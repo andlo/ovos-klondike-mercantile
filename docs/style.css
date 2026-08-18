@@ -185,6 +185,12 @@ main {
 
 .byline a { color: var(--muted); }
 
+.stats {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 0.1rem;
+}
+
 .badges {
   display: flex;
   flex-wrap: wrap;

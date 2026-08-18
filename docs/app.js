@@ -6,6 +6,7 @@ const searchInput = document.getElementById("search");
 const authorFilter = document.getElementById("author-filter");
 const tagFilter = document.getElementById("tag-filter");
 const typeFilter = document.getElementById("type-filter");
+const sortOrder = document.getElementById("sort-order");
 
 let skills = [];
 
@@ -108,6 +109,10 @@ function renderCard(skill) {
   const icon = skill.icon || GENERIC_ICON;
   const version = skill.pypi_version ? `v${escapeHtml(skill.pypi_version)}` : "unreleased";
   const description = truncate(skill.description, MAX_DESCRIPTION_LENGTH);
+  const stats = [];
+  if (skill.stars) stats.push(`⭐ ${skill.stars}`);
+  if (skill.forks) stats.push(`🍴 ${skill.forks}`);
+  const statsLine = stats.length ? `<div class="stats">${stats.join(" · ")}</div>` : "";
 
   return `
     <article class="card tier-${skill.tier}">
@@ -117,6 +122,7 @@ function renderCard(skill) {
         <div class="card-head-text">
           <h2>${escapeHtml(skill.name)}</h2>
           <div class="byline">by ${escapeHtml(skill.author)} · ${version}</div>
+          ${statsLine}
         </div>
       </div>
       <div class="badges">${renderBadges(skill)}</div>
@@ -129,6 +135,18 @@ function renderCard(skill) {
       </div>
     </article>
   `;
+}
+
+function sortSkills(list, order) {
+  const sorted = [...list];
+  if (order === "stars") {
+    sorted.sort((a, b) => (b.stars || 0) - (a.stars || 0));
+  } else if (order === "newest") {
+    sorted.sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0));
+  } else {
+    sorted.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+  }
+  return sorted;
 }
 
 function groupByCategory(list) {
@@ -231,25 +249,26 @@ function applyFilters() {
     (!tag || (s.tags || []).includes(tag)) &&
     (!type || s.component_type === type)
   );
+  const sorted = sortSkills(filtered, sortOrder.value);
 
-  render(filtered);
+  render(sorted);
   // The "new" section always reflects the current filter set too,
   // so filtering by author/tag/type still shows their recent additions.
-  renderNewSection(filtered);
+  renderNewSection(sorted);
 }
 
 searchInput.addEventListener("input", applyFilters);
 authorFilter.addEventListener("change", applyFilters);
 tagFilter.addEventListener("change", applyFilters);
 typeFilter.addEventListener("change", applyFilters);
+sortOrder.addEventListener("change", applyFilters);
 
 fetch("skills.json")
   .then((res) => res.json())
   .then((data) => {
     skills = data;
     populateFilters(skills);
-    render(skills);
-    renderNewSection(skills);
+    applyFilters();
   })
   .catch(() => {
     grid.innerHTML = "";
