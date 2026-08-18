@@ -1,27 +1,27 @@
 {
   "skill_id": null,
-  "name": "ovos-skills-info",
-  "description": "Skill information parser support skill",
+  "name": "ovos-skill-spotify",
+  "description": "",
   "examples": [],
   "tags": [
-    "deprecated",
     "openvoiceos",
-    "skill"
+    "skill",
+    "spotify"
   ],
   "category": "Other",
   "icon": null,
-  "source": "https://github.com/OpenVoiceOS/ovos-skills-info",
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-spotify",
   "package_name": null,
   "pypi_version": null,
-  "license": "Apache-2.0",
+  "license": null,
   "author": "OpenVoiceOS",
   "tier": 3,
   "on_pypi": false,
-  "has_release": false,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
-  "last_updated": "2022-10-31T10:59:51Z",
+  "last_updated": "2026-06-25T22:05:47Z",
   "is_new": false
 }
