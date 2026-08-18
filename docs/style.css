@@ -37,6 +37,42 @@ h1 { margin: 0 0 0.5rem; font-size: 2rem; }
 
 .subtitle a { color: var(--accent); }
 
+.legend {
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+  text-align: left;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.1rem;
+}
+
+.legend summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.legend dl {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+}
+
+.legend dt { margin-top: 0.6rem; }
+
+.legend dd {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+.description {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+  min-height: 2.7em;
+}
+
 #search {
   width: 100%;
   max-width: 420px;
@@ -177,12 +213,6 @@ main {
 .badge-partial { background: #fff4e5; color: #b5680b; }
 .badge-unverified { background: #f1f2f4; color: #5b6472; }
 .badge-warn { background: #fdeceb; color: #c73e35; }
-
-.description {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin: 0;
-}
 
 .examples {
   margin: 0;

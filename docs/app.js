@@ -12,16 +12,41 @@ const STORE_BADGE_SVG = `<svg viewBox="0 0 20 20" fill="currentColor" aria-hidde
   <path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.8 6.3-6.3a1 1 0 0 1 1.4 0z" clip-rule="evenodd"/>
 </svg>`;
 
+// A plain gray placeholder (no external asset) shown when a skill
+// has no icon, or its icon URL fails to load - as a data: URI so it
+// never triggers a second failed network request.
+const GENERIC_ICON =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+       <rect width="44" height="44" rx="10" fill="#e2e5ea"/>
+       <path d="M22 12a10 10 0 100 20 10 10 0 000-20zm0 3a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm3.5 12h-7v-1.2c0-1.9 2.3-3.3 3.5-3.3s3.5 1.4 3.5 3.3z" fill="#9aa0ab"/>
+     </svg>`
+  );
+
+const MAX_DESCRIPTION_LENGTH = 160;
+
+// Connectivity labels deliberately avoid the word "Offline" alone -
+// on its own it reads as "the skill is unavailable" rather than
+// "works without internet" (requested after exactly that confusion
+// came up). "Online" alone has the same problem in reverse, so it's
+// paired with "Needs Internet" instead.
 const CONNECTIVITY_META = {
-  offline: { label: "Offline", cls: "badge-offline" },
-  hybrid: { label: "Hybrid", cls: "badge-hybrid" },
-  online: { label: "Online", cls: "badge-online" },
+  offline: { label: "Works Offline", cls: "badge-offline" },
+  hybrid: { label: "Offline + Online", cls: "badge-hybrid" },
+  online: { label: "Needs Internet", cls: "badge-online" },
 };
 
+// These intentionally do NOT say "Verified" - this system checks
+// that the expected PIECES are present (a skill.json, a PyPI
+// release, a GitHub release), not that the skill actually works.
+// Real verification would mean running `pip install` and importing
+// it - a real, larger feature this labeling deliberately doesn't
+// claim to already be.
 const TIER_META = {
-  1: { label: "Verified", cls: "badge-verified" },
-  2: { label: "Partial", cls: "badge-partial" },
-  3: { label: "Unverified", cls: "badge-unverified" },
+  1: { label: "Looks Complete", cls: "badge-verified" },
+  2: { label: "Incomplete", cls: "badge-partial" },
+  3: { label: "Inferred, Unconfirmed", cls: "badge-unverified" },
 };
 
 function escapeHtml(str) {
@@ -37,6 +62,11 @@ function pipelineLabel(pipelinePackage) {
     .split("-")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ") + " Pipeline";
+}
+
+function truncate(text, maxLength) {
+  if (!text || text.length <= maxLength) return text || "";
+  return text.slice(0, maxLength).replace(/\s+\S*$/, "") + "…";
 }
 
 function renderBadges(skill) {
@@ -59,6 +89,9 @@ function renderBadges(skill) {
   if (!skill.has_release) {
     badges.push(`<span class="badge badge-warn">No release</span>`);
   }
+  if (!skill.license) {
+    badges.push(`<span class="badge badge-warn">No license</span>`);
+  }
   return badges.join("");
 }
 
@@ -67,21 +100,22 @@ function renderCard(skill) {
     .map((e) => `<li>"${escapeHtml(e)}"</li>`).join("");
   const tags = (skill.tags || [])
     .map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
-  const icon = skill.icon || "";
+  const icon = skill.icon || GENERIC_ICON;
   const version = skill.pypi_version ? `v${escapeHtml(skill.pypi_version)}` : "unreleased";
+  const description = truncate(skill.description, MAX_DESCRIPTION_LENGTH);
 
   return `
     <article class="card tier-${skill.tier}">
       <div class="card-head">
         <img src="${escapeHtml(icon)}" alt="" loading="lazy"
-             onerror="this.style.visibility='hidden'">
+             onerror="this.onerror=null;this.src='${GENERIC_ICON}'">
         <div class="card-head-text">
           <h2>${escapeHtml(skill.name)}</h2>
           <div class="byline">by ${escapeHtml(skill.author)} · ${version}</div>
         </div>
       </div>
       <div class="badges">${renderBadges(skill)}</div>
-      <p class="description">${escapeHtml(skill.description)}</p>
+      <p class="description">${escapeHtml(description)}</p>
       <ul class="examples">${examples}</ul>
       <div class="tags">${tags}</div>
       <div class="links">

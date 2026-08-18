@@ -155,8 +155,17 @@ def search_topic_repos(topic):
 def repo_info(full_name):
     """Basic repo metadata - fork status, license, description,
     topics, last-push timestamp. Returns None if the repo is gone
-    (deleted/renamed since discovery)."""
-    return gh_ok("api", f"repos/{full_name}")
+    (deleted/renamed since discovery) - prints the REAL failure
+    reason (not just "not accessible") since a prior version of this
+    function swallowed the actual error and made a real bug (every
+    OpenVoiceOS repo failing identically) look like generic
+    inaccessibility instead of the specific cause it actually was."""
+    try:
+        return gh_json("api", f"repos/{full_name}")
+    except subprocess.CalledProcessError as e:
+        reason = (e.stderr or "").strip().splitlines()[0] if e.stderr else "(no stderr captured)"
+        print(f"    DIAG repo_info({full_name}) failed: {reason}")
+        return None
 
 
 def fetch_file(full_name, path):
@@ -371,9 +380,10 @@ def main():
         if repo.get("fork"):
             print(f"  SKIP {full_name}: is a fork")
             continue
-        if not repo.get("license"):
-            print(f"  SKIP {full_name}: no license")
-            continue
+        # No license exclusion - included regardless, with an
+        # explicit "No license" badge in the UI (build_entry's
+        # license field is simply null). Goal is maximal inclusion,
+        # marking what's missing rather than gatekeeping on it.
 
         skill_json = fetch_skill_json(full_name)
 

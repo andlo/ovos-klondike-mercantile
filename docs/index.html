@@ -11,13 +11,48 @@
   <header>
     <h1>⛏️ OVOS Klondike Mercantile</h1>
     <p class="subtitle">
-      Every OVOS skill we could dig up across all of GitHub - not just
-      one author's own work. Auto-discovered weekly, cross-referenced
-      against PyPI and the official
-      <a href="https://openvoiceos.github.io/OVOS-skills-store/">OVOS Skill Store</a>.
-      Verified, partial, and unverified finds are all shown - see
-      <a href="https://github.com/andlo/ovos-klondike-mercantile#how-this-works">how this works</a>.
+      Every OVOS skill we could dig up across all of GitHub - not
+      just one author's own work. Discovered automatically (code +
+      topic search), checked against PyPI, GitHub releases, and the
+      official
+      <a href="https://openvoiceos.github.io/OVOS-skills-store/">OVOS Skill Store</a>
+      every week. Nothing here has been installed or run - the
+      badges below describe what was found, not that a skill
+      actually works.
     </p>
+
+    <details class="legend">
+      <summary>What do the badges mean?</summary>
+      <dl>
+        <dt><span class="badge badge-verified">Looks Complete</span></dt>
+        <dd>Has a proper <code>skill.json</code>, is published on PyPI, and has a GitHub release. All the expected pieces are present - not the same as confirmed working.</dd>
+
+        <dt><span class="badge badge-partial">Incomplete</span></dt>
+        <dd>Has a <code>skill.json</code>, but is missing a PyPI release and/or a GitHub release.</dd>
+
+        <dt><span class="badge badge-unverified">Inferred, Unconfirmed</span></dt>
+        <dd>No <code>skill.json</code> found. The repo tags itself as OVOS-related and its code shows real signs of being a skill, but everything shown is guessed from the repo's own description/topics - treat it as a lead, not a confirmed listing.</dd>
+
+        <dt><span class="badge badge-offline">Works Offline</span></dt>
+        <dd>The skill's own description states it needs no internet connection.</dd>
+
+        <dt><span class="badge badge-hybrid">Offline + Online</span></dt>
+        <dd>Works offline, with an optional online component (e.g. a fallback for content the offline data doesn't cover).</dd>
+
+        <dt><span class="badge badge-online">Needs Internet</span></dt>
+        <dd>Fetches content from the internet to function.</dd>
+
+        <dt><span class="badge badge-store">OVOS Store</span></dt>
+        <dd>Also listed in the official OVOS Skill Store.</dd>
+
+        <dt><span class="badge badge-key">API key</span></dt>
+        <dd>Requires an API key or similar credential to configure.</dd>
+
+        <dt><span class="badge badge-warn">Not on PyPI / No release / No license</span></dt>
+        <dd>Exactly what it says - shown as a plain fact, not a reason to exclude the skill.</dd>
+      </dl>
+    </details>
+
     <input id="search" type="search" placeholder="Search skills, authors, tags..." autocomplete="off">
     <div class="filters">
       <select id="author-filter"><option value="">All authors</option></select>
