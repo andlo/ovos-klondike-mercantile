@@ -5,6 +5,7 @@ const emptyState = document.getElementById("empty-state");
 const searchInput = document.getElementById("search");
 const authorFilter = document.getElementById("author-filter");
 const tagFilter = document.getElementById("tag-filter");
+const typeFilter = document.getElementById("type-filter");
 
 let skills = [];
 
@@ -72,6 +73,10 @@ function truncate(text, maxLength) {
 function renderBadges(skill) {
   const badges = [];
 
+  if (skill.component_type && skill.component_type !== "Skill") {
+    badges.push(`<span class="badge badge-type">${escapeHtml(skill.component_type)}</span>`);
+  }
+
   const tier = TIER_META[skill.tier];
   if (tier) badges.push(`<span class="badge ${tier.cls}">${tier.label}</span>`);
 
@@ -127,11 +132,17 @@ function renderCard(skill) {
 }
 
 function groupByCategory(list) {
+  // Skills group by their inferred content category (Education,
+  // Utility, ...); everything else groups by its own component type
+  // (OCP Media Plugin, Pipeline Plugin, Persona, ...) instead of
+  // being lumped into a generic "Other" bucket alongside them.
   const groups = new Map();
   for (const skill of list) {
-    const cat = skill.category || "Other";
-    if (!groups.has(cat)) groups.set(cat, []);
-    groups.get(cat).push(skill);
+    const key = (skill.component_type && skill.component_type !== "Skill")
+      ? skill.component_type
+      : (skill.category || "Other");
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(skill);
   }
   // "Other" last, everything else alphabetical
   return new Map(
@@ -177,6 +188,7 @@ function renderNewSection(list) {
 function populateFilters(list) {
   const authors = [...new Set(list.map((s) => s.author))].sort((a, b) => a.localeCompare(b));
   const tags = [...new Set(list.flatMap((s) => s.tags || []))].sort((a, b) => a.localeCompare(b));
+  const types = [...new Set(list.map((s) => s.component_type).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 
   for (const a of authors) {
     const opt = document.createElement("option");
@@ -189,6 +201,12 @@ function populateFilters(list) {
     opt.value = t;
     opt.textContent = t;
     tagFilter.appendChild(opt);
+  }
+  for (const t of types) {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    typeFilter.appendChild(opt);
   }
 }
 
@@ -205,22 +223,25 @@ function applyFilters() {
   const query = searchInput.value.trim().toLowerCase();
   const author = authorFilter.value;
   const tag = tagFilter.value;
+  const type = typeFilter.value;
 
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
     (!author || s.author === author) &&
-    (!tag || (s.tags || []).includes(tag))
+    (!tag || (s.tags || []).includes(tag)) &&
+    (!type || s.component_type === type)
   );
 
   render(filtered);
   // The "new" section always reflects the current filter set too,
-  // so filtering by author/tag still shows their recent additions.
+  // so filtering by author/tag/type still shows their recent additions.
   renderNewSection(filtered);
 }
 
 searchInput.addEventListener("input", applyFilters);
 authorFilter.addEventListener("change", applyFilters);
 tagFilter.addEventListener("change", applyFilters);
+typeFilter.addEventListener("change", applyFilters);
 
 fetch("skills.json")
   .then((res) => res.json())

@@ -52,10 +52,46 @@ IGNORE_LIST_PATH = ROOT / "ignore.txt"
 PROVIDER_PATTERN = re.compile(r"provider for ([\w.-]+)", re.IGNORECASE)
 ONLINE_LIBS = {"requests", "bs4", "beautifulsoup4", "feedparser", "aiohttp", "httpx"}
 
-# Signs of a real OVOS skill in __init__.py - used only for Tier 3
-# candidates (topic-tagged but no skill.json found), to filter out
-# repos that merely tag themselves "ovos" without actually being a
-# skill (a config repo, a fork with the topic left over, etc.).
+# Matches OVOS's own namespaced entry-point group names, e.g.
+# "opm.ocp.extractor" or "ovos.plugin.pipeline" - these are the
+# AUTHORITATIVE signal for what kind of component something is,
+# since it's literally how ovos-plugin-manager discovers and
+# categorizes plugins at runtime. Far more precise than guessing
+# from class names in __init__.py. Works against both setup.py
+# (dict-literal entry_points=) and pyproject.toml
+# ([project.entry-points."..."]) - many newer OVOS repos have moved
+# to pyproject.toml exclusively, found while investigating why OCP/
+# pipeline/persona components were being skipped entirely.
+ENTRY_POINT_GROUP_PATTERN = re.compile(r'"(ovos\.plugin\.[\w.]+|opm\.[\w.]+)"')
+
+# Readable labels for known entry-point group suffixes (prefix
+# "ovos.plugin."/"opm." stripped before matching). Checked as
+# substrings, not exact matches, since real-world group names vary
+# ("opm.ocp.extractor" vs "opm.ocp.extractor.config" should both
+# read as the same component type). Anything not matched here still
+# gets a readable fallback label instead of being dropped - see
+# derive_component_type().
+KNOWN_COMPONENT_TYPES = {
+    "skill": "Skill",
+    "ocp": "OCP Media Plugin",
+    "pipeline": "Pipeline Plugin",
+    "solver": "Solver Plugin",
+    "persona": "Persona",
+    "tts": "TTS Plugin",
+    "stt": "STT Plugin",
+    "wake_word": "Wake Word Plugin",
+    "ww": "Wake Word Plugin",
+    "phal": "PHAL Plugin",
+    "g2p": "G2P Plugin",
+    "vad": "VAD Plugin",
+    "audio": "Audio Plugin",
+    "transformer": "Transformer Plugin",
+    "microphone": "Microphone Plugin",
+}
+
+# Signs of a real OVOS skill in __init__.py - used as a fallback only
+# when no skill.json AND no entry-points group were found at all, to
+# still catch skills missing formal packaging metadata.
 SKILL_CODE_SIGNS = (
     "OVOSSkill", "FallbackSkill", "CommonQuerySkill",
     "ovos_workshop", "intent_handler", "create_skill",
@@ -195,6 +231,33 @@ def looks_like_skill_code(full_name):
     return any(sign in text for sign in SKILL_CODE_SIGNS)
 
 
+def fetch_entry_point_groups(full_name):
+    """Finds OVOS-namespaced entry-point GROUP names declared in
+    either setup.py or pyproject.toml - see ENTRY_POINT_GROUP_PATTERN
+    for why this is the authoritative signal for component type."""
+    groups = set()
+    for path in ("setup.py", "pyproject.toml"):
+        text = fetch_file(full_name, path) or ""
+        groups.update(ENTRY_POINT_GROUP_PATTERN.findall(text))
+    return groups
+
+
+def derive_component_type(entry_point_groups):
+    """Readable component type from a set of entry-point group
+    names, or None if the set is empty. See KNOWN_COMPONENT_TYPES for
+    the matched labels; anything else still gets a readable label
+    derived from its own group name rather than being dropped -
+    "opm.some_new_thing" becomes "Some New Thing Plugin"."""
+    for group in entry_point_groups:
+        suffix = group.replace("ovos.plugin.", "").replace("opm.", "")
+        for key, label in KNOWN_COMPONENT_TYPES.items():
+            if key in suffix:
+                return label
+        last_part = suffix.split(".")[-1].replace("_", " ")
+        return f"{last_part.title()} Plugin"
+    return None
+
+
 def fetch_requires_api_key(full_name):
     text = fetch_file(full_name, "settingsmeta.json")
     if text is None:
@@ -204,13 +267,19 @@ def fetch_requires_api_key(full_name):
 
 
 def guess_package_name(full_name):
-    """Best-effort package_name for a Tier 3 (no skill.json) entry -
-    read from setup.py's own name= argument, since that's the actual
-    PyPI-facing declaration and more trustworthy than guessing from
-    the repo name (which don't always match, e.g. skill-alerts vs
-    ovos-skill-alerts)."""
+    """Best-effort package_name for a non-skill.json entry - checks
+    setup.py's name= argument first, then pyproject.toml's
+    [project] name field, since a growing number of OVOS repos have
+    moved to pyproject.toml exclusively (found while investigating
+    OCP/pipeline/persona components, which mostly use it). Prefers
+    the package's own declared name over guessing from the repo name
+    (which don't always match, e.g. skill-alerts vs ovos-skill-alerts)."""
     text = fetch_file(full_name, "setup.py") or ""
     match = re.search(r"""name\s*=\s*["']([\w.-]+)["']""", text)
+    if match:
+        return match.group(1)
+    text = fetch_file(full_name, "pyproject.toml") or ""
+    match = re.search(r"""^\s*name\s*=\s*["']([\w.-]+)["']""", text, re.MULTILINE)
     return match.group(1) if match else None
 
 
@@ -289,7 +358,7 @@ def days_since(iso_timestamp):
         return None
 
 
-def build_entry(full_name, repo, skill_json, tier, store_package_names):
+def build_entry(full_name, repo, skill_json, tier, component_type, store_package_names):
     owner, name = full_name.split("/", 1)
 
     if skill_json is not None:
@@ -332,6 +401,7 @@ def build_entry(full_name, repo, skill_json, tier, store_package_names):
         "license": license_id,
         "author": owner,
         "tier": tier,
+        "component_type": component_type,
         "on_pypi": version is not None,
         "has_release": github_release is not None,
         "in_ovos_store": package_name in store_package_names if package_name else False,
@@ -386,19 +456,36 @@ def main():
         # marking what's missing rather than gatekeeping on it.
 
         skill_json = fetch_skill_json(full_name)
+        component_type = None
 
-        if skill_json is None:
+        if skill_json is not None:
+            component_type = "Skill"
+        else:
             if full_name not in topic_repos:
                 # Found only via the skill.json search but the file
                 # vanished/moved since - and it's not topic-tagged
                 # either, so there's no fallback signal to trust.
                 print(f"  SKIP {full_name}: skill.json missing, not topic-tagged")
                 continue
-            if not looks_like_skill_code(full_name):
-                print(f"  SKIP {full_name}: topic-tagged but __init__.py shows no skill signs")
-                continue
+            # Check the authoritative entry-points signal first (see
+            # derive_component_type) - catches OCP/pipeline/persona/
+            # solver/etc components that were previously skipped
+            # outright just for not being a skill specifically.
+            entry_point_groups = fetch_entry_point_groups(full_name)
+            component_type = derive_component_type(entry_point_groups)
+            if component_type is None:
+                # No declared entry-points group either - last resort,
+                # check for skill-shaped code as before.
+                if looks_like_skill_code(full_name):
+                    component_type = "Skill"
+                else:
+                    print(f"  SKIP {full_name}: topic-tagged but no plugin/skill signs found")
+                    continue
 
-        entry = build_entry(full_name, repo, skill_json, tier=3, store_package_names=store_package_names)
+        entry = build_entry(
+            full_name, repo, skill_json, tier=3,
+            component_type=component_type, store_package_names=store_package_names,
+        )
         if skill_json is not None:
             entry["tier"] = 1 if (entry["on_pypi"] and entry["has_release"]) else 2
 
@@ -410,9 +497,10 @@ def main():
             f.write("\n")
 
         tier_note = f" [tier {entry['tier']}]"
+        type_note = f" [{entry['component_type']}]"
         pypi_note = "" if entry["on_pypi"] else " [not on PyPI]"
         release_note = "" if entry["has_release"] else " [no release]"
-        print(f"  OK   {full_name}{tier_note}{pypi_note}{release_note}")
+        print(f"  OK   {full_name}{tier_note}{type_note}{pypi_note}{release_note}")
 
     entries.sort(key=lambda e: (e["name"] or "").lower())
     with open(FEED_PATH, "w") as f:
