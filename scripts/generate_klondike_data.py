@@ -36,6 +36,7 @@ import base64
 import json
 import re
 import subprocess
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -67,16 +68,41 @@ CATEGORY_TAGS = {
 }
 
 
-def gh_json(*args):
-    result = subprocess.run(["gh", *args], capture_output=True, text=True, check=True)
-    return json.loads(result.stdout)
+def gh_json(*args, retries=4):
+    """Runs `gh` and parses JSON output. Retries with exponential
+    backoff specifically on GitHub's SECONDARY rate limit (abuse
+    detection triggered by request bursts, distinct from the hourly
+    primary limit) - caught the hard way in a real CI run: this
+    script's per-candidate loop makes several sequential API calls
+    with no pacing at all, and a fine-grained PAT hit secondary
+    limits hard enough to silently fail ~40 consecutive calls
+    (an entire org's worth of repos, all at the same millisecond
+    timestamp - not a coincidence). Anything else still raises
+    immediately - only rate-limit responses are worth retrying."""
+    last_result = None
+    for attempt in range(retries):
+        result = subprocess.run(["gh", *args], capture_output=True, text=True)
+        if result.returncode == 0:
+            return json.loads(result.stdout)
+        last_result = result
+        if "rate limit" in result.stderr.lower() and attempt < retries - 1:
+            wait = 2 ** (attempt + 2)  # 4s, 8s, 16s, 32s
+            print(f"    (rate limited, waiting {wait}s before retry {attempt + 2}/{retries})")
+            time.sleep(wait)
+            continue
+        break
+    raise subprocess.CalledProcessError(
+        last_result.returncode, last_result.args, last_result.stdout, last_result.stderr
+    )
 
 
 def gh_ok(*args):
     """Like gh_json, but returns None on any failure instead of
     raising - used for optional lookups (a repo without a
     settingsmeta.json, a missing file, etc.) where "not found" is a
-    normal, expected outcome, not an error to propagate."""
+    normal, expected outcome, not an error to propagate. Still
+    benefits from gh_json's own rate-limit retry - only genuine
+    "this doesn't exist" 404s end up silently returning None here."""
     try:
         return gh_json(*args)
     except subprocess.CalledProcessError:
@@ -327,7 +353,17 @@ def main():
     store_package_names = fetch_ovos_store_package_names()
 
     entries = []
-    for full_name in all_candidates:
+    for i, full_name in enumerate(all_candidates):
+        if i > 0 and i % 20 == 0:
+            # Proactive pacing, not just reactive retry - spreads out
+            # the burst of API calls this loop makes (repo info +
+            # skill.json + possibly __init__.py/setup.py/settingsmeta
+            # per candidate) so we're less likely to trip GitHub's
+            # secondary rate limit in the first place. A short pause
+            # every 20 candidates, not every single one, to keep the
+            # weekly run's total time reasonable.
+            time.sleep(3)
+
         repo = repo_info(full_name)
         if repo is None:
             print(f"  SKIP {full_name}: repo not accessible")
