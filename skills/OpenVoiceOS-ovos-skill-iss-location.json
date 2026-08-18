@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-iss-location.openvoiceos",
+  "name": "ISS Tracker",
+  "description": "Track the location of the ISS",
+  "examples": [
+    "Where is the ISS",
+    "Who is on board of the space station?",
+    "When is the ISS passing over",
+    "Tell me about the IS",
+    "how many persons on board of the space station"
+  ],
+  "tags": [
+    "Trivia",
+    "space"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-iss-location",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-08-12T22:02:56Z",
+  "is_new": true
+}

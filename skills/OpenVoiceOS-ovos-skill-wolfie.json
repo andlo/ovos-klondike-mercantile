@@ -1,0 +1,34 @@
+{
+  "skill_id": "ovos-skill-wolfie.openvoiceos",
+  "name": "Wolfram Alpha",
+  "description": "Use Wolfram Alpha for general knowledge questions.",
+  "examples": [
+    "ask the wolf what is the speed of light",
+    "How tall is Mount Everest?",
+    "When was The Rocky Horror Picture Show released?",
+    "What is Madonna's real name?",
+    "What's 18 times 4?",
+    "How many inches in a meter?"
+  ],
+  "tags": [
+    "wolfram-alpha",
+    "query",
+    "general-knowledge",
+    "information"
+  ],
+  "category": "Information",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-wolfie",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-08-17T18:51:10Z",
+  "is_new": true
+}

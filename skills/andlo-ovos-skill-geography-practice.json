@@ -1,0 +1,34 @@
+{
+  "skill_id": "ovos-skill-geography-practice.andlo",
+  "name": "Geography Practice",
+  "description": "Geography practice - quizzes and teach-then-practice for capitals, continents, and country borders across 194 UN member states. Fully offline.",
+  "examples": [
+    "quiz me on capitals",
+    "quiz me on continents",
+    "quiz me on country borders",
+    "teach me about Europe",
+    "quiz me on what you taught me"
+  ],
+  "tags": [
+    "geography",
+    "education",
+    "capitals",
+    "quiz",
+    "kids"
+  ],
+  "category": "Education",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-geography-practice/main/icon.png",
+  "source": "https://github.com/andlo/ovos-skill-geography-practice",
+  "package_name": "ovos-skill-geography-practice",
+  "pypi_version": "0.0.3",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "last_updated": "2026-08-17T14:58:23.806589Z",
+  "is_new": true
+}

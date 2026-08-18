@@ -1,0 +1,36 @@
+{
+  "skill_id": "neon_homeassistant_skill.mikejgray",
+  "name": "neon-homeassistant-skill",
+  "description": "neon-homeassistant-skill",
+  "examples": [
+    "What is the status of the living room light?",
+    "Turn on the kitchen light",
+    "Change light bedside lamp to blue"
+  ],
+  "tags": [
+    "ovos",
+    "neon",
+    "home",
+    "assistant",
+    "phal",
+    "voice",
+    "interface",
+    "skill",
+    "plugin"
+  ],
+  "category": "Home",
+  "icon": "https://www.home-assistant.io/images/home-assistant-logo.svg",
+  "source": "https://github.com/mikejgray/neon-homeassistant-skill",
+  "package_name": "neon-homeassistant-skill",
+  "pypi_version": "0.0.24",
+  "license": "Apache-2.0",
+  "author": "mikejgray",
+  "tier": 2,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": true,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2025-01-29T02:26:15.220908Z",
+  "is_new": false
+}

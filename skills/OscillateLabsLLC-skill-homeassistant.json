@@ -1,0 +1,35 @@
+{
+  "skill_id": "skill_homeassistant.oscillatelabsllc",
+  "name": "skill-homeassistant",
+  "description": "skill-homeassistant",
+  "examples": [
+    "What is the status of the living room light?",
+    "Turn on the kitchen light",
+    "Change light bedside lamp to blue"
+  ],
+  "tags": [
+    "ovos",
+    "neon",
+    "home",
+    "assistant",
+    "voice",
+    "interface",
+    "skill",
+    "plugin"
+  ],
+  "category": "Home",
+  "icon": "https://www.home-assistant.io/images/home-assistant-logo.svg",
+  "source": "https://github.com/OscillateLabsLLC/skill-homeassistant",
+  "package_name": "skill-homeassistant",
+  "pypi_version": "1.4.1",
+  "license": "Apache-2.0",
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-07-23T03:55:53.739461Z",
+  "is_new": true
+}

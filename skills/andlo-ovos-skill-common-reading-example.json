@@ -1,0 +1,27 @@
+{
+  "skill_id": "ovos-skill-common-reading-example.andlo",
+  "name": "Common Reading Example (template)",
+  "description": "Template/example provider for ovos-common-reading-pipeline-plugin. Copy and adapt - not meant to be installed for its own content.",
+  "examples": [],
+  "tags": [
+    "template",
+    "example",
+    "provider",
+    "orchestrator"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-common-reading-example/main/story-512.png",
+  "source": "https://github.com/andlo/ovos-skill-common-reading-example",
+  "package_name": "ovos-skill-common-reading-example",
+  "pypi_version": null,
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": "ovos-common-reading-pipeline-plugin",
+  "connectivity": null,
+  "last_updated": "2026-07-22T14:50:12Z",
+  "is_new": true
+}

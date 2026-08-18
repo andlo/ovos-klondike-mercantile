@@ -1,0 +1,25 @@
+{
+  "skill_id": "ovos-skill-laugh.openvoiceos=ovos_skill_laugh:LaughSkill",
+  "name": "ovos-skill-laugh",
+  "description": "Laugh randomly or when requested.",
+  "examples": [
+    "Laugh like Alexa",
+    "can you laugh"
+  ],
+  "tags": "ovos skill voice assistant",
+  "category": "Other",
+  "icon": "res/icon/laugh_icon.png",
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-laugh",
+  "package_name": "ovos-skill-laugh",
+  "pypi_version": "1.0.5",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": true,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-05-10T21:01:45.247870Z",
+  "is_new": false
+}

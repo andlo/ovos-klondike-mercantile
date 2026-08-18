@@ -1,0 +1,25 @@
+{
+  "skill_id": "skill-core_ready.neongeckocom=skill_core_ready:CoreReadySkill",
+  "name": "neon-skill-core_ready",
+  "description": "When Neon is started or restarted, this skill will speak a notification to the user. This speech can be enabled/disabled by intent.",
+  "examples": [
+    "Enable ready notifications.",
+    "Disable load speech."
+  ],
+  "tags": [],
+  "category": "Other",
+  "icon": "logo.svg",
+  "source": "https://github.com/NeonGeckoCom/skill-core_ready",
+  "package_name": "neon-skill-core_ready",
+  "pypi_version": "0.3.0",
+  "license": "NOASSERTION",
+  "author": "NeonGeckoCom",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-07-27T23:58:00.310763Z",
+  "is_new": true
+}

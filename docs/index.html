@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OVOS Klondike Mercantile</title>
+  <meta name="description" content="A global, automatically-discovered directory of OVOS skills across all of GitHub.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>⛏️ OVOS Klondike Mercantile</h1>
+    <p class="subtitle">
+      Every OVOS skill we could dig up across all of GitHub - not just
+      one author's own work. Auto-discovered weekly, cross-referenced
+      against PyPI and the official
+      <a href="https://openvoiceos.github.io/OVOS-skills-store/">OVOS Skill Store</a>.
+      Verified, partial, and unverified finds are all shown - see
+      <a href="https://github.com/andlo/ovos-klondike-mercantile#how-this-works">how this works</a>.
+    </p>
+    <input id="search" type="search" placeholder="Search skills, authors, tags..." autocomplete="off">
+    <div class="filters">
+      <select id="author-filter"><option value="">All authors</option></select>
+      <select id="tag-filter"><option value="">All tags</option></select>
+    </div>
+  </header>
+
+  <section id="new-section" class="new-section" hidden>
+    <h2 class="group-title">🆕 New in the last 30 days</h2>
+    <div class="card-grid" id="new-grid"></div>
+  </section>
+
+  <main id="grid" aria-live="polite"></main>
+
+  <p id="empty-state" hidden>No skills match your search/filters.</p>
+
+  <footer>
+    <p>
+      <a href="skills.json">Raw JSON feed</a> ·
+      Regenerated automatically via GitHub Actions, weekly.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "skill_id": "skill_meal_plan.oscillatelabsllc",
+  "name": "skill-meal-plan",
+  "description": "An OVOS voice skill for meal suggestions",
+  "examples": [
+    "What should I make for dinner?",
+    "What should I eat?",
+    "What should I eat tonight?",
+    "I'm hungry",
+    "What's for dinner?"
+  ],
+  "tags": [
+    "ovos",
+    "neon",
+    "skill",
+    "voice",
+    "meal",
+    "planning"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/utensils.svg",
+  "source": "https://github.com/OscillateLabsLLC/skill-meal-plan",
+  "package_name": "skill-meal-plan",
+  "pypi_version": "2.2.0",
+  "license": "Apache-2.0",
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-07-21T02:25:56.207411Z",
+  "is_new": true
+}

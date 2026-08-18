@@ -1,0 +1,58 @@
+name: Update Klondike Mercantile data
+
+on:
+  schedule:
+    - cron: "23 5 * * 1"   # weekly, Mondays, arbitrary off-peak minute
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate Klondike data
+        env:
+          # Same minimal-scope PAT pattern as andlo/ovos-skills-directory -
+          # "Public Repositories (read-only)", nothing broader. This
+          # step only ever reads public repos/code/files across
+          # GitHub - it has no reason to hold write access anywhere.
+          GH_TOKEN: ${{ secrets.PUBLIC_READ_TOKEN }}
+        run: python3 scripts/generate_klondike_data.py
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add skills/ docs/skills.json
+          git diff --cached --quiet || git commit -m "chore: update Klondike data [automated]"
+          git push
+
+  deploy-pages:
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Pull latest (in case generate job committed)
+        run: git pull
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4

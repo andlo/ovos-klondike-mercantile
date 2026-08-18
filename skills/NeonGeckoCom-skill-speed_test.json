@@ -1,0 +1,25 @@
+{
+  "skill_id": "skill-speed_test.neongeckocom=neon_skill_speed_test:SpeedTestSkill",
+  "name": "neon-skill-speed_test",
+  "description": "This skill uses speedtest.net to check your internet speed",
+  "examples": [
+    "Run a speed test.",
+    "How fast is my internet?"
+  ],
+  "tags": [],
+  "category": "Other",
+  "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_skill.png",
+  "source": "https://github.com/NeonGeckoCom/skill-speed_test",
+  "package_name": "neon-skill-speed_test",
+  "pypi_version": "2.0.0",
+  "license": "NOASSERTION",
+  "author": "NeonGeckoCom",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-07-01T02:27:54.776116Z",
+  "is_new": false
+}

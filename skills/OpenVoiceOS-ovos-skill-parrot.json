@@ -1,0 +1,38 @@
+{
+  "skill_id": "ovos-skill-parrot.openvoiceos",
+  "name": "Parrot",
+  "description": "Turn OpenVoiceOS into a echoing parrot! Make OVOS repeat whatever you want.",
+  "examples": [
+    "say Goodnight, Gracie",
+    "repeat Once upon a midnight dreary, while I pondered, weak and weary, Over many a quaint and curious volume of forgotten lore",
+    "speak I can say anything you'd like!",
+    "Repeat what you just said",
+    "Repeat that",
+    "Can you repeat that?",
+    "What did I just say?",
+    "Tell me what I just said.",
+    "start parrot",
+    "stop parrot"
+  ],
+  "tags": [
+    "parrot",
+    "echo",
+    "repeater",
+    "entertainment"
+  ],
+  "category": "Entertainment",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-parrot",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-08-12T12:53:45Z",
+  "is_new": true
+}

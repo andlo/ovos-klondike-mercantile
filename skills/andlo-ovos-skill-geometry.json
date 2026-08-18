@@ -1,0 +1,33 @@
+{
+  "skill_id": "ovos-skill-geometry.andlo",
+  "name": "Geometry",
+  "description": "Geometry knowledge - shape and term definitions, formulas, and applied calculations for rectangles, squares, triangles, circles, and the Pythagorean theorem. Fully offline.",
+  "examples": [
+    "what is a rhombus",
+    "what is the formula for the area of a circle",
+    "what is the area of a rectangle with length 5 and width 3",
+    "what is the hypotenuse of a right triangle with legs 3 and 4",
+    "what is pythagoras' theorem"
+  ],
+  "tags": [
+    "geometry",
+    "reference",
+    "math",
+    "shapes"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-geometry/main/icon.png",
+  "source": "https://github.com/andlo/ovos-skill-geometry",
+  "package_name": "ovos-skill-geometry",
+  "pypi_version": "0.0.3",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "last_updated": "2026-08-17T18:26:53.787921Z",
+  "is_new": true
+}

@@ -1,0 +1,32 @@
+{
+  "skill_id": "ovos-skill-sound-like.andlo",
+  "name": "Sound Like",
+  "description": "How does a cow sound? Bundled offline sounds (currently animals) for instant answers, with an optional freesound.org online fallback for anything else, filtered to CC0-licensed results.",
+  "examples": [
+    "how does a cow sound",
+    "what does a dog sound like",
+    "play a cat sound"
+  ],
+  "tags": [
+    "sounds",
+    "animals",
+    "fun",
+    "kids",
+    "entertainment"
+  ],
+  "category": "Entertainment",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-sound-like/main/icon.png",
+  "source": "https://github.com/andlo/ovos-skill-sound-like",
+  "package_name": "ovos-skill-sound-like",
+  "pypi_version": "0.0.1",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "hybrid",
+  "last_updated": "2026-08-16T17:27:41.684513Z",
+  "is_new": true
+}

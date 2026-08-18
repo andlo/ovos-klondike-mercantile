@@ -1,0 +1,32 @@
+{
+  "skill_id": "ovos-skill-network-scanner.andlo",
+  "name": "Network Scanner",
+  "description": "Discovers devices on your own local network via mDNS/Bonjour plus a ping+ARP+MAC-vendor sweep. Fully offline, no root required.",
+  "examples": [
+    "scan the network",
+    "can you see my Sony TV",
+    "is my printer on the network"
+  ],
+  "tags": [
+    "network",
+    "scanner",
+    "mdns",
+    "discovery",
+    "lan"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-network-scanner/main/icon.png",
+  "source": "https://github.com/andlo/ovos-skill-network-scanner",
+  "package_name": "ovos-skill-network-scanner",
+  "pypi_version": "0.0.1",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "last_updated": "2026-08-16T19:02:51.026660Z",
+  "is_new": true
+}

@@ -1,0 +1,30 @@
+{
+  "skill_id": "skill-ovos-fallback-chatgpt.openvoiceos",
+  "name": "ChatGPT Fallback Skill",
+  "description": "When in doubt, ask ChatGPT",
+  "examples": [
+    "Explain quantum computing in simple terms",
+    "Got any creative ideas for a 10 year old\u2019s birthday?"
+  ],
+  "tags": [
+    "fallback",
+    "LLM",
+    "query",
+    "information"
+  ],
+  "category": "Information",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2025-01-31T06:19:52Z",
+  "is_new": false
+}

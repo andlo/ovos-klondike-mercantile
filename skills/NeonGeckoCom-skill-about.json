@@ -1,0 +1,26 @@
+{
+  "skill_id": "skill-about.neongeckocom=skill_about:AboutSkill",
+  "name": "neon-skill-about",
+  "description": "This skill provides information about Neon. You can ask about licensing and your Neon installation. This skill also provides formatted examples for installed skills.",
+  "examples": [
+    "Tell me my license.",
+    "Tell me my skills.",
+    "What can you do?"
+  ],
+  "tags": [],
+  "category": "Other",
+  "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_skill.png",
+  "source": "https://github.com/NeonGeckoCom/skill-about",
+  "package_name": "neon-skill-about",
+  "pypi_version": "1.0.4",
+  "license": "NOASSERTION",
+  "author": "NeonGeckoCom",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-07-27T23:34:15.801499Z",
+  "is_new": true
+}

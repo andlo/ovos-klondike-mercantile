@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-tuning-fork.andlo",
+  "name": "Tuning Fork",
+  "description": "A reference-tone generator - give me an A plays 440Hz, play 300 hertz plays any frequency. Fully offline, generated tones, nothing recorded.",
+  "examples": [
+    "give me an A",
+    "play a C sharp",
+    "play 300 hertz"
+  ],
+  "tags": [
+    "music",
+    "tuning",
+    "reference tone",
+    "instrument"
+  ],
+  "category": "Music",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-tuning-fork/main/icon.png",
+  "source": "https://github.com/andlo/ovos-skill-tuning-fork",
+  "package_name": "ovos-skill-tuning-fork",
+  "pypi_version": "0.0.1",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "last_updated": "2026-08-16T17:51:38.229713Z",
+  "is_new": true
+}

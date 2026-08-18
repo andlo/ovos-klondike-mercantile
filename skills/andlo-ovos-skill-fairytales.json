@@ -1,0 +1,32 @@
+{
+  "skill_id": "ovos-skill-fairytales.andlo",
+  "name": "Fairy Tales",
+  "description": "Tells fairy tales by Hans Christian Andersen and the Brothers Grimm.",
+  "examples": [
+    "tell me a story about Cinderella",
+    "read me a fairy tale",
+    "continue the story"
+  ],
+  "tags": [
+    "entertainment",
+    "stories",
+    "fairytales",
+    "andersen",
+    "grimm"
+  ],
+  "category": "Entertainment",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-fairytales/master/story-512.png",
+  "source": "https://github.com/andlo/ovos-skill-fairytales",
+  "package_name": "ovos-skill-fairytales",
+  "pypi_version": "0.1.0",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 2,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "last_updated": "2026-07-21T00:32:27.512227Z",
+  "is_new": true
+}

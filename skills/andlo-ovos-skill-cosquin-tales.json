@@ -1,0 +1,32 @@
+{
+  "skill_id": "ovos-skill-cosquin-tales.andlo",
+  "name": "Cosquin Tales (provider)",
+  "description": "Emmanuel Cosquin's Lorraine folk tales provider for ovos-common-reading-pipeline-plugin. French only, no translation.",
+  "examples": [
+    "Tell me a story from cosquin",
+    "Tell me a fairy tale from lorraine"
+  ],
+  "tags": [
+    "entertainment",
+    "stories",
+    "folklore",
+    "cosquin",
+    "french",
+    "provider"
+  ],
+  "category": "Entertainment",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-cosquin-tales/main/story-512.png",
+  "source": "https://github.com/andlo/ovos-skill-cosquin-tales",
+  "package_name": "ovos-skill-cosquin-tales",
+  "pypi_version": "0.1.2",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": "ovos-common-reading-pipeline-plugin",
+  "connectivity": "online",
+  "last_updated": "2026-07-25T22:06:02.217024Z",
+  "is_new": true
+}

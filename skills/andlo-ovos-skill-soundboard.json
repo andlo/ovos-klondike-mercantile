@@ -1,0 +1,30 @@
+{
+  "skill_id": "ovos-skill-soundboard.andlo",
+  "name": "SoundBoard",
+  "description": "A sound-effects board for OVOS - 'play a drum roll', 'play applause', 'play an air horn'. Same bundled-CC0-sample pattern as ovos-skill-sound-like, but for stock sound effects rather than animal/object sounds. Could plausibly share infrastructure with ovos-skill-sound-like rather than being fully separate - worth revisiting once both exist.",
+  "examples": [
+    "play a drum roll",
+    "play applause",
+    "play an air horn"
+  ],
+  "tags": [
+    "sound effects",
+    "fun",
+    "soundboard"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-soundboard/main/icon.png",
+  "source": "https://github.com/andlo/ovos-skill-soundboard",
+  "package_name": "ovos-skill-soundboard",
+  "pypi_version": null,
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "last_updated": "2026-08-16T17:15:31Z",
+  "is_new": true
+}

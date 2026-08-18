@@ -1,0 +1,31 @@
+{
+  "skill_id": "ovos-skill-wiki-offline.andlo",
+  "name": "Wiki Offline",
+  "description": "Offline general-knowledge lookup covering Wikipedia's ~10,000 Level 4 Vital Articles. English, Spanish, and French are native; any other language is answered via on-demand offline translation. No internet connection needed.",
+  "examples": [
+    "what is photosynthesis",
+    "who was Marie Curie",
+    "tell me about the Eiffel Tower"
+  ],
+  "tags": [
+    "wikipedia",
+    "knowledge",
+    "offline",
+    "reference"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-wiki-offline/main/icon.png",
+  "source": "https://github.com/andlo/ovos-skill-wiki-offline",
+  "package_name": "ovos-skill-wiki-offline",
+  "pypi_version": "0.0.7",
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "last_updated": "2026-08-18T13:53:56.170148Z",
+  "is_new": false
+}
