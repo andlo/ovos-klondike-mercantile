@@ -231,14 +231,27 @@ def looks_like_skill_code(full_name):
     return any(sign in text for sign in SKILL_CODE_SIGNS)
 
 
-def fetch_entry_point_groups(full_name):
-    """Finds OVOS-namespaced entry-point GROUP names declared in
-    either setup.py or pyproject.toml - see ENTRY_POINT_GROUP_PATTERN
-    for why this is the authoritative signal for component type."""
+def fetch_setup_and_pyproject(full_name):
+    """Fetches setup.py and pyproject.toml ONCE per candidate and
+    returns both texts (empty string if missing) for reuse by both
+    entry-point-group detection and package-name guessing. Fixed
+    after a real CI run burned through an entire hourly rate-limit
+    budget partway through 300+ candidates: both files were
+    previously being fetched TWICE per non-skill.json candidate (once
+    in fetch_entry_point_groups, again in guess_package_name) -
+    doubling API calls for no reason across roughly 270 topic-tagged
+    candidates."""
+    setup_text = fetch_file(full_name, "setup.py") or ""
+    pyproject_text = fetch_file(full_name, "pyproject.toml") or ""
+    return setup_text, pyproject_text
+
+
+def derive_entry_point_groups(setup_text, pyproject_text):
+    """Same signal as before (see ENTRY_POINT_GROUP_PATTERN) - now
+    takes already-fetched text instead of fetching it itself."""
     groups = set()
-    for path in ("setup.py", "pyproject.toml"):
-        text = fetch_file(full_name, path) or ""
-        groups.update(ENTRY_POINT_GROUP_PATTERN.findall(text))
+    groups.update(ENTRY_POINT_GROUP_PATTERN.findall(setup_text))
+    groups.update(ENTRY_POINT_GROUP_PATTERN.findall(pyproject_text))
     return groups
 
 
@@ -266,20 +279,14 @@ def fetch_requires_api_key(full_name):
     return "api_key" in lowered or "api key" in lowered
 
 
-def guess_package_name(full_name):
-    """Best-effort package_name for a non-skill.json entry - checks
-    setup.py's name= argument first, then pyproject.toml's
-    [project] name field, since a growing number of OVOS repos have
-    moved to pyproject.toml exclusively (found while investigating
-    OCP/pipeline/persona components, which mostly use it). Prefers
-    the package's own declared name over guessing from the repo name
-    (which don't always match, e.g. skill-alerts vs ovos-skill-alerts)."""
-    text = fetch_file(full_name, "setup.py") or ""
-    match = re.search(r"""name\s*=\s*["']([\w.-]+)["']""", text)
+def derive_package_name(setup_text, pyproject_text):
+    """Same signal as before (see guess_package_name's original
+    docstring) - now takes already-fetched text instead of fetching
+    it itself, see fetch_setup_and_pyproject()."""
+    match = re.search(r"""name\s*=\s*["']([\w.-]+)["']""", setup_text)
     if match:
         return match.group(1)
-    text = fetch_file(full_name, "pyproject.toml") or ""
-    match = re.search(r"""^\s*name\s*=\s*["']([\w.-]+)["']""", text, re.MULTILINE)
+    match = re.search(r"""^\s*name\s*=\s*["']([\w.-]+)["']""", pyproject_text, re.MULTILINE)
     return match.group(1) if match else None
 
 
@@ -358,7 +365,7 @@ def days_since(iso_timestamp):
         return None
 
 
-def build_entry(full_name, repo, skill_json, tier, component_type, store_package_names):
+def build_entry(full_name, repo, skill_json, tier, component_type, package_name_override, store_package_names):
     owner, name = full_name.split("/", 1)
 
     if skill_json is not None:
@@ -370,7 +377,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, store_package
         icon = skill_json.get("icon")
         skill_id = skill_json.get("skill_id")
     else:
-        package_name = guess_package_name(full_name)
+        package_name = package_name_override
         description = repo.get("description") or ""
         tags = repo.get("topics", [])
         display_name = name
@@ -460,6 +467,7 @@ def main():
 
         skill_json = fetch_skill_json(full_name)
         component_type = None
+        package_name_override = None
 
         if skill_json is not None:
             component_type = "Skill"
@@ -470,11 +478,14 @@ def main():
                 # either, so there's no fallback signal to trust.
                 print(f"  SKIP {full_name}: skill.json missing, not topic-tagged")
                 continue
-            # Check the authoritative entry-points signal first (see
-            # derive_component_type) - catches OCP/pipeline/persona/
-            # solver/etc components that were previously skipped
-            # outright just for not being a skill specifically.
-            entry_point_groups = fetch_entry_point_groups(full_name)
+            # One fetch of setup.py/pyproject.toml, reused for both
+            # entry-point-group detection and package-name guessing -
+            # see fetch_setup_and_pyproject()'s docstring for why this
+            # replaced two separate functions that each fetched the
+            # same two files independently.
+            setup_text, pyproject_text = fetch_setup_and_pyproject(full_name)
+            package_name_override = derive_package_name(setup_text, pyproject_text)
+            entry_point_groups = derive_entry_point_groups(setup_text, pyproject_text)
             component_type = derive_component_type(entry_point_groups)
             if component_type is None:
                 # No declared entry-points group either - last resort,
@@ -487,7 +498,8 @@ def main():
 
         entry = build_entry(
             full_name, repo, skill_json, tier=3,
-            component_type=component_type, store_package_names=store_package_names,
+            component_type=component_type, package_name_override=package_name_override,
+            store_package_names=store_package_names,
         )
         if skill_json is not None:
             entry["tier"] = 1 if (entry["on_pypi"] and entry["has_release"]) else 2
