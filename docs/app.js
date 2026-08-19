@@ -15,17 +15,40 @@ const STORE_BADGE_SVG = `<svg viewBox="0 0 20 20" fill="currentColor" aria-hidde
   <path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 1 1 1.4-1.4l2.8 2.8 6.3-6.3a1 1 0 0 1 1.4 0z" clip-rule="evenodd"/>
 </svg>`;
 
-// A plain gray placeholder (no external asset) shown when a skill
-// has no icon, or its icon URL fails to load - as a data: URI so it
-// never triggers a second failed network request.
-const GENERIC_ICON =
-  "data:image/svg+xml;utf8," +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
-       <rect width="44" height="44" rx="10" fill="#e2e5ea"/>
-       <path d="M22 12a10 10 0 100 20 10 10 0 000-20zm0 3a2.5 2.5 0 110 5 2.5 2.5 0 010-5zm3.5 12h-7v-1.2c0-1.9 2.3-3.3 3.5-3.3s3.5 1.4 3.5 3.3z" fill="#9aa0ab"/>
-     </svg>`
+// Generic per-type placeholder icons (no external asset, data: URIs)
+// shown when a skill/plugin/tool has no icon of its own, or its icon
+// URL fails to load. One shape per type_group (Skill/Plugin/Tool)
+// instead of a single identical icon for everything, so a card
+// without its own icon still hints at what kind of thing it is.
+function genericIconSvg(glyphPath) {
+  return (
+    "data:image/svg+xml;utf8," +
+    encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+         <rect width="44" height="44" rx="10" fill="#e2e5ea"/>
+         <path d="${glyphPath}" fill="#9aa0ab"/>
+       </svg>`
+    )
   );
+}
+
+const GENERIC_ICON_SKILL = genericIconSvg(
+  "M22 11c-6.6 0-11 4-11 9s4.4 9 11 9c1 0 2-.1 2.9-.3l4.6 2.8-.7-4.4C30.8 25.4 33 22.5 33 20c0-5-4.4-9-11-9z"
+);
+const GENERIC_ICON_PLUGIN = genericIconSvg(
+  "M15 13h6a2 2 0 012-2 2 2 0 012 2h6v6a2 2 0 012 2 2 2 0 01-2 2v6h-6a2 2 0 01-2 2 2 2 0 01-2-2h-6v-6a2 2 0 002-2 2 2 0 00-2-2v-6z"
+);
+const GENERIC_ICON_TOOL = genericIconSvg(
+  "M27.7 13.3a5 5 0 00-6.6 6l-9.5 9.5 2.6 2.6 9.5-9.5a5 5 0 006-6.6l-3 3-2-2 3-3z"
+);
+// Kept as the ultimate fallback (unknown/missing type_group).
+const GENERIC_ICON = GENERIC_ICON_PLUGIN;
+
+function genericIconFor(skill) {
+  if (skill.type_group === "Skill") return GENERIC_ICON_SKILL;
+  if (skill.type_group === "Tool") return GENERIC_ICON_TOOL;
+  return GENERIC_ICON_PLUGIN;
+}
 
 const MAX_DESCRIPTION_LENGTH = 160;
 
@@ -118,7 +141,8 @@ function renderCard(skill) {
     .map((e) => `<li>"${escapeHtml(e)}"</li>`).join("");
   const tags = asArray(skill.tags)
     .map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
-  const icon = skill.icon || GENERIC_ICON;
+  const fallbackIcon = genericIconFor(skill);
+  const icon = skill.icon || fallbackIcon;
   const version = skill.pypi_version ? `v${escapeHtml(skill.pypi_version)}` : "unreleased";
   const description = truncate(skill.description, MAX_DESCRIPTION_LENGTH);
   const stats = [];
@@ -130,7 +154,7 @@ function renderCard(skill) {
     <article class="card tier-${skill.tier}">
       <div class="card-head">
         <img src="${escapeHtml(icon)}" alt="" loading="lazy"
-             onerror="this.onerror=null;this.src='${GENERIC_ICON}'">
+             onerror="this.onerror=null;this.src='${fallbackIcon}'">
         <div class="card-head-text">
           <h2>${escapeHtml(skill.name)}</h2>
           <div class="byline">by ${escapeHtml(skill.author)} · ${version}</div>

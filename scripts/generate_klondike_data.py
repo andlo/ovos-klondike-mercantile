@@ -311,6 +311,39 @@ def fetch_requires_api_key(full_name):
     return "api_key" in lowered or "api key" in lowered
 
 
+def fetch_readme_description(full_name):
+    """Best-effort description pulled from the repo's own README,
+    used ONLY as a last-resort fallback when neither skill.json nor
+    GitHub's own repo "About" description field have anything -
+    confirmed common specifically for PHAL plugins by inspection:
+    ovos-PHAL-plugin-pulseaudio has a real, substantial README
+    ("This is a PHAL plugin for OpenVoiceOS. It controls system
+    volume through PulseAudio...") but an empty GitHub About field,
+    leaving the card with no description text at all otherwise.
+    Strips markdown headers, badge/image lines, and raw HTML lines,
+    then takes the first line of real prose - deliberately simple
+    (not a full markdown parser) since it only needs to find one
+    readable sentence, not render the document."""
+    for path in ("README.md", "readme.md", "Readme.md"):
+        text = fetch_file(full_name, path)
+        if text:
+            break
+    else:
+        return ""
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("[!") or line.startswith("!["):
+            continue
+        if line.startswith("<"):
+            continue
+        line = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", line)
+        if len(line) > 20:
+            return line
+    return ""
+
+
 def derive_package_name(setup_text, pyproject_text):
     """Same signal as before (see guess_package_name's original
     docstring) - now takes already-fetched text instead of fetching
@@ -440,6 +473,13 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     else:
         package_name = package_name_override
         description = repo.get("description") or ""
+        if not description:
+            # Fallback only reached when BOTH skill.json (not present
+            # for this branch by definition) and GitHub's own "About"
+            # field are empty - common for PHAL plugins specifically,
+            # see fetch_readme_description()'s docstring. One extra
+            # API call, but only for entries that actually need it.
+            description = fetch_readme_description(full_name)
         tags = normalize_tags(repo.get("topics") or [])
         display_name = name
         examples = []
