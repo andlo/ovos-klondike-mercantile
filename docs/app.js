@@ -152,7 +152,6 @@ function renderNewSection(list) {
 
 function populateFilters(list) {
   const authors = [...new Set(list.map((s) => s.author))].sort((a, b) => a.localeCompare(b));
-  const tags = [...new Set(list.flatMap((s) => asArray(s.tags)))].sort((a, b) => a.localeCompare(b));
 
   for (const a of authors) {
     const opt = document.createElement("option");
@@ -160,11 +159,43 @@ function populateFilters(list) {
     opt.textContent = a;
     authorFilter.appendChild(opt);
   }
-  for (const t of tags) {
-    const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
-    tagFilter.appendChild(opt);
+
+  // Tag filter: "our" curated categories first (the same grouping
+  // the main grid uses - Daily, News, Other, ...), then every raw
+  // tag value underneath - previously one long flat alphabetical
+  // list where the handful of meaningful categories were buried
+  // among hundreds of one-off raw tags (Actors, aes, agent, aiy,
+  // ...). Category options are prefixed "cat:" so applyFilters can
+  // tell them apart from raw "tag:" values sharing the same select.
+  const categories = [...new Set(list.map((s) => s.category).filter(Boolean))]
+    .sort((a, b) => {
+      if (a === "Other") return 1;
+      if (b === "Other") return -1;
+      return a.localeCompare(b);
+    });
+  const rawTags = [...new Set(list.flatMap((s) => asArray(s.tags)))].sort((a, b) => a.localeCompare(b));
+
+  if (categories.length > 0) {
+    const optgroup = document.createElement("optgroup");
+    optgroup.label = "Categories";
+    for (const c of categories) {
+      const opt = document.createElement("option");
+      opt.value = `cat:${c}`;
+      opt.textContent = c;
+      optgroup.appendChild(opt);
+    }
+    tagFilter.appendChild(optgroup);
+  }
+  if (rawTags.length > 0) {
+    const optgroup = document.createElement("optgroup");
+    optgroup.label = "All Tags";
+    for (const t of rawTags) {
+      const opt = document.createElement("option");
+      opt.value = `tag:${t}`;
+      opt.textContent = t;
+      optgroup.appendChild(opt);
+    }
+    tagFilter.appendChild(optgroup);
   }
 
   const pluginTypes = new Set();
@@ -211,6 +242,17 @@ function matchesSearch(skill, query) {
   return haystack.includes(query);
 }
 
+function matchesTagFilter(skill, tagValue) {
+  if (!tagValue) return true;
+  if (tagValue.startsWith("cat:")) {
+    return skill.category === tagValue.slice(4);
+  }
+  if (tagValue.startsWith("tag:")) {
+    return asArray(skill.tags).includes(tagValue.slice(4));
+  }
+  return true;
+}
+
 function applyFilters() {
   const query = searchInput.value.trim().toLowerCase();
   const author = authorFilter.value;
@@ -220,7 +262,7 @@ function applyFilters() {
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
     (!author || s.author === author) &&
-    (!tag || asArray(s.tags).includes(tag)) &&
+    matchesTagFilter(s, tag) &&
     (!type || s.component_type === type)
   );
   const sorted = sortSkills(filtered, sortOrder.value);
