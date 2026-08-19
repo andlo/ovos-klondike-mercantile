@@ -1,3 +1,8 @@
 # One "owner/repo" per line - repos to exclude even if they'd
-# otherwise match the discovery search. Comments (#) and blank lines
-# are ignored.
+# otherwise match the discovery search. A bare "owner" (no slash)
+# excludes every repo from that whole account/org. Comments (#) and
+# blank lines are ignored.
+
+# Excluded on direct advice from a core OVOS contributor
+# (JarbasAI): "that org is literally a dumpster of broken stuff".
+OVOSHatchery

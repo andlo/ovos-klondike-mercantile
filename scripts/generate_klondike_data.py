@@ -174,10 +174,21 @@ def gh_ok(*args):
 
 
 def load_ignore_list():
+    """Two kinds of lines, both from ignore.txt: "owner/repo"
+    excludes exactly that repo; a bare "owner" (no slash) excludes
+    every repo from that whole account/org - added after direct
+    community feedback (a core OVOS contributor) recommending
+    against including OVOSHatchery's repos wholesale ("that org is
+    literally a dumpster of broken stuff"), which only became a real
+    concern once the ovos-in-name discovery signal started actually
+    surfacing repos from it. Returns (exact_repo_set, blocked_owner_set)."""
     if not IGNORE_LIST_PATH.exists():
-        return set()
+        return set(), set()
     lines = IGNORE_LIST_PATH.read_text().splitlines()
-    return {ln.strip() for ln in lines if ln.strip() and not ln.strip().startswith("#")}
+    entries = {ln.strip() for ln in lines if ln.strip() and not ln.strip().startswith("#")}
+    exact = {e for e in entries if "/" in e}
+    owners = {e.lower() for e in entries if "/" not in e}
+    return exact, owners
 
 
 def load_state():
@@ -255,6 +266,33 @@ def search_topic_repos(topic):
     while True:
         items = gh_json(
             "api", f"search/repositories?q=topic:{topic}+fork:true&per_page=100&page={page}"
+        )["items"]
+        if not items:
+            break
+        for item in items:
+            names.add(item["full_name"])
+        if len(items) < 100:
+            break
+        page += 1
+        if page > 10:
+            break
+    return names
+
+
+def search_name_repos(keyword):
+    """Repos with the keyword literally in their own name -
+    complements the topic-search signal for repos that never got a
+    GitHub topic set at all (found by inspection: several real
+    OpenVoiceOS repos, including ovos-control-panel, have zero
+    topics AND no skill.json, making them invisible to both other
+    discovery signals despite genuinely being OVOS tools). Also
+    fork:true for the same reason as search_topic_repos - GitHub
+    excludes forks from repository search by default."""
+    names = set()
+    page = 1
+    while True:
+        items = gh_json(
+            "api", f"search/repositories?q={keyword}+in:name+fork:true&per_page=100&page={page}"
         )["items"]
         if not items:
             break
@@ -748,7 +786,7 @@ def main():
     """
     SKILLS_DIR.mkdir(exist_ok=True)
     DOCS_DIR.mkdir(exist_ok=True)
-    ignore_list = load_ignore_list()
+    ignore_exact, ignore_owners = load_ignore_list()
     state = load_state()
     previous_entries = load_previous_entries()
 
@@ -760,8 +798,25 @@ def main():
     topic_repos = search_topic_repos("ovos") | search_topic_repos("openvoiceos")
     print(f"  {len(topic_repos)} repos")
 
-    all_candidates = sorted((with_skill_json | topic_repos) - ignore_list)
-    print(f"\n{len(all_candidates)} total unique candidates ({len(ignore_list)} ignored)")
+    print("Discovering via name search (ovos in repo name)...")
+    name_repos = search_name_repos("ovos")
+    print(f"  {len(name_repos)} repos")
+
+    # A repo found via EITHER topic or name search gets the same
+    # trust for the entry-points/skill-code/tool fallback path below -
+    # both are similarly strong "this really is OVOS-related" signals,
+    # not just an accident of being near the word "OVOS" somewhere.
+    topic_or_name_repos = topic_repos | name_repos
+
+    all_candidates = sorted(
+        (with_skill_json | topic_or_name_repos) - ignore_exact
+        - {c for c in (with_skill_json | topic_or_name_repos)
+           if c.split("/", 1)[0].lower() in ignore_owners}
+    )
+    print(
+        f"\n{len(all_candidates)} total unique candidates "
+        f"({len(ignore_exact)} repos ignored, {len(ignore_owners)} owners blocked)"
+    )
 
     attempted_ids = set(state.get("attempted", []))
     new_candidates = [c for c in all_candidates if c.replace("/", "-") not in attempted_ids]
@@ -837,11 +892,12 @@ def main():
             component_type = "Skill"
             has_confirmed_manifest = True
         else:
-            if full_name not in topic_repos:
+            if full_name not in topic_or_name_repos:
                 # Found only via the skill.json search but the file
-                # vanished/moved since - and it's not topic-tagged
-                # either, so there's no fallback signal to trust.
-                print(f"  SKIP {full_name}: skill.json missing, not topic-tagged")
+                # vanished/moved since - and it's neither topic-
+                # tagged nor name-matched either, so there's no
+                # fallback signal to trust.
+                print(f"  SKIP {full_name}: skill.json missing, not topic/name-matched")
                 merged_entries.pop(full_name.replace("/", "-"), None)
                 continue
             # One fetch of setup.py/pyproject.toml, reused for both
