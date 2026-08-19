@@ -35,11 +35,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-PHAL-plugin-termux\n```"
+      "content": "pip install ovos-PHAL-plugin-termux"
     },
     {
       "heading": "Config",
-      "content": "```json\n  \"PHAL\": {\n    \"ovos-PHAL-plugin-termux\": {\n      \"stream\": \"music\",\n      \"camera_id\": 0,\n      \"vibrate_on_record_start\": false,\n      \"vibrate_on_record_end\": false,\n      \"vibrate_on_sleep\": false,\n      \"vibrate_on_error\": true\n    }\n  }\n```"
+      "content": "\"PHAL\": {\n    \"ovos-PHAL-plugin-termux\": {\n      \"stream\": \"music\",\n      \"camera_id\": 0,\n      \"vibrate_on_record_start\": false,\n      \"vibrate_on_record_end\": false,\n      \"vibrate_on_sleep\": false,\n      \"vibrate_on_error\": true\n    }\n  }"
     }
   ],
   "languages": [],

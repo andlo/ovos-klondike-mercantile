@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Audio Plugin",
+  "component_type": "Video Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 2,
@@ -30,11 +30,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-media-plugin-chromecast\n```"
+      "content": "pip install ovos-media-plugin-chromecast"
     },
     {
       "heading": "Configuration",
-      "content": "Run the `ovos-chromecast-autoconfigure` command to configure your Chromecast devices automatically.\n\n```bash\n$ ovos-chromecast-autoconfigure\nThis script will auto configure chromecast devices under your mycroft.conf\nMake sure your devices are turned on and connected to the same Wifi as you, otherwise discovery will fail\n\nScanning...\n    - Found Chromecast: Bedroom TV - 192.168.1.17:8009\n\nFound devices: ['Bedroom TV']\n\nmycroft.conf updated!"
+      "content": "Run the `ovos-chromecast-autoconfigure` command to configure your Chromecast devices automatically.\n\n$ ovos-chromecast-autoconfigure\nThis script will auto configure chromecast devices under your mycroft.conf\nMake sure your devices are turned on and connected to the same Wifi as you, otherwise discovery will fail\n\nScanning...\n    - Found Chromecast: Bedroom TV - 192.168.1.17:8009\n\nFound devices: ['Bedroom TV']\n\nmycroft.conf updated!"
     }
   ],
   "languages": [],

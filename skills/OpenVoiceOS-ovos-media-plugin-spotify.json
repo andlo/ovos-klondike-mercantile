@@ -35,7 +35,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "Edit your `mycroft.conf` and add the Spotify players you want to expose.\n\n> NOTE: If you want to make the OVOS device itself a Spotify player, use [spotifyd](https://github.com/Spotifyd/spotifyd).\n\nThe easiest way to configure this is the `ovos-spotify-autoconfigure` command.\n\n```bash\n$ ovos-spotify-autoconfigure\nThis script will auto configure ALL spotify devices under your mycroft.conf\n        \n        SPOTIFY PREMIUM is required!\n        \n        If you have not yet authenticated your spotify account, run 'ovos-spotify-oauth' first!\n        \nFound device: OpenVoiceOS-TV\n\nmycroft.conf updated!"
+      "content": "Edit your `mycroft.conf` and add the Spotify players you want to expose.\n\n> NOTE: If you want to make the OVOS device itself a Spotify player, use [spotifyd](https://github.com/Spotifyd/spotifyd).\n\nThe easiest way to configure this is the `ovos-spotify-autoconfigure` command.\n\n$ ovos-spotify-autoconfigure\nThis script will auto configure ALL spotify devices under your mycroft.conf\n        \n        SPOTIFY PREMIUM is required!\n        \n        If you have not yet authenticated your spotify account, run 'ovos-spotify-oauth' first!\n        \nFound device: OpenVoiceOS-TV\n\nmycroft.conf updated!"
     }
   ],
   "languages": [],

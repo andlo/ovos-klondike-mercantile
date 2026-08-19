@@ -29,11 +29,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-bus-client\n```"
+      "content": "pip install ovos-bus-client"
     },
     {
       "heading": "Configuration",
-      "content": "`MessageBusClient` reads the `websocket` block of your OVOS config (loaded by `ovos-config`) \u2014 defaults to `ws://127.0.0.1:8181/core`. Override at construction:\n\n```python\nMessageBusClient(host='127.0.0.1', port=8181)\n```\n\nDo **not** change `host` to anything routable. See the security callout above."
+      "content": "`MessageBusClient` reads the `websocket` block of your OVOS config (loaded by `ovos-config`) \u2014 defaults to `ws://127.0.0.1:8181/core`. Override at construction:\n\nMessageBusClient(host='127.0.0.1', port=8181)\n\nDo **not** change `host` to anything routable. See the security callout above."
     }
   ],
   "languages": [],

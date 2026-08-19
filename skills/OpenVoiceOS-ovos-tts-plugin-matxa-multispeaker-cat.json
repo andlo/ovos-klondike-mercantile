@@ -34,11 +34,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install phoonnx\n```\n\n`espeak-ng` with Catalan support is required (same as before). Depending on your distro you may need to compile from source \u2014 see the [espeak-ng Catalan PR](https://github.com/espeak-ng/espeak-ng/pull/1681).\n\nAlternatively, use `OpenVoiceOS/matxa-cat-central-graphemes-v2` which requires no espeak-ng."
+      "content": "pip install phoonnx\n\n`espeak-ng` with Catalan support is required (same as before). Depending on your distro you may need to compile from source \u2014 see the [espeak-ng Catalan PR](https://github.com/espeak-ng/espeak-ng/pull/1681).\n\nAlternatively, use `OpenVoiceOS/matxa-cat-central-graphemes-v2` which requires no espeak-ng."
     },
     {
       "heading": "Configuration mapping",
-      "content": "**Before:**\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-matxa-multispeaker-cat\",\n  \"ovos-tts-plugin-matxa-multispeaker-cat\": {\n    \"voice\": \"valencia/gina\"\n  }\n}\n```\n\n**After:**\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"OpenVoiceOS/matxa-cat-multispeaker-vocos-2stage\",\n    \"speaker_id\": 7\n  }\n}\n```\n\n### Auto-select by language\n\nSet your OVOS language to `ca`, `ca-ba`, `ca-va`, or `ca-nw` and leave `voice` unset \u2014 phoonnx will select the appropriate Matxa dialect variant automatically."
+      "content": "**Before:**\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-matxa-multispeaker-cat\",\n  \"ovos-tts-plugin-matxa-multispeaker-cat\": {\n    \"voice\": \"valencia/gina\"\n  }\n}\n\n**After:**\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"OpenVoiceOS/matxa-cat-multispeaker-vocos-2stage\",\n    \"speaker_id\": 7\n  }\n}\n\n### Auto-select by language\n\nSet your OVOS language to `ca`, `ca-ba`, `ca-va`, or `ca-nw` and leave `voice` unset \u2014 phoonnx will select the appropriate Matxa dialect variant automatically."
     }
   ],
   "languages": [],

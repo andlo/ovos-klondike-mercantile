@@ -39,7 +39,7 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "```bash\npip install poorman_handshake\n```\n\nRequires Python 3.10+, `pycryptodomex >= 3.19.1`, `noiseprotocol >= 0.3.1`, `argon2-cffi >= 21.3.0`, and `zxcvbn >= 4.4.28` (for password-strength checking)."
+      "content": "pip install poorman_handshake\n\nRequires Python 3.10+, `pycryptodomex >= 3.19.1`, `noiseprotocol >= 0.3.1`, `argon2-cffi >= 21.3.0`, and `zxcvbn >= 4.4.28` (for password-strength checking)."
     }
   ],
   "languages": [],

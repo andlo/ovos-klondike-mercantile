@@ -29,11 +29,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "from pip\n\n```bash\npip install ovos-local-backend\n```"
+      "content": "from pip\n\npip install ovos-local-backend"
     },
     {
       "heading": "Configuration",
-      "content": "configure backend by editing/creating ```~/.config/ovos_backend/ovos_backend.conf```\n\n\n```json\n{\n  \"lang\": \"en-us\",\n  \"date_format\": \"DMY\",\n  \"system_unit\": \"metric\",\n  \"time_format\": \"full\",\n  \"location\": {\n    \"city\": {\"...\": \"...\"},\n    \"coordinate\": {\"...\": \"...\"},\n    \"timezone\": {\"...\": \"...\"}\n  },\n\n  \"stt_servers\": [\"https://stt.openvoiceos.org/stt\"],\n\n  \"server\": {\n    \"admin_key\": \"leave empty to DISABLE admin api\",\n    \"port\": 6712,\n    \"database\": \"sqlite:////home/user/.local/share/ovos_backend.db\",\n    \"skip_auth\": false,\n    \"geolocate\": true,\n    \"override_location\": false,\n    \"version\": \"v1\"\n  },\n\n  \"listener\": {\n     \"record_utterances\": false,\n     \"record_wakewords\": false\n  },\n\n  \"microservices\": {\n    \"wolfram_key\": \"$KEY\",\n    \"owm_key\": \"$KEY\",\n    \"email\": {\u2026"
+      "content": "configure backend by editing/creating ```~/.config/ovos_backend/ovos_backend.conf```\n\n\n{\n  \"lang\": \"en-us\",\n  \"date_format\": \"DMY\",\n  \"system_unit\": \"metric\",\n  \"time_format\": \"full\",\n  \"location\": {\n    \"city\": {\"...\": \"...\"},\n    \"coordinate\": {\"...\": \"...\"},\n    \"timezone\": {\"...\": \"...\"}\n  },\n\n  \"stt_servers\": [\"https://stt.openvoiceos.org/stt\"],\n\n  \"server\": {\n    \"admin_key\": \"leave empty to DISABLE admin api\",\n    \"port\": 6712,\n    \"database\": \"sqlite:////home/user/.local/share/ovos_backend.db\",\n    \"skip_auth\": false,\n    \"geolocate\": true,\n    \"override_location\": false,\n    \"version\": \"v1\"\n  },\n\n  \"listener\": {\n     \"record_utterances\": false,\n     \"record_wakewords\": false\n  },\n\n  \"microservices\": {\n    \"wolfram_key\": \"$KEY\",\n    \"owm_key\": \"$KEY\",\n    \"email\": {\n       \"recipie\u2026"
     }
   ],
   "languages": [],

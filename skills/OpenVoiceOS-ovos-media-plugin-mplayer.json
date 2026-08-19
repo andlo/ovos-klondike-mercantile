@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Audio Plugin",
+  "component_type": "Video Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 1,
@@ -30,11 +30,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "Run this command to install the plugin.\n\n```\npip install ovos-media-plugin-mplayer\n```"
+      "content": "Run this command to install the plugin.\n\npip install ovos-media-plugin-mplayer"
     },
     {
       "heading": "Configuration",
-      "content": "This plugin supports either audio or video playback, not both at the same time. If you enable both, the plugin loads but plays each stream twice.\n\nAdd the plugin to the `media` section of your OVOS configuration. Set `mplayer` in `preferred_audio_services` or `preferred_video_services` to select it.\n\n```javascript\n{\n \"media\": {\n\n    // keys are the strings defined in \"audio_players\"\n    \"preferred_audio_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // keys are the strings defined in \"video_players\"\n    \"preferred_video_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // PlaybackType.AUDIO handlers\n    \"audio_players\": {\n        // mplayer player uses a slave mplayer instance to handle uris\n        \"mplayer\": {\n            // the plugin name\n            \"module\": \"ovos-media-audio-plug\u2026"
+      "content": "This plugin supports either audio or video playback, not both at the same time. If you enable both, the plugin loads but plays each stream twice.\n\nAdd the plugin to the `media` section of your OVOS configuration. Set `mplayer` in `preferred_audio_services` or `preferred_video_services` to select it.\n\n{\n \"media\": {\n\n    // keys are the strings defined in \"audio_players\"\n    \"preferred_audio_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // keys are the strings defined in \"video_players\"\n    \"preferred_video_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // PlaybackType.AUDIO handlers\n    \"audio_players\": {\n        // mplayer player uses a slave mplayer instance to handle uris\n        \"mplayer\": {\n            // the plugin name\n            \"module\": \"ovos-media-audio-plugin-mplayer\",\u2026"
     }
   ],
   "languages": [],

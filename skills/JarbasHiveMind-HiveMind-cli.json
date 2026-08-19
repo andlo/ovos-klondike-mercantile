@@ -41,7 +41,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install HiveMind-cli\n```\n\nFrom source:\n\n```bash\ngit clone https://github.com/JarbasHiveMind/HiveMind-cli\ncd HiveMind-cli\npip install -e .\n```\n\nHiveMind CLI tracks the HiveMind bus-client 2.x stack (`ovos-bus-client>=2.0`).\n`pyproject.toml` is the single source of truth for dependencies. There is no\n`requirements.txt`."
+      "content": "pip install HiveMind-cli\n\nFrom source:\n\ngit clone https://github.com/JarbasHiveMind/HiveMind-cli\ncd HiveMind-cli\npip install -e .\n\nHiveMind CLI tracks the HiveMind bus-client 2.x stack (`ovos-bus-client>=2.0`).\n`pyproject.toml` is the single source of truth for dependencies. There is no\n`requirements.txt`."
     }
   ],
   "languages": [],

@@ -36,7 +36,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "Add the following to your hotwords section in mycroft.conf \n\n```json\n\"listener\": {\n  \"wake_word\": \"hey mycroft\"\n},\n\"hotwords\": {\n  \"hey mycroft\": {\n    \"module\": \"ovos-ww-plugin-precise-lite\",\n    \"model\": \"https://github.com/OpenVoiceOS/precise-lite-models/raw/master/wakewords/en/hey_mycroft.tflite\",\n    \"listen\": true,\n    \"sound\": \"snd/start_listening.wav\",\n    \"expected_duration\": 3,\n    \"trigger_level\": 3,\n    \"sensitivity\": 0.5\n   }\n}\n```\n\nGet community models [here](https://github.com/OpenVoiceOS/precise-lite-models)"
+      "content": "Add the following to your hotwords section in mycroft.conf \n\n\"listener\": {\n  \"wake_word\": \"hey mycroft\"\n},\n\"hotwords\": {\n  \"hey mycroft\": {\n    \"module\": \"ovos-ww-plugin-precise-lite\",\n    \"model\": \"https://github.com/OpenVoiceOS/precise-lite-models/raw/master/wakewords/en/hey_mycroft.tflite\",\n    \"listen\": true,\n    \"sound\": \"snd/start_listening.wav\",\n    \"expected_duration\": 3,\n    \"trigger_level\": 3,\n    \"sensitivity\": 0.5\n   }\n}\n\nGet community models [here](https://github.com/OpenVoiceOS/precise-lite-models)"
     }
   ],
   "languages": [],

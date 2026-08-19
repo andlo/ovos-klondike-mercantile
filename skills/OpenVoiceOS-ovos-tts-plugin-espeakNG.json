@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos_tts_plugin_espeakng\n```\n\nThe plugin needs the `espeak-ng` executable. Install it with:\n\n```bash\napt-get install espeak-ng\n```"
+      "content": "pip install ovos_tts_plugin_espeakng\n\nThe plugin needs the `espeak-ng` executable. Install it with:\n\napt-get install espeak-ng"
     },
     {
       "heading": "Configuration",
-      "content": "Add this block to your OVOS configuration to select the plugin and a voice:\n\n```json\n  \"tts\": {\n    \"module\": \"ovos_tts_plugin_espeakng\",\n    \"ovos_tts_plugin_espeakng\": {\n      \"voice\": \"m1\"\n    }\n }\n```"
+      "content": "Add this block to your OVOS configuration to select the plugin and a voice:\n\n  \"tts\": {\n    \"module\": \"ovos_tts_plugin_espeakng\",\n    \"ovos_tts_plugin_espeakng\": {\n      \"voice\": \"m1\"\n    }\n }"
     }
   ],
   "languages": [],

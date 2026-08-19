@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-PHAL-plugin-dotstar\n```"
+      "content": "pip install ovos-PHAL-plugin-dotstar"
     },
     {
       "heading": "Custom configuration",
-      "content": "You can configure colors and animations in `~/.config/mycroft/mycroft.conf`.\n\n```json\n{\n    \"PHAL\": {\n        \"ovos-PHAL-plugin-dotstar\": {\n            \"main_color\": \"Mycroft blue\",\n            \"background_color\": \"OVOS red\",\n            \"listen_animation\": \"breath\",\n            \"talking_animation\": \"blink\"\n        }\n    }\n}\n```\n\n`main_color` -> str:\n```\n    rgb value -> \"32, 195, 63\"\n    name -> \"blue\"\n    hex value -> \"#22A7F0\"\n```\n\n`background_color` -> str:\n```\n    rgb value -> \"32, 195, 63\"\n    name -> \"red\"\n    hex value -> \"#FF1A1A\"\n```\n\n`listen_animation` -> str, one of:\n```\n    'breathe'\n    'chase'\n    'fill'\n    'refill'\n    'bounce'\n    'blink'\n    'alternating'\n```\n\n`talking_animation` -> str, one of:\n```\n    'breathe'\n    'chase'\n    'fill'\n    'refill'\n    'bounce'\n    'blin\u2026"
+      "content": "You can configure colors and animations in `~/.config/mycroft/mycroft.conf`.\n\n{\n    \"PHAL\": {\n        \"ovos-PHAL-plugin-dotstar\": {\n            \"main_color\": \"Mycroft blue\",\n            \"background_color\": \"OVOS red\",\n            \"listen_animation\": \"breath\",\n            \"talking_animation\": \"blink\"\n        }\n    }\n}\n\n`main_color` -> str:\n    rgb value -> \"32, 195, 63\"\n    name -> \"blue\"\n    hex value -> \"#22A7F0\"\n\n`background_color` -> str:\n    rgb value -> \"32, 195, 63\"\n    name -> \"red\"\n    hex value -> \"#FF1A1A\"\n\n`listen_animation` -> str, one of:\n    'breathe'\n    'chase'\n    'fill'\n    'refill'\n    'bounce'\n    'blink'\n    'alternating'\n\n`talking_animation` -> str, one of:\n    'breathe'\n    'chase'\n    'fill'\n    'refill'\n    'bounce'\n    'blink'\n    'alternating'"
     }
   ],
   "languages": [],

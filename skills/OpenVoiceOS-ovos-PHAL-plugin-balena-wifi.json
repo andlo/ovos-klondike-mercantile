@@ -41,7 +41,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "You can change a few parameters to customize the setup assets, you can change some Hotspot details, dialogs and GUI strings\n\n```json\n{\n  \"ssid\": \"OVOS\",\n  \"portal\": \"start dot openvoiceos dot com\",\n  \"device_name\": \"OVOS Device\",\n  \"image_connect_ap\":  \"1_phone_connect-to-ap.png\",\n  \"image_choose_wifi\":  \"3_phone_choose-wifi.png\"\n}\n```"
+      "content": "You can change a few parameters to customize the setup assets, you can change some Hotspot details, dialogs and GUI strings\n\n{\n  \"ssid\": \"OVOS\",\n  \"portal\": \"start dot openvoiceos dot com\",\n  \"device_name\": \"OVOS Device\",\n  \"image_connect_ap\":  \"1_phone_connect-to-ap.png\",\n  \"image_choose_wifi\":  \"3_phone_choose-wifi.png\"\n}"
     }
   ],
   "languages": [],

@@ -36,7 +36,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install hivemind-audio-binary-protocol\n```\n\nYou also need OVOS STT, TTS, VAD, and WakeWord plugins. Install them as you would in a\nstandard OVOS setup:\n\n```bash\npip install ovos-stt-plugin-server ovos-tts-plugin-piper ovos-vad-plugin-silero \\\n            ovos-ww-plugin-precise-lite\n```"
+      "content": "pip install hivemind-audio-binary-protocol\n\nYou also need OVOS STT, TTS, VAD, and WakeWord plugins. Install them as you would in a\nstandard OVOS setup:\n\npip install ovos-stt-plugin-server ovos-tts-plugin-piper ovos-vad-plugin-silero \\\n            ovos-ww-plugin-precise-lite"
     },
     {
       "heading": "Configuration reference",

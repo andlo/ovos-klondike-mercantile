@@ -42,7 +42,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-common-reading-pipeline-plugin\n```\n\nAdd it to your pipeline in `mycroft.conf` **right after your stop\nmatcher** (`stop_high`/`ovos-stop-pipeline-plugin-high`) - roughly\nwhere OCP sits, not before stop. \"Stop\" should always be the most\nreliable, highest-priority command regardless of what skill is active;\nputting anything ahead of it undermines that guarantee for every skill,\nnot just this one. An earlier version of this README recommended\nputting this plugin first - that was wrong, and has been reverted; see\nthe note at the end of this section for why.\n\n**Don't copy-paste a whole pipeline block from here or anywhere else** -\nyour existing list already has entries specific to your install (the\nexact names/order vary: `stop_high` vs `ovos-stop-pipeline-plugin-high`,\u2026"
+      "content": "pip install ovos-common-reading-pipeline-plugin\n\nAdd it to your pipeline in `mycroft.conf` **right after your stop\nmatcher** (`stop_high`/`ovos-stop-pipeline-plugin-high`) - roughly\nwhere OCP sits, not before stop. \"Stop\" should always be the most\nreliable, highest-priority command regardless of what skill is active;\nputting anything ahead of it undermines that guarantee for every skill,\nnot just this one. An earlier version of this README recommended\nputting this plugin first - that was wrong, and has been reverted; see\nthe note at the end of this section for why.\n\n**Don't copy-paste a whole pipeline block from here or anywhere else** -\nyour existing list already has entries specific to your install (the\nexact names/order vary: `stop_high` vs `ovos-stop-pipeline-plugin-high`,\nwhether pers\u2026"
     }
   ],
   "languages": [

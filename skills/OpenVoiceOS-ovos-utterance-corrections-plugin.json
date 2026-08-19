@@ -30,7 +30,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-utterance-corrections-plugin\n```\n\nThe plugin registers itself as an OVOS transformer plugin under the entry point group `opm.transformer.text`, so [ovos-core](https://github.com/OpenVoiceOS/ovos-core) picks it up automatically once installed.\n\n---"
+      "content": "pip install ovos-utterance-corrections-plugin\n\nThe plugin registers itself as an OVOS transformer plugin under the entry point group `opm.transformer.text`, so [ovos-core](https://github.com/OpenVoiceOS/ovos-core) picks it up automatically once installed.\n\n---"
     },
     {
       "heading": "Configuration Paths",

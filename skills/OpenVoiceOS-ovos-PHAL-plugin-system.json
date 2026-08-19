@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-PHAL-plugin-system\n```"
+      "content": "pip install ovos-PHAL-plugin-system"
     },
     {
       "heading": "Config",
-      "content": "This plugin can run as an admin plugin. An admin plugin runs as root. To enable it, add this to `mycroft.conf`:\n\n```javascript\n{\n\"PHAL\": {\n    \"admin\": {\n        \"ovos-PHAL-plugin-system\": {\"enabled\": true}\n    }\n}\n}\n```\n\nIf you omit this config, the plugin runs as the regular user. In that case, you need a polkit policy that allows `systemctl` without `sudo`. This policy is not yet implemented."
+      "content": "This plugin can run as an admin plugin. An admin plugin runs as root. To enable it, add this to `mycroft.conf`:\n\n{\n\"PHAL\": {\n    \"admin\": {\n        \"ovos-PHAL-plugin-system\": {\"enabled\": true}\n    }\n}\n}\n\nIf you omit this config, the plugin runs as the regular user. In that case, you need a polkit policy that allows `systemctl` without `sudo`. This policy is not yet implemented."
     }
   ],
   "languages": [],

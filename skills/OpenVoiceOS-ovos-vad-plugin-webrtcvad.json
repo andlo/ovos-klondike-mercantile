@@ -31,11 +31,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-vad-plugin-webrtcvad\n```"
+      "content": "pip install ovos-vad-plugin-webrtcvad"
     },
     {
       "heading": "Configuration",
-      "content": "Set the plugin as the VAD engine in the OpenVoiceOS configuration:\n\n```json\n{\n  \"listener\": {\n    \"VAD\": {\n      \"module\": \"ovos-vad-plugin-webrtcvad\",\n      \"ovos-vad-plugin-webrtcvad\": {\n        \"vad_mode\": 3\n      }\n    }\n  }\n}\n```\n\n`vad_mode` ranges from 0 (least aggressive) to 3 (most aggressive, default)."
+      "content": "Set the plugin as the VAD engine in the OpenVoiceOS configuration:\n\n{\n  \"listener\": {\n    \"VAD\": {\n      \"module\": \"ovos-vad-plugin-webrtcvad\",\n      \"ovos-vad-plugin-webrtcvad\": {\n        \"vad_mode\": 3\n      }\n    }\n  }\n}\n\n`vad_mode` ranges from 0 (least aggressive) to 3 (most aggressive, default)."
     }
   ],
   "languages": [],

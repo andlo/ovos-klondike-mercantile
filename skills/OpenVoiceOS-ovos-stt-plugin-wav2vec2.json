@@ -34,11 +34,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-stt-plugin-wav2vec\n```"
+      "content": "pip install ovos-stt-plugin-wav2vec"
     },
     {
       "heading": "Configuration",
-      "content": "```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-wav2vec\",\n    \"ovos-stt-plugin-wav2vec\": {\n        \"model\": \"proxectonos/Nos_ASR-wav2vec2-large-xlsr-53-gl-with-lm\"\n    }\n  }\n```\n\n`model` can be any [compatible Wav2Vec2 model](https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&sort=likes&search=%2Fwav2vec2) from Hugging Face. If you do not set it, the plugin picks a model based on `lang`.\n\n### Models\n\nIf your language is not in the list below, use `\"facebook/mms-1b-all\"` as the model. In that case, use the dedicated [ovos-stt-plugin-mms](https://github.com/OpenVoiceOS/ovos-stt-plugin-mms) plugin instead.\n\nSupported languages: `ab`, `ar`, `as`, `ba`, `bas`, `bg`, `bn`, `br`, `ca`, `cnh`, `cv`, `cy`,\n`cz`, `da`, `de`, `el`, `en`, `eo`, `es`, `fa`, `fi`, `fr`, `ga`, `gl`\u2026"
+      "content": "\"stt\": {\n    \"module\": \"ovos-stt-plugin-wav2vec\",\n    \"ovos-stt-plugin-wav2vec\": {\n        \"model\": \"proxectonos/Nos_ASR-wav2vec2-large-xlsr-53-gl-with-lm\"\n    }\n  }\n\n`model` can be any [compatible Wav2Vec2 model](https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&sort=likes&search=%2Fwav2vec2) from Hugging Face. If you do not set it, the plugin picks a model based on `lang`.\n\n### Models\n\nIf your language is not in the list below, use `\"facebook/mms-1b-all\"` as the model. In that case, use the dedicated [ovos-stt-plugin-mms](https://github.com/OpenVoiceOS/ovos-stt-plugin-mms) plugin instead.\n\nSupported languages: `ab`, `ar`, `as`, `ba`, `bas`, `bg`, `bn`, `br`, `ca`, `cnh`, `cv`, `cy`,\n`cz`, `da`, `de`, `el`, `en`, `eo`, `es`, `fa`, `fi`, `fr`, `ga`, `gl`, `gn`, `ha`,\u2026"
     }
   ],
   "languages": [],

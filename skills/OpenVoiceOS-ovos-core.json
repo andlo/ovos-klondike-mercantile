@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Installing OVOS",
-      "content": "If you have an existing system, use the [ovos-installer](https://github.com/OpenVoiceOS/ovos-installer) to install OVOS and its dependencies in one step.\n\nFor Raspberry Pi users, the [RaspOVOS](https://github.com/OpenVoiceOS/RaspOVOS) image runs in headless mode (no GUI) and targets Raspberry Pi 3B or higher.\n\nFor embedded systems, [ovos-buildroot](https://github.com/OpenVoiceOS/ovos-buildroot) builds a custom Linux distribution for minimal setups.\n\nMore detailed documentation is available in the [ovos-technical-manual](https://openvoiceos.github.io/ovos-technical-manual) and in [`docs/`](docs/index.md). See [docs/prerelease-quirks.md](docs/prerelease-quirks.md) for what changed since the last stable release.\n\nDevelopers can install `ovos-core` standalone:\n\n```bash\npip install ovos-core\n``\u2026"
+      "content": "If you have an existing system, use the [ovos-installer](https://github.com/OpenVoiceOS/ovos-installer) to install OVOS and its dependencies in one step.\n\nFor Raspberry Pi users, the [RaspOVOS](https://github.com/OpenVoiceOS/RaspOVOS) image runs in headless mode (no GUI) and targets Raspberry Pi 3B or higher.\n\nFor embedded systems, [ovos-buildroot](https://github.com/OpenVoiceOS/ovos-buildroot) builds a custom Linux distribution for minimal setups.\n\nMore detailed documentation is available in the [ovos-technical-manual](https://openvoiceos.github.io/ovos-technical-manual) and in [`docs/`](docs/index.md). See [docs/prerelease-quirks.md](docs/prerelease-quirks.md) for what changed since the last stable release.\n\nDevelopers can install `ovos-core` standalone:\n\npip install ovos-core\n\nThis incl\u2026"
     }
   ],
   "languages": [],

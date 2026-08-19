@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "```bash\npip install ovos-tts-plugin-edge-tts\n```"
+      "content": "pip install ovos-tts-plugin-edge-tts"
     },
     {
       "heading": "Configuration",
-      "content": "Add the plugin to your user config file (`~/.config/mycroft/mycroft.conf`):\n\n```javascript\n\"tts\": {\n    \"module\": \"ovos-tts-plugin-edge-tts\",\n    \"ovos-tts-plugin-edge-tts\": {\n        \"voice\": \"en-US-AriaNeural\",\n        // =100% speed; use \"+50%\" for 150%, or \"+100%\" for 200% speech rate etc for adjusting speed\n        \"rate\": \"+0%\"\n    }\n}\n```\n\nSee the [list of voices available in Edge TTS](https://gist.github.com/BettyJJ/17cbaa1de96235a7f5773b8690a20462).\n\nMany of the newer multilingual voices (from March 2024) also work with this plugin. For\nexample: `\"voice\": \"en-US-EmmaMultilingualNeural\"`."
+      "content": "Add the plugin to your user config file (`~/.config/mycroft/mycroft.conf`):\n\n\"tts\": {\n    \"module\": \"ovos-tts-plugin-edge-tts\",\n    \"ovos-tts-plugin-edge-tts\": {\n        \"voice\": \"en-US-AriaNeural\",\n        // =100% speed; use \"+50%\" for 150%, or \"+100%\" for 200% speech rate etc for adjusting speed\n        \"rate\": \"+0%\"\n    }\n}\n\nSee the [list of voices available in Edge TTS](https://gist.github.com/BettyJJ/17cbaa1de96235a7f5773b8690a20462).\n\nMany of the newer multilingual voices (from March 2024) also work with this plugin. For\nexample: `\"voice\": \"en-US-EmmaMultilingualNeural\"`."
     }
   ],
   "languages": [],

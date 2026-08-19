@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-tts-plugin-SAM\n```"
+      "content": "pip install ovos-tts-plugin-SAM"
     },
     {
       "heading": "Configuration",
-      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-SAM\"\n }\n```\n\nThe original manual lists these typical voice values:\n\n    DESCRIPTION          SPEED     PITCH     THROAT    MOUTH\n    Elf                   72        64        110       160\n    Little Robot          92        60        190       190\n    Stuffy Guy            82        72        110       105\n    Little Old Lady       82        32        145       145\n    Extra-Terrestrial    100        64        150       200\n    SAM                   72        64        128       128\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-SAM\",\n    \"ovos-tts-plugin-SAM\": {\n      \"voice\": \"stuffy guy\"\n    }\n }\n```"
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-SAM\"\n }\n\nThe original manual lists these typical voice values:\n\n    DESCRIPTION          SPEED     PITCH     THROAT    MOUTH\n    Elf                   72        64        110       160\n    Little Robot          92        60        190       190\n    Stuffy Guy            82        72        110       105\n    Little Old Lady       82        32        145       145\n    Extra-Terrestrial    100        64        150       200\n    SAM                   72        64        128       128\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-SAM\",\n    \"ovos-tts-plugin-SAM\": {\n      \"voice\": \"stuffy guy\"\n    }\n }"
     }
   ],
   "languages": [],

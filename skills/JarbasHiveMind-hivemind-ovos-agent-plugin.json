@@ -34,7 +34,7 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "```bash\npip install hivemind-ovos-agent-plugin\n```\n\nOr install it from source:\n\n```bash\ngit clone https://github.com/JarbasHiveMind/hivemind-ovos-agent-plugin\ncd hivemind-ovos-agent-plugin\npip install -e .\n```"
+      "content": "pip install hivemind-ovos-agent-plugin\n\nOr install it from source:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-ovos-agent-plugin\ncd hivemind-ovos-agent-plugin\npip install -e ."
     }
   ],
   "languages": [],

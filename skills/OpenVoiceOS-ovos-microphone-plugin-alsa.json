@@ -31,11 +31,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-microphone-plugin-alsa\n```"
+      "content": "pip install ovos-microphone-plugin-alsa"
     },
     {
       "heading": "Configuration",
-      "content": "Add this block to your `mycroft.conf`, or merge it with your existing\n`listener` section.\n\n```python\n\"listener\": {\n    \"microphone\": {\n        \"module\": \"ovos-microphone-plugin-alsa\",\n        \"device\": \"pulse\",                  # name/alias of the device; default = \"default\"\n        \"period_size\": 1024,                # frames per period; default = 1024\n        \"timeout\": 5.0,                     # blocks x seconds and raises the Empty exception if no item was available within that time; default = 5.0\n        \"multiplier\": 1.0,                  # Increase/decrease loudness of audio; default = 1.0\n        \"audio_retries\": 0,                 # Number of times to retry listening; default = 0\n        \"audio_retry_delay\": 0.0            # Seconds to wait between retries; default = 0.0\n    }\n}\n`\u2026"
+      "content": "Add this block to your `mycroft.conf`, or merge it with your existing\n`listener` section.\n\n\"listener\": {\n    \"microphone\": {\n        \"module\": \"ovos-microphone-plugin-alsa\",\n        \"device\": \"pulse\",                  # name/alias of the device; default = \"default\"\n        \"period_size\": 1024,                # frames per period; default = 1024\n        \"timeout\": 5.0,                     # blocks x seconds and raises the Empty exception if no item was available within that time; default = 5.0\n        \"multiplier\": 1.0,                  # Increase/decrease loudness of audio; default = 1.0\n        \"audio_retries\": 0,                 # Number of times to retry listening; default = 0\n        \"audio_retry_delay\": 0.0            # Seconds to wait between retries; default = 0.0\n    }\n}"
     }
   ],
   "languages": [],

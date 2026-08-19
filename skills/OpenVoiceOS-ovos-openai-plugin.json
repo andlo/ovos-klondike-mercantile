@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Summarizer Plugin",
+  "component_type": "Translate Plugin",
   "type_group": "Plugin",
   "stars": 9,
   "forks": 7,
@@ -30,7 +30,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-openai-plugin\n```"
+      "content": "pip install ovos-openai-plugin"
     }
   ],
   "languages": [],

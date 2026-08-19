@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-tts-plugin-pico\n```\n\n`pico2wave` must be available. On a Raspberry Pi, install it with:\n\n```bash\napt-get install libttspico0\napt-get install libttspico-utils\n```\n\nYou can also install it from [source](https://github.com/naggety/picotts)."
+      "content": "pip install ovos-tts-plugin-pico\n\n`pico2wave` must be available. On a Raspberry Pi, install it with:\n\napt-get install libttspico0\napt-get install libttspico-utils\n\nYou can also install it from [source](https://github.com/naggety/picotts)."
     },
     {
       "heading": "Configuration",
-      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-pico\"\n }\n```\n\nThe voice corresponds to a language code. OVOS auto-detects it from the global config.\n\nYou can also set it explicitly to one of `\"de-DE\", \"es-ES\", \"fr-FR\", \"it-IT\", \"en-US\"`:\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-pico\",\n    \"ovos-tts-plugin-pico\": {\n      \"voice\": \"en-US\"\n    }\n }\n```"
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-pico\"\n }\n\nThe voice corresponds to a language code. OVOS auto-detects it from the global config.\n\nYou can also set it explicitly to one of `\"de-DE\", \"es-ES\", \"fr-FR\", \"it-IT\", \"en-US\"`:\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-pico\",\n    \"ovos-tts-plugin-pico\": {\n      \"voice\": \"en-US\"\n    }\n }"
     }
   ],
   "languages": [],

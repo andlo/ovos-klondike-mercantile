@@ -46,7 +46,7 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "Install the skill in the same Python environment as OVOS:\n\n```bash\npip install git+https://github.com/smartgic/skill-sonos-controller\n```\n\nSonos discovery uses local multicast traffic. The OVOS host and Sonos players\nmust be reachable on the same LAN, and client isolation must be disabled. The\nprovided container uses host networking for this reason:\n\n```bash\ncd docker\ndocker compose up -d\n```"
+      "content": "Install the skill in the same Python environment as OVOS:\n\npip install git+https://github.com/smartgic/skill-sonos-controller\n\nSonos discovery uses local multicast traffic. The OVOS host and Sonos players\nmust be reachable on the same LAN, and client isolation must be disabled. The\nprovided container uses host networking for this reason:\n\ncd docker\ndocker compose up -d"
     },
     {
       "heading": "Configuration",

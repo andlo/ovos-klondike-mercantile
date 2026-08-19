@@ -30,11 +30,11 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "```bash\npip install ovos-utterance-plugin-cancel\n```"
+      "content": "pip install ovos-utterance-plugin-cancel"
     },
     {
       "heading": "Configuration",
-      "content": "This plugin is **enabled by default** in `ovos-config` alongside the other standard utterance transformers:\n\n```json\n\"utterance_transformers\": {\n    \"ovos-utterance-normalizer\": {},\n    \"ovos-utterance-plugin-cancel\": {},\n    \"ovos-utterance-corrections-plugin\": {}\n}\n```\n\nTo disable it, add `\"enable\": false` to your config:\n\n```json\n\"utterance_transformers\": {\n    \"ovos-utterance-plugin-cancel\": {\"enable\": false}\n}\n```"
+      "content": "This plugin is **enabled by default** in `ovos-config` alongside the other standard utterance transformers:\n\n\"utterance_transformers\": {\n    \"ovos-utterance-normalizer\": {},\n    \"ovos-utterance-plugin-cancel\": {},\n    \"ovos-utterance-corrections-plugin\": {}\n}\n\nTo disable it, add `\"enable\": false` to your config:\n\n\"utterance_transformers\": {\n    \"ovos-utterance-plugin-cancel\": {\"enable\": false}\n}"
     }
   ],
   "languages": [],

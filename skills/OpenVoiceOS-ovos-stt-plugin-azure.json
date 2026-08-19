@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-stt-plugin-azure\n```"
+      "content": "pip install ovos-stt-plugin-azure"
     },
     {
       "heading": "Configuration",
-      "content": "Add this plugin to the `stt` section of your OVOS configuration.\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-azure\",\n    \"ovos-stt-plugin-azure\": {\n      \"key\": \"xxx\",\n      \"region\": \"westeurope\",\n      \"profanity\": \"raw\"\n    }\n  }\n```\n\n- `key`: key for the Azure AI Speech API.\n- `region`: location or region of your Azure speech service.\n- `profanity`: profanity filter setting. Valid values are `raw`, `masked`, or `removed`."
+      "content": "Add this plugin to the `stt` section of your OVOS configuration.\n\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-azure\",\n    \"ovos-stt-plugin-azure\": {\n      \"key\": \"xxx\",\n      \"region\": \"westeurope\",\n      \"profanity\": \"raw\"\n    }\n  }\n\n- `key`: key for the Azure AI Speech API.\n- `region`: location or region of your Azure speech service.\n- `profanity`: profanity filter setting. Valid values are `raw`, `masked`, or `removed`."
     }
   ],
   "languages": [],

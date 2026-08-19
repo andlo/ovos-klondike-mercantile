@@ -38,11 +38,11 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "```shell\npip install ovos-phal-plugin-mm-wakeword\n```"
+      "content": "pip install ovos-phal-plugin-mm-wakeword"
     },
     {
       "heading": "Configuration",
-      "content": "The plugin configuration file is `~/.config/OpenVoiceOS/ovos-phal-plugin-mm-wakeword.json`.\n\n| Option    | Value                    | Description                           |\n| --------- | ------------------------ | ------------------------------------- |\n| `url`     | `http://localhost:8080`  | MagicMirror\u00b2 URL                      |\n| `key`     | `N/A`                    | MagicMirror\u00b2 API key                  |\n| `message` | `Listening...`           | Message displayed when triggered      |\n| `timeout` | `10`                     | HTTP request timeout in seconds       |\n| `verify`  | `false`                  | Verify SSL certificate                |\n\n### Example\n\nConfiguration sample of `~/.config/OpenVoiceOS/ovos-phal-plugin-mm-wakeword.json`.\n\n```json\n{\n  \"url\": \"http://mm.home.lan\",\u2026"
+      "content": "The plugin configuration file is `~/.config/OpenVoiceOS/ovos-phal-plugin-mm-wakeword.json`.\n\n| Option    | Value                    | Description                           |\n| --------- | ------------------------ | ------------------------------------- |\n| `url`     | `http://localhost:8080`  | MagicMirror\u00b2 URL                      |\n| `key`     | `N/A`                    | MagicMirror\u00b2 API key                  |\n| `message` | `Listening...`           | Message displayed when triggered      |\n| `timeout` | `10`                     | HTTP request timeout in seconds       |\n| `verify`  | `false`                  | Verify SSL certificate                |\n\n### Example\n\nConfiguration sample of `~/.config/OpenVoiceOS/ovos-phal-plugin-mm-wakeword.json`.\n\n{\n  \"url\": \"http://mm.home.lan\",\n  \"key\":\u2026"
     },
     {
       "heading": "MagicMirror\u00b2 Configuration",

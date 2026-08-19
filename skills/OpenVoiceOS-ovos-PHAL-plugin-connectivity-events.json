@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-PHAL-plugin-connectivity-events\n```"
+      "content": "pip install ovos-PHAL-plugin-connectivity-events"
     },
     {
       "heading": "Configuration",
-      "content": "The plugin reads its settings from the PHAL configuration section:\n\n```json\n{\n  \"check_interval\": 60,\n  \"disable_scheduled_checks\": false\n}\n```\n\n- `check_interval`: seconds between automatic checks. Default: 60.\n- `disable_scheduled_checks`: if true, the plugin does not poll on a timer. It still responds to `ovos.PHAL.internet_check`."
+      "content": "The plugin reads its settings from the PHAL configuration section:\n\n{\n  \"check_interval\": 60,\n  \"disable_scheduled_checks\": false\n}\n\n- `check_interval`: seconds between automatic checks. Default: 60.\n- `disable_scheduled_checks`: if true, the plugin does not poll on a timer. It still responds to `ovos.PHAL.internet_check`."
     }
   ],
   "languages": [],

@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-stt-plugin-chromium\n```"
+      "content": "pip install ovos-stt-plugin-chromium"
     },
     {
       "heading": "Configuration",
-      "content": "By default, the plugin uses the global language set in your OVOS configuration.\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-chromium\"\n  }\n```\n\n### Advanced configuration\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-chromium\",\n    \"ovos-stt-plugin-chromium\": {\n        \"lang\": \"en-US\",\n        \"pfilter\": false,\n        \"debug\": false\n    }\n  }\n```\n\n- `lang` \u2014 overrides the global language. Use a code from the supported languages list.\n- `pfilter` \u2014 profanity filter. When `true`, the plugin censors profanity, showing only the first character and replacing the rest with asterisks, for example `f***`.\n- `debug` \u2014 when `true`, logs the confidence score and alternative transcriptions."
+      "content": "By default, the plugin uses the global language set in your OVOS configuration.\n\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-chromium\"\n  }\n\n### Advanced configuration\n\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-chromium\",\n    \"ovos-stt-plugin-chromium\": {\n        \"lang\": \"en-US\",\n        \"pfilter\": false,\n        \"debug\": false\n    }\n  }\n\n- `lang` \u2014 overrides the global language. Use a code from the supported languages list.\n- `pfilter` \u2014 profanity filter. When `true`, the plugin censors profanity, showing only the first character and replacing the rest with asterisks, for example `f***`.\n- `debug` \u2014 when `true`, logs the confidence score and alternative transcriptions."
     }
   ],
   "languages": [],

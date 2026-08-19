@@ -36,7 +36,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-spec-tools            # core \u2014 no dependencies\npip install ovos-spec-tools[langcodes] # adds the smart language fallback\n```\n\nRequires Python 3.10+."
+      "content": "pip install ovos-spec-tools            # core \u2014 no dependencies\npip install ovos-spec-tools[langcodes] # adds the smart language fallback\n\nRequires Python 3.10+."
     }
   ],
   "languages": [],

@@ -45,11 +45,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install HiveMind-voice-sat"
+      "content": "pip install HiveMind-voice-sat"
     },
     {
       "heading": "Minimal configuration",
-      "content": "The satellite reads `~/.config/mycroft/mycroft.conf` (standard OVOS config).\nOverride STT, TTS, VAD, and wakeword plugins there:\n\n```json\n{\n  \"listener\": {\n    \"VAD\": {\n      \"module\": \"ovos-vad-plugin-silero\"\n    },\n    \"wake_word\": \"hey_mycroft\",\n    \"hey_mycroft\": {\n      \"module\": \"ovos-ww-plugin-vosk\"\n    }\n  },\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-server\",\n    \"ovos-stt-plugin-server\": { \"url\": \"https://stt.openvoiceos.org/stt\" }\n  },\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\",\n    \"ovos-tts-plugin-server\": { \"host\": \"https://tts.openvoiceos.org\" }\n  }\n}\n```\n\nAll plugin slots are swappable via [ovos-plugin-manager](https://github.com/OpenVoiceOS/ovos-plugin-manager). See [docs/configuration.md](docs/configuration.md) for the full reference."
+      "content": "The satellite reads `~/.config/mycroft/mycroft.conf` (standard OVOS config).\nOverride STT, TTS, VAD, and wakeword plugins there:\n\n{\n  \"listener\": {\n    \"VAD\": {\n      \"module\": \"ovos-vad-plugin-silero\"\n    },\n    \"wake_word\": \"hey_mycroft\",\n    \"hey_mycroft\": {\n      \"module\": \"ovos-ww-plugin-vosk\"\n    }\n  },\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-server\",\n    \"ovos-stt-plugin-server\": { \"url\": \"https://stt.openvoiceos.org/stt\" }\n  },\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\",\n    \"ovos-tts-plugin-server\": { \"host\": \"https://tts.openvoiceos.org\" }\n  }\n}\n\nAll plugin slots are swappable via [ovos-plugin-manager](https://github.com/OpenVoiceOS/ovos-plugin-manager). See [docs/configuration.md](docs/configuration.md) for the full reference."
     }
   ],
   "languages": [],

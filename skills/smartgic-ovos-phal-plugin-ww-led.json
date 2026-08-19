@@ -38,11 +38,11 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "```shell\npip install ovos-phal-plugin-ww-led\n```"
+      "content": "pip install ovos-phal-plugin-ww-led"
     },
     {
       "heading": "Configuration",
-      "content": "The plugin configuration file is `~/.config/OpenVoiceOS/ovos-phal-plugin-ww-led.json`.\n\n| Option          | Value   | Description                                        |\n| --------------- | ------- | -------------------------------------------------- |\n| `gpio_pin`      | `N/A`   | GPIO PIN where the LED is connected                |\n| `wakeword_only` | `false` | Turn on the LED only during the wakeword detection |\n| `pulse`         | `true`  | Make the LED pulse                                 |\n\n### Example\n\nConfiguration sample of `~/.config/OpenVoiceOS/ovos-phal-plugin-ww-led.json`.\n\n```json\n{\n  \"gpio_pin\": 25,\n  \"wakeword_only\": false,\n  \"pulse\": true\n}\n```"
+      "content": "The plugin configuration file is `~/.config/OpenVoiceOS/ovos-phal-plugin-ww-led.json`.\n\n| Option          | Value   | Description                                        |\n| --------------- | ------- | -------------------------------------------------- |\n| `gpio_pin`      | `N/A`   | GPIO PIN where the LED is connected                |\n| `wakeword_only` | `false` | Turn on the LED only during the wakeword detection |\n| `pulse`         | `true`  | Make the LED pulse                                 |\n\n### Example\n\nConfiguration sample of `~/.config/OpenVoiceOS/ovos-phal-plugin-ww-led.json`.\n\n{\n  \"gpio_pin\": 25,\n  \"wakeword_only\": false,\n  \"pulse\": true\n}"
     }
   ],
   "languages": [],

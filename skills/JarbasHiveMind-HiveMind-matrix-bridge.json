@@ -33,7 +33,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install git+https://github.com/JarbasHiveMind/HiveMind-matrix-bridge\n```\n\nOr from a checkout:\n\n```bash\ngit clone https://github.com/JarbasHiveMind/HiveMind-matrix-bridge\ncd HiveMind-matrix-bridge\npip install .\n```\n\nThis installs the `HiveMind-matrix` console command."
+      "content": "pip install git+https://github.com/JarbasHiveMind/HiveMind-matrix-bridge\n\nOr from a checkout:\n\ngit clone https://github.com/JarbasHiveMind/HiveMind-matrix-bridge\ncd HiveMind-matrix-bridge\npip install .\n\nThis installs the `HiveMind-matrix` console command."
     },
     {
       "heading": "Configuration",

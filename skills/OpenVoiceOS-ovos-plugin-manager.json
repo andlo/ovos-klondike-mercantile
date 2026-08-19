@@ -32,7 +32,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-plugin-manager\n```\n\nMedia provider plugins need an extra dependency. Install it with:\n\n```bash\npip install ovos-plugin-manager[media]\n```"
+      "content": "pip install ovos-plugin-manager\n\nMedia provider plugins need an extra dependency. Install it with:\n\npip install ovos-plugin-manager[media]"
     }
   ],
   "languages": [],

@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-skill-application-launcher\n```"
+      "content": "pip install ovos-skill-application-launcher"
     },
     {
       "heading": "Configuration via `settings.json`",
@@ -39,18 +39,18 @@
     }
   ],
   "languages": [
-    "ca-ES",
-    "da-DK",
-    "de-DE",
-    "en-US",
-    "es-ES",
-    "eu-ES",
-    "fa-IR",
-    "fr-FR",
-    "gl-ES",
-    "it-IT",
-    "nl-NL",
-    "pt-PT"
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fa-ir",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
   ],
   "in_ovos_localize": true,
   "repo_created_at": "2021-12-13T22:13:24Z",

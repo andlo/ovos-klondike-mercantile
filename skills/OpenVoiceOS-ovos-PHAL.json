@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos_PHAL\n```\n\nExtra plugin sets install with the package:\n\n```bash\npip install ovos_PHAL[linux]   # alsa, system, network-manager, wallpaper-manager\npip install ovos_PHAL[mac]     # ovos-phal-plugin-mac\npip install ovos_PHAL[mk1]     # ovos-PHAL-plugin-mk1\npip install ovos_PHAL[mk2]     # ovos-PHAL-plugin-hotkeys\npip install ovos_PHAL[mk2dev]  # ovos-PHAL-plugin-mk2-fan-control\npip install ovos_PHAL[extras]  # ipgeo, connectivity-events, oauth\n```"
+      "content": "pip install ovos_PHAL\n\nExtra plugin sets install with the package:\n\npip install ovos_PHAL[linux]   # alsa, system, network-manager, wallpaper-manager\npip install ovos_PHAL[mac]     # ovos-phal-plugin-mac\npip install ovos_PHAL[mk1]     # ovos-PHAL-plugin-mk1\npip install ovos_PHAL[mk2]     # ovos-PHAL-plugin-hotkeys\npip install ovos_PHAL[mk2dev]  # ovos-PHAL-plugin-mk2-fan-control\npip install ovos_PHAL[extras]  # ipgeo, connectivity-events, oauth"
     }
   ],
   "languages": [],

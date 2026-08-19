@@ -33,7 +33,7 @@
   "setup_notes": [
     {
       "heading": "Configuration",
-      "content": "Add this to `mycroft.conf`:\n\n```json\n{\n  \"Audio\": {\n    \"backends\": {\n      \"local\": {\n        \"type\": \"ovos_common_play\",\n        \"active\": true\n      },\n      \"simple\": {\n        \"type\": \"ovos_audio_simple\",\n        \"active\": true\n      }\n    },\n    \"default-backend\": \"local\"\n  }\n}\n```"
+      "content": "Add this to `mycroft.conf`:\n\n{\n  \"Audio\": {\n    \"backends\": {\n      \"local\": {\n        \"type\": \"ovos_common_play\",\n        \"active\": true\n      },\n      \"simple\": {\n        \"type\": \"ovos_audio_simple\",\n        \"active\": true\n      }\n    },\n    \"default-backend\": \"local\"\n  }\n}"
     }
   ],
   "languages": [],

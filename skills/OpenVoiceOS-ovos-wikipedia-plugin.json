@@ -16,7 +16,7 @@
   "license": null,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Toolbox Plugin",
+  "component_type": "Retrieval Plugin",
   "type_group": "Plugin",
   "stars": 1,
   "forks": 0,
@@ -30,7 +30,7 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "```bash\npip install ovos-wikipedia-plugin\n```\n\n---"
+      "content": "pip install ovos-wikipedia-plugin\n\n---"
     }
   ],
   "languages": [],

@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```console\npip install ovos-PHAL-plugin-mk2-fan-control\n```"
+      "content": "pip install ovos-PHAL-plugin-mk2-fan-control"
     },
     {
       "heading": "Configuration",
-      "content": "You can set the temperature at which the fan turns on.\n\n```json\n{\n    \"PHAL\": {\n        \"ovos-PHAL-plugin-mk2-v6-fan-control\": {\n            \"max_fanless_temp\": 60.0,\n            \"max_fan_temp\": 80.0\n        }\n    }\n}\n```\n\n* `max_fanless_temp` \u2014 the temperature at which the fan turns on.\n* `max_fan_temp` \u2014 the temperature at which the fan runs at 100%."
+      "content": "You can set the temperature at which the fan turns on.\n\n{\n    \"PHAL\": {\n        \"ovos-PHAL-plugin-mk2-v6-fan-control\": {\n            \"max_fanless_temp\": 60.0,\n            \"max_fan_temp\": 80.0\n        }\n    }\n}\n\n* `max_fanless_temp` \u2014 the temperature at which the fan turns on.\n* `max_fan_temp` \u2014 the temperature at which the fan runs at 100%."
     }
   ],
   "languages": [],

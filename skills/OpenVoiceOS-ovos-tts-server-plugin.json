@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-tts-plugin-server\n```"
+      "content": "pip install ovos-tts-plugin-server"
     },
     {
       "heading": "Configuration",
-      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\",\n    \"ovos-tts-plugin-server\": {\n        \"host\": \"https://tts.smartgic.io/piper\",\n        \"v2\": true,\n        \"verify_ssl\": true,\n        \"tts_timeout\": 5\n     }\n } \n```\n\n- `host`: the URL of the TTS server. The plugin appends `/synthesize` to this URL.\n- `v2`: use the v2 API, if the server offers it.\n- `verify_ssl`: verify the server's SSL certificate. Set this to `false` for a self-signed certificate, but see the [security warning](#security-warning) before you do.\n- `tts_timeout`: timeout, in seconds, for a request to the server. The default is 5 seconds.\n\n### v2 API (ovos-tts-server 0.0.3a10 and later)\n\nIf the TTS server plugin supports v2, set `v2` to `true` to use the newer API. The `host` value stays the same either way. For\u2026"
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-server\",\n    \"ovos-tts-plugin-server\": {\n        \"host\": \"https://tts.smartgic.io/piper\",\n        \"v2\": true,\n        \"verify_ssl\": true,\n        \"tts_timeout\": 5\n     }\n } \n\n- `host`: the URL of the TTS server. The plugin appends `/synthesize` to this URL.\n- `v2`: use the v2 API, if the server offers it.\n- `verify_ssl`: verify the server's SSL certificate. Set this to `false` for a self-signed certificate, but see the [security warning](#security-warning) before you do.\n- `tts_timeout`: timeout, in seconds, for a request to the server. The default is 5 seconds.\n\n### v2 API (ovos-tts-server 0.0.3a10 and later)\n\nIf the TTS server plugin supports v2, set `v2` to `true` to use the newer API. The `host` value stays the same either way. For example, it st\u2026"
     }
   ],
   "languages": [],

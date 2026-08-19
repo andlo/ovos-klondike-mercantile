@@ -30,11 +30,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-skill-cmd\n```"
+      "content": "pip install ovos-skill-cmd"
     },
     {
       "heading": "Configuration",
-      "content": "Configure the skill in `settings.json`. Map a spoken phrase to a script or command under `alias`. For example:\n\n```json\n{\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\"\n  }\n}\n```\n\nWith this setting, the phrase \"run script generate report\" makes the skill execute `/home/forslund/scripts/generate_report.sh`.\n\n### user\n\nSet `user` to run commands under a specific user's privileges:\n\n```json\n{\n  \"user\": \"ovos\"\n}\n```\n\n### shell\n\nSet `shell` to control whether commands run through a shell. It defaults to `true`:\n\n```json\n{\n  \"shell\": false\n}\n```\n\n### Full example\n\n```json\n{\n  \"user\": \"ovos\",\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\",\n    \"update system\": \"sudo apt update && sudo apt upgrade -y\",\n    \"reboot device\": \"sudo reb\u2026"
+      "content": "Configure the skill in `settings.json`. Map a spoken phrase to a script or command under `alias`. For example:\n\n{\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\"\n  }\n}\n\nWith this setting, the phrase \"run script generate report\" makes the skill execute `/home/forslund/scripts/generate_report.sh`.\n\n### user\n\nSet `user` to run commands under a specific user's privileges:\n\n{\n  \"user\": \"ovos\"\n}\n\n### shell\n\nSet `shell` to control whether commands run through a shell. It defaults to `true`:\n\n{\n  \"shell\": false\n}\n\n### Full example\n\n{\n  \"user\": \"ovos\",\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\",\n    \"update system\": \"sudo apt update && sudo apt upgrade -y\",\n    \"reboot device\": \"sudo reboot\"\n  },\n  \"shell\": true\n}"
     }
   ],
   "languages": [],

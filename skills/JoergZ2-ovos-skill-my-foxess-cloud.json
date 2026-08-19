@@ -33,7 +33,7 @@
   "setup_notes": [
     {
       "heading": "Setup",
-      "content": "You have to edit settings.json of the skill. You will find it in your config folder in ```~/.config/mycroft/skills/ovos-skill-my-foxess-cloud.joergz2/settings.json``` It looks like:\n```\n{\n    \"__mycroft_skill_firstrun\": false,\n    \"api_key\": \"12345678-9876-3541...\",\n    \"device_sn\": \"60SH......\",\n    \"time_zone\": \"Europe/Berlin\",\n    \"lang_specifics\": {\n        \"decimal_char\": \",\"\n    }\n}\n```"
+      "content": "You have to edit settings.json of the skill. You will find it in your config folder in ```~/.config/mycroft/skills/ovos-skill-my-foxess-cloud.joergz2/settings.json``` It looks like:\n{\n    \"__mycroft_skill_firstrun\": false,\n    \"api_key\": \"12345678-9876-3541...\",\n    \"device_sn\": \"60SH......\",\n    \"time_zone\": \"Europe/Berlin\",\n    \"lang_specifics\": {\n        \"decimal_char\": \",\"\n    }\n}"
     }
   ],
   "languages": [

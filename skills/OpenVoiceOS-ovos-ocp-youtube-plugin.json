@@ -33,7 +33,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-ocp-youtube-plugin\n```\n\nThe plugin registers itself as an OCP stream extractor through the\n`opm.ocp.extractor` entry point. OCP loads it automatically once it is\ninstalled. No extra setup is needed."
+      "content": "pip install ovos-ocp-youtube-plugin\n\nThe plugin registers itself as an OCP stream extractor through the\n`opm.ocp.extractor` entry point. OCP loads it automatically once it is\ninstalled. No extra setup is needed."
     }
   ],
   "languages": [],

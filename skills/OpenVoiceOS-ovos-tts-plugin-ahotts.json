@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-tts-plugin-ahotts\n```"
+      "content": "pip install ovos-tts-plugin-ahotts"
     },
     {
       "heading": "Configuration",
-      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-ahotts\",\n    \"ovos-tts-plugin-ahotts\": {\n        \"lang\": \"eu\"\n    }\n  }\n```"
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-ahotts\",\n    \"ovos-tts-plugin-ahotts\": {\n        \"lang\": \"eu\"\n    }\n  }"
     }
   ],
   "languages": [],

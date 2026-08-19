@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-stt-plugin-whispercpp\n```"
+      "content": "pip install ovos-stt-plugin-whispercpp"
     },
     {
       "heading": "Configuration",
-      "content": "The available models are `tiny.en`, `tiny`, `base.en`, `base`, `small.en`, `small`, `medium.en`, `medium`, and `large`.\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-whispercpp\",\n    \"ovos-stt-plugin-whispercpp\": {\n        \"model\": \"tiny\"\n    }\n  }\n```"
+      "content": "The available models are `tiny.en`, `tiny`, `base.en`, `base`, `small.en`, `small`, `medium.en`, `medium`, and `large`.\n\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-whispercpp\",\n    \"ovos-stt-plugin-whispercpp\": {\n        \"model\": \"tiny\"\n    }\n  }"
     }
   ],
   "languages": [],

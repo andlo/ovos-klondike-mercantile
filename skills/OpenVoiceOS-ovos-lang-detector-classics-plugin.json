@@ -30,7 +30,7 @@
   "setup_notes": [
     {
       "heading": "Configuration",
-      "content": "Add this to `mycroft.conf`:\n\n```javascript\n  \"language\": {\n    \"detection_module\": \"ovos-lang-detector-plugin-voter\",\n    \n    \"ovos-lang-detector-plugin-voter\": {\n        \"weights\": {\n            \"ovos-lang-detector-plugin-cld3\": 0.8,\n            \"ovos-lang-detector-plugin-cld2\": 0.8,\n            \"ovos-lang-detector-plugin-lingua-podre\": 1.0,\n            \"ovos-lang-detector-plugin-langdetect\": 1.0,\n            \"ovos-lang-detector-plugin-fastlang\": 1.0,\n        }\n    }\n    \n  },\n```"
+      "content": "Add this to `mycroft.conf`:\n\n  \"language\": {\n    \"detection_module\": \"ovos-lang-detector-plugin-voter\",\n    \n    \"ovos-lang-detector-plugin-voter\": {\n        \"weights\": {\n            \"ovos-lang-detector-plugin-cld3\": 0.8,\n            \"ovos-lang-detector-plugin-cld2\": 0.8,\n            \"ovos-lang-detector-plugin-lingua-podre\": 1.0,\n            \"ovos-lang-detector-plugin-langdetect\": 1.0,\n            \"ovos-lang-detector-plugin-fastlang\": 1.0,\n        }\n    }\n    \n  },"
     }
   ],
   "languages": [],

@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-tts-plugin-kokoro\n```\n\n`espeak-ng` is required for the underlying G2P stack:\n\n```bash"
+      "content": "pip install ovos-tts-plugin-kokoro\n\n`espeak-ng` is required for the underlying G2P stack:"
     },
     {
       "heading": "Configuration",
-      "content": "```json\n{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-kokoro\",\n    \"ovos-tts-plugin-kokoro\": {\n      \"voice\": \"af_bella\"\n    }\n  }\n}\n```\n\n### Voice options\n\nKokoro ships 56 built-in voices across 9 languages. The voice id encodes language + gender:\n\n| Prefix | Language             | Examples                                    |\n| ------ | -------------------- | ------------------------------------------- |\n| `af_`  | American English (F) | `af_bella`, `af_heart`, `af_nicole`         |\n| `am_`  | American English (M) | `am_michael`, `am_onyx`, `am_eric`          |\n| `bf_`  | British English (F)  | `bf_alice`, `bf_emma`, `bf_lily`            |\n| `bm_`  | British English (M)  | `bm_george`, `bm_fable`, `bm_daniel`        |\n| `jf_` / `jm_` | Japanese      | `jf_alpha`, `jm_kumo` *(needs `[ja]` e\u2026"
+      "content": "{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-kokoro\",\n    \"ovos-tts-plugin-kokoro\": {\n      \"voice\": \"af_bella\"\n    }\n  }\n}\n\n### Voice options\n\nKokoro ships 56 built-in voices across 9 languages. The voice id encodes language + gender:\n\n| Prefix | Language             | Examples                                    |\n| ------ | -------------------- | ------------------------------------------- |\n| `af_`  | American English (F) | `af_bella`, `af_heart`, `af_nicole`         |\n| `am_`  | American English (M) | `am_michael`, `am_onyx`, `am_eric`          |\n| `bf_`  | British English (F)  | `bf_alice`, `bf_emma`, `bf_lily`            |\n| `bm_`  | British English (M)  | `bm_george`, `bm_fable`, `bm_daniel`        |\n| `jf_` / `jm_` | Japanese      | `jf_alpha`, `jm_kumo` *(needs `[ja]` extra)* |\n| `\u2026"
     }
   ],
   "languages": [],

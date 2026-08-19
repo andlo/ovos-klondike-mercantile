@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-tts-plugin-pocket-tts\n```\n\nWith `uv`, torch automatically resolves to the CPU-only wheel (configured via `tool.uv.sources`).\n\n### Linux: CPU-only torch (saves ~2GB)\n\nOn Linux, pip defaults to the CUDA torch wheel (~2.5GB). If you don't need GPU support (pocket-tts is CPU-only anyway), install torch from the CPU index first:\n\n```bash\npip install torch --index-url https://download.pytorch.org/whl/cpu\npip install ovos-tts-plugin-pocket-tts\n```\n\nOn macOS, this is not needed \u2014 PyPI torch is already CPU-only (~60MB)."
+      "content": "pip install ovos-tts-plugin-pocket-tts\n\nWith `uv`, torch automatically resolves to the CPU-only wheel (configured via `tool.uv.sources`).\n\n### Linux: CPU-only torch (saves ~2GB)\n\nOn Linux, pip defaults to the CUDA torch wheel (~2.5GB). If you don't need GPU support (pocket-tts is CPU-only anyway), install torch from the CPU index first:\n\npip install torch --index-url https://download.pytorch.org/whl/cpu\npip install ovos-tts-plugin-pocket-tts\n\nOn macOS, this is not needed \u2014 PyPI torch is already CPU-only (~60MB)."
     },
     {
       "heading": "Configuration",
-      "content": "```json\n{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-pocket-tts\",\n    \"ovos-tts-plugin-pocket-tts\": {\n      \"voice\": \"alba\"\n    }\n  }\n}\n```\n\n### Voice options\n\n**Built-in voices:** `alba`, `marius`, `javert`, `jean`, `fantine`, `cosette`, `eponine`, `azelma`\n\n**Voice cloning:** Set `voice` to a path to a `.wav` file, a pre-exported `.safetensors` file, or a HuggingFace URI (`hf://kyutai/tts-voices/...`)."
+      "content": "{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-pocket-tts\",\n    \"ovos-tts-plugin-pocket-tts\": {\n      \"voice\": \"alba\"\n    }\n  }\n}\n\n### Voice options\n\n**Built-in voices:** `alba`, `marius`, `javert`, `jean`, `fantine`, `cosette`, `eponine`, `azelma`\n\n**Voice cloning:** Set `voice` to a path to a `.wav` file, a pre-exported `.safetensors` file, or a HuggingFace URI (`hf://kyutai/tts-voices/...`)."
     }
   ],
   "languages": [],

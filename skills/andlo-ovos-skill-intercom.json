@@ -36,11 +36,11 @@
   "setup_notes": [
     {
       "heading": "Setup",
-      "content": "Each device needs a **name** and a shared household **code**, set by\nvoice on that specific device:\n```\n\"set intercom name to living room\"\n\"set intercom code to four seven two nine\"\n```\n\nEvery device that should participate says the **same code** - not a\nseparate secret per pair of devices. Say it once per device; any two\ndevices with matching codes can message each other."
+      "content": "Each device needs a **name** and a shared household **code**, set by\nvoice on that specific device:\n\"set intercom name to living room\"\n\"set intercom code to four seven two nine\"\n\nEvery device that should participate says the **same code** - not a\nseparate secret per pair of devices. Say it once per device; any two\ndevices with matching codes can message each other."
     },
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-skill-intercom\n```"
+      "content": "pip install ovos-skill-intercom"
     }
   ],
   "languages": [

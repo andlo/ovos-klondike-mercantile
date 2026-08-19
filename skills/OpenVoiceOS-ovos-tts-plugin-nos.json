@@ -35,11 +35,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install phoonnx\n```\n\nFor the cotovia-phonemized voices (`sabela`, `icia`, `iago`, `paulo`, `brais-cotovia`, `celtia-cotovia`), `cotovia` must be available in your base OS \u2014 same requirement as before. Follow the install steps in [ovos-tts-plugin-cotovia](https://github.com/OpenVoiceOS/ovos-tts-plugin-cotovia)."
+      "content": "pip install phoonnx\n\nFor the cotovia-phonemized voices (`sabela`, `icia`, `iago`, `paulo`, `brais-cotovia`, `celtia-cotovia`), `cotovia` must be available in your base OS \u2014 same requirement as before. Follow the install steps in [ovos-tts-plugin-cotovia](https://github.com/OpenVoiceOS/ovos-tts-plugin-cotovia)."
     },
     {
       "heading": "Configuration mapping",
-      "content": "**Before:**\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-nos\",\n  \"ovos-tts-plugin-nos\": {\n    \"voice\": \"celtia\"\n  }\n}\n```\n\n**After:**\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"proxectonos/celtia\"\n  }\n}\n```\n\nFor a cotovia voice:\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"proxectonos/sabela-cotovia\"\n  }\n}\n```\n\n### Auto-select by language\n\nSet your OVOS language to `gl-ES` and leave `voice` unset \u2014 phoonnx will select a Galician voice automatically."
+      "content": "**Before:**\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-nos\",\n  \"ovos-tts-plugin-nos\": {\n    \"voice\": \"celtia\"\n  }\n}\n\n**After:**\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"proxectonos/celtia\"\n  }\n}\n\nFor a cotovia voice:\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"proxectonos/sabela-cotovia\"\n  }\n}\n\n### Auto-select by language\n\nSet your OVOS language to `gl-ES` and leave `voice` unset \u2014 phoonnx will select a Galician voice automatically."
     }
   ],
   "languages": [],

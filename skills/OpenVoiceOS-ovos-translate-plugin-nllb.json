@@ -30,11 +30,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "Install the plugin with pip:\n\n```bash\npip install ovos-translate-plugin-nllb\n```"
+      "content": "Install the plugin with pip:\n\npip install ovos-translate-plugin-nllb"
     },
     {
       "heading": "Advanced Configuration",
-      "content": "### HuggingFace Integration\n\nTo use a model hosted on the HuggingFace Hub, set the `model` parameter to the HuggingFace model ID. `NLLB200Translator` downloads and loads the model from HuggingFace.\n\n### Additional Parameters\n\n- `beam_size`: the beam size used for translation. A larger value trades speed for translation quality.\n- `device`: the device to run on, either `cpu` or `cuda` (GPU).\n\n```python\nfrom ovos_translate_plugin_nllb import NLLB200Translator\ntx = NLLB200Translator(config={\n    \"model\": \"nllb-200_600M_int8\",\n    \"beam_size\": 5,\n    \"device\": \"cuda\"\n})\n```"
+      "content": "### HuggingFace Integration\n\nTo use a model hosted on the HuggingFace Hub, set the `model` parameter to the HuggingFace model ID. `NLLB200Translator` downloads and loads the model from HuggingFace.\n\n### Additional Parameters\n\n- `beam_size`: the beam size used for translation. A larger value trades speed for translation quality.\n- `device`: the device to run on, either `cpu` or `cuda` (GPU).\n\nfrom ovos_translate_plugin_nllb import NLLB200Translator\ntx = NLLB200Translator(config={\n    \"model\": \"nllb-200_600M_int8\",\n    \"beam_size\": 5,\n    \"device\": \"cuda\"\n})"
     }
   ],
   "languages": [],

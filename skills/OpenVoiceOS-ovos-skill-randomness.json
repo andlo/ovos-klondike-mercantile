@@ -43,11 +43,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```console\npip install ovos-skill-randomness\n```"
+      "content": "pip install ovos-skill-randomness"
     },
     {
       "heading": "Configuration",
-      "content": "The skill accepts one property, `die_limit`. This property sets the maximum number of dice you can roll at once. The default is 16.\n\nSet it in `~/.config/mycroft/skills/skill-randomness.openvoiceos/settings.json`:\n\n```json\n{\n  \"die_limit\": 16\n}\n```"
+      "content": "The skill accepts one property, `die_limit`. This property sets the maximum number of dice you can roll at once. The default is 16.\n\nSet it in `~/.config/mycroft/skills/skill-randomness.openvoiceos/settings.json`:\n\n{\n  \"die_limit\": 16\n}"
     }
   ],
   "languages": [],

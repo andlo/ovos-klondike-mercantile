@@ -29,7 +29,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-workshop\n```\n\nRuntime dependencies include `ovos-yes-no-plugin` and `ovos-option-matcher-fuzzy-plugin`, which back the `ask_yesno` and `ask_selection` skill methods."
+      "content": "pip install ovos-workshop\n\nRuntime dependencies include `ovos-yes-no-plugin` and `ovos-option-matcher-fuzzy-plugin`, which back the `ask_yesno` and `ask_selection` skill methods."
     },
     {
       "heading": "Configuration",

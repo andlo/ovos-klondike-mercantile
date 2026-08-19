@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-microphone-plugin-pyaudio\n```\n\nThe plugin needs the `libportaudio2` system library on Linux, macOS, and Windows."
+      "content": "pip install ovos-microphone-plugin-pyaudio\n\nThe plugin needs the `libportaudio2` system library on Linux, macOS, and Windows."
     }
   ],
   "languages": [],

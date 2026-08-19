@@ -23,7 +23,7 @@
   "license": "Apache-2.0",
   "author": "TigreGotico",
   "tier": 1,
-  "component_type": "Keywords Plugin",
+  "component_type": "Detect Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
@@ -37,7 +37,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install markovonnx              # core (numpy, onnx, onnxruntime)\npip install markovonnx[ovos]        # + OVOS voice assistant plugins\npip install markovonnx[bpe]         # + BPE tokenizer support\npip install markovonnx[quantize]    # + INT8 quantization\n```"
+      "content": "pip install markovonnx              # core (numpy, onnx, onnxruntime)\npip install markovonnx[ovos]        # + OVOS voice assistant plugins\npip install markovonnx[bpe]         # + BPE tokenizer support\npip install markovonnx[quantize]    # + INT8 quantization"
     }
   ],
   "languages": [],

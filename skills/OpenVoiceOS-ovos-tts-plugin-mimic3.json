@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "Install the necessary system packages:\n\n``` sh\nsudo apt-get install libespeak-ng1\n```\n\nOn 32-bit ARM platforms (a.k.a. `armv7l` or `armhf`), you will also need some extra libraries:\n\n``` sh\nsudo apt-get install libatomic1 libgomp1 libatlas-base-dev\n```\n\ninstall the TTS plugin in Mycroft:\n\n`pip install ovos-tts-plugin-mimic3[all]`\n\nRemoving `[all]` will install support for English only.\n\nAdditional language support can be selectively installed by replacing `all` with a two-character language code, such as `de` (German) or `fr` (French).\nSee [`setup.py`](https://github.com/OpenVoiceOS/ovos-tts-plugin-mimic3/blob/master/setup.py#L55) for an up-to-date list of language codes."
+      "content": "Install the necessary system packages:\n\n``` sh\nsudo apt-get install libespeak-ng1\n\nOn 32-bit ARM platforms (a.k.a. `armv7l` or `armhf`), you will also need some extra libraries:\n\n``` sh\nsudo apt-get install libatomic1 libgomp1 libatlas-base-dev\n\ninstall the TTS plugin in Mycroft:\n\n`pip install ovos-tts-plugin-mimic3[all]`\n\nRemoving `[all]` will install support for English only.\n\nAdditional language support can be selectively installed by replacing `all` with a two-character language code, such as `de` (German) or `fr` (French).\nSee [`setup.py`](https://github.com/OpenVoiceOS/ovos-tts-plugin-mimic3/blob/master/setup.py#L55) for an up-to-date list of language codes."
     },
     {
       "heading": "Configuration",
-      "content": "``` json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-mimic3\",\n    \"ovos-tts-plugin-mimic3\": {\n      \"voice\": \"en_UK/apope_low\"\n    }\n  }\n```\n\n\n### Advanced config\n\n\n``` json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-mimic3\",\n  \"ovos-tts-plugin-mimic3\": {\n      \"voice\": \"en_US/cmu-arctic_low\",  // default voice\n      \"speaker\": \"fem\",  // default speaker\n      \"length_scale\": 1.0,  // speaking rate\n      \"noise_scale\": 0.667,  // speaking variablility\n      \"noise_w\": 1.0  // phoneme duration variablility\n  }\n}\n```"
+      "content": "``` json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-mimic3\",\n    \"ovos-tts-plugin-mimic3\": {\n      \"voice\": \"en_UK/apope_low\"\n    }\n  }\n\n\n### Advanced config\n\n\n``` json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-mimic3\",\n  \"ovos-tts-plugin-mimic3\": {\n      \"voice\": \"en_US/cmu-arctic_low\",  // default voice\n      \"speaker\": \"fem\",  // default speaker\n      \"length_scale\": 1.0,  // speaking rate\n      \"noise_scale\": 0.667,  // speaking variablility\n      \"noise_w\": 1.0  // phoneme duration variablility\n  }\n}"
     }
   ],
   "languages": [],

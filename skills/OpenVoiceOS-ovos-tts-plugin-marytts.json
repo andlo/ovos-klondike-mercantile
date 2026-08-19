@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\n$ pip install ovos-tts-plugin-marytts\n```"
+      "content": "$ pip install ovos-tts-plugin-marytts"
     },
     {
       "heading": "Configuration",
-      "content": "```json\n\"tts\": {\n    \"module\": \"ovos-tts-plugin-marytts\",\n    \"ovos-tts-plugin-marytts\": {\n      \"url\": \"http://0.0.0.0:59125\",\n      \"voice\": \"cmu-slt-hsmm\"\n    }\n}\n```"
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-marytts\",\n    \"ovos-tts-plugin-marytts\": {\n      \"url\": \"http://0.0.0.0:59125\",\n      \"voice\": \"cmu-slt-hsmm\"\n    }\n}"
     }
   ],
   "languages": [],

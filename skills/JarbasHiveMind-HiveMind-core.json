@@ -35,11 +35,11 @@
   "setup_notes": [
     {
       "heading": "Protocol Configuration",
-      "content": "HiveMind Core supports a configuration file. This lets you define server settings without long command-line arguments.\n\n> The configuration file is stored at `~/.config/hivemind-core/server.json`\n\nThe default configuration:\n\n```json\n{\n  \"agent_protocol\": {\n    \"module\": \"hivemind-ovos-agent-plugin\",\n    \"hivemind-ovos-agent-plugin\": {\n      \"host\": \"127.0.0.1\",\n      \"port\": 8181\n    }\n  },\n  \"binary_protocol\": {\n    \"module\": null\n  },\n  \"network_protocol\": {\n    \"hivemind-websocket-plugin\": {\n      \"host\": \"0.0.0.0\",\n      \"port\": 5678\n    },\n    \"hivemind-http-plugin\": {\n      \"host\": \"0.0.0.0\",\n      \"port\": 5679\n    }\n  },\n  \"policy\": {\n    \"chain\": [\n      {\"module\": \"hivemind-ovos-agent-policy\"}\n    ]\n  },\n  \"database\": {\n    \"module\": \"hivemind-sqlite-db-plugin\",\n    \"hivemind-sqli\u2026"
+      "content": "HiveMind Core supports a configuration file. This lets you define server settings without long command-line arguments.\n\n> The configuration file is stored at `~/.config/hivemind-core/server.json`\n\nThe default configuration:\n\n{\n  \"agent_protocol\": {\n    \"module\": \"hivemind-ovos-agent-plugin\",\n    \"hivemind-ovos-agent-plugin\": {\n      \"host\": \"127.0.0.1\",\n      \"port\": 8181\n    }\n  },\n  \"binary_protocol\": {\n    \"module\": null\n  },\n  \"network_protocol\": {\n    \"hivemind-websocket-plugin\": {\n      \"host\": \"0.0.0.0\",\n      \"port\": 5678\n    },\n    \"hivemind-http-plugin\": {\n      \"host\": \"0.0.0.0\",\n      \"port\": 5679\n    }\n  },\n  \"policy\": {\n    \"chain\": [\n      {\"module\": \"hivemind-ovos-agent-policy\"}\n    ]\n  },\n  \"database\": {\n    \"module\": \"hivemind-sqlite-db-plugin\",\n    \"hivemind-sqlite-db-pl\u2026"
     },
     {
       "heading": "Installation",
-      "content": "```bash\npip install hivemind-core\n```"
+      "content": "pip install hivemind-core"
     }
   ],
   "languages": [],

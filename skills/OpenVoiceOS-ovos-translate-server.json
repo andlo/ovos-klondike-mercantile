@@ -29,11 +29,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-translate-server\n```\n\nThe server only hosts plugins \u2014 install at least one translation plugin, and\noptionally a dedicated language-detection plugin, alongside it:\n\n```bash\npip install ovos-translate-plugin-nllb              # translation\npip install ovos-lang-detector-classics-plugin      # detection (optional)\n```\n\nOptional extras:\n\n| Extra | Installs | Enables |\n|-------|----------|---------|\n| `mcp` | `pip install \"ovos-translate-server[mcp]\"` + `--mcp` flag | embedded [MCP](#mcp--model-context-protocol) server at `/mcp` |\n| `lang-names` | `pip install \"ovos-translate-server[lang-names]\"` | human-readable language names in vendor `languages` responses |"
+      "content": "pip install ovos-translate-server\n\nThe server only hosts plugins \u2014 install at least one translation plugin, and\noptionally a dedicated language-detection plugin, alongside it:\n\npip install ovos-translate-plugin-nllb              # translation\npip install ovos-lang-detector-classics-plugin      # detection (optional)\n\nOptional extras:\n\n| Extra | Installs | Enables |\n|-------|----------|---------|\n| `mcp` | `pip install \"ovos-translate-server[mcp]\"` + `--mcp` flag | embedded [MCP](#mcp--model-context-protocol) server at `/mcp` |\n| `lang-names` | `pip install \"ovos-translate-server[lang-names]\"` | human-readable language names in vendor `languages` responses |"
     },
     {
       "heading": "Claude Desktop configuration",
-      "content": "```json\n{\n  \"mcpServers\": {\n    \"ovos-translate\": {\n      \"url\": \"http://localhost:9686/mcp\"\n    }\n  }\n}\n```"
+      "content": "{\n  \"mcpServers\": {\n    \"ovos-translate\": {\n      \"url\": \"http://localhost:9686/mcp\"\n    }\n  }\n}"
     }
   ],
   "languages": [],

@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-dialog-normalizer-plugin\n```"
+      "content": "pip install ovos-dialog-normalizer-plugin"
     },
     {
       "heading": "Configuration",
-      "content": "Add an entry under `\"dialog_transformers\"` in your `mycroft.conf` to enable the plugin.\n\n```json\n\"dialog_transformers\": {\n    \"ovos-dialog-normalizer-plugin\": {}\n}\n```"
+      "content": "Add an entry under `\"dialog_transformers\"` in your `mycroft.conf` to enable the plugin.\n\n\"dialog_transformers\": {\n    \"ovos-dialog-normalizer-plugin\": {}\n}"
     }
   ],
   "languages": [],

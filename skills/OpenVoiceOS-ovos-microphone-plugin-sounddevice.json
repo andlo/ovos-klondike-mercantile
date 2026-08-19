@@ -31,11 +31,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-microphone-plugin-sounddevice\n```"
+      "content": "pip install ovos-microphone-plugin-sounddevice"
     },
     {
       "heading": "Configuration",
-      "content": "The listener defaults to the `ovos-microphone-plugin-alsa` plugin. To use this plugin instead, update the `mycroft.conf` configuration file:\n\n```json\n{\n  \"listener\": {\n    \"microphone\": {\n      \"module\": \"ovos-microphone-plugin-sounddevice\",\n      \"ovos-microphone-plugin-sounddevice\": {}\n    }\n  }\n}\n```\n\n### macOS recommended settings (clear capture)\n\n```json\n{\n  \"listener\": {\n    \"microphone\": {\n      \"module\": \"ovos-microphone-plugin-sounddevice\",\n      \"ovos-microphone-plugin-sounddevice\": {\n        \"device\": \"Built-in Microphone\",\n        \"latency\": \"low\",\n        \"multiplier\": 1.0,\n        \"blocksize\": 1024,\n        \"queue_maxsize\": 8,\n        \"use_coreaudio_settings\": true,\n        \"coreaudio_conversion_quality\": \"max\",\n        \"coreaudio_change_device_parameters\": false,\n        \"co\u2026"
+      "content": "The listener defaults to the `ovos-microphone-plugin-alsa` plugin. To use this plugin instead, update the `mycroft.conf` configuration file:\n\n{\n  \"listener\": {\n    \"microphone\": {\n      \"module\": \"ovos-microphone-plugin-sounddevice\",\n      \"ovos-microphone-plugin-sounddevice\": {}\n    }\n  }\n}\n\n### macOS recommended settings (clear capture)\n\n{\n  \"listener\": {\n    \"microphone\": {\n      \"module\": \"ovos-microphone-plugin-sounddevice\",\n      \"ovos-microphone-plugin-sounddevice\": {\n        \"device\": \"Built-in Microphone\",\n        \"latency\": \"low\",\n        \"multiplier\": 1.0,\n        \"blocksize\": 1024,\n        \"queue_maxsize\": 8,\n        \"use_coreaudio_settings\": true,\n        \"coreaudio_conversion_quality\": \"max\",\n        \"coreaudio_change_device_parameters\": false,\n        \"coreaudio_fail_if_conv\u2026"
     }
   ],
   "languages": [],

@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 2,
-  "component_type": "Audio Plugin",
+  "component_type": "Video Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
@@ -34,7 +34,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "```javascript\n{\n \"media\": {\n\n    // keys are the strings defined in \"audio_players\"\n    \"preferred_audio_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // keys are the strings defined in \"video_players\"\n    \"preferred_video_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // PlaybackType.AUDIO handlers\n    \"audio_players\": {\n        // vlc player uses a headless vlc instance to handle uris\n        \"vlc\": {\n            // the plugin name\n            \"module\": \"ovos-media-audio-plugin-vlc\",\n\n            // users may request specific handlers in the utterance\n            // using these aliases\n             \"aliases\": [\"VLC\"],\n\n            // deactivate a plugin by setting to false\n            \"active\": true\n        }\n    },\n\n    // PlaybackType.VIDEO handlers\n    \"video_players\": {\u2026"
+      "content": "{\n \"media\": {\n\n    // keys are the strings defined in \"audio_players\"\n    \"preferred_audio_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // keys are the strings defined in \"video_players\"\n    \"preferred_video_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // PlaybackType.AUDIO handlers\n    \"audio_players\": {\n        // vlc player uses a headless vlc instance to handle uris\n        \"vlc\": {\n            // the plugin name\n            \"module\": \"ovos-media-audio-plugin-vlc\",\n\n            // users may request specific handlers in the utterance\n            // using these aliases\n             \"aliases\": [\"VLC\"],\n\n            // deactivate a plugin by setting to false\n            \"active\": true\n        }\n    },\n\n    // PlaybackType.VIDEO handlers\n    \"video_players\": {\n        // vlc playe\u2026"
     }
   ],
   "languages": [],

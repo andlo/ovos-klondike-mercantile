@@ -39,7 +39,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-cotovia-remote\",\n    \"ovos-tts-plugin-cotovia-remote\": {\n      \"voice\": \"iago\"\n    }\n  }\n \n```\n\nvalid voices are `sabela`, `iago`, `david`"
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-cotovia-remote\",\n    \"ovos-tts-plugin-cotovia-remote\": {\n      \"voice\": \"iago\"\n    }\n  }\n \n\nvalid voices are `sabela`, `iago`, `david`"
     }
   ],
   "languages": [],

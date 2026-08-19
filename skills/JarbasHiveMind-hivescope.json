@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install hivescope\n```\n\nWith OVOS skill-level testing (live MiniCroft backend):\n\n```bash\npip install \"hivescope[ovos]\"\n```\n\nTo track `dev` instead of the last release:\n\n```bash\npip install \"hivescope @ git+https://github.com/JarbasHiveMind/hivescope@dev\"\n```\n\n---"
+      "content": "pip install hivescope\n\nWith OVOS skill-level testing (live MiniCroft backend):\n\npip install \"hivescope[ovos]\"\n\nTo track `dev` instead of the last release:\n\npip install \"hivescope @ git+https://github.com/JarbasHiveMind/hivescope@dev\"\n\n---"
     },
     {
       "heading": "Configuration",

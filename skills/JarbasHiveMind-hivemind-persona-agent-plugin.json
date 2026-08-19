@@ -35,11 +35,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install hivemind-persona-agent-plugin\n```\n\nOr from source:\n\n```bash\ngit clone https://github.com/JarbasHiveMind/hivemind-persona-agent-plugin\ncd hivemind-persona-agent-plugin\npip install -e .\n```"
+      "content": "pip install hivemind-persona-agent-plugin\n\nOr from source:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-persona-agent-plugin\ncd hivemind-persona-agent-plugin\npip install -e ."
     },
     {
       "heading": "2. Configure hivemind-core",
-      "content": "Edit `~/.config/hivemind-core/server.json`:\n\n```json\n{\n  \"agent_protocol\": {\n    \"module\": \"hivemind-persona-agent-plugin\",\n    \"hivemind-persona-agent-plugin\": {\n      \"persona\": \"~/.config/ovos_persona/persona.json\"\n    }\n  }\n}\n```\n\nThe `persona` value can be either:\n- a path to a persona JSON file (string, `~` expands), or\n- an inline persona config dict."
+      "content": "Edit `~/.config/hivemind-core/server.json`:\n\n{\n  \"agent_protocol\": {\n    \"module\": \"hivemind-persona-agent-plugin\",\n    \"hivemind-persona-agent-plugin\": {\n      \"persona\": \"~/.config/ovos_persona/persona.json\"\n    }\n  }\n}\n\nThe `persona` value can be either:\n- a path to a persona JSON file (string, `~` expands), or\n- an inline persona config dict."
     },
     {
       "heading": "Configuration",

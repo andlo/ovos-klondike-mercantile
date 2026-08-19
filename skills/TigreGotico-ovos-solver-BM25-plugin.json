@@ -32,7 +32,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\n$ pip install ovos-solver-bm25-plugin\n```\n\n---\n\n### ReRanking\n\nReranking refines a list of candidate answers by their relevance to a query. Use it when several candidate responses exist and you need to pick the best one.\n\n![reranker diagram](https://github.com/user-attachments/assets/61c5034b-e54f-434a-8cbf-e967154af983)\n\nThe solver ranks the candidates by their similarity to the query and selects the best match.\n\n```python\nfrom ovos_bm25_solver import BM25MultipleChoiceSolver\n\nsolver = BM25MultipleChoiceSolver()\na = solver.rerank(\"what is the speed of light\", [\n    \"very fast\", \"10m/s\", \"the speed of light is C\"\n])\nprint(a)"
+      "content": "$ pip install ovos-solver-bm25-plugin\n\n---\n\n### ReRanking\n\nReranking refines a list of candidate answers by their relevance to a query. Use it when several candidate responses exist and you need to pick the best one.\n\n![reranker diagram](https://github.com/user-attachments/assets/61c5034b-e54f-434a-8cbf-e967154af983)\n\nThe solver ranks the candidates by their similarity to the query and selects the best match.\n\nfrom ovos_bm25_solver import BM25MultipleChoiceSolver\n\nsolver = BM25MultipleChoiceSolver()\na = solver.rerank(\"what is the speed of light\", [\n    \"very fast\", \"10m/s\", \"the speed of light is C\"\n])\nprint(a)"
     },
     {
       "heading": "Initialize BM25QACorpusSolver with config",

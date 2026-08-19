@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install \"hivescope @ git+https://github.com/JarbasHiveMind/hivescope@dev\"\npip install -e \".[dev]\"\n```\n\nFor skill e2e tests (requires a live OVOS installation):\n\n```bash\npip install -e \".[dev,ovos]\"\n```\n\n---"
+      "content": "pip install \"hivescope @ git+https://github.com/JarbasHiveMind/hivescope@dev\"\npip install -e \".[dev]\"\n\nFor skill e2e tests (requires a live OVOS installation):\n\npip install -e \".[dev,ovos]\"\n\n---"
     }
   ],
   "languages": [],

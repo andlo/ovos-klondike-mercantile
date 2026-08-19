@@ -31,15 +31,15 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-stt-http-server\n```\n\nThe server only hosts plugins. Install at least one STT plugin alongside it:\n\n```bash\npip install ovos-stt-plugin-fasterwhisper\n```\n\nOptional extras:\n\n| Extra | Installs | Enables |\n|-------|----------|---------|\n| `mcp` | `pip install \"ovos-stt-http-server[mcp]\"` | embedded [MCP](#mcp--model-context-protocol) server at `/mcp` (requires `--mcp` flag) |\n| `audio` | `pip install \"ovos-stt-http-server[audio]\"` | non-WAV audio decoding (`pydub`) for the vendor-compat routers |"
+      "content": "pip install ovos-stt-http-server\n\nThe server only hosts plugins. Install at least one STT plugin alongside it:\n\npip install ovos-stt-plugin-fasterwhisper\n\nOptional extras:\n\n| Extra | Installs | Enables |\n|-------|----------|---------|\n| `mcp` | `pip install \"ovos-stt-http-server[mcp]\"` | embedded [MCP](#mcp--model-context-protocol) server at `/mcp` (requires `--mcp` flag) |\n| `audio` | `pip install \"ovos-stt-http-server[audio]\"` | non-WAV audio decoding (`pydub`) for the vendor-compat routers |"
     },
     {
       "heading": "Configuration",
-      "content": "The STT plugin is configured exactly as it would be inside an assistant, under\n`mycroft.conf`:\n\n```json\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-deepgram\",\n    \"ovos-stt-plugin-deepgram\": {\"key\": \"xxxxx\"}\n  }\n}\n```"
+      "content": "The STT plugin is configured exactly as it would be inside an assistant, under\n`mycroft.conf`:\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-deepgram\",\n    \"ovos-stt-plugin-deepgram\": {\"key\": \"xxxxx\"}\n  }\n}"
     },
     {
       "heading": "Claude Desktop / claude-code (`claude_desktop_config.json`)",
-      "content": "```json\n{\n  \"mcpServers\": {\n    \"ovos-stt\": {\n      \"transport\": \"http\",\n      \"url\": \"http://localhost:8080/mcp\"\n    }\n  }\n}\n```"
+      "content": "{\n  \"mcpServers\": {\n    \"ovos-stt\": {\n      \"transport\": \"http\",\n      \"url\": \"http://localhost:8080/mcp\"\n    }\n  }\n}"
     }
   ],
   "languages": [],

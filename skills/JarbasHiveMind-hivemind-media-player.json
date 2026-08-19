@@ -34,15 +34,15 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install hivemind-player-protocol\n```\n\nOptional extras (VLC, MPV backends):\n\n```bash\npip install \"hivemind-player-protocol[extras]\"\n```\n\nOr from source:\n\n```bash\ngit clone https://github.com/JarbasHiveMind/hivemind-media-player\ncd hivemind-media-player\npip install -e .\n```\n\n### Dependencies\n\nThe whole stack rides the **`ovos-bus-client` 2.x line** (HiveMind core 4.6.x\nrequires it). That line, and the OVOS components updated to ride it\n(`ovos-audio`, OCP, `ovos-plugin-manager`, `ovos-workshop`), are currently\npublished as **prereleases**.\n\n`pyproject.toml` pins each dependency to its *prerelease floor* (for example\n`ovos-bus-client>=2.0.0a3`). A plain `pip install` then resolves the right\nversions. **No `--pre` flag is needed.** Do not add `--pre`. The floor pins\nopt into the pre\u2026"
+      "content": "pip install hivemind-player-protocol\n\nOptional extras (VLC, MPV backends):\n\npip install \"hivemind-player-protocol[extras]\"\n\nOr from source:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-media-player\ncd hivemind-media-player\npip install -e .\n\n### Dependencies\n\nThe whole stack rides the **`ovos-bus-client` 2.x line** (HiveMind core 4.6.x\nrequires it). That line, and the OVOS components updated to ride it\n(`ovos-audio`, OCP, `ovos-plugin-manager`, `ovos-workshop`), are currently\npublished as **prereleases**.\n\n`pyproject.toml` pins each dependency to its *prerelease floor* (for example\n`ovos-bus-client>=2.0.0a3`). A plain `pip install` then resolves the right\nversions. **No `--pre` flag is needed.** Do not add `--pre`. The floor pins\nopt into the prereleases, package by package, and ke\u2026"
     },
     {
       "heading": "1. Configure hivemind-core",
-      "content": "Edit `~/.config/hivemind-core/server.json` on the player device:\n\n```json\n{\n  \"agent_protocol\": {\n    \"module\": \"hivemind-player-agent-plugin\",\n    \"hivemind-player-agent-plugin\": {}\n  }\n}\n```"
+      "content": "Edit `~/.config/hivemind-core/server.json` on the player device:\n\n{\n  \"agent_protocol\": {\n    \"module\": \"hivemind-player-agent-plugin\",\n    \"hivemind-player-agent-plugin\": {}\n  }\n}"
     },
     {
       "heading": "2. Configure ovos-audio",
-      "content": "Edit `~/.config/mycroft/mycroft.conf` on the same device:\n\n```json\n{\n  \"play_wav_cmdline\": \"paplay %1\",\n  \"play_mp3_cmdline\": \"mpg123 %1\",\n  \"play_ogg_cmdline\": \"ogg123 -q %1\",\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\"\n  },\n  \"Audio\": {\n    \"backends\": {\n      \"OCP\": {\n        \"type\": \"ovos_common_play\",\n        \"preferred_audio_services\": [\"mpv\", \"vlc\"],\n        \"active\": true\n      },\n      \"vlc\": { \"type\": \"vlc\", \"active\": true },\n      \"mpv\": { \"type\": \"mpv\",  \"active\": true }\n    }\n  }\n}\n```"
+      "content": "Edit `~/.config/mycroft/mycroft.conf` on the same device:\n\n{\n  \"play_wav_cmdline\": \"paplay %1\",\n  \"play_mp3_cmdline\": \"mpg123 %1\",\n  \"play_ogg_cmdline\": \"ogg123 -q %1\",\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\"\n  },\n  \"Audio\": {\n    \"backends\": {\n      \"OCP\": {\n        \"type\": \"ovos_common_play\",\n        \"preferred_audio_services\": [\"mpv\", \"vlc\"],\n        \"active\": true\n      },\n      \"vlc\": { \"type\": \"vlc\", \"active\": true },\n      \"mpv\": { \"type\": \"mpv\",  \"active\": true }\n    }\n  }\n}"
     }
   ],
   "languages": [],

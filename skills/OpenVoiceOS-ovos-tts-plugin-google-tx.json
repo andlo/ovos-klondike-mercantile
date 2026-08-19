@@ -32,11 +32,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-tts-plugin-google-tx\n```"
+      "content": "pip install ovos-tts-plugin-google-tx"
     },
     {
       "heading": "Configuration",
-      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-google-tx\"\n  }\n```\n\n### Extra options\n\nYou can override the language. Otherwise the plugin uses the system\nlanguage.\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-google-tx\",\n    \"ovos-tts-plugin-google-tx\": {\n      \"slow\": false,\n      \"lang\": \"fr\",\n      \"tld\": \"ca\"\n    }\n  }\n```\n\nSet the `tld` option to [force an accent](https://gtts.readthedocs.io/en/latest/module.html#localized-accents).\nThis option also helps when a network blocks `google.com` but allows a\nlocal or different Google host.\n\nThe plugin recognizes the following regional accents and dialects, and\npicks the matching `tld` for each:\n\n```python"
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-google-tx\"\n  }\n\n### Extra options\n\nYou can override the language. Otherwise the plugin uses the system\nlanguage.\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-google-tx\",\n    \"ovos-tts-plugin-google-tx\": {\n      \"slow\": false,\n      \"lang\": \"fr\",\n      \"tld\": \"ca\"\n    }\n  }\n\nSet the `tld` option to [force an accent](https://gtts.readthedocs.io/en/latest/module.html#localized-accents).\nThis option also helps when a network blocks `google.com` but allows a\nlocal or different Google host.\n\nThe plugin recognizes the following regional accents and dialects, and\npicks the matching `tld` for each:"
     }
   ],
   "languages": [],

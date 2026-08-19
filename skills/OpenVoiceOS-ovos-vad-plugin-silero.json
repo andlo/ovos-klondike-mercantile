@@ -17,7 +17,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Vad Plugin",
+  "component_type": "Wake Word Plugin",
   "type_group": "Plugin",
   "stars": 2,
   "forks": 3,
@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-vad-plugin-silero\n```"
+      "content": "pip install ovos-vad-plugin-silero"
     }
   ],
   "languages": [],

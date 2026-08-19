@@ -19,7 +19,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Audio Plugin",
+  "component_type": "STT Plugin",
   "type_group": "Plugin",
   "stars": 6,
   "forks": 5,
@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install ovos-stt-plugin-fasterwhisper\n```"
+      "content": "pip install ovos-stt-plugin-fasterwhisper"
     },
     {
       "heading": "Configuration",
-      "content": "This example configures the `large-v3` model to run on GPU:\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-fasterwhisper\",\n    \"ovos-stt-plugin-fasterwhisper\": {\n        \"model\": \"large-v3\",\n        \"use_cuda\": true,\n        \"compute_type\": \"float16\",\n        \"beam_size\": 5,\n        \"cpu_threads\": 4\n    }\n  }\n```\n\nThis example uses Faster Whisper for language detection. It works only with `ovos-dinkum-listener`.\n\n```json\n  \"listener\": {\n    \"audio_transformers\": {\n        \"ovos-audio-transformer-plugin-fasterwhisper\": {\n            \"model\": \"small\"\n        }\n    }\n  }\n```"
+      "content": "This example configures the `large-v3` model to run on GPU:\n\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-fasterwhisper\",\n    \"ovos-stt-plugin-fasterwhisper\": {\n        \"model\": \"large-v3\",\n        \"use_cuda\": true,\n        \"compute_type\": \"float16\",\n        \"beam_size\": 5,\n        \"cpu_threads\": 4\n    }\n  }\n\nThis example uses Faster Whisper for language detection. It works only with `ovos-dinkum-listener`.\n\n  \"listener\": {\n    \"audio_transformers\": {\n        \"ovos-audio-transformer-plugin-fasterwhisper\": {\n            \"model\": \"small\"\n        }\n    }\n  }"
     }
   ],
   "languages": [],

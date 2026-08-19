@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "Install the plugin with `pip`:\n\n```bash\npip install ovos-m2v-pipeline\n```\n\n---"
+      "content": "Install the plugin with `pip`:\n\npip install ovos-m2v-pipeline\n\n---"
     },
     {
       "heading": "Configuration",
-      "content": "In your `mycroft.conf`:\n\n```json\n{\n  \"intents\": {\n    \"ovos-m2v-pipeline\": {\n      \"model\": \"Jarbas/ovos-model2vec-intents-LaBSE\",\n      \"conf_high\": 0.7,\n      \"conf_medium\": 0.5,\n      \"conf_low\": 0.15,\n      \"ignore_intents\": []\n    }\n  }\n}\n```\n\n* `model`: Path to your pretrained Model2Vec model or huggingface repo.\n* `conf_xxx`: Minimum confidence threshold for intent matching.\n* `ignore_intents`: List of intents to ignore during matching.\n* `prototype_strategy`: Scoring strategy for prototype mode (default `\"max_over_all\"`, back-compatible). See [docs/strategies.md](docs/strategies.md).\n* `prototype_top_k`: Top-k cosines averaged by the `top_k_mean` strategy (default `3`).\n* `prototype_tau`: Softmax temperature for the `softmax_weighted` strategy (default `0.1`).\n\n> The Model2Vec mode\u2026"
+      "content": "In your `mycroft.conf`:\n\n{\n  \"intents\": {\n    \"ovos-m2v-pipeline\": {\n      \"model\": \"Jarbas/ovos-model2vec-intents-LaBSE\",\n      \"conf_high\": 0.7,\n      \"conf_medium\": 0.5,\n      \"conf_low\": 0.15,\n      \"ignore_intents\": []\n    }\n  }\n}\n\n* `model`: Path to your pretrained Model2Vec model or huggingface repo.\n* `conf_xxx`: Minimum confidence threshold for intent matching.\n* `ignore_intents`: List of intents to ignore during matching.\n* `prototype_strategy`: Scoring strategy for prototype mode (default `\"max_over_all\"`, back-compatible). See [docs/strategies.md](docs/strategies.md).\n* `prototype_top_k`: Top-k cosines averaged by the `top_k_mean` strategy (default `3`).\n* `prototype_tau`: Softmax temperature for the `softmax_weighted` strategy (default `0.1`).\n\n> The Model2Vec model is pretrai\u2026"
     }
   ],
   "languages": [],

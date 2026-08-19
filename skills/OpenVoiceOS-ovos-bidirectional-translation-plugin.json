@@ -30,7 +30,7 @@
   "setup_notes": [
     {
       "heading": "Configuration",
-      "content": "```\n\"utterance_transformers\": {\n    \"ovos-utterance-translation-plugin\": {\n      \"bidirectional\": true,\n      \"verify_lang\": false,\n      \"ignore_invalid\": true,\n      \"translate_secondary_langs\": false\n    }\n},\n\"dialog_transformers\": {\n    \"ovos-dialog-translation-plugin\": {}\n}\n```"
+      "content": "\"utterance_transformers\": {\n    \"ovos-utterance-translation-plugin\": {\n      \"bidirectional\": true,\n      \"verify_lang\": false,\n      \"ignore_invalid\": true,\n      \"translate_secondary_langs\": false\n    }\n},\n\"dialog_transformers\": {\n    \"ovos-dialog-translation-plugin\": {}\n}"
     }
   ],
   "languages": [],

@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install phoonnx\n```\n\n`espeak-ng` must be available in your base OS (install via your distro package manager) \u2014 same requirement as before."
+      "content": "pip install phoonnx\n\n`espeak-ng` must be available in your base OS (install via your distro package manager) \u2014 same requirement as before."
     },
     {
       "heading": "Configuration mapping",
-      "content": "Replace the plugin module and key. Voice IDs use the `piper/<lang_code>-<name>` format:\n\n**Before:**\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-piper\",\n  \"ovos-tts-plugin-piper\": {\n    \"voice\": \"alan-low\"\n  }\n}\n```\n\n**After:**\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"piper/en_GB-alan-low\"\n  }\n}\n```\n\n### Local model path\n\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"model\": \"/path/to/model.onnx\",\n    \"model_config\": \"/path/to/model.onnx.json\"\n  }\n}\n```\n\n### Remote URL\n\n```json\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"model\": \"https://huggingface.co/poisson-fish/piper-vasco/resolve/main/onnx/vasco.onnx\",\n    \"model_config\": \"https://huggingf\u2026"
+      "content": "Replace the plugin module and key. Voice IDs use the `piper/<lang_code>-<name>` format:\n\n**Before:**\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-piper\",\n  \"ovos-tts-plugin-piper\": {\n    \"voice\": \"alan-low\"\n  }\n}\n\n**After:**\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"voice\": \"piper/en_GB-alan-low\"\n  }\n}\n\n### Local model path\n\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"model\": \"/path/to/model.onnx\",\n    \"model_config\": \"/path/to/model.onnx.json\"\n  }\n}\n\n### Remote URL\n\n\"tts\": {\n  \"module\": \"ovos-tts-plugin-phoonnx\",\n  \"ovos-tts-plugin-phoonnx\": {\n    \"model\": \"https://huggingface.co/poisson-fish/piper-vasco/resolve/main/onnx/vasco.onnx\",\n    \"model_config\": \"https://huggingface.co/poisson-fish/piper-vasco/resolve/main\u2026"
     }
   ],
   "languages": [],

@@ -39,15 +39,15 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "```bash\npip install hivemind_bus_client\n```\n\nAsync client (asyncio-native applications):\n\n```bash\npip install \"hivemind_bus_client[async]\"\n```\n\nVerify:\n\n```bash\nhivemind-client --help\n```"
+      "content": "pip install hivemind_bus_client\n\nAsync client (asyncio-native applications):\n\npip install \"hivemind_bus_client[async]\"\n\nVerify:\n\nhivemind-client --help"
     },
     {
       "heading": "2. Configure the satellite",
-      "content": "On the satellite machine:\n\n```bash\nhivemind-client set-identity \\\n  --key   \"your-access-key\" \\\n  --password \"your-password\" \\\n  --host  ws://192.168.1.10 \\\n  --port  5678 \\\n  --siteid living-room\n```\n\nCredentials are saved to `~/.config/hivemind/_identity.json` and are read automatically by the client."
+      "content": "On the satellite machine:\n\nhivemind-client set-identity \\\n  --key   \"your-access-key\" \\\n  --password \"your-password\" \\\n  --host  ws://192.168.1.10 \\\n  --port  5678 \\\n  --siteid living-room\n\nCredentials are saved to `~/.config/hivemind/_identity.json` and are read automatically by the client."
     },
     {
       "heading": "Forget the pinned key of a master that was reinstalled",
-      "content": "hivemind-client forget-server --host 192.168.1.10 --port 5678\n```\n\n## Troubleshooting\n\n**`RuntimeError: NodeIdentity not set`**: Run `hivemind-client set-identity` or pass `key`, `password`, and `host` to the constructor.\n\n**`RuntimeError: timed out waiting for handshake`**: The hub is unreachable or the port is wrong. Verify the hub is running (`hivemind-core listen`) and the firewall allows port 5678. Try `hivemind-client ping` first.\n\n**`got encrypted message, but could not decrypt!`**: The access key or password does not match what was registered on the hub. Re-run `hivemind-core add-client` and update the satellite identity.\n\n**`server Noise static key CHANGED`**: The master is answering with a different encryption key than the one this node pinned. If you reinstalled or restored the\u2026"
+      "content": "hivemind-client forget-server --host 192.168.1.10 --port 5678\n\n## Troubleshooting\n\n**`RuntimeError: NodeIdentity not set`**: Run `hivemind-client set-identity` or pass `key`, `password`, and `host` to the constructor.\n\n**`RuntimeError: timed out waiting for handshake`**: The hub is unreachable or the port is wrong. Verify the hub is running (`hivemind-core listen`) and the firewall allows port 5678. Try `hivemind-client ping` first.\n\n**`got encrypted message, but could not decrypt!`**: The access key or password does not match what was registered on the hub. Re-run `hivemind-core add-client` and update the satellite identity.\n\n**`server Noise static key CHANGED`**: The master is answering with a different encryption key than the one this node pinned. If you reinstalled or restored the mast\u2026"
     }
   ],
   "languages": [],

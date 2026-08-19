@@ -34,7 +34,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "edit `~/.config/mycroft/ovos_backend_manager.conf`\n\n```javascript\n{\n    \"server\": {\n        \"url\": \"http://XXX.XXX.XXX.XX:6712\",\n        \"version\": \"v1\",\n        \"admin_key\": \"XXXX\"\n    }\n}\n```"
+      "content": "edit `~/.config/mycroft/ovos_backend_manager.conf`\n\n{\n    \"server\": {\n        \"url\": \"http://XXX.XXX.XXX.XX:6712\",\n        \"version\": \"v1\",\n        \"admin_key\": \"XXXX\"\n    }\n}"
     }
   ],
   "languages": [],
