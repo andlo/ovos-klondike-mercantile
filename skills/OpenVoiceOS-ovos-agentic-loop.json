@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-agentic-loop",
+  "skill_id": null,
+  "name": "ovos-agentic-loop",
+  "description": "Agent-loop `ChatEngine` plugins for OVOS. Implements seven agentic reasoning patterns (ReAct, Plan-and-Execute, Reflexion, Self-Ask, Chain-of-Thought, CRITIC, Tree-of-Thoughts), five built-in toolboxes, SKILL.md integration, and AGENTS.md context management \u2014 all as standard OPM plugins.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-agentic-loop",
+  "package_name": "ovos-agentic-loop",
+  "pypi_version": "0.1.0",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Chat Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 9,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-agentic-loop"
+    },
+    {
+      "heading": "Persona JSON (all-in-one config)",
+      "content": "{\n  \"name\": \"MyAgent\",\n  \"solvers\": [\"ovos-react-loop\"],\n  \"ovos-react-loop\": {\n    \"brain\": \"ovos-chat-openai-plugin\",\n    \"ovos-chat-openai-plugin\": {\n      \"api_url\": \"http://localhost:11434/v1/chat/completions\"\n    },\n    \"toolboxes\": [\"ovos-math-tools\", \"ovos-web-search-tools\", \"ovos-clock-tools\"],\n    \"max_iterations\": 10\n  }\n}\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-03-18T17:09:43Z",
+  "last_updated": "2026-03-18T17:50:53.763778Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

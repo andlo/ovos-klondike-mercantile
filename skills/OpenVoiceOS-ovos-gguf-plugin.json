@@ -1,0 +1,47 @@
+{
+  "id": "OpenVoiceOS-ovos-gguf-plugin",
+  "skill_id": null,
+  "name": "ovos-gguf-plugin",
+  "description": "A unified GGUF wrapper for OpenVoiceOS. It covers chat, summarization, dialog rewriting, translation, language detection, and text embeddings, all backed by quantized GGUF models through `llama-cpp-python`.",
+  "examples": [],
+  "tags": [
+    "gguf",
+    "plugin",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-gguf-plugin",
+  "package_name": "ovos-gguf-plugin",
+  "pypi_version": "1.2.3a1",
+  "license": "MIT",
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Transformer Plugin",
+  "type_group": "Plugin",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 15,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-gguf-plugin\n\nFor GPU inference, rebuild `llama-cpp-python` with CUDA support first:\n\nCMAKE_ARGS=\"-DGGML_CUDA=on\" FORCE_CMAKE=1 pip install llama-cpp-python --force-reinstall --no-cache-dir"
+    },
+    {
+      "heading": "Configuration",
+      "content": "All wrappers share the same config keys:\n\n| Key | Default | Description |\n|---|---|---|\n| `model` | required | Local `.gguf` path, HuggingFace repo id, or friendly name (embeddings) |\n| `remote_filename` | `*Q4_K_M.gguf` | Glob for selecting the file from a HF repo |\n| `n_gpu_layers` | `0` | GPU layers to offload (`-1` = all) |\n| `chat_format` | `None` | llama.cpp chat format (auto-detected for most models) |\n| `verbose` | `True` | llama.cpp verbosity |\n| `max_tokens` | `512` | Maximum tokens to generate |\n| `system_prompt` | locale default | Override the system prompt |\n\nSee [`docs/configuration.md`](docs/configuration.md) for the full reference, including per-wrapper options and GPU build instructions."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-07-20T23:33:09Z",
+  "last_updated": "2026-08-13T23:14:37.502402Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-media-provider-youtube-music",
+  "skill_id": null,
+  "name": "ovos-media-provider-youtube-music",
+  "description": "OVOS MediaProvider plugin for YouTube Music (replaces ovos-skill-youtube-music)",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-provider-youtube-music",
+  "package_name": "ovos-media-provider-youtube-music",
+  "pypi_version": "0.0.1a3",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Provider Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-provider-youtube-music"
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `max_results` | `10` | Maximum number of results returned per search. |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-22T23:10:54Z",
+  "last_updated": "2026-08-13T18:40:15.466723Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

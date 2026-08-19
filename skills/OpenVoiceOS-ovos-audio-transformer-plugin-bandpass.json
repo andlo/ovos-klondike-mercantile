@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-audio-transformer-plugin-bandpass",
+  "skill_id": null,
+  "name": "ovos-audio-transformer-plugin-bandpass",
+  "description": "Band-pass filter audio transformer for OpenVoiceOS",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-audio-transformer-plugin-bandpass",
+  "package_name": "ovos-audio-transformer-plugin-bandpass",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Audio Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-audio-transformer-plugin-bandpass"
+    },
+    {
+      "heading": "Configure",
+      "content": "Enable it in `mycroft.conf` under `audio_transformers` (any component that runs\nthe audio-transformer pipeline \u2014 the listener, or the STT server \u2014 will apply it):\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-bandpass\": {\n      \"low_hz\": 300,\n      \"high_hz\": 3400,\n      \"order\": 4,\n      \"sample_rate\": 16000\n    }\n  }\n}\n\n| Option | Default | Meaning |\n|--------|---------|---------|\n| `low_hz` | `300` | Lower edge of the pass-band, in Hz. |\n| `high_hz` | `3400` | Upper edge of the pass-band, in Hz. |\n| `order` | `4` | Butterworth filter order; higher is a steeper roll-off. |\n| `sample_rate` | `16000` | Sample rate of the incoming PCM audio, in Hz. |\n\nEdges are clamped into the open interval below Nyquist, so an aggressive band on a\nlow sample rate degrades gracefully inst\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-07-17T19:30:33Z",
+  "last_updated": "2026-07-17T19:31:35.483963Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

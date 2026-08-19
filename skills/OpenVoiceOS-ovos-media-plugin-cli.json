@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-media-plugin-cli",
+  "skill_id": null,
+  "name": "ovos-media-plugin-cli",
+  "description": "Generic CLI-command playback plugin for ovos-media (and the legacy ovos-audio service)",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-cli",
+  "package_name": "ovos-media-plugin-cli",
+  "pypi_version": "0.0.3a1",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Audio Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-plugin-cli\n\nInstall `sox` too. It gives the widest format and URL coverage when the\nplugin auto-detects a player."
+    },
+    {
+      "heading": "Configuration",
+      "content": "New `ovos-media`:\n\n{\n  \"media\": {\n    \"preferred_audio_services\": [\"mplayer\", \"vlc\", \"cli\"],\n    \"audio_players\": {\n      \"cli\": {\n        \"module\": \"ovos-media-audio-plugin-cli\",\n        \"aliases\": [\"Command line\", \"CLI Player\"],\n        \"active\": true,\n        \"command\": \"mpv --no-terminal\"\n      }\n    }\n  }\n}\n\nOmit `command` to auto-detect. Legacy `ovos-audio`:\n\n{\n  \"Audio\": {\n    \"backends\": {\n      \"cli\": { \"type\": \"cli\", \"active\": true, \"command\": \"mpv --no-terminal\" }\n    }\n  }\n}\n\n### Keys\n\n| Key | Type | Default | Description |\n|-----|------|---------|-------------|\n| `command` (alias `play_cmd`) | str | _auto-detect_ | CLI player command. The plugin appends the URI as the last argument. |\n| `active` | bool | `true` | Enable or disable this backend instance. |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-25T17:01:29Z",
+  "last_updated": "2026-08-13T11:28:28.720746Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

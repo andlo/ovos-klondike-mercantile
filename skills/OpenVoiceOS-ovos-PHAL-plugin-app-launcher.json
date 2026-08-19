@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-app-launcher",
+  "skill_id": null,
+  "name": "ovos-PHAL-plugin-app-launcher",
+  "description": "PHAL plugin: desktop application launcher OS actions over the OVOS messagebus",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-PHAL-plugin-app-launcher",
+  "package_name": "ovos-PHAL-plugin-app-launcher",
+  "pypi_version": "0.0.1a1",
+  "license": null,
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 2,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Add to `ovos.conf` under the `PHAL` section or plugin settings:\n\n{\n  \"ovos-phal-plugin-app-launcher\": {\n    \"skip_categories\": [\"Settings\", \"ConsoleOnly\", \"Building\"],\n    \"skip_keywords\": [],\n    \"target_categories\": [],\n    \"target_keywords\": [],\n    \"blacklist\": [],\n    \"aliases\": {\"kcalc\": [\"calculator\"]},\n    \"user_commands\": {},\n    \"require_icon\": true,\n    \"require_categories\": true,\n    \"match_threshold\": 0.85,\n    \"terminate_all\": false,\n    \"disable_window_manager\": false\n  }\n}\n\n| Key | Type | Default | Description |\n|---|---|---|---|\n| `skip_categories` | list[str] | `[\"Settings\",\"ConsoleOnly\",\"Building\"]` | Desktop categories to exclude |\n| `skip_keywords` | list[str] | `[]` | Desktop keywords to exclude |\n| `target_categories` | list[str] | `[]` | Only include apps in these c\u2026"
+    },
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-PHAL-plugin-app-launcher"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-10T19:14:00Z",
+  "last_updated": "2026-06-13T02:14:32.280399Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

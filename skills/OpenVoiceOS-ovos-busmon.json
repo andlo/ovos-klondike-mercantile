@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-busmon",
+  "skill_id": null,
+  "name": "ovos-busmon",
+  "description": "A DevTools-style live log for the OpenVoiceOS messagebus.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-busmon",
+  "package_name": "ovos-busmon",
+  "pypi_version": "0.1.0",
+  "license": "MIT",
+  "author": "OpenVoiceOS",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 2,
+  "forks": 0,
+  "open_issues": 25,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-busmon\n\nOr from source:\n\ngit clone https://github.com/OpenVoiceOS/ovos-busmon\ncd ovos-busmon\npip install -e .[dev]"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Set every option through environment variables, or through a `.env` file:\n\n| Variable | Default | Description |\n|---|---|---|\n| `OVOS_BUS_HOST` | `localhost` | OVOS messagebus host |\n| `OVOS_BUS_PORT` | `8181` | OVOS messagebus port |\n| `BUSMON_HOST` | `127.0.0.1` | Address to bind the HTTP service |\n| `BUSMON_PORT` | `8005` | Port to bind the HTTP service |\n| `BUSMON_TOKEN` | (empty) | Shared-secret token. When set, the API needs it |\n| `BUSMON_USERNAME` | (empty) | HTTP Basic auth username |\n| `BUSMON_PASSWORD` | (empty) | HTTP Basic auth password |\n| `BUFFER_SIZE` | `2000` | Ring buffer capacity (messages) |\n\nAuthentication is off until you set `BUSMON_TOKEN`, or `BUSMON_USERNAME` and\n`BUSMON_PASSWORD`. There are no default credentials."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-04-15T00:23:51Z",
+  "last_updated": "2026-07-23T19:34:33.541104Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

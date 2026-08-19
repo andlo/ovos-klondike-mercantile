@@ -1,0 +1,39 @@
+{
+  "id": "OpenVoiceOS-ovos-markov-pipeline-plugin",
+  "skill_id": null,
+  "name": "ovos-markov-pipeline-plugin",
+  "description": "OVOS intent pipeline plugin using Markov chain perplexity ensemble",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin",
+  "package_name": "ovos-markov-pipeline-plugin",
+  "pypi_version": "0.5.0a2",
+  "license": "NOASSERTION",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Pipeline Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 2,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-markov-pipeline-plugin\n\nOptional stemming support (recommended for non-English use):\n\npip install ovos-markov-pipeline-plugin[stem]"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-05-19T23:04:37Z",
+  "last_updated": "2026-07-31T22:36:28.888927Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

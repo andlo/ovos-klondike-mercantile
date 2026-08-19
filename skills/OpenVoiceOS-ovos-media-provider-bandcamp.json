@@ -1,0 +1,39 @@
+{
+  "id": "OpenVoiceOS-ovos-media-provider-bandcamp",
+  "skill_id": null,
+  "name": "ovos-media-provider-bandcamp",
+  "description": "OVOS MediaProvider plugin for Bandcamp (replaces ovos-skill-bandcamp)",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-provider-bandcamp",
+  "package_name": "ovos-media-provider-bandcamp",
+  "pypi_version": "0.0.1a4",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Provider Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-provider-bandcamp\n\nThe plugin registers under the `opm.media.provider` entry-point group as `bandcamp`. The OCP pipeline loads it in-process. There is nothing to configure.\n\n### Configuration\n\n| Key | Default | Description |\n| --- | --- | --- |\n| `max_pages` | `1` | Number of Bandcamp search-result pages to walk per query. |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-22T22:52:36Z",
+  "last_updated": "2026-08-15T03:29:26.955975Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

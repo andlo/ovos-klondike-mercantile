@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-media-provider-mass",
+  "skill_id": null,
+  "name": "ovos-media-provider-mass",
+  "description": "OVOS **MediaProvider** plugin for Music Assistant.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-provider-mass",
+  "package_name": "ovos-media-provider-mass",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Provider Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-provider-mass\n\n> **Note (ovos-media sprint):** the `opm.media.provider` plugin type lives in\n> `ovos-plugin-manager`'s `feat/media-provider-plugin-type` branch and is not on\n> PyPI yet, so until it ships you need:\n> ```bash\n> pip install git+https://github.com/OpenVoiceOS/ovos-plugin-manager@feat/media-provider-plugin-type\n> ```\n> CI installs it the same way. `opm-check` is wired back once that support is released."
+    },
+    {
+      "heading": "Configure",
+      "content": "Per-provider settings live under `media_providers` in `mycroft.conf`, keyed by\nthe provider's entry-point name:\n\n{\n  \"media_providers\": {\n    \"music_assistant\": {\n      \"url\": \"http://192.168.1.100:8095\",\n      \"max_results\": 10\n    }\n  }\n}\n\n`url` is required (the provider reports itself unavailable without it). Set\n`\"enabled\": false` to disable without uninstalling."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-23T17:15:35Z",
+  "last_updated": "2026-08-13T18:40:52Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

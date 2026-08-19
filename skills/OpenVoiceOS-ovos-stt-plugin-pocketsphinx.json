@@ -1,0 +1,51 @@
+{
+  "id": "OpenVoiceOS-ovos-stt-plugin-pocketsphinx",
+  "skill_id": null,
+  "name": "ovos-stt-plugin-pocketsphinx",
+  "description": "pocketsphinx STT plugin for mycroft",
+  "examples": [],
+  "tags": [
+    "asr",
+    "automatic-speech-recognition",
+    "maintainer-wanted",
+    "pocketsphinx",
+    "speech-recognition",
+    "speech-to-text",
+    "stt"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-stt-plugin-pocketsphinx",
+  "package_name": "ovos-stt-plugin-pocketsphinx",
+  "pypi_version": "0.1.1",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "STT Plugin",
+  "type_group": "Plugin",
+  "stars": 1,
+  "forks": 1,
+  "open_issues": 2,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-stt-plugin-pocketsphinx`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "\"stt\": {\n    \"module\": \"ovos-stt-plugin-pocketsphinx\"\n  }\n \n\n### Advanced configuration\n\nIf you do not want to use the default english model (included) you configure this plugin to use a different one\n\n[Iberian Languages](https://github.com/JarbasIberianLanguageResources/iberian-sphinx) models can be found here, [SourceForge](https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/) also has models for other languages\n\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-pocketsphinx\",\n    \"ovos-stt-plugin-pocketsphinx\": {\n      \"acoustic-model\": \"path/to/hmm/folder\",\n      \"language-model\": \"path/to/lm/file.lm\",\n      \"pronounciation-dictionary\": \"path/to/phonemes/file.dict\"\n    }\n  }"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2020-12-03T03:12:57Z",
+  "last_updated": "2021-09-01T03:36:54.674785Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

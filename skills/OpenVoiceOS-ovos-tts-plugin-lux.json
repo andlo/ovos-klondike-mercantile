@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-tts-plugin-lux",
+  "skill_id": null,
+  "name": "ovos-tts-plugin-lux",
+  "description": "A LuxTTS plugin for the OpenVoiceOS voice assistant platform. LuxTTS is a",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-tts-plugin-lux",
+  "package_name": "ovos-tts-plugin-lux",
+  "pypi_version": null,
+  "license": null,
+  "author": "OpenVoiceOS",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-tts-plugin-lux"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The plugin needs a reference audio file for voice cloning. Add this to\n`mycroft.conf`:\n\n{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-lux\",\n    \"ovos-tts-plugin-lux\": {\n      \"prompt_audio\": \"/path/to/reference.wav\",\n      \"device\": \"cuda\",  # or \"cpu\" or \"mps\"\n      \"model_path\": \"YatharthS/LuxTTS\",\n      \"rms\": 0.01,\n      \"num_steps\": 4,\n      \"t_shift\": 0.9,\n      \"speed\": 1.0,\n      \"return_smooth\": false,\n      \"ref_duration\": 5\n    }\n  }\n}\n\n| Parameter | Type | Default | Description |\n|-----------|------|---------|-------------|\n| `model_path` | str | \"YatharthS/LuxTTS\" | HuggingFace model path |\n| `device` | str | \"cuda\" | Device to use (cuda/cpu/mps) |\n| `threads` | int | 4 | Number of threads for CPU |\n| `prompt_audio` | str | None | Path to reference audio file (required) |\n| `rms\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-03-12T22:28:39Z",
+  "last_updated": "2026-08-10T17:43:50Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

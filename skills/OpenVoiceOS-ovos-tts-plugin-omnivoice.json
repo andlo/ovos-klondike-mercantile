@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-tts-plugin-omnivoice",
+  "skill_id": null,
+  "name": "ovos-tts-plugin-omnivoice",
+  "description": "OmniVoice massively-multilingual zero-shot TTS plugin for OpenVoiceOS",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-tts-plugin-omnivoice",
+  "package_name": "ovos-tts-plugin-omnivoice",
+  "pypi_version": "0.0.2a1",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "TTS Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "The OmniVoice runtime (PyTorch + the multi-GB `omnivoice` package) is a core\ndependency, so a plain install is enough to synthesize:\n\npip install ovos-tts-plugin-omnivoice\n\nIt runs on **CPU or GPU**. A GPU is optional and only makes synthesis faster; it is **not required**. The\ndefault install pulls PyPI's default torch build (CPU-capable). To target a\nspecific accelerator, reinstall torch from the matching index:"
+    },
+    {
+      "heading": "Configuration",
+      "content": "`mycroft.conf`:\n\n{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-omnivoice\",\n    \"ovos-tts-plugin-omnivoice\": {\n      \"lang\": \"en\",\n      \"voice\": \"auto\",\n      \"num_step\": 32\n    }\n  }\n}\n\nConfig keys:\n\n| Key | Default | Meaning |\n|-----|---------|---------|\n| `lang` | session lang | BCP-47 tag, mapped to an OmniVoice `language_id` (tables above) |\n| `voice` | `auto` | `auto`, `female`, `male`, or a preset name |\n| `instruct` | none | free-text voice-design string (overrides `voice`) |\n| `ref_audio` | none | path to a 3 to 10 s reference clip \u2192 voice cloning mode |\n| `ref_text` | none | transcript of `ref_audio` (auto-transcribed if omitted) |\n| `device` | auto | `cuda:0`, `cpu`, `mps`, or `xpu`, auto-detected (CUDA if available, else CPU) |\n| `dtype` | auto | torch dtype, `float16` on CUDA, `\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-07-15T00:44:41Z",
+  "last_updated": "2026-08-02T16:54:28.130491Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

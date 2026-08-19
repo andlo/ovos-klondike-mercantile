@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-media-provider-spotify",
+  "skill_id": null,
+  "name": "ovos-media-provider-spotify",
+  "description": "This is an OVOS **MediaProvider** plugin for Spotify. It replaces the search half of the deprecated OCP search skill `ovos-skill-spotify`.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-provider-spotify",
+  "package_name": "ovos-media-provider-spotify",
+  "pypi_version": "0.0.1a4",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Provider Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-provider-spotify\n\nThe plugin registers itself through the `opm.media.provider` entry point, so OCP picks it up automatically after install.\n\n[project.entry-points.\"opm.media.provider\"]\nspotify = \"ovos_media_provider_spotify:SpotifyMediaProvider\""
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `max_tracks` | `25` | Maximum tracks returned per matched album/artist. |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-25T22:45:16Z",
+  "last_updated": "2026-08-13T18:40:34.423584Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

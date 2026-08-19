@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-media-provider-youtube",
+  "skill_id": null,
+  "name": "ovos-media-provider-youtube",
+  "description": "OVOS MediaProvider plugin for YouTube (replaces ovos-skill-youtube)",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-provider-youtube",
+  "package_name": "ovos-media-provider-youtube",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Provider Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-provider-youtube"
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `max_results` | `10` | Maximum number of results returned per search. |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-22T22:52:52Z",
+  "last_updated": "2026-08-13T18:41:01Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

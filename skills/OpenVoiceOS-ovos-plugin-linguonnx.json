@@ -1,0 +1,39 @@
+{
+  "id": "OpenVoiceOS-ovos-plugin-linguonnx",
+  "skill_id": null,
+  "name": "ovos-plugin-linguonnx",
+  "description": "OVOS language detection and translation plugins backed by linguonnx (ONNX, offline)",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-plugin-linguonnx",
+  "package_name": "ovos-plugin-linguonnx",
+  "pypi_version": "0.3.2a3",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Translate Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 13,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-plugin-linguonnx\n\nModels download from HuggingFace on first use and are cached under\n`~/.cache/linguonnx/models/<model_id>/`. Constructing either plugin does not\ntrigger a download; the first real call does. On a server, prefetch instead \u2014\nsee [Prefetching](docs/translation.md#prefetching)."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-08-02T10:55:28Z",
+  "last_updated": "2026-08-13T22:32:36.716559Z",
+  "is_new_repo": true,
+  "is_recently_updated": true
+}

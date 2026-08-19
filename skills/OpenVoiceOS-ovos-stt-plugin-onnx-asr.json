@@ -1,0 +1,49 @@
+{
+  "id": "OpenVoiceOS-ovos-stt-plugin-onnx-asr",
+  "skill_id": null,
+  "name": "ovos-stt-plugin-onnx-asr",
+  "description": "An OpenVoiceOS Speech-to-Text plugin backed by the lightweight onnx-asr library. This plugin runs offline and supports high-performance models like Nvidia Canary, Parakeet, and OpenAI Whisper via ONNX Runtime.",
+  "examples": [],
+  "tags": [
+    "onnx",
+    "plugin",
+    "speech-to-text",
+    "stt",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-stt-plugin-onnx-asr",
+  "package_name": "ovos-stt-plugin-onnx-asr",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 5,
+  "forks": 0,
+  "open_issues": 7,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "To install the plugin, use `pip`. You also need to ensure the backend dependencies are installed.\n\npip install ovos-stt-plugin-onnx-asr\n\nTo run this plugin as a standalone server in a container, see\n[docs/docker.md](docs/docker.md) and [docs/deployment.md](docs/deployment.md).\nFor which model families load and how, see [docs/models.md](docs/models.md)."
+    },
+    {
+      "heading": "Configuration",
+      "content": "Configure the plugin in your `mycroft.conf` or user config.\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-onnx-asr\",\n    \"ovos-stt-plugin-onnx-asr\": {\n      \"model\": \"nemo-canary-1b-v2\",\n      \"quantization\": \"int8\"\n    }\n  }\n}\n\n\n### Per-language model resolution\n\nThe plugin ships a built-in best-model-per-language registry (`defaults.LANG_DEFAULTS`, ~90 languages \u2014 dedicated fine-tunes from the [OpenVoiceOS/stt-asr-onnx](https://huggingface.co/collections/OpenVoiceOS/stt-asr-onnx) collection, with parakeet-tdt-0.6b-v3 and whisper-base as multilingual coverage). Whisper ONNX exports are supported like any other model. The model for a request's language resolves in this order, trying the full BCP-47 tag before the nearest usable tag at each level:\n\n1. `lang2model` in the plugin config\n2. `ON\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-01-31T18:16:25Z",
+  "last_updated": "2026-01-31T18:18:34.239003Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

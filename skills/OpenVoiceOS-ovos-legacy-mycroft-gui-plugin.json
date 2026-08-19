@@ -1,0 +1,39 @@
+{
+  "id": "OpenVoiceOS-ovos-legacy-mycroft-gui-plugin",
+  "skill_id": null,
+  "name": "ovos-legacy-mycroft-gui-plugin",
+  "description": "This plugin is a GUI adapter for OpenVoiceOS. It translates the OVOS template API (the `SYSTEM_*` page templates) into the mycroft-gui Qt WebSocket protocol. Existing Qt5 and Qt6 GUI clients, such as mycroft-gui-qt6, can then show skill output without any QML from the skill itself. Skills do not ship QML files. This plugin renders every page from its own bundled `ui/*.qml` files.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-legacy-mycroft-gui-plugin",
+  "package_name": "ovos-legacy-mycroft-gui-plugin",
+  "pypi_version": null,
+  "license": null,
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Gui Adapter Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-legacy-mycroft-gui-plugin\n\nThe plugin registers under the `opm.gui_adapter` entry point:\n\n[project.entry-points.\"opm.gui_adapter\"]\novos-legacy-mycroft-gui = \"ovos_legacy_mycroft_gui:LegacyMycoftGuiPlugin\"\n\n[ovos-plugin-manager](https://github.com/OpenVoiceOS/ovos-plugin-manager) finds and loads it through this entry point. You do not call the plugin directly."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-03-12T03:21:01Z",
+  "last_updated": "2026-07-31T22:56:26Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

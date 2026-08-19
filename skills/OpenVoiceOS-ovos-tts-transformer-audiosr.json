@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-tts-transformer-audiosr",
+  "skill_id": null,
+  "name": "ovos-tts-transformer-audiosr",
+  "description": "Engine-agnostic audio super-resolution for OpenVoiceOS speech synthesis. It",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-tts-transformer-audiosr",
+  "package_name": "ovos-tts-transformer-audiosr",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "TTS Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-tts-transformer-audiosr"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Enable the transformer in `mycroft.conf` under the `tts_transformers` section,\nkeyed by the plugin name:\n\n\"tts_transformers\": {\n  \"ovos-tts-transformer-audiosr\": {\"engine\": \"novasr\"}\n}\n\nMultiple TTS transformers can be chained. Execution order follows each plugin's\n`priority` (this plugin defaults to `50`).\n\n### Engines\n\nSelect the super-resolution engine with the `engine` config key:\n\n| engine        | notes                                                                 |\n|---------------|-----------------------------------------------------------------------|\n| `novasr`      | **Default.** Natural on TTS output and lightweight.                    |\n| `lavasr`      | Higher-detail bandwidth extension. Can add audible high-frequency noise on already-wideband voices. |\n| `hifiganbwe`  | Hi\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-07-15T03:07:12Z",
+  "last_updated": "2026-08-01T14:03:08Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

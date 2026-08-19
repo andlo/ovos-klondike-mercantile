@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-messagebus-chat-plugin",
+  "skill_id": null,
+  "name": "ovos-messagebus-chat-plugin",
+  "description": "OVOS ChatEngine plugin (opm.agents.chat) that proxies turns through the OVOS messagebus",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-messagebus-chat-plugin",
+  "package_name": "ovos-messagebus-chat-plugin",
+  "pypi_version": "0.1.2a2",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Chat Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-messagebus-chat-plugin"
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Key            | Type | Default                     | Notes                                                                    |\n|----------------|------|-----------------------------|--------------------------------------------------------------------------|\n| `autoconnect`  | bool | `False`                     | Open an internal `MessageBusClient` on init.                              |\n| `host`         | str  | `127.0.0.1`                 | OVOS messagebus host (only used with `autoconnect`).                      |\n| `port`         | int  | `8181`                      | OVOS messagebus port (only used with `autoconnect`).                      |\n| `timeout`      | int  | `30`                        | Per-utterance wait, refreshed on every `speak` to allow multi-speak.       |\n| `source\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-05-18T16:19:42Z",
+  "last_updated": "2026-07-31T22:28:30.302839Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

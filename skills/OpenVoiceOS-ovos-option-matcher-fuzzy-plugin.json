@@ -1,0 +1,39 @@
+{
+  "id": "OpenVoiceOS-ovos-option-matcher-fuzzy-plugin",
+  "skill_id": null,
+  "name": "ovos-option-matcher-fuzzy-plugin",
+  "description": "Fuzzy-match `OptionMatcherEngine` plugin for OpenVoiceOS.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-option-matcher-fuzzy-plugin",
+  "package_name": "ovos-option-matcher-fuzzy-plugin",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Option Matcher Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 2,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-option-matcher-fuzzy-plugin\n\nWith optional numeric-fallback support (handles positions above 10 and raw digit references):\n\npip install \"ovos-option-matcher-fuzzy-plugin[number-parser]\""
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
+  "repo_created_at": "2026-03-18T18:26:25Z",
+  "last_updated": "2026-04-08T22:21:01.164020Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

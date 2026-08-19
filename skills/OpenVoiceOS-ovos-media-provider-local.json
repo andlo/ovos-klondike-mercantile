@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-media-provider-local",
+  "skill_id": null,
+  "name": "ovos-media-provider-local",
+  "description": "OVOS MediaProvider plugin for a local file-system media library (replaces ovos-skill-local-media)",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-provider-local",
+  "package_name": "ovos-media-provider-local",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Provider Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-provider-local"
+    },
+    {
+      "heading": "Configure",
+      "content": "Per-provider settings live under `media_providers` in `mycroft.conf`, keyed\nby the provider's entry-point name:\n\n{\n  \"media_providers\": {\n    \"local\": {\n      \"paths\": [\"~/Music\", \"~/Videos\", \"/mnt/media\"],\n      \"max_results\": 10,\n      \"min_confidence\": 0.3\n    }\n  }\n}\n\n| Key | Default | Description |\n|---|---|---|\n| `paths` | `$XDG_MUSIC_DIR`/`~/Music`, `$XDG_VIDEOS_DIR`/`~/Videos` | Directories scanned recursively for media files. |\n| `max_results` | `10` | Maximum number of matching files returned per search. |\n| `min_confidence` | `0.3` | Files scoring below this are dropped from the results. |\n\nSet `\"enabled\": false` to disable without uninstalling."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-08-13T18:47:32Z",
+  "last_updated": "2026-08-13T18:48:17Z",
+  "is_new_repo": true,
+  "is_recently_updated": true
+}

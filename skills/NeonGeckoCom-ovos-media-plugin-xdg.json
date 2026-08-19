@@ -1,0 +1,43 @@
+{
+  "id": "NeonGeckoCom-ovos-media-plugin-xdg",
+  "skill_id": null,
+  "name": "ovos-media-plugin-xdg",
+  "description": "plugin for ovos-media",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/NeonGeckoCom/ovos-media-plugin-xdg",
+  "package_name": "ovos-media-plugin-xdg",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "NeonGeckoCom",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 1,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-media-plugin-xdg`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "{\n \"media\": {\n\n    \"preferred_audio_services\": [\"vlc\", \"xdg\"],\n    \"preferred_video_services\": [\"xdg\"],\n    \"preferred_web_services\": [\"webbrowser\", \"xdg\"],\n\n    // PlaybackType.AUDIO handlers\n    \"audio_players\": {\n        // xdg-open to handle uris\n        \"xdg\": {\n            // the plugin name\n            \"module\": \"ovos-media-audio-plugin-xdg\",\n\n            // users may request specific handlers in the utterance\n            // using these aliases\n            \"aliases\": [\"System\", \"Desktop\", \"OS\", \"XDG Open\"],\n\n            // deactivate a plugin by setting to false\n            \"active\": true\n        }\n    },    \n    \"video_players\": {\n        // xdg-open to handle uris\n        \"xdg\": {\n            // the plugin name\n            \"module\": \"ovos-media-video-plugin-xdg\",\n\n            // u\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-02-08T19:01:03Z",
+  "last_updated": "2024-02-08T19:31:09Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

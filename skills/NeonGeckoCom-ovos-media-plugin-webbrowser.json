@@ -1,0 +1,43 @@
+{
+  "id": "NeonGeckoCom-ovos-media-plugin-webbrowser",
+  "skill_id": null,
+  "name": "ovos-media-plugin-webbrowser",
+  "description": "webbrowser plugin for ovos-media",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/NeonGeckoCom/ovos-media-plugin-webbrowser",
+  "package_name": "ovos-media-plugin-webbrowser",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "NeonGeckoCom",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-media-plugin-webbrowser`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "{\n \"media\": {\n\n    \"preferred_web_services\": [\"webbrowser\"],\n\n    // PlaybackType.WEBVIEW handlers\n    \"web_players\": {\n        // webbrowser-open to handle uris\n        \"webbrowser\": {\n            // the plugin name\n            \"module\": \"ovos-media-web-plugin-webbrowser\",\n\n            // users may request specific handlers in the utterance\n            // using these aliases\n            \"aliases\": [\"Browser\"],\n\n            // deactivate a plugin by setting to false\n            \"active\": true\n        }\n    }\n}"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-02-08T19:18:52Z",
+  "last_updated": "2024-02-08T19:19:34Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

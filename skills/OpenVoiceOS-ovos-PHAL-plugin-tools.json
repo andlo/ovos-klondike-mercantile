@@ -1,0 +1,39 @@
+{
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-tools",
+  "skill_id": null,
+  "name": "ovos-PHAL-plugin-tools",
+  "description": "PHAL service provider exposing OVOS tool plugins over the messagebus",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-PHAL-plugin-tools",
+  "package_name": "ovos-PHAL-plugin-tools",
+  "pypi_version": "0.0.1a1",
+  "license": "NOASSERTION",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-PHAL-plugin-tools\n\nEnable in your OVOS config (`mycroft.conf`):\n\n{\n  \"PHAL\": {\n    \"ovos-phal-plugin-tools\": {\n      \"enabled\": true\n    }\n  }\n}\n\nInstall one or more toolbox plugins (entry-point group `opm.agents.toolbox`).\nThe service discovers them automatically at startup. Send\n`ovos.tools.reload` if you install plugins while OVOS is already running.\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-10T04:39:33Z",
+  "last_updated": "2026-06-10T21:19:20.257669Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
