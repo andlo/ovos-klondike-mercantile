@@ -15,6 +15,7 @@ const typeFilter = document.getElementById("type-filter");
 const tierFilter = document.getElementById("tier-filter");
 const languageFilter = document.getElementById("language-filter");
 const sortOrder = document.getElementById("sort-order");
+const statsContent = document.getElementById("stats-content");
 
 let skills = [];
 
@@ -299,6 +300,128 @@ function matchesTypeFilter(skill, typeValue) {
   return skill.component_type === typeValue;
 }
 
+const TIER_CHART_COLORS = { 1: "#1e8a4c", 2: "#b5680b", 3: "#8a8f98" };
+
+function renderTypeTierChart(list) {
+  const groups = ["Skill", "Plugin", "Tool"];
+  const data = groups.map((g) => {
+    const subset = list.filter((s) => s.type_group === g);
+    const tiers = { 1: 0, 2: 0, 3: 0 };
+    for (const s of subset) tiers[s.tier] = (tiers[s.tier] || 0) + 1;
+    return { group: g, total: subset.length, tiers };
+  }).filter((d) => d.total > 0);
+  if (data.length === 0) return "";
+  const maxTotal = Math.max(...data.map((d) => d.total), 1);
+
+  const rows = data.map((d) => {
+    const trackWidthPct = (d.total / maxTotal) * 100;
+    const segments = [1, 2, 3].map((tier) => {
+      const count = d.tiers[tier] || 0;
+      if (count === 0) return "";
+      const segWidthPct = (count / d.total) * 100;
+      const label = TIER_META[tier].label;
+      return `<div class="chart-fill" style="width:${segWidthPct}%;background:${TIER_CHART_COLORS[tier]}" title="${escapeHtml(label)}: ${count}"></div>`;
+    }).join("");
+    return `
+      <div class="chart-row">
+        <div class="chart-label">${escapeHtml(d.group)}</div>
+        <div class="chart-track-bg"><div class="chart-track" style="width:${trackWidthPct}%">${segments}</div></div>
+        <div class="chart-value">${d.total}</div>
+      </div>
+    `;
+  }).join("");
+
+  const legend = [1, 2, 3].map((t) =>
+    `<span class="chart-legend-item"><span class="chart-swatch" style="background:${TIER_CHART_COLORS[t]}"></span>${escapeHtml(TIER_META[t].label)}</span>`
+  ).join("");
+
+  return `
+    <h4>By type, broken down by tier</h4>
+    <div class="chart-block">${rows}<div class="chart-legend">${legend}</div></div>
+  `;
+}
+
+function renderAuthorChart(list) {
+  const counts = {};
+  for (const s of list) counts[s.author] = (counts[s.author] || 0) + 1;
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 12);
+  if (sorted.length === 0) return "";
+  const max = sorted[0][1];
+
+  const rows = sorted.map(([author, count]) => {
+    const pct = (count / max) * 100;
+    return `
+      <div class="chart-row">
+        <div class="chart-label">${escapeHtml(author)}</div>
+        <div class="chart-track-bg"><div class="chart-track" style="width:${pct}%"><div class="chart-fill" style="width:100%;background:var(--accent)"></div></div></div>
+        <div class="chart-value">${count}</div>
+      </div>
+    `;
+  }).join("");
+
+  return `
+    <h4>Top authors/orgs by entries listed</h4>
+    <div class="chart-block">${rows}</div>
+  `;
+}
+
+function renderTimelineChart(list) {
+  const years = {};
+  for (const s of list) {
+    if (!s.repo_created_at) continue;
+    const year = s.repo_created_at.slice(0, 4);
+    years[year] = (years[year] || 0) + 1;
+  }
+  const sortedYears = Object.keys(years).sort();
+  if (sortedYears.length === 0) return "";
+  const max = Math.max(...Object.values(years), 1);
+
+  const rows = sortedYears.map((year) => {
+    const count = years[year];
+    const pct = (count / max) * 100;
+    return `
+      <div class="chart-row">
+        <div class="chart-label">${escapeHtml(year)}</div>
+        <div class="chart-track-bg"><div class="chart-track" style="width:${pct}%"><div class="chart-fill" style="width:100%;background:var(--gold)"></div></div></div>
+        <div class="chart-value">${count}</div>
+      </div>
+    `;
+  }).join("");
+
+  return `
+    <h4>Repos by creation year</h4>
+    <div class="chart-block">${rows}</div>
+    <p class="chart-caveat">
+      Only counts repos currently listed here, bucketed by their
+      GitHub creation date - not a historical record (older repos
+      that no longer exist or were never discovered aren't reflected).
+    </p>
+  `;
+}
+
+function renderStatsSection(list) {
+  const totalSkills = list.filter((s) => s.type_group === "Skill").length;
+  const totalPlugins = list.filter((s) => s.type_group === "Plugin").length;
+  const totalTools = list.filter((s) => s.type_group === "Tool").length;
+  const totalAuthors = new Set(list.map((s) => s.author)).size;
+
+  const summary = `
+    <div class="stat-summary-grid">
+      <div class="stat-summary-cell"><div class="stat-summary-number">${list.length}</div><div class="stat-summary-label">Total listed</div></div>
+      <div class="stat-summary-cell"><div class="stat-summary-number">${totalSkills}</div><div class="stat-summary-label">Skills</div></div>
+      <div class="stat-summary-cell"><div class="stat-summary-number">${totalPlugins}</div><div class="stat-summary-label">Plugins</div></div>
+      <div class="stat-summary-cell"><div class="stat-summary-number">${totalTools}</div><div class="stat-summary-label">Tools</div></div>
+      <div class="stat-summary-cell"><div class="stat-summary-number">${totalAuthors}</div><div class="stat-summary-label">Authors/orgs</div></div>
+    </div>
+  `;
+
+  statsContent.innerHTML =
+    summary +
+    renderTypeTierChart(list) +
+    renderAuthorChart(list) +
+    renderTimelineChart(list);
+}
+
 function applyFilters() {
   const query = searchInput.value.trim().toLowerCase();
   const author = authorFilter.value;
@@ -374,6 +497,7 @@ Promise.all([
     skills = skillsData;
     populateFilters(skills);
     renderStatsLine(metaData, skills.length);
+    renderStatsSection(skills);
     applyFilters();
   })
   .catch((err) => {

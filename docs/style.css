@@ -120,6 +120,108 @@ h1 { margin: 0 0 0.5rem; font-size: 2rem; }
   padding: 0.1em 0.35em;
 }
 
+.chart-block {
+  margin: 0.5rem 0 1.25rem;
+}
+
+.chart-block h4 {
+  font-size: 0.85rem;
+  margin: 1.1rem 0 0.6rem;
+  color: var(--text);
+}
+
+.chart-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 34px;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+}
+
+.chart-label {
+  color: var(--text);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chart-track-bg {
+  background: #eef0f3;
+  border-radius: 6px;
+  height: 16px;
+}
+
+.chart-track {
+  display: flex;
+  height: 16px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.chart-fill {
+  height: 100%;
+}
+
+.chart-value {
+  color: var(--muted);
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.chart-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.chart-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.stat-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.6rem;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.stat-summary-cell {
+  background: #f4f6f8;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  text-align: center;
+}
+
+.stat-summary-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stat-summary-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.chart-caveat {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
 .description {
   color: var(--muted);
   font-size: 0.9rem;
