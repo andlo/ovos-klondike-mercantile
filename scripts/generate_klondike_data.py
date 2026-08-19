@@ -107,6 +107,22 @@ CATEGORY_TAGS = {
     "home": "Home", "information": "Information", "news": "News",
 }
 
+# Orgs/authors already confirmed (by hand, from real Klondike runs)
+# to be genuine first-party parts of the OVOS ecosystem, not random
+# personal accounts. Used ONLY to avoid excluding their forks - see
+# the fork-check in main() for why "is a GitHub fork" alone isn't a
+# reliable "skip this" signal: ovos-skill-alerts, ovos-skill-
+# easter-eggs, ovos-skill-ip, and ovos-skill-date-time were ALL
+# missing from the store entirely (not just badged oddly) because
+# they're technically still registered as GitHub forks of their
+# original Mycroft-AI predecessors, never detached - excluding them
+# lost real, official, actively-maintained OpenVoiceOS skills, not
+# noise.
+TRUSTED_FORK_OWNERS = {
+    "openvoiceos", "neongeckocom", "oscillatelabsllc",
+    "tigregotico", "jarbashivemind", "smartgic",
+}
+
 
 def gh_json(*args, retries=4):
     """Runs `gh` and parses JSON output. Retries with exponential
@@ -477,8 +493,15 @@ def main():
         if repo is None:
             print(f"  SKIP {full_name}: repo not accessible")
             continue
-        if repo.get("fork"):
-            print(f"  SKIP {full_name}: is a fork")
+        owner_lower = full_name.split("/", 1)[0].lower()
+        if repo.get("fork") and owner_lower not in TRUSTED_FORK_OWNERS:
+            # "Is a fork" alone isn't reliable - see
+            # TRUSTED_FORK_OWNERS's comment. Skipped only for
+            # accounts NOT already confirmed as first-party OVOS
+            # ecosystem orgs, to avoid pulling in random personal
+            # test-forks while still keeping e.g. OpenVoiceOS's own
+            # never-detached forks of their Mycroft predecessors.
+            print(f"  SKIP {full_name}: is a fork (untrusted owner)")
             continue
         # No license exclusion - included regardless, with an
         # explicit "No license" badge in the UI (build_entry's
@@ -547,6 +570,18 @@ def main():
         )
         if has_confirmed_manifest:
             entry["tier"] = 1 if (entry["on_pypi"] and entry["has_release"]) else 2
+        if entry["in_ovos_store"]:
+            # Official Store inclusion means a real OVOS maintainer
+            # reviewed and approved this - a STRONGER completeness
+            # signal than PyPI+release, since the store doesn't
+            # require either (many OVOS skills install straight from
+            # source, not PyPI). Without this override, a skill could
+            # be reviewed, approved, and actively used via the
+            # official store while this site badged it "Incomplete" -
+            # a real, confusing contradiction found by inspection.
+            # The underlying "Not on PyPI"/"No release" badges still
+            # show independently as plain facts either way.
+            entry["tier"] = 1
         # else: stays tier 3 (last-resort fallback, no formal manifest)
 
         entries.append(entry)
