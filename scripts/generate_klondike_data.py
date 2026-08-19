@@ -61,6 +61,18 @@ IGNORE_LIST_PATH = ROOT / "ignore.txt"
 # processed in full regardless of this number, every run.
 BATCH_SIZE = 60
 
+# Cap on genuinely NEW candidates processed per run - previously
+# uncapped ("every new candidate, every run"), which was safe while
+# discovery found a few new repos per run at most. Adding the
+# ovos-in-name search signal jumped the candidate pool from ~360 to
+# ~2000 in one step - without a cap, that first run alone would try
+# to process ~1700 "new" candidates at once, right back into the
+# same rate-limit trouble BATCH_SIZE was built to solve for known
+# candidates. New candidates beyond this cap simply wait for the
+# next run instead - they're still "new" then too, so nothing is
+# lost, just spread out.
+NEW_BATCH_SIZE = 60
+
 PROVIDER_PATTERN = re.compile(r"provider for ([\w.-]+)", re.IGNORECASE)
 ONLINE_LIBS = {"requests", "bs4", "beautifulsoup4", "feedparser", "aiohttp", "httpx"}
 
@@ -766,9 +778,10 @@ def main():
     """Runs discovery every time (cheap - a few dozen search-API
     calls total), but only fully FETCHES/PROCESSES a bounded subset
     of candidates per run:
-    - Every genuinely NEW candidate (never seen in a previous run's
-      output) - so new repos are caught quickly, every run, not
-      gated behind a rotation.
+    - Up to NEW_BATCH_SIZE genuinely NEW candidates (never attempted
+      before) - so new repos are still caught quickly, but a sudden
+      jump in the candidate pool (e.g. a new discovery signal) can't
+      flood a single run uncapped either.
     - Up to BATCH_SIZE ALREADY-KNOWN candidates, rotating through
       the full known list a chunk at a time via state.json's cursor,
       so existing entries get refreshed periodically without every
@@ -819,8 +832,14 @@ def main():
     )
 
     attempted_ids = set(state.get("attempted", []))
-    new_candidates = [c for c in all_candidates if c.replace("/", "-") not in attempted_ids]
+    all_new_candidates = [c for c in all_candidates if c.replace("/", "-") not in attempted_ids]
     known_candidates = [c for c in all_candidates if c.replace("/", "-") in attempted_ids]
+
+    # Capped, not "every new candidate every run" - see
+    # NEW_BATCH_SIZE's comment. Anything beyond the cap is simply
+    # left for the next run(s), still new then too.
+    new_candidates = all_new_candidates[:NEW_BATCH_SIZE]
+    remaining_new = len(all_new_candidates) - len(new_candidates)
 
     cursor = state.get("cursor", 0)
     if known_candidates:
@@ -834,7 +853,9 @@ def main():
     to_process = new_candidates + batch
     print(
         f"Processing {len(to_process)} this run "
-        f"({len(new_candidates)} new, {len(batch)} refreshed from rotation "
+        f"({len(new_candidates)} new"
+        + (f", {remaining_new} more new waiting for later runs" if remaining_new else "")
+        + f", {len(batch)} refreshed from rotation "
         f"of {len(known_candidates)} known)"
     )
 
