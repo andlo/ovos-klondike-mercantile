@@ -17,20 +17,23 @@ Discovery combines two independent signals, unioned:
    catches skills that exist but weren't found by signal 1 (skill.json
    missing, misplaced, or not yet written).
 
-Every candidate gets one of three tiers:
-- Tier 1 (verified): has skill.json, published on PyPI, has a
-  GitHub release.
-- Tier 2 (partial): has skill.json, but missing a PyPI release
-  and/or a GitHub release - shown with an explicit "not on PyPI" /
-  "no release" badge rather than excluded.
-- Tier 3 (unverified): NO skill.json found, but the repo is
-  topic-tagged as OVOS-related AND its __init__.py shows real signs
-  of being an OVOS skill (imports ovos_workshop, subclasses
-  OVOSSkill/FallbackSkill, uses @intent_handler, etc.) - metadata is
-  inferred from the repo's own description/README/setup.py rather
-  than a skill.json, and shown with an "unverified" badge. A
-  topic-tagged repo with no such signs at all is excluded outright -
-  the topic alone isn't proof it's actually a skill.
+Every candidate gets one of three tiers, based on whether a formal
+manifest was found for its actual type - not specifically a
+skill.json, since most of what this store now covers isn't a skill:
+- Tier 1 (Looks Complete): has a confirmed manifest for its type
+  (skill.json for Skills, or a declared entry-points group for
+  Plugins), published on PyPI, has a GitHub release.
+- Tier 2 (Incomplete): has a confirmed manifest, but missing a PyPI
+  release and/or a GitHub release - shown with an explicit "not on
+  PyPI" / "no release" badge rather than excluded.
+- Tier 3 (Inferred, Unconfirmed): NO formal manifest found at all.
+  Falls through three last-resort signals, in order: skill-shaped
+  __init__.py code (OVOSSkill/FallbackSkill/etc, guessed as "Skill"),
+  then a real installable package with no skill/plugin-specific
+  signal at all (guessed as "Tool" - catches CLI clients, helper
+  libraries, and other genuinely OVOS-adjacent utilities that aren't
+  skills or plugins). A topic-tagged repo matching none of these is
+  excluded outright - the topic alone isn't proof of anything.
 """
 import base64
 import json
@@ -485,9 +488,20 @@ def main():
         skill_json = fetch_skill_json(full_name)
         component_type = None
         package_name_override = None
+        # Tracks whether a FORMAL manifest was found for this
+        # candidate's type (skill.json, or a declared entry-points
+        # group) - not just whether SOME plausible type label was
+        # derived. This distinguishes "confirmed, just needs release
+        # cleanup" (tier 1/2) from "no formal declaration at all,
+        # best-effort guess" (tier 3) - previously every non-skill.json
+        # entry was force-tier-3 even when it had a perfectly real,
+        # declared entry-points group, which understated plugins with
+        # genuinely complete packaging just as much as skills.
+        has_confirmed_manifest = False
 
         if skill_json is not None:
             component_type = "Skill"
+            has_confirmed_manifest = True
         else:
             if full_name not in topic_repos:
                 # Found only via the skill.json search but the file
@@ -504,13 +518,26 @@ def main():
             package_name_override = derive_package_name(setup_text, pyproject_text)
             entry_point_groups = derive_entry_point_groups(setup_text, pyproject_text)
             component_type = derive_component_type(entry_point_groups)
-            if component_type is None:
-                # No declared entry-points group either - last resort,
-                # check for skill-shaped code as before.
+            if component_type is not None:
+                has_confirmed_manifest = True
+            else:
+                # No declared entry-points group either - last-resort
+                # signals, in order. Both land at tier 3 regardless of
+                # which one matched, since neither is a formal
+                # declaration the way skill.json/entry-points are.
                 if looks_like_skill_code(full_name):
                     component_type = "Skill"
+                elif package_name_override:
+                    # A real installable package (setup.py/pyproject.toml
+                    # declares a name=) with no skill/plugin-specific
+                    # signal at all - catches CLI clients, helper
+                    # libraries, and other genuinely OVOS-adjacent
+                    # tools that aren't skills or plugins. Previously
+                    # excluded outright for not matching skill-code
+                    # signs specifically.
+                    component_type = "Tool"
                 else:
-                    print(f"  SKIP {full_name}: topic-tagged but no plugin/skill signs found")
+                    print(f"  SKIP {full_name}: topic-tagged but no plugin/skill/tool signs found")
                     continue
 
         entry = build_entry(
@@ -518,8 +545,9 @@ def main():
             component_type=component_type, package_name_override=package_name_override,
             store_package_names=store_package_names,
         )
-        if skill_json is not None:
+        if has_confirmed_manifest:
             entry["tier"] = 1 if (entry["on_pypi"] and entry["has_release"]) else 2
+        # else: stays tier 3 (last-resort fallback, no formal manifest)
 
         entries.append(entry)
 
