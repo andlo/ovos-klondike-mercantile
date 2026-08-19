@@ -535,14 +535,19 @@ def fetch_locale_languages(full_name):
     follow this convention in practice (confirmed by inspection
     across this whole ecosystem: locale/<lang>/ is specifically the
     Skill packaging convention). Returns an empty list if there's no
-    locale/ directory, or the repo isn't a Skill."""
+    locale/ directory, or the repo isn't a Skill.
+
+    Normalized to lowercase - different repos' locale/ folders use
+    inconsistent casing (en-us vs en-US), which without this showed
+    up as confusing duplicate entries in the language filter
+    dropdown ("en-US" and "en-us" as two separate options)."""
     data = gh_ok("api", f"repos/{full_name}/contents/locale")
     if not data:
         return []
-    return sorted(
-        item["name"] for item in data
+    return sorted(set(
+        item["name"].lower() for item in data
         if item.get("type") == "dir" and LOCALE_DIR_PATTERN.match(item["name"])
-    )
+    ))
 
 
 def extract_pipeline(description):
@@ -898,6 +903,15 @@ def main():
     # because their rotation slot hasn't come up again yet.
     valid_ids = {c.replace("/", "-") for c in all_candidates}
     merged_entries = {k: v for k, v in merged_entries.items() if k in valid_ids}
+
+    # Retroactively normalize language codes to lowercase across
+    # EVERY entry, not just ones reprocessed this run - fixes the
+    # en-US/en-us duplicate-option problem immediately for
+    # carried-over entries too, rather than waiting for each one's
+    # rotation turn to come up again (could be several runs away).
+    for entry in merged_entries.values():
+        if entry.get("languages"):
+            entry["languages"] = sorted(set(lang.lower() for lang in entry["languages"]))
 
     entries = sorted(merged_entries.values(), key=lambda e: (e["name"] or "").lower())
     for entry in entries:
