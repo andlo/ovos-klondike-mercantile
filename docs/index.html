@@ -12,16 +12,36 @@
     <h1>⛏️ OVOS Klondike Mercantile</h1>
     <p class="subtitle">
       Every OVOS skill, plugin, addon, tool, or other related repo
-      we could dig up across all of GitHub - not just one author's
-      own work. Discovered automatically (code + topic search), checked against PyPI, GitHub releases, and
-      OVOS's own
-      <a href="https://openvoiceos.github.io/OVOS-skills-store/">upcoming Skill Store</a>
-      (not yet officially launched) every week. Nothing here has
-      been installed or run - the badges below describe what was
-      found, not that a skill actually works.
+      we could dig up across all of GitHub.
     </p>
     <p class="stats-line" id="stats-line"></p>
     <p class="queue-line" id="queue-line" hidden></p>
+
+    <details class="legend">
+      <summary>About / Why Klondike?</summary>
+      <div class="legend-prose">
+        <p>
+          Years ago, a one-time hand-built list tried to catalog the
+          wider Mycroft/OVOS skill ecosystem - useful at the time,
+          but a snapshot, not something that stayed current, and
+          it's gone now. Today's OVOS ecosystem is smaller than that
+          era's, but still genuinely hard to see all at once: skills,
+          plugins, and tools live scattered across dozens of
+          different GitHub accounts and orgs, with no single place
+          that reliably shows what actually exists.
+        </p>
+        <p>
+          Klondike exists to answer that continuously, not as a
+          one-time count - discovered automatically via code, topic,
+          and repo-name search across all of GitHub, checked against
+          PyPI, GitHub releases, and OVOS's own
+          <a href="https://openvoiceos.github.io/OVOS-skills-store/">upcoming Skill Store</a>
+          (not yet officially launched) every few hours. Nothing here
+          has been installed or run - the badges below describe what
+          was found, not that a skill actually works.
+        </p>
+      </div>
+    </details>
 
     <details class="legend">
       <summary>What do the badges mean?</summary>
@@ -53,6 +73,138 @@
         <dt><span class="badge badge-warn">Not on PyPI / No release / No license</span></dt>
         <dd>Exactly what it says - shown as a plain fact, not a reason to exclude the skill.</dd>
       </dl>
+    </details>
+
+    <details class="legend">
+      <summary>Want your repo listed or classified correctly?</summary>
+      <div class="legend-prose">
+        <p class="guide-intro">
+          Everything below is what Klondike's own discovery script
+          actually checks - not guesses about how a "skill store"
+          might work in general, but the literal signals this
+          crawler looks for, found by inspecting real repos that
+          were missing or misclassified.
+        </p>
+
+        <h3 class="detail-subhead">1. Get discovered at all</h3>
+        <p>Klondike finds candidates via three signals, unioned:</p>
+        <ul class="guide-list">
+          <li>A <code>skill.json</code> file (anywhere, but
+            <code>locale/en-us/skill.json</code> is checked first)
+            containing a <code>pip_spec</code> field.</li>
+          <li>The GitHub topic <code>ovos</code> or
+            <code>openvoiceos</code> set on the repo.</li>
+          <li><code>ovos</code> appearing literally in the repo's own
+            name.</li>
+        </ul>
+        <p class="guide-note">
+          The single biggest lever if your repo isn't showing up at
+          all: <strong>add the <code>ovos</code> or
+          <code>openvoiceos</code> GitHub topic.</strong> Several
+          real, actively-maintained repos (including some of OVOS's
+          own) were invisible to this store simply because they had
+          zero topics set and aren't skills, so no
+          <code>skill.json</code> existed either.
+        </p>
+
+        <h3 class="detail-subhead">2. Get classified correctly</h3>
+        <p>Component type is derived from formal declarations, not guessed from a description:</p>
+        <ul class="guide-list">
+          <li><strong>Skill</strong> - has a <code>skill.json</code>.</li>
+          <li><strong>Plugin</strong> (OCP, TTS, STT, PHAL, Pipeline,
+            Persona, Solver, ...) - has a namespaced entry-point group
+            declared in <code>setup.py</code> or
+            <code>pyproject.toml</code>, e.g.
+            <code>entry_points={"opm.pipeline": "..."}</code>. This is
+            the same mechanism <code>ovos-plugin-manager</code> itself
+            uses at runtime, so it's the most reliable signal - and a
+            repo can have <em>both</em> a <code>skill.json</code>
+            <em>and</em> a plugin entry-point at once (they aren't
+            mutually exclusive); the entry-point takes priority for
+            classification when both are present.</li>
+          <li><strong>Tool</strong> - no skill.json, no entry-points,
+            but <code>setup.py</code>/<code>pyproject.toml</code>
+            declares a real installable package (a
+            <code>name=</code> field) - catches CLI clients and helper
+            libraries.</li>
+        </ul>
+
+        <h3 class="detail-subhead">3. Get your PyPI status verified</h3>
+        <p>
+          <code>skill.json</code> doesn't require a
+          <code>package_name</code> field, but without one Klondike
+          can't confirm PyPI status even when the package genuinely is
+          published. Resolution order:
+        </p>
+        <ol class="guide-list">
+          <li><code>skill.json</code>'s own <code>package_name</code>
+            field - most reliable, set this if you can.</li>
+          <li><code>setup.py</code>/<code>pyproject.toml</code>'s own
+            <code>name=</code> declaration.</li>
+          <li>The repo's bare name, as a last resort - works only when
+            it happens to match the actual PyPI package name.</li>
+        </ol>
+
+        <h3 class="detail-subhead">4. Reach "Looks Complete"</h3>
+        <p>Either of these gets you there:</p>
+        <ul class="guide-list">
+          <li>A confirmed manifest (from step 2) <strong>and</strong>
+            published on PyPI <strong>and</strong> a real GitHub
+            release.</li>
+          <li>Already listed in
+            <a href="https://openvoiceos.github.io/OVOS-skills-store/">OVOS's own upcoming Skill Store</a>
+            (not yet officially launched) - a maintainer reviewing and
+            merging a submission there counts as a stronger signal on
+            its own, since that store doesn't require PyPI or a
+            release either.</li>
+        </ul>
+        <p class="guide-note">
+          Missing PyPI or a release doesn't exclude you - it shows as
+          an "Incomplete" badge with the specific gap named, not a
+          rejection.
+        </p>
+
+        <h3 class="detail-subhead">5. Other things Klondike picks up automatically</h3>
+        <ul class="guide-list">
+          <li><strong>A <code>LICENSE</code> file</strong> - detected
+            by GitHub itself, not read from <code>skill.json</code>.
+            Missing one shows an explicit warning on the detail page.</li>
+          <li><strong>A real README</strong> - used as a description
+            fallback when neither <code>skill.json</code> nor GitHub's
+            own repo description have one, and scanned for
+            Install/Setup/Configuration headings to surface any
+            repo-specific setup steps beyond a plain
+            <code>pip install</code>.</li>
+          <li><strong>A <code>locale/&lt;lang&gt;/</code> folder</strong>
+            (Skills only) - each subfolder becomes a language flag on
+            your listing.</li>
+          <li><strong>Being tracked by
+            <a href="https://openvoiceos.github.io/ovos-localize/">OVOS Localize</a></strong> -
+            gets you a "Translate" link automatically; nothing to add
+            on your end beyond being in their own list.</li>
+        </ul>
+
+        <h3 class="detail-subhead">Forks</h3>
+        <p>
+          Forks are excluded by default (to avoid random personal
+          test-forks), except for a short list of orgs already
+          confirmed as genuine first-party parts of the OVOS ecosystem
+          (OpenVoiceOS, NeonGeckoCom, OscillateLabsLLC, TigreGotico,
+          JarbasHiveMind, smartgic). If your org publishes real,
+          maintained forks and isn't on that list, ask and it can be
+          added.
+        </p>
+
+        <h3 class="detail-subhead">How often does it refresh?</h3>
+        <p>
+          New repos get picked up within a few runs of appearing (the
+          crawler runs every 3 hours). Already-known repos refresh on
+          a rotation, not every run - so a change you make today may
+          take a few days to show up, not a few hours. If you need a
+          specific repo re-checked sooner,
+          <a href="https://github.com/andlo/ovos-klondike-mercantile">open an issue</a>.
+        </p>
+      </div>
     </details>
 
     <input id="search" type="search" placeholder="Search skills, authors, tags..." autocomplete="off">
