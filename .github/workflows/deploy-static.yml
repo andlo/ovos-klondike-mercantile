@@ -14,7 +14,10 @@ on:
     branches: [main]
     paths:
       - "docs/index.html"
+      - "docs/detail.html"
       - "docs/app.js"
+      - "docs/detail.js"
+      - "docs/shared.js"
       - "docs/style.css"
   workflow_dispatch: {}
 

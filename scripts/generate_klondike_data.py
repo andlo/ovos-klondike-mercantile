@@ -501,6 +501,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     last_updated = pypi_release_date or pushed_at
 
     return {
+        "id": full_name.replace("/", "-"),
         "skill_id": skill_id,
         "name": display_name,
         "description": description,
