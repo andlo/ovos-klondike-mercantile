@@ -1,0 +1,43 @@
+{
+  "id": "ecosphereplus-ovos-audio-transformer-plugin-omva-voiceid",
+  "skill_id": null,
+  "name": "ovos-audio-transformer-plugin-omva-voiceid",
+  "description": "A plugin for the Open Voice OS (OVOS) that provides voice identification capabilities using the OMVA model.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/ecosphereplus/ovos-audio-transformer-plugin-omva-voiceid",
+  "package_name": "ovos-audio-transformer-plugin-omva-voiceid",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "author": "ecosphereplus",
+  "tier": 2,
+  "component_type": "Audio Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "### Standard Installation\n\npip install -e .\n\n### Standalone Service\n\nThe plugin can run as a standalone service:"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add to your OVOS configuration:\n\n{\n    \"listener\": {\n        \"audio_transformers\": {\n            \"ovos-audio-transformer-plugin-omva-voiceid\": {\n                \"enabled\": true,\n                \"model\": \"speechbrain/spkrec-ecapa-voxceleb\",\n                \"model_cache_dir\": \"/opt/omva/speechbrain_cache\",\n                \"sample_rate\": 16000,\n                \"confidence_threshold\": 0.8,\n                \"processing_timeout_ms\": 100,\n                \"gpu\": false,\n                \"enable_enrollment\": true,\n                \"enrollment_session_timeout\": 600,\n                \"sample_timeout\": 30,\n                \"min_quality_threshold\": 0.5,\n                \"min_sample_duration\": 2.0,\n                \"max_sample_duration\": 10.0,\n                \"enrollment\": {\n                    \"min_samples\": 3\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-08-19T22:20:04Z",
+  "last_updated": "2025-09-01T16:23:10Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

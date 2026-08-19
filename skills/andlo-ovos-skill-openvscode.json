@@ -1,0 +1,41 @@
+{
+  "id": "andlo-ovos-skill-openvscode",
+  "skill_id": null,
+  "name": "ovos-skill-openvscode",
+  "description": "Run VS Code on your Mycroft device and access it in a browser.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/andlo/ovos-skill-openvscode",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "GPL-3.0",
+  "author": "andlo",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "How to install",
+      "content": "The skill isnt yet in the mycroft market.\n\npip install https://github.com/andlo/ovos-skill-openvscode.git\n\nThis will install the skill, and first thing the skil does, is installing OpenVScode-server. During this installation\nit will download precompiled package and extract it. \n\nThe skille should install and work on any arm and x86 platform running OVOS \n\nAfter installation, there should be a log info saying \"OpenVSCode-server installed OK\" and OVOS should tell \nyou by voice that he has installed the skill.\nYou can then open a web-browser and go to http://<device>:<port>/?tkn=<token> where <device> is the hostname of the\ndevice, port is the portnumber (standard 3000) and token is accestoken (standard 1234).\n\nExample:\nhttp://ovso.local:3000/?tkn=1234\n\nThere are some settings that kan be set\u2026"
+    }
+  ],
+  "languages": [
+    "en-us"
+  ],
+  "in_ovos_localize": false,
+  "repo_created_at": "2021-12-28T23:01:11Z",
+  "last_updated": "2024-03-30T22:31:08Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

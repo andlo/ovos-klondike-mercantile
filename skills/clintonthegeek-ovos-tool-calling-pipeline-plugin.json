@@ -1,0 +1,43 @@
+{
+  "id": "clintonthegeek-ovos-tool-calling-pipeline-plugin",
+  "skill_id": null,
+  "name": "ovos-tool-calling-pipeline-plugin",
+  "description": "OVOS pipeline plugin: LLM as primary intent router, with skills exposed as tool calls",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/clintonthegeek/ovos-tool-calling-pipeline-plugin",
+  "package_name": "ovos-tool-calling-pipeline-plugin",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "clintonthegeek",
+  "tier": 2,
+  "component_type": "Pipeline Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Add to ``~/.config/mycroft/mycroft.conf`` under ``intents``:\n\n\"intents\": {\n  \"ovos-tool-calling-pipeline-plugin\": {\n    \"enabled\": true,\n    \"persona\": \"OVOS Installer LLM\",\n    \"model\": \"accounts/fireworks/models/gpt-oss-120b\",\n\n    \"min_words\": 2,\n    \"cache_size\": 32,\n    \"blocklist_patterns\": []\n  }\n}\n\nThe ``persona`` field reuses the API URL, key, and (optional) system prompt from ``~/.config/ovos_persona/<persona>.json``. Override individual fields inline (``api_url``, ``key``, ``model``, ``system_prompt``, ``max_tokens``, ``temperature``) as needed.\n\nGate config (all optional):\n\n| Field | Default | Effect |\n|---|---|---|\n| ``min_words`` | 2 | Skip LLM if utterance has fewer than N whitespace-separated tokens. |\n| ``cache_size`` | 32 | LRU of recent (utterance \u2192 dispatch). 0 disables\u2026"
+    },
+    {
+      "heading": "Install (editable, into an existing OVOS venv)",
+      "content": "source ~/.venvs/ovos/bin/activate\npip install -e /path/to/ovos-tool-calling-pipeline-plugin"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-05-09T04:40:51Z",
+  "last_updated": "2026-05-09T22:05:47Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

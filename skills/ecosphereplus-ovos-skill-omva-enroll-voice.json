@@ -1,0 +1,63 @@
+{
+  "id": "ecosphereplus-ovos-skill-omva-enroll-voice",
+  "skill_id": null,
+  "name": "ovos-skill-omva-enroll-voice",
+  "description": "Provides natural voice interface for enrolling user voices with semantic intent recognition supporting phrases like 'enroll my voice', 'save my voice', 'remember me', and other semantically similar expressions. Integrates with SpeechBrain ECAPA-TDNN for voice identification.",
+  "examples": [
+    "Enroll my voice",
+    "Save my voice",
+    "Remember me",
+    "Enroll my voice as John",
+    "Register my voice as Mary Smith",
+    "Learn my voice",
+    "Add my voice to the system",
+    "Set up voice recognition for me"
+  ],
+  "tags": [
+    "voice",
+    "enrollment",
+    "biometric",
+    "recognition",
+    "speechbrain",
+    "voiceid"
+  ],
+  "category": "Other",
+  "icon": "microphone",
+  "source": "https://github.com/ecosphereplus/ovos-skill-omva-enroll-voice",
+  "package_name": "ovos-skill-omva-enroll-voice",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "author": "ecosphereplus",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "The skill can be configured through the settings interface:\n\n- **target_samples**: Number of voice samples to collect (default: 3)\n- **min_audio_duration**: Minimum audio duration in seconds (default: 3.0)\n- **max_audio_duration**: Maximum audio duration in seconds (default: 10.0)\n- **quality_threshold**: Audio quality threshold 0.0-1.0 (default: 0.7)\n- **confirmation_required**: Whether to require confirmation (default: true)\n- **replace_existing_profiles**: Allow replacing existing profiles (default: false)"
+    },
+    {
+      "heading": "Installation",
+      "content": "1. Install the skill:\npip install omva-skill-voice-enrollment\n\n2. Ensure the OMVA voice identification plugin is installed:\npip install ovos-audio-transformer-plugin-omva-voiceid\n\n3. The skill will be automatically loaded by OVOS."
+    }
+  ],
+  "languages": [
+    "en-us",
+    "es-es",
+    "fr-fr"
+  ],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-08-30T11:09:48Z",
+  "last_updated": "2025-09-01T17:07:51Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
