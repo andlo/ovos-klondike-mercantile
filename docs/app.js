@@ -11,6 +11,7 @@ const searchInput = document.getElementById("search");
 const authorFilter = document.getElementById("author-filter");
 const tagFilter = document.getElementById("tag-filter");
 const typeFilter = document.getElementById("type-filter");
+const languageFilter = document.getElementById("language-filter");
 const sortOrder = document.getElementById("sort-order");
 
 let skills = [];
@@ -231,6 +232,18 @@ function populateFilters(list) {
     opt.textContent = "Tool";
     typeFilter.appendChild(opt);
   }
+
+  // Language filter: "if someone speaks Spanish, they'd want to see
+  // skills listed with Spanish support" - populated from every
+  // distinct locale code actually present across skills' languages
+  // arrays, shown with its flag for quick scanning.
+  const languages = [...new Set(list.flatMap((s) => asArray(s.languages)))].sort((a, b) => a.localeCompare(b));
+  for (const l of languages) {
+    const opt = document.createElement("option");
+    opt.value = l;
+    opt.textContent = `${languageFlag(l)} ${l}`;
+    languageFilter.appendChild(opt);
+  }
 }
 
 function matchesSearch(skill, query) {
@@ -258,12 +271,14 @@ function applyFilters() {
   const author = authorFilter.value;
   const tag = tagFilter.value;
   const type = typeFilter.value;
+  const language = languageFilter.value;
 
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
     (!author || s.author === author) &&
     matchesTagFilter(s, tag) &&
-    (!type || s.component_type === type)
+    (!type || s.component_type === type) &&
+    (!language || asArray(s.languages).includes(language))
   );
   const sorted = sortSkills(filtered, sortOrder.value);
 
@@ -290,6 +305,7 @@ searchInput.addEventListener("input", applyFilters);
 authorFilter.addEventListener("change", applyFilters);
 tagFilter.addEventListener("change", applyFilters);
 typeFilter.addEventListener("change", applyFilters);
+languageFilter.addEventListener("change", applyFilters);
 sortOrder.addEventListener("change", applyFilters);
 
 // cache: "no-store" plus a timestamp query param - belt and braces
