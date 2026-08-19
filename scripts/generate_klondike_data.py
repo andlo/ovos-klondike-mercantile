@@ -912,6 +912,22 @@ def main():
         if skill_json is not None:
             component_type = "Skill"
             has_confirmed_manifest = True
+            # A repo can be BOTH a skill.json-listed Skill AND a
+            # registered ovos-plugin-manager plugin at the same time
+            # - found by inspection: andlo/ovos-common-reading-
+            # pipeline-plugin has a skill.json but its setup.py
+            # explicitly declares entry_points={"opm.pipeline": ...},
+            # a genuine pipeline-plugin registration that was being
+            # silently ignored since this branch never checked for
+            # it. Entry-points registration is the more
+            # architecturally precise signal for what kind of
+            # runtime component something actually IS, so it
+            # overrides the "Skill" default when present.
+            setup_text, pyproject_text = fetch_setup_and_pyproject(full_name)
+            entry_point_groups = derive_entry_point_groups(setup_text, pyproject_text)
+            plugin_type = derive_component_type(entry_point_groups)
+            if plugin_type is not None and plugin_type != "Skill":
+                component_type = plugin_type
         else:
             if full_name not in topic_or_name_repos:
                 # Found only via the skill.json search but the file
