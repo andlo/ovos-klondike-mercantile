@@ -65,7 +65,28 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add skills/ docs/skills.json docs/meta.json state.json
           git diff --cached --quiet || git commit -m "chore: update Klondike data [automated]"
-          git push
+          # Retry the push with a rebase on top of whatever landed
+          # on main while this run was in flight (a run can take
+          # 15-25+ min, plenty of time for a manual push to land
+          # first) - a plain `git push` with no fallback here was
+          # discovered losing ENTIRE runs' worth of real API work:
+          # the job would do everything correctly, commit locally,
+          # then fail at the final push on a non-fast-forward
+          # rejection, with no retry, silently discarding all of it.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Pushed successfully on attempt $attempt"
+              break
+            fi
+            if [ "$attempt" -eq 5 ]; then
+              echo "::error::Push failed after 5 attempts, giving up"
+              exit 1
+            fi
+            echo "Push rejected (attempt $attempt/5) - fetching and rebasing before retry"
+            git fetch origin main
+            git rebase origin/main
+            sleep 5
+          done
 
   deploy-pages:
     needs: generate
