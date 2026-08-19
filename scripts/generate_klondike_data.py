@@ -633,7 +633,16 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     readme_text = fetch_readme(full_name)
 
     if skill_json is not None:
-        package_name = skill_json.get("package_name")
+        # Falls back to the repo's own bare name when skill.json
+        # omits package_name entirely - found by inspection:
+        # OpenVoiceOS/ovos-skill-date-time's skill.json has no
+        # package_name field at all (also missing license, pip_spec,
+        # icon, author - a genuinely minimal skill.json), which made
+        # this site report "Not on PyPI" even though the package IS
+        # published, under exactly the repo's own name (the
+        # overwhelmingly common convention). No extra API cost -
+        # just tries the name already in hand before giving up.
+        package_name = skill_json.get("package_name") or name
         description = skill_json.get("description")
         tags = normalize_tags(skill_json.get("tags", []))
         display_name = skill_json.get("name") or name
