@@ -12,6 +12,7 @@ const searchInput = document.getElementById("search");
 const authorFilter = document.getElementById("author-filter");
 const tagFilter = document.getElementById("tag-filter");
 const typeFilter = document.getElementById("type-filter");
+const tierFilter = document.getElementById("tier-filter");
 const languageFilter = document.getElementById("language-filter");
 const sortOrder = document.getElementById("sort-order");
 
@@ -217,6 +218,15 @@ function populateFilters(list) {
     typeFilter.appendChild(opt);
   }
   if (pluginTypes.size > 0) {
+    // "All Plugins" as its own selectable option (not just an
+    // optgroup label, which HTML can't make clickable on its own),
+    // matching by type_group so any plugin type counts - separate
+    // from the specific nested types below it.
+    const allPluginsOpt = document.createElement("option");
+    allPluginsOpt.value = "__all_plugins__";
+    allPluginsOpt.textContent = "All Plugins";
+    typeFilter.appendChild(allPluginsOpt);
+
     const optgroup = document.createElement("optgroup");
     optgroup.label = "Plugins";
     for (const t of [...pluginTypes].sort((a, b) => a.localeCompare(b))) {
@@ -232,6 +242,22 @@ function populateFilters(list) {
     opt.value = "Tool";
     opt.textContent = "Tool";
     typeFilter.appendChild(opt);
+  }
+
+  // Tier filter: matches the site's own badge labels, not raw tier
+  // numbers, so the dropdown reads the same as what's on each card.
+  const TIER_OPTIONS = [
+    { value: "1", label: "Looks Complete" },
+    { value: "2", label: "Incomplete" },
+    { value: "3", label: "Inferred, Unconfirmed" },
+  ];
+  const presentTiers = new Set(list.map((s) => String(s.tier)));
+  for (const { value, label } of TIER_OPTIONS) {
+    if (!presentTiers.has(value)) continue;
+    const opt = document.createElement("option");
+    opt.value = value;
+    opt.textContent = label;
+    tierFilter.appendChild(opt);
   }
 
   // Language filter: "if someone speaks Spanish, they'd want to see
@@ -267,18 +293,26 @@ function matchesTagFilter(skill, tagValue) {
   return true;
 }
 
+function matchesTypeFilter(skill, typeValue) {
+  if (!typeValue) return true;
+  if (typeValue === "__all_plugins__") return skill.type_group === "Plugin";
+  return skill.component_type === typeValue;
+}
+
 function applyFilters() {
   const query = searchInput.value.trim().toLowerCase();
   const author = authorFilter.value;
   const tag = tagFilter.value;
   const type = typeFilter.value;
+  const tier = tierFilter.value;
   const language = languageFilter.value;
 
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
     (!author || s.author === author) &&
     matchesTagFilter(s, tag) &&
-    (!type || s.component_type === type) &&
+    matchesTypeFilter(s, type) &&
+    (!tier || String(s.tier) === tier) &&
     (!language || asArray(s.languages).includes(language))
   );
   const sorted = sortSkills(filtered, sortOrder.value);
@@ -307,10 +341,8 @@ function renderStatsLine(meta, entryCount) {
   // large batch of repos at once).
   const remaining = meta.new_candidates_remaining || 0;
   if (remaining > 0) {
-    const doneThisRun = meta.new_candidates_processed_this_run || 0;
     queueLine.textContent =
-      `⛏️ ${remaining} newly-discovered repos still queued for their first check ` +
-      `(${doneThisRun} processed this run) - shrinks a little every run.`;
+      `⛏️ ${remaining} newly-discovered repos still queued for their first check - we keep digging.`;
     queueLine.hidden = false;
   } else {
     queueLine.hidden = true;
@@ -321,6 +353,7 @@ searchInput.addEventListener("input", applyFilters);
 authorFilter.addEventListener("change", applyFilters);
 tagFilter.addEventListener("change", applyFilters);
 typeFilter.addEventListener("change", applyFilters);
+tierFilter.addEventListener("change", applyFilters);
 languageFilter.addEventListener("change", applyFilters);
 sortOrder.addEventListener("change", applyFilters);
 
