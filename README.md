@@ -72,12 +72,12 @@ manifest** was found for its actual type - not specifically
 - **Looks Complete** (tier 1): has a confirmed manifest for its type
   (`skill.json` for Skills, or a declared entry-points group for
   Plugins), published on PyPI, has a GitHub release - **or** is
-  already listed in the official [OVOS Skill Store](https://openvoiceos.github.io/OVOS-skills-store/),
-  which is treated as an even stronger completeness signal (a real
-  OVOS maintainer reviewed and approved it) since the official store
-  doesn't require PyPI or a release either. Deliberately *not*
-  called "Verified" - this checks that the expected pieces are
-  present, not that the thing actually works.
+  already listed in OVOS's own [upcoming Skill Store](https://openvoiceos.github.io/OVOS-skills-store/)
+  (not yet officially launched), which is treated as an even
+  stronger completeness signal (a maintainer reviewed and merged it)
+  since that store doesn't require PyPI or a release either.
+  Deliberately *not* called "Verified" - this checks that the
+  expected pieces are present, not that the thing actually works.
 - **Incomplete** (tier 2): has a confirmed manifest, but is missing
   a PyPI release and/or a GitHub release - shown with an explicit
   "Not on PyPI" / "No release" badge rather than excluded. The goal
@@ -95,8 +95,9 @@ manifest** was found for its actual type - not specifically
 Each entry is checked against:
 - **PyPI** - latest version, release date, and dependencies (the
   latter feeds the offline/hybrid/online badge - see below).
-- **The official OVOS Skill Store** - entries already listed there
-  get an "OVOS Store" badge (and the tier-1 override above).
+- **OVOS's own upcoming Skill Store** (not yet officially launched) -
+  entries already listed there get an "OVOS Store" badge (and the
+  tier-1 override above).
 - **[OVOS Localize](https://openvoiceos.github.io/ovos-localize/)** -
   the official translation platform's own tracked-repo list. Entries
   it tracks get a right-aligned "Translate"/"Help Translate" link.
@@ -233,6 +234,6 @@ discovery search.
   andlo's own curated, personal skill directory (higher bar: PyPI-published
   only, no tiers).
 - [OpenVoiceOS/OVOS-skills-store](https://github.com/OpenVoiceOS/OVOS-skills-store) -
-  the official, PR-reviewed OVOS Skill Store.
+  OVOS's own upcoming, PR-reviewed Skill Store (not yet officially launched).
 - [OpenVoiceOS/ovos-localize](https://github.com/OpenVoiceOS/ovos-localize) -
   the official translation platform.

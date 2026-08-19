@@ -875,16 +875,17 @@ def main():
         if has_confirmed_manifest:
             entry["tier"] = 1 if (entry["on_pypi"] and entry["has_release"]) else 2
         if entry["in_ovos_store"]:
-            # Official Store inclusion means a real OVOS maintainer
-            # reviewed and approved this - a STRONGER completeness
-            # signal than PyPI+release, since the store doesn't
-            # require either (many OVOS skills install straight from
-            # source, not PyPI). Without this override, a skill could
-            # be reviewed, approved, and actively used via the
-            # official store while this site badged it "Incomplete" -
-            # a real, confusing contradiction found by inspection.
-            # The underlying "Not on PyPI"/"No release" badges still
-            # show independently as plain facts either way.
+            # OVOS's own upcoming Skill Store (not yet officially
+            # launched) inclusion means a maintainer reviewed and
+            # merged this - a STRONGER completeness signal than
+            # PyPI+release, since that store doesn't require either
+            # (many OVOS skills install straight from source, not
+            # PyPI). Without this override, a skill could be
+            # reviewed, merged, and actively used there while this
+            # site badged it "Incomplete" - a real, confusing
+            # contradiction found by inspection. The underlying
+            # "Not on PyPI"/"No release" badges still show
+            # independently as plain facts either way.
             entry["tier"] = 1
         # else: stays tier 3 (last-resort fallback, no formal manifest)
 
