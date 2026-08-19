@@ -1,0 +1,37 @@
+{
+  "skill_id": "ovos-skill-boot-finished.openvoiceos",
+  "name": "Finished Booting Skill",
+  "description": "The Finished Booting skill provides notifications when OpenVoiceOS has fully started and all core services are ready",
+  "examples": [
+    "Is the system ready?",
+    "Enable ready notifications.",
+    "Disable ready notifications."
+  ],
+  "tags": [
+    "diagnostics",
+    "information"
+  ],
+  "category": "Information",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-boot-finished",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 3,
+  "open_issues": 15,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "repo_created_at": "2024-01-19T01:32:33Z",
+  "last_updated": "2026-08-12T02:42:06Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}
