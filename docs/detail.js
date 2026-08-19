@@ -62,6 +62,53 @@ function renderSetupNotes(skill) {
   `;
 }
 
+function renderAssessment(skill) {
+  let headline;
+  if (skill.tier === 1) {
+    if (skill.on_pypi && skill.has_release) {
+      headline = `Rated <strong>Looks Complete</strong> - it has a confirmed manifest (a proper <code>skill.json</code> or plugin entry-point declaration), is published on PyPI, and has a GitHub release.`;
+    } else if (skill.in_ovos_store) {
+      const gaps = [];
+      if (!skill.on_pypi) gaps.push("isn't published on PyPI");
+      if (!skill.has_release) gaps.push("has no GitHub release");
+      const gapsText = gaps.length ? ` even though it ${gaps.join(" and ")}` : "";
+      headline = `Rated <strong>Looks Complete</strong> primarily because it's already listed in OVOS's own upcoming Skill Store - a maintainer reviewed and merged it there, which counts as a strong completeness signal on its own${gapsText}.`;
+    } else {
+      headline = `Rated <strong>Looks Complete</strong>.`;
+    }
+  } else if (skill.tier === 2) {
+    const missing = [];
+    if (!skill.on_pypi) missing.push("isn't published on PyPI");
+    if (!skill.has_release) missing.push("has no GitHub release");
+    headline = `Rated <strong>Incomplete</strong> - it has a confirmed manifest (a proper <code>skill.json</code> or plugin entry-point declaration), but it ${missing.join(" and ")}.`;
+  } else {
+    headline = `Rated <strong>Inferred, Unconfirmed</strong> - no formal manifest (a <code>skill.json</code>, or a declared plugin entry-point) was found for this repo. Everything shown is guessed from the repo's own topic tags, description, and code, not a confirmed declaration.`;
+  }
+
+  const facts = [
+    {
+      label: "Published on PyPI",
+      ok: skill.on_pypi,
+      detail: skill.on_pypi ? `as ${skill.package_name}, v${skill.pypi_version}` : null,
+    },
+    { label: "Has a GitHub release", ok: skill.has_release },
+    { label: "Listed in OVOS's upcoming Skill Store", ok: skill.in_ovos_store },
+    { label: "Has a declared license", ok: !!skill.license, detail: skill.license },
+  ];
+  const factsHtml = facts.map((f) => `
+    <div class="fact-row">
+      <span class="fact-icon">${f.ok ? "✅" : "❌"}</span>
+      <span>${escapeHtml(f.label)}${f.detail ? ` <span class="fact-detail">(${escapeHtml(f.detail)})</span>` : ""}</span>
+    </div>
+  `).join("");
+
+  return `
+    <h2 class="detail-subhead">Why this assessment?</h2>
+    <p class="assessment-text">${headline}</p>
+    <div class="facts-list">${factsHtml}</div>
+  `;
+}
+
 function renderDetail(skill) {
   document.title = `${skill.name} · OVOS Klondike Mercantile`;
 
@@ -89,6 +136,8 @@ function renderDetail(skill) {
       </div>
 
       <div class="badges">${renderBadges(skill)}</div>
+
+      ${renderAssessment(skill)}
 
       ${renderLicenseWarning(skill)}
 

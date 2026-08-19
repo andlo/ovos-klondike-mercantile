@@ -387,6 +387,40 @@ footer a { color: var(--accent); }
   line-height: 1.5;
 }
 
+.assessment-text {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.assessment-text code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: #f0f1f3;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.facts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.fact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.fact-detail {
+  color: var(--muted);
+}
+
 .detail-description {
   font-size: 1rem;
   color: var(--text);
