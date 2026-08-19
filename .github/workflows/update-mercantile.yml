@@ -2,16 +2,24 @@ name: Update Klondike Mercantile data
 
 on:
   schedule:
-    - cron: "23 5 * * 1"   # weekly, Mondays, arbitrary off-peak minute
+    # Every 3 hours - safe now that each run only fully processes a
+    # bounded batch (new candidates + BATCH_SIZE known ones from a
+    # rotation) instead of the whole list at once, see BATCH_SIZE
+    # and main()'s docstring in generate_klondike_data.py. A weekly
+    # cron with a full sweep per run kept hitting real rate-limit
+    # trouble once README/setup-section/locale-listing calls were
+    # added per candidate; smaller, more frequent runs stay well
+    # within budget while still cycling the whole known list roughly
+    # every 356/60 ≈ 6 runs ≈ ~18 hours, and catching new repos every
+    # single run regardless of rotation position.
+    - cron: "17 */3 * * *"
   workflow_dispatch: {}
   push:
     branches: [main]
     paths:
-      # Only re-run the full (expensive, ~10-15 min) discovery when
-      # WHAT gets fetched could have changed - not on every push.
-      # Pure frontend changes (docs/app.js, index.html, style.css)
-      # are handled by the separate, much cheaper deploy-static.yml
-      # instead, which just redeploys already-committed data.
+      # Only re-run on push when WHAT gets fetched could have
+      # changed - not on every push. Pure frontend changes are
+      # handled by the separate, much cheaper deploy-static.yml.
       - "scripts/generate_klondike_data.py"
 
 # Queues (not cancels) overlapping runs - several script-changing
@@ -55,7 +63,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add skills/ docs/skills.json docs/meta.json
+          git add skills/ docs/skills.json docs/meta.json state.json
           git diff --cached --quiet || git commit -m "chore: update Klondike data [automated]"
           git push
 

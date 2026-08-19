@@ -50,8 +50,16 @@ SKILLS_DIR = ROOT / "skills"
 DOCS_DIR = ROOT / "docs"
 FEED_PATH = DOCS_DIR / "skills.json"
 META_PATH = DOCS_DIR / "meta.json"
+STATE_PATH = ROOT / "state.json"
 OVOS_STORE_FEED_URL = "https://openvoiceos.github.io/OVOS-skills-store/skills.json"
 IGNORE_LIST_PATH = ROOT / "ignore.txt"
+
+# How many ALREADY-KNOWN candidates get refreshed per run, rotating
+# through the full list over several runs rather than reprocessing
+# everyone every time - see main()'s docstring-length comment for
+# why. Genuinely NEW candidates (first time seen) are always
+# processed in full regardless of this number, every run.
+BATCH_SIZE = 60
 
 PROVIDER_PATTERN = re.compile(r"provider for ([\w.-]+)", re.IGNORECASE)
 ONLINE_LIBS = {"requests", "bs4", "beautifulsoup4", "feedparser", "aiohttp", "httpx"}
@@ -170,6 +178,35 @@ def load_ignore_list():
         return set()
     lines = IGNORE_LIST_PATH.read_text().splitlines()
     return {ln.strip() for ln in lines if ln.strip() and not ln.strip().startswith("#")}
+
+
+def load_state():
+    """Rotation position for batched refreshing - see BATCH_SIZE and
+    main()'s comment. A fresh repo (no prior state.json) just starts
+    at the beginning."""
+    if not STATE_PATH.exists():
+        return {"cursor": 0}
+    try:
+        return json.loads(STATE_PATH.read_text())
+    except Exception:
+        return {"cursor": 0}
+
+
+def save_state(state):
+    STATE_PATH.write_text(json.dumps(state, indent=2) + "\n")
+
+
+def load_previous_entries():
+    """Previous run's output, keyed by id - the merge base for this
+    run: candidates NOT selected for reprocessing keep this data
+    unchanged rather than needing a full sweep every run."""
+    if not FEED_PATH.exists():
+        return {}
+    try:
+        data = json.loads(FEED_PATH.read_text())
+        return {e["id"]: e for e in data if "id" in e}
+    except Exception:
+        return {}
 
 
 def search_code_repos(query):
@@ -654,9 +691,32 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
 
 
 def main():
+    """Runs discovery every time (cheap - a few dozen search-API
+    calls total), but only fully FETCHES/PROCESSES a bounded subset
+    of candidates per run:
+    - Every genuinely NEW candidate (never seen in a previous run's
+      output) - so new repos are caught quickly, every run, not
+      gated behind a rotation.
+    - Up to BATCH_SIZE ALREADY-KNOWN candidates, rotating through
+      the full known list a chunk at a time via state.json's cursor,
+      so existing entries get refreshed periodically without every
+      run needing to touch all ~350+ of them.
+
+    Found the hard way today: processing everyone in one run made
+    each run take 15-25+ minutes and made a real, repeated dent in
+    the hourly rate-limit budget once README/setup-section/locale-
+    listing calls were added per candidate. Batching keeps each run
+    small enough to run much more often (see the workflow's cron)
+    while still fully cycling through the known list over several
+    runs, and lets candidates NOT reprocessed this run simply keep
+    their previous data instead of needing to be re-fetched from
+    scratch to appear in the feed at all.
+    """
     SKILLS_DIR.mkdir(exist_ok=True)
     DOCS_DIR.mkdir(exist_ok=True)
     ignore_list = load_ignore_list()
+    state = load_state()
+    previous_entries = load_previous_entries()
 
     print("Discovering via code search (skill.json + pip_spec)...")
     with_skill_json = search_code_repos("filename:skill.json+pip_spec")
@@ -669,24 +729,43 @@ def main():
     all_candidates = sorted((with_skill_json | topic_repos) - ignore_list)
     print(f"\n{len(all_candidates)} total unique candidates ({len(ignore_list)} ignored)")
 
+    new_candidates = [c for c in all_candidates if c.replace("/", "-") not in previous_entries]
+    known_candidates = [c for c in all_candidates if c.replace("/", "-") in previous_entries]
+
+    cursor = state.get("cursor", 0)
+    if known_candidates:
+        cursor = cursor % len(known_candidates)
+        batch = known_candidates[cursor:cursor + BATCH_SIZE]
+        if len(batch) < BATCH_SIZE:
+            batch += known_candidates[:BATCH_SIZE - len(batch)]
+    else:
+        batch = []
+
+    to_process = new_candidates + batch
+    print(
+        f"Processing {len(to_process)} this run "
+        f"({len(new_candidates)} new, {len(batch)} refreshed from rotation "
+        f"of {len(known_candidates)} known)"
+    )
+
     store_package_names = fetch_ovos_store_package_names()
     localize_tracked_repos = fetch_ovos_localize_tracked_repos()
 
-    entries = []
-    for i, full_name in enumerate(all_candidates):
+    merged_entries = dict(previous_entries)  # everyone starts carried-over
+
+    for i, full_name in enumerate(to_process):
         if i > 0 and i % 20 == 0:
             # Proactive pacing, not just reactive retry - spreads out
             # the burst of API calls this loop makes (repo info +
-            # skill.json + possibly __init__.py/setup.py/settingsmeta
-            # per candidate) so we're less likely to trip GitHub's
-            # secondary rate limit in the first place. A short pause
-            # every 20 candidates, not every single one, to keep the
-            # weekly run's total time reasonable.
+            # skill.json + possibly __init__.py/setup.py/settingsmeta/
+            # README/locale per candidate) so we're less likely to
+            # trip GitHub's secondary rate limit in the first place.
             time.sleep(3)
 
         repo = repo_info(full_name)
         if repo is None:
             print(f"  SKIP {full_name}: repo not accessible")
+            merged_entries.pop(full_name.replace("/", "-"), None)
             continue
         owner_lower = full_name.split("/", 1)[0].lower()
         if repo.get("fork") and owner_lower not in TRUSTED_FORK_OWNERS:
@@ -697,6 +776,7 @@ def main():
             # test-forks while still keeping e.g. OpenVoiceOS's own
             # never-detached forks of their Mycroft predecessors.
             print(f"  SKIP {full_name}: is a fork (untrusted owner)")
+            merged_entries.pop(full_name.replace("/", "-"), None)
             continue
         # No license exclusion - included regardless, with an
         # explicit "No license" badge in the UI (build_entry's
@@ -726,6 +806,7 @@ def main():
                 # vanished/moved since - and it's not topic-tagged
                 # either, so there's no fallback signal to trust.
                 print(f"  SKIP {full_name}: skill.json missing, not topic-tagged")
+                merged_entries.pop(full_name.replace("/", "-"), None)
                 continue
             # One fetch of setup.py/pyproject.toml, reused for both
             # entry-point-group detection and package-name guessing -
@@ -756,6 +837,7 @@ def main():
                     component_type = "Tool"
                 else:
                     print(f"  SKIP {full_name}: topic-tagged but no plugin/skill/tool signs found")
+                    merged_entries.pop(full_name.replace("/", "-"), None)
                     continue
 
         entry = build_entry(
@@ -779,12 +861,7 @@ def main():
             entry["tier"] = 1
         # else: stays tier 3 (last-resort fallback, no formal manifest)
 
-        entries.append(entry)
-
-        out_name = full_name.replace("/", "-") + ".json"
-        with open(SKILLS_DIR / out_name, "w") as f:
-            json.dump(entry, f, indent=2)
-            f.write("\n")
+        merged_entries[entry["id"]] = entry
 
         tier_note = f" [tier {entry['tier']}]"
         type_note = f" [{entry['component_type']}]"
@@ -792,14 +869,37 @@ def main():
         release_note = "" if entry["has_release"] else " [no release]"
         print(f"  OK   {full_name}{tier_note}{type_note}{pypi_note}{release_note}")
 
-    entries.sort(key=lambda e: (e["name"] or "").lower())
+    # Drop entries for candidates that no longer appear at all
+    # (deleted, made private, or now in ignore.txt) - checked against
+    # the full current candidate list, not just what got reprocessed
+    # this run, so stale entries don't linger indefinitely just
+    # because their rotation slot hasn't come up again yet.
+    valid_ids = {c.replace("/", "-") for c in all_candidates}
+    merged_entries = {k: v for k, v in merged_entries.items() if k in valid_ids}
+
+    entries = sorted(merged_entries.values(), key=lambda e: (e["name"] or "").lower())
+    for entry in entries:
+        out_name = entry["id"] + ".json"
+        with open(SKILLS_DIR / out_name, "w") as f:
+            json.dump(entry, f, indent=2)
+            f.write("\n")
+    # Remove skill/*.json files for anything no longer valid, so
+    # stale per-entry files don't accumulate forever.
+    for path in SKILLS_DIR.glob("*.json"):
+        if path.stem not in valid_ids:
+            path.unlink()
+
     with open(FEED_PATH, "w") as f:
         json.dump(entries, f, indent=2)
         f.write("\n")
 
+    new_cursor = (cursor + len(batch)) % len(known_candidates) if known_candidates else 0
+    save_state({"cursor": new_cursor})
+
     meta = {
         "total_candidates_reviewed": len(all_candidates),
         "total_entries_included": len(entries),
+        "processed_this_run": len(to_process),
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     with open(META_PATH, "w") as f:

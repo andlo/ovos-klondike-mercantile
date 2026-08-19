@@ -277,10 +277,12 @@ function renderStatsLine(meta, entryCount) {
     return;
   }
   const reviewed = meta.total_candidates_reviewed;
+  const processed = meta.processed_this_run;
   const generated = formatDate(meta.generated_at);
   let text = `${entryCount} skills & components listed`;
   if (reviewed) text += ` (out of ${reviewed} repos reviewed)`;
   if (generated) text += ` · last checked ${generated}`;
+  if (processed) text += ` · ${processed} refreshed that run`;
   statsLine.textContent = text;
 }
 
