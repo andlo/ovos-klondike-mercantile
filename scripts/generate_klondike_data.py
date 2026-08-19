@@ -311,8 +311,32 @@ def fetch_requires_api_key(full_name):
     return "api_key" in lowered or "api key" in lowered
 
 
-def fetch_readme_description(full_name):
-    """Best-effort description pulled from the repo's own README,
+MAX_SETUP_SECTION_LENGTH = 800
+
+# Matches markdown headers whose text suggests installation/setup/
+# configuration content - deliberately broad (install, setup,
+# config, getting started) since repos phrase this differently, and
+# a repo can have more than one matching section (e.g. separate
+# "Installation" and "Configuration" headers).
+SETUP_HEADING_PATTERN = re.compile(
+    r"install|setup|config|getting started", re.IGNORECASE
+)
+
+
+def fetch_readme(full_name):
+    """Fetches README.md (or common case-variant names), once, for
+    reuse by both extract_readme_description() and
+    extract_readme_setup_sections() - avoids fetching the same file
+    twice for two different purposes."""
+    for path in ("README.md", "readme.md", "Readme.md"):
+        text = fetch_file(full_name, path)
+        if text:
+            return text
+    return None
+
+
+def extract_readme_description(readme_text):
+    """Best-effort description from already-fetched README text,
     used ONLY as a last-resort fallback when neither skill.json nor
     GitHub's own repo "About" description field have anything -
     confirmed common specifically for PHAL plugins by inspection:
@@ -324,13 +348,9 @@ def fetch_readme_description(full_name):
     then takes the first line of real prose - deliberately simple
     (not a full markdown parser) since it only needs to find one
     readable sentence, not render the document."""
-    for path in ("README.md", "readme.md", "Readme.md"):
-        text = fetch_file(full_name, path)
-        if text:
-            break
-    else:
+    if not readme_text:
         return ""
-    for line in text.splitlines():
+    for line in readme_text.splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
@@ -342,6 +362,44 @@ def fetch_readme_description(full_name):
         if len(line) > 20:
             return line
     return ""
+
+
+def extract_readme_setup_sections(readme_text):
+    """Pulls out any README sections whose heading suggests
+    installation/setup/configuration content - repo-specific steps
+    beyond a plain `pip install X` (editing mycroft.conf, enabling a
+    systemd service, setting an API key, etc) that a generic install
+    command can't capture on its own. Returns a list of
+    {heading, content} dicts, in document order - a repo can have
+    more than one matching section. Content is capped at
+    MAX_SETUP_SECTION_LENGTH so the feed doesn't balloon from a
+    handful of repos with very long READMEs."""
+    if not readme_text:
+        return []
+    lines = readme_text.splitlines()
+    sections = []
+    i = 0
+    while i < len(lines):
+        match = re.match(r"^(#{1,6})\s+(.*)$", lines[i])
+        if match and SETUP_HEADING_PATTERN.search(match.group(2)):
+            level = len(match.group(1))
+            heading = match.group(2).strip()
+            i += 1
+            body_lines = []
+            while i < len(lines):
+                next_match = re.match(r"^(#{1,6})\s+", lines[i])
+                if next_match and len(next_match.group(1)) <= level:
+                    break
+                body_lines.append(lines[i])
+                i += 1
+            body = "\n".join(body_lines).strip()
+            if body:
+                if len(body) > MAX_SETUP_SECTION_LENGTH:
+                    body = body[:MAX_SETUP_SECTION_LENGTH].rstrip() + "…"
+                sections.append({"heading": heading, "content": body})
+            continue
+        i += 1
+    return sections
 
 
 def derive_package_name(setup_text, pyproject_text):
@@ -462,6 +520,15 @@ def days_since(iso_timestamp):
 def build_entry(full_name, repo, skill_json, tier, component_type, package_name_override, store_package_names):
     owner, name = full_name.split("/", 1)
 
+    # Fetched once, used for two things below: a description
+    # fallback when skill.json/GitHub's About field are both empty,
+    # AND setup-section extraction - attempted for EVERY entry
+    # regardless of whether a description already exists, since a
+    # Skill with its own skill.json description can still have real
+    # README setup notes (mycroft.conf changes, systemd services,
+    # etc) a generic `pip install X` command can't capture.
+    readme_text = fetch_readme(full_name)
+
     if skill_json is not None:
         package_name = skill_json.get("package_name")
         description = skill_json.get("description")
@@ -474,17 +541,14 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         package_name = package_name_override
         description = repo.get("description") or ""
         if not description:
-            # Fallback only reached when BOTH skill.json (not present
-            # for this branch by definition) and GitHub's own "About"
-            # field are empty - common for PHAL plugins specifically,
-            # see fetch_readme_description()'s docstring. One extra
-            # API call, but only for entries that actually need it.
-            description = fetch_readme_description(full_name)
+            description = extract_readme_description(readme_text)
         tags = normalize_tags(repo.get("topics") or [])
         display_name = name
         examples = []
         icon = None
         skill_id = None
+
+    setup_notes = extract_readme_setup_sections(readme_text)
 
     version, requires_dist, pypi_release_date = pypi_info(package_name)
     github_release = latest_github_release(full_name)
@@ -526,6 +590,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "pipeline": extract_pipeline(description),
         "connectivity": classify_connectivity(description, requires_dist),
         "requires_api_key": fetch_requires_api_key(full_name),
+        "setup_notes": setup_notes,
         "repo_created_at": repo_created_at,
         "last_updated": last_updated,
         # Two DIFFERENT kinds of "new", deliberately not collapsed

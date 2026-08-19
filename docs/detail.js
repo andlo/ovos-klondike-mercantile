@@ -41,6 +41,27 @@ function renderStatRow(label, value) {
   return `<div class="stat-row"><span class="stat-label">${escapeHtml(label)}</span><span class="stat-value">${value}</span></div>`;
 }
 
+function renderSetupNotes(skill) {
+  const sections = asArray(skill.setup_notes);
+  if (sections.length === 0) return "";
+  const blocks = sections.map((s) => `
+    <div class="setup-section">
+      <div class="setup-heading">${escapeHtml(s.heading)}</div>
+      <pre class="setup-content">${escapeHtml(s.content)}</pre>
+    </div>
+  `).join("");
+  return `
+    <h2 class="detail-subhead">Additional setup / configuration</h2>
+    <p class="setup-note">
+      Pulled straight from the repo's own README - may include steps
+      beyond a plain install (editing <code>mycroft.conf</code>,
+      enabling a service, setting an API key, etc). Not verified,
+      just extracted as-is.
+    </p>
+    ${blocks}
+  `;
+}
+
 function renderDetail(skill) {
   document.title = `${skill.name} · OVOS Klondike Mercantile`;
 
@@ -78,6 +99,8 @@ function renderDetail(skill) {
           <code class="install-command">${escapeHtml(install.command)}</code>
         </div>
       ` : ""}
+
+      ${renderSetupNotes(skill)}
 
       ${examples ? `
         <h2 class="detail-subhead">Example phrases</h2>

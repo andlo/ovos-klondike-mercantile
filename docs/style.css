@@ -401,6 +401,37 @@ footer a { color: var(--accent); }
   white-space: pre;
 }
 
+.setup-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0 0 0.75rem;
+}
+
+.setup-section {
+  background: #f4f6f8;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.setup-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.setup-content {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
 .detail-subhead {
   font-size: 1rem;
   margin: 1.5rem 0 0.75rem;
