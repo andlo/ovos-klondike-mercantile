@@ -1,0 +1,43 @@
+{
+  "id": "LibreVoiceAssistant-ovos-PHAL-plugin-wallpaper-manager",
+  "skill_id": null,
+  "name": "ovos-PHAL-plugin-wallpaper-manager",
+  "description": "Central wallpaper management interface for homescreens and other desktops",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/LibreVoiceAssistant/ovos-PHAL-plugin-wallpaper-manager",
+  "package_name": "ovos-PHAL-plugin-wallpaper-manager",
+  "pypi_version": "0.2.6",
+  "license": "Apache-2.0",
+  "author": "LibreVoiceAssistant",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 4,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-PHAL-plugin-wallpaper-manager`"
+    },
+    {
+      "heading": "Provider Configuration API",
+      "content": "The wallpaper management interface provides functionality for configuring wallpaper providers through the GUI interface, this is the event providers must listen for:\n\nNote: Currently only string configuration options are supported.\n\n``` python\n    # {provider_name}.get.wallpaper.config\n    # type: Request\n    # description: Request the wallpaper management interface to configure a wallpaper provider\n\non receiving the above event, the wallpaper provider must respond with the following event:\n\n``` python\n    # ovos.wallpaper.manager.provider.config\n    # type: Response\n    # description: Response to the wallpaper provider configuration request\n    # data required:\n        # provider_name = typically the self.skill_id of the skill that provides the wallpaper provider\n        # config = a dict\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2023-02-22T08:51:25Z",
+  "last_updated": "2025-11-05T01:07:32.581257Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

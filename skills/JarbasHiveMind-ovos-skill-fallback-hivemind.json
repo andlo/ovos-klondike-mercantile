@@ -1,0 +1,48 @@
+{
+  "id": "JarbasHiveMind-ovos-skill-fallback-hivemind",
+  "skill_id": null,
+  "name": "ovos-skill-fallback-hivemind",
+  "description": "When in doubt, ask a smarter OVOS install",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/JarbasHiveMind/ovos-skill-fallback-hivemind",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "JarbasHiveMind",
+  "tier": 3,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 3,
+  "open_issues": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Under skill settings (`~/.config/mycroft/skills/skill-ovos-fallback-hivemind.openvoiceos/settings.json`) you can tweak some parameters for HiveMind Skill.\n\n{\n  \"name\": \"HiveMind\",\n  \"confirmation\": true,\n  \"slave_mode\": false,\n  \"allow_selfsigned\": false\n}\n\n| Option             | Value      | Description                                                                                                                                    |\n|--------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------|\n| `name`             | `HiveMind` | Name to give to the HiveMind AI assistant in the confirmation dialog                                                                           |\u2026"
+    },
+    {
+      "heading": "HiveMind Setup",
+      "content": "You need to register the skill in the HiveMind server\n$ hivemind-core add-client\nCredentials added to database!\n\nNode ID: 2\nFriendly Name: HiveMind-Node-2\nAccess Key: 5a9e580a2773a262cbb23fe9759881ff\nPassword: 9b247ca66c7cd2b6388ad49ca504279d\nEncryption Key: 4185240103de0770\nWARNING: Encryption Key is deprecated, only use if your client does not support password\n\nAnd then set the identity file in the satellite device (where the skill will run)\n$ hivemind-client set-identity --key 5a9e580a2773a262cbb23fe9759881ff --password 9b247ca66c7cd2b6388ad49ca504279d --host 0.0.0.0 --port 5678 --siteid test\nidentity saved: /home/miro/.config/hivemind/_identity.json\n\ncheck the created identity file if you like\n$ cat ~/.config/hivemind/_identity.json\n{\n    \"password\": \"9b247ca66c7cd2b6388ad49ca504279d\",\u2026"
+    }
+  ],
+  "languages": [
+    "en-us",
+    "fr-fr",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-05-19T22:48:58Z",
+  "last_updated": "2025-06-11T12:44:04Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
