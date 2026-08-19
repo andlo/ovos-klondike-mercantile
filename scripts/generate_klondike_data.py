@@ -21,19 +21,18 @@ Every candidate gets one of three tiers, based on whether a formal
 manifest was found for its actual type - not specifically a
 skill.json, since most of what this store now covers isn't a skill:
 - Tier 1 (Looks Complete): has a confirmed manifest for its type
-  (skill.json for Skills, or a declared entry-points group for
-  Plugins), published on PyPI, has a GitHub release.
+  (skill.json for Skills, a declared entry-points group for Plugins,
+  or a setup.py/pyproject.toml name= declaration for Tools),
+  published on PyPI, has a GitHub release.
 - Tier 2 (Incomplete): has a confirmed manifest, but missing a PyPI
   release and/or a GitHub release - shown with an explicit "not on
   PyPI" / "no release" badge rather than excluded.
-- Tier 3 (Inferred, Unconfirmed): NO formal manifest found at all.
-  Falls through three last-resort signals, in order: skill-shaped
-  __init__.py code (OVOSSkill/FallbackSkill/etc, guessed as "Skill"),
-  then a real installable package with no skill/plugin-specific
-  signal at all (guessed as "Tool" - catches CLI clients, helper
-  libraries, and other genuinely OVOS-adjacent utilities that aren't
-  skills or plugins). A topic-tagged repo matching none of these is
-  excluded outright - the topic alone isn't proof of anything.
+- Tier 3 (Inferred, Unconfirmed): NO formal manifest found at all -
+  specifically, skill-shaped __init__.py code (OVOSSkill/
+  FallbackSkill/etc) with no skill.json and no setup.py/pyproject.toml
+  name= either, guessed as "Skill" purely from behavior. A
+  topic-tagged repo matching none of these is excluded outright - the
+  topic alone isn't proof of anything.
 """
 import base64
 import json
@@ -963,9 +962,17 @@ def main():
                 has_confirmed_manifest = True
             else:
                 # No declared entry-points group either - last-resort
-                # signals, in order. Both land at tier 3 regardless of
-                # which one matched, since neither is a formal
-                # declaration the way skill.json/entry-points are.
+                # signals. The two are NOT equally strong though:
+                # skill-shaped __init__.py code is a real guess (no
+                # declaration anywhere says "this is a skill"), but a
+                # genuine setup.py/pyproject.toml name= declaration
+                # IS a formal manifest for a Tool the same way
+                # skill.json is for a Skill - found by inspection:
+                # andlo/ovos-tui-client is on PyPI with a real GitHub
+                # release, every signal pointing at "Looks Complete",
+                # but was stuck at tier 3 forever because this branch
+                # never set has_confirmed_manifest for the Tool case,
+                # unlike the Skill/Plugin cases above.
                 if looks_like_skill_code(full_name):
                     component_type = "Skill"
                 elif package_name_override:
@@ -977,6 +984,7 @@ def main():
                     # excluded outright for not matching skill-code
                     # signs specifically.
                     component_type = "Tool"
+                    has_confirmed_manifest = True
                 else:
                     print(f"  SKIP {full_name}: topic-tagged but no plugin/skill/tool signs found")
                     merged_entries.pop(full_name.replace("/", "-"), None)
