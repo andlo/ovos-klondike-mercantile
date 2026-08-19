@@ -683,16 +683,18 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     readme_text = fetch_readme(full_name)
 
     if skill_json is not None:
-        # Falls back to the repo's own bare name when skill.json
-        # omits package_name entirely - found by inspection:
-        # OpenVoiceOS/ovos-skill-date-time's skill.json has no
-        # package_name field at all (also missing license, pip_spec,
-        # icon, author - a genuinely minimal skill.json), which made
-        # this site report "Not on PyPI" even though the package IS
-        # published, under exactly the repo's own name (the
-        # overwhelmingly common convention). No extra API cost -
-        # just tries the name already in hand before giving up.
-        package_name = skill_json.get("package_name") or name
+        # Three-tier fallback when skill.json omits package_name:
+        # 1) skill.json's own declaration (most authoritative, when
+        #    present); 2) setup.py/pyproject.toml's own name= field,
+        #    per direct advice from JarbasAI (OVOS core contributor)
+        #    on exactly this question - more reliable than guessing,
+        #    since a repo's name doesn't always match its actual
+        #    PyPI package name; 3) the repo's own bare name as a
+        #    last resort (works often enough in practice - found by
+        #    inspection: OpenVoiceOS/ovos-skill-date-time's skill.json
+        #    has no package_name field at all, but the package IS
+        #    published on PyPI under exactly the repo's own name).
+        package_name = skill_json.get("package_name") or package_name_override or name
         description = skill_json.get("description")
         tags = normalize_tags(skill_json.get("tags", []))
         display_name = skill_json.get("name") or name
@@ -928,6 +930,17 @@ def main():
             plugin_type = derive_component_type(entry_point_groups)
             if plugin_type is not None and plugin_type != "Skill":
                 component_type = plugin_type
+            # Package-name fallback when skill.json doesn't declare
+            # one - per direct advice from JarbasAI (OVOS core
+            # contributor) in response to this exact question: "If
+            # there's a setup.py or pyproject.toml you get package
+            # name from there and check if it's on pypi". More
+            # reliable than guessing from the bare repo name (which
+            # build_entry() still falls back to if this comes up
+            # empty too) - a repo's name doesn't always match its
+            # actual PyPI package name, but its own setup.py/
+            # pyproject.toml declaration does.
+            package_name_override = derive_package_name(setup_text, pyproject_text)
         else:
             if full_name not in topic_or_name_repos:
                 # Found only via the skill.json search but the file
