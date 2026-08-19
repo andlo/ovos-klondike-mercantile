@@ -9,6 +9,12 @@ clearly labeled by how sure we are it's the real thing.
 
 **Live site**: [andlo.github.io/ovos-klondike-mercantile](https://andlo.github.io/ovos-klondike-mercantile/)
 
+**Maintaining an OVOS repo and want it listed or correctly classified?**
+See [Getting your repo found and correctly listed](https://andlo.github.io/ovos-klondike-mercantile/for-maintainers.html)
+for the actual, practical checklist - what follows below is the
+deeper technical explanation for anyone curious how the discovery
+itself works.
+
 - [How this works](#how-this-works)
 - [What's on the detail page](#whats-on-the-detail-page)
 - [Site structure](#site-structure)
@@ -202,14 +208,19 @@ Static, no build step - `docs/` is served directly by GitHub Pages:
 Split into two GitHub Actions workflows so a pure frontend change
 doesn't force an expensive full re-run:
 
-- **`update-mercantile.yml`** (~15-20 min): the actual discovery +
-  cross-referencing script. Runs weekly (Mondays), on-demand via
+- **`update-mercantile.yml`**: the actual discovery + cross-
+  referencing script. Runs every 3 hours, on-demand via
   `workflow_dispatch`, and automatically whenever
   `scripts/generate_klondike_data.py` itself changes (the only file
-  where a change could affect what gets fetched). Uses a
-  `concurrency` group (queue, not cancel) so back-to-back
-  script-changing pushes can't run two full passes at once and
-  conflict when committing.
+  where a change could affect what gets fetched). Processes new
+  candidates and a bounded, rotating batch of already-known ones per
+  run (see `BATCH_SIZE`/`NEW_BATCH_SIZE` in the script) rather than
+  the whole list every time - a full sweep-everyone-every-run design
+  kept hitting real rate-limit trouble once README/setup-section/
+  locale-listing lookups were added per candidate. A `concurrency`
+  group (queue, not cancel) plus a push-retry-with-rebase in the
+  commit step handle back-to-back runs landing close together
+  without losing work.
 - **`deploy-static.yml`** (~1 min): redeploys whatever's already
   committed under `docs/` whenever `index.html`, `detail.html`,
   `app.js`, `detail.js`, `shared.js`, or `style.css` change - no
