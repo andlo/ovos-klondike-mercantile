@@ -1029,6 +1029,9 @@ def main():
         "total_candidates_reviewed": len(all_candidates),
         "total_entries_included": len(entries),
         "processed_this_run": len(to_process),
+        "new_candidates_processed_this_run": len(new_candidates),
+        "new_candidates_remaining": remaining_new,
+        "known_candidates_count": len(known_candidates),
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     with open(META_PATH, "w") as f:

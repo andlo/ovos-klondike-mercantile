@@ -7,6 +7,7 @@ const newSection = document.getElementById("new-section");
 const newGrid = document.getElementById("new-grid");
 const emptyState = document.getElementById("empty-state");
 const statsLine = document.getElementById("stats-line");
+const queueLine = document.getElementById("queue-line");
 const searchInput = document.getElementById("search");
 const authorFilter = document.getElementById("author-filter");
 const tagFilter = document.getElementById("tag-filter");
@@ -292,13 +293,28 @@ function renderStatsLine(meta, entryCount) {
     return;
   }
   const reviewed = meta.total_candidates_reviewed;
-  const processed = meta.processed_this_run;
   const generated = formatDate(meta.generated_at);
   let text = `${entryCount} skills & components listed`;
   if (reviewed) text += ` (out of ${reviewed} repos reviewed)`;
   if (generated) text += ` · last checked ${generated}`;
-  if (processed) text += ` · ${processed} refreshed that run`;
   statsLine.textContent = text;
+
+  // Queue visibility: how many newly-discovered repos haven't had
+  // their first check yet, and how many got through this run - so
+  // it's visible there's a backlog, and that it's shrinking over
+  // time, not stuck. Only shown when there actually is a backlog
+  // (e.g. right after a new discovery signal was added and found a
+  // large batch of repos at once).
+  const remaining = meta.new_candidates_remaining || 0;
+  if (remaining > 0) {
+    const doneThisRun = meta.new_candidates_processed_this_run || 0;
+    queueLine.textContent =
+      `⛏️ ${remaining} newly-discovered repos still queued for their first check ` +
+      `(${doneThisRun} processed this run) - shrinks a little every run.`;
+    queueLine.hidden = false;
+  } else {
+    queueLine.hidden = true;
+  }
 }
 
 searchInput.addEventListener("input", applyFilters);
