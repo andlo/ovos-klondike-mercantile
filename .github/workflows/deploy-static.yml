@@ -1,0 +1,39 @@
+name: Deploy static site (no data regeneration)
+
+# Handles pure frontend changes (docs/app.js, index.html, style.css)
+# cheaply, without invoking the expensive (~10-15 min) discovery
+# script in update-mercantile.yml. Just repackages and redeploys
+# whatever is already committed under docs/ - including the
+# skills.json/meta.json that the OTHER workflow already committed
+# there, so the site always reflects the latest of both: newest
+# frontend code AND newest data, without needing both to change
+# together.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/index.html"
+      - "docs/app.js"
+      - "docs/style.css"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy-pages:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: "23 5 * * 1"   # weekly, Mondays, arbitrary off-peak minute
   workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      # Only re-run the full (expensive, ~10-15 min) discovery when
+      # WHAT gets fetched could have changed - not on every push.
+      # Pure frontend changes (docs/app.js, index.html, style.css)
+      # are handled by the separate, much cheaper deploy-static.yml
+      # instead, which just redeploys already-committed data.
+      - "scripts/generate_klondike_data.py"
 
 permissions:
   contents: write
