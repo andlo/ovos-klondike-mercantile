@@ -1,0 +1,31 @@
+{
+  "skill_id": null,
+  "name": "ovos-PHAL-sensors",
+  "description": "expose your OVOS device under HomeAssistant",
+  "examples": [],
+  "tags": [
+    "hardware",
+    "openvoiceos",
+    "phal"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-PHAL-sensors",
+  "package_name": "ovos-PHAL-sensors",
+  "pypi_version": "0.1.0a1",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 3,
+  "component_type": "PHAL Plugin",
+  "stars": 2,
+  "forks": 1,
+  "open_issues": 5,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "last_updated": "2026-08-12T14:50:21.853574Z",
+  "is_new": true
+}
