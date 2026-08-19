@@ -356,6 +356,22 @@ def infer_category(tags):
     return "Other"
 
 
+def normalize_tags(value):
+    """Coerces a tags value to a list of strings. Defensive fix for
+    real-world data quality: ovos-skill-laugh and ovos-skill-
+    randomness's actual skill.json files declare "tags" as a single
+    string ("ovos skill voice assistant") rather than an array -
+    passed through unmodified, this crashed the frontend's
+    tags.map() call on live data. A space-separated string is split
+    into individual tags as the most likely intended meaning;
+    anything else that isn't already a list falls back to empty."""
+    if isinstance(value, list):
+        return [str(v) for v in value]
+    if isinstance(value, str):
+        return value.split()
+    return []
+
+
 def days_since(iso_timestamp):
     if not iso_timestamp:
         return None
@@ -372,7 +388,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     if skill_json is not None:
         package_name = skill_json.get("package_name")
         description = skill_json.get("description")
-        tags = skill_json.get("tags", [])
+        tags = normalize_tags(skill_json.get("tags", []))
         display_name = skill_json.get("name") or name
         examples = skill_json.get("examples", [])
         icon = skill_json.get("icon")
@@ -380,7 +396,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     else:
         package_name = package_name_override
         description = repo.get("description") or ""
-        tags = repo.get("topics", [])
+        tags = normalize_tags(repo.get("topics") or [])
         display_name = name
         examples = []
         icon = None

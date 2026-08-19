@@ -58,6 +58,17 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Defense in depth: the generator now normalizes tags/examples to
+// always be arrays (see generate_klondike_data.py's normalize_tags,
+// added after ovos-skill-laugh/ovos-skill-randomness's own
+// skill.json turned out to declare "tags" as a plain string, which
+// crashed every .map() call on it - `value || []` alone doesn't
+// catch a truthy non-array value like a string). Kept here too in
+// case a future data source has a shape this hasn't anticipated.
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
 function pipelineLabel(pipelinePackage) {
   return pipelinePackage
     .replace(/^ovos-/, "")
@@ -103,9 +114,9 @@ function renderBadges(skill) {
 }
 
 function renderCard(skill) {
-  const examples = (skill.examples || []).slice(0, 3)
+  const examples = asArray(skill.examples).slice(0, 3)
     .map((e) => `<li>"${escapeHtml(e)}"</li>`).join("");
-  const tags = (skill.tags || [])
+  const tags = asArray(skill.tags)
     .map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
   const icon = skill.icon || GENERIC_ICON;
   const version = skill.pypi_version ? `v${escapeHtml(skill.pypi_version)}` : "unreleased";
@@ -206,7 +217,7 @@ function renderNewSection(list) {
 
 function populateFilters(list) {
   const authors = [...new Set(list.map((s) => s.author))].sort((a, b) => a.localeCompare(b));
-  const tags = [...new Set(list.flatMap((s) => s.tags || []))].sort((a, b) => a.localeCompare(b));
+  const tags = [...new Set(list.flatMap((s) => asArray(s.tags)))].sort((a, b) => a.localeCompare(b));
   const types = [...new Set(list.map((s) => s.component_type).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 
   for (const a of authors) {
@@ -233,7 +244,7 @@ function matchesSearch(skill, query) {
   if (!query) return true;
   const haystack = [
     skill.name, skill.description, skill.author,
-    ...(skill.tags || []), ...(skill.examples || []),
+    ...asArray(skill.tags), ...asArray(skill.examples),
   ].join(" ").toLowerCase();
   return haystack.includes(query);
 }
@@ -247,7 +258,7 @@ function applyFilters() {
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
     (!author || s.author === author) &&
-    (!tag || (s.tags || []).includes(tag)) &&
+    (!tag || asArray(s.tags).includes(tag)) &&
     (!type || s.component_type === type)
   );
   const sorted = sortSkills(filtered, sortOrder.value);
