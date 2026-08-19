@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-utterance-normalizer",
   "skill_id": null,
   "name": "ovos-utterance-normalizer",
-  "description": "",
+  "description": "`ovos-utterance-normalizer` is an OVOS plugin that",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -25,6 +26,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-utterance-normalizer\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-08-05T15:23:53Z",
   "last_updated": "2025-11-05T00:59:16.044516Z",
   "is_new_repo": false,

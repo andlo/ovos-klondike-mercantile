@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-utils",
   "skill_id": null,
   "name": "ovos-utils",
-  "description": "",
+  "description": "`ovos-utils` is a shared utility library for the OpenVoiceOS ecosystem. It provides",
   "examples": [],
   "tags": [
     "core",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-utils\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-10-24T11:11:55Z",
   "last_updated": "2026-03-11T04:28:57.691708Z",
   "is_new_repo": false,

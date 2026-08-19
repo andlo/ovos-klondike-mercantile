@@ -1,4 +1,5 @@
 {
+  "id": "OscillateLabsLLC-skill-homeassistant",
   "skill_id": "skill_homeassistant.oscillatelabsllc",
   "name": "skill-homeassistant",
   "description": "skill-homeassistant",
@@ -36,6 +37,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation on Neon",
+      "content": "You can `pip install neon-homeassistant-skill`, or handle the installation from the `~/.config/neon/neon.yaml` file if you prefer:\n\n```yaml\nskills:\n  default_skills:\n    - skill-homeassistant # Optionally with a version, such as skill-homeassistant==0.1.0\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "### Authentication Using a Long-lived Token\n\nWe recommend using a [long-lived token for Home Assistant](https://developers.home-assistant.io/docs/auth_api/#long-lived-access-token). This provides persistent access without requiring re-authentication. Configure it in your skill settings file:\n\n- OVOS: `~/.config/mycroft/skills/skill-homeassistant/settings.json`\n- Neon: `~/.config/neon/skills/neon_homeassistant_skill/settings.json`\n\n```json\n{\n  \"api_key\": \"<HA_LONG_LIVED_TOKEN>\",\n  \"host\": \"<HA_IP_OR_HOSTNAME>\"\n}\n```\n\n### Configuration Options\n\nAll available settings with their defaults:\n\n```jsonc\n{\n  \"host\": \"\", // Home Assistant instance URL - required, no default\n  \"api_key\": \"\", // Long-lived access token - required, no default\n  \"disable_intents\": false, // Disable all Home Assistant in\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2025-03-17T02:00:51Z",
   "last_updated": "2026-08-19T03:35:11.558124Z",
   "is_new_repo": false,

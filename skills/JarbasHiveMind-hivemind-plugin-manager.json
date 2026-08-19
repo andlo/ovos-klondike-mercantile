@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-hivemind-plugin-manager",
   "skill_id": null,
   "name": "hivemind-plugin-manager",
   "description": "Plugin manager and abstract interfaces for hivemind-core: database, network protocol, and agent protocol backends",
@@ -28,6 +29,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash\npip install hivemind-plugin-manager\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-12-28T15:18:52Z",
   "last_updated": "2026-05-18T19:25:54.867366Z",
   "is_new_repo": false,

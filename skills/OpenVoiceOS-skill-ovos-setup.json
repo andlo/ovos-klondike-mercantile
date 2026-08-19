@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-skill-ovos-setup",
   "skill_id": null,
   "name": "skill-ovos-setup",
   "description": "OpenVoiceOS Setup Skill - configure your device and optionally connect it to a backend server",
@@ -27,6 +28,21 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "<img src='https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/handshake.svg' card_color='#22a7f0' width='50' height='50' style='vertical-align:bottom'/> OVOS - Setup",
+      "content": "Setup your device, choose a voice and optionally connect to a backend server\n\nWARNING: end users SHOULD NOT install this, if it is needed then it will ship with our images, if you installed ovos manually this will only cause you issues\n\nIf the skill wasnt pre-installed, don't do it yourself\n\n## About \n\nThis skill will offer you the option to select Personal, or no backend, an offline or online STT as well choose the voice your device will use\n\n\n![](./pairing.gif)\n\n## Examples \n* \"Pair my device\" (happens automatically on first run if not paired already)\n\n## Credits \nMycroft AI (@MycroftAI)\n\n## Category\n**Configuration**\n\n## Tags\n#pair\n#pairing\n#connectivity\n#system"
+    }
+  ],
+  "languages": [
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "pt-pt"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-01-02T16:57:42Z",
   "last_updated": "2023-09-20T21:29:13Z",
   "is_new_repo": false,

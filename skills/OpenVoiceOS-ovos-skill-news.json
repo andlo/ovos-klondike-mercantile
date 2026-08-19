@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-news",
   "skill_id": "ovos-skill-news.openvoiceos",
   "name": "News Streams",
   "description": "News streams from around the globe.",
@@ -33,6 +34,25 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Classic Core Installation",
+      "content": "If you are using this skill with mycroft classic core, you have to [disable the official skill](https://mycroft-ai.gitbook.io/docs/skill-development/faq#how-do-i-disable-a-skill) because they are incompatible\n\nTo play https streams properly you also need to install vlc\n\n```bash\nsudo apt-get install vlc\n```\n\nand make it the default it in your .conf\n\n```json\n  \"Audio\": {\n    \"backends\": {\n      \"local\": {\n        \"active\": false\n      },\n      \"vlc\": {\n        \"active\": true\n      }\n    },\n    \"default-backend\": \"vlc\"\n  },\n```"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "pt-PT"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2021-03-14T15:16:53Z",
   "last_updated": "2026-07-12T16:49:36Z",
   "is_new_repo": false,

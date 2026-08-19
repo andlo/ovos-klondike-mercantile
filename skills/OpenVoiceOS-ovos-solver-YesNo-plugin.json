@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-solver-YesNo-plugin",
   "skill_id": null,
   "name": "ovos-solver-YesNo-plugin",
-  "description": "",
+  "description": "A simple tool to indicate whether a user answered \"yes\" or \"no\" to a yes/no prompt.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "\ud83d\udce5 Install",
+      "content": "```bash\npip install ovos-solver-yes-no-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2024-07-19T18:08:15Z",
   "last_updated": "2024-12-26T16:04:53.303139Z",
   "is_new_repo": false,

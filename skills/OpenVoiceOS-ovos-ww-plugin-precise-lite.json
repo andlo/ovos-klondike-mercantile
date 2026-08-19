@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-ww-plugin-precise-lite",
   "skill_id": null,
   "name": "ovos-ww-plugin-precise-lite",
-  "description": "",
+  "description": "OpenVoiceOS wake word plugin for precise-lite",
   "examples": [],
   "tags": [
     "deprecated",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "This package supports both tflite-runner and the full tensorflow.\n\nTo install with tflite, use `pip install ovos-ww-plugin-precise-lite[tflite]`.\nFor the full tensorflow use `pip install ovos-ww-plugin-precise-lite[full]`."
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add the following to your hotwords section in mycroft.conf \n\n```json\n\"listener\": {\n  \"wake_word\": \"hey mycroft\"\n},\n\"hotwords\": {\n  \"hey mycroft\": {\n    \"module\": \"ovos-ww-plugin-precise-lite\",\n    \"model\": \"https://github.com/OpenVoiceOS/precise-lite-models/raw/master/wakewords/en/hey_mycroft.tflite\",\n    \"listen\": true,\n    \"sound\": \"snd/start_listening.wav\",\n    \"expected_duration\": 3,\n    \"trigger_level\": 3,\n    \"sensitivity\": 0.5\n   }\n}\n```\n\nGet community models [here](https://github.com/OpenVoiceOS/precise-lite-models)"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-08-15T21:56:32Z",
   "last_updated": "2025-06-10T21:19:30.747583Z",
   "is_new_repo": false,

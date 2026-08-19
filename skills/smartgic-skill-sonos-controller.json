@@ -1,4 +1,5 @@
 {
+  "id": "smartgic-skill-sonos-controller",
   "skill_id": null,
   "name": "skill-sonos-controller",
   "description": "Control SONOS\u00ae speakers with music services support such as Deezer, Spotify, Amazon Music, etc... from your Open Voice OS assistant.",
@@ -42,6 +43,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "Install the skill in the same Python environment as OVOS:\n\n```bash\npip install git+https://github.com/smartgic/skill-sonos-controller\n```\n\nSonos discovery uses local multicast traffic. The OVOS host and Sonos players\nmust be reachable on the same LAN, and client isolation must be disabled. The\nprovided container uses host networking for this reason:\n\n```bash\ncd docker\ndocker compose up -d\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "OVOS stores settings under the skill ID\n`skill-sonos-controller.smartgic`. Available options are:\n\n| Option | Default | Description |\n| --- | --- | --- |\n| `default_source` | `Music Library` | Service used when an utterance does not name one. The name is case-insensitive. |\n| `link_code` | empty | Temporary code used to finish DeviceLink or AppLink authentication. |\n| `duck` | `false` | Reduce active Sonos volume while OVOS listens. |\n| `playing_confirmation` | `false` | Speak a confirmation after playback starts. |\n| `searching_confirmation` | `true` | Announce before searching a service. |\n| `url_shortener` | `https://sonos.smartgic.io` | Broker used to make a long provider registration URL speakable. |\n\n### Authenticate a service\n\n1. Say \u201cAuthenticate Spotify with Sonos,\u201d replacing Spot\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2020-12-08T01:27:16Z",
   "last_updated": "2026-08-11T04:36:40Z",
   "is_new_repo": false,

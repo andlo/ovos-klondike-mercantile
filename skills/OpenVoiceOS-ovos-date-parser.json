@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-date-parser",
   "skill_id": null,
   "name": "ovos-date-parser",
-  "description": "",
+  "description": "Multilingual parsing, extraction and formatting of human date, time and duration",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -25,6 +26,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash\npip install ovos-date-parser"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-11-07T01:05:06Z",
   "last_updated": "2026-07-21T12:30:09.910817Z",
   "is_new_repo": false,

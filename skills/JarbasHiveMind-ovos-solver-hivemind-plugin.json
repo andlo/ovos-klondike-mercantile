@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-ovos-solver-hivemind-plugin",
   "skill_id": null,
   "name": "ovos-solver-hivemind-plugin",
   "description": "OVOS solver plugin that exposes a HiveMind connection as a question-answering backend",
@@ -29,6 +30,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-solver-hivemind-plugin\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Key           | Type   | Default                    | Description |\n|---------------|--------|----------------------------|-------------|\n| `autoconnect` | bool   | `false`                    | Connect to HiveMind automatically at construction time. |\n| `useragent`   | string | `\"ovos-hivemind-solver\"`   | User-agent string sent to the hub. |\n| `site_id`     | string | value from identity file   | Site ID for the HiveMind connection. |\n| `lang`        | string | `\"en-us\"`                  | Default language when none is in context. |\n\nConnection credentials (host, port, key, password) come from the identity file set\nwith `hivemind-client set-identity`. They cannot be passed inline."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-05-19T21:32:32Z",
   "last_updated": "2025-02-06T23:17:57.831888Z",
   "is_new_repo": false,

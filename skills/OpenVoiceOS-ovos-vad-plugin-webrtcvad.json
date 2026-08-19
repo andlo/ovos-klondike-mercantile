@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-vad-plugin-webrtcvad",
   "skill_id": null,
   "name": "ovos-vad-plugin-webrtcvad",
   "description": "ovos plugin for voice activity detection using webrtcvad",
@@ -27,6 +28,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-vad-plugin-webrtcvad\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Set the plugin as the VAD engine in the OpenVoiceOS configuration:\n\n```json\n{\n  \"listener\": {\n    \"VAD\": {\n      \"module\": \"ovos-vad-plugin-webrtcvad\",\n      \"ovos-vad-plugin-webrtcvad\": {\n        \"vad_mode\": 3\n      }\n    }\n  }\n}\n```\n\n`vad_mode` ranges from 0 (least aggressive) to 3 (most aggressive, default)."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-03-05T11:34:52Z",
   "last_updated": "2023-04-09T18:34:31.514384Z",
   "is_new_repo": false,

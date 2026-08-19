@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-dinkum-listener",
   "skill_id": null,
   "name": "ovos-dinkum-listener",
   "description": "ovos-listener based on the voice loop from mycroft-dinkum",
@@ -27,6 +28,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-dinkum-listener[extras]` to install this package and the default plugins.\n\nWithout `extras` you will also need to manually install, and possibly configure STT, WW, and VAD modules as described below."
+    },
+    {
+      "heading": "Configuration",
+      "content": "you can set the Wakeword, VAD, STT and Microphone plugins\n\neg, to run under MacOS you should use https://github.com/OpenVoiceOS/ovos-microphone-plugin-sounddevice\n\nnon exhaustive list of config options\n```\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-server\",\n    \"fallback_module\": \"\",\n    \"ovos-stt-plugin-server\": {\"url\": \"https://stt.openvoiceos.com/stt\"}\n  },\n  \"listener\": {\n    // NOTE, multiple hotwords are supported, these fields define the main wake_word,\n    // this is equivalent to setting \"active\": true in the \"hotwords\" section\n    // see \"hotwords\" section at https://github.com/OpenVoiceOS/ovos-config/blob/dev/ovos_config/mycroft.conf\n    \"wake_word\": \"hey_mycroft\",\n    \"stand_up_word\": \"wake_up\",\n    \"microphone\": {\n      \"module\": \"ovos-microphone-plugin-alsa\"\n    },\n    // If\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-04-09T00:00:23Z",
   "last_updated": "2025-11-05T18:10:28.073510Z",
   "is_new_repo": false,

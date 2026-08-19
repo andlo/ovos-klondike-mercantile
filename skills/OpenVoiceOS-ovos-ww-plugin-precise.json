@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-ww-plugin-precise",
   "skill_id": null,
   "name": "ovos-ww-plugin-precise",
   "description": "mycroft plugin for detecting wake word with precise",
@@ -28,6 +29,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-ww-plugin-precise`\n\nConfigure your wake word in mycroft.conf\n\n```json\n \"listener\": {\n      \"wake_word\": \"android\"\n },\n \"hotwords\": {\n    \"android\": {\n        \"module\": \"ovos-ww-plugin-precise\",\n        \"version\": \"0.3\",\n        \"model\": \"path/to/your/model\"\n    }\n  }\n \n```\n\nAdvanced configuration\n\n```json\n \"listener\": {\n      \"wake_word\": \"android\"\n },\n \"hotwords\": {\n    \"android\": {\n        \"module\": \"ovos-ww-plugin-precise\",\n        \"trigger_level\": 3,\n        \"sensitivity\": 0.5,\n        \"version\": \"0.3\",\n        \"model\": \"path/or/url/to/your/model\",\n        \"binary_path\": \"path/to/your/binary/eg/using/tflite\",\n        \"expected_duration\": 3\n    }\n  }\n \n```\n\n\n- `binary_path` if you want to use your own binary, eg for use with \n  [tflite branch](https://github.com/Mycrof\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-06-07T19:19:43Z",
   "last_updated": "2022-03-01T13:21:25.775371Z",
   "is_new_repo": false,

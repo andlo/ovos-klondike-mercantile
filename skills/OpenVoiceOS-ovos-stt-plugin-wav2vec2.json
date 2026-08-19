@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-plugin-wav2vec2",
   "skill_id": null,
   "name": "ovos-stt-plugin-wav2vec2",
-  "description": "",
+  "description": "This is an OVOS speech-to-text (STT) plugin for Wav2Vec2 models. It loads a Wav2Vec2 model from Hugging Face and transcribes audio with it. If you do not set a model, the plugin picks one for you based on the language.",
   "examples": [],
   "tags": [
     "ilenia",
@@ -30,6 +31,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-stt-plugin-wav2vec\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-wav2vec\",\n    \"ovos-stt-plugin-wav2vec\": {\n        \"model\": \"proxectonos/Nos_ASR-wav2vec2-large-xlsr-53-gl-with-lm\"\n    }\n  }\n```\n\n`model` can be any [compatible Wav2Vec2 model](https://huggingface.co/models?pipeline_tag=automatic-speech-recognition&sort=likes&search=%2Fwav2vec2) from Hugging Face. If you do not set it, the plugin picks a model based on `lang`.\n\n### Models\n\nIf your language is not in the list below, use `\"facebook/mms-1b-all\"` as the model. In that case, use the dedicated [ovos-stt-plugin-mms](https://github.com/OpenVoiceOS/ovos-stt-plugin-mms) plugin instead.\n\nSupported languages: `ab`, `ar`, `as`, `ba`, `bas`, `bg`, `bn`, `br`, `ca`, `cnh`, `cv`, `cy`,\n`cz`, `da`, `de`, `el`, `en`, `eo`, `es`, `fa`, `fi`, `fr`, `ga`, `gl`\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-09-12T16:40:44Z",
   "last_updated": "2024-09-29T16:29:26.085394Z",
   "is_new_repo": false,

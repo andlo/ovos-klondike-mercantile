@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-fallback-chatgpt",
   "skill_id": "skill-ovos-fallback-chatgpt.openvoiceos",
   "name": "ChatGPT Fallback Skill",
   "description": "When in doubt, ask ChatGPT",
@@ -31,6 +32,29 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Under skill settings (`.config/mycroft/skills/skill-ovos-fallback-chatgpt.openvoiceos/settings.json`) you can tweak some parameters for chatGPT.\n\n| Option          | Value                                                                   | Description                                                                           |\n| --------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |\n| `key`           | `sk-XXXYYYZZZAAABBB123`                                                 | Your `api_key` to access OpenAI API                                                   |\n| `persona`       | `You are a helpful assistant who gives very short but factual answers.` | Give a persona\u2026"
+    },
+    {
+      "heading": "Configurations",
+      "content": "The skill utilizes the `~/.config/mycroft/skills/skill-ovos-fallback-chatgpt.openvoiceos/settings.json` file which allows you to configure it.\n\n### Configuration for use with OpenAI **(ChatGPT)**\n\n```json\n{\n  \"key\": \"sk-XXXYYYZZZAAABBB123\",\n  \"model\": \"gpt-3.5-turbo\",\n  \"persona\": \"You are a helpful voice assistant with a friendly tone and fun sense of humor. You respond in 40 words or fewer.\",\n  \"enable_memory\": true,\n  \"memory_size\": 15,\n  \"__mycroft_skill_firstrun\": false\n}\n```\n\n### Configuration for use with Local AI\n\nWhen using a local AI server instead of OpenAI, the `api_url` has to redirect to an alternative/local server compatible with OpenAI API. When using local AI, the `key` can be anything, but it has to exist. Read more about it in the OVOS technical manual, page [persona ser\u2026"
+    }
+  ],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "eu",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-01-30T17:22:18Z",
   "last_updated": "2025-01-31T06:19:52Z",
   "is_new_repo": false,

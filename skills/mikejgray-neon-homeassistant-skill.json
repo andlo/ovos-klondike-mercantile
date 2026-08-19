@@ -1,4 +1,5 @@
 {
+  "id": "mikejgray-neon-homeassistant-skill",
   "skill_id": "neon_homeassistant_skill.mikejgray",
   "name": "neon-homeassistant-skill",
   "description": "neon-homeassistant-skill",
@@ -37,6 +38,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation on Neon",
+      "content": "\\***\\*Note\\*\\***: This skill and the required PHAL plugin come pre-installed on Neon images for the Mycroft Mark II and Neon's published Docker images. These instructions are for custom development builds or creating your own Neon instance from scratch.\n\nInstall ovos-PHAL-plugin-homeassistant [per their documentation](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant)\n\nThen, you can `pip install neon-homeassistant-skill`, or handle the installation from the `~/.config/neon/neon.yaml` file if you prefer:\n\n```yaml\nskills:\n  default_skills:\n    # Jokes skill included because it cannot be pip installed to the image\n    - https://github.com/JarbasSkills/skill-icanhazdadjokes/tree/dev\n    - neon-homeassistant-skill # Optionally with a version, such as neon-homeassistant-skill==0.0.10\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-01-23T04:50:44Z",
   "last_updated": "2025-01-29T02:26:15.220908Z",
   "is_new_repo": false,

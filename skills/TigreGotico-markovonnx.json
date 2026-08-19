@@ -1,7 +1,8 @@
 {
+  "id": "TigreGotico-markovonnx",
   "skill_id": null,
   "name": "markovonnx",
-  "description": "",
+  "description": "Markov chains and Hidden Markov Models with ONNX export and Kneser-Ney smoothing.",
   "examples": [],
   "tags": [
     "hmm",
@@ -22,7 +23,7 @@
   "license": "Apache-2.0",
   "author": "TigreGotico",
   "tier": 1,
-  "component_type": "Detect Plugin",
+  "component_type": "Keywords Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
@@ -33,6 +34,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install markovonnx              # core (numpy, onnx, onnxruntime)\npip install markovonnx[ovos]        # + OVOS voice assistant plugins\npip install markovonnx[bpe]         # + BPE tokenizer support\npip install markovonnx[quantize]    # + INT8 quantization\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2026-03-19T14:05:00Z",
   "last_updated": "2026-05-21T16:02:23.876062Z",
   "is_new_repo": false,

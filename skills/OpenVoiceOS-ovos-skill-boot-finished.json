@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-boot-finished",
   "skill_id": "ovos-skill-boot-finished.openvoiceos",
   "name": "Finished Booting Skill",
   "description": "The Finished Booting skill provides notifications when OpenVoiceOS has fully started and all core services are ready",
@@ -30,6 +31,27 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Use the `settings.json` file to change the skill behavior.\n\n```javascript\n{\n  \"speak_ready\": true,        // Enables or disables spoken notifications for readiness\n  \"ready_sound\": true,         // Enables or disables sound notifications for readiness\n  \"ready_settings\": [\n    \"skills\",                  // Services to check before notifying readiness\n    \"voice\",\n    \"audio\",\n    \"gui\",\n    \"internet\"\n  ]\n}\n```\n\nThe `ready_settings` option lets you tailor notifications to the role of the device. For example, a server setup can monitor only core services, while a full OVOS device can wait for the GUI and audio stack. You can also add specific skills to this list, so the skill only reports readiness once those skills load.\n\nIf you omit `ready_settings`, the skill waits for `ovos-core` and al\u2026"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "nl-NL",
+    "pt-BR",
+    "pt-PT"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2024-01-19T01:32:33Z",
   "last_updated": "2026-08-12T02:42:06Z",
   "is_new_repo": false,

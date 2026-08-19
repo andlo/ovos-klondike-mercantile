@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-solver-plugin-rivescript",
   "skill_id": null,
   "name": "ovos-solver-plugin-rivescript",
-  "description": "",
+  "description": "This plugin is a question solver that answers with a Rivescript chatbot. It uses the Alice chatbot brain to answer phrases that no other skill handles, so almost every input gets some response. Answers can be casual and a bit sassy.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,9 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-02-04T22:01:52Z",
   "last_updated": "2025-06-08T18:28:28.109089Z",
   "is_new_repo": false,

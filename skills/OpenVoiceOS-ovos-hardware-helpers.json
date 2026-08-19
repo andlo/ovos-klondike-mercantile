@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-hardware-helpers",
   "skill_id": null,
   "name": "ovos-hardware-helpers",
-  "description": "",
+  "description": "`ovos-hardware-helpers` defines the abstract base classes that OVOS (OpenVoiceOS) PHAL plugins implement for LEDs, fans, and switches. It also provides a set of ready-to-use LED animation classes. It replaces the hardware interfaces previously in ovos-plugin-manager and uses ovos-color-parser to handle colors.",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -25,6 +26,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos_hardware_helpers\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-12-15T01:28:49Z",
   "last_updated": "2026-03-12T00:05:53.890106Z",
   "is_new_repo": false,

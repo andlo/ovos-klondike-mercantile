@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-coqui",
   "skill_id": null,
   "name": "ovos-tts-plugin-coqui",
-  "description": "",
+  "description": "This is an OVOS TTS plugin for Coqui TTS.",
   "examples": [],
   "tags": [
     "coqui",
@@ -30,6 +31,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-tts-plugin-coqui\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "### ovos-tts-plugin-coqui\n\nIf `\"model\"` is not set, the plugin selects a model automatically based on language.\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-coqui\",\n    \"ovos-tts-plugin-coqui\": {}\n  }\n```\n\nYou can also set a specific model ID to use a pretrained model (see the full list\nbelow). Some models accept a `\"voice\"` (often called a \"speaker\" in the model).\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-coqui\",\n    \"ovos-tts-plugin-coqui\": {\n      \"model\": \"tts_models/en/vctk/XXX\",\n      \"voice\": \"p232\"\n    }\n  }\n```\n\nYou can also set a model from a local path, with an optional vocoder if the model\narchitecture needs one.\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-coqui\",\n    \"ovos-tts-plugin-coqui\": {\n      \"model\": \"full/path/to/model.ckpt\",\n      \"model_config\"\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-09-13T04:15:06Z",
   "last_updated": "2024-09-15T21:03:45.631775Z",
   "is_new_repo": false,

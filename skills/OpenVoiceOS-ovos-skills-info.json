@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skills-info",
   "skill_id": null,
   "name": "ovos-skills-info",
   "description": "Skill information parser support skill",
@@ -27,6 +28,9 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-06-08T19:46:43Z",
   "last_updated": "2022-10-31T10:59:51Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-cmd",
   "skill_id": null,
   "name": "ovos-skill-cmd",
   "description": "A simple OVOS skill for launching shell scripts and system commands",
@@ -26,6 +27,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skill-cmd\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Configure the skill in `settings.json`. Map a spoken phrase to a script or command under `alias`. For example:\n\n```json\n{\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\"\n  }\n}\n```\n\nWith this setting, the phrase \"run script generate report\" makes the skill execute `/home/forslund/scripts/generate_report.sh`.\n\n### user\n\nSet `user` to run commands under a specific user's privileges:\n\n```json\n{\n  \"user\": \"ovos\"\n}\n```\n\n### shell\n\nSet `shell` to control whether commands run through a shell. It defaults to `true`:\n\n```json\n{\n  \"shell\": false\n}\n```\n\n### Full example\n\n```json\n{\n  \"user\": \"ovos\",\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\",\n    \"update system\": \"sudo apt update && sudo apt upgrade -y\",\n    \"reboot device\": \"sudo reb\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2024-03-06T17:55:00Z",
   "last_updated": "2025-06-08T23:17:55.153335Z",
   "is_new_repo": false,

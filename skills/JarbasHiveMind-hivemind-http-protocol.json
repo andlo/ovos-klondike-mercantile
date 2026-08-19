@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-hivemind-http-protocol",
   "skill_id": null,
   "name": "hivemind-http-protocol",
   "description": "REST/HTTP network protocol plugin for hivemind-core \u2014 alternative transport for message exchange",
@@ -29,6 +30,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install hivemind-http-protocol\n```"
+    },
+    {
+      "heading": "Configuration reference",
+      "content": "| Key | Default | Description |\n|---|---|---|\n| `host` | `0.0.0.0` | Bind address. |\n| `port` | `5679` | Listen port. |\n| `ssl` | `false` | Enable TLS. |\n| `cert_dir` | `$XDG_DATA_HOME/hivemind` | Directory for TLS cert/key files. |\n| `cert_name` | `hivemind` | Base filename for cert and key. |\n| `max_undelivered` | `256` | Frames held per client between polls. The oldest is dropped when the cap is reached. |\n| `undelivered_ttl` | `300` | Seconds a client can stop polling before its held frames are discarded. |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-01-07T04:05:28Z",
   "last_updated": "2025-01-15T20:38:13.226819Z",
   "is_new_repo": false,

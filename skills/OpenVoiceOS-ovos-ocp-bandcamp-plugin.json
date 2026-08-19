@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-ocp-bandcamp-plugin",
   "skill_id": null,
   "name": "ovos-ocp-bandcamp-plugin",
-  "description": "",
+  "description": "This plugin lets OVOS Common Play (OCP) play Bandcamp URLs. It extracts the real stream URL at playback time.",
   "examples": [],
   "tags": [
     "media",
@@ -28,6 +29,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-ocp-bandcamp-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-12-28T09:04:26Z",
   "last_updated": "2024-09-11T03:30:34.013629Z",
   "is_new_repo": false,

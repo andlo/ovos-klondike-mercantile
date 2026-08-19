@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-skill-ovos-stop",
   "skill_id": null,
   "name": "skill-ovos-stop",
   "description": "stop whatever the assistant is doing",
@@ -27,6 +28,20 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "nl-be",
+    "nl-nl",
+    "pt-pt",
+    "ru-ru",
+    "uk-ua"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-02-14T19:03:26Z",
   "last_updated": "2024-01-13T12:25:17Z",
   "is_new_repo": false,

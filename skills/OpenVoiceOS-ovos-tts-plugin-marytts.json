@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-marytts",
   "skill_id": null,
   "name": "ovos-tts-plugin-marytts",
-  "description": "",
+  "description": "This is a text-to-speech (TTS) plugin for OpenVoiceOS that connects to a MaryTTS server. The plugin sends text to the MaryTTS server and returns the audio it gets back. You must install and run MaryTTS separately, on the same machine or on a different one.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\n$ pip install ovos-tts-plugin-marytts\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n\"tts\": {\n    \"module\": \"ovos-tts-plugin-marytts\",\n    \"ovos-tts-plugin-marytts\": {\n      \"url\": \"http://0.0.0.0:59125\",\n      \"voice\": \"cmu-slt-hsmm\"\n    }\n}\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-05-23T08:34:19Z",
   "last_updated": "2026-01-23T21:56:40.238965Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos_skill_manager",
   "skill_id": null,
   "name": "ovos_skill_manager",
   "description": "skill installer for OVOS",
@@ -27,6 +28,22 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skills-manager\n```"
+    },
+    {
+      "heading": "Install",
+      "content": "Install a mycroft skill! Either pass a search query or a github url\n\n```bash\n(.venv) user@hostname:~$ osm install --help\nUsage: osm install [OPTIONS]\n\nOptions:\n  --skill TEXT                    skill to install\n  --branch TEXT                   select skill github branch to use\n  --folder TEXT                   path where skill will be installed, default\n                                  /opt/mycroft/skills\n\n  --search                        search appstores, otherwise assume it's a\n                                  github url\n\n  --appstore [ovos|mycroft|pling|andlo|default|all]\n                                  search a specific appstore, default search\n                                  appstores enabled in config file\n\n  --method [all|name|url|category|author|tag|description]\u2026"
+    },
+    {
+      "heading": "Print config",
+      "content": "print current configuration of osm, config file can be found at `~/.config/OpenVoiceOS/OVOS-SkillsManager.json`\n```bash\n(.venv) user@hostname:~$ osm print --help\nUsage: osm print [OPTIONS]\n\nOptions:\n  --appstore [ovos|mycroft|pling|andlo|all|default]\n                                  print config of a specific appstore\n  --help                          Show this message and exit.\n\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2020-12-21T16:12:26Z",
   "last_updated": "2023-10-11T20:14:41.147483Z",
   "is_new_repo": false,

@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-translate-server-plugin",
   "skill_id": null,
   "name": "ovos-translate-server-plugin",
-  "description": "",
+  "description": "An OVOS plugin for language detection and translation. It sends requests to ovos-translate-server and returns the result. The server does the work. This plugin is the client.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,14 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-translate-server-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-08-21T23:45:54Z",
   "last_updated": "2025-11-05T01:10:08.794851Z",
   "is_new_repo": false,

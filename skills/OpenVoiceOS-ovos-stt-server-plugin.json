@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-server-plugin",
   "skill_id": null,
   "name": "ovos-stt-server-plugin",
-  "description": "",
+  "description": "OpenVoiceOS companion plugin for OpenVoiceOS STT Server",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -17,7 +18,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "STT Plugin",
+  "component_type": "Audio Plugin",
   "type_group": "Plugin",
   "stars": 2,
   "forks": 6,
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-stt-plugin-server\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-server\",\n    \"ovos-stt-plugin-server\": {\n      \"urls\": [\"https://0.0.0.0:8080/stt\"],\n      \"verify_ssl\": true\n    },\n }\n```\n\nfor audio language detection\n\n```json\n  \"listener\": {\n    \"audio_transformers\": {\n        \"ovos-audio-lang-server-plugin\": {\n          \"urls\": [\"https://0.0.0.0:8080/lang_detect\"],\n          \"verify_ssl\": true\n        }\n    }\n  }\n```\n\n### Security warning\n\nPlease note that while you can set `verify_ssl` to `false` to disable SSL\nverification, this is not recommended and should only be used for testing\npurposes. Consider using a private CA or certificates signed using\n[Let's Encrypt](https://letsencrypt.org/) instead."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-04-12T13:39:20Z",
   "last_updated": "2025-11-04T18:10:00.841219Z",
   "is_new_repo": false,

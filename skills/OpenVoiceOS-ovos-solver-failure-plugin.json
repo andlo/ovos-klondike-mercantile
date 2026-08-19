@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-solver-failure-plugin",
   "skill_id": null,
   "name": "ovos-solver-failure-plugin",
-  "description": "",
+  "description": "FailureSolver is a question solver plugin for OVOS, Neon, and Mycroft assistants. It never answers a query. It always returns a fallback message, so it works as the last solver in a chain when every other solver fails.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-solver-failure-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2023-02-04T23:16:53Z",
   "last_updated": "2025-11-05T01:12:54.626869Z",
   "is_new_repo": false,

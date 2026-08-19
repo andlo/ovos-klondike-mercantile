@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-homeassistant",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-homeassistant",
   "description": "HomeAssistant PHAL Plugin for OpenVoice OS",
@@ -30,6 +31,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "Plugin Support Two Installation Methods:\n\n1. Install from Github URL\n\nNote: PIP install from URL will not install the .desktop file and icon if installing to a venv or virtual environment, so you need to manually install them to the system or user directory.\n\nNote: PIP install will attempt to install the .desktop file and icon to the system directory, or user directory if the system directory is not writable. If this is not a virtual environemnt.\n\n```bash\npip install git+https://github.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant\n```\n\n2. Manual Install from Git Clone\n\n```bash\ngit clone https://github.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant\ncd ovos-PHAL-plugin-homeassistant\ncp -r res/desktop/ovos-phal-homeassistant.desktop ~/.local/share/applications/\ncp -r res/icon/ovos-phal-homea\u2026"
+    },
+    {
+      "heading": "Configuration (Instance Setup)",
+      "content": "Plugin Supports Two Configuration Methods:\n\n1. Using the GUI\n\n   - Install the plugin\n   - Open the application from the homescreen menu\n   - Click the \"Connect Instance\" button\n   - Enter the URL of the Home Assistant Instance\n   - Enter the Long-Lived Access Token (API KEY)\n   - Press the \"Confirm\" button\n\n2. Manually Editing the Config File\n   - Add the following to the config file:\n   ```json\n        \"PHAL\": {\n            \"ovos-PHAL-plugin-homeassistant\": {\n                \"host\": \"https://someurl.toinstance\",\n                \"api_key\": \"api key from the instance\"\n            }\n        }\n   ```\n\nThe config also takes some optional properties:\n\n`brightness_increment` - the amount to increment/decrement the brightness of a light when the brightness up/down commands are sent. The default\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-12-03T00:33:09Z",
   "last_updated": "2025-03-15T14:05:41.175959Z",
   "is_new_repo": false,

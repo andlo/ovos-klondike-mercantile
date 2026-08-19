@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-audio-transformer-plugin-ggwave",
   "skill_id": null,
   "name": "ovos-audio-transformer-plugin-ggwave",
   "description": "data over sound plugin",
@@ -28,6 +29,26 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-audio-transformer-plugin-ggwave`\n\n> ggwave [fails to install on python 3.11](https://github.com/ggerganov/ggwave/issues/89), you can use the wheel from here https://whl.smartgic.io/ , plugin install should then work"
+    },
+    {
+      "heading": "Wifi setup",
+      "content": "emit a message setting the wifi SSID\n`SSID:123456`\n\nafter the SSID is set, emit a message setting the wifi password\n`PSWD:123456`\n\nif password is empty then it is assumed to be an open network\n`PSWD:`\n\nonce password is received a bus message is sent for [ovos-PHAL-plugin-network-manager](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-network-manager) to handle"
+    },
+    {
+      "heading": "Install a github skill",
+      "content": "install a skill from a github url\n\n`GHS:https://github.com/OpenVoiceOS/skill-ovos-icanhazdadjokes`"
+    },
+    {
+      "heading": "Install a python package",
+      "content": "install any package from pypi\n\n`PIP:skill-wikipedia-for-humans`"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-09-13T20:56:58Z",
   "last_updated": "2025-06-16T22:49:35.954419Z",
   "is_new_repo": false,

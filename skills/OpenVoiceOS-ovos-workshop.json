@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-workshop",
   "skill_id": null,
   "name": "ovos-workshop",
   "description": "frameworks, templates and patches for the OpenVoiceOS universe",
@@ -25,6 +26,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-workshop\n```\n\nRuntime dependencies include `ovos-yes-no-plugin` and `ovos-option-matcher-fuzzy-plugin`, which back the `ask_yesno` and `ask_selection` skill methods."
+    },
+    {
+      "heading": "Configuration",
+      "content": "Key settings a skill can accept in its `settings.json`:\n\n| Key | Default | Description |\n|-----|---------|-------------|\n| `ask_yesno_plugin` | `ovos-solver-yes-no-plugin` | YesNoEngine plugin used by `ask_yesno()` |\n| `ask_selection_plugin` | `ovos-option-matcher-fuzzy-plugin` | OptionMatcherEngine plugin used by `ask_selection()` |\n\nBoth keys can also be set system-wide under the `skills` block in `mycroft.conf`."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-04-02T15:15:29Z",
   "last_updated": "2025-11-09T17:11:25.044222Z",
   "is_new_repo": false,

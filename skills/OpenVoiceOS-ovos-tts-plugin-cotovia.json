@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-cotovia",
   "skill_id": null,
   "name": "ovos-tts-plugin-cotovia",
   "description": "galician tts plugin for OVOS",
@@ -29,6 +30,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Install the plugin.\n\n```bash\npip install ovos-tts-plugin-cotovia\n```\n\nThen download and install [Cotovia](https://sourceforge.net/projects/cotovia/files/Debian%20packages/).\n\n### Debian\n\nTo run Cotovia, install these packages:\n\n    cotovia_0.5_amd64.deb          --- Cotovia executable\n    cotovia-lang-gl_0.5_all.deb    --- Galician linguistic data\n    cotovia-lang-es_0.5_all.deb    --- Spanish linguistic data\n\nAlso install at least one voice:\n\n    cotovia-voice-iago_0.5_all.deb\n    cotovia-voice-sabela-large_0.5_all.deb\n    cotovia-voice-sabela_0.5_all.deb\n\n### Arch\n\nArch Linux users can find packages converted with `debtap` on the\n[releases page](https://github.com/OpenVoiceOS/ovos-tts-plugin-cotovia/releases/tag/0.4.1).\n\n```bash\nsudo pacman -U /home/miro/Transfer\u00eancias/cotovia-0.5-1-x86_\u2026"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-cotovia\",\n    \"ovos-tts-plugin-cotovia\": {\n      \"voice\": \"iago\"\n    }\n  }\n```\n\n### Advanced config\n\nYou can set these additional parameters:\n\n- `lang`: `gl` for Galician or `es` for Spanish.\n- `voice`: `iago` or `sabela`.\n- `pitch_scale_factor`: changes pitch (default `100`).\n- `time_scale_factor`: changes speed (default `100`).\n- `bin`: path to the executable (default `/usr/bin/cotovia`).\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-cotovia\",\n    \"ovos-tts-plugin-cotovia\": {\n      \"voice\": \"sabela\",\n      \"lang\": \"es\",\n      \"pitch_scale_factor\": 80,\n      \"time_scale_factor\": 80,\n      \"bin\": \"/usr/bin/cotovia\"\n    }\n  }\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2020-12-01T23:17:15Z",
   "last_updated": "2025-06-08T18:36:54.429503Z",
   "is_new_repo": false,

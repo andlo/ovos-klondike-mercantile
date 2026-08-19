@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-soundcloud",
   "skill_id": null,
   "name": "Soundcloud Skill",
   "description": null,
@@ -26,6 +27,20 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "pt-PT",
+    "sv-SE"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2021-09-26T22:17:25Z",
   "last_updated": "2026-07-20T20:57:29Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "TigreGotico-vad2mqtt",
   "skill_id": null,
   "name": "vad2mqtt",
   "description": "Voice Activity Detection to MQTT bridge using ovos-plugin-manager",
@@ -32,6 +33,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Every runtime setting is an environment variable. The defaults work without\nchanges. Tune only what you need.\n\n| Variable | Default | Description |\n|----------|---------|-------------|\n| **MQTT** | | |\n| `MQTT_HOST` | `localhost` | Broker host |\n| `MQTT_PORT` | `1883` | Broker port |\n| `MQTT_USER` | - | Auth user |\n| `MQTT_PASSWORD` | - | Auth password |\n| `MQTT_TOPIC_PREFIX` | `vad2mqtt` | Topic root |\n| `MQTT_CLIENT_ID` | `vad2mqtt-client` | MQTT client identifier |\n| `MQTT_QOS` | `0` | MQTT QoS (0, 1, or 2) |\n| `MQTT_RETAIN` | `true` | Retain flag for state messages |\n| `MQTT_KEEPALIVE` | `60` | MQTT keepalive interval (seconds) |\n| `MQTT_RETRY_COUNT` | `5` | Connection retry attempts on startup |\n| `MQTT_RETRY_MAX_BACKOFF` | `30` | Max seconds between retries |\n| `MQTT_CONNECT_TIMEOUT`\u2026"
+    },
+    {
+      "heading": "Community plugins - install the package and point VAD_PLUGIN_MODULE at it",
+      "content": "```\n\nA new VAD model or algorithm ships as a plain pip package. `vad2mqtt` uses it\nwith no code changes, once installed and referenced by\n`VAD_PLUGIN_MODULE`.\n\n## Architecture\n\n```\nMic \u2500\u2500\u25ba sounddevice \u2500\u2500\u25ba 30 ms chunks \u2500\u2500\u25ba OPM VAD Plugin\n                                               \u2502\n                    \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                    \u25bc\n            MQTT \u2500\u2500\u25ba Home Assistant\n            \u2502\n            \u251c\u2500\u2500 vad_probability (continuous, 0-100%)\n            \u251c\u2500\u2500 noise_level (throttled, dB)\n            \u251c\u2500\u2500 model_name (startup)\n            \u2514\u2500\u2500 speech_detected (binary, derived)\n```\n\n## Related\n\n- [ovos-plugin-manager](https://github.com/OpenVoiceOS/ovos-plugin-manager)\n- [ovos-vad-plugin-silero](https://github.com/OpenVoiceOS/ovos-vad-plugin-silero)\n- [shazam2mqtt](https://github.com\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2026-06-03T14:43:16Z",
   "last_updated": "2026-06-03T15:44:46.474757Z",
   "is_new_repo": false,

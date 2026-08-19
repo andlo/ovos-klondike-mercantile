@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-wikipedia-plugin",
   "skill_id": null,
   "name": "ovos-wikipedia-plugin",
-  "description": "",
+  "description": "This plugin connects OpenVoiceOS to Wikipedia. It provides a retrieval engine for RAG",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,14 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash\npip install ovos-wikipedia-plugin\n```\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-03-26T20:58:41Z",
   "last_updated": "2026-08-14T15:20:30.196767Z",
   "is_new_repo": false,

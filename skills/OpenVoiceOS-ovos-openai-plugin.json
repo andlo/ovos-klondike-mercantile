@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-openai-plugin",
   "skill_id": null,
   "name": "ovos-openai-plugin",
-  "description": "",
+  "description": "This package uses the OpenAI Chat Completions API to",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -15,7 +16,7 @@
   "license": "Apache-2.0",
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Detect Plugin",
+  "component_type": "Summarizer Plugin",
   "type_group": "Plugin",
   "stars": 9,
   "forks": 7,
@@ -26,6 +27,14 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-openai-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-02-04T23:18:15Z",
   "last_updated": "2025-11-05T01:05:20.363229Z",
   "is_new_repo": false,

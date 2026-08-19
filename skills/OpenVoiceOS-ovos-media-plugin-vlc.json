@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-media-plugin-vlc",
   "skill_id": null,
   "name": "ovos-media-plugin-vlc",
-  "description": "",
+  "description": "vlc plugin for ovos-media",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-media-plugin-vlc`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```javascript\n{\n \"media\": {\n\n    // keys are the strings defined in \"audio_players\"\n    \"preferred_audio_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // keys are the strings defined in \"video_players\"\n    \"preferred_video_services\": [\"qt5\", \"mplayer\", \"vlc\", \"cli\"],\n\n    // PlaybackType.AUDIO handlers\n    \"audio_players\": {\n        // vlc player uses a headless vlc instance to handle uris\n        \"vlc\": {\n            // the plugin name\n            \"module\": \"ovos-media-audio-plugin-vlc\",\n\n            // users may request specific handlers in the utterance\n            // using these aliases\n             \"aliases\": [\"VLC\"],\n\n            // deactivate a plugin by setting to false\n            \"active\": true\n        }\n    },\n\n    // PlaybackType.VIDEO handlers\n    \"video_players\": {\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-04-10T02:13:20Z",
   "last_updated": "2026-06-25T18:31:36.921254Z",
   "is_new_repo": false,

@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-ocp-news-plugin",
   "skill_id": null,
   "name": "ovos-ocp-news-plugin",
-  "description": "",
+  "description": "This plugin lets OCP play news feeds from several providers. It resolves a news request to the real stream URL and hands it to OCP for playback.",
   "examples": [],
   "tags": [
     "media",
@@ -28,6 +29,14 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-ocp-news-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-12-29T01:25:08Z",
   "last_updated": "2025-11-05T00:47:14.225647Z",
   "is_new_repo": false,

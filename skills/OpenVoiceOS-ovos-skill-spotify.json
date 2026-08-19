@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-spotify",
   "skill_id": null,
   "name": "ovos-skill-spotify",
-  "description": "",
+  "description": "OCP skill for spotify",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,28 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Setup",
+      "content": "Install and configure the companion plugin [ovos-media-plugin-spotify](https://github.com/OpenVoiceOS/ovos-media-plugin-spotify)\n\n`pip install ovos-media-plugin-spotify`\n\nthis skill only handles the voice search, plugin is needed to handle playback of spotify uris provided by this skill"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "nl-NL",
+    "pl-PL",
+    "pt-BR",
+    "ru-RU",
+    "sv-SE"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-07-15T13:38:36Z",
   "last_updated": "2026-06-25T22:05:47Z",
   "is_new_repo": false,

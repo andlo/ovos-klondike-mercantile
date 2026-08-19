@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-lang-detector-classics-plugin",
   "skill_id": null,
   "name": "ovos-lang-detector-classics-plugin",
-  "description": "",
+  "description": "This package provides OVOS language-detection plugins for four classic algorithms:",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Add this to `mycroft.conf`:\n\n```javascript\n  \"language\": {\n    \"detection_module\": \"ovos-lang-detector-plugin-voter\",\n    \n    \"ovos-lang-detector-plugin-voter\": {\n        \"weights\": {\n            \"ovos-lang-detector-plugin-cld3\": 0.8,\n            \"ovos-lang-detector-plugin-cld2\": 0.8,\n            \"ovos-lang-detector-plugin-lingua-podre\": 1.0,\n            \"ovos-lang-detector-plugin-langdetect\": 1.0,\n            \"ovos-lang-detector-plugin-fastlang\": 1.0,\n        }\n    }\n    \n  },\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-02-23T04:54:57Z",
   "last_updated": "2026-08-02T16:54:46.750458Z",
   "is_new_repo": false,

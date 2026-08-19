@@ -1,4 +1,5 @@
 {
+  "id": "smartgic-ovos-phal-plugin-aiy-v2",
   "skill_id": null,
   "name": "ovos-phal-plugin-aiy-v2",
   "description": "Open Voice OS plugin for Google AIY Voice Kit V2",
@@ -39,6 +40,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```shell\npip install ovos-phal-plugin-aiy-v2\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The plugin configuration file is `~/.config/OpenVoiceOS/ovos-phal-plugin-aiy-v2.json`.\n\n| Option          | Value                | Description                                                   |\n| --------------- | -------------------- | ------------------------------------------------------------- |\n| `color`         | `green`              | Define the color of the LED                                   |\n| `wakeword_only` | `false`              | Turn on the LED only during the wakeword detection            |\n| `pulse`         | `true`               | Make the LED pulse                                            |\n| `button_event`  | `mycroft.mic.listen` | Which event to send to message bus when the button is pressed |\n\n### Example\n\nConfiguration sample of `~/.config/OpenVoiceOS/ovos-phal\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-02-03T01:59:53Z",
   "last_updated": "2024-02-03T02:35:13.011599Z",
   "is_new_repo": false,

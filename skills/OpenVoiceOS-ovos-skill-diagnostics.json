@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-diagnostics",
   "skill_id": null,
   "name": "ovos-skill-diagnostics",
-  "description": "",
+  "description": "Report system information such as CPU usage, memory usage, and language settings.",
   "examples": [],
   "tags": [
     "ilenia",
@@ -29,6 +30,19 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "pt-PT"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2025-03-06T11:55:30Z",
   "last_updated": "2025-03-27T07:25:42.554089Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-pico",
   "skill_id": null,
   "name": "ovos-tts-plugin-pico",
   "description": "pico-tts-plugin",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-tts-plugin-pico\n```\n\n`pico2wave` must be available. On a Raspberry Pi, install it with:\n\n```bash\napt-get install libttspico0\napt-get install libttspico-utils\n```\n\nYou can also install it from [source](https://github.com/naggety/picotts)."
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-pico\"\n }\n```\n\nThe voice corresponds to a language code. OVOS auto-detects it from the global config.\n\nYou can also set it explicitly to one of `\"de-DE\", \"es-ES\", \"fr-FR\", \"it-IT\", \"en-US\"`:\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-pico\",\n    \"ovos-tts-plugin-pico\": {\n      \"voice\": \"en-US\"\n    }\n }\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-06-22T01:12:19Z",
   "last_updated": "2022-02-17T16:41:47.955656Z",
   "is_new_repo": false,

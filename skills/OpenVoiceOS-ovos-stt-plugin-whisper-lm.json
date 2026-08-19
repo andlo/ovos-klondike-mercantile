@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-plugin-whisper-lm",
   "skill_id": null,
   "name": "ovos-stt-plugin-whisper-lm",
-  "description": "",
+  "description": "This is an OpenVoiceOS STT plugin. It combines Whisper-LM-transformers, KenLM, and large language models with Whisper ASR models from the Hugging Face library.",
   "examples": [],
   "tags": [
     "ilenia",
@@ -31,6 +32,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-stt-plugin-whisper-lm`\n\n> \u26a0\ufe0f Only **python <=3.11** is supported by some of the dependencies."
+    },
+    {
+      "heading": "Configuration",
+      "content": "The example below uses the [HiTZ Basque KenLM model](https://huggingface.co/HiTZ/whisper-lm-ngrams). Adjust `lm_alpha`, `lm_beta`, and the other parameters to get the best results with your own models.\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-whisper-lm\",\n    \"ovos-stt-plugin-whisper-lm\": {\n        \"model\": \"zuazo/whisper-medium-eu\",\n        \"lm_repo\": \"HiTZ/whisper-lm-ngrams\",\n        \"lm_model\": \"5gram-eu.bin\",\n        \"lm_alpha\": 0.33582369,\n        \"lm_beta\": 0.68825565,\n        \"use_cuda\": true\n    }\n  }\n```\n> \ud83d\udca1 Set `lm_repo` only if you want to specify a specific filename in `lm_model`.\n\nTo use a large language model instead of an n-gram model:\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-whisper-lm\",\n    \"ovos-stt-plugin-whisper-lm\": {\n        \"model\": \"zuazo/whisper\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-04-08T11:00:54Z",
   "last_updated": "2025-06-08T18:32:55.688926Z",
   "is_new_repo": false,

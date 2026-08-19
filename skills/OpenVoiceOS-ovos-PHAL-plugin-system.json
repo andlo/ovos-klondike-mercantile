@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-system",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-system",
-  "description": "",
+  "description": "This PHAL plugin gives OpenVoiceOS commands to control the host system. It handles NTP sync, SSH, reboot, shutdown, factory reset, and language configuration through bus events. The plugin does not yet define a dbus interface.",
   "examples": [],
   "tags": [
     "hardware",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-PHAL-plugin-system\n```"
+    },
+    {
+      "heading": "Config",
+      "content": "This plugin can run as an admin plugin. An admin plugin runs as root. To enable it, add this to `mycroft.conf`:\n\n```javascript\n{\n\"PHAL\": {\n    \"admin\": {\n        \"ovos-PHAL-plugin-system\": {\"enabled\": true}\n    }\n}\n}\n```\n\nIf you omit this config, the plugin runs as the regular user. In that case, you need a polkit policy that allows `systemctl` without `sudo`. This policy is not yet implemented."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-03-14T14:03:04Z",
   "last_updated": "2025-11-05T00:48:35.337188Z",
   "is_new_repo": false,

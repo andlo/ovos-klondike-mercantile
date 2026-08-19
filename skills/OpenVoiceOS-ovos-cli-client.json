@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-cli-client",
   "skill_id": null,
   "name": "ovos-cli-client",
-  "description": "",
+  "description": "mycroft-core cli client extracted into a standalone component",
   "examples": [],
   "tags": [
     "deprecated",
@@ -26,6 +27,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos_cli_client\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-03-22T15:12:30Z",
   "last_updated": "2022-03-22T15:10:52.095989Z",
   "is_new_repo": false,

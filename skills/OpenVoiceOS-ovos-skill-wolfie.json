@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-wolfie",
   "skill_id": "ovos-skill-wolfie.openvoiceos",
   "name": "Wolfram Alpha",
   "description": "Use Wolfram Alpha for general knowledge questions.",
@@ -35,6 +36,25 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": true,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash\npip install ovos-skill-wolfie\n```\n\nAn [API key](https://products.wolframalpha.com/api/) is required. Configure it in the skill settings:\n\n```json\n{\n  \"appid\": \"YOUR-WOLFRAM-API-KEY\"\n}\n```\n\n---"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "pt-PT"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2020-12-08T10:42:07Z",
   "last_updated": "2026-08-17T18:51:10Z",
   "is_new_repo": false,

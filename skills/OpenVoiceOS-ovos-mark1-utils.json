@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-mark1-utils",
   "skill_id": null,
   "name": "ovos-mark1-utils",
-  "description": "",
+  "description": "This library controls the faceplate and eyes of the Mycroft Mark 1 hardware enclosure. It sends commands over the OVOS messagebus and gives you pixel-by-pixel control of the 32x8 mouth display and the eye ring.",
   "examples": [],
   "tags": [
     "mark-1",
@@ -26,6 +27,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-mark1-utils\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-12-28T19:01:34Z",
   "last_updated": "2024-09-09T22:51:29.553207Z",
   "is_new_repo": false,

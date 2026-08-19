@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-config",
   "skill_id": null,
   "name": "ovos-config",
   "description": "OVOS configuration manager library",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "OVOS-config",
+      "content": "helper package to interact with mycroft config\n\n## Command Line usage\n\nA small helper tool is included to quickly show, get or set config values\n\n<img width=\"1214\" alt=\"ovos-config\" src=\"https://user-images.githubusercontent.com/25036977/219516755-b454f28f-2a34-4caf-a91f-6182ff68049a.png\">\n\nQuick rundown (cli):\n\n* `ovos-config get`\n  \n  * Loose search (search a key or parts therof):\\\n  \\\nGiven an entry of\n\n        {'PHAL': {\n                'ovos-PHAL-plugin-system': {\n                        'enabled': True\n                },\n                'ovos-PHAL-plugin-connectivity-events': {\n                        'enabled': True\n                },\n                ... \n        }\n\n    `ovos-config get -k phal` would yield  **all**  PHAL entries and present it to the user (and the path where they w\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-06-25T12:51:25Z",
   "last_updated": "2025-06-18T01:32:00.769778Z",
   "is_new_repo": false,

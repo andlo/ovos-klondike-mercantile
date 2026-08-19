@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-mimic3-server",
   "skill_id": null,
   "name": "ovos-tts-plugin-mimic3-server",
-  "description": "",
+  "description": "OVOS Server TTS plugin for Mimic3",
   "examples": [],
   "tags": [
     "deprecated",
@@ -29,6 +30,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-tts-plugin-mimic3-server`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-mimic3-server\",\n    \"ovos-tts-plugin-mimic3-server\": {\n        \"voice\": \"en_UK/apope_low\"\n    }\n  }\n \n```\n\n### Voices\n\nYou can find a list of valid voices [here](https://github.com/MycroftAI/mimic3-voices)\n\nyou can specify a speaker by adding `#speaker_name` at the end of the voice\n\nNOTE: mimic3 uses the terminology \"voice\" and \"speaker\". A more accurate nomenclature would be \"model\" and \"voice/speaker\""
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-10-21T05:50:52Z",
   "last_updated": "2023-03-14T00:28:36.969856Z",
   "is_new_repo": false,

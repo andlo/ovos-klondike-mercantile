@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-SAM",
   "skill_id": null,
   "name": "ovos-tts-plugin-SAM",
   "description": "S.A.M - Software Automatic Mouth",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-tts-plugin-SAM\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-SAM\"\n }\n```\n\nThe original manual lists these typical voice values:\n\n    DESCRIPTION          SPEED     PITCH     THROAT    MOUTH\n    Elf                   72        64        110       160\n    Little Robot          92        60        190       190\n    Stuffy Guy            82        72        110       105\n    Little Old Lady       82        32        145       145\n    Extra-Terrestrial    100        64        150       200\n    SAM                   72        64        128       128\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-SAM\",\n    \"ovos-tts-plugin-SAM\": {\n      \"voice\": \"stuffy guy\"\n    }\n }\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-09-23T19:57:38Z",
   "last_updated": "2021-09-23T20:05:09.869867Z",
   "is_new_repo": false,

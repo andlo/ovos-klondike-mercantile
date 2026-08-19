@@ -1,4 +1,5 @@
 {
+  "id": "andlo-ovos-skill-voices-of-tomorrow",
   "skill_id": "ovos-skill-voices-of-tomorrow.andlo",
   "name": "Voices of Tomorrow",
   "description": "Plays pre-recorded audio readings of 365tomorrows.com flash fiction stories, via OCP. Separate from ovos-skill-365tomorrows-stories, which reads the text aloud via TTS instead.",
@@ -31,6 +32,25 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skill-voices-of-tomorrow\n```"
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "nb-no",
+    "nl-nl",
+    "pt-pt",
+    "sv-se"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-22T16:25:01Z",
   "last_updated": "2026-07-22T18:16:17.774625Z",
   "is_new_repo": true,

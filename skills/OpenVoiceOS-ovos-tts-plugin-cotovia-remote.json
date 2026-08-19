@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-cotovia-remote",
   "skill_id": null,
   "name": "ovos-tts-plugin-cotovia-remote",
-  "description": "",
+  "description": "OVOS TTS Remote plugin for Cotovia TTS demo server",
   "examples": [],
   "tags": [
     "deprecated",
@@ -31,6 +32,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Then install the plugin\n\n`pip install ovos-tts-plugin-cotovia-remote`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-cotovia-remote\",\n    \"ovos-tts-plugin-cotovia-remote\": {\n      \"voice\": \"iago\"\n    }\n  }\n \n```\n\nvalid voices are `sabela`, `iago`, `david`"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-12-03T15:55:51Z",
   "last_updated": "2024-12-03T15:57:53.968575Z",
   "is_new_repo": false,

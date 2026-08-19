@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-HiveMind-voice-relay",
   "skill_id": null,
   "name": "HiveMind-voice-relay",
   "description": "HiveMind voice relay \u2014 local wake word, remote STT/TTS via the hivemind-audio-binary-protocol plugin",
@@ -33,6 +34,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install HiveMind-voice-relay\n```\n\n---"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Voice Relay reads `~/.config/mycroft/mycroft.conf` (standard OVOS config).\n\n| Plugin type | Config key | Default | Required |\n|---|---|---|---|\n| Microphone | `microphone.module` | `ovos-microphone-plugin-alsa` | Yes |\n| VAD | `listener.VAD.module` | `ovos-vad-plugin-silero` | Yes |\n| Wake word | `listener.wake_word` | `hey_mycroft` | Yes |\n| G2P | `tts.g2p_module` | n/a | No |\n| Media Playback | `Audio.backends` | n/a | No |\n| OCP Plugins | n/a | n/a | No |\n| Dialog Transformers | n/a | n/a | No (server-side only) |\n| Audio Transformers | `audio_transformers` | n/a | No |\n| Utterance Transformers | `utterance_transformers` | n/a | No |\n| TTS Transformers | `tts_transformers` | n/a | No |\n| PHAL | n/a | n/a | No (auto-loaded if installed) |\n\nSee [docs/configuration.md](docs/configuration.m\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-10-23T15:32:00Z",
   "last_updated": "2024-12-23T03:16:08.409504Z",
   "is_new_repo": false,

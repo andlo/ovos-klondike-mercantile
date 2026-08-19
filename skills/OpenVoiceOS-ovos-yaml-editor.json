@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-yaml-editor",
   "skill_id": null,
   "name": "ovos-yaml-editor",
-  "description": "",
+  "description": "The OpenVoiceOS Config Editor is a web application for OpenVoiceOS configuration files. It supports YAML and JSON formats. The editor gives you a simple interface to view, change, and save configuration data.",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -25,6 +26,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "OpenVoiceOS YAML Config Editor",
+      "content": "The OpenVoiceOS Config Editor is a web application for OpenVoiceOS configuration files. It supports YAML and JSON formats. The editor gives you a simple interface to view, change, and save configuration data.\n\nYou can edit the configuration in two formats:\n- **YAML**: this is the default format when you open the editor.\n- **JSON**: switch to this format with the tabs in the editor.\n\n![](yaml.png)\n![](json.png)\n\n## Features\n\n- **Authentication**: the editor is protected with basic HTTP authentication.\n- **Editor interface**: an interactive editor with syntax highlighting for YAML and JSON, powered by CodeMirror.\n- **Save and reload**: save changes to the configuration files, or reload the current configuration into the editor.\n- **Issue reporting**: a direct link to report issues on GitHub.\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-04-12T17:01:06Z",
   "last_updated": "2025-06-17T15:12:49.273973Z",
   "is_new_repo": false,

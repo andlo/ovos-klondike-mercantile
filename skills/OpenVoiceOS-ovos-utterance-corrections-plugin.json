@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-utterance-corrections-plugin",
   "skill_id": null,
   "name": "ovos-utterance-corrections-plugin",
-  "description": "",
+  "description": "This plugin corrects speech-to-text (STT) output before intent matching. It is an OVOS text transformer plugin that applies user-defined replacements to each utterance.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-utterance-corrections-plugin\n```\n\nThe plugin registers itself as an OVOS transformer plugin under the entry point group `opm.transformer.text`, so [ovos-core](https://github.com/OpenVoiceOS/ovos-core) picks it up automatically once installed.\n\n---"
+    },
+    {
+      "heading": "Configuration Paths",
+      "content": "| File                      | Purpose                               |\n|---------------------------|----------------------------------------|\n| `corrections.json`        | Full utterance replacements.          |\n| `word_corrections.json`   | Word-level replacements.              |\n| `regex_corrections.json`  | Regex-based pattern replacements.     |\n\nAll correction files live under `~/.local/share/mycroft/`.\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-06-22T00:12:25Z",
   "last_updated": "2025-11-05T01:00:44.594413Z",
   "is_new_repo": false,

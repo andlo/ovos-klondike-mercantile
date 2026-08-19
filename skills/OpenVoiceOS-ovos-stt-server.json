@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-server",
   "skill_id": null,
   "name": "ovos-stt-server",
-  "description": "",
+  "description": "Turn any OVOS STT plugin into an HTTP microservice for speech-to-text and",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,22 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-stt-http-server\n```\n\nThe server only hosts plugins. Install at least one STT plugin alongside it:\n\n```bash\npip install ovos-stt-plugin-fasterwhisper\n```\n\nOptional extras:\n\n| Extra | Installs | Enables |\n|-------|----------|---------|\n| `mcp` | `pip install \"ovos-stt-http-server[mcp]\"` | embedded [MCP](#mcp--model-context-protocol) server at `/mcp` (requires `--mcp` flag) |\n| `audio` | `pip install \"ovos-stt-http-server[audio]\"` | non-WAV audio decoding (`pydub`) for the vendor-compat routers |"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The STT plugin is configured exactly as it would be inside an assistant, under\n`mycroft.conf`:\n\n```json\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-deepgram\",\n    \"ovos-stt-plugin-deepgram\": {\"key\": \"xxxxx\"}\n  }\n}\n```"
+    },
+    {
+      "heading": "Claude Desktop / claude-code (`claude_desktop_config.json`)",
+      "content": "```json\n{\n  \"mcpServers\": {\n    \"ovos-stt\": {\n      \"transport\": \"http\",\n      \"url\": \"http://localhost:8080/mcp\"\n    }\n  }\n}\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-04-12T13:22:41Z",
   "last_updated": "2025-03-15T01:36:28.728203Z",
   "is_new_repo": false,

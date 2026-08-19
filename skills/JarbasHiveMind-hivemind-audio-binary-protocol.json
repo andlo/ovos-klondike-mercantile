@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-hivemind-audio-binary-protocol",
   "skill_id": null,
   "name": "hivemind-audio-binary-protocol",
   "description": "Audio binary protocol plugin for hivemind-core: enables remote wake word, STT, and TTS via binary audio streaming",
@@ -32,6 +33,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install hivemind-audio-binary-protocol\n```\n\nYou also need OVOS STT, TTS, VAD, and WakeWord plugins. Install them as you would in a\nstandard OVOS setup:\n\n```bash\npip install ovos-stt-plugin-server ovos-tts-plugin-piper ovos-vad-plugin-silero \\\n            ovos-ww-plugin-precise-lite\n```"
+    },
+    {
+      "heading": "Configuration reference",
+      "content": "The plugin's config block mirrors the OVOS plugin config convention. Each sub-plugin\n(`stt`, `tts`, `vad`) takes its standard OVOS config:\n\n| Key | Description |\n|---|---|\n| `stt` | STT plugin config. `module` selects the OVOS STT plugin. |\n| `tts` | TTS plugin config. `module` selects the OVOS TTS plugin. |\n| `vad` | VAD plugin config. `module` selects the OVOS VAD plugin. |\n| `wake_word` | WakeWord name (key into `hotwords`). |\n| `hotwords` | Dict of wakeword configurations, keyed by wakeword name. |\n| `utterance_transformers` | List of OVOS utterance transformer plugin names. |\n| `dialog_transformers` | List of OVOS dialog transformer plugin names. |\n| `metadata_transformers` | List of OVOS metadata transformer plugin names. |\n| `audio_transformers` | List of OVOS audio transformer plug\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-10-24T10:23:15Z",
   "last_updated": "2026-03-04T19:09:21.305984Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "andlo-ovos-skill-fairytales",
   "skill_id": "ovos-skill-fairytales.andlo",
   "name": "Fairy Tales",
   "description": "Tells fairy tales by Hans Christian Andersen and the Brothers Grimm.",
@@ -33,6 +34,23 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skill-fairytales\n```"
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2019-02-03T18:26:11Z",
   "last_updated": "2026-07-21T00:32:27.512227Z",
   "is_new_repo": false,

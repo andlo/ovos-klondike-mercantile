@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-lingua-franca",
   "skill_id": null,
   "name": "ovos-lingua-franca",
   "description": "Mycroft's multilingual text parsing and formatting library",
@@ -25,6 +26,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Getting Started",
+      "content": "### Loading a language\n\nBefore using Lingua Franca's other functions, you'll need to load one or more languages into memory, using part or all of a\nBCP-47 language code:\n\n```python"
+    },
+    {
+      "heading": "1. Setup a local copy of the project",
+      "content": "1. [Fork the project](https://help.github.com/articles/fork-a-repo/) to create your own copy.\n\n2. Clone the repository and change into that directory\n\n```bash\ngit clone https://github.com/your-username/lingua-franca/\ncd lingua-franca\n```\n\n3. Setup a lightweight virtual environment (venv) for the project. This creates an isolated environment that can have it's own independent set of installed Python packages.\n\n```bash\npython3 -m venv .venv\nsource .venv/bin/activate\n```\n\n  To exit the venv you can run `deactivate` or close the terminal window.\n\n4. Install the package and it's dependencies\n\n```bash\npip install wheel\npython -m pip install .\npip install pytest\npython setup.py install\n```\n\n5. To check that everything is installed correctly, let's run the existing test-suite.\n\n```bash\npytest\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-01-18T21:00:14Z",
   "last_updated": "2023-04-05T10:54:23.399538Z",
   "is_new_repo": false,

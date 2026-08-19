@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-server-plugin",
   "skill_id": null,
   "name": "ovos-tts-server-plugin",
-  "description": "",
+  "description": "This plugin connects OpenVoiceOS to an OpenVoiceOS TTS Server instance. It sends text to the server and returns the synthesized audio to OVOS.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-tts-plugin-server\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\",\n    \"ovos-tts-plugin-server\": {\n        \"host\": \"https://tts.smartgic.io/piper\",\n        \"v2\": true,\n        \"verify_ssl\": true,\n        \"tts_timeout\": 5\n     }\n } \n```\n\n- `host`: the URL of the TTS server. The plugin appends `/synthesize` to this URL.\n- `v2`: use the v2 API, if the server offers it.\n- `verify_ssl`: verify the server's SSL certificate. Set this to `false` for a self-signed certificate, but see the [security warning](#security-warning) before you do.\n- `tts_timeout`: timeout, in seconds, for a request to the server. The default is 5 seconds.\n\n### v2 API (ovos-tts-server 0.0.3a10 and later)\n\nIf the TTS server plugin supports v2, set `v2` to `true` to use the newer API. The `host` value stays the same either way. For\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-02-17T22:48:57Z",
   "last_updated": "2026-03-04T18:17:12.826175Z",
   "is_new_repo": false,

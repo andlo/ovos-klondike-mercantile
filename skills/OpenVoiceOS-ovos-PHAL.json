@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL",
   "skill_id": null,
   "name": "ovos-PHAL",
-  "description": "",
+  "description": "ovos-PHAL is the Plugin-based Hardware Abstraction Layer for OpenVoiceOS. It runs as a service that loads PHAL plugins based on the environment, either from known configuration or from device fingerprinting. Each plugin connects a specific piece of hardware or a specific system feature to the OVOS messagebus.",
   "examples": [],
   "tags": [
     "hardware",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos_PHAL\n```\n\nExtra plugin sets install with the package:\n\n```bash\npip install ovos_PHAL[linux]   # alsa, system, network-manager, wallpaper-manager\npip install ovos_PHAL[mac]     # ovos-phal-plugin-mac\npip install ovos_PHAL[mk1]     # ovos-PHAL-plugin-mk1\npip install ovos_PHAL[mk2]     # ovos-PHAL-plugin-hotkeys\npip install ovos_PHAL[mk2dev]  # ovos-PHAL-plugin-mk2-fan-control\npip install ovos_PHAL[extras]  # ipgeo, connectivity-events, oauth\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-11-06T17:28:10Z",
   "last_updated": "2026-03-01T15:37:35.568380Z",
   "is_new_repo": false,

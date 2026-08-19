@@ -1,4 +1,5 @@
 {
+  "id": "smartgic-ovos-phal-plugin-ww-led",
   "skill_id": null,
   "name": "ovos-phal-plugin-ww-led",
   "description": "A light indicator when Open Voice OS is listening and/or speaking.",
@@ -34,6 +35,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```shell\npip install ovos-phal-plugin-ww-led\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The plugin configuration file is `~/.config/OpenVoiceOS/ovos-phal-plugin-ww-led.json`.\n\n| Option          | Value   | Description                                        |\n| --------------- | ------- | -------------------------------------------------- |\n| `gpio_pin`      | `N/A`   | GPIO PIN where the LED is connected                |\n| `wakeword_only` | `false` | Turn on the LED only during the wakeword detection |\n| `pulse`         | `true`  | Make the LED pulse                                 |\n\n### Example\n\nConfiguration sample of `~/.config/OpenVoiceOS/ovos-phal-plugin-ww-led.json`.\n\n```json\n{\n  \"gpio_pin\": 25,\n  \"wakeword_only\": false,\n  \"pulse\": true\n}\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-01-04T14:56:25Z",
   "last_updated": "2024-01-24T21:33:17.488164Z",
   "is_new_repo": false,

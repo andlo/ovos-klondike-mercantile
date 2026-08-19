@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-camera",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-camera",
-  "description": "",
+  "description": "This plugin gives OVOS access to a camera. It uses OpenCV on most systems and libcamera on Raspberry Pi. The plugin can take snapshots, serve a video stream over HTTP, and respond to camera commands sent over the message bus.",
   "examples": [],
   "tags": [
     "hardware",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "1. Install the plugin:\n\n   ```bash\n   pip install ovos-phal-plugin-camera\n   ```\n\n2. Add the plugin to your OVOS PHAL configuration:\n\n   ```json\n   {\n       \"PHAL\": {\n           \"ovos-phal-plugin-camera\": {\n               \"video_source\": 0,\n               \"start_open\": false,\n               \"serve_mjpeg\": false,\n               \"mjpeg_host\": \"0.0.0.0\",\n               \"mjpeg_port\": 5000\n           }\n       }\n   }\n   ```\n\n### Additional Steps for Raspberry Pi Users\n\nOn Raspberry Pi, the Picamera2 library needs the `libcamera` package. Raspberry Pi OS installs `libcamera` system-wide, so a Python virtual environment (venv) needs extra setup to reach it.\n\nThese examples use the default venv location from ovos-installer, `~/.venvs/ovos`. Adjust the path if your setup differs.\n\n#### Steps to Enab\u2026"
+    },
+    {
+      "heading": "Configuration Options",
+      "content": "| Option         | Type   | Default   | Description                                           |\n| -------------- | ------ | --------- | ----------------------------------------------------- |\n| `video_source` | `int`  | `0`       | Index of the video source to use for the camera.      |\n| `start_open`   | `bool` | `false`   | Whether to open the camera at plugin startup.         |\n| `serve_mjpeg`  | `bool` | `false`   | Whether to start an MJPEG server for video streaming. |\n| `mjpeg_port`   | `int`  | `5000`    | Port for the MJPEG server.                            |\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-01-06T18:53:45Z",
   "last_updated": "2025-06-13T03:38:14.338800Z",
   "is_new_repo": false,

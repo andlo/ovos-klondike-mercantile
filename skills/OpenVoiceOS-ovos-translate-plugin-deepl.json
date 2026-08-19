@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-translate-plugin-deepl",
   "skill_id": null,
   "name": "ovos-translate-plugin-deepl",
-  "description": "",
+  "description": "Language Plugin for DeepL language detection and translation",
   "examples": [],
   "tags": [
     "deprecated",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "add this to one of the configuration files (eg ~./config/mycroft/mycroft.conf)",
+      "content": "\"language\": {\n    \"detection_module\": \"deepl_detection_plug\",\n    \"translation_module\": \"deepl_translate_plug\",\n    \"internal\": <lang>,                                # default target lang being used unless passed as arg\n    \"deepl_detection_plug\": {\n        \"api_key\": \"<API_KEY>\"\n    },\n    \"deepl_translate_plug\": {\n        \"api_key\": \"<API_KEY>\"\n    }\n}\n\n```\n\n### General\n\nUsing this module standalone, the API key has to be passed\n\n\n**Translation**\n```python\nfrom ovos_translate_plugin_deepl import DeepLTranslator\n\ntranslator = DeepLTranslator({\"api_key\": <API_KEY>})\ntranslator.translate(\"hallo zusammen\", \"en-us\")  # auto detect source lang"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-04-26T21:59:16Z",
   "last_updated": "2023-05-01T19:21:33.022220Z",
   "is_new_repo": false,

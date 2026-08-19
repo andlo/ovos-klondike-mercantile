@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-fuster-quotes",
   "skill_id": "ovos-skill-joan-fuster.openvoiceos",
   "name": "Joan Fuster quotes",
   "description": "The Fuster quote of the day",
@@ -31,6 +32,20 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Install this skill with pip:\n\n```bash\npip install ovos-skill-fuster-quotes\n```"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "en-US",
+    "fr-FR",
+    "sv-SE"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2024-12-19T01:20:43Z",
   "last_updated": "2026-08-12T21:20:20Z",
   "is_new_repo": false,

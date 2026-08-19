@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-ww-plugin-openWakeWord",
   "skill_id": null,
   "name": "ovos-ww-plugin-openWakeWord",
-  "description": "",
+  "description": "This plugin adds openWakeWord support to OpenVoiceOS (OVOS). openWakeWord is an open-source wake word detection system. It trains on synthetic data and runs on a single core of a Raspberry Pi 3.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Run this command:\n\n```bash\npip install ovos-ww-plugin-openwakeword\n```\n\nSet your wake word in `mycroft.conf`. Do not set the `models` key if you want the default model (\"hey jarvis\").\n\n```json\n\"listener\": {\n    \"wake_word\": \"hey_jarvis\"\n},\n\"hotwords\": {\n  \"hey_jarvis\": {\n      \"module\": \"ovos-ww-plugin-openwakeword\"\n  }\n}\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The plugin accepts these extra options:\n\n```json\n\"listener\": {\n    \"wake_word\": \"hey_jarvis\"\n},\n\"hotwords\": {\n  \"hey_jarvis\": {\n      \"module\": \"ovos-ww-plugin-openwakeword\",\n      \"models\": [\"path/to/openwakeword/model/hey_jarvis.tflite\"],\n      \"inference_framework\": \"tflite\",\n      \"custom_verifier_models\": {\"hey_jarvis\": \"path/to/openwakeword/custom/verifier/model.pkl\"},\n      \"threshold\": 0.3,\n      \"custom_verifier_threshold\": 0.1\n  }\n}\n```\n\n- `models`: paths to one or more openWakeWord models, in `.onnx` or `.tflite` format. Any model in the list can activate OVOS.\n- `inference_framework`: the format of the models in `models`. Use `tflite` or `onnx`. `tflite` is the default for `openWakeWord >=0.5.0` and gives better performance on most platforms. `onnx` may work on more platforms.\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-03-02T18:26:44Z",
   "last_updated": "2024-04-22T00:59:34.839114Z",
   "is_new_repo": false,

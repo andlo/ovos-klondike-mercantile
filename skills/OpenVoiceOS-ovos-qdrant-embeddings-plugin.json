@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-qdrant-embeddings-plugin",
   "skill_id": null,
   "name": "ovos-qdrant-embeddings-plugin",
-  "description": "",
+  "description": "Qdrant-backed `EmbeddingsDB` vector store plugin for OpenVoiceOS.",
   "examples": [],
   "tags": [
     "embeddings",
@@ -29,6 +30,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-qdrant-embeddings-plugin\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `vector_size` | **required** | Dimension of the embedding vectors. Must match your embedding model. |\n| `distance_metric` | `\"cosine\"` | Similarity function: `\"cosine\"`, `\"euclidean\"`, or `\"dot\"`. |\n| `default_collection_name` | `\"embeddings\"` | Collection created on startup and used when no collection is specified. |\n| `host` | none | Remote Qdrant host (activates HTTP client mode). |\n| `port` | `6333` | HTTP port for remote client. |\n| `grpc_port` | `6334` | gRPC port for remote client. |\n| `api_key` | none | API key for Qdrant Cloud or authenticated remote instances. |\n| `path` | none | Filesystem path for local persistent storage (activates file-backed mode). |\n\n### Three client modes\n\n**In-memory** (development or CI):\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-07-17T23:17:04Z",
   "last_updated": "2026-07-31T23:55:03.139562Z",
   "is_new_repo": false,

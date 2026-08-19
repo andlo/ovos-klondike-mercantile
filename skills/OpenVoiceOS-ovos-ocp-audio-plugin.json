@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-ocp-audio-plugin",
   "skill_id": null,
   "name": "ovos-ocp-audio-plugin",
-  "description": "",
+  "description": "OVOS Common Play (OCP) is a voice media player packaged as a mycroft audio plugin. OCP handles voice integration and playback, and it also integrates with external players through MPRIS.",
   "examples": [],
   "tags": [
     "audio",
@@ -29,6 +30,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Add this to `mycroft.conf`:\n\n```json\n{\n  \"Audio\": {\n    \"backends\": {\n      \"local\": {\n        \"type\": \"ovos_common_play\",\n        \"active\": true\n      },\n      \"simple\": {\n        \"type\": \"ovos_audio_simple\",\n        \"active\": true\n      }\n    },\n    \"default-backend\": \"local\"\n  }\n}\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-07-22T21:24:31Z",
   "last_updated": "2026-03-04T17:17:05.717803Z",
   "is_new_repo": false,

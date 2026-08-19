@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-persona-server",
   "skill_id": null,
   "name": "ovos-persona-server",
-  "description": "",
+  "description": "A single HTTP server that exposes one or more OVOS `Persona`s as **eight concurrent API surfaces** \u2014 so any LLM client (OpenAI SDK, LangChain, Ollama tools, Anthropic SDK, Google Gemini SDK, Cohere SDK, HuggingFace TGI client, AWS Bedrock client, or any A2A agent) can talk to your OVOS persona without changes.",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -25,6 +26,22 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash"
+    },
+    {
+      "heading": "Persona Config Examples",
+      "content": "### LLM persona (OpenAI-compatible backend)\n\n```json\n{\n  \"name\": \"gpt-persona\",\n  \"handlers\": [\"ovos-openai-plugin\"],\n  \"ovos-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n```\n\n### Knowledge-base + LLM fallback\n\n```json\n{\n  \"name\": \"smart-assistant\",\n  \"handlers\": [\n    \"ovos-solver-wikipedia-plugin\",\n    \"ovos-solver-ddg-plugin\",\n    \"ovos-solver-wordnet-plugin\",\n    \"ovos-openai-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ],\n  \"ovos-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n```\n\n### Rivescript chatbot (no GPU, no API key)\n\n```json\n{\n  \"name\": \"rivescript-bot\",\n  \"handlers\": [\n    \"ovos-solver-rivescript-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ]\n}\n```\n\n---"
+    },
+    {
+      "heading": "Installing the MCP extra",
+      "content": "```bash\npip install ovos-persona-server[mcp]\n```\n\nWithout the `[mcp]` extra, or without passing `--mcp`, only the UTCP endpoints are active."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-09-24T21:19:18Z",
   "last_updated": "2025-11-08T23:21:43.884507Z",
   "is_new_repo": false,

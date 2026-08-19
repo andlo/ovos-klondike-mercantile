@@ -1,4 +1,5 @@
 {
+  "id": "jumper047-mycroft-mqtt-adapter",
   "skill_id": null,
   "name": "mycroft-mqtt-adapter",
   "description": "Skill for Mycroft Voice Assistant to be controlled via MQTT protocol",
@@ -28,6 +29,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "Go to [[https://account.mycroft.ai/skills]], find Installer skill, paste url https://github.com/jumper047/mycroft-mqtt-adapter into \"Skill URL\" field and press \"Save\". As alternate way you can connect to your Mycroft instance via ssh and enter `mycroft-skill install https://github.com/jumper047/mycroft-mqtt-adapter`"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-06-19T08:13:27Z",
   "last_updated": "2022-08-01T23:13:22Z",
   "is_new_repo": false,

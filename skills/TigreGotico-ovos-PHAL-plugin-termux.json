@@ -1,7 +1,8 @@
 {
+  "id": "TigreGotico-ovos-PHAL-plugin-termux",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-termux",
-  "description": "",
+  "description": "A PHAL plugin that controls system volume, vibration, and the camera on Termux. It runs as part of the Platform/Hardware Abstraction Layer in OpenVoiceOS.",
   "examples": [],
   "tags": [
     "android",
@@ -31,6 +32,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-PHAL-plugin-termux\n```"
+    },
+    {
+      "heading": "Config",
+      "content": "```json\n  \"PHAL\": {\n    \"ovos-PHAL-plugin-termux\": {\n      \"stream\": \"music\",\n      \"camera_id\": 0,\n      \"vibrate_on_record_start\": false,\n      \"vibrate_on_record_end\": false,\n      \"vibrate_on_sleep\": false,\n      \"vibrate_on_error\": true\n    }\n  }\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-09-06T18:53:48Z",
   "last_updated": "2026-07-30T20:27:26Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-dictation",
   "skill_id": "ovos-skill-dictation.openvoiceos",
   "name": "Dictation skill",
   "description": "continuously transcribes user speech to text file while enabled",
@@ -28,6 +29,20 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "pt-BR"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2017-03-05T18:10:49Z",
   "last_updated": "2026-08-14T16:55:47Z",
   "is_new_repo": false,

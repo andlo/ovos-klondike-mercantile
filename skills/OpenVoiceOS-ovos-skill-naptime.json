@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-naptime",
   "skill_id": "ovos-skill-naptime.openvoiceos",
   "name": "Naptime",
   "description": "Put the assistant to sleep when you don't want to be disturbed.",
@@ -32,6 +33,36 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "The skill uses the `~/.config/mycroft/skills/ovos-skill-naptime.openvoiceos/settings.json` file. Set `mute` to `true` to mute the audio when the assistant goes to sleep.\n\n```json\n{\n  \"mute\": false\n}\n```"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "cs-CZ",
+    "da-DK",
+    "de-DE",
+    "el-GR",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fa-IR",
+    "fr-FR",
+    "gl-ES",
+    "hu-HU",
+    "it-IT",
+    "nl-NL",
+    "pl-PL",
+    "pt-BR",
+    "pt-PT",
+    "ro-RO",
+    "ru-RU",
+    "sv-SE",
+    "tr-TR"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2021-09-06T12:46:20Z",
   "last_updated": "2026-08-17T18:00:59Z",
   "is_new_repo": false,

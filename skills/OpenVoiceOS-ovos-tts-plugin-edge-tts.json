@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-edge-tts",
   "skill_id": null,
   "name": "ovos-tts-plugin-edge-tts",
   "description": "OpenVoiceOS Text-to-speech plugin with Edge TTS",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash\npip install ovos-tts-plugin-edge-tts\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add the plugin to your user config file (`~/.config/mycroft/mycroft.conf`):\n\n```javascript\n\"tts\": {\n    \"module\": \"ovos-tts-plugin-edge-tts\",\n    \"ovos-tts-plugin-edge-tts\": {\n        \"voice\": \"en-US-AriaNeural\",\n        // =100% speed; use \"+50%\" for 150%, or \"+100%\" for 200% speech rate etc for adjusting speed\n        \"rate\": \"+0%\"\n    }\n}\n```\n\nSee the [list of voices available in Edge TTS](https://gist.github.com/BettyJJ/17cbaa1de96235a7f5773b8690a20462).\n\nMany of the newer multilingual voices (from March 2024) also work with this plugin. For\nexample: `\"voice\": \"en-US-EmmaMultilingualNeural\"`."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-02-11T14:27:29Z",
   "last_updated": "2025-06-17T23:23:21.485808Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-application-launcher",
   "skill_id": null,
   "name": "ovos-skill-application-launcher",
   "description": null,
@@ -27,6 +28,31 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skill-application-launcher\n```"
+    },
+    {
+      "heading": "Configuration via `settings.json`",
+      "content": "To customize the behavior of the Application Launcher skill, you can modify the following options in the `settings.json` file:\n\n| Option                   | Type                   | Default Value                             | Description                                                                                                                        |\n|--------------------------|------------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|\n| `aliases`                | `Dict[str, List[str]]` | `{\"kcalc\": [\"calculator\"]}`               | Defines application aliases. Use application names from the `.desktop` file as keys and a list of speech-friendl\u2026"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fa-IR",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "nl-NL",
+    "pt-PT"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2021-12-13T22:13:24Z",
   "last_updated": "2026-08-15T06:38:30Z",
   "is_new_repo": false,

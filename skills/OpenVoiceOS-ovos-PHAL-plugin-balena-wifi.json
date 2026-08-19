@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-balena-wifi",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-balena-wifi",
-  "description": "",
+  "description": "this plugin provides a balena interface for the wifi setup and is part of a larger collection of Wifi client plugins",
   "examples": [],
   "tags": [
     "deprecated",
@@ -29,6 +30,22 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "PHAL plugin - Balena Wifi Setup-",
+      "content": "this plugin provides a balena interface for the wifi setup and is part of a larger collection of Wifi client plugins\n\nBalena creates a hotspot you can connect to and set your credentials, this is the default option for devices without a GUI\n\nthis plugin replaces the old [skill-balena-wifi-setup](https://github.com/OpenVoiceOS/skill-balena-wifi-setup)"
+    },
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-PHAL-plugin-balena-wifi`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "You can change a few parameters to customize the setup assets, you can change some Hotspot details, dialogs and GUI strings\n\n```json\n{\n  \"ssid\": \"OVOS\",\n  \"portal\": \"start dot openvoiceos dot com\",\n  \"device_name\": \"OVOS Device\",\n  \"image_connect_ap\":  \"1_phone_connect-to-ap.png\",\n  \"image_choose_wifi\":  \"3_phone_choose-wifi.png\"\n}\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-03-14T19:56:17Z",
   "last_updated": "2025-06-10T21:19:25.561855Z",
   "is_new_repo": false,

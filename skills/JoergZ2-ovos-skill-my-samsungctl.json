@@ -1,4 +1,5 @@
 {
+  "id": "JoergZ2-ovos-skill-my-samsungctl",
   "skill_id": null,
   "name": "ovos-skill-my-samsungctl",
   "description": "Skill for controlling of some Samsung TVs",
@@ -29,6 +30,17 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Skill configuration (settings.json)",
+      "content": "* \"tv\": IP of your Samsung TV\n* \"port\": 55000 (default)\n* \"placement\": Room  (optional)\n* \"method\": legacy (for greatest compatibility)\n* \"rc_name\": (virtual) Name of voice RC\n* \"description\": Description (optional)\n* \"translations\" Language localization of cursor control and confirming selection or escaping a menu\n\nLocalization: Write the words without spaces after the comma, for example, in German: links,rechts,nach oben,nach unten,nehmen,verlassen. The spaces between 'nach' and 'oben' is ok. Today there is a localization for German only."
+    }
+  ],
+  "languages": [
+    "de-de",
+    "en-us"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-04-05T11:10:31Z",
   "last_updated": "2025-06-06T11:45:03Z",
   "is_new_repo": false,

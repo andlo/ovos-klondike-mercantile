@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-backend-client",
   "skill_id": null,
   "name": "ovos-backend-client",
   "description": "client library for interaction with all compatible ovos-core backend services",
@@ -26,6 +27,9 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-12-16T17:58:18Z",
   "last_updated": "2024-11-11T18:05:43.384459Z",
   "is_new_repo": false,

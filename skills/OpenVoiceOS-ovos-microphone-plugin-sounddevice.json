@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-microphone-plugin-sounddevice",
   "skill_id": null,
   "name": "ovos-microphone-plugin-sounddevice",
-  "description": "",
+  "description": "This plugin lets OpenVoiceOS (OVOS) capture microphone audio through python-sounddevice.",
   "examples": [],
   "tags": [
     "audio",
@@ -27,6 +28,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-microphone-plugin-sounddevice\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The listener defaults to the `ovos-microphone-plugin-alsa` plugin. To use this plugin instead, update the `mycroft.conf` configuration file:\n\n```json\n{\n  \"listener\": {\n    \"microphone\": {\n      \"module\": \"ovos-microphone-plugin-sounddevice\",\n      \"ovos-microphone-plugin-sounddevice\": {}\n    }\n  }\n}\n```\n\n### macOS recommended settings (clear capture)\n\n```json\n{\n  \"listener\": {\n    \"microphone\": {\n      \"module\": \"ovos-microphone-plugin-sounddevice\",\n      \"ovos-microphone-plugin-sounddevice\": {\n        \"device\": \"Built-in Microphone\",\n        \"latency\": \"low\",\n        \"multiplier\": 1.0,\n        \"blocksize\": 1024,\n        \"queue_maxsize\": 8,\n        \"use_coreaudio_settings\": true,\n        \"coreaudio_conversion_quality\": \"max\",\n        \"coreaudio_change_device_parameters\": false,\n        \"co\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-05-26T16:59:54Z",
   "last_updated": "2025-11-04T17:32:46.591362Z",
   "is_new_repo": false,

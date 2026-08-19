@@ -1,4 +1,5 @@
 {
+  "id": "andlo-ovos-skill-intercom",
   "skill_id": "ovos-skill-intercom.andlo",
   "name": "Intercom",
   "description": "LAN intercom - send a spoken message to a named OVOS device on the same local network. Fully offline, no internet needed. Speak-only, never executes commands on the receiving device.",
@@ -32,6 +33,24 @@
   "pipeline": null,
   "connectivity": "offline",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Setup",
+      "content": "Each device needs a **name** and a shared household **code**, set by\nvoice on that specific device:\n```\n\"set intercom name to living room\"\n\"set intercom code to four seven two nine\"\n```\n\nEvery device that should participate says the **same code** - not a\nseparate secret per pair of devices. Say it once per device; any two\ndevices with matching codes can message each other."
+    },
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skill-intercom\n```"
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-18T14:51:17Z",
   "last_updated": "2026-08-18T19:32:07.736726Z",
   "is_new_repo": false,

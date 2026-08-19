@@ -1,4 +1,5 @@
 {
+  "id": "OscillateLabsLLC-skill-meal-plan",
   "skill_id": "skill_meal_plan.oscillatelabsllc",
   "name": "skill-meal-plan",
   "description": "An OVOS voice skill for meal suggestions",
@@ -36,6 +37,9 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2022-05-22T02:33:47Z",
   "last_updated": "2026-08-19T03:35:03.943666Z",
   "is_new_repo": false,

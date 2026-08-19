@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-translate-plugin-nllb",
   "skill_id": null,
   "name": "ovos-translate-plugin-nllb",
   "description": "No Language Left Behind",
@@ -26,6 +27,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Install the plugin with pip:\n\n```bash\npip install ovos-translate-plugin-nllb\n```"
+    },
+    {
+      "heading": "Advanced Configuration",
+      "content": "### HuggingFace Integration\n\nTo use a model hosted on the HuggingFace Hub, set the `model` parameter to the HuggingFace model ID. `NLLB200Translator` downloads and loads the model from HuggingFace.\n\n### Additional Parameters\n\n- `beam_size`: the beam size used for translation. A larger value trades speed for translation quality.\n- `device`: the device to run on, either `cpu` or `cuda` (GPU).\n\n```python\nfrom ovos_translate_plugin_nllb import NLLB200Translator\ntx = NLLB200Translator(config={\n    \"model\": \"nllb-200_600M_int8\",\n    \"beam_size\": 5,\n    \"device\": \"cuda\"\n})\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-06-07T21:54:26Z",
   "last_updated": "2025-12-14T23:38:03.354940Z",
   "is_new_repo": false,

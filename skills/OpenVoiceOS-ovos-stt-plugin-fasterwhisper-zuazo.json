@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-plugin-fasterwhisper-zuazo",
   "skill_id": null,
   "name": "ovos-stt-plugin-fasterwhisper-zuazo",
-  "description": "",
+  "description": "FasterWhisper fine tuned models by Xabier de Zuazo for all the iberian peninsula languages, `pt`, `es`, `gl`, `ca`, `eu`",
   "examples": [],
   "tags": [
     "deprecated",
@@ -31,6 +32,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-stt-plugin-fasterwhisper-zuazo`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "to use small model locally\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-fasterwhisper-zuazo\",\n    \"ovos-stt-plugin-fasterwhisper-zuazo\": {\n        \"model\": \"small\"\n    }\n  }\n```\n\nto use Large model with GPU\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-fasterwhisper-zuazo\",\n    \"ovos-stt-plugin-fasterwhisper-zuazo\": {\n        \"model\": \"large\",\n        \"use_cuda\": true,\n        \"compute_type\": \"float16\",\n        \"beam_size\": 5,\n        \"cpu_threads\": 4\n    }\n  }\n```\n\nbest model is automatically selected based on language unless specified, valid config options are `tiny`,`base`,`small`,`medium`,`large`\n\n> you can also select `large-v1`, `large-v2` or `large-v3` explicitly, but `v3` is only available for `pt`,`ca`,`eu`\n\n### Models\n\n\n#### Portuguese\n\nself reported WER score from mod\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-09-15T14:42:33Z",
   "last_updated": "2025-06-17T23:46:17.380693Z",
   "is_new_repo": false,

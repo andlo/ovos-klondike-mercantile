@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-plugin-chromium",
   "skill_id": null,
   "name": "ovos-stt-plugin-chromium",
   "description": "A stt plugin for OpenVoiceOS using the google chrome browser api",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-stt-plugin-chromium\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "By default, the plugin uses the global language set in your OVOS configuration.\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-chromium\"\n  }\n```\n\n### Advanced configuration\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-chromium\",\n    \"ovos-stt-plugin-chromium\": {\n        \"lang\": \"en-US\",\n        \"pfilter\": false,\n        \"debug\": false\n    }\n  }\n```\n\n- `lang` \u2014 overrides the global language. Use a code from the supported languages list.\n- `pfilter` \u2014 profanity filter. When `true`, the plugin censors profanity, showing only the first character and replacing the rest with asterisks, for example `f***`.\n- `debug` \u2014 when `true`, logs the confidence score and alternative transcriptions."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2020-12-04T12:43:57Z",
   "last_updated": "2022-09-29T17:25:18.561924Z",
   "is_new_repo": false,

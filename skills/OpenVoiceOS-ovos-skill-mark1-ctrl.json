@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-mark1-ctrl",
   "skill_id": null,
   "name": "ovos-skill-mark1-ctrl",
   "description": "control the mycroft enclosure vocally",
@@ -27,6 +28,28 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skill-mark1-ctrl\n```"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "el-GR",
+    "en-US",
+    "es-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "nl-NL",
+    "pt-BR",
+    "ru-RU",
+    "sv-SE"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2018-04-09T21:39:14Z",
   "last_updated": "2026-04-04T04:32:02.377027Z",
   "is_new_repo": false,

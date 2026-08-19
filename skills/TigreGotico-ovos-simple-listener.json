@@ -1,7 +1,8 @@
 {
+  "id": "TigreGotico-ovos-simple-listener",
   "skill_id": null,
   "name": "ovos-simple-listener",
-  "description": "",
+  "description": "`ovos-simple-listener` is a lightweight alternative to `ovos-dinkum-listener`. It handles wake word detection, voice activity detection (VAD), and speech-to-text (STT) transcription for the Open Voice OS (OVOS) framework.",
   "examples": [],
   "tags": [
     "audio",
@@ -29,6 +30,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "Install `ovos-simple-listener` with pip:\n\n```bash\npip install ovos-simple-listener\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-10-24T08:07:38Z",
   "last_updated": "2026-01-23T15:23:02.100424Z",
   "is_new_repo": false,

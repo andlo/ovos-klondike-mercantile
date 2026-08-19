@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-plugin-vosk",
   "skill_id": null,
   "name": "ovos-stt-plugin-vosk",
   "description": "vosk STT plugin for mycroft",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-stt-plugin-vosk`\n\nGet official models from [alphacephei](https://alphacephei.com/vosk/models)."
+    },
+    {
+      "heading": "Configuration",
+      "content": "Give the plugin a Kaldi model. Point `model` at a local folder or a direct download URL.\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-vosk\",\n    \"ovos-stt-plugin-vosk\": {\n        \"model\": \"/path/to/unzipped/model/folder\"\n    }\n  }\n```\n\n### Advanced configuration\n\n```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-vosk-streaming\",\n    \"ovos-stt-plugin-vosk-streaming\": {\n        \"model\": \"http://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip\",\n        \"verbose\": true\n    },\n    \"ovos-stt-plugin-vosk\": {\n        \"model\": \"http://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip\"\n    }\n  }\n```\n\n`ovos-stt-plugin-vosk` runs regular STT. Transcription happens after recording finishes.\n\n`ovos-stt-plugin-vosk-streaming` runs streaming STT. Transcription happens in real t\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2020-12-03T04:21:47Z",
   "last_updated": "2026-01-09T09:03:40.931146Z",
   "is_new_repo": false,

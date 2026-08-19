@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-transformer-sox-plugin",
   "skill_id": null,
   "name": "ovos-tts-transformer-sox-plugin",
-  "description": "",
+  "description": "This plugin changes TTS audio before playback. It runs after the TTS engine generates a wav file and applies SoX (Sound eXchange) effects to it. Use it to add effects such as reverb, echo, or pitch shifting to synthesized speech.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -29,6 +30,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-tts-transformer-sox-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-10-06T23:12:15Z",
   "last_updated": "2026-08-01T14:01:57.365340Z",
   "is_new_repo": false,

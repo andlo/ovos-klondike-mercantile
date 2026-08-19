@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-media-plugin-chromecast",
   "skill_id": null,
   "name": "ovos-media-plugin-chromecast",
-  "description": "",
+  "description": "This plugin adds Chromecast support to ovos-audio and ovos-media.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-media-plugin-chromecast\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Run the `ovos-chromecast-autoconfigure` command to configure your Chromecast devices automatically.\n\n```bash\n$ ovos-chromecast-autoconfigure\nThis script will auto configure chromecast devices under your mycroft.conf\nMake sure your devices are turned on and connected to the same Wifi as you, otherwise discovery will fail\n\nScanning...\n    - Found Chromecast: Bedroom TV - 192.168.1.17:8009\n\nFound devices: ['Bedroom TV']\n\nmycroft.conf updated!"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-02-06T19:20:28Z",
   "last_updated": "2025-11-05T01:07:37.933719Z",
   "is_new_repo": false,

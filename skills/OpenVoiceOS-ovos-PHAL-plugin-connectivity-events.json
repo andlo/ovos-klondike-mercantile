@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-connectivity-events",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-connectivity-events",
-  "description": "",
+  "description": "This is a PHAL plugin for OVOS. It watches network and internet connectivity and publishes the result on the messagebus, so skills, the GUI, and the enclosure can react to going online or offline without probing the network themselves.",
   "examples": [],
   "tags": [
     "hardware",
@@ -26,8 +27,20 @@
   "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "offline",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-PHAL-plugin-connectivity-events\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The plugin reads its settings from the PHAL configuration section:\n\n```json\n{\n  \"check_interval\": 60,\n  \"disable_scheduled_checks\": false\n}\n```\n\n- `check_interval`: seconds between automatic checks. Default: 60.\n- `disable_scheduled_checks`: if true, the plugin does not poll on a timer. It still responds to `ovos.PHAL.internet_check`."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-12-02T21:38:38Z",
   "last_updated": "2025-11-05T00:39:54.319866Z",
   "is_new_repo": false,

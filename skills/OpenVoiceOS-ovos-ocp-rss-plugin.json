@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-ocp-rss-plugin",
   "skill_id": null,
   "name": "ovos-ocp-rss-plugin",
-  "description": "",
+  "description": "This plugin lets OCP play RSS feeds. It reads a feed URL, finds the first entry with an audio link, and returns that link as a playable stream.",
   "examples": [],
   "tags": [
     "media",
@@ -28,6 +29,14 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-ocp-rss-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-12-28T08:33:29Z",
   "last_updated": "2025-11-05T00:32:33.781782Z",
   "is_new_repo": false,

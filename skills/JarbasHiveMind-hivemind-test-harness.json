@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-hivemind-test-harness",
   "skill_id": null,
   "name": "hivemind-test-harness",
   "description": "Central integration test suite for HiveMind: topology, stress, and cross-repo scenarios built on hivescope",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install \"hivescope @ git+https://github.com/JarbasHiveMind/hivescope@dev\"\npip install -e \".[dev]\"\n```\n\nFor skill e2e tests (requires a live OVOS installation):\n\n```bash\npip install -e \".[dev,ovos]\"\n```\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2026-03-14T14:57:24Z",
   "last_updated": "2026-08-15T14:23:52Z",
   "is_new_repo": false,

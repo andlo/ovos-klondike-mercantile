@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-stt-plugin-projectAINA-remote",
   "skill_id": null,
   "name": "ovos-stt-plugin-projectAINA-remote",
-  "description": "",
+  "description": "OpenVoiceOS plugin for STT models hosted by ProjectAINA",
   "examples": [],
   "tags": [
     "catalan",
@@ -31,6 +32,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-stt-plugin-projectAINA`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "```json\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-projectAINA-remote\",\n    \"ovos-stt-plugin-projectAINA-remote\": {\n        \"hf_token\": \"hf_UrseOhaTKIPknBz......\"\n    }\n  }\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-11-20T17:33:45Z",
   "last_updated": "2024-11-21T09:51:19.313256Z",
   "is_new_repo": false,

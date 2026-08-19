@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-ww-plugin-snowboy",
   "skill_id": null,
   "name": "ovos-ww-plugin-snowboy",
   "description": "snowboy plugin for mycroft",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-ww-plugin-snowboy`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Each wake word can included several snowboy models, if any of them fires a detection is considered\n\nTIP: you can use this to train a model for each speaker in your house\n\nAdd the following to your hotwords section in mycroft.conf\n\n```json\n  \"hotwords\": {\n    \"my_word\": {\n        \"module\": \"ovos-ww-plugin-snowboy\",\n        \"models\": [\n            {\"sensitivity\": 0.5, \"model_path\": \"path/to/first.pmdl\"},\n            {\"sensitivity\": 0.5, \"model_path\": \"path/to/second.pmdl\"},\n            {\"sensitivity\": 0.5, \"model_path\": \"path/to/third.pmdl\"}\n         ]\n    }\n  }\n```\n\nThen select what wakeword to use\n\n```json\n \"listener\": {\n      \"wake_word\": \"my_word\"\n }\n \n```\n\n### Bundled wakeword models\n\nAll these are bundled with this plugin, they are universal models ```.umdl``` trained by snowboy and sh\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2020-12-06T07:36:29Z",
   "last_updated": "2021-08-31T22:55:54.637554Z",
   "is_new_repo": false,

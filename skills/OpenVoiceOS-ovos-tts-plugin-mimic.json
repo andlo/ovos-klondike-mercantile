@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-mimic",
   "skill_id": null,
   "name": "ovos-tts-plugin-mimic",
-  "description": "",
+  "description": "This plugin connects Mimic 1 to OpenVoiceOS through",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-tts-plugin-mimic\n```\n\nThe plugin needs the `mimic` binary. [Compile it from source](https://github.com/MycroftAI/mycroft-core/blob/dev/scripts/install-mimic.sh),\nor install a prebuilt package from [forslund's repo](https://forslund.github.io/mycroft-desktop-repo/)."
+    },
+    {
+      "heading": "Configuration",
+      "content": "If `mimic` is on the system path, set only a voice:\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-mimic\",\n    \"ovos-tts-plugin-mimic\": {\n      \"voice\": \"ap\"\n    }\n  }\n```\n\n### Advanced config\n\nA voice can be a URL, a file path, or one of the voices built into `mimic`. You can find\ncompatible festvox voices on the [festvox flite voice page](http://www.festvox.org/flite/packed/flite-2.0/voices/).\n\nSet the path to the `mimic` binary if it is not on the system path:\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-mimic\",\n    \"ovos-tts-plugin-mimic\": {\n      \"voice\": \"http://www.festvox.org/flite/packed/flite-2.0/voices/cmu_us_fem.flitevox\",\n      \"binary\": \"~/mimic1/mimic\"\n    }\n  }\n```\n\nMycroft premium subscribers get a female voice called `trinity`. This voice is a\nprecompiled `mimic\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-06-07T19:04:43Z",
   "last_updated": "2024-09-11T02:43:20.197791Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-hotkeys",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-hotkeys",
   "description": "map key presses to OVOS bus events",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Add your user to the `tty` and `input` groups.\n\n`sudo usermod -a -G tty,input $USER`\n\nYou can find more information in [this issue](https://github.com/boppreh/keyboard/issues/312).\n\nThen install the plugin.\n\n`pip install ovos-PHAL-plugin-hotkeys`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add a bus message and a key combo under `\"key_down\"` or `\"key_up\"`.\n\nUse `\"key_down\"` to react when a key is pressed. Use `\"key_up\"` to react when a key is released.\n\nHere is a complete example based on events from a generic G20 USB remote.\n\n```json\n \"PHAL\": {\n    \"ovos-PHAL-plugin-hotkeys\": {\n        \"debug\": false,\n        \"key_down\": {\n            \"mycroft.mic.listen\": 582,\n            \"mycroft.mic.mute.toggle\": 190,\n            \"mycroft.mic.mute\": \"shift+m\",\n            \"mycroft.mic.unmute\": \"shift+u\",\n            \"mycroft.volume.increase\": 115,\n            \"mycroft.volume.decrease\": 114,\n            \"mycroft.volume.mute.toggle\": 113,\n            \"mycroft.volume.mute\": \"ctrl+shift+m\",\n            \"mycroft.volume.unmute\": \"ctrl+shift+u\",\n            \"homescreen.manager.show_active\": 144\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-08-02T12:16:59Z",
   "last_updated": "2024-09-10T00:19:29.435964Z",
   "is_new_repo": false,

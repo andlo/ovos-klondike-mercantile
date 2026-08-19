@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-weather",
   "skill_id": "ovos-skill-weather.openvoiceos",
   "name": "Weather",
   "description": "Get weather conditions, forecasts, expected precipitation and more! You can also ask for other cities around the world. Current conditions and weather forecasts come from OpenMeteo",
@@ -49,6 +50,34 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Install the skill with pip:\n\n```bash\npip install ovos-skill-weather\n```\n\nAn [OVOS](https://github.com/OpenVoiceOS) instance loads it automatically through the\n[`opm.skill`](https://github.com/OpenVoiceOS/OVOS-plugin-manager) entry point."
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "cs-CZ",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "hu-HU",
+    "it-IT",
+    "nl-NL",
+    "pl-PL",
+    "pt-BR",
+    "pt-PT",
+    "ru-RU",
+    "sv-FI",
+    "sv-SE",
+    "tr-TR"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2021-06-08T08:00:33Z",
   "last_updated": "2026-08-14T21:18:15Z",
   "is_new_repo": false,

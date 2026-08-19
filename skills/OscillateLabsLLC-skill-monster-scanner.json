@@ -1,4 +1,5 @@
 {
+  "id": "OscillateLabsLLC-skill-monster-scanner",
   "skill_id": "skill_monster_scanner.oscillatelabsllc",
   "name": "skill-monster-scanner",
   "description": "An OVOS voice skill that scans for monsters under the bed",
@@ -33,6 +34,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "If you feel like being a monster yourself, you can set `scary` in the config to `true` and the skill will sometimes find a monster.\n\nUnder skill settings (`~/.config/mycroft/skills/skill-monster-scanner.oscillatelabsllc/settings.json`):\n\n| Option  | Value   | Description                                                  |\n| ------- | ------- | ------------------------------------------------------------ |\n| `scary` | `false` | Whether or not to occasionally find a monster under the bed. |\n\nNote: If you are running Neon, the skill settings file will be located at `~/.config/neon/skills/skill-monster-scanner.oscillatelabsllc/settings.json`."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2024-07-05T21:08:54Z",
   "last_updated": "2026-08-19T03:32:15.765812Z",
   "is_new_repo": false,

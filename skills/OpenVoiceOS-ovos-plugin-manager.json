@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-plugin-manager",
   "skill_id": null,
   "name": "ovos-plugin-manager",
   "description": "plugin manager for OpenVoiceOS , STT/TTS/Wakewords that can be used anywhere",
@@ -28,6 +29,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-plugin-manager\n```\n\nMedia provider plugins need an extra dependency. Install it with:\n\n```bash\npip install ovos-plugin-manager[media]\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-01-14T01:33:04Z",
   "last_updated": "2026-01-28T22:36:22.628403Z",
   "is_new_repo": false,

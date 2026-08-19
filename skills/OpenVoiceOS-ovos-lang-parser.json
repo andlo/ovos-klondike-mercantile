@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-lang-parser",
   "skill_id": null,
   "name": "ovos-lang-parser",
-  "description": "",
+  "description": "Map spoken and written **language names** to standard **IETF/BCP-47 language codes**, and",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -25,6 +26,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-lang-parser"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-11-07T01:48:38Z",
   "last_updated": "2025-03-06T11:03:48.200847Z",
   "is_new_repo": false,

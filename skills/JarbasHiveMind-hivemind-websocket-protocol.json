@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-hivemind-websocket-protocol",
   "skill_id": null,
   "name": "hivemind-websocket-protocol",
   "description": "WebSocket transport plugin for hivemind-core \u2014 the reference network protocol implementation",
@@ -30,6 +31,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install hivemind-websocket-protocol\n```"
+    },
+    {
+      "heading": "Configuration reference",
+      "content": "| Key | Env var | Default | Description |\n|---|---|---|---|\n| `host` | n/a | `0.0.0.0` | Bind address. Falls back to `identity.default_master`. |\n| `port` | n/a | `5678` | Listen port. Falls back to `identity.default_port`. |\n| `ssl` | n/a | `false` | Enable TLS. |\n| `cert_dir` | n/a | `$XDG_DATA_HOME/hivemind` | Directory for TLS cert and key files. |\n| `cert_name` | n/a | `hivemind` | Base filename. It produces `<name>.crt` and `<name>.key`. |\n| `trusted_proxy_cidrs` | `HIVEMIND_TRUSTED_PROXY_CIDRS` | _(none)_ | Comma-separated CIDRs of trusted proxy addresses. |\n| `trusted_client_ip_headers` | `HIVEMIND_TRUSTED_CLIENT_IP_HEADERS` | `x-forwarded-for,x-real-ip` | Ordered list of headers to inspect for real client IP. |\n| `websocket_ping_interval` | `HIVEMIND_WEBSOCKET_PING_INTERVAL` | `30\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-12-28T15:52:55Z",
   "last_updated": "2025-04-26T18:16:42.842189Z",
   "is_new_repo": false,

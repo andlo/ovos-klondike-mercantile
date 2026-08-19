@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-ocp-pipeline-plugin",
   "skill_id": null,
   "name": "ovos-ocp-pipeline-plugin",
-  "description": "",
+  "description": "The OCP (Open Common Play) pipeline plugin turns media utterances into playback actions in OVOS. Utterances such as \"play metallica\", \"put on some movie\", \"pause\", or \"next\" pass through this plugin as an intent pipeline stage. On a match, the plugin searches registered media skills over the message bus and drives playback through the OCP API.",
   "examples": [],
   "tags": [
     "media",
@@ -29,6 +30,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-ocp-pipeline-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2024-10-14T03:10:31Z",
   "last_updated": "2025-11-05T00:41:36.237265Z",
   "is_new_repo": false,

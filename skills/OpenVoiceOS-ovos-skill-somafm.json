@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-somafm",
   "skill_id": null,
   "name": "SomaFM Skill",
   "description": null,
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [
+    "en-US",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-10-07T13:39:47Z",
   "last_updated": "2026-07-03T23:59:16Z",
   "is_new_repo": false,

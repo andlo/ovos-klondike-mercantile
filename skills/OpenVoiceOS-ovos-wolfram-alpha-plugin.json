@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-wolfram-alpha-plugin",
   "skill_id": null,
   "name": "ovos-wolfram-alpha-plugin",
-  "description": "",
+  "description": "Wolfram Alpha integration for OpenVoiceOS. Provides a **retrieval engine** for RAG pipelines and an **agent toolbox** for tool-using agents, both as standard OPM plugins.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,14 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash\npip install ovos-wolfram-alpha-plugin\n```\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2025-03-27T12:57:18Z",
   "last_updated": "2026-08-14T15:19:58.429557Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "NeonGeckoCom-skill-update",
   "skill_id": "skill-update.neongeckocom=skill_update:UpdateSkill",
   "name": "neon-skill-update",
   "description": "The update skill provides intents for the user to manage device updates, including core packages, skills, configuration, and creation of new boot media. ### Software Updates This skill can be used to check for software updates and to start the update process on supported devices. For most devices, updates will take 10-30 minutes, and you will not be able to use your device while it is updating. ### Configuration Updates For supported distributions, this skill allows getting updated default configuration. This can be useful for resetting skills configuration to the latest default, or for troubleshooting after making manual configuration changes. ### Create New Media For supported distributions, this skill is able to create a new boot drive from a clean image, similar to what would be distributed with a new device. This involves downloading a new image and then writing it to an available storage device. This is a multi-step process. 1. An operating system image is downloaded. Depending on internet connection    speeds, this generally takes about 15-20 minutes. 2. After user confirmation, this image is written to a non-boot drive connected    to the device. **All existing on the new boot drive is lost**. This generally    takes about 30-45 minutes. 3. After this is complete, the device is shut down so the user may unplug the old    drive and boot the new one.",
@@ -30,6 +31,17 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration Updates",
+      "content": "For supported distributions, this skill allows getting updated default configuration.\nThis can be useful for resetting skills configuration to the latest default, or for\ntroubleshooting after making manual configuration changes."
+    }
+  ],
+  "languages": [
+    "en-us",
+    "uk-ua"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-10-08T22:47:42Z",
   "last_updated": "2025-03-18T00:27:09.004829Z",
   "is_new_repo": false,

@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-brightness-control-rpi",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-brightness-control-rpi",
-  "description": "",
+  "description": "This repository is no longer maintained by OpenVoiceOS, use https://github.com/OpenVoiceOS/ovos-gui-plugin-shell-companion instead",
   "examples": [],
   "tags": [
     "deprecated",
@@ -30,6 +31,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-PHAL-plugin-brightness-control-rpi`"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-05-16T17:40:03Z",
   "last_updated": "2022-11-17T00:44:04.625475Z",
   "is_new_repo": false,

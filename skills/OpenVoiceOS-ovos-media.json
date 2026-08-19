@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-media",
   "skill_id": null,
   "name": "ovos-media",
-  "description": "",
+  "description": "> **Warning:** this is pre-release software. It is under active development, is",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -25,6 +26,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-media\n```\n\nInstall at least one playback backend (audio is the minimum to hear anything):\n\n```bash\npip install ovos-media-plugin-vlc        # or -mplayer / -simple / -spotify / -chromecast\n```\n\n### Enable it\n\n`ovos-media` runs alongside `ovos-audio` (which keeps handling TTS). Turn off the\nlegacy audio service and run the daemon:\n\n```json\n// mycroft.conf\n{\n  \"enable_old_audioservice\": false\n}\n```\n\n```bash\novos-media          # start the daemon\n```\n\nAsk OVOS to play something and the OCP pipeline routes the request here.\n\n---"
+    },
+    {
+      "heading": "Configuration",
+      "content": "All configuration lives under the `\"media\"` key in `mycroft.conf`. The essentials:\n\n```jsonc\n{\n  \"media\": {\n    // MPRIS / D-Bus integration (off by default)\n    \"enable_mpris\": false,\n    // let MPRIS pause/stop other media players on the system\n    \"manage_external_players\": false,\n\n    // order of preference per playback type; the first backend that can\n    // handle the URI wins. Users may also name a backend in the utterance.\n    \"preferred_audio_services\": [\"vlc\", \"mplayer\", \"cli\"],\n    \"preferred_video_services\": [\"vlc\"],\n\n    // declare the backends available to each playback type.\n    // \"module\" is the plugin's entry-point name; \"aliases\" are spoken names.\n    \"audio_players\": {\n      \"vlc\": { \"module\": \"ovos-media-audio-plugin-vlc\", \"aliases\": [\"VLC\"], \"active\": true },\n      \"c\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-01-09T00:18:26Z",
   "last_updated": "2026-08-18T14:54:41.280936Z",
   "is_new_repo": false,

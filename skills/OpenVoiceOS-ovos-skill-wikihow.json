@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-wikihow",
   "skill_id": "ovos-skill-wikihow.openvoiceos",
   "name": "WikiHow",
   "description": "How to do nearly everything.",
@@ -29,6 +30,25 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-skill-wikihow\n```"
+    }
+  ],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "pt-PT"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2018-01-23T09:41:23Z",
   "last_updated": "2026-08-14T01:04:45Z",
   "is_new_repo": false,

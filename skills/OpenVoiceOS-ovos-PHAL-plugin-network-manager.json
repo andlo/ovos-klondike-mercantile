@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-network-manager",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-network-manager",
   "description": "NetworkManager plugin for PHAL",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-PHAL-plugin-network-manager\n```"
+    },
+    {
+      "heading": "Config",
+      "content": "This plugin is an admin plugin. It needs to run as root and to be enabled in `mycroft.conf`.\n\n```javascript\n{\n\"PHAL\": {\n    \"admin\": {\n        \"ovos-PHAL-plugin-network-manager\": {\"enabled\": true}\n    }\n}\n}\n```\n\nIf you omit this config, the plugin runs as the regular user. In that case, set the [polkit policy](https://github.com/OpenVoiceOS/ovos-buildroot/blob/5c7af8b05892206846ae06adb3478f1df620bf6b/buildroot-external/rootfs-overlay/base/etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules) to allow `nmcli` without sudo."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2022-05-26T06:22:30Z",
   "last_updated": "2026-03-01T15:43:52.419788Z",
   "is_new_repo": false,

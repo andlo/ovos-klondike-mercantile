@@ -1,4 +1,5 @@
 {
+  "id": "JoergZ2-ovos-skill-my-tasmota-mqtt",
   "skill_id": null,
   "name": "ovos-skill-my-tasmota-mqtt",
   "description": "OVOS skill controlling IoT devices with Tasmota firmware by MQTT",
@@ -30,6 +31,20 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration/setup",
+      "content": "### Basic settings\nIt's a clean JSON file. Be carefully. It does not forgive mistakes and delets all!\n```\n{\n    \"__mycroft_skill_firstrun\": false,\n    \"protocol\": \"mqtt\",\n    \"user\": \"admin\",\n    \"password\": \"joker\",\n    \"mqtthost\": \"IP.OF.MQTT.HOST\",\n    \"mqttport\": 1883,\n    \"tasmota_mqtt_modus\": \"homeassistant\",\n    \"capitalization\": true,\n    ...\n}\n```\nLine 1: standard from OVOS\nLine 2: choose \"mqtt\" or \"http\" (actually not implemented)\nLine 3 and line 4: standard user and password for using web interface, change if necessessary - only fpr http communication (actually not installed)\nLine 5: Ip of MQTT host\nLine 6: MQTT port\nLine 7: Choice between the %prefix%/%topic%/ (\"default\") or %topic%/%prefix%/ (\"homeassistant\")\nLine 8: if using MQTT names beginning with capitals use 'true' else\u2026"
+    },
+    {
+      "heading": "Configuration/Setup",
+      "content": "### MQTT-Settings\n* IP des MQTT-Brokers eingeben\n* Portnummer des MQTT-Brokers eingeben (1883 ist vorbelegt)\n\n### Tasmota FullTopicSyntax\n* Auswahl zwischen dem Typ %prefix%/%topic%/ (vorbelegt) oder %topic%/%prefix%/ (Homeassstant bzw. setoption19 Typ)\n\n### Capitalization\nFalls die Topics mit einem Gro\u00dfbuchstaben anfangen, dann diese Checkbox w\u00e4hlen. Es werden dann ALLE Topics (= devices, = Ger\u00e4te) mit einem f\u00fchrenden Gro\u00dfbuchstaben erzeugt. Das bedeutet gleichzeitig, dass kein weiterer Gro\u00dfbuchstabe z. B. wie TH10/TH16 oder POW NICHT vorkommen darf.\n\nDies bezieht sich allerdings auch auf die Schreibweise der auszuwertenden Sensordaten (Datei SensorKeywords.voc) \n\nWeitere Hinweise im Wiki"
+    }
+  ],
+  "languages": [
+    "de-de"
+  ],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-04-05T15:51:34Z",
   "last_updated": "2025-11-27T08:07:50Z",
   "is_new_repo": false,

@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-utterance-plugin-cancel",
   "skill_id": null,
   "name": "ovos-utterance-plugin-cancel",
-  "description": "",
+  "description": "This is an OpenVoiceOS utterance transformer plugin. It cancels an utterance when the user says a cancel or \"nevermind\" phrase at the end.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -26,6 +27,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "```bash\npip install ovos-utterance-plugin-cancel\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "This plugin is **enabled by default** in `ovos-config` alongside the other standard utterance transformers:\n\n```json\n\"utterance_transformers\": {\n    \"ovos-utterance-normalizer\": {},\n    \"ovos-utterance-plugin-cancel\": {},\n    \"ovos-utterance-corrections-plugin\": {}\n}\n```\n\nTo disable it, add `\"enable\": false` to your config:\n\n```json\n\"utterance_transformers\": {\n    \"ovos-utterance-plugin-cancel\": {\"enable\": false}\n}\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
   "repo_created_at": "2024-01-18T00:46:39Z",
   "last_updated": "2026-04-17T16:14:20.154307Z",
   "is_new_repo": false,

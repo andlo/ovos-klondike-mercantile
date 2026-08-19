@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-hivemind-mic-satellite",
   "skill_id": null,
   "name": "hivemind-mic-satellite",
   "description": "Lightweight HiveMind microphone satellite \u2014 streams audio to the hive for server-side STT/TTS (ideal for low-power devices)",
@@ -32,6 +33,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install hivemind-mic-satellite\n```\n\nRequires Python 3.10 or later.\n\n---"
+    },
+    {
+      "heading": "Minimal configuration",
+      "content": "The satellite shares the standard OpenVoiceOS config file `~/.config/mycroft/mycroft.conf`. At minimum you need a microphone plugin and a VAD plugin:\n\n```json\n{\n  \"microphone\": {\n    \"module\": \"ovos-microphone-plugin-alsa\"\n  },\n  \"VAD\": {\n    \"module\": \"ovos-vad-plugin-silero\"\n  }\n}\n```\n\nSee [docs/configuration.md](docs/configuration.md) for all options, plugin selection, and audio device tuning.\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-10-24T05:30:50Z",
   "last_updated": "2025-07-02T15:25:03.138216Z",
   "is_new_repo": false,

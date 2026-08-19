@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-chromadb-embeddings-plugin",
   "skill_id": null,
   "name": "ovos-chromadb-embeddings-plugin",
-  "description": "",
+  "description": "ChromaDB-backed `EmbeddingsDB` vector store plugin for OpenVoiceOS.",
   "examples": [],
   "tags": [
     "chromadb",
@@ -29,6 +30,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-chromadb-embeddings-plugin\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Pass a `config` dict to `ChromaEmbeddingsDB(config=...)` or set it in your OVOS\nconfiguration under the plugin key.\n\n| Key | Type | Default | Description |\n|---|---|---|---|\n| `path` | `str` | `\"./chromadb_storage\"` | Local persistence directory (PersistentClient mode). |\n| `host` | `str` | \u2014 | Remote ChromaDB server host. When set, uses HttpClient instead of PersistentClient. |\n| `port` | `int` | `8000` | Port for the remote ChromaDB server (HttpClient mode only). |\n| `default_collection_name` | `str` | `\"embeddings\"` | Name of the collection created/used on init. |\n| `hnsw:space` | `str` | `\"cosine\"` | Distance metric for HNSW index. Accepted: `\"cosine\"`, `\"l2\"`, `\"ip\"`. Set via collection metadata. |\n\n### Local (persistent) mode\n\n```python\ndb = ChromaEmbeddingsDB(config={\"path\": \"/var/l\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-07-19T22:57:49Z",
   "last_updated": "2024-10-25T22:14:27.453164Z",
   "is_new_repo": false,

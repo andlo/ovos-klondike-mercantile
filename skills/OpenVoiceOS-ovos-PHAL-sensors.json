@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-sensors",
   "skill_id": null,
   "name": "ovos-PHAL-sensors",
   "description": "expose your OVOS device under HomeAssistant",
@@ -27,6 +28,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-PHAL-sensors\n```\n\nThat is all the bus output needs. Optional integrations and hardware sensors pull\nextra packages \u2014 install only the ones you use:\n\n```bash\npip install ovos-PHAL-sensors[ha]          # Home Assistant REST logger (requests)\npip install ovos-PHAL-sensors[mqtt]        # Home Assistant MQTT discovery (ha-mqtt-discoverable)\npip install ovos-PHAL-sensors[pulse]       # PulseAudio sensors (pulsectl)\npip install ovos-PHAL-sensors[bluetooth]   # Bluetooth presence sensors (pybluez2)\npip install ovos-PHAL-sensors[screen]      # screen brightness (screen-brightness-control)\npip install ovos-PHAL-sensors[extras]      # everything above\n```\n\nA sensor whose extra is not installed is simply skipped; the bus output keeps working."
+    },
+    {
+      "heading": "Config",
+      "content": "```json\n{\n  \"PHAL\": {\n    \"ovos-PHAL-sensors\": {\n      \"name\": \"my_phal_device\",\n      \"time_between_checks\": 15,\n      \"screen_sensors\": true,\n      \"battery_sensors\": true,\n      \"cpu_sensors\": true,\n      \"memory_sensors\": true,\n      \"network_sensors\": true,\n      \"fan_sensors\": true,\n      \"os_sensors\": true,\n      \"apps_sensors\": true,\n      \"pulseaudio_sensors\": true,\n      \"bluetooth_sensors\": true,\n      \"disable_bus\": false,\n      \"disable_ha\": false,\n      \"disable_filelog\": true,\n      \"mqtt_config\": {\"host\":  \"192.168.1.8\", \"port\": 1883},\n      \"ha_host\": \"http://192.168.1.8:8123\",\n      \"ha_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2NGZmODYxY2M3ZDE0ZDZmODQ5...\"\n    }\n  }\n}\n```\n\n- `name`: the device name the sensors belong to\n- `time_between_checks`: time to wai\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-10-27T16:19:01Z",
   "last_updated": "2026-08-12T14:50:21.853574Z",
   "is_new_repo": false,

@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-skill-iss-location",
   "skill_id": "ovos-skill-iss-location.openvoiceos",
   "name": "ISS Tracker",
   "description": "Track the location of the ISS",
@@ -32,6 +33,20 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [
+    "ca-ES",
+    "da-DK",
+    "de-DE",
+    "en-US",
+    "es-ES",
+    "eu-ES",
+    "fr-FR",
+    "gl-ES",
+    "it-IT",
+    "pt-PT"
+  ],
+  "in_ovos_localize": true,
   "repo_created_at": "2020-06-26T03:33:52Z",
   "last_updated": "2026-08-12T22:02:56Z",
   "is_new_repo": false,

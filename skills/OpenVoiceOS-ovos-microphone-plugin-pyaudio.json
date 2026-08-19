@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-microphone-plugin-pyaudio",
   "skill_id": null,
   "name": "ovos-microphone-plugin-pyaudio",
-  "description": "",
+  "description": "`ovos-microphone-plugin-pyaudio` is a microphone plugin for OpenVoiceOS (OVOS). It captures audio through PyAudio (PortAudio) and does not depend on `speech_recognition`. The plugin maps `sample_width` to the matching PyAudio format and supports int8, int16, int24, int32, and float32 capture.",
   "examples": [],
   "tags": [
     "audio",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-microphone-plugin-pyaudio\n```\n\nThe plugin needs the `libportaudio2` system library on Linux, macOS, and Windows."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-05-17T19:18:03Z",
   "last_updated": "2026-07-31T22:25:54.796462Z",
   "is_new_repo": false,

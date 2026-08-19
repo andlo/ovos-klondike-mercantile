@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-media-plugin-spotify",
   "skill_id": null,
   "name": "ovos-media-plugin-spotify",
-  "description": "",
+  "description": "This is a Spotify plugin for ovos-audio and ovos-media. It lets OVOS start playback on Spotify.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-media-plugin-spotify`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Edit your `mycroft.conf` and add the Spotify players you want to expose.\n\n> NOTE: If you want to make the OVOS device itself a Spotify player, use [spotifyd](https://github.com/Spotifyd/spotifyd).\n\nThe easiest way to configure this is the `ovos-spotify-autoconfigure` command.\n\n```bash\n$ ovos-spotify-autoconfigure\nThis script will auto configure ALL spotify devices under your mycroft.conf\n        \n        SPOTIFY PREMIUM is required!\n        \n        If you have not yet authenticated your spotify account, run 'ovos-spotify-oauth' first!\n        \nFound device: OpenVoiceOS-TV\n\nmycroft.conf updated!"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-04-19T21:08:24Z",
   "last_updated": "2025-11-05T01:22:05.263016Z",
   "is_new_repo": false,

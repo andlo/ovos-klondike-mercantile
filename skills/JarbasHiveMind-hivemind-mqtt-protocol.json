@@ -1,4 +1,5 @@
 {
+  "id": "JarbasHiveMind-hivemind-mqtt-protocol",
   "skill_id": null,
   "name": "hivemind-mqtt-protocol",
   "description": "MQTT broker-mediated network protocol plugin for hivemind-core \u2014 ideal for IoT/sensor deployments",
@@ -29,6 +30,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration keys",
+      "content": "| Key | Default | Description |\n|---|---|---|\n| `broker_host` | `localhost` | MQTT broker hostname or IP |\n| `broker_port` | `1883` | Broker port (8883 for TLS) |\n| `broker_username` | none | MQTT broker username for the master |\n| `broker_password` | none | MQTT broker password for the master |\n| `tls` | `false` | Enable TLS |\n| `tls_ca_certs` | none | Path to CA bundle |\n| `tls_certfile` | none | Path to client cert (mTLS) |\n| `tls_keyfile` | none | Path to client key (mTLS) |\n| `topic_prefix` | `hivemind` | Topic namespace prefix |\n| `qos` | `1` | Default MQTT QoS for control frames |\n| `idle_timeout` | `300` | Seconds of silence before evicting a peer (0 = off) |"
+    },
+    {
+      "heading": "Install",
+      "content": "```bash\npip install hivemind-mqtt-protocol\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2026-06-04T18:25:55Z",
   "last_updated": "2026-08-15T13:43:47.725986Z",
   "is_new_repo": false,

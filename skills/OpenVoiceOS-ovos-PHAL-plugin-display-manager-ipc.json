@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-display-manager-ipc",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-display-manager-ipc",
-  "description": "",
+  "description": "Legacy implementation for mark1 faceplate, introduces yet another definition of \"active skill\"",
   "examples": [],
   "tags": [
     "deprecated",
@@ -29,6 +30,9 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2021-12-02T21:18:18Z",
   "last_updated": "2022-03-14T19:58:20Z",
   "is_new_repo": false,

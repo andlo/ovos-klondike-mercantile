@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-PHAL-plugin-mk2-v6-fan-control",
   "skill_id": null,
   "name": "ovos-PHAL-plugin-mk2-v6-fan-control",
-  "description": "",
+  "description": "This is an OVOS PHAL plugin. It controls the fan on the Mark2 dev kit hardware.",
   "examples": [],
   "tags": [
     "hardware",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```console\npip install ovos-PHAL-plugin-mk2-fan-control\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "You can set the temperature at which the fan turns on.\n\n```json\n{\n    \"PHAL\": {\n        \"ovos-PHAL-plugin-mk2-v6-fan-control\": {\n            \"max_fanless_temp\": 60.0,\n            \"max_fan_temp\": 80.0\n        }\n    }\n}\n```\n\n* `max_fanless_temp` \u2014 the temperature at which the fan turns on.\n* `max_fan_temp` \u2014 the temperature at which the fan runs at 100%."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-05-28T11:46:05Z",
   "last_updated": "2024-09-09T23:55:37.061760Z",
   "is_new_repo": false,

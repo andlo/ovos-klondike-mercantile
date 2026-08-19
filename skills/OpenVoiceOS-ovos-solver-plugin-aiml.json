@@ -1,7 +1,8 @@
 {
+  "id": "OpenVoiceOS-ovos-solver-plugin-aiml",
   "skill_id": null,
   "name": "ovos-solver-plugin-aiml",
-  "description": "",
+  "description": "An OVOS question solver plugin that answers with an AIML chatbot. It uses the Alice chatbot brain to hold open-ended conversation. It answers utterances that no other skill or solver handles, so most utterances get some response.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -27,6 +28,14 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-solver-aiml-plugin\n```"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2023-02-04T22:01:38Z",
   "last_updated": "2025-06-08T18:28:59.681386Z",
   "is_new_repo": false,

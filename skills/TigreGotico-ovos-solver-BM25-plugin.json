@@ -1,7 +1,8 @@
 {
+  "id": "TigreGotico-ovos-solver-BM25-plugin",
   "skill_id": null,
   "name": "ovos-solver-BM25-plugin",
-  "description": "",
+  "description": "This is an OVOS (OpenVoiceOS) plugin. It retrieves answers from a corpus of documents with the BM25 algorithm.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\n$ pip install ovos-solver-bm25-plugin\n```\n\n---\n\n### ReRanking\n\nReranking refines a list of candidate answers by their relevance to a query. Use it when several candidate responses exist and you need to pick the best one.\n\n![reranker diagram](https://github.com/user-attachments/assets/61c5034b-e54f-434a-8cbf-e967154af983)\n\nThe solver ranks the candidates by their similarity to the query and selects the best match.\n\n```python\nfrom ovos_bm25_solver import BM25MultipleChoiceSolver\n\nsolver = BM25MultipleChoiceSolver()\na = solver.rerank(\"what is the speed of light\", [\n    \"very fast\", \"10m/s\", \"the speed of light is C\"\n])\nprint(a)"
+    },
+    {
+      "heading": "Initialize BM25QACorpusSolver with config",
+      "content": "config = {\n    \"lang\": \"en-us\",\n    \"min_conf\": 0.4,\n    \"n_answer\": 1\n}\nsolver = BM25QACorpusSolver(config)\nsolver.load_corpus(corpus)\n\nquery = \"is there life on mars?\"\nanswer = solver.get_spoken_answer(query)\nprint(\"Query:\", query)\nprint(\"Answer:\", answer)"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2024-07-19T19:10:47Z",
   "last_updated": "2025-11-22T17:37:52.228982Z",
   "is_new_repo": false,

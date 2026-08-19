@@ -1,4 +1,5 @@
 {
+  "id": "OpenVoiceOS-ovos-tts-plugin-beepspeak",
   "skill_id": null,
   "name": "ovos-tts-plugin-beepspeak",
   "description": "experiment adding new r2d2 tts engine for mycroft",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "```bash\npip install ovos-tts-plugin-beepspeak\n```"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add this to your OVOS TTS configuration:\n\n```json\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-beepspeak\",\n    \"ovos-tts-plugin-beepspeak\": {\n      \"time_step\": 0.1\n    }\n }\n```\n\n`time_step` sets the length of the silence between beeps, in seconds. Valid values range\nfrom 0.1 to 0.7. The plugin clamps out-of-range values to the nearest limit."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
   "repo_created_at": "2018-01-26T08:57:30Z",
   "last_updated": "2026-08-01T13:48:57.519790Z",
   "is_new_repo": false,
