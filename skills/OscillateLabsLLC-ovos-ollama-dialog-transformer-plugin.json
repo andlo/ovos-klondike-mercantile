@@ -1,0 +1,41 @@
+{
+  "id": "OscillateLabsLLC-ovos-ollama-dialog-transformer-plugin",
+  "skill_id": null,
+  "name": "ovos-ollama-dialog-transformer-plugin",
+  "description": "Dialog transformer for OVOS, designed to return responses from Ollama. By default it will make all your OVOS responses sarcastic.",
+  "examples": [],
+  "tags": [
+    "status-poc"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/ovos-ollama-dialog-transformer-plugin",
+  "package_name": "ovos-ollama-dialog-transformer-plugin",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OscillateLabsLLC",
+  "tier": 2,
+  "component_type": "Transformer Plugin",
+  "type_group": "Plugin",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "To enable the Ollama Dialog Transformer Plugin, add the following to your `mycroft.conf` (typically found at `~/.config/mycroft/mycroft.conf`):\n\n\"dialog_transformers\": {\n    \"ovos-ollama-dialog-transformer-plugin\": {\n        \"prompt\": \"Please revise this text in 30 words or less as if it were spoken by a sarcastic AI. You are not an AI, you are revising text as if you were an AI. Don't mention anything about rewriting text, or your training, and don't use emoji. The dialog to rewrite is as follows:\",\n        \"model\": \"llama3.2\",\n        \"timeout\": 10,\n        \"stream\": false,\n        \"ollama_base_url\": \"http://localhost:11434\"\n    }\n}\n\nNote that these are all default values, so a minimal configuration would be:\n\n\"dialog_transformers\": {\n    \"ovos-ollama-dialog-transformer-plugin\": {}\n}"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-02-24T14:29:39Z",
+  "last_updated": "2026-04-23T02:53:32Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

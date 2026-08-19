@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-ww-plugin-wakewordlab",
+  "skill_id": null,
+  "name": "ovos-ww-plugin-wakewordlab",
+  "description": "OVOS wake word plugin using wakewordlab",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-wakewordlab",
+  "package_name": "ovos-ww-plugin-wakewordlab",
+  "pypi_version": null,
+  "license": null,
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Wake Word Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-ww-plugin-wakewordlab"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add the plugin to `mycroft.conf`:\n\n{\n  \"hotwords\": {\n    \"hey jarvis\": {\n      \"module\": \"ovos-ww-plugin-wakewordlab\",\n      \"model\": \"hey_jarvis\",\n      \"threshold\": 0.5,\n      \"vad\": true,\n      \"vad_threshold\": 0.5\n    }\n  }\n}\n\n| Key | Default | Description |\n|-----|---------|-------------|\n| `model` | key phrase | Wake word slug or path to a `.wkw`/`.onnx` model file |\n| `threshold` | model default | Confidence threshold (0.0-1.0) |\n| `vad` | `true` | Enable the Silero VAD pre-filter |\n| `vad_threshold` | `0.5` | VAD sensitivity |\n| `license_key` | `null` | License key for commercial models |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-12T21:42:27Z",
+  "last_updated": "2026-08-11T17:28:33Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

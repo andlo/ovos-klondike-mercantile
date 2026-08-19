@@ -1,0 +1,39 @@
+{
+  "id": "OpenVoiceOS-ovos-wordnet-plugin",
+  "skill_id": null,
+  "name": "ovos-wordnet-plugin",
+  "description": "This OVOS plugin exposes WordNet as a",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-wordnet-plugin",
+  "package_name": "ovos-wordnet-plugin",
+  "pypi_version": "0.1.0",
+  "license": null,
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Toolbox Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 5,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-wordnet-plugin\n\nThe first query downloads the required WordNet lexicon (about 30-60 MB for English).\nSubsequent calls are served from the local cache with no network access.\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-04-20T17:16:55Z",
+  "last_updated": "2026-04-20T17:20:09.894376Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

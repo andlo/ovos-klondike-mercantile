@@ -1,0 +1,45 @@
+{
+  "id": "OscillateLabsLLC-ovos-phal-plugin-mac",
+  "skill_id": null,
+  "name": "ovos-phal-plugin-mac",
+  "description": "OVOS System and Volume event support for Mac OS",
+  "examples": [],
+  "tags": [
+    "status-active"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/ovos-phal-plugin-mac",
+  "package_name": "ovos-phal-plugin-mac",
+  "pypi_version": "0.2.2",
+  "license": null,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 5,
+  "forks": 1,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install PHAL-plugin-mac`\n\nRequires associated skill for volume-based voice commands:\n\n- skill-ovos-volume"
+    },
+    {
+      "heading": "Config",
+      "content": "This plugin is not an Admin plugin, but in order for most of the system level commands to work, the user must be in the sudoers file. This can be done by running the following command in the terminal:\n\n`sudo vim /private/etc/sudoers.d/<username>`\nReplace <username> with the username of the user running the OVOS instance.\n\nThen add the following lines to the file:\n\n<username> ALL=(ALL) NOPASSWD: /usr/sbin/systemsetup\n<username> ALL=(ALL) NOPASSWD: /usr/sbin/shutdown\n<username> ALL=(ALL) NOPASSWD: /usr/bin/sntp\n<username> ALL=(ALL) NOPASSWD: /usr/bin/defaults\n\nBe sure to replace `<username>` with the username of the user running the OVOS instance.\n\n**NOTE:** Do this at your own risk. This is a security risk and should only be done if you understand the implications."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-08-19T02:35:16Z",
+  "last_updated": "2026-07-21T02:26:24.115929Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

@@ -1,0 +1,41 @@
+{
+  "id": "OscillateLabsLLC-ovos-kid-friendly-dialog-transformer",
+  "skill_id": null,
+  "name": "ovos-kid-friendly-dialog-transformer",
+  "description": "Dialog transformer for OVOS, designed to return kid-friendly responses from Ollama.",
+  "examples": [],
+  "tags": [
+    "status-poc"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/ovos-kid-friendly-dialog-transformer",
+  "package_name": "ovos-kid-friendly-dialog-transformer",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OscillateLabsLLC",
+  "tier": 2,
+  "component_type": "Transformer Plugin",
+  "type_group": "Plugin",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "To enable the Kid-Friendly Dialog Transformer Plugin, add the following to your `mycroft.conf` (typically found at `~/.config/mycroft/mycroft.conf`):\n\n\"dialog_transformers\": {\n    \"ovos-kid-friendly-dialog-transformer\": {\n        \"prompt\": \"Rewrite the following text to be more kid-friendly, assuming a movie rating of G. When in doubt, make it more kid-friendly. All responses should be short, concise, friendly, and helpful. Do not respond conversationally. Simply rewrite the text and add no additional commentary or prompt information. If there is no dialog, please simply say 'Hang on'. Don't mention anything about rewriting text. The dialog to rewrite is as follows:\",\n        \"model\": \"llama3.2\",\n        \"timeout\": 10,\n        \"stream\": false,\n        \"ollama_base_url\": \"http://localhost:1\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-02-23T18:57:40Z",
+  "last_updated": "2026-04-23T02:49:50Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

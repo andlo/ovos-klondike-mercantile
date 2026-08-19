@@ -1,0 +1,47 @@
+{
+  "id": "OpenVoiceOS-ovos-ww-verifier-plugin-speaker",
+  "skill_id": null,
+  "name": "ovos-ww-verifier-plugin-speaker",
+  "description": "OVOS wake word verifier plugin: reject non-enrolled speakers",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-ww-verifier-plugin-speaker",
+  "package_name": "ovos-ww-verifier-plugin-speaker",
+  "pypi_version": "0.0.2a4",
+  "license": null,
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Wake Word Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 6,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-ww-verifier-plugin-speaker"
+    },
+    {
+      "heading": "OVOS configuration",
+      "content": "[`ovos-dinkum-listener`](https://github.com/OpenVoiceOS/ovos-dinkum-listener)\n(>= 0.6.0) loads wake-word verifiers from `listener.ww_verifiers`. Each key is\na verifier plugin's entry-point name. Its value is that plugin's config. Add\nthis to `~/.config/mycroft/mycroft.conf` (or the OpenVoiceOS equivalent):\n\n{\n  \"listener\": {\n    \"ww_verifiers\": {\n      \"ovos-ww-verifier-speaker\": {\n        \"model\": \"wespeaker-resnet34\",\n        \"threshold\": 0.45,\n        \"fail_open\": true\n      }\n    }\n  }\n}\n\n> **Installing the plugin enables it.** The listener runs every installed\n> verifier whose config does not set `\"enabled\": false`. With no entry in\n> `ww_verifiers`, the plugin still loads with its defaults. Because\n> `fail_open` defaults to `true`, it accepts everything until you enroll at\n> least on\u2026"
+    },
+    {
+      "heading": "Configuration keys",
+      "content": "| Key | Type | Default | Description |\n|---|---|---|---|\n| `model` | str | `\"wespeaker-resnet34\"` | speakeronnx model alias or `.onnx` path |\n| `threshold` | float | `0.45` | Cosine similarity acceptance threshold |\n| `fail_open` | bool | `true` | Accept all activations when no profiles enrolled |\n| `profiles_path` | str | `~/.local/share/ovos_speaker_verifier/profiles.json` | Override profile storage path |\n| `per_profile_thresholds` | dict | `{}` | Per-name threshold overrides, e.g. `{\"Alice\": 0.5}` |\n| `sample_rate` | int | `16000` | PCM sample rate of audio chunks passed to `verify()` |\n| `sample_width` | int | `2` | PCM sample width in bytes (2 = 16-bit) |\n| `channels` | int | `1` | PCM channel count |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-10T14:56:51Z",
+  "last_updated": "2026-08-01T14:52:33.326405Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

@@ -1,0 +1,41 @@
+{
+  "id": "OscillateLabsLLC-ovos-mac",
+  "skill_id": null,
+  "name": "ovos-mac",
+  "description": "MVP of running OpenVoiceOS (OVOS) on a Mac with Apple Silicon",
+  "examples": [],
+  "tags": [
+    "status-poc"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/ovos-mac",
+  "package_name": "ovos-mac",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OscillateLabsLLC",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 4,
+  "forks": 1,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "brew install poetry # If you don't have it",
+      "content": "poetry install --without padatious # Or just poetry install if you want Padatious\npoetry shell\n./startup.sh\n\n## Installing Padatious\n\nFirst, build fann from source following the [instructions on their repo](https://github.com/FutureLinkCorporation/fann2). Then run:\n\npoetry shell\nLIBRARY_PATH=/usr/local/lib poetry install --with padatious\n\n## Adding skills\n\nOVOS skills are just Python packages, so you can simply run `poetry add my-skill` to add a skill to your environment. You can also clone a skill repo and add it to your environment with `poetry add /path/to/my-skill`. Finally, you can also add a skill from a git repo with `poetry add git+https://my-skill/repo.git`.\n\nOnce the skill is installed, stop your `startup.sh` script and start it again. Sometimes the skill will load without even r\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-03-23T18:29:39Z",
+  "last_updated": "2026-03-05T17:30:41Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

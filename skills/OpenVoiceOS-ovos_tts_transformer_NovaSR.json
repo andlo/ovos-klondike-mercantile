@@ -1,0 +1,48 @@
+{
+  "id": "OpenVoiceOS-ovos_tts_transformer_NovaSR",
+  "skill_id": null,
+  "name": "ovos_tts_transformer_NovaSR",
+  "description": "Audio super-resolution for OpenVoiceOS speech synthesis. `NovaSR` upsamples the",
+  "examples": [],
+  "tags": [
+    "text-to-speech",
+    "tigregotico",
+    "transformers",
+    "tts"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos_tts_transformer_NovaSR",
+  "package_name": "ovos_tts_transformer_NovaSR",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 5,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-tts-transformer-NovaSR"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Enable the transformer in `mycroft.conf` under the `tts_transformers` section,\nkeyed by the plugin name:\n\n\"tts_transformers\": {\n  \"ovos-tts-transformer-NovaSR\": {}\n}\n\nThe plugin takes no configuration of its own; once enabled it applies to the\noutput of whichever TTS plugin is active. Multiple TTS transformers can be\nchained. Execution order follows each plugin's `priority` (NovaSR defaults to\n`50`)."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-01-26T12:35:02Z",
+  "last_updated": "2026-08-15T11:12:28Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

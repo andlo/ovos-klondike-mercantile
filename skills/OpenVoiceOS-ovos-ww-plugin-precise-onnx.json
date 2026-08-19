@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-ww-plugin-precise-onnx",
+  "skill_id": null,
+  "name": "ovos-ww-plugin-precise-onnx",
+  "description": "A wake word plugin for OpenVoiceOS. It runs Precise-style wake word models with `onnxruntime` instead of `tflite`.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-precise-onnx",
+  "package_name": "ovos-ww-plugin-precise-onnx",
+  "pypi_version": "0.1.0",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Wake Word Plugin",
+  "type_group": "Plugin",
+  "stars": 1,
+  "forks": 1,
+  "open_issues": 10,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos_ww_plugin_precise_onnx\n\n---"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add the plugin to the `hotwords` section of `mycroft.conf`.\n\n\"listener\": {\n  \"wake_word\": \"hey_mycroft\"\n},\n\"hotwords\": {\n  \"hey_mycroft\": {\n    \"module\": \"ovos-ww-plugin-precise-onnx\",\n    \"model\": \"https://github.com/OpenVoiceOS/precise-lite-models/raw/master/wakewords/en/hey_mycroft.onnx\",\n    \"trigger_level\": 3,\n    \"sensitivity\": 0.5\n   }\n}\n\nGet community models from [OpenVoiceOS/precise-lite-models](https://github.com/OpenVoiceOS/precise-lite-models).\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-10-31T06:33:40Z",
+  "last_updated": "2025-11-04T19:09:22.604331Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-ww-plugin-wakeforge",
+  "skill_id": null,
+  "name": "ovos-ww-plugin-wakeforge",
+  "description": "OVOS wake word plugin for models trained with wakeforge",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-wakeforge",
+  "package_name": "ovos-ww-plugin-wakeforge",
+  "pypi_version": "0.0.1a2",
+  "license": "Apache-2.0",
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Wake Word Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-ww-plugin-wakeforge"
+    },
+    {
+      "heading": "Configure",
+      "content": "In `mycroft.conf`, point a hotword at the two ONNX files. Use local paths or URLs.\n\n{\n  \"listener\": {\n    \"wake_word\": \"hey_jarvis\"\n  },\n  \"hotwords\": {\n    \"hey_jarvis\": {\n      \"module\": \"ovos-ww-plugin-wakeforge\",\n      \"listen\": true,\n      \"featurizer\": \"~/hey_jarvis/best_f1_featurizer.onnx\",\n      \"model\": \"~/hey_jarvis/best_f1.onnx\",\n      \"threshold\": 0.5\n    }\n  }\n}\n\n### Config keys\n\n| key | default | description |\n|-----|---------|-------------|\n| `featurizer` | \u2014 (required) | feature-extractor ONNX (path or URL) |\n| `model` | \u2014 (required) | classifier-head ONNX (path or URL) |\n| `vad` | none | optional VAD ONNX for an extra channel |\n| `threshold` | `0.5` | detection threshold |\n| `smoothing` | `ema` | `ema` \\| `mean` \\| `max` |\n| `patience` | `3` | consecutive above-threshold f\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-22T22:35:30Z",
+  "last_updated": "2026-08-01T14:51:17.202172Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

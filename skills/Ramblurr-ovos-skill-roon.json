@@ -1,0 +1,43 @@
+{
+  "id": "Ramblurr-ovos-skill-roon",
+  "skill_id": null,
+  "name": "Roon Skill",
+  "description": null,
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/Ramblurr/ovos-skill-roon",
+  "package_name": "ovos-skill-roon",
+  "pypi_version": null,
+  "license": "AGPL-3.0",
+  "author": "Ramblurr",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "This skill must be installed as a container. See [docker/docker-compose.yml](./docker/docker-compose.yml). You can just copy the `ovos_skill_roon` service block into your existing compose."
+    },
+    {
+      "heading": "Setup",
+      "content": "\u26a0\ufe0f Your Roon Core must be on the same network as your OVOS device. If your OVOS device and Roon Core are on different vlans, you will need to configure the host and port manually. \u26a0\ufe0f\n\n### Discovery\n\nAfter installing the Roon Skill you must connect it to your Roon Core. You can\ndo this by asking Mycroft to setup Roon:\n\n1. \"Hey Mycroft, Setup Roon\"_ or \"Hey Mycroft, Configure Roon\"_\n\nThen it will attempt to discover your Roon Core.\n\nIf automatic discovery works it will tell you to proceed with activation (see\nbelow)\n\nIf it fails, it will tell you to configure the skill manually. You will need to vist https://home.mycroft.ai/#/skill,\nnavigate to the Roon Skill, and enter the IP Address/Host and Port for your Roon\nCore.\n\n### Activation\n\nAfter Mycroft discovers your Roon Core automatically, or\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2022-12-21T08:56:12Z",
+  "last_updated": "2026-04-10T06:10:37Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
