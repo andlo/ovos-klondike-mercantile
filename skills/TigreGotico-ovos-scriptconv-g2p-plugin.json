@@ -1,0 +1,43 @@
+{
+  "id": "TigreGotico-ovos-scriptconv-g2p-plugin",
+  "skill_id": null,
+  "name": "ovos-scriptconv-g2p-plugin",
+  "description": "OPM G2P plugin over scriptconv: 45 phonemizers behind one config switch",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-scriptconv-g2p-plugin",
+  "package_name": "ovos-scriptconv-g2p-plugin",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "TigreGotico",
+  "tier": 1,
+  "component_type": "G2P Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-scriptconv-g2p-plugin\n\n`scriptconv` and `ovos-plugin-manager` are the only hard dependencies.\nIndividual phonemizer backends are optional - scriptconv lazy-imports them,\nand installing this plugin does **not** pull in any of the 45 backing\npackages. If you configure a backend whose package isn't installed, you get\na clear `ImportError` naming the pip extra to install, e.g.:\n\npip install scriptconv[espeak]        # espeak backend\npip install scriptconv[o2i]           # orthography2ipa backend\npip install scriptconv[pt-phonemizers]  # tugaphone backend\n\nSee scriptconv's `pyproject.toml` for the full extras list - one per\nbackend or language family."
+    },
+    {
+      "heading": "Configuration",
+      "content": "\"g2p\": {\n    \"module\": \"ovos-scriptconv-g2p-plugin\",\n    \"ovos-scriptconv-g2p-plugin\": {\n        \"phonemizer\": \"espeak\",\n        \"lang\": \"en-us\"\n    }\n}\n\n- `phonemizer` (optional): registry name of the scriptconv phonemizer to\n  use, e.g. `\"espeak\"`, `\"orthography2ipa\"`, `\"tugaphone\"`. Omit it to let\n  scriptconv pick the default backend per language.\n- `lang` (optional): default language used when a caller doesn't pass one\n  explicitly.\n- any other key is forwarded as a keyword argument to the underlying\n  scriptconv phonemizer constructor (`model`, `normalizer`, ...)."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-08-13T01:16:17Z",
+  "last_updated": "2026-08-13T01:22:30.121459Z",
+  "is_new_repo": true,
+  "is_recently_updated": true
+}

@@ -1,0 +1,43 @@
+{
+  "id": "TigreGotico-ovos-media-provider-radio-spain",
+  "skill_id": null,
+  "name": "ovos-media-provider-radio-spain",
+  "description": "OVOS **MediaProvider** plugin for Spanish internet radio. Replaces the",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-media-provider-radio-spain",
+  "package_name": "ovos-media-provider-radio-spain",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "TigreGotico",
+  "tier": 2,
+  "component_type": "Provider Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-provider-radio-spain"
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `min_confidence` | `60` | Minimum fuzzy-match confidence (0-100) for a station to be returned. |\n| `max_results` | `10` | Maximum number of matching stations returned per search. |"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-25T22:28:01Z",
+  "last_updated": "2026-08-13T18:56:17Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

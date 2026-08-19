@@ -1,0 +1,49 @@
+{
+  "id": "TigreGotico-ovos-stt-plugin-sherpa-onnx",
+  "skill_id": null,
+  "name": "ovos-stt-plugin-sherpa-onnx",
+  "description": "An OpenVoiceOS Speech-to-Text plugin that uses Sherpa-ONNX, the Kaldi-based speech recognition toolkit from k2-fsa. The plugin runs fully offline and supports Transducer, Whisper, Moonshine, Paraformer, and several CTC model architectures.",
+  "examples": [],
+  "tags": [
+    "onnx",
+    "plugin",
+    "speech-to-text",
+    "stt",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-stt-plugin-sherpa-onnx",
+  "package_name": "ovos-stt-plugin-sherpa-onnx",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "TigreGotico",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 1,
+  "open_issues": 3,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-stt-plugin-sherpa-onnx"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add the following to your `mycroft.conf`. The configuration keys depend on the `model_type` you choose.\n\n### Basic usage (Transducer)\n\nThis is the standard configuration for Zipformer and Conformer transducer models.\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-sherpa-onnx\",\n    \"ovos-stt-plugin-sherpa-onnx\": {\n      \"model\": \"sherpa-onnx-zipformer-en-libriheavy-20230830-large-punct-case\",\n      \"model_type\": \"transducer\",\n      \"encoder\": \"encoder-epoch-16-avg-2.int8.onnx\",\n      \"decoder\": \"decoder-epoch-16-avg-2.int8.onnx\",\n      \"joiner\": \"joiner-epoch-16-avg-2.int8.onnx\",\n      \"tokens\": \"tokens.txt\"\n    }\n  }\n}\n\n### Supported model types and examples\n\nThe plugin supports many architectures. Below are configuration examples for the most common ones.\n\n#### Whisper\n\n{\n  \"model\": \"sherpa\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-01-31T21:24:09Z",
+  "last_updated": "2026-01-31T21:27:01.008902Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

@@ -1,0 +1,41 @@
+{
+  "id": "TigreGotico-ovos-document-chunkers",
+  "skill_id": null,
+  "name": "ovos-document-chunkers",
+  "description": "Document Chunkers is a Python library that splits raw documents into sentences or paragraphs. Use it to prepare text for natural language processing (NLP) tasks. The library reads plain text, Markdown, HTML, PDF, DOC, and DOCX input.",
+  "examples": [],
+  "tags": [
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-document-chunkers",
+  "package_name": "ovos-document-chunkers",
+  "pypi_version": "0.1.1",
+  "license": null,
+  "author": "TigreGotico",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 7,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-document-chunkers"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-07-24T15:16:57Z",
+  "last_updated": "2025-07-13T17:55:37.337077Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

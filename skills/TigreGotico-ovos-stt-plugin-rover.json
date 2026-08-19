@@ -1,0 +1,48 @@
+{
+  "id": "TigreGotico-ovos-stt-plugin-rover",
+  "skill_id": null,
+  "name": "ovos-stt-plugin-rover",
+  "description": "This plugin is a meta-STT engine for OVOS. It runs several STT backends in parallel and combines their output with the ROVER (Recognizer Output Voting Error Reduction) algorithm. The result is a single, more accurate transcript, at the cost of running more than one STT engine per utterance.",
+  "examples": [],
+  "tags": [
+    "plugin",
+    "speech-to-text",
+    "stt",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-stt-plugin-rover",
+  "package_name": "ovos-stt-plugin-rover",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "TigreGotico",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-stt-plugin-rover\n\nInstall the backend STT plugins you want to aggregate as well."
+    },
+    {
+      "heading": "Configuration example",
+      "content": "Add this to your `mycroft.conf`:\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-rover\",\n    \"ovos-stt-plugin-rover\": {\n        \"timeout\": 12,\n        \"workers\": 4,\n        \"backends\": [\n          {\n            \"module\": \"ovos-stt-plugin-whisper\",\n            \"config\": {\n              \"model\": \"small.en\"\n            }\n          },\n          {\n            \"module\": \"ovos-stt-plugin-vosk\",\n            \"config\": {\n              \"model\": \"vosk-model-en-us\"\n            }\n          },\n          {\n            \"module\": \"ovos-stt-plugin-xxx\",\n            \"config\": {\n              \"model\": \"...\"\n            }\n          }\n        ]\n    }\n  }\n}\n\n### Fields\n\n| Key        | Meaning                                        |\n| ---------- | ----------------------------------------------- |\n| `timeout`  | Tota\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-02-03T12:53:09Z",
+  "last_updated": "2026-02-03T17:07:03.434630Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

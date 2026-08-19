@@ -1,0 +1,43 @@
+{
+  "id": "TigreGotico-ovos-claude-plugin",
+  "skill_id": null,
+  "name": "ovos-claude-plugin",
+  "description": "Anthropic Claude integration for OpenVoiceOS, the open-source voice assistant platform.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-claude-plugin",
+  "package_name": "ovos-claude-plugin",
+  "pypi_version": null,
+  "license": "MIT",
+  "author": "TigreGotico",
+  "tier": 2,
+  "component_type": "Chat Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 1,
+  "open_issues": 6,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-claude-plugin\n\nTo summon Claude by name via voice, also install the Claude persona:\n\npip install ovos-claude-persona\n\n---"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add this to `~/.config/mycroft/mycroft.conf`:\n\n{\n  \"ovos-chat-claude-plugin\": {\n    \"api_key\": \"sk-ant-...\",\n    \"model\": \"claude-haiku-4-5-20251001\",\n    \"max_tokens\": 200,\n    \"system_prompt\": \"You are a helpful voice assistant. Be concise.\"\n  }\n}\n\nThe `api_key` field is optional if the `ANTHROPIC_API_KEY` environment variable is set.\n\n### Model selection\n\n| Model | Use case |\n|---|---|\n| `claude-haiku-4-5-20251001` | Real-time voice, fast and cheap (**default**) |\n| `claude-sonnet-4-6` | General purpose, more capable |\n| `claude-opus-4-6` | Heavy reasoning, slowest, most capable |\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-03-09T18:45:36Z",
+  "last_updated": "2026-08-14T15:54:40Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

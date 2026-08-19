@@ -1,0 +1,46 @@
+{
+  "id": "TigreGotico-ovos-flashrank-reranker-plugin",
+  "skill_id": null,
+  "name": "ovos-flashrank-reranker-plugin",
+  "description": "This plugin adds FlashRank-based reranking to the Open Voice OS (OVOS) platform. It picks the best answer to a question from a list of candidate answers. It can also extract the most relevant sentence from a text passage. It uses the FlashRank library to score and rank candidates by relevance to the query.",
+  "examples": [],
+  "tags": [
+    "plugin",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-flashrank-reranker-plugin",
+  "package_name": "ovos-flashrank-reranker-plugin",
+  "pypi_version": "0.0.0",
+  "license": null,
+  "author": "TigreGotico",
+  "tier": 1,
+  "component_type": "Solver Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 1,
+  "open_issues": 6,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-flashrank-reranker-plugin"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The `common_query` framework in OVOS uses a `MultipleChoiceSolver` to pick the best answer from several skill responses. Set this plugin as the reranker:\n\n\"common_query\": {\n  \"reranker\": \"ovos-flashrank-reranker-plugin\",\n  \"ignore_skill_scores\": true,\n  \"ovos-flashrank-reranker-plugin\": {\"model\": \"ms-marco-TinyBERT-L-2-v2\"}\n}\n\n> NOTE: On a Raspberry Pi, this adds up to 1 second of extra latency to the common query pipeline.\n\n### Available models\n\nThe default model is `ms-marco-MultiBERT-L-12`, because it supports many languages.\n\n| Model name | Description |\n|--------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-07-21T20:12:20Z",
+  "last_updated": "2024-10-25T22:16:20.826810Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

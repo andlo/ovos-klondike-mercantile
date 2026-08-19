@@ -1,0 +1,70 @@
+{
+  "id": "aka0kuro-ovos-skill-invidious",
+  "skill_id": null,
+  "name": "Invidious Skill",
+  "description": null,
+  "examples": [
+    "play Ant\u00f3nio Varia\u00e7\u00f5es",
+    "search for music videos",
+    "find tutorial videos",
+    "search invidious for cooking recipes",
+    "play latest music",
+    "find educational content",
+    "play spanish music",
+    "search for tutorials in english",
+    "find cooking recipes",
+    "play flamenco",
+    "play sevillanas",
+    "search for documentaries in english"
+  ],
+  "tags": [
+    "invidious",
+    "youtube alternative",
+    "video search",
+    "music",
+    "privacy",
+    "common play",
+    "english",
+    "localization"
+  ],
+  "category": "Music",
+  "icon": null,
+  "source": "https://github.com/aka0kuro/ovos-skill-invidious",
+  "package_name": "ovos-skill-invidious",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "aka0kuro",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "### Manual Installation\n\n1. Clone this repository\n2. Install dependencies: `pip install -r requirements.txt`\n3. Copy to your OVOS skills directory\n4. Restart OVOS"
+    },
+    {
+      "heading": "Configuration",
+      "content": "You can add queries to the skill configuration that will be pre-fetched when the skill loads.\n\nThis populates the featured_media entries + provides fast matching against cached entries.\n\n{    \n\"featured\":  [\"zz top\", \"ai covers\", \"frank sinatra\", \"tutorial python\", \"spanish music\", \"flamenco\"]\n}"
+    }
+  ],
+  "languages": [
+    "de-de",
+    "en-us",
+    "es-es",
+    "it-it"
+  ],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-08-04T22:33:18Z",
+  "last_updated": "2025-08-11T14:02:11Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

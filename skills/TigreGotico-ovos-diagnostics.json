@@ -1,0 +1,42 @@
+{
+  "id": "TigreGotico-ovos-diagnostics",
+  "skill_id": null,
+  "name": "ovos-diagnostics",
+  "description": "The OVOS Diagnostics Tool is a command-line utility for the Open Voice OS (OVOS) ecosystem. It lists, recommends, and manages plugins across categories such as audio, skills, GUI, language, listener, and platform-specific plugins.",
+  "examples": [],
+  "tags": [
+    "portuguese",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-diagnostics",
+  "package_name": "ovos-diagnostics",
+  "pypi_version": null,
+  "license": null,
+  "author": "TigreGotico",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 1,
+  "open_issues": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "List the installed TTS plugins",
+      "content": "To list the available TTS plugins, run:\n\novos-diagnostics audio scan-tts\nexample output\nList of TTS Plugins\n 0 - ovos-tts-plugin-mimic3\n 1 - ovos-tts-plugin-beepspeak\n 2 - ovos-tts-plugin-dummy\n 3 - ovos-tts-plugin-SAM\n 4 - ovos-tts-plugin-polly\n 5 - ovos_tts_plugin_espeakng\n 6 - ovos-tts-plugin-piper\n 7 - ovos-tts-plugin-pico\n 8 - ovos-tts-plugin-edge-tts\n 9 - ovos-tts-plugin-azure\n 10 - ovos-tts-plugin-server\n 11 - ovos-tts-plugin-marytts\n 12 - neon-tts-plugin-larynx-server\n 13 - ovos-tts-plugin-mimic\n 14 - ovos-tts-plugin-google-tx\n\n> NOTE: if a plugin is installed but does not show up here, then ovos-plugin-manager is failing to load it"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-07-25T21:04:51Z",
+  "last_updated": "2026-07-30T20:25:26Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

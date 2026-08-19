@@ -1,0 +1,42 @@
+{
+  "id": "TigreGotico-ovos-coreferee-plugin",
+  "skill_id": null,
+  "name": "ovos-coreferee-plugin",
+  "description": "OVOS plugin for coreference resolution and semantic triple extraction. It rewrites text so pronouns point to their referents. For example, it turns \"call Mom. tell her to buy eggs\" into \"call Mom. tell Mom to buy eggs\". This helps intent parsers and knowledge-graph builders that read the resolved text. The plugin also extracts subject-verb-object triples from text.",
+  "examples": [],
+  "tags": [
+    "plugin",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-coreferee-plugin",
+  "package_name": "ovos-coreferee-plugin",
+  "pypi_version": null,
+  "license": null,
+  "author": "TigreGotico",
+  "tier": 2,
+  "component_type": "Triples Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-coreferee-plugin\n\nThe plugin downloads the spaCy model `en_core_web_trf` on first use. This model needs `en_core_web_lg` as a companion. Both models download automatically."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-09-05T18:21:58Z",
+  "last_updated": "2026-07-30T20:22:55Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

@@ -1,0 +1,58 @@
+{
+  "id": "TigreGotico-ovos-stt-plugin-coreml",
+  "skill_id": null,
+  "name": "ovos-stt-plugin-coreml",
+  "description": "OVOS Speech-to-Text (STT) plugin that runs speech recognition models natively on Apple devices using CoreML",
+  "examples": [],
+  "tags": [
+    "coreml",
+    "macos",
+    "plugin",
+    "speech-to-text",
+    "stt",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-stt-plugin-coreml",
+  "package_name": "ovos-stt-plugin-coreml",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "TigreGotico",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 4,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "### Prerequisites\n\n- Python 3.10+\n- macOS 13.0+ (CoreML MLProgram / iOS 17 target)\n- Xcode command-line tools (only needed for `.mlmodelc` compilation)\n\n### From PyPI\n\npip install ovos-stt-plugin-coreml\n\n### Optional: ANE/GPU dispatch via PyObjC\n\npip install pyobjc-core pyobjc-framework-CoreML\n\nWhen installed, models are compiled to `.mlmodelc` and loaded via the native CoreML ObjC framework for full\nANE/GPU dispatch. Without PyObjC, coremltools loads `.mlpackage` directly (CPU-biased).\n\n### Optional: HuggingFace auto-download\n\npip install huggingface-hub\n\nRequired for `repo_id` auto-download and zero-config mode.\n\n### From Source\n\ngit clone https://github.com/TigreGotico/ovos-stt-plugin-coreml\ncd ovos-stt-plugin-coreml\npip install -e ."
+    },
+    {
+      "heading": "Zero-config (auto-selects best int8 model for your language)",
+      "content": "{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-coreml\",\n    \"ovos-stt-plugin-coreml\": {}\n  }\n}\n\nThe plugin reads `lang` from your OVOS config and picks the best published int8 model automatically:\n\n| Language(s) | Default model |\n|---|---|\n| `en-*` | `parakeet-tdt-ctc-110m-coreml-int8` (smallest/fastest English) |\n| `da-*` | `parakeet-rnnt-110m-da-coreml-int8` |\n| `nl-*` | `parakeet-tdt-0.6b-dutch-coreml-int8` |\n| `et-*` | `parakeet-tdt-0.6b-estonian-coreml-int8` |\n| `pl-*` | `parakeet-tdt-0.6b-polish-coreml-int8` |\n| `pt-*` | `parakeet-tdt-0.6b-portuguese-coreml-int8` |\n| `sl-*` | `parakeet-tdt-0.6b-slovenian-coreml-int8` |\n| `ja-*` | `parakeet-tdt-ctc-0.6b-ja-coreml-int8` |\n| `vi-*` | `parakeet-ctc-0.6b-vi-coreml-int8` |\n| `de/fr/es/it/cs/bg/el/fi/hr/hu/lt/lv/mt/ro/ru/sk/sv/uk-*` | `parakee\u2026"
+    },
+    {
+      "heading": "Configuration",
+      "content": "### Full config reference\n\n| Key                          | Default                     | Description                                             |\n|------------------------------|-----------------------------|---------------------------------------------------------|\n| `repo_id`                    | none                        | HF repo id. Auto-downloads when `metadata` is absent.  |\n| `metadata`                   | **required** (or `repo_id`) | Path to `metadata.json` produced by the export script   |\n| `model_type`                 | auto                        | `\"ctc\"` or `\"tdt\"`, overrides auto-detection            |\n| `compute_units`              | `\"all\"`                     | `\"all\"` \u00b7 `\"cpu_only\"` \u00b7 `\"cpu_and_gpu\"` \u00b7 `\"cpu_and_ne\"` |\n| `vocab`                      | `<metadata_di\u2026"
+    },
+    {
+      "heading": "Zero-config \u2014 auto-selects int8 model for the configured language",
+      "content": "stt = CoremlSTT(config={})"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-02-27T00:49:20Z",
+  "last_updated": "2026-07-30T20:26:43Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

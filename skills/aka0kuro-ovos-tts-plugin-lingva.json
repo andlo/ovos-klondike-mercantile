@@ -1,0 +1,43 @@
+{
+  "id": "aka0kuro-ovos-tts-plugin-lingva",
+  "skill_id": null,
+  "name": "ovos-tts-plugin-lingva",
+  "description": "OVOS TTS plugin for Lingva.ml",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/aka0kuro/ovos-tts-plugin-lingva",
+  "package_name": "ovos-tts-plugin-lingva",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "aka0kuro",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install git+https://github.com/aka0kuro/ovos-tts-plugin-lingva.git"
+    },
+    {
+      "heading": "Configuration",
+      "content": "\"tts\": {\n    \"module\": \"ovos-tts-plugin-lingva\"\n  }\n \n\n### Extra options\n\nYou can configure the Lingva instance and language settings:\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-lingva\",\n    \"ovos-tts-plugin-lingva\": {\n      \"lingva_instance\": \"https://lingva.ml\",\n      \"lang\": \"en\"\n    }\n\n### Supported Languages\n\nThe plugin supports a wide range of languages including:\n\n- **English**: en, en-US, en-GB, en-AU, en-CA, en-IN, en-IE, en-ZA, en-NG\n- **Spanish**: es, es-ES, es-US, es-MX\n- **French**: fr, fr-FR, fr-CA\n- **Portuguese**: pt, pt-PT, pt-BR\n- **German**: de, de-DE, de-AT, de-CH\n- **Italian**: it, it-IT\n- **Dutch**: nl, nl-NL, nl-BE\n- **Russian**: ru, ru-RU\n- **Japanese**: ja, ja-JP\n- **Korean**: ko, ko-KR\n- **Chinese**: zh, zh-CN, zh-TW\n- **Arabic**: ar, ar-SA\n- **Hindi**: hi, hi-IN\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-08-09T20:54:13Z",
+  "last_updated": "2025-08-10T18:26:33Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

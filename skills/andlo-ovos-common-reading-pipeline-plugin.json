@@ -28,8 +28,8 @@
   "license": "GPL-3.0",
   "author": "andlo",
   "tier": 1,
-  "component_type": "Skill",
-  "type_group": "Skill",
+  "component_type": "Pipeline Plugin",
+  "type_group": "Plugin",
   "stars": 2,
   "forks": 0,
   "open_issues": 25,
@@ -45,16 +45,7 @@
       "content": "pip install ovos-common-reading-pipeline-plugin\n\nAdd it to your pipeline in `mycroft.conf` **right after your stop\nmatcher** (`stop_high`/`ovos-stop-pipeline-plugin-high`) - roughly\nwhere OCP sits, not before stop. \"Stop\" should always be the most\nreliable, highest-priority command regardless of what skill is active;\nputting anything ahead of it undermines that guarantee for every skill,\nnot just this one. An earlier version of this README recommended\nputting this plugin first - that was wrong, and has been reverted; see\nthe note at the end of this section for why.\n\n**Don't copy-paste a whole pipeline block from here or anywhere else** -\nyour existing list already has entries specific to your install (the\nexact names/order vary: `stop_high` vs `ovos-stop-pipeline-plugin-high`,\nwhether pers\u2026"
     }
   ],
-  "languages": [
-    "da-dk",
-    "de-de",
-    "en-us",
-    "es-es",
-    "fr-fr",
-    "it-it",
-    "nl-nl",
-    "pt-pt"
-  ],
+  "languages": [],
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T11:11:43Z",
   "last_updated": "2026-07-25T21:50:14.951093Z",

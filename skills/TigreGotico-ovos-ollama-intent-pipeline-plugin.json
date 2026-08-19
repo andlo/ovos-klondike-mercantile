@@ -1,0 +1,47 @@
+{
+  "id": "TigreGotico-ovos-ollama-intent-pipeline-plugin",
+  "skill_id": null,
+  "name": "ovos-ollama-intent-pipeline-plugin",
+  "description": "A intent matching pipeline for OpenVoiceOS (OVOS), powered by local or remote LLMs via an HTTP API such as Ollama.",
+  "examples": [],
+  "tags": [
+    "pipeline",
+    "plugin",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-ollama-intent-pipeline-plugin",
+  "package_name": "ovos-ollama-intent-pipeline-plugin",
+  "pypi_version": "0.0.4",
+  "license": null,
+  "author": "TigreGotico",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "\ud83d\udce6 Installation",
+      "content": "pip install ovos-ollama-intent-pipeline\n\n---"
+    },
+    {
+      "heading": "\u2699\ufe0f Configuration",
+      "content": "In your `mycroft.conf` or OVOS config file:\n\n{\n  \"intents\": {\n    \"ovos_ollama_intent_pipeline\": {\n      \"model\": \"llama3\",\n      \"base_url\": \"http://192.168.1.200:11434\",\n      \"temperature\": 0.0,\n      \"timeout\": 5,\n      \"fuzzy\": true,\n      \"min_words\": 2,\n      \"ignore_labels\": []\n    }\n  }\n}\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-05-06T05:19:33Z",
+  "last_updated": "2025-06-10T21:27:14.358540Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
