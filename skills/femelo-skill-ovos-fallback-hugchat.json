@@ -1,0 +1,49 @@
+{
+  "id": "femelo-skill-ovos-fallback-hugchat",
+  "skill_id": null,
+  "name": "skill-ovos-fallback-hugchat",
+  "description": "Ask HuggingChat with OpenVoiceOS",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/femelo/skill-ovos-fallback-hugchat",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "femelo",
+  "tier": 3,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 3,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Under skill settings (`.config/mycroft/skills/skill-ovos-fallback-hugchat.femelo/settings.json`) you can tweak some parameters for HuggingChat.\n\n| Option          | Value                                                                  | Description                                                   |\n| --------------- | ---------------------------------------------------------------------- | ---------------------------------------                       |\n| `email`         | `your-hf-email`                                                        | Your `email` to access Hugging Face                           |\n| `password`      | `your-hf-password`                                                     | Your `password` to access Hugging Face                        |\n| `persona`       | `You ar\u2026"
+    },
+    {
+      "heading": "Configurations",
+      "content": "The skill utilizes the `~/.config/mycroft/skills/skill-ovos-fallback-hugchat.femelo/settings.json` file which allows you to configure it.\n\n### Configuration for use with HuggingChat\n\n{\n  \"email\": \"{your-hf-email}\",\n  \"password\": \"{your-hf-password}\",\n  \"model\": \"llama-3\",\n  \"persona\": \"You are a helpful voice assistant with a friendly tone and fun sense of humor\",\n  \"enable_memory\": true,\n  \"memory_size\": 15,\n  \"web_search\": false,\n  \"__mycroft_skill_firstrun\": false\n}"
+    }
+  ],
+  "languages": [
+    "en-us",
+    "fr-fr",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-05-22T22:59:41Z",
+  "last_updated": "2025-08-01T00:20:49Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

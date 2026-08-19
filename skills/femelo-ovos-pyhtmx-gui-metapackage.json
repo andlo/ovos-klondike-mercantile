@@ -1,0 +1,39 @@
+{
+  "id": "femelo-ovos-pyhtmx-gui-metapackage",
+  "skill_id": null,
+  "name": "ovos-pyhtmx-gui-metapackage",
+  "description": "Metapackage for setting up a development environment for the PyHTMX GUI client",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/femelo/ovos-pyhtmx-gui-metapackage",
+  "package_name": "ovos-pyhtmx-gui-metapackage",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "femelo",
+  "tier": 2,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "To install this metapackage and all its dependencies, you can use pip:\n\npip install .\n\nThis will install the following packages from their respective GitHub branches:\n\n- `ovos-gui@add-pyhtmx-system-pages`\n- `ovos-audio@add-audio-duration`\n- `ovos-dinkum-listener@add-audio-duration`\n- `ovos-skill-homescreen@add-pyhtmx-gui-resources`\n- `ovos-plugin-common-play@add-pyhtmx-resources`\n- `ovos-skill-date-time@add-pyhtmx-time-page`\n- `ovos-skill-weather@add-units-to-weather-params`\n- `ovos-pyhtmx-gui-client@main`"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-02-02T20:09:11Z",
+  "last_updated": "2026-02-09T18:01:17Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

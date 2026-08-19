@@ -1,0 +1,43 @@
+{
+  "id": "femelo-ovos-hierarchical-knn-pipeline",
+  "skill_id": null,
+  "name": "ovos-hierarchical-knn-pipeline",
+  "description": "OVOS Hierarchical KNN pipeline for intent matching",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/femelo/ovos-hierarchical-knn-pipeline",
+  "package_name": "ovos_hierarchical_knn_pipeline",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "femelo",
+  "tier": 2,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 2,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "\ud83d\udce6 Installation",
+      "content": "You can install the plugin via `pip`:\n\npip install ovos-hierarchical-knn-pipeline\n\n---"
+    },
+    {
+      "heading": "\u2699\ufe0f Configuration",
+      "content": "Add the following to your `mycroft.conf`. When `index_dir` is omitted the default pre-built index is downloaded automatically from HuggingFace on first run:\n\n{\n  \"intents\": {\n    \"pipeline\": [\n      \"ovos-hierarchical-knn-pipeline-high\",\n      \"adapt-high\",\n      \"padatious-high\",\n      \"ovos-hierarchical-knn-pipeline-medium\",\n      \"adapt-medium\",\n      \"padatious-medium\",\n      \"ovos-hierarchical-knn-pipeline-low\",\n      \"adapt-low\",\n      \"padatious-low\",\n      \"fallback-low\"\n    ],\n    \"ovos_hierarchical_knn_pipeline\": {\n      \"conf_high\": 0.7,\n      \"conf_medium\": 0.5,\n      \"conf_low\": 0.15,\n      \"ignore_intents\": []\n    }\n  }\n}\n\nTo use a local copy (faster startup, no internet required):\n\n{\n  \"intents\": {\n    \"ovos_hierarchical_knn_pipeline\": {\n      \"index_dir\": \"/path/to/local/in\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-05-11T07:55:37Z",
+  "last_updated": "2026-05-13T16:59:21.702710Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

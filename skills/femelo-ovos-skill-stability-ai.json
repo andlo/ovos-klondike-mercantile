@@ -1,0 +1,43 @@
+{
+  "id": "femelo-ovos-skill-stability-ai",
+  "skill_id": null,
+  "name": "ovos-skill-stability-ai",
+  "description": "A skill for OpenVoiceOS to generate AI images via Stability AI",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/femelo/ovos-skill-stability-ai",
+  "package_name": "ovos-skill-stability-ai",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "femelo",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 2,
+  "forks": 0,
+  "open_issues": 7,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Under skill settings you can tweak some parameters for Stability AI API.\n\n| Option          | Value                                                                  | Description                                                   |\n| --------------- | ---------------------------------------------------------------------- | ---------------------------------------                       |\n| `api_key`       | `your-stability-ai-api-key`                                            | Your `API key` to query Stability AI                          |\n| `model`         | `sdxl_v1.0`                                                            | Model (`sdxl_v1.0`, `sd_v1.6`, `sd_beta`)                     |\n| `style_preset`  | `fantasy-art`                                                          | Style\u2026"
+    },
+    {
+      "heading": "Configuration file",
+      "content": "The skill utilizes the `~/.config/mycroft/skills/ovos-skill-stability-ai.femelo/settings.json` file which allows you to configure it.\n\n### Configuration for the skill\n\n{\n  \"api_key\": \"{your-stability-ai-api-key}\",\n  \"model\": \"sdxl_v1.0\",\n  \"style_preset\": \"fantasy-art\",\n  \"__mycroft_skill_firstrun\": false\n}"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-06-01T01:56:20Z",
+  "last_updated": "2026-02-10T19:23:09Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
