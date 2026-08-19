@@ -2,6 +2,7 @@ const grid = document.getElementById("grid");
 const newSection = document.getElementById("new-section");
 const newGrid = document.getElementById("new-grid");
 const emptyState = document.getElementById("empty-state");
+const statsLine = document.getElementById("stats-line");
 const searchInput = document.getElementById("search");
 const authorFilter = document.getElementById("author-filter");
 const tagFilter = document.getElementById("tag-filter");
@@ -257,21 +258,52 @@ function applyFilters() {
   renderNewSection(sorted);
 }
 
+function renderStatsLine(meta, entryCount) {
+  if (!meta) {
+    statsLine.textContent = `${entryCount} skills & components listed.`;
+    return;
+  }
+  const reviewed = meta.total_candidates_reviewed;
+  const generated = meta.generated_at
+    ? new Date(meta.generated_at).toLocaleDateString(undefined, {
+        year: "numeric", month: "long", day: "numeric",
+      })
+    : null;
+  let text = `${entryCount} skills & components listed`;
+  if (reviewed) text += ` (out of ${reviewed} repos reviewed)`;
+  if (generated) text += ` · last checked ${generated}`;
+  statsLine.textContent = text;
+}
+
 searchInput.addEventListener("input", applyFilters);
 authorFilter.addEventListener("change", applyFilters);
 tagFilter.addEventListener("change", applyFilters);
 typeFilter.addEventListener("change", applyFilters);
 sortOrder.addEventListener("change", applyFilters);
 
-fetch("skills.json")
-  .then((res) => res.json())
-  .then((data) => {
-    skills = data;
+// cache: "no-store" plus a timestamp query param - belt and braces
+// against a stale cached copy ever being served, after exactly that
+// was suspected as the cause of a "could not load" / stale-filter
+// report from a real user session.
+const cacheBust = `?t=${Date.now()}`;
+
+Promise.all([
+  fetch(`skills.json${cacheBust}`, { cache: "no-store" }).then((res) => {
+    if (!res.ok) throw new Error(`skills.json: HTTP ${res.status}`);
+    return res.json();
+  }),
+  fetch(`meta.json${cacheBust}`, { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : null))
+    .catch(() => null),
+])
+  .then(([skillsData, metaData]) => {
+    skills = skillsData;
     populateFilters(skills);
+    renderStatsLine(metaData, skills.length);
     applyFilters();
   })
-  .catch(() => {
+  .catch((err) => {
     grid.innerHTML = "";
     emptyState.hidden = false;
-    emptyState.textContent = "Could not load skills.json.";
+    emptyState.textContent = `Could not load skills.json (${err.message}). Try refreshing the page.`;
   });

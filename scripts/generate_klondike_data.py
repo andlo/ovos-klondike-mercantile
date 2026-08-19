@@ -46,6 +46,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
 DOCS_DIR = ROOT / "docs"
 FEED_PATH = DOCS_DIR / "skills.json"
+META_PATH = DOCS_DIR / "meta.json"
 OVOS_STORE_FEED_URL = "https://openvoiceos.github.io/OVOS-skills-store/skills.json"
 IGNORE_LIST_PATH = ROOT / "ignore.txt"
 
@@ -520,6 +521,15 @@ def main():
     entries.sort(key=lambda e: (e["name"] or "").lower())
     with open(FEED_PATH, "w") as f:
         json.dump(entries, f, indent=2)
+        f.write("\n")
+
+    meta = {
+        "total_candidates_reviewed": len(all_candidates),
+        "total_entries_included": len(entries),
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }
+    with open(META_PATH, "w") as f:
+        json.dump(meta, f, indent=2)
         f.write("\n")
 
     print(f"\nWrote {len(entries)} entries to {SKILLS_DIR} and {FEED_PATH}")
