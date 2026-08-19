@@ -120,6 +120,22 @@ h1 { margin: 0 0 0.5rem; font-size: 2rem; }
   color: var(--gold);
 }
 
+.new-subsection {
+  margin-bottom: 2rem;
+}
+
+.new-subtitle {
+  font-size: 1rem;
+  color: var(--gold);
+  margin: 0 0 0.75rem;
+}
+
+.new-count {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
 main {
   max-width: 1100px;
   margin: 0 auto;

@@ -387,6 +387,19 @@ def infer_category(tags):
     return "Other"
 
 
+def type_group(component_type):
+    """Top-level grouping for the type filter/grid hierarchy - Skill
+    / Plugin / Tool, with everything that isn't specifically a Skill
+    or a Tool (OCP/TTS/STT/Persona/Pipeline/etc) bucketed as Plugin,
+    since all of those are registered via OVOS's plugin-manager
+    entry-points mechanism the same way, architecturally."""
+    if component_type == "Skill":
+        return "Skill"
+    if component_type == "Tool":
+        return "Tool"
+    return "Plugin"
+
+
 def normalize_tags(value):
     """Coerces a tags value to a list of strings. Defensive fix for
     real-world data quality: ovos-skill-laugh and ovos-skill-
@@ -440,6 +453,11 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     license_id = license_info.get("spdx_id")
 
     pushed_at = repo.get("pushed_at")
+    repo_created_at = repo.get("created_at")
+    # last_updated favors the PyPI release date over the repo's own
+    # push timestamp when both exist, since a fresh PyPI release is a
+    # more deliberate "this changed for users" signal than an
+    # arbitrary commit push (which could be a README typo fix).
     last_updated = pypi_release_date or pushed_at
 
     return {
@@ -457,6 +475,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "author": owner,
         "tier": tier,
         "component_type": component_type,
+        "type_group": type_group(component_type),
         "stars": repo.get("stargazers_count", 0),
         "forks": repo.get("forks_count", 0),
         "open_issues": repo.get("open_issues_count", 0),
@@ -466,8 +485,16 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "pipeline": extract_pipeline(description),
         "connectivity": classify_connectivity(description, requires_dist),
         "requires_api_key": fetch_requires_api_key(full_name),
+        "repo_created_at": repo_created_at,
         "last_updated": last_updated,
-        "is_new": (days_since(last_updated) or 9999) <= 30,
+        # Two DIFFERENT kinds of "new", deliberately not collapsed
+        # into one flag (an earlier version conflated these, which
+        # was ambiguous about what "new" even meant): a genuinely new
+        # addition to the ecosystem (the repo itself is young) is a
+        # different, more noteworthy thing than an existing,
+        # long-running project simply having a fresh release.
+        "is_new_repo": (days_since(repo_created_at) or 9999) <= 30,
+        "is_recently_updated": (days_since(last_updated) or 9999) <= 30,
     }
 
 

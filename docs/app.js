@@ -205,20 +205,56 @@ function render(list) {
   grid.innerHTML = html;
 }
 
+const MAX_NEW_ITEMS = 8;
+
 function renderNewSection(list) {
-  const recent = list.filter((s) => s.is_new);
-  if (recent.length === 0) {
+  // Two DIFFERENT things, deliberately not merged: a repo that's
+  // genuinely young (is_new_repo, from its GitHub creation date) is
+  // a more noteworthy kind of "new" than an existing, long-running
+  // project simply shipping a fresh release (is_recently_updated).
+  // A repo matching both only shows once, under "New repos".
+  const newRepos = [...list].filter((s) => s.is_new_repo)
+    .sort((a, b) => new Date(b.repo_created_at || 0) - new Date(a.repo_created_at || 0));
+  const updated = [...list].filter((s) => s.is_recently_updated && !s.is_new_repo)
+    .sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0));
+
+  if (newRepos.length === 0 && updated.length === 0) {
     newSection.hidden = true;
     return;
   }
   newSection.hidden = false;
-  newGrid.innerHTML = recent.map(renderCard).join("");
+
+  let html = "";
+  if (newRepos.length) {
+    // Capped, not an unbounded list - with 269+ entries a "new"
+    // section can itself get large enough to need this (found while
+    // testing: many repos in the same weekly batch legitimately
+    // qualify at once).
+    const shown = newRepos.slice(0, MAX_NEW_ITEMS);
+    const moreCount = newRepos.length - shown.length;
+    html += `
+      <div class="new-subsection">
+        <h3 class="new-subtitle">🆕 New repos${moreCount > 0 ? ` <span class="new-count">(${shown.length} of ${newRepos.length})</span>` : ""}</h3>
+        <div class="card-grid">${shown.map(renderCard).join("")}</div>
+      </div>
+    `;
+  }
+  if (updated.length) {
+    const shown = updated.slice(0, MAX_NEW_ITEMS);
+    const moreCount = updated.length - shown.length;
+    html += `
+      <div class="new-subsection">
+        <h3 class="new-subtitle">🔄 Recently updated${moreCount > 0 ? ` <span class="new-count">(${shown.length} of ${updated.length})</span>` : ""}</h3>
+        <div class="card-grid">${shown.map(renderCard).join("")}</div>
+      </div>
+    `;
+  }
+  newGrid.innerHTML = html;
 }
 
 function populateFilters(list) {
   const authors = [...new Set(list.map((s) => s.author))].sort((a, b) => a.localeCompare(b));
   const tags = [...new Set(list.flatMap((s) => asArray(s.tags)))].sort((a, b) => a.localeCompare(b));
-  const types = [...new Set(list.map((s) => s.component_type).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 
   for (const a of authors) {
     const opt = document.createElement("option");
@@ -232,10 +268,44 @@ function populateFilters(list) {
     opt.textContent = t;
     tagFilter.appendChild(opt);
   }
-  for (const t of types) {
+
+  // Type filter: hierarchical (Skill / Plugins / Tool) instead of
+  // one long flat list, which got hard to scan once component-type
+  // detection started covering a dozen+ specific plugin categories
+  // (OCP, TTS, STT, Persona, Pipeline, ...). Skill and Tool are
+  // single, standalone options; every specific plugin type nests
+  // under one "Plugins" optgroup.
+  const pluginTypes = new Set();
+  let hasSkill = false;
+  let hasTool = false;
+  for (const s of list) {
+    if (!s.component_type) continue;
+    if (s.type_group === "Skill") hasSkill = true;
+    else if (s.type_group === "Tool") hasTool = true;
+    else pluginTypes.add(s.component_type);
+  }
+
+  if (hasSkill) {
     const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
+    opt.value = "Skill";
+    opt.textContent = "Skill";
+    typeFilter.appendChild(opt);
+  }
+  if (pluginTypes.size > 0) {
+    const optgroup = document.createElement("optgroup");
+    optgroup.label = "Plugins";
+    for (const t of [...pluginTypes].sort((a, b) => a.localeCompare(b))) {
+      const opt = document.createElement("option");
+      opt.value = t;
+      opt.textContent = t;
+      optgroup.appendChild(opt);
+    }
+    typeFilter.appendChild(optgroup);
+  }
+  if (hasTool) {
+    const opt = document.createElement("option");
+    opt.value = "Tool";
+    opt.textContent = "Tool";
     typeFilter.appendChild(opt);
   }
 }
