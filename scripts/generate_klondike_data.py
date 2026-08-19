@@ -441,6 +441,15 @@ def extract_readme_setup_sections(readme_text):
                 body_lines.append(lines[i])
                 i += 1
             body = "\n".join(body_lines).strip()
+            # Strip markdown code-FENCE marker lines (```, ```bash,
+            # etc) - content is shown as plain preformatted text, not
+            # rendered markdown, so the bare fence markers just show
+            # up literally in the output and look broken rather than
+            # adding anything.
+            body = "\n".join(
+                ln for ln in body.splitlines()
+                if not re.match(r"^\s*```\w*\s*$", ln)
+            ).strip()
             if body:
                 if len(body) > MAX_SETUP_SECTION_LENGTH:
                     body = body[:MAX_SETUP_SECTION_LENGTH].rstrip() + "…"
