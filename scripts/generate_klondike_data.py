@@ -190,11 +190,23 @@ def search_code_repos(query):
 
 
 def search_topic_repos(topic):
+    """GitHub's repository search EXCLUDES forks by default unless
+    the query explicitly says fork:true - discovered the hard way:
+    several real, actively-maintained official OpenVoiceOS skills
+    (ovos-skill-alerts, ovos-skill-easter-eggs, ovos-skill-ip,
+    ovos-skill-date-time) were missing from Klondike entirely, not
+    just badged oddly, because they're technically still registered
+    as GitHub forks of their original Mycroft-AI predecessors (never
+    detached) - so they never even reached the fork-owner-allowlist
+    check in main(), since this function never found them in the
+    first place. fork:true here restores them to the candidate pool;
+    main()'s TRUSTED_FORK_OWNERS check still decides which forks are
+    actually kept."""
     names = set()
     page = 1
     while True:
         items = gh_json(
-            "api", f"search/repositories?q=topic:{topic}&per_page=100&page={page}"
+            "api", f"search/repositories?q=topic:{topic}+fork:true&per_page=100&page={page}"
         )["items"]
         if not items:
             break
