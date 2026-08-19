@@ -181,15 +181,26 @@ def load_ignore_list():
 
 
 def load_state():
-    """Rotation position for batched refreshing - see BATCH_SIZE and
-    main()'s comment. A fresh repo (no prior state.json) just starts
-    at the beginning."""
+    """Rotation position + the set of candidates ever ATTEMPTED
+    before (whether they became an entry or were deliberately
+    skipped - fork/no-manifest/etc). Deliberately NOT the same as
+    "has an entry in previous_entries": a candidate that was
+    correctly excluded (untrusted fork, no skill/plugin signal) has
+    no entry, but re-treating it as "new" every single run would
+    mean it gets reprocessed every run forever, defeating the whole
+    point of batching - caught by inspection: with ~305 successful
+    entries out of ~356 candidates, the ~51 legitimately-skipped ones
+    were silently costing a full extra pass every run before this
+    field existed. A fresh repo (no prior state.json) starts empty."""
     if not STATE_PATH.exists():
-        return {"cursor": 0}
+        return {"cursor": 0, "attempted": []}
     try:
-        return json.loads(STATE_PATH.read_text())
+        state = json.loads(STATE_PATH.read_text())
+        state.setdefault("cursor", 0)
+        state.setdefault("attempted", [])
+        return state
     except Exception:
-        return {"cursor": 0}
+        return {"cursor": 0, "attempted": []}
 
 
 def save_state(state):
@@ -729,8 +740,9 @@ def main():
     all_candidates = sorted((with_skill_json | topic_repos) - ignore_list)
     print(f"\n{len(all_candidates)} total unique candidates ({len(ignore_list)} ignored)")
 
-    new_candidates = [c for c in all_candidates if c.replace("/", "-") not in previous_entries]
-    known_candidates = [c for c in all_candidates if c.replace("/", "-") in previous_entries]
+    attempted_ids = set(state.get("attempted", []))
+    new_candidates = [c for c in all_candidates if c.replace("/", "-") not in attempted_ids]
+    known_candidates = [c for c in all_candidates if c.replace("/", "-") in attempted_ids]
 
     cursor = state.get("cursor", 0)
     if known_candidates:
@@ -762,6 +774,7 @@ def main():
             # trip GitHub's secondary rate limit in the first place.
             time.sleep(3)
 
+        attempted_ids.add(full_name.replace("/", "-"))
         repo = repo_info(full_name)
         if repo is None:
             print(f"  SKIP {full_name}: repo not accessible")
@@ -894,7 +907,13 @@ def main():
         f.write("\n")
 
     new_cursor = (cursor + len(batch)) % len(known_candidates) if known_candidates else 0
-    save_state({"cursor": new_cursor})
+    # Only keep attempted-ids for candidates still actually valid -
+    # a repo that's gone (deleted/private/now ignored) shouldn't
+    # keep occupying a rotation slot forever.
+    save_state({
+        "cursor": new_cursor,
+        "attempted": sorted(attempted_ids & valid_ids),
+    })
 
     meta = {
         "total_candidates_reviewed": len(all_candidates),
