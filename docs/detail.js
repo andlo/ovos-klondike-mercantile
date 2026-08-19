@@ -84,6 +84,7 @@ function renderDetail(skill) {
         <div>
           <h1>${escapeHtml(skill.name)}</h1>
           <div class="byline">by ${escapeHtml(skill.author)}${skill.pypi_version ? ` · v${escapeHtml(skill.pypi_version)}` : " · unreleased"}</div>
+          ${renderLanguageFlags(skill)}
         </div>
       </div>
 
@@ -127,6 +128,7 @@ function renderDetail(skill) {
       <div class="detail-links">
         <a href="${escapeHtml(skill.source)}" target="_blank" rel="noopener" class="detail-link-btn">View on GitHub</a>
         ${skill.package_name ? `<a href="https://pypi.org/project/${escapeHtml(skill.package_name)}/" target="_blank" rel="noopener" class="detail-link-btn">View on PyPI</a>` : ""}
+        ${skill.in_ovos_localize ? `<a href="https://openvoiceos.github.io/ovos-localize/" target="_blank" rel="noopener" class="detail-link-btn detail-link-translate">Help Translate</a>` : ""}
       </div>
     </div>
   `;

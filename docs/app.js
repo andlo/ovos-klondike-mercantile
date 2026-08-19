@@ -40,6 +40,7 @@ function renderCard(skill) {
             <h2>${escapeHtml(skill.name)}</h2>
             <div class="byline">by ${escapeHtml(skill.author)} · ${version}</div>
             ${statsLine}
+            ${renderLanguageFlags(skill)}
           </div>
         </div>
         <div class="badges">${renderBadges(skill)}</div>
@@ -50,6 +51,7 @@ function renderCard(skill) {
       <div class="links">
         <a href="${escapeHtml(skill.source)}" target="_blank" rel="noopener">GitHub</a>
         ${skill.package_name ? `<a href="https://pypi.org/project/${escapeHtml(skill.package_name)}/" target="_blank" rel="noopener">PyPI</a>` : ""}
+        ${skill.in_ovos_localize ? `<a href="https://openvoiceos.github.io/ovos-localize/" target="_blank" rel="noopener" class="translate-link">Translate</a>` : ""}
       </div>
     </article>
   `;

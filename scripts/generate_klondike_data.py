@@ -447,6 +447,47 @@ def fetch_ovos_store_package_names():
         return set()
 
 
+OVOS_LOCALIZE_SKILLS_URL = "https://raw.githubusercontent.com/OpenVoiceOS/ovos-localize/dev/skills.txt"
+
+
+def fetch_ovos_localize_tracked_repos():
+    """Plain-text "owner/repo" list (one per line, "#"-comments
+    allowed) of repos the official OVOS Localize translation
+    platform tracks - fetched via a plain HTTP GET, same as
+    fetch_ovos_store_package_names(), so it costs nothing against
+    GitHub's API rate limit regardless of how many entries this
+    script processes."""
+    try:
+        with urllib.request.urlopen(OVOS_LOCALIZE_SKILLS_URL, timeout=10) as resp:
+            text = resp.read().decode("utf-8", errors="ignore")
+        return {
+            line.strip() for line in text.splitlines()
+            if line.strip() and not line.strip().startswith("#")
+        }
+    except Exception:
+        return set()
+
+
+LOCALE_DIR_PATTERN = re.compile(r"^[a-z]{2}(-[a-zA-Z]{2,})?$")
+
+
+def fetch_locale_languages(full_name):
+    """Lists the locale/ directory to find which language codes a
+    Skill supports (e.g. ["en-us", "da-dk"]) - only called for
+    component_type == "Skill" entries, since plugins/tools don't
+    follow this convention in practice (confirmed by inspection
+    across this whole ecosystem: locale/<lang>/ is specifically the
+    Skill packaging convention). Returns an empty list if there's no
+    locale/ directory, or the repo isn't a Skill."""
+    data = gh_ok("api", f"repos/{full_name}/contents/locale")
+    if not data:
+        return []
+    return sorted(
+        item["name"] for item in data
+        if item.get("type") == "dir" and LOCALE_DIR_PATTERN.match(item["name"])
+    )
+
+
 def extract_pipeline(description):
     if not description:
         return None
@@ -517,7 +558,7 @@ def days_since(iso_timestamp):
         return None
 
 
-def build_entry(full_name, repo, skill_json, tier, component_type, package_name_override, store_package_names):
+def build_entry(full_name, repo, skill_json, tier, component_type, package_name_override, store_package_names, localize_tracked_repos):
     owner, name = full_name.split("/", 1)
 
     # Fetched once, used for two things below: a description
@@ -549,6 +590,12 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         skill_id = None
 
     setup_notes = extract_readme_setup_sections(readme_text)
+
+    # Locale/language listing is only meaningful for Skills - see
+    # fetch_locale_languages()'s docstring. Skipped entirely for
+    # Plugins/Tools rather than making a call that would almost
+    # always come back empty.
+    languages = fetch_locale_languages(full_name) if component_type == "Skill" else []
 
     version, requires_dist, pypi_release_date = pypi_info(package_name)
     github_release = latest_github_release(full_name)
@@ -591,6 +638,8 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "connectivity": classify_connectivity(description, requires_dist),
         "requires_api_key": fetch_requires_api_key(full_name),
         "setup_notes": setup_notes,
+        "languages": languages,
+        "in_ovos_localize": full_name in localize_tracked_repos,
         "repo_created_at": repo_created_at,
         "last_updated": last_updated,
         # Two DIFFERENT kinds of "new", deliberately not collapsed
@@ -621,6 +670,7 @@ def main():
     print(f"\n{len(all_candidates)} total unique candidates ({len(ignore_list)} ignored)")
 
     store_package_names = fetch_ovos_store_package_names()
+    localize_tracked_repos = fetch_ovos_localize_tracked_repos()
 
     entries = []
     for i, full_name in enumerate(all_candidates):
@@ -711,7 +761,7 @@ def main():
         entry = build_entry(
             full_name, repo, skill_json, tier=3,
             component_type=component_type, package_name_override=package_name_override,
-            store_package_names=store_package_names,
+            store_package_names=store_package_names, localize_tracked_repos=localize_tracked_repos,
         )
         if has_confirmed_manifest:
             entry["tier"] = 1 if (entry["on_pypi"] and entry["has_release"]) else 2

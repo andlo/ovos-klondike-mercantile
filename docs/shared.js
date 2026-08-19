@@ -128,3 +128,36 @@ function formatDate(iso) {
     year: "numeric", month: "long", day: "numeric",
   });
 }
+
+// Computes a country flag emoji directly from a 2-letter region
+// code via Unicode "regional indicator symbol" math - no lookup
+// table needed. E.g. flagEmoji("us") -> 🇺🇸, flagEmoji("dk") -> 🇩🇰.
+// Falls back to null for anything that isn't a clean 2-letter code
+// (a handful of locale codes are language-only, with no region).
+function flagEmoji(regionCode) {
+  if (!regionCode || regionCode.length !== 2) return null;
+  const upper = regionCode.toUpperCase();
+  if (!/^[A-Z]{2}$/.test(upper)) return null;
+  return String.fromCodePoint(
+    ...[...upper].map((c) => 127397 + c.charCodeAt(0))
+  );
+}
+
+// "en-us" -> flag for "us"; "da-dk" -> flag for "dk"; a bare
+// language code with no region ("en") falls back to just the code
+// itself, since there's no single flag for a language alone.
+function languageFlag(localeCode) {
+  const parts = localeCode.split("-");
+  const region = parts.length > 1 ? parts[parts.length - 1] : null;
+  const flag = region ? flagEmoji(region) : null;
+  return flag || localeCode;
+}
+
+function renderLanguageFlags(skill) {
+  const languages = asArray(skill.languages);
+  if (languages.length === 0) return "";
+  const flags = languages.map((l) =>
+    `<span class="lang-flag" title="${escapeHtml(l)}">${languageFlag(l)}</span>`
+  ).join("");
+  return `<div class="lang-flags">${flags}</div>`;
+}

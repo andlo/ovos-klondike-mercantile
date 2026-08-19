@@ -224,6 +224,14 @@ main {
   margin-top: 0.1rem;
 }
 
+.lang-flags {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.lang-flag { margin-right: 0.15rem; }
+
 .badges {
   display: flex;
   flex-wrap: wrap;
@@ -287,6 +295,7 @@ main {
 
 .links a { color: var(--accent); text-decoration: none; }
 .links a:hover { text-decoration: underline; }
+.translate-link { margin-left: auto; }
 
 footer {
   text-align: center;
@@ -474,3 +483,10 @@ footer a { color: var(--accent); }
 }
 
 .detail-link-btn:hover { opacity: 0.9; }
+
+.detail-link-translate {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  margin-left: auto;
+}
