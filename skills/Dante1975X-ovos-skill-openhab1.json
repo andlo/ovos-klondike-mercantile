@@ -1,0 +1,69 @@
+{
+  "id": "Dante1975X-ovos-skill-openhab1",
+  "skill_id": "ovos-skill-openhab.mikejgray=ovos_skill_openhab:openHABSkill",
+  "name": "ovos-skill-openhab",
+  "description": "This skill adds [openHAB](http://www.openhab.org/) support to [OVOS](https://openvoiceos.org). The skill takes advantage of the openHAB REST API, so it works both with the v1.x and v2.x of openHAB. In order to make openHAB Items accessible to OVOS/Neon, they need to be [tagged](https://www.openhab.org/addons/integrations/homekit/). Device names recognized by OVOS/Neon are matched against openHAB Item Labels. The above examples would all work with the following set of openHAB Item definitons: ```java Color DiningroomLight \"Diningroom Light\" <light> (gKitchen) [ \"Lighting\" ] {channel=\"hue:0200:1:bloom1:color\"} Color KitchenLight \"Kitchen Light\" <light> (gKitchen) [ \"Lighting\" ] {channel=\"hue:0200:1:bloom1:color\"} Switch GoodNight \"Good Night\"\t[ \"Switchable\" ] Number MqttID1Temperature \"Bedroom Temperature\" <temperature> [ \"CurrentTemperature\" ] {mqtt=\"<[mosquitto:mysensors/SI/1/1/1/0/0:state:default]\"} Number MqttID1Humidity \"Bedroom Humidity\" [ \"CurrentHumidity\" ] {mqtt=\"<[mosquitto:mysensors/SI/1/0/1/0/1:state:default]\"} Group gThermostat \"Main Thermostat\" [ \"gMainThermostat\" ] Number MainThermostatCurrentTemp \"Main Thermostat Current Temperature\" (gMainThermostat) [ \"CurrentTemperature\" ] Number MainThermostatTargetTemperature \"Main Thermostat Target Temperature\" (gMainThermostat) [ \"TargetTemperature\" ] String MainThermostatHeatingCoolingMode \"Main Thermostat Heating/Cooling Mode\" (gMainThermostat) [ \"homekit:HeatingCoolingMode\" ] ``` If items are modified in openHAB, a refresh in OVOS/Neon is needed by the command: - *\"Hey Mycroft/Neon, refresh openhab items\"* If you've forgotten what items have been identified, you can ask OVOS/Neon: - *\"Hey Mycroft/Neon, list openhab items\"*",
+  "examples": [
+    "Hey Mycroft/Neon, turn on Diningroom Light",
+    "Hey Mycroft/Neon, switch off Kitchen Light",
+    "Hey Mycroft/Neon, put on Good Night",
+    "Hey Mycroft/Neon, what is Good Night status?",
+    "Hey Mycroft/Neon, what is the status of Good Night?",
+    "Hey Mycroft/Neon, set Diningroom to 50 percent",
+    "Hey Mycroft/Neon, dim Kitchen",
+    "Hey Mycroft/Neon, bright Kitchen",
+    "Hey Mycroft/Neon, dim Kitchen by 20 percent",
+    "Hey Mycroft/Neon, what's Bedroom temperature?",
+    "Hey Mycroft/Neon, tell me the temperature of Bedroom",
+    "Hey Mycroft/Neon, what's the Bedroom humidity?",
+    "Hey Mycroft/Neon, I'd like to know the humidity of Bedroom",
+    "Hey Mycroft/Neon, adjust Main Thermostat to 21 degrees",
+    "Hey Mycroft/Neon, regulate Main Thermostat to 20 degrees",
+    "Hey Mycroft/Neon, decrease Main Thermostat by 2 degrees",
+    "Hey Mycroft/Neon, increase Main Thermostat by 1 degrees",
+    "Hey Mycroft/Neon, what is Main Thermostat is regulated to?",
+    "Hey Mycroft/Neon, how the Main Thermostat tuned to?"
+  ],
+  "tags": [
+    "ovos",
+    "skill",
+    "voice",
+    "assistant"
+  ],
+  "category": "Other",
+  "icon": "https://www.openhab.org/openhab-logo-square.png",
+  "source": "https://github.com/Dante1975X/ovos-skill-openhab1",
+  "package_name": "ovos-skill-openhab",
+  "pypi_version": null,
+  "license": "EPL-2.0",
+  "author": "Dante1975X",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "In OVOS and Neon, skill installation occurs via pip. To install the openHAB skill, run the following command:\n\npip install git+https://github.com/mikejgray/ovos-skill-openhab\n\nIn Neon, skill installation must happen in `~/.config/neon/neon.yaml` to persist:\n\nskills:\n  default_skills:\n    - git+https://github.com/mikejgray/ovos-skill-openhab\n\nIf `skills.default_skills` doesn't exist, add it. If it does, you only need to add the last line.\n\nIf you're running Neon, please note you will also need to blacklist the Home Assistant skill as it shares some intents with this skill: \n \nskills: \n  blacklisted_skills: \n    - neon_homeassistant_skill.mikejgray \n\nAfter installation, the skill needs to be configured. In Neon, the path is `~/.config/neon/skills/ovos-skill-openhab.mikejgray/settings.json`.\u2026"
+    }
+  ],
+  "languages": [
+    "de-de",
+    "en-us",
+    "es-es",
+    "it-it"
+  ],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-06-14T11:07:50Z",
+  "last_updated": "2025-12-21T12:57:45Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

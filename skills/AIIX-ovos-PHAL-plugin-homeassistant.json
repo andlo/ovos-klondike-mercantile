@@ -1,0 +1,43 @@
+{
+  "id": "AIIX-ovos-PHAL-plugin-homeassistant",
+  "skill_id": null,
+  "name": "ovos-PHAL-plugin-homeassistant",
+  "description": "HomeAssistant PHAL Plugin for OpenVoice OS",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/AIIX/ovos-PHAL-plugin-homeassistant",
+  "package_name": "ovos-PHAL-plugin-homeassistant",
+  "pypi_version": "0.1.0",
+  "license": "Apache-2.0",
+  "author": "AIIX",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 4,
+  "forks": 6,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "Plugin Support Two Installation Methods:\n1. Install from Github URL\n\nNote: PIP install from URL will not install the .desktop file and icon if installing to a venv or virtual environment, so you need to manually install them to the system or user directory.\n\nNote: PIP install will attempt to install the .desktop file and icon to the system directory, or user directory if the system directory is not writable. If this is not a virtual environemnt.\n\npip install git+https://github.com/AIIX/ovos-PHAL-plugin-homeassistant\n\n2. Manual Install from Git Clone\ngit clone https://github.com/AIIX/ovos-PHAL-plugin-homeassistant\ncd ovos-PHAL-plugin-homeassistant\ncp -r res/desktop/ovos-phal-homeassistant.desktop ~/.local/share/applications/\ncp -r res/icon/ovos-phal-homeassistant.png ~/.local/share/icons/\np\u2026"
+    },
+    {
+      "heading": "Configuration (Instance Setup)",
+      "content": "Plugin Supports Two Configuration Methods:\n1. Using the GUI\n   - Install the plugin\n   - Open the application from the homescreen menu\n   - Click the \"Connect Instance\" button\n   - Enter the URL of the Home Assistant Instance\n   - Enter the Long-Lived Access Token (API KEY)\n   - Press the \"Confirm\" button \n\n2. Manually Editing the Config File\n   - Add the following to the config file:\n        \"PHAL\": {\n            \"ovos-PHAL-plugin-homeassistant\": {\n                \"host\": \"https://someurl.toinstance\",\n                \"api_key\": \"api key from the instance\"\n            }\n        }"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2022-11-18T08:17:46Z",
+  "last_updated": "2025-03-15T14:05:41.175959Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

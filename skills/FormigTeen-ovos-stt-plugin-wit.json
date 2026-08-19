@@ -1,0 +1,43 @@
+{
+  "id": "FormigTeen-ovos-stt-plugin-wit",
+  "skill_id": null,
+  "name": "ovos-stt-plugin-wit",
+  "description": "OpenVoiceOS companion plugin for OpenVoiceOS STT Server",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/FormigTeen/ovos-stt-plugin-wit",
+  "package_name": "ovos-stt-plugin-wit",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "FormigTeen",
+  "tier": 3,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install git+https://github.com/FormigTeen/ovos-stt-plugin-wit"
+    },
+    {
+      "heading": "Configuration",
+      "content": "\"stt\": {\n    \"module\": \"ovos-stt-plugin-wit\",\n    \"ovos-stt-plugin-wit\": {\n        \"key\": \"YOUR-KEY-HERE\"\n    }\n }"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2023-08-04T22:02:36Z",
+  "last_updated": "2024-06-07T00:45:28Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
