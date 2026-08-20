@@ -360,8 +360,25 @@ def fetch_skill_json(full_name):
     return None
 
 
-def looks_like_skill_code(full_name):
-    text = fetch_file(full_name, "__init__.py") or ""
+def fetch_file_with_package_fallback(full_name, filename, package_name=None):
+    """Tries a file at repo root first, then falls back to
+    <package_name_with_underscores>/<filename> - some repos nest
+    files inside their Python package directory instead of repo
+    root. Originally found for locale/ (OscillateLabsLLC/skill-
+    homeassistant has none at root; its real one is at
+    skill_homeassistant/locale/) but the same pattern applies to
+    other files too - that repo's __init__.py and, in general,
+    settingsmeta.json can be nested the same way, since they're
+    conventionally placed alongside the skill's main module."""
+    text = fetch_file(full_name, filename)
+    if text is None and package_name:
+        package_dir = package_name.replace("-", "_")
+        text = fetch_file(full_name, f"{package_dir}/{filename}")
+    return text
+
+
+def looks_like_skill_code(full_name, package_name=None):
+    text = fetch_file_with_package_fallback(full_name, "__init__.py", package_name) or ""
     return any(sign in text for sign in SKILL_CODE_SIGNS)
 
 
@@ -405,7 +422,7 @@ def derive_component_type(entry_point_groups):
     return None
 
 
-def fetch_settings_fields(full_name):
+def fetch_settings_fields(full_name, package_name=None):
     """Parses settingsmeta.json's real structure (skillMetadata ->
     sections -> fields, confirmed by inspecting a real one) into a
     list of {name, type, label} dicts - one per actual configurable
@@ -415,8 +432,10 @@ def fetch_settings_fields(full_name):
     themselves. Returns an empty list if there's no settingsmeta.json
     or it doesn't parse - deliberately tolerant, since the exact
     shape varies enough across skills that a strict parser would
-    silently miss real ones."""
-    text = fetch_file(full_name, "settingsmeta.json")
+    silently miss real ones. Tries repo root first, then
+    <package_name>/settingsmeta.json - see
+    fetch_file_with_package_fallback()'s docstring for why."""
+    text = fetch_file_with_package_fallback(full_name, "settingsmeta.json", package_name)
     if text is None:
         return []
     try:
@@ -807,7 +826,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     # Fetched for both Skills and Plugins (unlike locale/languages
     # below, which is Skill-only) - plugins commonly have real
     # configurable settings too (API keys, endpoints, etc).
-    settings_fields = fetch_settings_fields(full_name)
+    settings_fields = fetch_settings_fields(full_name, package_name)
 
     # Locale/language listing is only meaningful for Skills - see
     # fetch_locale_languages()'s docstring. Skipped entirely for
@@ -1081,7 +1100,7 @@ def main():
                 # but was stuck at tier 3 forever because this branch
                 # never set has_confirmed_manifest for the Tool case,
                 # unlike the Skill/Plugin cases above.
-                if looks_like_skill_code(full_name):
+                if looks_like_skill_code(full_name, package_name_override):
                     component_type = "Skill"
                 elif package_name_override:
                     # A real installable package (setup.py/pyproject.toml
