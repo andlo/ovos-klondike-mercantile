@@ -6,6 +6,22 @@
 
 const detailRoot = document.getElementById("detail-root");
 
+// Prefer real browser back-navigation over a fixed link to
+// index.html - the browser's own history (via bfcache) restores the
+// previous page exactly as left, including selected filter dropdown
+// values, search text, and scroll position, none of which a plain
+// href="index.html" link would preserve. Falls back to the normal
+// link (browser default) when there's no history to go back to,
+// e.g. this page was opened directly rather than navigated to from
+// the store.
+const backLink = document.getElementById("back-link");
+backLink.addEventListener("click", (e) => {
+  if (window.history.length > 1) {
+    e.preventDefault();
+    window.history.back();
+  }
+});
+
 function installInstructions(skill) {
   if (skill.on_pypi && skill.package_name) {
     return {
