@@ -1,0 +1,39 @@
+{
+  "id": "matthewdva-ovos-phal-plugin-media-led",
+  "skill_id": null,
+  "name": "ovos-phal-plugin-media-led",
+  "description": "A light _(LED)_ indicator when Open Voice OS is playing media.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/matthewdva/ovos-phal-plugin-media-led",
+  "package_name": "ovos-phal-plugin-media-led",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "author": "matthewdva",
+  "tier": 2,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-phal-plugin-media-led"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-09-06T18:17:45Z",
+  "last_updated": "2025-09-22T12:48:15Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

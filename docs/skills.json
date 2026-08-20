@@ -250,9 +250,10 @@
       "research",
       "arxiv",
       "papers",
-      "provider"
+      "provider",
+      "information"
     ],
-    "category": "Other",
+    "category": "Information",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-arxiv-papers/main/book-512.png",
     "source": "https://github.com/andlo/ovos-skill-arxiv-papers",
     "package_name": "ovos-skill-arxiv-papers",
@@ -464,9 +465,10 @@
     "tags": [
       "calculator",
       "math",
-      "arithmetic"
+      "arithmetic",
+      "utility"
     ],
-    "category": "Other",
+    "category": "Utility",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-calculator/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-calculator",
     "package_name": "ovos-skill-calculator",
@@ -1057,9 +1059,10 @@
       "geography",
       "reference",
       "capitals",
-      "countries"
+      "countries",
+      "information"
     ],
-    "category": "Other",
+    "category": "Information",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-geography/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-geography",
     "package_name": "ovos-skill-geography",
@@ -1170,9 +1173,10 @@
       "geometry",
       "reference",
       "math",
-      "shapes"
+      "shapes",
+      "information"
     ],
-    "category": "Other",
+    "category": "Information",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-geometry/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-geometry",
     "package_name": "ovos-skill-geometry",
@@ -2255,9 +2259,10 @@
       "holidays",
       "calendar",
       "date",
-      "easter"
+      "easter",
+      "daily"
     ],
-    "category": "Other",
+    "category": "Daily",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-holidays/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-holidays",
     "package_name": "ovos-skill-holidays",
@@ -2292,8 +2297,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T14:52:37Z",
     "last_updated": "2026-08-18T17:26:38.410195Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "andlo-ovos-skill-horoscope-readings",
@@ -2403,9 +2408,10 @@
       "intercom",
       "multi-device",
       "messaging",
-      "lan"
+      "lan",
+      "home"
     ],
-    "category": "Other",
+    "category": "Home",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-intercom/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-intercom",
     "package_name": "ovos-skill-intercom",
@@ -2444,8 +2450,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T14:51:17Z",
     "last_updated": "2026-08-18T19:32:07.736726Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "aka0kuro-ovos-skill-invidious",
@@ -3674,9 +3680,10 @@
       "scanner",
       "mdns",
       "discovery",
-      "lan"
+      "lan",
+      "utility"
     ],
-    "category": "Other",
+    "category": "Utility",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-network-scanner/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-network-scanner",
     "package_name": "ovos-skill-network-scanner",
@@ -3829,6 +3836,40 @@
     "last_updated": "2025-06-08T23:13:39.080812Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "ohealthy-ovos",
+    "skill_id": null,
+    "name": "ovos",
+    "description": "",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/ohealthy/ovos",
+    "package_name": "open-webui",
+    "pypi_version": "0.11.0",
+    "license": "NOASSERTION",
+    "author": "ohealthy",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-09-11T18:00:20Z",
+    "last_updated": "2026-07-27T10:53:15.423671Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
   },
   {
     "id": "andlo-ovos-skill-ovosblog",
@@ -9731,6 +9772,45 @@
     "is_recently_updated": true
   },
   {
+    "id": "matthewdva-ovos-phal-plugin-media-led",
+    "skill_id": null,
+    "name": "ovos-phal-plugin-media-led",
+    "description": "A light _(LED)_ indicator when Open Voice OS is playing media.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/matthewdva/ovos-phal-plugin-media-led",
+    "package_name": "ovos-phal-plugin-media-led",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "author": "matthewdva",
+    "tier": 2,
+    "component_type": "PHAL Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-phal-plugin-media-led"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-09-06T18:17:45Z",
+    "last_updated": "2025-09-22T12:48:15Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-PHAL-plugin-mk1",
     "skill_id": null,
     "name": "ovos-PHAL-plugin-mk1",
@@ -11683,6 +11763,40 @@
     "in_ovos_localize": true,
     "repo_created_at": "2018-04-09T21:39:14Z",
     "last_updated": "2026-04-04T04:32:02.377027Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "mike99mac-ovos-skill-mpc-mike99mac",
+    "skill_id": null,
+    "name": "ovos-skill-mpc-mike99mac",
+    "description": "Mycroft music playing skill for mpc/mpd",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/mike99mac/ovos-skill-mpc-mike99mac",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "WTFPL",
+    "author": "mike99mac",
+    "tier": 3,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 2,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2022-12-21T18:37:37Z",
+    "last_updated": "2023-03-04T18:22:43Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -16962,6 +17076,45 @@
     "is_recently_updated": true
   },
   {
+    "id": "mikejgray-ovos-windows",
+    "skill_id": null,
+    "name": "ovos-windows",
+    "description": "OpenVoiceOS (OVOS) Running on Pure Windows",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/mikejgray/ovos-windows",
+    "package_name": "ovos-windows",
+    "pypi_version": null,
+    "license": null,
+    "author": "mikejgray",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 3,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "- Install Python\n- Install Poetry\n- `poetry install`\n- `poetry shell`\n- `.\\ovos.ps1`"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-06-02T04:42:12Z",
+    "last_updated": "2024-06-02T04:43:05Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-wolfram-alpha-plugin",
     "skill_id": null,
     "name": "ovos-wolfram-alpha-plugin",
@@ -17756,6 +17909,84 @@
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-05T13:59:14Z",
     "last_updated": "2025-09-16T06:33:14Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "mosiwon-ovos_stt_plugin-google-cloud-translate",
+    "skill_id": null,
+    "name": "ovos_stt_plugin-google-cloud-translate",
+    "description": "pip install git+https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate.git",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate",
+    "package_name": "ovos-stt-plugin-google-cloud-translate",
+    "pypi_version": null,
+    "license": null,
+    "author": "mosiwon",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "* in mycroft.conf\n{\n  \"stt\": {\n    \"module\": \"google_translate_stt\",\n    \"google_translate_stt\": {\n      \"stt_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"translate_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"language\": \"ko-KR\"\n    }\n  }\n}"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-07-03T04:53:33Z",
+    "last_updated": "2024-07-03T04:53:36Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "mosiwon-ovos_tts_plugin-google-cloud-translate",
+    "skill_id": null,
+    "name": "ovos_tts_plugin-google-cloud-translate",
+    "description": "pip install git+https://github.com/mosiwon/ovos_tts_plugin-google-cloud-translate.git",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/mosiwon/ovos_tts_plugin-google-cloud-translate",
+    "package_name": "ovos-tts-plugin-google-cloud-translate",
+    "pypi_version": null,
+    "license": null,
+    "author": "mosiwon",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "* in mycroft.conf\n{\n  \"tts\": {\n    \"module\": \"google_translate_tts\",\n    \"google_translate_tts\": {\n      \"api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"lang\": \"ko\"\n    }\n  }\n}"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-07-03T04:55:54Z",
+    "last_updated": "2024-07-03T04:57:03Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -19463,9 +19694,10 @@
     "tags": [
       "sound effects",
       "fun",
-      "soundboard"
+      "soundboard",
+      "entertainment"
     ],
-    "category": "Other",
+    "category": "Entertainment",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-soundboard/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-soundboard",
     "package_name": "ovos-skill-soundboard",
@@ -19496,9 +19728,9 @@
     ],
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:29Z",
-    "last_updated": "2026-08-16T17:15:31Z",
+    "last_updated": "2026-08-19T16:36:55Z",
     "is_new_repo": true,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-soundcloud",
@@ -20326,9 +20558,10 @@
       "sleep",
       "focus",
       "white noise",
-      "relaxation"
+      "relaxation",
+      "daily"
     ],
-    "category": "Other",
+    "category": "Daily",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-white-noise/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-white-noise",
     "package_name": "ovos-skill-white-noise",
@@ -20377,9 +20610,10 @@
       "wikipedia",
       "knowledge",
       "offline",
-      "reference"
+      "reference",
+      "information"
     ],
-    "category": "Other",
+    "category": "Information",
     "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-wiki-offline/main/icon.png",
     "source": "https://github.com/andlo/ovos-skill-wiki-offline",
     "package_name": "ovos-skill-wiki-offline",
@@ -20415,7 +20649,7 @@
     "repo_created_at": "2026-08-17T20:39:40Z",
     "last_updated": "2026-08-18T13:53:56.170148Z",
     "is_new_repo": true,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-skill-wikihow",

@@ -1,0 +1,39 @@
+{
+  "id": "mikejgray-ovos-windows",
+  "skill_id": null,
+  "name": "ovos-windows",
+  "description": "OpenVoiceOS (OVOS) Running on Pure Windows",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/mikejgray/ovos-windows",
+  "package_name": "ovos-windows",
+  "pypi_version": null,
+  "license": null,
+  "author": "mikejgray",
+  "tier": 2,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 3,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "- Install Python\n- Install Poetry\n- `poetry install`\n- `poetry shell`\n- `.\\ovos.ps1`"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-06-02T04:42:12Z",
+  "last_updated": "2024-06-02T04:43:05Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
