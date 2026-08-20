@@ -82,12 +82,17 @@ function asArray(value) {
 }
 
 function pipelineLabel(pipelinePackage) {
-  return pipelinePackage
+  const words = pipelinePackage
     .replace(/^ovos-/, "")
     .replace(/-plugin$/, "")
     .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ") + " Pipeline";
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1));
+  // Don't append "Pipeline" again if the package name already
+  // contains it as its own word (e.g. "common-reading-pipeline-
+  // plugin") - found by inspection: this produced "Common Reading
+  // Pipeline Pipeline" for that exact package before this check.
+  if (words[words.length - 1] !== "Pipeline") words.push("Pipeline");
+  return words.join(" ");
 }
 
 function truncate(text, maxLength) {
@@ -100,6 +105,17 @@ function renderBadges(skill) {
 
   if (skill.component_type && skill.component_type !== "Skill") {
     badges.push(`<span class="badge badge-type">${escapeHtml(skill.component_type)}</span>`);
+  }
+  if (skill.pipeline) {
+    // Was extracted into the data (pipelineLabel() existed) but
+    // never actually shown anywhere - found by inspection: a
+    // common-reading-pipeline provider skill (component_type
+    // "Skill") had no visible way to tell it apart from a regular
+    // skill, unlike an OCP provider (which gets its own distinct
+    // component_type via entry-points detection). Same visual
+    // treatment as the type badge, since it's the same kind of "this
+    // is part of a family" signal.
+    badges.push(`<span class="badge badge-type">${escapeHtml(pipelineLabel(skill.pipeline))} Provider</span>`);
   }
 
   const tier = TIER_META[skill.tier];
