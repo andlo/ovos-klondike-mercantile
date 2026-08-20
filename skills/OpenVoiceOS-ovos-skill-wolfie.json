@@ -23,6 +23,7 @@
   "package_name": "ovos-skill-wolfie",
   "pypi_version": "0.5.8",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "Skill",
@@ -36,6 +37,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": true,
+  "settings_fields": [
+    {
+      "name": "use_selene",
+      "type": "checkbox",
+      "label": "use mycroft backend proxy"
+    },
+    {
+      "name": "appid",
+      "type": "text",
+      "label": "your api key, if not using proxy"
+    }
+  ],
   "setup_notes": [
     {
       "heading": "Installation",

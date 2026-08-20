@@ -16,6 +16,7 @@
   "package_name": "ovos-stt-plugin-vosk",
   "pypi_version": "0.2.7",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "STT Plugin",
@@ -29,6 +30,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

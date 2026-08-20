@@ -15,8 +15,9 @@
   "package_name": "ovos_translate_plugin_deepl",
   "pypi_version": "0.0.0",
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 1,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 2,
@@ -28,6 +29,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "add this to one of the configuration files (eg ~./config/mycroft/mycroft.conf)",

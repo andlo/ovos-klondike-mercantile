@@ -19,6 +19,7 @@
   "package_name": "ovos-stt-plugin-whisper-lm",
   "pypi_version": "0.0.5",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "STT Plugin",
@@ -32,6 +33,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

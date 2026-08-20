@@ -17,8 +17,9 @@
   "package_name": "ovos-tts-plugin-mimic2",
   "pypi_version": "0.1.5",
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 1,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 2,
@@ -30,6 +31,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",
