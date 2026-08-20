@@ -1,0 +1,47 @@
+{
+  "id": "reklis-ovos-n8n-jarvis-persona",
+  "skill_id": null,
+  "name": "ovos-n8n-jarvis-persona",
+  "description": "A sophisticated OVOS Persona plugin that embodies JARVIS from Iron Man, processing all queries through n8n workflows with AI agents to create an intelligent, character-driven assistant experience.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/reklis/ovos-n8n-jarvis-persona",
+  "package_name": "ovos-n8n-jarvis-persona",
+  "pypi_version": null,
+  "license": null,
+  "author": "reklis",
+  "tier": 2,
+  "component_type": "Solver Plugin",
+  "type_group": "Plugin",
+  "stars": 1,
+  "forks": 1,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install in development mode",
+      "content": "pip install -e ."
+    },
+    {
+      "heading": "Or install from pip (when published)",
+      "content": "pip install ovos-n8n-jarvis-persona"
+    },
+    {
+      "heading": "Quick setup (runs all steps)",
+      "content": "./setup.sh\n\n## Configuration\n\n### 1. Create Persona Config\n\nCopy the JARVIS persona config to OVOS persona directory:\n\nmkdir -p ~/.config/ovos_persona/\ncp config/jarvis_persona.json ~/.config/ovos_persona/jarvis.json\n\nEdit `~/.config/ovos_persona/jarvis.json` with your n8n webhook URL:\n\n{\n  \"name\": \"JARVIS\",\n  \"description\": \"Just A Rather Very Intelligent System\",\n  \"persona_plugin\": \"ovos-n8n-jarvis-persona\",\n  \"ovos-n8n-jarvis-persona\": {\n    \"webhook_url\": \"https://your-n8n.com/webhook/jarvis\",\n    \"primary_persona\": true,\n    \"enable_streaming\": true,\n    \"process_tools\": true,\n    \"use_daily_session\": true,\n    \"session_id_prefix\": \"jarvis\",\n    \"timeout\": 30\n  }\n}\n\n### 2. Update OVOS Configuration\n\nAdd to your mycroft.conf (`~/.config/mycroft/mycroft.conf`):\n\n{\n  \"lang\": \"en-us\",\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-08-17T14:15:02Z",
+  "last_updated": "2025-12-20T16:20:47Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

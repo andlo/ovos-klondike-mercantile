@@ -1,0 +1,70 @@
+{
+  "id": "smartgic-ovos-skill-share-to-mirror",
+  "skill_id": "ovos-skill-share-to-mirror.smartgic",
+  "name": "Share To Mirror (YouTube Control)",
+  "description": "Control YouTube playback on MagicMirror via MMM-ShareToMirror with intelligent search, Shorts/long video support, and anti-repetition.",
+  "examples": [
+    "play a video about cooking on the mirror",
+    "play shorts about cats on the mirror",
+    "play long videos about history on the mirror",
+    "play the video called bohemian rhapsody on the mirror",
+    "play something from ted talks channel on the mirror",
+    "pause the video on the mirror",
+    "resume the video on the mirror",
+    "stop the video on the mirror",
+    "rewind 30 seconds on the mirror",
+    "forward 10 seconds on the mirror",
+    "restart the video on the mirror",
+    "skip this video on the mirror",
+    "whats playing on the mirror"
+  ],
+  "tags": [
+    "youtube",
+    "magicmirror",
+    "share",
+    "video",
+    "cast",
+    "shorts",
+    "intelligent-search",
+    "multilingual"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/smartgic/ovos-skill-share-to-mirror",
+  "package_name": "ovos-skill-share-to-mirror",
+  "pypi_version": null,
+  "license": null,
+  "author": "smartgic",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "\ud83d\udce6 Installation",
+      "content": "Install the skill using `pip`:\n\npip install git+https://github.com/smartgic/ovos-skill-share-to-mirror.git\n\n---"
+    },
+    {
+      "heading": "\u2699\ufe0f Configuration",
+      "content": "Setting up the skill requires configuring both your MagicMirror\u00b2 and your OVOS device.\n\n### Step 1: Set Up MMM-ShareToMirror on Your MagicMirror\u00b2\n\nAdd the following configuration to your `~/MagicMirror/config/config.js`:\n\n{\n  module: \"MMM-ShareToMirror\",\n  position: \"bottom_center\",\n  config: {\n    // Basic server settings\n    port: 8570,\n    https: {\n      enabled: false,   // Enable for HTTPS (requires SSL certificates)\n      keyPath: \"\",      // Path to SSL private key\n      certPath: \"\"      // Path to SSL certificate\n    },\n\n    // Hide the module UI (videos appear as overlay)\n    invisible: true,\n\n    // Video overlay appearance\n    overlay: {\n      width: \"70vw\",\n      maxWidth: \"1280px\",\n      aspectRatio: \"16 / 9\",\n      top: \"50%\",\n      left: \"50%\",\n      zIndex: 9999,\n      bor\u2026"
+    },
+    {
+      "heading": "Step 2: Configure the OVOS Skill",
+      "content": "Configure the skill settings either through the OVOS GUI or by editing the settings file directly.\n\n**Settings file location:** `~/.config/mycroft/skills/ovos-skill-share-to-mirror.smartgic/settings.json`\n\n**Basic configuration:**\n\n{\n  \"base_url\": \"http://<MIRROR_IP>:8570\",\n  \"verify_ssl\": true,\n  \"request_timeout\": 6,\n\n  \"caption_enabled\": false,\n  \"caption_lang\": \"en\",\n  \"quality_target\": \"auto\",\n  \"quality_lock\": false,\n\n  \"search_backend\": \"yt_dlp\",\n  \"youtube_api_key\": \"\"\n}\n\n**Configuration Options Explained:**\n\n- `base_url`: The full URL to your MagicMirror\u00b2 (replace `<MIRROR_IP>` with the actual IP)\n- `verify_ssl`: Set to `false` only if using self-signed certificates for testing\n- `request_timeout`: How long to wait for responses from the mirror (in seconds)\n- `search_backend`: Use\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-08-14T20:06:26Z",
+  "last_updated": "2025-08-15T00:39:54Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

@@ -7841,6 +7841,40 @@
     "is_recently_updated": false
   },
   {
+    "id": "raincystar-oss-OVOS-Monitor-v1",
+    "skill_id": null,
+    "name": "OVOS-Monitor-v1",
+    "description": "\u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u0434\u043b\u044f \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u0430 \u041e\u0412\u041e\u0421",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/raincystar-oss/OVOS-Monitor-v1",
+    "package_name": "ovos-monitor",
+    "pypi_version": null,
+    "license": null,
+    "author": "raincystar-oss",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-20T16:25:32Z",
+    "last_updated": "2026-05-20T19:21:11Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "TigreGotico-ovos-MoS",
     "skill_id": null,
     "name": "ovos-MoS",
@@ -7877,6 +7911,108 @@
     "last_updated": "2026-07-25T07:07:45Z",
     "is_new_repo": false,
     "is_recently_updated": true
+  },
+  {
+    "id": "reklis-ovos-n8n-jarvis-persona",
+    "skill_id": null,
+    "name": "ovos-n8n-jarvis-persona",
+    "description": "A sophisticated OVOS Persona plugin that embodies JARVIS from Iron Man, processing all queries through n8n workflows with AI agents to create an intelligent, character-driven assistant experience.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/reklis/ovos-n8n-jarvis-persona",
+    "package_name": "ovos-n8n-jarvis-persona",
+    "pypi_version": null,
+    "license": null,
+    "author": "reklis",
+    "tier": 2,
+    "component_type": "Solver Plugin",
+    "type_group": "Plugin",
+    "stars": 1,
+    "forks": 1,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Install in development mode",
+        "content": "pip install -e ."
+      },
+      {
+        "heading": "Or install from pip (when published)",
+        "content": "pip install ovos-n8n-jarvis-persona"
+      },
+      {
+        "heading": "Quick setup (runs all steps)",
+        "content": "./setup.sh\n\n## Configuration\n\n### 1. Create Persona Config\n\nCopy the JARVIS persona config to OVOS persona directory:\n\nmkdir -p ~/.config/ovos_persona/\ncp config/jarvis_persona.json ~/.config/ovos_persona/jarvis.json\n\nEdit `~/.config/ovos_persona/jarvis.json` with your n8n webhook URL:\n\n{\n  \"name\": \"JARVIS\",\n  \"description\": \"Just A Rather Very Intelligent System\",\n  \"persona_plugin\": \"ovos-n8n-jarvis-persona\",\n  \"ovos-n8n-jarvis-persona\": {\n    \"webhook_url\": \"https://your-n8n.com/webhook/jarvis\",\n    \"primary_persona\": true,\n    \"enable_streaming\": true,\n    \"process_tools\": true,\n    \"use_daily_session\": true,\n    \"session_id_prefix\": \"jarvis\",\n    \"timeout\": 30\n  }\n}\n\n### 2. Update OVOS Configuration\n\nAdd to your mycroft.conf (`~/.config/mycroft/mycroft.conf`):\n\n{\n  \"lang\": \"en-us\",\u2026"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-17T14:15:02Z",
+    "last_updated": "2025-12-20T16:20:47Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "reklis-ovos-n8n-jarvis-softphone",
+    "skill_id": null,
+    "name": "ovos-n8n-jarvis-softphone",
+    "description": "A Flask-based API bridge that connects Baresip (SIP client) with Twilio's conference calling system, enabling seamless integration between local SIP infrastructure and cloud-based telephony services.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/reklis/ovos-n8n-jarvis-softphone",
+    "package_name": "ovos-n8n-jarvis-softphone",
+    "pypi_version": null,
+    "license": null,
+    "author": "reklis",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "### 1. Clone the Repository\n\ngit clone <repository-url>\ncd ovos-n8n-jarvis-softphone\n\n### 2. Install Dependencies\n\nUsing uv (recommended):\nuv sync\n\nOr using pip:\npip install -r requirements.txt\n\n### 3. Environment Configuration\n\nCreate a `.env` file in the project root:"
+      },
+      {
+        "heading": "Baresip Configuration",
+        "content": "BARESIP_HOST=127.0.0.1\nBARESIP_CONS_PORT=5555\nBARESIP_DOMAIN=your-sip-domain.com"
+      },
+      {
+        "heading": "Twilio Configuration",
+        "content": "TWILIO_ACCOUNT_SID=your_account_sid\nTWILIO_AUTH_TOKEN=your_auth_token\nTWILIO_CALLER_ID=+1234567890\nTWILIO_SIP_URI=+1234567890@yourdomain.pstn.twilio.com\nTWILIO_PSTN_DOMAIN=yourdomain.pstn.twilio.com\n\n### 4. Baresip Configuration\n\nEnsure Baresip is configured with:\n- Console port enabled (default: 5555)\n- SIP account configured\n- Network access to Twilio SIP endpoints\n\n## Usage\n\n### Running the API Server\n\n#### Development Mode\npython app.py\n\n#### Production Mode (using uv)"
+      },
+      {
+        "heading": "uv will automatically install dependencies in .venv",
+        "content": "uv run python app.py\n\n#### As a systemd service"
+      },
+      {
+        "heading": "TwiML Configuration",
+        "content": "The project includes an example `twiml.xml` file for Twilio webhook configuration.\nConfigure this TwiML in your Twilio sip domain endpoint bucket."
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-18T01:27:43Z",
+    "last_updated": "2025-08-18T20:38:37Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-number-parser",
@@ -10722,6 +10858,49 @@
     "is_recently_updated": false
   },
   {
+    "id": "putnik-ovos-plugin-silero",
+    "skill_id": null,
+    "name": "ovos-plugin-silero",
+    "description": "Silero STT/TTS plugin for Mycroft",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/putnik/ovos-plugin-silero",
+    "package_name": "ovos-tts-plugin-silero",
+    "pypi_version": "0.3.1",
+    "license": "Apache-2.0",
+    "author": "putnik",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 3,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "`pip install ovos-tts-plugin-silero`"
+      },
+      {
+        "heading": "Configuration",
+        "content": "### Basic\n\nWill be used default model for your language and a first available voice for that model.\nDefault sample rate is 24000.\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-silero\"\n  }\n\n### Advanced\nSee [models and voices in Silero Models repository](https://github.com/snakers4/silero-models#models-and-speakers)\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-silero\",\n    \"ovos-tts-plugin-silero\": {\n      \"model\": \"v4_ru\",\n      \"voice\": \"xenia\",\n      \"sample_rate\": 24000\n    }\n  }"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2021-11-13T07:28:54Z",
+    "last_updated": "2023-10-01T09:37:40.733734Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-pydantic-models",
     "skill_id": null,
     "name": "ovos-pydantic-models",
@@ -10849,6 +11028,53 @@
     "last_updated": "2026-07-31T23:55:03.139562Z",
     "is_new_repo": false,
     "is_recently_updated": true
+  },
+  {
+    "id": "reklis-ovos-remote-music-service",
+    "skill_id": null,
+    "name": "ovos-remote-music-service",
+    "description": "Control OVOS (Open Voice OS) music playback with YouTube Music integration via REST API or MCP (Model Context Protocol).",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/reklis/ovos-remote-music-service",
+    "package_name": "ovos-remote-music-service",
+    "pypi_version": null,
+    "license": "MIT",
+    "author": "reklis",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 1,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "uv sync"
+      },
+      {
+        "heading": "OVOS Device Setup",
+        "content": "Ensure your OVOS device has the YouTube plugin installed:\n\npip install ovos-ocp-youtube-plugin"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Environment variables:\n\n| Variable | Default | Description |\n|----------|---------|-------------|\n| `OVOS_HOST` | `127.0.0.1` | OVOS message bus host |\n| `OVOS_PORT` | `8181` | OVOS message bus port |\n| `FLASK_HOST` | `0.0.0.0` | REST API listen address |\n| `FLASK_PORT` | `5000` | REST API listen port |\n| `MCP_HOST` | `0.0.0.0` | MCP server listen address |\n| `MCP_PORT` | `5001` | MCP server listen port |"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-12-20T15:07:56Z",
+    "last_updated": "2025-12-21T18:08:54Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "TigreGotico-ovos-scriptconv-g2p-plugin",
@@ -11170,6 +11396,46 @@
     "in_ovos_localize": true,
     "repo_created_at": "2018-03-27T15:44:21Z",
     "last_updated": "2025-01-24T16:57:37.905723Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "strugee-ovos-skill-ci-test",
+    "skill_id": null,
+    "name": "ovos-skill-ci-test",
+    "description": "Information about your skill",
+    "examples": [
+      "Hello world",
+      "How are you?",
+      "Thank you"
+    ],
+    "tags": [
+      "ovos skill"
+    ],
+    "category": "Other",
+    "icon": "",
+    "source": "https://github.com/strugee/ovos-skill-ci-test",
+    "package_name": "ovos-skill-ci-test",
+    "pypi_version": null,
+    "license": null,
+    "author": "strugee",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-08-06T21:33:14Z",
+    "last_updated": "2023-08-06T21:49:26Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -11763,6 +12029,49 @@
     "in_ovos_localize": true,
     "repo_created_at": "2018-04-09T21:39:14Z",
     "last_updated": "2026-04-04T04:32:02.377027Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "reklis-ovos-skill-mcp",
+    "skill_id": null,
+    "name": "ovos-skill-mcp",
+    "description": "ovos skill fastmcp server",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/reklis/ovos-skill-mcp",
+    "package_name": "ovos-skill-mcp",
+    "pypi_version": null,
+    "license": null,
+    "author": "reklis",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-skill-mcp\n\nOr install from source:\n\ngit clone https://github.com/OpenVoiceOS/ovos-skill-mcp.git\ncd ovos-skill-mcp\npip install -e ."
+      },
+      {
+        "heading": "Setup Development Environment",
+        "content": "git clone https://github.com/OpenVoiceOS/ovos-skill-mcp.git\ncd ovos-skill-mcp\npip install -e \".[dev]\""
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-01-08T19:32:25Z",
+    "last_updated": "2026-01-08T19:56:31Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -14809,6 +15118,49 @@
     "is_recently_updated": false
   },
   {
+    "id": "ser-ovos-stt-whispercppserver-plugin",
+    "skill_id": null,
+    "name": "ovos-stt-whispercppserver-plugin",
+    "description": "ovos stt plugin for whisper.cpp server",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/ser/ovos-stt-whispercppserver-plugin",
+    "package_name": "ovos-stt-plugin-whispercppserver",
+    "pypi_version": "0.0.1",
+    "license": "Apache-2.0",
+    "author": "ser",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 2,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-stt-plugin-whispercppserver"
+      },
+      {
+        "heading": "Configuration",
+        "content": "`~/.config/mycroft/mycroft.conf`\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-whispercppserver\",\n    \"ovos-stt-plugin-whispercppserver\": {\n      \"server\": \"http://192.168.41.49:8910/inference\"\n      \"temperature\": \"0.0\"\n      \"temperature_inc\": \"0.2\"\n      \"timeout\": 120\n    }\n  }\n}\n\n`server`: MANDATORY! your whisper.cpp inference path instance URI\n\n`temperature`: Decoding temperature (default: 0.0)\n\n`temperature_inc`: Temperature increment (default: 0.2)\n\n`timeout`: timeout of inference request (default: 120 seconds)"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-06-27T03:42:53Z",
+    "last_updated": "2025-06-27T08:47:00.448205Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-tool-adapters",
     "skill_id": null,
     "name": "ovos-tool-adapters",
@@ -15482,6 +15834,53 @@
     "languages": [],
     "in_ovos_localize": false,
     "repo_created_at": "2025-01-04T20:17:19Z",
+    "last_updated": "2025-12-16T22:26:55.858505Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "reklis-ovos-tts-plugin-elevenlabs",
+    "skill_id": null,
+    "name": "ovos-tts-plugin-elevenlabs",
+    "description": "An OVOS TTS plugin that uses ElevenLabs as the text-to-speech backend.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/reklis/ovos-tts-plugin-elevenlabs",
+    "package_name": "ovos-tts-plugin-elevenlabs",
+    "pypi_version": "0.1.0",
+    "license": "MIT",
+    "author": "reklis",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-tts-plugin-elevenlabs"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Add the following to your OVOS configuration (`~/.config/mycroft/mycroft.conf`):\n\n{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-elevenlabs\",\n    \"ovos-tts-plugin-elevenlabs\": {\n      \"api_key\": \"your-elevenlabs-api-key\",\n      \"voice_id\": \"21m00Tcm4TlvDq8ikWAM\"\n    }\n  }\n}"
+      },
+      {
+        "heading": "Configuration Options",
+        "content": "| Option | Type | Default | Description |\n|--------|------|---------|-------------|\n| `api_key` | string | **required** | Your ElevenLabs API key |\n| `voice_id` | string | `21m00Tcm4TlvDq8ikWAM` | The voice ID to use (default is \"Rachel\") |\n| `model_id` | string | `eleven_monolingual_v1` | The model to use for synthesis |\n| `stability` | float | `0.5` | Voice stability (0.0 to 1.0) |\n| `similarity_boost` | float | `0.5` | Similarity boost (0.0 to 1.0) |\n| `style` | float | `0.0` | Style exaggeration (0.0 to 1.0) |\n| `use_speaker_boost` | bool | `true` | Enable speaker boost |"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-12-16T21:43:36Z",
     "last_updated": "2025-12-16T22:26:55.858505Z",
     "is_new_repo": false,
     "is_recently_updated": false
@@ -18198,6 +18597,40 @@
     "is_recently_updated": false
   },
   {
+    "id": "phmasc-pereira_ovos",
+    "skill_id": null,
+    "name": "pereira_ovos",
+    "description": "Run as a desktop app:",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/phmasc/pereira_ovos",
+    "package_name": "pereira-v2",
+    "pypi_version": null,
+    "license": null,
+    "author": "phmasc",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-12-23T13:22:39Z",
+    "last_updated": "2026-01-05T16:32:01Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "JarbasHiveMind-poorman_handshake",
     "skill_id": null,
     "name": "poorman_handshake",
@@ -18439,6 +18872,76 @@
     "in_ovos_localize": false,
     "repo_created_at": "2022-12-21T08:56:12Z",
     "last_updated": "2026-04-10T06:10:37Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "smartgic-ovos-skill-share-to-mirror",
+    "skill_id": "ovos-skill-share-to-mirror.smartgic",
+    "name": "Share To Mirror (YouTube Control)",
+    "description": "Control YouTube playback on MagicMirror via MMM-ShareToMirror with intelligent search, Shorts/long video support, and anti-repetition.",
+    "examples": [
+      "play a video about cooking on the mirror",
+      "play shorts about cats on the mirror",
+      "play long videos about history on the mirror",
+      "play the video called bohemian rhapsody on the mirror",
+      "play something from ted talks channel on the mirror",
+      "pause the video on the mirror",
+      "resume the video on the mirror",
+      "stop the video on the mirror",
+      "rewind 30 seconds on the mirror",
+      "forward 10 seconds on the mirror",
+      "restart the video on the mirror",
+      "skip this video on the mirror",
+      "whats playing on the mirror"
+    ],
+    "tags": [
+      "youtube",
+      "magicmirror",
+      "share",
+      "video",
+      "cast",
+      "shorts",
+      "intelligent-search",
+      "multilingual"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/smartgic/ovos-skill-share-to-mirror",
+    "package_name": "ovos-skill-share-to-mirror",
+    "pypi_version": null,
+    "license": null,
+    "author": "smartgic",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "setup_notes": [
+      {
+        "heading": "\ud83d\udce6 Installation",
+        "content": "Install the skill using `pip`:\n\npip install git+https://github.com/smartgic/ovos-skill-share-to-mirror.git\n\n---"
+      },
+      {
+        "heading": "\u2699\ufe0f Configuration",
+        "content": "Setting up the skill requires configuring both your MagicMirror\u00b2 and your OVOS device.\n\n### Step 1: Set Up MMM-ShareToMirror on Your MagicMirror\u00b2\n\nAdd the following configuration to your `~/MagicMirror/config/config.js`:\n\n{\n  module: \"MMM-ShareToMirror\",\n  position: \"bottom_center\",\n  config: {\n    // Basic server settings\n    port: 8570,\n    https: {\n      enabled: false,   // Enable for HTTPS (requires SSL certificates)\n      keyPath: \"\",      // Path to SSL private key\n      certPath: \"\"      // Path to SSL certificate\n    },\n\n    // Hide the module UI (videos appear as overlay)\n    invisible: true,\n\n    // Video overlay appearance\n    overlay: {\n      width: \"70vw\",\n      maxWidth: \"1280px\",\n      aspectRatio: \"16 / 9\",\n      top: \"50%\",\n      left: \"50%\",\n      zIndex: 9999,\n      bor\u2026"
+      },
+      {
+        "heading": "Step 2: Configure the OVOS Skill",
+        "content": "Configure the skill settings either through the OVOS GUI or by editing the settings file directly.\n\n**Settings file location:** `~/.config/mycroft/skills/ovos-skill-share-to-mirror.smartgic/settings.json`\n\n**Basic configuration:**\n\n{\n  \"base_url\": \"http://<MIRROR_IP>:8570\",\n  \"verify_ssl\": true,\n  \"request_timeout\": 6,\n\n  \"caption_enabled\": false,\n  \"caption_lang\": \"en\",\n  \"quality_target\": \"auto\",\n  \"quality_lock\": false,\n\n  \"search_backend\": \"yt_dlp\",\n  \"youtube_api_key\": \"\"\n}\n\n**Configuration Options Explained:**\n\n- `base_url`: The full URL to your MagicMirror\u00b2 (replace `<MIRROR_IP>` with the actual IP)\n- `verify_ssl`: Set to `false` only if using self-signed certificates for testing\n- `request_timeout`: How long to wait for responses from the mirror (in seconds)\n- `search_backend`: Use\u2026"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-14T20:06:26Z",
+    "last_updated": "2025-08-15T00:39:54Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },

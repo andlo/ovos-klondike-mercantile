@@ -1,0 +1,43 @@
+{
+  "id": "putnik-ovos-plugin-silero",
+  "skill_id": null,
+  "name": "ovos-plugin-silero",
+  "description": "Silero STT/TTS plugin for Mycroft",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/putnik/ovos-plugin-silero",
+  "package_name": "ovos-tts-plugin-silero",
+  "pypi_version": "0.3.1",
+  "license": "Apache-2.0",
+  "author": "putnik",
+  "tier": 2,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 3,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "`pip install ovos-tts-plugin-silero`"
+    },
+    {
+      "heading": "Configuration",
+      "content": "### Basic\n\nWill be used default model for your language and a first available voice for that model.\nDefault sample rate is 24000.\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-silero\"\n  }\n\n### Advanced\nSee [models and voices in Silero Models repository](https://github.com/snakers4/silero-models#models-and-speakers)\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-silero\",\n    \"ovos-tts-plugin-silero\": {\n      \"model\": \"v4_ru\",\n      \"voice\": \"xenia\",\n      \"sample_rate\": 24000\n    }\n  }"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2021-11-13T07:28:54Z",
+  "last_updated": "2023-10-01T09:37:40.733734Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
