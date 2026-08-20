@@ -1,0 +1,50 @@
+{
+  "id": "TigreGotico-ovos-transcription-validator-plugin",
+  "skill_id": null,
+  "name": "ovos-transcription-validator-plugin",
+  "description": "This plugin is a utterance transformer for OVOS. It uses an OpenAI-compatible large language model (LLM) to check speech-to-text (STT) transcriptions before your voice assistant processes them.",
+  "examples": [],
+  "tags": [
+    "openvoiceos",
+    "plugin",
+    "stt",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-transcription-validator-plugin",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "TigreGotico",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 0,
+  "forks": 1,
+  "open_issues": 9,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "pip install ovos-transcription-validator-plugin\n\n---"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Add the plugin to the `utterance_transformers` section of your `mycroft.conf`.\n\nBy default, the plugin uses `https://llama.smartgic.io/v1` with the `qwen2.5:7b` model and a placeholder API key `sk-xxxx`.\n\n{\n  \"utterance_transformers\": {\n    \"ovos-transcription-validator-plugin\": {\n      \"api_url\": \"https://llama.smartgic.io/v1\",\n      \"api_key\": \"sk-xxxx\",\n      \"model\": \"qwen2.5:7b\",\n      \"prompt_template_system\": \"/path/to/system_template.txt\",\n      \"prompt_template_user\": \"/path/to/user_template.txt\",\n      \"error_sound\": true,\n      \"mode\": \"ignore\"\n    }\n  }\n}\n\n---\n\n### Available Settings\n\n| Key                     | Description                                                                                             | Default Value                 |\n|:------------------------|:--\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
+  "repo_created_at": "2025-04-14T14:22:06Z",
+  "last_updated": "2026-08-16T03:16:10Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

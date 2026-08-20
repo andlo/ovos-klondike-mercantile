@@ -11,6 +11,7 @@
   "package_name": "ovos-tts-plugin-lingva",
   "pypi_version": null,
   "license": "Apache-2.0",
+  "archived": false,
   "author": "aka0kuro",
   "tier": 2,
   "component_type": "Tool",
@@ -22,8 +23,9 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",
