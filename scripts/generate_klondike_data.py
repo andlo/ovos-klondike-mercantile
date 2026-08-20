@@ -74,6 +74,11 @@ NEW_BATCH_SIZE = 60
 
 PROVIDER_PATTERN = re.compile(r"provider for ([\w.-]+)", re.IGNORECASE)
 ONLINE_LIBS = {"requests", "bs4", "beautifulsoup4", "feedparser", "aiohttp", "httpx"}
+# zeroconf is the standard mDNS/LAN-discovery library used across the
+# OVOS ecosystem for exactly this purpose - confirmed directly:
+# andlo/ovos-skill-intercom's own requirements.txt declares nothing
+# but "zeroconf".
+LAN_LIBS = {"zeroconf"}
 
 # Matches OVOS's own namespaced entry-point group names, e.g.
 # "opm.ocp.extractor" or "ovos.plugin.pipeline" - these are the
@@ -645,7 +650,7 @@ def extract_pipeline(description):
     return match.group(1).rstrip(".") if match else None
 
 
-def classify_connectivity(description, requires_dist):
+def classify_connectivity(description, requires_dist, requirements_text=""):
     """Returns "offline", "lan", "hybrid", "online", or None. "lan"
     is checked FIRST and wins over a plain "offline" claim when both
     are present - found by inspection: andlo/ovos-skill-intercom's
@@ -653,7 +658,16 @@ def classify_connectivity(description, requires_dist):
     AND "LAN intercom... same local network", and "LAN" is the more
     informative of the two (it still needs networking, just not the
     internet - a genuinely different thing than a skill that uses no
-    network at all, which "offline" alone doesn't distinguish)."""
+    network at all, which "offline" alone doesn't distinguish).
+
+    Falls back, in order, to declared dependencies when the
+    description doesn't address connectivity at all: PyPI's
+    requires_dist first, then the repo's own requirements.txt
+    (checked second, and only fetched by the caller when the
+    description+PyPI check was inconclusive, to avoid an extra API
+    call for every single entry) - catches cases requires_dist alone
+    misses, e.g. a package not yet on PyPI (so requires_dist is
+    empty) that still declares real dependencies in its own repo."""
     desc_lower = (description or "").lower()
     mentions_lan = bool(
         re.search(r"\blan\b|local network|same network|mdns|multicast", desc_lower)
@@ -668,9 +682,23 @@ def classify_connectivity(description, requires_dist):
         return "hybrid"
     if mentions_offline:
         return "offline"
-    reqs = {re.split(r"[<>=;\[\s]", r)[0].strip().lower() for r in requires_dist}
+
+    def pkg_names(lines):
+        return {re.split(r"[<>=;\[\s]", ln)[0].strip().lower() for ln in lines if ln.strip()}
+
+    reqs = pkg_names(requires_dist)
+    if reqs & LAN_LIBS:
+        return "lan"
     if reqs & ONLINE_LIBS:
         return "online"
+
+    if requirements_text:
+        req_pkgs = pkg_names(requirements_text.splitlines())
+        if req_pkgs & LAN_LIBS:
+            return "lan"
+        if req_pkgs & ONLINE_LIBS:
+            return "online"
+
     return None
 
 
@@ -790,6 +818,16 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     # arbitrary commit push (which could be a README typo fix).
     last_updated = pypi_release_date or pushed_at
 
+    # Try the cheap check first (description + PyPI's already-fetched
+    # requires_dist, no extra call); only fetch requirements.txt as a
+    # second pass when that came back inconclusive, so this doesn't
+    # cost an API call for every single entry - most already resolve
+    # from the description or PyPI metadata alone.
+    connectivity = classify_connectivity(description, requires_dist)
+    if connectivity is None:
+        requirements_text = fetch_file(full_name, "requirements.txt") or ""
+        connectivity = classify_connectivity(description, requires_dist, requirements_text)
+
     return {
         "id": full_name.replace("/", "-"),
         "skill_id": skill_id,
@@ -815,7 +853,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "has_release": github_release is not None,
         "in_ovos_store": package_name in store_package_names if package_name else False,
         "pipeline": extract_pipeline(description),
-        "connectivity": classify_connectivity(description, requires_dist),
+        "connectivity": connectivity,
         "requires_api_key": requires_api_key_from_settings(settings_fields),
         "settings_fields": settings_fields,
         "setup_notes": setup_notes,
