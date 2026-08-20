@@ -3340,6 +3340,7 @@
     "package_name": "neon-homeassistant-skill",
     "pypi_version": "0.0.24",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "mikejgray",
     "tier": 1,
     "component_type": "Skill",
@@ -3353,6 +3354,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation on Neon",
@@ -3895,6 +3897,7 @@
     "package_name": "open-webui",
     "pypi_version": "0.11.0",
     "license": "NOASSERTION",
+    "archived": false,
     "author": "ohealthy",
     "tier": 2,
     "component_type": "Tool",
@@ -3908,6 +3911,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -10003,6 +10007,7 @@
     "package_name": "ovos-phal-plugin-media-led",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "matthewdva",
     "tier": 2,
     "component_type": "PHAL Plugin",
@@ -10016,6 +10021,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -12280,6 +12286,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "WTFPL",
+    "archived": false,
     "author": "mike99mac",
     "tier": 3,
     "component_type": "Skill",
@@ -12293,6 +12300,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -17763,6 +17771,7 @@
     "package_name": "ovos-windows",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "mikejgray",
     "tier": 2,
     "component_type": "Tool",
@@ -17776,6 +17785,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -18600,6 +18610,7 @@
     "package_name": "ovos-stt-plugin-google-cloud-translate",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "mosiwon",
     "tier": 2,
     "component_type": "Tool",
@@ -18613,6 +18624,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -18639,6 +18651,7 @@
     "package_name": "ovos-tts-plugin-google-cloud-translate",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "mosiwon",
     "tier": 2,
     "component_type": "Tool",
@@ -18652,6 +18665,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -21009,8 +21023,9 @@
     "package_name": "voiceforge",
     "pypi_version": null,
     "license": "NOASSERTION",
+    "archived": false,
     "author": "mohitkale",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -21022,6 +21037,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
