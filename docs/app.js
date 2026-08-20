@@ -206,10 +206,12 @@ function populateFilters(list) {
   const pluginTypes = new Set();
   let hasSkill = false;
   let hasTool = false;
+  let hasInfra = false;
   for (const s of list) {
     if (!s.component_type) continue;
     if (s.type_group === "Skill") hasSkill = true;
     else if (s.type_group === "Tool") hasTool = true;
+    else if (s.type_group === "Infrastructure") hasInfra = true;
     else pluginTypes.add(s.component_type);
   }
 
@@ -243,6 +245,12 @@ function populateFilters(list) {
     const opt = document.createElement("option");
     opt.value = "Tool";
     opt.textContent = "Tool";
+    typeFilter.appendChild(opt);
+  }
+  if (hasInfra) {
+    const opt = document.createElement("option");
+    opt.value = "Infrastructure";
+    opt.textContent = "Infrastructure";
     typeFilter.appendChild(opt);
   }
 

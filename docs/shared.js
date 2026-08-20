@@ -32,11 +32,15 @@ const GENERIC_ICON_PLUGIN = genericIconSvg(
 const GENERIC_ICON_TOOL = genericIconSvg(
   "M27.7 13.3a5 5 0 00-6.6 6l-9.5 9.5 2.6 2.6 9.5-9.5a5 5 0 006-6.6l-3 3-2-2 3-3z"
 );
+const GENERIC_ICON_INFRA = genericIconSvg(
+  "M13 14h18v5H13v-5zm0 8h18v5H13v-5zm0 8h18v5H13v-5z"
+);
 const GENERIC_ICON = GENERIC_ICON_PLUGIN; // ultimate fallback
 
 function genericIconFor(skill) {
   if (skill.type_group === "Skill") return GENERIC_ICON_SKILL;
   if (skill.type_group === "Tool") return GENERIC_ICON_TOOL;
+  if (skill.type_group === "Infrastructure") return GENERIC_ICON_INFRA;
   return GENERIC_ICON_PLUGIN;
 }
 
@@ -129,11 +133,18 @@ function renderBadges(skill) {
   if (skill.requires_api_key) {
     badges.push(`<span class="badge badge-key">API key</span>`);
   }
-  if (!skill.on_pypi) {
-    badges.push(`<span class="badge badge-warn">Not on PyPI</span>`);
-  }
-  if (!skill.has_release) {
-    badges.push(`<span class="badge badge-warn">No release</span>`);
+  if (skill.component_type !== "Infrastructure") {
+    // "Not on PyPI"/"No release" imply a gap in something that was
+    // supposed to be installable - doesn't apply to Infrastructure
+    // (docs, the store's own data repo, installers, this site's own
+    // repo, etc), which was never meant to be pip-installed at all.
+    // License/archived stay - those genuinely apply to any repo.
+    if (!skill.on_pypi) {
+      badges.push(`<span class="badge badge-warn">Not on PyPI</span>`);
+    }
+    if (!skill.has_release) {
+      badges.push(`<span class="badge badge-warn">No release</span>`);
+    }
   }
   if (!skill.license) {
     badges.push(`<span class="badge badge-warn">No license</span>`);

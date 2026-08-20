@@ -742,14 +742,17 @@ def infer_category(tags):
 
 def type_group(component_type):
     """Top-level grouping for the type filter/grid hierarchy - Skill
-    / Plugin / Tool, with everything that isn't specifically a Skill
-    or a Tool (OCP/TTS/STT/Persona/Pipeline/etc) bucketed as Plugin,
-    since all of those are registered via OVOS's plugin-manager
-    entry-points mechanism the same way, architecturally."""
+    / Plugin / Tool / Infrastructure, with everything that isn't
+    specifically one of the other three (OCP/TTS/STT/Persona/
+    Pipeline/etc) bucketed as Plugin, since all of those are
+    registered via OVOS's plugin-manager entry-points mechanism the
+    same way, architecturally."""
     if component_type == "Skill":
         return "Skill"
     if component_type == "Tool":
         return "Tool"
+    if component_type == "Infrastructure":
+        return "Infrastructure"
     return "Plugin"
 
 
@@ -1113,9 +1116,20 @@ def main():
                     component_type = "Tool"
                     has_confirmed_manifest = True
                 else:
-                    print(f"  SKIP {full_name}: topic-tagged but no plugin/skill/tool signs found")
-                    merged_entries.pop(full_name.replace("/", "-"), None)
-                    continue
+                    # No manifest of any kind - but it WAS genuinely
+                    # found via topic or name search, so it's real
+                    # OVOS-ecosystem tooling/infrastructure, not a
+                    # skill/plugin/tool: docs repos, the official
+                    # Skill Store's own data repo, installers,
+                    # buildroot configs, this very site's own repo,
+                    # etc. Included rather than excluded (previously
+                    # was), but deliberately given NO tier - the
+                    # whole tier system checks "is this installable
+                    # and published", which doesn't apply to
+                    # something that was never meant to be pip-
+                    # installed in the first place. See build_entry()
+                    # for how this skips the PyPI/release badges too.
+                    component_type = "Infrastructure"
 
         entry = build_entry(
             full_name, repo, skill_json, tier=3,
@@ -1138,13 +1152,20 @@ def main():
             # independently as plain facts either way.
             entry["tier"] = 1
         # else: stays tier 3 (last-resort fallback, no formal manifest)
+        if component_type == "Infrastructure":
+            # No tier at all - not even tier 3. The tier system's
+            # whole premise (is this installable + published) simply
+            # doesn't apply to something never meant to be pip-
+            # installed. A tier badge here would imply a completeness
+            # judgment this site has no real basis to make.
+            entry["tier"] = None
 
         merged_entries[entry["id"]] = entry
 
-        tier_note = f" [tier {entry['tier']}]"
+        tier_note = f" [tier {entry['tier']}]" if entry["tier"] is not None else ""
         type_note = f" [{entry['component_type']}]"
-        pypi_note = "" if entry["on_pypi"] else " [not on PyPI]"
-        release_note = "" if entry["has_release"] else " [no release]"
+        pypi_note = "" if (entry["on_pypi"] or component_type == "Infrastructure") else " [not on PyPI]"
+        release_note = "" if (entry["has_release"] or component_type == "Infrastructure") else " [no release]"
         print(f"  OK   {full_name}{tier_note}{type_note}{pypi_note}{release_note}")
 
     # Drop entries for candidates that no longer appear at all

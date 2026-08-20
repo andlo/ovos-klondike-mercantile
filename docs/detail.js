@@ -93,7 +93,9 @@ function renderSetupNotes(skill) {
 
 function renderAssessment(skill) {
   let headline;
-  if (skill.tier === 1) {
+  if (skill.component_type === "Infrastructure") {
+    headline = `Not given a completeness tier - this is OVOS-ecosystem tooling/infrastructure (docs, the official Skill Store's own data, an installer, etc), not something meant to be <code>pip install</code>ed. The "Looks Complete"/"Incomplete" system checks for a PyPI package and a GitHub release, which isn't a meaningful measure of completeness for this kind of repo.`;
+  } else if (skill.tier === 1) {
     if (skill.on_pypi && skill.has_release) {
       headline = `Rated <strong>Looks Complete</strong> - it has a confirmed manifest (a proper <code>skill.json</code> or plugin entry-point declaration), is published on PyPI, and has a GitHub release.`;
     } else if (skill.in_ovos_store) {
@@ -115,12 +117,14 @@ function renderAssessment(skill) {
   }
 
   const facts = [
-    {
-      label: "Published on PyPI",
-      ok: skill.on_pypi,
-      detail: skill.on_pypi ? `as ${skill.package_name}, v${skill.pypi_version}` : null,
-    },
-    { label: "Has a GitHub release", ok: skill.has_release },
+    ...(skill.component_type !== "Infrastructure" ? [
+      {
+        label: "Published on PyPI",
+        ok: skill.on_pypi,
+        detail: skill.on_pypi ? `as ${skill.package_name}, v${skill.pypi_version}` : null,
+      },
+      { label: "Has a GitHub release", ok: skill.has_release },
+    ] : []),
     { label: "Listed in OVOS's upcoming Skill Store", ok: skill.in_ovos_store },
     { label: "Has a declared license", ok: !!skill.license, detail: skill.license },
     { label: "Not archived", ok: !skill.archived },
