@@ -123,6 +123,28 @@ function renderAssessment(skill) {
   `;
 }
 
+function renderSettings(skill) {
+  const fields = asArray(skill.settings_fields);
+  if (fields.length === 0) return "";
+  const rows = fields.map((f) => {
+    const isApiKeyish = /api.?key|token|secret|password|credential/i.test(`${f.name} ${f.label}`);
+    return `
+      <div class="fact-row">
+        <span class="fact-icon">${isApiKeyish ? "🔑" : "⚙️"}</span>
+        <span>${escapeHtml(f.label)} <span class="fact-detail">(<code>${escapeHtml(f.name)}</code>${f.type ? `, ${escapeHtml(f.type)}` : ""})</span></span>
+      </div>
+    `;
+  }).join("");
+  return `
+    <h2 class="detail-subhead">Configurable settings</h2>
+    <p class="setup-note">
+      From this repo's own <code>settingsmeta.json</code> - shown as
+      declared, not verified to actually work.
+    </p>
+    <div class="facts-list">${rows}</div>
+  `;
+}
+
 function renderDetail(skill) {
   document.title = `${skill.name} · OVOS Klondike Mercantile`;
 
@@ -167,6 +189,8 @@ function renderDetail(skill) {
       ` : ""}
 
       ${renderSetupNotes(skill)}
+
+      ${renderSettings(skill)}
 
       ${examples ? `
         <h2 class="detail-subhead">Example phrases</h2>

@@ -400,12 +400,51 @@ def derive_component_type(entry_point_groups):
     return None
 
 
-def fetch_requires_api_key(full_name):
+def fetch_settings_fields(full_name):
+    """Parses settingsmeta.json's real structure (skillMetadata ->
+    sections -> fields, confirmed by inspecting a real one) into a
+    list of {name, type, label} dicts - one per actual configurable
+    setting. Pure informational "label"-type fields (explanatory
+    text with no "name", used to describe a section rather than
+    configure anything) are skipped, since they aren't settings
+    themselves. Returns an empty list if there's no settingsmeta.json
+    or it doesn't parse - deliberately tolerant, since the exact
+    shape varies enough across skills that a strict parser would
+    silently miss real ones."""
     text = fetch_file(full_name, "settingsmeta.json")
     if text is None:
-        return False
-    lowered = text.lower()
-    return "api_key" in lowered or "api key" in lowered
+        return []
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return []
+    fields = []
+    sections = (data.get("skillMetadata") or {}).get("sections") or []
+    for section in sections:
+        for field in section.get("fields") or []:
+            name = field.get("name")
+            if not name:
+                continue
+            fields.append({
+                "name": name,
+                "type": field.get("type"),
+                "label": field.get("label") or name,
+            })
+    return fields
+
+
+def requires_api_key_from_settings(settings_fields):
+    """Whether any real setting field (see fetch_settings_fields)
+    looks like it wants an API key or credential - checked by name/
+    label content, not a blind text search over the whole file (a
+    label-only field could mention "API key" in prose without there
+    being an actual field for it, and vice versa)."""
+    keywords = ("api_key", "api key", "apikey", "token", "secret", "password", "credential")
+    for f in settings_fields:
+        haystack = f"{f['name']} {f['label']}".lower()
+        if any(k in haystack for k in keywords):
+            return True
+    return False
 
 
 MAX_SETUP_SECTION_LENGTH = 800
@@ -607,7 +646,20 @@ def extract_pipeline(description):
 
 
 def classify_connectivity(description, requires_dist):
+    """Returns "offline", "lan", "hybrid", "online", or None. "lan"
+    is checked FIRST and wins over a plain "offline" claim when both
+    are present - found by inspection: andlo/ovos-skill-intercom's
+    own description says both "fully offline, no internet needed"
+    AND "LAN intercom... same local network", and "LAN" is the more
+    informative of the two (it still needs networking, just not the
+    internet - a genuinely different thing than a skill that uses no
+    network at all, which "offline" alone doesn't distinguish)."""
     desc_lower = (description or "").lower()
+    mentions_lan = bool(
+        re.search(r"\blan\b|local network|same network|mdns|multicast", desc_lower)
+    )
+    if mentions_lan:
+        return "lan"
     mentions_offline = bool(re.search(r"\boffline\b|\bno internet\b", desc_lower))
     mentions_online_fallback = bool(
         re.search(r"online fallback|optional.*online|fallback.*online", desc_lower)
@@ -713,6 +765,11 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
 
     setup_notes = extract_readme_setup_sections(readme_text)
 
+    # Fetched for both Skills and Plugins (unlike locale/languages
+    # below, which is Skill-only) - plugins commonly have real
+    # configurable settings too (API keys, endpoints, etc).
+    settings_fields = fetch_settings_fields(full_name)
+
     # Locale/language listing is only meaningful for Skills - see
     # fetch_locale_languages()'s docstring. Skipped entirely for
     # Plugins/Tools rather than making a call that would almost
@@ -759,7 +816,8 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "in_ovos_store": package_name in store_package_names if package_name else False,
         "pipeline": extract_pipeline(description),
         "connectivity": classify_connectivity(description, requires_dist),
-        "requires_api_key": fetch_requires_api_key(full_name),
+        "requires_api_key": requires_api_key_from_settings(settings_fields),
+        "settings_fields": settings_fields,
         "setup_notes": setup_notes,
         "languages": languages,
         "in_ovos_localize": full_name in localize_tracked_repos,

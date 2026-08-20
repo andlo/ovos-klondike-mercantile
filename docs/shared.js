@@ -44,12 +44,15 @@ const MAX_DESCRIPTION_LENGTH = 160;
 
 // Connectivity labels deliberately avoid the word "Offline" alone -
 // on its own it reads as "the skill is unavailable" rather than
-// "works without internet". "Online" alone has the same problem in
-// reverse, so it's paired with "Needs Internet" instead.
+// "works without internet". "lan" is a distinct category from
+// "offline": a LAN-only tool still uses networking (mDNS, local
+// discovery, etc), just not the internet - a genuinely different
+// thing than something that touches no network at all.
 const CONNECTIVITY_META = {
   offline: { label: "Works Offline", cls: "badge-offline" },
+  lan: { label: "LAN Only", cls: "badge-lan" },
   hybrid: { label: "Offline + Online", cls: "badge-hybrid" },
-  online: { label: "Needs Internet", cls: "badge-online" },
+  online: { label: "Needs Internet (WAN)", cls: "badge-online" },
 };
 
 // These intentionally do NOT say "Verified" - this system checks
