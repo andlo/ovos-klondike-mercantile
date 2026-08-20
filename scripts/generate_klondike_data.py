@@ -1116,20 +1116,29 @@ def main():
                     component_type = "Tool"
                     has_confirmed_manifest = True
                 else:
-                    # No manifest of any kind - but it WAS genuinely
-                    # found via topic or name search, so it's real
-                    # OVOS-ecosystem tooling/infrastructure, not a
-                    # skill/plugin/tool: docs repos, the official
-                    # Skill Store's own data repo, installers,
-                    # buildroot configs, this very site's own repo,
-                    # etc. Included rather than excluded (previously
-                    # was), but deliberately given NO tier - the
-                    # whole tier system checks "is this installable
-                    # and published", which doesn't apply to
-                    # something that was never meant to be pip-
-                    # installed in the first place. See build_entry()
-                    # for how this skips the PyPI/release badges too.
-                    component_type = "Infrastructure"
+                    # No manifest of any kind - real OVOS-ecosystem
+                    # tooling/infrastructure (docs repos, the
+                    # official Skill Store's own data repo,
+                    # installers, buildroot configs, this very site's
+                    # own repo, etc) genuinely exists in this shape,
+                    # so it's included rather than excluded. BUT only
+                    # when found via the TOPIC signal specifically,
+                    # not the name-match signal - found by inspection
+                    # right after shipping this: "ovos" is also the
+                    # Portuguese/Spanish word for "eggs", and the
+                    # name-search signal alone was pulling in
+                    # completely unrelated repos about Easter eggs
+                    # ("ovos-da-pascoaa", "ClassificadorOvos", etc)
+                    # once they were no longer silently excluded.
+                    # Topic-tagging is a deliberate, explicit claim
+                    # ("I am OVOS-related") the way a name coincidence
+                    # never is.
+                    if full_name in topic_repos:
+                        component_type = "Infrastructure"
+                    else:
+                        print(f"  SKIP {full_name}: name-matched only, no manifest, not topic-tagged (likely a false positive - 'ovos' means 'eggs' in Portuguese)")
+                        merged_entries.pop(full_name.replace("/", "-"), None)
+                        continue
 
         entry = build_entry(
             full_name, repo, skill_json, tier=3,
