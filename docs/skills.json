@@ -3084,6 +3084,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -5824,6 +5825,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "en-us",
@@ -10199,6 +10201,7 @@
     "package_name": "ovos-phal-plugin-mm-wakeword",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "smartgic",
     "tier": 2,
     "component_type": "PHAL Plugin",
@@ -10210,8 +10213,9 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -10757,6 +10761,7 @@
     "package_name": "ovos-phal-plugin-ww-led",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "smartgic",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10770,6 +10775,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -11156,6 +11162,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -11283,6 +11290,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "en-us",
@@ -11553,6 +11561,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -11628,6 +11637,7 @@
     "package_name": "ovos-skill-ci-test",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "strugee",
     "tier": 2,
     "component_type": "Skill",
@@ -11641,6 +11651,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -16990,6 +17001,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -17511,6 +17523,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -18863,6 +18876,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -19256,6 +19270,7 @@
     "package_name": "ovos-skill-share-to-mirror",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "smartgic",
     "tier": 2,
     "component_type": "Skill",
@@ -19267,8 +19282,9 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "\ud83d\udce6 Installation",
@@ -19283,7 +19299,10 @@
         "content": "Configure the skill settings either through the OVOS GUI or by editing the settings file directly.\n\n**Settings file location:** `~/.config/mycroft/skills/ovos-skill-share-to-mirror.smartgic/settings.json`\n\n**Basic configuration:**\n\n{\n  \"base_url\": \"http://<MIRROR_IP>:8570\",\n  \"verify_ssl\": true,\n  \"request_timeout\": 6,\n\n  \"caption_enabled\": false,\n  \"caption_lang\": \"en\",\n  \"quality_target\": \"auto\",\n  \"quality_lock\": false,\n\n  \"search_backend\": \"yt_dlp\",\n  \"youtube_api_key\": \"\"\n}\n\n**Configuration Options Explained:**\n\n- `base_url`: The full URL to your MagicMirror\u00b2 (replace `<MIRROR_IP>` with the actual IP)\n- `verify_ssl`: Set to `false` only if using self-signed certificates for testing\n- `request_timeout`: How long to wait for responses from the mirror (in seconds)\n- `search_backend`: Use\u2026"
       }
     ],
-    "languages": [],
+    "languages": [
+      "en-us",
+      "fr-fr"
+    ],
     "in_ovos_localize": false,
     "repo_created_at": "2025-08-14T20:06:26Z",
     "last_updated": "2025-08-15T00:39:54Z",
@@ -20408,6 +20427,7 @@
     "package_name": "skill-sonos-controller",
     "pypi_version": null,
     "license": "BSD-3-Clause",
+    "archived": false,
     "author": "smartgic",
     "tier": 2,
     "component_type": "Skill",
@@ -20419,8 +20439,40 @@
     "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "default_source",
+        "type": "text",
+        "label": "Default Sonos music service (for example Music Library or Spotify)"
+      },
+      {
+        "name": "link_code",
+        "type": "text",
+        "label": "Temporary authentication link code"
+      },
+      {
+        "name": "duck",
+        "type": "checkbox",
+        "label": "Reduce active Sonos volume while listening"
+      },
+      {
+        "name": "playing_confirmation",
+        "type": "checkbox",
+        "label": "Confirm media after starting playback"
+      },
+      {
+        "name": "searching_confirmation",
+        "type": "checkbox",
+        "label": "Announce music-service searches"
+      },
+      {
+        "name": "url_shortener",
+        "type": "text",
+        "label": "Authentication URL broker"
+      }
+    ],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -20431,7 +20483,24 @@
         "content": "OVOS stores settings under the skill ID\n`skill-sonos-controller.smartgic`. Available options are:\n\n| Option | Default | Description |\n| --- | --- | --- |\n| `default_source` | `Music Library` | Service used when an utterance does not name one. The name is case-insensitive. |\n| `link_code` | empty | Temporary code used to finish DeviceLink or AppLink authentication. |\n| `duck` | `false` | Reduce active Sonos volume while OVOS listens. |\n| `playing_confirmation` | `false` | Speak a confirmation after playback starts. |\n| `searching_confirmation` | `true` | Announce before searching a service. |\n| `url_shortener` | `https://sonos.smartgic.io` | Broker used to make a long provider registration URL speakable. |\n\n### Authenticate a service\n\n1. Say \u201cAuthenticate Spotify with Sonos,\u201d replacing Spot\u2026"
       }
     ],
-    "languages": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fa-ir",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-be",
+      "nl-nl",
+      "pl-pl",
+      "pt-br",
+      "pt-pt",
+      "uk-ua"
+    ],
     "in_ovos_localize": false,
     "repo_created_at": "2020-12-08T01:27:16Z",
     "last_updated": "2026-08-11T04:36:40Z",

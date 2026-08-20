@@ -34,6 +34,7 @@
   "package_name": "ovos-skill-share-to-mirror",
   "pypi_version": null,
   "license": null,
+  "archived": false,
   "author": "smartgic",
   "tier": 2,
   "component_type": "Skill",
@@ -45,8 +46,9 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "\ud83d\udce6 Installation",
@@ -61,7 +63,10 @@
       "content": "Configure the skill settings either through the OVOS GUI or by editing the settings file directly.\n\n**Settings file location:** `~/.config/mycroft/skills/ovos-skill-share-to-mirror.smartgic/settings.json`\n\n**Basic configuration:**\n\n{\n  \"base_url\": \"http://<MIRROR_IP>:8570\",\n  \"verify_ssl\": true,\n  \"request_timeout\": 6,\n\n  \"caption_enabled\": false,\n  \"caption_lang\": \"en\",\n  \"quality_target\": \"auto\",\n  \"quality_lock\": false,\n\n  \"search_backend\": \"yt_dlp\",\n  \"youtube_api_key\": \"\"\n}\n\n**Configuration Options Explained:**\n\n- `base_url`: The full URL to your MagicMirror\u00b2 (replace `<MIRROR_IP>` with the actual IP)\n- `verify_ssl`: Set to `false` only if using self-signed certificates for testing\n- `request_timeout`: How long to wait for responses from the mirror (in seconds)\n- `search_backend`: Use\u2026"
     }
   ],
-  "languages": [],
+  "languages": [
+    "en-us",
+    "fr-fr"
+  ],
   "in_ovos_localize": false,
   "repo_created_at": "2025-08-14T20:06:26Z",
   "last_updated": "2025-08-15T00:39:54Z",

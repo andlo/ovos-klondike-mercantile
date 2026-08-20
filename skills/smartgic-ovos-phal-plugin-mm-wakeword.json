@@ -22,6 +22,7 @@
   "package_name": "ovos-phal-plugin-mm-wakeword",
   "pypi_version": null,
   "license": "Apache-2.0",
+  "archived": false,
   "author": "smartgic",
   "tier": 2,
   "component_type": "PHAL Plugin",
@@ -33,8 +34,9 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Installation",
