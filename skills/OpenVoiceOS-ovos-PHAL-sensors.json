@@ -15,6 +15,7 @@
   "package_name": "ovos-PHAL-sensors",
   "pypi_version": "0.1.0a1",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 2,
   "component_type": "PHAL Plugin",
@@ -28,6 +29,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

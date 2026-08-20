@@ -19,8 +19,9 @@
   "package_name": "mycroft-classic-listener",
   "pypi_version": "0.1.0",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 1,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 0,
@@ -32,6 +33,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Configuration",

@@ -17,10 +17,11 @@
   "package_name": "ovos-PHAL-plugin-balena-wifi",
   "pypi_version": "1.2.2",
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
   "tier": 3,
-  "component_type": "Tool",
-  "type_group": "Tool",
+  "component_type": "Skill",
+  "type_group": "Skill",
   "stars": 0,
   "forks": 1,
   "open_issues": 0,
@@ -30,6 +31,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "PHAL plugin - Balena Wifi Setup-",
@@ -44,7 +46,13 @@
       "content": "You can change a few parameters to customize the setup assets, you can change some Hotspot details, dialogs and GUI strings\n\n{\n  \"ssid\": \"OVOS\",\n  \"portal\": \"start dot openvoiceos dot com\",\n  \"device_name\": \"OVOS Device\",\n  \"image_connect_ap\":  \"1_phone_connect-to-ap.png\",\n  \"image_choose_wifi\":  \"3_phone_choose-wifi.png\"\n}"
     }
   ],
-  "languages": [],
+  "languages": [
+    "ca-es",
+    "da",
+    "de",
+    "en-us",
+    "pt"
+  ],
   "in_ovos_localize": false,
   "repo_created_at": "2022-03-14T19:56:17Z",
   "last_updated": "2025-06-10T21:19:25.561855Z",

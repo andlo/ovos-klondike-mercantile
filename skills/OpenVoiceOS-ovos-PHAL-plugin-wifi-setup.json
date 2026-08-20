@@ -17,8 +17,9 @@
   "package_name": "ovos-PHAL-plugin-wifi-setup",
   "pypi_version": "1.1.8",
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 1,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 0,
@@ -30,6 +31,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "OVOS PHAL PLUGIN WIFI SETUP",

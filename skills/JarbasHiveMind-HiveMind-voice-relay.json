@@ -21,8 +21,9 @@
   "package_name": "HiveMind-voice-relay",
   "pypi_version": "1.0.1",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "JarbasHiveMind",
-  "tier": 3,
+  "tier": 1,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 1,
@@ -34,6 +35,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

@@ -1401,8 +1401,9 @@
     "package_name": "hivemind-audio-binary-protocol",
     "pypi_version": "2.1.5",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1414,6 +1415,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1458,8 +1460,9 @@
     "package_name": "HiveMind-cli",
     "pypi_version": "0.4.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 7,
@@ -1471,6 +1474,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1505,8 +1509,9 @@
     "package_name": "hivemind-core",
     "pypi_version": "4.0.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 17,
@@ -1518,6 +1523,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Protocol Configuration",
@@ -1554,8 +1560,9 @@
     "package_name": "hivemind-http-protocol",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1567,6 +1574,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1603,8 +1611,9 @@
     "package_name": "HiveMind-matrix-bridge",
     "pypi_version": "0.1.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
@@ -1616,6 +1625,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1653,8 +1663,9 @@
     "package_name": "hivemind-player-protocol",
     "pypi_version": "0.0.0a7",
     "license": null,
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1666,6 +1677,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1709,8 +1721,9 @@
     "package_name": "hivemind-mic-satellite",
     "pypi_version": "0.7.1",
     "license": null,
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1722,6 +1735,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1758,8 +1772,9 @@
     "package_name": "hivemind-mqtt-protocol",
     "pypi_version": "0.2.2a6",
     "license": null,
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1771,6 +1786,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration keys",
@@ -1808,8 +1824,9 @@
     "package_name": "hivemind-ovos-agent-plugin",
     "pypi_version": "0.1.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1821,6 +1838,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -1855,8 +1873,9 @@
     "package_name": "hivemind-persona-agent-plugin",
     "pypi_version": "0.0.1",
     "license": null,
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1868,6 +1887,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1907,8 +1927,9 @@
     "package_name": "hivemind-plugin-manager",
     "pypi_version": "0.5.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1920,6 +1941,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -1950,8 +1972,9 @@
     "package_name": "hivemind-test-harness",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -1963,6 +1986,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1999,8 +2023,9 @@
     "package_name": "HiveMind-voice-relay",
     "pypi_version": "1.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
@@ -2012,6 +2037,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -2060,8 +2086,9 @@
     "package_name": "HiveMind-voice-sat",
     "pypi_version": "2.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 24,
@@ -2073,6 +2100,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -2115,8 +2143,9 @@
     "package_name": "hivemind_bus_client",
     "pypi_version": "0.4.4",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -2128,6 +2157,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -2169,8 +2199,9 @@
     "package_name": "hivemind-websocket-protocol",
     "pypi_version": "0.0.3",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -2182,6 +2213,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -2216,8 +2248,9 @@
     "package_name": "hivescope",
     "pypi_version": "0.1.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -2229,6 +2262,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -3125,8 +3159,9 @@
     "package_name": "mycroft-classic-listener",
     "pypi_version": "0.1.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -3138,6 +3173,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -3993,6 +4029,7 @@
     "package_name": "ovos-a2a-solver-plugin",
     "pypi_version": "0.0.1a2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
     "component_type": "Chat Plugin",
@@ -4006,6 +4043,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -4044,6 +4082,7 @@
     "package_name": "ovos_adapt_parser",
     "pypi_version": "1.0.9",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Pipeline Plugin",
@@ -4057,6 +4096,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -4078,9 +4118,10 @@
     "package_name": "ovos-agentic-loop",
     "pypi_version": "0.1.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Chat Plugin",
+    "component_type": "Memory Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -4091,6 +4132,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -4124,8 +4166,9 @@
     "package_name": "ovos-audio",
     "pypi_version": "1.2.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 4,
@@ -4137,6 +4180,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4210,6 +4254,7 @@
     "package_name": "ovos-audio-transformer-plugin-bandpass",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Audio Plugin",
@@ -4223,6 +4268,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4258,6 +4304,7 @@
     "package_name": "ovos-audio-transformer-plugin-ggwave",
     "pypi_version": "0.0.5",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Audio Plugin",
@@ -4271,6 +4318,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4357,6 +4405,7 @@
     "package_name": "ovos-audio-transformer-plugin-speechbrain-langdetect",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Audio Plugin",
@@ -4370,6 +4419,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -4394,8 +4444,9 @@
     "package_name": "ovos-backend-client",
     "pypi_version": "1.0.1",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 3,
@@ -4407,6 +4458,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -4431,8 +4483,9 @@
     "package_name": "ovos-backend-manager",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 2,
@@ -4444,6 +4497,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4511,6 +4565,7 @@
     "package_name": "ovos-bidirectional-translation-plugin",
     "pypi_version": "0.1.2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Transformer Plugin",
@@ -4524,6 +4579,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -4552,8 +4608,9 @@
     "package_name": "ovos-bus-client",
     "pypi_version": "1.5.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 3,
@@ -4565,6 +4622,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4595,8 +4653,9 @@
     "package_name": "ovos-busmon",
     "pypi_version": "0.1.0",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 2,
@@ -4608,6 +4667,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -4644,6 +4704,7 @@
     "package_name": "ovos-chromadb-embeddings-plugin",
     "pypi_version": "0.0.0",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Embeddings Plugin",
@@ -4657,6 +4718,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4690,9 +4752,10 @@
     "package_name": "ovos-classifiers",
     "pypi_version": "0.0.0a59",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Solver Plugin",
+    "component_type": "G2P Plugin",
     "type_group": "Plugin",
     "stars": 3,
     "forks": 6,
@@ -4703,6 +4766,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -4770,8 +4834,9 @@
     "package_name": "ovos-cli-client",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
@@ -4783,6 +4848,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4811,8 +4877,9 @@
     "package_name": "ovos_color_parser",
     "pypi_version": "0.11.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 2,
@@ -4824,6 +4891,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -4854,6 +4922,7 @@
     "package_name": "ovos_common_query_pipeline_plugin",
     "pypi_version": "1.1.9",
     "license": null,
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Pipeline Plugin",
@@ -4867,6 +4936,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4901,8 +4971,9 @@
     "package_name": "ovos-config",
     "pypi_version": "2.1.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 3,
@@ -4914,6 +4985,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "OVOS-config",
@@ -4940,8 +5012,9 @@
     "package_name": "ovos-control-panel",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
@@ -4953,6 +5026,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4983,6 +5057,7 @@
     "package_name": "ovos-core",
     "pypi_version": "2.1.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Pipeline Plugin",
@@ -4996,6 +5071,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installing OVOS",
@@ -5066,8 +5142,9 @@
     "package_name": "ovos-date-parser",
     "pypi_version": "0.29.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -5079,6 +5156,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -5905,6 +5983,7 @@
     "package_name": "ovos-hivemind-pipeline-plugin",
     "pypi_version": "0.0.3",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
     "tier": 1,
     "component_type": "Pipeline Plugin",
@@ -5918,6 +5997,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -8909,8 +8989,9 @@
     "package_name": "ovos_PHAL",
     "pypi_version": "0.2.12",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -8922,6 +9003,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9014,6 +9096,7 @@
     "package_name": "ovos_PHAL_plugin_alsa",
     "pypi_version": "0.1.6",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -9027,6 +9110,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -9048,6 +9132,7 @@
     "package_name": "ovos-PHAL-plugin-app-launcher",
     "pypi_version": "0.0.1a1",
     "license": null,
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
     "component_type": "PHAL Plugin",
@@ -9061,6 +9146,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -9097,10 +9183,11 @@
     "package_name": "ovos-PHAL-plugin-balena-wifi",
     "pypi_version": "1.2.2",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
     "tier": 3,
-    "component_type": "Tool",
-    "type_group": "Tool",
+    "component_type": "Skill",
+    "type_group": "Skill",
     "stars": 0,
     "forks": 1,
     "open_issues": 0,
@@ -9110,6 +9197,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "PHAL plugin - Balena Wifi Setup-",
@@ -9124,7 +9212,13 @@
         "content": "You can change a few parameters to customize the setup assets, you can change some Hotspot details, dialogs and GUI strings\n\n{\n  \"ssid\": \"OVOS\",\n  \"portal\": \"start dot openvoiceos dot com\",\n  \"device_name\": \"OVOS Device\",\n  \"image_connect_ap\":  \"1_phone_connect-to-ap.png\",\n  \"image_choose_wifi\":  \"3_phone_choose-wifi.png\"\n}"
       }
     ],
-    "languages": [],
+    "languages": [
+      "ca-es",
+      "da",
+      "de",
+      "en-us",
+      "pt"
+    ],
     "in_ovos_localize": false,
     "repo_created_at": "2022-03-14T19:56:17Z",
     "last_updated": "2025-06-10T21:19:25.561855Z",
@@ -9151,8 +9245,9 @@
     "package_name": "ovos-PHAL-plugin-brightness-control-rpi",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9164,6 +9259,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9190,8 +9286,9 @@
     "package_name": "ovos-PHAL-plugin-brightness-control-rpi",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 2,
@@ -9203,6 +9300,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9234,6 +9332,7 @@
     "package_name": "ovos-PHAL-plugin-camera",
     "pypi_version": "0.2.1",
     "license": null,
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -9247,6 +9346,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -9283,8 +9383,9 @@
     "package_name": "ovos-PHAL-plugin-color-scheme-manager",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9296,6 +9397,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9322,8 +9424,9 @@
     "package_name": "ovos-PHAL-plugin-color-scheme-manager",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9335,6 +9438,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9367,8 +9471,9 @@
     "package_name": "ovos-PHAL-plugin-configuration-provider",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9380,6 +9485,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "DEPRECATED - OVOS PHAL CONFIGURATION PROVIDER",
@@ -9410,8 +9516,9 @@
     "package_name": "ovos-PHAL-plugin-configuration-provider",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9423,6 +9530,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9454,6 +9562,7 @@
     "package_name": "ovos_phal_plugin_connectivity_events",
     "pypi_version": "0.1.3",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -9467,6 +9576,7 @@
     "pipeline": null,
     "connectivity": "offline",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9503,8 +9613,9 @@
     "package_name": "ovos-PHAL-plugin-dashboard",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9516,6 +9627,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9542,8 +9654,9 @@
     "package_name": "ovos-PHAL-plugin-dashboard",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9555,6 +9668,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9587,8 +9701,9 @@
     "package_name": "ovos-phal-display-manager-ipc",
     "pypi_version": null,
     "license": null,
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9600,6 +9715,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -9626,6 +9742,7 @@
     "package_name": "ovos-PHAL-plugin-dotstar",
     "pypi_version": "0.0.1",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -9639,6 +9756,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9674,6 +9792,7 @@
     "package_name": "ovos-phal-plugin-gpsd",
     "pypi_version": "0.0.2a1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
     "component_type": "PHAL Plugin",
@@ -9687,6 +9806,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -9715,8 +9835,9 @@
     "package_name": "ovos-PHAL-plugin-gui-network-client",
     "pypi_version": "0.0.2",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -9728,6 +9849,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9802,8 +9924,9 @@
     "package_name": "ovos-PHAL-plugin-homeassistant",
     "pypi_version": "0.1.0",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 13,
@@ -9815,6 +9938,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -9895,6 +10019,7 @@
     "package_name": "ovos-PHAL-plugin-hotkeys",
     "pypi_version": "0.1.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -9908,6 +10033,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9943,6 +10069,7 @@
     "package_name": "ovos_phal_plugin_ipgeo",
     "pypi_version": "0.1.7",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -9956,6 +10083,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10073,6 +10201,7 @@
     "package_name": "ovos-PHAL-plugin-mk1",
     "pypi_version": "0.1.3",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10086,6 +10215,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10118,8 +10248,9 @@
     "package_name": "ovos-PHAL-plugin-mk2",
     "pypi_version": "0.0.1a4",
     "license": null,
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
@@ -10131,6 +10262,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -10157,6 +10289,7 @@
     "package_name": "ovos-PHAL-plugin-mk2-fan-control",
     "pypi_version": "0.0.1",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10170,6 +10303,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10265,6 +10399,7 @@
     "package_name": "ovos-PHAL-plugin-network-manager",
     "pypi_version": "1.3.5",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10278,6 +10413,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10344,8 +10480,9 @@
     "package_name": "ovos-PHAL-plugin-notification-widgets",
     "pypi_version": "1.0.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -10357,6 +10494,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10388,6 +10526,7 @@
     "package_name": "ovos-PHAL-plugin-oauth",
     "pypi_version": "0.1.3",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10401,6 +10540,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10433,6 +10573,7 @@
     "package_name": "ovos-PHAL-plugin-pulseaudio",
     "pypi_version": "0.0.5",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10446,6 +10587,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10477,6 +10619,7 @@
     "package_name": "ovos_PHAL_plugin_system",
     "pypi_version": "1.3.4",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10490,6 +10633,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10571,6 +10715,7 @@
     "package_name": "ovos-PHAL-plugin-tools",
     "pypi_version": "0.0.1a1",
     "license": "NOASSERTION",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
     "component_type": "PHAL Plugin",
@@ -10584,6 +10729,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -10615,6 +10761,7 @@
     "package_name": "ovos_PHAL_plugin_wallpaper_manager",
     "pypi_version": "0.2.6",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -10628,6 +10775,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10654,8 +10802,9 @@
     "package_name": "ovos-PHAL-plugin-wallpaper-manager",
     "pypi_version": "0.2.6",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -10667,6 +10816,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -10703,8 +10853,9 @@
     "package_name": "ovos-PHAL-plugin-wifi-setup",
     "pypi_version": "1.1.8",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -10716,6 +10867,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "OVOS PHAL PLUGIN WIFI SETUP",
@@ -10822,6 +10974,7 @@
     "package_name": "ovos-PHAL-sensors",
     "pypi_version": "0.1.0a1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
     "component_type": "PHAL Plugin",
@@ -10835,6 +10988,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -11967,6 +12121,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": true,
     "author": "JarbasHiveMind",
     "tier": 3,
     "component_type": "Skill",
@@ -11980,6 +12135,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -12361,6 +12517,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12374,6 +12531,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "de-de",
@@ -12404,6 +12562,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12415,8 +12574,9 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Setup",
@@ -12446,6 +12606,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12459,6 +12620,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "de-de"
@@ -12482,6 +12644,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12495,6 +12658,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "de-de",
@@ -12526,6 +12690,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12539,6 +12704,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -12577,6 +12743,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12590,6 +12757,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Skill configuration (settings.json)",
@@ -12625,6 +12793,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12638,6 +12807,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Setup",
@@ -12674,6 +12844,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -12687,6 +12858,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration/setup",
@@ -13239,6 +13411,7 @@
     "package_name": "ovos-skill-wakeup",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -13252,6 +13425,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -13677,6 +13851,7 @@
     "package_name": "ovos-solver-hivemind-plugin",
     "pypi_version": "0.0.3",
     "license": null,
+    "archived": false,
     "author": "JarbasHiveMind",
     "tier": 1,
     "component_type": "Solver Plugin",
@@ -13690,6 +13865,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -18629,6 +18805,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "JoergZ2",
     "tier": 3,
     "component_type": "Skill",
@@ -18642,6 +18819,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "de-de"
@@ -19038,8 +19216,9 @@
     "package_name": "poorman_handshake",
     "pypi_version": "1.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -19051,6 +19230,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -19346,8 +19526,9 @@
     "package_name": "SisOvos",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "JhonCleyton",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -19359,6 +19540,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -19814,6 +19996,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
     "tier": 3,
     "component_type": "Skill",
@@ -19827,6 +20010,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "de-de",
@@ -20010,6 +20194,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "LibreVoiceAssistant",
     "tier": 3,
     "component_type": "Skill",
@@ -20023,6 +20208,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "de-de",
@@ -21976,8 +22162,9 @@
     "package_name": "neon-enclosure",
     "pypi_version": "1.8.0",
     "license": null,
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -21989,6 +22176,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,

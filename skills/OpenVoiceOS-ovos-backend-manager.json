@@ -14,8 +14,9 @@
   "package_name": "ovos-backend-manager",
   "pypi_version": null,
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 2,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 2,
@@ -27,6 +28,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

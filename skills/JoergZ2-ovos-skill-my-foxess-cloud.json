@@ -17,6 +17,7 @@
   "package_name": null,
   "pypi_version": null,
   "license": null,
+  "archived": false,
   "author": "JoergZ2",
   "tier": 3,
   "component_type": "Skill",
@@ -28,8 +29,9 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Setup",

@@ -11,8 +11,9 @@
   "package_name": "ovos-PHAL-plugin-wallpaper-manager",
   "pypi_version": "0.2.6",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "LibreVoiceAssistant",
-  "tier": 3,
+  "tier": 1,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 0,
@@ -24,6 +25,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

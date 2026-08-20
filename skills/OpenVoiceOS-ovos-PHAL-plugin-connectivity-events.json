@@ -16,6 +16,7 @@
   "package_name": "ovos_phal_plugin_connectivity_events",
   "pypi_version": "0.1.3",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "PHAL Plugin",
@@ -29,6 +30,7 @@
   "pipeline": null,
   "connectivity": "offline",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",
