@@ -15,6 +15,7 @@ const typeFilter = document.getElementById("type-filter");
 const tierFilter = document.getElementById("tier-filter");
 const languageFilter = document.getElementById("language-filter");
 const sortOrder = document.getElementById("sort-order");
+const showArchivedToggle = document.getElementById("show-archived");
 const statsContent = document.getElementById("stats-content");
 
 let skills = [];
@@ -429,6 +430,7 @@ function applyFilters() {
   const type = typeFilter.value;
   const tier = tierFilter.value;
   const language = languageFilter.value;
+  const showArchived = showArchivedToggle.checked;
 
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
@@ -436,7 +438,8 @@ function applyFilters() {
     matchesTagFilter(s, tag) &&
     matchesTypeFilter(s, type) &&
     (!tier || String(s.tier) === tier) &&
-    (!language || asArray(s.languages).includes(language))
+    (!language || asArray(s.languages).includes(language)) &&
+    (showArchived || !s.archived)
   );
   const sorted = sortSkills(filtered, sortOrder.value);
 
@@ -479,6 +482,7 @@ typeFilter.addEventListener("change", applyFilters);
 tierFilter.addEventListener("change", applyFilters);
 languageFilter.addEventListener("change", applyFilters);
 sortOrder.addEventListener("change", applyFilters);
+showArchivedToggle.addEventListener("change", applyFilters);
 
 // cache: "no-store" plus a timestamp query param - belt and braces
 // against a stale cached copy ever being served.

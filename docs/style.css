@@ -259,6 +259,20 @@ h1 { margin: 0 0 0.5rem; font-size: 2rem; }
   font-size: 0.78rem;
 }
 
+.archived-toggle {
+  display: block;
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.archived-toggle input {
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
 .new-section {
   max-width: 1100px;
   margin: 0 auto;
