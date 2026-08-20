@@ -1,0 +1,54 @@
+{
+  "id": "OpenVoiceOS-ovos-wyoming-docker",
+  "skill_id": null,
+  "name": "ovos-wyoming-docker",
+  "description": "A collection of Docker images for running OVOS services using the Wyoming Protocol.",
+  "examples": [],
+  "tags": [
+    "docker",
+    "library",
+    "openvoiceos",
+    "tigregotico"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-wyoming-docker",
+  "package_name": null,
+  "pypi_version": null,
+  "license": null,
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 4,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Getting started",
+      "content": "### Build the images\n\nBuild all images manually:\n\n./build.sh\n\nOr build them with Docker Compose:\n\ndocker compose build\n\n### Add to Home Assistant\n\nAdd the services to Home Assistant with the Wyoming integration.\n\n![image](https://github.com/user-attachments/assets/ad44dbea-1cae-4dbd-9a9d-0bdb9688f98f)\n\n![image](https://github.com/user-attachments/assets/4c8ebdca-cc80-4747-ab3a-9a4b23d70343)\n\nAdd the OVOS agent with the Ollama integration.\n\n![image](https://github.com/user-attachments/assets/18e28f47-7acf-4f36-a121-4451cec66a38)\n\n![image](https://github.com/user-attachments/assets/9f6ed44a-8303-49ee-ae9b-29604bfb38f6)\n\nPoint your Wyoming satellites to OVOS.\n\n![image](https://github.com/user-attachments/assets/e71a9a4b-8a47-418c-9ab8-529264c8ad3b)\n\n---"
+    },
+    {
+      "heading": "Compose setup",
+      "content": "Edit `docker-compose.yml` to fit your setup. Below is an example with multiple TTS, STT, and wake word services.\n\nSet `${CONFIG_BASE_DIR}` to the path that holds your `mycroft.conf` file.\n\nservices:\n  ovos-assist-agent:\n    image: ovos-persona/ovos-core\n    restart: always\n    container_name: ovos_core_persona\n    # network_mode: host in order to be able to connect to the bus\n    network_mode: host\n    #ports:\n    #  - 8337:8337\n    \n  wyoming-ovos-tts-sam:\n    image: jarbasai/ovos-wyoming-tts-sam:latest\n    container_name: wyoming-ovos-tts-sam\n    restart: unless-stopped\n    volumes:\n      - ${CONFIG_BASE_DIR}/mycroft.conf:/etc/mycroft/mycroft.conf\n    ports:\n      - 10605:8080\n\n  wyoming-ovos-tts-nos:\n    image: jarbasai/ovos-wyoming-tts-nos:latest\n    container_name: wyoming-ovos-tts-no\u2026"
+    },
+    {
+      "heading": "Configuration",
+      "content": "All services use a shared `mycroft.conf` file. This file is usually at:\n\n/etc/mycroft/mycroft.conf\n\nSet `${CONFIG_BASE_DIR}` to the base directory that holds your config, for example:\n\nexport CONFIG_BASE_DIR=$HOME/.config/mycroft\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-04-09T18:29:45Z",
+  "last_updated": "2026-08-15T04:15:53Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

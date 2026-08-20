@@ -1,0 +1,45 @@
+{
+  "id": "OpenVoiceOS-raspovos-manual",
+  "skill_id": null,
+  "name": "raspovos-manual",
+  "description": "User manual for the raspOVOS image",
+  "examples": [],
+  "tags": [
+    "deprecated",
+    "openvoiceos",
+    "raspberry-pi"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/raspovos-manual",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": true,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Advanced configuration",
+      "content": "\\\nThe user configuration file is found at `~/.config/mycroft/mycroft.conf`  \nThis is a standard JSON file and can be checked with the command `cat ~/.config/mycroft/mycroft.conf | jq`\n\\"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-10-24T15:55:58Z",
+  "last_updated": "2024-10-24T21:43:21Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

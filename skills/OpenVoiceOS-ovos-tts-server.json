@@ -15,8 +15,9 @@
   "package_name": "ovos-tts-server",
   "pypi_version": "1.13.4",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 1,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 16,
@@ -28,6 +29,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

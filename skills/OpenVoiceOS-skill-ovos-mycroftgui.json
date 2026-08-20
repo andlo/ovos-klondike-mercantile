@@ -11,6 +11,7 @@
   "package_name": "ovos-skill-mycroft-gui",
   "pypi_version": null,
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
   "tier": 3,
   "component_type": "Skill",
@@ -24,6 +25,13 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "use_listening_beep",
+      "type": "checkbox",
+      "label": "Play beep when listening"
+    }
+  ],
   "setup_notes": [],
   "languages": [
     "ca-es",

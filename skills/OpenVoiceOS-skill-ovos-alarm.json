@@ -15,6 +15,7 @@
   "package_name": null,
   "pypi_version": null,
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
   "tier": 3,
   "component_type": "Skill",
@@ -28,6 +29,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "sound",
+      "type": "select",
+      "label": "Selection:"
+    },
+    {
+      "name": "start_quiet",
+      "type": "checkbox",
+      "label": "Start Quietly, Grow Louder"
+    }
+  ],
   "setup_notes": [],
   "languages": [
     "ca-es",

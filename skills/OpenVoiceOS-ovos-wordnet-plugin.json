@@ -11,9 +11,10 @@
   "package_name": "ovos-wordnet-plugin",
   "pypi_version": "0.1.0",
   "license": null,
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Retrieval Plugin",
+  "component_type": "Toolbox Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
@@ -24,6 +25,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Installation",

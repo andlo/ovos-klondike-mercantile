@@ -15,10 +15,11 @@
   "package_name": "ovos-skills-manager",
   "pypi_version": "0.0.13",
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
   "tier": 3,
-  "component_type": "Tool",
-  "type_group": "Tool",
+  "component_type": "Skill",
+  "type_group": "Skill",
   "stars": 5,
   "forks": 5,
   "open_issues": 28,
@@ -28,6 +29,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

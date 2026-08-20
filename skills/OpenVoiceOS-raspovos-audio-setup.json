@@ -1,0 +1,47 @@
+{
+  "id": "OpenVoiceOS-raspovos-audio-setup",
+  "skill_id": null,
+  "name": "raspovos-audio-setup",
+  "description": "Automatic audio configuration for Raspberry Pi devices running OpenVoiceOS.",
+  "examples": [],
+  "tags": [
+    "audio",
+    "ilenia",
+    "library",
+    "openvoiceos",
+    "raspberry-pi"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/raspovos-audio-setup",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 8,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "raspOVOS-audio-setup",
+      "content": "Automatic audio configuration for Raspberry Pi devices running OpenVoiceOS.\n\nThis repository has shell tools and systemd units that keep audio working when hardware changes. Plug in a USB soundcard, add a HAT, or move the SD card to different hardware, and the tools select the right output automatically. They also expose more complex setups, such as combined outputs and echo cancellation, through a simple menu.\n\n**Note:** The companion project [ovos-i2csound](https://github.com/OpenVoiceOS/ovos-i2csound) handles hardware detection and driver setup for I2C HATs (Mark 1, Respeaker, HiFiBerry, and others). This repository reads its detection hints from `/etc/OpenVoiceOS/i2c_platform`.\n\n---\n\n## The tools\n\n| Tool | Installed to | What it does |\n|------|--------------|--------------|\n| `ovos-aud\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-01-17T06:00:40Z",
+  "last_updated": "2026-08-01T15:34:55Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

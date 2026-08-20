@@ -1,0 +1,53 @@
+{
+  "id": "OpenVoiceOS-raspOVOS",
+  "skill_id": null,
+  "name": "raspOVOS",
+  "description": "raspOVOS is the flagship OpenVoiceOS experience for the Raspberry Pi. It provides ready-to-flash images that turn a Pi into a voice assistant.",
+  "examples": [],
+  "tags": [
+    "openvoiceos",
+    "raspberry-pi",
+    "tool"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/raspOVOS",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 51,
+  "forks": 6,
+  "open_issues": 20,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Getting Started",
+      "content": "Full documentation lives at [openvoiceos.github.io/raspOVOS](https://openvoiceos.github.io/raspOVOS/). It covers flashing tutorials, hardware guidance, troubleshooting, and developer docs (in-repo source: [`docs/`](docs/index.md)).\n\nFind the latest images on the [Releases](https://github.com/OpenVoiceOS/raspOVOS/releases) page.\n\nEvery image build passes automated static, functional, and boot smoke tests ([CI tiers](docs/dev/ci-tiers.md). Stable releases also pass a [hardware checklist](docs/dev/release-checklist.md).\n\n---"
+    },
+    {
+      "heading": "System Configuration",
+      "content": "**User Customization:**\n\n* Renames the default `pi` user to a custom user (default: `ovos`).\n* Updates all references in system files (`/etc/passwd`, `/etc/group`, `/etc/shadow`) and moves the home directory.\n* Sets a default password (`ovos`) and applies it across boot and login settings.\n* Adds the user to the groups `sudo`, `audio`, `pipewire`, `rtkit`, and a custom `ovos` group.\n\n**Hostname:**\n\n* Sets a custom hostname (`raspOVOS`).\n\n**Performance Tuning:**\n\n* Modifies `/etc/fstab` with `setup_fstab.sh` to optimize disk usage and performance (for example, zram swap).\n\n---"
+    },
+    {
+      "heading": "Python Environment Setup",
+      "content": "* Installs [uv](https://github.com/astral-sh/uv) and `sdnotify` globally.\n* Creates a Python virtual environment at `~/.venvs/ovos`.\n* Installs core OVOS components and their dependencies inside the venv:\n    * `ovos-core`, `ovos-gui`, `ovos-audio`, `ovos-phal`, `ovos-skill-config-tool`, and others.\n    * STT/TTS plugins like `ovos-stt-plugin-fasterwhisper`, `ovos-audio-transformer-plugin-ggwave`.\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-11-25T12:08:27Z",
+  "last_updated": "2026-08-16T03:01:21Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}
