@@ -145,6 +145,36 @@ function renderSettings(skill) {
   `;
 }
 
+const REPO_URL = "https://github.com/andlo/ovos-klondike-mercantile";
+
+// Both open GitHub's own "new issue" form, pre-filled - no backend
+// needed on this static site. A maintainer (or an automated workflow
+// watching for these labels, if one gets built later) can then bump
+// the repo to the front of the rotation, matching the same effect as
+// manually removing it from state.json's "attempted" list.
+function updateRequestUrl(skill) {
+  const title = `Update request: ${skill.name} (${skill.id})`;
+  const body =
+    `Please re-check this listing sooner than its normal rotation turn:\n\n` +
+    `- **Repo**: ${skill.source}\n` +
+    `- **Listing**: ${window.location.href}\n\n` +
+    `**What changed / why re-check?**\n<!-- e.g. added a GitHub topic, ` +
+    `set package_name in skill.json, published a release, archived the repo, etc -->\n`;
+  const params = new URLSearchParams({ title, body, labels: "update-request" });
+  return `${REPO_URL}/issues/new?${params.toString()}`;
+}
+
+function flagUrl(skill) {
+  const title = `Flag: ${skill.name} (${skill.id})`;
+  const body =
+    `Please review this listing:\n\n` +
+    `- **Repo**: ${skill.source}\n` +
+    `- **Listing**: ${window.location.href}\n\n` +
+    `**Reason** (illegal, dangerous, spam, abandoned, shouldn't be here, etc)?\n<!-- describe -->\n`;
+  const params = new URLSearchParams({ title, body, labels: "flagged" });
+  return `${REPO_URL}/issues/new?${params.toString()}`;
+}
+
 function renderDetail(skill) {
   document.title = `${skill.name} · OVOS Klondike Mercantile`;
 
@@ -218,6 +248,11 @@ function renderDetail(skill) {
         <a href="${escapeHtml(skill.source)}" target="_blank" rel="noopener" class="detail-link-btn">View on GitHub</a>
         ${skill.package_name ? `<a href="https://pypi.org/project/${escapeHtml(skill.package_name)}/" target="_blank" rel="noopener" class="detail-link-btn">View on PyPI</a>` : ""}
         ${skill.in_ovos_localize ? `<a href="https://openvoiceos.github.io/ovos-localize/" target="_blank" rel="noopener" class="detail-link-btn detail-link-translate">Help Translate</a>` : ""}
+      </div>
+
+      <div class="detail-meta-links">
+        <a href="${updateRequestUrl(skill)}" target="_blank" rel="noopener">🔄 Request update</a>
+        <a href="${flagUrl(skill)}" target="_blank" rel="noopener" class="flag-link">🚩 Report a problem</a>
       </div>
     </div>
   `;

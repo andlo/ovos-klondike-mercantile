@@ -740,3 +740,19 @@ footer a { color: var(--accent); }
   border: 1px solid var(--accent);
   margin-left: auto;
 }
+
+.detail-meta-links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.detail-meta-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.detail-meta-links a:hover { text-decoration: underline; }
+
+.flag-link { color: #c73e35; }
