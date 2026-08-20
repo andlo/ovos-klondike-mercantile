@@ -621,7 +621,7 @@ def fetch_ovos_localize_tracked_repos():
 LOCALE_DIR_PATTERN = re.compile(r"^[a-z]{2}(-[a-zA-Z]{2,})?$")
 
 
-def fetch_locale_languages(full_name):
+def fetch_locale_languages(full_name, package_name=None):
     """Lists the locale/ directory to find which language codes a
     Skill supports (e.g. ["en-us", "da-dk"]) - only called for
     component_type == "Skill" entries, since plugins/tools don't
@@ -630,11 +630,22 @@ def fetch_locale_languages(full_name):
     Skill packaging convention). Returns an empty list if there's no
     locale/ directory, or the repo isn't a Skill.
 
+    Tries repo-root locale/ first, then falls back to
+    <package_name_with_underscores>/locale/ - found by inspection:
+    OscillateLabsLLC/skill-homeassistant has NO locale/ at root at
+    all; its real one lives at skill_homeassistant/locale/, nested
+    inside the Python package directory (Python's own convention of
+    replacing hyphens with underscores for the importable module
+    name, which matches the package name here exactly).
+
     Normalized to lowercase - different repos' locale/ folders use
     inconsistent casing (en-us vs en-US), which without this showed
     up as confusing duplicate entries in the language filter
     dropdown ("en-US" and "en-us" as two separate options)."""
     data = gh_ok("api", f"repos/{full_name}/contents/locale")
+    if not data and package_name:
+        package_dir = package_name.replace("-", "_")
+        data = gh_ok("api", f"repos/{full_name}/contents/{package_dir}/locale")
     if not data:
         return []
     return sorted(set(
@@ -802,7 +813,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     # fetch_locale_languages()'s docstring. Skipped entirely for
     # Plugins/Tools rather than making a call that would almost
     # always come back empty.
-    languages = fetch_locale_languages(full_name) if component_type == "Skill" else []
+    languages = fetch_locale_languages(full_name, package_name) if component_type == "Skill" else []
 
     version, requires_dist, pypi_release_date = pypi_info(package_name)
     github_release = latest_github_release(full_name)
