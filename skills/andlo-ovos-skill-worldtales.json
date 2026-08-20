@@ -22,6 +22,7 @@
   "package_name": "ovos-skill-worldtales",
   "pypi_version": null,
   "license": "GPL-3.0",
+  "archived": true,
   "author": "andlo",
   "tier": 2,
   "component_type": "Skill",
@@ -33,8 +34,9 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",
