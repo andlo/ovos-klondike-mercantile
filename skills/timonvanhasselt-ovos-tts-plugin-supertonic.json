@@ -1,0 +1,44 @@
+{
+  "id": "timonvanhasselt-ovos-tts-plugin-supertonic",
+  "skill_id": null,
+  "name": "ovos-tts-plugin-supertonic",
+  "description": "A lightweight, local TTS plugin for Open Voice OS (OVOS) using Supertonic V2 ONNX model.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/timonvanhasselt/ovos-tts-plugin-supertonic",
+  "package_name": "ovos-tts-plugin-supertonic",
+  "pypi_version": null,
+  "license": null,
+  "archived": false,
+  "author": "timonvanhasselt",
+  "tier": 2,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 3,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "git clone\ncd ovos-tts-plugin-supertonic\npip install ."
+    },
+    {
+      "heading": "Configuration",
+      "content": "Update your mycroft.conf:\n  \"tts\": {\n    \"module\": \"supertonic_tts_plugin\",\n    \"supertonic_tts_plugin\": {\n      \"voice\": \"Sarah\",  // Choose: Sarah (F1), Lily (F2), Jessica (F3), Olivia (F4), Emily (F5), Alex (M1), James (M2), Robert (M3), Sam (M4), Daniel (M5)\n      \"lang\": \"en\", // Change the language to the preferred other language then OVOS interface language, if supported. Fallback is \"en\"\n      \"quality\": 5, #quality steps range 1 - 15\n      \"speed\": 1.05 #default suggested by Supertonic, speed up to 1.3x supported\n    }\n}"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-01-07T20:01:28Z",
+  "last_updated": "2026-01-07T20:35:44Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
