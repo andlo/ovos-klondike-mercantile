@@ -1,0 +1,48 @@
+{
+  "id": "andlo-ovos-klondike-mercantile",
+  "skill_id": null,
+  "name": "ovos-klondike-mercantile",
+  "description": "A global, automatically-discovered directory of OVOS skills, plugins, addons and tools across all of GitHub - cross-referenced against PyPI, GitHub releases, the official OVOS Skill Store, and OVOS Localize.",
+  "examples": [],
+  "tags": [
+    "directory",
+    "mycroft",
+    "openvoiceos",
+    "ovos",
+    "skill-store",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/andlo/ovos-klondike-mercantile",
+  "package_name": null,
+  "pypi_version": null,
+  "license": null,
+  "archived": false,
+  "author": "andlo",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Descriptions and setup notes, from the README when needed",
+      "content": "If neither `skill.json` nor GitHub's own repo \"About\" field has a\ndescription, the repo's own README is used as a fallback - common\nspecifically for PHAL plugins, which often have a real, substantial\nREADME but an empty About field.\n\nSeparately, and for **every** entry regardless of whether a\ndescription already exists, the README is also scanned for headings\nmatching install/setup/config/getting-started - repo-specific steps\nbeyond a generic `pip install X` (editing `mycroft.conf`, enabling a\nsystemd service, setting an API key, etc). A repo can have more than\none matching section; all are shown, unmodified, on the detail page."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-08-18T20:54:26Z",
+  "last_updated": "2026-08-20T19:29:43Z",
+  "is_new_repo": true,
+  "is_recently_updated": false
+}

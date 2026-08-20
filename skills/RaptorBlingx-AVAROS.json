@@ -1,0 +1,49 @@
+{
+  "id": "RaptorBlingx-AVAROS",
+  "skill_id": null,
+  "name": "AVAROS",
+  "description": "AVAROS is an AI-voice-assistant-driven platform for resource-optimized sustainable manufacturing. It utilizes an OVOS-based conversational layer and Docker-Compose deployment to help engineers optimize energy, material, and carbon performance in real-time.",
+  "examples": [],
+  "tags": [
+    "ai-voice-assistant",
+    "carbon-emissions",
+    "docker-compose",
+    "energy",
+    "llm",
+    "ovos",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/RaptorBlingx/AVAROS",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "RaptorBlingx",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "First-run configuration",
+      "content": "The web wizard guides an operator through:\n\n1. Platform endpoint and authentication\n2. Connection test\n3. Asset registration\n4. Platform resource linking\n5. Metric mapping\n6. Intent activation\n7. Optional PREVENTION configuration\n\nAVAROS remains usable without PREVENTION; anomaly and drift commands are disabled when no PREVENTION endpoint is configured."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-03-03T06:02:11Z",
+  "last_updated": "2026-08-12T10:40:30Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

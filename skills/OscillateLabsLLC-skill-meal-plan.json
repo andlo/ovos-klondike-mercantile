@@ -24,6 +24,7 @@
   "package_name": "skill-meal-plan",
   "pypi_version": "2.2.1",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OscillateLabsLLC",
   "tier": 1,
   "component_type": "Skill",
@@ -37,11 +38,17 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [],
-  "languages": [],
+  "languages": [
+    "da-dk",
+    "en-us",
+    "fr-fr",
+    "sv-se"
+  ],
   "in_ovos_localize": true,
   "repo_created_at": "2022-05-22T02:33:47Z",
   "last_updated": "2026-08-19T03:35:03.943666Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

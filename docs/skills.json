@@ -433,6 +433,55 @@
     "is_recently_updated": false
   },
   {
+    "id": "RaptorBlingx-AVAROS",
+    "skill_id": null,
+    "name": "AVAROS",
+    "description": "AVAROS is an AI-voice-assistant-driven platform for resource-optimized sustainable manufacturing. It utilizes an OVOS-based conversational layer and Docker-Compose deployment to help engineers optimize energy, material, and carbon performance in real-time.",
+    "examples": [],
+    "tags": [
+      "ai-voice-assistant",
+      "carbon-emissions",
+      "docker-compose",
+      "energy",
+      "llm",
+      "ovos",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/RaptorBlingx/AVAROS",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "RaptorBlingx",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "First-run configuration",
+        "content": "The web wizard guides an operator through:\n\n1. Platform endpoint and authentication\n2. Connection test\n3. Asset registration\n4. Platform resource linking\n5. Metric mapping\n6. Intent activation\n7. Optional PREVENTION configuration\n\nAVAROS remains usable without PREVENTION; anomaly and drift commands are disabled when no PREVENTION endpoint is configured."
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-03-03T06:02:11Z",
+    "last_updated": "2026-08-12T10:40:30Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "OpenVoiceOS-awesome-ocp-skills",
     "skill_id": null,
     "name": "awesome-ocp-skills",
@@ -2573,6 +2622,67 @@
     "is_recently_updated": true
   },
   {
+    "id": "RaptorBlingx-HumanEnerDIA",
+    "skill_id": null,
+    "name": "HumanEnerDIA",
+    "description": "HumanEnerDIA is a comprehensive energy monitoring and analytics platform designed for real-world industrial facilities. It provides ISO 50001-compliant energy performance monitoring, machine learning-powered insights, and voice interface capabilities.",
+    "examples": [],
+    "tags": [
+      "docker-compose",
+      "energy-consumption",
+      "european-union",
+      "fastapi",
+      "forecasting",
+      "grafana-dashboard",
+      "javascript",
+      "machine-learning",
+      "nodered",
+      "ovos",
+      "ovos-skills",
+      "postgresql",
+      "prediction",
+      "python",
+      "rasa-chatbot"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/RaptorBlingx/HumanEnerDIA",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "MIT",
+    "archived": false,
+    "author": "RaptorBlingx",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "**Option 1: Guided Setup (Recommended)**"
+      },
+      {
+        "heading": "Clone and configure",
+        "content": "git clone https://github.com/RaptorBlingx/HumanEnerDIA.git humanergy\ncd humanergy\ncp .env.example .env"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-10-08T11:03:44Z",
+    "last_updated": "2026-06-23T08:37:50Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "SiC-Gamelab-interactive-stories-ovos",
     "skill_id": null,
     "name": "interactive-stories-ovos",
@@ -2585,6 +2695,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "CC0-1.0",
+    "archived": false,
     "author": "SiC-Gamelab",
     "tier": 3,
     "component_type": "Skill",
@@ -2598,6 +2709,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "en-us",
@@ -3028,6 +3140,7 @@
     "package_name": "markovonnx",
     "pypi_version": "1.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "TigreGotico",
     "tier": 1,
     "component_type": "G2P Plugin",
@@ -3041,6 +3154,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -6817,6 +6931,7 @@
     "package_name": "ovos-kid-friendly-dialog-transformer",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 2,
     "component_type": "Transformer Plugin",
@@ -6830,6 +6945,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -6841,6 +6957,54 @@
     "repo_created_at": "2025-02-23T18:57:40Z",
     "last_updated": "2026-04-23T02:49:50Z",
     "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "andlo-ovos-klondike-mercantile",
+    "skill_id": null,
+    "name": "ovos-klondike-mercantile",
+    "description": "A global, automatically-discovered directory of OVOS skills, plugins, addons and tools across all of GitHub - cross-referenced against PyPI, GitHub releases, the official OVOS Skill Store, and OVOS Localize.",
+    "examples": [],
+    "tags": [
+      "directory",
+      "mycroft",
+      "openvoiceos",
+      "ovos",
+      "skill-store",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/andlo/ovos-klondike-mercantile",
+    "package_name": null,
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "andlo",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Descriptions and setup notes, from the README when needed",
+        "content": "If neither `skill.json` nor GitHub's own repo \"About\" field has a\ndescription, the repo's own README is used as a fallback - common\nspecifically for PHAL plugins, which often have a real, substantial\nREADME but an empty About field.\n\nSeparately, and for **every** entry regardless of whether a\ndescription already exists, the README is also scanned for headings\nmatching install/setup/config/getting-started - repo-specific steps\nbeyond a generic `pip install X` (editing `mycroft.conf`, enabling a\nsystemd service, setting an API key, etc). A repo can have more than\none matching section; all are shown, unmodified, on the detail page."
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-08-18T20:54:26Z",
+    "last_updated": "2026-08-20T19:29:43Z",
+    "is_new_repo": true,
     "is_recently_updated": false
   },
   {
@@ -7267,6 +7431,7 @@
     "package_name": "ovos-mac",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OscillateLabsLLC",
     "tier": 2,
     "component_type": "Tool",
@@ -7280,6 +7445,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "brew install poetry # If you don't have it",
@@ -8925,6 +9091,7 @@
     "package_name": "ovos_MoS",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "TigreGotico",
     "tier": 2,
     "component_type": "Tool",
@@ -8938,6 +9105,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -9481,6 +9649,7 @@
     "package_name": "ovos-ollama-dialog-transformer-plugin",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 2,
     "component_type": "Transformer Plugin",
@@ -9494,6 +9663,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -11046,6 +11216,7 @@
     "package_name": "ovos-phal-plugin-mac",
     "pypi_version": "0.2.2",
     "license": null,
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -11059,6 +11230,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -12331,6 +12503,58 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-ovos-rust-messagebus",
+    "skill_id": null,
+    "name": "ovos-rust-messagebus",
+    "description": "OVOS Message Bus implementation in Rust",
+    "examples": [],
+    "tags": [
+      "hacktoberfest",
+      "neon",
+      "openvoiceos",
+      "ovos",
+      "status-active",
+      "voiceassistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OscillateLabsLLC/ovos-rust-messagebus",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 4,
+    "forks": 4,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "Since there is no Rust port of ovos-utils, configuration is done via environment variables and/or a configuration file.\n\n### Using a Configuration File\n\nThe most backwards-compatible option is to set the `OVOS_BUS_CONFIG_FILE` environment variable:\n\nOVOS_BUS_CONFIG_FILE=/home/ovos/.config/mycroft/mycroft.conf /usr/local/bin/ovos_messagebus"
+      },
+      {
+        "heading": "Additional Configuration",
+        "content": "Any other settings must be configured in `mycroft.conf` or a similar OVOS-compatible configuration file."
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-05-20T18:14:21Z",
+    "last_updated": "2026-07-23T02:15:23Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "TigreGotico-ovos-scriptconv-g2p-plugin",
     "skill_id": null,
     "name": "ovos-scriptconv-g2p-plugin",
@@ -12984,6 +13208,7 @@
     "package_name": "ovos-skill-config-tool",
     "pypi_version": "1.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 1,
     "component_type": "Tool",
@@ -12997,6 +13222,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "OVOS Skill Config Tool",
@@ -13028,7 +13254,7 @@
     "repo_created_at": "2024-12-21T00:51:14Z",
     "last_updated": "2026-08-19T03:35:30.083723Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "andlo-ovos-skill-count",
@@ -18243,6 +18469,7 @@
     "package_name": "ovos-tts-plugin-kokoro",
     "pypi_version": "0.2.1",
     "license": "NOASSERTION",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 1,
     "component_type": "Tool",
@@ -18256,6 +18483,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -18883,6 +19111,7 @@
     "package_name": "ovos-tts-plugin-pocket-tts",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 2,
     "component_type": "Tool",
@@ -18896,6 +19125,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -21635,6 +21865,7 @@
     "package_name": "skill-roon",
     "pypi_version": null,
     "license": "AGPL-3.0",
+    "archived": false,
     "author": "Ramblurr",
     "tier": 2,
     "component_type": "Skill",
@@ -21648,6 +21879,18 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "host",
+        "type": "text",
+        "label": "Host/IP Address"
+      },
+      {
+        "name": "port",
+        "type": "number",
+        "label": "Port"
+      }
+    ],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -21867,6 +22110,7 @@
     "package_name": "skill-homeassistant",
     "pypi_version": "1.4.2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 1,
     "component_type": "Skill",
@@ -21880,6 +22124,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation on Neon",
@@ -21890,12 +22135,19 @@
         "content": "### Authentication Using a Long-lived Token\n\nWe recommend using a [long-lived token for Home Assistant](https://developers.home-assistant.io/docs/auth_api/#long-lived-access-token). This provides persistent access without requiring re-authentication. Configure it in your skill settings file:\n\n- OVOS: `~/.config/mycroft/skills/skill-homeassistant/settings.json`\n- Neon: `~/.config/neon/skills/neon_homeassistant_skill/settings.json`\n\n{\n  \"api_key\": \"<HA_LONG_LIVED_TOKEN>\",\n  \"host\": \"<HA_IP_OR_HOSTNAME>\"\n}\n\n### Configuration Options\n\nAll available settings with their defaults:\n\n{\n  \"host\": \"\", // Home Assistant instance URL - required, no default\n  \"api_key\": \"\", // Long-lived access token - required, no default\n  \"disable_intents\": false, // Disable all Home Assistant intents. In most cases,\u2026"
       }
     ],
-    "languages": [],
+    "languages": [
+      "da-dk",
+      "en-us",
+      "es-es",
+      "fr-fr",
+      "pl-pl",
+      "sv-se"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2025-03-17T02:00:51Z",
     "last_updated": "2026-08-19T03:35:11.558124Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OscillateLabsLLC-skill-meal-plan",
@@ -21923,6 +22175,7 @@
     "package_name": "skill-meal-plan",
     "pypi_version": "2.2.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 1,
     "component_type": "Skill",
@@ -21936,13 +22189,19 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
-    "languages": [],
+    "languages": [
+      "da-dk",
+      "en-us",
+      "fr-fr",
+      "sv-se"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2022-05-22T02:33:47Z",
     "last_updated": "2026-08-19T03:35:03.943666Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OscillateLabsLLC-skill-monster-scanner",
@@ -21967,6 +22226,7 @@
     "package_name": "skill-monster-scanner",
     "pypi_version": "2.2.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OscillateLabsLLC",
     "tier": 1,
     "component_type": "Skill",
@@ -21980,18 +22240,24 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
         "content": "If you feel like being a monster yourself, you can set `scary` in the config to `true` and the skill will sometimes find a monster.\n\nUnder skill settings (`~/.config/mycroft/skills/skill-monster-scanner.oscillatelabsllc/settings.json`):\n\n| Option  | Value   | Description                                                  |\n| ------- | ------- | ------------------------------------------------------------ |\n| `scary` | `false` | Whether or not to occasionally find a monster under the bed. |\n\nNote: If you are running Neon, the skill settings file will be located at `~/.config/neon/skills/skill-monster-scanner.oscillatelabsllc/settings.json`."
       }
     ],
-    "languages": [],
+    "languages": [
+      "da-dk",
+      "en-us",
+      "fr-fr",
+      "sv-se"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2024-07-05T21:08:54Z",
     "last_updated": "2026-08-19T03:32:15.765812Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-skill-ovos-alarm",

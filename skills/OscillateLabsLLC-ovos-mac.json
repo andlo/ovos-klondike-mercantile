@@ -13,6 +13,7 @@
   "package_name": "ovos-mac",
   "pypi_version": null,
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OscillateLabsLLC",
   "tier": 2,
   "component_type": "Tool",
@@ -26,6 +27,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "brew install poetry # If you don't have it",

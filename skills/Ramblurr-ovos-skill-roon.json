@@ -11,6 +11,7 @@
   "package_name": "skill-roon",
   "pypi_version": null,
   "license": "AGPL-3.0",
+  "archived": false,
   "author": "Ramblurr",
   "tier": 2,
   "component_type": "Skill",
@@ -24,6 +25,18 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "host",
+      "type": "text",
+      "label": "Host/IP Address"
+    },
+    {
+      "name": "port",
+      "type": "number",
+      "label": "Port"
+    }
+  ],
   "setup_notes": [
     {
       "heading": "Installation",

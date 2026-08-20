@@ -1,0 +1,52 @@
+{
+  "id": "OscillateLabsLLC-ovos-rust-messagebus",
+  "skill_id": null,
+  "name": "ovos-rust-messagebus",
+  "description": "OVOS Message Bus implementation in Rust",
+  "examples": [],
+  "tags": [
+    "hacktoberfest",
+    "neon",
+    "openvoiceos",
+    "ovos",
+    "status-active",
+    "voiceassistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/ovos-rust-messagebus",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 4,
+  "forks": 4,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Since there is no Rust port of ovos-utils, configuration is done via environment variables and/or a configuration file.\n\n### Using a Configuration File\n\nThe most backwards-compatible option is to set the `OVOS_BUS_CONFIG_FILE` environment variable:\n\nOVOS_BUS_CONFIG_FILE=/home/ovos/.config/mycroft/mycroft.conf /usr/local/bin/ovos_messagebus"
+    },
+    {
+      "heading": "Additional Configuration",
+      "content": "Any other settings must be configured in `mycroft.conf` or a similar OVOS-compatible configuration file."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-05-20T18:14:21Z",
+  "last_updated": "2026-07-23T02:15:23Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}
