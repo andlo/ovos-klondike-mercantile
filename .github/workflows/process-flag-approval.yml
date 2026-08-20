@@ -1,0 +1,94 @@
+name: Process approved flag (remove from store)
+
+# A "flagged" issue does NOTHING automatically when opened - it just
+# waits for a maintainer to review it. This only fires when a
+# maintainer explicitly adds the "approved" label to an already-
+# flagged issue - that's the deliberate approval gate: nothing gets
+# removed without an explicit human decision.
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  process:
+    if: >
+      contains(github.event.issue.labels.*.name, 'flagged') &&
+      contains(github.event.issue.labels.*.name, 'approved')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract repo from issue body and add to ignore.txt
+        id: extract
+        env:
+          # Passed via env, not interpolated into the shell script -
+          # see process-update-request.yml for why.
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          python3 - <<'EOF'
+          import os
+          import re
+          from pathlib import Path
+
+          body = os.environ["ISSUE_BODY"]
+          outputs = {}
+          match = re.search(r"github\.com/([\w.-]+/[\w.-]+)", body)
+          if not match:
+              outputs["no_match"] = "true"
+          else:
+              full_name = match.group(1)
+              ignore_path = Path("ignore.txt")
+              lines = ignore_path.read_text().splitlines() if ignore_path.exists() else []
+              existing = {ln.strip() for ln in lines}
+              if full_name in existing:
+                  outputs["already_ignored"] = "true"
+              else:
+                  lines.append(full_name)
+                  ignore_path.write_text("\n".join(lines) + "\n")
+                  outputs["added"] = "true"
+              outputs["full_name"] = full_name
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              for key, value in outputs.items():
+                  f.write(f"{key}={value}\n")
+          EOF
+
+      - name: Commit and push if changed
+        if: steps.extract.outputs.added == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ignore.txt
+          git commit -m "chore: remove ${{ steps.extract.outputs.full_name }} per approved flag #${{ github.event.issue.number }}"
+          for attempt in 1 2 3; do
+            if git push; then break; fi
+            git fetch origin main && git rebase origin/main
+          done
+
+      - name: Comment and close (removed)
+        if: steps.extract.outputs.added == 'true'
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "Approved and added to ignore.txt. It'll disappear from the store within the next few hours (the crawler runs every 3 hours)."
+          gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment (already ignored)
+        if: steps.extract.outputs.already_ignored == 'true'
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "This repo is already in ignore.txt - nothing further to do."
+          gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment (couldn't identify the repo)
+        if: steps.extract.outputs.no_match == 'true'
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "Couldn't automatically identify the repo from the issue body - remove it from ignore.txt manually if needed."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

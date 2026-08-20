@@ -1,0 +1,100 @@
+name: Process update-request issues
+
+# Triggered when someone opens an issue with the "update-request"
+# label (created via the detail page's "Request update" button,
+# pre-filled with the skill id in the title). Safe to fully
+# automate - all this does is bump a specific entry to the front of
+# the refresh rotation, no content gets removed or hidden.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  process:
+    if: contains(github.event.issue.labels.*.name, 'update-request')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract skill id and re-queue it
+        id: extract
+        env:
+          # Passed via env, never interpolated directly into the
+          # shell script - the issue title is user-controlled text,
+          # and inlining it into a run: block via ${{ }} is a known
+          # GitHub Actions injection risk.
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          python3 - <<'EOF'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          title = os.environ["ISSUE_TITLE"]
+          outputs = {}
+          match = re.search(r"\(([\w.-]+)\)\s*$", title)
+          if not match:
+              outputs["no_match"] = "true"
+          else:
+              skill_id = match.group(1)
+              skill_file = Path("skills") / f"{skill_id}.json"
+              if not skill_file.exists():
+                  outputs["no_match"] = "true"
+              else:
+                  state_path = Path("state.json")
+                  state = json.loads(state_path.read_text()) if state_path.exists() else {"cursor": 0, "attempted": []}
+                  attempted = state.get("attempted", [])
+                  if skill_id in attempted:
+                      attempted.remove(skill_id)
+                      state["attempted"] = attempted
+                      state_path.write_text(json.dumps(state, indent=2) + "\n")
+                      outputs["requeued"] = "true"
+                  else:
+                      outputs["requeued"] = "false"
+                  outputs["skill_id"] = skill_id
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              for key, value in outputs.items():
+                  f.write(f"{key}={value}\n")
+          EOF
+
+      - name: Commit and push if changed
+        if: steps.extract.outputs.no_match != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "chore: re-queue ${{ steps.extract.outputs.skill_id }} per update request #${{ github.event.issue.number }}"
+          for attempt in 1 2 3; do
+            if git push; then break; fi
+            git fetch origin main && git rebase origin/main
+          done
+
+      - name: Comment and close (found + requeued)
+        if: steps.extract.outputs.requeued == 'true'
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "Queued for its next check - should be reflected here within a few hours (the crawler runs every 3 hours)."
+          gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment and close (already queued)
+        if: steps.extract.outputs.requeued == 'false'
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "This is a newly-discovered entry that hasn't had its first check yet - it's already in the queue and doesn't need requeuing."
+          gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment and close (couldn't identify the entry)
+        if: steps.extract.outputs.no_match == 'true'
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --body "Couldn't automatically identify which listing this refers to from the issue title - a maintainer will need to look at this one manually."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
