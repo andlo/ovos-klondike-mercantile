@@ -11,9 +11,10 @@
   "package_name": "ovos-n8n-jarvis-persona",
   "pypi_version": null,
   "license": null,
+  "archived": false,
   "author": "reklis",
   "tier": 2,
-  "component_type": "Solver Plugin",
+  "component_type": "Persona",
   "type_group": "Plugin",
   "stars": 1,
   "forks": 1,
@@ -24,6 +25,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install in development mode",

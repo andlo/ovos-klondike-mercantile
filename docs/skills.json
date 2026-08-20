@@ -7940,6 +7940,7 @@
     "package_name": "ovos-monitor",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "raincystar-oss",
     "tier": 2,
     "component_type": "Tool",
@@ -7951,8 +7952,9 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -8012,9 +8014,10 @@
     "package_name": "ovos-n8n-jarvis-persona",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "reklis",
     "tier": 2,
-    "component_type": "Solver Plugin",
+    "component_type": "Persona",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 1,
@@ -8025,6 +8028,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install in development mode",
@@ -8059,6 +8063,7 @@
     "package_name": "ovos-n8n-jarvis-softphone",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "reklis",
     "tier": 2,
     "component_type": "Tool",
@@ -8072,6 +8077,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -8950,6 +8956,7 @@
     "package_name": "ovos-phal-plugin-aiy-v2",
     "pypi_version": "0.1.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "smartgic",
     "tier": 1,
     "component_type": "PHAL Plugin",
@@ -8963,6 +8970,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -10959,6 +10967,7 @@
     "package_name": "ovos-tts-plugin-silero",
     "pypi_version": "0.3.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "putnik",
     "tier": 2,
     "component_type": "Tool",
@@ -10972,6 +10981,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -11167,6 +11177,7 @@
     "package_name": "ovos-remote-music-service",
     "pypi_version": null,
     "license": "MIT",
+    "archived": false,
     "author": "reklis",
     "tier": 2,
     "component_type": "Tool",
@@ -11180,6 +11191,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -12243,6 +12255,7 @@
     "package_name": "ovos-skill-mcp",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "reklis",
     "tier": 2,
     "component_type": "Tool",
@@ -12256,6 +12269,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -15334,6 +15348,7 @@
     "package_name": "ovos-stt-plugin-whispercppserver",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "ser",
     "tier": 2,
     "component_type": "Tool",
@@ -15345,8 +15360,9 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -16056,6 +16072,7 @@
     "package_name": "ovos-tts-plugin-elevenlabs",
     "pypi_version": "0.1.0",
     "license": "MIT",
+    "archived": false,
     "author": "reklis",
     "tier": 2,
     "component_type": "Tool",
@@ -16069,6 +16086,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -18934,6 +18952,7 @@
     "package_name": "pereira-v2",
     "pypi_version": null,
     "license": null,
+    "archived": false,
     "author": "phmasc",
     "tier": 2,
     "component_type": "Tool",
@@ -18945,8 +18964,9 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
