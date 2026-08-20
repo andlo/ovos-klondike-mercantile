@@ -27,7 +27,7 @@ function renderCard(skill) {
     .map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
   const fallbackIcon = genericIconFor(skill);
   const icon = skill.icon || fallbackIcon;
-  const version = skill.pypi_version ? `v${escapeHtml(skill.pypi_version)}` : "unreleased";
+  const version = versionLabel(skill);
   const description = truncate(skill.description, MAX_DESCRIPTION_LENGTH);
   const stats = [];
   if (skill.stars) stats.push(`⭐ ${skill.stars}`);
@@ -43,7 +43,7 @@ function renderCard(skill) {
                onerror="this.onerror=null;this.src='${fallbackIcon}'">
           <div class="card-head-text">
             <h2>${escapeHtml(skill.name)}</h2>
-            <div class="byline">by ${escapeHtml(skill.author)} · ${version}</div>
+            <div class="byline">by ${escapeHtml(skill.author)}${version ? ` · ${escapeHtml(version)}` : ""}</div>
             ${statsLine}
             ${renderLanguageFlags(skill)}
           </div>

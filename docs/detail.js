@@ -216,7 +216,7 @@ function renderDetail(skill) {
              onerror="this.onerror=null;this.src='${fallbackIcon}'">
         <div>
           <h1>${escapeHtml(skill.name)}</h1>
-          <div class="byline">by ${escapeHtml(skill.author)}${skill.pypi_version ? ` · v${escapeHtml(skill.pypi_version)}` : " · unreleased"}</div>
+          <div class="byline">by ${escapeHtml(skill.author)}${versionLabel(skill) ? ` · ${escapeHtml(versionLabel(skill))}` : ""}</div>
           ${renderLanguageFlags(skill)}
         </div>
       </div>

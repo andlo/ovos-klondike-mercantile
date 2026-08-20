@@ -162,6 +162,20 @@ function formatDate(iso) {
   });
 }
 
+// "unreleased" only makes sense as a claim for something that's
+// EXPECTED to be on PyPI (a Skill/Plugin/Tool) - showing it for an
+// Infrastructure entry (the official Skill Store's own data repo,
+// an installer, this site itself, etc) is actively wrong: found by
+// inspection, this site's own repo has real GitHub releases but
+// showed "unreleased" simply because it has no PyPI package, which
+// PyPI versioning was never meant to apply to in the first place.
+// Returns null (render nothing) rather than a misleading label.
+function versionLabel(skill) {
+  if (skill.pypi_version) return `v${skill.pypi_version}`;
+  if (skill.component_type === "Infrastructure") return null;
+  return "unreleased";
+}
+
 // Computes a country flag emoji directly from a 2-letter region
 // code via Unicode "regional indicator symbol" math - no lookup
 // table needed. E.g. flagEmoji("us") -> 🇺🇸, flagEmoji("dk") -> 🇩🇰.
