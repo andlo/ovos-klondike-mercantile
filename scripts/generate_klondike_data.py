@@ -746,6 +746,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "package_name": package_name,
         "pypi_version": version,
         "license": license_id,
+        "archived": bool(repo.get("archived")),
         "author": owner,
         "tier": tier,
         "component_type": component_type,

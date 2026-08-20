@@ -36,6 +36,19 @@ function renderLicenseWarning(skill) {
   `;
 }
 
+function renderArchivedWarning(skill) {
+  if (!skill.archived) return "";
+  return `
+    <div class="archived-notice">
+      📦 <strong>This repo is archived on GitHub.</strong> The owner
+      has marked it read-only, meaning no further updates, fixes, or
+      issue responses are expected. Everything shown here reflects
+      its last state before archiving - it may still work exactly as
+      described, just isn't being maintained.
+    </div>
+  `;
+}
+
 function renderStatRow(label, value) {
   if (value === null || value === undefined || value === "") return "";
   return `<div class="stat-row"><span class="stat-label">${escapeHtml(label)}</span><span class="stat-value">${value}</span></div>`;
@@ -94,6 +107,7 @@ function renderAssessment(skill) {
     { label: "Has a GitHub release", ok: skill.has_release },
     { label: "Listed in OVOS's upcoming Skill Store", ok: skill.in_ovos_store },
     { label: "Has a declared license", ok: !!skill.license, detail: skill.license },
+    { label: "Not archived", ok: !skill.archived },
   ];
   const factsHtml = facts.map((f) => `
     <div class="fact-row">
@@ -140,6 +154,8 @@ function renderDetail(skill) {
       ${renderAssessment(skill)}
 
       ${renderLicenseWarning(skill)}
+
+      ${renderArchivedWarning(skill)}
 
       <p class="detail-description">${escapeHtml(skill.description || "No description available.")}</p>
 

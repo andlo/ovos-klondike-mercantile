@@ -119,6 +119,9 @@ function renderBadges(skill) {
   if (!skill.license) {
     badges.push(`<span class="badge badge-warn">No license</span>`);
   }
+  if (skill.archived) {
+    badges.push(`<span class="badge badge-warn">Archived</span>`);
+  }
   return badges.join("");
 }
 

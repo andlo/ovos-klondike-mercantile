@@ -529,6 +529,16 @@ footer a { color: var(--accent); }
   line-height: 1.5;
 }
 
+.archived-notice {
+  background: #eef0f3;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.88rem;
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
 .assessment-text {
   color: var(--text);
   font-size: 0.9rem;
