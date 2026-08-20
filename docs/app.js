@@ -445,6 +445,13 @@ function applyFilters() {
 
   render(sorted);
   renderNewSection(sorted);
+  // Stats reflect exactly what's currently filtered/shown (including
+  // the archived toggle) - not a fixed, independent total. Previously
+  // computed once from the full unfiltered list on load, which could
+  // show a different total than the "N skills listed" headline right
+  // above it once someone applied any filter, including archived
+  // ones staying counted even with "show archived" off.
+  renderStatsSection(sorted);
 }
 
 function renderStatsLine(meta, entryCount) {
@@ -501,7 +508,6 @@ Promise.all([
     skills = skillsData;
     populateFilters(skills);
     renderStatsLine(metaData, skills.length);
-    renderStatsSection(skills);
     applyFilters();
   })
   .catch((err) => {
