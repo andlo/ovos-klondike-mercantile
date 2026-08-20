@@ -11,6 +11,7 @@
   "package_name": "ovos-media-plugin-cli",
   "pypi_version": "0.0.3a1",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 2,
   "component_type": "Audio Plugin",
@@ -24,6 +25,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

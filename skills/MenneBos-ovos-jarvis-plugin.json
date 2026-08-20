@@ -1,0 +1,45 @@
+{
+  "id": "MenneBos-ovos-jarvis-plugin",
+  "skill_id": null,
+  "name": "ovos-jarvis-plugin",
+  "description": "`ovos-jarvis-plugin` is an OVOS persona solver plugin that forwards utterances to a Jarvis AI agent exposed through an n8n webhook.",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/MenneBos/ovos-jarvis-plugin",
+  "package_name": "ovos_jarvis_plugin",
+  "pypi_version": null,
+  "license": null,
+  "archived": false,
+  "author": "MenneBos",
+  "tier": 2,
+  "component_type": "Solver Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install git+https://github.com/MenneBos/ovos-jarvis-plugin.git"
+    },
+    {
+      "heading": "Persona configuration",
+      "content": "Create `~/.config/ovos_persona/jarvis.json`:\n\n{\n  \"name\": \"Jarvis\",\n  \"solvers\": [\n    \"ovos-solver-jarvis-plugin\"\n  ],\n  \"ovos-solver-jarvis-plugin\": {\n    \"webhook_url\": \"http://127.0.0.1:5677/webhook/3eb829d2-c64c-479e-a0e2-ed6f7d1aa052\",\n    \"timeout\": 10\n  }\n}\n\n### n8n webhook note\n\n- `/webhook-test/` is meant for n8n workflow testing\n- `/webhook/` is the production endpoint used when your workflow is active"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-04-16T18:59:28Z",
+  "last_updated": "2026-04-17T09:59:23Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

@@ -13,8 +13,9 @@
   "package_name": "ovos-media",
   "pypi_version": "2.0.0a9",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 2,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 3,
@@ -26,6 +27,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

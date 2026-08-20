@@ -15,9 +15,10 @@
   "package_name": "ovos-ddg-plugin",
   "pypi_version": "1.0.2a1",
   "license": "NOASSERTION",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Toolbox Plugin",
+  "component_type": "Retrieval Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 1,
@@ -28,6 +29,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Installation",

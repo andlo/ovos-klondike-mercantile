@@ -15,6 +15,7 @@
   "package_name": "neon-skill-caffeinewiz",
   "pypi_version": "3.0.0",
   "license": "NOASSERTION",
+  "archived": false,
   "author": "NeonGeckoCom",
   "tier": 1,
   "component_type": "Skill",
@@ -28,8 +29,13 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [],
-  "languages": [],
+  "languages": [
+    "de-de",
+    "en-us",
+    "uk-ua"
+  ],
   "in_ovos_localize": false,
   "repo_created_at": "2017-10-11T00:44:52Z",
   "last_updated": "2026-06-30T22:43:48.030742Z",

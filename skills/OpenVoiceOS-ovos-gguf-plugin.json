@@ -15,9 +15,10 @@
   "package_name": "ovos-gguf-plugin",
   "pypi_version": "1.2.3a1",
   "license": "MIT",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Transformer Plugin",
+  "component_type": "Chat Plugin",
   "type_group": "Plugin",
   "stars": 1,
   "forks": 0,
@@ -28,6 +29,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

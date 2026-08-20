@@ -14,9 +14,10 @@
   "package_name": "ovos_media_plugin_chromecast",
   "pypi_version": "0.1.3",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Audio Plugin",
+  "component_type": "Video Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 2,
@@ -25,8 +26,9 @@
   "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "lan",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

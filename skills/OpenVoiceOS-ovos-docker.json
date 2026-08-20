@@ -1,0 +1,44 @@
+{
+  "id": "OpenVoiceOS-ovos-docker",
+  "skill_id": null,
+  "name": "ovos-docker",
+  "description": "Open Voice OS container images and docker-compose.yml files for x86_64 and aarch64 CPU architectures.",
+  "examples": [],
+  "tags": [
+    "docker",
+    "openvoiceos"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-docker",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 64,
+  "forks": 21,
+  "open_issues": 9,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "Defaults are defined in `docker-bake.hcl` and `scripts/bake.sh`:\n\n- `REGISTRY` (default `docker.io/smartgic`)\n- `TAG` and `VERSION` (default `alpha`)\n- `LATEST_TAG` (default `latest`, only applied when `TAG=stable`)\n- `CHANNEL` (default `alpha`, used for constraints files)\n- `PLATFORMS` (default `linux/amd64,linux/arm64`)\n- `UV_PRERELEASE` (default `allow`)\n- `ENSURE_BINFMT` (default `auto`, set `true` to force or `false` to skip)\n- `BUILDER` (default `ovos-bake`)\n\nExamples:\n\n- `REGISTRY=docker.io/smartgic TAG=alpha CHANNEL=alpha ./scripts/bake.sh`\n- `TAG=stable CHANNEL=stable ./scripts/bake.sh -T services`"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2022-05-07T17:20:53Z",
+  "last_updated": "2026-08-12T21:33:10Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

@@ -14,9 +14,10 @@
   "package_name": "ovos-media-plugin-vlc",
   "pypi_version": "0.2.0a2",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 2,
-  "component_type": "Audio Plugin",
+  "component_type": "Video Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
@@ -27,6 +28,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

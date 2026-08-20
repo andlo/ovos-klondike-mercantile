@@ -16,8 +16,9 @@
   "package_name": "ovos-media-plugin-qt5",
   "pypi_version": "0.1.0a2",
   "license": "Apache-2.0",
+  "archived": true,
   "author": "OpenVoiceOS",
-  "tier": 3,
+  "tier": 2,
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 0,
@@ -29,6 +30,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

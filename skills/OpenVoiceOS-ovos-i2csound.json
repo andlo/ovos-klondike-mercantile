@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-i2csound",
+  "skill_id": null,
+  "name": "ovos-i2csound",
+  "description": "Script for i2c HAT detection",
+  "examples": [],
+  "tags": [
+    "openvoiceos"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-i2csound",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 2,
+  "forks": 1,
+  "open_issues": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "The install script works on apt-based systems only.\n\n1. Clone this repository: `git clone https://github.com/OpenVoiceOS/ovos-i2csound`\n2. Change into the `ovos-i2csound` directory: `cd ovos-i2csound`\n3. Run the install script: `sudo ./install.sh`\n4. Reboot for the changes to take effect.\n\n### What the install script does\n\nThe `install.sh` script installs `ovos-i2csound`. It checks for the required apt packages and installs any that are missing. It then copies the rest of the scripts to the required directories on the host system. After installation, you can delete this directory.\n\n### Manual install\n\nInstead of running `install.sh`, you can place these files by hand and reboot:\n\n| File | Target |\n| --- | --- |\n| `i2c.conf` | `/etc/modules-load.d/i2c.conf` |\n| `bcm2835-alsa.conf` | `/etc/m\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2023-12-20T23:12:10Z",
+  "last_updated": "2026-07-31T22:54:12Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}
