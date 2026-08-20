@@ -25,6 +25,7 @@
   "package_name": "ovos-skill-date-time",
   "pypi_version": "1.1.5",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "Skill",
@@ -38,6 +39,13 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "show_time",
+      "type": "checkbox",
+      "label": "Show digital clock when idle"
+    }
+  ],
   "setup_notes": [
     {
       "heading": "Configuration",

@@ -1,0 +1,43 @@
+{
+  "id": "OpenVoiceOS-ovos-shell",
+  "skill_id": null,
+  "name": "ovos-shell",
+  "description": "======================",
+  "examples": [],
+  "tags": [
+    "openvoiceos"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-shell",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": true,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 2,
+  "forks": 5,
+  "open_issues": 4,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "First clone the repo\ngit clone https://github.com/OpenVoiceOS/ovos-shell\ncd ovos-shell\n\nThen either install with the provided script\n./dev_setup.sh\n\nor Manually\necho \"Building OVOS-Shell\"\nif [[ ! -d build-testing ]] ; then\n  mkdir build-testing\nfi\ncd build-testing\ncmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release   -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON\nmake -j4\nsudo make install\n\necho \"Installing Lottie-QML\"\ncd $TOP\nif [[ ! -d lottie-qml ]] ; then\n    git clone https://github.com/kbroulik/lottie-qml\n    cd lottie-qml\n    mkdir build\nelse\n    cd lottie-qml\n    git pull\nfi\n\ncd build\ncmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release   -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON\nmake\nsudo make install"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2021-01-08T14:45:23Z",
+  "last_updated": "2024-09-18T02:59:25Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

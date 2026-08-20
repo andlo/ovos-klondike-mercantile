@@ -13,9 +13,10 @@
   "package_name": "ovos-persona",
   "pypi_version": "0.7.1",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Pipeline Plugin",
+  "component_type": "Memory Plugin",
   "type_group": "Plugin",
   "stars": 8,
   "forks": 6,
@@ -26,6 +27,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Installation",

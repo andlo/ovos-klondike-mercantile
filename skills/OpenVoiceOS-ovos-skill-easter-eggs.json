@@ -26,6 +26,7 @@
   "package_name": "skill-easter-eggs",
   "pypi_version": "1.0.2",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "Skill",
@@ -39,6 +40,13 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "grandma_mode_enabled",
+      "type": "checkbox",
+      "label": "Keep the content classy"
+    }
+  ],
   "setup_notes": [],
   "languages": [
     "da-dk",

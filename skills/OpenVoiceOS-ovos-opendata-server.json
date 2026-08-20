@@ -1,0 +1,45 @@
+{
+  "id": "OpenVoiceOS-ovos-opendata-server",
+  "skill_id": null,
+  "name": "ovos-opendata-server",
+  "description": "A **FastAPI service** for collecting anonymized OVOS usage metrics and data with an **interactive Streamlit dashboard** for visualization.",
+  "examples": [],
+  "tags": [
+    "ilenia",
+    "openvoiceos",
+    "server"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-opendata-server",
+  "package_name": null,
+  "pypi_version": null,
+  "license": null,
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 10,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "**\ud83d\udee0\ufe0f Setup & Installation**",
+      "content": "### ** Clone the Repository**  \ngit clone https://github.com/TigreGotico/metrics-server-docker\ncd metrics-server-docker\n\n### ** Start the Services**  \ndocker-compose up --build -d\nThis will start:  \n- **FastAPI server** on `http://localhost:8000`  \n- **PostgreSQL database**  \n- **Streamlit dashboard** on `http://localhost:8501`  \n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-03-07T22:47:46Z",
+  "last_updated": "2026-07-23T14:21:27Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

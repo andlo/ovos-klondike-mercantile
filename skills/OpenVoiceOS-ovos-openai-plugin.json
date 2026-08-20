@@ -14,9 +14,10 @@
   "package_name": "ovos_openai_plugin",
   "pypi_version": "2.0.6",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Transformer Plugin",
+  "component_type": "Chat Plugin",
   "type_group": "Plugin",
   "stars": 9,
   "forks": 7,
@@ -27,6 +28,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",

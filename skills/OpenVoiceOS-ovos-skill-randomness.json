@@ -27,6 +27,7 @@
   "package_name": "ovos-skill-randomness",
   "pypi_version": "1.1.0",
   "license": "MIT",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "Skill",
@@ -40,6 +41,13 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "die_limit",
+      "type": "number",
+      "label": "Max number of dice to roll at once"
+    }
+  ],
   "setup_notes": [
     {
       "heading": "Install",
@@ -55,5 +63,5 @@
   "repo_created_at": "2024-02-09T03:28:09Z",
   "last_updated": "2026-08-19T00:31:58.581157Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

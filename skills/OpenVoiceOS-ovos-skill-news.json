@@ -21,6 +21,7 @@
   "package_name": "ovos-skill-news",
   "pypi_version": "0.4.6",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "Skill",
@@ -34,6 +35,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Classic Core Installation",

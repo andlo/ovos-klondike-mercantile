@@ -1,0 +1,44 @@
+{
+  "id": "OpenVoiceOS-ovos-skill-count",
+  "skill_id": null,
+  "name": "ovos-skill-count",
+  "description": "CountSkill is a skill for Open Voice OS (OVOS). It counts aloud from 1 to a number the user gives, or counts without a limit until stopped. It supports cardinal and ordinal formats and works offline, using ovos-number-parser to extract and pronounce numbers.",
+  "examples": [],
+  "tags": [
+    "openvoiceos",
+    "skill"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-count",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 2,
+  "forks": 3,
+  "open_issues": 24,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-count"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": true,
+  "repo_created_at": "2025-06-15T22:30:35Z",
+  "last_updated": "2026-08-14T15:19:33Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

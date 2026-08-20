@@ -19,6 +19,7 @@
   "package_name": "ovos-skill-personal",
   "pypi_version": "0.1.19",
   "license": "Apache-2.0",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "Skill",
@@ -32,6 +33,28 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "year_of_birth",
+      "type": "text",
+      "label": "Year of Assistant Birth"
+    },
+    {
+      "name": "location_of_birth",
+      "type": "text",
+      "label": "Location of Assistant Birth"
+    },
+    {
+      "name": "creator",
+      "type": "text",
+      "label": "Assistant Creator"
+    },
+    {
+      "name": "assistant_name",
+      "type": "text",
+      "label": "Assistant Name (defaults to wakeword)"
+    }
+  ],
   "setup_notes": [
     {
       "heading": "Install",

@@ -11,6 +11,7 @@
   "package_name": "ovos-skill-pokepedia",
   "pypi_version": "0.1.4",
   "license": "MIT",
+  "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
   "component_type": "Skill",
@@ -24,6 +25,7 @@
   "pipeline": null,
   "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Installation",
@@ -34,7 +36,13 @@
       "content": "pip install -e . -r test/requirements.txt"
     }
   ],
-  "languages": [],
+  "languages": [
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "pt-pt"
+  ],
   "in_ovos_localize": true,
   "repo_created_at": "2026-05-12T15:30:53Z",
   "last_updated": "2026-05-12T18:23:26.079186Z",

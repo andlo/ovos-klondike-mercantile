@@ -26,6 +26,7 @@
     "package_name": "ovos-skill-date-time",
     "pypi_version": "1.1.5",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -39,6 +40,13 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "show_time",
+        "type": "checkbox",
+        "label": "Show digital clock when idle"
+      }
+    ],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -359,6 +367,7 @@
     "package_name": "ovos-skill-personal",
     "pypi_version": "0.1.19",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -372,6 +381,28 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "year_of_birth",
+        "type": "text",
+        "label": "Year of Assistant Birth"
+      },
+      {
+        "name": "location_of_birth",
+        "type": "text",
+        "label": "Location of Assistant Birth"
+      },
+      {
+        "name": "creator",
+        "type": "text",
+        "label": "Assistant Creator"
+      },
+      {
+        "name": "assistant_name",
+        "type": "text",
+        "label": "Assistant Name (defaults to wakeword)"
+      }
+    ],
     "setup_notes": [
       {
         "heading": "Install",
@@ -508,6 +539,7 @@
     "package_name": "ovos-skill-bandcamp",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -521,6 +553,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "en-us",
@@ -694,6 +727,7 @@
     "package_name": "ovos-skill-fallback-chatgpt",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
     "tier": 2,
     "component_type": "Skill",
@@ -707,6 +741,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -891,6 +926,7 @@
     "package_name": "ovos-skill-confucius-quotes",
     "pypi_version": "0.2.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -904,6 +940,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1003,6 +1040,7 @@
     "package_name": "ovos-skill-ip",
     "pypi_version": "0.2.8",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -1016,6 +1054,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -1062,6 +1101,7 @@
     "package_name": "ovos-skill-dictation",
     "pypi_version": "0.2.21",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -1075,6 +1115,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -1246,6 +1287,7 @@
     "package_name": "ovos-skill-boot-finished",
     "pypi_version": "0.5.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -1259,6 +1301,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -2823,6 +2866,7 @@
     "package_name": "ovos-skill-iss-location",
     "pypi_version": "0.2.16",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -2836,6 +2880,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -2876,6 +2921,7 @@
     "package_name": "ovos-skill-fuster-quotes",
     "pypi_version": "0.0.4",
     "license": null,
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -2889,6 +2935,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -2936,6 +2983,7 @@
     "package_name": "ovos-skill-icanhazdadjokes",
     "pypi_version": "0.3.7",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -2949,6 +2997,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -3022,6 +3071,7 @@
     "package_name": "ovos-skill-local-media",
     "pypi_version": "0.2.12",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -3035,6 +3085,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -3297,6 +3348,7 @@
     "package_name": "ovos-skill-moviemaster",
     "pypi_version": "0.0.12",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -3310,6 +3362,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -3496,6 +3549,7 @@
     "package_name": "ovos-skill-naptime",
     "pypi_version": "0.3.15",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -3509,6 +3563,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -4092,6 +4147,7 @@
     "package_name": "ovos-skill-news",
     "pypi_version": "0.4.6",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -4105,6 +4161,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Classic Core Installation",
@@ -4152,6 +4209,7 @@
     "package_name": "ovos-skill-number-facts",
     "pypi_version": "0.1.12",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -4165,6 +4223,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -4967,6 +5026,138 @@
     "last_updated": "2024-11-21T07:43:39.226664Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-binary-shop",
+    "skill_id": null,
+    "name": "ovos-binary-shop",
+    "description": "Wheels and pre-compiled binaries for usage with ovos plugins / images",
+    "examples": [],
+    "tags": [
+      "deprecated",
+      "openvoiceos"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-binary-shop",
+    "package_name": null,
+    "pypi_version": null,
+    "license": null,
+    "archived": true,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 0,
+    "forks": 1,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-03-29T18:21:31Z",
+    "last_updated": "2023-05-14T19:54:03Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-blogs",
+    "skill_id": null,
+    "name": "ovos-blogs",
+    "description": "ovos blog site built with Next.js using the Starter Blog template",
+    "examples": [],
+    "tags": [
+      "openvoiceos"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-blogs",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "MIT",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 1,
+    "forks": 5,
+    "open_issues": 44,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-12-22T18:14:53Z",
+    "last_updated": "2026-08-14T19:12:19Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
+    "id": "OpenVoiceOS-ovos-buildroot",
+    "skill_id": null,
+    "name": "ovos-buildroot",
+    "description": "Open Voice Operating System - Buildroot edition is a minimalistic linux OS bringing the OVOS voice assistant to embbeded, low-spec headless and/or small (touch)screen devices.",
+    "examples": [],
+    "tags": [
+      "ai",
+      "artificial-intelligence",
+      "buildroot",
+      "hacktoberfest",
+      "linux",
+      "mycroft",
+      "mycroftai",
+      "open-source",
+      "opensource",
+      "openvoiceos",
+      "ovos",
+      "personal-assistant",
+      "raspberry-pi",
+      "raspberry-pi-3",
+      "rpi",
+      "rpi3",
+      "voice-as-an-interface",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-buildroot",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 281,
+    "forks": 36,
+    "open_issues": 10,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2018-10-30T15:25:53Z",
+    "last_updated": "2026-07-31T14:47:34Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-bus-client",
@@ -6355,7 +6546,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Chat Plugin",
+    "component_type": "Text Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
@@ -6422,42 +6613,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2024-08-05T23:36:05Z",
     "last_updated": "2024-10-25T20:31:31.694653Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "OpenVoiceOS-ovos-gitlocalize-intent-dataset",
-    "skill_id": null,
-    "name": "ovos-gitlocalize-intent-dataset",
-    "description": "- Total unique utterances: **157007**",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-gitlocalize-intent-dataset",
-    "package_name": null,
-    "pypi_version": null,
-    "license": null,
-    "archived": true,
-    "author": "OpenVoiceOS",
-    "tier": null,
-    "component_type": "Infrastructure",
-    "type_group": "Infrastructure",
-    "stars": 1,
-    "forks": 0,
-    "open_issues": 1,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [],
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-05-18T23:54:23Z",
-    "last_updated": "2026-03-25T01:25:34Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -9335,8 +9490,9 @@
     "package_name": "ovos-number-parser",
     "pypi_version": "0.19.13",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 4,
@@ -9348,6 +9504,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9380,10 +9537,11 @@
     "package_name": "ovos_plugin_common_play",
     "pypi_version": "1.3.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 3,
-    "component_type": "Tool",
-    "type_group": "Tool",
+    "component_type": "Skill",
+    "type_group": "Skill",
     "stars": 4,
     "forks": 9,
     "open_issues": 10,
@@ -9393,6 +9551,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -9424,6 +9583,7 @@
     "package_name": "ovos-ocp-bandcamp-plugin",
     "pypi_version": "0.0.2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "OCP Media Plugin",
@@ -9437,6 +9597,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9468,6 +9629,7 @@
     "package_name": "ovos-ocp-files-plugin",
     "pypi_version": "0.13.1",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "OCP Media Plugin",
@@ -9481,6 +9643,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9512,6 +9675,7 @@
     "package_name": "ovos-ocp-m3u-plugin",
     "pypi_version": "0.0.2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "OCP Media Plugin",
@@ -9525,6 +9689,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9556,6 +9721,7 @@
     "package_name": "ovos_ocp_news_plugin",
     "pypi_version": "0.1.2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "OCP Media Plugin",
@@ -9569,6 +9735,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9601,6 +9768,7 @@
     "package_name": "ovos_ocp_pipeline_plugin",
     "pypi_version": "1.1.18",
     "license": null,
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Pipeline Plugin",
@@ -9614,6 +9782,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9645,6 +9814,7 @@
     "package_name": "ovos_ocp_rss_plugin",
     "pypi_version": "0.1.2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "OCP Media Plugin",
@@ -9658,6 +9828,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9690,6 +9861,7 @@
     "package_name": "ovos_ocp_youtube_plugin",
     "pypi_version": "0.0.6",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "OCP Media Plugin",
@@ -9703,6 +9875,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9820,9 +9993,10 @@
     "package_name": "ovos_openai_plugin",
     "pypi_version": "2.0.6",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Transformer Plugin",
+    "component_type": "Chat Plugin",
     "type_group": "Plugin",
     "stars": 9,
     "forks": 7,
@@ -9833,6 +10007,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9847,6 +10022,51 @@
     "is_recently_updated": false
   },
   {
+    "id": "OpenVoiceOS-ovos-opendata-server",
+    "skill_id": null,
+    "name": "ovos-opendata-server",
+    "description": "A **FastAPI service** for collecting anonymized OVOS usage metrics and data with an **interactive Streamlit dashboard** for visualization.",
+    "examples": [],
+    "tags": [
+      "ilenia",
+      "openvoiceos",
+      "server"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-opendata-server",
+    "package_name": null,
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 10,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "**\ud83d\udee0\ufe0f Setup & Installation**",
+        "content": "### ** Clone the Repository**  \ngit clone https://github.com/TigreGotico/metrics-server-docker\ncd metrics-server-docker\n\n### ** Start the Services**  \ndocker-compose up --build -d\nThis will start:  \n- **FastAPI server** on `http://localhost:8000`  \n- **PostgreSQL database**  \n- **Streamlit dashboard** on `http://localhost:8501`  \n\n---"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-03-07T22:47:46Z",
+    "last_updated": "2026-07-23T14:21:27Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "OpenVoiceOS-ovos-option-matcher-fuzzy-plugin",
     "skill_id": null,
     "name": "ovos-option-matcher-fuzzy-plugin",
@@ -9859,6 +10079,7 @@
     "package_name": "ovos-option-matcher-fuzzy-plugin",
     "pypi_version": "0.0.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Option Matcher Plugin",
@@ -9872,6 +10093,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -9898,8 +10120,9 @@
     "package_name": "ovos-org-website",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
@@ -9911,6 +10134,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -9936,6 +10160,7 @@
     "package_name": "ovos_padatious",
     "pypi_version": "1.4.3",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Pipeline Plugin",
@@ -9949,6 +10174,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installing",
@@ -10013,9 +10239,10 @@
     "package_name": "ovos-persona",
     "pypi_version": "0.7.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Pipeline Plugin",
+    "component_type": "Memory Plugin",
     "type_group": "Plugin",
     "stars": 8,
     "forks": 6,
@@ -10026,6 +10253,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -10058,8 +10286,9 @@
     "package_name": "ovos-persona-server",
     "pypi_version": "0.5.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 3,
@@ -10071,6 +10300,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Persona Config Examples",
@@ -10103,8 +10333,9 @@
     "package_name": "ovos-local-backend",
     "pypi_version": "0.1.5",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 84,
@@ -10116,6 +10347,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -12183,8 +12415,9 @@
     "package_name": "ovos-plugin-arena",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
@@ -12196,6 +12429,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -12217,6 +12451,7 @@
     "package_name": "ovos-plugin-linguonnx",
     "pypi_version": "0.3.2a3",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Translate Plugin",
@@ -12230,6 +12465,7 @@
     "pipeline": null,
     "connectivity": "offline",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -12261,8 +12497,9 @@
     "package_name": "ovos-plugin-manager",
     "pypi_version": "2.2.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 14,
@@ -12274,6 +12511,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -12347,8 +12585,9 @@
     "package_name": "ovos-pydantic-models",
     "pypi_version": "0.1.1",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 3,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
@@ -12360,6 +12599,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -12432,6 +12672,7 @@
     "package_name": "ovos-qdrant-embeddings-plugin",
     "pypi_version": "0.0.1a8",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
     "component_type": "Embeddings Plugin",
@@ -12445,6 +12686,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -12666,6 +12908,49 @@
     "is_recently_updated": false
   },
   {
+    "id": "OpenVoiceOS-ovos-shell",
+    "skill_id": null,
+    "name": "ovos-shell",
+    "description": "======================",
+    "examples": [],
+    "tags": [
+      "openvoiceos"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-shell",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": true,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 2,
+    "forks": 5,
+    "open_issues": 4,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "First clone the repo\ngit clone https://github.com/OpenVoiceOS/ovos-shell\ncd ovos-shell\n\nThen either install with the provided script\n./dev_setup.sh\n\nor Manually\necho \"Building OVOS-Shell\"\nif [[ ! -d build-testing ]] ; then\n  mkdir build-testing\nfi\ncd build-testing\ncmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release   -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON\nmake -j4\nsudo make install\n\necho \"Installing Lottie-QML\"\ncd $TOP\nif [[ ! -d lottie-qml ]] ; then\n    git clone https://github.com/kbroulik/lottie-qml\n    cd lottie-qml\n    mkdir build\nelse\n    cd lottie-qml\n    git pull\nfi\n\ncd build\ncmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release   -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON\nmake\nsudo make install"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": false,
+    "repo_created_at": "2021-01-08T14:45:23Z",
+    "last_updated": "2024-09-18T02:59:25Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "TigreGotico-ovos-simple-listener",
     "skill_id": null,
     "name": "ovos-simple-listener",
@@ -12787,6 +13072,7 @@
     "package_name": "ovos-skill-alerts",
     "pypi_version": "0.1.28",
     "license": "NOASSERTION",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -12800,6 +13086,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -12843,6 +13130,7 @@
     "package_name": "ovos-skill-application-launcher",
     "pypi_version": "0.5.14",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -12856,6 +13144,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -12905,6 +13194,7 @@
     "package_name": "ovos-skill-audio-recording",
     "pypi_version": "0.2.7",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -12918,6 +13208,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -12990,6 +13281,7 @@
     "package_name": "ovos-skill-camera",
     "pypi_version": "1.0.4",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13003,6 +13295,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -13080,6 +13373,7 @@
     "package_name": "ovos-skill-cmd",
     "pypi_version": "0.2.11",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13093,6 +13387,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -13103,7 +13398,18 @@
         "content": "Configure the skill in `settings.json`. Map a spoken phrase to a script or command under `alias`. For example:\n\n{\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\"\n  }\n}\n\nWith this setting, the phrase \"run script generate report\" makes the skill execute `/home/forslund/scripts/generate_report.sh`.\n\n### user\n\nSet `user` to run commands under a specific user's privileges:\n\n{\n  \"user\": \"ovos\"\n}\n\n### shell\n\nSet `shell` to control whether commands run through a shell. It defaults to `true`:\n\n{\n  \"shell\": false\n}\n\n### Full example\n\n{\n  \"user\": \"ovos\",\n  \"alias\": {\n    \"generate report\": \"/home/forslund/scripts/generate_report.sh\",\n    \"update system\": \"sudo apt update && sudo apt upgrade -y\",\n    \"reboot device\": \"sudo reboot\"\n  },\n  \"shell\": true\n}"
       }
     ],
-    "languages": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "pt-pt"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2024-03-06T17:55:00Z",
     "last_updated": "2025-06-08T23:17:55.153335Z",
@@ -13125,6 +13431,7 @@
     "package_name": "ovos-skill-color-picker",
     "pypi_version": "0.0.7",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13138,6 +13445,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -13255,6 +13563,50 @@
     "is_recently_updated": true
   },
   {
+    "id": "OpenVoiceOS-ovos-skill-count",
+    "skill_id": null,
+    "name": "ovos-skill-count",
+    "description": "CountSkill is a skill for Open Voice OS (OVOS). It counts aloud from 1 to a number the user gives, or counts without a limit until stopped. It supports cardinal and ordinal formats and works offline, using ovos-number-parser to extract and pronounce numbers.",
+    "examples": [],
+    "tags": [
+      "openvoiceos",
+      "skill"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-count",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 2,
+    "forks": 3,
+    "open_issues": 24,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "offline",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-count"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": true,
+    "repo_created_at": "2025-06-15T22:30:35Z",
+    "last_updated": "2026-08-14T15:19:33Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "OpenVoiceOS-ovos-skill-ddg",
     "skill_id": null,
     "name": "ovos-skill-ddg",
@@ -13270,6 +13622,7 @@
     "package_name": "ovos-skill-ddg",
     "pypi_version": "0.3.7",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13283,13 +13636,51 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
         "content": "pip install ovos-skill-ddg"
       }
     ],
-    "languages": [],
+    "languages": [
+      "ar-xa",
+      "bg-bg",
+      "ca-es",
+      "cs-cz",
+      "da-dk",
+      "de-de",
+      "el-gr",
+      "en-us",
+      "es-es",
+      "et-ee",
+      "fi-fi",
+      "fr-fr",
+      "he-il",
+      "hr-hr",
+      "hu-hu",
+      "id-id",
+      "it-it",
+      "ja-jp",
+      "ko-kr",
+      "lt-lt",
+      "lv-lv",
+      "ms-my",
+      "nb-no",
+      "nl-nl",
+      "pl-pl",
+      "pt-pt",
+      "ro-ro",
+      "ru-ru",
+      "sk-sk",
+      "sl-si",
+      "sv-se",
+      "th-th",
+      "tr-tr",
+      "uk-ua",
+      "vi-vn",
+      "zh-cn"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2020-12-09T06:10:40Z",
     "last_updated": "2026-04-21T22:51:13.132567Z",
@@ -13315,6 +13706,7 @@
     "package_name": "ovos-skill-diagnostics",
     "pypi_version": "0.0.8",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13328,6 +13720,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -13433,6 +13826,45 @@
     "is_recently_updated": false
   },
   {
+    "id": "OpenVoiceOS-ovos-skill-fallback-unknown",
+    "skill_id": null,
+    "name": "ovos-skill-fallback-unknown",
+    "description": "OpenVoiceOS official Unknown Fallback Skill - used if no Intent is matched to an Utterance",
+    "examples": [],
+    "tags": [
+      "openvoiceos",
+      "skill"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-fallback-unknown",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 1,
+    "forks": 3,
+    "open_issues": 12,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "in_ovos_localize": true,
+    "repo_created_at": "2021-12-08T18:28:54Z",
+    "last_updated": "2026-08-13T16:33:33Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "andlo-ovos-skill-fart",
     "skill_id": null,
     "name": "ovos-skill-fart",
@@ -13530,6 +13962,7 @@
     "package_name": "ovos-skill-ggwave",
     "pypi_version": "0.3.4",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13543,18 +13976,74 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
         "content": "`ovos-skill-ggwave` is an OVOS skill. Install it with `pip`:\n\npip install ovos-skill-ggwave"
       }
     ],
-    "languages": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "pt-br"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2024-03-17T21:53:27Z",
     "last_updated": "2024-11-19T21:23:54.261567Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-skill-hello-world",
+    "skill_id": null,
+    "name": "ovos-skill-hello-world",
+    "description": "OpenVoiceOS Hello World Skill - use this basic Skill to see how OpenVoiceOS Skills work. ",
+    "examples": [],
+    "tags": [
+      "openvoiceos",
+      "skill"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-hello-world",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 6,
+    "forks": 8,
+    "open_issues": 20,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-hello-world"
+      }
+    ],
+    "languages": [],
+    "in_ovos_localize": true,
+    "repo_created_at": "2021-11-03T17:20:24Z",
+    "last_updated": "2026-08-18T10:24:52Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-skill-homescreen",
@@ -13572,6 +14061,7 @@
     "package_name": "ovos_skill_homescreen",
     "pypi_version": "3.0.3",
     "license": "Apache-2.0",
+    "archived": true,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13585,6 +14075,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -13694,6 +14185,7 @@
     "package_name": "ovos-skill-laugh",
     "pypi_version": "1.1.0",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13707,13 +14199,43 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "gender",
+        "type": "text",
+        "label": "gender"
+      },
+      {
+        "name": "haunted",
+        "type": "text",
+        "label": "true or false"
+      }
+    ],
     "setup_notes": [],
-    "languages": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "el-gr",
+      "en-us",
+      "es-es",
+      "es-lm",
+      "eu",
+      "eu-es",
+      "fa-ir",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt",
+      "sv-se"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2018-03-09T16:28:33Z",
     "last_updated": "2026-08-19T00:36:48.032732Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "MenneBos-ovos-skill-light",
@@ -13771,6 +14293,7 @@
     "package_name": "ovos-skill-mark1-ctrl",
     "pypi_version": "0.0.1",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -13784,6 +14307,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -14536,6 +15060,7 @@
     "package_name": "ovos-skill-pokepedia",
     "pypi_version": "0.1.4",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -14549,6 +15074,7 @@
     "pipeline": null,
     "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -14559,7 +15085,13 @@
         "content": "pip install -e . -r test/requirements.txt"
       }
     ],
-    "languages": [],
+    "languages": [
+      "en-us",
+      "es-es",
+      "fr-fr",
+      "it-it",
+      "pt-pt"
+    ],
     "in_ovos_localize": true,
     "repo_created_at": "2026-05-12T15:30:53Z",
     "last_updated": "2026-05-12T18:23:26.079186Z",
@@ -14595,6 +15127,7 @@
     "package_name": "ovos-skill-randomness",
     "pypi_version": "1.1.0",
     "license": "MIT",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -14608,6 +15141,13 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "die_limit",
+        "type": "number",
+        "label": "Max number of dice to roll at once"
+      }
+    ],
     "setup_notes": [
       {
         "heading": "Install",
@@ -14623,7 +15163,7 @@
     "repo_created_at": "2024-02-09T03:28:09Z",
     "last_updated": "2026-08-19T00:31:58.581157Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-skill-screenshot",
@@ -20946,6 +21486,7 @@
     "package_name": "ovos-skill-parrot",
     "pypi_version": "0.1.25",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -20959,6 +21500,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Install",
@@ -21172,6 +21714,7 @@
     "package_name": "ovos-skill-pyradios",
     "pypi_version": "0.1.5",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -21185,6 +21728,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
@@ -21515,6 +22059,7 @@
     "package_name": "skill-easter-eggs",
     "pypi_version": "1.0.2",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -21528,6 +22073,13 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "grandma_mode_enabled",
+        "type": "checkbox",
+        "label": "Keep the content classy"
+      }
+    ],
     "setup_notes": [],
     "languages": [
       "da-dk",
@@ -23027,6 +23579,7 @@
     "package_name": "ovos-skill-days-in-history",
     "pypi_version": "0.3.11",
     "license": "Apache-2.0",
+    "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
     "component_type": "Skill",
@@ -23040,6 +23593,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "ca-es",
