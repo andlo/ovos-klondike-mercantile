@@ -1,0 +1,50 @@
+{
+  "id": "jeffehobbs-mark2-fip-radio",
+  "skill_id": null,
+  "name": "mark2-fip-radio",
+  "description": "Turn a Mycroft Mark II into a FIP internet radio (now-playing screen, LED volume ring, quiet fan) on stock Raspberry Pi OS \u2014 no custom image.",
+  "examples": [],
+  "tags": [
+    "fip",
+    "internet-radio",
+    "mark-ii",
+    "mycroft",
+    "openvoiceos",
+    "radio-france",
+    "raspberry-pi",
+    "sj201"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/jeffehobbs/mark2-fip-radio",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "MIT",
+  "archived": false,
+  "author": "jeffehobbs",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "On the Mark II (or over SSH):\n\ngit clone https://github.com/jeffehobbs/mark2-fip-radio\ncd mark2-fip-radio\nsudo ./install.sh\nsudo reboot\n\nAfter the reboot it comes up playing FIP with the now-playing screen. To remove\neverything: `sudo ./uninstall.sh`."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-06-16T18:59:53Z",
+  "last_updated": "2026-06-24T14:56:03Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
