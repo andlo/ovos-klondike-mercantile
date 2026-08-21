@@ -1,0 +1,46 @@
+{
+  "id": "andlo-haos-ovos-addons",
+  "skill_id": null,
+  "name": "haos-ovos-addons",
+  "description": "Home Assistant OS (Supervisor) add-ons that bring OpenVoiceOS into Home Assistant's own Assist pipeline \u2014 discoverable and configurable the way HAOS users already expect: Add-on Store, install, fill in a form.",
+  "examples": [],
+  "tags": [
+    "hassio-addons",
+    "home-assistant",
+    "openvoiceos",
+    "wip"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/andlo/haos-ovos-addons",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "andlo",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 4,
+  "forks": 0,
+  "open_issues": 7,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "1. In Home Assistant: **Settings \u2192 Add-ons \u2192 Add-on Store**.\n2. Top right **\u22ee \u2192 Repositories**, paste `https://github.com/andlo/haos-ovos-addons`, **Add**.\n3. The add-ons below now appear in the store. Install the ones you need \u2014 see \"Two ways to use this\" below for which ones."
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-08-03T19:00:21Z",
+  "last_updated": "2026-08-08T19:33:31Z",
+  "is_new_repo": true,
+  "is_recently_updated": true
+}

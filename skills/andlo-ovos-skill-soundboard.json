@@ -20,6 +20,7 @@
   "package_name": "ovos-skill-soundboard",
   "pypi_version": null,
   "license": "GPL-3.0",
+  "archived": false,
   "author": "andlo",
   "tier": 2,
   "component_type": "Skill",
@@ -33,6 +34,7 @@
   "pipeline": null,
   "connectivity": null,
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Install",
@@ -47,5 +49,5 @@
   "repo_created_at": "2026-08-16T17:15:29Z",
   "last_updated": "2026-08-19T16:36:55Z",
   "is_new_repo": true,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

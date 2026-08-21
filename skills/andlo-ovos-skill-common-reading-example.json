@@ -16,6 +16,7 @@
   "package_name": "ovos-skill-common-reading-example",
   "pypi_version": null,
   "license": "GPL-3.0",
+  "archived": false,
   "author": "andlo",
   "tier": 2,
   "component_type": "Skill",
@@ -27,8 +28,9 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": "ovos-common-reading-pipeline-plugin",
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [],
   "languages": [
     "da-dk",

@@ -21,6 +21,7 @@
   "package_name": "ovos-skill-intercom",
   "pypi_version": "0.0.4",
   "license": "GPL-3.0",
+  "archived": false,
   "author": "andlo",
   "tier": 1,
   "component_type": "Skill",
@@ -32,8 +33,9 @@
   "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": "offline",
+  "connectivity": "lan",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Setup",

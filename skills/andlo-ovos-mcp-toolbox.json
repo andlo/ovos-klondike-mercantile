@@ -2,7 +2,7 @@
   "id": "andlo-ovos-mcp-toolbox",
   "skill_id": null,
   "name": "ovos-mcp-toolbox",
-  "description": "WIP - MCP bridge toolbox for ovos-agentic-loop. Not functional yet.",
+  "description": "WIP - MCP bridge toolbox for ovos-agentic-loop. ",
   "examples": [],
   "tags": [
     "openvpniceos",
@@ -32,13 +32,13 @@
   "setup_notes": [
     {
       "heading": "Config shape",
-      "content": "{\n  \"ovos-mcp-tools\": {\n    \"servers\": [\n      {\n        \"name\": \"ha\",\n        \"transport\": \"http\",\n        \"url\": \"http://192.168.65.186/api/mcp\",\n        \"token\": \"...\"\n      },\n      {\n        \"name\": \"dc\",\n        \"transport\": \"stdio\",\n        \"command\": \"npx\",\n        \"args\": [\"-y\", \"@wonderwhy-er/desktop-commander\"]\n      }\n    ],\n    \"policy\": {\n      \"ha__default_confirm\": true,\n      \"ha__always_confirm\": \"HassBroadcast\",\n      \"ha__never_confirm\": \"GetDateTime,GetLiveContext\"\n    },\n    \"scaffold_path\": \"/home/andlo/.local/state/ovos-mcp-toolbox/policy_scaffold.json\"\n  }\n}\n\n`transport: \"stdio\"` is accepted but not implemented yet - see status\ntable."
+      "content": "{\n  \"ovos-mcp-tools\": {\n    \"servers\": [\n      {\n        \"name\": \"ha\",\n        \"transport\": \"http\",\n        \"url\": \"http://192.168.65.186/api/mcp\",\n        \"token\": \"...\"\n      },\n      {\n        \"name\": \"dc\",\n        \"transport\": \"stdio\",\n        \"command\": \"npx\",\n        \"args\": [\"-y\", \"@wonderwhy-er/desktop-commander\"]\n      }\n    ],\n    \"policy\": {\n      \"ha__default_confirm\": true,\n      \"ha__always_confirm\": \"HassBroadcast\",\n      \"ha__never_confirm\": \"GetDateTime,GetLiveContext\"\n    },\n    \"scaffold_path\": \"/home/andlo/.local/state/ovos-mcp-toolbox/policy_scaffold.json\"\n  }\n}\n\n`transport: \"stdio\"` is accepted but not implemented yet - see status\ntable. `scaffold_path` should point outside the repo directory (a\ngenerated scaffold file contains real device/entity names from\nwhatever M\u2026"
     }
   ],
   "languages": [],
   "in_ovos_localize": false,
   "repo_created_at": "2026-08-20T15:56:25Z",
-  "last_updated": "2026-08-20T18:50:55Z",
+  "last_updated": "2026-08-20T20:07:21Z",
   "is_new_repo": false,
   "is_recently_updated": false
 }
