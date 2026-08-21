@@ -1,0 +1,50 @@
+{
+  "id": "JarbasHiveMind-hivemind-homeassistant",
+  "skill_id": null,
+  "name": "hivemind-homeassistant",
+  "description": "Home Assistant integration for connecting to an OVOS instance via HiveMind for system-level control",
+  "examples": [],
+  "tags": [
+    "hivemind",
+    "openvoiceos",
+    "ovos",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/JarbasHiveMind/hivemind-homeassistant",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "MIT",
+  "archived": false,
+  "author": "JarbasHiveMind",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 2,
+  "forks": 1,
+  "open_issues": 4,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "### HACS (custom repository)\n\n1. Add `https://github.com/JarbasHiveMind/hivemind-homeassistant` as a custom\n   repository (category *Integration*).\n2. Install **HiveMind**.\n3. Restart Home Assistant.\n\n### Manual\n\n1. Copy the `hivemind` folder into your Home Assistant\n   `custom_components` directory:\n\n   mkdir -p /config/custom_components\n   cp -r custom_components/hivemind /config/custom_components/\n\n2. Restart Home Assistant.\n\n### Add the integration\n\nGo to **Settings \u2192 Devices & Services \u2192 Add Integration \u2192 HiveMind**. The\nconfig flow checks the hub connection before it saves the entry, so a bad host\nor credential shows a clear `cannot connect` or `invalid auth` error instead of\na silent failure."
+    },
+    {
+      "heading": "Configuration fields",
+      "content": "The config flow asks for these fields when you add the integration:\n\n| Field | Default | Description |\n| --- | --- | --- |\n| `device_type` | `voice_assistant` | Which OVOS capabilities to expose (see below). |\n| `name` | n/a | Friendly name for the device in Home Assistant. |\n| `host` | n/a | HiveMind hub host (e.g. `ws://192.168.1.10`). |\n| `access_key` | n/a | HiveMind client access key. |\n| `password` | n/a | HiveMind client password. |\n| `port` | `5678` | HiveMind WebSocket port. |\n| `legacy_audio` | `false` | Use the legacy Audio Service instead of OCP. |\n| `site_id` | `unknown` | OVOS site id. |\n| `allow_self_signed` | `false` | Accept a self-signed TLS certificate. |\n\n### Device types\n\nThe `device_type` field controls which platforms Home Assistant sets up:\n\n| Type | Exposes |\n| ---\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-04-26T18:29:10Z",
+  "last_updated": "2026-08-15T13:56:43Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}
