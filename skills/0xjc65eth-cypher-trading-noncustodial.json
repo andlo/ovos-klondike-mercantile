@@ -1,0 +1,66 @@
+{
+  "id": "0xjc65eth-cypher-trading-noncustodial",
+  "skill_id": null,
+  "name": "cypher-trading-noncustodial",
+  "description": "\ud83c\udf99\ufe0f Voice-first non-custodial crypto trading assistant. Trade on DEXes by voice. Multi-chain. OVOS + Electron + React + WalletConnect v2. Say 'Hey Cypher' and take control of your DeFi trading.",
+  "examples": [],
+  "tags": [
+    "accessibility",
+    "ai-agent",
+    "arbitrum",
+    "crypto-trading",
+    "defi",
+    "electron",
+    "ethers",
+    "multi-chain",
+    "non-custodial",
+    "open-source",
+    "ovos",
+    "react",
+    "solana",
+    "voice-assistant",
+    "walletconnect",
+    "web3"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/0xjc65eth/cypher-trading-noncustodial",
+  "package_name": null,
+  "pypi_version": null,
+  "license": null,
+  "archived": false,
+  "author": "0xjc65eth",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "1. Clone & Setup",
+      "content": "git clone https://github.com/cypher-trading/cypher-trading-noncustodial.git\ncd cypher-trading-noncustodial\nnpm run setup"
+    },
+    {
+      "heading": "2. Configure Environment",
+      "content": "cp .env.example .env"
+    },
+    {
+      "heading": "4. Register the skill in OVOS config",
+      "content": "Add to `skills/skills_config.yaml`\n\n---"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-05-15T10:07:12Z",
+  "last_updated": "2026-05-15T10:38:54Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

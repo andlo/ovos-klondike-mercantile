@@ -1,0 +1,60 @@
+{
+  "id": "tophcodes-ovos-flake",
+  "skill_id": null,
+  "name": "ovos-flake",
+  "description": "NixOS flake for OpenVoiceOS. Work in progress!",
+  "examples": [],
+  "tags": [
+    "flake",
+    "nix",
+    "nix-flake",
+    "nixos",
+    "open-voice-os",
+    "ovos"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/tophcodes/ovos-flake",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "tophcodes",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "Add this flake to your configuration:\n\n{\n  inputs = {\n    nixpkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";\n    home-manager.url = \"github:nix-community/home-manager\";\n    ovos.url = \"github:tophcodes/ovos-flake\";\n  };\n\n  outputs = { nixpkgs, home-manager, ovos, ... }: {\n    nixosConfigurations.yourhost = nixpkgs.lib.nixosSystem {\n      modules = [\n        ovos.nixosModules.default\n        home-manager.nixosModules.home-manager\n        {\n          home-manager.users.youruser = {\n            imports = [ ovos.homeManagerModules.default ];\n          };\n        }\n        ./configuration.nix\n      ];\n    };\n  };\n}"
+    },
+    {
+      "heading": "Basic Configuration",
+      "content": "**NixOS (message bus):**\n{\n  services.ovos = {\n    enable = true;  # Starts messagebus on port 8181\n  };\n}\n\n**Home Manager (TTS/STT services):**\n{\n  services.ovos.audio = {\n    enable = true;  # TTS with Piper\n  };\n}"
+    },
+    {
+      "heading": "Home Manager - audio service reads this from system config",
+      "content": "services.ovos.audio.enable = true;\n\n## Configuration Options\n\n### NixOS Module (System)\n\n| Option | Type | Default | Description |\n|--------|------|---------|-------------|\n| `enable` | bool | `false` | Enable OVOS messagebus |\n| `host` | string | `\"0.0.0.0\"` | Host to bind messagebus to |\n| `port` | port | `8181` | Messagebus WebSocket port |\n| `speech.backend` | string | `\"piper\"` | TTS backend |\n| `speech.voice` | string | `\"en_US-lessac-medium\"` | Piper voice |\n| `location.timezone` | string | `\"America/Chicago\"` | Timezone |\n\n### Home Manager Module (User Services)\n\n| Option | Type | Default | Description |\n|--------|------|---------|-------------|\n| `audio.enable` | bool | `false` | Enable TTS audio service |\n| `audio.logLevel` | enum | `\"INFO\"` | Log level |\n| `messagebusHost` | str\u2026"
+    },
+    {
+      "heading": "Development Setup",
+      "content": "**NixOS:**\n{\n  services.ovos = {\n    enable = true;\n    host = \"127.0.0.1\";  # Local only\n    logLevel = \"DEBUG\";\n  };\n}\n\n**Home Manager:**\n{\n  services.ovos.audio = {\n    enable = true;\n    logLevel = \"DEBUG\";\n  };\n}"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-12-22T11:20:23Z",
+  "last_updated": "2025-12-23T15:08:35Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
