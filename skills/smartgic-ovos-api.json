@@ -1,0 +1,62 @@
+{
+  "id": "smartgic-ovos-api",
+  "skill_id": null,
+  "name": "ovos-api",
+  "description": "Expose a secure REST API on top of Open Voice OS to perform actions on your instance without to SSH into it.",
+  "examples": [],
+  "tags": [
+    "api",
+    "docker",
+    "docker-compose",
+    "fastapi",
+    "json",
+    "jwt",
+    "jwt-authentication",
+    "mycroft",
+    "openapi",
+    "openvoiceos",
+    "ovos",
+    "postman",
+    "python",
+    "python3",
+    "rest",
+    "rest-api"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/smartgic/ovos-api",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "MIT",
+  "archived": false,
+  "author": "smartgic",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 8,
+  "forks": 3,
+  "open_issues": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "_Python `virtualenv` is always a good practice to keep a clean environment but it is not a mandatory step._\n\ngit clone https://github.com/smartgic/ovos-api.git\ncd ovos-api\nmkdir ~/virtualenvs\npython -m venv ~/virtualenvs/ovos-api\n. ~/virtualenvs/ovos-api/bin/activate\npip install -r requirements.txt"
+    },
+    {
+      "heading": "Configuration",
+      "content": "Before starting to use the API, some configurations must be applied to the `.env` file.\n\nSECRET=\"\"\nWS_HOST=\"10.12.50.20\"\nWS_PORT=\"8181\"\nAPI_KEY=\"\"\nUSERS_DB=\"/users.json\"\n\n| Variable   | Explaination                                                            |\n| ---------- | ----------------------------------------------------------------------- |\n| `SECRET`   | Random string used to generate the JWT token                            |\n| `WS_HOST`  | IP address or hostname of the OVOS messages bus                         |\n| `WS_PORT`  | TCP Port of the OVOS messages bus                                       |\n| `API_KEY`  | Key used between the API and the `skill-rest-api` skill to authenticate |\n| `USERS_DB` | File where users are declared with their status and encrypted password  |\n\nThe `\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2021-12-31T00:23:46Z",
+  "last_updated": "2024-05-31T01:58:16Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

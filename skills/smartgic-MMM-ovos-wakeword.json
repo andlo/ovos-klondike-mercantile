@@ -1,0 +1,55 @@
+{
+  "id": "smartgic-MMM-ovos-wakeword",
+  "skill_id": null,
+  "name": "MMM-ovos-wakeword",
+  "description": "MagicMirror module for Open Voice OS wakeword detection.",
+  "examples": [],
+  "tags": [
+    "magicmirror",
+    "magicmirror2",
+    "module",
+    "mycroft",
+    "mycroft-skill",
+    "mycroftai",
+    "openvoiceos",
+    "ovos",
+    "wakeword"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/smartgic/MMM-ovos-wakeword",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "MIT",
+  "archived": false,
+  "author": "smartgic",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 6,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "Clone this repository into `~/MagicMirror/modules` _(replace with your path)_ directory.\n\ncd ~/MagicMirror/modules\ngit clone https://github.com/smartgic/MMM-ovos-wakeword.git\n\nThen update the MagicMirror configuration file `~/MagicMirror/config/config.js` _(replace with your path)_.\n\n{\n    module: \"MMM-ovos-wakeword\",\n    position: \"lower_third\",\n    config: {\n      title: \"Open Voice OS\",\n      apiKey: \"en323q9WBNMK3Q04WIPNEAsdfhesammhp44\",\n      maxMessages: 1,\n      opacity: 0.5\n    }\n}"
+    },
+    {
+      "heading": "Configuration",
+      "content": "In order to reach the `/ovos` route on your MagicMirror, you need to allow the remote connection for a specific IP address or for a network range in your MagicMirror by changing the `~/MagicMirror/config/config.js` _(replace with your path)_.\n\nipWhitelist: ['127.0.0.1', '::ffff:127.0.0.1', '::1', '::ffff:192.168.1.1/24'];\n\nThe example above will allows all the connection from `192.168.1.0/24` network to perform remote connections.\n\n| Option        | Default         | Description                                                              |\n| ------------- | --------------- | ------------------------------------------------------------------------ |\n| `maxMessages` | `5`             | How many messages should be displayed on the screen.                     |\n| `image`       | `wakeword.png\u2026"
+    }
+  ],
+  "languages": [],
+  "in_ovos_localize": false,
+  "repo_created_at": "2021-04-01T20:19:20Z",
+  "last_updated": "2024-03-19T12:47:47Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
