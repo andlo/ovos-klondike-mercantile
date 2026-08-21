@@ -4874,6 +4874,7 @@
     "package_name": "ovos-audio-transformer-plugin-omva-voiceid",
     "pypi_version": null,
     "license": "NOASSERTION",
+    "archived": false,
     "author": "ecosphereplus",
     "tier": 2,
     "component_type": "Audio Plugin",
@@ -4885,8 +4886,9 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Installation",
@@ -5045,6 +5047,7 @@
     "package_name": "ovos-backend-ui",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "builderjer",
     "tier": 2,
     "component_type": "Tool",
@@ -5058,6 +5061,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -14996,6 +15000,7 @@
     "package_name": "ovos-skill-omva-enroll-voice",
     "pypi_version": null,
     "license": "NOASSERTION",
+    "archived": false,
     "author": "ecosphereplus",
     "tier": 2,
     "component_type": "Skill",
@@ -15007,8 +15012,45 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "target_samples",
+        "type": "number",
+        "label": "Number of voice samples to collect"
+      },
+      {
+        "name": "min_audio_duration",
+        "type": "number",
+        "label": "Minimum audio duration (seconds)"
+      },
+      {
+        "name": "max_audio_duration",
+        "type": "number",
+        "label": "Maximum audio duration (seconds)"
+      },
+      {
+        "name": "quality_threshold",
+        "type": "number",
+        "label": "Audio quality threshold (0.0-1.0)"
+      },
+      {
+        "name": "confirmation_required",
+        "type": "checkbox",
+        "label": "Require confirmation before enrollment"
+      },
+      {
+        "name": "replace_existing_profiles",
+        "type": "checkbox",
+        "label": "Allow replacing existing voice profiles"
+      },
+      {
+        "name": "relationship_words",
+        "type": "text",
+        "label": "Relationship words for third-person enrollment (comma-separated)"
+      }
+    ],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -18277,6 +18319,7 @@
     "package_name": "ovos-tool-calling-pipeline-plugin",
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "clintonthegeek",
     "tier": 2,
     "component_type": "Pipeline Plugin",
@@ -18290,6 +18333,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [
       {
         "heading": "Configuration",
@@ -23573,6 +23617,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "branep",
     "tier": 2,
     "component_type": "Skill",
@@ -23586,6 +23631,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [],
     "in_ovos_localize": false,
@@ -23878,6 +23924,7 @@
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
+    "archived": false,
     "author": "ddurdin",
     "tier": 3,
     "component_type": "Skill",
@@ -23891,6 +23938,7 @@
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
+    "settings_fields": [],
     "setup_notes": [],
     "languages": [
       "en-us"

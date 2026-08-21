@@ -11,6 +11,7 @@
   "package_name": "ovos-audio-transformer-plugin-omva-voiceid",
   "pypi_version": null,
   "license": "NOASSERTION",
+  "archived": false,
   "author": "ecosphereplus",
   "tier": 2,
   "component_type": "Audio Plugin",
@@ -22,8 +23,9 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [],
   "setup_notes": [
     {
       "heading": "Installation",

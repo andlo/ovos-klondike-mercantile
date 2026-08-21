@@ -27,6 +27,7 @@
   "package_name": "ovos-skill-omva-enroll-voice",
   "pypi_version": null,
   "license": "NOASSERTION",
+  "archived": false,
   "author": "ecosphereplus",
   "tier": 2,
   "component_type": "Skill",
@@ -38,8 +39,45 @@
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "target_samples",
+      "type": "number",
+      "label": "Number of voice samples to collect"
+    },
+    {
+      "name": "min_audio_duration",
+      "type": "number",
+      "label": "Minimum audio duration (seconds)"
+    },
+    {
+      "name": "max_audio_duration",
+      "type": "number",
+      "label": "Maximum audio duration (seconds)"
+    },
+    {
+      "name": "quality_threshold",
+      "type": "number",
+      "label": "Audio quality threshold (0.0-1.0)"
+    },
+    {
+      "name": "confirmation_required",
+      "type": "checkbox",
+      "label": "Require confirmation before enrollment"
+    },
+    {
+      "name": "replace_existing_profiles",
+      "type": "checkbox",
+      "label": "Allow replacing existing voice profiles"
+    },
+    {
+      "name": "relationship_words",
+      "type": "text",
+      "label": "Relationship words for third-person enrollment (comma-separated)"
+    }
+  ],
   "setup_notes": [
     {
       "heading": "Configuration",
