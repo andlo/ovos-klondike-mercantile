@@ -20,8 +20,8 @@
   "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Persona",
-  "type_group": "Plugin",
+  "component_type": "Skill",
+  "type_group": "Skill",
   "stars": 4,
   "forks": 9,
   "open_issues": 18,
@@ -38,7 +38,18 @@
       "content": "pip install ovos-skill-wikihow"
     }
   ],
-  "languages": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "pt-pt"
+  ],
   "in_ovos_localize": true,
   "repo_created_at": "2018-01-23T09:41:23Z",
   "last_updated": "2025-06-08T22:04:04.795081Z",
