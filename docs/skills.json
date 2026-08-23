@@ -136,7 +136,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T23:05:13Z",
     "last_updated": "2026-07-25T22:06:01.953486Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -195,7 +195,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T12:16:45Z",
     "last_updated": "2026-07-25T22:06:02.065313Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -247,7 +247,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T19:20:27Z",
     "last_updated": "2026-07-25T22:06:14.527871Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -397,7 +397,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T18:24:40Z",
     "last_updated": "2026-07-25T22:08:10.944593Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -721,7 +721,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T21:45:17Z",
     "last_updated": "2026-07-25T22:06:04.970994Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -888,8 +888,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T14:56:13Z",
     "last_updated": "2026-07-22T14:50:12Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "andlo-ovos-common-reading-pipeline-plugin",
@@ -944,7 +944,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T11:11:43Z",
     "last_updated": "2026-07-25T21:50:14.951093Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -1053,7 +1053,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T22:16:02Z",
     "last_updated": "2026-07-25T22:06:02.217024Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -1695,7 +1695,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T18:04:14Z",
     "last_updated": "2026-07-25T22:06:02.043884Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -3038,7 +3038,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-22T15:31:53Z",
     "last_updated": "2026-07-25T22:06:03.303207Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -4927,7 +4927,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T13:53:14Z",
     "last_updated": "2026-07-25T22:06:07.918808Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -7725,7 +7725,7 @@
     "languages": [],
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T20:54:26Z",
-    "last_updated": "2026-08-20T21:46:27Z",
+    "last_updated": "2026-08-22T21:36:47Z",
     "is_new_repo": true,
     "is_recently_updated": false
   },
@@ -8307,8 +8307,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-20T15:56:25Z",
     "last_updated": "2026-08-20T20:07:21Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-media",
@@ -15876,45 +15876,6 @@
     "is_recently_updated": true
   },
   {
-    "id": "andlo-ovos-skill-recipe-helper",
-    "skill_id": null,
-    "name": "ovos-skill-recipe-helper",
-    "description": "Design doc: offline recipe skill for OVOS, sourced from Wikibooks Cookbook",
-    "examples": [],
-    "tags": [
-      "openvoiceos",
-      "ovos"
-    ],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/andlo/ovos-skill-recipe-helper",
-    "package_name": null,
-    "pypi_version": null,
-    "license": "GPL-3.0",
-    "archived": false,
-    "author": "andlo",
-    "tier": null,
-    "component_type": "Infrastructure",
-    "type_group": "Infrastructure",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": "offline",
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [],
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-08-18T14:53:06Z",
-    "last_updated": "2026-08-18T14:53:34Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
-  },
-  {
     "id": "andlo-ovos-skill-sampler",
     "skill_id": null,
     "name": "ovos-skill-sampler",
@@ -20884,7 +20845,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-22T19:17:04Z",
     "last_updated": "2026-07-25T22:32:38.130094Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -23181,6 +23142,61 @@
     "is_recently_updated": false
   },
   {
+    "id": "andlo-ovos-skill-recipe-helper",
+    "skill_id": "ovos-skill-recipe-helper.andlo",
+    "name": "Recipe Helper",
+    "description": "Offline recipes sourced from Wikibooks Cookbook, with unit conversion via ovos-skill-convert. English, Danish, and German are native; any other language is answered via on-demand offline translation. No internet connection needed.",
+    "examples": [
+      "how do I make pancakes",
+      "what do I need for carbonara",
+      "how many grams is 2 dl of flour"
+    ],
+    "tags": [
+      "recipes",
+      "cooking",
+      "food",
+      "offline",
+      "reference"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-recipe-helper/main/icon.png",
+    "source": "https://github.com/andlo/ovos-skill-recipe-helper",
+    "package_name": "ovos-skill-recipe-helper",
+    "pypi_version": null,
+    "license": "GPL-3.0",
+    "archived": false,
+    "author": "andlo",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 3,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "offline",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "fr-fr",
+      "it-it",
+      "nl-nl",
+      "pt-pt"
+    ],
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-08-18T14:53:06Z",
+    "last_updated": "2026-08-21T18:12:57Z",
+    "is_new_repo": true,
+    "is_recently_updated": true
+  },
+  {
     "id": "andlo-ovos-skill-rhythm-box",
     "skill_id": "ovos-skill-rhythm-box.andlo",
     "name": "Rhythm Box",
@@ -25417,8 +25433,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-22T16:25:01Z",
     "last_updated": "2026-07-22T18:16:17.774625Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "MohamadKanso-VoiceSafeKit",
@@ -26645,7 +26661,7 @@
     "repo_created_at": "2026-07-21T00:17:24Z",
     "last_updated": "2026-07-21T12:56:15Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-wyoming-ovos-stt",
