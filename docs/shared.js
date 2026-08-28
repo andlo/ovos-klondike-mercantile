@@ -200,11 +200,80 @@ function languageFlag(localeCode) {
   return flag || localeCode;
 }
 
-function renderLanguageFlags(skill) {
+function renderLanguageFlags(skill, currentLang) {
   const languages = asArray(skill.languages);
   if (languages.length === 0) return "";
-  const flags = languages.map((l) =>
-    `<span class="lang-flag" title="${escapeHtml(l)}">${languageFlag(l)}</span>`
-  ).join("");
+  const flags = languages.map((l) => {
+    const isCurrent = !!currentLang && l === currentLang;
+    return `<span class="lang-flag${isCurrent ? " lang-flag-current" : ""}" title="${escapeHtml(l)}">${languageFlag(l)}</span>`;
+  }).join("");
   return `<div class="lang-flags">${flags}</div>`;
+}
+
+// Site-wide DISPLAY language - distinct from the existing
+// "language-filter" dropdown (which controls WHICH skills show up
+// at all, based on what they themselves support). This instead
+// changes what TEXT is shown for skills that have a translated
+// locale/<lang>/skill.json (see generate_klondike_data.py's
+// fetch_locale_content) - name/description/examples - while every
+// skill still stays visible regardless of the chosen language,
+// falling back to the English base text when a given skill has no
+// translation for it.
+const SITE_LANGUAGES = [
+  { code: "en-us", label: "English" },
+  { code: "da-dk", label: "Dansk" },
+  { code: "de-de", label: "Deutsch" },
+  { code: "fr-fr", label: "Français" },
+  { code: "es-es", label: "Español" },
+  { code: "pt-pt", label: "Português" },
+  { code: "it-it", label: "Italiano" },
+  { code: "nl-nl", label: "Nederlands" },
+];
+
+const SITE_LANG_STORAGE_KEY = "klondike_site_lang";
+
+function getSiteLanguage() {
+  try {
+    return localStorage.getItem(SITE_LANG_STORAGE_KEY) || "en-us";
+  } catch {
+    // localStorage can throw in some private-browsing modes -
+    // English is always a safe, always-available fallback.
+    return "en-us";
+  }
+}
+
+function setSiteLanguage(code) {
+  try {
+    localStorage.setItem(SITE_LANG_STORAGE_KEY, code);
+  } catch {
+    // Same as above - the switcher still works for this page load,
+    // it just won't be remembered on the next visit.
+  }
+}
+
+// Returns {name, description, examples, translated} for a skill
+// shown in the given display language. "translated" is true only
+// when a real override was found (not just when the language
+// happens to equal "en-us") - callers can use it to show a subtle
+// "not translated yet" hint instead of silently mixing languages
+// with no indication anything fell back.
+function localizeSkill(skill, lang) {
+  const override = (skill.locale_content && skill.locale_content[lang]) || null;
+  return {
+    name: (override && override.name) || skill.name,
+    description: (override && override.description) || skill.description,
+    examples: (override && override.examples) || skill.examples,
+    translated: !!override,
+  };
+}
+
+function populateSiteLangSelect(selectEl) {
+  if (!selectEl) return;
+  for (const { code, label } of SITE_LANGUAGES) {
+    const opt = document.createElement("option");
+    opt.value = code;
+    opt.textContent = `${languageFlag(code)} ${label}`;
+    selectEl.appendChild(opt);
+  }
+  selectEl.value = getSiteLanguage();
 }

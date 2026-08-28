@@ -360,6 +360,62 @@ def fetch_skill_json(full_name):
     return None
 
 
+def fetch_skill_json_for_locale(full_name, locale, package_name=None):
+    """Fetches and parses locale/<locale>/skill.json for a SPECIFIC
+    non-English locale a skill is already CONFIRMED to have (the
+    caller gets that confirmation from fetch_locale_languages() first)
+    - unlike fetch_skill_json(), this never probes multiple candidate
+    paths to check existence, since the caller already knows the
+    folder is there. Tries repo-root locale/ first, then falls back
+    to <package_name>/locale/, matching fetch_locale_languages()'s own
+    fallback - a skill whose locale/ directory is nested under its
+    package dir (see that function's docstring, e.g.
+    OscillateLabsLLC/skill-homeassistant) has its translated
+    skill.json files nested the same way, not at the repo root."""
+    text = fetch_file(full_name, f"locale/{locale}/skill.json")
+    if text is None and package_name:
+        package_dir = package_name.replace("-", "_")
+        text = fetch_file(full_name, f"{package_dir}/locale/{locale}/skill.json")
+    if text is None:
+        return None
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        return None
+
+
+def fetch_locale_content(full_name, languages, package_name=None):
+    """For each non-English language a Skill is already confirmed to
+    have (from fetch_locale_languages), fetches THAT language's own
+    skill.json and keeps just the user-facing fields worth showing
+    translated - name/description/examples - keyed by locale code,
+    e.g. {"da-dk": {"name": ..., "description": ...}}. English
+    locales are skipped since that content is already the entry's
+    base name/description/examples fields - no need to duplicate it.
+    Costs exactly one extra API call per non-English language a skill
+    ACTUALLY has, not one per possible ecosystem language - a skill
+    with only en-us and da-dk locale folders costs one extra call
+    here, not eight, since fetch_locale_languages already confirmed
+    which folders exist before this function is ever called."""
+    content = {}
+    for lang in languages:
+        if lang.startswith("en"):
+            continue
+        data = fetch_skill_json_for_locale(full_name, lang, package_name)
+        if not data:
+            continue
+        entry = {}
+        if data.get("name"):
+            entry["name"] = data["name"]
+        if data.get("description"):
+            entry["description"] = data["description"]
+        if data.get("examples"):
+            entry["examples"] = data["examples"]
+        if entry:
+            content[lang] = entry
+    return content
+
+
 def fetch_file_with_package_fallback(full_name, filename, package_name=None):
     """Tries a file at repo root first, then falls back to
     <package_name_with_underscores>/<filename> - some repos nest
@@ -837,6 +893,13 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     # always come back empty.
     languages = fetch_locale_languages(full_name, package_name) if component_type == "Skill" else []
 
+    # Translated display content (name/description/examples) for
+    # every non-English language listed above - see
+    # fetch_locale_content()'s docstring. Skill-only and
+    # languages-gated for the same reason as the listing itself: a
+    # skill with no extra locale folders costs nothing extra here.
+    locale_content = fetch_locale_content(full_name, languages, package_name) if languages else {}
+
     version, requires_dist, pypi_release_date = pypi_info(package_name)
     github_release = latest_github_release(full_name)
 
@@ -891,6 +954,7 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "settings_fields": settings_fields,
         "setup_notes": setup_notes,
         "languages": languages,
+        "locale_content": locale_content,
         "in_ovos_localize": full_name in localize_tracked_repos,
         "repo_created_at": repo_created_at,
         "last_updated": last_updated,

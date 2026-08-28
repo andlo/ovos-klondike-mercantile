@@ -395,6 +395,43 @@ main {
 
 .lang-flag { margin-right: 0.15rem; }
 
+.lang-flag-current {
+  filter: drop-shadow(0 0 0 transparent);
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-radius: 3px;
+}
+
+.untranslated-note {
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.site-lang-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.site-lang-switcher select {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.78rem;
+}
+
+.detail-header .site-lang-switcher {
+  margin: 0;
+}
+
 .badges {
   display: flex;
   flex-wrap: wrap;
@@ -482,6 +519,11 @@ footer a { color: var(--accent); }
   max-width: 700px;
   margin: 0 auto;
   padding: 1.5rem 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .back-link {

@@ -5,6 +5,9 @@
 // last updated, stars/forks/open issues).
 
 const detailRoot = document.getElementById("detail-root");
+const siteLangSelect = document.getElementById("site-lang");
+let currentSiteLang = getSiteLanguage();
+let currentSkill = null;
 
 // Prefer real browser back-navigation over a fixed link to
 // index.html - the browser's own history (via bfcache) restores the
@@ -196,18 +199,22 @@ function flagUrl(skill) {
 }
 
 function renderDetail(skill) {
-  document.title = `${skill.name} · OVOS Klondike Mercantile`;
+  const localized = localizeSkill(skill, currentSiteLang);
+  document.title = `${localized.name} · OVOS Klondike Mercantile`;
 
   const fallbackIcon = genericIconFor(skill);
   const icon = skill.icon || fallbackIcon;
   const install = installInstructions(skill);
-  const examples = asArray(skill.examples)
+  const examples = asArray(localized.examples)
     .map((e) => `<li>"${escapeHtml(e)}"</li>`).join("");
   const tags = asArray(skill.tags)
     .map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
 
   const createdDate = formatDate(skill.repo_created_at);
   const updatedDate = formatDate(skill.last_updated);
+  const untranslatedNote = (currentSiteLang !== "en-us" && !localized.translated)
+    ? `<div class="untranslated-note">Not yet translated - showing English</div>`
+    : "";
 
   detailRoot.innerHTML = `
     <div class="detail-card">
@@ -215,9 +222,10 @@ function renderDetail(skill) {
         <img src="${escapeHtml(icon)}" alt="" class="detail-icon"
              onerror="this.onerror=null;this.src='${fallbackIcon}'">
         <div>
-          <h1>${escapeHtml(skill.name)}</h1>
+          <h1>${escapeHtml(localized.name)}</h1>
           <div class="byline">by ${escapeHtml(skill.author)}${versionLabel(skill) ? ` · ${escapeHtml(versionLabel(skill))}` : ""}</div>
-          ${renderLanguageFlags(skill)}
+          ${renderLanguageFlags(skill, currentSiteLang)}
+          ${untranslatedNote}
         </div>
       </div>
 
@@ -229,7 +237,7 @@ function renderDetail(skill) {
 
       ${renderArchivedWarning(skill)}
 
-      <p class="detail-description">${escapeHtml(skill.description || "No description available.")}</p>
+      <p class="detail-description">${escapeHtml(localized.description || "No description available.")}</p>
 
       ${install ? `
         <div class="install-box">
@@ -296,6 +304,13 @@ if (!wantedId) {
         detailRoot.innerHTML = `<p class="loading">Couldn't find that entry - it may have been removed in a later update. <a href="index.html">Back to the store</a>.</p>`;
         return;
       }
+      currentSkill = skill;
+      populateSiteLangSelect(siteLangSelect);
+      siteLangSelect.addEventListener("change", () => {
+        currentSiteLang = siteLangSelect.value;
+        setSiteLanguage(currentSiteLang);
+        renderDetail(currentSkill);
+      });
       renderDetail(skill);
     })
     .catch((err) => {

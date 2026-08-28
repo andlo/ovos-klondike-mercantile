@@ -14,26 +14,36 @@ const tagFilter = document.getElementById("tag-filter");
 const typeFilter = document.getElementById("type-filter");
 const tierFilter = document.getElementById("tier-filter");
 const languageFilter = document.getElementById("language-filter");
+const siteLangSelect = document.getElementById("site-lang");
 const sortOrder = document.getElementById("sort-order");
 const showArchivedToggle = document.getElementById("show-archived");
 const statsContent = document.getElementById("stats-content");
 
 let skills = [];
+let currentSiteLang = getSiteLanguage();
 
 function renderCard(skill) {
-  const examples = asArray(skill.examples).slice(0, 3)
+  const localized = localizeSkill(skill, currentSiteLang);
+  const examples = asArray(localized.examples).slice(0, 3)
     .map((e) => `<li>"${escapeHtml(e)}"</li>`).join("");
   const tags = asArray(skill.tags)
     .map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
   const fallbackIcon = genericIconFor(skill);
   const icon = skill.icon || fallbackIcon;
   const version = versionLabel(skill);
-  const description = truncate(skill.description, MAX_DESCRIPTION_LENGTH);
+  const description = truncate(localized.description, MAX_DESCRIPTION_LENGTH);
   const stats = [];
   if (skill.stars) stats.push(`⭐ ${skill.stars}`);
   if (skill.forks) stats.push(`🍴 ${skill.forks}`);
   const statsLine = stats.length ? `<div class="stats">${stats.join(" · ")}</div>` : "";
   const detailUrl = `detail.html?id=${encodeURIComponent(skill.id)}`;
+  // Shown only when the display language isn't English AND this
+  // specific skill has no translation for it - not shown at all in
+  // English (there's nothing to fall back FROM), and not shown for
+  // skills that DO have a real translation.
+  const untranslatedNote = (currentSiteLang !== "en-us" && !localized.translated)
+    ? `<div class="untranslated-note">Not yet translated - showing English</div>`
+    : "";
 
   return `
     <article class="card tier-${skill.tier}">
@@ -42,10 +52,11 @@ function renderCard(skill) {
           <img src="${escapeHtml(icon)}" alt="" loading="lazy"
                onerror="this.onerror=null;this.src='${fallbackIcon}'">
           <div class="card-head-text">
-            <h2>${escapeHtml(skill.name)}</h2>
+            <h2>${escapeHtml(localized.name)}</h2>
             <div class="byline">by ${escapeHtml(skill.author)}${version ? ` · ${escapeHtml(version)}` : ""}</div>
             ${statsLine}
-            ${renderLanguageFlags(skill)}
+            ${renderLanguageFlags(skill, currentSiteLang)}
+            ${untranslatedNote}
           </div>
         </div>
         <div class="badges">${renderBadges(skill)}</div>
@@ -69,7 +80,9 @@ function sortSkills(list, order) {
   } else if (order === "newest") {
     sorted.sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0));
   } else {
-    sorted.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+    sorted.sort((a, b) =>
+      (localizeSkill(a, currentSiteLang).name || "").localeCompare(localizeSkill(b, currentSiteLang).name || "")
+    );
   }
   return sorted;
 }
@@ -285,9 +298,10 @@ function populateFilters(list) {
 
 function matchesSearch(skill, query) {
   if (!query) return true;
+  const localized = localizeSkill(skill, currentSiteLang);
   const haystack = [
-    skill.name, skill.description, skill.author,
-    ...asArray(skill.tags), ...asArray(skill.examples),
+    skill.name, skill.description, localized.name, localized.description, skill.author,
+    ...asArray(skill.tags), ...asArray(skill.examples), ...asArray(localized.examples),
   ].join(" ").toLowerCase();
   return haystack.includes(query);
 }
@@ -498,6 +512,11 @@ tierFilter.addEventListener("change", applyFilters);
 languageFilter.addEventListener("change", applyFilters);
 sortOrder.addEventListener("change", applyFilters);
 showArchivedToggle.addEventListener("change", applyFilters);
+siteLangSelect.addEventListener("change", () => {
+  currentSiteLang = siteLangSelect.value;
+  setSiteLanguage(currentSiteLang);
+  applyFilters();
+});
 
 // cache: "no-store" plus a timestamp query param - belt and braces
 // against a stale cached copy ever being served.
@@ -515,6 +534,7 @@ Promise.all([
   .then(([skillsData, metaData]) => {
     skills = skillsData;
     populateFilters(skills);
+    populateSiteLangSelect(siteLangSelect);
     renderStatsLine(metaData, skills.length);
     applyFilters();
   })
