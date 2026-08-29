@@ -50,6 +50,48 @@
     "es-es",
     "fr-fr"
   ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Helligdage",
+      "description": "Helligdage, p\u00e5ske og datoberegning. Fuldt offline, beregnet direkte via holidays-biblioteket.",
+      "examples": [
+        "er i dag en helligdag",
+        "hvorn\u00e5r er det jul",
+        "hvor mange dage er der til p\u00e5ske",
+        "hvilken ugedag er 3. marts"
+      ]
+    },
+    "de-de": {
+      "name": "Feiertage",
+      "description": "Feiertage, Ostern und Datumsberechnung. Vollstandig offline, live berechnet uber die holidays-Bibliothek.",
+      "examples": [
+        "ist heute ein feiertag",
+        "wann ist weihnachten",
+        "wie viele tage sind es bis ostern",
+        "welcher wochentag ist der 3. m\u00e4rz"
+      ]
+    },
+    "es-es": {
+      "name": "D\u00edas festivos",
+      "description": "D\u00edas festivos, Pascua y c\u00e1lculo de fechas. Totalmente sin conexi\u00f3n, calculado en vivo mediante la biblioteca holidays.",
+      "examples": [
+        "es hoy festivo",
+        "cu\u00e1ndo es navidad",
+        "cu\u00e1ntos d\u00edas faltan para pascua",
+        "qu\u00e9 d\u00eda de la semana es el 3 de marzo"
+      ]
+    },
+    "fr-fr": {
+      "name": "Jours f\u00e9ri\u00e9s",
+      "description": "Jours f\u00e9ri\u00e9s, P\u00e2ques et calcul de dates. Enti\u00e8rement hors ligne, calcul\u00e9 en direct via la biblioth\u00e8que holidays.",
+      "examples": [
+        "est-ce que c'est f\u00e9ri\u00e9 aujourd'hui",
+        "quand est no\u00ebl",
+        "combien de jours avant p\u00e2ques",
+        "quel jour de la semaine est le 3 mars"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2026-08-18T14:52:37Z",
   "last_updated": "2026-08-18T17:26:38.410195Z",
