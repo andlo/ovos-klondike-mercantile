@@ -21,7 +21,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-localize",
   "package_name": "ovos-localize",
-  "pypi_version": null,
+  "pypi_version": "0.1.0a14",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -30,12 +30,12 @@
   "type_group": "Tool",
   "stars": 7,
   "forks": 3,
-  "open_issues": 78,
-  "on_pypi": false,
+  "open_issues": 33,
+  "on_pypi": true,
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
   "settings_fields": [],
   "setup_notes": [
@@ -45,9 +45,10 @@
     }
   ],
   "languages": [],
+  "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-03-18T01:39:28Z",
-  "last_updated": "2026-08-26T06:53:34Z",
+  "last_updated": "2026-08-26T20:06:05.604874Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

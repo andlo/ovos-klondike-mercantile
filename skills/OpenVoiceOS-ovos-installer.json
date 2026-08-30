@@ -18,9 +18,9 @@
   "tier": null,
   "component_type": "Infrastructure",
   "type_group": "Infrastructure",
-  "stars": 316,
+  "stars": 317,
   "forks": 59,
-  "open_issues": 9,
+  "open_issues": 7,
   "on_pypi": false,
   "has_release": true,
   "in_ovos_store": false,
@@ -30,22 +30,23 @@
   "settings_fields": [],
   "setup_notes": [
     {
-      "heading": "\ud83c\udf89 Open Voice OS and HiveMind Installer \ud83c\udf89",
-      "content": "Installer for Open Voice OS (OVOS) and HiveMind on Linux and macOS. Supports interactive installs, scenario-based automation, and optional container deployment.\n\n## \ud83e\udd16 What is Open Voice OS?\n\nOpen Voice OS (OVOS) is an open-source voice assistant platform focused on privacy and customization. HiveMind extends OVOS with distributed voice processing across multiple devices.\n\n## \ud83d\ude80 Quickstart\n\nPrereqs: `curl`, `git`, and `sudo`. Run:\n\nsudo sh -c \"$(curl -fsSL https://raw.githubusercontent.com/OpenVoiceOS/ovos-installer/main/installer.sh)\"\n\nIf you prefer to inspect before running, download the script first, review it, then execute it with `sudo sh installer.sh`.\n\nThis downloads and runs the installer interactively.\n\n> Heads-up: OVOS targets a supported Python runtime in its virtualenv (default `\u2026"
+      "heading": "Open Voice OS and HiveMind Installer",
+      "content": "This installer sets up Open Voice OS (OVOS) and HiveMind on Linux and macOS. It supports interactive installs, scenario-based automation, and optional container deployment.\n\n## What is Open Voice OS?\n\nOpen Voice OS (OVOS) is an open-source voice assistant platform focused on privacy and customization. HiveMind extends OVOS with distributed voice processing across multiple devices.\n\n## Quickstart\n\nThe installer needs `curl`, `git`, `sudo`, and Bash 4 or later. Run:\n\nsudo sh -c \"$(curl -fsSL https://raw.githubusercontent.com/OpenVoiceOS/ovos-installer/main/installer.sh)\"\n\nIf you prefer to inspect the script before you run it, download it first, review it, then run it with `sudo sh installer.sh`.\n\nThis command downloads and runs the installer interactively.\n\nNote: OVOS targets a supported Pyt\u2026"
     },
     {
-      "heading": "\ud83e\udd16 Automated install",
-      "content": "The installer supports non-interactive installation via a scenario file at `~/.config/ovos-installer/scenario.yaml`. This is useful for scripting or deploying to multiple devices.\n\nHere is an example of a scenario to install Open Voice OS within Docker containers on a Raspberry Pi 4B with default skills.\n\nmkdir -p ~/.config/ovos-installer\ncat <<EOF > ~/.config/ovos-installer/scenario.yaml\n---\nuninstall: false\nmethod: containers\nchannel: testing\nprofile: ovos\nfeatures:\n  skills: true\n  extra_skills: false\nraspberry_pi_tuning: true\nshare_telemetry: true\nshare_usage_telemetry: true\nEOF\n\n### Configuration options explained\n\n- `uninstall`: Set to `true` to uninstall instead of install.\n- `method`: Installation method (`containers` for Docker, `virtualenv` for Python virtual environment). On mac\u2026"
+      "heading": "Automated install",
+      "content": "The installer supports non-interactive installation through a scenario file at `~/.config/ovos-installer/scenario.yaml`. Use this to script installs or deploy to multiple devices.\n\nThis example scenario installs Open Voice OS in Docker containers on a Raspberry Pi 4B with default skills:\n\nmkdir -p ~/.config/ovos-installer\ncat <<EOF > ~/.config/ovos-installer/scenario.yaml\n---\nuninstall: false\nmethod: containers\nchannel: testing\nprofile: ovos\nfeatures:\n  skills: true\n  extra_skills: false\nraspberry_pi_tuning: true\nshare_telemetry: true\nshare_usage_telemetry: true\nEOF\n\n### Configuration options explained\n\n- `uninstall`: Set to `true` to uninstall instead of install.\n- `method`: Installation method (`containers` for Docker, `virtualenv` for a Python virtual environment). On macOS and Mark 2 h\u2026"
     },
     {
-      "heading": "\u274c Uninstall",
+      "heading": "Uninstall",
       "content": "Uninstalling Open Voice OS removes installed components, configurations, and services. Back up any important data first."
     }
   ],
   "languages": [],
+  "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2023-11-07T20:31:20Z",
-  "last_updated": "2026-08-25T07:47:55Z",
+  "last_updated": "2026-08-30T00:32:37Z",
   "is_new_repo": false,
   "is_recently_updated": false
 }

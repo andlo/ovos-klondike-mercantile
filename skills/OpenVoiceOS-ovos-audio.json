@@ -32,14 +32,15 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "`pip install ovos-audio[extras]` to install this package and the default plugins.\n\nWithout `extras`, you will also need to manually install, and possibly configure TTS modules as described below.\n\n\n_________"
+      "content": "pip install ovos-audio[extras]\n\nThe `extras` group installs this package with the default plugins. Without it, you must install and configure TTS modules yourself, as described below.\n\n_________"
     },
     {
       "heading": "Configuration",
-      "content": "under mycroft.conf\n\n{\n\n  // Text to Speech parameters\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\",\n    \"fallback_module\": \"ovos-tts-plugin-mimic\",\n    \"ovos-tts-plugin-mimic\": {\n        \"voice\": \"ap\"\n    }\n  },\n\n  // File locations of sounds to play for system events\n  \"sounds\": {\n    \"start_listening\": \"snd/start_listening.wav\",\n    \"end_listening\": \"snd/end_listening.wav\",\n    \"acknowledge\": \"snd/acknowledge.mp3\",\n    \"error\": \"snd/error.mp3\"\n  },\n\n  // Mechanism used to play WAV audio files\n  \"play_wav_cmdline\": \"paplay %1 --stream-name=mycroft-voice\",\n\n  // Mechanism used to play MP3 audio files\n  \"play_mp3_cmdline\": \"mpg123 %1\",\n\n  // Mechanism used to play OGG audio files\n  \"play_ogg_cmdline\": \"ogg123 -q %1\"\n}\n_________\n\n## \ud83e\udd16 Persona Support  \n\nThis project supports **dialog-tr\u2026"
+      "content": "`ovos-audio` reads its settings from `mycroft.conf`.\n\n{\n\n  // Text to Speech parameters\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\",\n    \"fallback_module\": \"ovos-tts-plugin-mimic\",\n    \"ovos-tts-plugin-mimic\": {\n        \"voice\": \"ap\"\n    }\n  },\n\n  // File locations of sounds to play for system events\n  \"sounds\": {\n    \"start_listening\": \"snd/start_listening.wav\",\n    \"end_listening\": \"snd/end_listening.wav\",\n    \"acknowledge\": \"snd/acknowledge.mp3\",\n    \"error\": \"snd/error.mp3\"\n  },\n\n  // Mechanism used to play WAV audio files\n  \"play_wav_cmdline\": \"paplay %1 --stream-name=mycroft-voice\",\n\n  // Mechanism used to play MP3 audio files\n  \"play_mp3_cmdline\": \"mpg123 %1\",\n\n  // Mechanism used to play OGG audio files\n  \"play_ogg_cmdline\": \"ogg123 -q %1\"\n}\n_________"
     }
   ],
   "languages": [],
+  "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2021-12-01T14:43:41Z",
   "last_updated": "2026-03-11T17:10:05.188945Z",
