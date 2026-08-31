@@ -3670,7 +3670,41 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Horoskop (udbyder)",
+        "description": "L\u00e6ser dagens stjernetegns-horoskop h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+        "examples": [
+          "L\u00e6s horoskopet for l\u00f8ven",
+          "L\u00e6s v\u00e6dderens horoskop"
+        ]
+      },
+      "de-de": {
+        "name": "Horoskop (Anbieter)",
+        "description": "Liest das t\u00e4gliche Sternzeichen-Horoskop vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle."
+      },
+      "es-es": {
+        "name": "Hor\u00f3scopo (proveedor)",
+        "description": "Lee en voz alta el hor\u00f3scopo diario del zod\u00edaco. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente."
+      },
+      "fr-fr": {
+        "name": "Horoscope (fournisseur)",
+        "description": "Lit \u00e0 voix haute l'horoscope quotidien du zodiaque. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome."
+      },
+      "it-it": {
+        "name": "Oroscopo (fornitore)",
+        "description": "Legge ad alta voce l'oroscopo zodiacale del giorno. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma."
+      },
+      "nl-nl": {
+        "name": "Horoscoop (aanbieder)",
+        "description": "Leest de dagelijkse sterrenbeeldhoroscoop hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface."
+      },
+      "pt-pt": {
+        "name": "Hor\u00f3scopo (fornecedor)",
+        "description": "L\u00ea em voz alta o hor\u00f3scopo di\u00e1rio do zod\u00edaco. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma."
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-22T15:31:53Z",
     "last_updated": "2026-07-25T22:06:03.303207Z",
     "is_new_repo": false,
@@ -3833,7 +3867,45 @@
       "es-es",
       "fr-fr"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Intercom",
+        "description": "LAN-intercom - send en talt besked til en navngiven OVOS-enhed p\u00e5 samme lokale netv\u00e6rk. Fuldt offline, ingen internetforbindelse n\u00f8dvendig. Kun tale, udf\u00f8rer aldrig kommandoer p\u00e5 modtager-enheden.",
+        "examples": [
+          "s\u00e6t intercom-navn til stuen",
+          "s\u00e6t intercom-kode til fire syv to ni",
+          "send en besked til sovev\u00e6relset"
+        ]
+      },
+      "de-de": {
+        "name": "Intercom",
+        "description": "LAN-Intercom - sendet eine gesprochene Nachricht an ein benanntes OVOS-Ger\u00e4t im selben lokalen Netzwerk. Vollst\u00e4ndig offline, keine Internetverbindung erforderlich. Nur Sprache, f\u00fchrt niemals Befehle auf dem Empf\u00e4ngerger\u00e4t aus.",
+        "examples": [
+          "setze intercom-namen auf wohnzimmer",
+          "setze intercom-code auf vier sieben zwei neun",
+          "sende eine nachricht an schlafzimmer"
+        ]
+      },
+      "es-es": {
+        "name": "Intercomunicador",
+        "description": "Intercomunicador LAN - env\u00eda un mensaje hablado a un dispositivo OVOS nombrado en la misma red local. Totalmente sin conexi\u00f3n, no requiere internet. Solo habla, nunca ejecuta comandos en el dispositivo receptor.",
+        "examples": [
+          "establece el nombre de intercomunicador en sal\u00f3n",
+          "establece el c\u00f3digo de intercomunicador en cuatro siete dos nueve",
+          "env\u00eda un mensaje a dormitorio"
+        ]
+      },
+      "fr-fr": {
+        "name": "Intercom",
+        "description": "Intercom LAN - envoie un message parl\u00e9 \u00e0 un appareil OVOS nomm\u00e9 sur le m\u00eame r\u00e9seau local. Enti\u00e8rement hors ligne, aucune connexion internet requise. Parle uniquement, n'ex\u00e9cute jamais de commandes sur l'appareil r\u00e9cepteur.",
+        "examples": [
+          "d\u00e9finis le nom intercom \u00e0 salon",
+          "d\u00e9finis le code intercom \u00e0 quatre sept deux neuf",
+          "envoie un message \u00e0 chambre"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T14:51:17Z",
     "last_updated": "2026-08-18T19:32:07.736726Z",
     "is_new_repo": true,
@@ -4339,7 +4411,24 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Regnetr\u00e6ning",
+        "description": "Regnetr\u00e6ning til b\u00f8rn - t\u00e6lle, tabel-recitation, og interaktive quizzer i plus, minus, gange, division og procent. Fuldst\u00e6ndig offline.",
+        "examples": [
+          "t\u00e6l til ti",
+          "sig 5 tabellen",
+          "quiz mig i 3 tabellen",
+          "quiz mig i procent",
+          "quiz mig i sv\u00e6r division",
+          "quiz mig i blandede regnearter",
+          "quiz mig i estimering",
+          "quiz mig i decimaltal i addition",
+          "quiz mig i det hele"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T18:31:58Z",
     "last_updated": "2026-08-17T12:16:52.479762Z",
     "is_new_repo": true,
@@ -4392,7 +4481,18 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Metronom",
+        "description": "En metronom - s\u00e6t et tempo i bpm og f\u00e5 et h\u00f8rbart klik med accent p\u00e5 hvert fjerde slag. Fuldst\u00e6ndig deterministisk og offline: genererede kliktoner, ikke optagelser.",
+        "examples": [
+          "s\u00e6t en metronom til 120 bpm",
+          "start en metronom",
+          "stop metronomen"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:13Z",
     "last_updated": "2026-08-16T17:27:40.140338Z",
     "is_new_repo": true,
@@ -4499,7 +4599,17 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Morsekode",
+        "description": "Koder tekst til morsekode, afspillet som genererede h\u00f8rbare bip. Fuldst\u00e6ndig offline, ingen optagelser.",
+        "examples": [
+          "hvordan siger man SOS p\u00e5 morse",
+          "spil hello world p\u00e5 morse"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:18Z",
     "last_updated": "2026-08-16T18:13:24.697134Z",
     "is_new_repo": true,
@@ -4837,7 +4947,17 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "NATO Alfabetet",
+        "description": "Staver et ord med det NATO/ICAO fonetiske alfabet - Alfa, Bravo, Charlie. Fuldst\u00e6ndig offline, ren opslagstabel.",
+        "examples": [
+          "stav Andreas",
+          "hvordan staver man hej"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:21Z",
     "last_updated": "2026-08-16T18:13:21.880357Z",
     "is_new_repo": true,
@@ -5325,7 +5445,18 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Netv\u00e6rksscanner",
+        "description": "Finder enheder p\u00e5 dit eget lokale netv\u00e6rk via mDNS/Bonjour samt et ping+ARP+MAC-vendor-sweep. Fuldst\u00e6ndig offline, ingen root n\u00f8dvendig.",
+        "examples": [
+          "scan netv\u00e6rket",
+          "kan du se min Sony TV",
+          "er min printer p\u00e5 netv\u00e6rket"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T18:56:47Z",
     "last_updated": "2026-08-16T19:02:51.026660Z",
     "is_new_repo": true,
@@ -5585,7 +5716,64 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "OVOS Blog (udbyder)",
+        "description": "L\u00e6ser OpenVoiceOS-bloggen h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+        "examples": [
+          "L\u00e6s mig seneste artikel fra ovosblog"
+        ]
+      },
+      "de-de": {
+        "name": "OVOS Blog (Anbieter)",
+        "description": "Liest den OpenVoiceOS-Blog vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+        "examples": [
+          "Erz\u00e4hl mir eine Geschichte von ovos blog",
+          "Lies mir eine Geschichte von ovos blog"
+        ]
+      },
+      "es-es": {
+        "name": "OVOS Blog (proveedor)",
+        "description": "Lee en voz alta el blog de OpenVoiceOS. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+        "examples": [
+          "Cu\u00e9ntame un cuento de ovos blog",
+          "L\u00e9eme un cuento de ovos blog"
+        ]
+      },
+      "fr-fr": {
+        "name": "OVOS Blog (fournisseur)",
+        "description": "Lit le blog OpenVoiceOS \u00e0 voix haute. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+        "examples": [
+          "Raconte-moi une histoire de ovos blog",
+          "Lis-moi une histoire de ovos blog"
+        ]
+      },
+      "it-it": {
+        "name": "OVOS Blog (fornitore)",
+        "description": "Legge ad alta voce il blog di OpenVoiceOS. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+        "examples": [
+          "Raccontami una storia di ovos blog",
+          "Leggimi una storia di ovos blog"
+        ]
+      },
+      "nl-nl": {
+        "name": "OVOS Blog (aanbieder)",
+        "description": "Leest de OpenVoiceOS-blog hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+        "examples": [
+          "Vertel me een verhaal van ovos blog",
+          "Lees me een verhaal van ovos blog"
+        ]
+      },
+      "pt-pt": {
+        "name": "OVOS Blog (fornecedor)",
+        "description": "L\u00ea o blog da OpenVoiceOS em voz alta. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+        "examples": [
+          "Conta-me uma hist\u00f3ria de ovos blog",
+          "L\u00ea-me uma hist\u00f3ria de ovos blog"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T13:53:14Z",
     "last_updated": "2026-07-25T22:06:07.918808Z",
     "is_new_repo": false,
@@ -6197,6 +6385,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-10-16T22:07:42Z",
     "last_updated": "2023-11-25T20:27:22Z",
@@ -15539,6 +15728,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:21:28Z",
     "last_updated": "2026-08-16T20:02:59Z",
@@ -15798,6 +15988,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:42:57Z",
     "last_updated": "2026-08-16T19:59:23Z",
@@ -16256,6 +16447,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T14:52:09Z",
     "last_updated": "2026-08-18T15:04:52Z",
@@ -16295,6 +16487,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:43:07Z",
     "last_updated": "2026-08-16T19:59:22Z",
@@ -16334,6 +16527,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:43:19Z",
     "last_updated": "2026-08-16T19:59:20Z",
@@ -16634,6 +16828,7 @@
     "languages": [
       "en-us"
     ],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2021-12-28T23:01:11Z",
     "last_updated": "2024-03-30T22:31:08Z",
@@ -16793,6 +16988,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T20:53:28Z",
     "last_updated": "2026-08-16T20:53:30Z",
@@ -16832,6 +17028,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:34:27Z",
     "last_updated": "2026-08-16T19:59:16Z",
@@ -17011,6 +17208,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:52:39Z",
     "last_updated": "2026-08-16T19:59:24Z",
@@ -17194,6 +17392,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:49:22Z",
     "last_updated": "2026-08-16T19:49:27Z",
@@ -17233,6 +17432,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:43:30Z",
     "last_updated": "2026-08-16T19:59:19Z",
@@ -17344,6 +17544,7 @@
     "languages": [
       "en-us"
     ],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2020-01-02T12:42:23Z",
     "last_updated": "2024-04-05T18:30:33Z",
@@ -21813,7 +22014,7 @@
     "icon": null,
     "source": "https://github.com/andlo/ovos-tui-client",
     "package_name": "ovos-tui-client",
-    "pypi_version": "0.1.24",
+    "pypi_version": "0.1.25",
     "license": "GPL-3.0",
     "archived": false,
     "author": "andlo",
@@ -21841,11 +22042,12 @@
       }
     ],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-22T19:17:04Z",
-    "last_updated": "2026-07-25T22:32:38.130094Z",
+    "last_updated": "2026-08-29T18:50:56.494419Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-ui-enclosure-protocol",
@@ -24239,6 +24441,71 @@
       "nl-nl",
       "pt-pt"
     ],
+    "locale_content": {
+      "da-dk": {
+        "name": "Opskriftshj\u00e6lper",
+        "description": "Offline opskrifter fra Wikibooks Cookbook, med m\u00e5l-omregning via ovos-skill-convert. Engelsk, dansk og tysk er indbygget; alle andre sprog besvares via offline-overs\u00e6ttelse. Ingen internetforbindelse n\u00f8dvendig.",
+        "examples": [
+          "hvordan laver jeg pandekager",
+          "hvad skal jeg bruge til carbonara",
+          "hvor mange gram er 2 dl mel"
+        ]
+      },
+      "de-de": {
+        "name": "Rezepthelfer",
+        "description": "Offline-Rezepte aus dem Wikibooks Kochbuch, mit Mengenumrechnung \u00fcber ovos-skill-convert. Englisch, D\u00e4nisch und Deutsch sind nativ; alle anderen Sprachen werden per Offline-\u00dcbersetzung beantwortet. Keine Internetverbindung n\u00f6tig.",
+        "examples": [
+          "wie mache ich Pfannkuchen",
+          "was brauche ich f\u00fcr Carbonara",
+          "wie viel Gramm sind 2 dl Mehl"
+        ]
+      },
+      "es-es": {
+        "name": "Ayudante de recetas",
+        "description": "Recetas sin conexi\u00f3n de Artes culinarias en Wikibooks, con conversi\u00f3n de unidades v\u00eda ovos-skill-convert. Ingl\u00e9s, dan\u00e9s y alem\u00e1n son nativos; cualquier otro idioma se responde mediante traducci\u00f3n sin conexi\u00f3n. No requiere internet.",
+        "examples": [
+          "c\u00f3mo hago panqueques",
+          "qu\u00e9 necesito para una carbonara",
+          "cu\u00e1ntos gramos son 2 dl de harina"
+        ]
+      },
+      "fr-fr": {
+        "name": "Assistant de recettes",
+        "description": "Recettes hors ligne issues du Livre de cuisine Wikibooks, avec conversion d'unit\u00e9s via ovos-skill-convert. L'anglais, le danois et l'allemand sont natifs ; toute autre langue est trait\u00e9e par traduction hors ligne \u00e0 la demande. Aucune connexion internet requise.",
+        "examples": [
+          "comment faire des cr\u00eapes",
+          "de quoi ai-je besoin pour une carbonara",
+          "combien de grammes fait 2 dl de farine"
+        ]
+      },
+      "it-it": {
+        "name": "Assistente di ricette",
+        "description": "Ricette offline dal Libro di cucina di Wikibooks, con conversione delle unit\u00e0 tramite ovos-skill-convert. Inglese, danese e tedesco sono nativi; qualsiasi altra lingua viene gestita tramite traduzione offline su richiesta. Non richiede connessione internet.",
+        "examples": [
+          "come si fanno i pancake",
+          "cosa serve per una carbonara",
+          "quanti grammi sono 2 dl di farina"
+        ]
+      },
+      "nl-nl": {
+        "name": "Receptenhulp",
+        "description": "Offline recepten uit het Wikibooks Kookboek, met eenheidsomrekening via ovos-skill-convert. Engels, Deens en Duits zijn native; elke andere taal wordt beantwoord via offline vertaling op aanvraag. Geen internetverbinding nodig.",
+        "examples": [
+          "hoe maak ik pannenkoeken",
+          "wat heb ik nodig voor carbonara",
+          "hoeveel gram is 2 dl bloem"
+        ]
+      },
+      "pt-pt": {
+        "name": "Assistente de receitas",
+        "description": "Receitas offline do Livro de receitas da Wikibooks, com convers\u00e3o de unidades via ovos-skill-convert. Ingl\u00eas, dinamarqu\u00eas e alem\u00e3o s\u00e3o nativos; qualquer outro idioma \u00e9 respondido por tradu\u00e7\u00e3o offline sob demanda. N\u00e3o requer internet.",
+        "examples": [
+          "como fa\u00e7o panquecas",
+          "o que preciso para uma carbonara",
+          "quantos gramas s\u00e3o 2 dl de farinha"
+        ]
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T14:53:06Z",
     "last_updated": "2026-08-21T18:12:57Z",
@@ -24292,7 +24559,18 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Rytmeboks",
+        "description": "Et simpelt rytmeboks-skill - loop et beat-m\u00f8nster (rock, disco) i et valgt tempo. Fuldst\u00e6ndig offline, genererede trommelyde.",
+        "examples": [
+          "spil et rock beat p\u00e5 100 bpm",
+          "start et trommeloop",
+          "stop beatet"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:32Z",
     "last_updated": "2026-08-16T17:51:39.102215Z",
     "is_new_repo": true,
@@ -25329,6 +25607,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-09-19T19:11:59Z",
     "last_updated": "2024-12-19T17:12:31Z",
@@ -25918,7 +26197,18 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Hvordan Lyder Det",
+        "description": "Hvordan lyder en ko? Bundlede offline-lyde (i dag dyr) for \u00f8jeblikkelige svar, med et valgfrit freesound.org online-fallback for alt andet, filtreret til kun CC0-licenserede resultater.",
+        "examples": [
+          "hvordan lyder en ko",
+          "hvilken lyd laver en hund",
+          "spil en kat lyd"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:10:48Z",
     "last_updated": "2026-08-16T17:27:41.684513Z",
     "is_new_repo": true,
@@ -25971,6 +26261,17 @@
       "da-dk",
       "en-us"
     ],
+    "locale_content": {
+      "da-dk": {
+        "name": "SoundBoard",
+        "description": "Et lydeffekt-braet til OVOS - 'spil en trommehvirvel', 'spil klapsalve', 'spil et luft-horn'. Samme bundlede-CC0-sample-moenster som ovos-skill-sound-like, men for standard lydeffekter fremfor dyre-/objektlyde. Kunne plausibelt dele infrastruktur med ovos-skill-sound-like fremfor at vaere helt separat - vaerd at genbesoege naar begge findes.",
+        "examples": [
+          "spil en trommehvirvel",
+          "spil klapsalve",
+          "spil et luft-horn"
+        ]
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:29Z",
     "last_updated": "2026-08-19T16:36:55Z",
@@ -26365,7 +26666,18 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Stemmegaffel",
+        "description": "En referencetone-generator - giv mig et A spiller 440Hz, spil 300 hertz spiller enhver frekvens. Fuldst\u00e6ndig offline, genererede toner, ingen optagelser.",
+        "examples": [
+          "giv mig et A",
+          "spil et C skarp",
+          "spil 300 hertz"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:09Z",
     "last_updated": "2026-08-16T17:51:38.229713Z",
     "is_new_repo": true,
@@ -26653,7 +26965,81 @@
       "pt-pt",
       "sv-se"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Voices of Tomorrow",
+        "description": "Afspiller forudindspillede opl\u00e6sninger fra 365tomorrows.com via OCP. Adskilt fra ovos-skill-365tomorrows-stories, som i stedet l\u00e6ser teksten h\u00f8jt via TTS.",
+        "examples": [
+          "afspil voices of tomorrow",
+          "afspil 365tomorrows podcasten"
+        ]
+      },
+      "de-de": {
+        "name": "Voices of Tomorrow",
+        "description": "Spielt vorab aufgenommene Lesungen von 365tomorrows.com \u00fcber OCP ab. Getrennt von ovos-skill-365tomorrows-stories, das den Text stattdessen per TTS vorliest.",
+        "examples": [
+          "spiele voices of tomorrow",
+          "spiele den 365tomorrows podcast"
+        ]
+      },
+      "es-es": {
+        "name": "Voices of Tomorrow",
+        "description": "Reproduce lecturas grabadas de 365tomorrows.com a trav\u00e9s de OCP. Independiente de ovos-skill-365tomorrows-stories, que en su lugar lee el texto en voz alta mediante TTS.",
+        "examples": [
+          "reproduce voices of tomorrow",
+          "reproduce el podcast de 365tomorrows"
+        ]
+      },
+      "fr-fr": {
+        "name": "Voices of Tomorrow",
+        "description": "Joue des lectures pr\u00e9enregistr\u00e9es de 365tomorrows.com via OCP. Distinct de ovos-skill-365tomorrows-stories, qui lit le texte \u00e0 voix haute via TTS \u00e0 la place.",
+        "examples": [
+          "joue voices of tomorrow",
+          "joue le podcast 365tomorrows"
+        ]
+      },
+      "it-it": {
+        "name": "Voices of Tomorrow",
+        "description": "Riproduce letture preregistrate da 365tomorrows.com tramite OCP. Separato da ovos-skill-365tomorrows-stories, che invece legge il testo ad alta voce tramite TTS.",
+        "examples": [
+          "riproduci voices of tomorrow",
+          "riproduci il podcast 365tomorrows"
+        ]
+      },
+      "nb-no": {
+        "name": "Voices of Tomorrow",
+        "description": "Spiller forh\u00e5ndsinnspilte opplesninger fra 365tomorrows.com via OCP. Adskilt fra ovos-skill-365tomorrows-stories, som i stedet leser teksten h\u00f8yt via TTS.",
+        "examples": [
+          "spill voices of tomorrow",
+          "spill 365tomorrows-podkasten"
+        ]
+      },
+      "nl-nl": {
+        "name": "Voices of Tomorrow",
+        "description": "Speelt vooraf opgenomen voorlezingen van 365tomorrows.com af via OCP. Los van ovos-skill-365tomorrows-stories, dat de tekst in plaats daarvan hardop voorleest via TTS.",
+        "examples": [
+          "speel voices of tomorrow af",
+          "speel de 365tomorrows podcast af"
+        ]
+      },
+      "pt-pt": {
+        "name": "Voices of Tomorrow",
+        "description": "Reproduz leituras pr\u00e9-gravadas de 365tomorrows.com atrav\u00e9s do OCP. Separado de ovos-skill-365tomorrows-stories, que em vez disso l\u00ea o texto em voz alta via TTS.",
+        "examples": [
+          "reproduz voices of tomorrow",
+          "reproduz o podcast 365tomorrows"
+        ]
+      },
+      "sv-se": {
+        "name": "Voices of Tomorrow",
+        "description": "Spelar f\u00f6rinspelade uppl\u00e4sningar fr\u00e5n 365tomorrows.com via OCP. Separat fr\u00e5n ovos-skill-365tomorrows-stories, som ist\u00e4llet l\u00e4ser texten h\u00f6gt via TTS.",
+        "examples": [
+          "spela voices of tomorrow",
+          "spela 365tomorrows-podden"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-22T16:25:01Z",
     "last_updated": "2026-07-22T18:16:17.774625Z",
     "is_new_repo": false,
@@ -27652,7 +28038,18 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Hvid St\u00f8j",
+        "description": "En ambient-lydmaskine - hvid, pink og brun st\u00f8j til s\u00f8vn eller fokus. Fuldst\u00e6ndig offline, alt genereret, ingen optagelser.",
+        "examples": [
+          "spil hvid st\u00f8j",
+          "spil pink st\u00f8j",
+          "stop st\u00f8jen"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T17:15:25Z",
     "last_updated": "2026-08-16T18:13:12.535472Z",
     "is_new_repo": true,
@@ -27709,6 +28106,44 @@
       "es-es",
       "fr-fr"
     ],
+    "locale_content": {
+      "da-dk": {
+        "name": "Wiki Offline",
+        "description": "Offline opslag i almen viden, der d\u00e6kker Wikipedias ~10.000 vitale artikler. Engelsk, spansk og fransk er indbygget; alle andre sprog besvares via offline-overs\u00e6ttelse. Ingen internetforbindelse n\u00f8dvendig.",
+        "examples": [
+          "hvad er fotosyntese",
+          "hvem var Marie Curie",
+          "fort\u00e6l mig om Eiffelt\u00e5rnet"
+        ]
+      },
+      "de-de": {
+        "name": "Wiki Offline",
+        "description": "Offline-Nachschlagewerk fuer Allgemeinwissen, das Wikipedias rund 10.000 vitale Artikel abdeckt. Englisch, Spanisch und Franzoesisch sind nativ; jede andere Sprache wird per Offline-Uebersetzung beantwortet. Keine Internetverbindung noetig.",
+        "examples": [
+          "was ist photosynthese",
+          "wer war Marie Curie",
+          "erzaehl mir vom Eiffelturm"
+        ]
+      },
+      "es-es": {
+        "name": "Wiki Offline",
+        "description": "Consulta de conocimiento general sin conexi\u00f3n, que cubre unos 10.000 art\u00edculos vitales de Wikipedia. Ingl\u00e9s, espa\u00f1ol y franc\u00e9s son nativos; cualquier otro idioma se responde mediante traducci\u00f3n offline. No requiere conexi\u00f3n a internet.",
+        "examples": [
+          "qu\u00e9 es la fotos\u00edntesis",
+          "qui\u00e9n fue Marie Curie",
+          "h\u00e1blame de la Torre Eiffel"
+        ]
+      },
+      "fr-fr": {
+        "name": "Wiki Offline",
+        "description": "Consultation de connaissances g\u00e9n\u00e9rales hors ligne, couvrant environ 10 000 articles vitaux de Wikip\u00e9dia. L'anglais, l'espagnol et le fran\u00e7ais sont natifs ; toute autre langue est trait\u00e9e par traduction hors ligne. Aucune connexion internet requise.",
+        "examples": [
+          "qu'est-ce que la photosynth\u00e8se",
+          "qui \u00e9tait Marie Curie",
+          "parle-moi de la Tour Eiffel"
+        ]
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-17T20:39:40Z",
     "last_updated": "2026-08-18T13:53:56.170148Z",
@@ -27887,7 +28322,8 @@
     "languages": [
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {},
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T00:17:24Z",
     "last_updated": "2026-07-21T12:56:15Z",
     "is_new_repo": false,

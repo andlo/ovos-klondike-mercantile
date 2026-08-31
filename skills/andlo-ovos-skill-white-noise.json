@@ -47,7 +47,18 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Hvid St\u00f8j",
+      "description": "En ambient-lydmaskine - hvid, pink og brun st\u00f8j til s\u00f8vn eller fokus. Fuldst\u00e6ndig offline, alt genereret, ingen optagelser.",
+      "examples": [
+        "spil hvid st\u00f8j",
+        "spil pink st\u00f8j",
+        "stop st\u00f8jen"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T17:15:25Z",
   "last_updated": "2026-08-16T18:13:12.535472Z",
   "is_new_repo": true,

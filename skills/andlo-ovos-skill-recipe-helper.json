@@ -47,6 +47,71 @@
     "nl-nl",
     "pt-pt"
   ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Opskriftshj\u00e6lper",
+      "description": "Offline opskrifter fra Wikibooks Cookbook, med m\u00e5l-omregning via ovos-skill-convert. Engelsk, dansk og tysk er indbygget; alle andre sprog besvares via offline-overs\u00e6ttelse. Ingen internetforbindelse n\u00f8dvendig.",
+      "examples": [
+        "hvordan laver jeg pandekager",
+        "hvad skal jeg bruge til carbonara",
+        "hvor mange gram er 2 dl mel"
+      ]
+    },
+    "de-de": {
+      "name": "Rezepthelfer",
+      "description": "Offline-Rezepte aus dem Wikibooks Kochbuch, mit Mengenumrechnung \u00fcber ovos-skill-convert. Englisch, D\u00e4nisch und Deutsch sind nativ; alle anderen Sprachen werden per Offline-\u00dcbersetzung beantwortet. Keine Internetverbindung n\u00f6tig.",
+      "examples": [
+        "wie mache ich Pfannkuchen",
+        "was brauche ich f\u00fcr Carbonara",
+        "wie viel Gramm sind 2 dl Mehl"
+      ]
+    },
+    "es-es": {
+      "name": "Ayudante de recetas",
+      "description": "Recetas sin conexi\u00f3n de Artes culinarias en Wikibooks, con conversi\u00f3n de unidades v\u00eda ovos-skill-convert. Ingl\u00e9s, dan\u00e9s y alem\u00e1n son nativos; cualquier otro idioma se responde mediante traducci\u00f3n sin conexi\u00f3n. No requiere internet.",
+      "examples": [
+        "c\u00f3mo hago panqueques",
+        "qu\u00e9 necesito para una carbonara",
+        "cu\u00e1ntos gramos son 2 dl de harina"
+      ]
+    },
+    "fr-fr": {
+      "name": "Assistant de recettes",
+      "description": "Recettes hors ligne issues du Livre de cuisine Wikibooks, avec conversion d'unit\u00e9s via ovos-skill-convert. L'anglais, le danois et l'allemand sont natifs ; toute autre langue est trait\u00e9e par traduction hors ligne \u00e0 la demande. Aucune connexion internet requise.",
+      "examples": [
+        "comment faire des cr\u00eapes",
+        "de quoi ai-je besoin pour une carbonara",
+        "combien de grammes fait 2 dl de farine"
+      ]
+    },
+    "it-it": {
+      "name": "Assistente di ricette",
+      "description": "Ricette offline dal Libro di cucina di Wikibooks, con conversione delle unit\u00e0 tramite ovos-skill-convert. Inglese, danese e tedesco sono nativi; qualsiasi altra lingua viene gestita tramite traduzione offline su richiesta. Non richiede connessione internet.",
+      "examples": [
+        "come si fanno i pancake",
+        "cosa serve per una carbonara",
+        "quanti grammi sono 2 dl di farina"
+      ]
+    },
+    "nl-nl": {
+      "name": "Receptenhulp",
+      "description": "Offline recepten uit het Wikibooks Kookboek, met eenheidsomrekening via ovos-skill-convert. Engels, Deens en Duits zijn native; elke andere taal wordt beantwoord via offline vertaling op aanvraag. Geen internetverbinding nodig.",
+      "examples": [
+        "hoe maak ik pannenkoeken",
+        "wat heb ik nodig voor carbonara",
+        "hoeveel gram is 2 dl bloem"
+      ]
+    },
+    "pt-pt": {
+      "name": "Assistente de receitas",
+      "description": "Receitas offline do Livro de receitas da Wikibooks, com convers\u00e3o de unidades via ovos-skill-convert. Ingl\u00eas, dinamarqu\u00eas e alem\u00e3o s\u00e3o nativos; qualquer outro idioma \u00e9 respondido por tradu\u00e7\u00e3o offline sob demanda. N\u00e3o requer internet.",
+      "examples": [
+        "como fa\u00e7o panquecas",
+        "o que preciso para uma carbonara",
+        "quantos gramas s\u00e3o 2 dl de farinha"
+      ]
+    }
+  },
   "in_ovos_localize": false,
   "repo_created_at": "2026-08-18T14:53:06Z",
   "last_updated": "2026-08-21T18:12:57Z",

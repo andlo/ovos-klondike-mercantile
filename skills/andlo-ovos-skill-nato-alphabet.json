@@ -44,7 +44,17 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "NATO Alfabetet",
+      "description": "Staver et ord med det NATO/ICAO fonetiske alfabet - Alfa, Bravo, Charlie. Fuldst\u00e6ndig offline, ren opslagstabel.",
+      "examples": [
+        "stav Andreas",
+        "hvordan staver man hej"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T17:15:21Z",
   "last_updated": "2026-08-16T18:13:21.880357Z",
   "is_new_repo": true,

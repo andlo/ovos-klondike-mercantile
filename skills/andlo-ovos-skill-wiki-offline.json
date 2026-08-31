@@ -49,6 +49,44 @@
     "es-es",
     "fr-fr"
   ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Wiki Offline",
+      "description": "Offline opslag i almen viden, der d\u00e6kker Wikipedias ~10.000 vitale artikler. Engelsk, spansk og fransk er indbygget; alle andre sprog besvares via offline-overs\u00e6ttelse. Ingen internetforbindelse n\u00f8dvendig.",
+      "examples": [
+        "hvad er fotosyntese",
+        "hvem var Marie Curie",
+        "fort\u00e6l mig om Eiffelt\u00e5rnet"
+      ]
+    },
+    "de-de": {
+      "name": "Wiki Offline",
+      "description": "Offline-Nachschlagewerk fuer Allgemeinwissen, das Wikipedias rund 10.000 vitale Artikel abdeckt. Englisch, Spanisch und Franzoesisch sind nativ; jede andere Sprache wird per Offline-Uebersetzung beantwortet. Keine Internetverbindung noetig.",
+      "examples": [
+        "was ist photosynthese",
+        "wer war Marie Curie",
+        "erzaehl mir vom Eiffelturm"
+      ]
+    },
+    "es-es": {
+      "name": "Wiki Offline",
+      "description": "Consulta de conocimiento general sin conexi\u00f3n, que cubre unos 10.000 art\u00edculos vitales de Wikipedia. Ingl\u00e9s, espa\u00f1ol y franc\u00e9s son nativos; cualquier otro idioma se responde mediante traducci\u00f3n offline. No requiere conexi\u00f3n a internet.",
+      "examples": [
+        "qu\u00e9 es la fotos\u00edntesis",
+        "qui\u00e9n fue Marie Curie",
+        "h\u00e1blame de la Torre Eiffel"
+      ]
+    },
+    "fr-fr": {
+      "name": "Wiki Offline",
+      "description": "Consultation de connaissances g\u00e9n\u00e9rales hors ligne, couvrant environ 10 000 articles vitaux de Wikip\u00e9dia. L'anglais, l'espagnol et le fran\u00e7ais sont natifs ; toute autre langue est trait\u00e9e par traduction hors ligne. Aucune connexion internet requise.",
+      "examples": [
+        "qu'est-ce que la photosynth\u00e8se",
+        "qui \u00e9tait Marie Curie",
+        "parle-moi de la Tour Eiffel"
+      ]
+    }
+  },
   "in_ovos_localize": false,
   "repo_created_at": "2026-08-17T20:39:40Z",
   "last_updated": "2026-08-18T13:53:56.170148Z",

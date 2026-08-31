@@ -52,7 +52,18 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Hvordan Lyder Det",
+      "description": "Hvordan lyder en ko? Bundlede offline-lyde (i dag dyr) for \u00f8jeblikkelige svar, med et valgfrit freesound.org online-fallback for alt andet, filtreret til kun CC0-licenserede resultater.",
+      "examples": [
+        "hvordan lyder en ko",
+        "hvilken lyd laver en hund",
+        "spil en kat lyd"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T17:10:48Z",
   "last_updated": "2026-08-16T17:27:41.684513Z",
   "is_new_repo": true,

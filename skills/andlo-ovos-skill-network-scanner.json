@@ -47,7 +47,18 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Netv\u00e6rksscanner",
+      "description": "Finder enheder p\u00e5 dit eget lokale netv\u00e6rk via mDNS/Bonjour samt et ping+ARP+MAC-vendor-sweep. Fuldst\u00e6ndig offline, ingen root n\u00f8dvendig.",
+      "examples": [
+        "scan netv\u00e6rket",
+        "kan du se min Sony TV",
+        "er min printer p\u00e5 netv\u00e6rket"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T18:56:47Z",
   "last_updated": "2026-08-16T19:02:51.026660Z",
   "is_new_repo": true,

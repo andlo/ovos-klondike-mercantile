@@ -52,7 +52,81 @@
     "pt-pt",
     "sv-se"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Voices of Tomorrow",
+      "description": "Afspiller forudindspillede opl\u00e6sninger fra 365tomorrows.com via OCP. Adskilt fra ovos-skill-365tomorrows-stories, som i stedet l\u00e6ser teksten h\u00f8jt via TTS.",
+      "examples": [
+        "afspil voices of tomorrow",
+        "afspil 365tomorrows podcasten"
+      ]
+    },
+    "de-de": {
+      "name": "Voices of Tomorrow",
+      "description": "Spielt vorab aufgenommene Lesungen von 365tomorrows.com \u00fcber OCP ab. Getrennt von ovos-skill-365tomorrows-stories, das den Text stattdessen per TTS vorliest.",
+      "examples": [
+        "spiele voices of tomorrow",
+        "spiele den 365tomorrows podcast"
+      ]
+    },
+    "es-es": {
+      "name": "Voices of Tomorrow",
+      "description": "Reproduce lecturas grabadas de 365tomorrows.com a trav\u00e9s de OCP. Independiente de ovos-skill-365tomorrows-stories, que en su lugar lee el texto en voz alta mediante TTS.",
+      "examples": [
+        "reproduce voices of tomorrow",
+        "reproduce el podcast de 365tomorrows"
+      ]
+    },
+    "fr-fr": {
+      "name": "Voices of Tomorrow",
+      "description": "Joue des lectures pr\u00e9enregistr\u00e9es de 365tomorrows.com via OCP. Distinct de ovos-skill-365tomorrows-stories, qui lit le texte \u00e0 voix haute via TTS \u00e0 la place.",
+      "examples": [
+        "joue voices of tomorrow",
+        "joue le podcast 365tomorrows"
+      ]
+    },
+    "it-it": {
+      "name": "Voices of Tomorrow",
+      "description": "Riproduce letture preregistrate da 365tomorrows.com tramite OCP. Separato da ovos-skill-365tomorrows-stories, che invece legge il testo ad alta voce tramite TTS.",
+      "examples": [
+        "riproduci voices of tomorrow",
+        "riproduci il podcast 365tomorrows"
+      ]
+    },
+    "nb-no": {
+      "name": "Voices of Tomorrow",
+      "description": "Spiller forh\u00e5ndsinnspilte opplesninger fra 365tomorrows.com via OCP. Adskilt fra ovos-skill-365tomorrows-stories, som i stedet leser teksten h\u00f8yt via TTS.",
+      "examples": [
+        "spill voices of tomorrow",
+        "spill 365tomorrows-podkasten"
+      ]
+    },
+    "nl-nl": {
+      "name": "Voices of Tomorrow",
+      "description": "Speelt vooraf opgenomen voorlezingen van 365tomorrows.com af via OCP. Los van ovos-skill-365tomorrows-stories, dat de tekst in plaats daarvan hardop voorleest via TTS.",
+      "examples": [
+        "speel voices of tomorrow af",
+        "speel de 365tomorrows podcast af"
+      ]
+    },
+    "pt-pt": {
+      "name": "Voices of Tomorrow",
+      "description": "Reproduz leituras pr\u00e9-gravadas de 365tomorrows.com atrav\u00e9s do OCP. Separado de ovos-skill-365tomorrows-stories, que em vez disso l\u00ea o texto em voz alta via TTS.",
+      "examples": [
+        "reproduz voices of tomorrow",
+        "reproduz o podcast 365tomorrows"
+      ]
+    },
+    "sv-se": {
+      "name": "Voices of Tomorrow",
+      "description": "Spelar f\u00f6rinspelade uppl\u00e4sningar fr\u00e5n 365tomorrows.com via OCP. Separat fr\u00e5n ovos-skill-365tomorrows-stories, som ist\u00e4llet l\u00e4ser texten h\u00f6gt via TTS.",
+      "examples": [
+        "spela voices of tomorrow",
+        "spela 365tomorrows-podden"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-22T16:25:01Z",
   "last_updated": "2026-07-22T18:16:17.774625Z",
   "is_new_repo": false,

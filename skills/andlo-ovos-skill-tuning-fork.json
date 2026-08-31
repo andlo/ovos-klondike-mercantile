@@ -45,7 +45,18 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Stemmegaffel",
+      "description": "En referencetone-generator - giv mig et A spiller 440Hz, spil 300 hertz spiller enhver frekvens. Fuldst\u00e6ndig offline, genererede toner, ingen optagelser.",
+      "examples": [
+        "giv mig et A",
+        "spil et C skarp",
+        "spil 300 hertz"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T17:15:09Z",
   "last_updated": "2026-08-16T17:51:38.229713Z",
   "is_new_repo": true,

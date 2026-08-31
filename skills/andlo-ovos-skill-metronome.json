@@ -45,7 +45,18 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Metronom",
+      "description": "En metronom - s\u00e6t et tempo i bpm og f\u00e5 et h\u00f8rbart klik med accent p\u00e5 hvert fjerde slag. Fuldst\u00e6ndig deterministisk og offline: genererede kliktoner, ikke optagelser.",
+      "examples": [
+        "s\u00e6t en metronom til 120 bpm",
+        "start en metronom",
+        "stop metronomen"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T17:15:13Z",
   "last_updated": "2026-08-16T17:27:40.140338Z",
   "is_new_repo": true,

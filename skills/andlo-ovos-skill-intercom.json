@@ -53,7 +53,45 @@
     "es-es",
     "fr-fr"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Intercom",
+      "description": "LAN-intercom - send en talt besked til en navngiven OVOS-enhed p\u00e5 samme lokale netv\u00e6rk. Fuldt offline, ingen internetforbindelse n\u00f8dvendig. Kun tale, udf\u00f8rer aldrig kommandoer p\u00e5 modtager-enheden.",
+      "examples": [
+        "s\u00e6t intercom-navn til stuen",
+        "s\u00e6t intercom-kode til fire syv to ni",
+        "send en besked til sovev\u00e6relset"
+      ]
+    },
+    "de-de": {
+      "name": "Intercom",
+      "description": "LAN-Intercom - sendet eine gesprochene Nachricht an ein benanntes OVOS-Ger\u00e4t im selben lokalen Netzwerk. Vollst\u00e4ndig offline, keine Internetverbindung erforderlich. Nur Sprache, f\u00fchrt niemals Befehle auf dem Empf\u00e4ngerger\u00e4t aus.",
+      "examples": [
+        "setze intercom-namen auf wohnzimmer",
+        "setze intercom-code auf vier sieben zwei neun",
+        "sende eine nachricht an schlafzimmer"
+      ]
+    },
+    "es-es": {
+      "name": "Intercomunicador",
+      "description": "Intercomunicador LAN - env\u00eda un mensaje hablado a un dispositivo OVOS nombrado en la misma red local. Totalmente sin conexi\u00f3n, no requiere internet. Solo habla, nunca ejecuta comandos en el dispositivo receptor.",
+      "examples": [
+        "establece el nombre de intercomunicador en sal\u00f3n",
+        "establece el c\u00f3digo de intercomunicador en cuatro siete dos nueve",
+        "env\u00eda un mensaje a dormitorio"
+      ]
+    },
+    "fr-fr": {
+      "name": "Intercom",
+      "description": "Intercom LAN - envoie un message parl\u00e9 \u00e0 un appareil OVOS nomm\u00e9 sur le m\u00eame r\u00e9seau local. Enti\u00e8rement hors ligne, aucune connexion internet requise. Parle uniquement, n'ex\u00e9cute jamais de commandes sur l'appareil r\u00e9cepteur.",
+      "examples": [
+        "d\u00e9finis le nom intercom \u00e0 salon",
+        "d\u00e9finis le code intercom \u00e0 quatre sept deux neuf",
+        "envoie un message \u00e0 chambre"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-18T14:51:17Z",
   "last_updated": "2026-08-18T19:32:07.736726Z",
   "is_new_repo": true,

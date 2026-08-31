@@ -51,7 +51,41 @@
     "nl-nl",
     "pt-pt"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Horoskop (udbyder)",
+      "description": "L\u00e6ser dagens stjernetegns-horoskop h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+      "examples": [
+        "L\u00e6s horoskopet for l\u00f8ven",
+        "L\u00e6s v\u00e6dderens horoskop"
+      ]
+    },
+    "de-de": {
+      "name": "Horoskop (Anbieter)",
+      "description": "Liest das t\u00e4gliche Sternzeichen-Horoskop vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle."
+    },
+    "es-es": {
+      "name": "Hor\u00f3scopo (proveedor)",
+      "description": "Lee en voz alta el hor\u00f3scopo diario del zod\u00edaco. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente."
+    },
+    "fr-fr": {
+      "name": "Horoscope (fournisseur)",
+      "description": "Lit \u00e0 voix haute l'horoscope quotidien du zodiaque. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome."
+    },
+    "it-it": {
+      "name": "Oroscopo (fornitore)",
+      "description": "Legge ad alta voce l'oroscopo zodiacale del giorno. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma."
+    },
+    "nl-nl": {
+      "name": "Horoscoop (aanbieder)",
+      "description": "Leest de dagelijkse sterrenbeeldhoroscoop hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface."
+    },
+    "pt-pt": {
+      "name": "Hor\u00f3scopo (fornecedor)",
+      "description": "L\u00ea em voz alta o hor\u00f3scopo di\u00e1rio do zod\u00edaco. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma."
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-22T15:31:53Z",
   "last_updated": "2026-07-25T22:06:03.303207Z",
   "is_new_repo": false,

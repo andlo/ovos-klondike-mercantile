@@ -52,7 +52,24 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Regnetr\u00e6ning",
+      "description": "Regnetr\u00e6ning til b\u00f8rn - t\u00e6lle, tabel-recitation, og interaktive quizzer i plus, minus, gange, division og procent. Fuldst\u00e6ndig offline.",
+      "examples": [
+        "t\u00e6l til ti",
+        "sig 5 tabellen",
+        "quiz mig i 3 tabellen",
+        "quiz mig i procent",
+        "quiz mig i sv\u00e6r division",
+        "quiz mig i blandede regnearter",
+        "quiz mig i estimering",
+        "quiz mig i decimaltal i addition",
+        "quiz mig i det hele"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T18:31:58Z",
   "last_updated": "2026-08-17T12:16:52.479762Z",
   "is_new_repo": true,

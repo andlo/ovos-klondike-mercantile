@@ -45,7 +45,18 @@
     "da-dk",
     "en-us"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Rytmeboks",
+      "description": "Et simpelt rytmeboks-skill - loop et beat-m\u00f8nster (rock, disco) i et valgt tempo. Fuldst\u00e6ndig offline, genererede trommelyde.",
+      "examples": [
+        "spil et rock beat p\u00e5 100 bpm",
+        "start et trommeloop",
+        "stop beatet"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T17:15:32Z",
   "last_updated": "2026-08-16T17:51:39.102215Z",
   "is_new_repo": true,

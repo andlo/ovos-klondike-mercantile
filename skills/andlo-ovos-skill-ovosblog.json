@@ -51,7 +51,64 @@
     "nl-nl",
     "pt-pt"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "OVOS Blog (udbyder)",
+      "description": "L\u00e6ser OpenVoiceOS-bloggen h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+      "examples": [
+        "L\u00e6s mig seneste artikel fra ovosblog"
+      ]
+    },
+    "de-de": {
+      "name": "OVOS Blog (Anbieter)",
+      "description": "Liest den OpenVoiceOS-Blog vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+      "examples": [
+        "Erz\u00e4hl mir eine Geschichte von ovos blog",
+        "Lies mir eine Geschichte von ovos blog"
+      ]
+    },
+    "es-es": {
+      "name": "OVOS Blog (proveedor)",
+      "description": "Lee en voz alta el blog de OpenVoiceOS. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+      "examples": [
+        "Cu\u00e9ntame un cuento de ovos blog",
+        "L\u00e9eme un cuento de ovos blog"
+      ]
+    },
+    "fr-fr": {
+      "name": "OVOS Blog (fournisseur)",
+      "description": "Lit le blog OpenVoiceOS \u00e0 voix haute. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+      "examples": [
+        "Raconte-moi une histoire de ovos blog",
+        "Lis-moi une histoire de ovos blog"
+      ]
+    },
+    "it-it": {
+      "name": "OVOS Blog (fornitore)",
+      "description": "Legge ad alta voce il blog di OpenVoiceOS. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+      "examples": [
+        "Raccontami una storia di ovos blog",
+        "Leggimi una storia di ovos blog"
+      ]
+    },
+    "nl-nl": {
+      "name": "OVOS Blog (aanbieder)",
+      "description": "Leest de OpenVoiceOS-blog hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+      "examples": [
+        "Vertel me een verhaal van ovos blog",
+        "Lees me een verhaal van ovos blog"
+      ]
+    },
+    "pt-pt": {
+      "name": "OVOS Blog (fornecedor)",
+      "description": "L\u00ea o blog da OpenVoiceOS em voz alta. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+      "examples": [
+        "Conta-me uma hist\u00f3ria de ovos blog",
+        "L\u00ea-me uma hist\u00f3ria de ovos blog"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T13:53:14Z",
   "last_updated": "2026-07-25T22:06:07.918808Z",
   "is_new_repo": false,
