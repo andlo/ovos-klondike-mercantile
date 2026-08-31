@@ -1,0 +1,82 @@
+{
+  "id": "OscillateLabsLLC-skill-monster-scanner",
+  "skill_id": "skill_monster_scanner.oscillatelabsllc",
+  "name": "skill-monster-scanner",
+  "description": "An OVOS voice skill that scans for monsters under the bed",
+  "examples": [
+    "Are there monsters under my bed?",
+    "Is the Boogeyman under the bed?"
+  ],
+  "tags": [
+    "ovos",
+    "neon",
+    "skill",
+    "voice",
+    "kids",
+    "fun"
+  ],
+  "category": "Other",
+  "icon": "",
+  "source": "https://github.com/OscillateLabsLLC/skill-monster-scanner",
+  "package_name": "skill-monster-scanner",
+  "pypi_version": "2.2.1",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 2,
+  "forks": 2,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "If you feel like being a monster yourself, you can set `scary` in the config to `true` and the skill will sometimes find a monster.\n\nUnder skill settings (`~/.config/mycroft/skills/skill-monster-scanner.oscillatelabsllc/settings.json`):\n\n| Option  | Value   | Description                                                  |\n| ------- | ------- | ------------------------------------------------------------ |\n| `scary` | `false` | Whether or not to occasionally find a monster under the bed. |\n\nNote: If you are running Neon, the skill settings file will be located at `~/.config/neon/skills/skill-monster-scanner.oscillatelabsllc/settings.json`."
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "en-us",
+    "fr-fr",
+    "sv-se"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "skill-monster-scanner",
+      "description": "En OVOS stemmeskill der scanner efter monstre under sengen",
+      "examples": [
+        "Er der monstre under min seng?",
+        "Er bussemanden under sengen?"
+      ]
+    },
+    "fr-fr": {
+      "name": "D\u00e9tecteur de monstres",
+      "description": "Un skill OVOS qui v\u00e9rifie s'il y a des monstres sous le lit pour rassurer les enfants au moment du coucher.",
+      "examples": [
+        "Peux-tu v\u00e9rifier s'il y a des monstres sous mon lit ?",
+        "Regarde s'il y a un croque-mitaine sous le lit"
+      ]
+    },
+    "sv-se": {
+      "name": "skill-monster-scanner",
+      "description": "En OVOS r\u00f6stskill som skannar efter monster under s\u00e4ngen",
+      "examples": [
+        "Finns det monster under min s\u00e4ng?",
+        "\u00c4r busen under s\u00e4ngen?"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-07-05T21:08:54Z",
+  "last_updated": "2026-08-19T03:32:15.765812Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

@@ -51,7 +51,53 @@
     "es-es",
     "fr-fr"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Geografitr\u00e6ning",
+      "description": "Geografitr\u00e6ning - quizzer og undervisning i hovedst\u00e6der, kontinenter og landegr\u00e6nser for 194 FN-medlemslande. Fuldst\u00e6ndig offline.",
+      "examples": [
+        "quiz mig i hovedst\u00e6der",
+        "quiz mig i kontinenter",
+        "quiz mig i landegr\u00e6nser",
+        "l\u00e6r mig om Europa",
+        "quiz mig i det du l\u00e6rte mig"
+      ]
+    },
+    "de-de": {
+      "name": "Geografietraining",
+      "description": "Geografietraining - Quiz und Lehr-dann-\u00fcben f\u00fcr Hauptst\u00e4dte, Kontinente und Landesgrenzen f\u00fcr 194 UN-Mitgliedstaaten. Vollst\u00e4ndig offline.",
+      "examples": [
+        "quiz mich zu hauptst\u00e4dten",
+        "quiz mich zu kontinenten",
+        "quiz mich zu landesgrenzen",
+        "bring mir etwas \u00fcber Europa bei",
+        "quiz mich zu dem was du mir beigebracht hast"
+      ]
+    },
+    "es-es": {
+      "name": "Entrenamiento de geograf\u00eda",
+      "description": "Entrenamiento de geograf\u00eda - cuestionarios y aprendizaje de capitales, continentes y fronteras de 194 estados miembros de la ONU. Totalmente sin conexi\u00f3n.",
+      "examples": [
+        "preg\u00fantame sobre capitales",
+        "preg\u00fantame sobre continentes",
+        "preg\u00fantame sobre fronteras",
+        "ens\u00e9\u00f1ame sobre Europa",
+        "preg\u00fantame sobre lo que me ense\u00f1aste"
+      ]
+    },
+    "fr-fr": {
+      "name": "Entra\u00eenement de g\u00e9ographie",
+      "description": "Entra\u00eenement de g\u00e9ographie - quiz et apprentissage des capitales, continents et fronti\u00e8res de 194 \u00c9tats membres de l'ONU. Enti\u00e8rement hors ligne.",
+      "examples": [
+        "interroge-moi sur les capitales",
+        "interroge-moi sur les continents",
+        "interroge-moi sur les fronti\u00e8res",
+        "apprends-moi l'Europe",
+        "interroge-moi sur ce que tu m'as appris"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T19:34:38Z",
   "last_updated": "2026-08-17T14:58:23.806589Z",
   "is_new_repo": true,

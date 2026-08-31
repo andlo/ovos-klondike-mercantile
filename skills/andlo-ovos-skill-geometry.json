@@ -51,7 +51,53 @@
     "es-es",
     "fr-fr"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Geometri",
+      "description": "Geometrisk viden - definitioner af former og begreber, formler, og udregninger for rektangler, kvadrater, trekanter, cirkler og pythagoras' s\u00e6tning. Fuldst\u00e6ndig offline.",
+      "examples": [
+        "hvad er en rombe",
+        "hvad er formlen for arealet af en cirkel",
+        "hvad er arealet af et rektangel med l\u00e6ngden 5 og bredden 3",
+        "hvad er hypotenusen i en retvinklet trekant med kateterne 3 og 4",
+        "hvad er pythagoras' s\u00e6tning"
+      ]
+    },
+    "de-de": {
+      "name": "Geometrie",
+      "description": "Geometrisches Wissen - Definitionen von Formen und Begriffen, Formeln und Berechnungen f\u00fcr Rechtecke, Quadrate, Dreiecke, Kreise und den Satz des Pythagoras. Vollst\u00e4ndig offline.",
+      "examples": [
+        "was ist eine Raute",
+        "wie lautet die formel f\u00fcr die fl\u00e4che eines kreises",
+        "was ist die fl\u00e4che eines rechtecks mit der l\u00e4nge 5 und der breite 3",
+        "was ist die hypotenuse eines rechtwinkligen dreiecks mit den katheten 3 und 4",
+        "was ist der satz des pythagoras"
+      ]
+    },
+    "es-es": {
+      "name": "Geometr\u00eda",
+      "description": "Conocimiento de geometr\u00eda - definiciones de formas y t\u00e9rminos, f\u00f3rmulas y c\u00e1lculos para rect\u00e1ngulos, cuadrados, tri\u00e1ngulos, c\u00edrculos y el teorema de Pit\u00e1goras. Totalmente sin conexi\u00f3n.",
+      "examples": [
+        "qu\u00e9 es un rombo",
+        "cu\u00e1l es la f\u00f3rmula para el \u00e1rea de un c\u00edrculo",
+        "cu\u00e1l es el \u00e1rea de un rect\u00e1ngulo con largo 5 y ancho 3",
+        "cu\u00e1l es la hipotenusa de un tri\u00e1ngulo rect\u00e1ngulo con catetos 3 y 4",
+        "cu\u00e1l es el teorema de pit\u00e1goras"
+      ]
+    },
+    "fr-fr": {
+      "name": "G\u00e9om\u00e9trie",
+      "description": "Connaissances en g\u00e9om\u00e9trie - d\u00e9finitions des formes et termes, formules et calculs pour rectangles, carr\u00e9s, triangles, cercles et le th\u00e9or\u00e8me de Pythagore. Enti\u00e8rement hors ligne.",
+      "examples": [
+        "qu'est-ce qu'un losange",
+        "quelle est la formule pour l'aire d'un cercle",
+        "quelle est l'aire d'un rectangle de longueur 5 et de largeur 3",
+        "quelle est l'hypot\u00e9nuse d'un triangle rectangle avec des c\u00f4t\u00e9s 3 et 4",
+        "quel est le th\u00e9or\u00e8me de pythagore"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-17T16:59:50Z",
   "last_updated": "2026-08-17T18:26:53.787921Z",
   "is_new_repo": true,

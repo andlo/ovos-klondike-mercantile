@@ -2,7 +2,7 @@
   "id": "andlo-ha-ovos-integration",
   "skill_id": null,
   "name": "ha-ovos-integration",
-  "description": "Planned: a Home Assistant integration exposing shared OVOS config and per-skill settingsmeta.json as HA entities.",
+  "description": "A Home Assistant integration exposing shared OVOS config and per-skill settingsmeta.json as HA entities.",
   "examples": [],
   "tags": [
     "home-assistant",
@@ -23,9 +23,9 @@
   "type_group": "Infrastructure",
   "stars": 1,
   "forks": 0,
-  "open_issues": 3,
+  "open_issues": 1,
   "on_pypi": false,
-  "has_release": false,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
   "connectivity": null,
@@ -34,13 +34,14 @@
   "setup_notes": [
     {
       "heading": "Setup",
-      "content": "1. Install and start the relevant [haos-ovos-addons](https://github.com/andlo/haos-ovos-addons) add-ons first.\n2. Add the **OpenVoiceOS** integration in HA.\n3. Fill in each add-on's API URL under the integration's own entities (e.g. `http://<hostname>:8500` for `ovos-skills`).\n4. Use **Add sub-entry** on the integration to add skills, run voice setup, or configure persona."
+      "content": "1. Install and start the relevant [haos-ovos-addons](https://github.com/andlo/haos-ovos-addons) add-ons first.\n2. Add the **OpenVoiceOS** integration in HA.\n3. On Home Assistant OS / Supervised, each add-on's API URL is filled in automatically by querying Supervisor \u2014 nothing to do here. On a non-Supervisor install (or if an add-on isn't found), fill in the missing URL(s) under the integration's own entities (e.g. `http://<hostname>:8500` for `ovos-skills`).\n4. Use **Add sub-entry** on the integration to add skills, run voice setup, or configure persona."
     }
   ],
   "languages": [],
+  "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-08-04T06:43:42Z",
-  "last_updated": "2026-08-07T19:44:09Z",
+  "last_updated": "2026-08-30T19:33:37Z",
   "is_new_repo": true,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }

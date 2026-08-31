@@ -50,7 +50,64 @@
     "nl-nl",
     "pt-pt"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "365tomorrows Historier (udbyder)",
+      "description": "L\u00e6ser dagligt CC-licenseret science fiction fra 365tomorrows.com h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+      "examples": [
+        "L\u00e6s mig seneste historie fra 365tomorrows"
+      ]
+    },
+    "de-de": {
+      "name": "365tomorrows Geschichten (Anbieter)",
+      "description": "Liest t\u00e4glich CC-lizenzierte Science-Fiction-Kurzgeschichten von 365tomorrows.com vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+      "examples": [
+        "Erz\u00e4hl mir eine Geschichte von 365tomorrows",
+        "Lies mir eine Geschichte von tomorrows"
+      ]
+    },
+    "es-es": {
+      "name": "Historias de 365tomorrows (proveedor)",
+      "description": "Lee en voz alta ciencia ficci\u00f3n breve con licencia CC de 365tomorrows.com a diario. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+      "examples": [
+        "Cu\u00e9ntame un cuento de 365tomorrows",
+        "L\u00e9eme un cuento de tomorrows"
+      ]
+    },
+    "fr-fr": {
+      "name": "Histoires 365tomorrows (fournisseur)",
+      "description": "Lit \u00e0 voix haute chaque jour de la science-fiction courte sous licence CC de 365tomorrows.com. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+      "examples": [
+        "Raconte-moi une histoire de 365tomorrows",
+        "Lis-moi une histoire de tomorrows"
+      ]
+    },
+    "it-it": {
+      "name": "Racconti 365tomorrows (fornitore)",
+      "description": "Legge ad alta voce ogni giorno fantascienza breve con licenza CC da 365tomorrows.com. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+      "examples": [
+        "Raccontami una storia di 365tomorrows",
+        "Leggimi una storia di tomorrows"
+      ]
+    },
+    "nl-nl": {
+      "name": "365tomorrows Verhalen (aanbieder)",
+      "description": "Leest dagelijks CC-gelicentieerde sciencefiction van 365tomorrows.com hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+      "examples": [
+        "Vertel me een verhaal van 365tomorrows",
+        "Lees me een verhaal van tomorrows"
+      ]
+    },
+    "pt-pt": {
+      "name": "Hist\u00f3rias 365tomorrows (fornecedor)",
+      "description": "L\u00ea em voz alta fic\u00e7\u00e3o cient\u00edfica curta com licen\u00e7a CC da 365tomorrows.com diariamente. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+      "examples": [
+        "Conta-me uma hist\u00f3ria de 365tomorrows",
+        "L\u00ea-me uma hist\u00f3ria de tomorrows"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T23:05:13Z",
   "last_updated": "2026-07-25T22:06:01.953486Z",
   "is_new_repo": false,

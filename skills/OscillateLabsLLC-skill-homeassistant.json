@@ -1,0 +1,112 @@
+{
+  "id": "OscillateLabsLLC-skill-homeassistant",
+  "skill_id": "skill_homeassistant.oscillatelabsllc",
+  "name": "skill-homeassistant",
+  "description": "skill-homeassistant",
+  "examples": [
+    "What is the status of the living room light?",
+    "Turn on the kitchen light",
+    "Change light bedside lamp to blue"
+  ],
+  "tags": [
+    "ovos",
+    "neon",
+    "home",
+    "assistant",
+    "voice",
+    "interface",
+    "skill",
+    "plugin"
+  ],
+  "category": "Home",
+  "icon": "https://www.home-assistant.io/images/home-assistant-logo.svg",
+  "source": "https://github.com/OscillateLabsLLC/skill-homeassistant",
+  "package_name": "skill-homeassistant",
+  "pypi_version": "1.4.2",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 20,
+  "forks": 7,
+  "open_issues": 2,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installation on Neon",
+      "content": "You can `pip install neon-homeassistant-skill`, or handle the installation from the `~/.config/neon/neon.yaml` file if you prefer:\n\nskills:\n  default_skills:\n    - skill-homeassistant # Optionally with a version, such as skill-homeassistant==0.1.0"
+    },
+    {
+      "heading": "Configuration",
+      "content": "### Authentication Using a Long-lived Token\n\nWe recommend using a [long-lived token for Home Assistant](https://developers.home-assistant.io/docs/auth_api/#long-lived-access-token). This provides persistent access without requiring re-authentication. Configure it in your skill settings file:\n\n- OVOS: `~/.config/mycroft/skills/skill-homeassistant/settings.json`\n- Neon: `~/.config/neon/skills/neon_homeassistant_skill/settings.json`\n\n{\n  \"api_key\": \"<HA_LONG_LIVED_TOKEN>\",\n  \"host\": \"<HA_IP_OR_HOSTNAME>\"\n}\n\n### Configuration Options\n\nAll available settings with their defaults:\n\n{\n  \"host\": \"\", // Home Assistant instance URL - required, no default\n  \"api_key\": \"\", // Long-lived access token - required, no default\n  \"disable_intents\": false, // Disable all Home Assistant intents. In most cases,\u2026"
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "pl-pl",
+    "sv-se"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "skill-homeassistant",
+      "description": "skill-homeassistant",
+      "examples": [
+        "Hvad er status p\u00e5 stuelampen?",
+        "T\u00e6nd k\u00f8kkenlyset",
+        "Skift sengelampen til bl\u00e5"
+      ]
+    },
+    "es-es": {
+      "name": "skill-homeassistant",
+      "description": "skill-homeassistant",
+      "examples": [
+        "\u00bfCu\u00e1l es el estado de la luz de la sala?",
+        "Enciende la luz de la cocina",
+        "Cambiar la luz de la l\u00e1mpara de noche a azul"
+      ]
+    },
+    "fr-fr": {
+      "name": "Home Assistant",
+      "description": "Commandez vos appareils Home Assistant \u00e0 la voix.",
+      "examples": [
+        "Quel est l'\u00e9tat de la lumi\u00e8re du salon ?",
+        "Allume la lumi\u00e8re de la cuisine",
+        "Change la couleur de la lampe de chevet en bleu"
+      ]
+    },
+    "pl-pl": {
+      "name": "skill-homeassistant",
+      "description": "skill-homeassistant",
+      "examples": [
+        "Jaki jest status lampy w salonie?",
+        "W\u0142\u0105cz \u015bwiat\u0142o w kuchni",
+        "Zmie\u0144 kolor lampy w salonie na niebieski"
+      ]
+    },
+    "sv-se": {
+      "name": "skill-homeassistant",
+      "description": "skill-homeassistant",
+      "examples": [
+        "Vad \u00e4r statusen p\u00e5 vardagsrumslampan?",
+        "Sl\u00e5 p\u00e5 k\u00f6kslampan",
+        "\u00c4ndra s\u00e4nglampan till bl\u00e5"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-03-17T02:00:51Z",
+  "last_updated": "2026-08-19T03:35:11.558124Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

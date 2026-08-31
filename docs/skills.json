@@ -134,7 +134,64 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "365tomorrows Historier (udbyder)",
+        "description": "L\u00e6ser dagligt CC-licenseret science fiction fra 365tomorrows.com h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+        "examples": [
+          "L\u00e6s mig seneste historie fra 365tomorrows"
+        ]
+      },
+      "de-de": {
+        "name": "365tomorrows Geschichten (Anbieter)",
+        "description": "Liest t\u00e4glich CC-lizenzierte Science-Fiction-Kurzgeschichten von 365tomorrows.com vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+        "examples": [
+          "Erz\u00e4hl mir eine Geschichte von 365tomorrows",
+          "Lies mir eine Geschichte von tomorrows"
+        ]
+      },
+      "es-es": {
+        "name": "Historias de 365tomorrows (proveedor)",
+        "description": "Lee en voz alta ciencia ficci\u00f3n breve con licencia CC de 365tomorrows.com a diario. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+        "examples": [
+          "Cu\u00e9ntame un cuento de 365tomorrows",
+          "L\u00e9eme un cuento de tomorrows"
+        ]
+      },
+      "fr-fr": {
+        "name": "Histoires 365tomorrows (fournisseur)",
+        "description": "Lit \u00e0 voix haute chaque jour de la science-fiction courte sous licence CC de 365tomorrows.com. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+        "examples": [
+          "Raconte-moi une histoire de 365tomorrows",
+          "Lis-moi une histoire de tomorrows"
+        ]
+      },
+      "it-it": {
+        "name": "Racconti 365tomorrows (fornitore)",
+        "description": "Legge ad alta voce ogni giorno fantascienza breve con licenza CC da 365tomorrows.com. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+        "examples": [
+          "Raccontami una storia di 365tomorrows",
+          "Leggimi una storia di tomorrows"
+        ]
+      },
+      "nl-nl": {
+        "name": "365tomorrows Verhalen (aanbieder)",
+        "description": "Leest dagelijks CC-gelicentieerde sciencefiction van 365tomorrows.com hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+        "examples": [
+          "Vertel me een verhaal van 365tomorrows",
+          "Lees me een verhaal van tomorrows"
+        ]
+      },
+      "pt-pt": {
+        "name": "Hist\u00f3rias 365tomorrows (fornecedor)",
+        "description": "L\u00ea em voz alta fic\u00e7\u00e3o cient\u00edfica curta com licen\u00e7a CC da 365tomorrows.com diariamente. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+        "examples": [
+          "Conta-me uma hist\u00f3ria de 365tomorrows",
+          "L\u00ea-me uma hist\u00f3ria de tomorrows"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T23:05:13Z",
     "last_updated": "2026-07-25T22:06:01.953486Z",
     "is_new_repo": false,
@@ -193,7 +250,57 @@
       "it-it",
       "nl-nl"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "H.C. Andersens Eventyr (udbyder)",
+        "description": "H.C. Andersens eventyr, udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+        "examples": [
+          "Fort\u00e6l mig en historie fra andersen",
+          "Fort\u00e6l mig historien om den lille havfrue"
+        ]
+      },
+      "de-de": {
+        "name": "Andersens M\u00e4rchen (Anbieter)",
+        "description": "M\u00e4rchen von Hans Christian Andersen, Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+        "examples": [
+          "Erz\u00e4hl mir eine Geschichte von andersen",
+          "Lies mir eine Geschichte von hans christian andersen"
+        ]
+      },
+      "es-es": {
+        "name": "Cuentos de Andersen (proveedor)",
+        "description": "Cuentos de Hans Christian Andersen, proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+        "examples": [
+          "Cu\u00e9ntame un cuento de andersen",
+          "L\u00e9eme un cuento de hans christian andersen"
+        ]
+      },
+      "fr-fr": {
+        "name": "Contes d'Andersen (fournisseur)",
+        "description": "Contes de Hans Christian Andersen, fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+        "examples": [
+          "Raconte-moi une histoire de andersen",
+          "Lis-moi une histoire de hans christian andersen"
+        ]
+      },
+      "it-it": {
+        "name": "Fiabe di Andersen (fornitore)",
+        "description": "Fiabe di Hans Christian Andersen, fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+        "examples": [
+          "Raccontami una storia di andersen",
+          "Leggimi una storia di hans christian andersen"
+        ]
+      },
+      "nl-nl": {
+        "name": "Andersens Sprookjes (aanbieder)",
+        "description": "Sprookjes van Hans Christian Andersen, aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+        "examples": [
+          "Vertel me een verhaal van andersen",
+          "Lees me een verhaal van hans christian andersen"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T12:16:45Z",
     "last_updated": "2026-07-25T22:06:02.065313Z",
     "is_new_repo": false,
@@ -245,7 +352,8 @@
     "languages": [
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {},
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T19:20:27Z",
     "last_updated": "2026-07-25T22:06:14.527871Z",
     "is_new_repo": false,
@@ -397,7 +505,64 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "arXiv Artikler (udbyder)",
+        "description": "L\u00e6ser resum\u00e9er af arXiv-artikler h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+        "examples": [
+          "L\u00e6s mig seneste artikel fra arxiv"
+        ]
+      },
+      "de-de": {
+        "name": "arXiv Artikel (Anbieter)",
+        "description": "Liest arXiv-Artikelzusammenfassungen vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+        "examples": [
+          "Erz\u00e4hl mir eine Geschichte von arxiv",
+          "Lies mir eine Geschichte von arxiv"
+        ]
+      },
+      "es-es": {
+        "name": "Art\u00edculos de arXiv (proveedor)",
+        "description": "Lee en voz alta los res\u00famenes de art\u00edculos de arXiv. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+        "examples": [
+          "Cu\u00e9ntame un cuento de arxiv",
+          "L\u00e9eme un cuento de arxiv"
+        ]
+      },
+      "fr-fr": {
+        "name": "Articles arXiv (fournisseur)",
+        "description": "Lit \u00e0 voix haute les r\u00e9sum\u00e9s d'articles arXiv. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+        "examples": [
+          "Raconte-moi une histoire de arxiv",
+          "Lis-moi une histoire de arxiv"
+        ]
+      },
+      "it-it": {
+        "name": "Articoli arXiv (fornitore)",
+        "description": "Legge ad alta voce gli abstract degli articoli arXiv. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+        "examples": [
+          "Raccontami una storia di arxiv",
+          "Leggimi una storia di arxiv"
+        ]
+      },
+      "nl-nl": {
+        "name": "arXiv Artikelen (aanbieder)",
+        "description": "Leest samenvattingen van arXiv-artikelen hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+        "examples": [
+          "Vertel me een verhaal van arxiv",
+          "Lees me een verhaal van arxiv"
+        ]
+      },
+      "pt-pt": {
+        "name": "Artigos arXiv (fornecedor)",
+        "description": "L\u00ea em voz alta os resumos de artigos arXiv. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+        "examples": [
+          "Conta-me uma hist\u00f3ria de arxiv",
+          "L\u00ea-me uma hist\u00f3ria de arxiv"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T18:24:40Z",
     "last_updated": "2026-07-25T22:08:10.944593Z",
     "is_new_repo": false,
@@ -726,7 +891,17 @@
       "de-de",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "de-de": {
+        "name": "Bechstein-M\u00e4rchen (Anbieter)",
+        "description": "Anbieter f\u00fcr Ludwig Bechsteins deutsche M\u00e4rchen f\u00fcr ovos-common-reading-pipeline-plugin. Nur auf Deutsch, keine \u00dcbersetzung.",
+        "examples": [
+          "Erz\u00e4hl mir eine Geschichte von bechstein",
+          "Lies mir eine Geschichte von ludwig bechstein"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T21:45:17Z",
     "last_updated": "2026-07-25T22:06:04.970994Z",
     "is_new_repo": false,
@@ -779,7 +954,18 @@
       "da-dk",
       "en-us"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Lommeregner",
+        "description": "En basal lommeregner - plus, minus, gange, dividere, procent, kvadrat, kvadratrod. Fuldst\u00e6ndig offline.",
+        "examples": [
+          "hvad er 15 gange 23",
+          "hvad er kvadratroden af 144",
+          "hvad er 20 procent af 150"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T18:25:07Z",
     "last_updated": "2026-08-17T19:19:35.306872Z",
     "is_new_repo": true,
@@ -935,7 +1121,8 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {},
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T14:56:13Z",
     "last_updated": "2026-07-22T14:50:12Z",
     "is_new_repo": false,
@@ -991,7 +1178,8 @@
       }
     ],
     "languages": [],
-    "in_ovos_localize": true,
+    "locale_content": {},
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T11:11:43Z",
     "last_updated": "2026-07-25T21:50:14.951093Z",
     "is_new_repo": false,
@@ -1101,7 +1289,17 @@
       "en-us",
       "fr-fr"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "fr-fr": {
+        "name": "Contes de Cosquin (fournisseur)",
+        "description": "Fournisseur des contes populaires de Lorraine d'Emmanuel Cosquin pour ovos-common-reading-pipeline-plugin. Uniquement en fran\u00e7ais, sans traduction.",
+        "examples": [
+          "Raconte-moi une histoire de cosquin",
+          "Lis-moi une histoire de lorraine"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T22:16:02Z",
     "last_updated": "2026-07-25T22:06:02.217024Z",
     "is_new_repo": false,
@@ -1389,7 +1587,72 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Eventyr",
+        "description": "Fort\u00e6ller eventyr af H.C. Andersen og Br\u00f8drene Grimm.",
+        "examples": [
+          "fort\u00e6l historien om Askepot",
+          "l\u00e6s et eventyr",
+          "forts\u00e6t historien"
+        ]
+      },
+      "de-de": {
+        "name": "M\u00e4rchen",
+        "description": "Erz\u00e4hlt M\u00e4rchen von H.C. Andersen und den Br\u00fcdern Grimm.",
+        "examples": [
+          "erz\u00e4hl mir das M\u00e4rchen Aschenputtel",
+          "lies mir ein M\u00e4rchen vor",
+          "erz\u00e4hl weiter"
+        ]
+      },
+      "es-es": {
+        "name": "Cuentos de hadas",
+        "description": "Cuenta cuentos de hadas de H.C. Andersen y los Hermanos Grimm.",
+        "examples": [
+          "cu\u00e9ntame el cuento de Cenicienta",
+          "l\u00e9eme un cuento de hadas",
+          "contin\u00faa el cuento"
+        ]
+      },
+      "fr-fr": {
+        "name": "Contes de f\u00e9es",
+        "description": "Raconte des contes de f\u00e9es de H.C. Andersen et des Fr\u00e8res Grimm.",
+        "examples": [
+          "raconte-moi l'histoire de Cendrillon",
+          "lis-moi un conte de f\u00e9es",
+          "continue l'histoire"
+        ]
+      },
+      "it-it": {
+        "name": "Fiabe",
+        "description": "Racconta fiabe di H.C. Andersen e dei Fratelli Grimm.",
+        "examples": [
+          "raccontami la storia di Cenerentola",
+          "leggimi una fiaba",
+          "continua la storia"
+        ]
+      },
+      "nl-nl": {
+        "name": "Sprookjes",
+        "description": "Vertelt sprookjes van H.C. Andersen en de Gebroeders Grimm.",
+        "examples": [
+          "vertel me het verhaal van Assepoester",
+          "lees me een sprookje voor",
+          "ga verder met het verhaal"
+        ]
+      },
+      "pt-pt": {
+        "name": "Contos de fadas",
+        "description": "Conta contos dos Irm\u00e3os Grimm (apenas Grimm neste idioma - sem hist\u00f3rias de Andersen em portugu\u00eas).",
+        "examples": [
+          "conta-me a hist\u00f3ria da Cinderela",
+          "l\u00ea-me um conto",
+          "continua a hist\u00f3ria"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2019-02-03T18:26:11Z",
     "last_updated": "2026-07-21T00:32:27.512227Z",
     "is_new_repo": false,
@@ -1512,7 +1775,61 @@
       "es-es",
       "fr-fr"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Geografi",
+        "description": "Geografiske fakta - hovedst\u00e6der, kontinenter, gr\u00e6nser, areal, valuta og sprog for 194 FN-medlemslande. Fuldst\u00e6ndig offline.",
+        "examples": [
+          "hvad er hovedstaden i Frankrig",
+          "hvilket kontinent er Kenya i",
+          "hvilke lande gr\u00e6nser op til Tyskland",
+          "hvor stort er Brasilien",
+          "hvilken valuta bruger Japan",
+          "hvilket sprog taler man i Egypten",
+          "fort\u00e6l mig om Afghanistan"
+        ]
+      },
+      "de-de": {
+        "name": "Geografie",
+        "description": "Geografische Fakten - Hauptst\u00e4dte, Kontinente, Grenzen, Fl\u00e4che, W\u00e4hrung und Sprache f\u00fcr 194 UN-Mitgliedstaaten. Vollst\u00e4ndig offline.",
+        "examples": [
+          "was ist die hauptstadt von Frankreich",
+          "auf welchem kontinent liegt Kenia",
+          "welche l\u00e4nder grenzen an Deutschland",
+          "wie gro\u00df ist Brasilien",
+          "welche w\u00e4hrung hat Japan",
+          "welche sprache spricht man in \u00c4gypten",
+          "erz\u00e4hl mir etwas \u00fcber Afghanistan"
+        ]
+      },
+      "es-es": {
+        "name": "Geograf\u00eda",
+        "description": "Datos geogr\u00e1ficos - capitales, continentes, fronteras, \u00e1rea, moneda e idioma de 194 estados miembros de la ONU. Totalmente sin conexi\u00f3n.",
+        "examples": [
+          "cu\u00e1l es la capital de Francia",
+          "en qu\u00e9 continente est\u00e1 Kenia",
+          "qu\u00e9 pa\u00edses limitan con Alemania",
+          "qu\u00e9 tan grande es Brasil",
+          "qu\u00e9 moneda usa Jap\u00f3n",
+          "qu\u00e9 idioma se habla en Egipto",
+          "h\u00e1blame de Afganist\u00e1n"
+        ]
+      },
+      "fr-fr": {
+        "name": "G\u00e9ographie",
+        "description": "Faits g\u00e9ographiques - capitales, continents, fronti\u00e8res, superficie, monnaie et langue pour 194 \u00c9tats membres de l'ONU. Enti\u00e8rement hors ligne.",
+        "examples": [
+          "quelle est la capitale de la France",
+          "sur quel continent se trouve le Kenya",
+          "quels pays bordent l'Allemagne",
+          "quelle est la taille du Br\u00e9sil",
+          "quelle monnaie utilise le Japon",
+          "quelle langue parle-t-on en \u00c9gypte",
+          "parle-moi de l'Afghanistan"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-17T14:27:03Z",
     "last_updated": "2026-08-17T18:27:28.858666Z",
     "is_new_repo": true,
@@ -1571,7 +1888,53 @@
       "es-es",
       "fr-fr"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Geografitr\u00e6ning",
+        "description": "Geografitr\u00e6ning - quizzer og undervisning i hovedst\u00e6der, kontinenter og landegr\u00e6nser for 194 FN-medlemslande. Fuldst\u00e6ndig offline.",
+        "examples": [
+          "quiz mig i hovedst\u00e6der",
+          "quiz mig i kontinenter",
+          "quiz mig i landegr\u00e6nser",
+          "l\u00e6r mig om Europa",
+          "quiz mig i det du l\u00e6rte mig"
+        ]
+      },
+      "de-de": {
+        "name": "Geografietraining",
+        "description": "Geografietraining - Quiz und Lehr-dann-\u00fcben f\u00fcr Hauptst\u00e4dte, Kontinente und Landesgrenzen f\u00fcr 194 UN-Mitgliedstaaten. Vollst\u00e4ndig offline.",
+        "examples": [
+          "quiz mich zu hauptst\u00e4dten",
+          "quiz mich zu kontinenten",
+          "quiz mich zu landesgrenzen",
+          "bring mir etwas \u00fcber Europa bei",
+          "quiz mich zu dem was du mir beigebracht hast"
+        ]
+      },
+      "es-es": {
+        "name": "Entrenamiento de geograf\u00eda",
+        "description": "Entrenamiento de geograf\u00eda - cuestionarios y aprendizaje de capitales, continentes y fronteras de 194 estados miembros de la ONU. Totalmente sin conexi\u00f3n.",
+        "examples": [
+          "preg\u00fantame sobre capitales",
+          "preg\u00fantame sobre continentes",
+          "preg\u00fantame sobre fronteras",
+          "ens\u00e9\u00f1ame sobre Europa",
+          "preg\u00fantame sobre lo que me ense\u00f1aste"
+        ]
+      },
+      "fr-fr": {
+        "name": "Entra\u00eenement de g\u00e9ographie",
+        "description": "Entra\u00eenement de g\u00e9ographie - quiz et apprentissage des capitales, continents et fronti\u00e8res de 194 \u00c9tats membres de l'ONU. Enti\u00e8rement hors ligne.",
+        "examples": [
+          "interroge-moi sur les capitales",
+          "interroge-moi sur les continents",
+          "interroge-moi sur les fronti\u00e8res",
+          "apprends-moi l'Europe",
+          "interroge-moi sur ce que tu m'as appris"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:34:38Z",
     "last_updated": "2026-08-17T14:58:23.806589Z",
     "is_new_repo": true,
@@ -1630,7 +1993,53 @@
       "es-es",
       "fr-fr"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Geometri",
+        "description": "Geometrisk viden - definitioner af former og begreber, formler, og udregninger for rektangler, kvadrater, trekanter, cirkler og pythagoras' s\u00e6tning. Fuldst\u00e6ndig offline.",
+        "examples": [
+          "hvad er en rombe",
+          "hvad er formlen for arealet af en cirkel",
+          "hvad er arealet af et rektangel med l\u00e6ngden 5 og bredden 3",
+          "hvad er hypotenusen i en retvinklet trekant med kateterne 3 og 4",
+          "hvad er pythagoras' s\u00e6tning"
+        ]
+      },
+      "de-de": {
+        "name": "Geometrie",
+        "description": "Geometrisches Wissen - Definitionen von Formen und Begriffen, Formeln und Berechnungen f\u00fcr Rechtecke, Quadrate, Dreiecke, Kreise und den Satz des Pythagoras. Vollst\u00e4ndig offline.",
+        "examples": [
+          "was ist eine Raute",
+          "wie lautet die formel f\u00fcr die fl\u00e4che eines kreises",
+          "was ist die fl\u00e4che eines rechtecks mit der l\u00e4nge 5 und der breite 3",
+          "was ist die hypotenuse eines rechtwinkligen dreiecks mit den katheten 3 und 4",
+          "was ist der satz des pythagoras"
+        ]
+      },
+      "es-es": {
+        "name": "Geometr\u00eda",
+        "description": "Conocimiento de geometr\u00eda - definiciones de formas y t\u00e9rminos, f\u00f3rmulas y c\u00e1lculos para rect\u00e1ngulos, cuadrados, tri\u00e1ngulos, c\u00edrculos y el teorema de Pit\u00e1goras. Totalmente sin conexi\u00f3n.",
+        "examples": [
+          "qu\u00e9 es un rombo",
+          "cu\u00e1l es la f\u00f3rmula para el \u00e1rea de un c\u00edrculo",
+          "cu\u00e1l es el \u00e1rea de un rect\u00e1ngulo con largo 5 y ancho 3",
+          "cu\u00e1l es la hipotenusa de un tri\u00e1ngulo rect\u00e1ngulo con catetos 3 y 4",
+          "cu\u00e1l es el teorema de pit\u00e1goras"
+        ]
+      },
+      "fr-fr": {
+        "name": "G\u00e9om\u00e9trie",
+        "description": "Connaissances en g\u00e9om\u00e9trie - d\u00e9finitions des formes et termes, formules et calculs pour rectangles, carr\u00e9s, triangles, cercles et le th\u00e9or\u00e8me de Pythagore. Enti\u00e8rement hors ligne.",
+        "examples": [
+          "qu'est-ce qu'un losange",
+          "quelle est la formule pour l'aire d'un cercle",
+          "quelle est l'aire d'un rectangle de longueur 5 et de largeur 3",
+          "quelle est l'hypot\u00e9nuse d'un triangle rectangle avec des c\u00f4t\u00e9s 3 et 4",
+          "quel est le th\u00e9or\u00e8me de pythagore"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-17T16:59:50Z",
     "last_updated": "2026-08-17T18:26:53.787921Z",
     "is_new_repo": true,
@@ -1688,7 +2097,53 @@
       "es-es",
       "fr-fr"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Geometritr\u00e6ning",
+        "description": "Geometritr\u00e6ning - quizzer og undervisning i begreber, formler og pythagoras' s\u00e6tning. Fuldst\u00e6ndig offline.",
+        "examples": [
+          "quiz mig i geometribegreber",
+          "quiz mig i areal og omkreds",
+          "quiz mig i pythagoras",
+          "l\u00e6r mig om termer",
+          "quiz mig i det du l\u00e6rte mig"
+        ]
+      },
+      "de-de": {
+        "name": "Geometrietraining",
+        "description": "Geometrietraining - Quiz und Lehr-dann-\u00fcben f\u00fcr Begriffe, Formeln und den Satz des Pythagoras. Vollst\u00e4ndig offline.",
+        "examples": [
+          "quiz mich zu geometriebegriffen",
+          "quiz mich zu fl\u00e4che und umfang",
+          "quiz mich zu pythagoras",
+          "bring mir etwas \u00fcber begriffe bei",
+          "quiz mich zu dem was du mir beigebracht hast"
+        ]
+      },
+      "es-es": {
+        "name": "Entrenamiento de geometr\u00eda",
+        "description": "Entrenamiento de geometr\u00eda - cuestionarios y aprendizaje de t\u00e9rminos, f\u00f3rmulas y el teorema de Pit\u00e1goras. Totalmente sin conexi\u00f3n.",
+        "examples": [
+          "preg\u00fantame sobre t\u00e9rminos de geometr\u00eda",
+          "preg\u00fantame sobre \u00e1rea y per\u00edmetro",
+          "preg\u00fantame sobre pit\u00e1goras",
+          "ens\u00e9\u00f1ame sobre t\u00e9rminos",
+          "preg\u00fantame sobre lo que me ense\u00f1aste"
+        ]
+      },
+      "fr-fr": {
+        "name": "Entra\u00eenement de g\u00e9om\u00e9trie",
+        "description": "Entra\u00eenement de g\u00e9om\u00e9trie - quiz et apprentissage des termes, formules et du th\u00e9or\u00e8me de Pythagore. Enti\u00e8rement hors ligne.",
+        "examples": [
+          "interroge-moi sur les termes de g\u00e9om\u00e9trie",
+          "interroge-moi sur l'aire et le p\u00e9rim\u00e8tre",
+          "interroge-moi sur pythagore",
+          "apprends-moi les termes",
+          "interroge-moi sur ce que tu m'as appris"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-17T10:58:37Z",
     "last_updated": "2026-08-17T17:48:43.333498Z",
     "is_new_repo": true,
@@ -1748,7 +2203,65 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Grimm Eventyr (udbyder)",
+        "description": "Br\u00f8drene Grimms eventyr, udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+        "examples": [
+          "Fort\u00e6l mig en historie fra grimm",
+          "Fort\u00e6l mig historien om askepot"
+        ]
+      },
+      "de-de": {
+        "name": "Grimm M\u00e4rchen (Anbieter)",
+        "description": "M\u00e4rchen der Gebr\u00fcder Grimm, Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+        "examples": [
+          "Erz\u00e4hl mir eine Geschichte von grimm",
+          "Lies mir eine Geschichte von grimm"
+        ]
+      },
+      "es-es": {
+        "name": "Cuentos de Grimm (proveedor)",
+        "description": "Cuentos de los Hermanos Grimm, proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+        "examples": [
+          "Cu\u00e9ntame un cuento de grimm",
+          "L\u00e9eme un cuento de grimm"
+        ]
+      },
+      "fr-fr": {
+        "name": "Contes de Grimm (fournisseur)",
+        "description": "Contes des Fr\u00e8res Grimm, fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+        "examples": [
+          "Raconte-moi une histoire de grimm",
+          "Lis-moi une histoire de grimm"
+        ]
+      },
+      "it-it": {
+        "name": "Fiabe di Grimm (fornitore)",
+        "description": "Fiabe dei Fratelli Grimm, fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+        "examples": [
+          "Raccontami una storia di grimm",
+          "Leggimi una storia di grimm"
+        ]
+      },
+      "nl-nl": {
+        "name": "Grimm Sprookjes (aanbieder)",
+        "description": "Sprookjes van de Gebroeders Grimm, aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+        "examples": [
+          "Vertel me een verhaal van grimm",
+          "Lees me een verhaal van grimm"
+        ]
+      },
+      "pt-pt": {
+        "name": "Contos de Grimm (fornecedor)",
+        "description": "Contos dos Irm\u00e3os Grimm, fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+        "examples": [
+          "Conta-me uma hist\u00f3ria de grimm",
+          "L\u00ea-me uma hist\u00f3ria de grimm"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T18:04:14Z",
     "last_updated": "2026-07-25T22:06:02.043884Z",
     "is_new_repo": false,
@@ -1758,7 +2271,7 @@
     "id": "andlo-ha-ovos-integration",
     "skill_id": null,
     "name": "ha-ovos-integration",
-    "description": "Planned: a Home Assistant integration exposing shared OVOS config and per-skill settingsmeta.json as HA entities.",
+    "description": "A Home Assistant integration exposing shared OVOS config and per-skill settingsmeta.json as HA entities.",
     "examples": [],
     "tags": [
       "home-assistant",
@@ -1779,9 +2292,9 @@
     "type_group": "Infrastructure",
     "stars": 1,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 1,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -1790,15 +2303,16 @@
     "setup_notes": [
       {
         "heading": "Setup",
-        "content": "1. Install and start the relevant [haos-ovos-addons](https://github.com/andlo/haos-ovos-addons) add-ons first.\n2. Add the **OpenVoiceOS** integration in HA.\n3. Fill in each add-on's API URL under the integration's own entities (e.g. `http://<hostname>:8500` for `ovos-skills`).\n4. Use **Add sub-entry** on the integration to add skills, run voice setup, or configure persona."
+        "content": "1. Install and start the relevant [haos-ovos-addons](https://github.com/andlo/haos-ovos-addons) add-ons first.\n2. Add the **OpenVoiceOS** integration in HA.\n3. On Home Assistant OS / Supervised, each add-on's API URL is filled in automatically by querying Supervisor \u2014 nothing to do here. On a non-Supervisor install (or if an add-on isn't found), fill in the missing URL(s) under the integration's own entities (e.g. `http://<hostname>:8500` for `ovos-skills`).\n4. Use **Add sub-entry** on the integration to add skills, run voice setup, or configure persona."
       }
     ],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-04T06:43:42Z",
-    "last_updated": "2026-08-07T19:44:09Z",
+    "last_updated": "2026-08-30T19:33:37Z",
     "is_new_repo": true,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OscillateLabsLLC-ha-ovos-tts",
@@ -1888,15 +2402,16 @@
     "setup_notes": [
       {
         "heading": "Installation",
-        "content": "1. In Home Assistant: **Settings \u2192 Add-ons \u2192 Add-on Store**.\n2. Top right **\u22ee \u2192 Repositories**, paste `https://github.com/andlo/haos-ovos-addons`, **Add**.\n3. The add-ons below now appear in the store. Install the ones you need \u2014 see \"Two ways to use this\" below for which ones."
+        "content": "1. In Home Assistant: **Settings \u2192 Add-ons \u2192 Add-on Store**.\n2. Top right **\u22ee \u2192 Repositories**, paste `https://github.com/andlo/haos-ovos-addons`, **Add**.\n3. The add-ons below now appear in the store. You don't need all of them \u2014 see \"Which add-ons do I actually need?\" below to pick."
       }
     ],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-03T19:00:21Z",
-    "last_updated": "2026-08-08T19:33:31Z",
+    "last_updated": "2026-08-30T19:47:05Z",
     "is_new_repo": true,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "andlo-haos-ovos-skills",
@@ -1933,6 +2448,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-03T19:01:19Z",
     "last_updated": "2026-08-04T09:53:02Z",
@@ -3095,7 +3611,7 @@
         ]
       }
     },
-    "in_ovos_localize": true,
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T14:52:37Z",
     "last_updated": "2026-08-18T17:26:38.410195Z",
     "is_new_repo": true,
@@ -3389,6 +3905,7 @@
       "es-es",
       "it-it"
     ],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-08-04T22:33:18Z",
     "last_updated": "2025-08-11T14:02:11Z",
@@ -4325,6 +4842,439 @@
     "last_updated": "2026-08-16T18:13:21.880357Z",
     "is_new_repo": true,
     "is_recently_updated": true
+  },
+  {
+    "id": "mikejgray-neon-homeassistant-skill",
+    "skill_id": "neon_homeassistant_skill.mikejgray",
+    "name": "neon-homeassistant-skill",
+    "description": "neon-homeassistant-skill",
+    "examples": [
+      "What is the status of the living room light?",
+      "Turn on the kitchen light",
+      "Change light bedside lamp to blue"
+    ],
+    "tags": [
+      "ovos",
+      "neon",
+      "home",
+      "assistant",
+      "phal",
+      "voice",
+      "interface",
+      "skill",
+      "plugin"
+    ],
+    "category": "Home",
+    "icon": "https://www.home-assistant.io/images/home-assistant-logo.svg",
+    "source": "https://github.com/mikejgray/neon-homeassistant-skill",
+    "package_name": "neon-homeassistant-skill",
+    "pypi_version": "0.0.24",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "mikejgray",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 9,
+    "forks": 4,
+    "open_issues": 3,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": true,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation on Neon",
+        "content": "\\***\\*Note\\*\\***: This skill and the required PHAL plugin come pre-installed on Neon images for the Mycroft Mark II and Neon's published Docker images. These instructions are for custom development builds or creating your own Neon instance from scratch.\n\nInstall ovos-PHAL-plugin-homeassistant [per their documentation](https://github.com/OpenVoiceOS/ovos-PHAL-plugin-homeassistant)\n\nThen, you can `pip install neon-homeassistant-skill`, or handle the installation from the `~/.config/neon/neon.yaml` file if you prefer:\n\nskills:\n  default_skills:\n    # Jokes skill included because it cannot be pip installed to the image\n    - https://github.com/JarbasSkills/skill-icanhazdadjokes/tree/dev\n    - neon-homeassistant-skill # Optionally with a version, such as neon-homeassistant-skill==0.0.10\n\n### Au\u2026"
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-01-23T04:50:44Z",
+    "last_updated": "2025-01-29T02:26:15.220908Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-about",
+    "skill_id": "skill-about.neongeckocom=skill_about:AboutSkill",
+    "name": "neon-skill-about",
+    "description": "This skill provides information about Neon. You can ask about licensing and your Neon installation. This skill also provides formatted examples for installed skills.",
+    "examples": [
+      "Tell me my license.",
+      "Tell me my skills.",
+      "What can you do?"
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_skill.png",
+    "source": "https://github.com/NeonGeckoCom/skill-about",
+    "package_name": "neon-skill-about",
+    "pypi_version": "1.0.4",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 2,
+    "forks": 2,
+    "open_issues": 4,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2020-08-03T22:29:21Z",
+    "last_updated": "2026-07-27T23:34:15.801499Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-alerts",
+    "skill_id": "skill-alerts.neongeckocom=skill_alerts:AlertSkill",
+    "name": "neon-skill-alerts",
+    "description": "The skill provides functionality to create alarms, timers and reminders, remove them by name, time, or type, and ask for what is active. You may also silence all alerts and ask for a summary of what was missed if you were away, your device was off, or you had quiet hours enabled. Alarms and reminders may be set to recur daily or weekly. An active alert may be snoozed for a specified amount of time while it is active. Any alerts that are not acknowledged will be added to a list of missed alerts that may be read and cleared when requested. Other modules may integrate with the alerts skill by listening for `neon.alert_expired` events. This event will be emitted when a scheduled alert expires and will include any context associated with the event creation. If the event was created with `mq` context, the mq connector module will forward the expired alert for the client module to handle and the alert will be marked `active` until the client module emits a `neon.acknowledge_alert` Message with the `alert_id` and `missed` data, i.e.: ``` Message(\"neon.acknowledge_alert\", {\"alert_id\": <alert_id>, \"missed\": False}, <context>) ```",
+    "examples": [
+      "Set an alarm for 8 AM.",
+      "When is my next alarm?",
+      "Cancel my 8 AM alarm.",
+      "Set a 5 minute timer.",
+      "How much time is left?",
+      "Remind me to go home at 6.",
+      "Remind me to take out the trash every thursday at 7 PM.",
+      "What are my reminders?",
+      "Cancel all alarms.",
+      "Cancel all timers.",
+      "Cancel all reminders.",
+      "Go to sleep.",
+      "Start quiet hours.",
+      "Stop.",
+      "Snooze.",
+      "Snooze for 1 minute.",
+      "Wake up.",
+      "What did I miss?",
+      "Did I miss anything?"
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "logo.svg",
+    "source": "https://github.com/NeonGeckoCom/skill-alerts",
+    "package_name": "neon-skill-alerts",
+    "pypi_version": "3.1.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 5,
+    "forks": 13,
+    "open_issues": 16,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2020-08-03T22:36:13Z",
+    "last_updated": "2026-06-26T00:42:25.163866Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-caffeinewiz",
+    "skill_id": "skill-caffeinewiz.neongeckocom=neon_skill_caffeinewiz:CaffeineWizSkill",
+    "name": "neon-skill-caffeinewiz",
+    "description": "The skill provides the functionality to inform the user of the caffeine content of the requested drink (Multiple drinks in a row are possible) by collecting the required information from two data sources: 1.  [http://caffeinewiz.com/](http://caffeinewiz.com/) - the main source of information for the drink\u2019s database 2.  [https://www.caffeineinformer.com/the-caffeine-database](https://www.caffeineinformer.com/the-caffeine-database) - secondary source for any non-duplicate drinks CaffeineWiz uses [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to pull the tables from the websites above, then strips the html tags, and later formats the results into the comprehensive list. That object is pickled for the future use. The skill will check for updates periodically. You can modify that time period by changing `TIME_TO_CHECK` parameter on top of the file in the init.",
+    "examples": [
+      "Tell me the caffeine content of Pepsi.",
+      "How much caffeine is in Starbucks Blonde?",
+      "Tell me the caffeine content of Rocket Chocolate."
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "logo.svg",
+    "source": "https://github.com/NeonGeckoCom/skill-caffeinewiz",
+    "package_name": "neon-skill-caffeinewiz",
+    "pypi_version": "3.0.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 2,
+    "forks": 1,
+    "open_issues": 5,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "de-de",
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2017-10-11T00:44:52Z",
+    "last_updated": "2026-06-30T22:43:48.030742Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-core_ready",
+    "skill_id": "skill-core_ready.neongeckocom=skill_core_ready:CoreReadySkill",
+    "name": "neon-skill-core_ready",
+    "description": "When Neon is started or restarted, this skill will speak a notification to the user. This speech can be enabled/disabled by intent.",
+    "examples": [
+      "Enable ready notifications.",
+      "Disable load speech."
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "logo.svg",
+    "source": "https://github.com/NeonGeckoCom/skill-core_ready",
+    "package_name": "neon-skill-core_ready",
+    "pypi_version": "0.3.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 5,
+    "open_issues": 1,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-11-17T23:21:23Z",
+    "last_updated": "2026-07-27T23:58:00.310763Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-data_controls",
+    "skill_id": "skill-data_controls.neongeckocom=skill_data_controls:DataControlsSkill",
+    "name": "neon-skill-data_controls",
+    "description": "Manage saved transcriptions and other user-generated media.",
+    "examples": [
+      "Clear my user transcriptions.",
+      "Erase all pictures.",
+      "Delete my profile."
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_skill.png",
+    "source": "https://github.com/NeonGeckoCom/skill-data_controls",
+    "package_name": "neon-skill-data_controls",
+    "pypi_version": "2.1.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 1,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2022-02-08T23:00:39Z",
+    "last_updated": "2026-07-02T01:03:37.105517Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-speed_test",
+    "skill_id": "skill-speed_test.neongeckocom=neon_skill_speed_test:SpeedTestSkill",
+    "name": "neon-skill-speed_test",
+    "description": "This skill uses speedtest.net to check your internet speed",
+    "examples": [
+      "Run a speed test.",
+      "How fast is my internet?"
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "https://0000.us/klatchat/app/files/neon_images/icons/neon_skill.png",
+    "source": "https://github.com/NeonGeckoCom/skill-speed_test",
+    "package_name": "neon-skill-speed_test",
+    "pypi_version": "2.0.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 2,
+    "forks": 1,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2020-08-04T00:21:27Z",
+    "last_updated": "2026-07-01T02:27:54.776116Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-support_helper",
+    "skill_id": "skill-support_helper.neongeckocom=skill_support_helper:SupportSkill",
+    "name": "neon-skill-support_helper",
+    "description": "The skill provides the functionality to get core module status information and message information, including user profile information, sent to the user via email.",
+    "examples": [
+      "Create a troubleshooting package.",
+      "Create a support ticket."
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/life-ring.svg",
+    "source": "https://github.com/NeonGeckoCom/skill-support_helper",
+    "package_name": "neon-skill-support_helper",
+    "pypi_version": "1.3.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 2,
+    "open_issues": 4,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "de-de",
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2020-08-04T00:23:24Z",
+    "last_updated": "2026-07-02T00:39:56.098661Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "NeonGeckoCom-skill-update",
+    "skill_id": "skill-update.neongeckocom=skill_update:UpdateSkill",
+    "name": "neon-skill-update",
+    "description": "The update skill provides intents for the user to manage device updates, including core packages, skills, configuration, and creation of new boot media. ### Software Updates This skill can be used to check for software updates and to start the update process on supported devices. For most devices, updates will take 10-30 minutes, and you will not be able to use your device while it is updating. ### Configuration Updates For supported distributions, this skill allows getting updated default configuration. This can be useful for resetting skills configuration to the latest default, or for troubleshooting after making manual configuration changes. ### Create New Media For supported distributions, this skill is able to create a new boot drive from a clean image, similar to what would be distributed with a new device. This involves downloading a new image and then writing it to an available storage device. This is a multi-step process. 1. An operating system image is downloaded. Depending on internet connection    speeds, this generally takes about 15-20 minutes. 2. After user confirmation, this image is written to a non-boot drive connected    to the device. **All existing on the new boot drive is lost**. This generally    takes about 30-45 minutes. 3. After this is complete, the device is shut down so the user may unplug the old    drive and boot the new one.",
+    "examples": [
+      "Check for updates.",
+      "Do you have any updates?",
+      "Update my default configuration.",
+      "Create a new boot drive.",
+      "Switch to beta releases.",
+      "Change to stable updates."
+    ],
+    "tags": [],
+    "category": "Other",
+    "icon": "logo.svg",
+    "source": "https://github.com/NeonGeckoCom/skill-update",
+    "package_name": "neon-skill-update",
+    "pypi_version": "3.1.2",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "NeonGeckoCom",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 2,
+    "forks": 2,
+    "open_issues": 9,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration Updates",
+        "content": "For supported distributions, this skill allows getting updated default configuration.\nThis can be useful for resetting skills configuration to the latest default, or for\ntroubleshooting after making manual configuration changes."
+      }
+    ],
+    "languages": [
+      "en-us",
+      "uk-ua"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2021-10-08T22:47:42Z",
+    "last_updated": "2025-03-18T00:27:09.004829Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "andlo-ovos-skill-network-scanner",
@@ -7492,9 +8442,10 @@
       }
     ],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T20:54:26Z",
-    "last_updated": "2026-08-27T00:49:50Z",
+    "last_updated": "2026-08-31T05:32:58Z",
     "is_new_repo": true,
     "is_recently_updated": false
   },
@@ -8085,6 +9036,7 @@
       }
     ],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-20T15:56:25Z",
     "last_updated": "2026-08-20T20:07:21Z",
@@ -13660,6 +14612,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-03T19:00:56Z",
     "last_updated": "2026-08-04T08:38:58Z",
@@ -13966,6 +14919,7 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2018-10-05T19:13:32Z",
     "last_updated": "2026-07-20T17:23:20Z",
@@ -14312,6 +15266,7 @@
     "languages": [
       "en-us"
     ],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-03-28T20:54:48Z",
     "last_updated": "2024-03-28T21:47:28Z",
@@ -19851,6 +20806,7 @@
       }
     ],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-08-09T20:54:13Z",
     "last_updated": "2025-08-10T18:26:33Z",
@@ -23579,6 +24535,267 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-skill-homeassistant",
+    "skill_id": "skill_homeassistant.oscillatelabsllc",
+    "name": "skill-homeassistant",
+    "description": "skill-homeassistant",
+    "examples": [
+      "What is the status of the living room light?",
+      "Turn on the kitchen light",
+      "Change light bedside lamp to blue"
+    ],
+    "tags": [
+      "ovos",
+      "neon",
+      "home",
+      "assistant",
+      "voice",
+      "interface",
+      "skill",
+      "plugin"
+    ],
+    "category": "Home",
+    "icon": "https://www.home-assistant.io/images/home-assistant-logo.svg",
+    "source": "https://github.com/OscillateLabsLLC/skill-homeassistant",
+    "package_name": "skill-homeassistant",
+    "pypi_version": "1.4.2",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 20,
+    "forks": 7,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation on Neon",
+        "content": "You can `pip install neon-homeassistant-skill`, or handle the installation from the `~/.config/neon/neon.yaml` file if you prefer:\n\nskills:\n  default_skills:\n    - skill-homeassistant # Optionally with a version, such as skill-homeassistant==0.1.0"
+      },
+      {
+        "heading": "Configuration",
+        "content": "### Authentication Using a Long-lived Token\n\nWe recommend using a [long-lived token for Home Assistant](https://developers.home-assistant.io/docs/auth_api/#long-lived-access-token). This provides persistent access without requiring re-authentication. Configure it in your skill settings file:\n\n- OVOS: `~/.config/mycroft/skills/skill-homeassistant/settings.json`\n- Neon: `~/.config/neon/skills/neon_homeassistant_skill/settings.json`\n\n{\n  \"api_key\": \"<HA_LONG_LIVED_TOKEN>\",\n  \"host\": \"<HA_IP_OR_HOSTNAME>\"\n}\n\n### Configuration Options\n\nAll available settings with their defaults:\n\n{\n  \"host\": \"\", // Home Assistant instance URL - required, no default\n  \"api_key\": \"\", // Long-lived access token - required, no default\n  \"disable_intents\": false, // Disable all Home Assistant intents. In most cases,\u2026"
+      }
+    ],
+    "languages": [
+      "da-dk",
+      "en-us",
+      "es-es",
+      "fr-fr",
+      "pl-pl",
+      "sv-se"
+    ],
+    "locale_content": {
+      "da-dk": {
+        "name": "skill-homeassistant",
+        "description": "skill-homeassistant",
+        "examples": [
+          "Hvad er status p\u00e5 stuelampen?",
+          "T\u00e6nd k\u00f8kkenlyset",
+          "Skift sengelampen til bl\u00e5"
+        ]
+      },
+      "es-es": {
+        "name": "skill-homeassistant",
+        "description": "skill-homeassistant",
+        "examples": [
+          "\u00bfCu\u00e1l es el estado de la luz de la sala?",
+          "Enciende la luz de la cocina",
+          "Cambiar la luz de la l\u00e1mpara de noche a azul"
+        ]
+      },
+      "fr-fr": {
+        "name": "Home Assistant",
+        "description": "Commandez vos appareils Home Assistant \u00e0 la voix.",
+        "examples": [
+          "Quel est l'\u00e9tat de la lumi\u00e8re du salon ?",
+          "Allume la lumi\u00e8re de la cuisine",
+          "Change la couleur de la lampe de chevet en bleu"
+        ]
+      },
+      "pl-pl": {
+        "name": "skill-homeassistant",
+        "description": "skill-homeassistant",
+        "examples": [
+          "Jaki jest status lampy w salonie?",
+          "W\u0142\u0105cz \u015bwiat\u0142o w kuchni",
+          "Zmie\u0144 kolor lampy w salonie na niebieski"
+        ]
+      },
+      "sv-se": {
+        "name": "skill-homeassistant",
+        "description": "skill-homeassistant",
+        "examples": [
+          "Vad \u00e4r statusen p\u00e5 vardagsrumslampan?",
+          "Sl\u00e5 p\u00e5 k\u00f6kslampan",
+          "\u00c4ndra s\u00e4nglampan till bl\u00e5"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-03-17T02:00:51Z",
+    "last_updated": "2026-08-19T03:35:11.558124Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
+    "id": "OscillateLabsLLC-skill-meal-plan",
+    "skill_id": "skill_meal_plan.oscillatelabsllc",
+    "name": "skill-meal-plan",
+    "description": "An OVOS voice skill for meal suggestions",
+    "examples": [
+      "What should I make for dinner?",
+      "What should I eat?",
+      "What should I eat tonight?",
+      "I'm hungry",
+      "What's for dinner?"
+    ],
+    "tags": [
+      "ovos",
+      "neon",
+      "skill",
+      "voice",
+      "meal",
+      "planning"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githack.com/FortAwesome/Font-Awesome/master/svgs/solid/utensils.svg",
+    "source": "https://github.com/OscillateLabsLLC/skill-meal-plan",
+    "package_name": "skill-meal-plan",
+    "pypi_version": "2.2.1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 2,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "da-dk",
+      "en-us",
+      "fr-fr",
+      "sv-se"
+    ],
+    "locale_content": {
+      "fr-fr": {
+        "name": "Plan de repas",
+        "description": "Un skill OVOS qui sugg\u00e8re un repas et vous aide \u00e0 g\u00e9rer votre liste de repas.",
+        "examples": [
+          "Propose-moi une id\u00e9e de repas",
+          "Quel repas me proposes-tu ?",
+          "Ajoute un repas \u00e0 ma liste de repas",
+          "Supprime un repas de ma liste",
+          "Quels sont mes repas ?"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2022-05-22T02:33:47Z",
+    "last_updated": "2026-08-19T03:35:03.943666Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
+    "id": "OscillateLabsLLC-skill-monster-scanner",
+    "skill_id": "skill_monster_scanner.oscillatelabsllc",
+    "name": "skill-monster-scanner",
+    "description": "An OVOS voice skill that scans for monsters under the bed",
+    "examples": [
+      "Are there monsters under my bed?",
+      "Is the Boogeyman under the bed?"
+    ],
+    "tags": [
+      "ovos",
+      "neon",
+      "skill",
+      "voice",
+      "kids",
+      "fun"
+    ],
+    "category": "Other",
+    "icon": "",
+    "source": "https://github.com/OscillateLabsLLC/skill-monster-scanner",
+    "package_name": "skill-monster-scanner",
+    "pypi_version": "2.2.1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 2,
+    "forks": 2,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "If you feel like being a monster yourself, you can set `scary` in the config to `true` and the skill will sometimes find a monster.\n\nUnder skill settings (`~/.config/mycroft/skills/skill-monster-scanner.oscillatelabsllc/settings.json`):\n\n| Option  | Value   | Description                                                  |\n| ------- | ------- | ------------------------------------------------------------ |\n| `scary` | `false` | Whether or not to occasionally find a monster under the bed. |\n\nNote: If you are running Neon, the skill settings file will be located at `~/.config/neon/skills/skill-monster-scanner.oscillatelabsllc/settings.json`."
+      }
+    ],
+    "languages": [
+      "da-dk",
+      "en-us",
+      "fr-fr",
+      "sv-se"
+    ],
+    "locale_content": {
+      "da-dk": {
+        "name": "skill-monster-scanner",
+        "description": "En OVOS stemmeskill der scanner efter monstre under sengen",
+        "examples": [
+          "Er der monstre under min seng?",
+          "Er bussemanden under sengen?"
+        ]
+      },
+      "fr-fr": {
+        "name": "D\u00e9tecteur de monstres",
+        "description": "Un skill OVOS qui v\u00e9rifie s'il y a des monstres sous le lit pour rassurer les enfants au moment du coucher.",
+        "examples": [
+          "Peux-tu v\u00e9rifier s'il y a des monstres sous mon lit ?",
+          "Regarde s'il y a un croque-mitaine sous le lit"
+        ]
+      },
+      "sv-se": {
+        "name": "skill-monster-scanner",
+        "description": "En OVOS r\u00f6stskill som skannar efter monster under s\u00e4ngen",
+        "examples": [
+          "Finns det monster under min s\u00e4ng?",
+          "\u00c4r busen under s\u00e4ngen?"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-07-05T21:08:54Z",
+    "last_updated": "2026-08-19T03:32:15.765812Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "OpenVoiceOS-skill-ovos-alarm",
     "skill_id": null,
     "name": "skill-ovos-alarm",
@@ -24155,6 +25372,7 @@
       "en-us",
       "pt-pt"
     ],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-08-31T19:32:10Z",
     "last_updated": "2026-07-25T08:00:17Z",
@@ -24198,6 +25416,7 @@
       "en-us",
       "pt-pt"
     ],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-08-31T16:18:40Z",
     "last_updated": "2026-07-25T14:56:19Z",
@@ -25206,7 +26425,67 @@
       "nl-nl",
       "pt-pt"
     ],
-    "in_ovos_localize": true,
+    "locale_content": {
+      "da-dk": {
+        "name": "Enhedskonverter",
+        "description": "Lokal, offline enhedskonvertering - ingen cloud-afh\u00e6ngighed, ingen API-n\u00f8gle. D\u00e6kker l\u00e6ngde, masse, temperatur, tid, hastighed, areal, volumen, vinkel, densitet, tryk, kraft, energi, effekt, moment, acceleration, koncentration, computer og flow.",
+        "examples": [
+          "konverter 10 centimeter til tommer",
+          "hvor mange fod er 2 meter",
+          "konverter 100 celsius til fahrenheit",
+          "hvor mange kilogram er 2 ton"
+        ]
+      },
+      "de-de": {
+        "name": "Einheitenumrechner",
+        "description": "Lokale, offline Einheitenumrechnung - keine Cloud-Abh\u00e4ngigkeit, kein API-Schl\u00fcssel. Erster maschinell \u00fcbersetzter Entwurf, noch nicht von Muttersprachlern gepr\u00fcft.",
+        "examples": [
+          "konvertiere 10 Zentimeter in Zoll",
+          "wie viele Fu\u00df sind 2 Meter"
+        ]
+      },
+      "es-es": {
+        "name": "Conversor de unidades",
+        "description": "Conversi\u00f3n de unidades local y offline - sin dependencia de la nube, sin clave de API. Primer borrador con traducci\u00f3n autom\u00e1tica, a\u00fan no verificado por un hablante nativo.",
+        "examples": [
+          "convierte 10 cent\u00edmetros a pulgadas",
+          "cu\u00e1ntos pies son 2 metros"
+        ]
+      },
+      "fr-fr": {
+        "name": "Convertisseur d'unit\u00e9s",
+        "description": "Conversion d'unit\u00e9s locale et hors ligne - aucune d\u00e9pendance au cloud, aucune cl\u00e9 API. Premi\u00e8re version traduite automatiquement, pas encore v\u00e9rifi\u00e9e par un locuteur natif.",
+        "examples": [
+          "convertis 10 centim\u00e8tres en pouces",
+          "combien de pieds font 2 m\u00e8tres"
+        ]
+      },
+      "it-it": {
+        "name": "Convertitore di unit\u00e0",
+        "description": "Conversione di unit\u00e0 locale e offline - nessuna dipendenza dal cloud, nessuna chiave API. Prima bozza tradotta automaticamente, non ancora verificata da un madrelingua.",
+        "examples": [
+          "converti 10 centimetri in pollici",
+          "quanti piedi sono 2 metri"
+        ]
+      },
+      "nl-nl": {
+        "name": "Eenhedenomrekenaar",
+        "description": "Lokale, offline eenhedenomrekening - geen cloud-afhankelijkheid, geen API-sleutel. Eerste machinaal vertaalde versie, nog niet geverifieerd door een moedertaalspreker.",
+        "examples": [
+          "converteer 10 centimeter naar inch",
+          "hoeveel voet is 2 meter"
+        ]
+      },
+      "pt-pt": {
+        "name": "Conversor de unidades",
+        "description": "Convers\u00e3o de unidades local e offline - sem depend\u00eancia da cloud, sem chave de API. Primeiro rascunho traduzido automaticamente, ainda n\u00e3o verificado por um falante nativo.",
+        "examples": [
+          "converte 10 cent\u00edmetros para polegadas",
+          "quantos p\u00e9s s\u00e3o 2 metros"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T14:09:15Z",
     "last_updated": "2026-08-17T19:25:54.801848Z",
     "is_new_repo": true,
@@ -25260,6 +26539,7 @@
       }
     ],
     "languages": [],
+    "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-03T14:43:16Z",
     "last_updated": "2026-06-03T15:44:46.474757Z",

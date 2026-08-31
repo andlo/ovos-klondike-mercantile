@@ -53,7 +53,61 @@
     "es-es",
     "fr-fr"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Geografi",
+      "description": "Geografiske fakta - hovedst\u00e6der, kontinenter, gr\u00e6nser, areal, valuta og sprog for 194 FN-medlemslande. Fuldst\u00e6ndig offline.",
+      "examples": [
+        "hvad er hovedstaden i Frankrig",
+        "hvilket kontinent er Kenya i",
+        "hvilke lande gr\u00e6nser op til Tyskland",
+        "hvor stort er Brasilien",
+        "hvilken valuta bruger Japan",
+        "hvilket sprog taler man i Egypten",
+        "fort\u00e6l mig om Afghanistan"
+      ]
+    },
+    "de-de": {
+      "name": "Geografie",
+      "description": "Geografische Fakten - Hauptst\u00e4dte, Kontinente, Grenzen, Fl\u00e4che, W\u00e4hrung und Sprache f\u00fcr 194 UN-Mitgliedstaaten. Vollst\u00e4ndig offline.",
+      "examples": [
+        "was ist die hauptstadt von Frankreich",
+        "auf welchem kontinent liegt Kenia",
+        "welche l\u00e4nder grenzen an Deutschland",
+        "wie gro\u00df ist Brasilien",
+        "welche w\u00e4hrung hat Japan",
+        "welche sprache spricht man in \u00c4gypten",
+        "erz\u00e4hl mir etwas \u00fcber Afghanistan"
+      ]
+    },
+    "es-es": {
+      "name": "Geograf\u00eda",
+      "description": "Datos geogr\u00e1ficos - capitales, continentes, fronteras, \u00e1rea, moneda e idioma de 194 estados miembros de la ONU. Totalmente sin conexi\u00f3n.",
+      "examples": [
+        "cu\u00e1l es la capital de Francia",
+        "en qu\u00e9 continente est\u00e1 Kenia",
+        "qu\u00e9 pa\u00edses limitan con Alemania",
+        "qu\u00e9 tan grande es Brasil",
+        "qu\u00e9 moneda usa Jap\u00f3n",
+        "qu\u00e9 idioma se habla en Egipto",
+        "h\u00e1blame de Afganist\u00e1n"
+      ]
+    },
+    "fr-fr": {
+      "name": "G\u00e9ographie",
+      "description": "Faits g\u00e9ographiques - capitales, continents, fronti\u00e8res, superficie, monnaie et langue pour 194 \u00c9tats membres de l'ONU. Enti\u00e8rement hors ligne.",
+      "examples": [
+        "quelle est la capitale de la France",
+        "sur quel continent se trouve le Kenya",
+        "quels pays bordent l'Allemagne",
+        "quelle est la taille du Br\u00e9sil",
+        "quelle monnaie utilise le Japon",
+        "quelle langue parle-t-on en \u00c9gypte",
+        "parle-moi de l'Afghanistan"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-17T14:27:03Z",
   "last_updated": "2026-08-17T18:27:28.858666Z",
   "is_new_repo": true,

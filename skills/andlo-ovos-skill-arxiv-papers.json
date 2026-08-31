@@ -52,7 +52,64 @@
     "nl-nl",
     "pt-pt"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "arXiv Artikler (udbyder)",
+      "description": "L\u00e6ser resum\u00e9er af arXiv-artikler h\u00f8jt. Udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+      "examples": [
+        "L\u00e6s mig seneste artikel fra arxiv"
+      ]
+    },
+    "de-de": {
+      "name": "arXiv Artikel (Anbieter)",
+      "description": "Liest arXiv-Artikelzusammenfassungen vor. Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+      "examples": [
+        "Erz\u00e4hl mir eine Geschichte von arxiv",
+        "Lies mir eine Geschichte von arxiv"
+      ]
+    },
+    "es-es": {
+      "name": "Art\u00edculos de arXiv (proveedor)",
+      "description": "Lee en voz alta los res\u00famenes de art\u00edculos de arXiv. Proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+      "examples": [
+        "Cu\u00e9ntame un cuento de arxiv",
+        "L\u00e9eme un cuento de arxiv"
+      ]
+    },
+    "fr-fr": {
+      "name": "Articles arXiv (fournisseur)",
+      "description": "Lit \u00e0 voix haute les r\u00e9sum\u00e9s d'articles arXiv. Fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+      "examples": [
+        "Raconte-moi une histoire de arxiv",
+        "Lis-moi une histoire de arxiv"
+      ]
+    },
+    "it-it": {
+      "name": "Articoli arXiv (fornitore)",
+      "description": "Legge ad alta voce gli abstract degli articoli arXiv. Fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+      "examples": [
+        "Raccontami una storia di arxiv",
+        "Leggimi una storia di arxiv"
+      ]
+    },
+    "nl-nl": {
+      "name": "arXiv Artikelen (aanbieder)",
+      "description": "Leest samenvattingen van arXiv-artikelen hardop voor. Aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+      "examples": [
+        "Vertel me een verhaal van arxiv",
+        "Lees me een verhaal van arxiv"
+      ]
+    },
+    "pt-pt": {
+      "name": "Artigos arXiv (fornecedor)",
+      "description": "L\u00ea em voz alta os resumos de artigos arXiv. Fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+      "examples": [
+        "Conta-me uma hist\u00f3ria de arxiv",
+        "L\u00ea-me uma hist\u00f3ria de arxiv"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T18:24:40Z",
   "last_updated": "2026-07-25T22:08:10.944593Z",
   "is_new_repo": false,

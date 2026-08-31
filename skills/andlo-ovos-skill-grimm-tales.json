@@ -52,7 +52,65 @@
     "nl-nl",
     "pt-pt"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Grimm Eventyr (udbyder)",
+      "description": "Br\u00f8drene Grimms eventyr, udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+      "examples": [
+        "Fort\u00e6l mig en historie fra grimm",
+        "Fort\u00e6l mig historien om askepot"
+      ]
+    },
+    "de-de": {
+      "name": "Grimm M\u00e4rchen (Anbieter)",
+      "description": "M\u00e4rchen der Gebr\u00fcder Grimm, Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+      "examples": [
+        "Erz\u00e4hl mir eine Geschichte von grimm",
+        "Lies mir eine Geschichte von grimm"
+      ]
+    },
+    "es-es": {
+      "name": "Cuentos de Grimm (proveedor)",
+      "description": "Cuentos de los Hermanos Grimm, proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+      "examples": [
+        "Cu\u00e9ntame un cuento de grimm",
+        "L\u00e9eme un cuento de grimm"
+      ]
+    },
+    "fr-fr": {
+      "name": "Contes de Grimm (fournisseur)",
+      "description": "Contes des Fr\u00e8res Grimm, fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+      "examples": [
+        "Raconte-moi une histoire de grimm",
+        "Lis-moi une histoire de grimm"
+      ]
+    },
+    "it-it": {
+      "name": "Fiabe di Grimm (fornitore)",
+      "description": "Fiabe dei Fratelli Grimm, fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+      "examples": [
+        "Raccontami una storia di grimm",
+        "Leggimi una storia di grimm"
+      ]
+    },
+    "nl-nl": {
+      "name": "Grimm Sprookjes (aanbieder)",
+      "description": "Sprookjes van de Gebroeders Grimm, aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+      "examples": [
+        "Vertel me een verhaal van grimm",
+        "Lees me een verhaal van grimm"
+      ]
+    },
+    "pt-pt": {
+      "name": "Contos de Grimm (fornecedor)",
+      "description": "Contos dos Irm\u00e3os Grimm, fornecedor para ovos-common-reading-pipeline-plugin. Sem interface de voz aut\u00f3noma.",
+      "examples": [
+        "Conta-me uma hist\u00f3ria de grimm",
+        "L\u00ea-me uma hist\u00f3ria de grimm"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T18:04:14Z",
   "last_updated": "2026-07-25T22:06:02.043884Z",
   "is_new_repo": false,

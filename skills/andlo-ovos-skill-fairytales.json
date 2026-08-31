@@ -52,7 +52,72 @@
     "nl-nl",
     "pt-pt"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Eventyr",
+      "description": "Fort\u00e6ller eventyr af H.C. Andersen og Br\u00f8drene Grimm.",
+      "examples": [
+        "fort\u00e6l historien om Askepot",
+        "l\u00e6s et eventyr",
+        "forts\u00e6t historien"
+      ]
+    },
+    "de-de": {
+      "name": "M\u00e4rchen",
+      "description": "Erz\u00e4hlt M\u00e4rchen von H.C. Andersen und den Br\u00fcdern Grimm.",
+      "examples": [
+        "erz\u00e4hl mir das M\u00e4rchen Aschenputtel",
+        "lies mir ein M\u00e4rchen vor",
+        "erz\u00e4hl weiter"
+      ]
+    },
+    "es-es": {
+      "name": "Cuentos de hadas",
+      "description": "Cuenta cuentos de hadas de H.C. Andersen y los Hermanos Grimm.",
+      "examples": [
+        "cu\u00e9ntame el cuento de Cenicienta",
+        "l\u00e9eme un cuento de hadas",
+        "contin\u00faa el cuento"
+      ]
+    },
+    "fr-fr": {
+      "name": "Contes de f\u00e9es",
+      "description": "Raconte des contes de f\u00e9es de H.C. Andersen et des Fr\u00e8res Grimm.",
+      "examples": [
+        "raconte-moi l'histoire de Cendrillon",
+        "lis-moi un conte de f\u00e9es",
+        "continue l'histoire"
+      ]
+    },
+    "it-it": {
+      "name": "Fiabe",
+      "description": "Racconta fiabe di H.C. Andersen e dei Fratelli Grimm.",
+      "examples": [
+        "raccontami la storia di Cenerentola",
+        "leggimi una fiaba",
+        "continua la storia"
+      ]
+    },
+    "nl-nl": {
+      "name": "Sprookjes",
+      "description": "Vertelt sprookjes van H.C. Andersen en de Gebroeders Grimm.",
+      "examples": [
+        "vertel me het verhaal van Assepoester",
+        "lees me een sprookje voor",
+        "ga verder met het verhaal"
+      ]
+    },
+    "pt-pt": {
+      "name": "Contos de fadas",
+      "description": "Conta contos dos Irm\u00e3os Grimm (apenas Grimm neste idioma - sem hist\u00f3rias de Andersen em portugu\u00eas).",
+      "examples": [
+        "conta-me a hist\u00f3ria da Cinderela",
+        "l\u00ea-me um conto",
+        "continua a hist\u00f3ria"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2019-02-03T18:26:11Z",
   "last_updated": "2026-07-21T00:32:27.512227Z",
   "is_new_repo": false,

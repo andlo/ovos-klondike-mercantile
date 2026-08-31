@@ -50,7 +50,53 @@
     "es-es",
     "fr-fr"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Geometritr\u00e6ning",
+      "description": "Geometritr\u00e6ning - quizzer og undervisning i begreber, formler og pythagoras' s\u00e6tning. Fuldst\u00e6ndig offline.",
+      "examples": [
+        "quiz mig i geometribegreber",
+        "quiz mig i areal og omkreds",
+        "quiz mig i pythagoras",
+        "l\u00e6r mig om termer",
+        "quiz mig i det du l\u00e6rte mig"
+      ]
+    },
+    "de-de": {
+      "name": "Geometrietraining",
+      "description": "Geometrietraining - Quiz und Lehr-dann-\u00fcben f\u00fcr Begriffe, Formeln und den Satz des Pythagoras. Vollst\u00e4ndig offline.",
+      "examples": [
+        "quiz mich zu geometriebegriffen",
+        "quiz mich zu fl\u00e4che und umfang",
+        "quiz mich zu pythagoras",
+        "bring mir etwas \u00fcber begriffe bei",
+        "quiz mich zu dem was du mir beigebracht hast"
+      ]
+    },
+    "es-es": {
+      "name": "Entrenamiento de geometr\u00eda",
+      "description": "Entrenamiento de geometr\u00eda - cuestionarios y aprendizaje de t\u00e9rminos, f\u00f3rmulas y el teorema de Pit\u00e1goras. Totalmente sin conexi\u00f3n.",
+      "examples": [
+        "preg\u00fantame sobre t\u00e9rminos de geometr\u00eda",
+        "preg\u00fantame sobre \u00e1rea y per\u00edmetro",
+        "preg\u00fantame sobre pit\u00e1goras",
+        "ens\u00e9\u00f1ame sobre t\u00e9rminos",
+        "preg\u00fantame sobre lo que me ense\u00f1aste"
+      ]
+    },
+    "fr-fr": {
+      "name": "Entra\u00eenement de g\u00e9om\u00e9trie",
+      "description": "Entra\u00eenement de g\u00e9om\u00e9trie - quiz et apprentissage des termes, formules et du th\u00e9or\u00e8me de Pythagore. Enti\u00e8rement hors ligne.",
+      "examples": [
+        "interroge-moi sur les termes de g\u00e9om\u00e9trie",
+        "interroge-moi sur l'aire et le p\u00e9rim\u00e8tre",
+        "interroge-moi sur pythagore",
+        "apprends-moi les termes",
+        "interroge-moi sur ce que tu m'as appris"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-17T10:58:37Z",
   "last_updated": "2026-08-17T17:48:43.333498Z",
   "is_new_repo": true,

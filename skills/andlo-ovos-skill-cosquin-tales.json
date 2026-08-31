@@ -46,7 +46,17 @@
     "en-us",
     "fr-fr"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "fr-fr": {
+      "name": "Contes de Cosquin (fournisseur)",
+      "description": "Fournisseur des contes populaires de Lorraine d'Emmanuel Cosquin pour ovos-common-reading-pipeline-plugin. Uniquement en fran\u00e7ais, sans traduction.",
+      "examples": [
+        "Raconte-moi une histoire de cosquin",
+        "Lis-moi une histoire de lorraine"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T22:16:02Z",
   "last_updated": "2026-07-25T22:06:02.217024Z",
   "is_new_repo": false,

@@ -52,7 +52,67 @@
     "nl-nl",
     "pt-pt"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "Enhedskonverter",
+      "description": "Lokal, offline enhedskonvertering - ingen cloud-afh\u00e6ngighed, ingen API-n\u00f8gle. D\u00e6kker l\u00e6ngde, masse, temperatur, tid, hastighed, areal, volumen, vinkel, densitet, tryk, kraft, energi, effekt, moment, acceleration, koncentration, computer og flow.",
+      "examples": [
+        "konverter 10 centimeter til tommer",
+        "hvor mange fod er 2 meter",
+        "konverter 100 celsius til fahrenheit",
+        "hvor mange kilogram er 2 ton"
+      ]
+    },
+    "de-de": {
+      "name": "Einheitenumrechner",
+      "description": "Lokale, offline Einheitenumrechnung - keine Cloud-Abh\u00e4ngigkeit, kein API-Schl\u00fcssel. Erster maschinell \u00fcbersetzter Entwurf, noch nicht von Muttersprachlern gepr\u00fcft.",
+      "examples": [
+        "konvertiere 10 Zentimeter in Zoll",
+        "wie viele Fu\u00df sind 2 Meter"
+      ]
+    },
+    "es-es": {
+      "name": "Conversor de unidades",
+      "description": "Conversi\u00f3n de unidades local y offline - sin dependencia de la nube, sin clave de API. Primer borrador con traducci\u00f3n autom\u00e1tica, a\u00fan no verificado por un hablante nativo.",
+      "examples": [
+        "convierte 10 cent\u00edmetros a pulgadas",
+        "cu\u00e1ntos pies son 2 metros"
+      ]
+    },
+    "fr-fr": {
+      "name": "Convertisseur d'unit\u00e9s",
+      "description": "Conversion d'unit\u00e9s locale et hors ligne - aucune d\u00e9pendance au cloud, aucune cl\u00e9 API. Premi\u00e8re version traduite automatiquement, pas encore v\u00e9rifi\u00e9e par un locuteur natif.",
+      "examples": [
+        "convertis 10 centim\u00e8tres en pouces",
+        "combien de pieds font 2 m\u00e8tres"
+      ]
+    },
+    "it-it": {
+      "name": "Convertitore di unit\u00e0",
+      "description": "Conversione di unit\u00e0 locale e offline - nessuna dipendenza dal cloud, nessuna chiave API. Prima bozza tradotta automaticamente, non ancora verificata da un madrelingua.",
+      "examples": [
+        "converti 10 centimetri in pollici",
+        "quanti piedi sono 2 metri"
+      ]
+    },
+    "nl-nl": {
+      "name": "Eenhedenomrekenaar",
+      "description": "Lokale, offline eenhedenomrekening - geen cloud-afhankelijkheid, geen API-sleutel. Eerste machinaal vertaalde versie, nog niet geverifieerd door een moedertaalspreker.",
+      "examples": [
+        "converteer 10 centimeter naar inch",
+        "hoeveel voet is 2 meter"
+      ]
+    },
+    "pt-pt": {
+      "name": "Conversor de unidades",
+      "description": "Convers\u00e3o de unidades local e offline - sem depend\u00eancia da cloud, sem chave de API. Primeiro rascunho traduzido automaticamente, ainda n\u00e3o verificado por um falante nativo.",
+      "examples": [
+        "converte 10 cent\u00edmetros para polegadas",
+        "quantos p\u00e9s s\u00e3o 2 metros"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T14:09:15Z",
   "last_updated": "2026-08-17T19:25:54.801848Z",
   "is_new_repo": true,

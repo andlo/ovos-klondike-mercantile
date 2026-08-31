@@ -51,7 +51,57 @@
     "it-it",
     "nl-nl"
   ],
-  "in_ovos_localize": true,
+  "locale_content": {
+    "da-dk": {
+      "name": "H.C. Andersens Eventyr (udbyder)",
+      "description": "H.C. Andersens eventyr, udbyder til ovos-common-reading-pipeline-plugin. Ingen selvst\u00e6ndig stemmegr\u00e6nseflade.",
+      "examples": [
+        "Fort\u00e6l mig en historie fra andersen",
+        "Fort\u00e6l mig historien om den lille havfrue"
+      ]
+    },
+    "de-de": {
+      "name": "Andersens M\u00e4rchen (Anbieter)",
+      "description": "M\u00e4rchen von Hans Christian Andersen, Anbieter f\u00fcr ovos-common-reading-pipeline-plugin. Keine eigenst\u00e4ndige Sprachschnittstelle.",
+      "examples": [
+        "Erz\u00e4hl mir eine Geschichte von andersen",
+        "Lies mir eine Geschichte von hans christian andersen"
+      ]
+    },
+    "es-es": {
+      "name": "Cuentos de Andersen (proveedor)",
+      "description": "Cuentos de Hans Christian Andersen, proveedor para ovos-common-reading-pipeline-plugin. Sin interfaz de voz independiente.",
+      "examples": [
+        "Cu\u00e9ntame un cuento de andersen",
+        "L\u00e9eme un cuento de hans christian andersen"
+      ]
+    },
+    "fr-fr": {
+      "name": "Contes d'Andersen (fournisseur)",
+      "description": "Contes de Hans Christian Andersen, fournisseur pour ovos-common-reading-pipeline-plugin. Pas d'interface vocale autonome.",
+      "examples": [
+        "Raconte-moi une histoire de andersen",
+        "Lis-moi une histoire de hans christian andersen"
+      ]
+    },
+    "it-it": {
+      "name": "Fiabe di Andersen (fornitore)",
+      "description": "Fiabe di Hans Christian Andersen, fornitore per ovos-common-reading-pipeline-plugin. Nessuna interfaccia vocale autonoma.",
+      "examples": [
+        "Raccontami una storia di andersen",
+        "Leggimi una storia di hans christian andersen"
+      ]
+    },
+    "nl-nl": {
+      "name": "Andersens Sprookjes (aanbieder)",
+      "description": "Sprookjes van Hans Christian Andersen, aanbieder voor ovos-common-reading-pipeline-plugin. Geen zelfstandige spraakinterface.",
+      "examples": [
+        "Vertel me een verhaal van andersen",
+        "Lees me een verhaal van hans christian andersen"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T12:16:45Z",
   "last_updated": "2026-07-25T22:06:02.065313Z",
   "is_new_repo": false,
