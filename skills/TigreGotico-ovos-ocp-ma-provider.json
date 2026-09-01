@@ -1,0 +1,46 @@
+{
+  "id": "TigreGotico-ovos-ocp-ma-provider",
+  "skill_id": null,
+  "name": "ovos-ocp-ma-provider",
+  "description": "OVOS OCP skills as a Music Assistant music provider",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/TigreGotico/ovos-ocp-ma-provider",
+  "package_name": "ovos-ocp-ma-provider",
+  "pypi_version": null,
+  "license": null,
+  "archived": false,
+  "author": "TigreGotico",
+  "tier": 2,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Install it as a Music Assistant provider plugin with [music-assistant-plugin-manager](https://github.com/TigreGotico/music-assistant-plugin-manager), not with a bare `pip install`:\n\nmusic-assistant-community install ovos-ocp-ma-provider\n\nThe plugin manager installs the package into the Music Assistant server's own environment and registers it under the `music_assistant.provider` entry point, which a manual `pip install` into an unrelated environment will not do.\n\nThis package needs Python 3.11 or later, and a Music Assistant instance with a reachable OVOS messagebus."
+    },
+    {
+      "heading": "Configuration",
+      "content": "| Setting | Default | Description |\n| --- | --- | --- |\n| OVOS messagebus host | `localhost` | Hostname or IP of the OVOS messagebus. Must be reachable from Music Assistant. |\n| OVOS messagebus port | `8181` | Port of the OVOS messagebus. |\n| OCP search timeout (seconds) | `10` | How long the provider waits for OCP skills to respond. Skills can extend this through the OCP protocol. |\n| Minimum match confidence | `50` | OCP results below this score are discarded. Uses OCP's own 0-100 `match_confidence` scale. |"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-04-29T11:01:45Z",
+  "last_updated": "2026-09-01T23:07:18Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

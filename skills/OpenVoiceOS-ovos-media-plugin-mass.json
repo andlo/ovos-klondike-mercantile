@@ -1,0 +1,46 @@
+{
+  "id": "OpenVoiceOS-ovos-media-plugin-mass",
+  "skill_id": null,
+  "name": "ovos-media-plugin-mass",
+  "description": "Music Assistant **playback backend** for OVOS. It controls",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mass",
+  "package_name": "ovos-media-plugin-mass",
+  "pypi_version": "0.0.2a6",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Audio Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-media-plugin-mass"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The easiest way is the bundled `ovos-mass-autoconfigure` command, which scans your\nserver and writes both the legacy and `ovos-media` player entries into\n`mycroft.conf`:\n\n$ ovos-mass-autoconfigure\nThis script will auto configure Music Assistant devices under your mycroft.conf\nMake sure your Music Assistant server is accessible from this device\nPlease enter your Music Assistant server url: http://192.168.1.100:8095\n\nScanning...\n    - Found player: HomeLabRenderer - dlna:uuid:4b778a71-0499-485a-a5a4-88140603fba9\n\nmycroft.conf updated!\n\nIt emits configuration for both stacks:\n\n// Legacy Audio Service:\n{\"backends\": {\"mass-HomeLabRenderer:dlna\": {\n    \"active\": true, \"type\": \"ovos_mass\", \"player_type\": \"dlna\",\n    \"identifier\": \"uuid:4b778a71-0499-485a-a5a4-88140603fba9\",\n    \"url\": \"http://192\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-09-07T16:44:17Z",
+  "last_updated": "2026-09-01T23:01:00.390023Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
