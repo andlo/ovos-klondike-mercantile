@@ -18,7 +18,7 @@
   "type_group": "Tool",
   "stars": 1,
   "forks": 0,
-  "open_issues": 2,
+  "open_issues": 1,
   "on_pypi": false,
   "has_release": false,
   "in_ovos_store": false,
@@ -26,12 +26,17 @@
   "connectivity": null,
   "requires_api_key": false,
   "settings_fields": [],
-  "setup_notes": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-org-website"
+    }
+  ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2024-02-18T16:24:57Z",
-  "last_updated": "2026-07-31T22:11:01Z",
+  "last_updated": "2026-09-01T17:20:40Z",
   "is_new_repo": false,
   "is_recently_updated": true
 }

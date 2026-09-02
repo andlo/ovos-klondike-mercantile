@@ -9,7 +9,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-media-provider-mass",
   "package_name": "ovos-media-provider-mass",
-  "pypi_version": null,
+  "pypi_version": "0.0.1a5",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -18,8 +18,8 @@
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
-  "open_issues": 1,
-  "on_pypi": false,
+  "open_issues": 2,
+  "on_pypi": true,
   "has_release": false,
   "in_ovos_store": false,
   "pipeline": null,
@@ -29,7 +29,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install ovos-media-provider-mass\n\n> **Note (ovos-media sprint):** the `opm.media.provider` plugin type lives in\n> `ovos-plugin-manager`'s `feat/media-provider-plugin-type` branch and is not on\n> PyPI yet, so until it ships you need:\n> ```bash\n> pip install git+https://github.com/OpenVoiceOS/ovos-plugin-manager@feat/media-provider-plugin-type\n> ```\n> CI installs it the same way. `opm-check` is wired back once that support is released."
+      "content": "pip install ovos-media-provider-mass\n\nThe `opm.media.provider` plugin type is available in `ovos-plugin-manager` 2.11.6a1 and later."
     },
     {
       "heading": "Configure",
@@ -40,7 +40,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-06-23T17:15:35Z",
-  "last_updated": "2026-08-13T18:40:52Z",
+  "last_updated": "2026-09-02T15:51:31.707243Z",
   "is_new_repo": false,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }

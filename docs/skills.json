@@ -839,7 +839,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2018-04-09T05:39:31Z",
-    "last_updated": "2026-07-04T00:05:59Z",
+    "last_updated": "2026-09-02T18:37:48Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -1210,7 +1210,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 5,
-    "open_issues": 11,
+    "open_issues": 12,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -9452,7 +9452,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
@@ -9493,7 +9493,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-cli",
     "package_name": "ovos-media-plugin-cli",
-    "pypi_version": "0.0.3a1",
+    "pypi_version": "0.0.4a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9524,9 +9524,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-25T17:01:29Z",
-    "last_updated": "2026-08-13T11:28:28.720746Z",
+    "last_updated": "2026-09-02T18:40:52.037901Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-ffplay",
@@ -9542,7 +9542,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay",
     "package_name": "ovos-media-plugin-ffplay",
-    "pypi_version": "0.0.3a4",
+    "pypi_version": "0.0.5a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9573,9 +9573,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-01-28T18:41:30Z",
-    "last_updated": "2026-07-31T22:34:06.579798Z",
+    "last_updated": "2026-09-02T18:39:56.245406Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-mass",
@@ -9588,7 +9588,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mass",
     "package_name": "ovos-media-plugin-mass",
-    "pypi_version": "0.0.2a6",
+    "pypi_version": "0.1.1a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9612,14 +9612,14 @@
       },
       {
         "heading": "Configuration",
-        "content": "The easiest way is the bundled `ovos-mass-autoconfigure` command, which scans your\nserver and writes both the legacy and `ovos-media` player entries into\n`mycroft.conf`:\n\n$ ovos-mass-autoconfigure\nThis script will auto configure Music Assistant devices under your mycroft.conf\nMake sure your Music Assistant server is accessible from this device\nPlease enter your Music Assistant server url: http://192.168.1.100:8095\n\nScanning...\n    - Found player: HomeLabRenderer - dlna:uuid:4b778a71-0499-485a-a5a4-88140603fba9\n\nmycroft.conf updated!\n\nIt emits configuration for both stacks:\n\n// Legacy Audio Service:\n{\"backends\": {\"mass-HomeLabRenderer:dlna\": {\n    \"active\": true, \"type\": \"ovos_mass\", \"player_type\": \"dlna\",\n    \"identifier\": \"uuid:4b778a71-0499-485a-a5a4-88140603fba9\",\n    \"url\": \"http://192\u2026"
+        "content": "The easiest way is the bundled `ovos-mass-autoconfigure` command, which scans your\nserver and writes both the legacy and `ovos-media` player entries into\n`mycroft.conf`:\n\n$ ovos-mass-autoconfigure\nThis script will auto configure Music Assistant devices under your mycroft.conf\nMake sure your Music Assistant server is accessible from this device\nPlease enter your Music Assistant server url: http://192.168.1.100:8095\n\nScanning...\n    - Found player: HomeLabRenderer - dlna:uuid:4b778a71-0499-485a-a5a4-88140603fba9\n\nmycroft.conf updated!\n\nWhen more than one player is found, it lists them and prompts for the\ndefault (the only player written to the legacy `Audio` backends and marked\n`active: true` on the `ovos-media` side \u2014 every other discovered player is\nwritten with `active: false`):\n\n$ ovos-m\u2026"
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-07T16:44:17Z",
-    "last_updated": "2026-09-01T23:01:00.390023Z",
+    "last_updated": "2026-09-02T19:30:07.039612Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -9637,7 +9637,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mplayer",
     "package_name": "ovos-media-plugin-mplayer",
-    "pypi_version": "0.2.0a3",
+    "pypi_version": "0.2.1a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9646,7 +9646,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -9668,9 +9668,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-08-06T13:37:47Z",
-    "last_updated": "2026-07-31T22:33:45.193819Z",
+    "last_updated": "2026-09-02T18:39:44.452583Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-mpv",
@@ -9687,7 +9687,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mpv",
     "package_name": "ovos-media-plugin-mpv",
-    "pypi_version": "1.0.1a1",
+    "pypi_version": "1.0.2a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9696,7 +9696,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -9714,9 +9714,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-07-17T21:47:35Z",
-    "last_updated": "2026-08-13T11:28:40.742307Z",
+    "last_updated": "2026-09-02T18:40:49.368370Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-qt5",
@@ -9793,7 +9793,7 @@
     "type_group": "Plugin",
     "stars": 6,
     "forks": 5,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -9833,7 +9833,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-vlc",
     "package_name": "ovos-media-plugin-vlc",
-    "pypi_version": "0.2.0a2",
+    "pypi_version": "0.2.1a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9864,7 +9864,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-04-10T02:13:20Z",
-    "last_updated": "2026-06-25T18:31:36.921254Z",
+    "last_updated": "2026-09-02T18:39:11.210608Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -10013,7 +10013,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-local",
     "package_name": "ovos-media-provider-local",
-    "pypi_version": null,
+    "pypi_version": "0.0.1a5",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10023,7 +10023,7 @@
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
@@ -10044,9 +10044,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-13T18:47:32Z",
-    "last_updated": "2026-08-13T18:48:17Z",
+    "last_updated": "2026-09-02T18:40:52.274749Z",
     "is_new_repo": true,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-mass",
@@ -10059,7 +10059,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-mass",
     "package_name": "ovos-media-provider-mass",
-    "pypi_version": null,
+    "pypi_version": "0.0.1a5",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10068,8 +10068,8 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 1,
-    "on_pypi": false,
+    "open_issues": 2,
+    "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
@@ -10079,7 +10079,7 @@
     "setup_notes": [
       {
         "heading": "Install",
-        "content": "pip install ovos-media-provider-mass\n\n> **Note (ovos-media sprint):** the `opm.media.provider` plugin type lives in\n> `ovos-plugin-manager`'s `feat/media-provider-plugin-type` branch and is not on\n> PyPI yet, so until it ships you need:\n> ```bash\n> pip install git+https://github.com/OpenVoiceOS/ovos-plugin-manager@feat/media-provider-plugin-type\n> ```\n> CI installs it the same way. `opm-check` is wired back once that support is released."
+        "content": "pip install ovos-media-provider-mass\n\nThe `opm.media.provider` plugin type is available in `ovos-plugin-manager` 2.11.6a1 and later."
       },
       {
         "heading": "Configure",
@@ -10090,9 +10090,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-23T17:15:35Z",
-    "last_updated": "2026-08-13T18:40:52Z",
+    "last_updated": "2026-09-02T15:51:31.707243Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-news",
@@ -10105,7 +10105,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-news",
     "package_name": "ovos-media-provider-news",
-    "pypi_version": null,
+    "pypi_version": "0.0.1a6",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10115,7 +10115,7 @@
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
@@ -10136,9 +10136,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-25T22:45:39Z",
-    "last_updated": "2026-08-13T18:40:37Z",
+    "last_updated": "2026-09-02T19:24:59.280469Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-pyradios",
@@ -10151,7 +10151,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-pyradios",
     "package_name": "ovos-media-provider-pyradios",
-    "pypi_version": null,
+    "pypi_version": "0.0.1a4",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10161,11 +10161,11 @@
     "stars": 0,
     "forks": 0,
     "open_issues": 0,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": null,
+    "connectivity": "online",
     "requires_api_key": false,
     "settings_fields": [],
     "setup_notes": [
@@ -10182,7 +10182,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-22T23:10:58Z",
-    "last_updated": "2026-08-13T18:40:54Z",
+    "last_updated": "2026-08-31T13:57:20.330928Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -10289,7 +10289,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-somafm",
     "package_name": "ovos-media-provider-somafm",
-    "pypi_version": "0.0.1a4",
+    "pypi_version": "0.0.1a5",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10320,9 +10320,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-22T23:10:07Z",
-    "last_updated": "2026-08-14T12:08:42.857300Z",
+    "last_updated": "2026-09-02T18:40:18.050674Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-soundcloud",
@@ -10427,7 +10427,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-tunein",
     "package_name": "ovos-media-provider-tunein",
-    "pypi_version": null,
+    "pypi_version": "0.0.1a4",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10437,7 +10437,7 @@
     "stars": 0,
     "forks": 0,
     "open_issues": 0,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
@@ -10454,7 +10454,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-22T23:10:00Z",
-    "last_updated": "2026-08-13T18:41:06Z",
+    "last_updated": "2026-08-31T13:57:06.168923Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -10469,7 +10469,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-youtube",
     "package_name": "ovos-media-provider-youtube",
-    "pypi_version": null,
+    "pypi_version": "0.0.1a4",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10479,7 +10479,7 @@
     "stars": 0,
     "forks": 0,
     "open_issues": 0,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
@@ -10500,7 +10500,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-22T22:52:52Z",
-    "last_updated": "2026-08-13T18:41:01Z",
+    "last_updated": "2026-08-31T13:57:18.488076Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -10594,7 +10594,7 @@
     "repo_created_at": "2026-06-10T14:57:42Z",
     "last_updated": "2026-07-31T22:28:43.838745Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-messagebus",
@@ -10653,7 +10653,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-messagebus-chat-plugin",
     "package_name": "ovos-messagebus-chat-plugin",
-    "pypi_version": "0.1.2a2",
+    "pypi_version": "0.1.3a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10662,7 +10662,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -10684,7 +10684,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-05-18T16:19:42Z",
-    "last_updated": "2026-07-31T22:28:30.302839Z",
+    "last_updated": "2026-08-31T12:35:13.223217Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -10828,7 +10828,7 @@
     "repo_created_at": "2023-05-17T19:18:03Z",
     "last_updated": "2026-07-31T22:25:54.796462Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-microphone-plugin-sounddevice",
@@ -11088,7 +11088,7 @@
     "type_group": "Tool",
     "stars": 4,
     "forks": 5,
-    "open_issues": 12,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11418,7 +11418,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 3,
-    "open_issues": 21,
+    "open_issues": 23,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11648,7 +11648,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Chat Plugin",
+    "component_type": "Summarizer Plugin",
     "type_group": "Plugin",
     "stars": 9,
     "forks": 7,
@@ -11678,7 +11678,7 @@
     "id": "OpenVoiceOS-ovos-opendata-server",
     "skill_id": null,
     "name": "ovos-opendata-server",
-    "description": "A **FastAPI service** for collecting anonymized OVOS usage metrics and data with an **interactive Streamlit dashboard** for visualization.",
+    "description": "A small FastAPI service that turns opt-in telemetry from OVOS voice devices into",
     "examples": [],
     "tags": [
       "ilenia",
@@ -11688,14 +11688,14 @@
     "category": "Other",
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-opendata-server",
-    "package_name": null,
+    "package_name": "ovos-opendata-server",
     "pypi_version": null,
-    "license": null,
+    "license": "NOASSERTION",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": null,
-    "component_type": "Infrastructure",
-    "type_group": "Infrastructure",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
     "stars": 1,
     "forks": 0,
     "open_issues": 10,
@@ -11708,15 +11708,15 @@
     "settings_fields": [],
     "setup_notes": [
       {
-        "heading": "**\ud83d\udee0\ufe0f Setup & Installation**",
-        "content": "### ** Clone the Repository**  \ngit clone https://github.com/TigreGotico/metrics-server-docker\ncd metrics-server-docker\n\n### ** Start the Services**  \ndocker-compose up --build -d\nThis will start:  \n- **FastAPI server** on `http://localhost:8000`  \n- **PostgreSQL database**  \n- **Streamlit dashboard** on `http://localhost:8501`  \n\n---"
+        "heading": "Configuration",
+        "content": "All configuration is via environment variables (`.env.example` provided):\n\n| Variable | Required | Default | Description |\n|----------|----------|---------|-------------|\n| `DATABASE_URL` | No | `sqlite:///./ovos_opendata.db` | Database DSN. Defaults to a local SQLite file for easy local/dev use \u2014 **production deployments should set this to a PostgreSQL DSN**. |\n| `MAX_AUDIO_SIZE_MB` | No | `10` | Audio upload size cap in MB |\n| `API_KEY` | No | unset | If set, intake endpoints also require a matching `X-API-Key` header |\n| `RATE_LIMIT` | No | `60/minute` | Per-IP rate limit applied to intake endpoints |\n| `DASHBOARD_CACHE_TTL` | No | `60` | Seconds the `/dashboard/stats` aggregation is cached |\n\nSettings are loaded via `app/config.py` (pydantic-settings), which also reads a\n`.env` file if\u2026"
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-03-07T22:47:46Z",
-    "last_updated": "2026-07-23T14:21:27Z",
+    "last_updated": "2026-09-02T12:40:12Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -11782,7 +11782,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 1,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -11790,12 +11790,17 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-org-website"
+      }
+    ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-02-18T16:24:57Z",
-    "last_updated": "2026-07-31T22:11:01Z",
+    "last_updated": "2026-09-01T17:20:40Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -11823,7 +11828,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 3,
-    "open_issues": 19,
+    "open_issues": 28,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11867,7 +11872,7 @@
     "type_group": "Plugin",
     "stars": 8,
     "forks": 6,
-    "open_issues": 27,
+    "open_issues": 28,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11882,7 +11887,7 @@
       },
       {
         "heading": "Pipeline Configuration",
-        "content": "When a persona is active, you have two options:\n- send every utterance to the persona and ignore all skills, or\n- let high-confidence skills match before the persona does.\n\nWhere you place `\"ovos-persona-pipeline-plugin-high\"` in the pipeline decides which behavior you get. `\"ovos-persona-pipeline-plugin-low\"` handles utterances even when no persona is explicitly active.\n\n#### Option 1: send all utterances to the active persona\n\nWith this option, the persona has full control over user utterances. It will most likely fail to perform actions such as playing music, telling the time, or setting alarms. You must explicitly deactivate the persona to use that functionality.\n\nAdd the persona pipeline before the `_high` pipeline matchers. The `\"...\"` below is a placeholder for your existing pipelin\u2026"
+        "content": "Where you place `\"ovos-persona-pipeline-plugin-high\"` in the pipeline decides whether the active persona gets full control of an utterance, or only handles it after high-confidence skills fail to match. `\"ovos-persona-pipeline-plugin-low\"` handles utterances as a fallback even when no persona is explicitly active, replacing [OpenVoiceOS/ovos-skill-fallback-chatgpt](https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt).\n\nSee the [OVOS technical manual: Persona Pipeline](https://tigregotico.github.io/ovos-technical-manual/persona-pipeline/) for the pipeline configuration strategies and example `mycroft.conf` snippets.\n\n---"
       }
     ],
     "languages": [],
@@ -11915,7 +11920,7 @@
     "type_group": "Tool",
     "stars": 3,
     "forks": 2,
-    "open_issues": 40,
+    "open_issues": 41,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14093,7 +14098,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 6,
+    "open_issues": 2,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -14106,9 +14111,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-06T11:10:29Z",
-    "last_updated": "2026-08-27T17:45:44Z",
+    "last_updated": "2026-09-02T22:50:31Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-plugin-linguonnx",
@@ -14130,7 +14135,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 13,
+    "open_issues": 12,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14149,7 +14154,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-02T10:55:28Z",
     "last_updated": "2026-08-13T22:32:36.716559Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -14177,7 +14182,7 @@
     "type_group": "Tool",
     "stars": 14,
     "forks": 14,
-    "open_issues": 54,
+    "open_issues": 57,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14267,7 +14272,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 13,
+    "open_issues": 19,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14381,7 +14386,7 @@
     "repo_created_at": "2025-07-17T23:17:04Z",
     "last_updated": "2026-07-31T23:55:03.139562Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "svhozt-ovos-rasa-skills",
@@ -14786,7 +14791,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 4,
-    "open_issues": 35,
+    "open_issues": 41,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -14910,7 +14915,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 3,
-    "open_issues": 16,
+    "open_issues": 18,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -15040,7 +15045,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 1,
-    "open_issues": 20,
+    "open_issues": 23,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -15134,7 +15139,7 @@
     "type_group": "Skill",
     "stars": 6,
     "forks": 4,
-    "open_issues": 12,
+    "open_issues": 14,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -15193,7 +15198,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
-    "open_issues": 11,
+    "open_issues": 14,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,

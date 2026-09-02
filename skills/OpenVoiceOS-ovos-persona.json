@@ -20,7 +20,7 @@
   "type_group": "Plugin",
   "stars": 8,
   "forks": 6,
-  "open_issues": 27,
+  "open_issues": 28,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -35,7 +35,7 @@
     },
     {
       "heading": "Pipeline Configuration",
-      "content": "When a persona is active, you have two options:\n- send every utterance to the persona and ignore all skills, or\n- let high-confidence skills match before the persona does.\n\nWhere you place `\"ovos-persona-pipeline-plugin-high\"` in the pipeline decides which behavior you get. `\"ovos-persona-pipeline-plugin-low\"` handles utterances even when no persona is explicitly active.\n\n#### Option 1: send all utterances to the active persona\n\nWith this option, the persona has full control over user utterances. It will most likely fail to perform actions such as playing music, telling the time, or setting alarms. You must explicitly deactivate the persona to use that functionality.\n\nAdd the persona pipeline before the `_high` pipeline matchers. The `\"...\"` below is a placeholder for your existing pipelin\u2026"
+      "content": "Where you place `\"ovos-persona-pipeline-plugin-high\"` in the pipeline decides whether the active persona gets full control of an utterance, or only handles it after high-confidence skills fail to match. `\"ovos-persona-pipeline-plugin-low\"` handles utterances as a fallback even when no persona is explicitly active, replacing [OpenVoiceOS/ovos-skill-fallback-chatgpt](https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt).\n\nSee the [OVOS technical manual: Persona Pipeline](https://tigregotico.github.io/ovos-technical-manual/persona-pipeline/) for the pipeline configuration strategies and example `mycroft.conf` snippets.\n\n---"
     }
   ],
   "languages": [],

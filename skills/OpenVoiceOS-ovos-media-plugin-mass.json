@@ -9,7 +9,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mass",
   "package_name": "ovos-media-plugin-mass",
-  "pypi_version": "0.0.2a6",
+  "pypi_version": "0.1.1a1",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -33,14 +33,14 @@
     },
     {
       "heading": "Configuration",
-      "content": "The easiest way is the bundled `ovos-mass-autoconfigure` command, which scans your\nserver and writes both the legacy and `ovos-media` player entries into\n`mycroft.conf`:\n\n$ ovos-mass-autoconfigure\nThis script will auto configure Music Assistant devices under your mycroft.conf\nMake sure your Music Assistant server is accessible from this device\nPlease enter your Music Assistant server url: http://192.168.1.100:8095\n\nScanning...\n    - Found player: HomeLabRenderer - dlna:uuid:4b778a71-0499-485a-a5a4-88140603fba9\n\nmycroft.conf updated!\n\nIt emits configuration for both stacks:\n\n// Legacy Audio Service:\n{\"backends\": {\"mass-HomeLabRenderer:dlna\": {\n    \"active\": true, \"type\": \"ovos_mass\", \"player_type\": \"dlna\",\n    \"identifier\": \"uuid:4b778a71-0499-485a-a5a4-88140603fba9\",\n    \"url\": \"http://192\u2026"
+      "content": "The easiest way is the bundled `ovos-mass-autoconfigure` command, which scans your\nserver and writes both the legacy and `ovos-media` player entries into\n`mycroft.conf`:\n\n$ ovos-mass-autoconfigure\nThis script will auto configure Music Assistant devices under your mycroft.conf\nMake sure your Music Assistant server is accessible from this device\nPlease enter your Music Assistant server url: http://192.168.1.100:8095\n\nScanning...\n    - Found player: HomeLabRenderer - dlna:uuid:4b778a71-0499-485a-a5a4-88140603fba9\n\nmycroft.conf updated!\n\nWhen more than one player is found, it lists them and prompts for the\ndefault (the only player written to the legacy `Audio` backends and marked\n`active: true` on the `ovos-media` side \u2014 every other discovered player is\nwritten with `active: false`):\n\n$ ovos-m\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2025-09-07T16:44:17Z",
-  "last_updated": "2026-09-01T23:01:00.390023Z",
+  "last_updated": "2026-09-02T19:30:07.039612Z",
   "is_new_repo": false,
   "is_recently_updated": false
 }
