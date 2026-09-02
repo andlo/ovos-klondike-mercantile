@@ -22,7 +22,7 @@
   "type_group": "Tool",
   "stars": 3,
   "forks": 14,
-  "open_issues": 35,
+  "open_issues": 37,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -33,7 +33,7 @@
   "setup_notes": [
     {
       "heading": "OVOS-config",
-      "content": "helper package to interact with mycroft config\n\n## Command Line usage\n\nA small helper tool is included to quickly show, get or set config values\n\n<img width=\"1214\" alt=\"ovos-config\" src=\"https://user-images.githubusercontent.com/25036977/219516755-b454f28f-2a34-4caf-a91f-6182ff68049a.png\">\n\nQuick rundown (cli):\n\n* `ovos-config get`\n  \n  * Loose search (search a key or parts therof):\\\n  \\\nGiven an entry of\n\n        {'PHAL': {\n                'ovos-PHAL-plugin-system': {\n                        'enabled': True\n                },\n                'ovos-PHAL-plugin-connectivity-events': {\n                        'enabled': True\n                },\n                ... \n        }\n\n    `ovos-config get -k phal` would yield  **all**  PHAL entries and present it to the user (and the path where they w\u2026"
+      "content": "helper package to interact with the OVOS configuration\n\n## Configuration stack\n\nOVOS merges several configuration files into a single configuration. They are\nloaded in the following order, with later layers overriding earlier ones:\n\n| Layer | Path | Written by |\n|-------|------|------------|\n| `DefaultConfig` | bundled `mycroft.conf` | OVOS (read only) |\n| `DistributionConfig` | `/usr/share/mycroft/mycroft.conf` | distribution/image maintainers (read only) |\n| `SystemConfig` | `/etc/mycroft/mycroft.conf` | system administrators (read only) |\n| `AssistantConfig` | `~/.config/mycroft/runtime.conf` | OVOS itself, at runtime |\n| `UserConfig` | `~/.config/mycroft/mycroft.conf` | the user |\n\nSo the effective priority is `user > assistant > system > distribution > default`.\n\n`AssistantConfig` (`r\u2026"
     }
   ],
   "languages": [],

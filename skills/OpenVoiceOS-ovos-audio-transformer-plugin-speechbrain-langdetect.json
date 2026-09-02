@@ -31,7 +31,12 @@
   "connectivity": null,
   "requires_api_key": false,
   "settings_fields": [],
-  "setup_notes": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-audio-transformer-plugin-speechbrain-langdetect"
+    }
+  ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,

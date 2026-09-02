@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-bidirectional-translation-plugin",
   "skill_id": null,
   "name": "ovos-bidirectional-translation-plugin",
-  "description": "This package includes a UtteranceTransformer plugin and a DialogTransformer plugin, they work together to allow OVOS to speak in ANY language",
+  "description": "This package holds two OVOS plugins: a `UtteranceTransformer` and a `DialogTransformer`. Together they let OVOS understand and answer in any language, even one the installed skills do not support directly.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -31,8 +31,12 @@
   "settings_fields": [],
   "setup_notes": [
     {
+      "heading": "Install",
+      "content": "pip install ovos-bidirectional-translation-plugin"
+    },
+    {
       "heading": "Configuration",
-      "content": "\"utterance_transformers\": {\n    \"ovos-utterance-translation-plugin\": {\n      \"bidirectional\": true,\n      \"verify_lang\": false,\n      \"ignore_invalid\": true,\n      \"translate_secondary_langs\": false\n    }\n},\n\"dialog_transformers\": {\n    \"ovos-dialog-translation-plugin\": {}\n}"
+      "content": "{\n  \"utterance_transformers\": {\n    \"ovos-utterance-translation-plugin\": {\n      \"bidirectional\": true,\n      \"verify_lang\": false,\n      \"ignore_invalid_langs\": true,\n      \"translate_secondary_langs\": false\n    }\n  },\n  \"dialog_transformers\": {\n    \"ovos-dialog-translation-plugin\": {}\n  }\n}"
     }
   ],
   "languages": [],

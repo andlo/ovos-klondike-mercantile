@@ -11,7 +11,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-media",
   "package_name": "ovos-media",
-  "pypi_version": "2.0.0a9",
+  "pypi_version": "2.2.0a1",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -20,7 +20,7 @@
   "type_group": "Tool",
   "stars": 3,
   "forks": 3,
-  "open_issues": 48,
+  "open_issues": 54,
   "on_pypi": true,
   "has_release": false,
   "in_ovos_store": false,
@@ -35,14 +35,14 @@
     },
     {
       "heading": "Configuration",
-      "content": "All configuration lives under the `\"media\"` key in `mycroft.conf`. The essentials:\n\n{\n  \"media\": {\n    // MPRIS / D-Bus integration (off by default)\n    \"enable_mpris\": false,\n    // let MPRIS pause/stop other media players on the system\n    \"manage_external_players\": false,\n\n    // order of preference per playback type; the first backend that can\n    // handle the URI wins. Users may also name a backend in the utterance.\n    \"preferred_audio_services\": [\"vlc\", \"mplayer\", \"cli\"],\n    \"preferred_video_services\": [\"vlc\"],\n\n    // declare the backends available to each playback type.\n    // \"module\" is the plugin's entry-point name; \"aliases\" are spoken names.\n    \"audio_players\": {\n      \"vlc\": { \"module\": \"ovos-media-audio-plugin-vlc\", \"aliases\": [\"VLC\"], \"active\": true },\n      \"cli\": { \"m\u2026"
+      "content": "All configuration lives under the `\"media\"` key in `mycroft.conf`. The essentials:\n\n{\n  \"media\": {\n    // MPRIS / D-Bus integration (off by default)\n    \"enable_mpris\": false,\n    // let MPRIS pause/stop other media players on the system\n    \"manage_external_players\": false,\n\n    // order of preference per playback type; the first backend that can\n    // handle the URI wins. Users may also name a backend in the utterance.\n    \"preferred_audio_services\": [\"vlc\", \"mplayer\", \"cli\"],\n    \"preferred_video_services\": [\"vlc\"],\n\n    // every installed backend plugin loads automatically; declare an entry\n    // here to customise its name/aliases/config, control its load order, or\n    // disable it with \"active\": false. \"module\" is the plugin's entry-point\n    // name; \"aliases\" are spoken names. a\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2024-01-09T00:18:26Z",
-  "last_updated": "2026-08-18T14:54:41.280936Z",
+  "last_updated": "2026-09-02T15:45:36.264389Z",
   "is_new_repo": false,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }

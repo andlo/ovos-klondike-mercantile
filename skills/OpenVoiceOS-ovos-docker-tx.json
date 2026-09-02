@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-docker-tx",
   "skill_id": null,
   "name": "ovos-docker-tx",
-  "description": "",
+  "description": "Docker image definitions for Open Voice OS translation (tx) microservices. Each image runs `ovos-translate-server` over HTTP and serves translation and language detection through a specific engine plugin.",
   "examples": [],
   "tags": [
     "docker",
@@ -21,7 +21,7 @@
   "type_group": "Infrastructure",
   "stars": 0,
   "forks": 0,
-  "open_issues": 2,
+  "open_issues": 1,
   "on_pypi": false,
   "has_release": false,
   "in_ovos_store": false,
@@ -29,12 +29,17 @@
   "connectivity": null,
   "requires_api_key": false,
   "settings_fields": [],
-  "setup_notes": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "This repo has no Python package. It only ships Dockerfiles and a build script. Build the images locally:\n\ndocker build -f base/Dockerfile -t smartgic/ovos-tx-server-base:alpha ./base\ndocker build -f nllb/Dockerfile -t smartgic/ovos-tx-server-nllb:alpha ./nllb\ndocker build -f google/Dockerfile -t smartgic/ovos-tx-server-google:alpha ./google\n\nThe engine images (`nllb`, `google`) build `FROM smartgic/ovos-tx-server-base:${TAG}`, so build the base image first, or pull it, before you build an engine image. Pass `--build-arg ALPHA=true` to install pre-release or git-based dependencies instead of the released packages."
+    }
+  ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2023-08-21T22:04:19Z",
-  "last_updated": "2026-07-31T16:16:19Z",
+  "last_updated": "2026-09-01T17:20:26Z",
   "is_new_repo": false,
   "is_recently_updated": true
 }

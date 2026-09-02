@@ -21,9 +21,9 @@
   "type_group": "Infrastructure",
   "stars": 64,
   "forks": 21,
-  "open_issues": 9,
+  "open_issues": 2,
   "on_pypi": false,
-  "has_release": false,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
   "connectivity": null,
@@ -32,14 +32,14 @@
   "setup_notes": [
     {
       "heading": "Configuration",
-      "content": "Defaults are defined in `docker-bake.hcl` and `scripts/bake.sh`:\n\n- `REGISTRY` (default `docker.io/smartgic`)\n- `TAG` and `VERSION` (default `alpha`)\n- `LATEST_TAG` (default `latest`, only applied when `TAG=stable`)\n- `CHANNEL` (default `alpha`, used for constraints files)\n- `PLATFORMS` (default `linux/amd64,linux/arm64`)\n- `UV_PRERELEASE` (default `allow`)\n- `ENSURE_BINFMT` (default `auto`, set `true` to force or `false` to skip)\n- `BUILDER` (default `ovos-bake`)\n\nExamples:\n\n- `REGISTRY=docker.io/smartgic TAG=alpha CHANNEL=alpha ./scripts/bake.sh`\n- `TAG=stable CHANNEL=stable ./scripts/bake.sh -T services`"
+      "content": "`docker-bake.hcl` and `scripts/bake.sh` define the defaults:\n\n- `REGISTRY` (default `docker.io/smartgic`)\n- `MIRROR_REGISTRY` (default empty; CI uses `ghcr.io/openvoiceos/ovos-docker`): a second registry each image is also pushed to\n- `TAG` and `VERSION` (default `alpha`)\n- `LATEST_TAG` (default `latest`; applied only when `TAG=stable`)\n- `CHANNEL` (default `alpha`): selects the constraints file\n- `OVOS_RELEASES_REF` (default `main`): the git ref of [ovos-releases](https://github.com/OpenVoiceOS/ovos-releases) that supplies `constraints-${CHANNEL}.txt`. Give a commit SHA for a reproducible build.\n- `CACHE_REPO` (default `ghcr.io/openvoiceos/ovos-docker-cache`): the registry build cache, readable without login\n- `CACHE_TO` (default off): set `max` to also export the build cache. CI does thi\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2022-05-07T17:20:53Z",
-  "last_updated": "2026-08-27T21:04:32Z",
+  "last_updated": "2026-09-02T20:53:58Z",
   "is_new_repo": false,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }

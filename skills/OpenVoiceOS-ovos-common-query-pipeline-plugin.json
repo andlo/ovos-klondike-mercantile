@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
   "skill_id": null,
   "name": "ovos-common-query-pipeline-plugin",
-  "description": "The **OVOS Common Query Framework** is designed to answer questions by gathering answers from several skills and selecting the best one",
+  "description": "The OVOS Common Query Framework answers questions. It gathers answers from several skills and picks the best one.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "This plugin usually ships with ovos-core by default and should not need to be explicitly installed\n\npip install ovos-common-query-pipeline-plugin"
+      "content": "This plugin ships with [ovos-core](https://github.com/OpenVoiceOS/ovos-core) by default. You do not need to install it explicitly.\n\npip install ovos-common-query-pipeline-plugin"
     },
     {
       "heading": "Configuration",
-      "content": "### Reranker (Optional)\nRerankers, also referred to as **MultipleChoiceSolvers**, are optional and need to be explicitly installed. These are used to rank and select the most relevant response from multiple common query skills (e.g., Wolfram Alpha, Wikipedia).\n\nBelow is an example configuration to set up a reranker:\n\n\"intents\": {\n    \"common_query\": {\n        \"min_self_confidence\": 0.5,\n        \"min_reranker_score\": 0.5,\n        \"reranker\": \"ovos-flashrank-reranker-plugin\",\n        \"ovos-flashrank-reranker-plugin\": {\n          \"model\": \"ms-marco-TinyBERT-L-2-v2\"\n        }\n    }\n}\n\n### Notes:\n- **Reranker Plugin**: A reranker plugin is optional. You need to install it explicitly for the framework to use it.\n- **Model Choice**: The example uses the `ovos-flashrank-reranker-plugin` with `ms-m\u2026"
+      "content": "### Reranker (optional)\n\nRerankers, also called MultipleChoiceSolvers, are optional. Install one explicitly to rank and select the most relevant response from multiple common query skills (for example, Wolfram Alpha or Wikipedia).\n\nThis example configures a reranker:\n\n\"intents\": {\n    \"common_query\": {\n        \"min_self_confidence\": 0.5,\n        \"min_reranker_score\": 0.5,\n        \"reranker\": \"ovos-flashrank-reranker-plugin\",\n        \"ovos-flashrank-reranker-plugin\": {\n          \"model\": \"ms-marco-TinyBERT-L-2-v2\"\n        }\n    }\n}\n\nNotes:\n- A reranker plugin is optional. Install it explicitly for the framework to use it.\n- The example uses [ovos-flashrank-reranker-plugin](https://github.com/OpenVoiceOS/ovos-flashrank-reranker-plugin) with the `ms-marco-TinyBERT-L-2-v2` model. Other plugins\u2026"
     }
   ],
   "languages": [],
