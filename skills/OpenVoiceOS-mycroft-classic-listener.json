@@ -26,7 +26,7 @@
   "type_group": "Tool",
   "stars": 0,
   "forks": 0,
-  "open_issues": 7,
+  "open_issues": 8,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -36,8 +36,8 @@
   "settings_fields": [],
   "setup_notes": [
     {
-      "heading": "Configuration",
-      "content": "under mycroft.conf\n\n{\n\n  // Speech to Text parameters\n  // Override: REMOTE\n  \"stt\": {\n    // select a STT plugin as described in the respective readme\n    \"module\": \"ovos-stt-plugin-server\",\n    // the default instance is hosted by a OpenVoiceOS member\n    // it is a google proxy equivalent to mycroft selene\n    \"ovos-stt-plugin-server\": {\"url\": \"https://stt.openvoiceos.com/stt\"}\n  },\n  \n  // Hotword configurations\n  \"hotwords\": {\n    \"hey_mycroft\": {\n        \"module\": \"ovos-ww-plugin-precise-lite\",\n        \"model\": \"https://github.com/OpenVoiceOS/precise-lite-models/raw/master/wakewords/en/hey_mycroft.tflite\",\n        \"expected_duration\": 3,\n        \"trigger_level\": 3,\n        \"sensitivity\": 0.5,\n        \"fallback_ww\": \"hey_mycroft_precise\"\n    },\n    \"hey_mycroft_precise\": {\n        \"mo\u2026"
+      "heading": "Install",
+      "content": "uv pip install -e ."
     }
   ],
   "languages": [],

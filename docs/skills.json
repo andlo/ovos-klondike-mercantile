@@ -434,7 +434,7 @@
     "type_group": "Infrastructure",
     "stars": 2,
     "forks": 0,
-    "open_issues": 17,
+    "open_issues": 18,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -447,9 +447,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-05-21T17:30:05Z",
-    "last_updated": "2026-08-13T21:44:01Z",
+    "last_updated": "2026-09-02T12:38:48Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "andlo-ovos-skill-arxiv-papers",
@@ -4811,7 +4811,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 7,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -4821,8 +4821,8 @@
     "settings_fields": [],
     "setup_notes": [
       {
-        "heading": "Configuration",
-        "content": "under mycroft.conf\n\n{\n\n  // Speech to Text parameters\n  // Override: REMOTE\n  \"stt\": {\n    // select a STT plugin as described in the respective readme\n    \"module\": \"ovos-stt-plugin-server\",\n    // the default instance is hosted by a OpenVoiceOS member\n    // it is a google proxy equivalent to mycroft selene\n    \"ovos-stt-plugin-server\": {\"url\": \"https://stt.openvoiceos.com/stt\"}\n  },\n  \n  // Hotword configurations\n  \"hotwords\": {\n    \"hey_mycroft\": {\n        \"module\": \"ovos-ww-plugin-precise-lite\",\n        \"model\": \"https://github.com/OpenVoiceOS/precise-lite-models/raw/master/wakewords/en/hey_mycroft.tflite\",\n        \"expected_duration\": 3,\n        \"trigger_level\": 3,\n        \"sensitivity\": 0.5,\n        \"fallback_ww\": \"hey_mycroft_precise\"\n    },\n    \"hey_mycroft_precise\": {\n        \"mo\u2026"
+        "heading": "Install",
+        "content": "uv pip install -e ."
       }
     ],
     "languages": [],
@@ -11997,7 +11997,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 5,
-    "open_issues": 13,
+    "open_issues": 14,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -12134,7 +12134,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-PHAL-plugin-app-launcher",
     "package_name": "ovos-PHAL-plugin-app-launcher",
-    "pypi_version": "0.0.1a1",
+    "pypi_version": "0.0.1a4",
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
@@ -12143,7 +12143,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -12165,9 +12165,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-10T19:14:00Z",
-    "last_updated": "2026-06-13T02:14:32.280399Z",
+    "last_updated": "2026-08-31T15:35:18.209478Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-PHAL-plugin-balena-wifi",
@@ -13237,7 +13237,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 3,
-    "open_issues": 8,
+    "open_issues": 12,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
