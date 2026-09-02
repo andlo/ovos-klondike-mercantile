@@ -2544,7 +2544,7 @@
     "type_group": "Tool",
     "stars": 7,
     "forks": 7,
-    "open_issues": 12,
+    "open_issues": 13,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -2591,7 +2591,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 1,
+    "open_issues": 2,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -2604,9 +2604,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-10-13T23:01:38Z",
-    "last_updated": "2026-08-15T13:49:23Z",
+    "last_updated": "2026-09-02T00:00:37Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "JarbasHiveMind-HiveMind-core",
@@ -2636,7 +2636,7 @@
     "type_group": "Tool",
     "stars": 17,
     "forks": 2,
-    "open_issues": 43,
+    "open_issues": 51,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2687,9 +2687,9 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 10,
+    "open_issues": 5,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -2698,20 +2698,20 @@
     "setup_notes": [
       {
         "heading": "Getting Started",
-        "content": "### 1. Clone the Repository\nFirst, grab this repository from GitHub like a honeybee grabbing nectar:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-docker.git\ncd hivemind-docker\n\n### 2. Configure Your Environment\nEdit the `.env` file to configure your setup. Here\u2019s an example:\n\nHIVEMIND_PORT=5678\nHIVEMIND_PASSWORD=SuperSecretPassword\n\nFeel free to use \"password123\" if you enjoy living dangerously. (Don\u2019t do this. Seriously.)\n\n### 3. Build and Run\nRun the following command to build your containers and start the HiveMind:\n\ndocker-compose up -d\n\nThis command will:\n- Pull down the necessary images.\n- Deploy your HiveMind containers.\n- Launch your very own AI hive network.\n\nGrab a coffee\u2014or a pint of honey\u2014while Docker works its magic."
+        "content": "### 1. Clone the Repository\nFirst, grab this repository from GitHub like a honeybee grabbing nectar:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-docker.git\ncd hivemind-docker\n\n### 2. Configure Your Environment\nCopy the documented template and fill in real values (`compose/.env-example` explains every variable):\n\ncp compose/.env-example compose/.env\n\nFeel free to use \"password123\" if you enjoy living dangerously. (Don\u2019t do this. Seriously.)\n\nThere is one compose file per deployment under `compose/`:\n\n| File | Deployment |\n| ---- | ---------- |\n| `docker-compose.yml` | the hub \u2014 `hivemind-listener` + an admin `hivemind-cli` |\n| `docker-compose.satellite.yml` | a voice satellite pointed at a hub, with its own cli |\n| `docker-compose.chatroom.yml` | the Flask chatroom bridge |\n| `doc\u2026"
       },
       {
         "heading": "Configuration",
-        "content": "Defaults are defined in `docker-bake.hcl` and `scripts/bake.sh`:\n\n- `REGISTRY` (default `docker.io/smartgic`)\n- `TAG` and `VERSION` (default `alpha`)\n- `LATEST_TAG` (default `latest`, only applied when `TAG=stable`)\n- `CHANNEL` (default `alpha`)\n- `PLATFORMS` (default `linux/amd64,linux/arm64`)\n- `UV_PRERELEASE` (default `allow`)\n- `ENSURE_BINFMT` (default `auto`, set `true` to force or `false` to skip)\n- `BUILDER` (default `hivemind-bake`)"
+        "content": "Defaults are defined in `docker-bake.hcl` and `scripts/bake.sh`:\n\n- `REGISTRY` (default `docker.io/smartgic`)\n- `TAG` and `VERSION` (default `alpha`)\n- `LATEST_TAG` (default `latest`, only applied when `TAG=stable`)\n- `CHANNEL` (default `alpha`): which `constraints-<channel>.txt` pins the installs\n- `OVOS_RELEASES_REF` (default `main`): git ref of ovos-releases to take the constraints from\n- `PLATFORMS` (default `linux/amd64,linux/arm64`)\n- `UV_PRERELEASE` (default `allow`): uv prerelease policy (`never` outside alpha)\n- `MIRROR_REGISTRY` (default empty; CI uses `ghcr.io/jarbashivemind/hivemind-docker`)\n- `CACHE_REPO`/`CACHE_TO`: GHCR build cache (`hivemind-docker-cache`); leave `CACHE_TO` empty locally\n- `ENSURE_BINFMT` (default `auto`, set `true` to force or `false` to skip)\n- `BUILDER`\u2026"
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-09-10T23:05:41Z",
-    "last_updated": "2026-08-15T21:32:41Z",
+    "last_updated": "2026-09-02T03:45:53Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "JarbasHiveMind-hivemind-homeassistant",
@@ -2738,7 +2738,7 @@
     "type_group": "Infrastructure",
     "stars": 2,
     "forks": 1,
-    "open_issues": 4,
+    "open_issues": 6,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -2760,9 +2760,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-04-26T18:29:10Z",
-    "last_updated": "2026-08-26T12:55:32Z",
+    "last_updated": "2026-09-01T23:48:38Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "JarbasHiveMind-hivemind-http-protocol",
@@ -2790,7 +2790,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 10,
+    "open_issues": 14,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2842,7 +2842,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 17,
+    "open_issues": 19,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2857,7 +2857,7 @@
       },
       {
         "heading": "Configuration",
-        "content": "`HiveMind-matrix run` options:\n\n| Option | Description | Default |\n| --- | --- | --- |\n| `--botname` | Mention prefix that triggers the bot | none |\n| `--matrixtoken` | Matrix access token for the bot account | none |\n| `--matrixhost` | Matrix homeserver URL | `https://matrix.org` |\n| `--room` | Room alias to join | `#hivemind-bots:matrix.org` |\n| `--key` | HiveMind access key | read from identity file |\n| `--password` | HiveMind password | read from identity file |\n| `--host` | HiveMind host (a `ws://` prefix is added if no scheme) | read from identity file |\n| `--port` | HiveMind port | `5678` |\n\nWhen `--key/--password/--host` are omitted, the bridge reads them from the stored `NodeIdentity`. If none of the three are available, the bridge exits with an error that points you at `hivemind-\u2026"
+        "content": "`HiveMind-matrix run` options:\n\n| Option | Description | Default |\n| --- | --- | --- |\n| `--botname` | Mention prefix that triggers the bot. If omitted, the bridge answers every message in the room. | none |\n| `--matrixtoken` | Matrix access token for the bot account | none |\n| `--matrixhost` | Matrix homeserver URL | `https://matrix.org` |\n| `--room` | Room alias to join | `#hivemind-bots:matrix.org` |\n| `--key` | HiveMind access key | read from identity file |\n| `--password` | HiveMind password | read from identity file |\n| `--host` | HiveMind host (a `ws://` prefix is added if no scheme) | read from identity file |\n| `--port` | HiveMind port | `5678` |\n\nWhen `--key/--password/--host` are omitted, the bridge reads them from the stored `NodeIdentity`. If none of the three are available, t\u2026"
       }
     ],
     "languages": [],
@@ -2886,7 +2886,7 @@
     "icon": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-media-player",
     "package_name": "hivemind-player-protocol",
-    "pypi_version": "0.0.0a7",
+    "pypi_version": "0.0.1a1",
     "license": null,
     "archived": false,
     "author": "JarbasHiveMind",
@@ -2921,9 +2921,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-14T22:56:03Z",
-    "last_updated": "2026-08-15T13:54:05.225454Z",
+    "last_updated": "2026-09-01T18:41:20.716169Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "JarbasHiveMind-hivemind-mic-satellite",
@@ -2954,7 +2954,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 16,
+    "open_issues": 17,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2997,7 +2997,7 @@
     "icon": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-mqtt-protocol",
     "package_name": "hivemind-mqtt-protocol",
-    "pypi_version": "0.2.2a6",
+    "pypi_version": "0.2.3a1",
     "license": null,
     "archived": false,
     "author": "JarbasHiveMind",
@@ -3028,9 +3028,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-04T18:25:55Z",
-    "last_updated": "2026-08-15T13:43:47.725986Z",
+    "last_updated": "2026-09-01T22:17:00.181322Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "JarbasHiveMind-hivemind-ovos-agent-plugin",
@@ -3059,7 +3059,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 18,
+    "open_issues": 20,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3109,7 +3109,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 8,
+    "open_issues": 9,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3228,7 +3228,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-14T14:57:24Z",
-    "last_updated": "2026-08-29T08:04:39Z",
+    "last_updated": "2026-09-02T00:07:49Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -3262,7 +3262,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 1,
-    "open_issues": 10,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3326,7 +3326,7 @@
     "type_group": "Tool",
     "stars": 24,
     "forks": 13,
-    "open_issues": 14,
+    "open_issues": 15,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3384,7 +3384,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 7,
-    "open_issues": 46,
+    "open_issues": 47,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,

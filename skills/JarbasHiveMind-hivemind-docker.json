@@ -23,9 +23,9 @@
   "type_group": "Infrastructure",
   "stars": 3,
   "forks": 1,
-  "open_issues": 10,
+  "open_issues": 5,
   "on_pypi": false,
-  "has_release": false,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
   "connectivity": null,
@@ -34,18 +34,18 @@
   "setup_notes": [
     {
       "heading": "Getting Started",
-      "content": "### 1. Clone the Repository\nFirst, grab this repository from GitHub like a honeybee grabbing nectar:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-docker.git\ncd hivemind-docker\n\n### 2. Configure Your Environment\nEdit the `.env` file to configure your setup. Here\u2019s an example:\n\nHIVEMIND_PORT=5678\nHIVEMIND_PASSWORD=SuperSecretPassword\n\nFeel free to use \"password123\" if you enjoy living dangerously. (Don\u2019t do this. Seriously.)\n\n### 3. Build and Run\nRun the following command to build your containers and start the HiveMind:\n\ndocker-compose up -d\n\nThis command will:\n- Pull down the necessary images.\n- Deploy your HiveMind containers.\n- Launch your very own AI hive network.\n\nGrab a coffee\u2014or a pint of honey\u2014while Docker works its magic."
+      "content": "### 1. Clone the Repository\nFirst, grab this repository from GitHub like a honeybee grabbing nectar:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-docker.git\ncd hivemind-docker\n\n### 2. Configure Your Environment\nCopy the documented template and fill in real values (`compose/.env-example` explains every variable):\n\ncp compose/.env-example compose/.env\n\nFeel free to use \"password123\" if you enjoy living dangerously. (Don\u2019t do this. Seriously.)\n\nThere is one compose file per deployment under `compose/`:\n\n| File | Deployment |\n| ---- | ---------- |\n| `docker-compose.yml` | the hub \u2014 `hivemind-listener` + an admin `hivemind-cli` |\n| `docker-compose.satellite.yml` | a voice satellite pointed at a hub, with its own cli |\n| `docker-compose.chatroom.yml` | the Flask chatroom bridge |\n| `doc\u2026"
     },
     {
       "heading": "Configuration",
-      "content": "Defaults are defined in `docker-bake.hcl` and `scripts/bake.sh`:\n\n- `REGISTRY` (default `docker.io/smartgic`)\n- `TAG` and `VERSION` (default `alpha`)\n- `LATEST_TAG` (default `latest`, only applied when `TAG=stable`)\n- `CHANNEL` (default `alpha`)\n- `PLATFORMS` (default `linux/amd64,linux/arm64`)\n- `UV_PRERELEASE` (default `allow`)\n- `ENSURE_BINFMT` (default `auto`, set `true` to force or `false` to skip)\n- `BUILDER` (default `hivemind-bake`)"
+      "content": "Defaults are defined in `docker-bake.hcl` and `scripts/bake.sh`:\n\n- `REGISTRY` (default `docker.io/smartgic`)\n- `TAG` and `VERSION` (default `alpha`)\n- `LATEST_TAG` (default `latest`, only applied when `TAG=stable`)\n- `CHANNEL` (default `alpha`): which `constraints-<channel>.txt` pins the installs\n- `OVOS_RELEASES_REF` (default `main`): git ref of ovos-releases to take the constraints from\n- `PLATFORMS` (default `linux/amd64,linux/arm64`)\n- `UV_PRERELEASE` (default `allow`): uv prerelease policy (`never` outside alpha)\n- `MIRROR_REGISTRY` (default empty; CI uses `ghcr.io/jarbashivemind/hivemind-docker`)\n- `CACHE_REPO`/`CACHE_TO`: GHCR build cache (`hivemind-docker-cache`); leave `CACHE_TO` empty locally\n- `ENSURE_BINFMT` (default `auto`, set `true` to force or `false` to skip)\n- `BUILDER`\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2023-09-10T23:05:41Z",
-  "last_updated": "2026-08-15T21:32:41Z",
+  "last_updated": "2026-09-02T03:45:53Z",
   "is_new_repo": false,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }

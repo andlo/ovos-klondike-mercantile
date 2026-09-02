@@ -24,7 +24,7 @@
   "type_group": "Tool",
   "stars": 1,
   "forks": 0,
-  "open_issues": 17,
+  "open_issues": 19,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -39,7 +39,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "`HiveMind-matrix run` options:\n\n| Option | Description | Default |\n| --- | --- | --- |\n| `--botname` | Mention prefix that triggers the bot | none |\n| `--matrixtoken` | Matrix access token for the bot account | none |\n| `--matrixhost` | Matrix homeserver URL | `https://matrix.org` |\n| `--room` | Room alias to join | `#hivemind-bots:matrix.org` |\n| `--key` | HiveMind access key | read from identity file |\n| `--password` | HiveMind password | read from identity file |\n| `--host` | HiveMind host (a `ws://` prefix is added if no scheme) | read from identity file |\n| `--port` | HiveMind port | `5678` |\n\nWhen `--key/--password/--host` are omitted, the bridge reads them from the stored `NodeIdentity`. If none of the three are available, the bridge exits with an error that points you at `hivemind-\u2026"
+      "content": "`HiveMind-matrix run` options:\n\n| Option | Description | Default |\n| --- | --- | --- |\n| `--botname` | Mention prefix that triggers the bot. If omitted, the bridge answers every message in the room. | none |\n| `--matrixtoken` | Matrix access token for the bot account | none |\n| `--matrixhost` | Matrix homeserver URL | `https://matrix.org` |\n| `--room` | Room alias to join | `#hivemind-bots:matrix.org` |\n| `--key` | HiveMind access key | read from identity file |\n| `--password` | HiveMind password | read from identity file |\n| `--host` | HiveMind host (a `ws://` prefix is added if no scheme) | read from identity file |\n| `--port` | HiveMind port | `5678` |\n\nWhen `--key/--password/--host` are omitted, the bridge reads them from the stored `NodeIdentity`. If none of the three are available, t\u2026"
     }
   ],
   "languages": [],
