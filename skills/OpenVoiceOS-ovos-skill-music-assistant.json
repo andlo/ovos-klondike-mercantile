@@ -1,7 +1,7 @@
 {
   "id": "OpenVoiceOS-ovos-skill-music-assistant",
   "skill_id": null,
-  "name": "MAss Skill",
+  "name": "Music Assistant",
   "description": null,
   "examples": [
     "play soma fm radio",
@@ -13,7 +13,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-music-assistant",
   "package_name": "ovos-skill-music-assistant",
-  "pypi_version": "0.1.6a6",
+  "pypi_version": "0.2.0a1",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -28,12 +28,23 @@
   "in_ovos_store": false,
   "pipeline": null,
   "connectivity": null,
-  "requires_api_key": false,
-  "settings_fields": [],
+  "requires_api_key": true,
+  "settings_fields": [
+    {
+      "name": "url",
+      "type": "text",
+      "label": "Music Assistant server address"
+    },
+    {
+      "name": "token",
+      "type": "text",
+      "label": "Music Assistant API token"
+    }
+  ],
   "setup_notes": [
     {
-      "heading": "Configure",
-      "content": "Set your Music Assistant server URL in the skill settings (`settings.json`):\n\n{ \"url\": \"http://192.168.1.100:8095\" }"
+      "heading": "Setup",
+      "content": "Check which player stack you run before installing anything. On the classic\n`ovos-audio`/OCP stack, this skill does the catalog search and hands playback\nto [ovos-media-plugin-mass](https://github.com/OpenVoiceOS/ovos-media-plugin-mass);\ninstall both together. On the newer `ovos-media` stack, this skill is replaced\nentirely at flag day by\n[ovos-media-provider-mass](https://github.com/OpenVoiceOS/ovos-media-provider-mass),\nwhich does catalog search and playback on its own \u2014 do not install this skill\nthere.\n\nFor the classic stack:\n\npip install ovos-skill-music-assistant ovos-media-plugin-mass\n\nSet your Music Assistant server URL in this skill's settings \u2014 the\n`url` field in `settings.json`, reachable through the OVOS control panel\nunder this skill's settings page:\n\n{ \"url\": \"http://192.168.1\u2026"
     }
   ],
   "languages": [
@@ -44,7 +55,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2025-09-07T22:37:54Z",
-  "last_updated": "2026-09-01T23:01:02.308902Z",
+  "last_updated": "2026-09-02T18:40:44.756410Z",
   "is_new_repo": false,
   "is_recently_updated": false
 }
