@@ -19929,7 +19929,7 @@
     "type_group": "Tool",
     "stars": 9,
     "forks": 5,
-    "open_issues": 13,
+    "open_issues": 15,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20078,7 +20078,7 @@
     "type_group": "Infrastructure",
     "stars": 10,
     "forks": 2,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -20086,21 +20086,12 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Running Mycroft as user systemd service (Recommended for Desktop installations)",
-        "content": "### Unit Files\nUnit files for user services can be installed in a couple of [different places](https://www.freedesktop.org/software/systemd/man/systemd.unit.html#User%20Unit%20Search%20Path). I believe there is no right or wrong here, but going to pick one; ~/.config/systemd/user/\n\nSo to install these unit files, copy them to that place;\n`cp mycroft-systemd/user/* ~/.config/systemd/user/`\n\nWe can then enable them to be auto started when the user logs in;\n`systemctl --user enable mycroft.service`\n\nTo start them manually now without a reboot, just run;\n`systemctl --user start mycroft.service`\n\nAll different sub unit files will automatically be started as well. If for whatever reason one of the sub units need to be started, stopped or restarted that can be done with similar command (example);\u2026"
-      },
-      {
-        "heading": "Running Mycroft as system systemd service (Recommended for Headless installations)",
-        "content": "### Unit Files\nSystem service files are installed within the /etc/systemd/system/ directory and therefor require root access to be installed.\n`sudo cp mycroft-systemd/system/* /etc/systemd/system`\n\nWe can then enable them to be started at boot by;\n`sudo systemctl enable mycroft.service`\n\nTo start them manually now without a reboot, just run;\n`sudo systemctl start mycroft.service`"
-      }
-    ],
+    "setup_notes": [],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2020-03-27T10:14:53Z",
-    "last_updated": "2026-08-01T13:13:02Z",
+    "last_updated": "2026-09-01T17:20:47Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -20163,7 +20154,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20268,7 +20259,7 @@
     "repo_created_at": "2025-09-06T01:20:46Z",
     "last_updated": "2026-08-01T13:21:57Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "TigreGotico-ovos-transcription-validator-plugin",
@@ -20650,7 +20641,7 @@
     "repo_created_at": "2023-06-07T13:24:07Z",
     "last_updated": "2026-08-01T13:48:59.836622Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-tts-plugin-beepspeak",
@@ -20701,7 +20692,7 @@
     "repo_created_at": "2018-01-26T08:57:30Z",
     "last_updated": "2026-08-01T13:48:57.519790Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-tts-plugin-coqui",
@@ -20730,7 +20721,7 @@
     "type_group": "Plugin",
     "stars": 4,
     "forks": 1,
-    "open_issues": 17,
+    "open_issues": 18,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -21441,7 +21432,7 @@
     ],
     "languages": [],
     "locale_content": {},
-    "in_ovos_localize": false,
+    "in_ovos_localize": true,
     "repo_created_at": "2021-06-07T19:04:43Z",
     "last_updated": "2024-09-11T02:43:20.197791Z",
     "is_new_repo": false,
@@ -21701,7 +21692,7 @@
     "repo_created_at": "2026-07-15T00:44:41Z",
     "last_updated": "2026-08-02T16:54:28.130491Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-tts-plugin-pico",
@@ -22062,7 +22053,7 @@
     "type_group": "Tool",
     "stars": 16,
     "forks": 5,
-    "open_issues": 13,
+    "open_issues": 16,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -22183,7 +22174,7 @@
     "repo_created_at": "2026-07-15T03:07:12Z",
     "last_updated": "2026-08-01T14:03:08Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-tts-transformer-sox-plugin",
@@ -22231,7 +22222,7 @@
     "repo_created_at": "2023-10-06T23:12:15Z",
     "last_updated": "2026-08-01T14:01:57.365340Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "andlo-ovos-tui-client",
@@ -22347,7 +22338,7 @@
     "type_group": "Tool",
     "stars": 6,
     "forks": 13,
-    "open_issues": 38,
+    "open_issues": 41,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -22792,12 +22783,12 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-wikipedia-plugin",
     "package_name": "ovos-wikipedia-plugin",
-    "pypi_version": "1.1.1a1",
+    "pypi_version": "1.1.2a1",
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
@@ -22819,9 +22810,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-03-26T20:58:41Z",
-    "last_updated": "2026-08-14T15:20:30.196767Z",
+    "last_updated": "2026-09-02T12:26:35.244676Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "mikejgray-ovos-windows",
@@ -22879,16 +22870,16 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-wolfram-alpha-plugin",
     "package_name": "ovos-wolfram-alpha-plugin",
-    "pypi_version": "1.1.1a1",
+    "pypi_version": "1.1.2a1",
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 9,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -22906,7 +22897,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-03-27T12:57:18Z",
-    "last_updated": "2026-08-14T15:19:58.429557Z",
+    "last_updated": "2026-09-01T00:18:05.851313Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -22926,7 +22917,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -22946,7 +22937,7 @@
     ],
     "languages": [],
     "locale_content": {},
-    "in_ovos_localize": false,
+    "in_ovos_localize": true,
     "repo_created_at": "2026-04-20T17:16:55Z",
     "last_updated": "2026-04-20T17:20:09.894376Z",
     "is_new_repo": false,
