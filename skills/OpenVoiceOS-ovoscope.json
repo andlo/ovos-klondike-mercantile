@@ -22,7 +22,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 0,
-  "open_issues": 19,
+  "open_issues": 23,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -33,7 +33,7 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "pip install ovoscope\nWith optional typed message model support:\npip install ovoscope[pydantic]\n---"
+      "content": "pip install ovoscope\nTo add typed message model support:\npip install ovoscope[pydantic]\n---"
     }
   ],
   "languages": [],
