@@ -5843,56 +5843,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OpenVoiceOS-ovos-a2a-agent-plugin",
-    "skill_id": null,
-    "name": "ovos-a2a-agent-plugin",
-    "description": "Consume external A2A agents as OVOS persona solvers",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-a2a-agent-plugin",
-    "package_name": "ovos-a2a-solver-plugin",
-    "pypi_version": "0.0.2a1",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 2,
-    "component_type": "Chat Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 2,
-    "on_pypi": true,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": "online",
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Installation",
-        "content": "pip install ovos-a2a-solver-plugin\n\nThis plugin needs Python 3.10 or later, and `ovos-plugin-manager >= 2.3.0a1`.\n\n---"
-      },
-      {
-        "heading": "Configuration",
-        "content": "Add the plugin as the engine for an ovos-persona persona:"
-      },
-      {
-        "heading": "~/.config/mycroft/personas/my-a2a-persona.yaml",
-        "content": "name: my-a2a-persona\nengine: ovos-a2a-solver\nengine_config:\n  agent_url: \"https://my-a2a-agent.example.com\"   # required\n  auth_header: \"Bearer <token>\"                    # optional\n  timeout: 60                                      # seconds (default 60)\n  streaming: false                                 # set true to use SSE streaming\n\n| Key | Type | Default | Description |\n|-----|------|---------|-------------|\n| `agent_url` | `str` | (none) | Required. Root URL of the A2A server. |\n| `auth_header` | `str` | `None` | Full `Authorization` header value, for example `Bearer <token>`. |\n\n| Key | Type | Default | Description |\n|-----|------|---------|-------------|\n| `timeout` | `float` | `60` | HTTP timeout in seconds. |\n| `streaming` | `bool` | `False` | Use `tasks/sendSubscribe` (SSE) in\u2026"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-06-10T04:21:56Z",
-    "last_updated": "2026-08-31T12:34:48.816038Z",
-    "is_new_repo": false,
-    "is_recently_updated": true
-  },
-  {
     "id": "OpenVoiceOS-ovos-adapt-pipeline-plugin",
     "skill_id": null,
     "name": "ovos-adapt-pipeline-plugin",
@@ -18309,7 +18259,7 @@
     "archived": false,
     "author": "femelo",
     "tier": 2,
-    "component_type": "Persona",
+    "component_type": "Transformer Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
