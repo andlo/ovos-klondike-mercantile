@@ -2,7 +2,7 @@
   "id": "mosiwon-ovos_stt_plugin-google-cloud-translate",
   "skill_id": null,
   "name": "ovos_stt_plugin-google-cloud-translate",
-  "description": "pip install git+https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate.git",
+  "description": "",
   "examples": [],
   "tags": [],
   "category": "Other",
@@ -26,12 +26,7 @@
   "connectivity": null,
   "requires_api_key": false,
   "settings_fields": [],
-  "setup_notes": [
-    {
-      "heading": "Configuration",
-      "content": "* in mycroft.conf\n{\n  \"stt\": {\n    \"module\": \"google_translate_stt\",\n    \"google_translate_stt\": {\n      \"stt_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"translate_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"language\": \"ko-KR\"\n    }\n  }\n}"
-    }
-  ],
+  "setup_notes": [],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
