@@ -2484,7 +2484,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 9,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2544,7 +2544,7 @@
     "type_group": "Tool",
     "stars": 7,
     "forks": 7,
-    "open_issues": 13,
+    "open_issues": 14,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -2604,9 +2604,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-10-13T23:01:38Z",
-    "last_updated": "2026-09-02T00:00:37Z",
+    "last_updated": "2026-09-04T01:24:59Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-HiveMind-core",
@@ -2636,7 +2636,7 @@
     "type_group": "Tool",
     "stars": 17,
     "forks": 2,
-    "open_issues": 51,
+    "open_issues": 12,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2687,7 +2687,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 3,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -2709,7 +2709,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-09-10T23:05:41Z",
-    "last_updated": "2026-09-02T03:45:53Z",
+    "last_updated": "2026-09-05T05:03:17Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -2738,7 +2738,7 @@
     "type_group": "Infrastructure",
     "stars": 2,
     "forks": 1,
-    "open_issues": 6,
+    "open_issues": 4,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -2749,20 +2749,20 @@
     "setup_notes": [
       {
         "heading": "Installation",
-        "content": "### HACS (custom repository)\n\n1. Add `https://github.com/JarbasHiveMind/hivemind-homeassistant` as a custom\n   repository (category *Integration*).\n2. Install **HiveMind**.\n3. Restart Home Assistant.\n\n### Manual\n\n1. Copy the `hivemind` folder into your Home Assistant\n   `custom_components` directory:\n\n   mkdir -p /config/custom_components\n   cp -r custom_components/hivemind /config/custom_components/\n\n2. Restart Home Assistant.\n\n### Add the integration\n\nGo to **Settings \u2192 Devices & Services \u2192 Add Integration \u2192 HiveMind**. The\nconfig flow checks the hub connection before it saves the entry, so a bad host\nor credential shows a clear `cannot connect` or `invalid auth` error instead of\na silent failure."
+        "content": "### HACS (custom repository)\n\n1. Add `https://github.com/JarbasHiveMind/hivemind-homeassistant` as a custom\n   repository (category *Integration*).\n2. Install **HiveMind**.\n3. Restart Home Assistant.\n\n### Manual\n\n1. Copy the `hivemind` folder into your Home Assistant\n   `custom_components` directory:\n\n   mkdir -p /config/custom_components\n   cp -r custom_components/hivemind /config/custom_components/\n\n2. Restart Home Assistant.\n\n### Prerelease requirement\n\nThis integration depends on prerelease packages. Its dependency closure pulls in\n`poorman-handshake`, whose required version is a prerelease, so the integration\nmust be installed in an environment where prerelease resolution is enabled. A\nstock Home Assistant add flow, or a plain `pip install` that does not enable\nprereleases, fails to r\u2026"
       },
       {
         "heading": "Configuration fields",
-        "content": "The config flow asks for these fields when you add the integration:\n\n| Field | Default | Description |\n| --- | --- | --- |\n| `device_type` | `voice_assistant` | Which OVOS capabilities to expose (see below). |\n| `name` | n/a | Friendly name for the device in Home Assistant. |\n| `host` | n/a | HiveMind hub host (e.g. `ws://192.168.1.10`). |\n| `access_key` | n/a | HiveMind client access key. |\n| `password` | n/a | HiveMind client password. |\n| `port` | `5678` | HiveMind WebSocket port. |\n| `legacy_audio` | `false` | Use the legacy Audio Service instead of OCP. |\n| `site_id` | `unknown` | OVOS site id. |\n| `allow_self_signed` | `false` | Accept a self-signed TLS certificate. |\n\n### Device types\n\nThe `device_type` field controls which platforms Home Assistant sets up:\n\n| Type | Exposes |\n| ---\u2026"
+        "content": "The config flow asks for these fields when you add the integration:\n\n| Field | Default | Description |\n| --- | --- | --- |\n| `device_type` | `voice_assistant` | Which OVOS capabilities to expose (see below). |\n| `name` | n/a | Friendly name for the device in Home Assistant. |\n| `host` | n/a | HiveMind hub address \u2014 a bare hostname/IP (e.g. `192.168.1.10`) or a `ws://`/`wss://` URL to force the scheme. |\n| `port` | `5678` | HiveMind WebSocket port; a separate field from `host`. |\n| `access_key` | n/a | HiveMind client access key. |\n| `password` | n/a | HiveMind client password. |\n| `site_id` | empty | Optional OVOS site id; leave blank if you have one hub. |\n| `allow_self_signed` | `false` | Accept a self-signed TLS certificate. |\n\n### Device types\n\nThe `device_type` field controls which pl\u2026"
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-04-26T18:29:10Z",
-    "last_updated": "2026-09-01T23:48:38Z",
+    "last_updated": "2026-09-03T16:47:40Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-hivemind-http-protocol",
@@ -2886,7 +2886,7 @@
     "icon": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-media-player",
     "package_name": "hivemind-player-protocol",
-    "pypi_version": "0.0.1a1",
+    "pypi_version": "0.1.1a1",
     "license": null,
     "archived": false,
     "author": "JarbasHiveMind",
@@ -2906,24 +2906,24 @@
     "setup_notes": [
       {
         "heading": "Install",
-        "content": "pip install hivemind-player-protocol\n\nOptional extras (VLC, MPV backends):\n\npip install \"hivemind-player-protocol[extras]\"\n\nOr from source:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-media-player\ncd hivemind-media-player\npip install -e .\n\n### Dependencies\n\nThe whole stack rides the **`ovos-bus-client` 2.x line** (HiveMind core 4.6.x\nrequires it). That line, and the OVOS components updated to ride it\n(`ovos-audio`, OCP, `ovos-plugin-manager`, `ovos-workshop`), are currently\npublished as **prereleases**.\n\n`pyproject.toml` pins each dependency to its *prerelease floor* (for example\n`ovos-bus-client>=2.0.0a3`). A plain `pip install` then resolves the right\nversions. **No `--pre` flag is needed.** Do not add `--pre`. The floor pins\nopt into the prereleases, package by package, and ke\u2026"
+        "content": "pip install hivemind-player-protocol\n\nOptional extras (VLC, MPV backends):\n\npip install \"hivemind-player-protocol[extras]\"\n\nOr from source:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-media-player\ncd hivemind-media-player\npip install -e .\n\n### Dependencies\n\nThe whole stack rides the **`ovos-bus-client` 2.x line** (HiveMind core 4.6.x\nrequires it). That line, and the OVOS components updated to ride it\n(`ovos-audio`, `ovos-media`, `ovos-plugin-manager`, `ovos-workshop`), are currently\npublished as **prereleases**.\n\n`pyproject.toml` pins each dependency to its *prerelease floor* (for example\n`ovos-bus-client>=2.0.0a3`). A plain `pip install` then resolves the right\nversions. **No `--pre` flag is needed.** Do not add `--pre`. The floor pins\nopt into the prereleases, package by packag\u2026"
       },
       {
         "heading": "1. Configure hivemind-core",
         "content": "Edit `~/.config/hivemind-core/server.json` on the player device:\n\n{\n  \"agent_protocol\": {\n    \"module\": \"hivemind-player-agent-plugin\",\n    \"hivemind-player-agent-plugin\": {}\n  }\n}"
       },
       {
-        "heading": "2. Configure ovos-audio",
-        "content": "Edit `~/.config/mycroft/mycroft.conf` on the same device:\n\n{\n  \"play_wav_cmdline\": \"paplay %1\",\n  \"play_mp3_cmdline\": \"mpg123 %1\",\n  \"play_ogg_cmdline\": \"ogg123 -q %1\",\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\"\n  },\n  \"Audio\": {\n    \"backends\": {\n      \"OCP\": {\n        \"type\": \"ovos_common_play\",\n        \"preferred_audio_services\": [\"mpv\", \"vlc\"],\n        \"active\": true\n      },\n      \"vlc\": { \"type\": \"vlc\", \"active\": true },\n      \"mpv\": { \"type\": \"mpv\",  \"active\": true }\n    }\n  }\n}"
+        "heading": "2. Configure TTS and playback",
+        "content": "Edit `~/.config/mycroft/mycroft.conf` on the same device: `tts` configures\nthe embedded `ovos-audio` (TTS only), `media` configures the embedded\n`ovos-media` playback backends.\n\n{\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-server\"\n  },\n  \"media\": {\n    \"preferred_audio_services\": [\"vlc\"],\n    \"audio_players\": {\n      \"vlc\": {\n        \"module\": \"ovos-media-audio-plugin-vlc\",\n        \"aliases\": [\"VLC\"],\n        \"active\": true\n      }\n    }\n  }\n}\n\nSee [docs/configuration.md](docs/configuration.md) for the full reference."
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-14T22:56:03Z",
-    "last_updated": "2026-09-01T18:41:20.716169Z",
+    "last_updated": "2026-09-03T16:48:14.323477Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-hivemind-mic-satellite",
@@ -3030,7 +3030,7 @@
     "repo_created_at": "2026-06-04T18:25:55Z",
     "last_updated": "2026-09-01T22:17:00.181322Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-hivemind-ovos-agent-plugin",
@@ -3059,7 +3059,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 20,
+    "open_issues": 21,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3164,7 +3164,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 15,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3262,7 +3262,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 1,
-    "open_issues": 11,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3277,7 +3277,7 @@
       },
       {
         "heading": "Configuration",
-        "content": "Voice Relay reads `~/.config/mycroft/mycroft.conf` (standard OVOS config).\n\n| Plugin type | Config key | Default | Required |\n|---|---|---|---|\n| Microphone | `microphone.module` | `ovos-microphone-plugin-alsa` | Yes |\n| VAD | `listener.VAD.module` | `ovos-vad-plugin-silero` | Yes |\n| Wake word | `listener.wake_word` | `hey_mycroft` | Yes |\n| G2P | `tts.g2p_module` | n/a | No |\n| Media Playback | `Audio.backends` | n/a | No |\n| OCP Plugins | n/a | n/a | No |\n| Dialog Transformers | n/a | n/a | No (server-side only) |\n| Audio Transformers | `audio_transformers` | n/a | No |\n| Utterance Transformers | `utterance_transformers` | n/a | No |\n| TTS Transformers | `tts_transformers` | n/a | No |\n| PHAL | n/a | n/a | No (auto-loaded if installed) |\n\nSee [docs/configuration.md](docs/configuration.m\u2026"
+        "content": "Voice Relay reads `~/.config/mycroft/mycroft.conf` (standard OVOS config).\n\n| Plugin type | Config key | Default | Required |\n|---|---|---|---|\n| Microphone | `microphone.module` | `ovos-microphone-plugin-alsa` | Yes |\n| VAD | `listener.VAD.module` | `ovos-vad-plugin-silero` | Yes |\n| Wake word | `listener.wake_word` | `hey_mycroft` | Yes |\n| G2P | `tts.g2p_module` | n/a | No |\n| Media Playback | `Audio.backends` | n/a | No |\n| OCP Plugins | n/a | n/a | No |\n| Dialog Transformers | n/a | n/a | No (server-side only) |\n| Audio Transformers | `audio_transformers` | n/a | No |\n| Utterance Transformers | `utterance_transformers` | n/a | No |\n| TTS Transformers | `tts_transformers` | n/a | No |\n| STT transport | `stt_transport` | `b64` | No |\n| TTS transport | `tts_transport` | `b64` | No |\n| PH\u2026"
       }
     ],
     "languages": [],

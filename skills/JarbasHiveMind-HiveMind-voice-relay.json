@@ -28,7 +28,7 @@
   "type_group": "Tool",
   "stars": 1,
   "forks": 1,
-  "open_issues": 11,
+  "open_issues": 2,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -43,7 +43,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "Voice Relay reads `~/.config/mycroft/mycroft.conf` (standard OVOS config).\n\n| Plugin type | Config key | Default | Required |\n|---|---|---|---|\n| Microphone | `microphone.module` | `ovos-microphone-plugin-alsa` | Yes |\n| VAD | `listener.VAD.module` | `ovos-vad-plugin-silero` | Yes |\n| Wake word | `listener.wake_word` | `hey_mycroft` | Yes |\n| G2P | `tts.g2p_module` | n/a | No |\n| Media Playback | `Audio.backends` | n/a | No |\n| OCP Plugins | n/a | n/a | No |\n| Dialog Transformers | n/a | n/a | No (server-side only) |\n| Audio Transformers | `audio_transformers` | n/a | No |\n| Utterance Transformers | `utterance_transformers` | n/a | No |\n| TTS Transformers | `tts_transformers` | n/a | No |\n| PHAL | n/a | n/a | No (auto-loaded if installed) |\n\nSee [docs/configuration.md](docs/configuration.m\u2026"
+      "content": "Voice Relay reads `~/.config/mycroft/mycroft.conf` (standard OVOS config).\n\n| Plugin type | Config key | Default | Required |\n|---|---|---|---|\n| Microphone | `microphone.module` | `ovos-microphone-plugin-alsa` | Yes |\n| VAD | `listener.VAD.module` | `ovos-vad-plugin-silero` | Yes |\n| Wake word | `listener.wake_word` | `hey_mycroft` | Yes |\n| G2P | `tts.g2p_module` | n/a | No |\n| Media Playback | `Audio.backends` | n/a | No |\n| OCP Plugins | n/a | n/a | No |\n| Dialog Transformers | n/a | n/a | No (server-side only) |\n| Audio Transformers | `audio_transformers` | n/a | No |\n| Utterance Transformers | `utterance_transformers` | n/a | No |\n| TTS Transformers | `tts_transformers` | n/a | No |\n| STT transport | `stt_transport` | `b64` | No |\n| TTS transport | `tts_transport` | `b64` | No |\n| PH\u2026"
     }
   ],
   "languages": [],

@@ -23,7 +23,7 @@
   "type_group": "Infrastructure",
   "stars": 2,
   "forks": 1,
-  "open_issues": 6,
+  "open_issues": 4,
   "on_pypi": false,
   "has_release": false,
   "in_ovos_store": false,
@@ -34,18 +34,18 @@
   "setup_notes": [
     {
       "heading": "Installation",
-      "content": "### HACS (custom repository)\n\n1. Add `https://github.com/JarbasHiveMind/hivemind-homeassistant` as a custom\n   repository (category *Integration*).\n2. Install **HiveMind**.\n3. Restart Home Assistant.\n\n### Manual\n\n1. Copy the `hivemind` folder into your Home Assistant\n   `custom_components` directory:\n\n   mkdir -p /config/custom_components\n   cp -r custom_components/hivemind /config/custom_components/\n\n2. Restart Home Assistant.\n\n### Add the integration\n\nGo to **Settings \u2192 Devices & Services \u2192 Add Integration \u2192 HiveMind**. The\nconfig flow checks the hub connection before it saves the entry, so a bad host\nor credential shows a clear `cannot connect` or `invalid auth` error instead of\na silent failure."
+      "content": "### HACS (custom repository)\n\n1. Add `https://github.com/JarbasHiveMind/hivemind-homeassistant` as a custom\n   repository (category *Integration*).\n2. Install **HiveMind**.\n3. Restart Home Assistant.\n\n### Manual\n\n1. Copy the `hivemind` folder into your Home Assistant\n   `custom_components` directory:\n\n   mkdir -p /config/custom_components\n   cp -r custom_components/hivemind /config/custom_components/\n\n2. Restart Home Assistant.\n\n### Prerelease requirement\n\nThis integration depends on prerelease packages. Its dependency closure pulls in\n`poorman-handshake`, whose required version is a prerelease, so the integration\nmust be installed in an environment where prerelease resolution is enabled. A\nstock Home Assistant add flow, or a plain `pip install` that does not enable\nprereleases, fails to r\u2026"
     },
     {
       "heading": "Configuration fields",
-      "content": "The config flow asks for these fields when you add the integration:\n\n| Field | Default | Description |\n| --- | --- | --- |\n| `device_type` | `voice_assistant` | Which OVOS capabilities to expose (see below). |\n| `name` | n/a | Friendly name for the device in Home Assistant. |\n| `host` | n/a | HiveMind hub host (e.g. `ws://192.168.1.10`). |\n| `access_key` | n/a | HiveMind client access key. |\n| `password` | n/a | HiveMind client password. |\n| `port` | `5678` | HiveMind WebSocket port. |\n| `legacy_audio` | `false` | Use the legacy Audio Service instead of OCP. |\n| `site_id` | `unknown` | OVOS site id. |\n| `allow_self_signed` | `false` | Accept a self-signed TLS certificate. |\n\n### Device types\n\nThe `device_type` field controls which platforms Home Assistant sets up:\n\n| Type | Exposes |\n| ---\u2026"
+      "content": "The config flow asks for these fields when you add the integration:\n\n| Field | Default | Description |\n| --- | --- | --- |\n| `device_type` | `voice_assistant` | Which OVOS capabilities to expose (see below). |\n| `name` | n/a | Friendly name for the device in Home Assistant. |\n| `host` | n/a | HiveMind hub address \u2014 a bare hostname/IP (e.g. `192.168.1.10`) or a `ws://`/`wss://` URL to force the scheme. |\n| `port` | `5678` | HiveMind WebSocket port; a separate field from `host`. |\n| `access_key` | n/a | HiveMind client access key. |\n| `password` | n/a | HiveMind client password. |\n| `site_id` | empty | Optional OVOS site id; leave blank if you have one hub. |\n| `allow_self_signed` | `false` | Accept a self-signed TLS certificate. |\n\n### Device types\n\nThe `device_type` field controls which pl\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2025-04-26T18:29:10Z",
-  "last_updated": "2026-09-01T23:48:38Z",
+  "last_updated": "2026-09-03T16:47:40Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }
