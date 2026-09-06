@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-skill-youtube",
   "skill_id": null,
   "name": "ovos-skill-youtube",
-  "description": "play music from youtube in mycroft",
+  "description": "[DEPRECATED \u2014 ARCHIVED] Replaced by the MediaProvider plugin 'ovos-media-provider-youtube' (pip install ovos-media-provider-youtube), configured under intents.ovos-ocp-pipeline-plugin.media_providers \u2014 no longer installed as a skill.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -15,7 +15,7 @@
   "package_name": null,
   "pypi_version": null,
   "license": "Apache-2.0",
-  "archived": false,
+  "archived": true,
   "author": "OpenVoiceOS",
   "tier": 3,
   "component_type": "Skill",
@@ -44,5 +44,5 @@
   "repo_created_at": "2017-01-11T20:23:54Z",
   "last_updated": "2026-09-02T18:38:12Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

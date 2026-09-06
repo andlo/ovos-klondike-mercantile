@@ -47,7 +47,12 @@
       "label": "Keep the content classy"
     }
   ],
-  "setup_notes": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Install the skill with pip.\n\npip install ovos-skill-easter-eggs"
+    }
+  ],
   "languages": [
     "da-dk",
     "de-de",

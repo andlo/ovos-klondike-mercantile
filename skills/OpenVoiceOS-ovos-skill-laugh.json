@@ -26,7 +26,7 @@
   "type_group": "Skill",
   "stars": 7,
   "forks": 8,
-  "open_issues": 9,
+  "open_issues": 6,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -45,7 +45,12 @@
       "label": "true or false"
     }
   ],
-  "setup_notes": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-laugh"
+    }
+  ],
   "languages": [
     "ca-es",
     "da-dk",
