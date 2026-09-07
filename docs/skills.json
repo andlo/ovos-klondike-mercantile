@@ -23842,7 +23842,7 @@
     "id": "mosiwon-ovos_stt_plugin-google-cloud-translate",
     "skill_id": null,
     "name": "ovos_stt_plugin-google-cloud-translate",
-    "description": "",
+    "description": "pip install git+https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate.git",
     "examples": [],
     "tags": [],
     "category": "Other",
@@ -23866,7 +23866,12 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "* in mycroft.conf\n{\n  \"stt\": {\n    \"module\": \"google_translate_stt\",\n    \"google_translate_stt\": {\n      \"stt_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"translate_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"language\": \"ko-KR\"\n    }\n  }\n}"
+      }
+    ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
@@ -23879,7 +23884,7 @@
     "id": "mosiwon-ovos_tts_plugin-google-cloud-translate",
     "skill_id": null,
     "name": "ovos_tts_plugin-google-cloud-translate",
-    "description": "",
+    "description": "pip install git+https://github.com/mosiwon/ovos_tts_plugin-google-cloud-translate.git",
     "examples": [],
     "tags": [],
     "category": "Other",
@@ -23903,7 +23908,12 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "* in mycroft.conf\n{\n  \"tts\": {\n    \"module\": \"google_translate_tts\",\n    \"google_translate_tts\": {\n      \"api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"lang\": \"ko\"\n    }\n  }\n}"
+      }
+    ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
@@ -27136,14 +27146,14 @@
     "category": "Other",
     "icon": null,
     "source": "https://github.com/mohitkale/voiceforge",
-    "package_name": null,
+    "package_name": "voiceforge",
     "pypi_version": null,
     "license": "NOASSERTION",
     "archived": false,
     "author": "mohitkale",
-    "tier": null,
-    "component_type": "Infrastructure",
-    "type_group": "Infrastructure",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
     "stars": 1,
     "forks": 0,
     "open_issues": 0,
