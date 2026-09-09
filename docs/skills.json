@@ -8665,7 +8665,7 @@
     "repo_created_at": "2025-02-23T18:57:40Z",
     "last_updated": "2026-09-06T01:01:55Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "andlo-ovos-klondike-mercantile",
@@ -11585,7 +11585,7 @@
     "repo_created_at": "2025-02-24T14:29:39Z",
     "last_updated": "2026-09-06T01:02:22Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "TigreGotico-ovos-ollama-intent-pipeline-plugin",
@@ -13197,7 +13197,7 @@
     "repo_created_at": "2024-08-19T02:35:16Z",
     "last_updated": "2026-09-05T22:51:24.427304Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "matthewdva-ovos-phal-plugin-media-led",
@@ -15314,7 +15314,7 @@
     "repo_created_at": "2024-12-21T00:51:14Z",
     "last_updated": "2026-09-06T01:07:56.308725Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "andlo-ovos-skill-count",
@@ -22807,6 +22807,48 @@
     "is_recently_updated": true
   },
   {
+    "id": "TigreGotico-ovos-voice-embeddings-plugin",
+    "skill_id": null,
+    "name": "ovos-voice-embeddings-plugin",
+    "description": "`VoiceEmbeddingsRecognitionPlugin` recognizes and manages voice embeddings for OVOS. It uses Resemblyzer to extract speaker embeddings from audio, and it stores and retrieves those embeddings with ovos-chromadb-embeddings-plugin.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/TigreGotico/ovos-voice-embeddings-plugin",
+    "package_name": "ovos-voice-embeddings-plugin",
+    "pypi_version": "0.0.0a2",
+    "license": null,
+    "archived": false,
+    "author": "TigreGotico",
+    "tier": 1,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-voice-embeddings-plugin"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-07-19T22:59:25Z",
+    "last_updated": "2024-10-25T20:37:24.100378Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-wikipedia-plugin",
     "skill_id": null,
     "name": "ovos-wikipedia-plugin",
@@ -22825,7 +22867,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
@@ -22912,7 +22954,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -22954,7 +22996,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -23002,7 +23044,7 @@
     "type_group": "Tool",
     "stars": 6,
     "forks": 17,
-    "open_issues": 26,
+    "open_issues": 36,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -23229,7 +23271,7 @@
     "type_group": "Plugin",
     "stars": 2,
     "forks": 5,
-    "open_issues": 10,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -23658,7 +23700,7 @@
     "component_type": "Wake Word Plugin",
     "type_group": "Plugin",
     "stars": 0,
-    "forks": 0,
+    "forks": 1,
     "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
@@ -23742,7 +23784,7 @@
     "repo_created_at": "2025-04-09T18:29:45Z",
     "last_updated": "2026-09-05T23:47:43Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-yaml-editor",
@@ -24104,7 +24146,7 @@
     "repo_created_at": "2026-01-26T12:35:02Z",
     "last_updated": "2026-09-06T00:03:05Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovoscope",
@@ -24130,7 +24172,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 0,
-    "open_issues": 5,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -24531,7 +24573,7 @@
     "type_group": "Infrastructure",
     "stars": 51,
     "forks": 6,
-    "open_issues": 20,
+    "open_issues": 24,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -24557,7 +24599,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-11-25T12:08:27Z",
-    "last_updated": "2026-08-16T03:01:21Z",
+    "last_updated": "2026-09-08T22:31:48Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -25197,7 +25239,7 @@
     "repo_created_at": "2025-03-17T02:00:51Z",
     "last_updated": "2026-09-06T01:08:15.789361Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OscillateLabsLLC-skill-meal-plan",
@@ -25264,7 +25306,7 @@
     "repo_created_at": "2022-05-22T02:33:47Z",
     "last_updated": "2026-09-06T01:06:25.874814Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OscillateLabsLLC-skill-monster-scanner",
@@ -25346,7 +25388,7 @@
     "repo_created_at": "2024-07-05T21:08:54Z",
     "last_updated": "2026-09-06T01:09:34.794765Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-skill-ovos-alarm",
@@ -26785,7 +26827,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-05-29T22:30:36Z",
-    "last_updated": "2026-09-06T04:08:44Z",
+    "last_updated": "2026-09-09T04:16:22Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
