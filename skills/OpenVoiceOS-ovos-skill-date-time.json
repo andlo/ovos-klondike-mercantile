@@ -31,7 +31,7 @@
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 1,
-  "forks": 9,
+  "forks": 10,
   "open_issues": 9,
   "on_pypi": true,
   "has_release": true,
@@ -53,6 +53,7 @@
     }
   ],
   "languages": [
+    "an",
     "ca-es",
     "cs-cz",
     "da-dk",
@@ -74,7 +75,21 @@
     "sv-se",
     "tr-tr"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "an": {
+      "name": " Data y hora",
+      "description": "Informaci\u00f3n sobre la hora, la calendata y lo d\u00eda d'a semana",
+      "examples": [
+        "Qu\u00e9 hora ye?",
+        "Di-me lo d\u00eda d'a semana",
+        "Cu\u00e1ntos d\u00edas faltan pa lo 24 de chunyo?",
+        "Que d\u00eda ye?",
+        "Di-me la hora",
+        "Cu\u00e1n ye lo d\u00eda d'o libro?",
+        "Qu\u00e9 hora ye en Par\u00eds?"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2022-03-14T00:48:07Z",
   "last_updated": "2025-07-31T23:27:32.507067Z",
