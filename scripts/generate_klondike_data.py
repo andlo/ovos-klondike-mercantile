@@ -360,22 +360,22 @@ def fetch_skill_json(full_name):
     return None
 
 
-def fetch_skill_json_for_locale(full_name, locale, package_name=None):
-    """Fetches and parses locale/<locale>/skill.json for a SPECIFIC
-    non-English locale a skill is already CONFIRMED to have (the
-    caller gets that confirmation from fetch_locale_languages() first)
-    - unlike fetch_skill_json(), this never probes multiple candidate
-    paths to check existence, since the caller already knows the
-    folder is there. Tries repo-root locale/ first, then falls back
-    to <package_name>/locale/, matching fetch_locale_languages()'s own
-    fallback - a skill whose locale/ directory is nested under its
-    package dir (see that function's docstring, e.g.
-    OscillateLabsLLC/skill-homeassistant) has its translated
-    skill.json files nested the same way, not at the repo root."""
-    text = fetch_file(full_name, f"locale/{locale}/skill.json")
-    if text is None and package_name:
-        package_dir = package_name.replace("-", "_")
-        text = fetch_file(full_name, f"{package_dir}/locale/{locale}/skill.json")
+def fetch_skill_json_for_locale(full_name, locale, locale_prefix=""):
+    """Fetches and parses <locale_prefix>/locale/<locale>/skill.json
+    for a SPECIFIC non-English locale a skill is already CONFIRMED to
+    have - the caller gets both that confirmation AND locale_prefix
+    (the path the locale/ directory actually lives under, "" for repo
+    root) from fetch_locale_languages() first, so this never has to
+    probe or guess a path itself, unlike fetch_skill_json(). Using the
+    prefix fetch_locale_languages() actually FOUND - rather than
+    re-deriving a package-name-based guess here independently - means
+    this stays correct even when that guess was wrong and
+    fetch_locale_languages() had to fall back to
+    find_locale_prefix_via_tree() to find the real one (see that
+    function's docstring for why the guess can diverge from reality,
+    e.g. OpenVoiceOS/ovos-skill-randomness)."""
+    path = f"{locale_prefix}/locale/{locale}/skill.json" if locale_prefix else f"locale/{locale}/skill.json"
+    text = fetch_file(full_name, path)
     if text is None:
         return None
     try:
@@ -384,7 +384,7 @@ def fetch_skill_json_for_locale(full_name, locale, package_name=None):
         return None
 
 
-def fetch_locale_content(full_name, languages, package_name=None):
+def fetch_locale_content(full_name, languages, locale_prefix=""):
     """For each non-English language a Skill is already confirmed to
     have (from fetch_locale_languages), fetches THAT language's own
     skill.json and keeps just the user-facing fields worth showing
@@ -396,12 +396,18 @@ def fetch_locale_content(full_name, languages, package_name=None):
     ACTUALLY has, not one per possible ecosystem language - a skill
     with only en-us and da-dk locale folders costs one extra call
     here, not eight, since fetch_locale_languages already confirmed
-    which folders exist before this function is ever called."""
+    which folders exist before this function is ever called.
+
+    locale_prefix is the path fetch_locale_languages() actually found
+    the locale/ directory under (see its docstring) - passed straight
+    through to fetch_skill_json_for_locale() rather than re-guessed
+    from package_name, so this stays correct for skills whose locale/
+    directory the package-name guess doesn't predict."""
     content = {}
     for lang in languages:
         if lang.startswith("en"):
             continue
-        data = fetch_skill_json_for_locale(full_name, lang, package_name)
+        data = fetch_skill_json_for_locale(full_name, lang, locale_prefix)
         if not data:
             continue
         entry = {}
@@ -696,14 +702,57 @@ def fetch_ovos_localize_tracked_repos():
 LOCALE_DIR_PATTERN = re.compile(r"^[a-z]{2}(-[a-zA-Z]{2,})?$")
 
 
+def find_locale_prefix_via_tree(full_name):
+    """Last-resort locale discovery: walks the repo's full git tree
+    (one API call) looking for any directory literally named
+    "locale", instead of GUESSING its parent from the PyPI package
+    name the way the two cheap lookups in fetch_locale_languages() do.
+
+    That guess (package_name.replace("-", "_")) assumes the internal
+    Python package directory matches the published PyPI package
+    name - true often enough to be worth trying first (it's free,
+    one API call), but false whenever they diverge. Found by
+    inspection: OpenVoiceOS/ovos-skill-randomness is published on
+    PyPI as "ovos-skill-randomness" (so the guess is
+    "ovos_skill_randomness/locale"), but its actual package
+    directory - and therefore its actual locale/ path - is
+    "skill_randomness/locale". The skill.json's own "package_name"
+    field doesn't help either; it agrees with PyPI, not with the
+    repo's real directory layout. No amount of smarter guessing
+    fixes this in general, since nothing requires the two to match -
+    only actually looking at the tree does.
+
+    Returns the path prefix before "/locale" (e.g.
+    "skill_randomness"), "" if "locale" sits at the repo root, or
+    None if no directory named "locale" exists anywhere in the tree."""
+    repo_meta = gh_ok("api", f"repos/{full_name}")
+    branch = (repo_meta or {}).get("default_branch", "master")
+    tree = gh_ok("api", f"repos/{full_name}/git/trees/{branch}?recursive=1")
+    if not tree:
+        return None
+    for item in tree.get("tree", []):
+        if item.get("type") != "tree":
+            continue
+        path = item["path"]
+        if path == "locale":
+            return ""
+        if path.endswith("/locale"):
+            return path[: -len("/locale")]
+    return None
+
+
 def fetch_locale_languages(full_name, package_name=None):
     """Lists the locale/ directory to find which language codes a
     Skill supports (e.g. ["en-us", "da-dk"]) - only called for
     component_type == "Skill" entries, since plugins/tools don't
     follow this convention in practice (confirmed by inspection
     across this whole ecosystem: locale/<lang>/ is specifically the
-    Skill packaging convention). Returns an empty list if there's no
-    locale/ directory, or the repo isn't a Skill.
+    Skill packaging convention). Returns (languages, locale_prefix):
+    an empty list and None if no locale/ directory was found anywhere
+    (or the repo isn't a Skill); otherwise the language list plus the
+    path prefix the locale/ directory was actually found under (""
+    for repo root), so callers needing per-language files (see
+    fetch_locale_content) don't have to re-guess the same path.
 
     Tries repo-root locale/ first, then falls back to
     <package_name_with_underscores>/locale/ - found by inspection:
@@ -711,22 +760,37 @@ def fetch_locale_languages(full_name, package_name=None):
     all; its real one lives at skill_homeassistant/locale/, nested
     inside the Python package directory (Python's own convention of
     replacing hyphens with underscores for the importable module
-    name, which matches the package name here exactly).
+    name, which matches the package name here exactly). When BOTH of
+    those guesses come up empty, falls back to find_locale_prefix_via_tree()
+    - a real (if more expensive) search instead of a third guess, for
+    the cases where the internal package directory doesn't match the
+    PyPI package name at all (see that function's docstring).
 
     Normalized to lowercase - different repos' locale/ folders use
     inconsistent casing (en-us vs en-US), which without this showed
     up as confusing duplicate entries in the language filter
     dropdown ("en-US" and "en-us" as two separate options)."""
     data = gh_ok("api", f"repos/{full_name}/contents/locale")
+    locale_prefix = "" if data else None
     if not data and package_name:
         package_dir = package_name.replace("-", "_")
         data = gh_ok("api", f"repos/{full_name}/contents/{package_dir}/locale")
+        if data:
+            locale_prefix = package_dir
     if not data:
-        return []
-    return sorted(set(
+        prefix = find_locale_prefix_via_tree(full_name)
+        if prefix is not None:
+            locale_path = f"{prefix}/locale" if prefix else "locale"
+            data = gh_ok("api", f"repos/{full_name}/contents/{locale_path}")
+            if data:
+                locale_prefix = prefix
+    if not data:
+        return [], None
+    languages = sorted(set(
         item["name"].lower() for item in data
         if item.get("type") == "dir" and LOCALE_DIR_PATTERN.match(item["name"])
     ))
+    return languages, locale_prefix
 
 
 def extract_pipeline(description):
@@ -891,14 +955,16 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     # fetch_locale_languages()'s docstring. Skipped entirely for
     # Plugins/Tools rather than making a call that would almost
     # always come back empty.
-    languages = fetch_locale_languages(full_name, package_name) if component_type == "Skill" else []
+    languages, locale_prefix = (
+        fetch_locale_languages(full_name, package_name) if component_type == "Skill" else ([], None)
+    )
 
     # Translated display content (name/description/examples) for
     # every non-English language listed above - see
     # fetch_locale_content()'s docstring. Skill-only and
     # languages-gated for the same reason as the listing itself: a
     # skill with no extra locale folders costs nothing extra here.
-    locale_content = fetch_locale_content(full_name, languages, package_name) if languages else {}
+    locale_content = fetch_locale_content(full_name, languages, locale_prefix or "") if languages else {}
 
     version, requires_dist, pypi_release_date = pypi_info(package_name)
     github_release = latest_github_release(full_name)
