@@ -743,14 +743,14 @@ def find_locale_prefix_via_tree(full_name):
 
 def fetch_locale_languages(full_name, package_name=None):
     """Lists the locale/ directory to find which language codes a
-    Skill supports (e.g. ["en-us", "da-dk"]) - only called for
-    component_type == "Skill" entries, since plugins/tools don't
-    follow this convention in practice (confirmed by inspection
-    across this whole ecosystem: locale/<lang>/ is specifically the
-    Skill packaging convention). Returns (languages, locale_prefix):
-    an empty list and None if no locale/ directory was found anywhere
-    (or the repo isn't a Skill); otherwise the language list plus the
-    path prefix the locale/ directory was actually found under (""
+    repo supports (e.g. ["en-us", "da-dk"]). Called for every
+    component_type, not just Skills - plugins can and do ship real
+    locale/ folders too (confirmed by inspection:
+    andlo/ovos-common-reading-pipeline-plugin, a Pipeline Plugin, has
+    a genuine 8-language locale/ directory at its repo root). Returns
+    (languages, locale_prefix): an empty list and None if no locale/
+    directory was found anywhere; otherwise the language list plus
+    the path prefix the locale/ directory was actually found under (""
     for repo root), so callers needing per-language files (see
     fetch_locale_content) don't have to re-guess the same path.
 
@@ -946,24 +946,30 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
 
     setup_notes = extract_readme_setup_sections(readme_text)
 
-    # Fetched for both Skills and Plugins (unlike locale/languages
-    # below, which is Skill-only) - plugins commonly have real
-    # configurable settings too (API keys, endpoints, etc).
+    # Fetched for both Skills and Plugins - plugins commonly have
+    # real configurable settings too (API keys, endpoints, etc).
     settings_fields = fetch_settings_fields(full_name, package_name)
 
-    # Locale/language listing is only meaningful for Skills - see
-    # fetch_locale_languages()'s docstring. Skipped entirely for
-    # Plugins/Tools rather than making a call that would almost
-    # always come back empty.
-    languages, locale_prefix = (
-        fetch_locale_languages(full_name, package_name) if component_type == "Skill" else ([], None)
-    )
+    # Locale/language listing used to be gated on component_type ==
+    # "Skill", on the assumption that plugins/tools don't ship
+    # locale/ folders in practice. Found false by inspection:
+    # andlo/ovos-common-reading-pipeline-plugin (a Pipeline Plugin)
+    # has a real locale/ directory with 8 languages (da-DK, de-DE,
+    # en-US, es-ES, fr-FR, it-IT, nl-NL, pt-PT) at its repo root, and
+    # the site showed zero languages for it purely because of this
+    # gate - not because of any locale/-discovery failure like
+    # find_locale_prefix_via_tree() was built for. So this now runs
+    # for every component_type; fetch_locale_languages() already
+    # returns ([], None) cheaply (one failed API call) for the
+    # genuinely locale-less majority of plugins/tools, so this only
+    # costs extra calls for entries that actually have something to
+    # find.
+    languages, locale_prefix = fetch_locale_languages(full_name, package_name)
 
     # Translated display content (name/description/examples) for
     # every non-English language listed above - see
-    # fetch_locale_content()'s docstring. Skill-only and
-    # languages-gated for the same reason as the listing itself: a
-    # skill with no extra locale folders costs nothing extra here.
+    # fetch_locale_content()'s docstring. Languages-gated: an entry
+    # with no locale folders at all costs nothing extra here.
     locale_content = fetch_locale_content(full_name, languages, locale_prefix or "") if languages else {}
 
     version, requires_dist, pypi_release_date = pypi_info(package_name)
