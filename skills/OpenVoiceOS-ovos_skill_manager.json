@@ -44,7 +44,9 @@
       "content": "print current configuration of osm, config file can be found at `~/.config/OpenVoiceOS/OVOS-SkillsManager.json`\n(.venv) user@hostname:~$ osm print --help\nUsage: osm print [OPTIONS]\n\nOptions:\n  --appstore [ovos|mycroft|pling|andlo|all|default]\n                                  print config of a specific appstore\n  --help                          Show this message and exit."
     }
   ],
-  "languages": [],
+  "languages": [
+    "en-us"
+  ],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2020-12-21T16:12:26Z",
