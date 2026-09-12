@@ -41,11 +41,13 @@
       "content": "pip install ovos-spec-tools            # core \u2014 no dependencies\npip install ovos-spec-tools[langcodes] # adds the smart language fallback\n\nRequires Python 3.10+."
     }
   ],
-  "languages": [],
+  "languages": [
+    "en-us"
+  ],
   "locale_content": {},
   "in_ovos_localize": true,
   "repo_created_at": "2026-05-22T10:53:04Z",
   "last_updated": "2026-09-09T02:20:55.569326Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

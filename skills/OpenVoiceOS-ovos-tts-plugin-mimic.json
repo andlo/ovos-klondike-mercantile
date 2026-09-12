@@ -23,7 +23,7 @@
   "type_group": "Plugin",
   "stars": 0,
   "forks": 4,
-  "open_issues": 14,
+  "open_issues": 10,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -41,7 +41,9 @@
       "content": "If `mimic` is on the system path, set only a voice:\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-mimic\",\n    \"ovos-tts-plugin-mimic\": {\n      \"voice\": \"ap\"\n    }\n  }\n\n### Advanced config\n\nA voice can be a URL, a file path, or one of the voices built into `mimic`. You can find\ncompatible festvox voices on the [festvox flite voice page](http://www.festvox.org/flite/packed/flite-2.0/voices/).\n\nSet the path to the `mimic` binary if it is not on the system path:\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-mimic\",\n    \"ovos-tts-plugin-mimic\": {\n      \"voice\": \"http://www.festvox.org/flite/packed/flite-2.0/voices/cmu_us_fem.flitevox\",\n      \"binary\": \"~/mimic1/mimic\"\n    }\n  }\n\nMycroft premium subscribers get a female voice called `trinity`. This voice is a\nprecompiled `mimic` binary with the voice\u2026"
     }
   ],
-  "languages": [],
+  "languages": [
+    "en-us"
+  ],
   "locale_content": {},
   "in_ovos_localize": true,
   "repo_created_at": "2021-06-07T19:04:43Z",
