@@ -11,7 +11,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-media",
   "package_name": "ovos-media",
-  "pypi_version": "2.3.0a1",
+  "pypi_version": "2.3.0a2",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -19,7 +19,7 @@
   "component_type": "Tool",
   "type_group": "Tool",
   "stars": 3,
-  "forks": 3,
+  "forks": 4,
   "open_issues": 17,
   "on_pypi": true,
   "has_release": false,
@@ -38,11 +38,14 @@
       "content": "All configuration lives under the `\"media\"` key in `mycroft.conf`. The essentials:\n\n{\n  \"media\": {\n    // MPRIS / D-Bus integration (off by default)\n    \"enable_mpris\": false,\n    // let MPRIS pause/stop other media players on the system\n    \"manage_external_players\": false,\n\n    // order of preference per playback type; the first backend that can\n    // handle the URI wins. Users may also name a backend in the utterance.\n    \"preferred_audio_services\": [\"vlc\", \"mplayer\", \"cli\"],\n    \"preferred_video_services\": [\"vlc\"],\n\n    // every installed backend plugin loads automatically; declare an entry\n    // here to customise its name/aliases/config, control its load order, or\n    // disable it with \"active\": false. \"module\" is the plugin's entry-point\n    // name; \"aliases\" are spoken names. a\u2026"
     }
   ],
-  "languages": [],
+  "languages": [
+    "da-dk",
+    "en-us"
+  ],
   "locale_content": {},
   "in_ovos_localize": true,
   "repo_created_at": "2024-01-09T00:18:26Z",
-  "last_updated": "2026-09-09T00:36:38.027057Z",
+  "last_updated": "2026-09-10T17:57:13.798261Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

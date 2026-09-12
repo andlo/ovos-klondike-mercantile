@@ -20,7 +20,7 @@
   "type_group": "Plugin",
   "stars": 8,
   "forks": 6,
-  "open_issues": 17,
+  "open_issues": 14,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -35,10 +35,30 @@
     },
     {
       "heading": "Pipeline Configuration",
-      "content": "Where you place `\"ovos-persona-pipeline-plugin-high\"` in the pipeline decides whether the active persona gets full control of an utterance, or only handles it after high-confidence skills fail to match. `\"ovos-persona-pipeline-plugin-low\"` handles utterances as a fallback even when no persona is explicitly active, replacing [OpenVoiceOS/ovos-skill-fallback-chatgpt](https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt).\n\nSee the [OVOS technical manual: Persona Pipeline](https://tigregotico.github.io/ovos-technical-manual/persona-pipeline/) for the pipeline configuration strategies and example `mycroft.conf` snippets.\n\n---"
+      "content": "Where you place `\"ovos-persona-pipeline-plugin-high\"` in the pipeline decides whether the active persona gets full control of an utterance, or only handles it after high-confidence skills fail to match. `\"ovos-persona-pipeline-plugin-low\"` handles utterances as a fallback even when no persona is explicitly active, replacing [OpenVoiceOS/ovos-skill-fallback-chatgpt](https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt).\n\nSee the [OVOS technical manual: Persona Pipeline](https://openvoiceos.github.io/beta-technical-manual/persona-pipeline/) for the pipeline configuration strategies and example `mycroft.conf` snippets.\n\n---"
     }
   ],
-  "languages": [],
+  "languages": [
+    "ca",
+    "ca-es",
+    "da",
+    "da-dk",
+    "de",
+    "de-de",
+    "en-us",
+    "es",
+    "es-es",
+    "fr",
+    "fr-fr",
+    "gl",
+    "gl-es",
+    "it-it",
+    "nl",
+    "nl-nl",
+    "pt",
+    "pt-br",
+    "pt-pt"
+  ],
   "locale_content": {},
   "in_ovos_localize": true,
   "repo_created_at": "2023-03-25T05:15:52Z",
