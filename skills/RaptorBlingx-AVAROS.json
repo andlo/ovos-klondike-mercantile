@@ -40,11 +40,13 @@
       "content": "The web wizard guides an operator through:\n\n1. Platform endpoint and authentication\n2. Connection test\n3. Asset registration\n4. Platform resource linking\n5. Metric mapping\n6. Intent activation\n7. Optional PREVENTION configuration\n\nAVAROS remains usable without PREVENTION; anomaly and drift commands are disabled when no PREVENTION endpoint is configured."
     }
   ],
-  "languages": [],
+  "languages": [
+    "en-us"
+  ],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-03-03T06:02:11Z",
   "last_updated": "2026-08-12T10:40:30Z",
   "is_new_repo": false,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }
