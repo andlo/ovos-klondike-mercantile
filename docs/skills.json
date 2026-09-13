@@ -17855,7 +17855,12 @@
         "content": "The skill utilizes the `~/.config/mycroft/skills/ovos-skill-stability-ai.femelo/settings.json` file which allows you to configure it.\n\n### Configuration for the skill\n\n{\n  \"api_key\": \"{your-stability-ai-api-key}\",\n  \"model\": \"sdxl_v1.0\",\n  \"style_preset\": \"fantasy-art\",\n  \"__mycroft_skill_firstrun\": false\n}"
       }
     ],
-    "languages": [],
+    "languages": [
+      "en-us",
+      "fr-fr",
+      "pt-br",
+      "pt-pt"
+    ],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-01T01:56:20Z",
@@ -18597,7 +18602,7 @@
     "archived": false,
     "author": "femelo",
     "tier": 2,
-    "component_type": "Transformer Plugin",
+    "component_type": "Persona",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
@@ -25937,7 +25942,13 @@
         "content": "The skill utilizes the `~/.config/mycroft/skills/skill-ovos-fallback-gemini-chat.femelo/settings.json` file which allows you to configure it.\n\n### Configuration for use with Gemini Chat\n\n{\n  \"api_key\": \"{your-gemini-api-key}\",\n  \"model\": \"gemini-2.5-flash\",\n  \"persona\": \"You are a helpful voice assistant with a friendly tone and fun sense of humor\",\n  \"enable_reasoning\": false,\n  \"__mycroft_skill_firstrun\": false\n}"
       }
     ],
-    "languages": [],
+    "languages": [
+      "en-us",
+      "fr-fr",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-26T13:57:05Z",
@@ -26284,7 +26295,11 @@
     "requires_api_key": false,
     "settings_fields": [],
     "setup_notes": [],
-    "languages": [],
+    "languages": [
+      "en-us",
+      "es-es",
+      "fr-fr"
+    ],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-09-19T19:11:59Z",
