@@ -47,8 +47,91 @@
       "content": "pip install ovos-common-reading-pipeline-plugin\n\nAdd it to your pipeline in `mycroft.conf` **right after your stop\nmatcher** (`stop_high`/`ovos-stop-pipeline-plugin-high`) - roughly\nwhere OCP sits, not before stop. \"Stop\" should always be the most\nreliable, highest-priority command regardless of what skill is active;\nputting anything ahead of it undermines that guarantee for every skill,\nnot just this one. An earlier version of this README recommended\nputting this plugin first - that was wrong, and has been reverted; see\nthe note at the end of this section for why.\n\n**Don't copy-paste a whole pipeline block from here or anywhere else** -\nyour existing list already has entries specific to your install (the\nexact names/order vary: `stop_high` vs `ovos-stop-pipeline-plugin-high`,\nwhether pers\u2026"
     }
   ],
-  "languages": [],
-  "locale_content": {},
+  "languages": [
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Generisk l\u00e6sepipeline",
+      "description": "En generisk l\u00e6sepipeline: genkender anmodninger om at f\u00e5 historier, artikler, rapporter, horoskoper og mere l\u00e6st h\u00f8jt, og videresender dem til det installerede skill, der kan levere indholdet. Ikke bundet til \u00e9n bestemt indholdstype eller kilde.",
+      "examples": [
+        "Fort\u00e6l mig en historie om askepot",
+        "L\u00e6s mig en artikel om pingviner",
+        "Fort\u00e6l mig en historie fra grimm",
+        "Fort\u00e6l mig en grimm-historie",
+        "L\u00e6s mig dagens horoskop",
+        "Forts\u00e6t",
+        "Pause"
+      ]
+    },
+    "de-de": {
+      "name": "Allgemeine Vorlese-Pipeline",
+      "description": "Eine allgemeine Vorlese-Pipeline: erkennt Anfragen, Geschichten, Artikel und mehr vorzulesen, und leitet sie an das passende installierte Skill weiter.",
+      "examples": [
+        "Erz\u00e4hl mir eine Geschichte \u00fcber Aschenputtel",
+        "Erz\u00e4hl mir eine Geschichte von grimm",
+        "Weiter",
+        "Pause"
+      ]
+    },
+    "es-es": {
+      "name": "Pipeline de lectura gen\u00e9rica",
+      "description": "Una pipeline de lectura gen\u00e9rica: reconoce solicitudes para leer cuentos, art\u00edculos y m\u00e1s en voz alta, y las dirige a la skill instalada que pueda ofrecer ese contenido.",
+      "examples": [
+        "Cu\u00e9ntame un cuento sobre cenicienta",
+        "Cu\u00e9ntame un cuento de grimm",
+        "Contin\u00faa",
+        "Pausa"
+      ]
+    },
+    "fr-fr": {
+      "name": "Pipeline de lecture g\u00e9n\u00e9rique",
+      "description": "Une pipeline de lecture g\u00e9n\u00e9rique : reconna\u00eet les demandes de lecture d'histoires, d'articles et plus encore, et les redirige vers le skill install\u00e9 qui peut fournir ce contenu.",
+      "examples": [
+        "Raconte-moi une histoire sur cendrillon",
+        "Raconte-moi une histoire de grimm",
+        "Continue",
+        "Pause"
+      ]
+    },
+    "it-it": {
+      "name": "Pipeline di lettura generica",
+      "description": "Una pipeline di lettura generica: riconosce le richieste di leggere storie, articoli e altro ad alta voce, e le indirizza allo skill installato che pu\u00f2 fornire quel contenuto.",
+      "examples": [
+        "Raccontami una storia su cenerentola",
+        "Raccontami una storia di grimm",
+        "Continua",
+        "Pausa"
+      ]
+    },
+    "nl-nl": {
+      "name": "Generieke voorleespipeline",
+      "description": "Een generieke voorleespipeline: herkent verzoeken om verhalen, artikelen en meer voor te lezen, en stuurt ze door naar de ge\u00efnstalleerde skill die die inhoud kan leveren.",
+      "examples": [
+        "Vertel me een verhaal over assepoester",
+        "Vertel me een verhaal van grimm",
+        "Ga verder",
+        "Pauze"
+      ]
+    },
+    "pt-pt": {
+      "name": "Pipeline de leitura gen\u00e9rica",
+      "description": "Uma pipeline de leitura gen\u00e9rica: reconhece pedidos para ler hist\u00f3rias, artigos e mais em voz alta, e encaminha-os para a skill instalada que possa fornecer esse conte\u00fado.",
+      "examples": [
+        "Conta-me uma hist\u00f3ria sobre cinderela",
+        "Conta-me uma hist\u00f3ria de grimm",
+        "Continua",
+        "Pausa"
+      ]
+    }
+  },
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T11:11:43Z",
   "last_updated": "2026-09-09T07:12:51.788943Z",

@@ -1194,8 +1194,91 @@
         "content": "pip install ovos-common-reading-pipeline-plugin\n\nAdd it to your pipeline in `mycroft.conf` **right after your stop\nmatcher** (`stop_high`/`ovos-stop-pipeline-plugin-high`) - roughly\nwhere OCP sits, not before stop. \"Stop\" should always be the most\nreliable, highest-priority command regardless of what skill is active;\nputting anything ahead of it undermines that guarantee for every skill,\nnot just this one. An earlier version of this README recommended\nputting this plugin first - that was wrong, and has been reverted; see\nthe note at the end of this section for why.\n\n**Don't copy-paste a whole pipeline block from here or anywhere else** -\nyour existing list already has entries specific to your install (the\nexact names/order vary: `stop_high` vs `ovos-stop-pipeline-plugin-high`,\nwhether pers\u2026"
       }
     ],
-    "languages": [],
-    "locale_content": {},
+    "languages": [
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "fr-fr",
+      "it-it",
+      "nl-nl",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "da-dk": {
+        "name": "Generisk l\u00e6sepipeline",
+        "description": "En generisk l\u00e6sepipeline: genkender anmodninger om at f\u00e5 historier, artikler, rapporter, horoskoper og mere l\u00e6st h\u00f8jt, og videresender dem til det installerede skill, der kan levere indholdet. Ikke bundet til \u00e9n bestemt indholdstype eller kilde.",
+        "examples": [
+          "Fort\u00e6l mig en historie om askepot",
+          "L\u00e6s mig en artikel om pingviner",
+          "Fort\u00e6l mig en historie fra grimm",
+          "Fort\u00e6l mig en grimm-historie",
+          "L\u00e6s mig dagens horoskop",
+          "Forts\u00e6t",
+          "Pause"
+        ]
+      },
+      "de-de": {
+        "name": "Allgemeine Vorlese-Pipeline",
+        "description": "Eine allgemeine Vorlese-Pipeline: erkennt Anfragen, Geschichten, Artikel und mehr vorzulesen, und leitet sie an das passende installierte Skill weiter.",
+        "examples": [
+          "Erz\u00e4hl mir eine Geschichte \u00fcber Aschenputtel",
+          "Erz\u00e4hl mir eine Geschichte von grimm",
+          "Weiter",
+          "Pause"
+        ]
+      },
+      "es-es": {
+        "name": "Pipeline de lectura gen\u00e9rica",
+        "description": "Una pipeline de lectura gen\u00e9rica: reconoce solicitudes para leer cuentos, art\u00edculos y m\u00e1s en voz alta, y las dirige a la skill instalada que pueda ofrecer ese contenido.",
+        "examples": [
+          "Cu\u00e9ntame un cuento sobre cenicienta",
+          "Cu\u00e9ntame un cuento de grimm",
+          "Contin\u00faa",
+          "Pausa"
+        ]
+      },
+      "fr-fr": {
+        "name": "Pipeline de lecture g\u00e9n\u00e9rique",
+        "description": "Une pipeline de lecture g\u00e9n\u00e9rique : reconna\u00eet les demandes de lecture d'histoires, d'articles et plus encore, et les redirige vers le skill install\u00e9 qui peut fournir ce contenu.",
+        "examples": [
+          "Raconte-moi une histoire sur cendrillon",
+          "Raconte-moi une histoire de grimm",
+          "Continue",
+          "Pause"
+        ]
+      },
+      "it-it": {
+        "name": "Pipeline di lettura generica",
+        "description": "Una pipeline di lettura generica: riconosce le richieste di leggere storie, articoli e altro ad alta voce, e le indirizza allo skill installato che pu\u00f2 fornire quel contenuto.",
+        "examples": [
+          "Raccontami una storia su cenerentola",
+          "Raccontami una storia di grimm",
+          "Continua",
+          "Pausa"
+        ]
+      },
+      "nl-nl": {
+        "name": "Generieke voorleespipeline",
+        "description": "Een generieke voorleespipeline: herkent verzoeken om verhalen, artikelen en meer voor te lezen, en stuurt ze door naar de ge\u00efnstalleerde skill die die inhoud kan leveren.",
+        "examples": [
+          "Vertel me een verhaal over assepoester",
+          "Vertel me een verhaal van grimm",
+          "Ga verder",
+          "Pauze"
+        ]
+      },
+      "pt-pt": {
+        "name": "Pipeline de leitura gen\u00e9rica",
+        "description": "Uma pipeline de leitura gen\u00e9rica: reconhece pedidos para ler hist\u00f3rias, artigos e mais em voz alta, e encaminha-os para a skill instalada que possa fornecer esse conte\u00fado.",
+        "examples": [
+          "Conta-me uma hist\u00f3ria sobre cinderela",
+          "Conta-me uma hist\u00f3ria de grimm",
+          "Continua",
+          "Pausa"
+        ]
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T11:11:43Z",
     "last_updated": "2026-09-09T07:12:51.788943Z",
@@ -8796,7 +8879,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T20:54:26Z",
-    "last_updated": "2026-09-10T04:40:54Z",
+    "last_updated": "2026-09-12T23:05:09Z",
     "is_new_repo": true,
     "is_recently_updated": false
   },
@@ -11761,7 +11844,10 @@
         "content": "In your `mycroft.conf` or OVOS config file:\n\n{\n  \"intents\": {\n    \"ovos_ollama_intent_pipeline\": {\n      \"model\": \"llama3\",\n      \"base_url\": \"http://192.168.1.200:11434\",\n      \"temperature\": 0.0,\n      \"timeout\": 5,\n      \"fuzzy\": true,\n      \"min_words\": 2,\n      \"ignore_labels\": []\n    }\n  }\n}\n\n---"
       }
     ],
-    "languages": [],
+    "languages": [
+      "ca-es",
+      "en-us"
+    ],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-05-06T05:19:33Z",
@@ -14705,52 +14791,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "TigreGotico-ovos-scriptconv-g2p-plugin",
-    "skill_id": null,
-    "name": "ovos-scriptconv-g2p-plugin",
-    "description": "OPM G2P plugin over scriptconv: 45 phonemizers behind one config switch",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/TigreGotico/ovos-scriptconv-g2p-plugin",
-    "package_name": "ovos-scriptconv-g2p-plugin",
-    "pypi_version": "0.0.1",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "TigreGotico",
-    "tier": 1,
-    "component_type": "G2P Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 1,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-scriptconv-g2p-plugin\n\n`scriptconv` and `ovos-plugin-manager` are the only hard dependencies.\nIndividual phonemizer backends are optional - scriptconv lazy-imports them,\nand installing this plugin does **not** pull in any of the 45 backing\npackages. If you configure a backend whose package isn't installed, you get\na clear `ImportError` naming the pip extra to install, e.g.:\n\npip install scriptconv[espeak]        # espeak backend\npip install scriptconv[o2i]           # orthography2ipa backend\npip install scriptconv[pt-phonemizers]  # tugaphone backend\n\nSee scriptconv's `pyproject.toml` for the full extras list - one per\nbackend or language family."
-      },
-      {
-        "heading": "Configuration",
-        "content": "\"g2p\": {\n    \"module\": \"ovos-scriptconv-g2p-plugin\",\n    \"ovos-scriptconv-g2p-plugin\": {\n        \"phonemizer\": \"espeak\",\n        \"lang\": \"en-us\"\n    }\n}\n\n- `phonemizer` (optional): registry name of the scriptconv phonemizer to\n  use, e.g. `\"espeak\"`, `\"orthography2ipa\"`, `\"tugaphone\"`. Omit it to let\n  scriptconv pick the default backend per language.\n- `lang` (optional): default language used when a caller doesn't pass one\n  explicitly.\n- any other key is forwarded as a keyword argument to the underlying\n  scriptconv phonemizer constructor (`model`, `normalizer`, ...)."
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-08-13T01:16:17Z",
-    "last_updated": "2026-08-13T01:22:30.121459Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
-  },
-  {
     "id": "timonvanhasselt-ovos-selfiecamera-mac-skill",
     "skill_id": null,
     "name": "ovos-selfiecamera-mac-skill",
@@ -14860,7 +14900,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18412,7 +18452,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 2,
-    "open_issues": 7,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19631,7 +19671,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19891,7 +19931,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 8,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20582,7 +20622,7 @@
     "type_group": "Infrastructure",
     "stars": 0,
     "forks": 1,
-    "open_issues": 9,
+    "open_issues": 7,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -20600,7 +20640,21 @@
         "content": "Add the plugin to the `utterance_transformers` section of your `mycroft.conf`.\n\nBy default, the plugin uses `https://llama.smartgic.io/v1` with the `qwen2.5:7b` model and a placeholder API key `sk-xxxx`.\n\n{\n  \"utterance_transformers\": {\n    \"ovos-transcription-validator-plugin\": {\n      \"api_url\": \"https://llama.smartgic.io/v1\",\n      \"api_key\": \"sk-xxxx\",\n      \"model\": \"qwen2.5:7b\",\n      \"prompt_template_system\": \"/path/to/system_template.txt\",\n      \"prompt_template_user\": \"/path/to/user_template.txt\",\n      \"error_sound\": true,\n      \"mode\": \"ignore\"\n    }\n  }\n}\n\n---\n\n### Available Settings\n\n| Key                     | Description                                                                                             | Default Value                 |\n|:------------------------|:--\u2026"
       }
     ],
-    "languages": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt",
+      "sv-se"
+    ],
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2025-04-14T14:22:06Z",
@@ -23095,20 +23149,20 @@
     "id": "TigreGotico-ovos-voice-embeddings-plugin",
     "skill_id": null,
     "name": "ovos-voice-embeddings-plugin",
-    "description": "`VoiceEmbeddingsRecognitionPlugin` recognizes and manages voice embeddings for OVOS. It uses Resemblyzer to extract speaker embeddings from audio, and it stores and retrieves those embeddings with ovos-chromadb-embeddings-plugin.",
+    "description": "An OVOS voice embeddings plugin. It turns a speech clip into a speaker",
     "examples": [],
     "tags": [],
     "category": "Other",
     "icon": null,
     "source": "https://github.com/TigreGotico/ovos-voice-embeddings-plugin",
     "package_name": "ovos-voice-embeddings-plugin",
-    "pypi_version": "0.0.0a2",
-    "license": null,
+    "pypi_version": "0.0.1a1",
+    "license": "Apache-2.0",
     "archived": false,
     "author": "TigreGotico",
     "tier": 1,
-    "component_type": "Tool",
-    "type_group": "Tool",
+    "component_type": "Voice Plugin",
+    "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 2,
@@ -23123,15 +23177,19 @@
       {
         "heading": "Install",
         "content": "pip install ovos-voice-embeddings-plugin"
+      },
+      {
+        "heading": "Configuration",
+        "content": "| key | default | description |\n|---|---|---|\n| `model` | `\"wespeaker-resnet34\"` | speakeronnx model alias or path to an ONNX file |\n| `sample_rate` | `16000` | sample rate of the audio passed to `get_embeddings` |"
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-07-19T22:59:25Z",
-    "last_updated": "2024-10-25T20:37:24.100378Z",
+    "last_updated": "2026-09-12T00:49:38.420268Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-wikipedia-plugin",
@@ -24814,7 +24872,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 9,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -27581,7 +27639,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 10,
+    "open_issues": 9,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
