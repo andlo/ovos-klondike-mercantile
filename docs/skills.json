@@ -6412,6 +6412,52 @@
     "is_recently_updated": false
   },
   {
+    "id": "ecosphereplus-ovos-audio-transformer-plugin-omva-voiceid",
+    "skill_id": null,
+    "name": "ovos-audio-transformer-plugin-omva-voiceid",
+    "description": "A plugin for the Open Voice OS (OVOS) that provides voice identification capabilities using the OMVA model.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/ecosphereplus/ovos-audio-transformer-plugin-omva-voiceid",
+    "package_name": "ovos-audio-transformer-plugin-omva-voiceid",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "ecosphereplus",
+    "tier": 2,
+    "component_type": "Audio Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "### Standard Installation\n\npip install -e .\n\n### Standalone Service\n\nThe plugin can run as a standalone service:"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Add to your OVOS configuration:\n\n{\n    \"listener\": {\n        \"audio_transformers\": {\n            \"ovos-audio-transformer-plugin-omva-voiceid\": {\n                \"enabled\": true,\n                \"model\": \"speechbrain/spkrec-ecapa-voxceleb\",\n                \"model_cache_dir\": \"/opt/omva/speechbrain_cache\",\n                \"sample_rate\": 16000,\n                \"confidence_threshold\": 0.8,\n                \"processing_timeout_ms\": 100,\n                \"gpu\": false,\n                \"enable_enrollment\": true,\n                \"enrollment_session_timeout\": 600,\n                \"sample_timeout\": 30,\n                \"min_quality_threshold\": 0.5,\n                \"min_sample_duration\": 2.0,\n                \"max_sample_duration\": 10.0,\n                \"enrollment\": {\n                    \"min_samples\": 3\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-19T22:20:04Z",
+    "last_updated": "2025-09-01T16:23:10Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-audio-transformer-plugin-speechbrain-langdetect",
     "skill_id": null,
     "name": "ovos-audio-transformer-plugin-speechbrain-langdetect",
@@ -8969,7 +9015,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-04T15:01:45Z",
-    "last_updated": "2026-09-06T00:01:24Z",
+    "last_updated": "2026-09-13T19:11:11Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -9147,7 +9193,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-12T03:21:01Z",
-    "last_updated": "2026-09-01T00:06:59Z",
+    "last_updated": "2026-09-13T12:24:36Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -9269,7 +9315,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-localize",
     "package_name": "ovos-localize",
-    "pypi_version": "0.1.0a17",
+    "pypi_version": "0.1.0a18",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9296,7 +9342,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-18T01:39:28Z",
-    "last_updated": "2026-09-08T20:08:02.810723Z",
+    "last_updated": "2026-09-13T16:12:14.971565Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -9326,7 +9372,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 3,
-    "open_issues": 33,
+    "open_issues": 26,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -9695,7 +9741,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
@@ -9885,7 +9931,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
@@ -9935,7 +9981,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 1,
@@ -10034,7 +10080,7 @@
     "tier": 1,
     "component_type": "Audio Plugin",
     "type_group": "Plugin",
-    "stars": 6,
+    "stars": 5,
     "forks": 5,
     "open_issues": 3,
     "on_pypi": true,
@@ -10081,7 +10127,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -10243,7 +10289,7 @@
     "repo_created_at": "2026-06-22T22:52:36Z",
     "last_updated": "2026-08-15T03:29:26.955975Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-local",
@@ -10288,7 +10334,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-13T18:47:32Z",
     "last_updated": "2026-09-02T18:40:52.274749Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -10611,7 +10657,7 @@
     "repo_created_at": "2026-06-22T23:12:12Z",
     "last_updated": "2026-08-13T18:40:03.719750Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-spotify",
@@ -10657,7 +10703,7 @@
     "repo_created_at": "2026-06-25T22:45:16Z",
     "last_updated": "2026-08-13T18:40:34.423584Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-tunein",
@@ -10791,7 +10837,7 @@
     "repo_created_at": "2026-06-22T23:10:54Z",
     "last_updated": "2026-08-13T18:40:15.466723Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-memory-plugins",
@@ -10862,7 +10908,7 @@
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
-    "forks": 2,
+    "forks": 3,
     "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
@@ -11331,7 +11377,7 @@
     "type_group": "Tool",
     "stars": 4,
     "forks": 5,
-    "open_issues": 13,
+    "open_issues": 14,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11351,7 +11397,7 @@
     "repo_created_at": "2024-11-06T21:07:15Z",
     "last_updated": "2026-08-13T16:19:32.364255Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-ocp-audio-plugin",
@@ -11678,7 +11724,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 4,
-    "open_issues": 11,
+    "open_issues": 13,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11925,11 +11971,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Detect Plugin",
+    "component_type": "Summarizer Plugin",
     "type_group": "Plugin",
     "stars": 9,
     "forks": 8,
-    "open_issues": 10,
+    "open_issues": 9,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -12121,7 +12167,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 3,
-    "open_issues": 11,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14435,9 +14481,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-06T11:10:29Z",
-    "last_updated": "2026-09-11T09:46:28Z",
+    "last_updated": "2026-09-13T09:15:54Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-plugin-linguonnx",
