@@ -20,7 +20,7 @@
   "type_group": "Tool",
   "stars": 0,
   "forks": 8,
-  "open_issues": 59,
+  "open_issues": 58,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -34,7 +34,13 @@
       "content": "pip install ovos-date-parser"
     }
   ],
-  "languages": [],
+  "languages": [
+    "de",
+    "es",
+    "fr",
+    "it",
+    "pt"
+  ],
   "locale_content": {},
   "in_ovos_localize": true,
   "repo_created_at": "2024-11-07T01:05:06Z",
