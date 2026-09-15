@@ -23,7 +23,7 @@
   "type_group": "Plugin",
   "stars": 0,
   "forks": 4,
-  "open_issues": 5,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -31,7 +31,12 @@
   "connectivity": null,
   "requires_api_key": false,
   "settings_fields": [],
-  "setup_notes": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-PHAL-plugin-alsa\n\nor from source:\n\npip install git+https://github.com/OpenVoiceOS/ovos-PHAL-plugin-alsa\n\nself.bus.on(\"mycroft.volume.get\", self.handle_volume_request)\nself.bus.on(\"mycroft.volume.set\", self.handle_volume_change)\nself.bus.on(\"mycroft.volume.mute\", self.handle_mute_request)\nself.bus.on(\"mycroft.volume.unmute\", self.handle_unmute_request)\n\n---"
+    }
+  ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
