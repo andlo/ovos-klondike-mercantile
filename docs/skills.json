@@ -7090,6 +7090,43 @@
     "is_recently_updated": true
   },
   {
+    "id": "evok3dx-OVOS-Commands",
+    "skill_id": null,
+    "name": "OVOS-Commands",
+    "description": "> **Experimental software.** This project is tested for a small, known group",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/evok3dx/OVOS-Commands",
+    "package_name": "ovos-skill-jarvis-dispatcher",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "evok3dx",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-09-09T00:38:09Z",
+    "last_updated": "2026-09-16T21:13:23Z",
+    "is_new_repo": true,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
     "skill_id": null,
     "name": "ovos-common-query-pipeline-plugin",
@@ -10473,7 +10510,7 @@
     "repo_created_at": "2026-06-25T22:28:01Z",
     "last_updated": "2026-08-13T18:56:17Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "TigreGotico-ovos-media-provider-radio-tuga",
@@ -10519,7 +10556,7 @@
     "repo_created_at": "2026-06-25T22:28:25Z",
     "last_updated": "2026-08-13T18:56:30Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-somafm",
@@ -20642,7 +20679,7 @@
     "repo_created_at": "2025-04-14T14:22:06Z",
     "last_updated": "2026-08-16T03:16:10Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-translate-plugin-deepl",
