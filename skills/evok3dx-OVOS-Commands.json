@@ -26,12 +26,17 @@
   "connectivity": null,
   "requires_api_key": false,
   "settings_fields": [],
-  "setup_notes": [],
+  "setup_notes": [
+    {
+      "heading": "Post-install application validation",
+      "content": "For product-specific actions, confirm the capability mapping and window focus\nbefore debugging shortcuts or OVOS intent routing.\n\ncat ~/.config/jarvis/capabilities.json\n\nThen inspect the real X11 identity of the application:\n\nwmctrl -lx\nACTIVE=\"$(xdotool getactivewindow)\"\nxprop -id \"$ACTIVE\" WM_CLASS\n\nFor Standard Notes, the validated laptop reported:\n\nWM_CLASS(STRING) = \"standard notes\", \"Standard Notes\"\n\nTest Jarvis focus directly:\n\n~/.local/bin/jarvis-app-window focus standard_notes\necho \"exit=$?\"\n\nOnly after focus succeeds should you test application-specific actions such as\n`New note` or `Search notes`. A bare `xdotool key ...` command targets whatever\nwindow currently owns focus, often the terminal, so it is not a valid app test\nunless the intended application is actually active.\n\nSe\u2026"
+    }
+  ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-09-09T00:38:09Z",
-  "last_updated": "2026-09-16T21:13:23Z",
+  "last_updated": "2026-09-17T04:43:09Z",
   "is_new_repo": true,
   "is_recently_updated": false
 }
