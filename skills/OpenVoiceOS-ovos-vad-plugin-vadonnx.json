@@ -1,0 +1,42 @@
+{
+  "id": "OpenVoiceOS-ovos-vad-plugin-vadonnx",
+  "skill_id": null,
+  "name": "ovos-vad-plugin-vadonnx",
+  "description": "OVOS VAD plugin exposing every vadonnx model",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-vad-plugin-vadonnx",
+  "package_name": "ovos-vad-plugin-vadonnx",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Vad Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 2,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "uv pip install ovos-vad-plugin-vadonnx\n\nThe `fsmn` models also need the fbank frontend:\n\nuv pip install \"ovos-vad-plugin-vadonnx[fsmn]\""
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-09-17T04:10:47Z",
+  "last_updated": "2026-09-17T23:59:28Z",
+  "is_new_repo": true,
+  "is_recently_updated": false
+}
