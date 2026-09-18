@@ -1,5 +1,5 @@
 {
-  "id": "TigreGotico-ovos-transcription-validator-plugin",
+  "id": "OpenVoiceOS-ovos-transcription-validator-plugin",
   "skill_id": null,
   "name": "ovos-transcription-validator-plugin",
   "description": "This plugin is a utterance transformer for OVOS. It uses an OpenAI-compatible large language model (LLM) to check speech-to-text (STT) transcriptions before your voice assistant processes them.",
@@ -12,12 +12,12 @@
   ],
   "category": "Other",
   "icon": null,
-  "source": "https://github.com/TigreGotico/ovos-transcription-validator-plugin",
+  "source": "https://github.com/OpenVoiceOS/ovos-transcription-validator-plugin",
   "package_name": null,
   "pypi_version": null,
   "license": "Apache-2.0",
   "archived": false,
-  "author": "TigreGotico",
+  "author": "OpenVoiceOS",
   "tier": null,
   "component_type": "Infrastructure",
   "type_group": "Infrastructure",
@@ -57,9 +57,9 @@
     "sv-se"
   ],
   "locale_content": {},
-  "in_ovos_localize": true,
+  "in_ovos_localize": false,
   "repo_created_at": "2025-04-14T14:22:06Z",
-  "last_updated": "2026-08-16T03:16:10Z",
+  "last_updated": "2026-09-17T09:03:36Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }
