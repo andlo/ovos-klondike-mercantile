@@ -20,7 +20,7 @@
   "type_group": "Tool",
   "stars": 3,
   "forks": 2,
-  "open_issues": 13,
+  "open_issues": 10,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Persona Config Examples",
-      "content": "### LLM persona (OpenAI-compatible backend)\n\n{\n  \"name\": \"gpt-persona\",\n  \"handlers\": [\"ovos-openai-plugin\"],\n  \"ovos-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Knowledge-base + LLM fallback\n\n{\n  \"name\": \"smart-assistant\",\n  \"handlers\": [\n    \"ovos-solver-wikipedia-plugin\",\n    \"ovos-solver-ddg-plugin\",\n    \"ovos-solver-wordnet-plugin\",\n    \"ovos-openai-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ],\n  \"ovos-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Rivescript chatbot (no GPU, no API key)\n\n{\n  \"name\": \"rivescript-bot\",\n  \"handlers\": [\n    \"ovos-solver-rivescript-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ]\n}\n\n---"
+      "content": "### LLM persona (OpenAI-compatible backend)\n\n{\n  \"name\": \"gpt-persona\",\n  \"handlers\": [\"ovos-chat-openai-plugin\"],\n  \"ovos-chat-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Knowledge-base + LLM fallback\n\n{\n  \"name\": \"smart-assistant\",\n  \"handlers\": [\n    \"ovos-wikipedia-plugin\",\n    \"ovos-ddg-plugin\",\n    \"ovos-wordnet-plugin\",\n    \"ovos-chat-openai-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ],\n  \"ovos-chat-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Rivescript chatbot (no GPU, no API key)\n\n{\n  \"name\": \"rivescript-bot\",\n  \"handlers\": [\n    \"ovos-solver-rivescript-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ]\n}\n\n---"
     },
     {
       "heading": "Installing the MCP extra",
