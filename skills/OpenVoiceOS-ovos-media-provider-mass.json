@@ -9,7 +9,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-media-provider-mass",
   "package_name": "ovos-media-provider-mass",
-  "pypi_version": "0.0.1a5",
+  "pypi_version": "0.0.1a6",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -18,7 +18,7 @@
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
-  "open_issues": 2,
+  "open_issues": 1,
   "on_pypi": true,
   "has_release": false,
   "in_ovos_store": false,
@@ -33,14 +33,14 @@
     },
     {
       "heading": "Configure",
-      "content": "Per-provider settings live under `media_providers` in `mycroft.conf`, keyed by\nthe provider's entry-point name:\n\n{\n  \"media_providers\": {\n    \"music_assistant\": {\n      \"url\": \"http://192.168.1.100:8095\",\n      \"max_results\": 10\n    }\n  }\n}\n\n`url` is required (the provider reports itself unavailable without it). Set\n`\"enabled\": false` to disable without uninstalling."
+      "content": "Per-provider settings live under `media_providers` in `mycroft.conf`, keyed by\nthe provider's entry-point name:\n\n{\n  \"media_providers\": {\n    \"music_assistant\": {\n      \"url\": \"http://192.168.1.100:8095\",\n      \"token\": \"your-mass-api-token\",\n      \"max_results\": 10\n    }\n  }\n}\n\n`url` is required (the provider reports itself unavailable without it). `token`\nis required by Music Assistant 2.11+ (create one in the MA web UI under\nSettings \u2192 Users); older, unauthenticated servers keep working without it. Set\n`\"enabled\": false` to disable without uninstalling."
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-06-23T17:15:35Z",
-  "last_updated": "2026-09-02T15:51:31.707243Z",
+  "last_updated": "2026-09-16T19:22:54.454872Z",
   "is_new_repo": false,
   "is_recently_updated": true
 }
