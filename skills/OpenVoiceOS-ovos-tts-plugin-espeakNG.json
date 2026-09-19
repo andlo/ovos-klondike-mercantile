@@ -23,7 +23,7 @@
   "type_group": "Plugin",
   "stars": 2,
   "forks": 2,
-  "open_issues": 10,
+  "open_issues": 8,
   "on_pypi": true,
   "has_release": false,
   "in_ovos_store": false,
@@ -38,7 +38,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "Add this block to your OVOS configuration to select the plugin and a voice:\n\n  \"tts\": {\n    \"module\": \"ovos_tts_plugin_espeakng\",\n    \"ovos_tts_plugin_espeakng\": {\n      \"voice\": \"m1\"\n    }\n }"
+      "content": "Add this block to your OVOS configuration to select the plugin and a voice:\n\n  \"tts\": {\n    \"module\": \"ovos-tts-plugin-espeakng\",\n    \"ovos-tts-plugin-espeakng\": {\n      \"voice\": \"m1\"\n    }\n }"
     }
   ],
   "languages": [],

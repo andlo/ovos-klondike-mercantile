@@ -21,8 +21,8 @@
   "component_type": "Wake Word Plugin",
   "type_group": "Plugin",
   "stars": 2,
-  "forks": 5,
-  "open_issues": 8,
+  "forks": 7,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -33,11 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "Run this command:\n\npip install ovos-ww-plugin-openwakeword\n\nSet your wake word in `mycroft.conf`. Do not set the `models` key if you want the default model (\"hey jarvis\").\n\n\"listener\": {\n    \"wake_word\": \"hey_jarvis\"\n},\n\"hotwords\": {\n  \"hey_jarvis\": {\n      \"module\": \"ovos-ww-plugin-openwakeword\"\n  }\n}"
+      "content": "On Python 3.11 and older, run this command:\n\npip install ovos-ww-plugin-openwakeword\n\nOn Python 3.12 and newer, a plain install fails to resolve: openwakeword\nrequires tflite-runtime, and tflite-runtime has no wheels for these\ninterpreters. Install openwakeword without its declared dependencies, then\nlet this plugin provide the dependencies the onnx path needs:\n\npip install --no-deps \"openwakeword>=0.5.0,<1\"\npip install \"ovos-ww-plugin-openwakeword[onnx]\"\n\nSet your wake word in `mycroft.conf`. Do not set the `models` key if you want the default model (\"hey jarvis\").\n\n\"listener\": {\n    \"wake_word\": \"hey_jarvis\"\n},\n\"hotwords\": {\n  \"hey_jarvis\": {\n      \"module\": \"ovos-ww-plugin-openwakeword\"\n  }\n}"
     },
     {
       "heading": "Configuration",
-      "content": "The plugin accepts these extra options:\n\n\"listener\": {\n    \"wake_word\": \"hey_jarvis\"\n},\n\"hotwords\": {\n  \"hey_jarvis\": {\n      \"module\": \"ovos-ww-plugin-openwakeword\",\n      \"models\": [\"path/to/openwakeword/model/hey_jarvis.tflite\"],\n      \"inference_framework\": \"tflite\",\n      \"custom_verifier_models\": {\"hey_jarvis\": \"path/to/openwakeword/custom/verifier/model.pkl\"},\n      \"threshold\": 0.3,\n      \"custom_verifier_threshold\": 0.1\n  }\n}\n\n- `models`: paths to one or more openWakeWord models, in `.onnx` or `.tflite` format. Any model in the list can activate OVOS.\n- `inference_framework`: the format of the models in `models`. Use `tflite` or `onnx`. `tflite` is the default for `openWakeWord >=0.5.0` and gives better performance on most platforms. `onnx` may work on more platforms.\n\n- `threshol\u2026"
+      "content": "The plugin accepts these extra options:\n\n\"listener\": {\n    \"wake_word\": \"hey_jarvis\"\n},\n\"hotwords\": {\n  \"hey_jarvis\": {\n      \"module\": \"ovos-ww-plugin-openwakeword\",\n      \"models\": [\"path/to/openwakeword/model/hey_jarvis.tflite\"],\n      \"inference_framework\": \"tflite\",\n      \"custom_verifier_models\": {\"hey_jarvis\": \"path/to/openwakeword/custom/verifier/model.pkl\"},\n      \"threshold\": 0.3,\n      \"custom_verifier_threshold\": 0.1\n  }\n}\n\n- `models`: paths to one or more openWakeWord models, in `.onnx` or `.tflite` format. Any model in the list can activate OVOS.\n- `inference_framework`: the format of the models in `models`. Use `tflite` or `onnx`. The plugin picks `tflite` when tflite-runtime is installed and `onnx` when it is not \u2014 on Python 3.12+ tflite-runtime is usually not installable,\u2026"
     }
   ],
   "languages": [],
