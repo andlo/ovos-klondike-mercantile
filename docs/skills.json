@@ -17430,8 +17430,8 @@
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 3,
-    "forks": 4,
-    "open_issues": 3,
+    "forks": 3,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -18135,6 +18135,76 @@
     "in_ovos_localize": true,
     "repo_created_at": "2020-12-05T16:12:35Z",
     "last_updated": "2025-06-08T22:32:49.328946Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-skill-wolfie",
+    "skill_id": null,
+    "name": "ovos-skill-wolfie",
+    "description": "wolfram alpha spoken answers skill",
+    "examples": [],
+    "tags": [
+      "openvoiceos",
+      "skill"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-wolfie",
+    "package_name": "ovos-skill-wolfie",
+    "pypi_version": "0.5.8",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 5,
+    "open_issues": 7,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": true,
+    "settings_fields": [
+      {
+        "name": "use_selene",
+        "type": "checkbox",
+        "label": "use mycroft backend proxy"
+      },
+      {
+        "name": "appid",
+        "type": "text",
+        "label": "your api key, if not using proxy"
+      }
+    ],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-skill-wolfie\n\nAn [API key](https://products.wolframalpha.com/api/) is required. Configure it in the skill settings:\n\n{\n  \"appid\": \"YOUR-WOLFRAM-API-KEY\"\n}\n\n---"
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt",
+      "sv-se"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": true,
+    "repo_created_at": "2020-12-08T10:42:07Z",
+    "last_updated": "2025-06-08T22:33:04.764467Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -18998,7 +19068,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 2,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20339,7 +20409,7 @@
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
     "stars": 8,
-    "forks": 11,
+    "forks": 10,
     "open_issues": 7,
     "on_pypi": false,
     "has_release": false,
@@ -28966,85 +29036,6 @@
     "in_ovos_localize": true,
     "repo_created_at": "2018-01-23T09:41:23Z",
     "last_updated": "2025-06-08T22:04:04.795081Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "OpenVoiceOS-ovos-skill-wolfie",
-    "skill_id": "ovos-skill-wolfie.openvoiceos",
-    "name": "Wolfram Alpha",
-    "description": "Use Wolfram Alpha for general knowledge questions.",
-    "examples": [
-      "ask the wolf what is the speed of light",
-      "How tall is Mount Everest?",
-      "When was The Rocky Horror Picture Show released?",
-      "What is Madonna's real name?",
-      "What's 18 times 4?",
-      "How many inches in a meter?"
-    ],
-    "tags": [
-      "wolfram-alpha",
-      "query",
-      "general-knowledge",
-      "information"
-    ],
-    "category": "Information",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-skill-wolfie",
-    "package_name": "ovos-skill-wolfie",
-    "pypi_version": "0.5.8",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 1,
-    "forks": 5,
-    "open_issues": 9,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": true,
-    "settings_fields": [
-      {
-        "name": "use_selene",
-        "type": "checkbox",
-        "label": "use mycroft backend proxy"
-      },
-      {
-        "name": "appid",
-        "type": "text",
-        "label": "your api key, if not using proxy"
-      }
-    ],
-    "setup_notes": [
-      {
-        "heading": "Installation",
-        "content": "pip install ovos-skill-wolfie\n\nAn [API key](https://products.wolframalpha.com/api/) is required. Configure it in the skill settings:\n\n{\n  \"appid\": \"YOUR-WOLFRAM-API-KEY\"\n}\n\n---"
-      }
-    ],
-    "languages": [
-      "ca-es",
-      "da-dk",
-      "de-de",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "pt-br",
-      "pt-pt",
-      "sv-se"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": true,
-    "repo_created_at": "2020-12-08T10:42:07Z",
-    "last_updated": "2025-06-08T22:33:04.764467Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
