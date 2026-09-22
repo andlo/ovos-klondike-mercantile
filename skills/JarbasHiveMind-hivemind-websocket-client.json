@@ -30,7 +30,7 @@
   "type_group": "Tool",
   "stars": 0,
   "forks": 8,
-  "open_issues": 4,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -46,6 +46,10 @@
     {
       "heading": "2. Configure the satellite",
       "content": "On the satellite machine:\n\nhivemind-client set-identity \\\n  --key   \"your-access-key\" \\\n  --password \"your-password\" \\\n  --host  ws://192.168.1.10 \\\n  --port  5678 \\\n  --siteid living-room\n\nCredentials are saved to `~/.config/hivemind/_identity.json` and are read automatically by the client."
+    },
+    {
+      "heading": "NodeIdentity() without a name still loads the shared ~/.config/hivemind/_identity.json",
+      "content": "print(identity.access_key)\nprint(identity.default_master)\n\nidentity.add_trusted_key(\"home-hub\", \"-----BEGIN PUBLIC KEY-----\\n...\")\nidentity.save()\n\nSee [Identity & Credentials](docs/identity.md) for the full field reference.\n\n## CLI"
     },
     {
       "heading": "Forget the pinned key of a master that was reinstalled",

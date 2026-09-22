@@ -2703,7 +2703,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 1,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -2716,7 +2716,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-10-13T23:01:38Z",
-    "last_updated": "2026-09-13T17:11:07Z",
+    "last_updated": "2026-09-19T01:44:45Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -2748,7 +2748,7 @@
     "type_group": "Tool",
     "stars": 17,
     "forks": 2,
-    "open_issues": 6,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2821,7 +2821,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-09-10T23:05:41Z",
-    "last_updated": "2026-09-18T16:04:41Z",
+    "last_updated": "2026-09-21T11:03:22Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -2954,7 +2954,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2998,7 +2998,7 @@
     "icon": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-media-player",
     "package_name": "hivemind-player-protocol",
-    "pypi_version": "0.1.1a1",
+    "pypi_version": "0.1.2a1",
     "license": null,
     "archived": false,
     "author": "JarbasHiveMind",
@@ -3007,7 +3007,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -3033,7 +3033,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-14T22:56:03Z",
-    "last_updated": "2026-09-03T16:48:14.323477Z",
+    "last_updated": "2026-09-19T00:50:09.163359Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -3118,7 +3118,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 1,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -3171,7 +3171,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3342,7 +3342,7 @@
     "repo_created_at": "2026-03-14T14:57:24Z",
     "last_updated": "2026-09-18T13:10:26Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-HiveMind-voice-relay",
@@ -3496,7 +3496,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 8,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3512,6 +3512,10 @@
       {
         "heading": "2. Configure the satellite",
         "content": "On the satellite machine:\n\nhivemind-client set-identity \\\n  --key   \"your-access-key\" \\\n  --password \"your-password\" \\\n  --host  ws://192.168.1.10 \\\n  --port  5678 \\\n  --siteid living-room\n\nCredentials are saved to `~/.config/hivemind/_identity.json` and are read automatically by the client."
+      },
+      {
+        "heading": "NodeIdentity() without a name still loads the shared ~/.config/hivemind/_identity.json",
+        "content": "print(identity.access_key)\nprint(identity.default_master)\n\nidentity.add_trusted_key(\"home-hub\", \"-----BEGIN PUBLIC KEY-----\\n...\")\nidentity.save()\n\nSee [Identity & Credentials](docs/identity.md) for the full field reference.\n\n## CLI"
       },
       {
         "heading": "Forget the pinned key of a master that was reinstalled",
