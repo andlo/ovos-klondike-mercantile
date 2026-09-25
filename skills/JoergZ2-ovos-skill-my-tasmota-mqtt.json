@@ -15,12 +15,12 @@
   "category": "Other",
   "icon": null,
   "source": "https://github.com/JoergZ2/ovos-skill-my-tasmota-mqtt",
-  "package_name": null,
+  "package_name": "ovos-skill-my-tasmota-mqtt",
   "pypi_version": null,
   "license": "Apache-2.0",
   "archived": false,
   "author": "JoergZ2",
-  "tier": 3,
+  "tier": 2,
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 1,
@@ -44,12 +44,13 @@
     }
   ],
   "languages": [
-    "de-de"
+    "de-de",
+    "en-us"
   ],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2024-04-05T15:51:34Z",
-  "last_updated": "2025-11-27T08:07:50Z",
+  "last_updated": "2026-09-25T08:33:41Z",
   "is_new_repo": false,
   "is_recently_updated": false
 }
