@@ -1,0 +1,44 @@
+{
+  "id": "OscillateLabsLLC-neon-phal-plugin-notifications",
+  "skill_id": null,
+  "name": "neon-phal-plugin-notifications",
+  "description": "Notification Manager PHAL plugin for Neon/OVOS (ovos.notification.api.*)",
+  "examples": [],
+  "tags": [
+    "ovos"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/neon-phal-plugin-notifications",
+  "package_name": "neon-phal-plugin-notifications",
+  "pypi_version": "0.1.0",
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "All keys live under the plugin's PHAL section. Every key is optional.\n\nPHAL:\n  neon-phal-plugin-notifications:\n    store: json                      # persistence adapter; only \"json\" ships\n    store_path: null                 # override the JSON file path (default:\n                                     # $XDG_DATA_HOME/neon/neon-phal-plugin-notifications/notifications.json)\n    allow_global:                    # skill_ids permitted to use scope=GLOBAL\n      - skill-alerts.neongeckocom\n    allow_non_removable:             # skill_ids permitted to set removable_by_user=false\n      - skill-alerts.neongeckocom\n    rate_limit: 30                   # accepted `set` requests per producer per window\n    rate_window_seconds: 3600\n    consumers_allowed_to_dismiss: [] # empty/absent = every consumer m\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-08-22T16:00:57Z",
+  "last_updated": "2026-09-06T01:18:24.666386Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

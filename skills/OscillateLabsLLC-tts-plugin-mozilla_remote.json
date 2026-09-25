@@ -1,0 +1,45 @@
+{
+  "id": "OscillateLabsLLC-tts-plugin-mozilla_remote",
+  "skill_id": null,
+  "name": "tts-plugin-mozilla_remote",
+  "description": "TTS Plugin for remote Mozilla/Coqui TTS",
+  "examples": [],
+  "tags": [
+    "ovos",
+    "status-security-fixes-only"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote",
+  "package_name": "tts-plugin-mozilla_remote",
+  "pypi_version": "3.1.0",
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "TTS Plugin",
+  "type_group": "Plugin",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "using mycroft.conf\n\n\"tts\": {\n    \"module\": \"mozilla_remote\",\n    \"mozilla_remote\": {\n      \"api_url\": \"http://0.0.0.0:5002/api/tts\"\n    }\n}\n\nUsing neon.yaml\n\ntts:\n  module: mozilla_remote\n  mozilla_remote: { \"api_url\": \"http://0.0.0.0:5002/api/tts\" }"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2024-12-13T04:58:29Z",
+  "last_updated": "2026-09-25T02:05:01.688397Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

@@ -1,0 +1,88 @@
+{
+  "id": "OscillateLabsLLC-skill-mac-application-launcher",
+  "skill_id": null,
+  "name": "skill-mac-application-launcher",
+  "description": "launch applications by voice",
+  "examples": [],
+  "tags": [
+    "ovos",
+    "status-security-fixes-only"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/skill-mac-application-launcher",
+  "package_name": "skill-mac-application-launcher",
+  "pypi_version": "1.0.4",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 1,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration via `settings.json`",
+      "content": "Customize the Application Launcher skill behavior by modifying these options in `settings.json`:\n\n| Option                   | Type                   | Default Value | Description                                                                                           |\n| ------------------------ | ---------------------- | ------------- | ----------------------------------------------------------------------------------------------------- |\n| `aliases`                | `Dict[str, List[str]]` | `{}`          | Application aliases. Map app names to speech-friendly alternatives (e.g., `{\"Calculator\": [\"calc\"]}`) |\n| `user_commands`          | `Dict[str, str]`       | `{}`          | Custom application paths. Map app names to specific `.app` bundle paths                               |\n| `thr\u2026"
+    },
+    {
+      "heading": "Installation",
+      "content": "Install from PyPI:\n\npip install skill-mac-application-launcher\n\nOr install from source:\n\ngit clone https://github.com/OscillateLabsLLC/skill-mac-application-launcher\ncd skill-mac-application-launcher\npip install ."
+    }
+  ],
+  "languages": [
+    "ca-es",
+    "da",
+    "de-de",
+    "en-us",
+    "eu",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "examples": [
+        "Obre ____",
+        "Inicia ____",
+        "Tanca ____"
+      ]
+    },
+    "da": {
+      "examples": [
+        "\u00c5ben ____",
+        "Start ____",
+        "Luk ____"
+      ]
+    },
+    "de-de": {
+      "examples": [
+        "\u00d6ffne ____",
+        "Starte ____",
+        "Schlie\u00dfe ____"
+      ]
+    },
+    "nl-nl": {
+      "examples": [
+        "Open ____",
+        "Start ____",
+        "Sluit ____"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-06-08T21:50:46Z",
+  "last_updated": "2026-09-06T01:09:08.533293Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

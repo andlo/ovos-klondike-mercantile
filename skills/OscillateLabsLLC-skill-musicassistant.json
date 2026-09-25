@@ -1,0 +1,69 @@
+{
+  "id": "OscillateLabsLLC-skill-musicassistant",
+  "skill_id": "skill-musicassistant",
+  "name": "skill-musicassistant",
+  "description": "skill-musicassistant",
+  "examples": [],
+  "tags": [
+    "mycroft",
+    "ovos",
+    "neon",
+    "plugin",
+    "media",
+    "home assistant",
+    "music assistant",
+    "open home foundation"
+  ],
+  "category": "Other",
+  "icon": "https://www.music-assistant.io/assets/transparent-logo.png",
+  "source": "https://github.com/OscillateLabsLLC/skill-musicassistant",
+  "package_name": "skill-musicassistant",
+  "pypi_version": "0.2.1",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 1,
+  "forks": 2,
+  "open_issues": 2,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "The skill requires the following configuration:\n\n- `music_assistant_url`: The URL of the Music Assistant server.\n- `music_assistant_token`: The token for the Music Assistant server. _Required for version 2.7.2 and later._\n\nThe skill also accepts the following configuration:\n\n- `default_player`: The default player to use when a command doesn't name one. Can also be set by voice (\"make ... my default player\"), which updates this setting on the local device.\n\nThese can be set in the skill settings or in the skill configuration file."
+    },
+    {
+      "heading": "Example Configuration",
+      "content": "{\n  \"music_assistant_url\": \"http://localhost:8095\",\n  \"music_assistant_token\": \"MUSIC_ASSISTANT_TOKEN\",\n  \"default_player\": \"Living Room Speaker\"\n}"
+    }
+  ],
+  "languages": [
+    "en-us",
+    "fr-fr"
+  ],
+  "locale_content": {
+    "fr-fr": {
+      "name": "Music Assistant",
+      "description": "Contr\u00f4le la lecture musicale sur vos lecteurs Music Assistant avec OpenVoiceOS.",
+      "examples": [
+        "Avec Music Assistant, joue l'album Random Access Memories dans le salon",
+        "Avec Music Assistant, lance la playlist d\u00e9tente",
+        "Avec Music Assistant, joue le morceau Get Lucky",
+        "Avec Music Assistant, mets le volume \u00e0 trente pour cent"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-08-28T01:28:15Z",
+  "last_updated": "2025-12-21T04:05:44.336646Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

@@ -1,0 +1,45 @@
+{
+  "id": "OscillateLabsLLC-phal-plugin-save-conversations",
+  "skill_id": null,
+  "name": "phal-plugin-save-conversations",
+  "description": "An OVOS/Neon PHAL plugin that saves a transcript of your conversation messages in JSONL format.",
+  "examples": [],
+  "tags": [
+    "ovos",
+    "status-active"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/phal-plugin-save-conversations",
+  "package_name": "phal-plugin-save-conversations",
+  "pypi_version": "0.2.4",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 3,
+  "forks": 1,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Configuration",
+      "content": "OVOS `~/.config/mycroft/mycroft.conf`\n\n{\n  \"PHAL\": {\n    \"phal-plugin-save-conversations\": {\n      \"save_path\": \"/home/ovos/.cache/transcripts\"\n    }\n  }\n}\n\nNeon `~/.config/neon/neon.yaml`\n\nPHAL:\n  phal-plugin-save-conversations:\n    save_path: \"/home/neon/.cache/transcripts\""
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2025-02-01T04:45:06Z",
+  "last_updated": "2026-09-06T01:08:31.356842Z",
+  "is_new_repo": false,
+  "is_recently_updated": true
+}

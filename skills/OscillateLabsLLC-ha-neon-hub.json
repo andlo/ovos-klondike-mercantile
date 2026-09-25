@@ -1,0 +1,52 @@
+{
+  "id": "OscillateLabsLLC-ha-neon-hub",
+  "skill_id": null,
+  "name": "ha-neon-hub",
+  "description": "Home Assistant integration for Neon Hub: TTS, STT, and conversation agents via the HANA API",
+  "examples": [],
+  "tags": [
+    "hacs",
+    "home-assistant",
+    "neon-ai",
+    "ovos",
+    "status-poc"
+  ],
+  "category": "Other",
+  "icon": null,
+  "source": "https://github.com/OscillateLabsLLC/ha-neon-hub",
+  "package_name": "ha-neon-hub",
+  "pypi_version": null,
+  "license": "BSD-3-Clause",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 2,
+  "component_type": "Tool",
+  "type_group": "Tool",
+  "stars": 1,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installation",
+      "content": "### HACS (recommended)\n\n1. In HACS, add this repository as a custom repository\n   (category: Integration).\n2. Install **Neon Hub**.\n3. Restart Home Assistant.\n\n### Manual\n\nCopy `custom_components/neon_hub/` into your Home Assistant\n`config/custom_components/` directory and restart Home Assistant."
+    },
+    {
+      "heading": "Configuration",
+      "content": "If your hub advertises itself via mDNS (`_neon-hub._tcp`), Home Assistant will\ndiscover it and prompt you to finish setup. Otherwise add it manually:\n**Settings \u2192 Devices & Services \u2192 Add Integration \u2192 Neon Hub**.\n\n| Parameter | Description |\n| --- | --- |\n| Host | Hostname or full address of the HANA API, e.g. `hana.neon-hub.local` |\n| Username | Hub user account for Home Assistant |\n| Password | Password for that account |\n| Verify SSL certificate | Off by default \u2014 Neon Hub ships with a self-signed certificate. Enable if you have installed a real certificate. |\n\n### Options\n\n**Settings \u2192 Devices & Services \u2192 Neon Hub \u2192 Configure**\n\n| Option | Default | Description |\n| --- | --- | --- |\n| LLM backend | `chatgpt` | Which hub LLM endpoint the LLM conversation agent uses (`chatgpt`, `fastch\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-08-03T02:03:11Z",
+  "last_updated": "2026-08-03T02:03:13Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

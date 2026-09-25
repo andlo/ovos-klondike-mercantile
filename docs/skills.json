@@ -2380,6 +2380,58 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-ha-neon-hub",
+    "skill_id": null,
+    "name": "ha-neon-hub",
+    "description": "Home Assistant integration for Neon Hub: TTS, STT, and conversation agents via the HANA API",
+    "examples": [],
+    "tags": [
+      "hacs",
+      "home-assistant",
+      "neon-ai",
+      "ovos",
+      "status-poc"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OscillateLabsLLC/ha-neon-hub",
+    "package_name": "ha-neon-hub",
+    "pypi_version": null,
+    "license": "BSD-3-Clause",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "### HACS (recommended)\n\n1. In HACS, add this repository as a custom repository\n   (category: Integration).\n2. Install **Neon Hub**.\n3. Restart Home Assistant.\n\n### Manual\n\nCopy `custom_components/neon_hub/` into your Home Assistant\n`config/custom_components/` directory and restart Home Assistant."
+      },
+      {
+        "heading": "Configuration",
+        "content": "If your hub advertises itself via mDNS (`_neon-hub._tcp`), Home Assistant will\ndiscover it and prompt you to finish setup. Otherwise add it manually:\n**Settings \u2192 Devices & Services \u2192 Add Integration \u2192 Neon Hub**.\n\n| Parameter | Description |\n| --- | --- |\n| Host | Hostname or full address of the HANA API, e.g. `hana.neon-hub.local` |\n| Username | Hub user account for Home Assistant |\n| Password | Password for that account |\n| Verify SSL certificate | Off by default \u2014 Neon Hub ships with a self-signed certificate. Enable if you have installed a real certificate. |\n\n### Options\n\n**Settings \u2192 Devices & Services \u2192 Neon Hub \u2192 Configure**\n\n| Option | Default | Description |\n| --- | --- | --- |\n| LLM backend | `chatgpt` | Which hub LLM endpoint the LLM conversation agent uses (`chatgpt`, `fastch\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-08-03T02:03:11Z",
+    "last_updated": "2026-08-03T02:03:13Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "andlo-ha-ovos-integration",
     "skill_id": null,
     "name": "ha-ovos-integration",
@@ -5216,6 +5268,50 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-neon-phal-plugin-notifications",
+    "skill_id": null,
+    "name": "neon-phal-plugin-notifications",
+    "description": "Notification Manager PHAL plugin for Neon/OVOS (ovos.notification.api.*)",
+    "examples": [],
+    "tags": [
+      "ovos"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OscillateLabsLLC/neon-phal-plugin-notifications",
+    "package_name": "neon-phal-plugin-notifications",
+    "pypi_version": "0.1.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "PHAL Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "All keys live under the plugin's PHAL section. Every key is optional.\n\nPHAL:\n  neon-phal-plugin-notifications:\n    store: json                      # persistence adapter; only \"json\" ships\n    store_path: null                 # override the JSON file path (default:\n                                     # $XDG_DATA_HOME/neon/neon-phal-plugin-notifications/notifications.json)\n    allow_global:                    # skill_ids permitted to use scope=GLOBAL\n      - skill-alerts.neongeckocom\n    allow_non_removable:             # skill_ids permitted to set removable_by_user=false\n      - skill-alerts.neongeckocom\n    rate_limit: 30                   # accepted `set` requests per producer per window\n    rate_window_seconds: 3600\n    consumers_allowed_to_dismiss: [] # empty/absent = every consumer m\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-08-22T16:00:57Z",
+    "last_updated": "2026-09-06T01:18:24.666386Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "NeonGeckoCom-skill-about",
     "skill_id": "skill-about.neongeckocom=skill_about:AboutSkill",
     "name": "neon-skill-about",
@@ -5867,6 +5963,46 @@
     "last_updated": "2025-06-08T23:13:39.080812Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "OscillateLabsLLC-ocp-mac-visualizer",
+    "skill_id": null,
+    "name": "ocp-mac-visualizer",
+    "description": "A web-based music visualizer for OpenVoiceOS (OVOS), specifically ovos-mac",
+    "examples": [],
+    "tags": [
+      "ovos",
+      "status-poc"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OscillateLabsLLC/ocp-mac-visualizer",
+    "package_name": "ocp-mac-visualizer",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-08-21T03:29:09Z",
+    "last_updated": "2026-09-05T23:37:04Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
   },
   {
     "id": "putnik-OpenVoiceOS-russian",
@@ -17293,6 +17429,78 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-ovos-skill-openhab",
+    "skill_id": "ovos-skill-openhab.mikejgray=ovos_skill_openhab:openHABSkill",
+    "name": "ovos-skill-openhab",
+    "description": "This skill adds [openHAB](http://www.openhab.org/) support to [OVOS](https://openvoiceos.org). The skill takes advantage of the openHAB REST API, so it works both with the v1.x and v2.x of openHAB. In order to make openHAB Items accessible to OVOS/Neon, they need to be [tagged](https://www.openhab.org/addons/integrations/homekit/). Device names recognized by OVOS/Neon are matched against openHAB Item Labels. The above examples would all work with the following set of openHAB Item definitons: ```java Color DiningroomLight \"Diningroom Light\" <light> (gKitchen) [ \"Lighting\" ] {channel=\"hue:0200:1:bloom1:color\"} Color KitchenLight \"Kitchen Light\" <light> (gKitchen) [ \"Lighting\" ] {channel=\"hue:0200:1:bloom1:color\"} Switch GoodNight \"Good Night\"\t[ \"Switchable\" ] Number MqttID1Temperature \"Bedroom Temperature\" <temperature> [ \"CurrentTemperature\" ] {mqtt=\"<[mosquitto:mysensors/SI/1/1/1/0/0:state:default]\"} Number MqttID1Humidity \"Bedroom Humidity\" [ \"CurrentHumidity\" ] {mqtt=\"<[mosquitto:mysensors/SI/1/0/1/0/1:state:default]\"} Group gThermostat \"Main Thermostat\" [ \"gMainThermostat\" ] Number MainThermostatCurrentTemp \"Main Thermostat Current Temperature\" (gMainThermostat) [ \"CurrentTemperature\" ] Number MainThermostatTargetTemperature \"Main Thermostat Target Temperature\" (gMainThermostat) [ \"TargetTemperature\" ] String MainThermostatHeatingCoolingMode \"Main Thermostat Heating/Cooling Mode\" (gMainThermostat) [ \"homekit:HeatingCoolingMode\" ] ``` If items are modified in openHAB, a refresh in OVOS/Neon is needed by the command: - *\"Hey Mycroft/Neon, refresh openhab items\"* If you've forgotten what items have been identified, you can ask OVOS/Neon: - *\"Hey Mycroft/Neon, list openhab items\"*",
+    "examples": [
+      "Hey Mycroft/Neon, turn on Diningroom Light",
+      "Hey Mycroft/Neon, switch off Kitchen Light",
+      "Hey Mycroft/Neon, put on Good Night",
+      "Hey Mycroft/Neon, what is Good Night status?",
+      "Hey Mycroft/Neon, what is the status of Good Night?",
+      "Hey Mycroft/Neon, set Diningroom to 50 percent",
+      "Hey Mycroft/Neon, dim Kitchen",
+      "Hey Mycroft/Neon, bright Kitchen",
+      "Hey Mycroft/Neon, dim Kitchen by 20 percent",
+      "Hey Mycroft/Neon, what's Bedroom temperature?",
+      "Hey Mycroft/Neon, tell me the temperature of Bedroom",
+      "Hey Mycroft/Neon, what's the Bedroom humidity?",
+      "Hey Mycroft/Neon, I'd like to know the humidity of Bedroom",
+      "Hey Mycroft/Neon, adjust Main Thermostat to 21 degrees",
+      "Hey Mycroft/Neon, regulate Main Thermostat to 20 degrees",
+      "Hey Mycroft/Neon, decrease Main Thermostat by 2 degrees",
+      "Hey Mycroft/Neon, increase Main Thermostat by 1 degrees",
+      "Hey Mycroft/Neon, what is Main Thermostat is regulated to?",
+      "Hey Mycroft/Neon, how the Main Thermostat tuned to?"
+    ],
+    "tags": [
+      "ovos",
+      "skill",
+      "voice",
+      "assistant"
+    ],
+    "category": "Other",
+    "icon": "https://www.openhab.org/openhab-logo-square.png",
+    "source": "https://github.com/OscillateLabsLLC/ovos-skill-openhab",
+    "package_name": "ovos-skill-openhab",
+    "pypi_version": null,
+    "license": "EPL-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 1,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "In OVOS and Neon, skill installation occurs via pip. To install the openHAB skill, run the following command:\n\npip install git+https://github.com/mikejgray/ovos-skill-openhab\n\nIn Neon, skill installation must happen in `~/.config/neon/neon.yaml` to persist:\n\nskills:\n  default_skills:\n    - git+https://github.com/mikejgray/ovos-skill-openhab\n\nIf `skills.default_skills` doesn't exist, add it. If it does, you only need to add the last line.\n\nIf you're running Neon, please note you will also need to blacklist the Home Assistant skill as it shares some intents with this skill: \n \nskills: \n  blacklisted_skills: \n    - neon_homeassistant_skill.mikejgray \n\nAfter installation, the skill needs to be configured. In Neon, the path is `~/.config/neon/skills/ovos-skill-openhab.mikejgray/settings.json`.\u2026"
+      }
+    ],
+    "languages": [
+      "de-de",
+      "en-us",
+      "es-es",
+      "it-it"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-02-03T02:21:32Z",
+    "last_updated": "2026-03-17T04:01:27Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "andlo-ovos-skill-openvscode",
     "skill_id": null,
     "name": "ovos-skill-openvscode",
@@ -24744,6 +24952,51 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-phal-plugin-save-conversations",
+    "skill_id": null,
+    "name": "phal-plugin-save-conversations",
+    "description": "An OVOS/Neon PHAL plugin that saves a transcript of your conversation messages in JSONL format.",
+    "examples": [],
+    "tags": [
+      "ovos",
+      "status-active"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OscillateLabsLLC/phal-plugin-save-conversations",
+    "package_name": "phal-plugin-save-conversations",
+    "pypi_version": "0.2.4",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "PHAL Plugin",
+    "type_group": "Plugin",
+    "stars": 3,
+    "forks": 1,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "OVOS `~/.config/mycroft/mycroft.conf`\n\n{\n  \"PHAL\": {\n    \"phal-plugin-save-conversations\": {\n      \"save_path\": \"/home/ovos/.cache/transcripts\"\n    }\n  }\n}\n\nNeon `~/.config/neon/neon.yaml`\n\nPHAL:\n  phal-plugin-save-conversations:\n    save_path: \"/home/neon/.cache/transcripts\""
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-02-01T04:45:06Z",
+    "last_updated": "2026-09-06T01:08:31.356842Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "JarbasHiveMind-poorman_handshake",
     "skill_id": null,
     "name": "poorman_handshake",
@@ -25645,6 +25898,94 @@
     "is_recently_updated": true
   },
   {
+    "id": "OscillateLabsLLC-skill-mac-application-launcher",
+    "skill_id": null,
+    "name": "skill-mac-application-launcher",
+    "description": "launch applications by voice",
+    "examples": [],
+    "tags": [
+      "ovos",
+      "status-security-fixes-only"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OscillateLabsLLC/skill-mac-application-launcher",
+    "package_name": "skill-mac-application-launcher",
+    "pypi_version": "1.0.4",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 1,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration via `settings.json`",
+        "content": "Customize the Application Launcher skill behavior by modifying these options in `settings.json`:\n\n| Option                   | Type                   | Default Value | Description                                                                                           |\n| ------------------------ | ---------------------- | ------------- | ----------------------------------------------------------------------------------------------------- |\n| `aliases`                | `Dict[str, List[str]]` | `{}`          | Application aliases. Map app names to speech-friendly alternatives (e.g., `{\"Calculator\": [\"calc\"]}`) |\n| `user_commands`          | `Dict[str, str]`       | `{}`          | Custom application paths. Map app names to specific `.app` bundle paths                               |\n| `thr\u2026"
+      },
+      {
+        "heading": "Installation",
+        "content": "Install from PyPI:\n\npip install skill-mac-application-launcher\n\nOr install from source:\n\ngit clone https://github.com/OscillateLabsLLC/skill-mac-application-launcher\ncd skill-mac-application-launcher\npip install ."
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da",
+      "de-de",
+      "en-us",
+      "eu",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "examples": [
+          "Obre ____",
+          "Inicia ____",
+          "Tanca ____"
+        ]
+      },
+      "da": {
+        "examples": [
+          "\u00c5ben ____",
+          "Start ____",
+          "Luk ____"
+        ]
+      },
+      "de-de": {
+        "examples": [
+          "\u00d6ffne ____",
+          "Starte ____",
+          "Schlie\u00dfe ____"
+        ]
+      },
+      "nl-nl": {
+        "examples": [
+          "Open ____",
+          "Start ____",
+          "Sluit ____"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-06-08T21:50:46Z",
+    "last_updated": "2026-09-06T01:09:08.533293Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "OscillateLabsLLC-skill-meal-plan",
     "skill_id": "skill_meal_plan.oscillatelabsllc",
     "name": "skill-meal-plan",
@@ -25792,6 +26133,75 @@
     "last_updated": "2026-09-06T01:09:34.794765Z",
     "is_new_repo": false,
     "is_recently_updated": true
+  },
+  {
+    "id": "OscillateLabsLLC-skill-musicassistant",
+    "skill_id": "skill-musicassistant",
+    "name": "skill-musicassistant",
+    "description": "skill-musicassistant",
+    "examples": [],
+    "tags": [
+      "mycroft",
+      "ovos",
+      "neon",
+      "plugin",
+      "media",
+      "home assistant",
+      "music assistant",
+      "open home foundation"
+    ],
+    "category": "Other",
+    "icon": "https://www.music-assistant.io/assets/transparent-logo.png",
+    "source": "https://github.com/OscillateLabsLLC/skill-musicassistant",
+    "package_name": "skill-musicassistant",
+    "pypi_version": "0.2.1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 2,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "The skill requires the following configuration:\n\n- `music_assistant_url`: The URL of the Music Assistant server.\n- `music_assistant_token`: The token for the Music Assistant server. _Required for version 2.7.2 and later._\n\nThe skill also accepts the following configuration:\n\n- `default_player`: The default player to use when a command doesn't name one. Can also be set by voice (\"make ... my default player\"), which updates this setting on the local device.\n\nThese can be set in the skill settings or in the skill configuration file."
+      },
+      {
+        "heading": "Example Configuration",
+        "content": "{\n  \"music_assistant_url\": \"http://localhost:8095\",\n  \"music_assistant_token\": \"MUSIC_ASSISTANT_TOKEN\",\n  \"default_player\": \"Living Room Speaker\"\n}"
+      }
+    ],
+    "languages": [
+      "en-us",
+      "fr-fr"
+    ],
+    "locale_content": {
+      "fr-fr": {
+        "name": "Music Assistant",
+        "description": "Contr\u00f4le la lecture musicale sur vos lecteurs Music Assistant avec OpenVoiceOS.",
+        "examples": [
+          "Avec Music Assistant, joue l'album Random Access Memories dans le salon",
+          "Avec Music Assistant, lance la playlist d\u00e9tente",
+          "Avec Music Assistant, joue le morceau Get Lucky",
+          "Avec Music Assistant, mets le volume \u00e0 trente pour cent"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-28T01:28:15Z",
+    "last_updated": "2025-12-21T04:05:44.336646Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-skill-ovos-alarm",
@@ -26720,6 +27130,63 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-skill-plex",
+    "skill_id": null,
+    "name": "skill-plex",
+    "description": "",
+    "examples": [
+      "Play Charles Mingus",
+      "Play Jamie Cullum on Plex",
+      "Play the movie Ghostbusters",
+      "Play the movie Ghostbusters on Plex",
+      "Play Star Trek the Next Generation on Plex",
+      "Play the tv show Star Trek the Next Generation on Plex"
+    ],
+    "tags": [
+      "music",
+      "NeonAI",
+      "NeonGecko Original",
+      "OCP",
+      "Common Play"
+    ],
+    "category": "Music",
+    "icon": "https://www.plex.tv/wp-content/themes/plex/assets/img/plex-logo.svg",
+    "source": "https://github.com/OscillateLabsLLC/skill-plex",
+    "package_name": "skill-plex",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 2,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Setup",
+        "content": "### Neon Mark 2\n\n#### Installation\n\nUpdate `~/.config/neon/neon.yaml` to include the following:\n\nskills:\n  default_skills:\n    - git+https://github.com/OscillateLabsLLC/skill-plex\n\nRestart `neon-skills` with `sudo systemctl restart neon-skills` or restart Neon services from the GUI.\n\nFor pip installation instructions, see [the OVOS section](#OVOS).\n\n#### Pairing\n\nWhen it loads, you will see a screen asking you to visit https://plex.tv/link and enter a code. Note that you must be logged into the Plex instance you wish to use. Enter the code and you will authorize the Mark 2 to use your Plex server. You will only need to do this once.\n\nIf this is not working for some reason or you prefer to use a specific token, you can manually update the skill settings:\n\nmkdir -p config/neon/skills/skill-p\u2026"
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-02-24T21:27:18Z",
+    "last_updated": "2025-01-26T03:20:26Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "smartgic-skill-sonos-controller",
     "skill_id": null,
     "name": "skill-sonos-controller",
@@ -27391,6 +27858,51 @@
     "in_ovos_localize": true,
     "repo_created_at": "2024-03-06T18:18:18Z",
     "last_updated": "2025-06-08T23:41:56.135664Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "OscillateLabsLLC-tts-plugin-mozilla_remote",
+    "skill_id": null,
+    "name": "tts-plugin-mozilla_remote",
+    "description": "TTS Plugin for remote Mozilla/Coqui TTS",
+    "examples": [],
+    "tags": [
+      "ovos",
+      "status-security-fixes-only"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote",
+    "package_name": "tts-plugin-mozilla_remote",
+    "pypi_version": "3.1.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "TTS Plugin",
+    "type_group": "Plugin",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "using mycroft.conf\n\n\"tts\": {\n    \"module\": \"mozilla_remote\",\n    \"mozilla_remote\": {\n      \"api_url\": \"http://0.0.0.0:5002/api/tts\"\n    }\n}\n\nUsing neon.yaml\n\ntts:\n  module: mozilla_remote\n  mozilla_remote: { \"api_url\": \"http://0.0.0.0:5002/api/tts\" }"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-12-13T04:58:29Z",
+    "last_updated": "2026-09-25T02:05:01.688397Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
