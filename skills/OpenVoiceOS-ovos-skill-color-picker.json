@@ -1,8 +1,8 @@
 {
   "id": "OpenVoiceOS-ovos-skill-color-picker",
   "skill_id": null,
-  "name": "ovos-skill-color-picker",
-  "description": null,
+  "name": "Color Picker",
+  "description": "Look up a color by name and hear its hex and RGB values.",
   "examples": [
     "show me the color green"
   ],
@@ -20,7 +20,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 4,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,

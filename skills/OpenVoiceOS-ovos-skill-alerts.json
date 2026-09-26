@@ -1,8 +1,8 @@
 {
   "id": "OpenVoiceOS-ovos-skill-alerts",
   "skill_id": null,
-  "name": "ovos-skill-alerts",
-  "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service. ",
+  "name": "Alerts",
+  "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service.",
   "examples": [
     "Set an alarm for 8 AM.",
     "Start a bread timer for 30 minutes.",
@@ -41,7 +41,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 4,
-  "open_issues": 8,
+  "open_issues": 36,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -64,6 +64,7 @@
     "it-it",
     "nl-nl",
     "pl-pl",
+    "pt-br",
     "pt-pt",
     "ru-ru",
     "sv-fi",

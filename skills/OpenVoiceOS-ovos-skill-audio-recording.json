@@ -1,8 +1,8 @@
 {
   "id": "OpenVoiceOS-ovos-skill-audio-recording",
   "skill_id": null,
-  "name": "ovos-skill-audio-recording",
-  "description": null,
+  "name": "Audio Recording",
+  "description": "Record audio to a file by voice. While a recording runs, the skill turns off the wake word and speech to text. It needs ovos-dinkum-listener.",
   "examples": [
     "begin recording",
     "new recording named {name}",
@@ -24,7 +24,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 3,
-  "open_issues": 7,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
