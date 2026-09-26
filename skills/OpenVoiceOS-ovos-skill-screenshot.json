@@ -1,8 +1,8 @@
 {
   "id": "OpenVoiceOS-ovos-skill-screenshot",
-  "skill_id": null,
-  "name": "ovos-skill-screenshot",
-  "description": null,
+  "skill_id": "ovos-skill-screenshot.openvoiceos",
+  "name": "Screenshot",
+  "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
   "examples": [
     "take screenshot",
     "take a screenshot",
@@ -11,7 +11,9 @@
     "save a screenshot",
     "grab the screen"
   ],
-  "tags": [],
+  "tags": [
+    "system"
+  ],
   "category": "Other",
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-screenshot",

@@ -6295,7 +6295,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 3,
-    "open_issues": 7,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -17684,7 +17684,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 2,
-    "open_issues": 7,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -17704,6 +17704,7 @@
     ],
     "languages": [
       "ca-es",
+      "da-dk",
       "de-de",
       "en-us",
       "es-es",
@@ -17759,7 +17760,7 @@
     "type_group": "Skill",
     "stars": 3,
     "forks": 3,
-    "open_issues": 8,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -17875,70 +17876,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T19:34:27Z",
     "last_updated": "2026-08-16T19:59:16Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "OpenVoiceOS-ovos-skill-screenshot",
-    "skill_id": null,
-    "name": "ovos-skill-screenshot",
-    "description": null,
-    "examples": [
-      "take screenshot",
-      "take a screenshot",
-      "capture the screen",
-      "screenshot the display",
-      "save a screenshot",
-      "grab the screen"
-    ],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-skill-screenshot",
-    "package_name": "ovos-skill-screenshot",
-    "pypi_version": "0.0.7",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 3,
-    "open_issues": 4,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-skill-screenshot"
-      }
-    ],
-    "languages": [
-      "ca-es",
-      "da-dk",
-      "de-de",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "oc-fr",
-      "pt-br",
-      "pt-pt",
-      "sv-se"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": true,
-    "repo_created_at": "2024-11-17T13:56:41Z",
-    "last_updated": "2025-03-16T13:12:04.694661Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -18428,7 +18365,7 @@
     "type_group": "Skill",
     "stars": 11,
     "forks": 12,
-    "open_issues": 7,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18618,7 +18555,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 3,
-    "open_issues": 9,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18826,7 +18763,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 2,
-    "open_issues": 6,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18979,7 +18916,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19151,7 +19088,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19234,7 +19171,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-spec-tools",
     "package_name": "ovos-spec-tools",
-    "pypi_version": "1.13.0a1",
+    "pypi_version": "1.13.1a3",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -19243,7 +19180,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 9,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -19263,9 +19200,9 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2026-05-22T10:53:04Z",
-    "last_updated": "2026-09-17T03:02:35.200290Z",
+    "last_updated": "2026-09-26T15:10:16.806287Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-stt-plugin-azure",
@@ -19343,7 +19280,7 @@
     "type_group": "Plugin",
     "stars": 2,
     "forks": 2,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19449,7 +19386,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 4,
+    "open_issues": 5,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -19479,7 +19416,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-02-27T00:49:20Z",
-    "last_updated": "2026-07-30T20:26:43Z",
+    "last_updated": "2026-09-26T11:31:15Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -19746,7 +19683,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19842,7 +19779,7 @@
     "type_group": "Tool",
     "stars": 5,
     "forks": 0,
-    "open_issues": 6,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19896,7 +19833,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -20001,7 +19938,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20411,7 +20348,7 @@
     "type_group": "Plugin",
     "stars": 6,
     "forks": 2,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20550,7 +20487,7 @@
     "type_group": "Tool",
     "stars": 9,
     "forks": 5,
-    "open_issues": 10,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20605,7 +20542,7 @@
     "type_group": "Plugin",
     "stars": 2,
     "forks": 6,
-    "open_issues": 8,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -24954,7 +24891,7 @@
     "type_group": "Skill",
     "stars": 6,
     "forks": 9,
-    "open_issues": 5,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -25669,6 +25606,72 @@
     "in_ovos_localize": false,
     "repo_created_at": "2022-12-21T08:56:12Z",
     "last_updated": "2026-04-10T06:10:37Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-skill-screenshot",
+    "skill_id": "ovos-skill-screenshot.openvoiceos",
+    "name": "Screenshot",
+    "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
+    "examples": [
+      "take screenshot",
+      "take a screenshot",
+      "capture the screen",
+      "screenshot the display",
+      "save a screenshot",
+      "grab the screen"
+    ],
+    "tags": [
+      "system"
+    ],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-screenshot",
+    "package_name": "ovos-skill-screenshot",
+    "pypi_version": "0.0.7",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 3,
+    "open_issues": 4,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-screenshot"
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "oc-fr",
+      "pt-br",
+      "pt-pt",
+      "sv-se"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": true,
+    "repo_created_at": "2024-11-17T13:56:41Z",
+    "last_updated": "2025-03-16T13:12:04.694661Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -27700,7 +27703,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 3,
-    "open_issues": 3,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -28627,7 +28630,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 5,
-    "open_issues": 10,
+    "open_issues": 9,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -28695,7 +28698,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 4,
-    "open_issues": 6,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -28734,237 +28737,237 @@
         "label": "wpcraft"
       },
       {
-        "name": "EarthPorn",
+        "name": "earth_porn",
         "type": "checkbox",
         "label": "Earth Porn"
       },
       {
-        "name": "BotanicalPorn",
+        "name": "botanical_porn",
         "type": "checkbox",
         "label": "Botanical Porn"
       },
       {
-        "name": "WaterPorn",
+        "name": "water_porn",
         "type": "checkbox",
         "label": "Water Porn"
       },
       {
-        "name": "SeaPorn",
+        "name": "sea_porn",
         "type": "checkbox",
         "label": "Sea Porn"
       },
       {
-        "name": "SkyPorn",
+        "name": "sky_porn",
         "type": "checkbox",
         "label": "Sky Porn"
       },
       {
-        "name": "FirePorn",
+        "name": "fire_porn",
         "type": "checkbox",
         "label": "Fire Porn"
       },
       {
-        "name": "DesertPorn",
+        "name": "desert_porn",
         "type": "checkbox",
         "label": "Desert Porn"
       },
       {
-        "name": "WinterPorn",
+        "name": "winter_porn",
         "type": "checkbox",
         "label": "Winter Porn"
       },
       {
-        "name": "AutumnPorn",
+        "name": "autumn_porn",
         "type": "checkbox",
         "label": "Autumn Porn"
       },
       {
-        "name": "WeatherPorn",
+        "name": "weather_porn",
         "type": "checkbox",
         "label": "Weather Porn"
       },
       {
-        "name": "GeologyPorn",
+        "name": "geology_porn",
         "type": "checkbox",
         "label": "Geology Porn"
       },
       {
-        "name": "SpacePorn",
+        "name": "space_porn",
         "type": "checkbox",
         "label": "Space Porn"
       },
       {
-        "name": "BeachPorn",
+        "name": "beach_porn",
         "type": "checkbox",
         "label": "Beach Porn"
       },
       {
-        "name": "MushroomPorn",
+        "name": "mushroom_porn",
         "type": "checkbox",
         "label": "Mushroom Porn"
       },
       {
-        "name": "SpringPorn",
+        "name": "spring_porn",
         "type": "checkbox",
         "label": "Spring Porn"
       },
       {
-        "name": "SummerPorn",
+        "name": "summer_porn",
         "type": "checkbox",
         "label": "Summer Porn"
       },
       {
-        "name": "LavaPorn",
+        "name": "lava_porn",
         "type": "checkbox",
         "label": "Lava Porn"
       },
       {
-        "name": "LakePorn",
+        "name": "lake_porn",
         "type": "checkbox",
         "label": "Lake Porn"
       },
       {
-        "name": "CityPorn",
+        "name": "city_porn",
         "type": "checkbox",
         "label": "City Porn"
       },
       {
-        "name": "VillagePorn",
+        "name": "village_porn",
         "type": "checkbox",
         "label": "Village Porn"
       },
       {
-        "name": "RuralPorn",
+        "name": "rural_porn",
         "type": "checkbox",
         "label": "Rural Porn"
       },
       {
-        "name": "ArchitecturePorn",
+        "name": "architecture_porn",
         "type": "checkbox",
         "label": "Architecture Porn"
       },
       {
-        "name": "HousePorn",
+        "name": "house_porn",
         "type": "checkbox",
         "label": "House Porn"
       },
       {
-        "name": "CabinPorn",
+        "name": "cabin_porn",
         "type": "checkbox",
         "label": "Cabin Porn"
       },
       {
-        "name": "ChurchPorn",
+        "name": "church_porn",
         "type": "checkbox",
         "label": "Church Porn"
       },
       {
-        "name": "AbandonedPorn",
+        "name": "abandoned_porn",
         "type": "checkbox",
         "label": "Abandoned Porn"
       },
       {
-        "name": "CemeteryPorn",
+        "name": "cemetery_porn",
         "type": "checkbox",
         "label": "Cemetery Porn"
       },
       {
-        "name": "InfrastructurePorn",
+        "name": "infrastructure_porn",
         "type": "checkbox",
         "label": "Infrastructure Porn"
       },
       {
-        "name": "MachinePorn",
+        "name": "machine_porn",
         "type": "checkbox",
         "label": "Machine Porn"
       },
       {
-        "name": "CarPorn",
+        "name": "car_porn",
         "type": "checkbox",
         "label": "Car Porn"
       },
       {
-        "name": "F1Porn",
+        "name": "f1_porn",
         "type": "checkbox",
-        "label": "F1Porn"
+        "label": "f1_porn"
       },
       {
-        "name": "MotorcyclePorn",
+        "name": "motorcycle_porn",
         "type": "checkbox",
         "label": "Motorcycle Porn"
       },
       {
-        "name": "MilitaryPorn",
+        "name": "military_porn",
         "type": "checkbox",
         "label": "Military Porn"
       },
       {
-        "name": "GunPorn",
+        "name": "gun_porn",
         "type": "checkbox",
         "label": "Gun Porn"
       },
       {
-        "name": "KnifePorn",
+        "name": "knife_porn",
         "type": "checkbox",
         "label": "Knife Porn"
       },
       {
-        "name": "BoatPorn",
+        "name": "boat_porn",
         "type": "checkbox",
         "label": "Boat Porn"
       },
       {
-        "name": "RidesPorn",
+        "name": "rides_porn",
         "type": "checkbox",
         "label": "Rides Porn"
       },
       {
-        "name": "DestructionPorn",
+        "name": "destruction_porn",
         "type": "checkbox",
         "label": "Destruction Porn"
       },
       {
-        "name": "ThingsCutInHalfPorn",
+        "name": "things_cut_in_half_porn",
         "type": "checkbox",
         "label": "Things Cut In Half Porn"
       },
       {
-        "name": "StarshipPorn",
+        "name": "starship_porn",
         "type": "checkbox",
         "label": "Starship Porn"
       },
       {
-        "name": "ToolPorn",
+        "name": "tool_porn",
         "type": "checkbox",
         "label": "Tool Porn"
       },
       {
-        "name": "TechnologyPorn",
+        "name": "technology_porn",
         "type": "checkbox",
         "label": "Technology Porn"
       },
       {
-        "name": "BridgePorn",
+        "name": "bridge_porn",
         "type": "checkbox",
         "label": "Bridge Porn"
       },
       {
-        "name": "PolicePorn",
+        "name": "police_porn",
         "type": "checkbox",
         "label": "Police Porn"
       },
       {
-        "name": "SteamPorn",
+        "name": "steam_porn",
         "type": "checkbox",
         "label": "Steam Porn"
       },
       {
-        "name": "RetailPorn",
+        "name": "retail_porn",
         "type": "checkbox",
         "label": "Retail Porn"
       },
       {
-        "name": "SpaceFlightPorn",
+        "name": "space_flight_porn",
         "type": "checkbox",
         "label": "Space Flight Porn"
       },
@@ -28979,197 +28982,197 @@
         "label": "drydockporn"
       },
       {
-        "name": "AnimalPorn",
+        "name": "animal_porn",
         "type": "checkbox",
         "label": "Animal Porn"
       },
       {
-        "name": "HumanPorn",
+        "name": "human_porn",
         "type": "checkbox",
         "label": "Human Porn"
       },
       {
-        "name": "EarthlingPorn",
+        "name": "earthling_porn",
         "type": "checkbox",
         "label": "Earthling Porn"
       },
       {
-        "name": "AdrenalinePorn",
+        "name": "adrenaline_porn",
         "type": "checkbox",
         "label": "Adrenaline Porn"
       },
       {
-        "name": "ClimbingPorn",
+        "name": "climbing_porn",
         "type": "checkbox",
         "label": "Climbing Porn"
       },
       {
-        "name": "SportsPorn",
+        "name": "sports_porn",
         "type": "checkbox",
         "label": "Sports Porn"
       },
       {
-        "name": "AgriculturePorn",
+        "name": "agriculture_porn",
         "type": "checkbox",
         "label": "Agriculture Porn"
       },
       {
-        "name": "TeaPorn",
+        "name": "tea_porn",
         "type": "checkbox",
         "label": "Tea Porn"
       },
       {
-        "name": "BonsaiPorn",
+        "name": "bonsai_porn",
         "type": "checkbox",
         "label": "Bonsai Porn"
       },
       {
-        "name": "FoodPorn",
+        "name": "food_porn",
         "type": "checkbox",
         "label": "Food Porn"
       },
       {
-        "name": "CulinaryPorn",
+        "name": "culinary_porn",
         "type": "checkbox",
         "label": "Culinary Porn"
       },
       {
-        "name": "DessertPorn",
+        "name": "dessert_porn",
         "type": "checkbox",
         "label": "Dessert Porn"
       },
       {
-        "name": "DesignPorn",
+        "name": "design_porn",
         "type": "checkbox",
         "label": "Design Porn"
       },
       {
-        "name": "RoomPorn",
+        "name": "room_porn",
         "type": "checkbox",
         "label": "Room Porn"
       },
       {
-        "name": "AlbumArtPorn",
+        "name": "album_art_porn",
         "type": "checkbox",
         "label": "Album Art Porn"
       },
       {
-        "name": "MetalPorn",
+        "name": "metal_porn",
         "type": "checkbox",
         "label": "Metal Porn"
       },
       {
-        "name": "MoviePosterPorn",
+        "name": "movie_poster_porn",
         "type": "checkbox",
         "label": "Movie Poster Porn"
       },
       {
-        "name": "TelevisionPosterPorn",
+        "name": "television_poster_porn",
         "type": "checkbox",
         "label": "Television Poster Porn"
       },
       {
-        "name": "ComicBookPorn",
+        "name": "comic_book_porn",
         "type": "checkbox",
         "label": "Comic Book Porn"
       },
       {
-        "name": "StreetArtPorn",
+        "name": "street_art_porn",
         "type": "checkbox",
         "label": "Street Art Porn"
       },
       {
-        "name": "AdPorn",
+        "name": "ad_porn",
         "type": "checkbox",
         "label": "Ad Porn"
       },
       {
-        "name": "ArtPorn",
+        "name": "art_porn",
         "type": "checkbox",
         "label": "Art Porn"
       },
       {
-        "name": "FractalPorn",
+        "name": "fractal_porn",
         "type": "checkbox",
         "label": "Fractal Porn"
       },
       {
-        "name": "InstrumentPorn",
+        "name": "instrument_porn",
         "type": "checkbox",
         "label": "Instrument Porn"
       },
       {
-        "name": "ExposurePorn",
+        "name": "exposure_porn",
         "type": "checkbox",
         "label": "Exposure Porn"
       },
       {
-        "name": "MacroPorn",
+        "name": "macro_porn",
         "type": "checkbox",
         "label": "Macro Porn"
       },
       {
-        "name": "MicroPorn",
+        "name": "micro_porn",
         "type": "checkbox",
         "label": "Micro Porn"
       },
       {
-        "name": "GeekPorn",
+        "name": "geek_porn",
         "type": "checkbox",
         "label": "Geek Porn"
       },
       {
-        "name": "MTGPorn",
+        "name": "mtgporn",
         "type": "checkbox",
         "label": "MTG Porn"
       },
       {
-        "name": "GamerPorn",
+        "name": "gamer_porn",
         "type": "checkbox",
         "label": "Gamer Porn"
       },
       {
-        "name": "PowerWashingPorn",
+        "name": "power_washing_porn",
         "type": "checkbox",
         "label": "Power Washing Porn"
       },
       {
-        "name": "AerialPorn",
+        "name": "aerial_porn",
         "type": "checkbox",
         "label": "Aerial Porn"
       },
       {
-        "name": "OrganizationPorn",
+        "name": "organization_porn",
         "type": "checkbox",
         "label": "Organization Porn"
       },
       {
-        "name": "FashionPorn",
+        "name": "fashion_porn",
         "type": "checkbox",
         "label": "Fashion Porn"
       },
       {
-        "name": "AVPorn",
+        "name": "avporn",
         "type": "checkbox",
         "label": "AV Porn"
       },
       {
-        "name": "ApocalypsePorn",
+        "name": "apocalypse_porn",
         "type": "checkbox",
         "label": "Apocalypse Porn"
       },
       {
-        "name": "InfraredPorn",
+        "name": "infrared_porn",
         "type": "checkbox",
         "label": "Infrared Porn"
       },
       {
-        "name": "ViewPorn",
+        "name": "view_porn",
         "type": "checkbox",
         "label": "View Porn"
       },
       {
-        "name": "HellscapePorn",
+        "name": "hellscape_porn",
         "type": "checkbox",
         "label": "Hellscape Porn"
       },
@@ -29179,142 +29182,142 @@
         "label": "sculptureporn"
       },
       {
-        "name": "HistoryPorn",
+        "name": "history_porn",
         "type": "checkbox",
         "label": "History Porn"
       },
       {
-        "name": "UniformPorn",
+        "name": "uniform_porn",
         "type": "checkbox",
         "label": "Uniform Porn"
       },
       {
-        "name": "BookPorn",
+        "name": "book_porn",
         "type": "checkbox",
         "label": "Book Porn"
       },
       {
-        "name": "NewsPorn",
+        "name": "news_porn",
         "type": "checkbox",
         "label": "News Porn"
       },
       {
-        "name": "QuotesPorn",
+        "name": "quotes_porn",
         "type": "checkbox",
         "label": "Quotes Porn"
       },
       {
-        "name": "FuturePorn",
+        "name": "future_porn",
         "type": "checkbox",
         "label": "Future Porn"
       },
       {
-        "name": "FossilPorn",
+        "name": "fossil_porn",
         "type": "checkbox",
         "label": "Fossil Porn"
       },
       {
-        "name": "MegalithPorn",
+        "name": "megalith_porn",
         "type": "checkbox",
         "label": "Megalith Porn"
       },
       {
-        "name": "ArtefactPorn",
+        "name": "artefact_porn",
         "type": "checkbox",
         "label": "Artefact Porn"
       },
       {
-        "name": "AmateurEarthPorn",
+        "name": "amateur_earth_porn",
         "type": "checkbox",
         "label": "Amateur Earth Porn"
       },
       {
-        "name": "AmateurPhotography",
+        "name": "amateur_photography",
         "type": "checkbox",
         "label": "Amateur Photography"
       },
       {
-        "name": "ArtistOfTheDay",
+        "name": "artist_of_the_day",
         "type": "checkbox",
         "label": "Artist Of The Day"
       },
       {
-        "name": "BackgroundArt",
+        "name": "background_art",
         "type": "checkbox",
         "label": "Background Art"
       },
       {
-        "name": "Conservation",
+        "name": "conservation",
         "type": "checkbox",
-        "label": "Conservation"
+        "label": "conservation"
       },
       {
-        "name": "EarthPornVids",
+        "name": "earth_porn_vids",
         "type": "checkbox",
         "label": "Earth Porn Vids"
       },
       {
-        "name": "EyeCandy",
+        "name": "eye_candy",
         "type": "checkbox",
         "label": "Eye Candy"
       },
       {
-        "name": "FWEPP",
+        "name": "fwepp",
         "type": "checkbox",
-        "label": "FWEPP"
+        "label": "fwepp"
       },
       {
-        "name": "ImaginaryLandscapes",
+        "name": "imaginary_landscapes",
         "type": "checkbox",
         "label": "Imaginary Landscapes"
       },
       {
-        "name": "ImaginaryWildlands",
+        "name": "imaginary_wildlands",
         "type": "checkbox",
         "label": "Imaginary Wildlands"
       },
       {
-        "name": "IncredibleIndia",
+        "name": "incredible_india",
         "type": "checkbox",
         "label": "Incredible India"
       },
       {
-        "name": "ITookAPicture",
+        "name": "itook_apicture",
         "type": "checkbox",
         "label": "I Took A Picture"
       },
       {
-        "name": "JoshuaTree",
+        "name": "joshua_tree",
         "type": "checkbox",
         "label": "Joshua Tree"
       },
       {
-        "name": "NationalGeographic",
+        "name": "national_geographic",
         "type": "checkbox",
         "label": "National Geographic"
       },
       {
-        "name": "Nature",
+        "name": "nature",
         "type": "checkbox",
-        "label": "Nature"
+        "label": "nature"
       },
       {
-        "name": "NatureGifs",
+        "name": "nature_gifs",
         "type": "checkbox",
         "label": "Nature Gifs"
       },
       {
-        "name": "NaturePics",
+        "name": "nature_pics",
         "type": "checkbox",
         "label": "Nature Pics"
       },
       {
-        "name": "NotSafeForNature",
+        "name": "not_safe_for_nature",
         "type": "checkbox",
         "label": "Not Safe For Nature"
       },
       {
-        "name": "NZPhotos",
+        "name": "nzphotos",
         "type": "checkbox",
         "label": "NZ Photos"
       },
@@ -29324,12 +29327,12 @@
         "label": "remoteplaces"
       },
       {
-        "name": "Schweiz",
+        "name": "schweiz",
         "type": "checkbox",
-        "label": "Schweiz"
+        "label": "schweiz"
       },
       {
-        "name": "SpecArt",
+        "name": "spec_art",
         "type": "checkbox",
         "label": "Spec Art"
       },
@@ -29339,7 +29342,7 @@
         "label": "wallpapers"
       },
       {
-        "name": "InterstellarArt",
+        "name": "interstellar_art",
         "type": "checkbox",
         "label": "Interstellar Art"
       }
@@ -29373,24 +29376,24 @@
     "name": "Weather",
     "description": "Get weather conditions, forecasts, expected precipitation and more! You can also ask for other cities around the world. Current conditions and weather forecasts come from OpenMeteo",
     "examples": [
-      "what is the weather like?",
-      "What's the temperature?",
-      "What is the forecast tomorrow?",
-      "What is the weather in Houston?",
-      "What's the temperature in Paris tomorrow in Celsius?",
-      "What's the high temperature tomorrow",
-      "When is the sunset?",
-      "Is it going to snow in Baltimore?",
-      "Is it going to snow?",
-      "What is the weather going to be like Tuesday?",
-      "What is the weather for the next three days?",
-      "What's the humidity?",
-      "What is the weather this weekend?",
-      "What is the forecast in London tomorrow?",
-      "How windy is it?",
-      "When will it rain next?",
-      "Will it be cold on Tuesday",
-      "is it raining?"
+      "current humidity level right now in Chicago",
+      "is it hot",
+      "is it windy right now in Chicago",
+      "when will it rain next in Chicago",
+      "when is the sunrise today in Chicago",
+      "when is the sunset today in Chicago",
+      "what is the current temperature right now in celsius in Chicago",
+      "what is the weather like in celsius",
+      "is foggy today",
+      "humidity percentage right now",
+      "is it chilly",
+      "how strong are the winds",
+      "when is the next rainfall",
+      "what time does the sun rise today in Chicago",
+      "when is the sun set tomorrow",
+      "what's the highest temp",
+      "hourly weather for this morning",
+      "is the sky gray in Chicago"
     ],
     "tags": [
       "weather",
@@ -29413,7 +29416,7 @@
     "type_group": "Skill",
     "stars": 3,
     "forks": 10,
-    "open_issues": 13,
+    "open_issues": 15,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -29441,6 +29444,7 @@
       "en-us",
       "es-es",
       "eu-es",
+      "fi-fi",
       "fr-fr",
       "gl-es",
       "hu-hu",
