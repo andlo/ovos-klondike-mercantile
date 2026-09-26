@@ -7873,7 +7873,7 @@
     "type_group": "Tool",
     "stars": 10,
     "forks": 6,
-    "open_issues": 19,
+    "open_issues": 20,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7922,7 +7922,7 @@
     "type_group": "Infrastructure",
     "stars": 64,
     "forks": 21,
-    "open_issues": 2,
+    "open_issues": 4,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -7940,7 +7940,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-05-07T17:20:53Z",
-    "last_updated": "2026-09-22T03:53:14Z",
+    "last_updated": "2026-09-26T11:19:07Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -8263,7 +8263,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 7,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8369,7 +8369,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
-    "open_issues": 7,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8453,7 +8453,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gguf-plugin",
     "package_name": "ovos-gguf-plugin",
-    "pypi_version": "1.2.3a1",
+    "pypi_version": "1.2.6a1",
     "license": "MIT",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -8462,7 +8462,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8477,7 +8477,7 @@
       },
       {
         "heading": "Configuration",
-        "content": "All wrappers share the same config keys:\n\n| Key | Default | Description |\n|---|---|---|\n| `model` | required | Local `.gguf` path, HuggingFace repo id, or friendly name (embeddings) |\n| `remote_filename` | `*Q4_K_M.gguf` | Glob for selecting the file from a HF repo |\n| `n_gpu_layers` | `0` | GPU layers to offload (`-1` = all) |\n| `chat_format` | `None` | llama.cpp chat format (auto-detected for most models) |\n| `verbose` | `True` | llama.cpp verbosity |\n| `max_tokens` | `512` | Maximum tokens to generate |\n| `system_prompt` | locale default | Override the system prompt |\n\nSee [`docs/configuration.md`](docs/configuration.md) for the full reference, including per-wrapper options and GPU build instructions."
+        "content": "All wrappers share the same config keys:\n\n| Key | Default | Description |\n|---|---|---|\n| `model` | required | Local `.gguf` path, HuggingFace repo id, or friendly name (embeddings) |\n| `remote_filename` | `*Q4_K_M.gguf` | Glob for selecting the file from a HF repo |\n| `n_gpu_layers` | `0` | GPU layers to offload (`-1` = all) |\n| `chat_format` | `None` | llama.cpp chat format (auto-detected for most models) |\n| `verbose` | `True` | llama.cpp verbosity |\n| `max_tokens` | `512` | Maximum tokens to generate |\n| `system_prompt` | locale default | Override the system prompt |\n| `end_markers` | `END_MARKERS` tuple | Text markers to strip from token stream (chat template artifacts) |\n\nSee [`docs/configuration.md`](docs/configuration.md) for the full reference, including per-wrapper options and GP\u2026"
       }
     ],
     "languages": [
@@ -8486,9 +8486,9 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2024-07-20T23:33:09Z",
-    "last_updated": "2026-08-13T23:14:37.502402Z",
+    "last_updated": "2026-09-24T18:55:29.482472Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-gguf-translate-plugin",
@@ -8553,11 +8553,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Detect Plugin",
+    "component_type": "Translate Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8602,7 +8602,7 @@
     "type_group": "Tool",
     "stars": 3,
     "forks": 5,
-    "open_issues": 17,
+    "open_issues": 16,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8647,7 +8647,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 4,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8979,7 +8979,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 8,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -9023,7 +9023,7 @@
     "type_group": "Infrastructure",
     "stars": 2,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -9041,7 +9041,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-12-20T23:12:10Z",
-    "last_updated": "2026-07-31T22:54:12Z",
+    "last_updated": "2026-09-25T19:09:33Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -9065,7 +9065,7 @@
     "tier": null,
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
-    "stars": 322,
+    "stars": 323,
     "forks": 60,
     "open_issues": 8,
     "on_pypi": false,
@@ -9085,7 +9085,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-11-07T20:31:20Z",
-    "last_updated": "2026-09-22T09:20:30Z",
+    "last_updated": "2026-09-26T09:23:25Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -9250,7 +9250,7 @@
     "type_group": "Infrastructure",
     "stars": 6,
     "forks": 4,
-    "open_issues": 18,
+    "open_issues": 19,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -9263,9 +9263,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-04T15:01:45Z",
-    "last_updated": "2026-09-20T14:38:16Z",
+    "last_updated": "2026-09-26T10:15:08Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-lang-detector-classics-plugin",
@@ -9423,7 +9423,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -9441,7 +9441,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-12T03:21:01Z",
-    "last_updated": "2026-09-18T01:15:04Z",
+    "last_updated": "2026-09-24T18:06:41Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -9563,7 +9563,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-localize",
     "package_name": "ovos-localize",
-    "pypi_version": "0.1.0a19",
+    "pypi_version": "0.1.0a23",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9572,7 +9572,7 @@
     "type_group": "Tool",
     "stars": 8,
     "forks": 3,
-    "open_issues": 69,
+    "open_issues": 84,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -9590,15 +9590,15 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-18T01:39:28Z",
-    "last_updated": "2026-09-19T00:00:45.523112Z",
+    "last_updated": "2026-09-26T00:56:56.559788Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-m2v-pipeline",
     "skill_id": null,
     "name": "ovos-m2v-pipeline",
-    "description": "An intent matching pipeline for OpenVoiceOS (OVOS). It uses the Model2Vec model for intent classification.",
+    "description": "An intent-matching pipeline plugin for OpenVoiceOS,",
     "examples": [],
     "tags": [
       "framework",
@@ -9620,7 +9620,7 @@
     "type_group": "Plugin",
     "stars": 1,
     "forks": 4,
-    "open_issues": 24,
+    "open_issues": 16,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -9630,12 +9630,12 @@
     "settings_fields": [],
     "setup_notes": [
       {
-        "heading": "Installation",
-        "content": "Install the plugin with `pip`:\n\npip install ovos-m2v-pipeline\n\n---"
+        "heading": "Install",
+        "content": "uv pip install --prerelease=allow ovos-m2v-pipeline"
       },
       {
-        "heading": "Configuration",
-        "content": "In your `mycroft.conf`:\n\n{\n  \"intents\": {\n    \"ovos-m2v-pipeline\": {\n      \"model\": \"Jarbas/ovos-model2vec-intents-LaBSE\",\n      \"conf_high\": 0.7,\n      \"conf_medium\": 0.5,\n      \"conf_low\": 0.15,\n      \"ignore_intents\": []\n    }\n  }\n}\n\n* `model`: Path to your pretrained Model2Vec model or huggingface repo.\n* `conf_xxx`: Minimum confidence threshold for intent matching. The default depends on the mode, because the two modes score on different scales. Classifier mode returns a softmax probability and defaults to `0.7` / `0.5` / `0.15`. Prototype mode returns a cosine similarity and defaults to `0.85` / `0.7` / `0.65`. On the cosine scale nearly every utterance scores above 0.15 against some stored prototype, and a third score above 0.5 against a prototype of the wrong label. With the classi\u2026"
+        "heading": "Configure",
+        "content": "{\n  \"intents\": {\n    \"ovos-m2v-pipeline\": {\n      \"model\": \"OpenVoiceOS/ovos-m2v-intents-multilingual\"\n    },\n    \"pipeline\": [\n      \"ovos-padacioso-pipeline-plugin-high\",\n      \"ovos-m2v-pipeline-high\",\n      \"ovos-m2v-prototype-pipeline-medium\"\n    ]\n  }\n}\n\n`intents.pipeline` replaces the whole pipeline list, not only its m2v\nentries; see [the pipeline order](docs/ovos_pipeline.md#place-padacioso-before-the-classifier)\nfor where the other plugins a deployment installs belong in it.\n\n`ovos-padacioso-pipeline-plugin-high` runs first: a frozen classifier only\nanswers with a label it was trained on, so an exact template line of a\nskill it never saw is claimed earlier, and correctly, by an exact matcher.\nSee [the pipeline order](docs/ovos_pipeline.md#place-padacioso-before-the-classifier)\nfo\u2026"
       }
     ],
     "languages": [],
@@ -9881,7 +9881,7 @@
     "icon": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media",
     "package_name": "ovos-media",
-    "pypi_version": "2.4.1a1",
+    "pypi_version": "2.4.2a2",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -9915,9 +9915,9 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2024-01-09T00:18:26Z",
-    "last_updated": "2026-09-19T14:47:14.688121Z",
+    "last_updated": "2026-09-25T20:08:35.308152Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-classifier",
@@ -9993,7 +9993,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
-    "open_issues": 5,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11157,7 +11157,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 3,
-    "open_issues": 7,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,

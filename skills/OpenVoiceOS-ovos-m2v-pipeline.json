@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-m2v-pipeline",
   "skill_id": null,
   "name": "ovos-m2v-pipeline",
-  "description": "An intent matching pipeline for OpenVoiceOS (OVOS). It uses the Model2Vec model for intent classification.",
+  "description": "An intent-matching pipeline plugin for OpenVoiceOS,",
   "examples": [],
   "tags": [
     "framework",
@@ -24,7 +24,7 @@
   "type_group": "Plugin",
   "stars": 1,
   "forks": 4,
-  "open_issues": 24,
+  "open_issues": 16,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -34,12 +34,12 @@
   "settings_fields": [],
   "setup_notes": [
     {
-      "heading": "Installation",
-      "content": "Install the plugin with `pip`:\n\npip install ovos-m2v-pipeline\n\n---"
+      "heading": "Install",
+      "content": "uv pip install --prerelease=allow ovos-m2v-pipeline"
     },
     {
-      "heading": "Configuration",
-      "content": "In your `mycroft.conf`:\n\n{\n  \"intents\": {\n    \"ovos-m2v-pipeline\": {\n      \"model\": \"Jarbas/ovos-model2vec-intents-LaBSE\",\n      \"conf_high\": 0.7,\n      \"conf_medium\": 0.5,\n      \"conf_low\": 0.15,\n      \"ignore_intents\": []\n    }\n  }\n}\n\n* `model`: Path to your pretrained Model2Vec model or huggingface repo.\n* `conf_xxx`: Minimum confidence threshold for intent matching. The default depends on the mode, because the two modes score on different scales. Classifier mode returns a softmax probability and defaults to `0.7` / `0.5` / `0.15`. Prototype mode returns a cosine similarity and defaults to `0.85` / `0.7` / `0.65`. On the cosine scale nearly every utterance scores above 0.15 against some stored prototype, and a third score above 0.5 against a prototype of the wrong label. With the classi\u2026"
+      "heading": "Configure",
+      "content": "{\n  \"intents\": {\n    \"ovos-m2v-pipeline\": {\n      \"model\": \"OpenVoiceOS/ovos-m2v-intents-multilingual\"\n    },\n    \"pipeline\": [\n      \"ovos-padacioso-pipeline-plugin-high\",\n      \"ovos-m2v-pipeline-high\",\n      \"ovos-m2v-prototype-pipeline-medium\"\n    ]\n  }\n}\n\n`intents.pipeline` replaces the whole pipeline list, not only its m2v\nentries; see [the pipeline order](docs/ovos_pipeline.md#place-padacioso-before-the-classifier)\nfor where the other plugins a deployment installs belong in it.\n\n`ovos-padacioso-pipeline-plugin-high` runs first: a frozen classifier only\nanswers with a label it was trained on, so an exact template line of a\nskill it never saw is claimed earlier, and correctly, by an exact matcher.\nSee [the pipeline order](docs/ovos_pipeline.md#place-padacioso-before-the-classifier)\nfo\u2026"
     }
   ],
   "languages": [],

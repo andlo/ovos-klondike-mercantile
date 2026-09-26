@@ -13,7 +13,7 @@
   "icon": null,
   "source": "https://github.com/OpenVoiceOS/ovos-gguf-plugin",
   "package_name": "ovos-gguf-plugin",
-  "pypi_version": "1.2.3a1",
+  "pypi_version": "1.2.6a1",
   "license": "MIT",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -22,7 +22,7 @@
   "type_group": "Plugin",
   "stars": 1,
   "forks": 0,
-  "open_issues": 4,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -37,7 +37,7 @@
     },
     {
       "heading": "Configuration",
-      "content": "All wrappers share the same config keys:\n\n| Key | Default | Description |\n|---|---|---|\n| `model` | required | Local `.gguf` path, HuggingFace repo id, or friendly name (embeddings) |\n| `remote_filename` | `*Q4_K_M.gguf` | Glob for selecting the file from a HF repo |\n| `n_gpu_layers` | `0` | GPU layers to offload (`-1` = all) |\n| `chat_format` | `None` | llama.cpp chat format (auto-detected for most models) |\n| `verbose` | `True` | llama.cpp verbosity |\n| `max_tokens` | `512` | Maximum tokens to generate |\n| `system_prompt` | locale default | Override the system prompt |\n\nSee [`docs/configuration.md`](docs/configuration.md) for the full reference, including per-wrapper options and GPU build instructions."
+      "content": "All wrappers share the same config keys:\n\n| Key | Default | Description |\n|---|---|---|\n| `model` | required | Local `.gguf` path, HuggingFace repo id, or friendly name (embeddings) |\n| `remote_filename` | `*Q4_K_M.gguf` | Glob for selecting the file from a HF repo |\n| `n_gpu_layers` | `0` | GPU layers to offload (`-1` = all) |\n| `chat_format` | `None` | llama.cpp chat format (auto-detected for most models) |\n| `verbose` | `True` | llama.cpp verbosity |\n| `max_tokens` | `512` | Maximum tokens to generate |\n| `system_prompt` | locale default | Override the system prompt |\n| `end_markers` | `END_MARKERS` tuple | Text markers to strip from token stream (chat template artifacts) |\n\nSee [`docs/configuration.md`](docs/configuration.md) for the full reference, including per-wrapper options and GP\u2026"
     }
   ],
   "languages": [
@@ -46,7 +46,7 @@
   "locale_content": {},
   "in_ovos_localize": true,
   "repo_created_at": "2024-07-20T23:33:09Z",
-  "last_updated": "2026-08-13T23:14:37.502402Z",
+  "last_updated": "2026-09-24T18:55:29.482472Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }
