@@ -4838,8 +4838,8 @@
     "tier": null,
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
-    "stars": 1,
-    "forks": 0,
+    "stars": 2,
+    "forks": 1,
     "open_issues": 0,
     "on_pypi": false,
     "has_release": false,
@@ -7609,7 +7609,7 @@
     "id": "evok3dx-OVOS-Commands",
     "skill_id": null,
     "name": "OVOS-Commands",
-    "description": "> **Experimental software.** This project is tested for a small, known group",
+    "description": "Jarvis makes everyday desktop control feel natural while keeping execution",
     "examples": [],
     "tags": [],
     "category": "Other",
@@ -7617,7 +7617,7 @@
     "source": "https://github.com/evok3dx/OVOS-Commands",
     "package_name": "ovos-skill-jarvis-dispatcher",
     "pypi_version": null,
-    "license": null,
+    "license": "NOASSERTION",
     "archived": false,
     "author": "evok3dx",
     "tier": 2,
@@ -7633,19 +7633,16 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Post-install application validation",
-        "content": "For product-specific actions, confirm the capability mapping and window focus\nbefore debugging shortcuts or OVOS intent routing.\n\ncat ~/.config/jarvis/capabilities.json\n\nThen inspect the real X11 identity of the application:\n\nwmctrl -lx\nACTIVE=\"$(xdotool getactivewindow)\"\nxprop -id \"$ACTIVE\" WM_CLASS\n\nFor Standard Notes, the validated laptop reported:\n\nWM_CLASS(STRING) = \"standard notes\", \"Standard Notes\"\n\nTest Jarvis focus directly:\n\n~/.local/bin/jarvis-app-window focus standard_notes\necho \"exit=$?\"\n\nOnly after focus succeeds should you test application-specific actions such as\n`New note` or `Search notes`. A bare `xdotool key ...` command targets whatever\nwindow currently owns focus, often the terminal, so it is not a valid app test\nunless the intended application is actually active.\n\nSe\u2026"
-      }
+    "setup_notes": [],
+    "languages": [
+      "en-us"
     ],
-    "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-09T00:38:09Z",
-    "last_updated": "2026-09-17T05:04:04Z",
+    "last_updated": "2026-09-28T05:12:09Z",
     "is_new_repo": true,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
@@ -13213,6 +13210,48 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-05-16T17:39:53Z",
+    "last_updated": "2022-11-17T00:44:24.588782Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "LibreVoiceAssistant-ovos-PHAL-plugin-color-scheme-manager",
+    "skill_id": null,
+    "name": "ovos-PHAL-plugin-color-scheme-manager",
+    "description": "OVOS Shell ColorScheme Manager Plugin for OVOS PHAL",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "source": "https://github.com/LibreVoiceAssistant/ovos-PHAL-plugin-color-scheme-manager",
+    "package_name": "ovos-PHAL-plugin-color-scheme-manager",
+    "pypi_version": "1.0.0",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "LibreVoiceAssistant",
+    "tier": 1,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 1,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "`pip install ovos-PHAL-plugin-color-scheme-manager`"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2022-06-08T10:32:00Z",
     "last_updated": "2022-11-17T00:44:24.588782Z",
     "is_new_repo": false,
     "is_recently_updated": false
@@ -18920,7 +18959,7 @@
     "archived": false,
     "author": "femelo",
     "tier": 2,
-    "component_type": "Transformer Plugin",
+    "component_type": "Persona",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
