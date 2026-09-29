@@ -42,7 +42,8 @@ function renderCommunityReports(c) {
   const current = asArray(c.reports).filter((r) => r.current);
   const rows = {};
   for (const r of current) {
-    const key = [r.hardware || "unspecified hardware", asArray(r.languages)[0] || ""].filter(Boolean).join(" · ");
+    const key = [r.hardware || "unspecified hardware", asArray(r.languages)[0] || "",
+      shortPlugin(r.stt), shortPlugin(r.tts)].filter(Boolean).join(" · ");
     rows[key] = rows[key] || { works: 0, partly: 0, doesnt_work: 0, reports: [] };
     rows[key][r.outcome] += 1;
     rows[key].reports.push(r);
@@ -59,6 +60,11 @@ function renderCommunityReports(c) {
   const history = c.history ? ` <span class="setup-note">(${c.history} older ${c.history === 1 ? "report" : "reports"} for an earlier version or channel, not counted)</span>` : "";
   if (!table && !history) return "";
   return `<div class="people-row people-community">${confirmations}${escapeHtml(bad)}${history}${table}</div>`;
+}
+
+// "ovos-tts-plugin-piper" -> "piper": the matrix stays readable.
+function shortPlugin(name) {
+  return String(name || "").replace(/^(ovos|neon)-(stt|tts)-plugin-/, "");
 }
 
 function renderOneReport(r) {

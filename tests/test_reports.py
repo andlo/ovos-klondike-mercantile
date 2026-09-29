@@ -71,7 +71,8 @@ BASE = {
         "versions_from": "this environment",
         "stack": {"ovos-core": "3.7.2a1", "ovos-workshop": "9.8.9a2"},
         "skills": {SID: {"package": "ovos-skill-convert", "version": "0.0.8", "active": True}},
-        "config": {"lang": "en-us", "secondary_langs": ["da-dk"], "pipeline": ["ovos-padatious-pipeline-plugin-high"]},
+        "config": {"lang": "en-us", "secondary_langs": ["da-dk"], "pipeline": ["ovos-padatious-pipeline-plugin-high"],
+                   "stt": "ovos-stt-plugin-server", "tts": "ovos-tts-plugin-piper"},
     },
     "summary": {"steps": 10, "planned": 10, "checked": 10, "passed": 9, "failed": 1, "timed_out": 0,
                 "sent_without_check": 0, "answered": 10, "cancelled": False, "duration_s": 42.0},
@@ -155,6 +156,11 @@ def node(script, payload):
 
 def test_validate(cases):
     fails = 0
+    v = check(copy.deepcopy(BASE), "ovos-skill-convert", "0.0.8", CONSTRAINTS, STACKS)["view"]
+    ok = (v["stt"], v["tts"], v["hardware"]) == ("ovos-stt-plugin-server", "ovos-tts-plugin-piper",
+                                                  "Raspberry Pi 5 Model B Rev 1.0")
+    fails += not ok
+    print(("ok  " if ok else "FAIL"), "validate: view carries hardware, stt and tts", v["stt"], v["tts"])
     for c in cases:
         res = check(c["report"], "ovos-skill-convert", c["latest"], CONSTRAINTS, c["stacks"])
         ok = matches(res, c["want"])

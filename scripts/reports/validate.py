@@ -16,6 +16,7 @@ is about (`view()`), and derives what it needs:
   routed / checked   its own steps: status "pass" / pass+fail+timeout
   outcome            all passed: works; some: partly; none: doesnt_work
   hardware, langs    manifest.machine.model, manifest.config
+  stt, tts           manifest.config.stt / .tts (plugin names only)
   notes              the tester's free text
 
 One implementation of the rules, used by the crawler (maintainer reports
@@ -190,6 +191,8 @@ def view(report, skill_id):
         "created_at": m.get("created_at"), "tool": m.get("tool"),
         "hardware": (m.get("machine") or {}).get("model") or (m.get("machine") or {}).get("arch") or "",
         "languages": langs[:10], "notes": (report.get("notes") or "")[:1000] if isinstance(report.get("notes"), str) else "",
+        # Plugin names only (ovos-tui-client records nothing else of them).
+        "stt": str(cfg.get("stt") or "")[:80], "tts": str(cfg.get("tts") or "")[:80],
     }
 
 

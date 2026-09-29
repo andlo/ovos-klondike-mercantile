@@ -137,6 +137,7 @@ function reportView(report, skillId) {
     outcome, channel: m.channel == null ? null : m.channel, created_at: m.created_at || null, tool: m.tool || null,
     hardware: machine.model || machine.arch || "", languages: langs.slice(0, 10),
     notes: typeof report.notes === "string" ? report.notes.slice(0, 1000) : "",
+    stt: String(cfg.stt || "").slice(0, 80), tts: String(cfg.tts || "").slice(0, 80),
   };
 }
 

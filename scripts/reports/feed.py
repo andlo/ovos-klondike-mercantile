@@ -85,6 +85,7 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
                     "current": current, "outcome": outcome, "version": v["version"],
                     "created_at": v["created_at"], "checked": v["checked"], "routed": v["routed"],
                     "hardware": v["hardware"], "languages": v["languages"],
+                    "stt": v["stt"], "tts": v["tts"],
                     "notes": v["notes"],
                     "stale_reason": "" if current else (res["problems"][0]["message"] if res["problems"] else ""),
                 })
