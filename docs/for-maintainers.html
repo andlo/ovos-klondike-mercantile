@@ -195,9 +195,11 @@
       </p>
       <pre class="setup-content">[![OVOS alpha](https://img.shields.io/endpoint?url=https://andlo.github.io/ovos-klondike-mercantile/badges/&lt;your-skill-id&gt;/alpha.json)](https://andlo.github.io/ovos-klondike-mercantile/detail.html?id=&lt;entry-id&gt;)</pre>
       <p class="guide-note">
-        Two grey results are not failures: <em>not supported</em> (the channel
+        Three grey results are not failures: <em>needs config</em> (your own
+        load error says it needs an API key, account or identity first; the
+        message is shown), <em>not supported</em> (the channel
         cannot run this kind of package at all, e.g. stable's ovos-core has no
-        loader for third-party pipeline plugins) and <em>needs device</em>
+        loader for third-party pipeline plugins), and <em>needs device</em>
         (loading waits in your own code for something only a device provides,
         such as network or GUI ready signals; the detail page shows the exact
         line). A failure caused by the test setup rather than your package (PyPI

@@ -15,6 +15,8 @@ Result status:
   needs_device  loading blocks in the package's own code waiting for
          something only a device provides (network/GUI ready signals);
          shown as "needs device" with the file:line, never as a failure
+  needs_config  its own load error says it needs configuration first (an
+         API key, account or identity): "needs config", with the message
   fail   the package's own fault (dependency conflict, import error, boot
          error, timeout while booting)
   error  our/infra fault (PyPI unreachable, disk full): not published as a
@@ -39,6 +41,37 @@ NETWORK_ERRORS = re.compile(
     r"(ConnectionError|ReadTimeout|Max retries exceeded|Temporary failure in name "
     r"resolution|No space left on device|HTTP error 5\d\d|403 Client Error)")
 MAX_EXCERPT = 4000
+
+# "Needs config" (issue #6): a package that cannot start until the user
+# configures it (API key, account, identity) is not broken. Only the
+# package's OWN load error is matched (a pipeline load error naming one of
+# its ids, or a traceback running through its own modules), and only
+# against phrases that say something is missing or unset, so a real bug
+# stays a failure.
+NEEDS_CONFIG = re.compile(
+    r"(api[ _-]?key|token|credential|password|secret|identity|account|"
+    r"not (?:set|configured)|please (?:pass|set|configure)|missing (?:config|setting)|"
+    r"no .* configured)", re.I)
+EXC_LINE = re.compile(r"^(?:\w+\.)*\w*(?:Error|Exception): (?P<msg>.+)$")
+
+
+def config_message(output, plugin_ids, module_roots):
+    """The package's own load error when it says configuration is missing."""
+    text = ANSI.sub("", output or "")
+    for pid in plugin_ids or []:
+        m = re.search(rf"Failed to load pipeline plugin '{re.escape(pid)}': (?P<msg>.+)$", text, re.M)
+        if m and NEEDS_CONFIG.search(m.group("msg")):
+            return m.group("msg").strip()[:300]
+    markers = [f"/site-packages/{r}/" for r in module_roots or []]
+    for block in text.split("Traceback (most recent call last)")[1:]:
+        lines = block.splitlines()
+        if not any(any(mk in l for mk in markers) for l in lines):
+            continue
+        for l in lines:
+            m = EXC_LINE.match(l.strip())
+            if m and NEEDS_CONFIG.search(m.group("msg")):
+                return m.group("msg").strip()[:300]
+    return None
 
 
 def excerpt(text, anchor_patterns=("Traceback (most recent call last)", "ERROR", "error:")):
@@ -84,11 +117,22 @@ def install_excerpt(output):
     return excerpt(output)
 
 
+# Intent training. ovoscope's defaults (180s of silence, 600s in total)
+# suit a single-language CI boot; a skill booted with ~20 languages trains
+# ~20 padatious containers, which took 220s alone on 8 cores and over 600s
+# under load (ovos-skill-alerts). A hosted runner has 2 cores. Training that
+# still has not finished after this is reported as a failure.
+TRAINED_TIMEOUT = 600
+TRAINED_MAX = 1800
+PROBE_ENV = {"PIP_NO_INPUT": "1", "OVOSCOPE_TRAINED_TIMEOUT": str(TRAINED_TIMEOUT),
+             "OVOSCOPE_TRAINED_MAX": str(TRAINED_MAX)}
+
+
 def run(cmd, timeout, log_path):
     with open(log_path, "w") as log:
         try:
             proc = subprocess.run(cmd, stdout=log, stderr=subprocess.STDOUT,
-                                  timeout=timeout, env={**os.environ, "PIP_NO_INPUT": "1"})
+                                  timeout=timeout, env={**os.environ, **PROBE_ENV})
             rc = proc.returncode
         except subprocess.TimeoutExpired:
             rc = None
@@ -135,19 +179,54 @@ def test_item(item, args, workroot):
         rec["level"] = 1
 
         # Level 2
-        result_path = Path(workroot) / "probe.json"
-        if result_path.exists():
-            result_path.unlink()
-        rc, out = run([py, str(PROBE), "--kind", item["kind"], "--package", item["package"],
-                       "--langs", ",".join(item.get("languages") or []),
-                       "--out", str(result_path), "--max-wait", str(args.boot_timeout)],
-                      args.boot_timeout + 120, Path(workroot) / "probe.log")
-        if not result_path.exists():
-            reason = (f"timed out booting after {args.boot_timeout + 120}s" if rc is None
-                      else f"probe crashed (exit {rc})")
-            rec.update(status="fail", stage="load", reason=reason, log_excerpt=excerpt(out))
-            return rec
-        probe = json.loads(result_path.read_text())
+        def probe_once(only_langs=""):
+            result_path = Path(workroot) / "probe.json"
+            if result_path.exists():
+                result_path.unlink()
+            cmd = [py, str(PROBE), "--kind", item["kind"], "--package", item["package"],
+                   "--langs", ",".join(item.get("languages") or []),
+                   "--out", str(result_path), "--max-wait", str(args.boot_timeout)]
+            if only_langs:
+                cmd += ["--only-langs", only_langs]
+            rc, out = run(cmd, args.boot_timeout + TRAINED_MAX + 120, Path(workroot) / "probe.log")
+            if not result_path.exists():
+                reason = (f"timed out booting after {args.boot_timeout + TRAINED_MAX + 120}s" if rc is None
+                          else f"probe crashed (exit {rc})")
+                return {"status": "fail", "reason": reason}, out
+            return json.loads(result_path.read_text()), out
+
+        probe, out = probe_once()
+        booted = probe.get("languages_booted") or []
+        if (item["kind"] == "skill" and probe.get("status") == "fail" and len(booted) > 1
+                and "failed to initialise" in (probe.get("reason") or "")):
+            # A skill that fails with ALL its languages configured may only
+            # be broken in one of them (ovos-skill-spelling 0.2.6: a bad
+            # ro-ro regex). A device only loads its own languages, so that
+            # is a per-language defect, not "doesn't load". Retry with the
+            # primary language alone; if that loads, try each other
+            # language alone to name the broken ones.
+            primary, primary_out = probe_once(booted[0])
+            if primary.get("status") == "pass":
+                failing, by_lang = [], dict(primary.get("intents_by_lang") or {})
+                for lang in booted[1:]:
+                    one, _ = probe_once(lang)
+                    if one.get("status") == "pass":
+                        by_lang.update(one.get("intents_by_lang") or {})
+                    else:
+                        failing.append(lang)
+                if failing:
+                    primary["languages_booted"] = booted
+                    primary["intents_by_lang"] = dict(sorted(by_lang.items()))
+                    primary["languages_missing"] = failing
+                    primary["warnings"] = [
+                        "fails to load when these languages are configured: " + ", ".join(failing)
+                        + " (loads with the others; see log excerpt)"]
+                    probe, out = primary, out  # keep the multi-language failure log
+                else:
+                    # Every language loads on its own: the failure only happens
+                    # in combination, which a device with all of them would hit.
+                    probe["reason"] += " (each language loads on its own; fails only in combination)"
+
         rec["version_tested"] = probe.get("version_installed")
         for k in ("plugin_ids", "registrations", "intents_by_lang", "languages_booted",
                   "languages_missing", "warnings", "stages", "boot_seconds", "driver"):
@@ -161,8 +240,14 @@ def test_item(item, args, workroot):
             if rec.get("warnings"):
                 rec["log_excerpt"] = excerpt(out)
         else:
-            rec.update(status="fail", stage="load", reason=probe.get("reason", "did not load"),
-                       log_excerpt=excerpt(out))
+            cfg = config_message(out, probe.get("plugin_ids"), probe.get("module_roots"))
+            if cfg:
+                rec.update(status="needs_config", stage="load",
+                           reason=f"needs configuration before it can load: {cfg}",
+                           log_excerpt=excerpt(out))
+            else:
+                rec.update(status="fail", stage="load", reason=probe.get("reason", "did not load"),
+                           log_excerpt=excerpt(out))
         return rec
     finally:
         rec["duration_seconds"] = round(time.monotonic() - started, 1)
@@ -193,7 +278,7 @@ def main():
         canary_out = Path(workroot) / "canary.json"
         rc, out = run([str(Path(args.base_venv) / "bin" / "python"), str(PROBE), "--kind", "canary",
                        "--out", str(canary_out), "--max-wait", str(args.boot_timeout)],
-                      args.boot_timeout + 120, Path(workroot) / "canary.log")
+                      args.boot_timeout + TRAINED_MAX + 120, Path(workroot) / "canary.log")
         canary = json.loads(canary_out.read_text()) if canary_out.exists() else \
             {"status": "fail", "reason": "canary timed out" if rc is None else f"canary crashed (exit {rc})"}
         Path(args.out).with_name("canary.json").write_text(

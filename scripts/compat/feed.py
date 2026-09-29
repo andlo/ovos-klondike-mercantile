@@ -16,6 +16,14 @@ CHANNEL_ORDER = ["stable", "testing", "alpha"]
 TESTED_TYPES = {"Skill": "skill", "Pipeline Plugin": "pipeline"}
 
 
+# Results that are final for their key (not retried). pass/fail are the
+# package's own result; the grey ones say it could not be judged here, for a
+# stated reason, and are never shown as a failure.
+FINAL_STATUSES = ("pass", "fail", "unsupported", "needs_device", "needs_config")
+GREY_LABELS = {"unsupported": "not supported", "needs_device": "needs device",
+               "needs_config": "needs config"}
+
+
 def is_candidate(entry):
     """Looks Complete (tier 1), a tested type, not archived, has a package."""
     return (entry.get("tier") == 1 and entry.get("component_type") in TESTED_TYPES
@@ -31,10 +39,8 @@ def load_results(path):
 
 def label(rec):
     """(short text, state) for one result; state is pass/warn/fail/untested."""
-    if rec and rec.get("status") == "unsupported":
-        return "not supported", "unsupported"
-    if rec and rec.get("status") == "needs_device":
-        return "needs device", "unsupported"
+    if rec and rec.get("status") in GREY_LABELS:
+        return GREY_LABELS[rec["status"]], "unsupported"
     if not rec or rec.get("status") not in ("pass", "fail"):
         return "untested", "untested"
     if rec["status"] == "fail":

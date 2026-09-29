@@ -220,10 +220,32 @@ class Recorder:
         return regs, {k: len(v) for k, v in sorted(self.intents_by_lang.items())}
 
 
-def loader_state(croft, skill_id):
+def why_not_found(package, skill_id):
+    """A skill the plugin manager never handed to MiniCroft: say why."""
+    eps = [ep for ep in distribution(package).entry_points
+           if ep.group in SKILL_GROUPS and ep.name == skill_id]
+    try:
+        from ovos_plugin_manager.skills import find_skill_plugins
+        found = skill_id in find_skill_plugins()
+    except Exception:  # noqa: BLE001
+        found = None
+    for ep in eps:
+        try:
+            ep.load()
+        except Exception as e:  # noqa: BLE001
+            return f"import failed: {type(e).__name__}: {e}"[:400]
+    if found is False and eps:
+        from importlib.metadata import version as v
+        groups = ", ".join(sorted({ep.group for ep in eps}))
+        return (f"declared only under entry-point group {groups}, which this channel's "
+                f"ovos-plugin-manager {v('ovos-plugin-manager')} does not scan for skills")
+    return "skill plugin was not loaded (see log excerpt)"
+
+
+def loader_state(croft, skill_id, package):
     loader = (getattr(croft, "plugin_skills", {}) or {}).get(skill_id)
     if loader is None:
-        return False, "skill plugin was not loaded (import failed or entry point broken)"
+        return False, why_not_found(package, skill_id)
     instance = getattr(loader, "instance", None)
     loaded = getattr(loader, "loaded", instance is not None)
     if instance is None or not loaded:
@@ -241,6 +263,9 @@ def probe_skill(args, result):
         return
     langs = shipped_languages(args.package)
     result["languages_source"] = "package"
+    if args.only_langs:
+        langs = [bcp47(l) for l in args.only_langs.split(",") if l]
+        result["languages_source"] = "retry"
     if not langs:
         # No recognisable resource folders (unusual layout): fall back to
         # what the feed read from the repo.
@@ -267,7 +292,7 @@ def probe_skill(args, result):
     try:
         failures = []
         for sid in ids:
-            ok, why = loader_state(croft, sid)
+            ok, why = loader_state(croft, sid, args.package)
             if not ok:
                 failures.append(f"{sid}: {why}")
         regs, by_lang = recorder.summary()
@@ -343,6 +368,7 @@ def main():
     ap.add_argument("--kind", choices=["skill", "pipeline", "canary"], required=True)
     ap.add_argument("--package", default="")
     ap.add_argument("--langs", default="")
+    ap.add_argument("--only-langs", default="", help="boot exactly these languages (per-language retry)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--max-wait", type=float, default=300)
     ap.add_argument("--settle", type=float, default=2.0)
@@ -350,6 +376,13 @@ def main():
 
     result = {"kind": args.kind, "package": args.package}
     started = time.monotonic()
+    if args.package:
+        try:
+            result["module_roots"] = sorted({str(f).replace("\\", "/").split("/", 1)[0]
+                                             for f in distribution(args.package).files or []
+                                             if str(f).endswith(".py") and "/" in str(f).replace("\\", "/")})
+        except Exception:  # noqa: BLE001
+            pass
     try:
         if args.kind == "skill":
             probe_skill(args, result)

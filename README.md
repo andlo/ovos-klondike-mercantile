@@ -196,7 +196,10 @@ Results that are not the package's fault are never shown as a failure:
 `error` (infrastructure trouble, retried next run), `unsupported`
 (stable's ovos-core has no loader for third-party pipeline plugins) and
 `needs_device` (loading blocks in the package's own code waiting for
-device services; the file:line is recorded).
+device services; the file:line is recorded) and `needs_config` (the
+package's own load error says it needs an API key, account or identity).
+A skill that only fails with some of its languages configured is a pass
+with those languages flagged, since a device only loads its own.
 
 Shown as a label per channel on cards, a section on the detail page
 (level, date, versions tested against, failure reason, log excerpt,

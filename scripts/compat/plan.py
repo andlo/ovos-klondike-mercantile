@@ -31,7 +31,7 @@ from packaging.specifiers import SpecifierSet
 from packaging.version import InvalidVersion, Version
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from compat.feed import TESTED_TYPES, is_candidate  # noqa: E402
+from compat.feed import FINAL_STATUSES, TESTED_TYPES, is_candidate  # noqa: E402
 
 # Bump when probe.py/run_shard.py change what a result means; every package
 # is then re-tested once.
@@ -140,7 +140,7 @@ def main():
             key = key_for([e["package_name"], version, channel, csha, langs,
                            args.harness_sha, RUNNER_VERSION])
             prev = previous.get(e["id"], {}).get(channel)
-            if (prev and prev.get("key") == key and prev.get("status") in ("pass", "fail", "unsupported", "needs_device")
+            if (prev and prev.get("key") == key and prev.get("status") in FINAL_STATUSES
                     and not (args.force or args.full)):
                 skipped += 1
                 continue

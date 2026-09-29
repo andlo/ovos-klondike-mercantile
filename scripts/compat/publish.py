@@ -23,7 +23,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from compat.feed import CHANNEL_ORDER, SAFE_ID, badge_ids, is_candidate, load_results, shields  # noqa: E402
+from compat.feed import CHANNEL_ORDER, FINAL_STATUSES, SAFE_ID, badge_ids, is_candidate, load_results, shields  # noqa: E402
 
 STR_FIELDS = {"id": 200, "channel": 20, "key": 32, "kind": 20, "package": 200,
               "requested_version": 64, "version_tested": 64, "tested_at": 40,
@@ -56,7 +56,7 @@ def clean(rec):
     if isinstance(by_lang, dict):
         out["intents_by_lang"] = {str(k)[:20]: v for k, v in list(by_lang.items())[:60]
                                   if isinstance(v, int)}
-    if out.get("status") not in ("pass", "fail", "unsupported", "needs_device", "error"):
+    if out.get("status") not in FINAL_STATUSES + ("error",):
         return None
     out["level"] = out.get("level", 0) if out.get("level") in (0, 1, 2) else 0
     return out
@@ -95,7 +95,7 @@ def main():
                 continue
             per = results.setdefault(rec["id"], {})
             prev = per.get(channel)
-            if rec["status"] == "error" and prev and prev.get("status") in ("pass", "fail", "unsupported", "needs_device"):
+            if rec["status"] == "error" and prev and prev.get("status") in FINAL_STATUSES:
                 prev["last_error"] = {"tested_at": rec.get("tested_at"), "reason": rec.get("reason")}
             else:
                 per[channel] = rec
