@@ -169,6 +169,126 @@ function renderSettings(skill) {
 }
 
 const REPO_URL = "https://github.com/andlo/ovos-klondike-mercantile";
+const PAGES_URL = "https://andlo.github.io/ovos-klondike-mercantile";
+let compatDoc = null; // docs/compat/results.json, loaded beside skills.json
+
+function testRequestUrl(skill) {
+  // Title-keyed (process-test-request.yml): labels in a new-issue link are
+  // dropped for anyone without triage rights, so they can't be the trigger.
+  const title = `Test request: ${skill.id}`;
+  const body =
+    `Please test this entry against the OVOS release channels now, rather than waiting for the nightly run.\n\n` +
+    `- **Listing**: ${window.location.href}\n\n` +
+    `<!-- Leave the title as it is: it's read automatically. -->\n`;
+  return `${REPO_URL}/issues/new?${new URLSearchParams({ title, body }).toString()}`;
+}
+
+function compatReasonBlock(rec) {
+  const parts = [];
+  if (rec.reason) {
+    const cls = rec.status === "unsupported" ? "compat-note" : "compat-reason";
+    parts.push(`<div class="${cls}">${escapeHtml(rec.reason)}</div>`);
+  }
+  asArray(rec.warnings).forEach((w) => parts.push(`<div class="compat-warning">⚠️ ${escapeHtml(w)}</div>`));
+  if (rec.last_error) {
+    parts.push(`<div class="compat-note">Last attempt (${escapeHtml(formatDate(rec.last_error.tested_at) || "")}) hit a test-infrastructure error and kept this earlier result: ${escapeHtml(rec.last_error.reason || "")}</div>`);
+  }
+  if (rec.log_excerpt) {
+    parts.push(`<details class="compat-log"><summary>Log excerpt</summary><pre>${escapeHtml(rec.log_excerpt)}</pre></details>`);
+  }
+  return parts.join("");
+}
+
+function compatRegistrations(rec) {
+  const regs = rec.registrations || {};
+  const kinds = Object.entries(regs)
+    .filter(([k]) => k !== "other")
+    .map(([k, v]) => `${escapeHtml(k.replace("_", " "))} (${escapeHtml(String(v))})`);
+  if (Array.isArray(regs.other) && regs.other.length) kinds.push(`other: ${regs.other.map(escapeHtml).join(", ")}`);
+  return kinds.join(" · ");
+}
+
+function compatLanguages(rec) {
+  const booted = asArray(rec.languages_booted);
+  if (booted.length < 2) return "";
+  const missing = new Set(asArray(rec.languages_missing).map((l) => l.toLowerCase()));
+  return booted.map((l) => {
+    const bad = missing.has(l.toLowerCase());
+    return `<span class="compat-lang ${bad ? "compat-lang-missing" : ""}" title="${bad ? "no intents registered" : "intents registered"}">${languageFlag(l.toLowerCase())} ${escapeHtml(l)}</span>`;
+  }).join(" ");
+}
+
+function renderCompatSection(skill) {
+  const results = (compatDoc && compatDoc.results && compatDoc.results[skill.id]) || {};
+  // The feed's compat field arrives with the next crawl (up to 3h after a
+  // test run); results.json is fresh immediately, so either is enough.
+  if (!skill.compat && Object.keys(results).length === 0) return "";
+  const compat = skill.compat || { badge_id: skill.skill_id || skill.id, channels: {} };
+  const channelsMeta = (compatDoc && compatDoc.channels) || {};
+  const badgeId = compat.badge_id;
+  const FINAL = ["pass", "fail", "unsupported"];
+  const tested = COMPAT_CHANNELS.filter((ch) => results[ch] && FINAL.includes(results[ch].status));
+
+  const rows = COMPAT_CHANNELS.filter((ch) => results[ch] || channelsMeta[ch]).map((ch) => {
+    const rec = results[ch];
+    const meta = channelsMeta[ch] || {};
+    const stack = (meta.stack && meta.stack.packages) || {};
+    const stackText = ["ovos-core", "ovos-workshop", "ovos-padatious", "ovos-bus-client"]
+      .filter((p) => stack[p]).map((p) => `${p} ${stack[p]}`).join(" · ");
+    if (!rec || !FINAL.includes(rec.status)) {
+      return `
+        <div class="compat-row">
+          <div class="compat-row-head"><strong>${escapeHtml(ch)}</strong> <span class="compat-label compat-untested">not tested yet</span></div>
+          ${rec && rec.status === "error" ? `<div class="compat-note">Last attempt hit a test-infrastructure error (retried automatically): ${escapeHtml(rec.reason || "")}</div>` : ""}
+        </div>`;
+    }
+    const c = (compat.channels || {})[ch] || {};
+    const text = c.label || ({ pass: "✓ loads", unsupported: "not supported" }[rec.status]
+      || (rec.level === 0 ? "✗ doesn't install" : "✗ doesn't load"));
+    const state = c.state || ({ pass: "pass", unsupported: "unsupported" }[rec.status] || "fail");
+    const regs = compatRegistrations(rec);
+    const langs = compatLanguages(rec);
+    return `
+      <div class="compat-row">
+        <div class="compat-row-head">
+          <strong>${escapeHtml(ch)}</strong>
+          <span class="compat-label compat-${escapeHtml(state)}">${escapeHtml(text)}</span>
+          <span class="compat-level">${escapeHtml(COMPAT_LEVEL_TEXT[rec.level] || "")}</span>
+        </div>
+        <div class="compat-facts">
+          ${renderStatRow("Tested", escapeHtml(formatDate(rec.tested_at) || ""))}
+          ${renderStatRow("Version", escapeHtml((rec.version_tested || rec.requested_version || "") + (rec.channel_pinned ? " (pinned by the channel)" : "")))}
+          ${renderStatRow("Tested against", escapeHtml(stackText))}
+          ${regs ? renderStatRow("Registered", regs) : ""}
+          ${rec.driver ? renderStatRow("Test driver", escapeHtml(rec.driver)) : ""}
+        </div>
+        ${langs ? `<div class="compat-langs">${langs}</div>` : ""}
+        ${compatReasonBlock(rec)}
+      </div>`;
+  }).join("");
+
+  const snippets = tested.map((ch) => {
+    const img = `https://img.shields.io/endpoint?url=${PAGES_URL}/badges/${badgeId}/${ch}.json`;
+    const md = `[![OVOS ${ch}](${img})](${PAGES_URL}/detail.html?id=${encodeURIComponent(skill.id)})`;
+    return `
+      <div class="compat-snippet">
+        <img src="${escapeHtml(img)}" alt="OVOS ${escapeHtml(ch)} badge" loading="lazy">
+        <code class="install-command">${escapeHtml(md)}</code>
+      </div>`;
+  }).join("");
+
+  return `
+    <h2 class="detail-subhead">Tested on OVOS release channels</h2>
+    <p class="setup-note">
+      Installed under each channel's own constraints and booted in MiniCroft with every language it ships.
+      Re-tested when a new version is released or the channel changes.
+      <a href="for-maintainers.html#channel-tests">How testing works</a>
+      ${channelsMeta.stable || channelsMeta.alpha ? ` · <a href="compat/results.json" target="_blank" rel="noopener">raw results</a>` : ""}
+    </p>
+    ${rows || `<p class="setup-note">Not tested yet - it's in the queue for the next nightly run.</p>`}
+    ${snippets ? `<h3 class="detail-subhead compat-snippet-head">README badge</h3>${snippets}` : ""}
+  `;
+}
 
 // Both open GitHub's own "new issue" form, pre-filled - no backend
 // needed on this static site. A maintainer (or an automated workflow
@@ -233,6 +353,8 @@ function renderDetail(skill) {
 
       ${renderAssessment(skill)}
 
+      ${renderCompatSection(skill)}
+
       ${renderLicenseWarning(skill)}
 
       ${renderArchivedWarning(skill)}
@@ -280,6 +402,7 @@ function renderDetail(skill) {
 
       <div class="detail-meta-links">
         <a href="${updateRequestUrl(skill)}" target="_blank" rel="noopener">🔄 Request update</a>
+        ${skill.compat ? `<a href="${testRequestUrl(skill)}" target="_blank" rel="noopener">🧪 Request test</a>` : ""}
         <a href="${flagUrl(skill)}" target="_blank" rel="noopener" class="flag-link">🚩 Report a problem</a>
       </div>
     </div>
@@ -293,8 +416,14 @@ if (!wantedId) {
   detailRoot.innerHTML = `<p class="loading">No skill specified. <a href="index.html">Back to the store</a>.</p>`;
 } else {
   const cacheBust = `?t=${Date.now()}`;
-  fetch(`skills.json${cacheBust}`, { cache: "no-store" })
-    .then((res) => {
+  // Channel test results are optional: a missing or broken results.json
+  // must never stop the page from rendering.
+  const compatLoad = fetch(`compat/results.json${cacheBust}`, { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : null))
+    .catch(() => null)
+    .then((doc) => { compatDoc = doc; });
+  Promise.all([fetch(`skills.json${cacheBust}`, { cache: "no-store" }), compatLoad])
+    .then(([res]) => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
     })

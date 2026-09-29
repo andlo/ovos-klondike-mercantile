@@ -1,0 +1,184 @@
+name: Channel compat tests
+
+# Tests Looks Complete skills and pipeline plugins against OVOS release
+# channels (issue #6, phase 1): level 1 installs under the channel's
+# constraints, level 2 loads in MiniCroft. The channel install and MiniCroft
+# come from OpenVoiceOS/ovos-test-harness, pinned by SHA below and run
+# unchanged (scripts/compat/setup_channel.sh).
+#
+# Three jobs, split by trust:
+#   plan     read-only. Decides what to test (only packages whose key
+#            changed: version, constraints, languages, harness, runner).
+#   test     installs and imports arbitrary PyPI packages, so it gets NO
+#            secrets and NO token permissions, and clones over anonymous
+#            HTTPS. Its only output is an artifact.
+#   publish  holds write access; treats the artifacts as untrusted data
+#            (scripts/compat/publish.py) and writes docs/compat/ and
+#            docs/badges/ only. The crawler owns docs/skills.json and
+#            attaches the compat field on its next run.
+
+on:
+  schedule:
+    - cron: "41 2 * * *"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated entry ids to test (empty = everything that changed)"
+        required: false
+        default: ""
+      force:
+        description: "Re-test even if the key is unchanged"
+        type: boolean
+        default: false
+      full:
+        description: "Re-test everything"
+        type: boolean
+        default: false
+
+concurrency:
+  group: channel-compat
+  cancel-in-progress: false
+
+permissions: {}
+
+env:
+  HARNESS_REPO: https://github.com/OpenVoiceOS/ovos-test-harness.git
+  # Bumping this re-tests everything once (it is part of every key).
+  HARNESS_SHA: b752659c25b2637f57095fa5a585a2a0c588550c
+  CHANNELS: stable,alpha
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_work: ${{ steps.plan.outputs.has_work }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install packaging
+      - id: plan
+        env:
+          ONLY: ${{ inputs.only }}
+          FORCE: ${{ inputs.force }}
+          FULL: ${{ inputs.full }}
+        run: |
+          args=(--harness-sha "$HARNESS_SHA" --channels "$CHANNELS"
+                --constraints-dir "$RUNNER_TEMP/constraints" --out plan.json)
+          [ -n "$ONLY" ] && args+=(--only "$ONLY")
+          [ "$FORCE" = "true" ] && args+=(--force)
+          [ "$FULL" = "true" ] && args+=(--full)
+          python3 scripts/compat/plan.py "${args[@]}"
+          python3 - <<'EOF'
+          import json, os
+          plan = json.load(open("plan.json"))
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write("matrix=" + json.dumps({"include": plan["include"]}) + "\n")
+              f.write("has_work=" + ("true" if plan["include"] else "false") + "\n")
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plan
+          path: plan.json
+
+  test:
+    needs: plan
+    if: needs.plan.outputs.has_work == 'true'
+    runs-on: ubuntu-latest
+    permissions: {}
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    name: test ${{ matrix.channel }} ${{ matrix.shard }}
+    steps:
+      # Anonymous clones, no actions/checkout: nothing in this job holds a
+      # token that a package's install hooks or import-time code could use.
+      - name: Fetch this repo and the pinned harness
+        env:
+          SELF_REPO: ${{ github.server_url }}/${{ github.repository }}.git
+          SELF_SHA: ${{ github.sha }}
+        run: |
+          git init -q self && git -C self fetch -q --depth 1 "$SELF_REPO" "$SELF_SHA" && git -C self checkout -q FETCH_HEAD
+          git init -q harness && git -C harness fetch -q --depth 1 "$HARNESS_REPO" "$HARNESS_SHA" && git -C harness checkout -q FETCH_HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: System deps (padatious needs swig + libfann)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq swig libfann-dev
+      - name: Install the ${{ matrix.channel }} channel stack (ovos-test-harness)
+        run: bash self/scripts/compat/setup_channel.sh "${{ matrix.channel }}" harness "$RUNNER_TEMP/base" out/stack
+      - name: Test the shard
+        env:
+          ITEMS: ${{ toJSON(matrix.items) }}
+        run: |
+          printf '%s' "$ITEMS" > items.json
+          python3 self/scripts/compat/run_shard.py --channel "${{ matrix.channel }}" \
+            --constraints "out/stack/constraints-${{ matrix.channel }}.txt" \
+            --base-venv "$RUNNER_TEMP/base" --items items.json --out out/results.json
+      - name: Collect
+        if: always()
+        run: cp out/stack/stack.json out/stack/stack-freeze.txt out/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ matrix.channel }}-${{ matrix.shard }}
+          path: |
+            out/results.json
+            out/canary.json
+            out/stack.json
+            out/stack-freeze.txt
+          if-no-files-found: warn
+
+  publish:
+    needs: [plan, test]
+    if: always() && needs.plan.outputs.has_work == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          path: ${{ runner.temp }}/artifacts
+      - name: Merge results and commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Re-derived from a fresh main on every attempt instead of
+          # rebasing: publish only writes files the crawler never touches,
+          # so a reset + re-run can never lose anyone's work.
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 scripts/compat/publish.py --plan "$RUNNER_TEMP/artifacts/plan/plan.json" \
+              --artifacts "$RUNNER_TEMP/artifacts"
+            git add docs/compat docs/badges
+            git diff --cached --quiet && { echo "nothing to commit"; break; }
+            git commit -q -m "chore: update channel compat results [automated]"
+            if git push -q origin HEAD:main; then echo "pushed on attempt $attempt"; break; fi
+            [ "$attempt" -eq 5 ] && { echo "::error::push failed 5 times"; exit 1; }
+            sleep 5
+          done
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4

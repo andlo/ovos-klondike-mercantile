@@ -144,6 +144,64 @@
         re-checked sooner,
         <a href="https://github.com/andlo/ovos-klondike-mercantile">open an issue</a>.
       </p>
+
+      <h2 class="detail-subhead" id="channel-tests">6. Tested on OVOS release channels</h2>
+      <p>
+        Every <strong>Looks Complete</strong> skill and pipeline plugin (not
+        archived) is tested against OVOS's release channels, currently
+        <strong>stable</strong> and <strong>alpha</strong>. The result shows as
+        a small label on the card, a section on the detail page, and a badge
+        you can put in your README.
+      </p>
+      <ul class="guide-list">
+        <li><strong>Level 1, installs:</strong> <code>pip install</code> of your
+          package under the channel's own constraints file
+          (<code>constraints-&lt;channel&gt;.txt</code> from
+          <a href="https://github.com/OpenVoiceOS/OpenVoiceOS">OpenVoiceOS/OpenVoiceOS</a>,
+          fetched live). This catches dependency conflicts with what a device on
+          that channel actually runs. If the channel pins your package itself, the
+          version it pins is the one tested.</li>
+        <li><strong>Level 2, loads:</strong> the package is booted in
+          <a href="https://github.com/OpenVoiceOS/ovoscope">MiniCroft</a> with
+          <em>every language it ships</em>. A skill passes when it loads without
+          errors; what it registered is recorded (intents per language, fallback,
+          common query, OCP or other provider registration), so provider skills
+          without intents are not failed. A language that registers no intents
+          while others do is flagged. A pipeline plugin passes when its pipeline
+          stage loads.</li>
+        <li>Levels 3 (your own golden utterances route to your skill with the
+          default skills loaded) and 4 (stops when asked) are planned.</li>
+      </ul>
+      <p>
+        The channel stack is installed by
+        <a href="https://github.com/OpenVoiceOS/ovos-test-harness">OpenVoiceOS/ovos-test-harness</a>
+        (its <code>channel_compat</code> install, pinned by commit), so a result
+        means the same thing there and here. Each result lists the exact
+        ovos-core, ovos-workshop, ovos-padatious and ovos-bus-client versions it
+        was tested against, and the full <code>pip freeze</code> is published as
+        <code>compat/stack-&lt;channel&gt;.txt</code>.
+      </p>
+      <p>
+        <strong>When it runs:</strong> nightly, but a package is only re-tested
+        when something that matters changed: a new release, a change to the
+        channel's constraints, the languages it ships, or the test harness itself.
+        A new release is picked up the same night (PyPI is checked directly). To
+        test now, use <strong>🧪 Request test</strong> on the detail page (at
+        most once a day per entry).
+      </p>
+      <p>
+        <strong>Badge:</strong> the detail page shows a ready-to-paste snippet
+        once your package has been tested. It looks like this:
+      </p>
+      <pre class="setup-content">[![OVOS alpha](https://img.shields.io/endpoint?url=https://andlo.github.io/ovos-klondike-mercantile/badges/&lt;your-skill-id&gt;/alpha.json)](https://andlo.github.io/ovos-klondike-mercantile/detail.html?id=&lt;entry-id&gt;)</pre>
+      <p class="guide-note">
+        A failure caused by the test setup rather than your package (PyPI
+        unreachable, the test driver unable to boot on a channel) is never shown
+        as a ✗: it is kept out of the results and retried. Tests run in a job
+        without any secrets or write access, since they install and import
+        packages from PyPI. A result is information, not a verdict: if it looks
+        wrong, <a href="https://github.com/andlo/ovos-klondike-mercantile/issues">open an issue</a>.
+      </p>
     </div>
   </main>
 

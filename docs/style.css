@@ -798,3 +798,110 @@ footer a { color: var(--accent); }
 .detail-meta-links a:hover { text-decoration: underline; }
 
 .flag-link { color: #c73e35; }
+
+/* Channel test results (issue #6): card labels + detail-page section. */
+.compat-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.compat-label {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.compat-pass { background: #eafbf0; color: #1e8a4c; border-color: #bfe9cf; }
+.compat-warn { background: #f4f9e6; color: #5b7a12; border-color: #dbe9b5; }
+.compat-fail { background: #fdeceb; color: #c73e35; border-color: #f5c9c5; }
+.compat-untested,
+.compat-unsupported { background: #f1f2f4; color: #5b6472; border-color: #e2e5ea; }
+
+.compat-row {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  margin: 0.6rem 0;
+}
+
+.compat-row-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compat-level {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.compat-facts {
+  margin-top: 0.5rem;
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.compat-facts .stat-value { overflow-wrap: anywhere; }
+
+.compat-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.compat-lang {
+  background: #f1f2f4;
+  border-radius: 6px;
+  padding: 0.05rem 0.4rem;
+}
+
+.compat-lang-missing {
+  background: #fdeceb;
+  color: #c73e35;
+  text-decoration: line-through;
+}
+
+.compat-reason { margin-top: 0.5rem; font-weight: 600; color: #c73e35; overflow-wrap: anywhere; }
+.compat-warning { margin-top: 0.4rem; color: #8a5a00; font-size: 0.85rem; }
+.compat-note { margin-top: 0.4rem; color: var(--muted); font-size: 0.8rem; }
+
+.compat-log { margin-top: 0.5rem; }
+.compat-log summary { cursor: pointer; color: var(--muted); font-size: 0.8rem; }
+.compat-log pre {
+  max-height: 22rem;
+  overflow: auto;
+  background: #f7f8fa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 0.72rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.compat-snippet-head { font-size: 0.95rem; }
+
+.compat-snippet {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.5rem 0;
+}
+
+.compat-snippet img { height: 20px; }
+
+.compat-snippet code {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
