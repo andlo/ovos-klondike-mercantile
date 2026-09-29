@@ -27,6 +27,7 @@ when a configured stage fails to load.
 import argparse
 import json
 import os
+import re
 import sys
 import time
 import traceback
@@ -54,7 +55,11 @@ def modern_driver():
     """
     import inspect
     import ovoscope
-    return "secondary_langs" in inspect.signature(ovoscope.get_minicroft).parameters
+    # get_minicroft forwards lang/secondary_langs to MiniCroft via **kwargs,
+    # so the constructor is where the modern driver declares them.
+    params = set(inspect.signature(ovoscope.get_minicroft).parameters)
+    params |= set(inspect.signature(ovoscope.MiniCroft.__init__).parameters)
+    return "secondary_langs" in params
 
 
 def boot(ids, langs, max_wait, recorder, extra_pipelines=None, settle=2.0):
@@ -107,6 +112,46 @@ def intent_service(croft):
 def entry_points_for(package, groups):
     dist = distribution(package)
     return [ep for ep in dist.entry_points if ep.group in groups], dist.version
+
+
+LOCALE_DIR = re.compile(r"(?:^|/)(?:locale|vocab|dialog|regex)/([a-z]{2,3}[-_][A-Za-z]{2,4})/")
+
+
+def shipped_languages(package):
+    """Languages the INSTALLED version ships, from its locale folders.
+
+    Not the feed's list: that comes from the repo's current code, while a
+    channel may pin an older release (stable tests ovos-skill-wikipedia
+    0.8.13, which predates its pl-PL and sv-SE resources). Booting the old
+    release with the new list would flag languages it never claimed."""
+    langs = set()
+    for f in distribution(package).files or []:
+        m = LOCALE_DIR.search(str(f).replace("\\", "/"))
+        if m:
+            langs.add(bcp47(m.group(1)))
+    return sorted(langs)
+
+
+def blocked_in_package(package):
+    """Where a thread is stuck inside the package's own code, or None.
+
+    Called after a boot timeout. Some skills wait in initialize() for
+    things a device provides and MiniCroft does not (network/internet/GUI
+    ready signals: ovos-skill-boot-finished loops until they arrive), so the
+    load never finishes here although it does on a device. Reported as
+    "needs device" with the exact file:line, never as a failure, and never
+    silently: the location is shown on the detail page."""
+    import traceback as tb
+    from pathlib import Path
+    dist = distribution(package)
+    roots = {str(Path(dist.locate_file(f)).resolve().parent) for f in (dist.files or [])
+             if str(f).endswith(".py") and "/" in str(f).replace("\\", "/")}
+    for thread_id, frame in sys._current_frames().items():
+        stack = tb.extract_stack(frame)
+        for fs in reversed(stack):
+            if any(str(Path(fs.filename).resolve()).startswith(r) for r in roots):
+                return f"{Path(fs.filename).name}:{fs.lineno} in {fs.name}()"
+    return None
 
 
 def classify(msg_type):
@@ -194,7 +239,13 @@ def probe_skill(args, result):
     if not ids:
         result.update(status="fail", reason="package declares no skill entry point")
         return
-    langs = [bcp47(l) for l in (args.langs.split(",") if args.langs else []) if l]
+    langs = shipped_languages(args.package)
+    result["languages_source"] = "package"
+    if not langs:
+        # No recognisable resource folders (unusual layout): fall back to
+        # what the feed read from the repo.
+        langs = [bcp47(l) for l in (args.langs.split(",") if args.langs else []) if l]
+        result["languages_source"] = "feed"
     if not langs:
         langs = ["en-US"]
     elif "en-US" in langs:
@@ -202,7 +253,17 @@ def probe_skill(args, result):
     result["languages_booted"] = langs
 
     recorder = Recorder(ids)
-    croft, result["driver"] = boot(ids, langs, args.max_wait, recorder, settle=args.settle)
+    try:
+        croft, result["driver"] = boot(ids, langs, args.max_wait, recorder, settle=args.settle)
+    except TimeoutError as e:
+        where = blocked_in_package(args.package)
+        if where:
+            result.update(status="needs_device",
+                          reason=f"load did not finish in MiniCroft: waiting in {where}, "
+                                 "likely for something a device provides (network, GUI or "
+                                 "other services)")
+            return
+        raise e
     try:
         failures = []
         for sid in ids:

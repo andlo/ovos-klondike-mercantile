@@ -6,6 +6,7 @@ carries what cards and filters need; the detail page loads results.json for
 the full record (log excerpt, registrations, per-language counts).
 """
 import json
+import re
 from pathlib import Path
 
 PAGES_URL = "https://andlo.github.io/ovos-klondike-mercantile"
@@ -32,6 +33,8 @@ def label(rec):
     """(short text, state) for one result; state is pass/warn/fail/untested."""
     if rec and rec.get("status") == "unsupported":
         return "not supported", "unsupported"
+    if rec and rec.get("status") == "needs_device":
+        return "needs device", "unsupported"
     if not rec or rec.get("status") not in ("pass", "fail"):
         return "untested", "untested"
     if rec["status"] == "fail":
@@ -54,20 +57,27 @@ def compact(rec):
     return out
 
 
+SAFE_ID = re.compile(r"^[A-Za-z0-9._-]{1,200}$")
+
+
 def badge_ids(entries):
     """entry id -> badge id for every candidate entry: the skill's own id
     (from its entry point once installed, else skill.json), unless two
-    candidates would share it, in which case both use their entry id."""
+    candidates would share it, in which case both use their entry id.
+    Always URL-path safe: some skill.json skill_ids are a whole entry-point
+    string ("skill-about.neongeckocom=skill_about:AboutSkill")."""
     wanted = {}
     for entry, per_channel in entries:
         plugin_ids = []
         for rec in (per_channel or {}).values():
             plugin_ids = plugin_ids or rec.get("plugin_ids") or []
-        wanted[entry["id"]] = (plugin_ids[0] if plugin_ids else None) or entry.get("skill_id") or entry["id"]
+        candidate = (plugin_ids[0] if plugin_ids else None) or entry.get("skill_id") or entry["id"]
+        candidate = candidate.split("=", 1)[0].strip()
+        wanted[entry["id"]] = candidate if SAFE_ID.match(candidate) else entry["id"]
     counts = {}
     for b in wanted.values():
         counts[b] = counts.get(b, 0) + 1
-    return {eid: (b if counts[b] == 1 and "/" not in b else eid) for eid, b in wanted.items()}
+    return {eid: (b if counts[b] == 1 else eid) for eid, b in wanted.items()}
 
 
 def attach_compat(entries, results_doc):

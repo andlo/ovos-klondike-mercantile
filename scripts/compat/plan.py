@@ -140,7 +140,7 @@ def main():
             key = key_for([e["package_name"], version, channel, csha, langs,
                            args.harness_sha, RUNNER_VERSION])
             prev = previous.get(e["id"], {}).get(channel)
-            if (prev and prev.get("key") == key and prev.get("status") in ("pass", "fail", "unsupported")
+            if (prev and prev.get("key") == key and prev.get("status") in ("pass", "fail", "unsupported", "needs_device")
                     and not (args.force or args.full)):
                 skipped += 1
                 continue

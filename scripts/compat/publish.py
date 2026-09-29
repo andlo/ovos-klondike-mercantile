@@ -23,15 +23,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from compat.feed import CHANNEL_ORDER, badge_ids, is_candidate, load_results, shields  # noqa: E402
+from compat.feed import CHANNEL_ORDER, SAFE_ID, badge_ids, is_candidate, load_results, shields  # noqa: E402
 
 STR_FIELDS = {"id": 200, "channel": 20, "key": 32, "kind": 20, "package": 200,
               "requested_version": 64, "version_tested": 64, "tested_at": 40,
-              "status": 12, "stage": 20, "reason": 600, "log_excerpt": 4000, "driver": 80}
+              "status": 12, "stage": 20, "reason": 600, "log_excerpt": 4000, "driver": 80, "languages_source": 10}
 NUM_FIELDS = {"level", "duration_seconds", "boot_seconds"}
 LIST_FIELDS = {"plugin_ids": 20, "languages_booted": 60, "languages_missing": 60,
                "warnings": 10, "stages": 20}
-SAFE_ID = re.compile(r"^[A-Za-z0-9._-]{1,200}$")
 
 
 def clean(rec):
@@ -57,7 +56,7 @@ def clean(rec):
     if isinstance(by_lang, dict):
         out["intents_by_lang"] = {str(k)[:20]: v for k, v in list(by_lang.items())[:60]
                                   if isinstance(v, int)}
-    if out.get("status") not in ("pass", "fail", "unsupported", "error"):
+    if out.get("status") not in ("pass", "fail", "unsupported", "needs_device", "error"):
         return None
     out["level"] = out.get("level", 0) if out.get("level") in (0, 1, 2) else 0
     return out
@@ -96,7 +95,7 @@ def main():
                 continue
             per = results.setdefault(rec["id"], {})
             prev = per.get(channel)
-            if rec["status"] == "error" and prev and prev.get("status") in ("pass", "fail", "unsupported"):
+            if rec["status"] == "error" and prev and prev.get("status") in ("pass", "fail", "unsupported", "needs_device"):
                 prev["last_error"] = {"tested_at": rec.get("tested_at"), "reason": rec.get("reason")}
             else:
                 per[channel] = rec

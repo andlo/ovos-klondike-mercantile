@@ -42,6 +42,26 @@ if python3 -m pip check --disable-pip-version-check 2>/dev/null | grep -qi '^ovo
   python3 -m pip install --disable-pip-version-check --pre -c "$WORK/constraints-$CHANNEL.txt" ovoscope
 fi
 
+# Default runtime plugins. A device's mycroft.conf names a translation and a
+# language-detection module (ovos-translate-plugin-server and
+# ovos-lang-detector-plugin-server, both from ovos-translate-server-plugin),
+# and the installer puts them on every device. The harness stack leaves them
+# out on stable, so any skill that creates self.translator in __init__
+# (wikipedia, wolfie ...) would fail here and nowhere else. Installed under
+# the channel's constraints, so the channel still decides the version.
+python3 -m pip install --disable-pip-version-check -q -c "$WORK/constraints-$CHANNEL.txt" ovos-translate-server-plugin
+python3 - <<'EOF'
+from ovos_config import Configuration
+from ovos_plugin_manager.language import find_tx_plugins, find_lang_detect_plugins
+lang = Configuration().get("language", {})
+missing = [m for m, found in ((lang.get("translation_module"), find_tx_plugins()),
+                              (lang.get("detection_module"), find_lang_detect_plugins()))
+           if m and m not in found]
+if missing:
+    raise SystemExit(f"default language plugins not loadable: {missing}")
+print("==> default language plugins present:", lang.get("translation_module"), lang.get("detection_module"))
+EOF
+
 python3 -m pip freeze --disable-pip-version-check > "$WORK/stack-freeze.txt"
 python3 - "$WORK/stack.json" <<'EOF'
 import json, sys, platform
@@ -49,7 +69,7 @@ from importlib.metadata import version, PackageNotFoundError
 out = {"python": platform.python_version(), "packages": {}}
 for p in ("ovos-core", "ovos-workshop", "ovos-bus-client", "ovos-padatious",
           "ovos-adapt-parser", "ovos-plugin-manager", "ovos-config", "ovos-utils",
-          "ovoscope"):
+          "ovoscope", "ovos-translate-server-plugin"):
     try:
         out["packages"][p] = version(p)
     except PackageNotFoundError:

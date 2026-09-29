@@ -167,7 +167,7 @@ const COMPAT_LEVEL_TEXT = {
 
 function compatTooltip(channel, c) {
   const parts = [`${channel}: ${c.label}`, COMPAT_LEVEL_TEXT[c.level] || ""];
-  if (c.state === "unsupported") parts.push("this channel cannot run this kind of package");
+  if (c.state === "unsupported") parts.push("not testable here: see the detail page");
   if (c.version_tested) parts.push(`tested v${c.version_tested}${c.channel_pinned ? " (the version this channel pins)" : ""}`);
   if (c.tested_at) parts.push(`on ${formatDate(c.tested_at)}`);
   return parts.filter(Boolean).join(" · ");

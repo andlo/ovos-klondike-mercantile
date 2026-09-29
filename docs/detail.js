@@ -186,7 +186,7 @@ function testRequestUrl(skill) {
 function compatReasonBlock(rec) {
   const parts = [];
   if (rec.reason) {
-    const cls = rec.status === "unsupported" ? "compat-note" : "compat-reason";
+    const cls = ["unsupported", "needs_device"].includes(rec.status) ? "compat-note" : "compat-reason";
     parts.push(`<div class="${cls}">${escapeHtml(rec.reason)}</div>`);
   }
   asArray(rec.warnings).forEach((w) => parts.push(`<div class="compat-warning">⚠️ ${escapeHtml(w)}</div>`));
@@ -226,7 +226,7 @@ function renderCompatSection(skill) {
   const compat = skill.compat || { badge_id: skill.skill_id || skill.id, channels: {} };
   const channelsMeta = (compatDoc && compatDoc.channels) || {};
   const badgeId = compat.badge_id;
-  const FINAL = ["pass", "fail", "unsupported"];
+  const FINAL = ["pass", "fail", "unsupported", "needs_device"];
   const tested = COMPAT_CHANNELS.filter((ch) => results[ch] && FINAL.includes(results[ch].status));
 
   const rows = COMPAT_CHANNELS.filter((ch) => results[ch] || channelsMeta[ch]).map((ch) => {
@@ -243,9 +243,9 @@ function renderCompatSection(skill) {
         </div>`;
     }
     const c = (compat.channels || {})[ch] || {};
-    const text = c.label || ({ pass: "✓ loads", unsupported: "not supported" }[rec.status]
+    const text = c.label || ({ pass: "✓ loads", unsupported: "not supported", needs_device: "needs device" }[rec.status]
       || (rec.level === 0 ? "✗ doesn't install" : "✗ doesn't load"));
-    const state = c.state || ({ pass: "pass", unsupported: "unsupported" }[rec.status] || "fail");
+    const state = c.state || ({ pass: "pass", unsupported: "unsupported", needs_device: "unsupported" }[rec.status] || "fail");
     const regs = compatRegistrations(rec);
     const langs = compatLanguages(rec);
     return `

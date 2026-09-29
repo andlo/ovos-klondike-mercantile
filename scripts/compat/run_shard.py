@@ -12,6 +12,9 @@ Result status:
   unsupported  the channel cannot run this kind of package at all (stable's
          ovos-core has no third-party pipeline plugin loader): not the
          package's fault, shown as "not supported", never as a failure
+  needs_device  loading blocks in the package's own code waiting for
+         something only a device provides (network/GUI ready signals);
+         shown as "needs device" with the file:line, never as a failure
   fail   the package's own fault (dependency conflict, import error, boot
          error, timeout while booting)
   error  our/infra fault (PyPI unreachable, disk full): not published as a
@@ -130,8 +133,9 @@ def test_item(item, args, workroot):
                   "languages_missing", "warnings", "stages", "boot_seconds", "driver"):
             if probe.get(k) not in (None, [], {}):
                 rec[k] = probe[k]
-        if probe.get("status") == "unsupported":
-            rec.update(status="unsupported", stage="load", reason=probe.get("reason", ""))
+        if probe.get("status") in ("unsupported", "needs_device"):
+            rec.update(status=probe["status"], stage="load", reason=probe.get("reason", ""),
+                       log_excerpt=excerpt(out))
         elif probe.get("status") == "pass":
             rec.update(status="pass", stage="load", level=2)
             if rec.get("warnings"):
@@ -153,7 +157,11 @@ def main():
     ap.add_argument("--items", required=True, help="JSON list from plan.py")
     ap.add_argument("--out", required=True)
     ap.add_argument("--install-timeout", type=int, default=900)
-    ap.add_argument("--boot-timeout", type=int, default=420)
+    # Generous: a skill with ~20 languages trains ~20 padatious containers
+    # before READY (~200s locally, slower on a 2-core hosted runner). A
+    # boot that exceeds this is reported as a failure, so it must not be
+    # tight enough to catch merely slow-but-correct skills.
+    ap.add_argument("--boot-timeout", type=int, default=900)
     args = ap.parse_args()
 
     items = json.loads(Path(args.items).read_text())
