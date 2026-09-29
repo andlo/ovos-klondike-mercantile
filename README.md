@@ -210,21 +210,25 @@ falling back to the entry id if two entries would share it.
 
 ## What's on the detail page
 
-Clicking any card opens `detail.html?id=<owner-repo>` with:
-- The full, untruncated description and full tag/example lists
-  (cards truncate both).
-- **Install instructions**: `pip install <package>` if on PyPI, else
-  a git-based fallback (`pip install git+<source>.git`) if it's only
-  on GitHub.
-- **Additional setup/configuration**, extracted from the README (see
-  above) - explicitly labeled as extracted-as-is, not verified.
-- An explicit **license warning** when none is declared (not just a
-  small badge easy to miss) - explaining what "no license" legally
-  means (default "all rights reserved") in plain language.
-- Full repository stats: type, license, created date, last updated
-  date, stars, forks, open issues, PyPI version.
-- **Channel test results** (see above) with a copy-paste README badge
-  snippet, and a **Request test** link.
+Clicking any card opens `detail.html?id=<owner-repo>`, ordered from "what
+is it" down to "for the maintainer":
+
+1. **Header**: name, author, version, language flags (the only place flags
+   appear), badges, an archived notice if it applies, the full untruncated
+   description, and GitHub / PyPI / Translate buttons.
+2. **Install**: `pip install <package>` if on PyPI, else a git-based
+   fallback. README setup notes and `settingsmeta.json` settings are
+   folded away underneath, labelled as extracted as-is, not verified.
+3. **Try saying**: the full example list (cards truncate it).
+4. **Works with OVOS**: one line per release channel (status, version
+   tested, date) and at most one line saying what is wrong. Versions tested
+   against, registrations, languages (by code) and the log excerpt are in a
+   folded "Test details"; the log only shows when something failed.
+5. **About this listing**: the completeness rating and its facts, the
+   license (with a plain-language warning when none is declared), repo
+   stats and tags, in one block.
+6. **For the maintainer**: the README badge snippet (folded), Request test,
+   Request update, the maintainer guide, Report a problem.
 
 ## Site structure
 

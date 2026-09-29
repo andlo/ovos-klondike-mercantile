@@ -73,103 +73,10 @@ function renderStatRow(label, value) {
   return `<div class="stat-row"><span class="stat-label">${escapeHtml(label)}</span><span class="stat-value">${value}</span></div>`;
 }
 
-function renderSetupNotes(skill) {
-  const sections = asArray(skill.setup_notes);
-  if (sections.length === 0) return "";
-  const blocks = sections.map((s) => `
-    <div class="setup-section">
-      <div class="setup-heading">${escapeHtml(s.heading)}</div>
-      <pre class="setup-content">${escapeHtml(s.content)}</pre>
-    </div>
-  `).join("");
-  return `
-    <h2 class="detail-subhead">Additional setup / configuration</h2>
-    <p class="setup-note">
-      Pulled straight from the repo's own README - may include steps
-      beyond a plain install (editing <code>mycroft.conf</code>,
-      enabling a service, setting an API key, etc). Not verified,
-      just extracted as-is.
-    </p>
-    ${blocks}
-  `;
-}
-
-function renderAssessment(skill) {
-  let headline;
-  if (skill.component_type === "Infrastructure") {
-    headline = `Not given a completeness tier - this is OVOS-ecosystem tooling/infrastructure (docs, the official Skill Store's own data, an installer, etc), not something meant to be <code>pip install</code>ed. The "Looks Complete"/"Incomplete" system checks for a PyPI package and a GitHub release, which isn't a meaningful measure of completeness for this kind of repo.`;
-  } else if (skill.tier === 1) {
-    if (skill.on_pypi && skill.has_release) {
-      headline = `Rated <strong>Looks Complete</strong> - it has a confirmed manifest (a proper <code>skill.json</code> or plugin entry-point declaration), is published on PyPI, and has a GitHub release.`;
-    } else if (skill.in_ovos_store) {
-      const gaps = [];
-      if (!skill.on_pypi) gaps.push("isn't published on PyPI");
-      if (!skill.has_release) gaps.push("has no GitHub release");
-      const gapsText = gaps.length ? ` even though it ${gaps.join(" and ")}` : "";
-      headline = `Rated <strong>Looks Complete</strong> primarily because it's already listed in OVOS's own upcoming Skill Store - a maintainer reviewed and merged it there, which counts as a strong completeness signal on its own${gapsText}.`;
-    } else {
-      headline = `Rated <strong>Looks Complete</strong>.`;
-    }
-  } else if (skill.tier === 2) {
-    const missing = [];
-    if (!skill.on_pypi) missing.push("isn't published on PyPI");
-    if (!skill.has_release) missing.push("has no GitHub release");
-    headline = `Rated <strong>Incomplete</strong> - it has a confirmed manifest (a proper <code>skill.json</code> or plugin entry-point declaration), but it ${missing.join(" and ")}.`;
-  } else {
-    headline = `Rated <strong>Inferred, Unconfirmed</strong> - no formal manifest (a <code>skill.json</code>, or a declared plugin entry-point) was found for this repo. Everything shown is guessed from the repo's own topic tags, description, and code, not a confirmed declaration.`;
-  }
-
-  const facts = [
-    ...(skill.component_type !== "Infrastructure" ? [
-      {
-        label: "Published on PyPI",
-        ok: skill.on_pypi,
-        detail: skill.on_pypi ? `as ${skill.package_name}, v${skill.pypi_version}` : null,
-      },
-      { label: "Has a GitHub release", ok: skill.has_release },
-    ] : []),
-    { label: "Listed in OVOS's upcoming Skill Store", ok: skill.in_ovos_store },
-    { label: "Has a declared license", ok: !!skill.license, detail: skill.license },
-    { label: "Not archived", ok: !skill.archived },
-  ];
-  const factsHtml = facts.map((f) => `
-    <div class="fact-row">
-      <span class="fact-icon">${f.ok ? "✅" : "❌"}</span>
-      <span>${escapeHtml(f.label)}${f.detail ? ` <span class="fact-detail">(${escapeHtml(f.detail)})</span>` : ""}</span>
-    </div>
-  `).join("");
-
-  return `
-    <h2 class="detail-subhead">Why this assessment?</h2>
-    <p class="assessment-text">${headline}</p>
-    <div class="facts-list">${factsHtml}</div>
-  `;
-}
-
-function renderSettings(skill) {
-  const fields = asArray(skill.settings_fields);
-  if (fields.length === 0) return "";
-  const rows = fields.map((f) => {
-    const isApiKeyish = /api.?key|token|secret|password|credential/i.test(`${f.name} ${f.label}`);
-    return `
-      <div class="fact-row">
-        <span class="fact-icon">${isApiKeyish ? "🔑" : "⚙️"}</span>
-        <span>${escapeHtml(f.label)} <span class="fact-detail">(<code>${escapeHtml(f.name)}</code>${f.type ? `, ${escapeHtml(f.type)}` : ""})</span></span>
-      </div>
-    `;
-  }).join("");
-  return `
-    <h2 class="detail-subhead">Configurable settings</h2>
-    <p class="setup-note">
-      From this repo's own <code>settingsmeta.json</code> - shown as
-      declared, not verified to actually work.
-    </p>
-    <div class="facts-list">${rows}</div>
-  `;
-}
-
 const REPO_URL = "https://github.com/andlo/ovos-klondike-mercantile";
+
 const PAGES_URL = "https://andlo.github.io/ovos-klondike-mercantile";
+
 let compatDoc = null; // docs/compat/results.json, loaded beside skills.json
 
 function testRequestUrl(skill) {
@@ -183,118 +90,6 @@ function testRequestUrl(skill) {
   return `${REPO_URL}/issues/new?${new URLSearchParams({ title, body }).toString()}`;
 }
 
-function compatReasonBlock(rec) {
-  const parts = [];
-  if (rec.reason) {
-    const cls = ["unsupported", "needs_device", "needs_config"].includes(rec.status) ? "compat-note" : "compat-reason";
-    parts.push(`<div class="${cls}">${escapeHtml(rec.reason)}</div>`);
-  }
-  asArray(rec.warnings).forEach((w) => parts.push(`<div class="compat-warning">⚠️ ${escapeHtml(w)}</div>`));
-  if (rec.last_error) {
-    parts.push(`<div class="compat-note">Last attempt (${escapeHtml(formatDate(rec.last_error.tested_at) || "")}) hit a test-infrastructure error and kept this earlier result: ${escapeHtml(rec.last_error.reason || "")}</div>`);
-  }
-  if (rec.log_excerpt) {
-    parts.push(`<details class="compat-log"><summary>Log excerpt</summary><pre>${escapeHtml(rec.log_excerpt)}</pre></details>`);
-  }
-  return parts.join("");
-}
-
-function compatRegistrations(rec) {
-  const regs = rec.registrations || {};
-  const kinds = Object.entries(regs)
-    .filter(([k]) => k !== "other")
-    .map(([k, v]) => `${escapeHtml(k.replace("_", " "))} (${escapeHtml(String(v))})`);
-  if (Array.isArray(regs.other) && regs.other.length) kinds.push(`other: ${regs.other.map(escapeHtml).join(", ")}`);
-  return kinds.join(" · ");
-}
-
-function compatLanguages(rec) {
-  const booted = asArray(rec.languages_booted);
-  if (booted.length < 2) return "";
-  const missing = new Set(asArray(rec.languages_missing).map((l) => l.toLowerCase()));
-  return booted.map((l) => {
-    const bad = missing.has(l.toLowerCase());
-    return `<span class="compat-lang ${bad ? "compat-lang-missing" : ""}" title="${bad ? "no intents registered" : "intents registered"}">${languageFlag(l.toLowerCase())} ${escapeHtml(l)}</span>`;
-  }).join(" ");
-}
-
-function renderCompatSection(skill) {
-  const results = (compatDoc && compatDoc.results && compatDoc.results[skill.id]) || {};
-  // The feed's compat field arrives with the next crawl (up to 3h after a
-  // test run); results.json is fresh immediately, so either is enough.
-  if (!skill.compat && Object.keys(results).length === 0) return "";
-  const compat = skill.compat || { badge_id: skill.skill_id || skill.id, channels: {} };
-  const channelsMeta = (compatDoc && compatDoc.channels) || {};
-  const badgeId = compat.badge_id;
-  const FINAL = ["pass", "fail", "unsupported", "needs_device", "needs_config"];
-  const tested = COMPAT_CHANNELS.filter((ch) => results[ch] && FINAL.includes(results[ch].status));
-
-  const rows = COMPAT_CHANNELS.filter((ch) => results[ch] || channelsMeta[ch]).map((ch) => {
-    const rec = results[ch];
-    const meta = channelsMeta[ch] || {};
-    const stack = (meta.stack && meta.stack.packages) || {};
-    const stackText = ["ovos-core", "ovos-workshop", "ovos-padatious", "ovos-bus-client"]
-      .filter((p) => stack[p]).map((p) => `${p} ${stack[p]}`).join(" · ");
-    if (!rec || !FINAL.includes(rec.status)) {
-      return `
-        <div class="compat-row">
-          <div class="compat-row-head"><strong>${escapeHtml(ch)}</strong> <span class="compat-label compat-untested">not tested yet</span></div>
-          ${rec && rec.status === "error" ? `<div class="compat-note">Last attempt hit a test-infrastructure error (retried automatically): ${escapeHtml(rec.reason || "")}</div>` : ""}
-        </div>`;
-    }
-    const c = (compat.channels || {})[ch] || {};
-    const text = c.label || ({ pass: "✓ loads", unsupported: "not supported", needs_device: "needs device", needs_config: "needs config" }[rec.status]
-      || (rec.level === 0 ? "✗ doesn't install" : "✗ doesn't load"));
-    const state = c.state || ({ pass: "pass", unsupported: "unsupported", needs_device: "unsupported", needs_config: "unsupported" }[rec.status] || "fail");
-    const regs = compatRegistrations(rec);
-    const langs = compatLanguages(rec);
-    return `
-      <div class="compat-row">
-        <div class="compat-row-head">
-          <strong>${escapeHtml(ch)}</strong>
-          <span class="compat-label compat-${escapeHtml(state)}">${escapeHtml(text)}</span>
-          <span class="compat-level">${["pass", "fail"].includes(rec.status) ? escapeHtml(COMPAT_LEVEL_TEXT[rec.level] || "") : "installs; could not be judged further here (see below)"}</span>
-        </div>
-        <div class="compat-facts">
-          ${renderStatRow("Tested", escapeHtml(formatDate(rec.tested_at) || ""))}
-          ${renderStatRow("Version", escapeHtml((rec.version_tested || rec.requested_version || "") + (rec.channel_pinned ? " (pinned by the channel)" : "")))}
-          ${renderStatRow("Tested against", escapeHtml(stackText))}
-          ${regs ? renderStatRow("Registered", regs) : ""}
-          ${rec.driver ? renderStatRow("Test driver", escapeHtml(rec.driver)) : ""}
-        </div>
-        ${langs ? `<div class="compat-langs">${langs}</div>` : ""}
-        ${compatReasonBlock(rec)}
-      </div>`;
-  }).join("");
-
-  const snippets = tested.map((ch) => {
-    const img = `https://img.shields.io/endpoint?url=${PAGES_URL}/badges/${badgeId}/${ch}.json`;
-    const md = `[![OVOS ${ch}](${img})](${PAGES_URL}/detail.html?id=${encodeURIComponent(skill.id)})`;
-    return `
-      <div class="compat-snippet">
-        <img src="${escapeHtml(img)}" alt="OVOS ${escapeHtml(ch)} badge" loading="lazy">
-        <code class="install-command">${escapeHtml(md)}</code>
-      </div>`;
-  }).join("");
-
-  return `
-    <h2 class="detail-subhead">Tested on OVOS release channels</h2>
-    <p class="setup-note">
-      Installed under each channel's own constraints and booted in MiniCroft with every language it ships.
-      Re-tested when a new version is released or the channel changes.
-      <a href="for-maintainers.html#channel-tests">How testing works</a>
-      ${channelsMeta.stable || channelsMeta.alpha ? ` · <a href="compat/results.json" target="_blank" rel="noopener">raw results</a>` : ""}
-    </p>
-    ${rows || `<p class="setup-note">Not tested yet - it's in the queue for the next nightly run.</p>`}
-    ${snippets ? `<h3 class="detail-subhead compat-snippet-head">README badge</h3>${snippets}` : ""}
-  `;
-}
-
-// Both open GitHub's own "new issue" form, pre-filled - no backend
-// needed on this static site. A maintainer (or an automated workflow
-// watching for these labels, if one gets built later) can then bump
-// the repo to the front of the rotation, matching the same effect as
-// manually removing it from state.json's "attempted" list.
 function updateRequestUrl(skill) {
   const title = `Update request: ${skill.name} (${skill.id})`;
   const body =
@@ -318,23 +113,250 @@ function flagUrl(skill) {
   return `${REPO_URL}/issues/new?${params.toString()}`;
 }
 
+// ---- Layout -----------------------------------------------------------
+// Ordered from "what is it" to "for the maintainer":
+//   1. header: name, byline, badges, the description, action buttons
+//   2. install (README setup notes and settings folded away)
+//   3. example phrases
+//   4. works with OVOS: one compact line per release channel; everything
+//      technical (versions, registrations, languages, log) folded away
+//   5. about this listing: assessment, facts, repo stats, tags in one block
+//   6. for maintainers: README badge, request test/update, report
+// Language flags appear once, in the header. Everything else names
+// languages by code, and only where something is wrong.
+
+function section(title, body, extraClass = "") {
+  if (!body) return "";
+  return `<section class="detail-section ${extraClass}"><h2 class="detail-subhead">${escapeHtml(title)}</h2>${body}</section>`;
+}
+
+function fold(summary, body, open = false) {
+  if (!body) return "";
+  return `<details class="detail-fold"${open ? " open" : ""}><summary>${summary}</summary><div class="detail-fold-body">${body}</div></details>`;
+}
+
+function renderInstall(skill) {
+  const install = installInstructions(skill);
+  const notes = asArray(skill.setup_notes);
+  const fields = asArray(skill.settings_fields);
+  if (!install && !notes.length && !fields.length) return "";
+
+  const notesHtml = notes.map((s) => `
+    <div class="setup-section">
+      <div class="setup-heading">${escapeHtml(s.heading)}</div>
+      <pre class="setup-content">${escapeHtml(s.content)}</pre>
+    </div>`).join("");
+  const fieldsHtml = fields.map((f) => {
+    const isApiKeyish = /api.?key|token|secret|password|credential/i.test(`${f.name} ${f.label}`);
+    return `<div class="fact-row"><span class="fact-icon">${isApiKeyish ? "🔑" : "⚙️"}</span>
+      <span>${escapeHtml(f.label)} <span class="fact-detail">(<code>${escapeHtml(f.name)}</code>${f.type ? `, ${escapeHtml(f.type)}` : ""})</span></span></div>`;
+  }).join("");
+
+  return section("Install", `
+    ${install ? `
+      <div class="install-box">
+        <div class="install-label">${escapeHtml(install.label)}</div>
+        <code class="install-command">${escapeHtml(install.command)}</code>
+      </div>` : ""}
+    ${fold(`Setup notes from the README (${notes.length})`,
+      notesHtml && `<p class="setup-note">Extracted as-is from the repo's README, not verified.</p>${notesHtml}`)}
+    ${fold(`Settings (${fields.length})`,
+      fieldsHtml && `<p class="setup-note">Declared in the repo's <code>settingsmeta.json</code>, not verified.</p><div class="facts-list">${fieldsHtml}</div>`)}
+  `);
+}
+
+function renderExamples(localized) {
+  const examples = asArray(localized.examples).map((e) => `<li>"${escapeHtml(e)}"</li>`).join("");
+  return examples ? section("Try saying", `<ul class="examples">${examples}</ul>`) : "";
+}
+
+// ---- Works with OVOS ---------------------------------------------------
+
+const FINAL = ["pass", "fail", "unsupported", "needs_device", "needs_config"];
+const STATUS_TEXT = { pass: "✓ loads", unsupported: "not supported", needs_device: "needs device", needs_config: "needs config" };
+const STATUS_STATE = { pass: "pass", unsupported: "unsupported", needs_device: "unsupported", needs_config: "unsupported" };
+
+// The one line a user needs under a channel's status: what is wrong, if
+// anything. Grey results and failures state their reason; a pass with
+// language problems names the languages.
+function compatSummaryLine(rec) {
+  if (rec.status === "pass") {
+    const missing = asArray(rec.languages_missing);
+    if (missing.length) {
+      const failed = asArray(rec.warnings).some((w) => w.startsWith("fails to load"));
+      return `<span class="compat-issue">${failed ? "Fails to load with" : "No intents for"} ${missing.map((l) => `<code>${escapeHtml(l)}</code>`).join(", ")}</span>`;
+    }
+    const other = asArray(rec.warnings)[0];
+    return other ? `<span class="compat-issue">${escapeHtml(other)}</span>` : "";
+  }
+  if (!rec.reason) return "";
+  // "<skill_id>: why" -> "why": the page is already about this skill.
+  let reason = rec.reason;
+  for (const pid of asArray(rec.plugin_ids)) {
+    if (reason.startsWith(`${pid}: `)) reason = reason.slice(pid.length + 2);
+  }
+  const cls = rec.status === "fail" ? "compat-issue compat-issue-fail" : "compat-issue";
+  return `<span class="${cls}">${escapeHtml(reason.charAt(0).toUpperCase() + reason.slice(1))}</span>`;
+}
+
+function compatDetails(rec, meta) {
+  const stack = (meta.stack && meta.stack.packages) || {};
+  const stackText = ["ovos-core", "ovos-workshop", "ovos-padatious", "ovos-bus-client"]
+    .filter((p) => stack[p]).map((p) => `${p} ${stack[p]}`).join(" · ");
+  const regs = rec.registrations || {};
+  const regText = Object.entries(regs).filter(([k]) => k !== "other")
+    .map(([k, v]) => `${k.replace("_", " ")} (${v})`).join(" · ");
+  const booted = asArray(rec.languages_booted);
+  const missing = new Set(asArray(rec.languages_missing).map((l) => l.toLowerCase()));
+  const langs = booted.length > 1 ? booted.map((l) =>
+    `<code class="${missing.has(l.toLowerCase()) ? "compat-lang-missing" : ""}">${escapeHtml(l)}</code>`).join(" ") : "";
+  return `
+    <div class="compat-facts">
+      ${renderStatRow("Level reached", escapeHtml(COMPAT_LEVEL_TEXT[rec.level] || ""))}
+      ${renderStatRow("Tested against", escapeHtml(stackText))}
+      ${regText ? renderStatRow("Registered", escapeHtml(regText)) : ""}
+      ${langs ? renderStatRow("Languages", langs) : ""}
+      ${rec.driver ? renderStatRow("Test driver", escapeHtml(rec.driver)) : ""}
+    </div>
+    ${showLog(rec) ? `<pre class="compat-log">${escapeHtml(rec.log_excerpt)}</pre>` : ""}
+  `;
+}
+
+// The log only helps when something went wrong: a failure, a grey result,
+// or languages that fail to load. For a clean pass it is just INFO noise.
+function showLog(rec) {
+  if (!rec.log_excerpt) return false;
+  if (rec.status !== "pass") return true;
+  return asArray(rec.warnings).some((w) => w.startsWith("fails to load"));
+}
+
+function renderWorksWith(skill) {
+  const results = (compatDoc && compatDoc.results && compatDoc.results[skill.id]) || {};
+  // The feed's compat field arrives with the next crawl (up to 3h after a
+  // test run); results.json is fresh immediately, so either is enough.
+  if (!skill.compat && Object.keys(results).length === 0) return "";
+  const channelsMeta = (compatDoc && compatDoc.channels) || {};
+  const compat = skill.compat || { channels: {} };
+  const channels = COMPAT_CHANNELS.filter((ch) => results[ch] || channelsMeta[ch]);
+
+  const rows = channels.map((ch) => {
+    const rec = results[ch];
+    if (!rec || !FINAL.includes(rec.status)) {
+      return `
+        <div class="compat-row">
+          <div class="compat-row-head"><strong>${escapeHtml(ch)}</strong>
+            <span class="compat-label compat-untested">not tested yet</span></div>
+        </div>`;
+    }
+    const c = (compat.channels || {})[ch] || {};
+    const text = c.label || STATUS_TEXT[rec.status] || (rec.level === 0 ? "✗ doesn't install" : "✗ doesn't load");
+    const state = c.state || STATUS_STATE[rec.status] || "fail";
+    const version = rec.version_tested || rec.requested_version || "";
+    const meta = [version && `v${version}${rec.channel_pinned ? " (channel's version)" : ""}`,
+      formatDate(rec.tested_at)].filter(Boolean).join(" · ");
+    return `
+      <div class="compat-row">
+        <div class="compat-row-head">
+          <strong>${escapeHtml(ch)}</strong>
+          <span class="compat-label compat-${escapeHtml(state)}">${escapeHtml(text)}</span>
+          <span class="compat-meta">${escapeHtml(meta)}</span>
+        </div>
+        ${compatSummaryLine(rec)}
+        ${fold("Test details", compatDetails(rec, channelsMeta[ch] || {}))}
+      </div>`;
+  }).join("");
+
+  return section("Works with OVOS", `
+    ${rows || `<p class="setup-note">Not tested yet. It's queued for the next nightly run.</p>`}
+    <p class="setup-note compat-footnote">Installed with each release channel's own package versions and started in a test core with all its languages. <a href="for-maintainers.html#channel-tests">How testing works</a></p>
+  `);
+}
+
+// ---- About this listing ------------------------------------------------
+
+function assessmentHeadline(skill) {
+  if (skill.component_type === "Infrastructure") {
+    return `No completeness rating: this is ecosystem tooling or infrastructure, not something meant to be <code>pip install</code>ed.`;
+  }
+  if (skill.tier === 1) {
+    if (skill.on_pypi && skill.has_release) return `<strong>Looks Complete</strong>: a confirmed manifest, published on PyPI, with a GitHub release.`;
+    if (skill.in_ovos_store) return `<strong>Looks Complete</strong>: listed in OVOS's own upcoming Skill Store, which a maintainer reviewed.`;
+    return `<strong>Looks Complete</strong>.`;
+  }
+  if (skill.tier === 2) return `<strong>Incomplete</strong>: a confirmed manifest, but not everything is published (see below).`;
+  return `<strong>Inferred, Unconfirmed</strong>: no formal manifest was found; what's shown is guessed from the repo's tags, description and code.`;
+}
+
+function renderAbout(skill) {
+  const infra = skill.component_type === "Infrastructure";
+  const facts = [
+    ...(!infra ? [
+      { label: "Published on PyPI", ok: skill.on_pypi, detail: skill.on_pypi ? `${skill.package_name} ${skill.pypi_version}` : null },
+      { label: "Has a GitHub release", ok: skill.has_release },
+    ] : []),
+    { label: "In OVOS's upcoming Skill Store", ok: skill.in_ovos_store },
+    { label: "License", ok: !!skill.license, detail: skill.license || "none declared" },
+    { label: "Not archived", ok: !skill.archived },
+  ];
+  const factsHtml = facts.map((f) => `
+    <div class="fact-row"><span class="fact-icon">${f.ok ? "✅" : "❌"}</span>
+      <span>${escapeHtml(f.label)}${f.detail ? ` <span class="fact-detail">(${escapeHtml(f.detail)})</span>` : ""}</span></div>`).join("");
+  const tags = asArray(skill.tags).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
+
+  return section("About this listing", `
+    <p class="assessment-text">${assessmentHeadline(skill)}</p>
+    <div class="about-grid">
+      <div class="facts-list">${factsHtml}</div>
+      <div class="stat-grid stat-grid-compact">
+        ${renderStatRow("Type", escapeHtml(skill.component_type || ""))}
+        ${renderStatRow("Created", escapeHtml(formatDate(skill.repo_created_at) || ""))}
+        ${renderStatRow("Last updated", escapeHtml(formatDate(skill.last_updated) || ""))}
+        ${renderStatRow("Stars", skill.stars)}
+        ${renderStatRow("Forks", skill.forks)}
+        ${renderStatRow("Open issues", skill.open_issues)}
+      </div>
+    </div>
+    ${renderLicenseWarning(skill)}
+    ${tags ? `<div class="tags about-tags">${tags}</div>` : ""}
+  `);
+}
+
+// ---- For maintainers ---------------------------------------------------
+
+function renderMaintainers(skill) {
+  const results = (compatDoc && compatDoc.results && compatDoc.results[skill.id]) || {};
+  const badgeId = (skill.compat && skill.compat.badge_id) || skill.skill_id || skill.id;
+  const snippets = COMPAT_CHANNELS
+    .filter((ch) => results[ch] && FINAL.includes(results[ch].status))
+    .map((ch) => {
+      const img = `https://img.shields.io/endpoint?url=${PAGES_URL}/badges/${badgeId}/${ch}.json`;
+      const md = `[![OVOS ${ch}](${img})](${PAGES_URL}/detail.html?id=${encodeURIComponent(skill.id)})`;
+      return `<div class="compat-snippet"><img src="${escapeHtml(img)}" alt="OVOS ${escapeHtml(ch)} badge" loading="lazy"><code class="install-command">${escapeHtml(md)}</code></div>`;
+    }).join("");
+
+  return `
+    <section class="detail-section maintainer-section">
+      <h2 class="detail-subhead">For the maintainer</h2>
+      ${fold("README badge", snippets && `<p class="setup-note">Paste into your README. It updates by itself after every test run.</p>${snippets}`)}
+      <div class="detail-meta-links">
+        ${skill.compat ? `<a href="${testRequestUrl(skill)}" target="_blank" rel="noopener">🧪 Request test</a>` : ""}
+        <a href="${updateRequestUrl(skill)}" target="_blank" rel="noopener">🔄 Request update</a>
+        <a href="for-maintainers.html">Guide for maintainers</a>
+        <a href="${flagUrl(skill)}" target="_blank" rel="noopener" class="flag-link">🚩 Report a problem</a>
+      </div>
+    </section>`;
+}
+
+// ---- Page ---------------------------------------------------------------
+
 function renderDetail(skill) {
   const localized = localizeSkill(skill, currentSiteLang);
   document.title = `${localized.name} · OVOS Klondike Mercantile`;
 
   const fallbackIcon = genericIconFor(skill);
   const icon = skill.icon || fallbackIcon;
-  const install = installInstructions(skill);
-  const examples = asArray(localized.examples)
-    .map((e) => `<li>"${escapeHtml(e)}"</li>`).join("");
-  const tags = asArray(skill.tags)
-    .map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
-
-  const createdDate = formatDate(skill.repo_created_at);
-  const updatedDate = formatDate(skill.last_updated);
   const untranslatedNote = (currentSiteLang !== "en-us" && !localized.translated)
-    ? `<div class="untranslated-note">Not yet translated - showing English</div>`
-    : "";
+    ? `<div class="untranslated-note">Not yet translated - showing English</div>` : "";
 
   detailRoot.innerHTML = `
     <div class="detail-card">
@@ -350,61 +372,21 @@ function renderDetail(skill) {
       </div>
 
       <div class="badges">${renderBadges(skill)}</div>
-
-      ${renderAssessment(skill)}
-
-      ${renderCompatSection(skill)}
-
-      ${renderLicenseWarning(skill)}
-
       ${renderArchivedWarning(skill)}
 
       <p class="detail-description">${escapeHtml(localized.description || "No description available.")}</p>
 
-      ${install ? `
-        <div class="install-box">
-          <div class="install-label">${escapeHtml(install.label)}</div>
-          <code class="install-command">${escapeHtml(install.command)}</code>
-        </div>
-      ` : ""}
-
-      ${renderSetupNotes(skill)}
-
-      ${renderSettings(skill)}
-
-      ${examples ? `
-        <h2 class="detail-subhead">Example phrases</h2>
-        <ul class="examples">${examples}</ul>
-      ` : ""}
-
-      ${tags ? `
-        <h2 class="detail-subhead">Tags</h2>
-        <div class="tags">${tags}</div>
-      ` : ""}
-
-      <h2 class="detail-subhead">Repository stats</h2>
-      <div class="stat-grid">
-        ${renderStatRow("Type", skill.component_type)}
-        ${renderStatRow("License", skill.license || "None declared")}
-        ${renderStatRow("Created", createdDate)}
-        ${renderStatRow("Last updated", updatedDate)}
-        ${renderStatRow("Stars", skill.stars)}
-        ${renderStatRow("Forks", skill.forks)}
-        ${renderStatRow("Open issues", skill.open_issues)}
-        ${renderStatRow("PyPI version", skill.pypi_version || "Not published")}
-      </div>
-
       <div class="detail-links">
         <a href="${escapeHtml(skill.source)}" target="_blank" rel="noopener" class="detail-link-btn">View on GitHub</a>
-        ${skill.package_name ? `<a href="https://pypi.org/project/${escapeHtml(skill.package_name)}/" target="_blank" rel="noopener" class="detail-link-btn">View on PyPI</a>` : ""}
+        ${skill.package_name && skill.on_pypi ? `<a href="https://pypi.org/project/${escapeHtml(skill.package_name)}/" target="_blank" rel="noopener" class="detail-link-btn">View on PyPI</a>` : ""}
         ${skill.in_ovos_localize ? `<a href="https://openvoiceos.github.io/ovos-localize/" target="_blank" rel="noopener" class="detail-link-btn detail-link-translate">Help Translate</a>` : ""}
       </div>
 
-      <div class="detail-meta-links">
-        <a href="${updateRequestUrl(skill)}" target="_blank" rel="noopener">🔄 Request update</a>
-        ${skill.compat ? `<a href="${testRequestUrl(skill)}" target="_blank" rel="noopener">🧪 Request test</a>` : ""}
-        <a href="${flagUrl(skill)}" target="_blank" rel="noopener" class="flag-link">🚩 Report a problem</a>
-      </div>
+      ${renderInstall(skill)}
+      ${renderExamples(localized)}
+      ${renderWorksWith(skill)}
+      ${renderAbout(skill)}
+      ${renderMaintainers(skill)}
     </div>
   `;
 }
