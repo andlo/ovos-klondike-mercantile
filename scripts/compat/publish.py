@@ -231,7 +231,7 @@ def main():
                 (docs / "compat" / f"stack-{channel}.txt").write_text(freeze)
                 meta.update(run_at=now,
                             constraints_sha256=plan["summary"][channel]["constraints_sha256"],
-                            constraints_url=f"https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-{channel}.txt",
+                            constraints_url=f"https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-{channel}.txt",
                             harness_sha=plan.get("harness_sha"),
                             runner_version=plan.get("runner_version"))
             except (OSError, ValueError, KeyError):

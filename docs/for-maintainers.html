@@ -148,17 +148,24 @@
       <h2 class="detail-subhead" id="channel-tests">6. Tested on OVOS release channels</h2>
       <p>
         Every <strong>Looks Complete</strong> skill and pipeline plugin (not
-        archived) is tested against OVOS's release channels, currently
-        <strong>stable</strong> and <strong>alpha</strong>. The result shows as
-        a small label on the card, a section on the detail page, and a badge
-        you can put in your README.
+        archived) is tested against OVOS's three release channels. The result
+        shows as a small label on the card, a section on the detail page, and a
+        badge you can put in your README.
       </p>
+      <ul class="guide-list">
+        <li><strong>testing</strong>: what the OVOS installer installs by
+          default ("recommended"), so what most new devices run. It weighs most.</li>
+        <li><strong>alpha</strong>: the installer's other choice, and the only
+          one on a Mark 2/DevKit or macOS.</li>
+        <li><strong>stable</strong>: not offered by the installer today, but
+          the slow, safe track a new stable release will land on.</li>
+      </ul>
       <ul class="guide-list">
         <li><strong>Level 1, installs:</strong> <code>pip install</code> of your
           package under the channel's own constraints file
           (<code>constraints-&lt;channel&gt;.txt</code> from
-          <a href="https://github.com/OpenVoiceOS/OpenVoiceOS">OpenVoiceOS/OpenVoiceOS</a>,
-          fetched live). This catches dependency conflicts with what a device on
+          <a href="https://github.com/OpenVoiceOS/ovos-releases">OpenVoiceOS/ovos-releases</a>,
+          the same file the OVOS installer uses, fetched live). This catches dependency conflicts with what a device on
           that channel actually runs. If the channel pins your package itself, the
           version it pins is the one tested.</li>
         <li><strong>Level 2, loads:</strong> the package is booted in
@@ -210,10 +217,10 @@
         <li>Level 4 (stops when asked) is planned.</li>
       </ul>
       <p>
-        <strong>Recommended order:</strong> the store's default sort. Stable
-        counts more than alpha: a package that works on stable ranks above
-        Looks Complete ones not tested yet, and one that fails on stable ranks
-        below them. Among working ones, measured golden routing ranks above
+        <strong>Recommended order:</strong> the store's default sort. testing
+        counts most (ten times alpha), stable three times alpha: a package that
+        works on testing ranks above Looks Complete ones not tested yet, and one
+        that fails on testing ranks below them. Among working ones, measured golden routing ranks above
         "loads", by the share of rows that route. Ties go to stars.
       </p>
       <p>

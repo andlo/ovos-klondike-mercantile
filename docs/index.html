@@ -241,13 +241,16 @@
       <select id="compat-filter" title="Tested on OVOS release channels (Looks Complete skills and pipeline plugins)">
         <option value="">Any OVOS test result</option>
         <option value="tested">Tested on OVOS</option>
-        <option value="loads:stable">✓ Works on stable</option>
+        <option value="loads:testing">✓ Works on testing (the installer's default)</option>
         <option value="loads:alpha">✓ Works on alpha</option>
-        <option value="loads:both">✓ Works on stable and alpha</option>
-        <option value="routes:stable">✓ Routes on stable (golden utterances)</option>
+        <option value="loads:stable">✓ Works on stable</option>
+        <option value="loads:installer">✓ Works on testing and alpha</option>
+        <option value="routes:testing">✓ Routes on testing (golden utterances)</option>
         <option value="routes:alpha">✓ Routes on alpha (golden utterances)</option>
-        <option value="fails:stable">✗ Fails on stable</option>
+        <option value="routes:stable">✓ Routes on stable (golden utterances)</option>
+        <option value="fails:testing">✗ Fails on testing</option>
         <option value="fails:alpha">✗ Fails on alpha</option>
+        <option value="fails:stable">✗ Fails on stable</option>
       </select>
       <select id="sort-order" title="Recommended: tested on stable first, then alpha, then stars (see For maintainers)">
         <option value="recommended">Recommended</option>

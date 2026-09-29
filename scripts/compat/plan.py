@@ -42,7 +42,12 @@ RUNNER_VERSION = "1"
 # never reaches level 3, so only `key` matters for it. Bump when route.py
 # or the level 3 parts of run_shard.py change what a result means.
 ROUTE_VERSION = "1"
-CONSTRAINTS_URL = "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-{channel}.txt"
+# The constraints the OVOS installer itself installs with
+# (ovos-installer: ovos_virtualenv_constraints_url). OpenVoiceOS/OpenVoiceOS
+# carries the same files today; the installer is the reference for "what a
+# device on this channel runs".
+CONSTRAINTS_BASE = "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main"
+CONSTRAINTS_URL = CONSTRAINTS_BASE + "/constraints-{channel}.txt"
 NAME_RE = re.compile(r"^\s*([A-Za-z0-9][A-Za-z0-9._-]*)\s*(\[[^\]]*\])?\s*([^;#]*)")
 
 
@@ -198,9 +203,14 @@ def device_bound(previous, channel):
     and the detail page says so."""
     ids = set()
     for per in previous.values():
-        rec = per.get(channel) or {}
-        if rec.get("status") == "needs_device":
-            ids.update(rec.get("plugin_ids") or [])
+        # A skill not yet tested on this channel (a newly added channel, or
+        # a new skill) is judged by its result on the other channels: one
+        # device-bound default skill is enough to keep a routing boot from
+        # ever reaching READY.
+        recs = [per[channel]] if per.get(channel) else list(per.values())
+        for rec in recs:
+            if rec.get("status") == "needs_device":
+                ids.update(rec.get("plugin_ids") or [])
     return sorted(ids)
 
 

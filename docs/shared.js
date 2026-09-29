@@ -231,8 +231,10 @@ function compatFromRecord(rec) {
 //   1    Looks Complete but untested, or not testable here (grey)
 //   2    loads (level 2); + up to 0.5 for generated utterances once shown
 //   3-4  golden utterances measured: 3 + the share that reach the skill
-// Stable counts ten times alpha, so passing on stable ranks above untested
-// and failing on stable ranks below it. Not Looks Complete: tier 2 is -1,
+// Channels are weighted by who runs them: testing ×10 (what the OVOS
+// installer installs by default), stable ×3 (not offered by the installer
+// today, but the slow, safe track a new stable release lands on), alpha ×1.
+// So passing on testing ranks above untested and failing on testing below it. Not Looks Complete: tier 2 is -1,
 // tier 3 -2. Ties go to stars.
 function channelScore(c) {
   if (!c || c.state === "untested" || c.state === "unsupported") return 1;
@@ -245,8 +247,8 @@ function channelScore(c) {
 function recommendedRank(skill) {
   const channels = (skill.compat && skill.compat.channels) || null;
   if (!channels && skill.tier !== 1) return skill.tier === 2 ? -1 : -2;
-  if (!channels) return 11;
-  return channelScore(channels.stable) * 10 + channelScore(channels.alpha);
+  if (!channels) return 14;
+  return channelScore(channels.testing) * 10 + channelScore(channels.stable) * 3 + channelScore(channels.alpha);
 }
 
 function applyCompatResults(skills, doc) {
@@ -278,7 +280,8 @@ function matchesCompatFilter(skill, value) {
   const fails = (ch) => channels[ch] && channels[ch].state === "fail";
   if (value === "tested") return Object.values(channels).some((c) => c.state !== "untested");
   const routes = (ch) => channels[ch] && (channels[ch].level || 0) >= 3;
-  if (value === "loads:both") return loads("stable") && loads("alpha");
+  // The two channels the OVOS installer offers.
+  if (value === "loads:installer" || value === "loads:both") return loads("testing") && loads("alpha");
   const [kind, ch] = value.split(":");
   if (kind === "routes") return routes(ch);
   return kind === "loads" ? loads(ch) : kind === "fails" ? fails(ch) : true;

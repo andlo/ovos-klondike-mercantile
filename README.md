@@ -172,11 +172,14 @@ repos".
 ### Tested on OVOS release channels
 
 Every Looks Complete skill and pipeline plugin (not archived) is tested
-against OVOS's release channels, currently **stable** and **alpha**
+against OVOS's release channels: **testing** (what the OVOS installer
+installs by default), **alpha** (its other choice) and **stable** (not
+offered by the installer today; kept for the next stable release)
 (issue #6, phases 1-2):
 
 - **Level 1, installs:** `pip install` under the channel's own
-  `constraints-<channel>.txt` from OpenVoiceOS/OpenVoiceOS, fetched live.
+  `constraints-<channel>.txt` from OpenVoiceOS/ovos-releases (the file the
+  installer itself uses), fetched live.
   When the channel pins the package itself, that pinned version is tested.
 - **Level 2, loads:** booted in MiniCroft with every language the
   installed version ships (one boot: the first language as `lang`, the
@@ -222,8 +225,8 @@ A skill that only fails with some of its languages configured is a pass
 with those languages flagged, since a device only loads its own.
 
 Shown as a label per channel on cards (with a "Works on OVOS" filter:
-works on stable / alpha / both, routes on stable / alpha, fails on stable
-/ alpha), the default "Recommended" sort (stable counts ten times alpha:
+works / routes / fails per channel, works on testing and alpha), the
+default "Recommended" sort (testing ×10, stable ×3, alpha ×1:
 fails 0, untested 1, loads 2, golden routing 3 plus the share routed; ties
 by stars), a section on the detail page
 (level, date, versions tested against, failure reason, log excerpt,
