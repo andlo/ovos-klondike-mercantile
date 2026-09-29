@@ -917,3 +917,8 @@ footer a { color: var(--accent); }
   overflow-x: auto;
   white-space: nowrap;
 }
+
+/* Level 3 routing details on the detail page */
+.compat-subhead { margin: 0.9rem 0 0.3rem; font-size: 0.95rem; }
+.compat-misses { margin: 0.3rem 0 0.6rem 1.2rem; padding: 0; font-size: 0.85rem; }
+.compat-misses li { margin: 0.15rem 0; }
