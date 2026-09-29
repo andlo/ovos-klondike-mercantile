@@ -169,9 +169,11 @@ function wireReportBox(skill) {
   });
   submitBtn.addEventListener("click", async () => {
     if (!checked) return;
+    // Compact in the link (a 7-step report is ~4 KB compact, ~7 KB indented);
+    // indented on the clipboard, where length does not matter.
     const text = JSON.stringify(checked, null, 2);
     const params = new URLSearchParams({ template: "test-report.yml", title: `Test report: ${skill.id}`, entry: skill.id });
-    let url = `${REPO_NEW_ISSUE}?${params}&report=${encodeURIComponent(text)}`;
+    let url = `${REPO_NEW_ISSUE}?${params}&report=${encodeURIComponent(JSON.stringify(checked))}`;
     if (url.length > MAX_ISSUE_URL) {
       url = `${REPO_NEW_ISSUE}?${params}`;
       try { await navigator.clipboard.writeText(text); } catch (e) { /* the user can copy it from the box */ }
