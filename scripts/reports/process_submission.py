@@ -26,7 +26,8 @@ from reports.validate import CHANNELS, check  # noqa: E402
 
 MIN_ACCOUNT_AGE = timedelta(days=30)
 MAX_REPORT_BYTES = 200_000
-CONSTRAINTS_URL = "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-{channel}.txt"
+# The constraints the OVOS installer uses, as the channel tests do (plan.py).
+CONSTRAINTS_URL = "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-{channel}.txt"
 SAFE = re.compile(r"^[A-Za-z0-9._-]{1,200}$")
 
 

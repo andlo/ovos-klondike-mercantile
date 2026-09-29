@@ -6,7 +6,7 @@
 
 let reportsDoc = null; // docs/reports/index.json
 const REPO_NEW_ISSUE = "https://github.com/andlo/ovos-klondike-mercantile/issues/new";
-const CONSTRAINTS_RAW = "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-";
+const CONSTRAINTS_RAW = "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-";
 const MAX_ISSUE_URL = 7500;
 const OUTCOME_TEXT = { works: "works", partly: "partly", doesnt_work: "doesn't work" };
 

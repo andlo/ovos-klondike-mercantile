@@ -272,7 +272,7 @@
       </p>
       <ol class="guide-list">
         <li><strong>A device on the channel.</strong> The OVOS installer lets you
-          pick stable or alpha. One device per channel, or re-install.</li>
+          pick testing (its default) or alpha. One device per channel, or re-install.</li>
         <li><strong>The released version, configured.</strong>
           <code>pip install your-skill==&lt;latest release&gt;</code>, then add
           the keys or hardware it needs.</li>
@@ -288,8 +288,8 @@
         <li><strong>Check it</strong> with <em>Submit a test report</em> on your
           skill's detail page: it says whether the report is valid for the
           channel as it is today and, if not, exactly why.</li>
-        <li><strong>Commit it</strong> as <code>test/reports/stable.json</code> or
-          <code>test/reports/alpha.json</code>. Klondike picks it up on its next
+        <li><strong>Commit it</strong> as <code>test/reports/testing.json</code>,
+          <code>test/reports/alpha.json</code> or <code>test/reports/stable.json</code>. Klondike picks it up on its next
           visit to your repo (within about a day).</li>
       </ol>
       <p>
