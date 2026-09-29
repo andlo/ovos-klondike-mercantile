@@ -539,9 +539,11 @@ Promise.all([
     .catch(() => null),
   // Optional: channel test results. Missing or broken never blocks the store.
   loadCompatResults(cacheBust),
+  // Optional too: test reports from maintainers and users.
+  loadReportsIndex(cacheBust),
 ])
-  .then(([skillsData, metaData, compatData]) => {
-    skills = applyCompatResults(skillsData, compatData);
+  .then(([skillsData, metaData, compatData, reportsIndex]) => {
+    skills = applyReports(applyCompatResults(skillsData, compatData), reportsIndex);
     populateFilters(skills);
     populateSiteLangSelect(siteLangSelect);
     renderStatsLine(metaData, skills.length);

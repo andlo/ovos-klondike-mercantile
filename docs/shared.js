@@ -236,19 +236,66 @@ function compatFromRecord(rec) {
 // today, but the slow, safe track a new stable release lands on), alpha ×1.
 // So passing on testing ranks above untested and failing on testing below it. Not Looks Complete: tier 2 is -1,
 // tier 3 -2. Ties go to stars.
-function channelScore(c) {
-  if (!c || c.state === "untested" || c.state === "unsupported") return 1;
-  if (c.state === "fail") return 0;
-  if (c.golden) return 3 + c.golden.hit / c.golden.counted;
-  if (COMPAT_PUBLIC_GENERATED && c.generated) return 2 + 0.5 * (c.generated.hit / c.generated.counted);
-  return 2;
+// Reports from people (#6 maintainer, #9 community) fit inside the bands
+// above, never across them:
+//   a current maintainer pass on a channel we cannot test (untested/grey)
+//   lifts it from 1 to 1.5 (1.7 at level 3): above untested, below our own
+//   "loads"; community confirmations move a skill up or down by at most
+//   0.45 within its band, with diminishing returns (communityWeight, same
+//   formula as scripts/reports/feed.py).
+function communityWeight(works, doesntWork) {
+  const w = 0.3 * Math.log10(1 + (works || 0)) - 0.3 * Math.log10(1 + (doesntWork || 0));
+  return Math.max(-0.45, Math.min(0.45, w));
+}
+
+function channelScore(c, r) {
+  let score;
+  if (!c || c.state === "untested" || c.state === "unsupported") score = 1;
+  else if (c.state === "fail") score = 0;
+  else if (c.golden) score = 3 + c.golden.hit / c.golden.counted;
+  else if (COMPAT_PUBLIC_GENERATED && c.generated) score = 2 + 0.5 * (c.generated.hit / c.generated.counted);
+  else score = 2;
+  if (!r) return score;
+  if (score === 1 && r.maintainer === "pass") score = r.maintainer_level === 3 ? 1.7 : 1.5;
+  return score + communityWeight(r.works, r.doesnt_work);
 }
 
 function recommendedRank(skill) {
   const channels = (skill.compat && skill.compat.channels) || null;
+  const reports = skill.reports || {};
   if (!channels && skill.tier !== 1) return skill.tier === 2 ? -1 : -2;
   if (!channels) return 14;
-  return channelScore(channels.testing) * 10 + channelScore(channels.stable) * 3 + channelScore(channels.alpha);
+  return channelScore(channels.testing, reports.testing) * 10 + channelScore(channels.stable, reports.stable) * 3
+    + channelScore(channels.alpha, reports.alpha);
+}
+
+// docs/reports/index.json, read directly (like compat/results.json) so a
+// stored report shows without waiting for the next crawl.
+function compactReports(summary) {
+  const out = {};
+  for (const [ch, row] of Object.entries(summary || {})) {
+    const m = row.maintainer, c = row.community || {};
+    let state = null;
+    if (m && m.status === "current") state = m.passes ? "pass" : "fail";
+    else if (m) state = m.status;
+    out[ch] = { maintainer: state, maintainer_level: m ? m.level : null,
+      works: c.works || 0, partly: c.partly || 0, doesnt_work: c.doesnt_work || 0 };
+  }
+  return out;
+}
+
+function applyReports(skills, index) {
+  const entries = (index && index.entries) || {};
+  for (const skill of skills) {
+    if (entries[skill.id]) skill.reports = compactReports(entries[skill.id]);
+  }
+  return skills;
+}
+
+function loadReportsIndex(cacheBust) {
+  return fetch(`reports/index.json${cacheBust}`, { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : null))
+    .catch(() => null);
 }
 
 function applyCompatResults(skills, doc) {
@@ -297,13 +344,27 @@ function compatTooltip(channel, c) {
 
 function renderCompatLabels(skill) {
   const channels = (skill.compat && skill.compat.channels) || {};
+  const reports = skill.reports || {};
   return COMPAT_CHANNELS
-    .filter((ch) => channels[ch] && channels[ch].state !== "untested")
+    .filter((ch) => (channels[ch] && channels[ch].state !== "untested") || reportLabelNeeded(channels[ch], reports[ch]))
     .map((ch) => {
-      const c = channels[ch];
-      const mark = { fail: "✗", unsupported: "–" }[c.state] || "✓";
-      return `<span class="compat-label compat-${escapeHtml(c.state)}" title="${escapeHtml(compatTooltip(ch, c))}">${mark} ${escapeHtml(ch)}</span>`;
+      const c = channels[ch] || { state: "untested", label: "not tested here yet", level: null };
+      const r = reports[ch] || {};
+      const users = r.works ? ` · ${r.works} ${r.works === 1 ? "user" : "users"}` : "";
+      // Our own result is shown as it is; a maintainer pass stands in only
+      // where we could not test, in its own colour so the two never mix.
+      if ((c.state === "untested" || c.state === "unsupported") && r.maintainer === "pass") {
+        const tip = `${ch}: tested by the maintainer on their own device (level ${r.maintainer_level}); not testable here`;
+        return `<span class="compat-label compat-maintainer" title="${escapeHtml(tip)}">✓ ${escapeHtml(ch)} · maintainer${escapeHtml(users)}</span>`;
+      }
+      const mark = { fail: "✗", unsupported: "–", untested: "·" }[c.state] || "✓";
+      const tip = compatTooltip(ch, c) + (users ? ` · confirmed by${users.replace(" ·", "")}` : "");
+      return `<span class="compat-label compat-${escapeHtml(c.state)}" title="${escapeHtml(tip)}">${mark} ${escapeHtml(ch)}${escapeHtml(users)}</span>`;
     }).join("");
+}
+
+function reportLabelNeeded(c, r) {
+  return !!r && (r.maintainer === "pass" || r.works > 0);
 }
 
 function formatDate(iso) {

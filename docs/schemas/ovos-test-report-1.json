@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ovos-test-report/1",
+  "title": "OVOS test report, version 1",
+  "description": "What one person saw when testing one released skill version on a real OVOS install. Written by a tool (e.g. ovos-tui-client headless mode), never by hand. Neutral: it names no store. A store decides what the report counts for (maintainer or community) from who published it, not from anything in the file.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "tool", "created_at", "channel", "skill", "stack", "level", "loaded"],
+  "properties": {
+    "schema": {"const": "ovos-test-report/1"},
+    "tool": {"type": "string", "maxLength": 100, "description": "name and version of the tool that wrote it"},
+    "created_at": {"type": "string", "format": "date-time", "maxLength": 40},
+    "channel": {"enum": ["stable", "testing", "alpha", "unknown"], "description": "installer channel of the device, as the tool detected it"},
+    "skill": {
+      "type": "object", "additionalProperties": false,
+      "required": ["package", "version"],
+      "properties": {
+        "package": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,199}$"},
+        "version": {"type": "string", "maxLength": 64},
+        "skill_id": {"type": "string", "maxLength": 200}
+      }
+    },
+    "stack": {
+      "type": "object", "maxProperties": 30,
+      "description": "installed versions of the core packages (package name -> version), plus python",
+      "additionalProperties": {"type": "string", "maxLength": 64},
+      "required": ["ovos-core"]
+    },
+    "setup": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "hardware": {"type": "string", "maxLength": 80, "description": "e.g. Mark 2, Raspberry Pi 5, x86_64"},
+        "languages": {"type": "array", "maxItems": 20, "items": {"type": "string", "maxLength": 20}},
+        "stt": {"type": "string", "maxLength": 80},
+        "tts": {"type": "string", "maxLength": 80},
+        "notes": {"type": "string", "maxLength": 1000, "description": "free text by the tester, e.g. 'needs an OpenWeather key'"}
+      }
+    },
+    "outcome": {"enum": ["works", "partly", "doesnt_work"], "description": "the tester's verdict; the tool proposes one from the results"},
+    "level": {"enum": [2, 3], "description": "2: loads and registers; 3: its utterances were run"},
+    "loaded": {
+      "type": "object", "additionalProperties": false, "required": ["ok"],
+      "properties": {
+        "ok": {"type": "boolean"},
+        "languages": {"type": "array", "maxItems": 60, "items": {"type": "string", "maxLength": 20}},
+        "registrations": {"type": "object", "maxProperties": 10, "additionalProperties": {"type": "integer", "minimum": 0}}
+      }
+    },
+    "utterances": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "routed"],
+      "properties": {
+        "source": {"type": "string", "maxLength": 200, "description": "path of the golden file in the skill repo, or 'generated'"},
+        "total": {"type": "integer", "minimum": 0, "maximum": 10000},
+        "routed": {"type": "integer", "minimum": 0, "maximum": 10000},
+        "answered": {"type": "integer", "minimum": 0, "maximum": 10000}
+      }
+    },
+    "results": {
+      "type": "array", "maxItems": 500,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["utterance", "lang"],
+        "properties": {
+          "utterance": {"type": "string", "maxLength": 300},
+          "lang": {"type": "string", "maxLength": 20},
+          "expected": {"type": ["string", "null"], "maxLength": 200},
+          "routed_to": {"type": ["string", "null"], "maxLength": 200},
+          "spoke": {"type": "boolean"}
+        }
+      }
+    },
+    "log_excerpt": {"type": "string", "maxLength": 4000, "description": "only for partly / doesnt_work; the tool picks it and removes private data"}
+  }
+}

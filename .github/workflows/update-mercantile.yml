@@ -50,6 +50,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      # The test-report checks compare versions against channel constraints.
+      - run: pip install packaging
+
       - name: Generate Klondike data
         env:
           # Same minimal-scope PAT pattern as andlo/ovos-skills-directory -
@@ -63,7 +66,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add skills/ docs/skills.json docs/meta.json state.json
+          git add skills/ docs/skills.json docs/meta.json state.json docs/reports
           git diff --cached --quiet || git commit -m "chore: update Klondike data [automated]"
           # Retry the push with a rebase on top of whatever landed
           # on main while this run was in flight (a run can take
@@ -84,7 +87,15 @@ jobs:
             fi
             echo "Push rejected (attempt $attempt/5) - fetching and rebasing before retry"
             git fetch origin main
-            git rebase origin/main
+            # docs/reports/index.json is derived data that a test-report
+            # submission may have rewritten meanwhile. -X theirs keeps this
+            # run's files on a conflict (the crawler owns everything it
+            # commits except that index), then the index is rebuilt on top
+            # so a report submitted during the crawl is not dropped from it.
+            git rebase -X theirs origin/main
+            python3 scripts/reports/build_index.py
+            git add docs/reports/index.json
+            git diff --cached --quiet || git commit -q -m "chore: rebuild test report index [automated]"
             sleep 5
           done
 

@@ -1,0 +1,105 @@
+name: Process test-report issues
+
+# "Submit a test report" on a detail page (or the issue form directly)
+# opens an issue titled "Test report: <entry id>" with the report in a form
+# field (#9). This checks it again with the same rules the page used
+# (scripts/reports/validate.py), stores it under docs/reports/, rebuilds
+# docs/reports/index.json, and answers in the issue. Keyed on the title, as
+# process-test-request.yml is: labels from a new-issue link are dropped for
+# anyone without triage rights.
+#
+# The issue is untrusted input. It reaches the script only through env
+# variables, is parsed as data and never executed; the report is stored as
+# JSON and the site renders every field with textContent.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: test-reports
+  cancel-in-progress: false
+
+jobs:
+  process:
+    if: startsWith(github.event.issue.title, 'Test report:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install packaging
+      - name: Who submitted it
+        id: who
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          created=$(gh api "users/$ISSUE_USER" --jq .created_at || echo "")
+          echo "created_at=$created" >> "$GITHUB_OUTPUT"
+          # Maintainer: owns the skill's repo, or is a public member of the
+          # org that does. Their reports belong in their own repo (#6).
+          entry=$(python3 -c 'import os,re; print(re.sub(r"^Test report:\s*","",os.environ["ISSUE_TITLE"]).strip())')
+          owner=$(python3 - "$entry" <<'EOF'
+          import json, sys
+          feed = {e["id"]: e for e in json.load(open("docs/skills.json"))}
+          src = (feed.get(sys.argv[1]) or {}).get("source") or ""
+          print(src.split("github.com/", 1)[1].split("/", 1)[0] if "github.com/" in src else "")
+          EOF
+          )
+          maint=false
+          if [ -n "$owner" ]; then
+            if [ "${owner,,}" = "${ISSUE_USER,,}" ]; then maint=true
+            elif gh api "orgs/$owner/public_members/$ISSUE_USER" >/dev/null 2>&1; then maint=true; fi
+          fi
+          echo "is_maintainer=$maint" >> "$GITHUB_OUTPUT"
+      - name: Check and store
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          USER_CREATED_AT: ${{ steps.who.outputs.created_at }}
+          IS_MAINTAINER: ${{ steps.who.outputs.is_maintainer }}
+        run: python3 scripts/reports/process_submission.py --out "$RUNNER_TEMP/outcome.json"
+      - name: Rebuild the index and commit
+        run: |
+          verdict=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["verdict"])' "$RUNNER_TEMP/outcome.json")
+          [ "$verdict" = "stored" ] || { echo "nothing to store ($verdict)"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Only the one new file is carried over a fresh main: the crawler
+          # writes docs/reports/ too, and re-copying the whole tree could
+          # put back files it has since changed.
+          rel=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["path"])' "$RUNNER_TEMP/outcome.json")
+          cp "docs/$rel" "$RUNNER_TEMP/report.json"
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            mkdir -p "docs/$(dirname "$rel")" && cp "$RUNNER_TEMP/report.json" "docs/$rel"
+            python3 scripts/reports/build_index.py
+            git add docs/reports
+            git diff --cached --quiet && break
+            git commit -q -m "chore: store test report from #${{ github.event.issue.number }} [automated]"
+            if git push -q origin HEAD:main; then break; fi
+            [ "$attempt" -eq 5 ] && { echo "::error::push failed 5 times"; exit 1; }
+            sleep 5
+          done
+          # A push made with GITHUB_TOKEN starts no workflow; a dispatch does.
+          gh workflow run deploy-static.yml -R "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Answer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["message"])' "$RUNNER_TEMP/outcome.json" > "$RUNNER_TEMP/msg.md"
+          gh issue comment "$NUMBER" -R "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/msg.md"
+          gh issue close "$NUMBER" -R "$GITHUB_REPOSITORY"

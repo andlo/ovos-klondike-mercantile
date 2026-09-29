@@ -1,0 +1,25 @@
+name: Test report
+description: Share how a skill works on your own OVOS setup (a report written by a test tool, e.g. ovos-tui-client).
+title: "Test report: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing. Paste the report your test tool wrote (an `ovos-test-report/1` JSON file). The detail page's **Submit a test report** box checks it and fills this form for you.
+
+        It is checked again when you submit, and the result is posted here as a comment. One report per person, skill version and channel counts; a new one replaces your earlier one. Your GitHub handle is shown with it.
+  - type: input
+    id: entry
+    attributes:
+      label: Entry
+      description: The Klondike entry id, as in the detail page address (`detail.html?id=...`).
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Report
+      description: The whole report, unchanged. It must not contain host names, IP addresses, paths under your home folder or keys; the check rejects those rather than editing your report.
+      render: json
+    validations:
+      required: true

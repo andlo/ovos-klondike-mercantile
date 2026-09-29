@@ -922,3 +922,27 @@ footer a { color: var(--accent); }
 .compat-subhead { margin: 0.9rem 0 0.3rem; font-size: 0.95rem; }
 .compat-misses { margin: 0.3rem 0 0.6rem 1.2rem; padding: 0; font-size: 0.85rem; }
 .compat-misses li { margin: 0.15rem 0; }
+
+/* Test reports from people (#6 maintainer, #9 community) */
+.compat-maintainer { background: #eaf1fd; color: #1a5fb4; border-color: #c3d6f5; }
+.people-row { margin: 0.45rem 0 0.1rem; font-size: 0.88rem; }
+.people-stale, .people-invalid { color: var(--muted); }
+.people-why, .people-setup { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
+.people-matrix { border-collapse: collapse; margin: 0.4rem 0; font-size: 0.84rem; }
+.people-matrix th, .people-matrix td { padding: 0.2rem 0.6rem; text-align: left; border-bottom: 1px solid var(--border); }
+.people-matrix th:not(:first-child), .people-matrix td:not(:first-child) { text-align: center; }
+.people-matrix .people-detail td { border-bottom: none; padding-top: 0; }
+.people-list { margin: 0.2rem 0 0.4rem 1rem; padding: 0; }
+.people-outcome { font-weight: 600; margin-right: 0.3rem; }
+.people-works { color: #1e8a4c; }
+.people-partly { color: #5b7a12; }
+.people-doesnt_work { color: #c73e35; }
+.report-input { width: 100%; font-family: ui-monospace, monospace; font-size: 0.8rem; border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; }
+.report-actions { display: flex; gap: 0.5rem; margin: 0.5rem 0; }
+.report-result { font-size: 0.88rem; }
+.report-result p { margin: 0.2rem 0; }
+.report-invalid { color: #c73e35; }
+.report-stale { color: var(--gold); }
+.report-ok { color: #1e8a4c; }
+.report-pending { color: var(--muted); }
+.report-hint { background: #fff8e8; border: 1px solid #f1dcae; border-radius: 8px; padding: 0.6rem 0.8rem; margin: 0.5rem 0 0.8rem; font-size: 0.88rem; }

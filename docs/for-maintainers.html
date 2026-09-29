@@ -260,6 +260,59 @@
         packages from PyPI. A result is information, not a verdict: if it looks
         wrong, <a href="https://github.com/andlo/ovos-klondike-mercantile/issues">open an issue</a>.
       </p>
+
+      <h2 class="detail-subhead" id="device-reports">7. Test your skill on a real device</h2>
+      <p>
+        Some skills can't be judged in our tests: they need an API key or an
+        account (<em>needs config</em>), device services (<em>needs device</em>)
+        or hardware. You can test them yourself on a configured device and
+        publish the result. It shows on the card as <strong>✓ alpha · maintainer</strong>,
+        in its own colour so it is never mistaken for our own result, and it
+        ranks above untested entries and below our own tests.
+      </p>
+      <ol class="guide-list">
+        <li><strong>A device on the channel.</strong> The OVOS installer lets you
+          pick stable or alpha. One device per channel, or re-install.</li>
+        <li><strong>The released version, configured.</strong>
+          <code>pip install your-skill==&lt;latest release&gt;</code>, then add
+          the keys or hardware it needs.</li>
+        <li><strong>Utterances.</strong> Your golden file
+          (<code>test/end2end/golden_utterances_&lt;lang&gt;.jsonl</code>) if you
+          have one. If not, <code>ovoscope generate</code> writes a first draft
+          from your <code>.intent</code> files to edit.</li>
+        <li><strong>Run a test tool</strong> that writes an
+          <a href="schemas/ovos-test-report-1.json"><code>ovos-test-report/1</code></a>
+          file (ovos-tui-client's headless mode). It reads the versions,
+          channel and skill version itself; you only describe the setup
+          ("needs an OpenWeather key"). Never write or edit the report by hand.</li>
+        <li><strong>Check it</strong> with <em>Submit a test report</em> on your
+          skill's detail page: it says whether the report is valid for the
+          channel as it is today and, if not, exactly why.</li>
+        <li><strong>Commit it</strong> as <code>test/reports/stable.json</code> or
+          <code>test/reports/alpha.json</code>. Klondike picks it up on its next
+          visit to your repo (within about a day).</li>
+      </ol>
+      <p>
+        <strong>When a report counts:</strong> it is for your latest release;
+        its core versions (ovos-core, ovos-workshop, ovos-padatious,
+        ovos-bus-client, ovos-plugin-manager) are still allowed by the channel's
+        constraints and on the same minor version the channel installs today
+        (alpha's constraints only set minimums, so the second part is what
+        makes an old alpha report stale); the skill loaded; and at level 3 at
+        least 80% of the utterances reached it. A report that no longer counts
+        stays visible, greyed out, as "tested on an older version or channel".
+        A report with private data in it (IP addresses, e-mail addresses, paths
+        under a home folder, things that look like keys) is not published at
+        all; the detail page says so. The test tool is expected to leave host
+        names and settings out in the first place.
+      </p>
+      <p class="guide-note">
+        Users can submit reports from their own setups too, through the same
+        box. Those show as confirmations ("✓ alpha · 4 users") and as honest
+        "doesn't work for me" reports with the setup, and weigh less than our
+        own tests or your report. If you submit one yourself for your own skill,
+        you are pointed here instead, since yours belongs in your repo.
+      </p>
     </div>
   </main>
 
