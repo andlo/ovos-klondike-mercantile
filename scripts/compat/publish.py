@@ -99,7 +99,7 @@ def _clean_run(r):
     for k in RUN_INTS:
         if isinstance(r.get(k), int) and not isinstance(r.get(k), bool) and 0 <= r[k] < 100_000:
             out[k] = r[k]
-    for k in ("langs", "langs_failed", "langs_not_routed"):
+    for k in ("langs", "langs_failed", "langs_not_routed", "langs_partial"):
         if isinstance(r.get(k), list):
             out[k] = [str(x)[:20] for x in r[k][:60]]
     for k, cap in (("misses", 25), ("collisions", 10)):

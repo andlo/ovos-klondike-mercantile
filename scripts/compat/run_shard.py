@@ -405,13 +405,19 @@ def route_shard(items, results, args, workroot, deadline):
         except (OSError, ValueError):
             res = {"lang": lang, "status": "boot_failed",
                    "reason": "route probe timed out" if rc is None else f"route probe crashed (exit {rc})"}
-        if rc is None and res.get("current"):
-            cur = res["current"]
-            r = res.setdefault("results", {}).setdefault(cur["id"], {}).setdefault(cur["run"], {"total": 0})
-            r["hang"] = r.get("hang", 0) + 1
-            r.setdefault("misses", []).append({"utterance": cur["utterance"], "kind": "hang"})
-            res["status"] = "partial"
-            res["reason"] = "stopped at an utterance that never finished; later rows not run"
+        if res.get("status") == "running":
+            # The probe died or was killed after writing some rows: keep
+            # what it measured, say why the rest is missing. Only a timeout
+            # blames the row in flight (route.py already bounds each
+            # utterance, so this is the last-resort path).
+            cur = res.pop("current", None)
+            if rc is None and cur:
+                r = res.setdefault("results", {}).setdefault(cur["id"], {}).setdefault(cur["run"], {"total": 0})
+                r["hang"] = r.get("hang", 0) + 1
+                r.setdefault("misses", []).append({"utterance": cur["utterance"], "kind": "hang"})
+            res["status"] = "partial" if res.get("results") else "boot_failed"
+            res["reason"] = ("route probe timed out" if rc is None else f"route probe exited ({rc})") \
+                + "; later rows not run"
         if res.get("status") != "ok":
             res["log_excerpt"] = excerpt(log)
         print(f"    route {lang}: {res.get('status')} {res.get('reason', '')} "
@@ -443,6 +449,8 @@ def aggregate(routable, boots, langs, skipped):
                 if not r:
                     continue
                 agg["langs"].append(b["lang"])
+                if b.get("status") == "partial":
+                    agg.setdefault("langs_partial", []).append(b["lang"])
                 for k in COUNTS:
                     agg[k] += r.get(k, 0)
                 for m in r.get("misses", []):
@@ -481,7 +489,7 @@ def main():
     # Level 3 (routing). Without --baseline the shard stops at level 2.
     ap.add_argument("--baseline", default="", help="JSON from plan.py: installer requirements + pipeline")
     ap.add_argument("--generator", default="", help="an `ovoscope` executable with `generate` (may be absent)")
-    ap.add_argument("--route-timeout", type=float, default=10.0, help="seconds per utterance")
+    ap.add_argument("--route-timeout", type=float, default=15.0, help="seconds per utterance")
     ap.add_argument("--deadline-minutes", type=float, default=300,
                     help="no new routing boot starts after this many minutes (job time limit)")
     args = ap.parse_args()

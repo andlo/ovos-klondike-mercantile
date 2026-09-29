@@ -231,7 +231,7 @@ const MISS_TEXT = {
   baseline: (m) => `taken by <code>${escapeHtml(m.taken_by || "?")}</code>`,
   wrong_intent: (m) => `reached another intent${m.fired && m.fired.length ? ` (<code>${escapeHtml(m.fired[0])}</code>)` : ""}`,
   unhandled: (m) => `not handled by any skill${m.stage ? ` (stopped at ${escapeHtml(m.stage)})` : ""}`,
-  hang: () => "never finished",
+  hang: (m) => `not handled by any skill; a later stage never answered${m.stage ? ` (${escapeHtml(m.stage)})` : ""}`,
 };
 
 function renderRoutingRun(title, r) {
@@ -243,10 +243,11 @@ function renderRoutingRun(title, r) {
   if (r.baseline) parts.push(`${r.baseline} taken by a default skill`);
   if (r.wrong_intent) parts.push(`${r.wrong_intent} reach another of its intents`);
   if (r.unhandled) parts.push(`${r.unhandled} not handled`);
-  if (r.hang) parts.push(`${r.hang} never finished`);
+  if (r.hang) parts.push(`${r.hang} stuck in a later stage`);
   if (r.manual) parts.push(`${r.manual} need a human (skipped)`);
   const langs = asArray(r.langs).map((l) => `<code>${escapeHtml(l)}</code>`).join(" ");
   const notRouted = asArray(r.langs_not_routed);
+  if (asArray(r.langs_partial).length) parts.push(`run stopped early in ${r.langs_partial.join(", ")}`);
   const misses = asArray(r.misses).map((m) =>
     `<li><code>${escapeHtml(m.lang || "")}</code> “${escapeHtml(m.utterance)}”: ${(MISS_TEXT[m.kind] || (() => escapeHtml(m.kind || "missed")))(m)}</li>`).join("");
   const collisions = asArray(r.collisions).map((m) =>

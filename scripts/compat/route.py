@@ -27,7 +27,9 @@ session, `ovos.intent.unmatched` means nobody, else the first
   neighbour  another skill of this shard took it. Shards are cut by
              plan.py, not by users, so this is shown as a collision on the
              detail page and left out of the score.
-  hang       the utterance never finished (the outer runner's timeout)
+  hang       nobody claimed it and a pipeline stage did not return within
+             --timeout (typically a common-query provider that blocks); a
+             miss, with the stage it was stuck in
 
 Output: one JSON object, rewritten after every row, so a run killed by the
 outer timeout still says how far it got.
@@ -37,6 +39,7 @@ import itertools
 import json
 import os
 import sys
+import threading
 import time
 import traceback
 
@@ -137,17 +140,30 @@ def capture(croft, utterance, lang, pipeline, timeout):
     msg = Message("recognizer_loop:utterance", {"utterances": [utterance], "lang": lang},
                   {"session": sess.serialize(), "source": "klondike", "destination": "skills"})
     croft.bus.on("message", rec)
+    hung = False
     try:
         deadline = time.monotonic() + timeout
-        croft.bus.emit(msg)
-        while time.monotonic() < deadline:
-            if any(m.msg_type in EOF_TYPES for m in recs if _session_of(m) in ("", session_id)):
-                time.sleep(CAPTURE_SETTLE)
-                break
-            time.sleep(0.05)
+        # FakeBus.emit runs every handler in the emitting thread, so a stage
+        # that never returns (a common-query provider whose can_answer
+        # blocks; ovos-test-harness quarantines wolfie/wordnet for this)
+        # would hang the whole run. The emit gets its own thread and a
+        # deadline; nothing is read while it runs, only after it returned
+        # or timed out, so the result does not depend on thread timing
+        # (the race ovos-test-harness saw came from polling DURING emit).
+        emitter = threading.Thread(target=croft.bus.emit, args=(msg,), daemon=True)
+        emitter.start()
+        emitter.join(timeout)
+        if emitter.is_alive():
+            hung = True
+        else:
+            while time.monotonic() < deadline:
+                if any(m.msg_type in EOF_TYPES for m in list(recs) if _session_of(m) in ("", session_id)):
+                    time.sleep(CAPTURE_SETTLE)
+                    break
+                time.sleep(0.05)
     finally:
         croft.bus.remove("message", rec)
-    return [m for m in recs if _session_of(m) in ("", session_id)]
+    return [m for m in list(recs) if _session_of(m) in ("", session_id)], hung
 
 
 def claimant(recs, known_ids):
@@ -180,15 +196,24 @@ def stage_of(recs):
         for key in ("pipeline", "pipeline_id", "matcher"):
             if key in ctx:
                 return str(ctx[key])[:80]
+    # No stage in any context: the last topic seen says where it stopped
+    # (e.g. "question:query" for common query).
+    for m in reversed(recs):
+        if m.msg_type not in ("recognizer_loop:utterance",) and not m.msg_type.startswith("mycroft.skills."):
+            return f"last message: {m.msg_type}"[:80]
     return None
 
 
+def _bare(name):
+    return name[:-len(".intent")] if name.endswith(".intent") else name
+
+
 def label_forms(skill_id, expected):
-    name = expected.split(":", 1)[1] if ":" in expected else expected
-    forms = {f"{skill_id}:{name}"}
-    if name.endswith(".intent"):
-        forms.add(f"{skill_id}:{name[:-len('.intent')]}")
-    return forms
+    """Both spellings of the expected intent topic. ovos-workshop 1.x (stable)
+    dispatches padatious intents as `skill:Name.intent`, current versions as
+    `skill:Name`; a row may name it either way."""
+    name = _bare(expected.split(":", 1)[1] if ":" in expected else expected)
+    return {f"{skill_id}:{name}", f"{skill_id}:{name}.intent"}
 
 
 def boot_route(ids, lang, pipeline, max_wait):
@@ -209,12 +234,33 @@ def boot_route(ids, lang, pipeline, max_wait):
     # ids predate the installer's plugin names, so the channel's own default
     # pipeline is used and published as such.
     croft, driver = boot(ids, [lang], max_wait, lambda _m: None)
+    notes = []
     try:
         from ovos_config import Configuration
         used = list(Configuration().get("intents", {}).get("pipeline") or [])
+        if used:
+            notes.append(f"(channel default used: {len(used)} stages)")
     except Exception:  # noqa: BLE001
-        used = []
-    return croft, driver, None, [f"(channel default used: {len(used)} stages)"] if used else []
+        pass
+    # ovos-core 1.x padatious only trains when asked ("instant_train" is off
+    # and the first train comes from the real SkillManager, which the
+    # legacy MiniCroft replaces). Untrained, every padatious sentence falls
+    # through to common query / fallback and reads as theft. Ask, and wait
+    # for the answer the real core waits for.
+    if not legacy_train(croft, max_wait):
+        notes.append("(padatious did not confirm training)")
+    return croft, driver, None, notes
+
+
+def legacy_train(croft, max_wait):
+    from ovos_bus_client.message import Message
+    try:
+        reply = croft.bus.wait_for_response(Message("mycroft.skills.train"),
+                                            "mycroft.skills.trained", timeout=max_wait)
+    except Exception as e:  # noqa: BLE001
+        print(f"warning: training request failed: {e}", file=sys.stderr)
+        return False
+    return reply is not None
 
 
 def main():
@@ -223,7 +269,8 @@ def main():
     ap.add_argument("--lang", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--max-wait", type=float, default=1800)
-    ap.add_argument("--timeout", type=float, default=10.0, help="seconds per utterance")
+    # Common query alone searches for up to 6s before answering.
+    ap.add_argument("--timeout", type=float, default=15.0, help="seconds per utterance")
     args = ap.parse_args()
 
     man = json.load(open(args.manifest))
@@ -281,10 +328,17 @@ def main():
             # process, the outer runner finds it here and counts it as "hang".
             out["current"] = {"id": item["id"], "run": run, "utterance": row["utterance"][:200]}
             flush()
-            recs = capture(croft, row["utterance"], row["lang"], session_pipeline, args.timeout)
+            recs, hung = capture(croft, row["utterance"], row["lang"], session_pipeline, args.timeout)
             who, fired = claimant(recs, known)
             expected = row.get("expected_intent", row.get("intent_label"))
             entry = {"utterance": row["utterance"][:200], "expected": expected, "taken_by": who}
+            if hung and who is None:
+                # Nobody claimed it and a pipeline stage never returned: the
+                # sentence got past every intent stage to one that blocks.
+                res["hang"] += 1
+                if len(res["misses"]) < MAX_MISSES:
+                    res["misses"].append({**entry, "kind": "hang", "stage": stage_of(recs)})
+                continue
             if who == own:
                 if expected and not any(f in label_forms(own, expected) for f in fired):
                     res["wrong_intent"] += 1
