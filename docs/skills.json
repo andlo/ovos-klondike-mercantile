@@ -4310,7 +4310,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-05-26T13:21:29Z",
-    "last_updated": "2026-09-19T18:57:49Z",
+    "last_updated": "2026-09-27T03:03:00Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -27806,7 +27806,7 @@
     "id": "thalovant-thalovant-skill-custos-fallback",
     "skill_id": null,
     "name": "thalovant-skill-custos-fallback",
-    "description": "A fallback skill that answers when no intent matched, instead of leaving the caller to time out.",
+    "description": "Give unanswered requests a helpful reply instead of leaving the room silent.",
     "examples": [],
     "tags": [
       "custos",
@@ -27821,7 +27821,7 @@
     "icon": null,
     "source": "https://github.com/thalovant/thalovant-skill-custos-fallback",
     "package_name": "thalovant-skill-custos-fallback",
-    "pypi_version": "0.1.4",
+    "pypi_version": "0.1.5",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
@@ -27838,12 +27838,7 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install thalovant-skill-custos-fallback\n\nNothing to set up. It only speaks when no other skill could help, so it never\ngets in the way.\n\nWorks with any [OpenVoiceOS](https://openvoiceos.org) assistant."
-      }
-    ],
+    "setup_notes": [],
     "languages": [
       "ca-es",
       "cs-cz",
@@ -27886,7 +27881,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-01T14:12:17Z",
-    "last_updated": "2026-09-19T18:57:16.580935Z",
+    "last_updated": "2026-09-27T03:21:30.729369Z",
     "is_new_repo": true,
     "is_recently_updated": true
   },
@@ -27908,7 +27903,7 @@
     "icon": null,
     "source": "https://github.com/thalovant/thalovant-skillkit",
     "package_name": "thalovant-skillkit",
-    "pypi_version": "0.21.1",
+    "pypi_version": "0.22.0",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
@@ -27938,9 +27933,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-08T01:58:37Z",
-    "last_updated": "2026-09-25T22:37:37.687650Z",
+    "last_updated": "2026-09-27T02:30:52.935620Z",
     "is_new_repo": true,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-skill-days-in-history",
