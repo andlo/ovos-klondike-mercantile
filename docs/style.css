@@ -977,3 +977,5 @@ footer a { color: var(--accent); }
   .legend-table td:nth-child(2), .legend-table th:nth-child(2) { display: none; }
   .legend-table td:nth-child(1) { white-space: normal; }
 }
+.legend a { color: var(--accent); }
+.legend > .setup-note { margin: 0.6rem 0 0; }
