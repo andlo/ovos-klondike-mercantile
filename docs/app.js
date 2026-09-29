@@ -14,6 +14,7 @@ const tagFilter = document.getElementById("tag-filter");
 const typeFilter = document.getElementById("type-filter");
 const tierFilter = document.getElementById("tier-filter");
 const languageFilter = document.getElementById("language-filter");
+const compatFilter = document.getElementById("compat-filter");
 const siteLangSelect = document.getElementById("site-lang");
 const sortOrder = document.getElementById("sort-order");
 const showArchivedToggle = document.getElementById("show-archived");
@@ -453,6 +454,7 @@ function applyFilters() {
   const type = typeFilter.value;
   const tier = tierFilter.value;
   const language = languageFilter.value;
+  const compat = compatFilter.value;
   const showArchived = showArchivedToggle.checked;
 
   const filtered = skills.filter((s) =>
@@ -462,6 +464,7 @@ function applyFilters() {
     matchesTypeFilter(s, type) &&
     (!tier || String(s.tier) === tier) &&
     (!language || asArray(s.languages).includes(language)) &&
+    matchesCompatFilter(s, compat) &&
     (showArchived || !s.archived)
   );
   const sorted = sortSkills(filtered, sortOrder.value);
@@ -511,6 +514,7 @@ tagFilter.addEventListener("change", applyFilters);
 typeFilter.addEventListener("change", applyFilters);
 tierFilter.addEventListener("change", applyFilters);
 languageFilter.addEventListener("change", applyFilters);
+compatFilter.addEventListener("change", applyFilters);
 sortOrder.addEventListener("change", applyFilters);
 showArchivedToggle.addEventListener("change", applyFilters);
 siteLangSelect.addEventListener("change", () => {
@@ -531,9 +535,11 @@ Promise.all([
   fetch(`meta.json${cacheBust}`, { cache: "no-store" })
     .then((res) => (res.ok ? res.json() : null))
     .catch(() => null),
+  // Optional: channel test results. Missing or broken never blocks the store.
+  loadCompatResults(cacheBust),
 ])
-  .then(([skillsData, metaData]) => {
-    skills = skillsData;
+  .then(([skillsData, metaData, compatData]) => {
+    skills = applyCompatResults(skillsData, compatData);
     populateFilters(skills);
     populateSiteLangSelect(siteLangSelect);
     renderStatsLine(metaData, skills.length);

@@ -36,10 +36,24 @@ bash "$HARNESS/test/channel_compat/install_channel.sh" "$CHANNEL" "$WORK"
 # installed ovoscope's own declared requirements are not met, it is replaced
 # by the newest ovoscope pip can resolve under the channel's constraints:
 # the driver that says it supports this stack. The stack itself is untouched.
-if python3 -m pip check --disable-pip-version-check 2>/dev/null | grep -qi '^ovoscope '; then
+# `pip check` exits non-zero whenever anything is unmet, and its output is
+# captured before grepping: piping it straight into `grep -q` under
+# `set -o pipefail` let grep close the pipe early, pip died of SIGPIPE, and
+# the whole condition read as false on the runner (it passed locally only
+# because pip happened to finish writing first).
+driver_unmet() {
+  local checks
+  checks="$(python3 -m pip check --disable-pip-version-check 2>/dev/null || true)"
+  grep -qi '^ovoscope ' <<<"$checks"
+}
+if driver_unmet; then
   echo "==> ovoscope $(python3 -c 'from importlib.metadata import version; print(version("ovoscope"))') does not support this channel's stack; resolving one that does"
   python3 -m pip uninstall -q -y ovoscope
   python3 -m pip install --disable-pip-version-check --pre -c "$WORK/constraints-$CHANNEL.txt" ovoscope
+  if driver_unmet; then
+    echo "::error::no ovoscope release supports the $CHANNEL stack" >&2
+    exit 1
+  fi
 fi
 
 # Default runtime plugins. A device's mycroft.conf names a translation and a

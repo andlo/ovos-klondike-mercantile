@@ -201,7 +201,9 @@ package's own load error says it needs an API key, account or identity).
 A skill that only fails with some of its languages configured is a pass
 with those languages flagged, since a device only loads its own.
 
-Shown as a label per channel on cards, a section on the detail page
+Shown as a label per channel on cards (with a "Works on OVOS" filter:
+works on stable / alpha / both, fails on stable / alpha), a section on the
+detail page
 (level, date, versions tested against, failure reason, log excerpt,
 languages), and a README badge via a shields.io endpoint on Pages:
 `https://img.shields.io/endpoint?url=https://andlo.github.io/ovos-klondike-mercantile/badges/<skill_id>/<channel>.json`.
@@ -281,7 +283,9 @@ doesn't force an expensive full re-run:
   validates the artifacts as untrusted data and writes only
   `docs/compat/` and `docs/badges/`). The crawler owns `skills.json` and
   attaches the `compat` field from `docs/compat/results.json` on every
-  run, so the two workflows never write the same file.
+  run, so the two workflows never write the same file. The pages read
+  `docs/compat/results.json` themselves too, so labels and the filter
+  update as soon as a test run publishes, not only after the next crawl.
   `scripts/compat/local_run.sh` reproduces one shard locally in podman.
 - **`process-test-request.yml`**: "Request test" on a detail page opens
   an issue titled `Test request: <entry id>`; this validates it and
