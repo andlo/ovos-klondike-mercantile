@@ -50,7 +50,8 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
                                  "problems": [p["message"] for p in stub][:5]}
             m = None
         if m:
-            res = check(m, entry.get("package_name"), latest, constraints.get(channel), channel_stacks.get(channel))
+            # The file name says which channel the maintainer meant.
+            res = check(m, entry.get("package_name"), latest, constraints, channel_stacks, channel_hint=channel)
             v = res["view"] or {}
             row["maintainer"] = {
                 "status": res["status"], "passes": res["passes"],
@@ -65,7 +66,9 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
             counts = {"works": 0, "partly": 0, "doesnt_work": 0}
             reports, history = [], 0
             for r in community:
-                res = check(r, entry.get("package_name"), latest, constraints.get(channel), channel_stacks.get(channel))
+                # Stored under the channel it was resolved to on submission;
+                # it must still match that channel to count.
+                res = check(r, entry.get("package_name"), latest, constraints, channel_stacks, channel_hint=channel)
                 if res["status"] == "invalid":
                     continue
                 current = res["status"] == "current"

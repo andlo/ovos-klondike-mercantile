@@ -218,25 +218,12 @@ function reportMinor(v) {
   return p ? `${p.release[0]}.${p.release[1] || 0}` : null;
 }
 
-function reportStaleReasons(report, v, latestVersion, constraintsText, channelStack) {
+// Why the installed core versions are not what `channel` runs today
+// ([] = they are): allowed by its live constraints AND the same
+// major.minor as the channel installs today (alpha's constraints are
+// floors only).
+function reportStackMismatches(stack, channel, constraintsText, channelStack) {
   const out = [];
-  const channel = v.channel;
-  if (latestVersion && v.version !== latestVersion) {
-    reportProblem(out, "old_version", "manifest.skills", `it tested ${v.version}; the current release is ${latestVersion}`);
-  }
-  if (!REPORT_CHANNELS.includes(channel)) {
-    reportProblem(out, "no_channel", "manifest.channel", "the channel is unknown (run the tool with --channel), so it cannot count for one");
-    return out;
-  }
-  const stack = Object.fromEntries(Object.entries((report.manifest || {}).stack || {}).map(([k, val]) => [reportNormalize(k), val]));
-  if (!stack["ovos-core"]) {
-    reportProblem(out, "no_stack", "manifest.stack", "the report has no installed versions (run the tool on the device itself)");
-    return out;
-  }
-  if (constraintsText === null || constraintsText === undefined) {
-    reportProblem(out, "no_constraints", "manifest.channel", `the ${channel} constraints could not be read`);
-    return out;
-  }
   const pins = reportParseConstraints(constraintsText);
   const now = Object.fromEntries(Object.entries(channelStack || {}).map(([k, val]) => [reportNormalize(k), val]));
   for (const pkg of REPORT_CORE) {
@@ -244,7 +231,7 @@ function reportStaleReasons(report, v, latestVersion, constraintsText, channelSt
     if (!have) continue;
     const spec = pins[reportNormalize(pkg)];
     if (spec && !pepAllowed(have, spec)) {
-      reportProblem(out, "old_stack", `manifest.stack.${pkg}`, `${pkg} ${have} is no longer allowed on ${channel}, which now pins ${spec}`);
+      reportProblem(out, "old_stack", `manifest.stack.${pkg}`, `${pkg} ${have} is not allowed on ${channel}, which pins ${spec}`);
       continue;
     }
     const cur = now[reportNormalize(pkg)];
@@ -253,6 +240,36 @@ function reportStaleReasons(report, v, latestVersion, constraintsText, channelSt
     }
   }
   return out;
+}
+
+// Same as validate.resolve_channel: the channel a report counts for is the
+// one its installed versions match today; a declared one must agree.
+function reportResolveChannel(report, constraints, channelStacks, hint) {
+  const m = report.manifest || {};
+  const stack = Object.fromEntries(Object.entries(m.stack || {}).map(([k, val]) => [reportNormalize(k), val]));
+  const out = [];
+  if (!stack["ovos-core"]) {
+    reportProblem(out, "no_stack", "manifest.stack", "the report has no installed versions (run the tool on the device itself)");
+    return [null, null, out];
+  }
+  const declared = REPORT_CHANNELS.includes(m.channel) ? m.channel : (REPORT_CHANNELS.includes(hint) ? hint : null);
+  constraints = constraints || {};
+  channelStacks = channelStacks || {};
+  if (declared) {
+    if (constraints[declared] === null || constraints[declared] === undefined) {
+      reportProblem(out, "no_constraints", "manifest.channel", `the ${declared} constraints could not be read`);
+      return [null, null, out];
+    }
+    const mism = reportStackMismatches(stack, declared, constraints[declared], channelStacks[declared]);
+    const source = REPORT_CHANNELS.includes(m.channel) ? "declared" : "file name";
+    return mism.length ? [null, null, mism] : [declared, source, []];
+  }
+  const fits = REPORT_CHANNELS.filter((ch) => constraints[ch] !== null && constraints[ch] !== undefined
+    && !reportStackMismatches(stack, ch, constraints[ch], channelStacks[ch]).length);
+  if (fits.length === 1) return [fits[0], "installed versions", []];
+  const what = !fits.length ? "match no channel as it is today" : `match more than one channel (${fits.join(", ")})`;
+  reportProblem(out, "no_channel", "manifest.channel", `no channel was given and the installed versions ${what}`);
+  return [null, null, out];
 }
 
 function reportCountingProblems(v) {
@@ -264,8 +281,9 @@ function reportCountingProblems(v) {
   return out;
 }
 
-// Same contract as validate.check().
-function checkReport(report, { packageName, latestVersion, constraintsText, channelStack } = {}) {
+// Same contract as validate.check(): constraints and channelStacks per
+// channel, fetched live by the caller.
+function checkReport(report, { packageName, latestVersion, constraints, channelStacks, channelHint } = {}) {
   let problems = reportStructureProblems(report);
   let v = null;
   if (!problems.length) {
@@ -280,10 +298,17 @@ function checkReport(report, { packageName, latestVersion, constraintsText, chan
     }
   }
   if (problems.length) return { status: "invalid", passes: false, problems, view: v };
-  const stale = reportStaleReasons(report, v, latestVersion, constraintsText, channelStack);
+  const stale = [];
+  if (latestVersion && v.version !== latestVersion) {
+    reportProblem(stale, "old_version", "manifest.skills", `it tested ${v.version}; the current release is ${latestVersion}`);
+  }
+  const [channel, source, channelProblems] = reportResolveChannel(report, constraints, channelStacks, channelHint);
+  v.channel = channel;
+  v.channel_source = source;
+  const all = stale.concat(channelProblems);
   const notPassing = reportCountingProblems(v);
-  return { status: stale.length ? "stale" : "current", passes: !notPassing.length && v.outcome === "works",
-    problems: stale.concat(notPassing), view: v };
+  return { status: all.length ? "stale" : "current", passes: !notPassing.length && v.outcome === "works",
+    problems: all.concat(notPassing), view: v };
 }
 
 if (typeof module !== "undefined") module.exports = { checkReport, pepAllowed };

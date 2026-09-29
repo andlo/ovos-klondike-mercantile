@@ -30,7 +30,12 @@ from reports.process_submission import process  # noqa: E402
 from reports.validate import check, parse_constraints  # noqa: E402
 
 ALPHA = (FIX / "constraints-alpha.txt").read_text()
+CONSTRAINTS = {ch: (FIX / f"constraints-{ch}.txt").read_text() for ch in ("stable", "testing", "alpha")}
 ALPHA_NOW = {"ovos-core": "3.7.2a1", "ovos-workshop": "9.8.9a2"}
+# What each channel installs today (as the compat run records it).
+STACKS = {"stable": {"ovos-core": "1.3.1", "ovos-workshop": "3.4.0"},
+          "testing": {"ovos-core": "2.1.1", "ovos-workshop": "7.0.6"},
+          "alpha": ALPHA_NOW}
 def setp(path, value):
     """Set a nested value; the path is split on "/" (skill ids contain dots)."""
     def f(r):
@@ -85,30 +90,35 @@ def with_steps(passes, fails):
 
 
 CASES = [
-    ("clean current pass (9/10)", None, "0.0.8", ALPHA_NOW, ("current", False, None)),
-    ("all routed", with_steps(10, 0), "0.0.8", ALPHA_NOW, ("current", True, None)),
-    ("older skill version", with_steps(10, 0), "0.0.9", ALPHA_NOW, ("stale", None, "old_version")),
-    ("core no longer allowed", setp("manifest/stack/ovos-core", "2.0.0"), "0.0.8", ALPHA_NOW, ("stale", None, "old_stack")),
-    ("older alpha, floor still ok", setp("manifest/stack/ovos-core", "3.5.0a4"), "0.0.8", ALPHA_NOW, ("stale", None, "old_stack")),
-    ("same alpha minor, newer patch", setp("manifest/stack/ovos-core", "3.7.5a1"), "0.0.8", ALPHA_NOW, ("current", None, None)),
-    ("channel stack unknown: constraints only", setp("manifest/stack/ovos-core", "3.5.0a4"), "0.0.8", None, ("current", None, None)),
-    ("unknown channel (null)", setp("manifest/channel", None), "0.0.8", ALPHA_NOW, ("stale", None, "no_channel")),
-    ("no versions (remote bus)", setp("manifest/stack", {}), "0.0.8", ALPHA_NOW, ("stale", None, "no_stack")),
-    ("below 80%", with_steps(5, 5), "0.0.8", ALPHA_NOW, ("current", False, "below_level3")),
-    ("not active", setp(f"manifest/skills/{SID}/active", False), "0.0.8", ALPHA_NOW, ("current", False, "not_loaded")),
-    ("nothing checked: level 2", with_steps(0, 0), "0.0.8", ALPHA_NOW, ("current", True, None)),
-    ("summary disagrees with steps", setp("summary/passed", 10), "0.0.8", ALPHA_NOW, ("invalid", False, "inconsistent")),
-    ("unknown step status", setp("steps", [{"utterance": "x", "status": "weird"}]), "0.0.8", ALPHA_NOW, ("invalid", False, "type")),
-    ("wrong schema", setp("schema", "klondike-report/1"), "0.0.8", ALPHA_NOW, ("invalid", False, "schema")),
-    ("wrong skill", setp(f"manifest/skills/{SID}/package", "ovos-skill-other"), "0.0.8", ALPHA_NOW, ("invalid", False, "wrong_skill")),
-    ("no skill version", setp(f"manifest/skills/{SID}/version", None), "0.0.8", ALPHA_NOW, ("invalid", False, "missing")),
-    ("ip address", setp("notes", "my box is 192.168.65.231"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_ip")),
-    ("home path", setp("notes", "installed in /home/andlo/venv"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_path")),
-    ("e-mail", setp("notes", "ask me at a@b.dk"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_email")),
-    ("api key", setp("notes", "api_key: abcdef1234567890"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_secret")),
-    ("replies included", lambda r: r["steps"][0].update(replies=["it is 14 degrees in Kvistgaard"]), "0.0.8", ALPHA_NOW, ("invalid", False, "private_replies")),
-    ("dotted versions are not ips", setp("manifest/machine/python", "3.11.2.1"), "0.0.8", ALPHA_NOW, ("current", None, None)),
-    ("no manifest", pop("manifest"), "0.0.8", ALPHA_NOW, ("invalid", False, "missing")),
+    ("clean current pass (9/10)", None, "0.0.8", STACKS, ("current", False, None)),
+    ("all routed", with_steps(10, 0), "0.0.8", STACKS, ("current", True, None)),
+    ("older skill version", with_steps(10, 0), "0.0.9", STACKS, ("stale", None, "old_version")),
+    ("core no longer allowed", setp("manifest/stack/ovos-core", "2.0.0"), "0.0.8", STACKS, ("stale", None, "old_stack")),
+    ("older alpha, floor still ok", setp("manifest/stack/ovos-core", "3.5.0a4"), "0.0.8", STACKS, ("stale", None, "old_stack")),
+    ("same alpha minor, newer patch", setp("manifest/stack/ovos-core", "3.7.5a1"), "0.0.8", STACKS, ("current", None, None)),
+    ("channel stack unknown: constraints only", setp("manifest/stack/ovos-core", "3.5.0a4"), "0.0.8", {}, ("current", None, None)),
+    ("no channel: inferred alpha from the versions", setp("manifest/channel", None), "0.0.8", STACKS, ("current", None, None, "alpha")),
+    ("no channel: inferred testing", lambda r: (r["manifest"].update(channel=None), r["manifest"].update(stack={"ovos-core": "2.1.1", "ovos-workshop": "7.0.6"})), "0.0.8", STACKS, ("current", None, None, "testing")),
+    ("no channel: inferred stable", lambda r: (r["manifest"].update(channel=None), r["manifest"].update(stack={"ovos-core": "1.3.1", "ovos-workshop": "3.4.0"})), "0.0.8", STACKS, ("current", None, None, "stable")),
+    ("no channel: mixed stack matches none", lambda r: (r["manifest"].update(channel=None), r["manifest"].update(stack={"ovos-core": "3.7.2a1", "ovos-workshop": "7.0.6"})), "0.0.8", STACKS, ("stale", None, "no_channel")),
+    ("says testing, runs alpha", setp("manifest/channel", "testing"), "0.0.8", STACKS, ("stale", None, "old_stack")),
+    ("unknown channel name, runs alpha", setp("manifest/channel", "beta"), "0.0.8", STACKS, ("current", None, None, "alpha")),
+    ("no versions (remote bus)", setp("manifest/stack", {}), "0.0.8", STACKS, ("stale", None, "no_stack")),
+    ("below 80%", with_steps(5, 5), "0.0.8", STACKS, ("current", False, "below_level3")),
+    ("not active", setp(f"manifest/skills/{SID}/active", False), "0.0.8", STACKS, ("current", False, "not_loaded")),
+    ("nothing checked: level 2", with_steps(0, 0), "0.0.8", STACKS, ("current", True, None)),
+    ("summary disagrees with steps", setp("summary/passed", 10), "0.0.8", STACKS, ("invalid", False, "inconsistent")),
+    ("unknown step status", setp("steps", [{"utterance": "x", "status": "weird"}]), "0.0.8", STACKS, ("invalid", False, "type")),
+    ("wrong schema", setp("schema", "klondike-report/1"), "0.0.8", STACKS, ("invalid", False, "schema")),
+    ("wrong skill", setp(f"manifest/skills/{SID}/package", "ovos-skill-other"), "0.0.8", STACKS, ("invalid", False, "wrong_skill")),
+    ("no skill version", setp(f"manifest/skills/{SID}/version", None), "0.0.8", STACKS, ("invalid", False, "missing")),
+    ("ip address", setp("notes", "my box is 192.168.65.231"), "0.0.8", STACKS, ("invalid", False, "private_ip")),
+    ("home path", setp("notes", "installed in /home/andlo/venv"), "0.0.8", STACKS, ("invalid", False, "private_path")),
+    ("e-mail", setp("notes", "ask me at a@b.dk"), "0.0.8", STACKS, ("invalid", False, "private_email")),
+    ("api key", setp("notes", "api_key: abcdef1234567890"), "0.0.8", STACKS, ("invalid", False, "private_secret")),
+    ("replies included", lambda r: r["steps"][0].update(replies=["it is 14 degrees in Kvistgaard"]), "0.0.8", STACKS, ("invalid", False, "private_replies")),
+    ("dotted versions are not ips", setp("manifest/machine/python", "3.11.2.1"), "0.0.8", STACKS, ("current", None, None)),
+    ("no manifest", pop("manifest"), "0.0.8", STACKS, ("invalid", False, "missing")),
 ]
 
 
@@ -118,19 +128,22 @@ def build_cases():
         r = copy.deepcopy(BASE)
         if mut:
             mut(r)
-        out.append({"name": name, "report": r, "latest": latest, "stack": stack, "want": want})
+        out.append({"name": name, "report": r, "latest": latest, "stacks": stack, "want": want})
     return out
 
 
 def key(res):
-    return res["status"], res["passes"], sorted(p["code"] for p in res["problems"])
+    return res["status"], res["passes"], sorted(p["code"] for p in res["problems"]), \
+        (res.get("view") or {}).get("channel")
 
 
 def matches(res, want):
-    status, passes, code = want
+    status, passes, code = want[:3]
+    channel = want[3] if len(want) > 3 else None
     codes = [p["code"] for p in res["problems"]]
     return res["status"] == status and (passes is None or res["passes"] == passes) \
-        and (code is None or code in codes)
+        and (code is None or code in codes) \
+        and (channel is None or (res.get("view") or {}).get("channel") == channel)
 
 
 def node(script, payload):
@@ -143,7 +156,7 @@ def node(script, payload):
 def test_validate(cases):
     fails = 0
     for c in cases:
-        res = check(c["report"], "ovos-skill-convert", c["latest"], ALPHA, c["stack"])
+        res = check(c["report"], "ovos-skill-convert", c["latest"], CONSTRAINTS, c["stacks"])
         ok = matches(res, c["want"])
         fails += not ok
         print(("ok  " if ok else "FAIL"), "validate:", c["name"], key(res))
@@ -155,13 +168,13 @@ def test_parity(cases):
     got = node(f"""
       const {{checkReport}} = require({js});
       const cases = JSON.parse(require('fs').readFileSync(0, 'utf8'));
-      const C = {json.dumps(ALPHA)};
+      const C = {json.dumps(CONSTRAINTS)};
       console.log(JSON.stringify(cases.map(c => checkReport(c.report, {{packageName: 'ovos-skill-convert',
-        latestVersion: c.latest, constraintsText: C, channelStack: c.stack}}))));
+        latestVersion: c.latest, constraints: C, channelStacks: c.stacks}}))));
     """, cases)
     fails = 0
     for c, b in zip(cases, got):
-        a = check(c["report"], "ovos-skill-convert", c["latest"], ALPHA, c["stack"])
+        a = check(c["report"], "ovos-skill-convert", c["latest"], CONSTRAINTS, c["stacks"])
         if key(a) != key(b):
             fails += 1
             print("FAIL parity:", c["name"], "python", key(a), "js", key(b))
@@ -196,8 +209,10 @@ def test_submission():
     feed = json.loads((docs / "skills.json").read_text())
     entry = next(e for e in feed if e.get("package_name") == "ovos-skill-convert")
     (docs / "compat" / "results.json").write_text(json.dumps(
-        {"channels": {"alpha": {"stack": {"packages": ALPHA_NOW}}}, "results": {}}))
-    offline = {"fetch_text": lambda url: ALPHA, "latest": lambda pkg: "0.0.8"}
+        {"channels": {ch: {"stack": {"packages": st}} for ch, st in STACKS.items()}, "results": {}}))
+    def fetch_constraints(url):
+        return CONSTRAINTS[url.rsplit("constraints-", 1)[1].removesuffix(".txt")]
+    offline = {"fetch_text": fetch_constraints, "latest": lambda pkg: "0.0.8"}
 
     def env(report, **kw):
         body = f"### Entry\n\n{entry['id']}\n\n### Report\n\n```json\n" + \
@@ -235,14 +250,13 @@ def test_submission():
         if rep is not None:
             (docs / rel).parent.mkdir(parents=True, exist_ok=True)
             (docs / rel).write_text(json.dumps(rep))
-    index = build_index(feed, docs / "reports", {"alpha": ALPHA, "stable": None, "testing": None},
-                        {"alpha": ALPHA_NOW}, lambda pkg: "0.0.8")
+    index = build_index(feed, docs / "reports", CONSTRAINTS, STACKS, lambda pkg: "0.0.8")
     c = index["entries"][entry["id"]]["alpha"]["community"]
     ok = (c["works"], c["doesnt_work"], c["history"]) == (1, 1, 0)
     fails += not ok
     print(("ok  " if ok else "FAIL"), "index:", {k: c[k] for k in ("works", "partly", "doesnt_work", "history")})
     # A new release makes both history without anyone touching them.
-    later = build_index(feed, docs / "reports", {"alpha": ALPHA}, {"alpha": ALPHA_NOW}, lambda pkg: "0.0.9")
+    later = build_index(feed, docs / "reports", CONSTRAINTS, STACKS, lambda pkg: "0.0.9")
     c = later["entries"][entry["id"]]["alpha"]["community"]
     ok = (c["works"], c["history"]) == (0, 2)
     fails += not ok

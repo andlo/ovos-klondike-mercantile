@@ -8,6 +8,9 @@ routing config, machine), a `summary` and one row per step. It names no
 store. One report can cover several skills; Klondike looks at the one it
 is about (`view()`), and derives what it needs:
 
+  channel            the one its installed versions match today; a declared
+                     channel (--channel, installer state, file name) must
+                     agree with them (resolve_channel)
   version / loaded   manifest.skills[<skill id>] (listed = found loaded)
   level              3 when the skill has checked steps, else 2
   routed / checked   its own steps: status "pass" / pass+fail+timeout
@@ -211,39 +214,22 @@ def _minor(v):
         return None
 
 
-def stale_reasons(report, v, latest_version, constraints_text, channel_stack=None):
-    """Why a well-formed report no longer counts ([] = current).
-
-    Core packages must be allowed by the channel's current constraints AND
-    share major.minor with what the channel installs today (`channel_stack`,
-    from the compat run). The second half matters on alpha, whose
-    constraints are floors only (ovos-core>=2.2.4a1 while alpha runs 3.7.x):
-    without it a year-old alpha report would still count."""
+def stack_mismatches(stack, channel, constraints_text, channel_stack):
+    """Why the installed core versions are not what `channel` runs today
+    ([] = they are): each must be allowed by the channel's constraints AND
+    share major.minor with what the channel installs today. The second half
+    matters on alpha, whose constraints are floors only (ovos-core>=2.2.4a1
+    while alpha runs 3.7.x)."""
     from packaging.specifiers import InvalidSpecifier, SpecifierSet
     from packaging.version import InvalidVersion, Version
     out = []
-    channel = v["channel"]
-    if latest_version and v["version"] != latest_version:
-        _problem(out, "old_version", "manifest.skills",
-                 f"it tested {v['version']}; the current release is {latest_version}")
-    if channel not in CHANNELS:
-        _problem(out, "no_channel", "manifest.channel",
-                 "the channel is unknown (run the tool with --channel), so it cannot count for one")
-        return out
-    stack = {normalize(k): val for k, val in ((report.get("manifest") or {}).get("stack") or {}).items()}
-    if not stack.get("ovos-core"):
-        _problem(out, "no_stack", "manifest.stack",
-                 "the report has no installed versions (run the tool on the device itself)")
-        return out
-    if constraints_text is None:
-        _problem(out, "no_constraints", "manifest.channel", f"the {channel} constraints could not be read")
-        return out
     pins = parse_constraints(constraints_text)
     now = {normalize(k): val for k, val in (channel_stack or {}).items()}
     for pkg in CORE_PACKAGES:
-        have, spec = stack.get(normalize(pkg)), pins.get(normalize(pkg))
+        have = stack.get(normalize(pkg))
         if not have:
             continue
+        spec = pins.get(normalize(pkg))
         if spec:
             try:
                 allowed = Version(have) in SpecifierSet(spec, prereleases=True)
@@ -251,13 +237,48 @@ def stale_reasons(report, v, latest_version, constraints_text, channel_stack=Non
                 allowed = False
             if not allowed:
                 _problem(out, "old_stack", f"manifest.stack.{pkg}",
-                         f"{pkg} {have} is no longer allowed on {channel}, which now pins {spec}")
+                         f"{pkg} {have} is not allowed on {channel}, which pins {spec}")
                 continue
         cur = now.get(normalize(pkg))
         if cur and _minor(have) and _minor(have) != _minor(cur):
             _problem(out, "old_stack", f"manifest.stack.{pkg}",
                      f"{pkg} {have} is an older {channel}: it runs {cur} now")
     return out
+
+
+def resolve_channel(report, constraints, channel_stacks, hint=None):
+    """(channel or None, source, problems).
+
+    The channel a report counts for is the one its installed versions match
+    today, which works for any install (the OVOS installer, raspOVOS,
+    Docker, a hand-made venv): what a device runs decides, not what someone
+    picked. A declared channel (the tool's --channel, the installer's state
+    file, or for maintainer reports the file name) must agree with the
+    versions; without one, the versions must match exactly one channel.
+    """
+    m = report.get("manifest") or {}
+    stack = {normalize(k): val for k, val in (m.get("stack") or {}).items()}
+    out = []
+    if not stack.get("ovos-core"):
+        _problem(out, "no_stack", "manifest.stack",
+                 "the report has no installed versions (run the tool on the device itself)")
+        return None, None, out
+    declared = m.get("channel") if m.get("channel") in CHANNELS else (hint if hint in CHANNELS else None)
+    if declared:
+        if (constraints or {}).get(declared) is None:
+            _problem(out, "no_constraints", "manifest.channel", f"the {declared} constraints could not be read")
+            return None, None, out
+        mism = stack_mismatches(stack, declared, constraints[declared], (channel_stacks or {}).get(declared))
+        source = "declared" if m.get("channel") in CHANNELS else "file name"
+        return (declared, source, []) if not mism else (None, None, mism)
+    fits = [ch for ch in CHANNELS if (constraints or {}).get(ch) is not None
+            and not stack_mismatches(stack, ch, constraints[ch], (channel_stacks or {}).get(ch))]
+    if len(fits) == 1:
+        return fits[0], "installed versions", []
+    what = "match no channel as it is today" if not fits else f"match more than one channel ({', '.join(fits)})"
+    _problem(out, "no_channel", "manifest.channel",
+             f"no channel was given and the installed versions {what}")
+    return None, None, out
 
 
 def counting_problems(v):
@@ -272,14 +293,17 @@ def counting_problems(v):
     return out
 
 
-def check(report, package=None, latest_version=None, constraints_text=None, channel_stack=None):
+def check(report, package=None, latest_version=None, constraints=None, channel_stacks=None, channel_hint=None):
     """{"status": "invalid"|"stale"|"current", "passes": bool,
         "problems": [...], "view": {...} or None}
 
     `package` is the store entry's package name (the report must cover it);
-    `latest_version` the current release; `constraints_text` the report
-    channel's current constraints file; `channel_stack` the core versions
-    the channel installs today (package -> version)."""
+    `latest_version` the current release; `constraints` each channel's
+    current constraints file ({channel: text or None}); `channel_stacks`
+    the core versions each channel installs today ({channel: {pkg: ver}});
+    `channel_hint` a channel to assume when the report names none (a
+    maintainer report's file name). view["channel"] is the channel the
+    report counts for, view["channel_source"] how it was found."""
     problems = structure_problems(report)
     v = None
     if not problems:
@@ -295,7 +319,13 @@ def check(report, package=None, latest_version=None, constraints_text=None, chan
                          "the report has no version for the skill (run the tool on the device itself)")
     if problems:
         return {"status": "invalid", "passes": False, "problems": problems, "view": v}
-    stale = stale_reasons(report, v, latest_version, constraints_text, channel_stack)
+    stale = []
+    if latest_version and v["version"] != latest_version:
+        _problem(stale, "old_version", "manifest.skills",
+                 f"it tested {v['version']}; the current release is {latest_version}")
+    channel, source, channel_problems = resolve_channel(report, constraints, channel_stacks, channel_hint)
+    stale += channel_problems
+    v["channel"], v["channel_source"] = channel, source
     not_passing = counting_problems(v)
     return {"status": "stale" if stale else "current",
             "passes": not not_passing and v["outcome"] == "works",

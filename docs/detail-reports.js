@@ -148,11 +148,17 @@ function wireReportBox(skill) {
       return;
     }
     showReportResult(out, "Checking against the current release and channel…", [], "report-pending");
-    const ch = report && report.manifest && report.manifest.channel;
-    const constraints = REPORT_CHANNELS.includes(ch) ? await fetchText(`${CONSTRAINTS_RAW}${ch}.txt`) : null;
-    const stack = (((compatDoc || {}).channels || {})[ch] || {}).stack || {};
+    // Every channel's constraints, live, and what each channel installs
+    // today (our own compat run): the report counts for the channel its
+    // installed versions match now.
+    const texts = await Promise.all(REPORT_CHANNELS.map((c) => fetchText(`${CONSTRAINTS_RAW}${c}.txt`)));
+    const constraints = Object.fromEntries(REPORT_CHANNELS.map((c, i) => [c, texts[i]]));
+    const stacks = Object.fromEntries(REPORT_CHANNELS.map((c) =>
+      [c, ((((compatDoc || {}).channels || {})[c] || {}).stack || {}).packages || null]));
     const res = checkReport(report, { packageName: skill.package_name, latestVersion: await latestRelease(skill),
-      constraintsText: constraints, channelStack: stack.packages || null });
+      constraints, channelStacks: stacks });
+    const ch = res.view && res.view.channel;
+    const how = res.view && res.view.channel_source === "installed versions" ? " (found from the installed versions)" : "";
     if (res.status === "invalid") {
       showReportResult(out, "This report can't be accepted:", res.problems, "report-invalid");
     } else if (res.status === "stale") {
@@ -162,7 +168,7 @@ function wireReportBox(skill) {
       const outcome = v.loaded ? v.outcome : "doesnt_work";
       const measured = v.checked ? ` (${v.routed}/${v.checked} sentences reached it)` : "";
       const verdict = res.passes ? `It counts as a confirmation that the skill works${measured}` : `It counts as a "${OUTCOME_TEXT[outcome]}" report${measured}`;
-      showReportResult(out, `Looks good. ${verdict} on ${ch}.`, res.problems, "report-ok");
+      showReportResult(out, `Looks good. ${verdict} on ${ch}${how}.`, res.problems, "report-ok");
       checked = report;
       submitBtn.hidden = false;
     }

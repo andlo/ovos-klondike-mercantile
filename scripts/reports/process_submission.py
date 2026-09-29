@@ -89,15 +89,15 @@ def process(env, docs, now=None, fetch_text=None, latest=None):
     except ValueError as e:
         return {"verdict": "invalid", "message": f"The report is not valid JSON ({str(e)[:200]})."}, None, None
 
-    channel = (report.get("manifest") or {}).get("channel") if isinstance(report, dict) else None
-    constraints = None
-    if channel in CHANNELS:
+    constraints = {}
+    for ch in CHANNELS:
         try:
-            constraints = fetch_text(CONSTRAINTS_URL.format(channel=channel))
+            constraints[ch] = fetch_text(CONSTRAINTS_URL.format(channel=ch))
         except Exception:  # noqa: BLE001
-            constraints = None
+            constraints[ch] = None
     current = latest(entry.get("package_name") or "") or entry.get("pypi_version")
-    res = check(report, entry.get("package_name"), current, constraints, channel_stacks(docs).get(channel))
+    res = check(report, entry.get("package_name"), current, constraints, channel_stacks(docs))
+    channel = (res.get("view") or {}).get("channel")
     if res["status"] == "invalid":
         lines = "\n".join(f"- `{p['field'] or 'report'}`: {p['message']}" for p in res["problems"][:10])
         return {"verdict": "invalid", "message": "The report was not stored:\n\n" + lines}, None, None

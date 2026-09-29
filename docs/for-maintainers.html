@@ -285,10 +285,12 @@
           <a href="schemas/ovos-test-report-1.json"><code>ovos-test-report/1</code></a>
           file:
           <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
-          It reads the channel, the installed versions and your skill's version
-          itself; <code>--notes</code> is where you describe the setup. If it
-          can't read the installer's channel, add <code>--channel testing</code>
-          (or <code>alpha</code>). Don't use <code>--report-replies</code> for a
+          It records the installed versions and your skill's version itself;
+          <code>--notes</code> is where you describe the setup. Klondike finds
+          the channel from those versions, so this works on any install
+          (the OVOS installer, raspOVOS, Docker, your own venv).
+          <code>--channel</code> is optional; if you give it, it must match
+          what the device runs. Don't use <code>--report-replies</code> for a
           report you share, and never edit the report by hand.</li>
         <li><strong>Check it</strong> with <em>Submit a test report</em> on your
           skill's detail page: it says whether the report is valid for the
@@ -300,11 +302,14 @@
       <p>
         <strong>When a report counts:</strong> it is for your latest release;
         its core versions (ovos-core, ovos-workshop, ovos-padatious,
-        ovos-bus-client, ovos-plugin-manager) are still allowed by the channel's
-        constraints and on the same minor version the channel installs today
-        (alpha's constraints only set minimums, so the second part is what
-        makes an old alpha report stale); the skill loaded; and at level 3 at
-        least 80% of the utterances reached it. A report that no longer counts
+        ovos-bus-client, ovos-plugin-manager) are what a channel runs
+        <em>today</em>: allowed by that channel's current constraints (read
+        live, every time) and on the same minor version the channel installs
+        now (alpha's constraints only set minimums, so the second part is what
+        makes an old alpha report stale). The channel is the one the versions
+        match; a report whose versions match no channel, or more than one,
+        doesn't count. Then: the skill loaded, and at level 3 at least 80% of
+        the utterances reached it. A report that no longer counts
         stays visible, greyed out, as "tested on an older version or channel".
         A report with private data in it (IP addresses, e-mail addresses, paths
         under a home folder, things that look like keys) is not published at
