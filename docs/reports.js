@@ -1,24 +1,28 @@
 // ovos-test-report/1 checks for the browser: the paste-and-check box on the
 // detail page (community reports, #9, and "check my report" for
-// maintainers, #6). The same rules and problem codes as
-// scripts/reports/validate.py; test/test_reports_parity.py runs both on the
-// same cases so they cannot drift. Nothing here trusts itself: the workflow
+// maintainers, #6). The format is the one ovos-tui-client's headless mode
+// writes (manifest / summary / steps). The same rules and problem codes as
+// scripts/reports/validate.py; tests/test_reports.py runs both on the same
+// cases so they cannot drift. Nothing here trusts itself: the workflow
 // checks every submitted report again.
 const REPORT_SCHEMA = "ovos-test-report/1";
 const REPORT_CHANNELS = ["stable", "testing", "alpha"];
 const REPORT_CORE = ["ovos-core", "ovos-workshop", "ovos-padatious", "ovos-bus-client", "ovos-plugin-manager"];
 const REPORT_LEVEL3_RATIO = 0.8;
-const REPORT_OUTCOMES = ["works", "partly", "doesnt_work"];
+const REPORT_STEP_STATUSES = ["pass", "fail", "timeout", "sent"];
+const REPORT_CHECKED = ["pass", "fail", "timeout"];
+const REPORT_MAX_STEPS = 2000;
 
 const RE_IPV4 = /(?<![\d.])(?:(?:25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|1?\d?\d)(?![\d.])/g;
 const RE_EMAIL = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/;
 const RE_HOME = /(?:\/home\/|\/Users\/|C:\\Users\\)[^/\\\s]+/i;
 const RE_SECRETISH = /(?:api[_-]?key|token|secret|password|passwd)\s*["':=]+\s*["']?[A-Za-z0-9_\-]{8,}/i;
 const RE_LONG_TOKEN = /\b[A-Za-z0-9_\-]{40,}\b/;
+const RE_VERSION_FIELDS = /^manifest\.(stack\.|skills\.[^.]+\.version$|machine\.python$)/;
 const HARMLESS_IPS = ["127.0.0.1", "0.0.0.0"];
 
 function reportNormalize(name) {
-  return String(name).replace(/[-_.]+/g, "-").toLowerCase();
+  return String(name == null ? "" : name).replace(/[-_.]+/g, "-").toLowerCase();
 }
 
 function reportProblem(list, code, field, message) {
@@ -34,13 +38,18 @@ function* reportStrings(obj, path = "") {
 function reportPrivacyProblems(report) {
   const out = [];
   for (const [field, text] of reportStrings(report)) {
-    if (field.startsWith("stack") || field === "skill.version") continue;
+    if (RE_VERSION_FIELDS.test(field)) continue;
     const ip = (text.match(RE_IPV4) || []).find((x) => !HARMLESS_IPS.includes(x));
     if (ip) reportProblem(out, "private_ip", field, `contains an IP address (${ip})`);
     if (RE_EMAIL.test(text)) reportProblem(out, "private_email", field, "contains an e-mail address");
     if (RE_HOME.test(text)) reportProblem(out, "private_path", field, "contains a path under a home directory (it names a user)");
     if (RE_SECRETISH.test(text) || RE_LONG_TOKEN.test(text)) reportProblem(out, "private_secret", field, "contains something that looks like a key or token");
   }
+  const steps = Array.isArray(report.steps) ? report.steps : [];
+  // Same truthiness as Python's step.get("replies"): a non-empty list or any truthy value.
+  const i = steps.findIndex((s) => s && typeof s === "object"
+    && (Array.isArray(s.replies) ? s.replies.length > 0 : !!s.replies));
+  if (i >= 0) reportProblem(out, "private_replies", `steps[${i}].replies`, "contains OVOS's replies; share a report made without --report-replies");
   return out;
 }
 
@@ -50,49 +59,85 @@ function isWhole(x) {
 
 function reportStructureProblems(report) {
   const p = [];
-  if (!report || typeof report !== "object" || Array.isArray(report)) {
+  const isObj = (v) => v && typeof v === "object" && !Array.isArray(v);
+  if (!isObj(report)) {
     reportProblem(p, "type", "", "the report is not a JSON object");
     return p;
   }
-  const need = (field, check, what) => {
-    if (report[field] === undefined || report[field] === null) {
-      reportProblem(p, "missing", field, `'${field}' is missing`);
-      return undefined;
-    }
-    if (!check(report[field])) {
-      reportProblem(p, "type", field, `'${field}' has the wrong type`);
-      return undefined;
-    }
-    return report[field];
-  };
-  const isObj = (v) => v && typeof v === "object" && !Array.isArray(v);
   if (report.schema !== REPORT_SCHEMA) reportProblem(p, "schema", "schema", `'schema' must be "${REPORT_SCHEMA}"`);
-  need("tool", (v) => typeof v === "string");
-  const created = need("created_at", (v) => typeof v === "string");
-  if (created && Number.isNaN(Date.parse(created))) reportProblem(p, "type", "created_at", "'created_at' is not an ISO date-time");
-  if (![...REPORT_CHANNELS, "unknown"].includes(report.channel)) reportProblem(p, "type", "channel", "'channel' must be stable, testing, alpha or unknown");
-  const skill = need("skill", isObj);
-  if (skill) for (const k of ["package", "version"]) {
-    if (typeof skill[k] !== "string" || !skill[k]) reportProblem(p, "missing", `skill.${k}`, `'skill.${k}' is missing`);
+  const m = report.manifest;
+  if (!isObj(m)) {
+    reportProblem(p, "missing", "manifest", "'manifest' is missing");
+    return p;
   }
-  const stack = need("stack", isObj);
-  if (stack && typeof stack["ovos-core"] !== "string") reportProblem(p, "missing", "stack.ovos-core", "'stack' must name the ovos-core version");
-  if (![2, 3].includes(report.level)) reportProblem(p, "type", "level", "'level' must be 2 or 3");
-  const loaded = need("loaded", isObj);
-  if (loaded && typeof loaded.ok !== "boolean") reportProblem(p, "missing", "loaded.ok", "'loaded.ok' must be true or false");
-  if ("outcome" in report && !REPORT_OUTCOMES.includes(report.outcome)) reportProblem(p, "type", "outcome", "'outcome' must be works, partly or doesnt_work");
-  const utt = report.utterances;
-  if (report.level === 3 && !isObj(utt)) reportProblem(p, "missing", "utterances", "a level 3 report needs 'utterances'");
-  if (isObj(utt)) {
-    if (!isWhole(utt.total) || !isWhole(utt.routed)) {
-      reportProblem(p, "type", "utterances", "'utterances.total' and '.routed' must be whole numbers");
-    } else if (utt.routed > utt.total || (Number.isInteger(utt.answered) && utt.answered > utt.total)) {
-      reportProblem(p, "inconsistent", "utterances", "more utterances routed or answered than were run");
-    } else if (Array.isArray(report.results) && report.results.length > utt.total) {
-      reportProblem(p, "inconsistent", "results", "more results than utterances run");
+  if (typeof m.tool !== "string") reportProblem(p, "missing", "manifest.tool", "'manifest.tool' is missing");
+  if (typeof m.created_at !== "string" || Number.isNaN(Date.parse(m.created_at))) {
+    reportProblem(p, "type", "manifest.created_at", "'manifest.created_at' is not an ISO date-time");
+  }
+  if (m.channel !== undefined && m.channel !== null && typeof m.channel !== "string") {
+    reportProblem(p, "type", "manifest.channel", "'manifest.channel' must be a channel name or null");
+  }
+  if (!isObj(m.stack)) reportProblem(p, "type", "manifest.stack", "'manifest.stack' must be an object");
+  if (!isObj(m.skills) || !Object.keys(m.skills).length) {
+    reportProblem(p, "missing", "manifest.skills", "'manifest.skills' must name the tested skills");
+  } else if (!Object.values(m.skills).every(isObj)) {
+    reportProblem(p, "type", "manifest.skills", "every entry of 'manifest.skills' must be an object");
+  }
+  const steps = report.steps;
+  if (!Array.isArray(steps) || steps.length > REPORT_MAX_STEPS) {
+    reportProblem(p, "type", "steps", `'steps' must be a list of at most ${REPORT_MAX_STEPS} rows`);
+    return p;
+  }
+  for (let i = 0; i < steps.length; i++) {
+    const s = steps[i];
+    if (!isObj(s) || typeof s.utterance !== "string" || !REPORT_STEP_STATUSES.includes(s.status)) {
+      reportProblem(p, "type", `steps[${i}]`, "each step needs 'utterance' and a known 'status'");
+      return p;
     }
+  }
+  const summary = report.summary;
+  if (!isObj(summary)) {
+    reportProblem(p, "missing", "summary", "'summary' is missing");
+    return p;
+  }
+  for (const [key, status] of [["passed", "pass"], ["failed", "fail"], ["timed_out", "timeout"]]) {
+    const n = steps.filter((s) => s.status === status).length;
+    if (isWhole(summary[key]) && summary[key] !== n) {
+      reportProblem(p, "inconsistent", `summary.${key}`, `'summary.${key}' says ${summary[key]}, the steps say ${n}`);
+    }
+  }
+  if (isWhole(summary.steps) && summary.steps !== steps.length) {
+    reportProblem(p, "inconsistent", "summary.steps", "'summary.steps' does not match the steps");
   }
   return p;
+}
+
+function reportSkillIdFor(report, packageName) {
+  for (const [sid, info] of Object.entries((report.manifest || {}).skills || {})) {
+    if (info && reportNormalize(info.package) === reportNormalize(packageName)) return sid;
+  }
+  return null;
+}
+
+function reportView(report, skillId) {
+  const m = report.manifest || {};
+  const info = (m.skills || {})[skillId] || {};
+  const own = (report.steps || []).filter((s) => typeof s.expected === "string"
+    && (s.expected === skillId || s.expected.startsWith(`${skillId}:`)));
+  const checked = own.filter((s) => REPORT_CHECKED.includes(s.status));
+  const routed = checked.filter((s) => s.status === "pass").length;
+  const outcome = !checked.length || routed === checked.length ? "works" : routed ? "partly" : "doesnt_work";
+  const cfg = m.config || {};
+  const langs = [cfg.lang || m.lang, ...(cfg.secondary_langs || [])].filter(Boolean);
+  const machine = m.machine || {};
+  return {
+    skill_id: skillId, package: info.package || null, version: info.version || null,
+    loaded: info.active !== false, level: checked.length ? 3 : 2,
+    checked: checked.length, routed, answered: own.filter((s) => s.answered).length,
+    outcome, channel: m.channel == null ? null : m.channel, created_at: m.created_at || null, tool: m.tool || null,
+    hardware: machine.model || machine.arch || "", languages: langs.slice(0, 10),
+    notes: typeof report.notes === "string" ? report.notes.slice(0, 1000) : "",
+  };
 }
 
 // A PEP 440 subset: enough for the constraints files (>=, >, <=, <, ==,
@@ -173,47 +218,48 @@ function reportMinor(v) {
   return p ? `${p.release[0]}.${p.release[1] || 0}` : null;
 }
 
-function reportStaleReasons(report, latestVersion, constraintsText, channelStack) {
+function reportStaleReasons(report, v, latestVersion, constraintsText, channelStack) {
   const out = [];
-  const version = (report.skill || {}).version;
-  if (latestVersion && version !== latestVersion) {
-    reportProblem(out, "old_version", "skill.version", `it tested ${version}; the current release is ${latestVersion}`);
+  const channel = v.channel;
+  if (latestVersion && v.version !== latestVersion) {
+    reportProblem(out, "old_version", "manifest.skills", `it tested ${v.version}; the current release is ${latestVersion}`);
   }
-  if (!REPORT_CHANNELS.includes(report.channel)) {
-    reportProblem(out, "no_channel", "channel", "the channel is unknown, so it cannot count for one");
+  if (!REPORT_CHANNELS.includes(channel)) {
+    reportProblem(out, "no_channel", "manifest.channel", "the channel is unknown (run the tool with --channel), so it cannot count for one");
+    return out;
+  }
+  const stack = Object.fromEntries(Object.entries((report.manifest || {}).stack || {}).map(([k, val]) => [reportNormalize(k), val]));
+  if (!stack["ovos-core"]) {
+    reportProblem(out, "no_stack", "manifest.stack", "the report has no installed versions (run the tool on the device itself)");
     return out;
   }
   if (constraintsText === null || constraintsText === undefined) {
-    reportProblem(out, "no_constraints", "channel", `the ${report.channel} constraints could not be read`);
+    reportProblem(out, "no_constraints", "manifest.channel", `the ${channel} constraints could not be read`);
     return out;
   }
   const pins = reportParseConstraints(constraintsText);
-  const stack = Object.fromEntries(Object.entries(report.stack || {}).map(([k, v]) => [reportNormalize(k), v]));
-  const now = Object.fromEntries(Object.entries(channelStack || {}).map(([k, v]) => [reportNormalize(k), v]));
+  const now = Object.fromEntries(Object.entries(channelStack || {}).map(([k, val]) => [reportNormalize(k), val]));
   for (const pkg of REPORT_CORE) {
-    const have = stack[reportNormalize(pkg)], spec = pins[reportNormalize(pkg)];
-    if (have && spec && !pepAllowed(have, spec)) {
-      reportProblem(out, "old_stack", `stack.${pkg}`, `${pkg} ${have} is no longer allowed on ${report.channel}, which now pins ${spec}`);
+    const have = stack[reportNormalize(pkg)];
+    if (!have) continue;
+    const spec = pins[reportNormalize(pkg)];
+    if (spec && !pepAllowed(have, spec)) {
+      reportProblem(out, "old_stack", `manifest.stack.${pkg}`, `${pkg} ${have} is no longer allowed on ${channel}, which now pins ${spec}`);
+      continue;
     }
-  }
-  for (const pkg of REPORT_CORE) {
-    const have = stack[reportNormalize(pkg)], cur = now[reportNormalize(pkg)];
-    if (have && cur && reportMinor(have) && reportMinor(have) !== reportMinor(cur)
-        && !out.some((p) => p.field === `stack.${pkg}`)) {
-      reportProblem(out, "old_stack", `stack.${pkg}`, `${pkg} ${have} is an older ${report.channel}: it runs ${cur} now`);
+    const cur = now[reportNormalize(pkg)];
+    if (cur && reportMinor(have) && reportMinor(have) !== reportMinor(cur)) {
+      reportProblem(out, "old_stack", `manifest.stack.${pkg}`, `${pkg} ${have} is an older ${channel}: it runs ${cur} now`);
     }
   }
   return out;
 }
 
-function reportCountingProblems(report) {
+function reportCountingProblems(v) {
   const out = [];
-  if (!(report.loaded || {}).ok) reportProblem(out, "not_loaded", "loaded.ok", "the skill did not load");
-  const utt = report.utterances || {};
-  if (report.level === 3 && utt.total) {
-    if ((utt.routed || 0) / utt.total < REPORT_LEVEL3_RATIO) {
-      reportProblem(out, "below_level3", "utterances", `${utt.routed || 0}/${utt.total} routed, below the ${REPORT_LEVEL3_RATIO * 100}% level 3 needs`);
-    }
+  if (!v.loaded) reportProblem(out, "not_loaded", "manifest.skills", "the skill was not active");
+  if (v.checked && v.routed / v.checked < REPORT_LEVEL3_RATIO) {
+    reportProblem(out, "below_level3", "steps", `${v.routed}/${v.checked} reached it, below the ${REPORT_LEVEL3_RATIO * 100}% level 3 needs`);
   }
   return out;
 }
@@ -221,21 +267,23 @@ function reportCountingProblems(report) {
 // Same contract as validate.check().
 function checkReport(report, { packageName, latestVersion, constraintsText, channelStack } = {}) {
   let problems = reportStructureProblems(report);
+  let v = null;
   if (!problems.length) {
     problems = problems.concat(reportPrivacyProblems(report));
-    const pkg = (report.skill || {}).package;
-    if (packageName && reportNormalize(pkg) !== reportNormalize(packageName)) {
-      reportProblem(problems, "wrong_skill", "skill.package", `the report is about ${pkg}, not ${packageName}`);
+    const sid = packageName ? reportSkillIdFor(report, packageName) : Object.keys(report.manifest.skills)[0];
+    if (sid === null) {
+      const tested = Object.values(report.manifest.skills).map((i) => String((i || {}).package)).join(", ");
+      reportProblem(problems, "wrong_skill", "manifest.skills", `the report tested ${tested}, not ${packageName}`);
+    } else {
+      v = reportView(report, sid);
+      if (!v.version) reportProblem(problems, "missing", "manifest.skills", "the report has no version for the skill (run the tool on the device itself)");
     }
   }
-  if (problems.length) return { status: "invalid", passes: false, problems };
-  const stale = reportStaleReasons(report, latestVersion, constraintsText, channelStack);
-  const notPassing = reportCountingProblems(report);
-  return {
-    status: stale.length ? "stale" : "current",
-    passes: !notPassing.length && (report.outcome || "works") === "works",
-    problems: stale.concat(notPassing),
-  };
+  if (problems.length) return { status: "invalid", passes: false, problems, view: v };
+  const stale = reportStaleReasons(report, v, latestVersion, constraintsText, channelStack);
+  const notPassing = reportCountingProblems(v);
+  return { status: stale.length ? "stale" : "current", passes: !notPassing.length && v.outcome === "works",
+    problems: stale.concat(notPassing), view: v };
 }
 
 if (typeof module !== "undefined") module.exports = { checkReport, pepAllowed };

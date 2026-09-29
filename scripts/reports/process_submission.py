@@ -89,7 +89,7 @@ def process(env, docs, now=None, fetch_text=None, latest=None):
     except ValueError as e:
         return {"verdict": "invalid", "message": f"The report is not valid JSON ({str(e)[:200]})."}, None, None
 
-    channel = report.get("channel") if isinstance(report, dict) else None
+    channel = (report.get("manifest") or {}).get("channel") if isinstance(report, dict) else None
     constraints = None
     if channel in CHANNELS:
         try:
@@ -110,7 +110,7 @@ def process(env, docs, now=None, fetch_text=None, latest=None):
     if env.get("IS_MAINTAINER") == "true":
         return {"verdict": "maintainer", "message": (
             "You maintain this skill, so your report counts as a maintainer report. Those live in the "
-            "skill's own repo: commit it as `test/reports/" + channel + ".json` and Klondike picks it up "
+            "skill's own repo: commit it as `test/reports/" + str(channel) + ".json` and Klondike picks it up "
             "on its next visit (within about a day). See *Test your skill on a real device* on the "
             "For maintainers page.")}, None, None
     try:
@@ -125,12 +125,13 @@ def process(env, docs, now=None, fetch_text=None, latest=None):
     report = {k: v for k, v in report.items() if k != "_klondike"}
     report["_klondike"] = {"user": user, "issue": int(env.get("ISSUE_NUMBER") or 0),
                            "received_at": now.isoformat(timespec="seconds"), "kind": "community"}
-    version = re.sub(r"[^A-Za-z0-9._-]", "_", report["skill"]["version"])[:64]
+    v = res["view"]
+    version = re.sub(r"[^A-Za-z0-9._-]", "_", v["version"])[:64]
     rel = Path("reports") / entry_id / "community" / channel / f"{user}-{version}.json"
     replaced = (docs / rel).exists()
-    outcome = report.get("outcome") or ("works" if res["passes"] else "doesnt_work")
+    outcome = v["outcome"] if v["loaded"] else "doesnt_work"
     label = {"works": "works", "partly": "works partly", "doesnt_work": "doesn't work"}[outcome]
-    hw = (report.get("setup") or {}).get("hardware") or "your setup"
+    hw = v["hardware"] or "your setup"
     return {"verdict": "stored", "path": str(rel), "message": (
         f"Thanks! Stored as a community report for **{channel}**: {label} on {hw}"
         f"{' (it replaces your earlier report for this version)' if replaced else ''}. "

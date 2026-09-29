@@ -50,9 +50,10 @@ def sync_maintainer_reports(full_name, entry, fetch_file, reports_dir):
             problems += structure_problems(report)
             if not problems:
                 problems += privacy_problems(report)
-            if not problems and report.get("channel") != channel:
-                problems.append({"code": "wrong_channel", "field": "channel",
-                                 "message": f"the file is named {channel}.json but the report is for {report.get('channel')}"})
+            got = (report.get("manifest") or {}).get("channel") if not problems else None
+            if not problems and got != channel:
+                problems.append({"code": "wrong_channel", "field": "manifest.channel",
+                                 "message": f"the file is named {channel}.json but the report is for {got}"})
         dest.parent.mkdir(parents=True, exist_ok=True)
         if problems:
             dest.write_text(json.dumps({"_klondike": {**envelope, "invalid": problems[:10]}}, indent=2) + "\n")

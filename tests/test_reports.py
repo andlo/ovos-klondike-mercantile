@@ -31,22 +31,10 @@ from reports.validate import check, parse_constraints  # noqa: E402
 
 ALPHA = (FIX / "constraints-alpha.txt").read_text()
 ALPHA_NOW = {"ovos-core": "3.7.2a1", "ovos-workshop": "9.8.9a2"}
-BASE = {
-    "schema": "ovos-test-report/1", "tool": "ovos-tui-client 0.3.0",
-    "created_at": "2026-10-04T18:12:00Z", "channel": "alpha",
-    "skill": {"package": "ovos-skill-convert", "version": "0.0.8", "skill_id": "ovos-skill-convert.andlo"},
-    "stack": {"ovos-core": "3.7.2a1", "ovos-workshop": "9.8.9a2", "python": "3.11.2"},
-    "setup": {"hardware": "Raspberry Pi 5", "languages": ["en-US"], "notes": "nothing special"},
-    "outcome": "works", "level": 3,
-    "loaded": {"ok": True, "languages": ["en-US"], "registrations": {"intents": 6}},
-    "utterances": {"source": "test/end2end/golden_utterances_en-US.jsonl", "total": 10, "routed": 9, "answered": 9},
-    "results": [{"utterance": "convert 10 cm to inches", "lang": "en-US", "expected": "x", "routed_to": "x", "spoke": True}],
-}
-
-
 def setp(path, value):
+    """Set a nested value; the path is split on "/" (skill ids contain dots)."""
     def f(r):
-        *parents, last = path.split(".")
+        *parents, last = path.split("/")
         d = r
         for k in parents:
             d = d[k]
@@ -58,28 +46,69 @@ def pop(key):
     return lambda r: r.pop(key)
 
 
-# name, mutation, latest release, channel stack, expected (status, passes, a code that must appear)
+SID = "ovos-skill-convert.andlo"
+
+
+def _step(i, status, answered=True):
+    return {"i": i, "utterance": f"convert {i} cm to inches", "lang": "en-us",
+            "expected": f"{SID}:convert.intent", "status": status,
+            "handled_by": f"{SID}:convert.intent" if status == "pass" else None, "answered": answered}
+
+
+# Shaped like ovos-tui-client's --report output (docs/headless.md in #54).
+BASE = {
+    "schema": "ovos-test-report/1",
+    "title": f"Test: {SID}",
+    "manifest": {
+        "created_at": "2026-10-04T18:12:00Z", "tool": "ovos-tui-client 0.3.0", "bus": "local",
+        "channel": "alpha", "channel_source": "ovos-installer", "lang": "en-us",
+        "machine": {"arch": "aarch64", "model": "Raspberry Pi 5 Model B Rev 1.0", "python": "3.11.2"},
+        "versions_from": "this environment",
+        "stack": {"ovos-core": "3.7.2a1", "ovos-workshop": "9.8.9a2"},
+        "skills": {SID: {"package": "ovos-skill-convert", "version": "0.0.8", "active": True}},
+        "config": {"lang": "en-us", "secondary_langs": ["da-dk"], "pipeline": ["ovos-padatious-pipeline-plugin-high"]},
+    },
+    "summary": {"steps": 10, "planned": 10, "checked": 10, "passed": 9, "failed": 1, "timed_out": 0,
+                "sent_without_check": 0, "answered": 10, "cancelled": False, "duration_s": 42.0},
+    "steps": [_step(i, "pass") for i in range(1, 10)] + [_step(10, "fail")],
+    "notes": "nothing special",
+}
+
+
+
+def with_steps(passes, fails):
+    def f(r):
+        r["steps"] = [_step(i, "pass") for i in range(1, passes + 1)] + \
+            [_step(passes + i, "fail") for i in range(1, fails + 1)]
+        r["summary"].update(steps=passes + fails, checked=passes + fails, passed=passes, failed=fails)
+    return f
+
+
 CASES = [
-    ("clean current pass", None, "0.0.8", ALPHA_NOW, ("current", True, None)),
-    ("older skill version", None, "0.0.9", ALPHA_NOW, ("stale", None, "old_version")),
-    ("core no longer allowed", setp("stack.ovos-core", "2.0.0"), "0.0.8", ALPHA_NOW, ("stale", None, "old_stack")),
-    ("older alpha, floor still ok", setp("stack.ovos-core", "3.5.0a4"), "0.0.8", ALPHA_NOW, ("stale", None, "old_stack")),
-    ("same alpha minor, newer patch", setp("stack.ovos-core", "3.7.5a1"), "0.0.8", ALPHA_NOW, ("current", True, None)),
-    ("channel stack unknown: constraints only", setp("stack.ovos-core", "3.5.0a4"), "0.0.8", None, ("current", True, None)),
-    ("unknown channel", setp("channel", "unknown"), "0.0.8", ALPHA_NOW, ("stale", None, "no_channel")),
-    ("below 80%", setp("utterances.routed", 5), "0.0.8", ALPHA_NOW, ("current", False, "below_level3")),
-    ("did not load", setp("loaded.ok", False), "0.0.8", ALPHA_NOW, ("current", False, "not_loaded")),
-    ("doesnt_work: counts, no pass", setp("outcome", "doesnt_work"), "0.0.8", ALPHA_NOW, ("current", False, None)),
-    ("routed > total", setp("utterances.routed", 11), "0.0.8", ALPHA_NOW, ("invalid", False, "inconsistent")),
+    ("clean current pass (9/10)", None, "0.0.8", ALPHA_NOW, ("current", False, None)),
+    ("all routed", with_steps(10, 0), "0.0.8", ALPHA_NOW, ("current", True, None)),
+    ("older skill version", with_steps(10, 0), "0.0.9", ALPHA_NOW, ("stale", None, "old_version")),
+    ("core no longer allowed", setp("manifest/stack/ovos-core", "2.0.0"), "0.0.8", ALPHA_NOW, ("stale", None, "old_stack")),
+    ("older alpha, floor still ok", setp("manifest/stack/ovos-core", "3.5.0a4"), "0.0.8", ALPHA_NOW, ("stale", None, "old_stack")),
+    ("same alpha minor, newer patch", setp("manifest/stack/ovos-core", "3.7.5a1"), "0.0.8", ALPHA_NOW, ("current", None, None)),
+    ("channel stack unknown: constraints only", setp("manifest/stack/ovos-core", "3.5.0a4"), "0.0.8", None, ("current", None, None)),
+    ("unknown channel (null)", setp("manifest/channel", None), "0.0.8", ALPHA_NOW, ("stale", None, "no_channel")),
+    ("no versions (remote bus)", setp("manifest/stack", {}), "0.0.8", ALPHA_NOW, ("stale", None, "no_stack")),
+    ("below 80%", with_steps(5, 5), "0.0.8", ALPHA_NOW, ("current", False, "below_level3")),
+    ("not active", setp(f"manifest/skills/{SID}/active", False), "0.0.8", ALPHA_NOW, ("current", False, "not_loaded")),
+    ("nothing checked: level 2", with_steps(0, 0), "0.0.8", ALPHA_NOW, ("current", True, None)),
+    ("summary disagrees with steps", setp("summary/passed", 10), "0.0.8", ALPHA_NOW, ("invalid", False, "inconsistent")),
+    ("unknown step status", setp("steps", [{"utterance": "x", "status": "weird"}]), "0.0.8", ALPHA_NOW, ("invalid", False, "type")),
     ("wrong schema", setp("schema", "klondike-report/1"), "0.0.8", ALPHA_NOW, ("invalid", False, "schema")),
-    ("wrong skill", setp("skill.package", "ovos-skill-other"), "0.0.8", ALPHA_NOW, ("invalid", False, "wrong_skill")),
-    ("ip address", setp("setup.notes", "my box is 192.168.65.231"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_ip")),
-    ("home path", setp("setup.notes", "installed in /home/andlo/venv"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_path")),
-    ("e-mail", setp("setup.notes", "ask me at a@b.dk"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_email")),
-    ("api key", setp("setup.notes", "api_key: abcdef1234567890"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_secret")),
-    ("dotted version is not an ip", setp("stack.python", "3.11.2.1"), "0.0.8", ALPHA_NOW, ("current", True, None)),
-    ("missing loaded", pop("loaded"), "0.0.8", ALPHA_NOW, ("invalid", False, "missing")),
-    ("level 3 without utterances", pop("utterances"), "0.0.8", ALPHA_NOW, ("invalid", False, "missing")),
+    ("wrong skill", setp(f"manifest/skills/{SID}/package", "ovos-skill-other"), "0.0.8", ALPHA_NOW, ("invalid", False, "wrong_skill")),
+    ("no skill version", setp(f"manifest/skills/{SID}/version", None), "0.0.8", ALPHA_NOW, ("invalid", False, "missing")),
+    ("ip address", setp("notes", "my box is 192.168.65.231"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_ip")),
+    ("home path", setp("notes", "installed in /home/andlo/venv"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_path")),
+    ("e-mail", setp("notes", "ask me at a@b.dk"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_email")),
+    ("api key", setp("notes", "api_key: abcdef1234567890"), "0.0.8", ALPHA_NOW, ("invalid", False, "private_secret")),
+    ("replies included", lambda r: r["steps"][0].update(replies=["it is 14 degrees in Kvistgaard"]), "0.0.8", ALPHA_NOW, ("invalid", False, "private_replies")),
+    ("dotted versions are not ips", setp("manifest/machine/python", "3.11.2.1"), "0.0.8", ALPHA_NOW, ("current", None, None)),
+    ("no manifest", pop("manifest"), "0.0.8", ALPHA_NOW, ("invalid", False, "missing")),
 ]
 
 
@@ -179,8 +208,12 @@ def test_submission():
         return e
 
     r = copy.deepcopy(BASE)
+    with_steps(10, 0)(r)
     bad = copy.deepcopy(BASE)
-    bad["outcome"], bad["setup"] = "doesnt_work", {"hardware": "Mark 2", "notes": "crashes in da-dk"}
+    with_steps(0, 10)(bad)
+    bad["manifest"]["machine"]["model"], bad["notes"] = "Mark 2", "crashes in da-dk"
+    old_version = copy.deepcopy(r)
+    setp(f"manifest/skills/{SID}/version", "0.0.1")(old_version)
     steps = [
         ("stored", env(r), "stored"),
         ("second user, doesn't work", env(bad, ISSUE_USER="other"), "stored"),
@@ -189,8 +222,8 @@ def test_submission():
         ("not json", env("{not json"), "invalid"),
         ("unknown entry", env(r, ISSUE_BODY="### Entry\n\nno-such-entry\n\n### Report\n\n{}",
                               ISSUE_TITLE="Test report: no-such-entry"), "invalid"),
-        ("private data", env({**r, "setup": {"notes": "at 192.168.1.20"}}), "invalid"),
-        ("old version", env({**r, "skill": {**r["skill"], "version": "0.0.1"}}), "stale"),
+        ("private data", env({**r, "notes": "at 192.168.1.20"}), "invalid"),
+        ("old version", env(old_version), "stale"),
         ("odd user name", env(r, ISSUE_USER="x/../y"), "invalid"),
     ]
     fails = 0
@@ -222,7 +255,7 @@ def test_crawler():
     reports = Path(tempfile.mkdtemp())
     entry = {"id": "andlo-ovos-skill-convert"}
     good = json.dumps(BASE)
-    private = json.dumps({**BASE, "setup": {"notes": "see /home/andlo/notes"}})
+    private = json.dumps({**BASE, "notes": "see /home/andlo/notes"})
     files = {"test/reports/alpha.json": good, "test/reports/stable.json": private}
     fails = 0
     got = sync_maintainer_reports("andlo/ovos-skill-convert", entry, lambda repo, p: files.get(p), reports)

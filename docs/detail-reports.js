@@ -26,10 +26,9 @@ function renderMaintainerReport(skill, m) {
   if (m.status === "invalid") {
     return `<div class="people-row people-invalid">Maintainer report not shown: ${escapeHtml(asArray(m.problems).join("; "))}${link}</div>`;
   }
-  const u = m.utterances || {};
-  const counts = u.total ? ` · ${u.routed}/${u.total} routed${Number.isInteger(u.answered) ? `, ${u.answered} answered` : ""}` : "";
+  const counts = m.checked ? ` · ${m.routed}/${m.checked} reached it, ${m.answered} answered` : "";
   const when = m.created_at ? ` · ${formatDate(m.created_at)}` : "";
-  const setup = m.setup ? `<div class="people-setup">Setup: ${escapeHtml(m.setup)}</div>` : "";
+  const setup = (m.setup || m.hardware) ? `<div class="people-setup">${escapeHtml([m.hardware, m.setup].filter(Boolean).join(" · "))}</div>` : "";
   if (m.status === "stale") {
     return `<div class="people-row people-stale">Maintainer-tested v${escapeHtml(m.version)}, level ${escapeHtml(String(m.level))}${escapeHtml(counts)}${escapeHtml(when)}${link}
       <div class="people-why">Not counted: ${escapeHtml(asArray(m.problems)[0] || "out of date")}</div>${setup}</div>`;
@@ -64,7 +63,7 @@ function renderCommunityReports(c) {
 
 function renderOneReport(r) {
   const bits = [r.user ? `@${r.user}` : "", r.created_at ? formatDate(r.created_at) : "", `v${r.version}`,
-    r.stt ? `STT ${r.stt}` : "", r.tts ? `TTS ${r.tts}` : ""].filter(Boolean).join(" · ");
+    r.checked ? `${r.routed}/${r.checked} reached it` : ""].filter(Boolean).join(" · ");
   return `<li><span class="people-outcome people-${escapeHtml(r.outcome)}">${escapeHtml(OUTCOME_TEXT[r.outcome] || r.outcome)}</span>
     ${escapeHtml(bits)}${r.notes ? `<div class="people-setup">${escapeHtml(r.notes)}</div>` : ""}</li>`;
 }
@@ -85,7 +84,7 @@ function renderReportBox(skill) {
   if (!skill.compat) return "";
   return fold("Submit a test report", `
     <p class="setup-note">Tested this skill on your own OVOS device? Paste the report your test tool wrote
-      (an <code>ovos-test-report/1</code> file, e.g. from ovos-tui-client). It is checked here first, then
+      (an <code>ovos-test-report/1</code> file: <code>ovos-tui --run &lt;skill_id&gt; --report -</code>). It is checked here first, then
       GitHub opens with it filled in and you submit it as yourself. Maintainers: use this to check your
       report before you commit it as <code>test/reports/&lt;channel&gt;.json</code>.</p>
     <textarea id="report-input" class="report-input" rows="8" spellcheck="false" placeholder='{"schema": "ovos-test-report/1", ...}'></textarea>
@@ -149,7 +148,7 @@ function wireReportBox(skill) {
       return;
     }
     showReportResult(out, "Checking against the current release and channel…", [], "report-pending");
-    const ch = report && report.channel;
+    const ch = report && report.manifest && report.manifest.channel;
     const constraints = REPORT_CHANNELS.includes(ch) ? await fetchText(`${CONSTRAINTS_RAW}${ch}.txt`) : null;
     const stack = (((compatDoc || {}).channels || {})[ch] || {}).stack || {};
     const res = checkReport(report, { packageName: skill.package_name, latestVersion: await latestRelease(skill),
@@ -159,7 +158,10 @@ function wireReportBox(skill) {
     } else if (res.status === "stale") {
       showReportResult(out, "The report is well-formed, but it would only count as history. Re-run the test on the current release and channel:", res.problems, "report-stale");
     } else {
-      const verdict = res.passes ? "It counts as a confirmation that the skill works" : `It counts as a "${OUTCOME_TEXT[report.outcome] || "doesn't work"}" report`;
+      const v = res.view;
+      const outcome = v.loaded ? v.outcome : "doesnt_work";
+      const measured = v.checked ? ` (${v.routed}/${v.checked} sentences reached it)` : "";
+      const verdict = res.passes ? `It counts as a confirmation that the skill works${measured}` : `It counts as a "${OUTCOME_TEXT[outcome]}" report${measured}`;
       showReportResult(out, `Looks good. ${verdict} on ${ch}.`, res.problems, "report-ok");
       checked = report;
       submitBtn.hidden = false;

@@ -280,11 +280,16 @@
           (<code>test/end2end/golden_utterances_&lt;lang&gt;.jsonl</code>) if you
           have one. If not, <code>ovoscope generate</code> writes a first draft
           from your <code>.intent</code> files to edit.</li>
-        <li><strong>Run a test tool</strong> that writes an
+        <li><strong>Run the test on the device</strong> with ovos-tui-client's
+          headless mode, which writes an
           <a href="schemas/ovos-test-report-1.json"><code>ovos-test-report/1</code></a>
-          file (ovos-tui-client's headless mode). It reads the versions,
-          channel and skill version itself; you only describe the setup
-          ("needs an OpenWeather key"). Never write or edit the report by hand.</li>
+          file:
+          <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
+          It reads the channel, the installed versions and your skill's version
+          itself; <code>--notes</code> is where you describe the setup. If it
+          can't read the installer's channel, add <code>--channel testing</code>
+          (or <code>alpha</code>). Don't use <code>--report-replies</code> for a
+          report you share, and never edit the report by hand.</li>
         <li><strong>Check it</strong> with <em>Submit a test report</em> on your
           skill's detail page: it says whether the report is valid for the
           channel as it is today and, if not, exactly why.</li>

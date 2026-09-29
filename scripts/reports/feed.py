@@ -51,12 +51,13 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
             m = None
         if m:
             res = check(m, entry.get("package_name"), latest, constraints.get(channel), channel_stacks.get(channel))
+            v = res["view"] or {}
             row["maintainer"] = {
                 "status": res["status"], "passes": res["passes"],
-                "level": m.get("level"), "version": m["skill"]["version"],
-                "created_at": m.get("created_at"), "tool": m.get("tool"),
-                "setup": (m.get("setup") or {}).get("notes") or "",
-                "utterances": m.get("utterances"),
+                "level": v.get("level"), "version": v.get("version"),
+                "created_at": v.get("created_at"), "tool": v.get("tool"),
+                "setup": v.get("notes") or "", "hardware": v.get("hardware") or "",
+                "checked": v.get("checked", 0), "routed": v.get("routed", 0), "answered": v.get("answered", 0),
                 "problems": [p["message"] for p in res["problems"]][:5],
                 "source": (m.get("_klondike") or {}).get("source"),
             }
@@ -68,19 +69,20 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
                 if res["status"] == "invalid":
                     continue
                 current = res["status"] == "current"
-                outcome = r.get("outcome") or ("works" if res["passes"] else "doesnt_work")
+                v = res["view"]
+                # A report that did not load counts as "doesn't work", which
+                # is exactly what a community report is for.
+                outcome = v["outcome"] if v["loaded"] else "doesnt_work"
                 if current:
                     counts[outcome] += 1
                 else:
                     history += 1
-                setup = r.get("setup") or {}
                 reports.append({
                     "user": (r.get("_klondike") or {}).get("user"),
-                    "current": current, "outcome": outcome, "version": r["skill"]["version"],
-                    "created_at": r.get("created_at"),
-                    "hardware": setup.get("hardware") or "", "languages": setup.get("languages") or [],
-                    "stt": setup.get("stt") or "", "tts": setup.get("tts") or "",
-                    "notes": setup.get("notes") or "",
+                    "current": current, "outcome": outcome, "version": v["version"],
+                    "created_at": v["created_at"], "checked": v["checked"], "routed": v["routed"],
+                    "hardware": v["hardware"], "languages": v["languages"],
+                    "notes": v["notes"],
                     "stale_reason": "" if current else (res["problems"][0]["message"] if res["problems"] else ""),
                 })
             reports.sort(key=lambda x: x.get("created_at") or "", reverse=True)
