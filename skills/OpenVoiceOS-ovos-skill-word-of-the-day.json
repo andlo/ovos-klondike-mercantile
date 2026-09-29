@@ -57,7 +57,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-skill-word-of-the-day",
-    "channels": {}
+    "badge_id": "ovos-skill-word-of-the-day.openvoiceos",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.2.5",
+        "tested_at": "2026-09-29T14:53:55+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.8.0a1",
+        "tested_at": "2026-09-29T14:00:04+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

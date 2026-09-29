@@ -117,6 +117,23 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-grimm-tales.andlo",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.6",
+        "tested_at": "2026-09-29T15:10:22+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.6",
+        "tested_at": "2026-09-29T14:14:55+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

@@ -59,6 +59,21 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "skill-alerts.neongeckocom",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T14:54:35+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T13:59:40+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

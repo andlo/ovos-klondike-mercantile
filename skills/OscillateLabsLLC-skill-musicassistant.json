@@ -68,6 +68,21 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "skill-musicassistant",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T14:58:01+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T14:00:02+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

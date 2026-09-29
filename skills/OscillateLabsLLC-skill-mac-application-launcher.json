@@ -86,7 +86,23 @@
   "is_new_repo": false,
   "is_recently_updated": true,
   "compat": {
-    "badge_id": "OscillateLabsLLC-skill-mac-application-launcher",
-    "channels": {}
+    "badge_id": "skill-mac-application-launcher.oscillatelabsllc",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.4",
+        "tested_at": "2026-09-29T14:57:27+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T13:59:45+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

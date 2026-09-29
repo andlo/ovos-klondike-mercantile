@@ -86,6 +86,23 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-personal.openvoiceos",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.19",
+        "tested_at": "2026-09-29T14:55:39+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.2a6",
+        "tested_at": "2026-09-29T14:07:34+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

@@ -51,7 +51,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-skill-color-picker",
-    "channels": {}
+    "badge_id": "ovos-skill-color-picker.krisgesling",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.7",
+        "tested_at": "2026-09-29T14:52:45+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.7.1a1",
+        "tested_at": "2026-09-29T13:57:33+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

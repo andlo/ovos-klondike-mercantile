@@ -50,7 +50,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-m2v-pipeline",
-    "channels": {}
+    "badge_id": "ovos-m2v-pipeline",
+    "channels": {
+      "stable": {
+        "label": "not supported",
+        "state": "unsupported",
+        "level": 1,
+        "version_tested": "0.0.9",
+        "tested_at": "2026-09-29T14:53:31+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.29.3a1",
+        "tested_at": "2026-09-29T13:58:07+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

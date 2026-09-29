@@ -81,7 +81,23 @@
   "is_new_repo": true,
   "is_recently_updated": true,
   "compat": {
-    "badge_id": "thalovant-thalovant-skill-custos-fallback",
-    "channels": {}
+    "badge_id": "thalovant-skill-custos-fallback.thalovant",
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T14:57:08+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.5",
+        "tested_at": "2026-09-29T13:59:14+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

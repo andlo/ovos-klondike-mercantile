@@ -41,6 +41,21 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "skill-messaging.neongeckocom",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T14:52:32+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-29T13:57:17+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

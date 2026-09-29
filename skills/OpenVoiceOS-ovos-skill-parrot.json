@@ -73,6 +73,23 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-parrot.openvoiceos",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.20",
+        "tested_at": "2026-09-29T14:54:27+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.11.0a4",
+        "tested_at": "2026-09-29T14:02:26+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

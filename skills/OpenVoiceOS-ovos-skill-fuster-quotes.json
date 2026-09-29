@@ -62,7 +62,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-joan-fuster.openvoiceos",
-    "channels": {}
+    "badge_id": "ovos-skill-fuster-quotes.openvoiceos",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.4",
+        "tested_at": "2026-09-29T14:54:06+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.2.4a3",
+        "tested_at": "2026-09-29T13:58:55+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

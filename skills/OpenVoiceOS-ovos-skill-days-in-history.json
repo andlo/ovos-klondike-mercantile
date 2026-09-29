@@ -60,6 +60,23 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-days-in-history.openvoiceos",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.3.11",
+        "tested_at": "2026-09-29T14:57:10+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.9.3a1",
+        "tested_at": "2026-09-29T13:59:23+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

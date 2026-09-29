@@ -60,7 +60,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-ocp-pipeline-plugin",
-    "channels": {}
+    "badge_id": "ovos-ocp-pipeline-plugin",
+    "channels": {
+      "stable": {
+        "label": "not supported",
+        "state": "unsupported",
+        "level": 1,
+        "version_tested": "1.1.14",
+        "tested_at": "2026-09-29T14:53:38+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.5.6a2",
+        "tested_at": "2026-09-29T13:58:14+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

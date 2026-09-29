@@ -52,6 +52,23 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-andrew-lang-tales.andlo",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.1.7",
+        "tested_at": "2026-09-29T14:54:49+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.1.7",
+        "tested_at": "2026-09-29T14:07:17+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

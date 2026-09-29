@@ -701,6 +701,23 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "skill-ovos-wallpapers.openvoiceos",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.9",
+        "tested_at": "2026-09-29T14:52:08+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "2.8.0a2",
+        "tested_at": "2026-09-29T13:57:27+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

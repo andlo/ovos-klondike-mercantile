@@ -44,7 +44,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-adapt-pipeline-plugin",
-    "channels": {}
+    "badge_id": "ovos-adapt-domain-pipeline-plugin",
+    "channels": {
+      "stable": {
+        "label": "not supported",
+        "state": "unsupported",
+        "level": 1,
+        "version_tested": "1.0.9",
+        "tested_at": "2026-09-29T14:53:16+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.6.7a2",
+        "tested_at": "2026-09-29T13:57:37+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

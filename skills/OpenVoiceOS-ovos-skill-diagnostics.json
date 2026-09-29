@@ -56,7 +56,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-skill-diagnostics",
-    "channels": {}
+    "badge_id": "ovos-skill-diagnostics.openvoiceos",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.8",
+        "tested_at": "2026-09-29T14:54:40+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.3.0a1",
+        "tested_at": "2026-09-29T14:03:05+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

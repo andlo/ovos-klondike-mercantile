@@ -115,7 +115,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-365tomorrows-stories.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-29T14:52:23+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-29T13:57:38+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -197,8 +214,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-alerts",
-      "channels": {}
+      "badge_id": "ovos-skill-alerts.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.24",
+          "tested_at": "2026-09-29T14:53:18+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.12.31a5",
+          "tested_at": "2026-09-29T13:57:44+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -311,7 +345,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-andersen-tales.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-29T14:54:28+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-29T14:07:01+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -368,7 +419,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-andrew-lang-tales.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-09-29T14:54:49+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-09-29T14:07:17+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -484,8 +552,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-application-launcher",
-      "channels": {}
+      "badge_id": "ovos-skill-application-launcher.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.5.13",
+          "tested_at": "2026-09-29T14:55:02+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.13.5a4",
+          "tested_at": "2026-09-29T14:07:22+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -651,7 +736,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-arxiv-papers.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T14:55:21+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T14:07:28+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -742,7 +844,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-personal.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.19",
+          "tested_at": "2026-09-29T14:55:39+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.2a6",
+          "tested_at": "2026-09-29T14:07:34+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -803,8 +922,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-audio-recording",
-      "channels": {}
+      "badge_id": "ovos-skill-audio-recording.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.7",
+          "tested_at": "2026-09-29T14:55:59+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.7.2a4",
+          "tested_at": "2026-09-29T14:08:22+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -1062,7 +1198,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-bechstein-tales.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T14:52:14+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T13:57:09+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -1130,7 +1283,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-calculator.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T14:52:31+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T13:57:18+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -1292,8 +1462,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-color-picker",
-      "channels": {}
+      "badge_id": "ovos-skill-color-picker.krisgesling",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-09-29T14:52:45+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.7.1a1",
+          "tested_at": "2026-09-29T13:57:33+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -1495,8 +1682,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-common-reading-pipeline-plugin.andlo",
-      "channels": {}
+      "badge_id": "ovos-common-reading-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-09-29T14:53:43+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-09-29T13:58:24+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -1561,7 +1765,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-confucius-quotes.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.13",
+          "tested_at": "2026-09-29T14:53:46+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.8.1a2",
+          "tested_at": "2026-09-29T13:58:36+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -1629,7 +1850,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-cosquin-tales.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T14:54:05+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T13:59:26+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -1798,7 +2036,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-date-time.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.4.20",
+          "tested_at": "2026-09-29T14:54:31+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 23/24 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "1.11.1a1",
+          "tested_at": "2026-09-29T13:59:34+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -1873,7 +2128,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-ip.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.8",
+          "tested_at": "2026-09-29T14:57:43+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.9.0a2",
+          "tested_at": "2026-09-29T14:02:59+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -1934,7 +2206,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-dictation.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.15",
+          "tested_at": "2026-09-29T14:52:19+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.7.0a3",
+          "tested_at": "2026-09-29T13:57:05+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -2165,7 +2454,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-boot-finished.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "needs device",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.5.0",
+          "tested_at": "2026-09-29T14:53:18+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "needs device",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.9.0a4",
+          "tested_at": "2026-09-29T13:58:29+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -2284,7 +2590,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-geography.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-29T15:09:15+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-29T14:13:37+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -2393,7 +2716,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-geography-practice.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-09-29T15:09:35+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-09-29T14:13:59+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -2502,7 +2842,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-geometry.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-29T15:09:50+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-29T14:14:18+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -2610,7 +2967,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-geometry-practice.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T15:10:06+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T14:14:37+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -2732,7 +3106,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-grimm-tales.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-29T15:10:22+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-29T14:14:55+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -3629,7 +4020,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3684,7 +4075,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3730,7 +4121,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 4,
+    "open_issues": 6,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -3748,7 +4139,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-14T14:57:24Z",
-    "last_updated": "2026-09-25T13:21:46Z",
+    "last_updated": "2026-09-29T02:08:31Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -3904,7 +4295,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 8,
-    "open_issues": 9,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3965,7 +4356,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -4015,7 +4406,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -4142,7 +4533,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-holidays.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T15:10:42+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T14:15:05+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -4239,7 +4647,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-horoscope-readings.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.3",
+          "tested_at": "2026-09-29T14:52:22+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.3",
+          "tested_at": "2026-09-29T13:57:20+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -4554,7 +4979,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-intercom.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.5",
+          "tested_at": "2026-09-29T14:53:11+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.5",
+          "tested_at": "2026-09-29T13:57:27+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -4692,7 +5134,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-iss-location.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.16",
+          "tested_at": "2026-09-29T14:53:27+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.7.1a1",
+          "tested_at": "2026-09-29T13:57:47+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -4759,8 +5218,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-joan-fuster.openvoiceos",
-      "channels": {}
+      "badge_id": "ovos-skill-fuster-quotes.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-09-29T14:54:06+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.4a3",
+          "tested_at": "2026-09-29T13:58:55+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -4835,7 +5311,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-icanhazdadjokes.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.7",
+          "tested_at": "2026-09-29T14:54:20+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.25.6a2",
+          "tested_at": "2026-09-29T13:59:52+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -5108,7 +5601,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-math-practice.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.6",
+          "tested_at": "2026-09-29T14:54:42+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.6",
+          "tested_at": "2026-09-29T14:00:48+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5176,7 +5686,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-metronome.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T14:54:55+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T14:01:02+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5297,7 +5824,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-morse-code.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:55:09+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:01:15+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5373,8 +5917,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "skill-moviemaster.openvoiceos",
-      "channels": {}
+      "badge_id": "ovos-skill-moviemaster.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.12",
+          "tested_at": "2026-09-29T14:52:15+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.7.1a3",
+          "tested_at": "2026-09-29T13:57:05+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -5656,7 +6217,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-naptime.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.15",
+          "tested_at": "2026-09-29T14:53:28+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.12.0a2",
+          "tested_at": "2026-09-29T13:58:10+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -5722,7 +6300,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-nato-alphabet.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:54:07+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T13:59:11+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5784,7 +6379,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "neon_homeassistant_skill.mikejgray",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.24",
+          "tested_at": "2026-09-29T14:54:19+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.24",
+          "tested_at": "2026-09-29T13:59:24+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5876,7 +6488,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-about.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:54:33+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:59:37+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5940,7 +6567,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-alerts.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:54:35+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:59:40+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5989,7 +6631,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-caffeinewiz.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:54:36+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:59:43+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6033,7 +6690,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-communication.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:54:38+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:59:46+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6080,7 +6752,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-core_ready.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:52:26+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:57:08+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6128,7 +6815,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-data_controls.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:52:29+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:57:13+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6174,7 +6876,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-messaging.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:52:32+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:57:17+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6221,7 +6938,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-speed_test.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:52:38+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:57:24+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6269,7 +7001,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-support_helper.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:52:41+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:57:29+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6325,7 +7072,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-update.neongeckocom",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:52:44+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:57:33+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6395,7 +7157,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-network-scanner.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:52:47+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T13:57:37+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6529,7 +7308,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-number-facts.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.12",
+          "tested_at": "2026-09-29T14:53:03+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.5.0a5",
+          "tested_at": "2026-09-29T13:57:54+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -6765,7 +7561,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-ovosblog.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T14:52:11+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T13:57:30+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6814,8 +7627,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-adapt-pipeline-plugin",
-      "channels": {}
+      "badge_id": "ovos-adapt-domain-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "1.0.9",
+          "tested_at": "2026-09-29T14:53:16+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.6.7a2",
+          "tested_at": "2026-09-29T13:57:37+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -7907,8 +8737,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
-      "channels": {}
+      "badge_id": "ovos-common-query-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "1.1.7",
+          "tested_at": "2026-09-29T14:53:19+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.1.19a1",
+          "tested_at": "2026-09-29T13:57:44+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -8063,8 +8910,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-core",
-      "channels": {}
+      "badge_id": "ovos-converse-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "1.3.1",
+          "tested_at": "2026-09-29T14:53:22+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "3.7.2a1",
+          "tested_at": "2026-09-29T13:57:50+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -9369,8 +10233,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "JarbasHiveMind-ovos-hivemind-pipeline-plugin",
-      "channels": {}
+      "badge_id": "ovos-hivemind-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-29T14:53:26+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "needs config",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-29T13:57:57+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -9580,7 +10461,7 @@
     "archived": false,
     "author": "MenneBos",
     "tier": 2,
-    "component_type": "Persona",
+    "component_type": "Solver Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -10121,8 +11002,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-m2v-pipeline",
-      "channels": {}
+      "badge_id": "ovos-m2v-pipeline",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.0.9",
+          "tested_at": "2026-09-29T14:53:31+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.29.3a1",
+          "tested_at": "2026-09-29T13:58:07+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -12437,8 +13335,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-ocp-pipeline-plugin",
-      "channels": {}
+      "badge_id": "ovos-ocp-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "1.1.14",
+          "tested_at": "2026-09-29T14:53:38+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.5.6a2",
+          "tested_at": "2026-09-29T13:58:14+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -12817,8 +13732,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-padatious-pipeline-plugin",
-      "channels": {}
+      "badge_id": "ovos-padatious-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "1.4.3",
+          "tested_at": "2026-09-29T14:53:41+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "2.2.7a1",
+          "tested_at": "2026-09-29T13:58:21+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -15801,8 +16733,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-camera",
-      "channels": {}
+      "badge_id": "ovos-skill-camera.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.4",
+          "tested_at": "2026-09-29T14:52:20+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.4.0a1",
+          "tested_at": "2026-09-29T13:57:26+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -15914,8 +16863,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-cmd",
-      "channels": {}
+      "badge_id": "ovos-skill-cmd.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.11",
+          "tested_at": "2026-09-29T14:53:31+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.9.0a1",
+          "tested_at": "2026-09-29T13:58:18+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -16083,8 +17049,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-count",
-      "channels": {}
+      "badge_id": "ovos-skill-count.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-29T14:53:57+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.6.1a1",
+          "tested_at": "2026-09-29T13:59:09+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -16172,8 +17155,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-ddg",
-      "channels": {}
+      "badge_id": "ovos-skill-ddg.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.6",
+          "tested_at": "2026-09-29T14:54:13+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.6.0a1",
+          "tested_at": "2026-09-29T14:01:17+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -16234,8 +17234,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-diagnostics",
-      "channels": {}
+      "badge_id": "ovos-skill-diagnostics.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-09-29T14:54:40+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.0a1",
+          "tested_at": "2026-09-29T14:03:05+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -16534,8 +17551,24 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-ggwave",
-      "channels": {}
+      "badge_id": "ovos-skill-ggwave.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.4",
+          "tested_at": "2026-09-29T14:55:01+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:04:13+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -16811,7 +17844,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-laugh.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.3",
+          "tested_at": "2026-09-29T14:55:18+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 14/17 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "2.0.0a1",
+          "tested_at": "2026-09-29T14:04:17+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -16917,8 +17967,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-mark1-ctrl",
-      "channels": {}
+      "badge_id": "ovos-skill-mark1-ctrl.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:56:05+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:07:15+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -17080,7 +18147,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-07-10T13:24:42Z",
-    "last_updated": "2026-09-23T14:08:18Z",
+    "last_updated": "2026-09-26T09:48:55Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -17131,9 +18198,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-04-24T10:17:52Z",
-    "last_updated": "2025-07-19T11:24:42Z",
+    "last_updated": "2026-09-28T11:26:49Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JoergZ2-ovos-skill-my-mpd",
@@ -17226,7 +18293,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-04-05T15:47:45Z",
-    "last_updated": "2025-06-02T07:17:13Z",
+    "last_updated": "2026-09-29T09:23:34Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -17384,9 +18451,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-04-05T15:51:34Z",
-    "last_updated": "2026-09-25T08:33:41Z",
+    "last_updated": "2026-09-26T10:29:59Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "andlo-ovos-skill-nameday",
@@ -17943,8 +19010,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-pokepedia",
-      "channels": {}
+      "badge_id": "ovos-skill-pokepedia.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.4",
+          "tested_at": "2026-09-29T14:52:17+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.4",
+          "tested_at": "2026-09-29T13:57:34+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -18023,7 +19107,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-ovos-randomness.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.2",
+          "tested_at": "2026-09-29T14:52:55+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "2.0.2a7",
+          "tested_at": "2026-09-29T13:57:55+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -18630,8 +19731,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-wikipedia",
-      "channels": {}
+      "badge_id": "ovos-skill-wikipedia.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.8.13",
+          "tested_at": "2026-09-29T14:53:07+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.18.3a3",
+          "tested_at": "2026-09-29T13:58:19+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -18704,8 +19822,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-wolfie",
-      "channels": {}
+      "badge_id": "ovos-skill-wolfie.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.5.8",
+          "tested_at": "2026-09-29T14:53:40+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.12.1a3",
+          "tested_at": "2026-09-29T13:59:13+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -18767,8 +19902,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-word-of-the-day",
-      "channels": {}
+      "badge_id": "ovos-skill-word-of-the-day.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.5",
+          "tested_at": "2026-09-29T14:53:55+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.8.0a1",
+          "tested_at": "2026-09-29T14:00:04+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -18847,8 +19999,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-wordnet",
-      "channels": {}
+      "badge_id": "ovos-skill-wordnet.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.6",
+          "tested_at": "2026-09-29T14:54:09+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.13.2a2",
+          "tested_at": "2026-09-29T14:00:59+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -19109,7 +20278,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -24872,48 +26041,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "mosiwon-ovos_stt_plugin-google-cloud-translate",
-    "skill_id": null,
-    "name": "ovos_stt_plugin-google-cloud-translate",
-    "description": "pip install git+https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate.git",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate",
-    "package_name": "ovos-stt-plugin-google-cloud-translate",
-    "pypi_version": null,
-    "license": null,
-    "archived": false,
-    "author": "mosiwon",
-    "tier": 2,
-    "component_type": "Tool",
-    "type_group": "Tool",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Configuration",
-        "content": "* in mycroft.conf\n{\n  \"stt\": {\n    \"module\": \"google_translate_stt\",\n    \"google_translate_stt\": {\n      \"stt_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"translate_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"language\": \"ko-KR\"\n    }\n  }\n}"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2024-07-03T04:53:33Z",
-    "last_updated": "2024-07-03T04:53:36Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "mosiwon-ovos_tts_plugin-google-cloud-translate",
     "skill_id": null,
     "name": "ovos_tts_plugin-google-cloud-translate",
@@ -25215,7 +26342,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-parrot.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.20",
+          "tested_at": "2026-09-29T14:54:27+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.11.0a4",
+          "tested_at": "2026-09-29T14:02:26+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -25332,7 +26476,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 2,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -25840,7 +26984,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-rhythm-box.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:54:42+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:03:18+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -25969,7 +27130,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-screenshot.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 10/11 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-09-29T14:52:25+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.7.0a3",
+          "tested_at": "2026-09-29T13:57:40+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -26164,7 +27342,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-easter-eggs.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.2",
+          "tested_at": "2026-09-29T14:53:36+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.2",
+          "tested_at": "2026-09-29T13:58:33+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -26279,8 +27474,25 @@
     "is_new_repo": false,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "skill_homeassistant.oscillatelabsllc",
-      "channels": {}
+      "badge_id": "skill-homeassistant.oscillatelabsllc",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.4.3",
+          "tested_at": "2026-09-29T14:53:53+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.4.3",
+          "tested_at": "2026-09-29T13:58:58+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -26371,8 +27583,24 @@
     "is_new_repo": false,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "OscillateLabsLLC-skill-mac-application-launcher",
-      "channels": {}
+      "badge_id": "skill-mac-application-launcher.oscillatelabsllc",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.4",
+          "tested_at": "2026-09-29T14:57:27+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:59:45+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -26443,7 +27671,22 @@
     "is_recently_updated": true,
     "compat": {
       "badge_id": "skill_meal_plan.oscillatelabsllc",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:57:45+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T13:59:47+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -26528,8 +27771,25 @@
     "is_new_repo": false,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "skill_monster_scanner.oscillatelabsllc",
-      "channels": {}
+      "badge_id": "skill-monster-scanner.oscillatelabsllc",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "2.2.2",
+          "tested_at": "2026-09-29T14:57:48+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "2.2.2",
+          "tested_at": "2026-09-29T13:59:49+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -26602,7 +27862,22 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-musicassistant",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:58:01+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:00:02+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -27819,7 +29094,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-sound-like.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:58:04+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:00:04+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -28003,7 +29295,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-speedtest.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.6",
+          "tested_at": "2026-09-29T14:52:27+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.10.0a3",
+          "tested_at": "2026-09-29T13:57:27+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -28069,8 +29378,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-spelling",
-      "channels": {}
+      "badge_id": "skill-ovos-spelling.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 19/20 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.2.6",
+          "tested_at": "2026-09-29T14:53:39+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.13.1a1",
+          "tested_at": "2026-09-29T13:58:22+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -28213,8 +29539,24 @@
     "is_new_repo": true,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "thalovant-thalovant-skill-custos-fallback",
-      "channels": {}
+      "badge_id": "thalovant-skill-custos-fallback.thalovant",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-29T14:57:08+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-29T13:59:14+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -28331,7 +29673,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-days-in-history.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.11",
+          "tested_at": "2026-09-29T14:57:10+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.9.3a1",
+          "tested_at": "2026-09-29T13:59:23+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -28500,7 +29859,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-tuning-fork.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:57:31+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:00:33+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -28624,7 +30000,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-convert.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-09-29T14:57:42+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-09-29T14:00:48+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -28870,7 +30263,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-voices-of-tomorrow.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.1",
+          "tested_at": "2026-09-29T14:57:58+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.1",
+          "tested_at": "2026-09-29T14:01:15+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -29016,8 +30426,25 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-skill-volume",
-      "channels": {}
+      "badge_id": "ovos-skill-volume.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.16",
+          "tested_at": "2026-09-29T14:58:14+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.12.0a3",
+          "tested_at": "2026-09-29T14:01:24+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -29723,7 +31150,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-ovos-wallpapers.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.9",
+          "tested_at": "2026-09-29T14:52:08+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "2.8.0a2",
+          "tested_at": "2026-09-29T13:57:27+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -29823,7 +31267,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-weather.openvoiceos",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.18",
+          "tested_at": "2026-09-29T15:00:07+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.5.1a1",
+          "tested_at": "2026-09-29T13:59:18+00:00",
+          "channel_pinned": true
+        }
+      }
     }
   },
   {
@@ -29893,7 +31354,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-white-noise.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T15:01:00+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:10:09+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -29992,7 +31470,24 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-wiki-offline.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-09-29T15:01:11+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-09-29T14:10:25+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {

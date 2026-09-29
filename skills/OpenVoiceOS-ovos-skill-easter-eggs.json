@@ -77,6 +77,23 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "skill-easter-eggs.openvoiceos",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.2",
+        "tested_at": "2026-09-29T14:53:36+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.2",
+        "tested_at": "2026-09-29T13:58:33+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

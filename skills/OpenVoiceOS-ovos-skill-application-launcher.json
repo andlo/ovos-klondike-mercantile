@@ -64,7 +64,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-skill-application-launcher",
-    "channels": {}
+    "badge_id": "ovos-skill-application-launcher.openvoiceos",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.5.13",
+        "tested_at": "2026-09-29T14:55:02+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.13.5a4",
+        "tested_at": "2026-09-29T14:07:22+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

@@ -68,7 +68,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-skill-wolfie",
-    "channels": {}
+    "badge_id": "ovos-skill-wolfie.openvoiceos",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.5.8",
+        "tested_at": "2026-09-29T14:53:40+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.12.1a3",
+        "tested_at": "2026-09-29T13:59:13+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }

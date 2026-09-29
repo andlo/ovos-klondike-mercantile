@@ -54,7 +54,24 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-skill-camera",
-    "channels": {}
+    "badge_id": "ovos-skill-camera.openvoiceos",
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.4",
+        "tested_at": "2026-09-29T14:52:20+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.4.0a1",
+        "tested_at": "2026-09-29T13:57:26+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }
