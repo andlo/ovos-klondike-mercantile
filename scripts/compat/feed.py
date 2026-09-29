@@ -23,6 +23,25 @@ FINAL_STATUSES = ("pass", "fail", "unsupported", "needs_device", "needs_config")
 GREY_LABELS = {"unsupported": "not supported", "needs_device": "needs device",
                "needs_config": "needs config"}
 
+# Level 3 is reached when at least this share of a skill's counted golden
+# rows reach it with the installer's default skills loaded. Labels always
+# show the exact numbers.
+LEVEL3_RATIO = 0.8
+
+# Generated utterances (ovoscope generate, OpenVoiceOS/ovoscope#224) are run
+# and stored in results.json, but not shown on cards, badges or in the feed
+# until #224 is merged or settled upstream. Flip this, and the same switch
+# in docs/shared.js, to publish them.
+PUBLIC_GENERATED = False
+
+
+def routing_counts(rec, run):
+    """(hit, counted) of a finished routing run, else None."""
+    r = ((rec or {}).get("routing") or {}).get(run) or {}
+    if r.get("status") != "ok" or not r.get("counted"):
+        return None
+    return r.get("hit", 0), r["counted"]
+
 
 def is_candidate(entry):
     """Looks Complete (tier 1), a tested type, not archived, has a package."""
@@ -47,6 +66,13 @@ def label(rec):
         return ("✗ doesn't install", "fail") if rec.get("level", 0) == 0 else ("✗ doesn't load", "fail")
     booted = rec.get("languages_booted") or []
     missing = rec.get("languages_missing") or []
+    golden = routing_counts(rec, "golden")
+    if golden:
+        hit, counted = golden
+        if hit / counted < LEVEL3_RATIO:
+            return f"✓ loads · {hit}/{counted} golden", "warn"
+        clean = hit == counted and not missing and not rec.get("warnings")
+        return f"✓ {hit}/{counted} golden", "pass" if clean else "warn"
     if missing and booted:
         return f"✓ loads · {len(booted) - len(missing)}/{len(booted)} langs", "warn"
     if rec.get("warnings"):
@@ -60,6 +86,11 @@ def compact(rec):
     for k in ("version_tested", "tested_at", "channel_pinned"):
         if rec.get(k) is not None:
             out[k] = rec[k]
+    runs = ("golden", "generated") if PUBLIC_GENERATED else ("golden",)
+    for run in runs:
+        counts = routing_counts(rec, run)
+        if counts:
+            out[run] = {"hit": counts[0], "counted": counts[1]}
     return out
 
 

@@ -173,7 +173,7 @@ repos".
 
 Every Looks Complete skill and pipeline plugin (not archived) is tested
 against OVOS's release channels, currently **stable** and **alpha**
-(issue #6, phase 1):
+(issue #6, phases 1-2):
 
 - **Level 1, installs:** `pip install` under the channel's own
   `constraints-<channel>.txt` from OpenVoiceOS/OpenVoiceOS, fetched live.
@@ -183,6 +183,26 @@ against OVOS's release channels, currently **stable** and **alpha**
   rest as `secondary_langs`). What it registered is recorded by kind
   (intents per language, fallback, common query, OCP, other), so provider
   skills without intents pass.
+- **Level 3, routes (skills, phase 2):** the skill's own golden
+  utterances (`test/end2end/golden_utterances*.jsonl` at the git tag of the
+  tested version) are sent through the OVOS installer's pipeline with the
+  installer's default skills loaded (`scripts/compat/baseline.py`, read
+  live from ovos-installer: today
+  `ovos-core[skills-essential,skills-internet,skills-audio]` under the
+  channel's constraints). Each row must reach the skill; a miss records who
+  took it. One MiniCroft per language serves a whole shard
+  (`scripts/compat/route.py`), so the default skills are booted once per
+  shard and language, not once per skill. Level 3 is reached at 80% of the
+  counted rows; the label shows the numbers (`✓ 14/14 golden`). Rows taken
+  by another skill of the same shard are collisions, shown but not
+  counted. Up to 4 languages per shard (en-US first).
+- **Generated utterances:** for skills without golden files,
+  `scripts/compat/generated.py` calls `ovoscope generate`
+  (OpenVoiceOS/ovoscope#224, pinned as `GENERATOR_SPEC` in the workflow)
+  and keeps rows with `"source": "generated"`. They run and are counted
+  separately from golden, and stay out of labels, badges and the sort
+  (`PUBLIC_GENERATED` / `COMPAT_PUBLIC_GENERATED`) until #224 is merged or
+  settled. An ovoscope without `generate` makes them "unavailable".
 
 The channel stack comes from OpenVoiceOS/ovos-test-harness's own
 `channel_compat` install (`test/channel_compat/install_channel.sh`,
@@ -202,8 +222,10 @@ A skill that only fails with some of its languages configured is a pass
 with those languages flagged, since a device only loads its own.
 
 Shown as a label per channel on cards (with a "Works on OVOS" filter:
-works on stable / alpha / both, fails on stable / alpha), a section on the
-detail page
+works on stable / alpha / both, routes on stable / alpha, fails on stable
+/ alpha), the default "Recommended" sort (stable counts ten times alpha:
+fails 0, untested 1, loads 2, golden routing 3 plus the share routed; ties
+by stars), a section on the detail page
 (level, date, versions tested against, failure reason, log excerpt,
 languages), and a README badge via a shields.io endpoint on Pages:
 `https://img.shields.io/endpoint?url=https://andlo.github.io/ovos-klondike-mercantile/badges/<skill_id>/<channel>.json`.

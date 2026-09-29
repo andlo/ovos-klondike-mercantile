@@ -169,9 +169,53 @@
           without intents are not failed. A language that registers no intents
           while others do is flagged. A pipeline plugin passes when its pipeline
           stage loads.</li>
-        <li>Levels 3 (your own golden utterances route to your skill with the
-          default skills loaded) and 4 (stops when asked) are planned.</li>
+        <li id="routing"><strong>Level 3, routes (skills):</strong> your own
+          golden utterances are sent through a normal intent pipeline with the
+          skills a default OVOS install has loaded next to yours, and each one
+          must reach your skill (and the intent the row names). This is what
+          catches <em>intent theft</em>: a sentence that works in your own test
+          suite, where your skill is alone, but that a default skill takes on a
+          real device.
+          <ul>
+            <li><strong>Default skills:</strong> read live from
+              <a href="https://github.com/OpenVoiceOS/ovos-installer">ovos-installer</a>
+              with its default choices (profile "ovos", skills on, extra skills
+              off), which today installs
+              <code>ovos-core[skills-essential,skills-internet,skills-audio]</code>.
+              The channel's constraints decide their versions. The pipeline order
+              is the installer's too. The detail page lists what was loaded.</li>
+            <li><strong>Golden files:</strong>
+              <code>test/end2end/golden_utterances*.jsonl</code> at the git tag of
+              the version tested (<code>v1.2.3</code> or <code>1.2.3</code>), one
+              JSON object per line with <code>utterance</code>, <code>lang</code>,
+              <code>skill_id</code> and <code>intent_label</code> (or
+              <code>expected_intent</code>); rows with
+              <code>"needs_manual": true</code> are skipped. The same format
+              <code>ovoscope golden</code> runs. Rows from your default branch are
+              not used: they may name intents the released version does not have.</li>
+            <li><strong>Score:</strong> level 3 is reached when at least 80% of
+              the counted rows reach your skill; the label always shows the
+              numbers, e.g. <code>✓ 14/14 golden</code>. A miss says who took the
+              sentence (a default skill, another of your intents, or nobody). A
+              sentence taken by another <em>tested</em> skill that is not a
+              default skill is shown as a collision and not counted: which
+              skills are tested together is decided by the test run, not by
+              users.</li>
+            <li><strong>Languages:</strong> each language is a boot of its own
+              with every default skill trained, so a run routes en-US plus the
+              languages most skills in it have rows for; the rest is listed as not
+              routed that run.</li>
+          </ul>
+        </li>
+        <li>Level 4 (stops when asked) is planned.</li>
       </ul>
+      <p>
+        <strong>Recommended order:</strong> the store's default sort. Stable
+        counts more than alpha: a package that works on stable ranks above
+        Looks Complete ones not tested yet, and one that fails on stable ranks
+        below them. Among working ones, measured golden routing ranks above
+        "loads", by the share of rows that route. Ties go to stars.
+      </p>
       <p>
         The channel stack is installed by
         <a href="https://github.com/OpenVoiceOS/ovos-test-harness">OpenVoiceOS/ovos-test-harness</a>

@@ -163,7 +163,21 @@ const COMPAT_LEVEL_TEXT = {
   0: "level 0: does not install under the channel's constraints",
   1: "level 1: installs, but does not load in MiniCroft",
   2: "level 2: installs and loads in MiniCroft",
+  3: "level 3: its golden utterances reach it with the OVOS installer's default skills loaded",
 };
+
+// Same switch as PUBLIC_GENERATED in scripts/compat/feed.py: generated
+// utterances (ovoscope generate, OpenVoiceOS/ovoscope#224) are tested but
+// not shown until #224 is merged or settled upstream.
+const COMPAT_PUBLIC_GENERATED = false;
+// Same as LEVEL3_RATIO in scripts/compat/feed.py.
+const COMPAT_LEVEL3_RATIO = 0.8;
+
+function routingCounts(rec, run) {
+  const r = ((rec && rec.routing) || {})[run] || {};
+  if (r.status !== "ok" || !r.counted) return null;
+  return { hit: r.hit || 0, counted: r.counted };
+}
 
 // Same rules as scripts/compat/feed.py label(): one short label and a
 // state (pass / warn / fail / unsupported / untested) per channel result.
@@ -186,13 +200,53 @@ function compatFromRecord(rec) {
     const missing = asArray(rec.languages_missing);
     label = "✓ loads";
     state = asArray(rec.warnings).length ? "warn" : "pass";
-    if (missing.length && booted.length) label = `✓ loads · ${booted.length - missing.length}/${booted.length} langs`;
+    if (missing.length && booted.length) {
+      label = `✓ loads · ${booted.length - missing.length}/${booted.length} langs`;
+      state = "warn";
+    }
+    const golden = routingCounts(rec, "golden");
+    if (golden) {
+      if (golden.hit / golden.counted < COMPAT_LEVEL3_RATIO) {
+        label = `✓ loads · ${golden.hit}/${golden.counted} golden`;
+        state = "warn";
+      } else {
+        label = `✓ ${golden.hit}/${golden.counted} golden`;
+        state = golden.hit === golden.counted && !missing.length && !asArray(rec.warnings).length ? "pass" : "warn";
+      }
+    }
   }
   const out = { label, state, level: (rec && rec.level) || 0 };
   for (const k of ["version_tested", "tested_at", "channel_pinned"]) {
     if (rec && rec[k] !== undefined && rec[k] !== null) out[k] = rec[k];
   }
+  for (const run of COMPAT_PUBLIC_GENERATED ? ["golden", "generated"] : ["golden"]) {
+    const c = routingCounts(rec, run);
+    if (c) out[run] = c;
+  }
   return out;
+}
+
+// "Recommended" sort (issue #6). Per channel a skill scores:
+//   0    fails (doesn't install / doesn't load)
+//   1    Looks Complete but untested, or not testable here (grey)
+//   2    loads (level 2); + up to 0.5 for generated utterances once shown
+//   3-4  golden utterances measured: 3 + the share that reach the skill
+// Stable counts ten times alpha, so passing on stable ranks above untested
+// and failing on stable ranks below it. Not Looks Complete: tier 2 is -1,
+// tier 3 -2. Ties go to stars.
+function channelScore(c) {
+  if (!c || c.state === "untested" || c.state === "unsupported") return 1;
+  if (c.state === "fail") return 0;
+  if (c.golden) return 3 + c.golden.hit / c.golden.counted;
+  if (COMPAT_PUBLIC_GENERATED && c.generated) return 2 + 0.5 * (c.generated.hit / c.generated.counted);
+  return 2;
+}
+
+function recommendedRank(skill) {
+  const channels = (skill.compat && skill.compat.channels) || null;
+  if (!channels && skill.tier !== 1) return skill.tier === 2 ? -1 : -2;
+  if (!channels) return 11;
+  return channelScore(channels.stable) * 10 + channelScore(channels.alpha);
 }
 
 function applyCompatResults(skills, doc) {
@@ -223,8 +277,10 @@ function matchesCompatFilter(skill, value) {
   const loads = (ch) => channels[ch] && ["pass", "warn"].includes(channels[ch].state);
   const fails = (ch) => channels[ch] && channels[ch].state === "fail";
   if (value === "tested") return Object.values(channels).some((c) => c.state !== "untested");
+  const routes = (ch) => channels[ch] && (channels[ch].level || 0) >= 3;
   if (value === "loads:both") return loads("stable") && loads("alpha");
   const [kind, ch] = value.split(":");
+  if (kind === "routes") return routes(ch);
   return kind === "loads" ? loads(ch) : kind === "fails" ? fails(ch) : true;
 }
 

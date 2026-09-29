@@ -1,8 +1,10 @@
 name: Channel compat tests
 
 # Tests Looks Complete skills and pipeline plugins against OVOS release
-# channels (issue #6, phase 1): level 1 installs under the channel's
-# constraints, level 2 loads in MiniCroft. The channel install and MiniCroft
+# channels (issue #6): level 1 installs under the channel's constraints,
+# level 2 loads in MiniCroft, level 3 (skills) routes its golden utterances
+# with the OVOS installer's default skills loaded (scripts/compat/route.py;
+# the default skills are read live from ovos-installer, baseline.py). The channel install and MiniCroft
 # come from OpenVoiceOS/ovos-test-harness, pinned by SHA below and run
 # unchanged (scripts/compat/setup_channel.sh).
 #
@@ -46,6 +48,12 @@ env:
   # Bumping this re-tests everything once (it is part of every key).
   HARNESS_SHA: b752659c25b2637f57095fa5a585a2a0c588550c
   CHANNELS: stable,alpha
+  # `ovoscope generate` (OpenVoiceOS/ovoscope#224, under review) drafts
+  # utterances for skills without golden files. Only its CLI and the rows'
+  # `source` field are used (scripts/compat/generated.py); an ovoscope
+  # without `generate` just makes those runs "unavailable". Pinned to the
+  # PR's commit until #224 is merged or settled; part of the level 3 key.
+  GENERATOR_SPEC: git+https://github.com/andlo/ovoscope@366a5ece00c56b44ed7607222afa0dfac017a797
 
 jobs:
   plan:
@@ -62,7 +70,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install packaging
+      - run: pip install packaging jinja2
       - id: plan
         env:
           ONLY: ${{ inputs.only }}
@@ -70,6 +78,7 @@ jobs:
           FULL: ${{ inputs.full }}
         run: |
           args=(--harness-sha "$HARNESS_SHA" --channels "$CHANNELS"
+                --generator-spec "$GENERATOR_SPEC"
                 --constraints-dir "$RUNNER_TEMP/constraints" --out plan.json)
           [ -n "$ONLY" ] && args+=(--only "$ONLY")
           [ "$FORCE" = "true" ] && args+=(--force)
@@ -92,7 +101,10 @@ jobs:
     if: needs.plan.outputs.has_work == 'true'
     runs-on: ubuntu-latest
     permissions: {}
-    timeout-minutes: 180
+    # Level 3 adds a routing boot per language on top of levels 1-2;
+    # run_shard.py starts no new boot after --deadline-minutes, so the
+    # results always upload before this limit.
+    timeout-minutes: 345
     strategy:
       fail-fast: false
       max-parallel: 12
@@ -115,14 +127,22 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq swig libfann-dev
       - name: Install the ${{ matrix.channel }} channel stack (ovos-test-harness)
         run: bash self/scripts/compat/setup_channel.sh "${{ matrix.channel }}" harness "$RUNNER_TEMP/base" out/stack
+      - name: Install the utterance generator (separate venv, not the channel stack)
+        continue-on-error: true
+        run: |
+          python3 -m venv "$RUNNER_TEMP/gen"
+          "$RUNNER_TEMP/gen/bin/python" -m pip install --disable-pip-version-check -q "$GENERATOR_SPEC"
       - name: Test the shard
         env:
           ITEMS: ${{ toJSON(matrix.items) }}
+          BASELINE: ${{ matrix.baseline }}
         run: |
           printf '%s' "$ITEMS" > items.json
           python3 self/scripts/compat/run_shard.py --channel "${{ matrix.channel }}" \
             --constraints "out/stack/constraints-${{ matrix.channel }}.txt" \
-            --base-venv "$RUNNER_TEMP/base" --items items.json --out out/results.json
+            --base-venv "$RUNNER_TEMP/base" --items items.json --out out/results.json \
+            --baseline "$BASELINE" --generator "$RUNNER_TEMP/gen/bin/ovoscope" \
+            --deadline-minutes 300
       - name: Collect
         if: always()
         run: cp out/stack/stack.json out/stack/stack-freeze.txt out/ 2>/dev/null || true
@@ -135,6 +155,8 @@ jobs:
             out/canary.json
             out/stack.json
             out/stack-freeze.txt
+            out/route.json
+            out/route-freeze.txt
           if-no-files-found: warn
 
   publish:

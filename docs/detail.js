@@ -218,8 +218,66 @@ function compatDetails(rec, meta) {
       ${langs ? renderStatRow("Languages", langs) : ""}
       ${rec.driver ? renderStatRow("Test driver", escapeHtml(rec.driver)) : ""}
     </div>
+    ${renderRouting(rec, meta)}
     ${showLog(rec) ? `<pre class="compat-log">${escapeHtml(rec.log_excerpt)}</pre>` : ""}
   `;
+}
+
+// Level 3: which of the skill's utterances reach it with the OVOS
+// installer's default skills loaded. Golden (hand-written) and generated
+// rows are separate runs; generated ones stay hidden until
+// COMPAT_PUBLIC_GENERATED (ovoscope#224).
+const MISS_TEXT = {
+  baseline: (m) => `taken by <code>${escapeHtml(m.taken_by || "?")}</code>`,
+  wrong_intent: (m) => `reached another intent${m.fired && m.fired.length ? ` (<code>${escapeHtml(m.fired[0])}</code>)` : ""}`,
+  unhandled: (m) => `not handled by any skill${m.stage ? ` (stopped at ${escapeHtml(m.stage)})` : ""}`,
+  hang: (m) => `not handled by any skill; a later stage never answered${m.stage ? ` (${escapeHtml(m.stage)})` : ""}`,
+};
+
+function renderRoutingRun(title, r) {
+  if (!r) return "";
+  if (r.status !== "ok") {
+    return renderStatRow(title, escapeHtml(r.reason || "not run"));
+  }
+  const parts = [`${r.hit}/${r.counted} reach the skill`];
+  if (r.baseline) parts.push(`${r.baseline} taken by a default skill`);
+  if (r.wrong_intent) parts.push(`${r.wrong_intent} reach another of its intents`);
+  if (r.unhandled) parts.push(`${r.unhandled} not handled`);
+  if (r.hang) parts.push(`${r.hang} stuck in a later stage`);
+  if (r.manual) parts.push(`${r.manual} need a human (skipped)`);
+  const langs = asArray(r.langs).map((l) => `<code>${escapeHtml(l)}</code>`).join(" ");
+  const notRouted = asArray(r.langs_not_routed);
+  if (asArray(r.langs_partial).length) parts.push(`run stopped early in ${r.langs_partial.join(", ")}`);
+  const misses = asArray(r.misses).map((m) =>
+    `<li><code>${escapeHtml(m.lang || "")}</code> “${escapeHtml(m.utterance)}”: ${(MISS_TEXT[m.kind] || (() => escapeHtml(m.kind || "missed")))(m)}</li>`).join("");
+  const collisions = asArray(r.collisions).map((m) =>
+    `<li><code>${escapeHtml(m.lang || "")}</code> “${escapeHtml(m.utterance)}” went to <code>${escapeHtml(m.taken_by || "?")}</code></li>`).join("");
+  return `
+    ${renderStatRow(title, escapeHtml(parts.join(" · ")))}
+    ${langs ? renderStatRow("Languages routed", langs + (notRouted.length ? ` <span class="setup-note">(not routed this run: ${escapeHtml(notRouted.join(", "))})</span>` : "")) : ""}
+    ${misses ? `<ul class="compat-misses">${misses}</ul>` : ""}
+    ${collisions ? `<p class="setup-note">Also collided with another skill tested in the same run (not counted, as neither is a default skill):</p><ul class="compat-misses">${collisions}</ul>` : ""}`;
+}
+
+function renderRouting(rec, meta) {
+  const routing = rec.routing;
+  if (!routing) return "";
+  const route = meta.route || {};
+  const rows = [];
+  if (routing.install) rows.push(renderStatRow("Routing", escapeHtml(routing.install)));
+  if (routing.error) rows.push(renderStatRow("Routing", escapeHtml(`not run: ${routing.error}`)));
+  rows.push(renderRoutingRun("Golden utterances", routing.golden));
+  if (COMPAT_PUBLIC_GENERATED) rows.push(renderRoutingRun("Generated utterances", routing.generated));
+  const against = [
+    asArray(route.baseline_requirements).join(", "),
+    route.baseline_ids && route.baseline_ids.length ? `${route.baseline_ids.length} default skills loaded` : "",
+  ].filter(Boolean).join(" · ");
+  if (against) rows.push(renderStatRow("Routed against", escapeHtml(against)));
+  if (asArray(route.excluded_ids).length) {
+    rows.push(renderStatRow("Left out", escapeHtml(`${route.excluded_ids.join(", ")} (waits for device services, so it cannot finish loading in the test core)`)));
+  }
+  if (routing.ref) rows.push(renderStatRow("Utterances from", `<code>${escapeHtml(routing.ref)}</code>`));
+  return `<h4 class="compat-subhead">Routing (level 3)</h4><div class="compat-facts">${rows.join("")}</div>`;
 }
 
 // The log only helps when something went wrong: a failure, a grey result,

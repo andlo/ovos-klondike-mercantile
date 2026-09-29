@@ -77,7 +77,9 @@ function renderCard(skill) {
 
 function sortSkills(list, order) {
   const sorted = [...list];
-  if (order === "stars") {
+  if (order === "recommended") {
+    sorted.sort((a, b) => recommendedRank(b) - recommendedRank(a) || (b.stars || 0) - (a.stars || 0));
+  } else if (order === "stars") {
     sorted.sort((a, b) => (b.stars || 0) - (a.stars || 0));
   } else if (order === "newest") {
     sorted.sort((a, b) => new Date(b.last_updated || 0) - new Date(a.last_updated || 0));

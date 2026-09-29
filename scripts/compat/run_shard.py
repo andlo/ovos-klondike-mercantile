@@ -254,6 +254,225 @@ def test_item(item, args, workroot):
         shutil.rmtree(venv, ignore_errors=True)
 
 
+ROUTE = HERE / "route.py"
+from feed import LEVEL3_RATIO  # noqa: E402
+# Languages routed per shard. Golden files often cover 15-25 languages and
+# every language is a boot of its own with the whole baseline training
+# (see route.py), so a shard routes en-US plus the languages most of its
+# skills have rows for, and lists the rest as not tested.
+ROUTE_MAX_LANGS = int(os.environ.get("COMPAT_ROUTE_MAX_LANGS", "4"))
+# Generated rows are drafted in English only for now: ovoscope generate's
+# default slot values are English-only (ovoscope#224), so other languages
+# skip most templates.
+GENERATED_LANGS = ["en-us"]
+
+
+def lang_key(lang):
+    parts = lang.replace("_", "-").split("-")
+    return parts[0].lower() + ("-" + parts[1].upper() if len(parts) > 1 else "")
+
+
+def prepare_rows(item, rec, args, workroot):
+    """Checkout at the tested version's tag, golden files, generated rows.
+    Returns {"golden": [files], "generated": [files]} and fills rec["routing"]."""
+    from rows import checkout, golden_files
+    import generated
+    routing = rec.setdefault("routing", {})
+    runs = {}
+    version = rec.get("version_tested") or item.get("version")
+    src = Path(workroot) / "src" / item["id"]
+    tag, why = checkout(item["repo"], version, src) if item.get("repo") else (None, "no repository")
+    routing["ref"] = tag
+    if not tag:
+        routing["golden"] = {"status": "none", "reason": why}
+        routing["generated"] = {"status": "none", "reason": why}
+        return runs
+    files = golden_files(src)
+    if files:
+        runs["golden"] = files
+    else:
+        routing["golden"] = {"status": "none", "reason": f"no test/end2end/golden_utterances*.jsonl at {tag}"}
+    gen_out = Path(workroot) / "gen" / f"{item['id']}.jsonl"
+    gen_out.parent.mkdir(parents=True, exist_ok=True)
+    skill_id = (rec.get("plugin_ids") or [None])[0]
+    g = generated.generate(args.generator, skill_id, src, GENERATED_LANGS, gen_out) if skill_id \
+        else {"status": "none", "reason": "no skill id"}
+    if g["status"] == "ok":
+        runs["generated"] = [str(gen_out)]
+    routing["generated"] = {k: v for k, v in g.items() if k in ("status", "reason")}
+    return runs
+
+
+def build_route_venv(args, workroot, candidates):
+    """Base venv + the installer's default skills + the shard's skills.
+    Returns (python, {id: reason} for skills that would not install here)."""
+    venv = Path(workroot) / "route-venv"
+    if venv.exists():
+        shutil.rmtree(venv)
+    shutil.copytree(args.base_venv, venv, symlinks=True)
+    py = str(venv / "bin" / "python")
+    base_cmd = [py, "-m", "pip", "install", "--disable-pip-version-check", "-c", args.constraints]
+    rc, out = run(base_cmd + args.baseline, args.install_timeout, Path(workroot) / "baseline.log")
+    if rc != 0:
+        raise RuntimeError("default skills did not install under the channel constraints: "
+                           + (pip_reason(out) if rc is not None else "timed out"))
+    refused = {}
+    for item, rec in candidates:
+        spec = item["package"] if item.get("channel_pinned") else f"{item['package']}=={rec['version_tested']}"
+        rc, out = run(base_cmd + [spec], args.install_timeout, Path(workroot) / "route-install.log")
+        if rc != 0:
+            refused[item["id"]] = ("does not install next to the default skills: "
+                                   + (pip_reason(out) if rc is not None else "timed out"))
+    freeze = subprocess.run([py, "-m", "pip", "freeze", "--disable-pip-version-check"],
+                            capture_output=True, text=True).stdout
+    return py, refused, freeze
+
+
+def pick_langs(all_runs):
+    counts = {}
+    for runs in all_runs.values():
+        langs = set()
+        for run, files in runs.items():
+            if run == "generated":
+                langs |= {lang_key(l) for l in GENERATED_LANGS}
+                continue
+            for f in files:
+                name = Path(f).stem.replace("golden_utterances", "").lstrip("_-")
+                if name:
+                    langs.add(lang_key(name))
+                else:
+                    for line in Path(f).read_text(encoding="utf-8", errors="replace").splitlines()[:50]:
+                        try:
+                            langs.add(lang_key(json.loads(line)["lang"]))
+                        except Exception:  # noqa: BLE001
+                            pass
+        for l in langs:
+            counts[l] = counts.get(l, 0) + 1
+    ordered = sorted(counts, key=lambda l: (l != "en-US", -counts[l], l))
+    return ordered[:ROUTE_MAX_LANGS], ordered[ROUTE_MAX_LANGS:]
+
+
+def route_shard(items, results, args, workroot, deadline):
+    """Level 3 for every skill of the shard that loaded at level 2."""
+    by_id = {r["id"]: r for r in results}
+    candidates = [(i, by_id[i["id"]]) for i in items
+                  if i.get("route_key") and i["kind"] == "skill" and i["id"] in by_id
+                  and by_id[i["id"]].get("status") == "pass" and by_id[i["id"]].get("plugin_ids")]
+    if not candidates:
+        return None
+    all_runs = {}
+    for item, rec in candidates:
+        rec["route_key"] = item["route_key"]
+        try:
+            all_runs[item["id"]] = prepare_rows(item, rec, args, workroot)
+        except Exception as e:  # noqa: BLE001
+            rec.setdefault("routing", {})["error"] = f"could not fetch rows: {e}"[:300]
+    routable = [(i, r) for i, r in candidates if all_runs.get(i["id"])]
+    if not routable:
+        return None
+    try:
+        py, refused, freeze = build_route_venv(args, workroot, routable)
+    except Exception as e:  # noqa: BLE001
+        for _, rec in routable:
+            rec["routing"]["error"] = str(e)[:300]
+        return None
+    for item, rec in routable:
+        if item["id"] in refused:
+            rec["routing"]["install"] = refused[item["id"]]
+    routable = [(i, r) for i, r in routable if i["id"] not in refused]
+    langs, skipped = pick_langs({i["id"]: all_runs[i["id"]] for i, _ in routable})
+    manifest = {"pipeline": args.pipeline, "exclude_ids": args.exclude_ids,
+                "items": [{"id": i["id"], "skill_ids": r["plugin_ids"], "runs": all_runs[i["id"]]}
+                          for i, r in routable]}
+    man_path = Path(workroot) / "route-manifest.json"
+    man_path.write_text(json.dumps(manifest))
+    boots = []
+    for lang in langs:
+        if time.monotonic() > deadline:
+            skipped.insert(0, lang)
+            print(f"    route {lang}: skipped, out of time", flush=True)
+            continue
+        out_path = Path(workroot) / f"route-{lang}.json"
+        n_rows = sum(len(Path(f).read_text(encoding="utf-8", errors="replace").splitlines())
+                     for runs in manifest["items"] for fs in runs["runs"].values() for f in fs)
+        budget = int(min(args.boot_timeout + TRAINED_MAX + n_rows * (args.route_timeout + 2) + 300,
+                         max(600, deadline - time.monotonic())))
+        rc, log = run([py, str(ROUTE), "--manifest", str(man_path), "--lang", lang,
+                       "--out", str(out_path), "--max-wait", str(args.boot_timeout),
+                       "--timeout", str(args.route_timeout)], budget, Path(workroot) / f"route-{lang}.log")
+        try:
+            res = json.loads(out_path.read_text())
+        except (OSError, ValueError):
+            res = {"lang": lang, "status": "boot_failed",
+                   "reason": "route probe timed out" if rc is None else f"route probe crashed (exit {rc})"}
+        if res.get("status") == "running":
+            # The probe died or was killed after writing some rows: keep
+            # what it measured, say why the rest is missing. Only a timeout
+            # blames the row in flight (route.py already bounds each
+            # utterance, so this is the last-resort path).
+            cur = res.pop("current", None)
+            if rc is None and cur:
+                r = res.setdefault("results", {}).setdefault(cur["id"], {}).setdefault(cur["run"], {"total": 0})
+                r["hang"] = r.get("hang", 0) + 1
+                r.setdefault("misses", []).append({"utterance": cur["utterance"], "kind": "hang"})
+            res["status"] = "partial" if res.get("results") else "boot_failed"
+            res["reason"] = ("route probe timed out" if rc is None else f"route probe exited ({rc})") \
+                + "; later rows not run"
+        if res.get("status") != "ok":
+            res["log_excerpt"] = excerpt(log)
+        print(f"    route {lang}: {res.get('status')} {res.get('reason', '')} "
+              f"boot={res.get('boot_seconds')}s total={res.get('seconds')}s", flush=True)
+        boots.append(res)
+    aggregate(routable, boots, langs, skipped)
+    return {"langs": langs, "langs_skipped": skipped, "freeze": freeze, "excluded_ids": args.exclude_ids,
+            "boots": [{k: b.get(k) for k in ("lang", "status", "reason", "driver", "pipeline",
+                                             "pipeline_dropped", "baseline_ids", "not_loaded",
+                                             "boot_seconds", "seconds", "log_excerpt")} for b in boots]}
+
+
+COUNTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual", "not_loaded", "total")
+
+
+def aggregate(routable, boots, langs, skipped):
+    for item, rec in routable:
+        routing = rec["routing"]
+        for run in ("golden", "generated"):
+            if routing.get(run, {}).get("status") in ("none", "unavailable", "error"):
+                continue
+            agg = {k: 0 for k in COUNTS}
+            agg.update(misses=[], collisions=[], langs=[], langs_failed=[])
+            for b in boots:
+                r = (b.get("results") or {}).get(item["id"], {}).get(run)
+                if b.get("status") == "boot_failed":
+                    agg["langs_failed"].append(b["lang"])
+                    continue
+                if not r:
+                    continue
+                agg["langs"].append(b["lang"])
+                if b.get("status") == "partial":
+                    agg.setdefault("langs_partial", []).append(b["lang"])
+                for k in COUNTS:
+                    agg[k] += r.get(k, 0)
+                for m in r.get("misses", []):
+                    agg["misses"].append({**m, "lang": b["lang"]})
+                for m in r.get("collisions", []):
+                    agg["collisions"].append({**m, "lang": b["lang"]})
+            agg["misses"] = agg["misses"][:25]
+            agg["collisions"] = agg["collisions"][:10]
+            counted = agg["total"] - agg["manual"] - agg["neighbour"] - agg["not_loaded"]
+            agg["counted"] = counted
+            agg["status"] = "ok" if counted > 0 else "none"
+            if counted <= 0:
+                agg["reason"] = ("could not boot with the default skills" if agg["langs_failed"]
+                                 else "no rows in the languages routed")
+            if run == "golden":
+                agg["langs_not_routed"] = skipped
+            routing[run] = agg
+        g = routing.get("golden", {})
+        if g.get("status") == "ok" and g["hit"] / g["counted"] >= LEVEL3_RATIO:
+            rec["level"] = 3
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--channel", required=True)
@@ -267,7 +486,18 @@ def main():
     # boot that exceeds this is reported as a failure, so it must not be
     # tight enough to catch merely slow-but-correct skills.
     ap.add_argument("--boot-timeout", type=int, default=900)
+    # Level 3 (routing). Without --baseline the shard stops at level 2.
+    ap.add_argument("--baseline", default="", help="JSON from plan.py: installer requirements + pipeline")
+    ap.add_argument("--generator", default="", help="an `ovoscope` executable with `generate` (may be absent)")
+    ap.add_argument("--route-timeout", type=float, default=15.0, help="seconds per utterance")
+    ap.add_argument("--deadline-minutes", type=float, default=300,
+                    help="no new routing boot starts after this many minutes (job time limit)")
     args = ap.parse_args()
+    started_at = time.monotonic()
+    baseline = json.loads(args.baseline) if args.baseline else None
+    args.baseline = (baseline or {}).get("requirements") or []
+    args.pipeline = (baseline or {}).get("pipeline") or []
+    args.exclude_ids = (baseline or {}).get("exclude_ids") or []
 
     items = json.loads(Path(args.items).read_text())
     results = []
@@ -307,6 +537,20 @@ def main():
             # Written after every item, so a job killed by its time limit
             # still uploads what it finished.
             Path(args.out).write_text(json.dumps(results, indent=2))
+
+        if args.baseline:
+            print(f"==> level 3: routing against the default skills ({', '.join(args.baseline)})", flush=True)
+            deadline = started_at + args.deadline_minutes * 60
+            try:
+                route = route_shard(items, results, args, workroot, deadline)
+            except Exception as e:  # noqa: BLE001 - level 3 trouble never loses levels 1-2
+                route = {"error": f"{type(e).__name__}: {e}"[:500]}
+                print(f"    level 3 aborted: {route['error']}", flush=True)
+            if route:
+                freeze = route.pop("freeze", "")
+                if freeze:
+                    Path(args.out).with_name("route-freeze.txt").write_text(freeze)
+                Path(args.out).with_name("route.json").write_text(json.dumps(route, indent=2))
     Path(args.out).write_text(json.dumps(results, indent=2))
     return 0
 
