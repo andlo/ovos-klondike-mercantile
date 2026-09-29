@@ -415,7 +415,7 @@ function renderMaintainers(skill) {
       <div class="detail-meta-links">
         ${skill.compat ? `<a href="${testRequestUrl(skill)}" target="_blank" rel="noopener">🧪 Request test</a>` : ""}
         <a href="${updateRequestUrl(skill)}" target="_blank" rel="noopener">🔄 Request update</a>
-        <a href="for-maintainers.html">Guide for maintainers</a>
+        <a href="for-maintainers.html">📖 Guide for maintainers</a>
         <a href="${flagUrl(skill)}" target="_blank" rel="noopener" class="flag-link">🚩 Report a problem</a>
       </div>
     </section>`;

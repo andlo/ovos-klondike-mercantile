@@ -61,6 +61,24 @@ h1 { margin: 0 0 0.5rem; font-size: 2rem; }
   padding: 0.75rem 1.1rem;
 }
 
+/* Index: the three info panels as one box instead of four loose ones */
+.info-group {
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.info-group .legend {
+  max-width: none;
+  margin: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+.info-group .legend + .legend { border-top: 1px solid var(--border); }
+.info-group .legend-prose ul { padding-left: 1.2rem; }
+
 .legend summary {
   cursor: pointer;
   font-weight: 600;

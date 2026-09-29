@@ -11,65 +11,66 @@
   <header>
     <h1>⛏️ OVOS Klondike Mercantile</h1>
     <p class="subtitle">
-      Every OVOS skill, plugin, addon, or tool we could dig up across GitHub.
+      Every OVOS skill, plugin, addon or tool we could dig up across GitHub:
+      <strong>found</strong> automatically, <strong>tested</strong> on OVOS's
+      <em>testing</em>, <em>alpha</em> and <em>stable</em> channels, and
+      <strong>reported</strong> on by maintainers and users.
     </p>
     <p class="stats-line" id="stats-line"></p>
     <p class="queue-line" id="queue-line" hidden></p>
 
+    <div class="info-group">
     <details class="legend">
-      <summary>About / Why Klondike?</summary>
+      <summary>ℹ️ How it works</summary>
       <div class="legend-prose">
-        <p>
-          Years ago, a one-time hand-built list tried to catalog the
-          wider Mycroft/OVOS skill ecosystem - useful at the time,
-          but a snapshot, not something that stayed current, and
-          it's gone now. Today's OVOS ecosystem is smaller than that
-          era's, but still genuinely hard to see all at once: skills,
-          plugins, and tools live scattered across dozens of
-          different GitHub accounts and orgs, with no single place
-          that reliably shows what actually exists.
-        </p>
-        <p>
-          Klondike exists to answer that continuously, not as a
-          one-time count - discovered automatically via code, topic,
-          and repo-name search across all of GitHub, checked against
-          PyPI, GitHub releases, and OVOS's own
-          <a href="https://openvoiceos.github.io/OVOS-skills-store/">upcoming Skill Store</a>
-          (not yet officially launched) every few hours.
-        </p>
-        <p>
-          What you see comes from three sources, and each is shown as
-          such:
-        </p>
+        <p>What you see comes from three sources, and each is shown as such:</p>
         <ul>
-          <li><strong>What we found</strong>: badges such as
-            <em>Looks Complete</em> or <em>Works Offline</em> describe the
-            repo, its PyPI package and its releases. They say nothing about
-            whether it works.</li>
-          <li><strong>What we tested</strong>: every Looks Complete skill and
-            pipeline plugin is installed and started on OVOS's release
-            channels (testing, alpha, stable), and a skill's own sentences
-            are sent to it with the OVOS installer's default skills loaded.
-            The result is the small channel label on the card.</li>
-          <li><strong>What people reported</strong>: a maintainer's test on a
-            real device, and reports from users' own setups. They are shown
-            next to our result, never as it.</li>
+          <li><strong>🔎 What we found</strong>: GitHub is searched every few hours
+            (code, topics, repo names) and each repo is checked against PyPI, its
+            GitHub releases and OVOS's own
+            <a href="https://openvoiceos.github.io/OVOS-skills-store/">upcoming Skill Store</a>.
+            That gives the badges such as <em>Looks Complete</em>. They describe the
+            repo, not whether it works.</li>
+          <li><strong>🧪 What we tested</strong>: every Looks Complete skill and pipeline
+            plugin is installed and started on each OVOS release channel, next to the
+            OVOS installer's default skills, and its own sentences are sent to it.
+            <a href="for-maintainers.html#channel-tests">How the tests work</a></li>
+          <li><strong>🙋 What people reported</strong>: a maintainer's test on a real
+            device, and reports from users' own setups, shown next to our result, never
+            as it. <a href="for-maintainers.html#device-reports">Maintainer and user reports</a></li>
         </ul>
-        <p>
-          See <a href="https://github.com/andlo/ovos-klondike-mercantile/releases">release notes</a>
-          for what's changed, and
-          <a href="https://github.com/andlo/ovos-klondike-mercantile/issues/new?title=Idea%3A+&labels=enhancement&body=%3C%21--+what+would+you+like+to+see%3F+--%3E">suggest an idea or improvement</a>
-          if something's missing.
-        </p>
+        <p>The release channels, each with its own label on every card:</p>
+        <ul>
+          <li><strong>testing</strong>: what the OVOS installer installs by default, so
+            what most users run. Weighs most in the <em>Recommended</em> order.</li>
+          <li><strong>alpha</strong>: the newest versions; the installer's other choice.</li>
+          <li><strong>stable</strong>: the last stable release; changes rarely.</li>
+        </ul>
+        <p>The versions in each channel move over time, so every result is tied to the
+          channel's live version list, and a skill is tested again when that list or the skill's own release changes.</p>
+        <p><strong>Maintainer?</strong> Add the <code>ovos</code> topic to get found, a
+          <code>skill.json</code> to get classified, a PyPI package and a GitHub release to
+          reach Looks Complete and get tested. <a href="for-maintainers.html">📖 Guide for maintainers</a></p>
+        <p class="setup-note">Why "Klondike"? A hand-built list once tried to catalog the
+          Mycroft/OVOS skills; it went stale and is gone. This one digs itself.
+          <a href="https://github.com/andlo/ovos-klondike-mercantile/releases">Release notes</a> ·
+          <a href="https://github.com/andlo/ovos-klondike-mercantile/issues/new?title=Idea%3A+&labels=enhancement&body=%3C%21--+what+would+you+like+to+see%3F+--%3E">Suggest an idea</a></p>
       </div>
     </details>
 
     <details class="legend">
-      <summary>What do the labels and badges mean?</summary>
-      <h3 class="legend-subhead">What we found</h3>
+      <summary>🏷️ What do the labels and badges mean?</summary>
+      <p class="setup-note">Each card has one small label per tested release channel:
+        <strong>testing</strong> (the installer's default), <strong>alpha</strong> and
+        <strong>stable</strong>. The coloured badges describe the repo itself.
+        <a href="for-maintainers.html#channel-tests">🧪 How skills are tested</a> ·
+        <a href="for-maintainers.html#device-reports">🙋 Maintainer and user reports</a></p>
+      <h3 class="legend-subhead">🧪 What we tested (one label per channel)</h3>
+      <div data-test-legend></div>
+      <h3 class="legend-subhead">🔎 What we found (badges)</h3>
       <dl>
         <dt><span class="badge badge-verified">Looks Complete</span></dt>
-        <dd>Has a proper <code>skill.json</code>/entry-point declaration, is published on PyPI, and has a GitHub release - OR is already listed in OVOS's own upcoming Skill Store (not yet officially launched; a stronger signal on its own, since that store doesn't require PyPI or a release either). Not the same as confirmed working: see <em>What we tested</em> below.</dd>
+        <dd>Has a proper <code>skill.json</code>/entry-point declaration, is published on PyPI, and has a GitHub release - OR is already listed in OVOS's own upcoming Skill Store (not yet officially launched; a stronger signal on its own, since that store doesn't require PyPI or a release either). Not the same as confirmed working: see <em>What we tested</em> above.</dd>
 
         <dt><span class="badge badge-partial">Incomplete</span></dt>
         <dd>Has a <code>skill.json</code>, but is missing a PyPI release and/or a GitHub release.</dd>
@@ -98,25 +99,6 @@
         <dt><span class="badge badge-warn">Not on PyPI / No release / No license</span></dt>
         <dd>Exactly what it says - shown as a plain fact, not a reason to exclude the skill.</dd>
       </dl>
-      <h3 class="legend-subhead">What we tested</h3>
-      <div data-test-legend></div>
-      <p class="setup-note"><a href="for-maintainers.html#channel-tests">How the tests work</a> ·
-        <a href="for-maintainers.html#device-reports">Maintainer and user reports</a></p>
-    </details>
-
-    <details class="legend">
-      <summary>Want your repo listed or classified correctly?</summary>
-      <div class="legend-prose">
-        <p>The short version:</p>
-        <ul>
-          <li><strong>Get found:</strong> add the <code>ovos</code> or <code>openvoiceos</code> GitHub topic to the repo.</li>
-          <li><strong>Get classified:</strong> a <code>skill.json</code> for a skill, a namespaced entry point for a plugin.</li>
-          <li><strong>Reach Looks Complete:</strong> publish on PyPI and make a GitHub release (or get into OVOS's Skill Store).</li>
-          <li><strong>Get tested:</strong> Looks Complete skills are tested automatically on every channel; add
-            <code>test/end2end/golden_utterances_&lt;lang&gt;.jsonl</code> to reach level 3, or publish your own report from a real device.</li>
-        </ul>
-        <p><a href="for-maintainers.html">The full guide for maintainers</a> explains each step, what the tests do, and the README badge.</p>
-      </div>
     </details>
 
     <details class="legend">
@@ -125,6 +107,7 @@
         <p class="guide-intro">Loading…</p>
       </div>
     </details>
+    </div>
 
     <div class="site-lang-switcher">
       <label for="site-lang">Display language</label>
@@ -152,7 +135,7 @@
         <option value="fails:alpha">✗ Fails on alpha</option>
         <option value="fails:stable">✗ Fails on stable</option>
       </select>
-      <select id="sort-order" title="Recommended: tested on stable first, then alpha, then stars (see For maintainers)">
+      <select id="sort-order" title="Recommended: best test result first, with testing (the installer's default) weighing most, then alpha, then stable">
         <option value="recommended">Recommended</option>
         <option value="stars">Most stars</option>
         <option value="name">Name (A-Z)</option>
