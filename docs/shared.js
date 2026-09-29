@@ -165,6 +165,69 @@ const COMPAT_LEVEL_TEXT = {
   2: "level 2: installs and loads in MiniCroft",
 };
 
+// Same rules as scripts/compat/feed.py label(): one short label and a
+// state (pass / warn / fail / unsupported / untested) per channel result.
+// Pages read docs/compat/results.json directly, so a finished test run
+// shows at once instead of waiting for the next crawl to copy it into
+// skills.json (the crawler's compat field is the fallback).
+const COMPAT_GREY = { unsupported: "not supported", needs_device: "needs device", needs_config: "needs config" };
+
+function compatFromRecord(rec) {
+  let label = "untested";
+  let state = "untested";
+  if (rec && COMPAT_GREY[rec.status]) {
+    label = COMPAT_GREY[rec.status];
+    state = "unsupported";
+  } else if (rec && rec.status === "fail") {
+    label = (rec.level || 0) === 0 ? "✗ doesn't install" : "✗ doesn't load";
+    state = "fail";
+  } else if (rec && rec.status === "pass") {
+    const booted = asArray(rec.languages_booted);
+    const missing = asArray(rec.languages_missing);
+    label = "✓ loads";
+    state = asArray(rec.warnings).length ? "warn" : "pass";
+    if (missing.length && booted.length) label = `✓ loads · ${booted.length - missing.length}/${booted.length} langs`;
+  }
+  const out = { label, state, level: (rec && rec.level) || 0 };
+  for (const k of ["version_tested", "tested_at", "channel_pinned"]) {
+    if (rec && rec[k] !== undefined && rec[k] !== null) out[k] = rec[k];
+  }
+  return out;
+}
+
+function applyCompatResults(skills, doc) {
+  const results = (doc && doc.results) || {};
+  for (const skill of skills) {
+    const perChannel = results[skill.id];
+    if (!perChannel) continue;
+    const channels = {};
+    for (const ch of COMPAT_CHANNELS) {
+      if (perChannel[ch]) channels[ch] = compatFromRecord(perChannel[ch]);
+    }
+    skill.compat = { ...(skill.compat || {}), channels };
+  }
+  return skills;
+}
+
+function loadCompatResults(cacheBust) {
+  return fetch(`compat/results.json${cacheBust}`, { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : null))
+    .catch(() => null);
+}
+
+// Filter helper for the store: does this skill match "loads:stable",
+// "fails:alpha", "loads:both" or "tested"?
+function matchesCompatFilter(skill, value) {
+  if (!value) return true;
+  const channels = (skill.compat && skill.compat.channels) || {};
+  const loads = (ch) => channels[ch] && ["pass", "warn"].includes(channels[ch].state);
+  const fails = (ch) => channels[ch] && channels[ch].state === "fail";
+  if (value === "tested") return Object.values(channels).some((c) => c.state !== "untested");
+  if (value === "loads:both") return loads("stable") && loads("alpha");
+  const [kind, ch] = value.split(":");
+  return kind === "loads" ? loads(ch) : kind === "fails" ? fails(ch) : true;
+}
+
 function compatTooltip(channel, c) {
   const parts = [`${channel}: ${c.label}`, COMPAT_LEVEL_TEXT[c.level] || ""];
   if (c.state === "unsupported") parts.push("not testable here: see the detail page");

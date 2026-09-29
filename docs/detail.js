@@ -400,17 +400,14 @@ if (!wantedId) {
   const cacheBust = `?t=${Date.now()}`;
   // Channel test results are optional: a missing or broken results.json
   // must never stop the page from rendering.
-  const compatLoad = fetch(`compat/results.json${cacheBust}`, { cache: "no-store" })
-    .then((res) => (res.ok ? res.json() : null))
-    .catch(() => null)
-    .then((doc) => { compatDoc = doc; });
+  const compatLoad = loadCompatResults(cacheBust).then((doc) => { compatDoc = doc; });
   Promise.all([fetch(`skills.json${cacheBust}`, { cache: "no-store" }), compatLoad])
     .then(([res]) => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
     })
     .then((data) => {
-      const skill = data.find((s) => s.id === wantedId);
+      const skill = applyCompatResults(data, compatDoc).find((s) => s.id === wantedId);
       if (!skill) {
         detailRoot.innerHTML = `<p class="loading">Couldn't find that entry - it may have been removed in a later update. <a href="index.html">Back to the store</a>.</p>`;
         return;
