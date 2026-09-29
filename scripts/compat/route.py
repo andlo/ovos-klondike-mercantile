@@ -225,6 +225,14 @@ def boot_route(ids, lang, pipeline, max_wait):
         if keep:
             kwargs["default_pipeline"] = keep
         croft = ovoscope.get_minicroft(ids, **kwargs)
+        # Drivers before ovoscope 1.x (testing resolves 0.13.1) emit
+        # mycroft.skills.train at start but do not wait for the answer.
+        # Ask and wait, as the legacy path does; a trained padatious
+        # answers at once, so this costs nothing on newer drivers.
+        import inspect
+        if "wait_for_trained" not in inspect.signature(ovoscope.get_minicroft).parameters:
+            if not legacy_train(croft, max_wait):
+                dropped = dropped + ["(padatious did not confirm training)"]
         time.sleep(2.0)
         if keep:
             keep, more = warm_models(croft, keep)
