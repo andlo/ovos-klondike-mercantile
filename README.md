@@ -169,6 +169,42 @@ ecosystem) vs. **Recently updated** (an existing project shipped a
 fresh release). A repo matching both only shows once, under "New
 repos".
 
+### Tested on OVOS release channels
+
+Every Looks Complete skill and pipeline plugin (not archived) is tested
+against OVOS's release channels, currently **stable** and **alpha**
+(issue #6, phase 1):
+
+- **Level 1, installs:** `pip install` under the channel's own
+  `constraints-<channel>.txt` from OpenVoiceOS/OpenVoiceOS, fetched live.
+  When the channel pins the package itself, that pinned version is tested.
+- **Level 2, loads:** booted in MiniCroft with every language the
+  installed version ships (one boot: the first language as `lang`, the
+  rest as `secondary_langs`). What it registered is recorded by kind
+  (intents per language, fallback, common query, OCP, other), so provider
+  skills without intents pass.
+
+The channel stack comes from OpenVoiceOS/ovos-test-harness's own
+`channel_compat` install (`test/channel_compat/install_channel.sh`,
+pinned by SHA in the workflow), run unchanged, plus two things a device
+has that the harness stack does not always include: the default
+translate/lang-detect plugins, and a test driver (ovoscope) whose own
+declared requirements accept the channel. On stable that is ovoscope
+0.6.0, driven through the same boot helper.
+
+Results that are not the package's fault are never shown as a failure:
+`error` (infrastructure trouble, retried next run), `unsupported`
+(stable's ovos-core has no loader for third-party pipeline plugins) and
+`needs_device` (loading blocks in the package's own code waiting for
+device services; the file:line is recorded).
+
+Shown as a label per channel on cards, a section on the detail page
+(level, date, versions tested against, failure reason, log excerpt,
+languages), and a README badge via a shields.io endpoint on Pages:
+`https://img.shields.io/endpoint?url=https://andlo.github.io/ovos-klondike-mercantile/badges/<skill_id>/<channel>.json`.
+The badge id is the id the skill registers under (from its entry point),
+falling back to the entry id if two entries would share it.
+
 ## What's on the detail page
 
 Clicking any card opens `detail.html?id=<owner-repo>` with:
@@ -184,6 +220,8 @@ Clicking any card opens `detail.html?id=<owner-repo>` with:
   means (default "all rights reserved") in plain language.
 - Full repository stats: type, license, created date, last updated
   date, stars, forks, open issues, PyPI version.
+- **Channel test results** (see above) with a copy-paste README badge
+  snippet, and a **Request test** link.
 
 ## Site structure
 
@@ -226,7 +264,24 @@ doesn't force an expensive full re-run:
   `app.js`, `detail.js`, `shared.js`, or `style.css` change - no
   GitHub/PyPI calls, no token needed.
 
-Both use a minimal-scope fine-grained PAT (`PUBLIC_READ_TOKEN`,
+- **`skill-compat.yml`**: the channel tests. Nightly, plus
+  `workflow_dispatch` (`only`, `force`, `full`). Incremental: a package
+  is re-tested only when its key changes (package, resolved version,
+  channel, constraints hash, languages, harness SHA, `RUNNER_VERSION` in
+  `scripts/compat/plan.py`). Three jobs split by trust: `plan`
+  (read-only), `test` (installs arbitrary PyPI packages: no secrets, no
+  token permissions, anonymous clones) and `publish` (write access;
+  validates the artifacts as untrusted data and writes only
+  `docs/compat/` and `docs/badges/`). The crawler owns `skills.json` and
+  attaches the `compat` field from `docs/compat/results.json` on every
+  run, so the two workflows never write the same file.
+  `scripts/compat/local_run.sh` reproduces one shard locally in podman.
+- **`process-test-request.yml`**: "Request test" on a detail page opens
+  an issue titled `Test request: <entry id>`; this validates it and
+  starts `skill-compat.yml` for that entry (at most once per entry per
+  24h).
+
+`update-mercantile.yml` uses a minimal-scope fine-grained PAT (`PUBLIC_READ_TOKEN`,
 "Public Repositories: read-only") for the parts that call the GitHub
 API - deliberately not a broader personal token, since none of this
 needs write access anywhere. (One real gotcha hit along the way:
