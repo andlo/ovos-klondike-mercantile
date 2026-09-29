@@ -120,32 +120,7 @@
           on your end beyond being in their own list.</li>
       </ul>
 
-      <h2 class="detail-subhead">Forks</h2>
-      <p>
-        Forks are excluded by default (to avoid random personal
-        test-forks), except for a short list of orgs already
-        confirmed as genuine first-party parts of the OVOS ecosystem
-        (OpenVoiceOS, NeonGeckoCom, OscillateLabsLLC, TigreGotico,
-        JarbasHiveMind, smartgic). If your org publishes real,
-        maintained forks and isn't on that list, ask and it can be
-        added.
-      </p>
-
-      <h2 class="detail-subhead">How often does it refresh?</h2>
-      <p>
-        New repos get picked up within a few runs of appearing (the
-        crawler runs every 3 hours). Already-known repos refresh on
-        a rotation, not every run: with roughly 60 refreshed per run
-        out of ~960 known repos total, a full rotation takes about
-        <strong>2 days</strong> - so as a rule of thumb, a change you
-        make today (new topic, added <code>package_name</code>,
-        archived the repo, whatever) should be reflected here within
-        about 2 days, not immediately. If you need a specific repo
-        re-checked sooner,
-        <a href="https://github.com/andlo/ovos-klondike-mercantile">open an issue</a>.
-      </p>
-
-      <h2 class="detail-subhead" id="channel-tests">6. Tested on OVOS release channels</h2>
+      <h2 class="detail-subhead" id="channel-tests">6. Tested on OVOS</h2>
       <p>
         Every <strong>Looks Complete</strong> skill and pipeline plugin (not
         archived) is tested against OVOS's three release channels. The result
@@ -216,6 +191,8 @@
         </li>
         <li>Level 4 (stops when asked) is planned.</li>
       </ul>
+      <h3 class="legend-subhead" id="labels">The labels at a glance</h3>
+      <div data-test-legend></div>
       <p>
         <strong>Recommended order:</strong> the store's default sort. testing
         counts most (ten times alpha), stable three times alpha: a package that
@@ -297,7 +274,8 @@
           channel as it is today and, if not, exactly why.</li>
         <li><strong>Commit it</strong> as <code>test/reports/testing.json</code>,
           <code>test/reports/alpha.json</code> or <code>test/reports/stable.json</code>. Klondike picks it up on its next
-          visit to your repo (within about a day).</li>
+          visit to your repo (within about 2 days, see <a href="#refresh">How often does it refresh?</a>),
+          or within 3 hours if you use <strong>🔄 Request update</strong> on the detail page.</li>
       </ol>
       <p>
         <strong>When a report counts:</strong> it is for your latest release;
@@ -323,6 +301,38 @@
         own tests or your report. If you submit one yourself for your own skill,
         you are pointed here instead, since yours belongs in your repo.
       </p>
+      <h2 class="detail-subhead">Forks</h2>
+      <p>
+        Forks are excluded by default (to avoid random personal
+        test-forks), except for a short list of orgs already
+        confirmed as genuine first-party parts of the OVOS ecosystem
+        (OpenVoiceOS, NeonGeckoCom, OscillateLabsLLC, TigreGotico,
+        JarbasHiveMind, smartgic). If your org publishes real,
+        maintained forks and isn't on that list, ask and it can be
+        added.
+      </p>
+
+      <h2 class="detail-subhead" id="refresh">How often does it refresh?</h2>
+      <p>
+        New repos get picked up within a few runs of appearing (the
+        crawler runs every 3 hours). Already-known repos refresh on
+        a rotation, not every run: with roughly 60 refreshed per run
+        out of ~960 known repos total, a full rotation takes about
+        <strong>2 days</strong> - so as a rule of thumb, a change you
+        make today (new topic, added <code>package_name</code>,
+        archived the repo, whatever) should be reflected here within
+        about 2 days, not immediately. To have your repo re-checked
+        sooner, use <strong>🔄 Request update</strong> on its detail page:
+        it is picked up by the next crawl, within 3 hours.
+      </p>
+      <p>
+        The tests run on their own schedule: nightly, and only for packages
+        where something that matters changed (see
+        <a href="#channel-tests">6. Tested on OVOS</a>).
+        <strong>🧪 Request test</strong> on the detail page tests one entry
+        right away, at most once a day.
+      </p>
+
     </div>
   </main>
 
@@ -332,5 +342,7 @@
       <a href="skills.json">Raw JSON feed</a>
     </p>
   </footer>
+  <script src="shared.js"></script>
+  <script src="legend.js"></script>
 </body>
 </html>

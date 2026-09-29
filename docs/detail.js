@@ -170,7 +170,7 @@ function renderExamples(localized) {
   return examples ? section("Try saying", `<ul class="examples">${examples}</ul>`) : "";
 }
 
-// ---- Works with OVOS ---------------------------------------------------
+// ---- Tested on OVOS ----------------------------------------------------
 
 const FINAL = ["pass", "fail", "unsupported", "needs_device", "needs_config"];
 const STATUS_TEXT = { pass: "✓ loads", unsupported: "not supported", needs_device: "needs device", needs_config: "needs config" };
@@ -327,9 +327,9 @@ function renderWorksWith(skill) {
       </div>`;
   }).join("");
 
-  return section("Works with OVOS", `
+  return section("Tested on OVOS", `
     ${rows || `<p class="setup-note">Not tested yet. It's queued for the next nightly run.</p>`}
-    <p class="setup-note compat-footnote">Our own tests install each release channel's own package versions and start the skill in a test core with all its languages. Reports from the maintainer and from users are shown as such, never as our result. <a href="for-maintainers.html#channel-tests">How testing works</a></p>
+    <p class="setup-note compat-footnote">Our own tests install each release channel's own package versions and start the skill in a test core with all its languages. Reports from the maintainer and from users are shown as such, never as our result. <a href="for-maintainers.html#labels">What the labels mean</a> · <a href="for-maintainers.html#channel-tests">How testing works</a></p>
     ${renderReportBox(skill)}
   `);
 }

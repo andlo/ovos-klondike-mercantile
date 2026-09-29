@@ -946,3 +946,16 @@ footer a { color: var(--accent); }
 .report-ok { color: #1e8a4c; }
 .report-pending { color: var(--muted); }
 .report-hint { background: #fff8e8; border: 1px solid #f1dcae; border-radius: 8px; padding: 0.6rem 0.8rem; margin: 0.5rem 0 0.8rem; font-size: 0.88rem; }
+
+/* Labels and badges legend (index "What do the labels and badges mean?",
+   for-maintainers "The labels at a glance"); rows drawn by legend.js */
+.legend-subhead { margin: 1rem 0 0.4rem; font-size: 1rem; }
+.legend-table { border-collapse: collapse; width: 100%; font-size: 0.86rem; margin: 0.3rem 0 0.6rem; }
+.legend-table th, .legend-table td { text-align: left; vertical-align: top; padding: 0.35rem 0.6rem 0.35rem 0; border-bottom: 1px solid var(--border); }
+.legend-table th { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
+.legend-table td:nth-child(1), .legend-table td:nth-child(2) { white-space: nowrap; }
+.legend-shield { vertical-align: middle; height: 20px; }
+@media (max-width: 640px) {
+  .legend-table td:nth-child(2), .legend-table th:nth-child(2) { display: none; }
+  .legend-table td:nth-child(1) { white-space: normal; }
+}
