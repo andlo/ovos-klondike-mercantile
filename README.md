@@ -169,21 +169,66 @@ ecosystem) vs. **Recently updated** (an existing project shipped a
 fresh release). A repo matching both only shows once, under "New
 repos".
 
+### Tested on OVOS release channels
+
+Every Looks Complete skill and pipeline plugin (not archived) is tested
+against OVOS's release channels, currently **stable** and **alpha**
+(issue #6, phase 1):
+
+- **Level 1, installs:** `pip install` under the channel's own
+  `constraints-<channel>.txt` from OpenVoiceOS/OpenVoiceOS, fetched live.
+  When the channel pins the package itself, that pinned version is tested.
+- **Level 2, loads:** booted in MiniCroft with every language the
+  installed version ships (one boot: the first language as `lang`, the
+  rest as `secondary_langs`). What it registered is recorded by kind
+  (intents per language, fallback, common query, OCP, other), so provider
+  skills without intents pass.
+
+The channel stack comes from OpenVoiceOS/ovos-test-harness's own
+`channel_compat` install (`test/channel_compat/install_channel.sh`,
+pinned by SHA in the workflow), run unchanged, plus two things a device
+has that the harness stack does not always include: the default
+translate/lang-detect plugins, and a test driver (ovoscope) whose own
+declared requirements accept the channel. On stable that is ovoscope
+0.6.0, driven through the same boot helper.
+
+Results that are not the package's fault are never shown as a failure:
+`error` (infrastructure trouble, retried next run), `unsupported`
+(stable's ovos-core has no loader for third-party pipeline plugins) and
+`needs_device` (loading blocks in the package's own code waiting for
+device services; the file:line is recorded) and `needs_config` (the
+package's own load error says it needs an API key, account or identity).
+A skill that only fails with some of its languages configured is a pass
+with those languages flagged, since a device only loads its own.
+
+Shown as a label per channel on cards, a section on the detail page
+(level, date, versions tested against, failure reason, log excerpt,
+languages), and a README badge via a shields.io endpoint on Pages:
+`https://img.shields.io/endpoint?url=https://andlo.github.io/ovos-klondike-mercantile/badges/<skill_id>/<channel>.json`.
+The badge id is the id the skill registers under (from its entry point),
+falling back to the entry id if two entries would share it.
+
 ## What's on the detail page
 
-Clicking any card opens `detail.html?id=<owner-repo>` with:
-- The full, untruncated description and full tag/example lists
-  (cards truncate both).
-- **Install instructions**: `pip install <package>` if on PyPI, else
-  a git-based fallback (`pip install git+<source>.git`) if it's only
-  on GitHub.
-- **Additional setup/configuration**, extracted from the README (see
-  above) - explicitly labeled as extracted-as-is, not verified.
-- An explicit **license warning** when none is declared (not just a
-  small badge easy to miss) - explaining what "no license" legally
-  means (default "all rights reserved") in plain language.
-- Full repository stats: type, license, created date, last updated
-  date, stars, forks, open issues, PyPI version.
+Clicking any card opens `detail.html?id=<owner-repo>`, ordered from "what
+is it" down to "for the maintainer":
+
+1. **Header**: name, author, version, language flags (the only place flags
+   appear), badges, an archived notice if it applies, the full untruncated
+   description, and GitHub / PyPI / Translate buttons.
+2. **Install**: `pip install <package>` if on PyPI, else a git-based
+   fallback. README setup notes and `settingsmeta.json` settings are
+   folded away underneath, labelled as extracted as-is, not verified.
+3. **Try saying**: the full example list (cards truncate it).
+4. **Works with OVOS**: one line per release channel (status, version
+   tested, date) and at most one line saying what is wrong. Versions tested
+   against, registrations, languages (by code) and the log excerpt are in a
+   folded "Test details"; the log only shows when something failed.
+5. **About this listing**: the completeness rating and its facts, the
+   license (with a plain-language warning when none is declared), repo
+   stats and tags, in one block.
+6. **For the maintainer**: the README badge snippet (folded), Request test,
+   Request update, the maintainer guide, Report a problem.
 
 ## Site structure
 
@@ -226,7 +271,24 @@ doesn't force an expensive full re-run:
   `app.js`, `detail.js`, `shared.js`, or `style.css` change - no
   GitHub/PyPI calls, no token needed.
 
-Both use a minimal-scope fine-grained PAT (`PUBLIC_READ_TOKEN`,
+- **`skill-compat.yml`**: the channel tests. Nightly, plus
+  `workflow_dispatch` (`only`, `force`, `full`). Incremental: a package
+  is re-tested only when its key changes (package, resolved version,
+  channel, constraints hash, languages, harness SHA, `RUNNER_VERSION` in
+  `scripts/compat/plan.py`). Three jobs split by trust: `plan`
+  (read-only), `test` (installs arbitrary PyPI packages: no secrets, no
+  token permissions, anonymous clones) and `publish` (write access;
+  validates the artifacts as untrusted data and writes only
+  `docs/compat/` and `docs/badges/`). The crawler owns `skills.json` and
+  attaches the `compat` field from `docs/compat/results.json` on every
+  run, so the two workflows never write the same file.
+  `scripts/compat/local_run.sh` reproduces one shard locally in podman.
+- **`process-test-request.yml`**: "Request test" on a detail page opens
+  an issue titled `Test request: <entry id>`; this validates it and
+  starts `skill-compat.yml` for that entry (at most once per entry per
+  24h).
+
+`update-mercantile.yml` uses a minimal-scope fine-grained PAT (`PUBLIC_READ_TOKEN`,
 "Public Repositories: read-only") for the parts that call the GitHub
 API - deliberately not a broader personal token, since none of this
 needs write access anywhere. (One real gotcha hit along the way:

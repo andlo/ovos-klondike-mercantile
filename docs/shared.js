@@ -155,6 +155,35 @@ function renderBadges(skill) {
   return badges.join("");
 }
 
+// Channel test results (compat field from the crawler, built from
+// docs/compat/results.json by the Channel compat tests workflow). One small
+// label per tested channel; untested channels show nothing.
+const COMPAT_CHANNELS = ["stable", "testing", "alpha"];
+const COMPAT_LEVEL_TEXT = {
+  0: "level 0: does not install under the channel's constraints",
+  1: "level 1: installs, but does not load in MiniCroft",
+  2: "level 2: installs and loads in MiniCroft",
+};
+
+function compatTooltip(channel, c) {
+  const parts = [`${channel}: ${c.label}`, COMPAT_LEVEL_TEXT[c.level] || ""];
+  if (c.state === "unsupported") parts.push("not testable here: see the detail page");
+  if (c.version_tested) parts.push(`tested v${c.version_tested}${c.channel_pinned ? " (the version this channel pins)" : ""}`);
+  if (c.tested_at) parts.push(`on ${formatDate(c.tested_at)}`);
+  return parts.filter(Boolean).join(" · ");
+}
+
+function renderCompatLabels(skill) {
+  const channels = (skill.compat && skill.compat.channels) || {};
+  return COMPAT_CHANNELS
+    .filter((ch) => channels[ch] && channels[ch].state !== "untested")
+    .map((ch) => {
+      const c = channels[ch];
+      const mark = { fail: "✗", unsupported: "–" }[c.state] || "✓";
+      return `<span class="compat-label compat-${escapeHtml(c.state)}" title="${escapeHtml(compatTooltip(ch, c))}">${mark} ${escapeHtml(ch)}</span>`;
+    }).join("");
+}
+
 function formatDate(iso) {
   if (!iso) return null;
   return new Date(iso).toLocaleDateString(undefined, {

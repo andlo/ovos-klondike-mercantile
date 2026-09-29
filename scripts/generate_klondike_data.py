@@ -44,6 +44,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+from compat.feed import attach_compat, load_results
+
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
 DOCS_DIR = ROOT / "docs"
@@ -1331,6 +1333,10 @@ def main():
             entry["languages"] = sorted(set(lang.lower() for lang in entry["languages"]))
 
     entries = sorted(merged_entries.values(), key=lambda e: (e["name"] or "").lower())
+    # Channel test results (skill-compat.yml) are the source of truth for
+    # the compat field; re-attached on every crawl so a crawler rewrite of
+    # an entry never drops or freezes it.
+    attach_compat(entries, load_results(DOCS_DIR / "compat" / "results.json"))
     for entry in entries:
         out_name = entry["id"] + ".json"
         with open(SKILLS_DIR / out_name, "w") as f:

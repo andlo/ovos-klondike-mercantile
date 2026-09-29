@@ -1,0 +1,89 @@
+name: Process test-request issues
+
+# "Request test" on a detail page opens an issue titled
+# "Test request: <entry id>". Keyed on the title, not a label: GitHub drops
+# `labels=` from a new-issue link for anyone without triage rights, so a
+# label trigger would only ever fire for the maintainer.
+#
+# Starts skill-compat.yml for that one entry with force=true. At most one
+# forced test per entry per 24h; the tests themselves run in the
+# secret-less test job there, never here.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+jobs:
+  process:
+    if: startsWith(github.event.issue.title, 'Test request:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate the entry
+        id: check
+        env:
+          # Via env, never ${{ }} inside the script: the title is user input.
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, re, sys
+          from datetime import datetime, timedelta, timezone
+          sys.path.insert(0, "scripts")
+          from compat.feed import is_candidate
+
+          out = {"verdict": "unknown"}
+          m = re.match(r"^Test request:\s*([A-Za-z0-9._-]+)\s*$", os.environ["ISSUE_TITLE"])
+          feed = {e["id"]: e for e in json.load(open("docs/skills.json"))}
+          entry = feed.get(m.group(1)) if m else None
+          if entry is None:
+              out["verdict"] = "unknown"
+          elif not is_candidate(entry):
+              out["verdict"] = "not_tested"
+          else:
+              out["entry_id"] = entry["id"]
+              try:
+                  results = json.load(open("docs/compat/results.json")).get("results", {})
+              except (OSError, ValueError):
+                  results = {}
+              recent = [r.get("tested_at") for r in results.get(entry["id"], {}).values()
+                        if r.get("tested_at") and datetime.fromisoformat(r["tested_at"])
+                        > datetime.now(timezone.utc) - timedelta(hours=24)]
+              out["verdict"] = "recent" if recent else "queue"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              for k, v in out.items():
+                  f.write(f"{k}={v}\n")
+          EOF
+
+      - name: Start the test
+        if: steps.check.outputs.verdict == 'queue'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ENTRY_ID: ${{ steps.check.outputs.entry_id }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh workflow run skill-compat.yml -R "$GITHUB_REPOSITORY" -f only="$ENTRY_ID" -f force=true
+          gh issue comment "$NUMBER" -R "$GITHUB_REPOSITORY" --body "Queued a test of \`$ENTRY_ID\` on stable and alpha. Results show on its detail page when the run finishes, usually within 30 minutes: https://andlo.github.io/ovos-klondike-mercantile/detail.html?id=$ENTRY_ID"
+          gh issue close "$NUMBER" -R "$GITHUB_REPOSITORY"
+
+      - name: Explain why not
+        if: steps.check.outputs.verdict != 'queue'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERDICT: ${{ steps.check.outputs.verdict }}
+          ENTRY_ID: ${{ steps.check.outputs.entry_id }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          case "$VERDICT" in
+            recent) msg="\`$ENTRY_ID\` was tested within the last 24 hours, so this was not queued again. A new release is picked up automatically on the next nightly run." ;;
+            not_tested) msg="Only Looks Complete skills and pipeline plugins (not archived) are tested, and this entry isn't one of them. See https://andlo.github.io/ovos-klondike-mercantile/for-maintainers.html" ;;
+            *) msg="Couldn't identify the entry from the title (expected \`Test request: <entry id>\`). A maintainer will take a look." ;;
+          esac
+          gh issue comment "$NUMBER" -R "$GITHUB_REPOSITORY" --body "$msg"
+          [ "$VERDICT" = "unknown" ] || gh issue close "$NUMBER" -R "$GITHUB_REPOSITORY"
