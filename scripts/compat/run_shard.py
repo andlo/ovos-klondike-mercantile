@@ -55,13 +55,33 @@ def excerpt(text, anchor_patterns=("Traceback (most recent call last)", "ERROR",
 
 
 def pip_reason(output):
-    for pat in ("ResolutionImpossible", "Cannot install", "conflict is caused by",
-                "No matching distribution found", "Could not find a version",
-                "Failed building wheel", "subprocess-exited-with-error"):
-        for line in output.splitlines():
-            if pat in line:
-                return line.strip()[:300]
+    """One line saying WHY pip gave up, e.g. "neon-skill-about 1.0.4 depends
+    on ovos-workshop~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0"."""
+    lines = [l.strip() for l in ANSI.sub("", output).splitlines()]
+    if "The conflict is caused by:" in lines:
+        i = lines.index("The conflict is caused by:")
+        block = []
+        for l in lines[i + 1:]:
+            if not l or l.startswith(("Additionally", "To fix")):
+                break
+            block.append(l.replace("The user requested (constraint)", "channel pins"))
+        if block:
+            return "; ".join(dict.fromkeys(block))[:500]
+    for pat in ("Failed to build", "No matching distribution found", "Could not find a version",
+                "Cannot install", "subprocess-exited-with-error"):
+        for l in lines:
+            if pat in l:
+                return l.removeprefix("ERROR: ")[:300]
     return "pip install failed"
+
+
+def install_excerpt(output):
+    text = ANSI.sub("", output)
+    for anchor in ("The conflict is caused by:", "Getting requirements to build wheel", "ERROR:"):
+        i = text.find(anchor)
+        if i >= 0:
+            return text[max(0, i - 400):][:MAX_EXCERPT]
+    return excerpt(output)
 
 
 def run(cmd, timeout, log_path):
@@ -110,7 +130,7 @@ def test_item(item, args, workroot):
                 rec.update(status="error", stage="install", reason="network error during pip install")
             else:
                 rec.update(status="fail", stage="install", reason=pip_reason(out))
-            rec["log_excerpt"] = excerpt(out, ("ERROR", "error:", "conflict"))
+            rec["log_excerpt"] = install_excerpt(out)
             return rec
         rec["level"] = 1
 
