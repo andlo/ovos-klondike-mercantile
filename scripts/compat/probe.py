@@ -114,22 +114,45 @@ def entry_points_for(package, groups):
     return [ep for ep in dist.entry_points if ep.group in groups], dist.version
 
 
-LOCALE_DIR = re.compile(r"(?:^|/)(?:locale|vocab|dialog|regex)/([a-z]{2,3}[-_][A-Za-z]{2,4})/")
+LOCALE_FILE = re.compile(
+    r"(?:^|/)(?:locale|vocab|dialog|regex)/([a-z]{2,3}(?:[-_][A-Za-z]{2,4})?)/(?:[^/]+/)*[^/]+\.(\w+)$")
+INTENT_EXTS = {"intent", "voc", "rx", "entity"}
+# Two-letter locale folders (locale/en, locale/ca) are booted as a full tag.
+DEFAULT_REGION = {"en": "US", "pt": "PT", "es": "ES", "ca": "ES", "gl": "ES", "eu": "ES",
+                  "da": "DK", "sv": "SE", "el": "GR", "fa": "IR", "cs": "CZ", "uk": "UA"}
+
+
+def full_tag(code):
+    code = code.replace("_", "-")
+    if "-" in code:
+        return bcp47(code)
+    return f"{code.lower()}-{DEFAULT_REGION.get(code.lower(), code.upper())}"
 
 
 def shipped_languages(package):
-    """Languages the INSTALLED version ships, from its locale folders.
+    """(all languages, languages with intent files) the INSTALLED version ships.
 
     Not the feed's list: that comes from the repo's current code, while a
     channel may pin an older release (stable tests ovos-skill-wikipedia
-    0.8.13, which predates its pl-PL and sv-SE resources). Booting the old
-    release with the new list would flag languages it never claimed."""
-    langs = set()
+    0.8.13, which predates several of its current locales). All languages
+    are booted, so a broken dialog file is caught too, but only languages
+    that ship intent files (.intent/.voc/.rx/.entity) are expected to
+    register intents: a dialog-only translation has nothing to register."""
+    langs, intent_langs = set(), set()
     for f in distribution(package).files or []:
-        m = LOCALE_DIR.search(str(f).replace("\\", "/"))
+        m = LOCALE_FILE.search(str(f).replace("\\", "/"))
         if m:
-            langs.add(bcp47(m.group(1)))
-    return sorted(langs)
+            tag = full_tag(m.group(1))
+            langs.add(tag)
+            if m.group(2).lower() in INTENT_EXTS:
+                intent_langs.add(tag)
+    return sorted(langs), sorted(intent_langs)
+
+
+def same_language(a, b):
+    """en-US == en-us, and a two-letter folder matches its region variants."""
+    a, b = a.lower(), b.lower()
+    return a == b or a.split("-")[0] == b.split("-")[0] and ("-" not in a or "-" not in b)
 
 
 def blocked_in_package(package):
@@ -261,15 +284,18 @@ def probe_skill(args, result):
     if not ids:
         result.update(status="fail", reason="package declares no skill entry point")
         return
-    langs = shipped_languages(args.package)
+    langs, intent_langs = shipped_languages(args.package)
     result["languages_source"] = "package"
     if args.only_langs:
-        langs = [bcp47(l) for l in args.only_langs.split(",") if l]
+        langs = [full_tag(l) for l in args.only_langs.split(",") if l]
+        intent_langs = [l for l in intent_langs if any(same_language(l, x) for x in langs)]
         result["languages_source"] = "retry"
     if not langs:
-        # No recognisable resource folders (unusual layout): fall back to
-        # what the feed read from the repo.
-        langs = [bcp47(l) for l in (args.langs.split(",") if args.langs else []) if l]
+        # No recognisable resource folders (unusual layout): boot what the
+        # feed read from the repo, but expect nothing per language, since
+        # the installed version may not ship those languages.
+        langs = [full_tag(l) for l in (args.langs.split(",") if args.langs else []) if l]
+        intent_langs = []
         result["languages_source"] = "feed"
     if not langs:
         langs = ["en-US"]
@@ -305,7 +331,8 @@ def probe_skill(args, result):
         if not regs:
             warnings.append("loaded but registered nothing (no intents, fallback or provider)")
         if by_lang:
-            missing = [l for l in langs if l.lower() not in by_lang]
+            missing = [l for l in intent_langs
+                       if not any(same_language(l, got) for got in by_lang)]
             if missing:
                 result["languages_missing"] = missing
                 warnings.append("no intents registered for: " + ", ".join(missing))

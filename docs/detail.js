@@ -253,7 +253,7 @@ function renderCompatSection(skill) {
         <div class="compat-row-head">
           <strong>${escapeHtml(ch)}</strong>
           <span class="compat-label compat-${escapeHtml(state)}">${escapeHtml(text)}</span>
-          <span class="compat-level">${escapeHtml(COMPAT_LEVEL_TEXT[rec.level] || "")}</span>
+          <span class="compat-level">${["pass", "fail"].includes(rec.status) ? escapeHtml(COMPAT_LEVEL_TEXT[rec.level] || "") : "installs; could not be judged further here (see below)"}</span>
         </div>
         <div class="compat-facts">
           ${renderStatRow("Tested", escapeHtml(formatDate(rec.tested_at) || ""))}
