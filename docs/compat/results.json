@@ -26,7 +26,7 @@
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
-      "run_at": "2026-09-29T14:15:41+00:00",
+      "run_at": "2026-09-29T15:11:14+00:00",
       "runner_version": "1",
       "stack": {
         "packages": {
@@ -39,13 +39,13 @@
           "ovos-translate-server-plugin": "0.0.2",
           "ovos-utils": "0.8.5",
           "ovos-workshop": "3.4.0",
-          "ovoscope": "1.11.1a1"
+          "ovoscope": "0.6.0"
         },
         "python": "3.11.16"
       }
     }
   },
-  "generated_at": "2026-09-29T14:15:41+00:00",
+  "generated_at": "2026-09-29T15:11:14+00:00",
   "results": {
     "JarbasHiveMind-ovos-hivemind-pipeline-plugin": {
       "alpha": {
@@ -73,17 +73,28 @@
         "version_tested": "0.0.3"
       },
       "stable": {
+        "boot_seconds": 0.6,
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 5.5,
         "id": "JarbasHiveMind-ovos-hivemind-pipeline-plugin",
         "key": "e98902b84d734101",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos-hivemind-pipeline-plugin",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-hivemind-pipeline-plugin"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "0.0.3",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-hivemind-pipeline-plugin"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:26+00:00",
+        "version_tested": "0.0.3"
       }
     },
     "NeonGeckoCom-skill-about": {
@@ -105,16 +116,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 1.6,
         "id": "NeonGeckoCom-skill-about",
         "key": "792890abc1641201",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "eady satisfied: ovos-utils>=0.0.28,~=0.0 in /tmp/compat-1pmaf5cg/venv/lib/python3.11/site-packages (from neon-skill-about==1.0.4) (0.8.5)\nINFO: pip is looking at multiple versions of neon-skill-about to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-about==1.0.4 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-about 1.0.4 depends on ovos-workshop>=0.0.15 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-about",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-about 1.0.4 depends on ovos-workshop>=0.0.15 and ~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0",
         "requested_version": "1.0.4",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:54:33+00:00"
       }
     },
     "NeonGeckoCom-skill-alerts": {
@@ -136,16 +150,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 1.5,
         "id": "NeonGeckoCom-skill-alerts",
         "key": "8615c12a0e244ded",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "y satisfied: ovos-utils>=0.0.32,~=0.0 in /tmp/compat-1pmaf5cg/venv/lib/python3.11/site-packages (from neon-skill-alerts==3.1.0) (0.8.5)\nINFO: pip is looking at multiple versions of neon-skill-alerts to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-alerts==3.1.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-alerts 3.1.0 depends on ovos-bus-client>=0.0.3 and ~=0.0\n    The user requested (constraint) ovos-bus-client<1.4.0,>=1.3.4\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-bus-client\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-alerts",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-alerts 3.1.0 depends on ovos-bus-client>=0.0.3 and ~=0.0; channel pins ovos-bus-client<1.4.0,>=1.3.4",
         "requested_version": "3.1.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:54:35+00:00"
       }
     },
     "NeonGeckoCom-skill-caffeinewiz": {
@@ -167,16 +184,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 1.6,
         "id": "NeonGeckoCom-skill-caffeinewiz",
         "key": "fdd2fc15d2410691",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "os-utils>=0.0.28,~=0.0 in /tmp/compat-1pmaf5cg/venv/lib/python3.11/site-packages (from neon-skill-caffeinewiz==3.0.0) (0.8.5)\nINFO: pip is looking at multiple versions of neon-skill-caffeinewiz to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-caffeinewiz==3.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-caffeinewiz 3.0.0 depends on ovos-bus-client>=0.0.3 and ~=0.0\n    The user requested (constraint) ovos-bus-client<1.4.0,>=1.3.4\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-bus-client\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-caffeinewiz",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-caffeinewiz 3.0.0 depends on ovos-bus-client>=0.0.3 and ~=0.0; channel pins ovos-bus-client<1.4.0,>=1.3.4",
         "requested_version": "3.0.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:54:36+00:00"
       }
     },
     "NeonGeckoCom-skill-communication": {
@@ -198,16 +218,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 1.6,
         "id": "NeonGeckoCom-skill-communication",
         "key": "d23ef0f02615bac6",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "ls>=0.0.28,~=0.0 in /tmp/compat-1pmaf5cg/venv/lib/python3.11/site-packages (from neon-skill-communication==0.2.0) (0.8.5)\nINFO: pip is looking at multiple versions of neon-skill-communication to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-communication==0.2.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-communication 0.2.0 depends on ovos-workshop>=0.0.15 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-communication",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-communication 0.2.0 depends on ovos-workshop>=0.0.15 and ~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0",
         "requested_version": "0.2.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:54:38+00:00"
       }
     },
     "NeonGeckoCom-skill-core_ready": {
@@ -229,16 +252,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.4,
         "id": "NeonGeckoCom-skill-core_ready",
         "key": "62d87bef59fba37d",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "Collecting neon-skill-core_ready==0.3.0\n  Downloading neon_skill_core_ready-0.3.0-py3-none-any.whl.metadata (1.4 kB)\nINFO: pip is looking at multiple versions of neon-skill-core-ready to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-core-ready==0.3.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-core-ready 0.3.0 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-core_ready",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-core-ready 0.3.0 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0",
         "requested_version": "0.3.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:52:26+00:00"
       }
     },
     "NeonGeckoCom-skill-data_controls": {
@@ -260,16 +286,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.5,
         "id": "NeonGeckoCom-skill-data_controls",
         "key": "418faeeccb21347b",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "ls>=0.0.28,~=0.0 in /tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages (from neon-skill-data_controls==2.1.0) (0.8.5)\nINFO: pip is looking at multiple versions of neon-skill-data-controls to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-data-controls==2.1.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-data-controls 2.1.0 depends on ovos-bus-client>=0.0.3 and ~=0.0\n    The user requested (constraint) ovos-bus-client<1.4.0,>=1.3.4\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-bus-client\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-data_controls",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-data-controls 2.1.0 depends on ovos-bus-client>=0.0.3 and ~=0.0; channel pins ovos-bus-client<1.4.0,>=1.3.4",
         "requested_version": "2.1.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:52:29+00:00"
       }
     },
     "NeonGeckoCom-skill-messaging": {
@@ -291,16 +320,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 6.5,
         "id": "NeonGeckoCom-skill-messaging",
         "key": "c8ddbe30714333a1",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "irement already satisfied: combo-lock~=0.2 in /tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages (from neon-utils<2.0.0,>=0.6->neon-skill-messaging==0.0.1) (0.3.1)\nCollecting pendulum~=2.1 (from neon-utils<2.0.0,>=0.6->neon-skill-messaging==0.0.1)\n  Downloading pendulum-2.1.2.tar.gz (81 kB)\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'done'\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nCollecting timezonefinder~=5.2 (from neon-utils<2.0.0,>=0.6->neon-skill-messaging==0.0.1)\n  Downloading timezonefinder-5.2.0-py36.py37.py38-none-any.whl.metadata (3.9 kB)\nRequirement already satisfied: nltk~=3.5 in /tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages (from neon-utils<2.0.0,>=0.6->neon-skill-messaging==0.0.1) (3.10.3)\nCollecting pyyaml~=5.4 (from neon-utils<2.0.0,>=0.6->neon-skill-messaging==0.0.1)\n  Downloading PyYAML-5.4.1.tar.gz (175 kB)\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Getting requirements to build wheel: started\n  Getting requirements to build wheel: finished with status 'error'\n  error: subprocess-exited-with-error\n  \n  \u00d7 Getting requirements to build wheel did not run successfully.\n  \u2502 exit code: 1\n  \u2570\u2500> [68 lines of output]\n      /tmp/pip-build-env-gs5xx9yk/overlay/lib/python3.11/site-packages/wheel/bdist_wheel.py:4: FutureWarning: The 'wheel' package is no longer the canonical location of the 'bdist_wheel' command, and will be removed in a future release. Please update to setuptools v70.1 or later which contains an integrated version of this command.\n        warn(\n      /tmp/pip-build-env-gs5xx9yk/overlay/lib/python3.11/site-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.\n      !!\n      \n              ********************************************************************************\n              Please consider removing the following classifiers in favor of a SPDX license expression:\n      \n              License :: OSI Approved :: MIT License\n      \n              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.\n              ********************************************************************************\n      \n      !!\n        self._finalize_license_expression()\n      running egg_info\n      writing lib3/PyYAML.egg-info/PKG-INFO\n      writing dependency_links to lib3/PyYAML.egg-info/dependency_links.txt\n      writing top-level names to lib3/PyYAML.egg-info/top_level.txt\n      Traceback (most recent call last):\n        File \"/tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 389, in <module>\n          main()\n        File \"/tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 373, in main\n          json_out[\"return_val\"] = hook(**hook_input[\"kwargs\"])\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 143, in get_requires_for_build_wheel\n          return hook(config_settings)\n                 ^^^^^^^^^^^^^^^^^^^^^\n        File \"/tmp/pip-build-env-gs5xx9yk/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 333, in get_requires_for_build_wheel\n          return self._get_build_requires(config_settings, requirements=[])\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        File \"/tmp/pip-build-env-gs5xx9yk/overlay/lib/python3.11/site-packages/setuptools/build_meta.py\", line 301, in _get_build_requires\n          self.run_setup()\n        File \"/tmp/pip-build-env-gs5xx9yk/overlay/lib/python3.11/site-packages/setuptoo",
         "package": "neon-skill-messaging",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "Failed to build 'pyyaml' when getting requirements to build wheel",
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:52:32+00:00"
       }
     },
     "NeonGeckoCom-skill-speed_test": {
@@ -322,16 +354,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.5,
         "id": "NeonGeckoCom-skill-speed_test",
         "key": "1c94e4e4cdaf8a8b",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": " ovos-utils>=0.0.28,~=0.0 in /tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages (from neon-skill-speed_test==2.0.0) (0.8.5)\nINFO: pip is looking at multiple versions of neon-skill-speed-test to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-speed-test==2.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-speed-test 2.0.0 depends on ovos-bus-client>=0.0.3 and ~=0.0\n    The user requested (constraint) ovos-bus-client<1.4.0,>=1.3.4\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-bus-client\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-speed_test",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-speed-test 2.0.0 depends on ovos-bus-client>=0.0.3 and ~=0.0; channel pins ovos-bus-client<1.4.0,>=1.3.4",
         "requested_version": "2.0.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:52:38+00:00"
       }
     },
     "NeonGeckoCom-skill-support_helper": {
@@ -353,16 +388,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.4,
         "id": "NeonGeckoCom-skill-support_helper",
         "key": "ede098e88c9e879b",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "aml<7.0,>=5.4 in /tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages (from neon-skill-support_helper==1.3.0) (6.0.3)\nINFO: pip is looking at multiple versions of neon-skill-support-helper to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-support-helper==1.3.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-support-helper 1.3.0 depends on ovos-bus-client>=0.0.3 and ~=0.0\n    The user requested (constraint) ovos-bus-client<1.4.0,>=1.3.4\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-bus-client\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-support_helper",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-support-helper 1.3.0 depends on ovos-bus-client>=0.0.3 and ~=0.0; channel pins ovos-bus-client<1.4.0,>=1.3.4",
         "requested_version": "1.3.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:52:41+00:00"
       }
     },
     "NeonGeckoCom-skill-update": {
@@ -384,16 +422,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.4,
         "id": "NeonGeckoCom-skill-update",
         "key": "2f3d997d06f70c5e",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "y satisfied: ovos-utils>=0.0.35,~=0.0 in /tmp/compat-t4hcx3b_/venv/lib/python3.11/site-packages (from neon-skill-update==3.1.2) (0.8.5)\nINFO: pip is looking at multiple versions of neon-skill-update to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install neon-skill-update==3.1.2 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    neon-skill-update 3.1.2 depends on ovos-workshop>=0.0.15 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "neon-skill-update",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "neon-skill-update 3.1.2 depends on ovos-workshop>=0.0.15 and ~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0",
         "requested_version": "3.1.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:52:44+00:00"
       }
     },
     "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -425,17 +466,28 @@
         "version_tested": "1.6.7a2"
       },
       "stable": {
+        "boot_seconds": 0.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "duration_seconds": 2.8,
         "id": "OpenVoiceOS-ovos-adapt-pipeline-plugin",
         "key": "23224a793b2ac600",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos_adapt_parser",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-adapt-pipeline-plugin"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "1.0.9",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-adapt-pipeline-plugin-high"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:16+00:00",
+        "version_tested": "1.0.9"
       }
     },
     "OpenVoiceOS-ovos-common-query-pipeline-plugin": {
@@ -463,17 +515,28 @@
         "version_tested": "1.1.19a1"
       },
       "stable": {
+        "boot_seconds": 0.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "duration_seconds": 2.8,
         "id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
         "key": "5e43d3e97b8fc438",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos_common_query_pipeline_plugin",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-common-query-pipeline-plugin"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "1.1.9",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-common-query-pipeline-plugin"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:19+00:00",
+        "version_tested": "1.1.7"
       }
     },
     "OpenVoiceOS-ovos-core": {
@@ -505,17 +568,32 @@
         "version_tested": "3.7.2a1"
       },
       "stable": {
+        "boot_seconds": 0.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "duration_seconds": 2.8,
         "id": "OpenVoiceOS-ovos-core",
         "key": "3c550855db9f6b06",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos-core",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-converse-pipeline-plugin",
+          "ovos-fallback-pipeline-plugin",
+          "ovos-stop-pipeline-plugin"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "1.3.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-converse-pipeline-plugin",
+          "ovos-fallback-pipeline-plugin",
+          "ovos-stop-pipeline-plugin"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:22+00:00",
+        "version_tested": "1.3.1"
       }
     },
     "OpenVoiceOS-ovos-m2v-pipeline": {
@@ -545,17 +623,28 @@
         "version_tested": "0.29.3a1"
       },
       "stable": {
+        "boot_seconds": 0.8,
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 5.5,
         "id": "OpenVoiceOS-ovos-m2v-pipeline",
         "key": "0a6ca189e7104412",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos_m2v_pipeline",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-m2v-pipeline"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "0.0.9",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-m2v-pipeline-high"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:31+00:00",
+        "version_tested": "0.0.9"
       }
     },
     "OpenVoiceOS-ovos-ocp-pipeline-plugin": {
@@ -585,17 +674,30 @@
         "version_tested": "1.5.6a2"
       },
       "stable": {
+        "boot_seconds": 0.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "duration_seconds": 2.9,
         "id": "OpenVoiceOS-ovos-ocp-pipeline-plugin",
         "key": "1e7a31854aebf18c",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos_ocp_pipeline_plugin",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-ocp-pipeline-plugin",
+          "ovos-ocp-pipeline-plugin-legacy"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "1.1.18",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-ocp-pipeline-plugin-high",
+          "ovos-ocp-pipeline-plugin-legacy"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:38+00:00",
+        "version_tested": "1.1.14"
       }
     },
     "OpenVoiceOS-ovos-padatious-pipeline-plugin": {
@@ -623,17 +725,28 @@
         "version_tested": "2.2.7a1"
       },
       "stable": {
+        "boot_seconds": 0.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "duration_seconds": 2.7,
         "id": "OpenVoiceOS-ovos-padatious-pipeline-plugin",
         "key": "30d1d56854f4ff2d",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos_padatious",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-padatious-pipeline-plugin"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "1.4.3",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-padatious-pipeline-plugin-high"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:41+00:00",
+        "version_tested": "1.4.3"
       }
     },
     "OpenVoiceOS-ovos-skill-alerts": {
@@ -710,17 +823,66 @@
         "version_tested": "0.12.31a5"
       },
       "stable": {
+        "boot_seconds": 63.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 69.3,
         "id": "OpenVoiceOS-ovos-skill-alerts",
+        "intents_by_lang": {
+          "ca-es": 815,
+          "cs-cz": 295,
+          "da-dk": 294,
+          "de-de": 485,
+          "en-us": 332,
+          "es-es": 291,
+          "eu-es": 376,
+          "fr-fr": 301,
+          "gl-es": 286,
+          "hu-hu": 301,
+          "it-it": 290,
+          "nl-nl": 286,
+          "pl-pl": 292,
+          "pt-pt": 291,
+          "ru-ru": 299,
+          "sv-fi": 290,
+          "sv-se": 293,
+          "unknown": 25
+        },
         "key": "f0c7774c2b9f404d",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "cs-CZ",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "hu-HU",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "ru-RU",
+          "sv-FI",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "ovos-skill-alerts",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-alerts.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 5842
+        },
         "requested_version": "0.1.28",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:18+00:00",
+        "version_tested": "0.1.24"
       }
     },
     "OpenVoiceOS-ovos-skill-application-launcher": {
@@ -769,17 +931,38 @@
         "version_tested": "0.13.5a4"
       },
       "stable": {
+        "boot_seconds": 16.0,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 18.9,
         "id": "OpenVoiceOS-ovos-skill-application-launcher",
         "key": "5c770fbdbc32ca01",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-application-launcher",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-application-launcher.openvoiceos"
+        ],
+        "registrations": {
+          "fallback": 1
+        },
         "requested_version": "0.5.14",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:55:02+00:00",
+        "version_tested": "0.5.13"
       }
     },
     "OpenVoiceOS-ovos-skill-audio-recording": {
@@ -850,17 +1033,51 @@
         "version_tested": "0.7.2a4"
       },
       "stable": {
+        "boot_seconds": 20.5,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 22.9,
         "id": "OpenVoiceOS-ovos-skill-audio-recording",
+        "intents_by_lang": {
+          "ca-es": 1,
+          "da-dk": 1,
+          "de-de": 1,
+          "en-us": 1,
+          "es-es": 1,
+          "eu-es": 1,
+          "fr-fr": 1,
+          "gl-es": 1,
+          "it-it": 1,
+          "pt-pt": 1
+        },
         "key": "f4d530320b981c4e",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-audio-recording",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-audio-recording.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 10
+        },
         "requested_version": "0.2.7",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:55:59+00:00",
+        "version_tested": "0.2.7"
       }
     },
     "OpenVoiceOS-ovos-skill-boot-finished": {
@@ -906,17 +1123,38 @@
         "version_tested": "0.9.0a4"
       },
       "stable": {
+        "boot_seconds": 953.1,
         "channel": "stable",
+        "channel_pinned": true,
+        "duration_seconds": 955.7,
         "id": "OpenVoiceOS-ovos-skill-boot-finished",
         "key": "8f62c88bb708dfbe",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-BR",
+          "pt-PT"
+        ],
+        "level": 1,
+        "log_excerpt": "d.openvoiceos - ERROR - Unable to find \"are_you_ready.intent\"\n2026-09-29 14:54:14.458 - ovos-skill-boot-finished.openvoiceos - ERROR - Unable to find \"are_you_ready.intent\"\n2026-09-29 14:54:14.459 - ovos-skill-boot-finished.openvoiceos - ERROR - Unable to find \"are_you_ready.intent\"\n2026-09-29 14:54:15.139 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 14:55:29.166 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 14:56:43.193 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 14:57:57.220 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 14:59:11.248 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:00:25.276 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:01:39.304 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:02:53.331 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:04:07.359 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:05:21.387 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:06:35.416 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:07:49.444 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:09:03.479 - OVOS - ovos_plugin_manager.skills:get_plugin_skills:148 - INFO - Located plugin skills: ['ovos-skill-boot-finished.openvoiceos', 'ovos-skill-hello-world.openvoiceos', 'ovos-skill-parrot.openvoiceos', 'ovos-skill-fallback-unknown.openvoiceos']\n2026-09-29 15:09:14.416 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 15:09:14.421 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-boot-finished",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-boot-finished.openvoiceos"
+        ],
+        "reason": "load did not finish in MiniCroft: waiting in __init__.py:94 in is_device_ready(), likely for something a device provides (network, GUI or other services)",
         "requested_version": "0.5.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "needs_device",
+        "tested_at": "2026-09-29T14:53:18+00:00",
+        "version_tested": "0.5.0"
       }
     },
     "OpenVoiceOS-ovos-skill-camera": {
@@ -986,17 +1224,41 @@
         "version_tested": "1.4.0a1"
       },
       "stable": {
+        "boot_seconds": 66.6,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 69.2,
         "id": "OpenVoiceOS-ovos-skill-camera",
+        "intents_by_lang": {
+          "ca-es": 2,
+          "da-dk": 2,
+          "en-us": 2,
+          "fr-fr": 2,
+          "pt-pt": 2
+        },
         "key": "3e8c74373a72fccd",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "fr-FR",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-camera",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-camera.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 10
+        },
         "requested_version": "1.0.4",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:20+00:00",
+        "version_tested": "1.0.4"
       }
     },
     "OpenVoiceOS-ovos-skill-cmd": {
@@ -1066,17 +1328,48 @@
         "version_tested": "0.9.0a1"
       },
       "stable": {
+        "boot_seconds": 22.3,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 24.9,
         "id": "OpenVoiceOS-ovos-skill-cmd",
+        "intents_by_lang": {
+          "ca-es": 72,
+          "da-dk": 6,
+          "de-de": 8,
+          "en-us": 6,
+          "eu-es": 6,
+          "gl-es": 4,
+          "it-it": 60,
+          "pt-pt": 6,
+          "unknown": 1
+        },
         "key": "7e7a4b45190313db",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-cmd",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-cmd.forslund"
+        ],
+        "registrations": {
+          "intents": 169
+        },
         "requested_version": "0.2.11",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:31+00:00",
+        "version_tested": "0.2.11"
       }
     },
     "OpenVoiceOS-ovos-skill-color-picker": {
@@ -1147,17 +1440,43 @@
         "version_tested": "0.7.1a1"
       },
       "stable": {
+        "boot_seconds": 53.8,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 56.6,
         "id": "OpenVoiceOS-ovos-skill-color-picker",
+        "intents_by_lang": {
+          "ca-es": 4,
+          "da-dk": 4,
+          "de-de": 4,
+          "en-us": 4,
+          "it-it": 4,
+          "pt-pt": 4
+        },
         "key": "c75f08f6e6897fc0",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-color-picker",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-color-picker.krisgesling"
+        ],
+        "registrations": {
+          "intents": 24
+        },
         "requested_version": "0.0.7",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:45+00:00",
+        "version_tested": "0.0.7"
       }
     },
     "OpenVoiceOS-ovos-skill-confucius-quotes": {
@@ -1225,17 +1544,46 @@
         "version_tested": "0.8.1a2"
       },
       "stable": {
+        "boot_seconds": 16.2,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 18.8,
         "id": "OpenVoiceOS-ovos-skill-confucius-quotes",
+        "intents_by_lang": {
+          "ca-es": 22,
+          "da-dk": 13,
+          "de-de": 13,
+          "en-us": 13,
+          "es-es": 13,
+          "eu-es": 13,
+          "pt-pt": 19,
+          "unknown": 4
+        },
         "key": "3d851e2d95bb1611",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-confucius-quotes",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-confucius-quotes.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 110
+        },
         "requested_version": "0.1.13",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:46+00:00",
+        "version_tested": "0.1.13"
       }
     },
     "OpenVoiceOS-ovos-skill-count": {
@@ -1305,17 +1653,35 @@
         "version_tested": "0.6.1a1"
       },
       "stable": {
+        "boot_seconds": 13.0,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.6,
         "id": "OpenVoiceOS-ovos-skill-count",
+        "intents_by_lang": {
+          "en-us": 13,
+          "pt-pt": 9
+        },
         "key": "7541166037471300",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-count",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-count.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 22
+        },
         "requested_version": "0.0.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:57+00:00",
+        "version_tested": "0.0.2"
       }
     },
     "OpenVoiceOS-ovos-skill-date-time": {
@@ -1407,17 +1773,75 @@
         ]
       },
       "stable": {
+        "boot_seconds": 186.0,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 190.6,
         "id": "OpenVoiceOS-ovos-skill-date-time",
+        "intents_by_lang": {
+          "ca-es": 67,
+          "cs-cz": 46,
+          "da-dk": 44,
+          "de-de": 56,
+          "en-us": 54,
+          "es-es": 60,
+          "eu-eu": 53,
+          "fa-ir": 47,
+          "fr-fr": 47,
+          "gl-es": 63,
+          "hu-hu": 42,
+          "it-it": 46,
+          "nl-nl": 45,
+          "pl-pl": 69,
+          "pt-br": 48,
+          "pt-pt": 46,
+          "ru-ru": 43,
+          "sv-fi": 47,
+          "sv-se": 46,
+          "tr-tr": 49,
+          "unknown": 8
+        },
         "key": "3448e8621c59e7a7",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "cs-CZ",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-EU",
+          "fa-IR",
+          "fr-FR",
+          "gl-ES",
+          "hu-HU",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-BR",
+          "pt-PT",
+          "ru-RU",
+          "sv-FI",
+          "sv-SE",
+          "tr-TR"
+        ],
+        "level": 2,
         "package": "ovos-skill-date-time",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-date-time.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 1026,
+          "other": [
+            "mycroft.scheduler.schedule_event"
+          ]
+        },
         "requested_version": "0.4.20",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:31+00:00",
+        "version_tested": "0.4.20"
       }
     },
     "OpenVoiceOS-ovos-skill-days-in-history": {
@@ -1479,17 +1903,46 @@
         "version_tested": "0.9.3a1"
       },
       "stable": {
+        "boot_seconds": 15.5,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 20.0,
         "id": "OpenVoiceOS-ovos-skill-days-in-history",
+        "intents_by_lang": {
+          "ca-es": 10,
+          "da-dk": 8,
+          "de-de": 8,
+          "en-us": 8,
+          "eu-es": 8,
+          "gl-es": 8,
+          "pt-pt": 11,
+          "unknown": 1
+        },
         "key": "5f7b02a0a5a6234a",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-days-in-history",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-days-in-history.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 62
+        },
         "requested_version": "0.3.11",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:57:10+00:00",
+        "version_tested": "0.3.11"
       }
     },
     "OpenVoiceOS-ovos-skill-ddg": {
@@ -1609,17 +2062,53 @@
         "version_tested": "0.6.0a1"
       },
       "stable": {
+        "boot_seconds": 22.1,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 26.2,
         "id": "OpenVoiceOS-ovos-skill-ddg",
+        "intents_by_lang": {
+          "ca-es": 21,
+          "da-dk": 4,
+          "de-de": 21,
+          "en-us": 16,
+          "es-es": 4,
+          "eu-es": 4,
+          "fr-fr": 4,
+          "gl-es": 15,
+          "it-it": 20,
+          "pt-pt": 4,
+          "unknown": 1
+        },
         "key": "dd3a00ec88d5bbc2",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-ddg",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-ddg.openvoiceos"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 114
+        },
         "requested_version": "0.3.7",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:13+00:00",
+        "version_tested": "0.3.6"
       }
     },
     "OpenVoiceOS-ovos-skill-diagnostics": {
@@ -1689,17 +2178,45 @@
         "version_tested": "0.3.0a1"
       },
       "stable": {
+        "boot_seconds": 17.3,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 20.4,
         "id": "OpenVoiceOS-ovos-skill-diagnostics",
+        "intents_by_lang": {
+          "ca-es": 10,
+          "da-dk": 10,
+          "de-de": 10,
+          "en-us": 10,
+          "gl-es": 10,
+          "it-it": 10,
+          "pt-pt": 10
+        },
         "key": "b305334854a09836",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-diagnostics",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-diagnostics.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 70
+        },
         "requested_version": "0.0.8",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:40+00:00",
+        "version_tested": "0.0.8"
       }
     },
     "OpenVoiceOS-ovos-skill-dictation": {
@@ -1772,17 +2289,45 @@
         "version_tested": "0.7.0a3"
       },
       "stable": {
+        "boot_seconds": 54.9,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 57.8,
         "id": "OpenVoiceOS-ovos-skill-dictation",
+        "intents_by_lang": {
+          "ca-es": 7,
+          "da-dk": 7,
+          "de-de": 9,
+          "en-us": 7,
+          "eu-es": 8,
+          "gl-es": 7,
+          "it-it": 5
+        },
         "key": "c4236852a8226566",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "it-IT"
+        ],
+        "level": 2,
         "package": "ovos-skill-dictation",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-dictation.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 50
+        },
         "requested_version": "0.2.21",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:19+00:00",
+        "version_tested": "0.2.15"
       }
     },
     "OpenVoiceOS-ovos-skill-easter-eggs": {
@@ -1828,17 +2373,45 @@
         "version_tested": "1.0.2"
       },
       "stable": {
+        "boot_seconds": 13.0,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 16.3,
         "id": "OpenVoiceOS-ovos-skill-easter-eggs",
+        "intents_by_lang": {
+          "de-de": 41,
+          "en-us": 61,
+          "eu-es": 59,
+          "fr-fr": 37,
+          "gl-es": 61,
+          "unknown": 16
+        },
         "key": "7b569a4b49ab8c82",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "de-DE",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES"
+        ],
+        "level": 2,
         "package": "skill-easter-eggs",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-easter-eggs.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 275,
+          "other": [
+            "mycroft.scheduler.schedule_event"
+          ]
+        },
         "requested_version": "1.0.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:36+00:00",
+        "version_tested": "1.0.2"
       }
     },
     "OpenVoiceOS-ovos-skill-fuster-quotes": {
@@ -1906,17 +2479,36 @@
         "version_tested": "0.2.4a3"
       },
       "stable": {
+        "boot_seconds": 11.1,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 13.9,
         "id": "OpenVoiceOS-ovos-skill-fuster-quotes",
+        "intents_by_lang": {
+          "ca-es": 24,
+          "en-us": 14,
+          "unknown": 3
+        },
         "key": "82d3354b960dfe84",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES"
+        ],
+        "level": 2,
         "package": "ovos-skill-fuster-quotes",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-fuster-quotes.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 41
+        },
         "requested_version": "0.0.4",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:06+00:00",
+        "version_tested": "0.0.4"
       }
     },
     "OpenVoiceOS-ovos-skill-ggwave": {
@@ -1937,17 +2529,41 @@
         "tested_at": "2026-09-29T14:04:13+00:00"
       },
       "stable": {
+        "boot_seconds": 13.5,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 16.2,
         "id": "OpenVoiceOS-ovos-skill-ggwave",
+        "intents_by_lang": {
+          "ca-es": 2,
+          "da-dk": 2,
+          "de-de": 2,
+          "en-us": 2,
+          "it-it": 2
+        },
         "key": "c19feb294c70eec2",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "it-IT"
+        ],
+        "level": 2,
         "package": "ovos-skill-ggwave",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-ggwave.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 10
+        },
         "requested_version": "0.3.4",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:55:01+00:00",
+        "version_tested": "0.3.4"
       }
     },
     "OpenVoiceOS-ovos-skill-icanhazdadjokes": {
@@ -2021,17 +2637,55 @@
         "version_tested": "0.25.6a2"
       },
       "stable": {
+        "boot_seconds": 17.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 20.2,
         "id": "OpenVoiceOS-ovos-skill-icanhazdadjokes",
+        "intents_by_lang": {
+          "ca-es": 8,
+          "da-dk": 2,
+          "de-de": 10,
+          "en-us": 9,
+          "eu-es": 2,
+          "fr-fr": 2,
+          "gl-es": 2,
+          "pt-pt": 9
+        },
         "key": "af167fa6ff963ecb",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "cs-CZ",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "hu-HU",
+          "it-IT",
+          "lt-LT",
+          "pl-PL",
+          "pt-PT",
+          "ru-RU",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "ovos-skill-icanhazdadjokes",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-icanhazdadjokes.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 44
+        },
         "requested_version": "0.3.7",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:20+00:00",
+        "version_tested": "0.3.7"
       }
     },
     "OpenVoiceOS-ovos-skill-ip": {
@@ -2103,17 +2757,58 @@
         "version_tested": "0.9.0a2"
       },
       "stable": {
+        "boot_seconds": 17.4,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 20.1,
         "id": "OpenVoiceOS-ovos-skill-ip",
+        "intents_by_lang": {
+          "ca-es": 19,
+          "cs-cz": 15,
+          "da-dk": 14,
+          "de-de": 65,
+          "en-us": 14,
+          "es-es": 8,
+          "eu-eu": 14,
+          "gl-es": 14,
+          "it-it": 7,
+          "pl-pl": 18,
+          "pt-br": 14,
+          "pt-pt": 14,
+          "sv-se": 7,
+          "unknown": 2
+        },
         "key": "8d6d0696057cb6cc",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "cs-CZ",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-EU",
+          "gl-ES",
+          "it-IT",
+          "pl-PL",
+          "pt-BR",
+          "pt-PT",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "ovos-skill-ip",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-ip.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 225
+        },
         "requested_version": "0.2.8",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:57:43+00:00",
+        "version_tested": "0.2.8"
       }
     },
     "OpenVoiceOS-ovos-skill-iss-location": {
@@ -2183,17 +2878,48 @@
         "version_tested": "0.7.1a1"
       },
       "stable": {
+        "boot_seconds": 32.8,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 37.0,
         "id": "OpenVoiceOS-ovos-skill-iss-location",
+        "intents_by_lang": {
+          "ca-es": 39,
+          "da-dk": 16,
+          "de-de": 20,
+          "en-us": 17,
+          "eu-es": 19,
+          "gl-es": 16,
+          "it-it": 24,
+          "pt-pt": 16,
+          "unknown": 2
+        },
         "key": "9987cad9ba7e2d38",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-iss-location",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-iss-location.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 169
+        },
         "requested_version": "0.2.16",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:27+00:00",
+        "version_tested": "0.2.16"
       }
     },
     "OpenVoiceOS-ovos-skill-laugh": {
@@ -2269,17 +2995,67 @@
         ]
       },
       "stable": {
+        "boot_seconds": 43.0,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 46.3,
         "id": "OpenVoiceOS-ovos-skill-laugh",
+        "intents_by_lang": {
+          "ca-es": 7,
+          "da-dk": 10,
+          "de-de": 9,
+          "el-gr": 7,
+          "en-us": 6,
+          "es-es": 8,
+          "es-lm": 8,
+          "eu-es": 6,
+          "fa-ir": 9,
+          "fr-fr": 10,
+          "gl-es": 6,
+          "it-it": 10,
+          "nl-nl": 8,
+          "pt-br": 9,
+          "pt-pt": 9,
+          "sv-se": 7,
+          "unknown": 1
+        },
         "key": "02f64c47bd74ab26",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "el-GR",
+          "es-ES",
+          "es-LM",
+          "eu-ES",
+          "fa-IR",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-BR",
+          "pt-PT",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "ovos-skill-laugh",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-laugh.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 130,
+          "other": [
+            "mycroft.scheduler.schedule_event"
+          ]
+        },
         "requested_version": "0.2.3",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:55:18+00:00",
+        "version_tested": "0.2.3"
       }
     },
     "OpenVoiceOS-ovos-skill-mark1-ctrl": {
@@ -2321,17 +3097,41 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 17.0,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 19.6,
         "id": "OpenVoiceOS-ovos-skill-mark1-ctrl",
         "key": "d3eff9dd793823f2",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "el-GR",
+          "es-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-BR",
+          "ru-RU",
+          "sv-SE"
+        ],
+        "level": 1,
+        "log_excerpt": "2026-09-29 14:56:18.644 - OVOS - ovos_solver_openai_persona.engines:__init__:129 - ERROR - system prompt not set in config! defaulting to 'You are a helpful assistant.'\n2026-09-29 14:56:18.645 - OVOS - ovos_persona.solvers:load_plugins:37 - INFO - loaded question solver plugin: ovos-solver-openai-plugin\n2026-09-29 14:56:20.181 - OVOS - ovos_core.transformers:load_plugins:32 - INFO - loaded utterance transformer plugin: ovos-utterance-normalizer\n2026-09-29 14:56:20.191 - OVOS - ovos_bus_client.util.scheduler:run:148 - INFO - EventScheduler Started\n2026-09-29 14:56:20.191 - OVOS - ovos_core.skill_manager:on_started:60 - INFO - Skills Manager is starting up.\n2026-09-29 14:56:20.199 - OVOS - ovos_plugin_manager.utils:find_plugins:140 - ERROR - Failed to load plugin entry point EntryPoint(name='ovos-skill-mark1-ctrl.openvoiceos', value='ovos_skill_mark1_ctrl:EnclosureControlSkill', group='ovos.plugin.skill'): No module named 'ovos_color_parser'\n2026-09-29 14:56:20.204 - OVOS - ovos_core.skill_manager:on_alive:64 - INFO - Skills Manager is alive.\n2026-09-29 14:56:20.204 - OVOS - ovoscope:load_plugin_skills:49 - INFO - loading skill plugins\n2026-09-29 14:56:20.213 - OVOS - ovoscope:run:65 - INFO - Skills all loaded!\n2026-09-29 14:56:20.213 - OVOS - ovos_core.skill_manager:on_ready:68 - INFO - Skills Manager is ready.\n2026-09-29 14:56:25.412 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 14:56:25.417 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-mark1-ctrl",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-mark1-ctrl.openvoiceos"
+        ],
+        "reason": "ovos-skill-mark1-ctrl.openvoiceos: import failed: ModuleNotFoundError: No module named 'ovos_color_parser'",
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:04+00:00"
+        "stage": "load",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:56:05+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "OpenVoiceOS-ovos-skill-moviemaster": {
@@ -2403,17 +3203,52 @@
         "version_tested": "0.7.1a3"
       },
       "stable": {
+        "boot_seconds": 67.5,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 70.1,
         "id": "OpenVoiceOS-ovos-skill-moviemaster",
+        "intents_by_lang": {
+          "da-dk": 8,
+          "de-de": 8,
+          "en-us": 8,
+          "es-es": 8,
+          "eu-es": 8,
+          "fr-fr": 8,
+          "gl-es": 8,
+          "it-it": 8,
+          "pt-br": 8,
+          "sv-se": 8
+        },
         "key": "d42988d28c0d07bf",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "pt-BR",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "ovos-skill-moviemaster",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-moviemaster.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 80
+        },
         "requested_version": "0.0.12",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:15+00:00",
+        "version_tested": "0.0.12"
       }
     },
     "OpenVoiceOS-ovos-skill-naptime": {
@@ -2493,17 +3328,73 @@
         "version_tested": "0.12.0a2"
       },
       "stable": {
+        "boot_seconds": 35.3,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 37.0,
         "id": "OpenVoiceOS-ovos-skill-naptime",
+        "intents_by_lang": {
+          "ca-es": 4,
+          "cs-cz": 3,
+          "da-dk": 2,
+          "de-de": 5,
+          "en-us": 2,
+          "es-es": 2,
+          "eu-eu": 7,
+          "fa-ir": 2,
+          "fr-fr": 2,
+          "gl-es": 5,
+          "hu-hu": 4,
+          "it-it": 3,
+          "nl-nl": 2,
+          "pl-pl": 3,
+          "pt-br": 2,
+          "pt-pt": 3,
+          "ro-ro": 2,
+          "ru-ru": 2,
+          "sv-se": 2,
+          "tr-tr": 2,
+          "unknown": 1
+        },
         "key": "2ee8ba1bc6e7c946",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "cs-CZ",
+          "da-DK",
+          "de-DE",
+          "el-GR",
+          "es-ES",
+          "eu-EU",
+          "fa-IR",
+          "fr-FR",
+          "gl-ES",
+          "hu-HU",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-BR",
+          "pt-PT",
+          "ro-RO",
+          "ru-RU",
+          "sv-SE",
+          "tr-TR"
+        ],
+        "level": 2,
         "package": "ovos-skill-naptime",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-naptime.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 60
+        },
         "requested_version": "0.3.15",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:28+00:00",
+        "version_tested": "0.3.15"
       }
     },
     "OpenVoiceOS-ovos-skill-number-facts": {
@@ -2573,17 +3464,46 @@
         "version_tested": "0.5.0a5"
       },
       "stable": {
+        "boot_seconds": 59.6,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 62.9,
         "id": "OpenVoiceOS-ovos-skill-number-facts",
+        "intents_by_lang": {
+          "ca-es": 48,
+          "da-dk": 43,
+          "de-de": 41,
+          "en-us": 43,
+          "eu-es": 41,
+          "gl-es": 43,
+          "pt-pt": 39,
+          "unknown": 4
+        },
         "key": "3c1b8726313c029e",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-number-facts",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-number-facts.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 302
+        },
         "requested_version": "0.1.12",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:03+00:00",
+        "version_tested": "0.1.12"
       }
     },
     "OpenVoiceOS-ovos-skill-parrot": {
@@ -2653,17 +3573,49 @@
         "version_tested": "0.11.0a4"
       },
       "stable": {
+        "boot_seconds": 13.3,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 14.6,
         "id": "OpenVoiceOS-ovos-skill-parrot",
+        "intents_by_lang": {
+          "ca-es": 23,
+          "da-dk": 17,
+          "de-de": 18,
+          "en-us": 18,
+          "es-es": 22,
+          "eu-es": 19,
+          "gl-es": 18,
+          "it-it": 17,
+          "pt-pt": 12
+        },
         "key": "60710bf2dc895d55",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-parrot",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-parrot.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 164
+        },
         "requested_version": "0.1.25",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:27+00:00",
+        "version_tested": "0.1.20"
       }
     },
     "OpenVoiceOS-ovos-skill-personal": {
@@ -2727,17 +3679,59 @@
         "version_tested": "1.0.2a6"
       },
       "stable": {
+        "boot_seconds": 17.0,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 19.6,
         "id": "OpenVoiceOS-ovos-skill-personal",
+        "intents_by_lang": {
+          "ca-es": 5,
+          "da-dk": 5,
+          "de-de": 5,
+          "en-us": 5,
+          "es-es": 5,
+          "eu-es": 5,
+          "fr-fr": 5,
+          "gl-es": 5,
+          "hu-hu": 5,
+          "it-it": 5,
+          "nl-nl": 5,
+          "pt-pt": 5,
+          "ru-ru": 15,
+          "sv-se": 5
+        },
         "key": "a6461b8052d7ebd6",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "hu-HU",
+          "it-IT",
+          "nl-NL",
+          "pt-PT",
+          "ru-RU",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "ovos-skill-personal",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-personal.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 80
+        },
         "requested_version": "0.1.19",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:55:39+00:00",
+        "version_tested": "0.1.19"
       }
     },
     "OpenVoiceOS-ovos-skill-pokepedia": {
@@ -2780,17 +3774,33 @@
         "version_tested": "0.1.4"
       },
       "stable": {
+        "boot_seconds": 34.5,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 36.1,
         "id": "OpenVoiceOS-ovos-skill-pokepedia",
         "key": "29002b19fac647f0",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 1,
+        "log_excerpt": "2026-09-29 14:52:20.108 - OVOS - ovos_bus_client.apis.ocp:ClassicAudioServiceInterface.__init__ - WARNING - Deprecation version=0.1.0. Caller=ocp_pipeline.opm:63. removed from ovos-audio with the adoption of ovos-media service, use OCPInterface instead\n2026-09-29 14:52:28.090 - OVOS - ovos_utils.events:EventSchedulerInterface.__init__ - WARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:52:28.366 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - persona.openvoiceos is ready.\n2026-09-29 14:52:28.367 - OVOS - ovos_persona:load_personas:172 - INFO - Personas path: /home/runner/.config/ovos_persona\n2026-09-29 14:52:28.371 - OVOS - ovos_persona:load_personas:198 - INFO - Found persona (provided via plugin): Remote Llama\n2026-09-29 14:52:30.021 - OVOS - ovos_solver_openai_persona.engines:__init__:129 - ERROR - system prompt not set in config! defaulting to 'You are a helpful assistant.'\n2026-09-29 14:52:30.022 - OVOS - ovos_persona.solvers:load_plugins:37 - INFO - loaded question solver plugin: ovos-solver-openai-plugin\n2026-09-29 14:52:47.804 - OVOS - ovos_core.transformers:load_plugins:32 - INFO - loaded utterance transformer plugin: ovos-utterance-normalizer\n2026-09-29 14:52:47.811 - OVOS - ovos_bus_client.util.scheduler:run:148 - INFO - EventScheduler Started\n2026-09-29 14:52:47.811 - OVOS - ovos_core.skill_manager:on_started:60 - INFO - Skills Manager is starting up.\n2026-09-29 14:52:47.818 - OVOS - ovos_core.skill_manager:on_alive:64 - INFO - Skills Manager is alive.\n2026-09-29 14:52:47.819 - OVOS - ovoscope:load_plugin_skills:49 - INFO - loading skill plugins\n2026-09-29 14:52:47.823 - OVOS - ovoscope:run:65 - INFO - Skills all loaded!\n2026-09-29 14:52:47.823 - OVOS - ovos_core.skill_manager:on_ready:68 - INFO - Skills Manager is ready.\n2026-09-29 14:52:53.079 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 14:52:53.085 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-pokepedia",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-pokepedia.openvoiceos"
+        ],
+        "reason": "ovos-skill-pokepedia.openvoiceos: declared only under entry-point group opm.skill, which this channel's ovos-plugin-manager 0.9.0 does not scan for skills",
         "requested_version": "0.1.4",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:52:17+00:00",
+        "version_tested": "0.1.4"
       }
     },
     "OpenVoiceOS-ovos-skill-randomness": {
@@ -2836,17 +3846,37 @@
         "version_tested": "2.0.2a7"
       },
       "stable": {
+        "boot_seconds": 10.3,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 11.9,
         "id": "OpenVoiceOS-ovos-skill-randomness",
+        "intents_by_lang": {
+          "en-us": 6,
+          "eu-es": 6,
+          "gl-es": 6
+        },
         "key": "5ee4bf7f582cf483",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "eu-ES",
+          "gl-ES"
+        ],
+        "level": 2,
         "package": "ovos-skill-randomness",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-ovos-randomness.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 18
+        },
         "requested_version": "0.1.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:55+00:00",
+        "version_tested": "0.1.2"
       }
     },
     "OpenVoiceOS-ovos-skill-screenshot": {
@@ -2916,17 +3946,59 @@
         "version_tested": "1.7.0a3"
       },
       "stable": {
+        "boot_seconds": 67.2,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 69.9,
         "id": "OpenVoiceOS-ovos-skill-screenshot",
+        "intents_by_lang": {
+          "ca-es": 1,
+          "da-dk": 1,
+          "de-de": 1,
+          "en-us": 1,
+          "es-es": 1,
+          "eu-es": 1,
+          "fr-fr": 1,
+          "gl-es": 1,
+          "it-it": 1,
+          "nl-nl": 1
+        },
         "key": "1d59ffb65b5ed722",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "languages_missing": [
+          "pt-PT"
+        ],
+        "level": 2,
+        "log_excerpt": "2026-09-29 14:53:30.269 - OVOS - ovos_utils.events:EventSchedulerInterface.__init__ - WARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:53:30.322 - ovos-skill-screenshot.openvoiceos - INFO - Registering example utterances with homescreen for lang: pt-PT - ['tirar captura de ecr\u00e3', 'tirar uma captura de ecr\u00e3', 'capturar a tela', None, 'guardar uma captura de ecr\u00e3', None]\n2026-09-29 14:53:30.322 - ovos-skill-screenshot.openvoiceos - INFO - Registering example utterances with homescreen for lang: ca-ES - ['fes una captura de pantalla', 'fes una captura', 'captura la pantalla', 'captura la pantalla', 'desa una captura', 'grava la pantalla']\n2026-09-29 14:53:30.325 - ovos-skill-screenshot.openvoiceos - INFO - Registering example utterances with homescreen for lang: en-US - ['take screenshot', 'take a screenshot', 'capture the screen', 'screenshot the display', 'save a screenshot', 'grab the screen']\n2026-09-29 14:53:30.327 - ovos-skill-screenshot.openvoiceos - INFO - Registering example utterances with homescreen for lang: de-DE - ['Screenshot machen', 'Mach einen Screenshot', 'Bildschirm aufnehmen', 'Screenshot des Displays', 'einen Screenshot speichern', 'Bildschirm speichern']\n2026-09-29 14:53:30.333 - ovos-skill-screenshot.openvoiceos - ERROR - Unable to find \"take.screenshot.intent\"\n2026-09-29 14:53:30.374 - ovos-skill-screenshot.openvoiceos - INFO - First run of ovos-skill-screenshot.openvoiceos\n2026-09-29 14:53:30.376 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - ovos-skill-screenshot.openvoiceos is ready.\n2026-09-29 14:53:30.377 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-screenshot.openvoiceos\n2026-09-29 14:53:30.378 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:499 - INFO - Skill ovos-skill-screenshot.openvoiceos loaded successfully\n2026-09-29 14:53:30.379 - OVOS - ovoscope:load_plugin_skills:57 - INFO - Loaded skill: ovos-skill-screenshot.openvoiceos\n2026-09-29 14:53:30.380 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-screenshot.openvoiceos\n2026-09-29 14:53:30.417 - OVOS - ovoscope:run:65 - INFO - Skills all loaded!\n2026-09-29 14:53:30.417 - OVOS - ovos_core.skill_manager:on_ready:68 - INFO - Skills Manager is ready.\n2026-09-29 14:53:35.463 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 14:53:35.463 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:646 - INFO - Unloading plugin skill: ovos-skill-screenshot.openvoiceos\n2026-09-29 14:53:35.464 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:759 - INFO - ovos-skill-screenshot.openvoiceos is shutting down...\n2026-09-29 14:53:35.515 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-screenshot",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-screenshot.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 10
+        },
         "requested_version": "0.0.7",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:25+00:00",
+        "version_tested": "0.0.7",
+        "warnings": [
+          "no intents registered for: pt-PT"
+        ]
       }
     },
     "OpenVoiceOS-ovos-skill-speedtest": {
@@ -3000,17 +4072,68 @@
         "version_tested": "0.10.0a3"
       },
       "stable": {
+        "boot_seconds": 67.1,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 69.0,
         "id": "OpenVoiceOS-ovos-skill-speedtest",
+        "intents_by_lang": {
+          "ca-es": 32,
+          "da-dk": 11,
+          "de-de": 20,
+          "el-gr": 2,
+          "en-us": 12,
+          "es-es": 2,
+          "es-lm": 2,
+          "eu-es": 12,
+          "fa-ir": 3,
+          "fr-fr": 3,
+          "gl-es": 12,
+          "it-it": 2,
+          "nl-nl": 12,
+          "pt-br": 2,
+          "pt-pt": 11,
+          "ru-ru": 3,
+          "sv-se": 3,
+          "tr-tr": 2,
+          "unknown": 1
+        },
         "key": "2b392d1912ae8a63",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "el-GR",
+          "es-ES",
+          "es-LM",
+          "eu-ES",
+          "fa-IR",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-BR",
+          "pt-PT",
+          "ru-RU",
+          "sv-SE",
+          "tr-TR"
+        ],
+        "level": 2,
         "package": "ovos-skill-speedtest",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-speedtest.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 147
+        },
         "requested_version": "0.3.6",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:27+00:00",
+        "version_tested": "0.3.6"
       }
     },
     "OpenVoiceOS-ovos-skill-spelling": {
@@ -3080,17 +4203,78 @@
         "version_tested": "0.13.1a1"
       },
       "stable": {
+        "boot_seconds": 9.5,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 207.6,
         "id": "OpenVoiceOS-ovos-skill-spelling",
+        "intents_by_lang": {
+          "ca-es": 13,
+          "da-dk": 5,
+          "de-de": 5,
+          "el-gr": 5,
+          "en-us": 5,
+          "es-es": 5,
+          "eu-eu": 5,
+          "fa-ir": 5,
+          "fr-fr": 5,
+          "gl-es": 5,
+          "hu-hu": 5,
+          "it-it": 5,
+          "nl-nl": 5,
+          "pl-pl": 5,
+          "pt-br": 5,
+          "pt-pt": 5,
+          "ru-ru": 4,
+          "sv-se": 5,
+          "tr-tr": 4,
+          "unknown": 1
+        },
         "key": "2bb680d41e04a9b0",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "el-GR",
+          "es-ES",
+          "eu-EU",
+          "fa-IR",
+          "fr-FR",
+          "gl-ES",
+          "hu-HU",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-BR",
+          "pt-PT",
+          "ro-RO",
+          "ru-RU",
+          "sv-SE",
+          "tr-TR"
+        ],
+        "languages_missing": [
+          "ro-RO"
+        ],
+        "level": 2,
+        "log_excerpt": "    itemsappend(_parse(source, state, verbose, nested + 1,\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/re/_parser.py\", line 874, in _parse\n    raise source.error(\"missing ), unterminated subpattern\",\nre.error: missing ), unterminated subpattern at position 0\n2026-09-29 14:53:52.014 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:506 - ERROR - Skill skill-ovos-spelling.openvoiceos failed to load\n2026-09-29 14:53:52.014 - OVOS - ovoscope:load_plugin_skills:57 - INFO - Loaded skill: skill-ovos-spelling.openvoiceos\n2026-09-29 14:53:52.015 - OVOS - ovoscope:run:65 - INFO - Skills all loaded!\n2026-09-29 14:53:52.015 - OVOS - ovos_core.skill_manager:on_ready:68 - INFO - Skills Manager is ready.\n2026-09-29 14:53:57.177 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 14:53:57.178 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:646 - INFO - Unloading plugin skill: skill-ovos-spelling.openvoiceos\n2026-09-29 14:53:57.182 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-spelling",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-ovos-spelling.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 6
+        },
         "requested_version": "0.2.6",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:39+00:00",
+        "version_tested": "0.2.6",
+        "warnings": [
+          "fails to load when these languages are configured: ro-RO (loads with the others; see log excerpt)"
+        ]
       }
     },
     "OpenVoiceOS-ovos-skill-volume": {
@@ -3163,17 +4347,54 @@
         "version_tested": "0.12.0a3"
       },
       "stable": {
+        "boot_seconds": 15.9,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 17.7,
         "id": "OpenVoiceOS-ovos-skill-volume",
+        "intents_by_lang": {
+          "ca-es": 30,
+          "da-dk": 24,
+          "de-de": 25,
+          "en-us": 25,
+          "es-es": 29,
+          "eu-es": 25,
+          "fr-fr": 28,
+          "gl-es": 25,
+          "it-it": 24,
+          "nl-nl": 33,
+          "pt-pt": 25,
+          "unknown": 4
+        },
         "key": "2aecc0518971aec4",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-volume",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-volume.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 297
+        },
         "requested_version": "0.1.16",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:58:14+00:00",
+        "version_tested": "0.1.16"
       }
     },
     "OpenVoiceOS-ovos-skill-wallpapers": {
@@ -3244,17 +4465,48 @@
         "version_tested": "2.8.0a2"
       },
       "stable": {
+        "boot_seconds": 475.2,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 477.0,
         "id": "OpenVoiceOS-ovos-skill-wallpapers",
+        "intents_by_lang": {
+          "ca-es": 21,
+          "da-dk": 16,
+          "de-de": 351,
+          "en-us": 18,
+          "eu-es": 16,
+          "gl-es": 16,
+          "unknown": 3
+        },
         "key": "53f7840c0603face",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES"
+        ],
+        "level": 2,
         "package": "ovos-skill-wallpapers",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-ovos-wallpapers.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 441,
+          "other": [
+            "add_context",
+            "ovos.wallpaper.manager.collect.collection.response"
+          ]
+        },
         "requested_version": "1.0.9",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:44+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:08+00:00",
+        "version_tested": "1.0.9"
       }
     },
     "OpenVoiceOS-ovos-skill-weather": {
@@ -3337,17 +4589,70 @@
         "version_tested": "1.5.1a1"
       },
       "stable": {
+        "boot_seconds": 48.1,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 50.7,
         "id": "OpenVoiceOS-ovos-skill-weather",
+        "intents_by_lang": {
+          "ca-es": 311,
+          "cs-cz": 176,
+          "da-dk": 168,
+          "de-de": 170,
+          "en-us": 185,
+          "es-es": 170,
+          "eu-es": 248,
+          "fr-fr": 158,
+          "gl-es": 168,
+          "hu-hu": 168,
+          "it-it": 140,
+          "nl-nl": 158,
+          "pl-pl": 165,
+          "pt-br": 141,
+          "pt-pt": 170,
+          "ru-ru": 163,
+          "sv-fi": 172,
+          "sv-se": 159,
+          "tr-tr": 162,
+          "unknown": 24
+        },
         "key": "e7248df07b01d614",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "cs-CZ",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "hu-HU",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-BR",
+          "pt-PT",
+          "ru-RU",
+          "sv-FI",
+          "sv-SE",
+          "tr-TR"
+        ],
+        "level": 2,
         "package": "ovos-skill-weather",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-ovos-weather.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 3376
+        },
         "requested_version": "0.1.18",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:44+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:00:07+00:00",
+        "version_tested": "0.1.18"
       }
     },
     "OpenVoiceOS-ovos-skill-wikipedia": {
@@ -3416,17 +4721,58 @@
         "version_tested": "0.18.3a3"
       },
       "stable": {
+        "boot_seconds": 28.6,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 31.0,
         "id": "OpenVoiceOS-ovos-skill-wikipedia",
+        "intents_by_lang": {
+          "ca-es": 18,
+          "da-dk": 16,
+          "de-de": 7,
+          "en-us": 16,
+          "es-es": 9,
+          "eu-es": 6,
+          "fr-fr": 5,
+          "gl-es": 18,
+          "it-it": 6,
+          "nl-nl": 6,
+          "pt-pt": 22,
+          "ru-ru": 14,
+          "unknown": 1
+        },
         "key": "f4756f57f1b9b734",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-PT",
+          "ru-RU"
+        ],
+        "level": 2,
         "package": "ovos-skill-wikipedia",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-wikipedia.openvoiceos"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 144
+        },
         "requested_version": "0.8.13",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:07+00:00",
+        "version_tested": "0.8.13"
       }
     },
     "OpenVoiceOS-ovos-skill-wolfie": {
@@ -3496,17 +4842,53 @@
         "version_tested": "0.12.1a3"
       },
       "stable": {
+        "boot_seconds": 13.9,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.5,
         "id": "OpenVoiceOS-ovos-skill-wolfie",
+        "intents_by_lang": {
+          "ca-es": 11,
+          "da-dk": 5,
+          "de-de": 5,
+          "en-us": 9,
+          "es-es": 5,
+          "eu-es": 5,
+          "fr-fr": 4,
+          "gl-es": 8,
+          "it-it": 9,
+          "pt-pt": 1
+        },
         "key": "fd692a9603dfb82c",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-wolfie",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-wolfie.openvoiceos"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "fallback": 1,
+          "intents": 62
+        },
         "requested_version": "0.5.8",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:40+00:00",
+        "version_tested": "0.5.8"
       }
     },
     "OpenVoiceOS-ovos-skill-word-of-the-day": {
@@ -3574,17 +4956,48 @@
         "version_tested": "0.8.0a1"
       },
       "stable": {
+        "boot_seconds": 12.0,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 13.8,
         "id": "OpenVoiceOS-ovos-skill-word-of-the-day",
+        "intents_by_lang": {
+          "ca-es": 76,
+          "da-dk": 3,
+          "de-de": 2,
+          "en-us": 3,
+          "es-es": 3,
+          "fr-fr": 6,
+          "gl-es": 2,
+          "pt-pt": 6,
+          "unknown": 1
+        },
         "key": "71d85f2441f30a37",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "gl-ES",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-word-of-the-day",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-word-of-the-day.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 102
+        },
         "requested_version": "0.2.5",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:55+00:00",
+        "version_tested": "0.2.5"
       }
     },
     "OpenVoiceOS-ovos-skill-wordnet": {
@@ -3690,17 +5103,52 @@
         "version_tested": "0.13.2a2"
       },
       "stable": {
+        "boot_seconds": 14.8,
         "channel": "stable",
+        "channel_pinned": true,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 16.5,
         "id": "OpenVoiceOS-ovos-skill-wordnet",
+        "intents_by_lang": {
+          "ca-es": 7,
+          "da-dk": 7,
+          "de-de": 7,
+          "en-us": 7,
+          "es-es": 7,
+          "eu-es": 7,
+          "fr-fr": 7,
+          "gl-es": 7,
+          "it-it": 7,
+          "pt-pt": 7
+        },
         "key": "2b9bd2bb60d6d696",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-wordnet",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-wordnet.openvoiceos"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 70
+        },
         "requested_version": "0.2.6",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:09+00:00",
+        "version_tested": "0.2.6"
       }
     },
     "OscillateLabsLLC-skill-homeassistant": {
@@ -3744,17 +5192,43 @@
         "version_tested": "1.4.3"
       },
       "stable": {
+        "boot_seconds": 208.6,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 212.5,
         "id": "OscillateLabsLLC-skill-homeassistant",
+        "intents_by_lang": {
+          "da-dk": 14,
+          "en-us": 14,
+          "es-es": 14,
+          "fr-fr": 14,
+          "pl-pl": 14,
+          "sv-se": 14
+        },
         "key": "bfd5fcf845982f8d",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "es-ES",
+          "fr-FR",
+          "pl-PL",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "skill-homeassistant",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-homeassistant.oscillatelabsllc"
+        ],
+        "registrations": {
+          "intents": 84
+        },
         "requested_version": "1.4.3",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:53+00:00",
+        "version_tested": "1.4.3"
       }
     },
     "OscillateLabsLLC-skill-mac-application-launcher": {
@@ -3775,17 +5249,38 @@
         "tested_at": "2026-09-29T13:59:45+00:00"
       },
       "stable": {
+        "boot_seconds": 15.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 18.1,
         "id": "OscillateLabsLLC-skill-mac-application-launcher",
         "key": "5e36b9e10e085f00",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "skill-mac-application-launcher",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-mac-application-launcher.oscillatelabsllc"
+        ],
+        "registrations": {
+          "fallback": 1
+        },
         "requested_version": "1.0.4",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:57:27+00:00",
+        "version_tested": "1.0.4"
       }
     },
     "OscillateLabsLLC-skill-meal-plan": {
@@ -3807,16 +5302,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.3,
         "id": "OscillateLabsLLC-skill-meal-plan",
         "key": "5e143c6b7e9c659c",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "already satisfied: ovos-utils>=0.0.30,~=0.0 in /tmp/compat-nb8axu71/venv/lib/python3.11/site-packages (from skill-meal-plan==2.2.2) (0.8.5)\nINFO: pip is looking at multiple versions of skill-meal-plan to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-meal-plan==2.2.2 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-meal-plan 2.2.2 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "skill-meal-plan",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "skill-meal-plan 2.2.2 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0",
         "requested_version": "2.2.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:57:45+00:00"
       }
     },
     "OscillateLabsLLC-skill-monster-scanner": {
@@ -3857,17 +5355,40 @@
         "version_tested": "2.2.2"
       },
       "stable": {
+        "boot_seconds": 10.6,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 13.3,
         "id": "OscillateLabsLLC-skill-monster-scanner",
+        "intents_by_lang": {
+          "da-dk": 7,
+          "en-us": 7,
+          "fr-fr": 17,
+          "sv-se": 7,
+          "unknown": 1
+        },
         "key": "1a60fb19a51b0a85",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "fr-FR",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "skill-monster-scanner",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "skill-monster-scanner.oscillatelabsllc"
+        ],
+        "registrations": {
+          "intents": 39
+        },
         "requested_version": "2.2.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:57:48+00:00",
+        "version_tested": "2.2.2"
       }
     },
     "OscillateLabsLLC-skill-musicassistant": {
@@ -3889,16 +5410,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.4,
         "id": "OscillateLabsLLC-skill-musicassistant",
         "key": "c7c406c57d9ee1c7",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "satisfied: ovos-utils>=0.7.0 in /tmp/compat-nb8axu71/venv/lib/python3.11/site-packages (from skill-musicassistant==0.2.1) (0.8.5)\nINFO: pip is looking at multiple versions of skill-musicassistant to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-musicassistant==0.2.1 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-musicassistant 0.2.1 depends on ovos-workshop<1.0.0, >=0.0.15, >=0.0.16 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "skill-musicassistant",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "skill-musicassistant 0.2.1 depends on ovos-workshop<1.0.0, >=0.0.15, >=0.0.16 and ~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0",
         "requested_version": "0.2.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:58:01+00:00"
       }
     },
     "andlo-ovos-common-reading-pipeline-plugin": {
@@ -3926,17 +5450,28 @@
         "version_tested": "0.2.0"
       },
       "stable": {
+        "boot_seconds": 0.5,
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 3.2,
         "id": "andlo-ovos-common-reading-pipeline-plugin",
         "key": "4baa466fad45a8a9",
         "kind": "pipeline",
-        "level": 0,
+        "level": 1,
+        "log_excerpt": "",
         "package": "ovos-common-reading-pipeline-plugin",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-common-reading-pipeline-plugin"
+        ],
+        "reason": "this channel's ovos-core does not load third-party pipeline plugins",
         "requested_version": "0.2.0",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "stages": [
+          "ovos-common-reading-pipeline-plugin"
+        ],
+        "status": "unsupported",
+        "tested_at": "2026-09-29T14:53:43+00:00",
+        "version_tested": "0.2.0"
       }
     },
     "andlo-ovos-skill-365tomorrows-stories": {
@@ -3984,17 +5519,47 @@
         "version_tested": "0.1.6"
       },
       "stable": {
+        "boot_seconds": 50.9,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 53.8,
         "id": "andlo-ovos-skill-365tomorrows-stories",
+        "intents_by_lang": {
+          "da-dk": 3,
+          "de-de": 2,
+          "en-us": 3,
+          "es-es": 2,
+          "fr-fr": 2,
+          "it-it": 2,
+          "nl-nl": 2,
+          "pt-pt": 2
+        },
         "key": "4aaa3fdd7f78c543",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-365tomorrows-stories",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-365tomorrows-stories.andlo"
+        ],
+        "registrations": {
+          "intents": 18
+        },
         "requested_version": "0.1.6",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:23+00:00",
+        "version_tested": "0.1.6"
       }
     },
     "andlo-ovos-skill-andersen-tales": {
@@ -4040,17 +5605,45 @@
         "version_tested": "0.1.6"
       },
       "stable": {
+        "boot_seconds": 17.1,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 19.7,
         "id": "andlo-ovos-skill-andersen-tales",
+        "intents_by_lang": {
+          "da-dk": 4,
+          "de-de": 2,
+          "en-us": 6,
+          "es-es": 2,
+          "fr-fr": 2,
+          "it-it": 2,
+          "nl-nl": 2
+        },
         "key": "63e36ddf3676224a",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nl-NL"
+        ],
+        "level": 2,
         "package": "ovos-skill-andersen-tales",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-andersen-tales.andlo"
+        ],
+        "registrations": {
+          "intents": 20
+        },
         "requested_version": "0.1.6",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:28+00:00",
+        "version_tested": "0.1.6"
       }
     },
     "andlo-ovos-skill-andrew-lang-tales": {
@@ -4082,17 +5675,31 @@
         ]
       },
       "stable": {
+        "boot_seconds": 10.1,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 12.7,
         "id": "andlo-ovos-skill-andrew-lang-tales",
         "key": "d26f76f3110c4f91",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US"
+        ],
+        "level": 2,
+        "log_excerpt": "cp_pipeline.opm:63. removed from ovos-audio with the adoption of ovos-media service, use OCPInterface instead\n2026-09-29 14:54:53.542 - OVOS - ovos_utils.events:EventSchedulerInterface.__init__ - WARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:54:53.683 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - persona.openvoiceos is ready.\n2026-09-29 14:54:53.683 - OVOS - ovos_persona:load_personas:172 - INFO - Personas path: /home/runner/.config/ovos_persona\n2026-09-29 14:54:53.690 - OVOS - ovos_persona:load_personas:198 - INFO - Found persona (provided via plugin): Remote Llama\n2026-09-29 14:54:56.347 - OVOS - ovos_solver_openai_persona.engines:__init__:129 - ERROR - system prompt not set in config! defaulting to 'You are a helpful assistant.'\n2026-09-29 14:54:56.348 - OVOS - ovos_persona.solvers:load_plugins:37 - INFO - loaded question solver plugin: ovos-solver-openai-plugin\n2026-09-29 14:54:56.487 - OVOS - ovos_core.transformers:load_plugins:32 - INFO - loaded utterance transformer plugin: ovos-utterance-normalizer\n2026-09-29 14:54:56.495 - OVOS - ovos_bus_client.util.scheduler:run:148 - INFO - EventScheduler Started\n2026-09-29 14:54:56.495 - OVOS - ovos_core.skill_manager:on_started:60 - INFO - Skills Manager is starting up.\n2026-09-29 14:54:56.533 - OVOS - ovos_core.skill_manager:on_alive:64 - INFO - Skills Manager is alive.\n2026-09-29 14:54:56.534 - OVOS - ovoscope:load_plugin_skills:49 - INFO - loading skill plugins\n2026-09-29 14:54:56.540 - OVOS - ovos_workshop.skill_launcher:load:521 - INFO - ATTEMPTING TO LOAD PLUGIN SKILL: ovos-skill-andrew-lang-tales.andlo\n2026-09-29 14:54:56.541 - OVOS - ovos_utils.events:EventSchedulerInterface.__init__ - WARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:54:56.559 - ovos-skill-andrew-lang-tales.andlo - INFO - Registering example utterances with homescreen for lang: en-US - ['Tell me a story from andrew lang', 'Tell me a fairy tale from the fairy books']\n2026-09-29 14:54:56.561 - ovos-skill-andrew-lang-tales.andlo - INFO - ovos-skill-andrew-lang-tales.andlo: serving 382 English stories to searches made in English (en-*)\n2026-09-29 14:54:56.567 - ovos-skill-andrew-lang-tales.andlo - INFO - First run of ovos-skill-andrew-lang-tales.andlo\n2026-09-29 14:54:56.570 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - ovos-skill-andrew-lang-tales.andlo is ready.\n2026-09-29 14:54:56.571 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-andrew-lang-tales.andlo\n2026-09-29 14:54:56.572 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:499 - INFO - Skill ovos-skill-andrew-lang-tales.andlo loaded successfully\n2026-09-29 14:54:56.574 - OVOS - ovoscope:load_plugin_skills:57 - INFO - Loaded skill: ovos-skill-andrew-lang-tales.andlo\n2026-09-29 14:54:56.575 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-andrew-lang-tales.andlo\n2026-09-29 14:54:56.577 - OVOS - ovoscope:run:65 - INFO - Skills all loaded!\n2026-09-29 14:54:56.577 - OVOS - ovos_core.skill_manager:on_ready:68 - INFO - Skills Manager is ready.\n2026-09-29 14:55:01.734 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 14:55:01.735 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:646 - INFO - Unloading plugin skill: ovos-skill-andrew-lang-tales.andlo\n2026-09-29 14:55:01.735 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:759 - INFO - ovos-skill-andrew-lang-tales.andlo is shutting down...\n2026-09-29 14:55:01.744 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-andrew-lang-tales",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-andrew-lang-tales.andlo"
+        ],
         "requested_version": "0.1.7",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:49+00:00",
+        "version_tested": "0.1.7",
+        "warnings": [
+          "loaded but registered nothing (no intents, fallback or provider)"
+        ]
       }
     },
     "andlo-ovos-skill-arxiv-papers": {
@@ -4140,17 +5747,47 @@
         "version_tested": "0.1.5"
       },
       "stable": {
+        "boot_seconds": 14.1,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 17.1,
         "id": "andlo-ovos-skill-arxiv-papers",
+        "intents_by_lang": {
+          "da-dk": 4,
+          "de-de": 3,
+          "en-us": 4,
+          "es-es": 3,
+          "fr-fr": 3,
+          "it-it": 3,
+          "nl-nl": 3,
+          "pt-pt": 3
+        },
         "key": "a7b3f7e1cec0666e",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-arxiv-papers",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-arxiv-papers.andlo"
+        ],
+        "registrations": {
+          "intents": 26
+        },
         "requested_version": "0.1.5",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:55:21+00:00",
+        "version_tested": "0.1.5"
       }
     },
     "andlo-ovos-skill-bechstein-tales": {
@@ -4183,17 +5820,32 @@
         ]
       },
       "stable": {
+        "boot_seconds": 13.4,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 16.3,
         "id": "andlo-ovos-skill-bechstein-tales",
         "key": "6d479b4576c15615",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "de-DE"
+        ],
+        "level": 2,
+        "log_excerpt": "ARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:52:19.543 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - persona.openvoiceos is ready.\n2026-09-29 14:52:19.544 - OVOS - ovos_persona:load_personas:172 - INFO - Personas path: /home/runner/.config/ovos_persona\n2026-09-29 14:52:19.552 - OVOS - ovos_persona:load_personas:198 - INFO - Found persona (provided via plugin): Remote Llama\n2026-09-29 14:52:21.961 - OVOS - ovos_solver_openai_persona.engines:__init__:129 - ERROR - system prompt not set in config! defaulting to 'You are a helpful assistant.'\n2026-09-29 14:52:21.962 - OVOS - ovos_persona.solvers:load_plugins:37 - INFO - loaded question solver plugin: ovos-solver-openai-plugin\n2026-09-29 14:52:25.070 - OVOS - ovos_core.transformers:load_plugins:32 - INFO - loaded utterance transformer plugin: ovos-utterance-normalizer\n2026-09-29 14:52:25.080 - OVOS - ovos_bus_client.util.scheduler:run:148 - INFO - EventScheduler Started\n2026-09-29 14:52:25.081 - OVOS - ovos_core.skill_manager:on_started:60 - INFO - Skills Manager is starting up.\n2026-09-29 14:52:25.145 - OVOS - ovos_core.skill_manager:on_alive:64 - INFO - Skills Manager is alive.\n2026-09-29 14:52:25.146 - OVOS - ovoscope:load_plugin_skills:49 - INFO - loading skill plugins\n2026-09-29 14:52:25.154 - OVOS - ovos_workshop.skill_launcher:load:521 - INFO - ATTEMPTING TO LOAD PLUGIN SKILL: ovos-skill-bechstein-tales.andlo\n2026-09-29 14:52:25.154 - OVOS - ovos_utils.events:EventSchedulerInterface.__init__ - WARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:52:25.178 - ovos-skill-bechstein-tales.andlo - INFO - Registering example utterances with homescreen for lang: en-US - ['Tell me a story from bechstein', 'Tell me a fairy tale from ludwig bechstein']\n2026-09-29 14:52:25.179 - ovos-skill-bechstein-tales.andlo - INFO - Registering example utterances with homescreen for lang: de-DE - ['Erz\u00e4hl mir eine Geschichte von bechstein', 'Lies mir eine Geschichte von ludwig bechstein']\n2026-09-29 14:52:25.181 - ovos-skill-bechstein-tales.andlo - INFO - ovos-skill-bechstein-tales.andlo: serving 80 German stories to searches made in German (de-*)\n2026-09-29 14:52:25.186 - ovos-skill-bechstein-tales.andlo - INFO - First run of ovos-skill-bechstein-tales.andlo\n2026-09-29 14:52:25.189 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - ovos-skill-bechstein-tales.andlo is ready.\n2026-09-29 14:52:25.190 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-bechstein-tales.andlo\n2026-09-29 14:52:25.193 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:499 - INFO - Skill ovos-skill-bechstein-tales.andlo loaded successfully\n2026-09-29 14:52:25.194 - OVOS - ovoscope:load_plugin_skills:57 - INFO - Loaded skill: ovos-skill-bechstein-tales.andlo\n2026-09-29 14:52:25.195 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-bechstein-tales.andlo\n2026-09-29 14:52:25.197 - OVOS - ovoscope:run:65 - INFO - Skills all loaded!\n2026-09-29 14:52:25.198 - OVOS - ovos_core.skill_manager:on_ready:68 - INFO - Skills Manager is ready.\n2026-09-29 14:52:30.346 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 14:52:30.347 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:646 - INFO - Unloading plugin skill: ovos-skill-bechstein-tales.andlo\n2026-09-29 14:52:30.348 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:759 - INFO - ovos-skill-bechstein-tales.andlo is shutting down...\n2026-09-29 14:52:30.359 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-bechstein-tales",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-bechstein-tales.andlo"
+        ],
         "requested_version": "0.1.5",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:14+00:00",
+        "version_tested": "0.1.5",
+        "warnings": [
+          "loaded but registered nothing (no intents, fallback or provider)"
+        ]
       }
     },
     "andlo-ovos-skill-calculator": {
@@ -4230,17 +5882,36 @@
         "version_tested": "0.0.2"
       },
       "stable": {
+        "boot_seconds": 10.2,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 12.7,
         "id": "andlo-ovos-skill-calculator",
+        "intents_by_lang": {
+          "da-dk": 7,
+          "en-us": 7
+        },
         "key": "25630d23c96b63de",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-calculator",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-calculator.andlo"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 14
+        },
         "requested_version": "0.0.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:31+00:00",
+        "version_tested": "0.0.2"
       }
     },
     "andlo-ovos-skill-convert": {
@@ -4292,17 +5963,48 @@
         "version_tested": "0.0.8"
       },
       "stable": {
+        "boot_seconds": 13.7,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.7,
         "id": "andlo-ovos-skill-convert",
+        "intents_by_lang": {
+          "da-dk": 3,
+          "de-de": 3,
+          "en-us": 3,
+          "es-es": 3,
+          "fr-fr": 3,
+          "it-it": 3,
+          "nl-nl": 3,
+          "pt-pt": 3
+        },
         "key": "696b4ce00f5f91b2",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-convert",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-convert.andlo"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 24
+        },
         "requested_version": "0.0.8",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:57:42+00:00",
+        "version_tested": "0.0.8"
       }
     },
     "andlo-ovos-skill-cosquin-tales": {
@@ -4335,17 +6037,32 @@
         ]
       },
       "stable": {
+        "boot_seconds": 22.4,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 25.0,
         "id": "andlo-ovos-skill-cosquin-tales",
         "key": "238d420fec2cf726",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "fr-FR"
+        ],
+        "level": 2,
+        "log_excerpt": "- ovos_utils.events:EventSchedulerInterface.__init__ - WARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:54:11.058 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - persona.openvoiceos is ready.\n2026-09-29 14:54:11.059 - OVOS - ovos_persona:load_personas:172 - INFO - Personas path: /home/runner/.config/ovos_persona\n2026-09-29 14:54:11.067 - OVOS - ovos_persona:load_personas:198 - INFO - Found persona (provided via plugin): Remote Llama\n2026-09-29 14:54:13.449 - OVOS - ovos_solver_openai_persona.engines:__init__:129 - ERROR - system prompt not set in config! defaulting to 'You are a helpful assistant.'\n2026-09-29 14:54:13.450 - OVOS - ovos_persona.solvers:load_plugins:37 - INFO - loaded question solver plugin: ovos-solver-openai-plugin\n2026-09-29 14:54:25.611 - OVOS - ovos_core.transformers:load_plugins:32 - INFO - loaded utterance transformer plugin: ovos-utterance-normalizer\n2026-09-29 14:54:25.620 - OVOS - ovos_bus_client.util.scheduler:run:148 - INFO - EventScheduler Started\n2026-09-29 14:54:25.621 - OVOS - ovos_core.skill_manager:on_started:60 - INFO - Skills Manager is starting up.\n2026-09-29 14:54:25.660 - OVOS - ovos_core.skill_manager:on_alive:64 - INFO - Skills Manager is alive.\n2026-09-29 14:54:25.661 - OVOS - ovoscope:load_plugin_skills:49 - INFO - loading skill plugins\n2026-09-29 14:54:25.669 - OVOS - ovos_workshop.skill_launcher:load:521 - INFO - ATTEMPTING TO LOAD PLUGIN SKILL: ovos-skill-cosquin-tales.andlo\n2026-09-29 14:54:25.670 - OVOS - ovos_utils.events:EventSchedulerInterface.__init__ - WARNING - Deprecation version=1.0.0. Caller=ovos_workshop.skills.ovos:148. EventSchedulerInterface moved to ovos_bus_client. 'from ovos_bus_client.apis.events import EventSchedulerInterface'\n2026-09-29 14:54:25.693 - ovos-skill-cosquin-tales.andlo - INFO - Registering example utterances with homescreen for lang: fr-FR - ['Raconte-moi une histoire de cosquin', 'Lis-moi une histoire de lorraine']\n2026-09-29 14:54:25.693 - ovos-skill-cosquin-tales.andlo - INFO - Registering example utterances with homescreen for lang: en-US - ['Tell me a story from cosquin', 'Tell me a fairy tale from lorraine']\n2026-09-29 14:54:25.695 - ovos-skill-cosquin-tales.andlo - INFO - ovos-skill-cosquin-tales.andlo: serving 30 French stories to searches made in French (fr-*)\n2026-09-29 14:54:25.700 - ovos-skill-cosquin-tales.andlo - INFO - First run of ovos-skill-cosquin-tales.andlo\n2026-09-29 14:54:25.702 - OVOS - ovos_workshop.skills.ovos:on_ready_status:753 - INFO - ovos-skill-cosquin-tales.andlo is ready.\n2026-09-29 14:54:25.704 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:499 - INFO - Skill ovos-skill-cosquin-tales.andlo loaded successfully\n2026-09-29 14:54:25.704 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-cosquin-tales.andlo\n2026-09-29 14:54:25.705 - OVOS - ovoscope:load_plugin_skills:57 - INFO - Loaded skill: ovos-skill-cosquin-tales.andlo\n2026-09-29 14:54:25.709 - OVOS - ovoscope:run:65 - INFO - Skills all loaded!\n2026-09-29 14:54:25.709 - OVOS - ovos_core.skill_manager:_handle_settings_file_change:166 - INFO - skill settings.json change detected for ovos-skill-cosquin-tales.andlo\n2026-09-29 14:54:25.711 - OVOS - ovos_core.skill_manager:on_ready:68 - INFO - Skills Manager is ready.\n2026-09-29 14:54:30.861 - OVOS - ovos_core.skill_manager:on_stopping:76 - INFO - Skills Manager is shutting down...\n2026-09-29 14:54:30.861 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:646 - INFO - Unloading plugin skill: ovos-skill-cosquin-tales.andlo\n2026-09-29 14:54:30.862 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:759 - INFO - ovos-skill-cosquin-tales.andlo is shutting down...\n2026-09-29 14:54:30.871 - OVOS - ovos_bus_client.util.scheduler:run:156 - INFO - EventScheduler Stopped",
         "package": "ovos-skill-cosquin-tales",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-cosquin-tales.andlo"
+        ],
         "requested_version": "0.1.5",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:05+00:00",
+        "version_tested": "0.1.5",
+        "warnings": [
+          "loaded but registered nothing (no intents, fallback or provider)"
+        ]
       }
     },
     "andlo-ovos-skill-geography": {
@@ -4388,17 +6105,42 @@
         "version_tested": "0.0.3"
       },
       "stable": {
+        "boot_seconds": 16.4,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 19.0,
         "id": "andlo-ovos-skill-geography",
+        "intents_by_lang": {
+          "da-dk": 7,
+          "de-de": 7,
+          "en-us": 7,
+          "es-es": 7,
+          "fr-fr": 7
+        },
         "key": "e7a3a318d193805a",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR"
+        ],
+        "level": 2,
         "package": "ovos-skill-geography",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-geography.andlo"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 35
+        },
         "requested_version": "0.0.3",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:09:15+00:00",
+        "version_tested": "0.0.3"
       }
     },
     "andlo-ovos-skill-geography-practice": {
@@ -4440,17 +6182,41 @@
         "version_tested": "0.0.4"
       },
       "stable": {
+        "boot_seconds": 12.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 14.9,
         "id": "andlo-ovos-skill-geography-practice",
+        "intents_by_lang": {
+          "da-dk": 19,
+          "de-de": 17,
+          "en-us": 20,
+          "es-es": 16,
+          "fr-fr": 17
+        },
         "key": "5707a5f00775c54f",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR"
+        ],
+        "level": 2,
         "package": "ovos-skill-geography-practice",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-geography-practice.andlo"
+        ],
+        "registrations": {
+          "intents": 89
+        },
         "requested_version": "0.0.4",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:09:35+00:00",
+        "version_tested": "0.0.4"
       }
     },
     "andlo-ovos-skill-geometry": {
@@ -4493,17 +6259,42 @@
         "version_tested": "0.0.3"
       },
       "stable": {
+        "boot_seconds": 12.6,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.4,
         "id": "andlo-ovos-skill-geometry",
+        "intents_by_lang": {
+          "da-dk": 11,
+          "de-de": 11,
+          "en-us": 11,
+          "es-es": 11,
+          "fr-fr": 11
+        },
         "key": "e4e95d2c13de5652",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR"
+        ],
+        "level": 2,
         "package": "ovos-skill-geometry",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-geometry.andlo"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 55
+        },
         "requested_version": "0.0.3",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:09:50+00:00",
+        "version_tested": "0.0.3"
       }
     },
     "andlo-ovos-skill-geometry-practice": {
@@ -4545,17 +6336,41 @@
         "version_tested": "0.0.2"
       },
       "stable": {
+        "boot_seconds": 12.2,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.0,
         "id": "andlo-ovos-skill-geometry-practice",
+        "intents_by_lang": {
+          "da-dk": 21,
+          "de-de": 22,
+          "en-us": 25,
+          "es-es": 22,
+          "fr-fr": 22
+        },
         "key": "4a3caba2ca36d85a",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR"
+        ],
+        "level": 2,
         "package": "ovos-skill-geometry-practice",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-geometry-practice.andlo"
+        ],
+        "registrations": {
+          "intents": 112
+        },
         "requested_version": "0.0.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:10:06+00:00",
+        "version_tested": "0.0.2"
       }
     },
     "andlo-ovos-skill-grimm-tales": {
@@ -4603,17 +6418,47 @@
         "version_tested": "0.1.6"
       },
       "stable": {
+        "boot_seconds": 17.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 20.2,
         "id": "andlo-ovos-skill-grimm-tales",
+        "intents_by_lang": {
+          "da-dk": 3,
+          "de-de": 3,
+          "en-us": 4,
+          "es-es": 3,
+          "fr-fr": 3,
+          "it-it": 3,
+          "nl-nl": 3,
+          "pt-pt": 3
+        },
         "key": "d56a95688eb12e43",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-grimm-tales",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-grimm-tales.andlo"
+        ],
+        "registrations": {
+          "intents": 25
+        },
         "requested_version": "0.1.6",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:10:22+00:00",
+        "version_tested": "0.1.6"
       }
     },
     "andlo-ovos-skill-holidays": {
@@ -4656,17 +6501,42 @@
         "version_tested": "0.0.2"
       },
       "stable": {
+        "boot_seconds": 12.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 16.7,
         "id": "andlo-ovos-skill-holidays",
+        "intents_by_lang": {
+          "da-dk": 4,
+          "de-de": 4,
+          "en-us": 4,
+          "es-es": 4,
+          "fr-fr": 4
+        },
         "key": "cc3ed64bc661753e",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR"
+        ],
+        "level": 2,
         "package": "ovos-skill-holidays",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-holidays.andlo"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "intents": 20
+        },
         "requested_version": "0.0.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:50+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:10:42+00:00",
+        "version_tested": "0.0.2"
       }
     },
     "andlo-ovos-skill-horoscope-readings": {
@@ -4714,17 +6584,47 @@
         "version_tested": "0.1.3"
       },
       "stable": {
+        "boot_seconds": 45.0,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 47.9,
         "id": "andlo-ovos-skill-horoscope-readings",
+        "intents_by_lang": {
+          "da-dk": 5,
+          "de-de": 5,
+          "en-us": 6,
+          "es-es": 5,
+          "fr-fr": 5,
+          "it-it": 5,
+          "nl-nl": 5,
+          "pt-pt": 5
+        },
         "key": "c122d3a6c055a9f9",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-horoscope-readings",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-horoscope-readings.andlo"
+        ],
+        "registrations": {
+          "intents": 41
+        },
         "requested_version": "0.1.3",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:22+00:00",
+        "version_tested": "0.1.3"
       }
     },
     "andlo-ovos-skill-intercom": {
@@ -4766,17 +6666,41 @@
         "version_tested": "0.0.5"
       },
       "stable": {
+        "boot_seconds": 12.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.8,
         "id": "andlo-ovos-skill-intercom",
+        "intents_by_lang": {
+          "da-dk": 7,
+          "de-de": 7,
+          "en-us": 7,
+          "es-es": 6,
+          "fr-fr": 6
+        },
         "key": "76b080acb238aa6c",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR"
+        ],
+        "level": 2,
         "package": "ovos-skill-intercom",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-intercom.andlo"
+        ],
+        "registrations": {
+          "intents": 33
+        },
         "requested_version": "0.0.5",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:53:11+00:00",
+        "version_tested": "0.0.5"
       }
     },
     "andlo-ovos-skill-math-practice": {
@@ -4812,17 +6736,35 @@
         "version_tested": "0.0.6"
       },
       "stable": {
+        "boot_seconds": 10.6,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 13.3,
         "id": "andlo-ovos-skill-math-practice",
+        "intents_by_lang": {
+          "da-dk": 29,
+          "en-us": 33
+        },
         "key": "2dd75f04b35f6352",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-math-practice",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-math-practice.andlo"
+        ],
+        "registrations": {
+          "intents": 62
+        },
         "requested_version": "0.0.6",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:42+00:00",
+        "version_tested": "0.0.6"
       }
     },
     "andlo-ovos-skill-metronome": {
@@ -4858,17 +6800,35 @@
         "version_tested": "0.0.2"
       },
       "stable": {
+        "boot_seconds": 10.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 13.0,
         "id": "andlo-ovos-skill-metronome",
+        "intents_by_lang": {
+          "da-dk": 3,
+          "en-us": 3
+        },
         "key": "66d77e5458aa35b3",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-metronome",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-metronome.andlo"
+        ],
+        "registrations": {
+          "intents": 6
+        },
         "requested_version": "0.0.2",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:55+00:00",
+        "version_tested": "0.0.2"
       }
     },
     "andlo-ovos-skill-morse-code": {
@@ -4904,17 +6864,35 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 10.2,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 13.0,
         "id": "andlo-ovos-skill-morse-code",
+        "intents_by_lang": {
+          "da-dk": 1,
+          "en-us": 1
+        },
         "key": "937ba6d1b3c1ed44",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-morse-code",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-morse-code.andlo"
+        ],
+        "registrations": {
+          "intents": 2
+        },
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:54+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:55:09+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "andlo-ovos-skill-nato-alphabet": {
@@ -4950,17 +6928,35 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 9.6,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 11.3,
         "id": "andlo-ovos-skill-nato-alphabet",
+        "intents_by_lang": {
+          "da-dk": 1,
+          "en-us": 1
+        },
         "key": "068b0f39f955182a",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-nato-alphabet",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-nato-alphabet.andlo"
+        ],
+        "registrations": {
+          "intents": 2
+        },
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:07+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "andlo-ovos-skill-network-scanner": {
@@ -4996,17 +6992,35 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 10.5,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.6,
         "id": "andlo-ovos-skill-network-scanner",
+        "intents_by_lang": {
+          "da-dk": 2,
+          "en-us": 2
+        },
         "key": "64930f5933e08c21",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-network-scanner",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-network-scanner.andlo"
+        ],
+        "registrations": {
+          "intents": 4
+        },
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:09+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:47+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "andlo-ovos-skill-ovosblog": {
@@ -5054,17 +7068,47 @@
         "version_tested": "0.1.5"
       },
       "stable": {
+        "boot_seconds": 59.1,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 61.9,
         "id": "andlo-ovos-skill-ovosblog",
+        "intents_by_lang": {
+          "da-dk": 4,
+          "de-de": 3,
+          "en-us": 4,
+          "es-es": 3,
+          "fr-fr": 3,
+          "it-it": 3,
+          "nl-nl": 3,
+          "pt-pt": 3
+        },
         "key": "2aca49ec61d210de",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nl-NL",
+          "pt-PT"
+        ],
+        "level": 2,
         "package": "ovos-skill-ovosblog",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-ovosblog.andlo"
+        ],
+        "registrations": {
+          "intents": 26
+        },
         "requested_version": "0.1.5",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:00+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:52:11+00:00",
+        "version_tested": "0.1.5"
       }
     },
     "andlo-ovos-skill-rhythm-box": {
@@ -5100,17 +7144,35 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 9.4,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 10.9,
         "id": "andlo-ovos-skill-rhythm-box",
+        "intents_by_lang": {
+          "da-dk": 3,
+          "en-us": 3
+        },
         "key": "5e8f0dc01331e350",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-rhythm-box",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-rhythm-box.andlo"
+        ],
+        "registrations": {
+          "intents": 6
+        },
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:06+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:42+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "andlo-ovos-skill-sound-like": {
@@ -5146,17 +7208,35 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 10.0,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 12.7,
         "id": "andlo-ovos-skill-sound-like",
+        "intents_by_lang": {
+          "da-dk": 1,
+          "en-us": 1
+        },
         "key": "1926a055ad0807be",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-sound-like",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-sound-like.andlo"
+        ],
+        "registrations": {
+          "intents": 2
+        },
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:56:11+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:58:04+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "andlo-ovos-skill-tuning-fork": {
@@ -5192,17 +7272,35 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 9.8,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 11.5,
         "id": "andlo-ovos-skill-tuning-fork",
+        "intents_by_lang": {
+          "da-dk": 2,
+          "en-us": 2
+        },
         "key": "c0d27cc7603f61b4",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-tuning-fork",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-tuning-fork.andlo"
+        ],
+        "registrations": {
+          "intents": 4
+        },
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:57:31+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "andlo-ovos-skill-voices-of-tomorrow": {
@@ -5255,17 +7353,52 @@
         "version_tested": "0.1.1"
       },
       "stable": {
+        "boot_seconds": 13.1,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 15.1,
         "id": "andlo-ovos-skill-voices-of-tomorrow",
+        "intents_by_lang": {
+          "da-dk": 6,
+          "de-de": 5,
+          "en-us": 6,
+          "es-es": 4,
+          "fr-fr": 4,
+          "it-it": 4,
+          "nb-no": 5,
+          "nl-nl": 4,
+          "pt-pt": 4,
+          "sv-se": 5
+        },
         "key": "9598fd7a5091704d",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR",
+          "it-IT",
+          "nb-NO",
+          "nl-NL",
+          "pt-PT",
+          "sv-SE"
+        ],
+        "level": 2,
         "package": "ovos-skill-voices-of-tomorrow",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-voices-of-tomorrow.andlo"
+        ],
+        "registrations": {
+          "intents": 47,
+          "ocp": 1
+        },
         "requested_version": "0.1.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:57:58+00:00",
+        "version_tested": "0.1.1"
       }
     },
     "andlo-ovos-skill-white-noise": {
@@ -5301,17 +7434,35 @@
         "version_tested": "0.0.1"
       },
       "stable": {
+        "boot_seconds": 8.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 10.0,
         "id": "andlo-ovos-skill-white-noise",
+        "intents_by_lang": {
+          "da-dk": 3,
+          "en-us": 3
+        },
         "key": "d4a38f831ad70d2a",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK"
+        ],
+        "level": 2,
         "package": "ovos-skill-white-noise",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-white-noise.andlo"
+        ],
+        "registrations": {
+          "intents": 6
+        },
         "requested_version": "0.0.1",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:44+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:01:00+00:00",
+        "version_tested": "0.0.1"
       }
     },
     "andlo-ovos-skill-wiki-offline": {
@@ -5347,17 +7498,35 @@
         "version_tested": "0.0.7"
       },
       "stable": {
+        "boot_seconds": 9.2,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 11.6,
         "id": "andlo-ovos-skill-wiki-offline",
         "key": "e6353e497294129c",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "fr-FR"
+        ],
+        "level": 2,
         "package": "ovos-skill-wiki-offline",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "ovos-skill-wiki-offline.andlo"
+        ],
+        "registrations": {
+          "common_query": 1,
+          "fallback": 1
+        },
         "requested_version": "0.0.7",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:44+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T15:01:11+00:00",
+        "version_tested": "0.0.7"
       }
     },
     "mikejgray-neon-homeassistant-skill": {
@@ -5391,17 +7560,33 @@
         "version_tested": "0.0.24"
       },
       "stable": {
+        "boot_seconds": 11.3,
         "channel": "stable",
+        "channel_pinned": false,
+        "driver": "ovoscope legacy (no lang/wait options)",
+        "duration_seconds": 13.9,
         "id": "mikejgray-neon-homeassistant-skill",
+        "intents_by_lang": {
+          "en-us": 17
+        },
         "key": "56d4391ee75ccb55",
         "kind": "skill",
-        "level": 0,
+        "languages_booted": [
+          "en-US"
+        ],
+        "level": 2,
         "package": "neon-homeassistant-skill",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "plugin_ids": [
+          "neon_homeassistant_skill.mikejgray"
+        ],
+        "registrations": {
+          "intents": 17
+        },
         "requested_version": "0.0.24",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-09-29T14:54:19+00:00",
+        "version_tested": "0.0.24"
       }
     },
     "thalovant-thalovant-skill-custos-fallback": {
@@ -5471,16 +7656,19 @@
       },
       "stable": {
         "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 1.7,
         "id": "thalovant-thalovant-skill-custos-fallback",
         "key": "0217cc401626d652",
         "kind": "skill",
         "level": 0,
+        "log_excerpt": "tmp/compat-11rifiea/venv/lib/python3.11/site-packages (from thalovant-skill-custos-fallback==0.1.5) (0.8.5)\nINFO: pip is looking at multiple versions of thalovant-skill-custos-fallback to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install thalovant-skill-custos-fallback==0.1.5 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-custos-fallback 0.1.5 depends on ovos-workshop<10.0.0 and >=8.0.0\n    The user requested (constraint) ovos-workshop<3.5.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "thalovant-skill-custos-fallback",
-        "reason": "test driver cannot boot on this channel: AttributeError: type object 'SessionManager' has no attribute 'get_default_session'",
+        "reason": "thalovant-skill-custos-fallback 0.1.5 depends on ovos-workshop<10.0.0 and >=8.0.0; channel pins ovos-workshop<3.5.0,>=3.4.0",
         "requested_version": "0.1.5",
-        "stage": "setup",
-        "status": "error",
-        "tested_at": "2026-09-29T13:55:51+00:00"
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-09-29T14:57:08+00:00"
       }
     }
   }
