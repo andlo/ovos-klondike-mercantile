@@ -25,6 +25,10 @@ backLink.addEventListener("click", (e) => {
   }
 });
 
+// A pip command only for what pip can install: package_name is set by the
+// crawler only when the repo has a setup.py or pyproject.toml. Without one
+// (docs, Docker/Ansible setups, add-ons, old-style skills) "pip install
+// git+…" would just fail, so the page says so and points to the README.
 function installInstructions(skill) {
   if (skill.on_pypi && skill.package_name) {
     return {
@@ -32,13 +36,19 @@ function installInstructions(skill) {
       command: `pip install ${skill.package_name}`,
     };
   }
-  if (skill.source) {
+  if (skill.package_name && skill.source) {
     return {
       label: "Install from GitHub (not on PyPI)",
       command: `pip install git+${skill.source}.git`,
     };
   }
   return null;
+}
+
+function notPipInstallable(skill) {
+  if (skill.package_name || !skill.source) return "";
+  const readme = `${skill.source}#readme`;
+  return `<p class="setup-note">Not a Python package (no <code>setup.py</code> or <code>pyproject.toml</code>), so it isn't installed with pip. See the <a href="${escapeHtml(readme)}" target="_blank" rel="noopener">README</a> for how to use it.</p>`;
 }
 
 function renderLicenseWarning(skill) {
@@ -139,7 +149,8 @@ function renderInstall(skill) {
   const install = installInstructions(skill);
   const notes = asArray(skill.setup_notes);
   const fields = asArray(skill.settings_fields);
-  if (!install && !notes.length && !fields.length) return "";
+  const other = notPipInstallable(skill);
+  if (!install && !other && !notes.length && !fields.length) return "";
 
   const notesHtml = notes.map((s) => `
     <div class="setup-section">
@@ -152,7 +163,8 @@ function renderInstall(skill) {
       <span>${escapeHtml(f.label)} <span class="fact-detail">(<code>${escapeHtml(f.name)}</code>${f.type ? `, ${escapeHtml(f.type)}` : ""})</span></span></div>`;
   }).join("");
 
-  return section("Install", `
+  return section(install ? "Install" : "Setup", `
+    ${other}
     ${install ? `
       <div class="install-box">
         <div class="install-label">${escapeHtml(install.label)}</div>
