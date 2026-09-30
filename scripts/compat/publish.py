@@ -240,13 +240,17 @@ def klondike_self_result(kmeta, sdir, spec, docs, channel, now):
     try:
         out = json.loads((sdir / "klondike.json").read_text())
     except (OSError, ValueError):
-        kmeta["self"] = {"run_at": now, "error": "no result (the job did not finish)"}
-        return
+        out = None
     if not isinstance(out, dict):
+        # Keep the last good result; a key of None makes plan.py retry.
+        kmeta.setdefault("self", {})["last_error"] = {"run_at": now, "reason": "no result (the job did not finish)"}
+        kmeta["key"] = None
         return
     allowed = {v["id"] for v in (spec.get("feed_map") or {}).values() if isinstance(v, dict)}
     if isinstance(out.get("error"), str):
-        kmeta["self"] = {"run_at": now, "key": spec.get("self_key"), "error": out["error"][:500]}
+        # The profile itself did not install (a pip resolution failure is a
+        # finding in itself): shown as such, and retried next run.
+        kmeta["self"] = {"run_at": now, "error": out["error"][:500]}
         kmeta["key"] = None
         return
     members = {}

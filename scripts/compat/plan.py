@@ -209,7 +209,7 @@ def main():
             kprof["self_key"] = key_for([csha, kprof["sha256"], args.harness_sha, RUNNER_VERSION,
                                          args.generator_spec, ROUTE_VERSION])
             prev_self = prev_klondike.get(channel) or {}
-            if prev_self.get("key") != kprof["self_key"] or args.force or args.full or prev_self.get("error"):
+            if prev_self.get("key") != kprof["self_key"] or args.force or args.full:
                 matrix.append({"channel": channel, "shard": "klondike", "items": [],
                                "klondike": json.dumps({"self": True, "requirements": kprof["requirements"],
                                                        "pipeline": kprof["pipeline"],
