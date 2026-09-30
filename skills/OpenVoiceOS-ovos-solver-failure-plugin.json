@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-solver-failure-plugin",
   "skill_id": null,
   "name": "ovos-solver-failure-plugin",
-  "description": "FailureSolver is a question solver plugin for OVOS, Neon, and Mycroft assistants. It never answers a query. It always returns a fallback message, so it works as the last solver in a chain when every other solver fails.",
+  "description": "A chat engine plugin for OpenVoiceOS personas that never answers the question. It always returns a canned line, so it works as the last link of a persona chain when every other handler declines. Registered as `ovos-solver-failure-plugin` in the `opm.agents.chat` entry-point group.",
   "examples": [],
   "tags": [
     "openvoiceos",
@@ -10,7 +10,9 @@
     "solver"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/robot.svg",
+  "icon_source": "readme",
+  "icon_color": "#40DBB0",
   "source": "https://github.com/OpenVoiceOS/ovos-solver-failure-plugin",
   "package_name": "ovos_solver_failure_plugin",
   "pypi_version": "0.0.3",
@@ -18,7 +20,7 @@
   "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Solver Plugin",
+  "component_type": "Chat Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 3,

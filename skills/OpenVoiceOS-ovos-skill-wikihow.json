@@ -67,6 +67,31 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-wikihow.openvoiceos",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.3.3",
+        "tested_at": "2026-09-30T13:09:25+00:00",
+        "channel_pinned": true
+      },
+      "testing": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.3.3",
+        "tested_at": "2026-09-30T13:21:21+00:00",
+        "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.7.2a1",
+        "tested_at": "2026-09-30T13:29:10+00:00",
+        "channel_pinned": true
+      }
+    }
   }
 }
