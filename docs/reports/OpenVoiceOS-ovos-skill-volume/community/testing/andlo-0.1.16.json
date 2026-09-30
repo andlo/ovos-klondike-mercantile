@@ -1,0 +1,738 @@
+{
+  "_klondike": {
+    "issue": 28,
+    "kind": "community",
+    "received_at": "2026-09-30T17:25:40+00:00",
+    "user": "andlo"
+  },
+  "manifest": {
+    "bus": "local",
+    "channel": "testing",
+    "channel_source": "installed versions",
+    "config": {
+      "lang": "en-us",
+      "pipeline": [
+        "ovos-stop-pipeline-plugin-high",
+        "ovos-common-reading-pipeline-plugin",
+        "ovos-converse-pipeline-plugin",
+        "ovos-ocp-pipeline-plugin-high",
+        "ovos-persona-pipeline-plugin-high",
+        "ovos-padatious-pipeline-plugin-high",
+        "ovos-m2v-pipeline-high",
+        "ovos-fallback-pipeline-plugin-high",
+        "ovos-adapt-pipeline-plugin-high",
+        "ovos-stop-pipeline-plugin-medium",
+        "ovos-adapt-pipeline-plugin-medium",
+        "ovos-common-query-pipeline-plugin",
+        "ovos-fallback-pipeline-plugin-medium",
+        "ovos-persona-pipeline-plugin-low",
+        "ovos-fallback-pipeline-plugin-low"
+      ],
+      "secondary_langs": [
+        "da-dk"
+      ],
+      "stt": "ovos-stt-plugin-server",
+      "tts": "ovos-tts-plugin-server"
+    },
+    "created_at": "2026-09-30T17:17:34Z",
+    "installed": [
+      {
+        "active": true,
+        "id": "ovos-skill-365tomorrows-stories.andlo",
+        "package": "ovos-skill-365tomorrows-stories",
+        "version": "0.1.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-alerts.openvoiceos",
+        "package": "ovos-skill-alerts",
+        "version": "0.1.28"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-andersen-tales.andlo",
+        "package": "ovos-skill-andersen-tales",
+        "version": "0.1.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-andrew-lang-tales.andlo",
+        "package": "ovos-skill-andrew-lang-tales",
+        "version": "0.1.7"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-arxiv-papers.andlo",
+        "package": "ovos-skill-arxiv-papers",
+        "version": "0.1.5"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-audio-recording.openvoiceos",
+        "package": "ovos-skill-audio-recording",
+        "version": "0.2.7"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-bechstein-tales.andlo",
+        "package": "ovos-skill-bechstein-tales",
+        "version": "0.1.5"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-boot-finished.openvoiceos",
+        "package": "ovos-skill-boot-finished",
+        "version": "0.5.0"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-calculator.andlo",
+        "package": "ovos-skill-calculator",
+        "version": "0.0.2"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-common-reading-example.andlo",
+        "package": "ovos-skill-common-reading-example",
+        "version": "0.1.0"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-convert.andlo",
+        "package": "ovos-skill-convert",
+        "version": "0.0.7"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-cosquin-tales.andlo",
+        "package": "ovos-skill-cosquin-tales",
+        "version": "0.1.5"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-count.openvoiceos",
+        "package": "ovos-skill-count",
+        "version": "0.0.2"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-date-time.openvoiceos",
+        "package": "ovos-skill-date-time",
+        "version": "1.1.5"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-ddg.openvoiceos",
+        "package": "ovos_skill_ddg",
+        "version": "0.3.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-diagnostics.openvoiceos",
+        "package": "ovos-skill-diagnostics",
+        "version": "0.0.8"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-dictation.openvoiceos",
+        "package": "ovos-skill-dictation",
+        "version": "0.2.19"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-fallback-unknown.openvoiceos",
+        "package": "ovos-skill-fallback-unknown",
+        "version": "0.1.9"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-geography-practice.andlo",
+        "package": "ovos-skill-geography-practice",
+        "version": "0.0.4"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-geography.andlo",
+        "package": "ovos-skill-geography",
+        "version": "0.0.3"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-geometry-practice.andlo",
+        "package": "ovos-skill-geometry-practice",
+        "version": "0.0.2"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-geometry.andlo",
+        "package": "ovos-skill-geometry",
+        "version": "0.0.3"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-grimm-tales.andlo",
+        "package": "ovos-skill-grimm-tales",
+        "version": "0.1.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-hello-world.openvoiceos",
+        "package": "ovos-skill-hello-world",
+        "version": "0.2.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-holidays.andlo",
+        "package": "ovos-skill-holidays",
+        "version": "0.0.2"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-horoscope-readings.andlo",
+        "package": "ovos-skill-horoscope-readings",
+        "version": "0.1.3"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-icanhazdadjokes.openvoiceos",
+        "package": "ovos-skill-icanhazdadjokes",
+        "version": "0.3.7"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-intercom.andlo",
+        "package": "ovos-skill-intercom",
+        "version": "0.0.4"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-ip.openvoiceos",
+        "package": "ovos-skill-ip",
+        "version": "0.2.8"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-local-media.openvoiceos",
+        "package": "ovos-skill-local-media",
+        "version": "0.2.12"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-math-practice.andlo",
+        "package": "ovos-skill-math-practice",
+        "version": "0.0.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-metronome.andlo",
+        "package": "ovos-skill-metronome",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-morse-code.andlo",
+        "package": "ovos-skill-morse-code",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-naptime.openvoiceos",
+        "package": "ovos-skill-naptime",
+        "version": "0.3.15"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-nato-alphabet.andlo",
+        "package": "ovos-skill-nato-alphabet",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-network-scanner.andlo",
+        "package": "ovos-skill-network-scanner",
+        "version": "0.0.1"
+      },
+      {
+        "active": false,
+        "id": "ovos-skill-news.openvoiceos",
+        "package": "ovos-skill-news",
+        "version": "0.4.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-openvscode.andlo",
+        "package": "ovos-skill-openvscode",
+        "version": "0.1.0"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-ovosblog.andlo",
+        "package": "ovos-skill-ovosblog",
+        "version": "0.1.5"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-parrot.openvoiceos",
+        "package": "ovos-skill-parrot",
+        "version": "0.1.25"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-personal.openvoiceos",
+        "package": "ovos-skill-personal",
+        "version": "0.1.19"
+      },
+      {
+        "active": null,
+        "id": "ovos-skill-pyradios.openvoiceos",
+        "package": "ovos-skill-pyradios",
+        "version": "0.1.5"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-recipe-helper.andlo",
+        "package": "ovos-skill-recipe-helper",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-rhythm-box.andlo",
+        "package": "ovos-skill-rhythm-box",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-sound-like.andlo",
+        "package": "ovos-skill-sound-like",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-soundboard.andlo",
+        "package": "ovos-skill-soundboard",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-speedtest.openvoiceos",
+        "package": "ovos-skill-speedtest",
+        "version": "0.3.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-tuning-fork.andlo",
+        "package": "ovos-skill-tuning-fork",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-voices-of-tomorrow.andlo",
+        "package": "ovos-skill-voices-of-tomorrow",
+        "version": "0.1.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-volume.openvoiceos",
+        "package": "ovos-skill-volume",
+        "version": "0.1.16"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-weather.openvoiceos",
+        "package": "ovos-skill-weather",
+        "version": "1.0.6"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-white-noise.andlo",
+        "package": "ovos-skill-white-noise",
+        "version": "0.0.1"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-wiki-offline.andlo",
+        "package": "ovos-skill-wiki-offline",
+        "version": "0.0.7"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-wikihow.openvoiceos",
+        "package": "ovos-skill-wikihow",
+        "version": "0.3.3"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-wikipedia.openvoiceos",
+        "package": "ovos-skill-wikipedia",
+        "version": "0.8.13"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-wolfie.openvoiceos",
+        "package": "ovos-skill-wolfie",
+        "version": "0.5.8"
+      },
+      {
+        "active": true,
+        "id": "ovos-skill-youtube-music.openvoiceos",
+        "package": "ovos-skill-youtube-music",
+        "version": "0.1.7"
+      },
+      {
+        "active": true,
+        "id": "skill-ovos-randomness.openvoiceos",
+        "package": "ovos-skill-randomness",
+        "version": "0.1.2"
+      },
+      {
+        "active": false,
+        "id": "skill-ovos-somafm.openvoiceos",
+        "package": "ovos-skill-somafm",
+        "version": "0.1.5"
+      },
+      {
+        "active": true,
+        "id": "skill-ovos-spelling.openvoiceos",
+        "package": "ovos-skill-spelling",
+        "version": "0.2.6"
+      }
+    ],
+    "installed_skills": 60,
+    "lang": "en-us",
+    "machine": {
+      "arch": "x86_64",
+      "model": null,
+      "python": "3.11.16"
+    },
+    "pipeline_plugins": {
+      "ovos-adapt-parser": "1.0.9",
+      "ovos-common-query-pipeline-plugin": "1.1.9",
+      "ovos-common-reading-pipeline-plugin": "0.2.0",
+      "ovos-core": "2.1.1",
+      "ovos-m2v-pipeline": "0.0.9",
+      "ovos-ocp-pipeline-plugin": "1.1.18",
+      "ovos-padatious": "1.4.3",
+      "ovos-persona": "0.7.1",
+      "padacioso": "1.0.0"
+    },
+    "skills": {
+      "ovos-skill-volume.openvoiceos": {
+        "active": true,
+        "package": "ovos-skill-volume",
+        "version": "0.1.16"
+      }
+    },
+    "stack": {
+      "ovos-adapt-parser": "1.0.9",
+      "ovos-bus-client": "1.5.0",
+      "ovos-common-query-pipeline-plugin": "1.1.9",
+      "ovos-config": "2.1.1",
+      "ovos-core": "2.1.1",
+      "ovos-m2v-pipeline": "0.0.9",
+      "ovos-ocp-pipeline-plugin": "1.1.18",
+      "ovos-padatious": "1.4.3",
+      "ovos-persona": "0.7.1",
+      "ovos-plugin-manager": "2.2.0",
+      "ovos-utils": "0.8.4",
+      "ovos-workshop": "7.0.6",
+      "padacioso": "1.0.0"
+    },
+    "tool": "ovos-tui-client 0.2.0a15",
+    "versions_from": "this environment"
+  },
+  "schema": "ovos-test-report/1",
+  "steps": [
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.default.intent",
+      "i": 1,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "default volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.mute.toggle.intent",
+      "i": 2,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "toggle audio"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.mute.intent",
+      "i": 3,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "mute volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.low.intent",
+      "i": 4,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume level to low"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.low.intent",
+      "i": 5,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume to low"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.high.intent",
+      "i": 6,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume level to high"
+    },
+    {
+      "answered": true,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.max.intent",
+      "i": 7,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "set volume to maximum"
+    },
+    {
+      "answered": true,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.max.intent",
+      "i": 8,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "set volume level to maximum"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.mute.toggle.intent",
+      "i": 9,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "toggle mute"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.low.intent",
+      "i": 10,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume level low"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.high.intent",
+      "i": 11,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume level high"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.high.intent",
+      "i": 12,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume to high level"
+    },
+    {
+      "answered": true,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.max.intent",
+      "i": 13,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "maximum volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.default.intent",
+      "i": 14,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "set volume to medium"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.default.intent",
+      "i": 15,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "restore volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.default.intent",
+      "i": 16,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "medium volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.high.intent",
+      "i": 17,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume high"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.mute.intent",
+      "i": 18,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "mute audio"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.unmute.intent",
+      "i": 19,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "unmute audio"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.unmute.intent",
+      "i": 20,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "unmute"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.high.intent",
+      "i": 21,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume to high"
+    },
+    {
+      "answered": true,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.max.intent",
+      "i": 22,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "max volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.default.intent",
+      "i": 23,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "reset volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.default.intent",
+      "i": 24,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "set volume to default"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.default.intent",
+      "i": 25,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "set volume level to default"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.low.intent",
+      "i": 26,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "low volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.high.intent",
+      "i": 27,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "high volume"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.low.intent",
+      "i": 28,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "volume low"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.mute.intent",
+      "i": 29,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "mute"
+    },
+    {
+      "answered": false,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.unmute.intent",
+      "i": 30,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "unmute volume"
+    },
+    {
+      "answered": true,
+      "expected": "ovos-skill-volume.openvoiceos",
+      "handled_by": "ovos-skill-volume.openvoiceos:volume.max.intent",
+      "i": 31,
+      "lang": "en-us",
+      "status": "pass",
+      "utterance": "top volume"
+    }
+  ],
+  "summary": {
+    "answered": 5,
+    "cancelled": false,
+    "checked": 31,
+    "duration_s": 108.1,
+    "failed": 0,
+    "passed": 31,
+    "planned": 31,
+    "sent_without_check": 0,
+    "steps": 31,
+    "timed_out": 0
+  },
+  "title": "Test: Volume - All"
+}

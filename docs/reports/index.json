@@ -1,4 +1,36 @@
 {
- "entries": {},
+ "entries": {
+  "OpenVoiceOS-ovos-skill-volume": {
+   "testing": {
+    "community": {
+     "doesnt_work": 0,
+     "history": 0,
+     "partly": 0,
+     "reports": [
+      {
+       "checked": 31,
+       "created_at": "2026-09-30T17:17:34Z",
+       "current": true,
+       "hardware": "x86_64",
+       "languages": [
+        "en-us",
+        "da-dk"
+       ],
+       "notes": "",
+       "outcome": "works",
+       "routed": 31,
+       "stale_reason": "",
+       "stt": "ovos-stt-plugin-server",
+       "tts": "ovos-tts-plugin-server",
+       "user": "andlo",
+       "version": "0.1.16"
+      }
+     ],
+     "works": 1
+    },
+    "maintainer": null
+   }
+  }
+ },
  "version": 1
 }
