@@ -794,6 +794,8 @@ footer a { color: var(--accent); }
 }
 
 .detail-link-btn:hover { opacity: 0.9; }
+.detail-link-btn:disabled { opacity: 0.45; cursor: not-allowed; filter: grayscale(1); }
+.detail-link-btn:disabled:hover { opacity: 0.45; }
 
 .detail-link-translate {
   background: transparent;

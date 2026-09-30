@@ -98,7 +98,7 @@ function renderReportBox(skill) {
     <textarea id="report-input" class="report-input" rows="8" spellcheck="false" placeholder='{"schema": "ovos-test-report/1", ...}'></textarea>
     <div class="report-actions">
       <button type="button" id="report-check" class="detail-link-btn">Check report</button>
-      <button type="button" id="report-submit" class="detail-link-btn" hidden>Submit on GitHub</button>
+      <button type="button" id="report-submit" class="detail-link-btn" disabled title="Check the report first">Submit on GitHub</button>
     </div>
     <div id="report-result" class="report-result" aria-live="polite"></div>
   `, hasReportLink());
@@ -183,14 +183,14 @@ function wireReportBox(skill) {
   const submitBtn = document.getElementById("report-submit");
   const out = document.getElementById("report-result");
   let checked = null;
-  input.addEventListener("input", () => { submitBtn.hidden = true; checked = null; });
+  input.addEventListener("input", () => { submitBtn.disabled = true; submitBtn.title = "Check the report first"; checked = null; });
   const fileInput = document.getElementById("report-file");
   if (fileInput) {
     fileInput.addEventListener("change", async () => {
       const file = fileInput.files && fileInput.files[0];
       if (!file) return;
       input.value = await file.text();
-      submitBtn.hidden = true;
+      submitBtn.disabled = true; submitBtn.title = "Check the report first";
       checked = null;
       checkBtn.click();
     });
@@ -205,7 +205,7 @@ function wireReportBox(skill) {
     checkBtn.click();
   });
   checkBtn.addEventListener("click", async () => {
-    submitBtn.hidden = true;
+    submitBtn.disabled = true; submitBtn.title = "Check the report first";
     let report;
     try {
       report = JSON.parse(input.value);
@@ -236,7 +236,8 @@ function wireReportBox(skill) {
       const verdict = res.passes ? `It counts as a confirmation that the skill works${measured}` : `It counts as a "${OUTCOME_TEXT[outcome]}" report${measured}`;
       showReportResult(out, `Looks good. ${verdict} on ${ch}${how}.`, res.problems, "report-ok");
       checked = report;
-      submitBtn.hidden = false;
+      submitBtn.disabled = false;
+      submitBtn.title = "";
     }
   });
   submitBtn.addEventListener("click", async () => {
