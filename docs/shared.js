@@ -37,6 +37,17 @@ const GENERIC_ICON_INFRA = genericIconSvg(
 );
 const GENERIC_ICON = GENERIC_ICON_PLUGIN; // ultimate fallback
 
+// Extra class and style for an entry's icon <img>. Icons the crawler found
+// itself (README header, repo tree) aren't always square, so they are
+// contained, not cropped. A Mycroft-style README icon is a black glyph
+// meant for a coloured tile (card_color): drawn white on that colour.
+function iconExtras(skill) {
+  const color = /^#[0-9a-fA-F]{3,8}$/.test(skill.icon_color || "") ? skill.icon_color : null;
+  if (color) return { cls: " icon-tile", style: ` style="background:${color}"` };
+  if (skill.icon && (skill.icon_source === "readme" || skill.icon_source === "repo")) return { cls: " icon-found", style: "" };
+  return { cls: "", style: "" };
+}
+
 function genericIconFor(skill) {
   if (skill.type_group === "Skill") return GENERIC_ICON_SKILL;
   if (skill.type_group === "Tool") return GENERIC_ICON_TOOL;

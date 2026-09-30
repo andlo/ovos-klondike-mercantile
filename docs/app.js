@@ -44,8 +44,8 @@ function renderCard(skill) {
     <article class="card tier-${skill.tier}">
       <a class="card-link" href="${escapeHtml(detailUrl)}">
         <div class="card-head">
-          <img src="${escapeHtml(icon)}" alt="" loading="lazy"
-               onerror="this.onerror=null;this.src='${fallbackIcon}'">
+          <img src="${escapeHtml(icon)}" alt="" loading="lazy" class="card-icon${skill.icon ? iconExtras(skill).cls : ""}"${skill.icon ? iconExtras(skill).style : ""}
+               onerror="this.onerror=null;this.className='card-icon';this.removeAttribute('style');this.src='${fallbackIcon}'">
           <div class="card-head-text">
             <h2>${escapeHtml(localized.name)}</h2>
             <div class="byline">by ${escapeHtml(skill.author)}${version ? ` · ${escapeHtml(version)}` : ""}</div>
