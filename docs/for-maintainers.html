@@ -249,7 +249,12 @@
       </p>
       <ol class="guide-list">
         <li><strong>A device on the channel.</strong> The OVOS installer lets you
-          pick testing (its default) or alpha. One device per channel, or re-install.</li>
+          pick testing (its default) or alpha; raspOVOS and ovos-docker images
+          follow alpha unless changed. In ovos-tui-client,
+          <code>Ctrl+P</code> → <strong>OVOS: Release channel</strong> shows which
+          channel the device runs (worked out from its versions, whatever made
+          the install) and how to change it on each kind of install. One device
+          per channel, or switch.</li>
         <li><strong>The released version, configured.</strong>
           <code>pip install your-skill==&lt;latest release&gt;</code>, then add
           the keys or hardware it needs.</li>
@@ -257,18 +262,27 @@
           (<code>test/end2end/golden_utterances_&lt;lang&gt;.jsonl</code>) if you
           have one. If not, <code>ovoscope generate</code> writes a first draft
           from your <code>.intent</code> files to edit.</li>
-        <li><strong>Run the test on the device</strong> with ovos-tui-client's
-          headless mode, which writes an
+        <li><strong>Run the test on the device</strong> with ovos-tui-client
+          (0.2.0 or newer), in either of two ways. Both write the same
           <a href="schemas/ovos-test-report-1.json"><code>ovos-test-report/1</code></a>
-          file:
-          <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
-          It records the installed versions and your skill's version itself;
-          <code>--notes</code> is where you describe the setup. Klondike finds
-          the channel from those versions, so this works on any install
-          (the OVOS installer, raspOVOS, Docker, your own venv).
-          <code>--channel</code> is optional; if you give it, it must match
-          what the device runs. Don't use <code>--report-replies</code> for a
-          report you share, and never edit the report by hand.</li>
+          file with the installed versions, your skill's version and the channel.
+          <ul>
+            <li><strong>In the TUI:</strong> start <code>ovos-tui</code>, run
+              <code>Ctrl+P</code> → <strong>Test: &lt;your skill&gt; - All</strong>, then
+              <code>Ctrl+P</code> → <strong>Test: Create shareable report</strong>. A
+              window asks for the channel (already filled in, with how it was
+              found), a note on the setup ("needs an OpenWeather key", "Mark II"),
+              and whether to include OVOS's replies: leave that off. The report is
+              saved and copied to the clipboard.</li>
+            <li><strong>Headless</strong>, e.g. from a script:
+              <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
+              <code>--channel</code> is optional; if you give it, it must match
+              what the device runs. Don't use <code>--report-replies</code> for a
+              report you share.</li>
+          </ul>
+          Klondike checks the channel again from the versions, so this works on
+          any install (the OVOS installer, raspOVOS, Buildroot, Docker, your own
+          venv). Never edit the report by hand.</li>
         <li><strong>Check it</strong> with <em>Submit a test report</em> on your
           skill's detail page: it says whether the report is valid for the
           channel as it is today and, if not, exactly why.</li>
