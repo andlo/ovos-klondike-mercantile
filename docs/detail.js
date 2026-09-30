@@ -435,8 +435,8 @@ function renderDetail(skill) {
   detailRoot.innerHTML = `
     <div class="detail-card">
       <div class="detail-top">
-        <img src="${escapeHtml(icon)}" alt="" class="detail-icon"
-             onerror="this.onerror=null;this.src='${fallbackIcon}'">
+        <img src="${escapeHtml(icon)}" alt="" class="detail-icon${skill.icon ? iconExtras(skill).cls : ""}"${skill.icon ? iconExtras(skill).style : ""}
+             onerror="this.onerror=null;this.className='detail-icon';this.removeAttribute('style');this.src='${fallbackIcon}'">
         <div>
           <h1>${escapeHtml(localized.name)}</h1>
           <div class="byline">by ${escapeHtml(skill.author)}${versionLabel(skill) ? ` · ${escapeHtml(versionLabel(skill))}` : ""}</div>

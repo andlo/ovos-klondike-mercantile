@@ -897,6 +897,155 @@ def normalize_tags(value):
     return []
 
 
+# ---- Icons -----------------------------------------------------------
+#
+# Only about 1 in 10 entries declares an icon in skill.json, so most cards
+# show the generic icon. Many repos do have one, just not declared: a
+# Mycroft-style README header (<img src='...font-awesome.../bed.svg'
+# card_color='#22a7f0' ...>), or an icon.png / logo.svg / res/icon/x.svg in
+# the repo. resolve_icon() takes, in this order:
+#   1. skill.json's "icon" (a relative path is made a raw GitHub URL; it
+#      used to be passed on as is and showed as a broken image);
+#   2. the README's header icon (only the Mycroft convention: an <img>
+#      in the first lines with card_color, or a Font Awesome / icon /
+#      logo URL - never badges or screenshots);
+#   3. an image in the repo tree named like an icon or logo, or kept in
+#      an icon(s)/ folder (one API call, only when 1 and 2 found nothing).
+# icon_source says which, so the detail page can say so.
+
+ICON_IMAGE = re.compile(r"\.(png|svg|jpe?g|webp)$", re.I)
+ICON_SKIP = re.compile(
+    r"(^|/)(tests?|screenshots?|node_modules|locale|\.?venv|build|dist|examples?|site-packages)(/|$)"
+    r"|screenshot|banner|badge|diagram|architecture|preview|example", re.I)
+ICON_WORD = re.compile(r"icon|logo", re.I)
+ICON_DIRS = {"res", "ui", "gui", "images", "img", "assets", "docs", ".github", "icons", "icon", "media", "static"}
+README_IMG = re.compile(r"<img\b[^>]*>", re.I)
+IMG_ATTR = re.compile(r"""(\w[\w-]*)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))""")
+HEX_COLOR = re.compile(r"^#[0-9a-fA-F]{3,8}$")
+NOT_ICON_URL = re.compile(r"shields\.io|badge|/actions/|codecov|coverage|travis|github\.com/[^/]+/[^/]+/assets/"
+                          r"|user-attachments|screenshot|diagram", re.I)
+
+
+FA_SVG = re.compile(r"font-?awesome.*?/svgs/(solid|regular|brands)/+([a-z0-9-]+)\.svg", re.I)
+FA_BRANCH = re.compile(r"font-?awesome/(?:raw/)?(?:refs/heads/)?(\d+)\.x/", re.I)
+UI_DIRS = {"gui", "ui", "qml", "qt5", "qt6", "shell"}
+
+
+def normalize_icon_url(url):
+    """Font Awesome icons in old READMEs point at rawgithub.com (gone) or the
+    FA repo's master branch; serve them from jsDelivr's npm copy of the same
+    major version instead (5 unless the URL names a 6.x/7.x branch)."""
+    m = FA_SVG.search(url or "")
+    if not m:
+        return url
+    major = FA_BRANCH.search(url)
+    version = major.group(1) if major else "5"
+    return f"https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{version}/svgs/{m.group(1).lower()}/{m.group(2).lower()}.svg"
+
+
+def raw_url(full_name, branch, path):
+    from urllib.parse import quote
+    while path.startswith(("./", "/")):
+        path = path[2:] if path.startswith("./") else path[1:]
+    return f"https://raw.githubusercontent.com/{full_name}/{branch}/{quote(path)}"
+
+
+def icon_from_readme(readme_text):
+    """(url, card_color) from a Mycroft-style README header icon, or (None, None)."""
+    head = "\n".join((readme_text or "").splitlines()[:8])
+    for tag in README_IMG.findall(head):
+        attrs = {m.group(1).lower(): next(g for g in m.groups()[1:] if g is not None) for m in IMG_ATTR.finditer(tag)}
+        src = attrs.get("src", "")
+        if not src.startswith("http") or NOT_ICON_URL.search(src) or not ICON_IMAGE.search(src.split("?")[0]):
+            continue
+        color = attrs.get("card_color")
+        color = color if color and HEX_COLOR.match(color) else None
+        if color or re.search(r"font-?awesome|icon|logo", src, re.I):
+            return src, color
+    return None, None
+
+
+def icon_score(path, top_dirs):
+    """Higher is more icon-like; None = not an icon candidate."""
+    low = path.lower()
+    base = low.rsplit("/", 1)[-1]
+    stem = base.rsplit(".", 1)[0]
+    parts = low.split("/")[:-1]
+    if not ICON_IMAGE.search(base) or ICON_SKIP.search(low):
+        return None
+    tokens = [t for t in re.split(r"[-_. ]+", stem) if t]
+    named = any(t.endswith(("icon", "logo")) or t in ("icon", "logo") for t in tokens)
+    # a folder of UI icons belongs to the skill's GUI (check marks, alarm
+    # bells), so only a top-level res/icon(s) or icon(s) folder counts
+    in_icon_dir = len(parts) <= 2 and bool(parts) and parts[-1] in ("icon", "icons") and parts[0] not in UI_DIRS
+    if any(p in UI_DIRS for p in parts) and stem not in ("icon", "logo"):
+        return None
+    if not named and not in_icon_dir:
+        return None
+    # below the root, the name must start with it (logo.png, icon_dark.svg,
+    # not sky-news-logo.svg next to other content images)
+    if parts and not in_icon_dir and not tokens[0].endswith(("icon", "logo")):
+        return None
+    score = 100 - 10 * len(parts)
+    if stem in ("icon", "logo"):
+        score += 30
+    elif stem.startswith(("icon", "logo")):
+        score += 15
+    if base.endswith(".svg"):
+        score += 5
+    if parts and (parts[0] in ICON_DIRS or parts[0] in top_dirs):
+        score += 5
+    if "favicon" in stem:
+        score -= 25
+    return score
+
+
+def icon_from_tree(full_name, branch):
+    tree = gh_ok("api", f"repos/{full_name}/git/trees/{branch}?recursive=1")
+    if not tree:
+        return None
+    items = tree.get("tree", [])
+    top_dirs = {i["path"].lower() for i in items if i.get("type") == "tree" and "/" not in i["path"]}
+    return raw_url(full_name, branch, pick_icon_path(items, top_dirs)) if pick_icon_path(items, top_dirs) else None
+
+
+def pick_icon_path(items, top_dirs):
+    """The best icon candidate in a git tree listing, or None. A folder
+    with three or more logo-like images is content (a news skill's
+    source logos, say), not the skill's own icon."""
+    cands = []
+    for item in items:
+        if item.get("type") != "blob" or item.get("size", 0) > 2_000_000:
+            continue
+        score = icon_score(item["path"], top_dirs)
+        if score is not None:
+            cands.append((score, item["path"]))
+    per_dir = {}
+    for _, path in cands:
+        folder = path.rsplit("/", 1)[0] if "/" in path else ""
+        per_dir[folder] = per_dir.get(folder, 0) + 1
+    cands = [c for c in cands if per_dir[c[1].rsplit("/", 1)[0] if "/" in c[1] else ""] < 3]
+    return max(cands)[1] if cands else None
+
+
+def resolve_icon(full_name, branch, declared, readme_text, tree_lookup=None):
+    """(icon_url, source, card_color) - see the Icons notes above."""
+    tree_lookup = tree_lookup or icon_from_tree
+    if declared:
+        declared = str(declared).strip()
+        if declared.startswith(("http://", "https://")):
+            return normalize_icon_url(declared), "skill.json", None
+        if declared and not declared.startswith(("data:", "/")) and ".." not in declared:
+            return raw_url(full_name, branch, declared), "skill.json", None
+    url, color = icon_from_readme(readme_text)
+    if url:
+        return normalize_icon_url(url), "readme", color
+    url = tree_lookup(full_name, branch)
+    if url:
+        return url, "repo", None
+    return None, None, None
+
+
 def days_since(iso_timestamp):
     if not iso_timestamp:
         return None
@@ -950,6 +1099,8 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         skill_id = None
 
     setup_notes = extract_readme_setup_sections(readme_text)
+    icon, icon_source, icon_color = resolve_icon(
+        full_name, repo.get("default_branch") or "main", icon, readme_text)
 
     # Fetched for both Skills and Plugins - plugins commonly have
     # real configurable settings too (API keys, endpoints, etc).
@@ -1010,6 +1161,8 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
         "tags": tags,
         "category": infer_category(tags),
         "icon": icon,
+        "icon_source": icon_source,
+        "icon_color": icon_color,
         "source": repo.get("html_url"),
         "package_name": package_name,
         "pypi_version": version,

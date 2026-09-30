@@ -1138,3 +1138,9 @@ footer a { color: var(--accent); }
 .clear-button:hover:not(:disabled) { background: #c0392b; color: #fff; }
 .clear-button:disabled { border-color: var(--border); color: var(--muted); cursor: default; opacity: 0.6; }
 .clear-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* Icons the crawler found in a README or the repo (shared.js iconExtras) */
+.card-head img.icon-found, .detail-icon.icon-found { object-fit: contain; padding: 3px; background: #fff; border: 1px solid var(--border); }
+.card-head img.icon-tile, .detail-icon.icon-tile { object-fit: contain; padding: 9px; filter: none; }
+.card-head img.icon-tile { padding: 9px; }
+.detail-icon.icon-tile { padding: 13px; }
