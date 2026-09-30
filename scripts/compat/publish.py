@@ -77,7 +77,7 @@ def clean(rec):
 
 
 RUN_INTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual",
-            "not_loaded", "total", "counted")
+            "not_loaded", "total", "counted", "asked")
 MISS_STRS = {"utterance": 200, "expected": 200, "taken_by": 200, "kind": 20, "stage": 80, "lang": 20}
 
 
@@ -87,6 +87,8 @@ def _clean_miss(m):
     out = {k: m[k][:cap] for k, cap in MISS_STRS.items() if isinstance(m.get(k), str)}
     if isinstance(m.get("fired"), list):
         out["fired"] = [str(x)[:200] for x in m["fired"][:3]]
+    if m.get("asked") is True:
+        out["asked"] = True
     return out if out.get("utterance") else None
 
 
@@ -164,6 +166,13 @@ def route_meta(meta, sdir, plan, docs, channel, now):
         "driver": str(first.get("driver") or "")[:80],
         "generator_spec": str(plan.get("generator_spec") or "")[:200],
         "route_version": str(plan.get("route_version") or "")[:10],
+        # How long routing took (issue #15), from the first shard that routed.
+        "timing": [{"lang": str(b.get("lang", ""))[:20], "status": str(b.get("status", ""))[:20],
+                    "seconds": b.get("seconds") if isinstance(b.get("seconds"), (int, float)) else None,
+                    "row_seconds": {k: v for k, v in (b.get("row_seconds") if isinstance(b.get("row_seconds"), dict)
+                                                      else {}).items()
+                                    if k in ("n", "median", "p95", "max") and isinstance(v, (int, float))}}
+                   for b in boots[:10]],
     }
     try:
         freeze = (sdir / "route-freeze.txt").read_text()[:200_000]
