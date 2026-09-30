@@ -138,8 +138,8 @@ function renderFacet(facet) {
       data-facet="${facet.id}" data-value="${escapeHtml(o.value)}">${o.html || escapeHtml(o.label)}${count}</button>`;
   }).join("");
   const search = facet.searchable && all.length > limit
-    ? `<input type="search" class="facet-search" data-facet="${facet.id}" placeholder="Find a ${facet.label.toLowerCase()}…"
-         value="${escapeHtml(facetQuery[facet.id] || "")}" aria-label="Find a ${facet.label.toLowerCase()}">` : "";
+    ? `<input type="search" class="facet-search" data-facet="${facet.id}" placeholder="Find ${/^[aeiou]/i.test(facet.label) ? "an" : "a"} ${facet.label.toLowerCase()}…"
+         value="${escapeHtml(facetQuery[facet.id] || "")}" aria-label="Find ${/^[aeiou]/i.test(facet.label) ? "an" : "a"} ${facet.label.toLowerCase()}">` : "";
   const toggle = more
     ? `<button type="button" class="link-button facet-more" data-facet="${facet.id}">Show all ${all.length}</button>`
     : (facetExpanded[facet.id] && !q && all.length > limit
