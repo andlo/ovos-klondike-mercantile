@@ -9,12 +9,6 @@ const emptyState = document.getElementById("empty-state");
 const statsLine = document.getElementById("stats-line");
 const queueLine = document.getElementById("queue-line");
 const searchInput = document.getElementById("search");
-const authorFilter = document.getElementById("author-filter");
-const tagFilter = document.getElementById("tag-filter");
-const typeFilter = document.getElementById("type-filter");
-const tierFilter = document.getElementById("tier-filter");
-const languageFilter = document.getElementById("language-filter");
-const compatFilter = document.getElementById("compat-filter");
 const siteLangSelect = document.getElementById("site-lang");
 const sortOrder = document.getElementById("sort-order");
 const showArchivedToggle = document.getElementById("show-archived");
@@ -172,134 +166,6 @@ function renderNewSection(list) {
   newGrid.innerHTML = html;
 }
 
-function populateFilters(list) {
-  const authors = [...new Set(list.map((s) => s.author))].sort((a, b) => a.localeCompare(b));
-
-  for (const a of authors) {
-    const opt = document.createElement("option");
-    opt.value = a;
-    opt.textContent = a;
-    authorFilter.appendChild(opt);
-  }
-
-  // Tag filter: "our" curated categories first (the same grouping
-  // the main grid uses - Daily, News, Other, ...), then every raw
-  // tag value underneath - previously one long flat alphabetical
-  // list where the handful of meaningful categories were buried
-  // among hundreds of one-off raw tags (Actors, aes, agent, aiy,
-  // ...). Category options are prefixed "cat:" so applyFilters can
-  // tell them apart from raw "tag:" values sharing the same select.
-  const categories = [...new Set(list.map((s) => s.category).filter(Boolean))]
-    .sort((a, b) => {
-      if (a === "Other") return 1;
-      if (b === "Other") return -1;
-      return a.localeCompare(b);
-    });
-  const rawTags = [...new Set(list.flatMap((s) => asArray(s.tags)))].sort((a, b) => a.localeCompare(b));
-
-  if (categories.length > 0) {
-    const optgroup = document.createElement("optgroup");
-    optgroup.label = "Categories";
-    for (const c of categories) {
-      const opt = document.createElement("option");
-      opt.value = `cat:${c}`;
-      opt.textContent = c;
-      optgroup.appendChild(opt);
-    }
-    tagFilter.appendChild(optgroup);
-  }
-  if (rawTags.length > 0) {
-    const optgroup = document.createElement("optgroup");
-    optgroup.label = "All Tags";
-    for (const t of rawTags) {
-      const opt = document.createElement("option");
-      opt.value = `tag:${t}`;
-      opt.textContent = t;
-      optgroup.appendChild(opt);
-    }
-    tagFilter.appendChild(optgroup);
-  }
-
-  const pluginTypes = new Set();
-  let hasSkill = false;
-  let hasTool = false;
-  let hasInfra = false;
-  for (const s of list) {
-    if (!s.component_type) continue;
-    if (s.type_group === "Skill") hasSkill = true;
-    else if (s.type_group === "Tool") hasTool = true;
-    else if (s.type_group === "Infrastructure") hasInfra = true;
-    else pluginTypes.add(s.component_type);
-  }
-
-  if (hasSkill) {
-    const opt = document.createElement("option");
-    opt.value = "Skill";
-    opt.textContent = "Skill";
-    typeFilter.appendChild(opt);
-  }
-  if (pluginTypes.size > 0) {
-    // "All Plugins" as its own selectable option (not just an
-    // optgroup label, which HTML can't make clickable on its own),
-    // matching by type_group so any plugin type counts - separate
-    // from the specific nested types below it.
-    const allPluginsOpt = document.createElement("option");
-    allPluginsOpt.value = "__all_plugins__";
-    allPluginsOpt.textContent = "All Plugins";
-    typeFilter.appendChild(allPluginsOpt);
-
-    const optgroup = document.createElement("optgroup");
-    optgroup.label = "Plugins";
-    for (const t of [...pluginTypes].sort((a, b) => a.localeCompare(b))) {
-      const opt = document.createElement("option");
-      opt.value = t;
-      opt.textContent = t;
-      optgroup.appendChild(opt);
-    }
-    typeFilter.appendChild(optgroup);
-  }
-  if (hasTool) {
-    const opt = document.createElement("option");
-    opt.value = "Tool";
-    opt.textContent = "Tool";
-    typeFilter.appendChild(opt);
-  }
-  if (hasInfra) {
-    const opt = document.createElement("option");
-    opt.value = "Infrastructure";
-    opt.textContent = "Infrastructure";
-    typeFilter.appendChild(opt);
-  }
-
-  // Tier filter: matches the site's own badge labels, not raw tier
-  // numbers, so the dropdown reads the same as what's on each card.
-  const TIER_OPTIONS = [
-    { value: "1", label: "Looks Complete" },
-    { value: "2", label: "Incomplete" },
-    { value: "3", label: "Inferred, Unconfirmed" },
-  ];
-  const presentTiers = new Set(list.map((s) => String(s.tier)));
-  for (const { value, label } of TIER_OPTIONS) {
-    if (!presentTiers.has(value)) continue;
-    const opt = document.createElement("option");
-    opt.value = value;
-    opt.textContent = label;
-    tierFilter.appendChild(opt);
-  }
-
-  // Language filter: "if someone speaks Spanish, they'd want to see
-  // skills listed with Spanish support" - populated from every
-  // distinct locale code actually present across skills' languages
-  // arrays, shown with its flag for quick scanning.
-  const languages = [...new Set(list.flatMap((s) => asArray(s.languages)))].sort((a, b) => a.localeCompare(b));
-  for (const l of languages) {
-    const opt = document.createElement("option");
-    opt.value = l;
-    opt.textContent = `${languageFlag(l)} ${l}`;
-    languageFilter.appendChild(opt);
-  }
-}
-
 function matchesSearch(skill, query) {
   if (!query) return true;
   const localized = localizeSkill(skill, currentSiteLang);
@@ -308,23 +174,6 @@ function matchesSearch(skill, query) {
     ...asArray(skill.tags), ...asArray(skill.examples), ...asArray(localized.examples),
   ].join(" ").toLowerCase();
   return haystack.includes(query);
-}
-
-function matchesTagFilter(skill, tagValue) {
-  if (!tagValue) return true;
-  if (tagValue.startsWith("cat:")) {
-    return skill.category === tagValue.slice(4);
-  }
-  if (tagValue.startsWith("tag:")) {
-    return asArray(skill.tags).includes(tagValue.slice(4));
-  }
-  return true;
-}
-
-function matchesTypeFilter(skill, typeValue) {
-  if (!typeValue) return true;
-  if (typeValue === "__all_plugins__") return skill.type_group === "Plugin";
-  return skill.component_type === typeValue;
 }
 
 const TIER_CHART_COLORS = { 1: "#1e8a4c", 2: "#b5680b", 3: "#8a8f98" };
@@ -451,22 +300,12 @@ function renderStatsSection(list) {
 
 function applyFilters() {
   const query = searchInput.value.trim().toLowerCase();
-  const author = authorFilter.value;
-  const tag = tagFilter.value;
-  const type = typeFilter.value;
-  const tier = tierFilter.value;
-  const language = languageFilter.value;
-  const compat = compatFilter.value;
   const showArchived = showArchivedToggle.checked;
 
+  // facetsMatch: the Filters panel (filters.js)
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
-    (!author || s.author === author) &&
-    matchesTagFilter(s, tag) &&
-    matchesTypeFilter(s, type) &&
-    (!tier || String(s.tier) === tier) &&
-    (!language || asArray(s.languages).includes(language)) &&
-    matchesCompatFilter(s, compat) &&
+    facetsMatch(s) &&
     (showArchived || !s.archived)
   );
   const sorted = sortSkills(filtered, sortOrder.value);
@@ -480,6 +319,7 @@ function applyFilters() {
   // above it once someone applied any filter, including archived
   // ones staying counted even with "show archived" off.
   renderStatsSection(sorted);
+  writeHash();
 }
 
 function renderStatsLine(meta, entryCount) {
@@ -511,14 +351,7 @@ function renderStatsLine(meta, entryCount) {
 }
 
 searchInput.addEventListener("input", applyFilters);
-authorFilter.addEventListener("change", applyFilters);
-tagFilter.addEventListener("change", applyFilters);
-typeFilter.addEventListener("change", applyFilters);
-tierFilter.addEventListener("change", applyFilters);
-languageFilter.addEventListener("change", applyFilters);
-compatFilter.addEventListener("change", applyFilters);
 sortOrder.addEventListener("change", applyFilters);
-showArchivedToggle.addEventListener("change", applyFilters);
 siteLangSelect.addEventListener("change", () => {
   currentSiteLang = siteLangSelect.value;
   setSiteLanguage(currentSiteLang);
@@ -544,7 +377,7 @@ Promise.all([
 ])
   .then(([skillsData, metaData, compatData, reportsIndex]) => {
     skills = applyReports(applyCompatResults(skillsData, compatData), reportsIndex);
-    populateFilters(skills);
+    initFacets(skills, applyFilters);
     populateSiteLangSelect(siteLangSelect);
     renderStatsLine(metaData, skills.length);
     applyFilters();

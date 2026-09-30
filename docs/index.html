@@ -108,43 +108,45 @@
     </details>
     </div>
 
-    <div class="site-lang-switcher">
-      <label for="site-lang">Display language</label>
-      <select id="site-lang"></select>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search skills, authors, tags..." autocomplete="off" aria-label="Search">
+      <div class="toolbar-row">
+        <button type="button" id="filters-toggle" class="toolbar-button" aria-expanded="false" aria-controls="filters-panel">
+          <span aria-hidden="true">⚙</span> Filters <span id="filters-count" class="filters-count" hidden></span>
+        </button>
+        <label class="toolbar-select">
+          <span>Sort</span>
+          <select id="sort-order" title="Recommended: best test result first, with testing (the installer's default) weighing most, then alpha, then stable">
+            <option value="recommended">Recommended</option>
+            <option value="stars">Most stars</option>
+            <option value="name">Name (A-Z)</option>
+            <option value="newest">Newest</option>
+          </select>
+        </label>
+        <label class="toolbar-select site-lang-switcher">
+          <span aria-hidden="true">🌐</span>
+          <select id="site-lang" aria-label="Display language"></select>
+        </label>
+      </div>
     </div>
 
-    <input id="search" type="search" placeholder="Search skills, authors, tags..." autocomplete="off">
-    <div class="filters">
-      <select id="author-filter"><option value="">All authors</option></select>
-      <select id="tag-filter"><option value="">All tags</option></select>
-      <select id="type-filter"><option value="">All types</option></select>
-      <select id="tier-filter"><option value="">All tiers</option></select>
-      <select id="language-filter"><option value="">All languages</option></select>
-      <select id="compat-filter" title="Tested on OVOS release channels (Looks Complete skills and pipeline plugins)">
-        <option value="">Any OVOS test result</option>
-        <option value="tested">Tested on OVOS</option>
-        <option value="loads:testing">✓ Works on testing (the installer's default)</option>
-        <option value="loads:alpha">✓ Works on alpha</option>
-        <option value="loads:stable">✓ Works on stable</option>
-        <option value="loads:installer">✓ Works on testing and alpha</option>
-        <option value="routes:testing">✓ Routes on testing (golden utterances)</option>
-        <option value="routes:alpha">✓ Routes on alpha (golden utterances)</option>
-        <option value="routes:stable">✓ Routes on stable (golden utterances)</option>
-        <option value="fails:testing">✗ Fails on testing</option>
-        <option value="fails:alpha">✗ Fails on alpha</option>
-        <option value="fails:stable">✗ Fails on stable</option>
-      </select>
-      <select id="sort-order" title="Recommended: best test result first, with testing (the installer's default) weighing most, then alpha, then stable">
-        <option value="recommended">Recommended</option>
-        <option value="stars">Most stars</option>
-        <option value="name">Name (A-Z)</option>
-        <option value="newest">Newest</option>
-      </select>
+    <div id="active-filters" class="active-filters" hidden></div>
+
+    <div id="filters-panel" class="filters-panel" hidden>
+      <div class="filters-panel-head">
+        <p class="filters-help">Pick as many as you like. Within a group, any of them matches; between groups, all must match.</p>
+        <button type="button" class="clear-button" data-clear="1">✕ Clear all</button>
+      </div>
+      <div id="facets"></div>
+      <div class="filters-panel-footer">
+        <label class="archived-toggle">
+          <input type="checkbox" id="show-archived">
+          Show archived repos too
+        </label>
+        <button type="button" class="clear-button" data-clear="1">✕ Clear all</button>
+        <button type="button" id="filters-done" class="toolbar-button">Done</button>
+      </div>
     </div>
-    <label class="archived-toggle">
-      <input type="checkbox" id="show-archived">
-      Show archived repos too
-    </label>
   </header>
 
   <section id="new-section" class="new-section" hidden>
@@ -165,6 +167,7 @@
 
   <script src="shared.js"></script>
   <script src="legend.js"></script>
+  <script src="filters.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
