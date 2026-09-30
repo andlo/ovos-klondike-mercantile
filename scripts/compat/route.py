@@ -37,7 +37,15 @@ session, `ovos.intent.unmatched` means nobody, else the first
              counts those hits.
 
 Output: one JSON object, rewritten after every row, so a run killed by the
-outer timeout still says how far it got.
+outer timeout still says how far it got. With --budget, rows past it are
+left out and the status is "partial" (issue #15); row_seconds says how long
+rows took (median, p95, max).
+
+A row waits for its handler to return (or --timeout). Ending it as soon as
+the claim is known was tried for #15 and dropped: a handler still running
+from one row changed the verdicts of later rows (weather's humidity
+sentences went from hit to hang in both runs that did it, and in none that
+did not).
 """
 import argparse
 import itertools
@@ -355,6 +363,10 @@ def legacy_train(croft, max_wait):
     return reply is not None
 
 
+class BudgetReached(Exception):
+    pass
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", required=True)
@@ -363,12 +375,22 @@ def main():
     ap.add_argument("--max-wait", type=float, default=1800)
     # Common query alone searches for up to 6s before answering.
     ap.add_argument("--timeout", type=float, default=15.0, help="seconds per utterance")
+    ap.add_argument("--budget", type=float, default=0,
+                    help="seconds for this language, boot included (0: no limit); rows past it are "
+                         "left out and the result is 'partial' (issue #15)")
     args = ap.parse_args()
 
     man = json.load(open(args.manifest))
     out = {"lang": args.lang, "status": "running", "results": {}}
 
+    row_times = []
+
     def flush():
+        if row_times:
+            ts = sorted(row_times)
+            out["row_seconds"] = {"n": len(ts), "median": round(ts[len(ts) // 2], 2),
+                                  "p95": round(ts[min(len(ts) - 1, int(len(ts) * 0.95))], 2),
+                                  "max": round(ts[-1], 2)}
         tmp = args.out + ".tmp"
         with open(tmp, "w") as f:
             json.dump(out, f, indent=1, default=str)
@@ -405,6 +427,10 @@ def main():
 
     try:
         for n, (item, run, row) in enumerate(work):
+            if args.budget and time.monotonic() - started > args.budget:
+                left = len(work) - n
+                out["budget_skipped"] = left
+                raise BudgetReached(f"routing budget reached; {left} rows not run")
             res = out["results"].setdefault(item["id"], {}).setdefault(run, {
                 "hit": 0, "wrong_intent": 0, "baseline": 0, "unhandled": 0, "neighbour": 0,
                 "hang": 0, "manual": 0, "not_loaded": 0, "total": 0, "asked": 0,
@@ -421,7 +447,9 @@ def main():
             # process, the outer runner finds it here and counts it as "hang".
             out["current"] = {"id": item["id"], "run": run, "utterance": row["utterance"][:200]}
             flush()
+            t_row = time.monotonic()
             recs, hung, asked = capture(croft, row["utterance"], row["lang"], session_pipeline, args.timeout)
+            row_times.append(time.monotonic() - t_row)
             who, fired = claimant(recs, known)
             expected = row.get("expected_intent", row.get("intent_label"))
             entry = {"utterance": row["utterance"][:200], "expected": expected, "taken_by": who}
@@ -464,6 +492,9 @@ def main():
                 res["misses"].append(entry)
         out.pop("current", None)
         out["status"] = "ok"
+    except BudgetReached as e:
+        out.pop("current", None)
+        out.update(status="partial", reason=str(e))
     except BaseException as e:  # noqa: BLE001
         out.update(status="error", reason=f"{type(e).__name__}: {e}"[:500])
         traceback.print_exc()

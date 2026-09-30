@@ -261,6 +261,11 @@ from feed import LEVEL3_RATIO  # noqa: E402
 # (see route.py), so a shard routes en-US plus the languages most of its
 # skills have rows for, and lists the rest as not tested.
 ROUTE_MAX_LANGS = int(os.environ.get("COMPAT_ROUTE_MAX_LANGS", "4"))
+# Minutes of level 3 routing per shard, all languages together (issue #15):
+# one skill with big multi-language golden files must not hold the whole
+# run. Rows past it are left out and the language is marked partial;
+# languages not started are listed as not routed.
+ROUTE_BUDGET_MIN = float(os.environ.get("COMPAT_ROUTE_BUDGET_MIN", "30"))
 # Generated rows are drafted in English only for now: ovoscope generate's
 # default slot values are English-only (ovoscope#224), so other languages
 # skip most templates.
@@ -387,8 +392,9 @@ def route_shard(items, results, args, workroot, deadline):
     man_path = Path(workroot) / "route-manifest.json"
     man_path.write_text(json.dumps(manifest))
     boots = []
+    deadline = min(deadline, time.monotonic() + ROUTE_BUDGET_MIN * 60)
     for lang in langs:
-        if time.monotonic() > deadline:
+        if time.monotonic() > deadline - 60:
             skipped.insert(0, lang)
             print(f"    route {lang}: skipped, out of time", flush=True)
             continue
@@ -399,7 +405,9 @@ def route_shard(items, results, args, workroot, deadline):
                          max(600, deadline - time.monotonic())))
         rc, log = run([py, str(ROUTE), "--manifest", str(man_path), "--lang", lang,
                        "--out", str(out_path), "--max-wait", str(args.boot_timeout),
-                       "--timeout", str(args.route_timeout)], budget, Path(workroot) / f"route-{lang}.log")
+                       "--timeout", str(args.route_timeout),
+                       "--budget", str(int(max(60, deadline - time.monotonic())))],
+                      budget, Path(workroot) / f"route-{lang}.log")
         try:
             res = json.loads(out_path.read_text())
         except (OSError, ValueError):
@@ -428,7 +436,8 @@ def route_shard(items, results, args, workroot, deadline):
             "boots": [{k: b.get(k) for k in ("lang", "status", "reason", "driver", "pipeline",
                                              "pipeline_dropped", "baseline_ids", "not_loaded",
                                              "boot_seconds", "seconds", "log_excerpt",
-                                             "questions_not_released")} for b in boots]}
+                                             "questions_not_released", "row_seconds",
+                                             "budget_skipped")} for b in boots]}
 
 
 COUNTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual", "not_loaded", "total",

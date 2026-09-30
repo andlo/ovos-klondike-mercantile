@@ -166,6 +166,13 @@ def route_meta(meta, sdir, plan, docs, channel, now):
         "driver": str(first.get("driver") or "")[:80],
         "generator_spec": str(plan.get("generator_spec") or "")[:200],
         "route_version": str(plan.get("route_version") or "")[:10],
+        # How long routing took (issue #15), from the first shard that routed.
+        "timing": [{"lang": str(b.get("lang", ""))[:20], "status": str(b.get("status", ""))[:20],
+                    "seconds": b.get("seconds") if isinstance(b.get("seconds"), (int, float)) else None,
+                    "row_seconds": {k: v for k, v in (b.get("row_seconds") if isinstance(b.get("row_seconds"), dict)
+                                                      else {}).items()
+                                    if k in ("n", "median", "p95", "max") and isinstance(v, (int, float))}}
+                   for b in boots[:10]],
     }
     try:
         freeze = (sdir / "route-freeze.txt").read_text()[:200_000]
