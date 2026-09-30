@@ -42,6 +42,8 @@ every other skill tested against the profile in one core. Its manifest
 lists the profile's skill ids as `counted_ids`: a sentence one of those
 takes counts as "baseline" (a real device with the profile would see it),
 while one taken by another tested skill stays a "neighbour", not counted.
+`uncounted_ids` names tested skills that are loaded but have no rows of
+their own (so are not in the manifest's items): they are neighbours too.
 
 Output: one JSON object, rewritten after every row, so a run killed by the
 outer timeout still says how far it got. With --budget, rows past it are
@@ -431,6 +433,7 @@ def main():
     out["not_loaded"] = sorted(set(baseline_ids + shard_ids) - loaded)
     known = set(baseline_ids) | set(shard_ids)
     counted_ids = set(man.get("counted_ids") or [])
+    uncounted_ids = set(man.get("uncounted_ids") or [])
     flush()
 
     try:
@@ -484,7 +487,7 @@ def main():
                     if asked is not None:
                         res["asked"] += 1
                     continue
-            elif who in shard_ids and who not in counted_ids:
+            elif (who in shard_ids or who in uncounted_ids) and who not in counted_ids:
                 res["neighbour"] += 1
                 if len(res["collisions"]) < MAX_MISSES:
                     res["collisions"].append(entry)

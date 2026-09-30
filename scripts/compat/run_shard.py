@@ -571,6 +571,7 @@ def klondike_job(args, workroot, deadline):
     langs, skipped = pick_langs({i["id"]: all_runs[i["id"]] for i, _ in routable})
     manifest = {"pipeline": spec.get("pipeline") or [], "exclude_ids": sorted(exclude),
                 "counted_ids": sorted(profile_ids),
+                "uncounted_ids": sorted({sid for i, r in entries if not r["member"] for sid in r["plugin_ids"]}),
                 "items": [{"id": i["id"], "skill_ids": r["plugin_ids"], "runs": all_runs[i["id"]]}
                           for i, r in routable]}
     boots = run_boots(py, manifest, langs, skipped, "klondike", args, workroot,
