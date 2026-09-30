@@ -23,7 +23,8 @@
     return `
       <h4 class="compat-subhead">${escapeHtml(ch)}</h4>
       <div class="compat-facts">
-        ${renderFactRow("Installer", asArray(p.requirements).filter((r) => r.startsWith("ovos-core[")).map(code).join(" ")
+        ${renderFactRow("Installer", asArray(p.requirements)
+          .filter((r) => r.startsWith("ovos-core[") && !asArray(p.extra_requirements).includes(r)).map(code).join(" ")
           + (asArray(p.extra_requirements).length ? ` + extra skills ${asArray(p.extra_requirements).map(code).join(" ")}` : ""))}
         ${renderFactRow("Pipeline", added.length ? `installer's, plus ${added.map(code).join(" ")}` : "the installer's, unchanged")}
         ${renderFactRow("Last run", selfLine)}
