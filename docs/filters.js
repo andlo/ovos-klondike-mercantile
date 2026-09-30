@@ -31,14 +31,14 @@ const FACETS = [
       const out = [];
       const has = (g) => list.some((s) => s.type_group === g);
       if (has("Skill")) out.push({ value: "Skill", label: "Skill" });
+      if (has("Tool")) out.push({ value: "Tool", label: "Tool" });
+      if (has("Infrastructure")) out.push({ value: "Infrastructure", label: "Infrastructure" });
       const pluginTypes = [...new Set(list.filter((s) => s.type_group === "Plugin" && s.component_type)
         .map((s) => s.component_type))].sort((a, b) => a.localeCompare(b));
       if (pluginTypes.length) {
         out.push({ value: "__all_plugins__", label: "All plugins" });
         for (const t of pluginTypes) out.push({ value: t, label: t });
       }
-      if (has("Tool")) out.push({ value: "Tool", label: "Tool" });
-      if (has("Infrastructure")) out.push({ value: "Infrastructure", label: "Infrastructure" });
       return out;
     },
     test(s, v) {
@@ -209,7 +209,7 @@ function writeHash() {
   const q = document.getElementById("search").value.trim();
   if (q) params.set("q", q);
   for (const f of FACETS) {
-    if (facetState[f.id].size) params.set(f.id, [...facetState[f.id]].map(encodeURIComponent).join(","));
+    if (facetState[f.id].size) params.set(f.id, [...facetState[f.id]].join(","));
   }
   const sort = document.getElementById("sort-order").value;
   if (sort && sort !== "recommended") params.set("sort", sort);
@@ -223,7 +223,7 @@ function readHash() {
   for (const f of FACETS) {
     facetState[f.id].clear();
     const raw = params.get(f.id);
-    if (raw) for (const v of raw.split(",")) if (v) facetState[f.id].add(decodeURIComponent(v));
+    if (raw) for (const v of raw.split(",")) if (v) facetState[f.id].add(v);
   }
   if (params.get("q")) document.getElementById("search").value = params.get("q");
   if (params.get("sort")) document.getElementById("sort-order").value = params.get("sort");
@@ -239,7 +239,12 @@ function setPanelOpen(open) {
 
 function initFacets(list, onChange) {
   facetsOnChange = onChange;
-  for (const f of FACETS) facetOptions[f.id] = f.options(list);
+  for (const f of FACETS) {
+    // every chip says how many entries it matches; chips matching none are left out
+    facetOptions[f.id] = f.options(list)
+      .map((o) => (o.n ? o : { ...o, n: list.filter((s) => f.test(s, o.value)).length }))
+      .filter((o) => o.n > 0);
+  }
   readHash();
   renderFacets();
 
