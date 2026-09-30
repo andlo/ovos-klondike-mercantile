@@ -272,8 +272,10 @@
               <code>Ctrl+P</code> → <strong>Test: Create shareable report</strong>. A
               window asks for the channel (already filled in, with how it was
               found), a note on the setup ("needs an OpenWeather key", "Mark II"),
-              and whether to include OVOS's replies: leave that off. The report is
-              saved and copied to the clipboard.</li>
+              and whether to include OVOS's replies: leave that off. <em>Save and copy</em>
+              puts it on the clipboard; if your terminal doesn't pass that on,
+              <em>Save and show</em> shows it to copy by hand (and
+              <strong>Test: Show last report</strong> shows it again later).</li>
             <li><strong>Headless</strong>, e.g. from a script:
               <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
               <code>--channel</code> is optional; if you give it, it must match
