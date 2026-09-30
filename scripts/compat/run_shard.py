@@ -427,10 +427,12 @@ def route_shard(items, results, args, workroot, deadline):
     return {"langs": langs, "langs_skipped": skipped, "freeze": freeze, "excluded_ids": args.exclude_ids,
             "boots": [{k: b.get(k) for k in ("lang", "status", "reason", "driver", "pipeline",
                                              "pipeline_dropped", "baseline_ids", "not_loaded",
-                                             "boot_seconds", "seconds", "log_excerpt")} for b in boots]}
+                                             "boot_seconds", "seconds", "log_excerpt",
+                                             "questions_not_released")} for b in boots]}
 
 
-COUNTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual", "not_loaded", "total")
+COUNTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual", "not_loaded", "total",
+          "asked")
 
 
 def aggregate(routable, boots, langs, skipped):

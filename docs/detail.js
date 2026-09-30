@@ -240,6 +240,7 @@ function renderRoutingRun(title, r) {
     return renderStatRow(title, escapeHtml(r.reason || "not run"));
   }
   const parts = [`${r.hit}/${r.counted} reach the skill`];
+  if (r.asked) parts.push(`${r.asked} of them ask a follow-up question (answered with “cancel”)`);
   if (r.baseline) parts.push(`${r.baseline} taken by a default skill`);
   if (r.wrong_intent) parts.push(`${r.wrong_intent} reach another of its intents`);
   if (r.unhandled) parts.push(`${r.unhandled} not handled`);
@@ -249,7 +250,7 @@ function renderRoutingRun(title, r) {
   const notRouted = asArray(r.langs_not_routed);
   if (asArray(r.langs_partial).length) parts.push(`run stopped early in ${r.langs_partial.join(", ")}`);
   const misses = asArray(r.misses).map((m) =>
-    `<li><code>${escapeHtml(m.lang || "")}</code> “${escapeHtml(m.utterance)}”: ${(MISS_TEXT[m.kind] || (() => escapeHtml(m.kind || "missed")))(m)}</li>`).join("");
+    `<li><code>${escapeHtml(m.lang || "")}</code> “${escapeHtml(m.utterance)}”: ${(MISS_TEXT[m.kind] || (() => escapeHtml(m.kind || "missed")))(m)}${m.asked ? " and asked a follow-up question" : ""}</li>`).join("");
   const collisions = asArray(r.collisions).map((m) =>
     `<li><code>${escapeHtml(m.lang || "")}</code> “${escapeHtml(m.utterance)}” went to <code>${escapeHtml(m.taken_by || "?")}</code></li>`).join("");
   return `

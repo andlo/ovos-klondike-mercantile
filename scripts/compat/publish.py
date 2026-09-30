@@ -77,7 +77,7 @@ def clean(rec):
 
 
 RUN_INTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual",
-            "not_loaded", "total", "counted")
+            "not_loaded", "total", "counted", "asked")
 MISS_STRS = {"utterance": 200, "expected": 200, "taken_by": 200, "kind": 20, "stage": 80, "lang": 20}
 
 
@@ -87,6 +87,8 @@ def _clean_miss(m):
     out = {k: m[k][:cap] for k, cap in MISS_STRS.items() if isinstance(m.get(k), str)}
     if isinstance(m.get("fired"), list):
         out["fired"] = [str(x)[:200] for x in m["fired"][:3]]
+    if m.get("asked") is True:
+        out["asked"] = True
     return out if out.get("utterance") else None
 
 

@@ -30,6 +30,11 @@ session, `ovos.intent.unmatched` means nobody, else the first
   hang       nobody claimed it and a pipeline stage did not return within
              --timeout (typically a common-query provider that blocks); a
              miss, with the stage it was stuck in
+  asked      (not an outcome of its own) the skill that took the row asked
+             a follow-up question; it is answered with "cancel" in the
+             row's session (see ASK_ENABLE) and the row is judged as usual,
+             so a question from the row's own skill is a hit. `asked`
+             counts those hits.
 
 Output: one JSON object, rewritten after every row, so a run killed by the
 outer timeout still says how far it got.
@@ -50,6 +55,19 @@ from probe import boot, modern_driver, same_language  # noqa: E402
 EOF_TYPES = {"ovos.utterance.handled", "mycroft.skill.handler.complete",
              "complete_intent_failure", "ovos.intent.unmatched"}
 CAPTURE_SETTLE = 0.4
+# A handler that asks the user something (get_response / ask_yesno) waits
+# for an answer that never comes: ovos-workshop before 9.x waits forever
+# (num_retries=-1, fixed upstream in ovos-workshop#514). In this core that
+# blocks the row's emit thread until --timeout and leaves the thread behind
+# for the rest of the run. So a question is answered with "cancel", sent
+# with the FULL session from the enable message's context: the response
+# mode lives in that session, and a cancel carrying only the session_id is
+# routed as a fresh utterance and frees nothing (verified live,
+# ovos-tui-client#54). The row then counts as handled by whoever asked.
+ASK_ENABLE = "skill.converse.get_response.enable"
+ASK_DISABLE = "skill.converse.get_response.disable"
+ASK_GRACE = 0.5       # an answer the handler itself provides (no real wait)
+ASK_RELEASE = 5.0     # how long the cancel may take to release the handler
 MAX_MISSES = 25
 _SESSION_SEQ = itertools.count()
 
@@ -141,21 +159,42 @@ def capture(croft, utterance, lang, pipeline, timeout):
                   {"session": sess.serialize(), "source": "klondike", "destination": "skills"})
     croft.bus.on("message", rec)
     hung = False
+    asked = None  # None: no question; True: asked and released; False: asked, not released
+    cut = None
     try:
         deadline = time.monotonic() + timeout
         # FakeBus.emit runs every handler in the emitting thread, so a stage
         # that never returns (a common-query provider whose can_answer
         # blocks; ovos-test-harness quarantines wolfie/wordnet for this)
         # would hang the whole run. The emit gets its own thread and a
-        # deadline; nothing is read while it runs, only after it returned
-        # or timed out, so the result does not depend on thread timing
-        # (the race ovos-test-harness saw came from polling DURING emit).
+        # deadline. While it runs, the loop below only plays the parts of a
+        # device the test core lacks (end of speech, an answer to a
+        # question); the verdict is still read after it returned or timed
+        # out, so it does not depend on thread timing (the race
+        # ovos-test-harness saw came from judging DURING emit).
         emitter = threading.Thread(target=croft.bus.emit, args=(msg,), daemon=True)
         emitter.start()
-        emitter.join(timeout)
+        spoken = 0
+        while emitter.is_alive() and time.monotonic() < deadline:
+            emitter.join(0.05)
+            spoken = end_speech(croft, recs, session_id, spoken)
+            if open_question(recs, session_id) is None:
+                continue
+            time.sleep(ASK_GRACE)
+            enable = open_question(recs, session_id)
+            if enable is None:
+                continue
+            # Everything after this point is the release, not the answer.
+            cut = len(recs)
+            asked = release_question(croft, enable, lang, recs, session_id)
+            until = time.monotonic() + ASK_RELEASE
+            while emitter.is_alive() and time.monotonic() < until:
+                emitter.join(0.05)
+                spoken = end_speech(croft, recs, session_id, spoken)
+            break
         if emitter.is_alive():
             hung = True
-        else:
+        elif asked is None:
             while time.monotonic() < deadline:
                 if any(m.msg_type in EOF_TYPES for m in list(recs) if _session_of(m) in ("", session_id)):
                     time.sleep(CAPTURE_SETTLE)
@@ -163,7 +202,52 @@ def capture(croft, utterance, lang, pipeline, timeout):
                 time.sleep(0.05)
     finally:
         croft.bus.remove("message", rec)
-    return [m for m in list(recs) if _session_of(m) in ("", session_id)], hung
+    kept = list(recs)[:cut] if cut is not None else list(recs)
+    return [m for m in kept if _session_of(m) in ("", session_id)], hung, asked
+
+
+def open_question(recs, session_id):
+    """The enable message of a question still waiting on this row's session."""
+    pending = None
+    for m in list(recs):
+        if m.msg_type not in (ASK_ENABLE, ASK_DISABLE) or _session_of(m) != session_id:
+            continue
+        pending = m if m.msg_type == ASK_ENABLE else None
+    return pending
+
+
+def release_question(croft, enable, lang, recs, session_id):
+    """Answer an open question with "cancel" in the asking session. True
+    when the skill let go (disable seen) within ASK_RELEASE."""
+    from ovos_bus_client.message import Message
+    ctx = enable.context or {}
+    cancel = Message("recognizer_loop:utterance", {"utterances": ["cancel"], "lang": lang},
+                     {"session": ctx.get("session"), "source": "klondike", "destination": "skills"})
+    threading.Thread(target=croft.bus.emit, args=(cancel,), daemon=True).start()
+    until = time.monotonic() + ASK_RELEASE
+    spoken = 0
+    while time.monotonic() < until:
+        if open_question(recs, session_id) is None:
+            return True
+        spoken = end_speech(croft, recs, session_id, spoken)
+        time.sleep(0.05)
+    return False
+
+
+def end_speech(croft, recs, session_id, done):
+    """Answer every new `speak` on the row's session with
+    recognizer_loop:audio_output_end, as a device's audio service does when
+    the sentence has been played. The test core has no audio service, so a
+    skill that speaks with wait=True (get_response does, before it starts
+    listening) would otherwise sit out the full 15 s speech timeout.
+    Returns how many speaks have been answered."""
+    speaks = [m for m in list(recs) if m.msg_type == "speak" and _session_of(m) == session_id]
+    for m in speaks[done:]:
+        try:
+            croft.bus.emit(m.forward("recognizer_loop:audio_output_end"))
+        except Exception as e:  # noqa: BLE001
+            print(f"warning: audio_output_end not sent: {e}", file=sys.stderr)
+    return len(speaks)
 
 
 def claimant(recs, known_ids):
@@ -323,7 +407,8 @@ def main():
         for n, (item, run, row) in enumerate(work):
             res = out["results"].setdefault(item["id"], {}).setdefault(run, {
                 "hit": 0, "wrong_intent": 0, "baseline": 0, "unhandled": 0, "neighbour": 0,
-                "hang": 0, "manual": 0, "not_loaded": 0, "total": 0, "misses": [], "collisions": []})
+                "hang": 0, "manual": 0, "not_loaded": 0, "total": 0, "asked": 0,
+                "misses": [], "collisions": []})
             res["total"] += 1
             if row.get("needs_manual"):
                 res["manual"] += 1
@@ -336,10 +421,16 @@ def main():
             # process, the outer runner finds it here and counts it as "hang".
             out["current"] = {"id": item["id"], "run": run, "utterance": row["utterance"][:200]}
             flush()
-            recs, hung = capture(croft, row["utterance"], row["lang"], session_pipeline, args.timeout)
+            recs, hung, asked = capture(croft, row["utterance"], row["lang"], session_pipeline, args.timeout)
             who, fired = claimant(recs, known)
             expected = row.get("expected_intent", row.get("intent_label"))
             entry = {"utterance": row["utterance"][:200], "expected": expected, "taken_by": who}
+            if asked is not None:
+                # Whoever asked handled the sentence: the verdict below is
+                # the usual one. `asked` counts the hits among them.
+                entry["asked"] = True
+                if asked is False:
+                    out["questions_not_released"] = out.get("questions_not_released", 0) + 1
             if hung and who is None:
                 # Nobody claimed it and a pipeline stage never returned: the
                 # sentence got past every intent stage to one that blocks.
@@ -354,6 +445,8 @@ def main():
                     entry["kind"] = "wrong_intent"
                 else:
                     res["hit"] += 1
+                    if asked is not None:
+                        res["asked"] += 1
                     continue
             elif who in shard_ids:
                 res["neighbour"] += 1
