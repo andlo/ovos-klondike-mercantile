@@ -90,16 +90,56 @@ function renderReportBox(skill) {
   if (!skill.compat) return "";
   return fold("Submit a test report", `
     <p class="setup-note">Tested this skill on your own OVOS device? Paste the report your test tool wrote
-      (an <code>ovos-test-report/1</code> file: <code>ovos-tui --run &lt;skill_id&gt; --report -</code>). It is checked here first, then
+      (an <code>ovos-test-report/1</code> file: <code>ovos-tui --run &lt;skill_id&gt; --report -</code>), or pick the
+      <code>.report.json</code> file. A report link from <code>ovos-tui</code> fills it in by itself. It is checked here first, then
       GitHub opens with it filled in and you submit it as yourself. Maintainers: use this to check your
       report before you commit it as <code>test/reports/&lt;channel&gt;.json</code>.</p>
+    <p class="setup-note"><label>Report file: <input type="file" id="report-file" accept=".json,application/json"></label></p>
     <textarea id="report-input" class="report-input" rows="8" spellcheck="false" placeholder='{"schema": "ovos-test-report/1", ...}'></textarea>
     <div class="report-actions">
       <button type="button" id="report-check" class="detail-link-btn">Check report</button>
       <button type="button" id="report-submit" class="detail-link-btn" hidden>Submit on GitHub</button>
     </div>
     <div id="report-result" class="report-result" aria-live="polite"></div>
-  `);
+  `, hasReportLink());
+}
+
+// A report link from ovos-tui: <this page>#report=<base64url(gzip(compact JSON))>.
+// The fragment never reaches a server; the browser unpacks it here. It is
+// taken off the address bar before the page renders (so the page's own
+// links, e.g. "Request test", don't carry it) and kept here.
+const REPORT_LINK = window.location.hash.startsWith("#report=")
+  ? window.location.hash.slice("#report=".length) : null;
+
+function hasReportLink() {
+  return REPORT_LINK !== null;
+}
+
+// The packed form a submission may carry (see process_submission.unpack).
+const PACKED_PREFIX = "ovos-test-report/1+gzip:";
+
+async function packReport(report) {
+  try {
+    const stream = new Blob([JSON.stringify(report)]).stream().pipeThrough(new CompressionStream("gzip"));
+    const bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+    let bin = "";
+    for (const b of bytes) bin += String.fromCharCode(b);
+    return PACKED_PREFIX + btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  } catch (e) {
+    return null;
+  }
+}
+
+async function reportFromLink() {
+  if (!hasReportLink()) return null;
+  try {
+    const b64 = REPORT_LINK.replace(/-/g, "+").replace(/_/g, "/");
+    const bytes = Uint8Array.from(atob(b64 + "===".slice((b64.length + 3) % 4)), (c) => c.charCodeAt(0));
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+    return await new Response(stream).text();
+  } catch (e) {
+    return null;
+  }
 }
 
 async function fetchText(url) {
@@ -144,6 +184,26 @@ function wireReportBox(skill) {
   const out = document.getElementById("report-result");
   let checked = null;
   input.addEventListener("input", () => { submitBtn.hidden = true; checked = null; });
+  const fileInput = document.getElementById("report-file");
+  if (fileInput) {
+    fileInput.addEventListener("change", async () => {
+      const file = fileInput.files && fileInput.files[0];
+      if (!file) return;
+      input.value = await file.text();
+      submitBtn.hidden = true;
+      checked = null;
+      checkBtn.click();
+    });
+  }
+  reportFromLink().then((text) => {
+    if (text === null) {
+      if (hasReportLink()) showReportResult(out, "The report link could not be unpacked. Paste the report or pick the file instead.", [], "report-invalid");
+      return;
+    }
+    input.value = text;
+    input.scrollIntoView({ block: "center" });
+    checkBtn.click();
+  });
   checkBtn.addEventListener("click", async () => {
     submitBtn.hidden = true;
     let report;
@@ -181,13 +241,21 @@ function wireReportBox(skill) {
   });
   submitBtn.addEventListener("click", async () => {
     if (!checked) return;
-    // Compact in the link (a 7-step report is ~4 KB compact, ~7 KB indented);
-    // indented on the clipboard, where length does not matter.
+    // Plain JSON in the link when it fits; otherwise packed (gzip +
+    // base64url, ~4x smaller: a report with the device's installed-skills
+    // list is ~9 KB as JSON, ~2.5 KB packed). The submission workflow
+    // unpacks it (process_submission.unpack). Only if even that is too
+    // long: the clipboard.
     const text = JSON.stringify(checked, null, 2);
     const params = new URLSearchParams({ template: "test-report.yml", title: `Test report: ${skill.id}`, entry: skill.id });
-    let url = `${REPO_NEW_ISSUE}?${params}&report=${encodeURIComponent(JSON.stringify(checked))}`;
+    const base = `${REPO_NEW_ISSUE}?${params}`;
+    let url = `${base}&report=${encodeURIComponent(JSON.stringify(checked))}`;
     if (url.length > MAX_ISSUE_URL) {
-      url = `${REPO_NEW_ISSUE}?${params}`;
+      const packed = await packReport(checked);
+      url = packed ? `${base}&report=${encodeURIComponent(packed)}` : base;
+    }
+    if (url.length > MAX_ISSUE_URL || url === base) {
+      url = base;
       try { await navigator.clipboard.writeText(text); } catch (e) { /* the user can copy it from the box */ }
       showReportResult(out, "The report is too long for a link, so it was copied to your clipboard: paste it into the Report field on the GitHub page that opens.", [], "report-ok");
     }

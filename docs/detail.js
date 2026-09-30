@@ -481,8 +481,10 @@ function renderDetail(skill) {
 
 const params = new URLSearchParams(window.location.search);
 const wantedId = params.get("id");
+// ?skill=<skill_id> (e.g. from an ovos-tui report link) finds the entry by its OVOS skill id
+const wantedSkill = (params.get("skill") || "").toLowerCase();
 
-if (!wantedId) {
+if (!wantedId && !wantedSkill) {
   detailRoot.innerHTML = `<p class="loading">No skill specified. <a href="index.html">Back to the store</a>.</p>`;
 } else {
   const cacheBust = `?t=${Date.now()}`;
@@ -496,12 +498,17 @@ if (!wantedId) {
       return res.json();
     })
     .then((data) => {
-      const skill = applyReports(applyCompatResults(data, compatDoc), reportsDoc).find((s) => s.id === wantedId);
+      const skill = applyReports(applyCompatResults(data, compatDoc), reportsDoc).find((s) => (wantedId ? s.id === wantedId : (s.skill_id || "").toLowerCase() === wantedSkill));
       if (!skill) {
         detailRoot.innerHTML = `<p class="loading">Couldn't find that entry - it may have been removed in a later update. <a href="index.html">Back to the store</a>.</p>`;
         return;
       }
       currentSkill = skill;
+      // one address per entry: ?skill= and a #report= link become ?id= (the
+      // report itself was read before, see REPORT_LINK in detail-reports.js)
+      if (wantedSkill || window.location.hash) {
+        history.replaceState(null, "", `detail.html?id=${encodeURIComponent(skill.id)}`);
+      }
       populateSiteLangSelect(siteLangSelect);
       siteLangSelect.addEventListener("change", () => {
         currentSiteLang = siteLangSelect.value;
