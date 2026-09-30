@@ -263,19 +263,19 @@
           have one. If not, <code>ovoscope generate</code> writes a first draft
           from your <code>.intent</code> files to edit.</li>
         <li><strong>Run the test on the device</strong> with ovos-tui-client
-          (0.2.0 or newer), in either of two ways. Both write the same
+          (0.2.0 or newer), in either of two ways. Both save the same
           <a href="schemas/ovos-test-report-1.json"><code>ovos-test-report/1</code></a>
-          file with the installed versions, your skill's version and the channel.
+          file (<code>….report.json</code>, next to a readable <code>.md</code>) with the installed versions, your skill's version and the channel.
           <ul>
             <li><strong>In the TUI:</strong> start <code>ovos-tui</code>, run
               <code>Ctrl+P</code> → <strong>Test: &lt;your skill&gt; - All</strong>, then
-              <code>Ctrl+P</code> → <strong>Test: Create shareable report</strong>. A
+              <code>Ctrl+P</code> → <strong>Test: Save result…</strong>. A
               window asks for the channel (already filled in, with how it was
               found), a note on the setup ("needs an OpenWeather key", "Mark II"),
               and whether to include OVOS's replies: leave that off. <em>Save and copy</em>
               puts it on the clipboard; if your terminal doesn't pass that on,
               <em>Save and show</em> shows it to copy by hand (and
-              <strong>Test: Show last report</strong> shows it again later).</li>
+              <strong>Test: Show last result</strong> shows it again later).</li>
             <li><strong>Headless</strong>, e.g. from a script:
               <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
               <code>--channel</code> is optional; if you give it, it must match
