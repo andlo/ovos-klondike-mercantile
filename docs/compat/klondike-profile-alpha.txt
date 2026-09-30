@@ -1,0 +1,27 @@
+# Klondike profile, alpha channel: a well-equipped OVOS install.
+# Install into the OVOS virtualenv under the channel's constraints:
+#   pip install -c https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-alpha.txt -r klondike-profile-alpha.txt
+# Then set the pipeline from klondike-mycroft-alpha.json in mycroft.conf.
+
+ovos-core[skills-essential,skills-internet]
+ovos-core[skills-audio]
+ovos-core[skills-media]
+ovos-skill-icanhazdadjokes
+ovos-skill-number-facts
+ovos-skill-days-in-history
+ovos-skill-word-of-the-day
+ovos-skill-wordnet
+ovos-skill-iss-location
+ovos-skill-confucius-quotes
+ovos-skill-laugh
+ovos-skill-moviemaster
+skill-easter-eggs==1.0.2
+ovos-skill-calculator==0.0.2
+ovos-skill-convert==0.0.8
+ovos-skill-holidays==0.0.2
+ovos-skill-nato-alphabet==0.0.1
+ovos-skill-white-noise==0.0.1
+ovos-skill-metronome==0.0.2
+ovos-skill-grimm-tales==0.1.6
+skill-homeassistant==1.4.3
+ovos-common-reading-pipeline-plugin==0.2.0

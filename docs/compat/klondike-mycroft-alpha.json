@@ -1,0 +1,21 @@
+{
+  "intents": {
+    "pipeline": [
+      "ovos-stop-pipeline-plugin-high",
+      "ovos-common-reading-pipeline-plugin",
+      "ovos-converse-pipeline-plugin",
+      "ovos-ocp-pipeline-plugin-high",
+      "ovos-persona-pipeline-plugin-high",
+      "ovos-padatious-pipeline-plugin-high",
+      "ovos-m2v-pipeline-high",
+      "ovos-fallback-pipeline-plugin-high",
+      "ovos-adapt-pipeline-plugin-high",
+      "ovos-stop-pipeline-plugin-medium",
+      "ovos-adapt-pipeline-plugin-medium",
+      "ovos-common-query-pipeline-plugin",
+      "ovos-fallback-pipeline-plugin-medium",
+      "ovos-persona-pipeline-plugin-low",
+      "ovos-fallback-pipeline-plugin-low"
+    ]
+  }
+}
