@@ -13,6 +13,9 @@ the skill's repo or is a public member of its org).
 Writes the outcome as JSON to --out: {"verdict", "message", "path"?}.
 """
 import argparse
+import base64
+import gzip
+import io
 import json
 import os
 import re
@@ -37,9 +40,30 @@ def section(body, label):
     return m.group(1).strip() if m else ""
 
 
+PACKED_PREFIX = "ovos-test-report/1+gzip:"
+
+
+def unpack(raw):
+    """A report packed to fit in a link: PACKED_PREFIX + base64url(gzip(JSON)),
+    as the detail page's Submit button fills it in when the plain JSON is too
+    long for GitHub's new-issue link (ovos-tui's {report_fragment} is the
+    same encoding)."""
+    data = re.sub(r"\s+", "", raw[len(PACKED_PREFIX):])
+    try:
+        packed = base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))
+        out = gzip.GzipFile(fileobj=io.BytesIO(packed)).read(MAX_REPORT_BYTES + 1)
+    except (ValueError, OSError, EOFError) as e:
+        raise ValueError(f"the packed report could not be unpacked ({e})") from None
+    if len(out) > MAX_REPORT_BYTES:
+        raise ValueError("the report is larger than 200 kB")
+    return out.decode("utf-8")
+
+
 def report_json(text):
     m = re.search(r"```(?:json)?\s*\n(.*?)\n```", text, re.S)
     raw = (m.group(1) if m else text).strip()
+    if raw.startswith(PACKED_PREFIX):
+        raw = unpack(raw)
     if len(raw.encode()) > MAX_REPORT_BYTES:
         raise ValueError("the report is larger than 200 kB")
     return json.loads(raw)

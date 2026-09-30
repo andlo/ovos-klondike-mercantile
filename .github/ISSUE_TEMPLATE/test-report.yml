@@ -19,7 +19,7 @@ body:
     id: report
     attributes:
       label: Report
-      description: The whole report, unchanged. It must not contain host names, IP addresses, paths under your home folder or keys; the check rejects those rather than editing your report.
+      description: The whole report, unchanged (the Submit button may fill it in packed, as `ovos-test-report/1+gzip:…`, so it fits in the link - that's fine). It must not contain host names, IP addresses, paths under your home folder or keys; the check rejects those rather than editing your report.
       render: json
     validations:
       required: true

@@ -275,13 +275,26 @@
               and whether to include OVOS's replies: leave that off. <em>Save and copy</em>
               puts it on the clipboard; if your terminal doesn't pass that on,
               <em>Save and show</em> shows it to copy by hand (and
-              <strong>Test: Show last result</strong> shows it again later).</li>
+              <strong>Test: Show last result</strong> shows it again later).
+              Over ssh, or in a terminal that doesn't pass the copy on (GNOME Terminal),
+              use <em>Save and share</em>: it prints a short link to open the report in
+              your own browser, and an <code>scp</code> command to fetch the file.</li>
             <li><strong>Headless</strong>, e.g. from a script:
               <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
               <code>--channel</code> is optional; if you give it, it must match
               what the device runs. Don't use <code>--report-replies</code> for a
               report you share.</li>
           </ul>
+          <strong>Klondike's report link.</strong> When ovos-tui asks
+          <em>Where do you submit test reports?</em> (or later: <code>Ctrl+P</code> →
+          <strong>Settings: Skill store report link</strong>, or <code>--submit-url</code>), paste:
+          <pre class="setup-content">https://andlo.github.io/ovos-klondike-mercantile/detail.html?skill={skill_id}#report={report_fragment}</pre>
+          The page ovos-tui shares then has an <em>Open in andlo.github.io</em> button that opens your
+          skill's page here with the report filled in and checked. ovos-tui submits nothing itself:
+          you look at the result and submit it from this page. The report travels after the
+          <code>#</code>, which browsers never send to a server. No link? Upload the
+          <code>.report.json</code> file in <em>Submit a test report</em> instead.
+          <br><br>
           Klondike checks the channel again from the versions, so this works on
           any install (the OVOS installer, raspOVOS, Buildroot, Docker, your own
           venv). Never edit the report by hand.</li>

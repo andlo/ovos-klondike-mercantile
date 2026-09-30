@@ -208,6 +208,12 @@ def test_parity(cases):
     return fails + pep_fails
 
 
+def pack(report):
+    import base64, gzip
+    raw = json.dumps(report, separators=(",", ":")).encode()
+    return "ovos-test-report/1+gzip:" + base64.urlsafe_b64encode(gzip.compress(raw)).decode().rstrip("=")
+
+
 def test_submission():
     docs = Path(tempfile.mkdtemp()) / "docs"
     (docs / "compat").mkdir(parents=True)
@@ -237,6 +243,8 @@ def test_submission():
     setp(f"manifest/skills/{SID}/version", "0.0.1")(old_version)
     steps = [
         ("stored", env(r), "stored"),
+        ("packed (from the Submit button, too long for plain JSON)", env(pack(r), ISSUE_USER="packer"), "stored"),
+        ("packed but broken", env("ovos-test-report/1+gzip:not-base64!!", ISSUE_USER="packer2"), "invalid"),
         ("second user, doesn't work", env(bad, ISSUE_USER="other"), "stored"),
         ("maintainer is pointed to their repo", env(r, IS_MAINTAINER="true"), "maintainer"),
         ("young account", env(r, USER_CREATED_AT=datetime.now(timezone.utc).isoformat()), "young_account"),
@@ -258,13 +266,13 @@ def test_submission():
             (docs / rel).write_text(json.dumps(rep))
     index = build_index(feed, docs / "reports", CONSTRAINTS, STACKS, lambda pkg: "0.0.8")
     c = index["entries"][entry["id"]]["alpha"]["community"]
-    ok = (c["works"], c["doesnt_work"], c["history"]) == (1, 1, 0)
+    ok = (c["works"], c["doesnt_work"], c["history"]) == (2, 1, 0)   # "someone", "packer"; "other"
     fails += not ok
     print(("ok  " if ok else "FAIL"), "index:", {k: c[k] for k in ("works", "partly", "doesnt_work", "history")})
     # A new release makes both history without anyone touching them.
     later = build_index(feed, docs / "reports", CONSTRAINTS, STACKS, lambda pkg: "0.0.9")
     c = later["entries"][entry["id"]]["alpha"]["community"]
-    ok = (c["works"], c["history"]) == (0, 2)
+    ok = (c["works"], c["history"]) == (0, 3)
     fails += not ok
     print(("ok  " if ok else "FAIL"), "index after a new release:", {k: c[k] for k in ("works", "history")})
     return fails
