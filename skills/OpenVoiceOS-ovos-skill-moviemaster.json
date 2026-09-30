@@ -8,9 +8,9 @@
     "Tell me about the movie _______",
     "Who plays in the movie _______?",
     "What genres does the flick _______ belong to?",
-    "Look for information on the movie _______.",
+    "Give me a synopsis of the movie _______.",
     "When was the movie _______ made?",
-    "Do you have info on the film _______?",
+    "Describe the film _______",
     "What are popular movies playing now?",
     "What films do you recommend like _______?",
     "How long is the movie _______?",
@@ -23,7 +23,9 @@
     "entertainment"
   ],
   "category": "Entertainment",
-  "icon": null,
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-moviemaster/dev/PrimaryLogo_Green.png",
+  "icon_source": "repo",
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-moviemaster",
   "package_name": "ovos-skill-moviemaster",
   "pypi_version": "0.0.12",
@@ -35,7 +37,7 @@
   "type_group": "Skill",
   "stars": 3,
   "forks": 2,
-  "open_issues": 6,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -54,14 +56,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -78,16 +84,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.12",
-        "tested_at": "2026-09-29T14:52:15+00:00",
+        "tested_at": "2026-09-30T08:47:32+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.7.1a3",
-        "tested_at": "2026-09-29T13:57:05+00:00",
+        "version_tested": "0.0.12",
+        "tested_at": "2026-09-30T08:53:23+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 174/185 golden",
+        "state": "warn",
+        "level": 3,
+        "version_tested": "0.7.1a3",
+        "tested_at": "2026-09-30T09:05:31+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 174,
+          "counted": 185
+        }
       }
     }
   }

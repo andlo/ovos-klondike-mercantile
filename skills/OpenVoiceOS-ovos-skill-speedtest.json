@@ -4,7 +4,7 @@
   "name": "Speedtest",
   "description": "runs an internet bandwidth test using speedtest.net",
   "examples": [
-    "run a speedtest"
+    "run a speed test"
   ],
   "tags": [
     "diagnostics",
@@ -15,7 +15,9 @@
     "internet"
   ],
   "category": "Information",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/signal.svg",
+  "icon_source": "readme",
+  "icon_color": "#40DBB0",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-speedtest",
   "package_name": "ovos-skill-speedtest",
   "pypi_version": "0.3.6",
@@ -27,7 +29,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 3,
-  "open_issues": 4,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -42,6 +44,7 @@
     "de-de",
     "el-gr",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
     "fa-ir",
@@ -50,6 +53,7 @@
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
     "ru-ru",
@@ -70,7 +74,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.3.6",
-        "tested_at": "2026-09-29T14:52:27+00:00",
+        "tested_at": "2026-09-30T08:45:05+00:00",
+        "channel_pinned": true
+      },
+      "testing": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.3.6",
+        "tested_at": "2026-09-30T08:57:55+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -78,7 +90,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.10.0a3",
-        "tested_at": "2026-09-29T13:57:27+00:00",
+        "tested_at": "2026-09-30T09:11:08+00:00",
         "channel_pinned": true
       }
     }

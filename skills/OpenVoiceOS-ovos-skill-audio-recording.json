@@ -1,6 +1,6 @@
 {
   "id": "OpenVoiceOS-ovos-skill-audio-recording",
-  "skill_id": null,
+  "skill_id": "ovos-skill-audio-recording.openvoiceos",
   "name": "Audio Recording",
   "description": "Record audio to a file by voice. While a recording runs, the skill turns off the wake word and speech to text. It needs ovos-dinkum-listener.",
   "examples": [
@@ -10,9 +10,13 @@
     "start a new audio recording called {name}",
     "start recording"
   ],
-  "tags": [],
+  "tags": [
+    "audio"
+  ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-audio-recording",
   "package_name": "ovos-skill-audio-recording",
   "pypi_version": "0.2.7",
@@ -24,7 +28,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 3,
-  "open_issues": 4,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -38,6 +42,7 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
     "fa-ir",
@@ -45,8 +50,10 @@
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -63,16 +70,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.7",
-        "tested_at": "2026-09-29T14:55:59+00:00",
+        "tested_at": "2026-09-30T08:48:35+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.7.2a4",
-        "tested_at": "2026-09-29T14:08:22+00:00",
+        "version_tested": "0.2.7",
+        "tested_at": "2026-09-30T08:46:01+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 42/49 golden",
+        "state": "warn",
+        "level": 3,
+        "version_tested": "0.7.2a4",
+        "tested_at": "2026-09-30T09:15:42+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 42,
+          "counted": 49
+        }
       }
     }
   }

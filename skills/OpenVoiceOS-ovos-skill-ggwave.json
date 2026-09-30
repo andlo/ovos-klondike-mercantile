@@ -10,6 +10,8 @@
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-ggwave",
   "package_name": "ovos-skill-ggwave",
   "pypi_version": "0.3.4",
@@ -21,7 +23,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 4,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -40,14 +42,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -64,14 +70,21 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.3.4",
-        "tested_at": "2026-09-29T14:55:01+00:00",
+        "tested_at": "2026-09-30T08:46:21+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-30T08:57:19+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2717 doesn't install",
         "state": "fail",
         "level": 0,
-        "tested_at": "2026-09-29T14:04:13+00:00",
+        "tested_at": "2026-09-30T09:14:32+00:00",
         "channel_pinned": false
       }
     }

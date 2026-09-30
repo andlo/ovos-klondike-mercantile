@@ -16,6 +16,8 @@
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-screenshot",
   "package_name": "ovos-skill-screenshot",
   "pypi_version": "0.0.7",
@@ -46,15 +48,19 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -71,7 +77,15 @@
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.7",
-        "tested_at": "2026-09-29T14:52:25+00:00",
+        "tested_at": "2026-09-30T08:46:21+00:00",
+        "channel_pinned": true
+      },
+      "testing": {
+        "label": "\u2713 loads \u00b7 10/11 langs",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.0.7",
+        "tested_at": "2026-09-30T08:56:31+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -79,7 +93,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.7.0a3",
-        "tested_at": "2026-09-29T13:57:40+00:00",
+        "tested_at": "2026-09-30T09:09:40+00:00",
         "channel_pinned": true
       }
     }

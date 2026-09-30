@@ -15,6 +15,8 @@
   ],
   "category": "Daily",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-fuster-quotes",
   "package_name": "ovos-skill-fuster-quotes",
   "pypi_version": "0.0.4",
@@ -45,14 +47,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -69,16 +75,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-09-29T14:54:06+00:00",
+        "tested_at": "2026-09-30T08:46:01+00:00",
         "channel_pinned": false
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.2.4a3",
-        "tested_at": "2026-09-29T13:58:55+00:00",
+        "version_tested": "0.0.4",
+        "tested_at": "2026-09-30T08:55:12+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 47/47 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.2.4a3",
+        "tested_at": "2026-09-30T09:03:49+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 47,
+          "counted": 47
+        }
       }
     }
   }

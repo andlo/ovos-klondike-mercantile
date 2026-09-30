@@ -1,15 +1,23 @@
 {
   "id": "OpenVoiceOS-ovos-skill-camera",
-  "skill_id": null,
-  "name": "ovos-skill-camera",
-  "description": "webcam for OVOS",
-  "examples": [],
+  "skill_id": "ovos-skill-camera.openvoiceos",
+  "name": "Camera",
+  "description": "Take pictures with a connected webcam by voice.",
+  "examples": [
+    "take a picture",
+    "is the camera working",
+    "where are my pictures saved"
+  ],
   "tags": [
-    "openvoiceos",
-    "skill"
+    "camera",
+    "webcam",
+    "photo",
+    "media"
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-camera",
   "package_name": "ovos-skill-camera",
   "pypi_version": "1.0.4",
@@ -21,7 +29,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 2,
-  "open_issues": 2,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -35,6 +43,7 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
     "fa-ir",
@@ -43,8 +52,10 @@
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -61,16 +72,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.0.4",
-        "tested_at": "2026-09-29T14:52:20+00:00",
+        "tested_at": "2026-09-30T08:47:12+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "1.4.0a1",
-        "tested_at": "2026-09-29T13:57:26+00:00",
+        "version_tested": "1.0.4",
+        "tested_at": "2026-09-30T08:54:46+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 35/35 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "1.4.0a1",
+        "tested_at": "2026-09-30T09:07:39+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 35,
+          "counted": 35
+        }
       }
     }
   }

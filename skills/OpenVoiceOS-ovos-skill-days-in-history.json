@@ -8,7 +8,7 @@
     "who was born today in history?",
     "who died today in history?",
     "What historical events happened on June 16th?",
-    "Tell me about events in history on December 12th"
+    "Tell me about historical events on December 12th"
   ],
   "tags": [
     "Information",
@@ -17,6 +17,8 @@
   ],
   "category": "Information",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-days-in-history",
   "package_name": "ovos-skill-days-in-history",
   "pypi_version": "0.3.11",
@@ -28,7 +30,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 3,
-  "open_issues": 8,
+  "open_issues": 10,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -42,6 +44,7 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
     "fr-fr",
@@ -66,16 +69,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.3.11",
-        "tested_at": "2026-09-29T14:57:10+00:00",
+        "tested_at": "2026-09-30T08:50:39+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.9.3a1",
-        "tested_at": "2026-09-29T13:59:23+00:00",
+        "version_tested": "0.3.11",
+        "tested_at": "2026-09-30T09:00:40+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads \u00b7 37/51 golden",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.9.3a1",
+        "tested_at": "2026-09-30T09:13:03+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 37,
+          "counted": 51
+        }
       }
     }
   }

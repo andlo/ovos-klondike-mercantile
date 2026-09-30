@@ -12,7 +12,9 @@
     "information"
   ],
   "category": "Daily",
-  "icon": null,
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wikihow/dev/logo.png",
+  "icon_source": "repo",
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-wikihow",
   "package_name": "ovos-skill-wikihow",
   "pypi_version": "0.3.3",
@@ -20,11 +22,11 @@
   "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Persona",
-  "type_group": "Plugin",
+  "component_type": "Skill",
+  "type_group": "Skill",
   "stars": 4,
   "forks": 9,
-  "open_issues": 4,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -43,14 +45,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -58,5 +64,9 @@
   "repo_created_at": "2018-01-23T09:41:23Z",
   "last_updated": "2025-06-08T22:04:04.795081Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-wikihow.openvoiceos",
+    "channels": {}
+  }
 }

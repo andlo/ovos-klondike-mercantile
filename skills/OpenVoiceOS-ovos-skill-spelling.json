@@ -12,7 +12,9 @@
   ],
   "tags": [],
   "category": "Other",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/book-reader.svg",
+  "icon_source": "readme",
+  "icon_color": "#22a7f0",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-spelling",
   "package_name": "ovos-skill-spelling",
   "pypi_version": "0.2.6",
@@ -43,15 +45,19 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -68,16 +74,28 @@
         "state": "warn",
         "level": 2,
         "version_tested": "0.2.6",
-        "tested_at": "2026-09-29T14:53:39+00:00",
+        "tested_at": "2026-09-30T08:46:55+00:00",
+        "channel_pinned": true
+      },
+      "testing": {
+        "label": "\u2713 loads \u00b7 19/20 langs",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.2.6",
+        "tested_at": "2026-09-30T08:59:14+00:00",
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 loads",
+        "label": "\u2713 20/20 golden",
         "state": "pass",
-        "level": 2,
+        "level": 3,
         "version_tested": "0.13.1a1",
-        "tested_at": "2026-09-29T13:58:22+00:00",
-        "channel_pinned": true
+        "tested_at": "2026-09-30T09:12:03+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 20,
+          "counted": 20
+        }
       }
     }
   }

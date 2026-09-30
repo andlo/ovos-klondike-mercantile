@@ -14,6 +14,8 @@
   ],
   "category": "Information",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-boot-finished",
   "package_name": "ovos-skill-boot-finished",
   "pypi_version": "0.5.0",
@@ -44,14 +46,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -71,12 +77,20 @@
         "tested_at": "2026-09-29T14:53:18+00:00",
         "channel_pinned": true
       },
+      "testing": {
+        "label": "needs device",
+        "state": "unsupported",
+        "level": 1,
+        "version_tested": "0.5.0",
+        "tested_at": "2026-09-30T08:45:02+00:00",
+        "channel_pinned": true
+      },
       "alpha": {
         "label": "needs device",
         "state": "unsupported",
         "level": 1,
         "version_tested": "0.9.0a4",
-        "tested_at": "2026-09-29T13:58:29+00:00",
+        "tested_at": "2026-09-30T09:03:23+00:00",
         "channel_pinned": true
       }
     }

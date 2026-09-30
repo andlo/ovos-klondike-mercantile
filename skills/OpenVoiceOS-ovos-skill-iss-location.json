@@ -15,7 +15,9 @@
     "space"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-iss-location/dev/logo.png",
+  "icon_source": "repo",
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-iss-location",
   "package_name": "ovos-skill-iss-location",
   "pypi_version": "0.2.16",
@@ -27,7 +29,7 @@
   "type_group": "Skill",
   "stars": 3,
   "forks": 5,
-  "open_issues": 5,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -41,15 +43,19 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -66,16 +72,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.16",
-        "tested_at": "2026-09-29T14:53:27+00:00",
+        "tested_at": "2026-09-30T08:45:09+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.7.1a1",
-        "tested_at": "2026-09-29T13:57:47+00:00",
+        "version_tested": "0.2.16",
+        "tested_at": "2026-09-30T08:54:33+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 69/69 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.7.1a1",
+        "tested_at": "2026-09-30T09:02:34+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 69,
+          "counted": 69
+        }
       }
     }
   }

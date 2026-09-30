@@ -12,7 +12,7 @@
     "when is the sunset today in Chicago",
     "what is the current temperature right now in celsius in Chicago",
     "what is the weather like in celsius",
-    "is foggy today",
+    "is it foggy today",
     "humidity percentage right now",
     "is it chilly",
     "how strong are the winds",
@@ -32,7 +32,9 @@
     "temperature"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/sun.svg",
+  "icon_source": "readme",
+  "icon_color": "#FEE255",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-weather",
   "package_name": "ovos-skill-weather",
   "pypi_version": "1.0.6",
@@ -44,7 +46,7 @@
   "type_group": "Skill",
   "stars": 3,
   "forks": 10,
-  "open_issues": 15,
+  "open_issues": 12,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -70,8 +72,10 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fi-fi",
     "fr-fr",
     "gl-es",
@@ -101,16 +105,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.18",
-        "tested_at": "2026-09-29T15:00:07+00:00",
+        "tested_at": "2026-09-30T08:57:47+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "1.5.1a1",
-        "tested_at": "2026-09-29T13:59:18+00:00",
+        "version_tested": "1.0.6",
+        "tested_at": "2026-09-30T09:12:50+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 198/198 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "1.5.1a1",
+        "tested_at": "2026-09-30T09:14:35+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 198,
+          "counted": 198
+        }
       }
     }
   }

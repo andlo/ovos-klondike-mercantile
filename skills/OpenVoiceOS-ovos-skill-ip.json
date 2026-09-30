@@ -18,7 +18,9 @@
     "system"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/info-circle.svg",
+  "icon_source": "readme",
+  "icon_color": "#22a7f0",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-ip",
   "package_name": "ovos-skill-ip",
   "pypi_version": "0.2.8",
@@ -50,8 +52,10 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
@@ -60,6 +64,7 @@
     "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -76,16 +81,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.8",
-        "tested_at": "2026-09-29T14:57:43+00:00",
+        "tested_at": "2026-09-30T08:50:20+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.9.0a2",
-        "tested_at": "2026-09-29T14:02:59+00:00",
+        "version_tested": "0.2.8",
+        "tested_at": "2026-09-30T08:52:24+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 38/39 golden",
+        "state": "warn",
+        "level": 3,
+        "version_tested": "0.9.0a2",
+        "tested_at": "2026-09-30T09:06:59+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 38,
+          "counted": 39
+        }
       }
     }
   }

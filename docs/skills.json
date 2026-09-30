@@ -121,7 +121,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-09-29T14:52:23+00:00",
+          "tested_at": "2026-09-30T08:45:04+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-30T08:44:07+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -129,7 +137,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-09-29T13:57:38+00:00",
+          "tested_at": "2026-09-30T09:00:18+00:00",
           "channel_pinned": false
         }
       }
@@ -142,18 +150,18 @@
     "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service.",
     "examples": [
       "Set an alarm for 8 AM.",
-      "Start a bread timer for 30 minutes.",
-      "Schedule a tennis event for 2 PM on friday spanning 2 hours.",
+      "Start a timer for 30 minutes.",
+      "Schedule an appointment for tennis on friday at 2 PM.",
       "Set a daily alarm for 8 AM.",
       "Set an alarm for 8 AM on saturdays.",
       "remind me to take out the trash every Thursday and Sunday at 7 PM.",
       "wake me up at 8 AM with music.",
       "When is my next alarm?",
-      "What are my reminders?",
+      "What are my upcoming reminders?",
       "Cancel all alarms.",
       "Cancel all timers.",
       "Cancel all reminders.",
-      "What did I miss?",
+      "What did I miss today?",
       "Did I miss anything?"
     ],
     "tags": [
@@ -166,7 +174,9 @@
       "schedule"
     ],
     "category": "Productivity",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-alerts/dev/logo.svg",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-alerts",
     "package_name": "ovos-skill-alerts",
     "pypi_version": "0.1.28",
@@ -178,7 +188,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 4,
-    "open_issues": 36,
+    "open_issues": 17,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -193,8 +203,10 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "hu-hu",
@@ -221,16 +233,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.24",
-          "tested_at": "2026-09-29T14:53:18+00:00",
+          "tested_at": "2026-09-30T08:46:05+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.12.31a5",
-          "tested_at": "2026-09-29T13:57:44+00:00",
+          "version_tested": "0.1.28",
+          "tested_at": "2026-09-30T08:44:43+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 217/228 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.12.31a5",
+          "tested_at": "2026-09-30T09:00:26+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 217,
+            "counted": 228
+          }
         }
       }
     }
@@ -351,7 +375,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-09-29T14:54:28+00:00",
+          "tested_at": "2026-09-30T08:47:02+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-30T08:45:13+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -359,7 +391,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-09-29T14:07:01+00:00",
+          "tested_at": "2026-09-30T09:14:17+00:00",
           "channel_pinned": false
         }
       }
@@ -425,7 +457,15 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-09-29T14:54:49+00:00",
+          "tested_at": "2026-09-30T08:47:22+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-09-30T08:45:26+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -433,7 +473,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-09-29T14:07:17+00:00",
+          "tested_at": "2026-09-30T09:14:30+00:00",
           "channel_pinned": false
         }
       }
@@ -488,7 +528,7 @@
   },
   {
     "id": "OpenVoiceOS-ovos-skill-application-launcher",
-    "skill_id": null,
+    "skill_id": "ovos-skill-application-launcher.openvoiceos",
     "name": "Application Launcher",
     "description": "Open and close applications on the Linux desktop by voice. This skill works only on Linux desktop environments.",
     "examples": [
@@ -496,9 +536,13 @@
       "Launch ____",
       "Close ____"
     ],
-    "tags": [],
+    "tags": [
+      "system"
+    ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/spinner.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-application-launcher",
     "package_name": "ovos-skill-application-launcher",
     "pypi_version": "0.5.14",
@@ -533,6 +577,7 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -541,8 +586,10 @@
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -559,16 +606,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.13",
-          "tested_at": "2026-09-29T14:55:02+00:00",
+          "tested_at": "2026-09-30T08:47:35+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.13.5a4",
-          "tested_at": "2026-09-29T14:07:22+00:00",
+          "version_tested": "0.5.14",
+          "tested_at": "2026-09-30T08:45:31+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 0/34 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.13.5a4",
+          "tested_at": "2026-09-30T09:14:39+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 0,
+            "counted": 34
+          }
         }
       }
     }
@@ -742,7 +801,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T14:55:21+00:00",
+          "tested_at": "2026-09-30T08:47:55+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-30T08:45:41+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -750,7 +817,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T14:07:28+00:00",
+          "tested_at": "2026-09-30T09:14:47+00:00",
           "channel_pinned": false
         }
       }
@@ -772,7 +839,9 @@
       "persona"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/smile-wink.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-personal",
     "package_name": "ovos-skill-personal",
     "pypi_version": "0.1.19",
@@ -784,7 +853,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 3,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -850,7 +919,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.19",
-          "tested_at": "2026-09-29T14:55:39+00:00",
+          "tested_at": "2026-09-30T08:48:14+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.19",
+          "tested_at": "2026-09-30T08:45:50+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -858,7 +935,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2a6",
-          "tested_at": "2026-09-29T14:07:34+00:00",
+          "tested_at": "2026-09-30T09:14:56+00:00",
           "channel_pinned": true
         }
       }
@@ -866,7 +943,7 @@
   },
   {
     "id": "OpenVoiceOS-ovos-skill-audio-recording",
-    "skill_id": null,
+    "skill_id": "ovos-skill-audio-recording.openvoiceos",
     "name": "Audio Recording",
     "description": "Record audio to a file by voice. While a recording runs, the skill turns off the wake word and speech to text. It needs ovos-dinkum-listener.",
     "examples": [
@@ -876,9 +953,13 @@
       "start a new audio recording called {name}",
       "start recording"
     ],
-    "tags": [],
+    "tags": [
+      "audio"
+    ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-audio-recording",
     "package_name": "ovos-skill-audio-recording",
     "pypi_version": "0.2.7",
@@ -890,7 +971,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 3,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -904,6 +985,7 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -911,8 +993,10 @@
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -929,16 +1013,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.7",
-          "tested_at": "2026-09-29T14:55:59+00:00",
+          "tested_at": "2026-09-30T08:48:35+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.2a4",
-          "tested_at": "2026-09-29T14:08:22+00:00",
+          "version_tested": "0.2.7",
+          "tested_at": "2026-09-30T08:46:01+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 42/49 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.7.2a4",
+          "tested_at": "2026-09-30T09:15:42+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 42,
+            "counted": 49
+          }
         }
       }
     }
@@ -1099,7 +1195,9 @@
     ],
     "tags": [],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-bandcamp/dev/res/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-bandcamp",
     "package_name": "ovos-skill-bandcamp",
     "pypi_version": null,
@@ -1204,7 +1302,15 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T14:52:14+00:00",
+          "tested_at": "2026-09-30T08:44:55+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-30T08:44:39+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -1212,7 +1318,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T13:57:09+00:00",
+          "tested_at": "2026-09-30T09:01:03+00:00",
           "channel_pinned": false
         }
       }
@@ -1289,7 +1395,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T14:52:31+00:00",
+          "tested_at": "2026-09-30T08:45:15+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-30T08:44:50+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -1297,8 +1411,108 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T13:57:18+00:00",
+          "tested_at": "2026-09-30T09:01:12+00:00",
           "channel_pinned": false
+        }
+      }
+    }
+  },
+  {
+    "id": "OpenVoiceOS-ovos-skill-camera",
+    "skill_id": "ovos-skill-camera.openvoiceos",
+    "name": "Camera",
+    "description": "Take pictures with a connected webcam by voice.",
+    "examples": [
+      "take a picture",
+      "is the camera working",
+      "where are my pictures saved"
+    ],
+    "tags": [
+      "camera",
+      "webcam",
+      "photo",
+      "media"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-camera",
+    "package_name": "ovos-skill-camera",
+    "pypi_version": "1.0.4",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 2,
+    "open_issues": 3,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-co",
+      "es-es",
+      "eu-es",
+      "fa-ir",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "oc-fr",
+      "pl-pl",
+      "pt-br",
+      "pt-pt",
+      "ru-ru",
+      "sv-se"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": true,
+    "repo_created_at": "2018-03-27T15:44:21Z",
+    "last_updated": "2025-01-24T16:57:37.905723Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-camera.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.4",
+          "tested_at": "2026-09-30T08:47:12+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.4",
+          "tested_at": "2026-09-30T08:54:46+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 35/35 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "1.4.0a1",
+          "tested_at": "2026-09-30T09:07:39+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 35,
+            "counted": 35
+          }
         }
       }
     }
@@ -1320,6 +1534,8 @@
     ],
     "category": "Information",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt",
     "package_name": "ovos-skill-fallback-chatgpt",
     "pypi_version": null,
@@ -1411,15 +1627,19 @@
   },
   {
     "id": "OpenVoiceOS-ovos-skill-color-picker",
-    "skill_id": null,
+    "skill_id": "ovos-skill-color-picker.krisgesling",
     "name": "Color Picker",
     "description": "Look up a color by name and hear its hex and RGB values.",
     "examples": [
       "show me the color green"
     ],
-    "tags": [],
+    "tags": [
+      "system"
+    ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/palette.svg",
+    "icon_source": "readme",
+    "icon_color": "#22A7F0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-color-picker",
     "package_name": "ovos-skill-color-picker",
     "pypi_version": "0.0.7",
@@ -1431,7 +1651,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -1445,14 +1665,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -1469,7 +1693,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-29T14:52:45+00:00",
+          "tested_at": "2026-09-30T08:45:28+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-09-30T08:44:57+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -1477,7 +1709,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.1a1",
-          "tested_at": "2026-09-29T13:57:33+00:00",
+          "tested_at": "2026-09-30T09:01:27+00:00",
           "channel_pinned": true
         }
       }
@@ -1692,12 +1924,20 @@
           "tested_at": "2026-09-29T14:53:43+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-09-30T08:45:45+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.0",
-          "tested_at": "2026-09-29T13:58:24+00:00",
+          "tested_at": "2026-09-30T09:02:18+00:00",
           "channel_pinned": false
         }
       }
@@ -1716,7 +1956,9 @@
     ],
     "tags": [],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-confucius-quotes/dev/gui/all/logo.jpeg",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-confucius-quotes",
     "package_name": "ovos-skill-confucius-quotes",
     "pypi_version": "0.2.0",
@@ -1747,14 +1989,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -1771,16 +2017,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.13",
-          "tested_at": "2026-09-29T14:53:46+00:00",
+          "tested_at": "2026-09-30T08:46:40+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.8.1a2",
-          "tested_at": "2026-09-29T13:58:36+00:00",
+          "version_tested": "0.1.13",
+          "tested_at": "2026-09-30T08:45:48+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 38/38 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.8.1a2",
+          "tested_at": "2026-09-30T09:02:29+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 38,
+            "counted": 38
+          }
         }
       }
     }
@@ -1856,7 +2114,15 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T14:54:05+00:00",
+          "tested_at": "2026-09-30T08:46:58+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-30T08:46:02+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -1864,7 +2130,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T13:59:26+00:00",
+          "tested_at": "2026-09-30T09:03:19+00:00",
           "channel_pinned": false
         }
       }
@@ -1959,7 +2225,9 @@
       "information"
     ],
     "category": "Information",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/calendar.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-date-time",
     "package_name": "ovos-skill-date-time",
     "pypi_version": "1.1.5",
@@ -1971,7 +2239,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 10,
-    "open_issues": 9,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -1998,9 +2266,11 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
+      "fi-fi",
       "fr-fr",
       "gl-es",
       "hu-hu",
@@ -2042,16 +2312,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.4.20",
-          "tested_at": "2026-09-29T14:54:31+00:00",
+          "tested_at": "2026-09-30T08:47:25+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 18/20 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "1.1.5",
+          "tested_at": "2026-09-30T08:46:22+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 23/24 langs",
+          "label": "\u2713 213/213 golden",
           "state": "warn",
-          "level": 2,
+          "level": 3,
           "version_tested": "1.11.1a1",
-          "tested_at": "2026-09-29T13:59:34+00:00",
-          "channel_pinned": true
+          "tested_at": "2026-09-30T09:03:27+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 213,
+            "counted": 213
+          }
         }
       }
     }
@@ -2076,7 +2358,9 @@
       "system"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/info-circle.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-ip",
     "package_name": "ovos-skill-ip",
     "pypi_version": "0.2.8",
@@ -2108,8 +2392,10 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
@@ -2118,6 +2404,7 @@
       "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -2134,16 +2421,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.8",
-          "tested_at": "2026-09-29T14:57:43+00:00",
+          "tested_at": "2026-09-30T08:50:20+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.9.0a2",
-          "tested_at": "2026-09-29T14:02:59+00:00",
+          "version_tested": "0.2.8",
+          "tested_at": "2026-09-30T08:52:24+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 38/39 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.9.0a2",
+          "tested_at": "2026-09-30T09:06:59+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 38,
+            "counted": 39
+          }
         }
       }
     }
@@ -2162,6 +2461,8 @@
     ],
     "category": "Productivity",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-dictation",
     "package_name": "ovos-skill-dictation",
     "pypi_version": "0.2.21",
@@ -2187,15 +2488,19 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -2212,16 +2517,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.15",
-          "tested_at": "2026-09-29T14:52:19+00:00",
+          "tested_at": "2026-09-30T08:50:41+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.0a3",
-          "tested_at": "2026-09-29T13:57:05+00:00",
+          "version_tested": "0.2.19",
+          "tested_at": "2026-09-30T08:44:27+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 26/34 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.7.0a3",
+          "tested_at": "2026-09-30T09:01:44+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 26,
+            "counted": 34
+          }
         }
       }
     }
@@ -2406,6 +2723,8 @@
     ],
     "category": "Information",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-boot-finished",
     "package_name": "ovos-skill-boot-finished",
     "pypi_version": "0.5.0",
@@ -2436,14 +2755,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -2463,12 +2786,20 @@
           "tested_at": "2026-09-29T14:53:18+00:00",
           "channel_pinned": true
         },
+        "testing": {
+          "label": "needs device",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.5.0",
+          "tested_at": "2026-09-30T08:45:02+00:00",
+          "channel_pinned": true
+        },
         "alpha": {
           "label": "needs device",
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.9.0a4",
-          "tested_at": "2026-09-29T13:58:29+00:00",
+          "tested_at": "2026-09-30T09:03:23+00:00",
           "channel_pinned": true
         }
       }
@@ -2596,7 +2927,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-09-29T15:09:15+00:00",
+          "tested_at": "2026-09-30T08:45:06+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-30T09:00:37+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -2604,7 +2943,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-09-29T14:13:37+00:00",
+          "tested_at": "2026-09-30T09:18:32+00:00",
           "channel_pinned": false
         }
       }
@@ -2722,7 +3061,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-09-29T15:09:35+00:00",
+          "tested_at": "2026-09-30T08:45:39+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-09-30T09:00:47+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -2730,7 +3077,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-09-29T14:13:59+00:00",
+          "tested_at": "2026-09-30T09:18:55+00:00",
           "channel_pinned": false
         }
       }
@@ -2848,7 +3195,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-09-29T15:09:50+00:00",
+          "tested_at": "2026-09-30T08:45:53+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-30T09:00:55+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -2856,7 +3211,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-09-29T14:14:18+00:00",
+          "tested_at": "2026-09-30T09:19:17+00:00",
           "channel_pinned": false
         }
       }
@@ -2973,7 +3328,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T15:10:06+00:00",
+          "tested_at": "2026-09-30T08:46:08+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-30T09:01:03+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -2981,7 +3344,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T14:14:37+00:00",
+          "tested_at": "2026-09-30T09:19:39+00:00",
           "channel_pinned": false
         }
       }
@@ -3112,7 +3475,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-09-29T15:10:22+00:00",
+          "tested_at": "2026-09-30T08:46:22+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.6",
+          "tested_at": "2026-09-30T09:01:11+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -3120,7 +3491,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-09-29T14:14:55+00:00",
+          "tested_at": "2026-09-30T09:20:01+00:00",
           "channel_pinned": false
         }
       }
@@ -4539,7 +4910,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T15:10:42+00:00",
+          "tested_at": "2026-09-30T08:47:14+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-30T09:01:26+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -4547,7 +4926,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T14:15:05+00:00",
+          "tested_at": "2026-09-30T09:20:12+00:00",
           "channel_pinned": false
         }
       }
@@ -4653,7 +5032,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.3",
-          "tested_at": "2026-09-29T14:52:22+00:00",
+          "tested_at": "2026-09-30T08:47:30+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.3",
+          "tested_at": "2026-09-30T08:53:19+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -4661,7 +5048,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.3",
-          "tested_at": "2026-09-29T13:57:20+00:00",
+          "tested_at": "2026-09-30T09:02:04+00:00",
           "channel_pinned": false
         }
       }
@@ -4985,7 +5372,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.5",
-          "tested_at": "2026-09-29T14:53:11+00:00",
+          "tested_at": "2026-09-30T08:47:46+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.5",
+          "tested_at": "2026-09-30T08:54:22+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -4993,7 +5388,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.5",
-          "tested_at": "2026-09-29T13:57:27+00:00",
+          "tested_at": "2026-09-30T09:02:12+00:00",
           "channel_pinned": false
         }
       }
@@ -5089,7 +5484,9 @@
       "space"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-iss-location/dev/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-iss-location",
     "package_name": "ovos-skill-iss-location",
     "pypi_version": "0.2.16",
@@ -5101,7 +5498,7 @@
     "type_group": "Skill",
     "stars": 3,
     "forks": 5,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -5115,15 +5512,19 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -5140,16 +5541,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.16",
-          "tested_at": "2026-09-29T14:53:27+00:00",
+          "tested_at": "2026-09-30T08:45:09+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.1a1",
-          "tested_at": "2026-09-29T13:57:47+00:00",
+          "version_tested": "0.2.16",
+          "tested_at": "2026-09-30T08:54:33+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 69/69 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.7.1a1",
+          "tested_at": "2026-09-30T09:02:34+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 69,
+            "counted": 69
+          }
         }
       }
     }
@@ -5171,6 +5584,8 @@
     ],
     "category": "Daily",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-fuster-quotes",
     "package_name": "ovos-skill-fuster-quotes",
     "pypi_version": "0.0.4",
@@ -5201,14 +5616,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -5225,16 +5644,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-09-29T14:54:06+00:00",
+          "tested_at": "2026-09-30T08:46:01+00:00",
           "channel_pinned": false
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.2.4a3",
-          "tested_at": "2026-09-29T13:58:55+00:00",
+          "version_tested": "0.0.4",
+          "tested_at": "2026-09-30T08:55:12+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 47/47 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.2.4a3",
+          "tested_at": "2026-09-30T09:03:49+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 47,
+            "counted": 47
+          }
         }
       }
     }
@@ -5263,6 +5694,8 @@
     ],
     "category": "Entertainment",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-icanhazdadjokes",
     "package_name": "ovos-skill-icanhazdadjokes",
     "pypi_version": "0.3.7",
@@ -5289,8 +5722,10 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "hu-hu",
@@ -5317,16 +5752,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.7",
-          "tested_at": "2026-09-29T14:54:20+00:00",
+          "tested_at": "2026-09-30T08:46:15+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.25.6a2",
-          "tested_at": "2026-09-29T13:59:52+00:00",
+          "version_tested": "0.3.7",
+          "tested_at": "2026-09-30T08:55:20+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 33/33 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.25.6a2",
+          "tested_at": "2026-09-30T09:04:46+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 33,
+            "counted": 33
+          }
         }
       }
     }
@@ -5374,7 +5821,9 @@
       "file"
     ],
     "category": "Daily",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/svgs/solid/folder-open.svg",
+    "icon_source": "readme",
+    "icon_color": "#55dffe",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-local-media",
     "package_name": "ovos-skill-local-media",
     "pypi_version": "0.2.12",
@@ -5419,6 +5868,122 @@
     "last_updated": "2025-06-08T21:55:38.909391Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-skill-mark1-ctrl",
+    "skill_id": "ovos-skill-mark1-ctrl.openvoiceos",
+    "name": "Mark 1 Enclosure Control",
+    "description": "Control the Mycroft Mark 1 enclosure by voice.",
+    "examples": [
+      "blink",
+      "set the eye brightness to 50 percent",
+      "make your eyes go crazy",
+      "set a custom eye color",
+      "make your eyes red",
+      "do the listening animation",
+      "look down",
+      "look left",
+      "look left and right",
+      "look right",
+      "look up",
+      "look up and down",
+      "narrow your eyes",
+      "reset your mark 1",
+      "can you smile",
+      "spin your eyes around",
+      "do the thinking animation"
+    ],
+    "tags": [
+      "mark1",
+      "enclosure",
+      "eyes",
+      "system"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-mark1-ctrl",
+    "package_name": "ovos-skill-mark1-ctrl",
+    "pypi_version": "0.0.1",
+    "license": "MIT",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 2,
+    "open_issues": 3,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-mark1-ctrl"
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "el-gr",
+      "en-us",
+      "es-co",
+      "es-es",
+      "eu-es",
+      "fa-ir",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "oc-fr",
+      "pl-pl",
+      "pt-br",
+      "pt-pt",
+      "ru-ru",
+      "sv-se"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": true,
+    "repo_created_at": "2018-04-09T21:39:14Z",
+    "last_updated": "2026-04-04T04:32:02.377027Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-mark1-ctrl.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-29T14:56:05+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T08:57:59+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T09:17:38+00:00",
+          "channel_pinned": false
+        }
+      }
+    }
   },
   {
     "id": "jeffehobbs-mark2-fip-radio",
@@ -5607,7 +6172,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.6",
-          "tested_at": "2026-09-29T14:54:42+00:00",
+          "tested_at": "2026-09-30T08:46:52+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.6",
+          "tested_at": "2026-09-30T08:55:38+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -5615,7 +6188,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.6",
-          "tested_at": "2026-09-29T14:00:48+00:00",
+          "tested_at": "2026-09-30T09:05:43+00:00",
           "channel_pinned": false
         }
       }
@@ -5692,7 +6265,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T14:54:55+00:00",
+          "tested_at": "2026-09-30T08:47:05+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-30T08:55:45+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -5700,7 +6281,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T14:01:02+00:00",
+          "tested_at": "2026-09-30T09:05:59+00:00",
           "channel_pinned": false
         }
       }
@@ -5830,7 +6411,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:55:09+00:00",
+          "tested_at": "2026-09-30T08:47:19+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T08:55:52+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -5838,7 +6427,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:01:15+00:00",
+          "tested_at": "2026-09-30T09:06:14+00:00",
           "channel_pinned": false
         }
       }
@@ -5854,9 +6443,9 @@
       "Tell me about the movie _______",
       "Who plays in the movie _______?",
       "What genres does the flick _______ belong to?",
-      "Look for information on the movie _______.",
+      "Give me a synopsis of the movie _______.",
       "When was the movie _______ made?",
-      "Do you have info on the film _______?",
+      "Describe the film _______",
       "What are popular movies playing now?",
       "What films do you recommend like _______?",
       "How long is the movie _______?",
@@ -5869,7 +6458,9 @@
       "entertainment"
     ],
     "category": "Entertainment",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-moviemaster/dev/PrimaryLogo_Green.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-moviemaster",
     "package_name": "ovos-skill-moviemaster",
     "pypi_version": "0.0.12",
@@ -5881,7 +6472,7 @@
     "type_group": "Skill",
     "stars": 3,
     "forks": 2,
-    "open_issues": 6,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -5900,14 +6491,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -5924,16 +6519,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.12",
-          "tested_at": "2026-09-29T14:52:15+00:00",
+          "tested_at": "2026-09-30T08:47:32+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.1a3",
-          "tested_at": "2026-09-29T13:57:05+00:00",
+          "version_tested": "0.0.12",
+          "tested_at": "2026-09-30T08:53:23+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 174/185 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.7.1a3",
+          "tested_at": "2026-09-30T09:05:31+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 174,
+            "counted": 185
+          }
         }
       }
     }
@@ -5997,6 +6604,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-music-assistant",
     "package_name": "ovos-skill-music-assistant",
     "pypi_version": "0.2.0a1",
@@ -6159,7 +6768,9 @@
       "do-not-disturb"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/bed.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-naptime",
     "package_name": "ovos-skill-naptime",
     "pypi_version": "0.3.15",
@@ -6171,7 +6782,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 5,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -6192,6 +6803,7 @@
       "de-de",
       "el-gr",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -6223,16 +6835,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.15",
-          "tested_at": "2026-09-29T14:53:28+00:00",
+          "tested_at": "2026-09-30T08:48:15+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.12.0a2",
-          "tested_at": "2026-09-29T13:58:10+00:00",
+          "version_tested": "0.3.15",
+          "tested_at": "2026-09-30T08:54:14+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 16/28 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.12.0a2",
+          "tested_at": "2026-09-30T09:06:46+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 16,
+            "counted": 28
+          }
         }
       }
     }
@@ -6306,7 +6930,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:54:07+00:00",
+          "tested_at": "2026-09-30T08:44:56+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T08:54:30+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -6314,7 +6946,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T13:59:11+00:00",
+          "tested_at": "2026-09-30T09:07:46+00:00",
           "channel_pinned": false
         }
       }
@@ -6385,7 +7017,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-09-29T14:54:19+00:00",
+          "tested_at": "2026-09-30T08:45:09+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.24",
+          "tested_at": "2026-09-30T08:54:35+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -6393,7 +7033,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-09-29T13:59:24+00:00",
+          "tested_at": "2026-09-30T09:08:00+00:00",
           "channel_pinned": false
         }
       }
@@ -6496,11 +7136,18 @@
           "tested_at": "2026-09-29T14:54:33+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:42+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:59:37+00:00",
+          "tested_at": "2026-09-30T09:08:16+00:00",
           "channel_pinned": false
         }
       }
@@ -6575,11 +7222,18 @@
           "tested_at": "2026-09-29T14:54:35+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:43+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:59:40+00:00",
+          "tested_at": "2026-09-30T09:08:19+00:00",
           "channel_pinned": false
         }
       }
@@ -6639,11 +7293,18 @@
           "tested_at": "2026-09-29T14:54:36+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:45+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:59:43+00:00",
+          "tested_at": "2026-09-30T09:08:23+00:00",
           "channel_pinned": false
         }
       }
@@ -6698,11 +7359,18 @@
           "tested_at": "2026-09-29T14:54:38+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:46+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:59:46+00:00",
+          "tested_at": "2026-09-30T09:08:27+00:00",
           "channel_pinned": false
         }
       }
@@ -6760,11 +7428,18 @@
           "tested_at": "2026-09-29T14:52:26+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:23+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:57:08+00:00",
+          "tested_at": "2026-09-30T09:06:45+00:00",
           "channel_pinned": false
         }
       }
@@ -6823,11 +7498,18 @@
           "tested_at": "2026-09-29T14:52:29+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:24+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:57:13+00:00",
+          "tested_at": "2026-09-30T09:06:50+00:00",
           "channel_pinned": false
         }
       }
@@ -6884,11 +7566,18 @@
           "tested_at": "2026-09-29T14:52:32+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:25+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:57:17+00:00",
+          "tested_at": "2026-09-30T09:06:54+00:00",
           "channel_pinned": false
         }
       }
@@ -6946,11 +7635,18 @@
           "tested_at": "2026-09-29T14:52:38+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:30+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:57:24+00:00",
+          "tested_at": "2026-09-30T09:07:03+00:00",
           "channel_pinned": false
         }
       }
@@ -7009,11 +7705,18 @@
           "tested_at": "2026-09-29T14:52:41+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:31+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:57:29+00:00",
+          "tested_at": "2026-09-30T09:07:08+00:00",
           "channel_pinned": false
         }
       }
@@ -7080,11 +7783,18 @@
           "tested_at": "2026-09-29T14:52:44+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:54:32+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:57:33+00:00",
+          "tested_at": "2026-09-30T09:07:12+00:00",
           "channel_pinned": false
         }
       }
@@ -7163,7 +7873,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:52:47+00:00",
+          "tested_at": "2026-09-30T08:45:24+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T08:54:33+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -7171,7 +7889,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T13:57:37+00:00",
+          "tested_at": "2026-09-30T09:07:16+00:00",
           "channel_pinned": false
         }
       }
@@ -7195,7 +7913,9 @@
       "information"
     ],
     "category": "News",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-news/dev/res/icon/news.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-news",
     "package_name": "ovos-skill-news",
     "pypi_version": "0.4.6",
@@ -7259,6 +7979,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-number-facts",
     "package_name": "ovos-skill-number-facts",
     "pypi_version": "0.1.12",
@@ -7270,7 +7992,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 3,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7289,15 +8011,19 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -7314,16 +8040,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.12",
-          "tested_at": "2026-09-29T14:53:03+00:00",
+          "tested_at": "2026-09-30T08:45:40+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.5.0a5",
-          "tested_at": "2026-09-29T13:57:54+00:00",
+          "version_tested": "0.1.12",
+          "tested_at": "2026-09-30T08:54:42+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 58/58 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.5.0a5",
+          "tested_at": "2026-09-30T09:07:33+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 58,
+            "counted": 58
+          }
         }
       }
     }
@@ -7567,7 +8305,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T14:52:11+00:00",
+          "tested_at": "2026-09-30T08:46:28+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-09-30T08:54:45+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -7575,7 +8321,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T13:57:30+00:00",
+          "tested_at": "2026-09-30T09:06:50+00:00",
           "channel_pinned": false
         }
       }
@@ -7637,12 +8383,20 @@
           "tested_at": "2026-09-29T14:53:16+00:00",
           "channel_pinned": true
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "1.0.9",
+          "tested_at": "2026-09-30T08:55:41+00:00",
+          "channel_pinned": true
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "1.6.7a2",
-          "tested_at": "2026-09-29T13:57:37+00:00",
+          "tested_at": "2026-09-30T09:06:57+00:00",
           "channel_pinned": true
         }
       }
@@ -8747,12 +9501,20 @@
           "tested_at": "2026-09-29T14:53:19+00:00",
           "channel_pinned": true
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "1.1.9",
+          "tested_at": "2026-09-30T08:55:43+00:00",
+          "channel_pinned": true
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.19a1",
-          "tested_at": "2026-09-29T13:57:44+00:00",
+          "tested_at": "2026-09-30T09:07:03+00:00",
           "channel_pinned": true
         }
       }
@@ -8920,12 +9682,20 @@
           "tested_at": "2026-09-29T14:53:22+00:00",
           "channel_pinned": true
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "2.1.1",
+          "tested_at": "2026-09-30T08:55:46+00:00",
+          "channel_pinned": true
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "3.7.2a1",
-          "tested_at": "2026-09-29T13:57:50+00:00",
+          "tested_at": "2026-09-30T09:07:09+00:00",
           "channel_pinned": true
         }
       }
@@ -10243,12 +11013,20 @@
           "tested_at": "2026-09-29T14:53:26+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-09-30T08:55:48+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "needs config",
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-09-29T13:57:57+00:00",
+          "tested_at": "2026-09-30T09:07:15+00:00",
           "channel_pinned": false
         }
       }
@@ -11012,12 +11790,20 @@
           "tested_at": "2026-09-29T14:53:31+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.9",
+          "tested_at": "2026-09-30T08:55:53+00:00",
+          "channel_pinned": true
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.29.3a1",
-          "tested_at": "2026-09-29T13:58:07+00:00",
+          "tested_at": "2026-09-30T09:07:22+00:00",
           "channel_pinned": true
         }
       }
@@ -13345,12 +14131,20 @@
           "tested_at": "2026-09-29T14:53:38+00:00",
           "channel_pinned": true
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "1.1.18",
+          "tested_at": "2026-09-30T08:55:55+00:00",
+          "channel_pinned": true
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "1.5.6a2",
-          "tested_at": "2026-09-29T13:58:14+00:00",
+          "tested_at": "2026-09-30T09:07:29+00:00",
           "channel_pinned": true
         }
       }
@@ -13742,12 +14536,20 @@
           "tested_at": "2026-09-29T14:53:41+00:00",
           "channel_pinned": true
         },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "1.4.3",
+          "tested_at": "2026-09-30T08:55:58+00:00",
+          "channel_pinned": true
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.7a1",
-          "tested_at": "2026-09-29T13:58:21+00:00",
+          "tested_at": "2026-09-30T09:07:35+00:00",
           "channel_pinned": true
         }
       }
@@ -16473,6 +17275,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-shell",
     "package_name": null,
     "pypi_version": null,
@@ -16521,6 +17325,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-simple-listener",
     "package_name": "ovos-simple-listener",
     "pypi_version": "0.1.0",
@@ -16532,7 +17338,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -16678,83 +17484,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OpenVoiceOS-ovos-skill-camera",
-    "skill_id": null,
-    "name": "ovos-skill-camera",
-    "description": "webcam for OVOS",
-    "examples": [],
-    "tags": [
-      "openvoiceos",
-      "skill"
-    ],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-skill-camera",
-    "package_name": "ovos-skill-camera",
-    "pypi_version": "1.0.4",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 1,
-    "forks": 2,
-    "open_issues": 2,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [
-      "ca-es",
-      "da-dk",
-      "de-de",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fa-ir",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "oc-fr",
-      "pt-br",
-      "pt-pt",
-      "sv-se"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": true,
-    "repo_created_at": "2018-03-27T15:44:21Z",
-    "last_updated": "2025-01-24T16:57:37.905723Z",
-    "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-skill-camera.openvoiceos",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.0.4",
-          "tested_at": "2026-09-29T14:52:20+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.4.0a1",
-          "tested_at": "2026-09-29T13:57:26+00:00",
-          "channel_pinned": true
-        }
-      }
-    }
-  },
-  {
     "id": "strugee-ovos-skill-ci-test",
     "skill_id": null,
     "name": "ovos-skill-ci-test",
@@ -16811,6 +17540,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-cmd",
     "package_name": "ovos-skill-cmd",
     "pypi_version": "0.2.11",
@@ -16822,7 +17553,7 @@
     "type_group": "Skill",
     "stars": 6,
     "forks": 5,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -16845,15 +17576,19 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -16870,16 +17605,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.11",
-          "tested_at": "2026-09-29T14:53:31+00:00",
+          "tested_at": "2026-09-30T08:47:27+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.9.0a1",
-          "tested_at": "2026-09-29T13:58:18+00:00",
+          "version_tested": "0.2.11",
+          "tested_at": "2026-09-30T08:55:47+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 24/24 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.9.0a1",
+          "tested_at": "2026-09-30T09:08:33+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 24,
+            "counted": 24
+          }
         }
       }
     }
@@ -17000,6 +17747,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-count",
     "package_name": "ovos-skill-count",
     "pypi_version": "0.0.2",
@@ -17011,7 +17760,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 3,
-    "open_issues": 7,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -17030,6 +17779,7 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -17038,8 +17788,10 @@
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -17056,16 +17808,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-29T14:53:57+00:00",
+          "tested_at": "2026-09-30T08:47:46+00:00",
           "channel_pinned": false
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.6.1a1",
-          "tested_at": "2026-09-29T13:59:09+00:00",
+          "version_tested": "0.0.2",
+          "tested_at": "2026-09-30T08:56:16+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 24/24 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.6.1a1",
+          "tested_at": "2026-09-30T09:09:25+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 24,
+            "counted": 24
+          }
         }
       }
     }
@@ -17081,7 +17845,9 @@
       "skill"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-ddg/dev/ovos_skill_ddg/gui/all/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-ddg",
     "package_name": "ovos-skill-ddg",
     "pypi_version": "0.3.7",
@@ -17116,9 +17882,11 @@
       "de-de",
       "el-gr",
       "en-us",
+      "es-co",
       "es-es",
       "et-ee",
       "eu-es",
+      "fa-ir",
       "fi-fi",
       "fr-fr",
       "gl-es",
@@ -17162,95 +17930,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-09-29T14:54:13+00:00",
+          "tested_at": "2026-09-30T08:44:43+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "version_tested": "0.3.6",
+          "tested_at": "2026-09-30T08:56:29+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 17/17 golden",
+          "state": "pass",
+          "level": 3,
           "version_tested": "0.6.0a1",
-          "tested_at": "2026-09-29T14:01:17+00:00",
-          "channel_pinned": true
-        }
-      }
-    }
-  },
-  {
-    "id": "OpenVoiceOS-ovos-skill-diagnostics",
-    "skill_id": null,
-    "name": "ovos-skill-diagnostics",
-    "description": "Report system information such as CPU usage, memory usage, and language settings.",
-    "examples": [],
-    "tags": [
-      "ilenia",
-      "openvoiceos",
-      "portuguese",
-      "skill",
-      "tool"
-    ],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-skill-diagnostics",
-    "package_name": "ovos-skill-diagnostics",
-    "pypi_version": "0.0.8",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 3,
-    "open_issues": 4,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [
-      "ca-es",
-      "da-dk",
-      "de-de",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "oc-fr",
-      "pt-br",
-      "pt-pt",
-      "sv-se"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": true,
-    "repo_created_at": "2025-03-06T11:55:30Z",
-    "last_updated": "2025-03-27T07:25:42.554089Z",
-    "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-skill-diagnostics.openvoiceos",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-09-29T14:54:40+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.0a1",
-          "tested_at": "2026-09-29T14:03:05+00:00",
-          "channel_pinned": true
+          "tested_at": "2026-09-30T09:11:34+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 17,
+            "counted": 17
+          }
         }
       }
     }
@@ -17354,7 +18055,9 @@
       "skill"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/question.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-fallback-unknown",
     "package_name": null,
     "pypi_version": null,
@@ -17381,6 +18084,7 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -17400,7 +18104,7 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2021-12-08T18:28:54Z",
-    "last_updated": "2026-09-19T15:07:15Z",
+    "last_updated": "2026-09-28T04:02:26Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -17504,6 +18208,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-ggwave",
     "package_name": "ovos-skill-ggwave",
     "pypi_version": "0.3.4",
@@ -17515,7 +18221,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -17534,14 +18240,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -17558,14 +18268,21 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.4",
-          "tested_at": "2026-09-29T14:55:01+00:00",
+          "tested_at": "2026-09-30T08:46:21+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T08:57:19+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:04:13+00:00",
+          "tested_at": "2026-09-30T09:14:32+00:00",
           "channel_pinned": false
         }
       }
@@ -17582,7 +18299,9 @@
       "skill"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/smile.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-hello-world",
     "package_name": null,
     "pypi_version": null,
@@ -17615,6 +18334,7 @@
       "de-de",
       "el-gr",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -17635,9 +18355,9 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2021-11-03T17:20:24Z",
-    "last_updated": "2026-09-26T09:34:37Z",
+    "last_updated": "2026-09-28T05:27:48Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-skill-homescreen",
@@ -17651,6 +18371,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-homescreen",
     "package_name": "ovos_skill_homescreen",
     "pypi_version": "3.0.3",
@@ -17780,7 +18502,9 @@
       "assistant"
     ],
     "category": "Other",
-    "icon": "res/icon/laugh_icon.png",
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-laugh/dev/res/icon/laugh_icon.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-laugh",
     "package_name": "ovos-skill-laugh",
     "pypi_version": "1.1.0",
@@ -17850,7 +18574,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.3",
-          "tested_at": "2026-09-29T14:55:18+00:00",
+          "tested_at": "2026-09-30T08:46:37+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.1.0",
+          "tested_at": "2026-09-30T08:57:21+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -17858,7 +18590,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.0.0a1",
-          "tested_at": "2026-09-29T14:04:17+00:00",
+          "tested_at": "2026-09-30T09:14:36+00:00",
           "channel_pinned": true
         }
       }
@@ -17903,90 +18635,6 @@
     "last_updated": "2025-04-08T18:57:24Z",
     "is_new_repo": false,
     "is_recently_updated": false
-  },
-  {
-    "id": "OpenVoiceOS-ovos-skill-mark1-ctrl",
-    "skill_id": null,
-    "name": "ovos-skill-mark1-ctrl",
-    "description": "control the mycroft enclosure vocally",
-    "examples": [],
-    "tags": [
-      "mark-1",
-      "openvoiceos",
-      "skill"
-    ],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-skill-mark1-ctrl",
-    "package_name": "ovos-skill-mark1-ctrl",
-    "pypi_version": "0.0.1",
-    "license": "MIT",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 1,
-    "forks": 2,
-    "open_issues": 3,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-skill-mark1-ctrl"
-      }
-    ],
-    "languages": [
-      "ca-es",
-      "da-dk",
-      "de-de",
-      "el-gr",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "oc-fr",
-      "pt-br",
-      "pt-pt",
-      "ru-ru",
-      "sv-se"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": true,
-    "repo_created_at": "2018-04-09T21:39:14Z",
-    "last_updated": "2026-04-04T04:32:02.377027Z",
-    "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-skill-mark1-ctrl.openvoiceos",
-      "channels": {
-        "stable": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
-          "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:56:05+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
-          "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:07:15+00:00",
-          "channel_pinned": false
-        }
-      }
-    }
   },
   {
     "id": "reklis-ovos-skill-mcp",
@@ -18959,6 +19607,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-pokepedia",
     "package_name": "ovos-skill-pokepedia",
     "pypi_version": "0.1.4",
@@ -18993,14 +19643,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -19020,12 +19674,20 @@
           "tested_at": "2026-09-29T14:52:17+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.4",
+          "tested_at": "2026-09-30T08:56:05+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.4",
-          "tested_at": "2026-09-29T13:57:34+00:00",
+          "tested_at": "2026-09-30T09:07:44+00:00",
           "channel_pinned": false
         }
       }
@@ -19056,6 +19718,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-randomness",
     "package_name": "ovos-skill-randomness",
     "pypi_version": "1.1.0",
@@ -19113,7 +19777,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-09-29T14:52:55+00:00",
+          "tested_at": "2026-09-30T08:47:12+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.1.0",
+          "tested_at": "2026-09-30T08:56:37+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -19121,7 +19793,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.0.2a7",
-          "tested_at": "2026-09-29T13:57:55+00:00",
+          "tested_at": "2026-09-30T09:08:08+00:00",
           "channel_pinned": true
         }
       }
@@ -19341,6 +20013,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-spotify",
     "package_name": null,
     "pypi_version": null,
@@ -19681,7 +20355,9 @@
       "skill"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wikipedia/dev/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-wikipedia",
     "package_name": "ovos-skill-wikipedia",
     "pypi_version": "0.8.13",
@@ -19691,9 +20367,9 @@
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
-    "stars": 11,
+    "stars": 10,
     "forks": 12,
-    "open_issues": 8,
+    "open_issues": 9,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19712,8 +20388,10 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
@@ -19738,16 +20416,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.13",
-          "tested_at": "2026-09-29T14:53:07+00:00",
+          "tested_at": "2026-09-30T08:47:27+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.18.3a3",
-          "tested_at": "2026-09-29T13:58:19+00:00",
+          "version_tested": "0.8.13",
+          "tested_at": "2026-09-30T08:56:44+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 23/26 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.18.3a3",
+          "tested_at": "2026-09-30T09:08:32+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 23,
+            "counted": 26
+          }
         }
       }
     }
@@ -19763,7 +20453,9 @@
       "skill"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wolfie/dev/gui/all/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-wolfie",
     "package_name": "ovos-skill-wolfie",
     "pypi_version": "0.5.8",
@@ -19775,7 +20467,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 5,
-    "open_issues": 7,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19805,14 +20497,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -19829,96 +20525,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.8",
-          "tested_at": "2026-09-29T14:53:40+00:00",
+          "tested_at": "2026-09-30T08:47:49+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "version_tested": "0.5.8",
+          "tested_at": "2026-09-30T08:57:20+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 14/14 golden",
+          "state": "pass",
+          "level": 3,
           "version_tested": "0.12.1a3",
-          "tested_at": "2026-09-29T13:59:13+00:00",
-          "channel_pinned": true
-        }
-      }
-    }
-  },
-  {
-    "id": "OpenVoiceOS-ovos-skill-word-of-the-day",
-    "skill_id": null,
-    "name": "ovos-skill-word-of-the-day",
-    "description": "Skill for OVOS, to get the word of the day",
-    "examples": [],
-    "tags": [
-      "openvoiceos",
-      "skill"
-    ],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-skill-word-of-the-day",
-    "package_name": "ovos-skill-word-of-the-day",
-    "pypi_version": "0.2.5",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 1,
-    "forks": 3,
-    "open_issues": 2,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": "online",
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "Install the skill with pip:\n\npip install ovos-skill-word-of-the-day"
-      }
-    ],
-    "languages": [
-      "ca-es",
-      "da-dk",
-      "de-de",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "pt-br",
-      "pt-pt",
-      "sv-se"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": true,
-    "repo_created_at": "2024-03-29T19:16:41Z",
-    "last_updated": "2026-05-12T22:56:55.036266Z",
-    "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-skill-word-of-the-day.openvoiceos",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.2.5",
-          "tested_at": "2026-09-29T14:53:55+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.8.0a1",
-          "tested_at": "2026-09-29T14:00:04+00:00",
-          "channel_pinned": true
+          "tested_at": "2026-09-30T09:09:27+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 14,
+            "counted": 14
+          }
         }
       }
     }
@@ -19935,6 +20563,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-wordnet",
     "package_name": "ovos-skill-wordnet",
     "pypi_version": "0.2.6",
@@ -19968,8 +20598,10 @@
       "de-de",
       "el-gr",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fi-fi",
       "fr-fr",
       "gl-es",
@@ -19987,6 +20619,7 @@
       "pt-br",
       "pt-pt",
       "ro-ro",
+      "ru-ru",
       "sk-sk",
       "sl-si",
       "sv-se",
@@ -20006,7 +20639,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-09-29T14:54:09+00:00",
+          "tested_at": "2026-09-30T08:44:55+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.6",
+          "tested_at": "2026-09-30T08:57:42+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -20014,7 +20655,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.13.2a2",
-          "tested_at": "2026-09-29T14:00:59+00:00",
+          "tested_at": "2026-09-30T09:11:14+00:00",
           "channel_pinned": true
         }
       }
@@ -20033,6 +20674,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-youtube",
     "package_name": null,
     "pypi_version": null,
@@ -20081,6 +20724,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skills",
     "package_name": "ovos-skills",
     "pypi_version": null,
@@ -20122,6 +20767,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skills-info",
     "package_name": null,
     "pypi_version": null,
@@ -20164,6 +20811,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-solver-BM25-plugin",
     "package_name": "ovos-solver-bm25-plugin",
     "pypi_version": "0.1.0",
@@ -20530,6 +21179,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-solver-YesNo-plugin",
     "package_name": "ovos-solver-yes-no-plugin",
     "pypi_version": "0.2.8",
@@ -26041,48 +26692,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "mosiwon-ovos_stt_plugin-google-cloud-translate",
-    "skill_id": null,
-    "name": "ovos_stt_plugin-google-cloud-translate",
-    "description": "pip install git+https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate.git",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "source": "https://github.com/mosiwon/ovos_stt_plugin-google-cloud-translate",
-    "package_name": "ovos-stt-plugin-google-cloud-translate",
-    "pypi_version": null,
-    "license": null,
-    "archived": false,
-    "author": "mosiwon",
-    "tier": 2,
-    "component_type": "Tool",
-    "type_group": "Tool",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Configuration",
-        "content": "* in mycroft.conf\n{\n  \"stt\": {\n    \"module\": \"google_translate_stt\",\n    \"google_translate_stt\": {\n      \"stt_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"translate_api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"language\": \"ko-KR\"\n    }\n  }\n}"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2024-07-03T04:53:33Z",
-    "last_updated": "2024-07-03T04:53:36Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "mosiwon-ovos_tts_plugin-google-cloud-translate",
     "skill_id": null,
     "name": "ovos_tts_plugin-google-cloud-translate",
@@ -26333,7 +26942,9 @@
       "entertainment"
     ],
     "category": "Entertainment",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-parrot/dev/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-parrot",
     "package_name": "ovos-skill-parrot",
     "pypi_version": "0.1.25",
@@ -26364,6 +26975,7 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -26372,8 +26984,10 @@
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -26390,16 +27004,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.20",
-          "tested_at": "2026-09-29T14:54:27+00:00",
+          "tested_at": "2026-09-30T08:45:53+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.11.0a4",
-          "tested_at": "2026-09-29T14:02:26+00:00",
+          "version_tested": "0.1.25",
+          "tested_at": "2026-09-30T08:57:52+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 100/103 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.11.0a4",
+          "tested_at": "2026-09-30T09:12:40+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 100,
+            "counted": 103
+          }
         }
       }
     }
@@ -26648,6 +27274,8 @@
     ],
     "category": "Music",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-pyradios",
     "package_name": "ovos-skill-pyradios",
     "pypi_version": "0.1.5",
@@ -27032,7 +27660,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:54:42+00:00",
+          "tested_at": "2026-09-30T08:46:09+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T08:58:03+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -27040,7 +27676,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:03:18+00:00",
+          "tested_at": "2026-09-30T09:13:33+00:00",
           "channel_pinned": false
         }
       }
@@ -27123,6 +27759,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-screenshot",
     "package_name": "ovos-skill-screenshot",
     "pypi_version": "0.0.7",
@@ -27153,15 +27791,19 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -27178,7 +27820,15 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-29T14:52:25+00:00",
+          "tested_at": "2026-09-30T08:46:21+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 10/11 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-09-30T08:56:31+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -27186,7 +27836,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.7.0a3",
-          "tested_at": "2026-09-29T13:57:40+00:00",
+          "tested_at": "2026-09-30T09:09:40+00:00",
           "channel_pinned": true
         }
       }
@@ -27329,6 +27979,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-easter-eggs",
     "package_name": "skill-easter-eggs",
     "pypi_version": "1.0.2",
@@ -27390,7 +28042,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2",
-          "tested_at": "2026-09-29T14:53:36+00:00",
+          "tested_at": "2026-09-30T08:46:38+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.0.2",
+          "tested_at": "2026-09-30T08:57:49+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -27398,7 +28058,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2",
-          "tested_at": "2026-09-29T13:58:33+00:00",
+          "tested_at": "2026-09-30T09:10:32+00:00",
           "channel_pinned": false
         }
       }
@@ -27523,7 +28183,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.3",
-          "tested_at": "2026-09-29T14:53:53+00:00",
+          "tested_at": "2026-09-30T08:46:55+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "1.4.3",
+          "tested_at": "2026-09-30T08:58:01+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -27531,7 +28199,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.3",
-          "tested_at": "2026-09-29T13:58:58+00:00",
+          "tested_at": "2026-09-30T09:10:50+00:00",
           "channel_pinned": false
         }
       }
@@ -27632,14 +28300,21 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.4",
-          "tested_at": "2026-09-29T14:57:27+00:00",
+          "tested_at": "2026-09-30T08:49:33+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T09:02:00+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:59:45+00:00",
+          "tested_at": "2026-09-30T09:11:40+00:00",
           "channel_pinned": false
         }
       }
@@ -27721,11 +28396,18 @@
           "tested_at": "2026-09-29T14:57:45+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T09:02:02+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T13:59:47+00:00",
+          "tested_at": "2026-09-30T09:11:43+00:00",
           "channel_pinned": false
         }
       }
@@ -27820,7 +28502,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-09-29T14:57:48+00:00",
+          "tested_at": "2026-09-30T08:49:49+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "2.2.2",
+          "tested_at": "2026-09-30T09:02:04+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -27828,7 +28518,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-09-29T13:59:49+00:00",
+          "tested_at": "2026-09-30T09:11:46+00:00",
           "channel_pinned": false
         }
       }
@@ -27912,11 +28602,18 @@
           "tested_at": "2026-09-29T14:58:01+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T09:02:11+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:00:02+00:00",
+          "tested_at": "2026-09-30T09:12:01+00:00",
           "channel_pinned": false
         }
       }
@@ -29031,6 +29728,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-somafm",
     "package_name": "ovos-skill-somafm",
     "pypi_version": "0.1.5",
@@ -29142,7 +29841,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:58:04+00:00",
+          "tested_at": "2026-09-30T08:44:51+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T09:02:13+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -29150,7 +29857,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:00:04+00:00",
+          "tested_at": "2026-09-30T09:12:04+00:00",
           "channel_pinned": false
         }
       }
@@ -29232,6 +29939,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-soundcloud",
     "package_name": "ovos-skill-soundcloud",
     "pypi_version": null,
@@ -29277,7 +29986,7 @@
     "name": "Speedtest",
     "description": "runs an internet bandwidth test using speedtest.net",
     "examples": [
-      "run a speedtest"
+      "run a speed test"
     ],
     "tags": [
       "diagnostics",
@@ -29288,7 +29997,9 @@
       "internet"
     ],
     "category": "Information",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/signal.svg",
+    "icon_source": "readme",
+    "icon_color": "#40DBB0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-speedtest",
     "package_name": "ovos-skill-speedtest",
     "pypi_version": "0.3.6",
@@ -29300,7 +30011,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 3,
-    "open_issues": 4,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -29315,6 +30026,7 @@
       "de-de",
       "el-gr",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -29323,6 +30035,7 @@
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
       "ru-ru",
@@ -29343,7 +30056,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-09-29T14:52:27+00:00",
+          "tested_at": "2026-09-30T08:45:05+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.3.6",
+          "tested_at": "2026-09-30T08:57:55+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -29351,7 +30072,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.10.0a3",
-          "tested_at": "2026-09-29T13:57:27+00:00",
+          "tested_at": "2026-09-30T09:11:08+00:00",
           "channel_pinned": true
         }
       }
@@ -29371,7 +30092,9 @@
     ],
     "tags": [],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/book-reader.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-spelling",
     "package_name": "ovos-skill-spelling",
     "pypi_version": "0.2.6",
@@ -29402,15 +30125,19 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -29427,16 +30154,28 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-09-29T14:53:39+00:00",
+          "tested_at": "2026-09-30T08:46:55+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 19/20 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.2.6",
+          "tested_at": "2026-09-30T08:59:14+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 20/20 golden",
           "state": "pass",
-          "level": 2,
+          "level": 3,
           "version_tested": "0.13.1a1",
-          "tested_at": "2026-09-29T13:58:22+00:00",
-          "channel_pinned": true
+          "tested_at": "2026-09-30T09:12:03+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 20,
+            "counted": 20
+          }
         }
       }
     }
@@ -29497,6 +30236,116 @@
     "last_updated": "2026-09-27T04:55:07Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-skill-diagnostics",
+    "skill_id": "ovos-skill-diagnostics.openvoiceos",
+    "name": "System Diagnostics",
+    "description": "Report system information such as CPU usage, memory usage, and language settings.",
+    "examples": [
+      "what version of ovos is this",
+      "what is your cpu usage",
+      "how much disk space is left",
+      "what other languages do you know",
+      "do you have a gpu",
+      "what is your kernel version",
+      "what languages can you speak",
+      "how much memory are you using",
+      "where are you located",
+      "what is your primary language",
+      "tell me your uptime",
+      "what language am i speaking",
+      "where am i"
+    ],
+    "tags": [
+      "system",
+      "diagnostics",
+      "information",
+      "Configuration"
+    ],
+    "category": "Information",
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/info-circle.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-diagnostics",
+    "package_name": "ovos-skill-diagnostics",
+    "pypi_version": "0.0.8",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 3,
+    "open_issues": 5,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-co",
+      "es-es",
+      "eu-es",
+      "fa-ir",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "oc-fr",
+      "pl-pl",
+      "pt-br",
+      "pt-pt",
+      "ru-ru",
+      "sv-se"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": true,
+    "repo_created_at": "2025-03-06T11:55:30Z",
+    "last_updated": "2025-03-27T07:25:42.554089Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-diagnostics.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-09-30T08:46:00+00:00",
+          "channel_pinned": true
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-09-30T08:57:01+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 192/192 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.3.0a1",
+          "tested_at": "2026-09-30T09:13:23+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 192,
+            "counted": 192
+          }
+        }
+      }
+    }
   },
   {
     "id": "thalovant-thalovant-skill-custos-fallback",
@@ -29590,12 +30439,19 @@
           "tested_at": "2026-09-29T14:57:08+00:00",
           "channel_pinned": false
         },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-09-30T09:00:39+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-29T13:59:14+00:00",
+          "tested_at": "2026-09-30T09:12:55+00:00",
           "channel_pinned": false
         }
       }
@@ -29663,7 +30519,7 @@
       "who was born today in history?",
       "who died today in history?",
       "What historical events happened on June 16th?",
-      "Tell me about events in history on December 12th"
+      "Tell me about historical events on December 12th"
     ],
     "tags": [
       "Information",
@@ -29672,6 +30528,8 @@
     ],
     "category": "Information",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-days-in-history",
     "package_name": "ovos-skill-days-in-history",
     "pypi_version": "0.3.11",
@@ -29683,7 +30541,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 3,
-    "open_issues": 8,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -29697,6 +30555,7 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fr-fr",
@@ -29721,16 +30580,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.11",
-          "tested_at": "2026-09-29T14:57:10+00:00",
+          "tested_at": "2026-09-30T08:50:39+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.9.3a1",
-          "tested_at": "2026-09-29T13:59:23+00:00",
+          "version_tested": "0.3.11",
+          "tested_at": "2026-09-30T09:00:40+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 37/51 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.9.3a1",
+          "tested_at": "2026-09-30T09:13:03+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 37,
+            "counted": 51
+          }
         }
       }
     }
@@ -29792,6 +30663,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-tunein",
     "package_name": "ovos-skill-tunein",
     "pypi_version": "0.0.5",
@@ -29907,7 +30780,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:57:31+00:00",
+          "tested_at": "2026-09-30T08:51:09+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T09:00:54+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -29915,7 +30796,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:00:33+00:00",
+          "tested_at": "2026-09-30T09:14:11+00:00",
           "channel_pinned": false
         }
       }
@@ -30044,20 +30925,40 @@
       "badge_id": "ovos-skill-convert.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
+          "label": "\u2713 13/13 golden",
           "state": "pass",
-          "level": 2,
+          "level": 3,
           "version_tested": "0.0.8",
-          "tested_at": "2026-09-29T14:57:42+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-09-30T08:51:22+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 13,
+            "counted": 13
+          }
+        },
+        "testing": {
+          "label": "\u2713 13/13 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-09-30T09:00:59+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 13,
+            "counted": 13
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 13/13 golden",
           "state": "pass",
-          "level": 2,
+          "level": 3,
           "version_tested": "0.0.8",
-          "tested_at": "2026-09-29T14:00:48+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-09-30T09:14:25+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 13,
+            "counted": 13
+          }
         }
       }
     }
@@ -30311,7 +31212,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.1",
-          "tested_at": "2026-09-29T14:57:58+00:00",
+          "tested_at": "2026-09-30T08:51:41+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.1",
+          "tested_at": "2026-09-30T09:01:10+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -30319,7 +31228,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.1",
-          "tested_at": "2026-09-29T14:01:15+00:00",
+          "tested_at": "2026-09-30T09:14:52+00:00",
           "channel_pinned": false
         }
       }
@@ -30418,7 +31327,9 @@
       "permissive-license"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/volume-down.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-volume",
     "package_name": "ovos-skill-volume",
     "pypi_version": "0.1.16",
@@ -30430,7 +31341,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 5,
-    "open_issues": 9,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -30449,6 +31360,7 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
       "fa-ir",
@@ -30457,8 +31369,10 @@
       "it-it",
       "nl-nl",
       "oc-fr",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -30475,16 +31389,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.16",
-          "tested_at": "2026-09-29T14:58:14+00:00",
+          "tested_at": "2026-09-30T08:51:58+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.12.0a3",
-          "tested_at": "2026-09-29T14:01:24+00:00",
+          "version_tested": "0.1.16",
+          "tested_at": "2026-09-30T09:01:21+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 37/37 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.12.0a3",
+          "tested_at": "2026-09-30T09:14:59+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 37,
+            "counted": 37
+          }
         }
       }
     }
@@ -30507,7 +31433,9 @@
       "pictures"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wallpapers/dev/icon.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-wallpapers",
     "package_name": "ovos-skill-wallpapers",
     "pypi_version": "1.0.9",
@@ -30519,7 +31447,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 4,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -31174,14 +32102,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -31198,16 +32130,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.9",
-          "tested_at": "2026-09-29T14:52:08+00:00",
+          "tested_at": "2026-09-30T08:44:48+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "2.8.0a2",
-          "tested_at": "2026-09-29T13:57:27+00:00",
+          "version_tested": "1.0.9",
+          "tested_at": "2026-09-30T08:59:19+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 38/67 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "2.8.0a2",
+          "tested_at": "2026-09-30T09:12:48+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 38,
+            "counted": 67
+          }
         }
       }
     }
@@ -31226,7 +32170,7 @@
       "when is the sunset today in Chicago",
       "what is the current temperature right now in celsius in Chicago",
       "what is the weather like in celsius",
-      "is foggy today",
+      "is it foggy today",
       "humidity percentage right now",
       "is it chilly",
       "how strong are the winds",
@@ -31246,7 +32190,9 @@
       "temperature"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/sun.svg",
+    "icon_source": "readme",
+    "icon_color": "#FEE255",
     "source": "https://github.com/OpenVoiceOS/ovos-skill-weather",
     "package_name": "ovos-skill-weather",
     "pypi_version": "1.0.6",
@@ -31258,7 +32204,7 @@
     "type_group": "Skill",
     "stars": 3,
     "forks": 10,
-    "open_issues": 15,
+    "open_issues": 12,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -31284,8 +32230,10 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fi-fi",
       "fr-fr",
       "gl-es",
@@ -31315,16 +32263,28 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.18",
-          "tested_at": "2026-09-29T15:00:07+00:00",
+          "tested_at": "2026-09-30T08:57:47+00:00",
           "channel_pinned": true
         },
-        "alpha": {
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "1.5.1a1",
-          "tested_at": "2026-09-29T13:59:18+00:00",
+          "version_tested": "1.0.6",
+          "tested_at": "2026-09-30T09:12:50+00:00",
           "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 198/198 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "1.5.1a1",
+          "tested_at": "2026-09-30T09:14:35+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 198,
+            "counted": 198
+          }
         }
       }
     }
@@ -31402,7 +32362,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T15:01:00+00:00",
+          "tested_at": "2026-09-30T08:59:07+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-09-30T09:17:11+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -31410,7 +32378,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-29T14:10:09+00:00",
+          "tested_at": "2026-09-30T09:25:06+00:00",
           "channel_pinned": false
         }
       }
@@ -31518,7 +32486,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-29T15:01:11+00:00",
+          "tested_at": "2026-09-30T08:59:20+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-09-30T09:17:19+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -31526,7 +32502,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-29T14:10:25+00:00",
+          "tested_at": "2026-09-30T09:25:22+00:00",
           "channel_pinned": false
         }
       }
@@ -31546,7 +32522,9 @@
       "information"
     ],
     "category": "Daily",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wikihow/dev/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-wikihow",
     "package_name": "ovos-skill-wikihow",
     "pypi_version": "0.3.3",
@@ -31554,11 +32532,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Persona",
-    "type_group": "Plugin",
+    "component_type": "Skill",
+    "type_group": "Skill",
     "stars": 4,
     "forks": 9,
-    "open_issues": 4,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -31577,14 +32555,18 @@
       "da-dk",
       "de-de",
       "en-us",
+      "es-co",
       "es-es",
       "eu-es",
+      "fa-ir",
       "fr-fr",
       "gl-es",
       "it-it",
       "nl-nl",
+      "pl-pl",
       "pt-br",
       "pt-pt",
+      "ru-ru",
       "sv-se"
     ],
     "locale_content": {},
@@ -31592,7 +32574,115 @@
     "repo_created_at": "2018-01-23T09:41:23Z",
     "last_updated": "2025-06-08T22:04:04.795081Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-wikihow.openvoiceos",
+      "channels": {}
+    }
+  },
+  {
+    "id": "OpenVoiceOS-ovos-skill-word-of-the-day",
+    "skill_id": "ovos-skill-word-of-the-day.openvoiceos",
+    "name": "Word Of The Day",
+    "description": "Speak the word of the day and spell it on request.",
+    "examples": [
+      "what was yesterday's word",
+      "how do you spell that",
+      "what is the word of the day"
+    ],
+    "tags": [
+      "word-of-the-day",
+      "dictionary",
+      "vocabulary",
+      "daily"
+    ],
+    "category": "Daily",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-skill-word-of-the-day",
+    "package_name": "ovos-skill-word-of-the-day",
+    "pypi_version": "0.2.5",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 3,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "Install the skill with pip:\n\npip install ovos-skill-word-of-the-day"
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-co",
+      "es-es",
+      "eu-es",
+      "fa-ir",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pl-pl",
+      "pt-br",
+      "pt-pt",
+      "ru-ru",
+      "sv-se"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": true,
+    "repo_created_at": "2024-03-29T19:16:41Z",
+    "last_updated": "2026-05-12T22:56:55.036266Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-word-of-the-day.openvoiceos",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.5",
+          "tested_at": "2026-09-30T08:48:10+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.2.5",
+          "tested_at": "2026-09-30T08:57:32+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 25/37 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.8.0a1",
+          "tested_at": "2026-09-30T09:10:20+00:00",
+          "channel_pinned": true,
+          "golden": {
+            "hit": 25,
+            "counted": 37
+          }
+        }
+      }
+    }
   },
   {
     "id": "andlo-ovos-skill-worldtales",
@@ -31782,6 +32872,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-youtube-music",
     "package_name": "ovos-skill-youtube-music",
     "pypi_version": "0.1.7",

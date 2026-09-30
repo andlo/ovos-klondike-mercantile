@@ -23,6 +23,8 @@
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-randomness",
   "package_name": "ovos-skill-randomness",
   "pypi_version": "1.1.0",
@@ -80,7 +82,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.2",
-        "tested_at": "2026-09-29T14:52:55+00:00",
+        "tested_at": "2026-09-30T08:47:12+00:00",
+        "channel_pinned": true
+      },
+      "testing": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.1.0",
+        "tested_at": "2026-09-30T08:56:37+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -88,7 +98,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "2.0.2a7",
-        "tested_at": "2026-09-29T13:57:55+00:00",
+        "tested_at": "2026-09-30T09:08:08+00:00",
         "channel_pinned": true
       }
     }

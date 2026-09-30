@@ -9,7 +9,9 @@
     "skill"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wolfie/dev/gui/all/logo.png",
+  "icon_source": "repo",
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-wolfie",
   "package_name": "ovos-skill-wolfie",
   "pypi_version": "0.5.8",
@@ -21,7 +23,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 5,
-  "open_issues": 7,
+  "open_issues": 8,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -51,14 +53,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -75,16 +81,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.5.8",
-        "tested_at": "2026-09-29T14:53:40+00:00",
+        "tested_at": "2026-09-30T08:47:49+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.12.1a3",
-        "tested_at": "2026-09-29T13:59:13+00:00",
+        "version_tested": "0.5.8",
+        "tested_at": "2026-09-30T08:57:20+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 14/14 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.12.1a3",
+        "tested_at": "2026-09-30T09:09:27+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 14,
+          "counted": 14
+        }
       }
     }
   }

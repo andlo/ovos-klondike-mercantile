@@ -70,12 +70,20 @@
         "tested_at": "2026-09-29T14:53:38+00:00",
         "channel_pinned": true
       },
+      "testing": {
+        "label": "\u2717 doesn't load",
+        "state": "fail",
+        "level": 1,
+        "version_tested": "1.1.18",
+        "tested_at": "2026-09-30T08:55:55+00:00",
+        "channel_pinned": true
+      },
       "alpha": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
         "version_tested": "1.5.6a2",
-        "tested_at": "2026-09-29T13:58:14+00:00",
+        "tested_at": "2026-09-30T09:07:29+00:00",
         "channel_pinned": true
       }
     }

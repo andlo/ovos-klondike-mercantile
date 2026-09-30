@@ -1,14 +1,18 @@
 {
   "id": "OpenVoiceOS-ovos-skill-color-picker",
-  "skill_id": null,
+  "skill_id": "ovos-skill-color-picker.krisgesling",
   "name": "Color Picker",
   "description": "Look up a color by name and hear its hex and RGB values.",
   "examples": [
     "show me the color green"
   ],
-  "tags": [],
+  "tags": [
+    "system"
+  ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/palette.svg",
+  "icon_source": "readme",
+  "icon_color": "#22A7F0",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-color-picker",
   "package_name": "ovos-skill-color-picker",
   "pypi_version": "0.0.7",
@@ -20,7 +24,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 5,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -34,14 +38,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -58,7 +66,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.7",
-        "tested_at": "2026-09-29T14:52:45+00:00",
+        "tested_at": "2026-09-30T08:45:28+00:00",
+        "channel_pinned": true
+      },
+      "testing": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.7",
+        "tested_at": "2026-09-30T08:44:57+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -66,7 +82,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.7.1a1",
-        "tested_at": "2026-09-29T13:57:33+00:00",
+        "tested_at": "2026-09-30T09:01:27+00:00",
         "channel_pinned": true
       }
     }

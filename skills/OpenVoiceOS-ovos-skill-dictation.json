@@ -12,6 +12,8 @@
   ],
   "category": "Productivity",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-dictation",
   "package_name": "ovos-skill-dictation",
   "pypi_version": "0.2.21",
@@ -37,15 +39,19 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -62,16 +68,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.15",
-        "tested_at": "2026-09-29T14:52:19+00:00",
+        "tested_at": "2026-09-30T08:50:41+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.7.0a3",
-        "tested_at": "2026-09-29T13:57:05+00:00",
+        "version_tested": "0.2.19",
+        "tested_at": "2026-09-30T08:44:27+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads \u00b7 26/34 golden",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.7.0a3",
+        "tested_at": "2026-09-30T09:01:44+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 26,
+          "counted": 34
+        }
       }
     }
   }

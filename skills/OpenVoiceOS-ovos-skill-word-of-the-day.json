@@ -1,15 +1,23 @@
 {
   "id": "OpenVoiceOS-ovos-skill-word-of-the-day",
-  "skill_id": null,
-  "name": "ovos-skill-word-of-the-day",
-  "description": "Skill for OVOS, to get the word of the day",
-  "examples": [],
-  "tags": [
-    "openvoiceos",
-    "skill"
+  "skill_id": "ovos-skill-word-of-the-day.openvoiceos",
+  "name": "Word Of The Day",
+  "description": "Speak the word of the day and spell it on request.",
+  "examples": [
+    "what was yesterday's word",
+    "how do you spell that",
+    "what is the word of the day"
   ],
-  "category": "Other",
+  "tags": [
+    "word-of-the-day",
+    "dictionary",
+    "vocabulary",
+    "daily"
+  ],
+  "category": "Daily",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-word-of-the-day",
   "package_name": "ovos-skill-word-of-the-day",
   "pypi_version": "0.2.5",
@@ -40,14 +48,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -64,16 +76,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.5",
-        "tested_at": "2026-09-29T14:53:55+00:00",
+        "tested_at": "2026-09-30T08:48:10+00:00",
         "channel_pinned": false
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.8.0a1",
-        "tested_at": "2026-09-29T14:00:04+00:00",
+        "version_tested": "0.2.5",
+        "tested_at": "2026-09-30T08:57:32+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads \u00b7 25/37 golden",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.8.0a1",
+        "tested_at": "2026-09-30T09:10:20+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 25,
+          "counted": 37
+        }
       }
     }
   }

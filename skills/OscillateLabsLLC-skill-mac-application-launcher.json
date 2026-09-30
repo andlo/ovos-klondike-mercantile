@@ -93,14 +93,21 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.0.4",
-        "tested_at": "2026-09-29T14:57:27+00:00",
+        "tested_at": "2026-09-30T08:49:33+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-09-30T09:02:00+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2717 doesn't install",
         "state": "fail",
         "level": 0,
-        "tested_at": "2026-09-29T13:59:45+00:00",
+        "tested_at": "2026-09-30T09:11:40+00:00",
         "channel_pinned": false
       }
     }

@@ -16,7 +16,9 @@
     "pictures"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wallpapers/dev/icon.png",
+  "icon_source": "repo",
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-wallpapers",
   "package_name": "ovos-skill-wallpapers",
   "pypi_version": "1.0.9",
@@ -28,7 +30,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 4,
-  "open_issues": 3,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -683,14 +685,18 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -707,16 +713,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.0.9",
-        "tested_at": "2026-09-29T14:52:08+00:00",
+        "tested_at": "2026-09-30T08:44:48+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "2.8.0a2",
-        "tested_at": "2026-09-29T13:57:27+00:00",
+        "version_tested": "1.0.9",
+        "tested_at": "2026-09-30T08:59:19+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 loads \u00b7 38/67 golden",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "2.8.0a2",
+        "tested_at": "2026-09-30T09:12:48+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 38,
+          "counted": 67
+        }
       }
     }
   }

@@ -1,16 +1,37 @@
 {
   "id": "OpenVoiceOS-ovos-skill-mark1-ctrl",
-  "skill_id": null,
-  "name": "ovos-skill-mark1-ctrl",
-  "description": "control the mycroft enclosure vocally",
-  "examples": [],
+  "skill_id": "ovos-skill-mark1-ctrl.openvoiceos",
+  "name": "Mark 1 Enclosure Control",
+  "description": "Control the Mycroft Mark 1 enclosure by voice.",
+  "examples": [
+    "blink",
+    "set the eye brightness to 50 percent",
+    "make your eyes go crazy",
+    "set a custom eye color",
+    "make your eyes red",
+    "do the listening animation",
+    "look down",
+    "look left",
+    "look left and right",
+    "look right",
+    "look up",
+    "look up and down",
+    "narrow your eyes",
+    "reset your mark 1",
+    "can you smile",
+    "spin your eyes around",
+    "do the thinking animation"
+  ],
   "tags": [
-    "mark-1",
-    "openvoiceos",
-    "skill"
+    "mark1",
+    "enclosure",
+    "eyes",
+    "system"
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-mark1-ctrl",
   "package_name": "ovos-skill-mark1-ctrl",
   "pypi_version": "0.0.1",
@@ -42,13 +63,16 @@
     "de-de",
     "el-gr",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
     "ru-ru",
@@ -71,12 +95,20 @@
         "tested_at": "2026-09-29T14:56:05+00:00",
         "channel_pinned": false
       },
+      "testing": {
+        "label": "\u2717 doesn't load",
+        "state": "fail",
+        "level": 1,
+        "version_tested": "0.0.1",
+        "tested_at": "2026-09-30T08:57:59+00:00",
+        "channel_pinned": false
+      },
       "alpha": {
         "label": "\u2717 doesn't load",
         "state": "fail",
         "level": 1,
         "version_tested": "0.0.1",
-        "tested_at": "2026-09-29T14:07:15+00:00",
+        "tested_at": "2026-09-30T09:17:38+00:00",
         "channel_pinned": false
       }
     }

@@ -45,7 +45,9 @@
     "permissive-license"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/volume-down.svg",
+  "icon_source": "readme",
+  "icon_color": "#22a7f0",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-volume",
   "package_name": "ovos-skill-volume",
   "pypi_version": "0.1.16",
@@ -57,7 +59,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 5,
-  "open_issues": 9,
+  "open_issues": 10,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -76,6 +78,7 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
     "fa-ir",
@@ -84,8 +87,10 @@
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -102,16 +107,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.16",
-        "tested_at": "2026-09-29T14:58:14+00:00",
+        "tested_at": "2026-09-30T08:51:58+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.12.0a3",
-        "tested_at": "2026-09-29T14:01:24+00:00",
+        "version_tested": "0.1.16",
+        "tested_at": "2026-09-30T09:01:21+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 37/37 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.12.0a3",
+        "tested_at": "2026-09-30T09:14:59+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 37,
+          "counted": 37
+        }
       }
     }
   }

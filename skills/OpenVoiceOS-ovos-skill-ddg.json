@@ -9,7 +9,9 @@
     "skill"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-ddg/dev/ovos_skill_ddg/gui/all/logo.png",
+  "icon_source": "repo",
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-ddg",
   "package_name": "ovos-skill-ddg",
   "pypi_version": "0.3.7",
@@ -44,9 +46,11 @@
     "de-de",
     "el-gr",
     "en-us",
+    "es-co",
     "es-es",
     "et-ee",
     "eu-es",
+    "fa-ir",
     "fi-fi",
     "fr-fr",
     "gl-es",
@@ -90,16 +94,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.3.6",
-        "tested_at": "2026-09-29T14:54:13+00:00",
+        "tested_at": "2026-09-30T08:44:43+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.6.0a1",
-        "tested_at": "2026-09-29T14:01:17+00:00",
+        "version_tested": "0.3.6",
+        "tested_at": "2026-09-30T08:56:29+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 17/17 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.6.0a1",
+        "tested_at": "2026-09-30T09:11:34+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 17,
+          "counted": 17
+        }
       }
     }
   }

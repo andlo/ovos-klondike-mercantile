@@ -9,7 +9,9 @@
     "skill"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-skill-wikipedia/dev/logo.png",
+  "icon_source": "repo",
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-wikipedia",
   "package_name": "ovos-skill-wikipedia",
   "pypi_version": "0.8.13",
@@ -19,9 +21,9 @@
   "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
-  "stars": 11,
+  "stars": 10,
   "forks": 12,
-  "open_issues": 8,
+  "open_issues": 9,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -40,8 +42,10 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
@@ -66,16 +70,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.8.13",
-        "tested_at": "2026-09-29T14:53:07+00:00",
+        "tested_at": "2026-09-30T08:47:27+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.18.3a3",
-        "tested_at": "2026-09-29T13:58:19+00:00",
+        "version_tested": "0.8.13",
+        "tested_at": "2026-09-30T08:56:44+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 23/26 golden",
+        "state": "warn",
+        "level": 3,
+        "version_tested": "0.18.3a3",
+        "tested_at": "2026-09-30T09:08:32+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 23,
+          "counted": 26
+        }
       }
     }
   }

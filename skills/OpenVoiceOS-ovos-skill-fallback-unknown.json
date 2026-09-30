@@ -9,7 +9,9 @@
     "skill"
   ],
   "category": "Other",
-  "icon": null,
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/question.svg",
+  "icon_source": "readme",
+  "icon_color": "#22a7f0",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-fallback-unknown",
   "package_name": null,
   "pypi_version": null,
@@ -36,6 +38,7 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
     "fa-ir",
@@ -55,7 +58,7 @@
   "locale_content": {},
   "in_ovos_localize": true,
   "repo_created_at": "2021-12-08T18:28:54Z",
-  "last_updated": "2026-09-19T15:07:15Z",
+  "last_updated": "2026-09-28T04:02:26Z",
   "is_new_repo": false,
   "is_recently_updated": true
 }

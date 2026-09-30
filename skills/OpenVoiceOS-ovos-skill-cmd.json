@@ -10,6 +10,8 @@
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-skill-cmd",
   "package_name": "ovos-skill-cmd",
   "pypi_version": "0.2.11",
@@ -21,7 +23,7 @@
   "type_group": "Skill",
   "stars": 6,
   "forks": 5,
-  "open_issues": 4,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -44,15 +46,19 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -69,16 +75,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.11",
-        "tested_at": "2026-09-29T14:53:31+00:00",
+        "tested_at": "2026-09-30T08:47:27+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.9.0a1",
-        "tested_at": "2026-09-29T13:58:18+00:00",
+        "version_tested": "0.2.11",
+        "tested_at": "2026-09-30T08:55:47+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 24/24 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.9.0a1",
+        "tested_at": "2026-09-30T09:08:33+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 24,
+          "counted": 24
+        }
       }
     }
   }

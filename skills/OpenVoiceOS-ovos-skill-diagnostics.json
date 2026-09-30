@@ -1,18 +1,33 @@
 {
   "id": "OpenVoiceOS-ovos-skill-diagnostics",
-  "skill_id": null,
-  "name": "ovos-skill-diagnostics",
+  "skill_id": "ovos-skill-diagnostics.openvoiceos",
+  "name": "System Diagnostics",
   "description": "Report system information such as CPU usage, memory usage, and language settings.",
-  "examples": [],
-  "tags": [
-    "ilenia",
-    "openvoiceos",
-    "portuguese",
-    "skill",
-    "tool"
+  "examples": [
+    "what version of ovos is this",
+    "what is your cpu usage",
+    "how much disk space is left",
+    "what other languages do you know",
+    "do you have a gpu",
+    "what is your kernel version",
+    "what languages can you speak",
+    "how much memory are you using",
+    "where are you located",
+    "what is your primary language",
+    "tell me your uptime",
+    "what language am i speaking",
+    "where am i"
   ],
-  "category": "Other",
-  "icon": null,
+  "tags": [
+    "system",
+    "diagnostics",
+    "information",
+    "Configuration"
+  ],
+  "category": "Information",
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/info-circle.svg",
+  "icon_source": "readme",
+  "icon_color": "#22a7f0",
   "source": "https://github.com/OpenVoiceOS/ovos-skill-diagnostics",
   "package_name": "ovos-skill-diagnostics",
   "pypi_version": "0.0.8",
@@ -24,7 +39,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 4,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -38,15 +53,19 @@
     "da-dk",
     "de-de",
     "en-us",
+    "es-co",
     "es-es",
     "eu-es",
+    "fa-ir",
     "fr-fr",
     "gl-es",
     "it-it",
     "nl-nl",
     "oc-fr",
+    "pl-pl",
     "pt-br",
     "pt-pt",
+    "ru-ru",
     "sv-se"
   ],
   "locale_content": {},
@@ -63,16 +82,28 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.8",
-        "tested_at": "2026-09-29T14:54:40+00:00",
+        "tested_at": "2026-09-30T08:46:00+00:00",
         "channel_pinned": true
       },
-      "alpha": {
+      "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.3.0a1",
-        "tested_at": "2026-09-29T14:03:05+00:00",
+        "version_tested": "0.0.8",
+        "tested_at": "2026-09-30T08:57:01+00:00",
         "channel_pinned": true
+      },
+      "alpha": {
+        "label": "\u2713 192/192 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.3.0a1",
+        "tested_at": "2026-09-30T09:13:23+00:00",
+        "channel_pinned": true,
+        "golden": {
+          "hit": 192,
+          "counted": 192
+        }
       }
     }
   }
