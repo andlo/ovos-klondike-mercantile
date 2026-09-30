@@ -243,9 +243,18 @@ function compatDetails(rec, meta) {
 const MISS_TEXT = {
   baseline: (m) => `taken by <code>${escapeHtml(m.taken_by || "?")}</code>`,
   wrong_intent: (m) => `reached another intent${m.fired && m.fired.length ? ` (<code>${escapeHtml(m.fired[0])}</code>)` : ""}`,
-  unhandled: (m) => `not handled by any skill${m.stage ? ` (stopped at ${escapeHtml(m.stage)})` : ""}`,
+  // A pipeline stage that is not a fallback took the sentence without a
+  // skill (OCP, persona, the reading pipeline): that is theft too, and
+  // should read as such, not as "nobody".
+  unhandled: (m) => stageTook(m.stage)
+    ? `taken by the <code>${escapeHtml(m.stage)}</code> pipeline stage, not a skill`
+    : `not handled by any skill${m.stage ? ` (stopped at ${escapeHtml(m.stage)})` : ""}`,
   hang: (m) => `not handled by any skill; a later stage never answered${m.stage ? ` (${escapeHtml(m.stage)})` : ""}`,
 };
+
+function stageTook(stage) {
+  return !!stage && !/fallback|^last message|stop-pipeline/.test(stage);
+}
 
 function renderRoutingRun(title, r, takenBy = "a default skill") {
   if (!r) return "";
@@ -323,8 +332,11 @@ function renderKlondike(rec, meta) {
     // Taken by a skill the normal install does not have: say so, it is
     // what a user of both would want to know ("pick one").
     const defaults = new Set(asArray((meta.route || {}).baseline_ids));
+    const added = new Set(asArray(profile.added_stages).map((st) => st.replace(/-(high|medium|low)$/, "")));
     const overlaps = [...new Set(asArray((k.golden || {}).misses)
-      .filter((m) => m.kind === "baseline" && m.taken_by && !defaults.has(m.taken_by)).map((m) => m.taken_by))];
+      .filter((m) => (m.kind === "baseline" && m.taken_by && !defaults.has(m.taken_by))
+        || (m.kind === "unhandled" && added.has(m.stage)))
+      .map((m) => (m.kind === "baseline" ? m.taken_by : m.stage)))];
     if (overlaps.length) {
       rows.push(renderStatRow("Overlaps with", overlaps.map((o) => `<code>${escapeHtml(o)}</code>`).join(" ")
         + ` <span class="setup-note">(in the Klondike profile, not in a normal install)</span>`));

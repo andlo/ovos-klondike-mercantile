@@ -485,7 +485,9 @@ from importlib.metadata import distributions
 out = []
 for d in distributions():
     for ep in d.entry_points:
-        if ep.group in ("opm.skills", "ovos.plugin.skill"):
+        # The same groups probe.py reads (SKILL_GROUPS): current skills use
+        # opm.skill, older ones ovos.plugin.skill or mycroft.plugin.skill.
+        if ep.group in ("opm.skill", "ovos.plugin.skill", "mycroft.plugin.skill"):
             out.append({"skill_id": ep.name, "dist": d.metadata["Name"], "version": d.version})
 print(json.dumps(out))
 """
