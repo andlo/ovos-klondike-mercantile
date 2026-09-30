@@ -4,6 +4,8 @@
 #
 # Level 3 runs when BASELINE is set (the JSON plan.py puts on each shard:
 # python3 -c 'import json,sys; sys.path.insert(0,"scripts"); from compat.baseline import load; b=load(); print(json.dumps({"requirements": b["requirements"], "pipeline": b["pipeline"]}))').
+# KLONDIKE is the "klondike" JSON plan.py puts on a shard (the profile; with
+# "self": true the shard routes the profile against itself, items may be []).
 # GENERATOR_SPEC is the pip spec of the ovoscope used for `generate`
 # (default: none, i.e. generated runs report "unavailable").
 set -euo pipefail
@@ -12,6 +14,7 @@ REPO="$(cd "$(dirname "$0")/../.." && pwd)"
 HARNESS="${HARNESS:-$HOME/ovos-test-harness}"
 mkdir -p "$OUT"
 printf '%s' "${BASELINE:-}" > "$OUT/baseline.json"
+printf '%s' "${KLONDIKE:-}" > "$OUT/klondike-arg.json"
 podman run --rm --cgroup-manager=cgroupfs \
   -e GENERATOR_SPEC="${GENERATOR_SPEC:-}" -e COMPAT_ROUTE_MAX_LANGS="${COMPAT_ROUTE_MAX_LANGS:-4}" \
   -e COMPAT_ROUTE_BUDGET_MIN="${COMPAT_ROUTE_BUDGET_MIN:-30}" \
@@ -27,5 +30,6 @@ podman run --rm --cgroup-manager=cgroupfs \
     python3 /repo/scripts/compat/run_shard.py --channel $CHANNEL \
       --constraints /out/stack/constraints-$CHANNEL.txt --base-venv /opt/base \
       --items /items.json --out /out/results.json \
-      --baseline \"\$(cat /out/baseline.json)\" --generator /opt/gen/bin/ovoscope
+      --baseline \"\$(cat /out/baseline.json)\" --klondike \"\$(cat /out/klondike-arg.json)\" \
+      --generator /opt/gen/bin/ovoscope
   "
