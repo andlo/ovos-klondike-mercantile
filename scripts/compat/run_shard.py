@@ -339,25 +339,30 @@ def build_route_venv(args, workroot, candidates, requirements, name="route-venv"
     return py, refused, freeze
 
 
+def row_langs(runs):
+    """The languages one skill has rows in."""
+    langs = set()
+    for run, files in runs.items():
+        if run == "generated":
+            langs |= {lang_key(l) for l in GENERATED_LANGS}
+            continue
+        for f in files:
+            name = Path(f).stem.replace("golden_utterances", "").lstrip("_-")
+            if name:
+                langs.add(lang_key(name))
+            else:
+                for line in Path(f).read_text(encoding="utf-8", errors="replace").splitlines()[:50]:
+                    try:
+                        langs.add(lang_key(json.loads(line)["lang"]))
+                    except Exception:  # noqa: BLE001
+                        pass
+    return langs
+
+
 def pick_langs(all_runs):
     counts = {}
     for runs in all_runs.values():
-        langs = set()
-        for run, files in runs.items():
-            if run == "generated":
-                langs |= {lang_key(l) for l in GENERATED_LANGS}
-                continue
-            for f in files:
-                name = Path(f).stem.replace("golden_utterances", "").lstrip("_-")
-                if name:
-                    langs.add(lang_key(name))
-                else:
-                    for line in Path(f).read_text(encoding="utf-8", errors="replace").splitlines()[:50]:
-                        try:
-                            langs.add(lang_key(json.loads(line)["lang"]))
-                        except Exception:  # noqa: BLE001
-                            pass
-        for l in langs:
+        for l in row_langs(runs):
             counts[l] = counts.get(l, 0) + 1
     ordered = sorted(counts, key=lambda l: (l != "en-US", -counts[l], l))
     return ordered[:ROUTE_MAX_LANGS], ordered[ROUTE_MAX_LANGS:]
@@ -429,7 +434,16 @@ def run_boots(py, manifest, langs, skipped, prefix, args, workroot, deadline, bo
                  for runs in manifest["items"] for fs in runs["runs"].values() for f in fs)
     boots = []
     last_boot = 0.0
+    dead = set()  # skill ids a boot could not load: their rows are never routed
     for lang in langs:
+        # A language whose rows all belong to skills that did not load is
+        # a boot for nothing (stable's Klondike job booted ca-ES and de-DE
+        # for 22 minutes for the rows of one skill that never loaded).
+        if dead and not any(lang in row_langs(it["runs"]) for it in manifest["items"]
+                            if not set(it["skill_ids"]) <= dead):
+            skipped.insert(0, lang)
+            print(f"    {prefix} {lang}: skipped, only rows of skills that did not load", flush=True)
+            continue
         # A language is only started when what is left can pay for its boot
         # (as long as the last one took) and some rows: on the runners a
         # boot with every baseline skill trained takes 7-10 minutes, and a
@@ -474,6 +488,8 @@ def run_boots(py, manifest, langs, skipped, prefix, args, workroot, deadline, bo
               f"boot={res.get('boot_seconds')}s total={res.get('seconds')}s "
               f"rows={res.get('row_seconds')}", flush=True)
         boots.append(res)
+        if isinstance(res.get("not_loaded"), list):
+            dead |= set(res["not_loaded"])
         if isinstance(res.get("boot_seconds"), (int, float)):
             last_boot = max(last_boot, res["boot_seconds"])
     return boots
