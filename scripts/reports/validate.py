@@ -333,3 +333,36 @@ def check(report, package=None, latest_version=None, constraints=None, channel_s
     return {"status": "stale" if stale else "current",
             "passes": not not_passing and v["outcome"] == "works",
             "problems": stale + not_passing, "view": v}
+
+
+def klondike_match(report, profile):
+    """(True, "") when the device the report came from runs the Klondike
+    profile (issue #13), else (False, why). `profile` is one channel's
+    {"skill_ids": [...], "stages": [{"stage", "after"|"before"}]} from
+    docs/compat/results.json. Uses what ovos-tui-client 0.2.0 records:
+    manifest.installed (every skill on the device, with `active`) and
+    manifest.config.pipeline (the order that actually runs)."""
+    if not profile or not profile.get("skill_ids"):
+        return False, "the Klondike profile for this channel is not published yet"
+    m = report.get("manifest") or {}
+    installed = m.get("installed")
+    if not isinstance(installed, list):
+        return False, "the report does not list the installed skills (ovos-tui-client 0.2.0 or newer)"
+    active = {str(i.get("id")) for i in installed if isinstance(i, dict) and i.get("active") is not False}
+    missing = [s for s in profile["skill_ids"] if s not in active]
+    problems = []
+    if missing:
+        shown = ", ".join(missing[:5]) + (f" and {len(missing) - 5} more" if len(missing) > 5 else "")
+        problems.append(f"{len(missing)} profile skill{'s' if len(missing) != 1 else ''} missing: {shown}")
+    pipeline = [str(x) for x in ((m.get("config") or {}).get("pipeline") or []) if isinstance(x, str)]
+    for rule in profile.get("stages") or []:
+        stage = rule.get("stage")
+        anchor = rule.get("after") or rule.get("before")
+        if stage not in pipeline:
+            problems.append(f"the pipeline has no {stage}")
+        elif anchor in pipeline:
+            ok = pipeline.index(stage) > pipeline.index(anchor) if rule.get("after") \
+                else pipeline.index(stage) < pipeline.index(anchor)
+            if not ok:
+                problems.append(f"{stage} is not {'after' if rule.get('after') else 'before'} {anchor}")
+    return (not problems), "; ".join(problems)

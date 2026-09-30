@@ -51,6 +51,21 @@ def channel_stacks(docs):
     return {c: (m.get("stack") or {}).get("packages") or {} for c, m in channels.items()}
 
 
+def klondike_profiles(docs):
+    """{channel: {"skill_ids", "stages"}}: the Klondike profile a report is
+    matched against (#13), as the last test run published it."""
+    try:
+        k = json.loads((docs / "compat" / "results.json").read_text()).get("klondike") or {}
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for channel, meta in k.items():
+        p = (meta or {}).get("profile") or {}
+        if p.get("skill_ids"):
+            out[channel] = {"skill_ids": list(p["skill_ids"]), "stages": list(p.get("stage_rules") or [])}
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--docs", default="docs")
@@ -58,7 +73,7 @@ def main():
     docs = Path(args.docs)
     entries = json.loads((docs / "skills.json").read_text())
     index = build_index(entries, docs / "reports", fetch_constraints(), channel_stacks(docs),
-                        latest_release)
+                        latest_release, klondike_profiles(docs))
     (docs / "reports").mkdir(parents=True, exist_ok=True)
     (docs / "reports" / "index.json").write_text(json.dumps(index, indent=1, sort_keys=True) + "\n")
     print(f"reports index: {len(index['entries'])} entries with reports")

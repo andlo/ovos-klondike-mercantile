@@ -17,6 +17,11 @@ Incremental: a (package, channel) is re-tested only when its key changes:
 package, resolved version, channel, constraints hash, languages booted,
 the pinned ovos-test-harness SHA and RUNNER_VERSION. Results with status
 "error" (infra trouble) are always retried.
+
+Level 3 has two baselines, each with its own key on top of `key`: the
+installer's defaults (route_key) and the Klondike profile (klondike_key,
+issue #13). Per channel the plan also carries one "klondike" job that routes
+the profile against itself; it runs when the profile or the channel changed.
 """
 import argparse
 import hashlib
@@ -132,24 +137,35 @@ def main():
 
     feed = json.loads(Path(args.feed).read_text())
     results_path = Path(args.results)
-    previous = json.loads(results_path.read_text()).get("results", {}) if results_path.exists() else {}
+    prev_doc = json.loads(results_path.read_text()) if results_path.exists() else {}
+    previous = prev_doc.get("results", {})
+    prev_klondike = prev_doc.get("klondike") or {}
+    profile_def = load_profile_def(baseline, Path(__file__).resolve().parents[2])
+    feed_by_id = {e["id"]: e for e in feed}
     only = {s.strip() for s in args.only.split(",") if s.strip()}
 
     candidates = [e for e in feed if is_candidate(e) and (not only or e["id"] in only)]
+    # Curated profile entries need a resolved version too, also in an --only run.
+    curated = [feed_by_id[c["id"]] for c in ((profile_def or {}).get("curated") or {}).get("skills", [])
+               + ((profile_def or {}).get("curated") or {}).get("pipeline", []) if c["id"] in feed_by_id]
+    lookup = {e["id"]: e for e in candidates + curated}
     releases = {}
     with ThreadPoolExecutor(max_workers=8) as pool:
-        for e, rel in zip(candidates, pool.map(lambda e: pypi_releases(e["package_name"]), candidates)):
+        for e, rel in zip(lookup.values(), pool.map(lambda e: pypi_releases(e["package_name"]),
+                                                   lookup.values())):
             releases[e["id"]] = rel
 
     cdir = Path(args.constraints_dir)
     cdir.mkdir(parents=True, exist_ok=True)
     channels = [c.strip() for c in args.channels.split(",") if c.strip()]
-    matrix, summary = [], {}
+    matrix, summary, klondike = [], {}, {}
     for channel in channels:
         raw = fetch(CONSTRAINTS_URL.format(channel=channel))
         (cdir / f"constraints-{channel}.txt").write_bytes(raw)
         csha = hashlib.sha256(raw).hexdigest()
         pins = parse_constraints(raw.decode())
+        kprof = channel_profile(profile_def, baseline, channel, feed_by_id, previous, pins, releases) \
+            if profile_def else None
         todo, skipped, unresolved = [], 0, []
         for e in candidates:
             pkg = normalize(e["package_name"])
@@ -164,15 +180,19 @@ def main():
                            args.harness_sha, RUNNER_VERSION])
             route_key = key_for([key, baseline["sha256"], args.generator_spec, ROUTE_VERSION]) \
                 if baseline and kind == "skill" else None
+            klondike_key = key_for([key, kprof["sha256"], args.generator_spec, ROUTE_VERSION]) \
+                if kprof and kind == "skill" else None
             prev = previous.get(e["id"], {}).get(channel)
             if (prev and prev.get("key") == key and prev.get("status") in FINAL_STATUSES
-                    and route_current(prev, route_key) and not (args.force or args.full)):
+                    and route_current(prev, route_key)
+                    and route_current(prev, klondike_key, "klondike_key", "klondike")
+                    and not (args.force or args.full)):
                 skipped += 1
                 continue
             todo.append({"id": e["id"], "package": e["package_name"], "version": version,
                          "channel_pinned": pinned, "kind": kind, "repo": repo_url(e),
                          "languages": langs if kind == "skill" else [], "key": key,
-                         "route_key": route_key})
+                         "route_key": route_key, "klondike_key": klondike_key})
         for i in range(0, len(todo), args.shard_size):
             shard = {"channel": channel, "shard": i // args.shard_size + 1,
                      "items": todo[i:i + args.shard_size]}
@@ -180,9 +200,25 @@ def main():
                 shard["baseline"] = json.dumps({"requirements": baseline["requirements"],
                                                 "pipeline": baseline["pipeline"],
                                                 "exclude_ids": device_bound(previous, channel)})
+            if kprof:
+                shard["klondike"] = json.dumps({"requirements": kprof["requirements"],
+                                                "pipeline": kprof["pipeline"],
+                                                "exclude_ids": device_bound(previous, channel)})
             matrix.append(shard)
+        if kprof:
+            kprof["self_key"] = key_for([csha, kprof["sha256"], args.harness_sha, RUNNER_VERSION,
+                                         args.generator_spec, ROUTE_VERSION])
+            prev_self = prev_klondike.get(channel) or {}
+            if prev_self.get("key") != kprof["self_key"] or args.force or args.full or prev_self.get("error"):
+                matrix.append({"channel": channel, "shard": "klondike", "items": [],
+                               "klondike": json.dumps({"self": True, "requirements": kprof["requirements"],
+                                                       "pipeline": kprof["pipeline"],
+                                                       "exclude_ids": device_bound(previous, channel),
+                                                       "feed_map": feed_map(feed)})})
         summary[channel] = {"constraints_sha256": csha, "to_test": len(todo),
                             "unchanged": skipped, "no_installable_release": unresolved}
+        if kprof:
+            klondike[channel] = kprof
         print(f"{channel}: {len(todo)} to test, {skipped} unchanged, "
               f"{len(unresolved)} without an installable release", file=sys.stderr)
 
@@ -191,6 +227,8 @@ def main():
                                           "runner_version": RUNNER_VERSION,
                                           "route_version": ROUTE_VERSION,
                                           "baseline": baseline,
+                                          "klondike": klondike,
+                                          "klondike_profile": profile_def,
                                           "generator_spec": args.generator_spec}, indent=2))
     return 0
 
@@ -214,11 +252,76 @@ def device_bound(previous, channel):
     return sorted(ids)
 
 
-def route_current(prev, route_key):
-    """Level 3 is up to date for this result, or does not apply to it."""
+def route_current(prev, route_key, key_field="route_key", field="routing"):
+    """Level 3 against one baseline is up to date for this result, or does
+    not apply to it."""
     if route_key is None or prev.get("status") != "pass":
         return True
-    return prev.get("route_key") == route_key and not (prev.get("routing") or {}).get("error")
+    return prev.get(key_field) == route_key and not (prev.get(field) or {}).get("error")
+
+
+def load_profile_def(baseline, repo_root):
+    """Installer extra skills + the curated TOML, or None (no level 3 at all,
+    or the profile cannot be read: then only the Klondike part is skipped)."""
+    if not baseline:
+        return None
+    from compat.baseline import load_extra_requirements, read_profile
+    try:
+        curated = read_profile(repo_root)
+        extra = load_extra_requirements()
+    except Exception as e:  # noqa: BLE001
+        print(f"warning: Klondike profile unavailable, its routing is skipped: {e}", file=sys.stderr)
+        return None
+    return {"curated": curated, "extra_requirements": extra}
+
+
+def channel_profile(profile_def, baseline, channel, feed_by_id, previous, pins, releases):
+    """What the Klondike profile is on one channel: requirements to install,
+    the pipeline, and which curated entries are in or out (and why). A
+    curated entry is in when its own level 2 result on this channel passed."""
+    from compat.baseline import insert_stages
+    members, left_out, reqs = [], {}, []
+    entries = profile_def["curated"]["skills"] + profile_def["curated"]["pipeline"]
+    for c in entries:
+        e = feed_by_id.get(c["id"])
+        rec = (previous.get(c["id"]) or {}).get(channel) or {}
+        if e is None:
+            left_out[c["id"]] = "not in the store"
+            continue
+        if rec.get("status") != "pass":
+            left_out[c["id"]] = (f"level 2 on {channel}: {rec['status']}" if rec.get("status")
+                                 else f"not tested on {channel} yet")
+            continue
+        pkg = normalize(e["package_name"])
+        version = resolve_version(releases.get(c["id"]), pins.get(pkg, ""))
+        if version is None:
+            left_out[c["id"]] = "no release the channel allows"
+            continue
+        reqs.append(e["package_name"] if pkg in pins else f"{e['package_name']}=={version}")
+        members.append(c["id"])
+    plugins = [p for p in profile_def["curated"]["pipeline"] if p["id"] in members]
+    pipeline, added, skipped = insert_stages(baseline["pipeline"], plugins)
+    spec = {"requirements": list(baseline["requirements"]) + list(profile_def["extra_requirements"]) + reqs,
+            "pipeline": pipeline, "added_stages": added, "stages_not_added": skipped,
+            "curated_members": members, "left_out": left_out}
+    # Versions are not in the sha on purpose: they come from the channel's
+    # constraints (already in every key) or are the latest release, and a new
+    # release of one profile skill should not re-run the whole store.
+    installer = sorted(set(baseline["requirements"]) | set(profile_def["extra_requirements"]))
+    spec["sha256"] = hashlib.sha256(json.dumps([installer, members, pipeline],
+                                               sort_keys=True).encode()).hexdigest()
+    return spec
+
+
+def feed_map(feed):
+    """{normalized package: {id, repo}} of every skill in the store, so the
+    profile job can tell which installed skills are store entries (and fetch
+    their golden files) without knowing what ovos-core[...] expands to."""
+    out = {}
+    for e in feed:
+        if e.get("component_type") == "Skill" and e.get("package_name") and not e.get("archived"):
+            out.setdefault(normalize(e["package_name"]), {"id": e["id"], "repo": repo_url(e)})
+    return out
 
 
 def repo_url(entry):

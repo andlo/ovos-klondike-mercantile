@@ -1,0 +1,114 @@
+# The Klondike profile: a well-equipped OVOS install (issue #13).
+#
+# Level 3 routes every skill's utterances against two baselines:
+#   1. a normal install: the OVOS installer's default skills and pipeline;
+#   2. the Klondike profile: the same, plus the installer's "extra skills",
+#      plus the curated entries below.
+# The installer parts are read live from OpenVoiceOS/ovos-installer
+# (scripts/compat/baseline.py); only the curated part lives here.
+#
+# Changed by pull request. The rule for a curated entry, in order of
+# preference OpenVoiceOS, then andlo, then others:
+#   * it passes level 2 on the channel (an entry that does not is left out
+#     of the profile on that channel, and the site says so);
+#   * it covers a function nothing else in the profile covers;
+#   * it needs no API key or special hardware;
+#   * it is not desktop- or GUI-only;
+#   * it is multi-language, or at least English.
+#
+# `id` is the entry id in docs/skills.json. The version installed is the
+# one the channel resolves, as for every other test.
+#
+# Pipeline plugins declare where their stage goes RELATIVE to the
+# installer's pipeline (`after` or `before` an installer stage; the legacy
+# names such as stop_high are accepted), so the profile survives changes to
+# the installer template. When the installer's own pipeline already has the
+# stage, nothing is inserted.
+
+# --- OpenVoiceOS -----------------------------------------------------------
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-number-facts"
+function = "number trivia"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-days-in-history"
+function = "on this day"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-word-of-the-day"
+function = "word of the day"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-wordnet"
+function = "definitions and synonyms"
+note = "overlaps wikipedia/wolfie on \"what is\", which is worth seeing"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-iss-location"
+function = "ISS position"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-confucius-quotes"
+function = "quotes"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-laugh"
+function = "laugh"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-moviemaster"
+function = "movies"
+note = "routing only needs it to load; it loads without a TMDB key"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-easter-eggs"
+function = "easter eggs"
+note = "commented out in the installer's extra-skills template"
+
+# --- andlo -----------------------------------------------------------------
+
+[[skill]]
+id = "andlo-ovos-skill-calculator"
+function = "arithmetic"
+
+[[skill]]
+id = "andlo-ovos-skill-convert"
+function = "unit conversion"
+
+[[skill]]
+id = "andlo-ovos-skill-holidays"
+function = "public holidays"
+
+[[skill]]
+id = "andlo-ovos-skill-nato-alphabet"
+function = "spelling aid"
+note = "overlaps spelling? worth seeing"
+
+[[skill]]
+id = "andlo-ovos-skill-white-noise"
+function = "sleep sounds"
+
+[[skill]]
+id = "andlo-ovos-skill-metronome"
+function = "music tool"
+
+[[skill]]
+id = "andlo-ovos-skill-grimm-tales"
+function = "story reading"
+note = "provider for the reading pipeline below; one provider is enough"
+
+# --- others ----------------------------------------------------------------
+
+[[skill]]
+id = "OscillateLabsLLC-skill-homeassistant"
+function = "smart home"
+note = "loads without config, so routing is meaningful even if actions cannot run"
+
+# --- pipeline --------------------------------------------------------------
+
+[[pipeline]]
+id = "andlo-ovos-common-reading-pipeline-plugin"
+stage = "ovos-common-reading-pipeline-plugin"
+after = "ovos-stop-pipeline-plugin-high"
+note = "meant to become part of OVOS; takes \"tell me …\" sentences, which is what this test should surface"

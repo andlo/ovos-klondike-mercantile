@@ -231,6 +231,7 @@ function compatDetails(rec, meta) {
       ${rec.driver ? renderStatRow("Test driver", escapeHtml(rec.driver)) : ""}
     </div>
     ${renderRouting(rec, meta)}
+    ${renderKlondike(rec, meta)}
     ${showLog(rec) ? `<pre class="compat-log">${escapeHtml(rec.log_excerpt)}</pre>` : ""}
   `;
 }
@@ -246,14 +247,14 @@ const MISS_TEXT = {
   hang: (m) => `not handled by any skill; a later stage never answered${m.stage ? ` (${escapeHtml(m.stage)})` : ""}`,
 };
 
-function renderRoutingRun(title, r) {
+function renderRoutingRun(title, r, takenBy = "a default skill") {
   if (!r) return "";
   if (r.status !== "ok") {
     return renderStatRow(title, escapeHtml(r.reason || "not run"));
   }
   const parts = [`${r.hit}/${r.counted} reach the skill`];
   if (r.asked) parts.push(`${r.asked} of them ask a follow-up question (answered with “cancel”)`);
-  if (r.baseline) parts.push(`${r.baseline} taken by a default skill`);
+  if (r.baseline) parts.push(`${r.baseline} taken by ${takenBy}`);
   if (r.wrong_intent) parts.push(`${r.wrong_intent} reach another of its intents`);
   if (r.unhandled) parts.push(`${r.unhandled} not handled`);
   if (r.hang) parts.push(`${r.hang} stuck in a later stage`);
@@ -291,6 +292,78 @@ function renderRouting(rec, meta) {
   }
   if (routing.ref) rows.push(renderStatRow("Utterances from", `<code>${escapeHtml(routing.ref)}</code>`));
   return `<h4 class="compat-subhead">Routing (level 3)</h4><div class="compat-facts">${rows.join("")}</div>`;
+}
+
+// Level 3 against the Klondike profile (#13): the installer's defaults plus
+// its extra skills plus the curated list in compat/klondike-profile.toml.
+// A worst case next to "normal install" above; it never changes the level
+// or the badge.
+function klondikeMeta(channel) {
+  return (compatDoc && compatDoc.klondike && compatDoc.klondike[channel]) || null;
+}
+
+function collisionList(items, text) {
+  return asArray(items).map((c) =>
+    `<li><code>${escapeHtml(c.lang || "")}</code> “${escapeHtml(c.utterance || "")}” ${text(c)}</li>`).join("");
+}
+
+function renderKlondike(rec, meta) {
+  const kmeta = klondikeMeta(rec.channel);
+  if (!kmeta) return "";
+  const k = rec.klondike;
+  const member = ((kmeta.self || {}).members || {})[rec.id];
+  if (!k && !member) return "";
+  const profile = kmeta.profile || {};
+  const rows = [];
+  if (k) {
+    if (k.install) rows.push(renderStatRow("Routing", escapeHtml(k.install)));
+    if (k.error) rows.push(renderStatRow("Routing", escapeHtml(`not run: ${k.error}`)));
+    rows.push(renderRoutingRun("Golden utterances", k.golden, "a profile skill"));
+    if (COMPAT_PUBLIC_GENERATED) rows.push(renderRoutingRun("Generated utterances", k.generated, "a profile skill"));
+    // Taken by a skill the normal install does not have: say so, it is
+    // what a user of both would want to know ("pick one").
+    const defaults = new Set(asArray((meta.route || {}).baseline_ids));
+    const overlaps = [...new Set(asArray((k.golden || {}).misses)
+      .filter((m) => m.kind === "baseline" && m.taken_by && !defaults.has(m.taken_by)).map((m) => m.taken_by))];
+    if (overlaps.length) {
+      rows.push(renderStatRow("Overlaps with", overlaps.map((o) => `<code>${escapeHtml(o)}</code>`).join(" ")
+        + ` <span class="setup-note">(in the Klondike profile, not in a normal install)</span>`));
+    }
+  }
+  if (member) {
+    const cur = asArray(profile.curated).find((c) => c.id === rec.id);
+    rows.push(renderStatRow("In the profile", escapeHtml(cur ? `yes, curated: ${cur.function || ""}` : "yes, installed by the OVOS installer")));
+    const own = ((member.routing || {}).golden) || {};
+    const takenBy = collisionList(own.collisions, (c) => `taken by <code>${escapeHtml(c.taken_by || "?")}</code>`);
+    const takesFrom = collisionList(((member.takes_from || {}).golden), (c) => `(a sentence of <code>${escapeHtml(c.from || "?")}</code>)`);
+    if (takenBy || takesFrom) {
+      rows.push(`<p class="setup-note">Collides within the profile (all profile skills in one core):</p>`
+        + (takenBy ? `<ul class="compat-misses">${takenBy}</ul>` : "")
+        + (takesFrom ? `<p class="setup-note">Takes these from other profile skills:</p><ul class="compat-misses">${takesFrom}</ul>` : ""));
+    } else if (own.status === "ok") {
+      rows.push(renderStatRow("Within the profile", "no collisions in its golden utterances"));
+    }
+  }
+  // Klondike-test reports (#13): reports from a device that runs the
+  // profile, with the same currency rules as any report (#11).
+  const people = ((reportsDoc && reportsDoc.entries && reportsDoc.entries[rec.id]) || {})[rec.channel] || {};
+  const pm = people.maintainer;
+  const pc = people.community || {};
+  const kparts = [];
+  if (pm && pm.status === "current" && pm.klondike) kparts.push(`${pm.passes ? "✓" : "✗"} maintainer`);
+  if (pc.klondike_works) kparts.push(`✓ ${pc.klondike_works} ${pc.klondike_works === 1 ? "user" : "users"}`);
+  if (kparts.length) {
+    rows.push(renderStatRow("On a real Klondike-profile device", escapeHtml(kparts.join(" · "))));
+  } else if (pm && pm.status === "current" && pm.klondike_reason) {
+    rows.push(renderStatRow("Maintainer's device", escapeHtml(`not a Klondike-profile device: ${pm.klondike_reason}`)));
+  }
+  if (asArray(profile.added_stages).length) {
+    rows.push(renderStatRow("Pipeline", `the profile adds ${asArray(profile.added_stages).map((s) => `<code>${escapeHtml(s)}</code>`).join(" ")} to the installer's pipeline`));
+  }
+  rows.push(renderStatRow("Profile", `<a href="for-maintainers.html#klondike-profile">what is in it, and how to propose a skill</a>`));
+  return `<h4 class="compat-subhead">Routing on a well-equipped install (Klondike profile)</h4>
+    <p class="setup-note">A worst case: the installer's default and extra skills plus a curated set, all loaded together. It does not change the level or the badge.</p>
+    <div class="compat-facts">${rows.join("")}</div>`;
 }
 
 // The log only helps when something went wrong: a failure, a grey result,

@@ -184,8 +184,8 @@ const COMPAT_PUBLIC_GENERATED = false;
 // Same as LEVEL3_RATIO in scripts/compat/feed.py.
 const COMPAT_LEVEL3_RATIO = 0.8;
 
-function routingCounts(rec, run) {
-  const r = ((rec && rec.routing) || {})[run] || {};
+function routingCounts(rec, run, field = "routing") {
+  const r = ((rec && rec[field]) || {})[run] || {};
   if (r.status !== "ok" || !r.counted) return null;
   return { hit: r.hit || 0, counted: r.counted };
 }
@@ -234,6 +234,10 @@ function compatFromRecord(rec) {
     const c = routingCounts(rec, run);
     if (c) out[run] = c;
   }
+  // Level 3 against the Klondike profile (#13): a line of its own, never
+  // part of the level or the badge.
+  const k = routingCounts(rec, "golden", "klondike");
+  if (k) out.klondike = k;
   return out;
 }
 
@@ -338,10 +342,13 @@ function matchesCompatFilter(skill, value) {
   const fails = (ch) => channels[ch] && channels[ch].state === "fail";
   if (value === "tested") return Object.values(channels).some((c) => c.state !== "untested");
   const routes = (ch) => channels[ch] && (channels[ch].level || 0) >= 3;
+  const klondike = (ch) => channels[ch] && channels[ch].klondike
+    && channels[ch].klondike.hit / channels[ch].klondike.counted >= COMPAT_LEVEL3_RATIO;
   // The two channels the OVOS installer offers.
   if (value === "loads:installer" || value === "loads:both") return loads("testing") && loads("alpha");
   const [kind, ch] = value.split(":");
   if (kind === "routes") return routes(ch);
+  if (kind === "klondike") return klondike(ch);
   return kind === "loads" ? loads(ch) : kind === "fails" ? fails(ch) : true;
 }
 

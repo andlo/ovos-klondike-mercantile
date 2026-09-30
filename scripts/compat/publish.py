@@ -13,7 +13,9 @@ An "error" result (infra trouble) never replaces an earlier pass/fail; it is
 kept beside it as last_error, and plan.py retries it on the next run.
 
 Writes: docs/compat/results.json, docs/compat/stack-<channel>.txt and
-docs/badges/<badge_id>/<channel>.json. Never the feed (see below).
+docs/badges/<badge_id>/<channel>.json, and for the Klondike profile (#13)
+docs/compat/klondike-profile-<channel>.txt and klondike-mycroft-<channel>.json.
+Never the feed (see below).
 """
 import argparse
 import json
@@ -26,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from compat.feed import (CHANNEL_ORDER, FINAL_STATUSES, LEVEL3_RATIO, SAFE_ID, badge_ids,  # noqa: E402
                          is_candidate, load_results, shields)
 
-STR_FIELDS = {"id": 200, "channel": 20, "key": 32, "kind": 20, "package": 200,
+STR_FIELDS = {"id": 200, "channel": 20, "key": 32, "klondike_key": 32, "kind": 20, "package": 200,
               "requested_version": 64, "version_tested": 64, "tested_at": 40,
               "status": 12, "stage": 20, "reason": 600, "log_excerpt": 4000, "driver": 80, "languages_source": 10}
 NUM_FIELDS = {"level", "duration_seconds", "boot_seconds"}
@@ -64,6 +66,13 @@ def clean(rec):
     out["level"] = min(out.get("level", 0), 2) if out.get("level") in (0, 1, 2, 3) else 0
     if out["status"] == "pass":
         out["level"] = 2
+    if isinstance(rec.get("klondike_key"), str) and out["status"] == "pass":
+        # The Klondike line (#13) never changes the level or the badge.
+        k = clean_routing(rec.get("klondike"))
+        if k:
+            out["klondike"] = k
+    else:
+        out.pop("klondike_key", None)
     if isinstance(rec.get("route_key"), str) and out["status"] == "pass":
         out["route_key"] = rec["route_key"][:32]
         routing = clean_routing(rec.get("routing"))
@@ -182,6 +191,95 @@ def route_meta(meta, sdir, plan, docs, channel, now):
         pass
 
 
+def klondike_boots(out):
+    boots = [b for b in (out or {}).get("boots") or [] if isinstance(b, dict)]
+    return [{"lang": str(b.get("lang", ""))[:20], "status": str(b.get("status", ""))[:20],
+             "seconds": b.get("seconds") if isinstance(b.get("seconds"), (int, float)) else None,
+             "pipeline_used": _strs(b.get("pipeline"), 30, 80),
+             "pipeline_dropped": _strs(b.get("pipeline_dropped"), 30, 80),
+             "baseline_count": len(b["baseline_ids"]) if isinstance(b.get("baseline_ids"), list) else None}
+            for b in boots[:10]]
+
+
+def klondike_profile_meta(kmeta, spec, profile_def):
+    """What the Klondike profile is on a channel, from the plan (trusted: it
+    comes from the repo and the installer, not from a test job)."""
+    curated = {c["id"]: c for c in (profile_def or {}).get("curated", {}).get("skills", [])
+               + (profile_def or {}).get("curated", {}).get("pipeline", [])}
+    kmeta["profile"] = {
+        "requirements": list(spec["requirements"]),
+        "pipeline": list(spec["pipeline"]),
+        "added_stages": list(spec.get("added_stages") or []),
+        "stages_not_added": dict(spec.get("stages_not_added") or {}),
+        "curated": [{**curated[i], "in": i in spec["curated_members"]} for i in curated],
+        "left_out": dict(spec.get("left_out") or {}),
+        "extra_requirements": list((profile_def or {}).get("extra_requirements") or []),
+        "sha256": spec["sha256"],
+    }
+
+
+def publish_profile_files(docs, channel, spec):
+    """The profile as something a person can apply (issue #13): pip
+    requirements to install under the channel's constraints, and the
+    mycroft.conf pipeline that goes with them."""
+    comp = docs / "compat"
+    comp.mkdir(parents=True, exist_ok=True)
+    head = [f"# Klondike profile, {channel} channel: a well-equipped OVOS install.",
+            "# Install into the OVOS virtualenv under the channel's constraints:",
+            f"#   pip install -c https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/"
+            f"constraints-{channel}.txt -r klondike-profile-{channel}.txt",
+            "# Then set the pipeline from klondike-mycroft-" + channel + ".json in mycroft.conf.", ""]
+    (comp / f"klondike-profile-{channel}.txt").write_text("\n".join(head + list(spec["requirements"])) + "\n")
+    (comp / f"klondike-mycroft-{channel}.json").write_text(
+        json.dumps({"intents": {"pipeline": list(spec["pipeline"])}}, indent=2) + "\n")
+
+
+def klondike_self_result(kmeta, sdir, spec, docs, channel, now):
+    """The profile against itself, from the channel's klondike shard. Only
+    ids the plan put in the profile's store map are accepted."""
+    try:
+        out = json.loads((sdir / "klondike.json").read_text())
+    except (OSError, ValueError):
+        kmeta["self"] = {"run_at": now, "error": "no result (the job did not finish)"}
+        return
+    if not isinstance(out, dict):
+        return
+    allowed = {v["id"] for v in (spec.get("feed_map") or {}).values() if isinstance(v, dict)}
+    if isinstance(out.get("error"), str):
+        kmeta["self"] = {"run_at": now, "key": spec.get("self_key"), "error": out["error"][:500]}
+        kmeta["key"] = None
+        return
+    members = {}
+    for mid, m in (out.get("members") or {}).items():
+        if mid not in allowed or not isinstance(m, dict):
+            continue
+        members[mid] = {"version": str(m.get("version", ""))[:64], "skill_id": str(m.get("skill_id", ""))[:200],
+                        "routing": clean_routing(m.get("routing"))}
+    # Who takes whose sentences, both ways ("taken by X" / "takes from Y").
+    by_skill = {m["skill_id"]: mid for mid, m in members.items()}
+    takes_from = {}
+    for mid, m in members.items():
+        for run in ("golden", "generated"):
+            for c in ((m.get("routing") or {}).get(run) or {}).get("collisions") or []:
+                taker = by_skill.get(c.get("taken_by"))
+                if taker:
+                    takes_from.setdefault(taker, {}).setdefault(run, []).append(
+                        {"from": mid, "utterance": c.get("utterance"), "lang": c.get("lang")})
+    for taker, runs in takes_from.items():
+        members[taker]["takes_from"] = {r: v[:10] for r, v in runs.items()}
+    kmeta["self"] = {"run_at": now, "members": members,
+                     "not_in_store": _strs(out.get("not_in_store"), 80, 200),
+                     "langs": _strs(out.get("langs"), 10, 20),
+                     "langs_skipped": _strs(out.get("langs_skipped"), 60, 20),
+                     "boots": klondike_boots(out)}
+    kmeta["key"] = spec.get("self_key")
+    try:
+        freeze = (sdir / "klondike-freeze.txt").read_text()[:200_000]
+        (docs / "compat" / f"klondike-stack-{channel}.txt").write_text(freeze)
+    except OSError:
+        pass
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", required=True, help="matrix JSON from plan.py")
@@ -204,6 +302,13 @@ def main():
         sdir = Path(args.artifacts) / f"shard-{channel}-{n}"
         expected = {i["id"]: i["key"] for i in shard["items"]}
         expected_route = {i["id"]: i.get("route_key") for i in shard["items"]}
+        expected_klondike = {i["id"]: i.get("klondike_key") for i in shard["items"]}
+        kmeta = doc.setdefault("klondike", {}).setdefault(channel, {})
+        if n == "klondike":
+            spec = {**json.loads(shard.get("klondike") or "{}"),
+                    "self_key": ((plan.get("klondike") or {}).get(channel) or {}).get("self_key")}
+            klondike_self_result(kmeta, sdir, spec, docs, channel, now)
+            continue
         try:
             records = json.loads((sdir / "results.json").read_text())
         except (OSError, ValueError):
@@ -214,6 +319,9 @@ def main():
             if not rec or rec.get("channel") != channel or expected.get(rec.get("id")) != rec.get("key"):
                 rejected += 1
                 continue
+            if rec.get("klondike_key") and rec["klondike_key"] != expected_klondike.get(rec["id"]):
+                rec.pop("klondike_key", None)
+                rec.pop("klondike", None)
             if rec.get("route_key") and rec["route_key"] != expected_route.get(rec["id"]):
                 # Levels 1-2 stand; a level 3 result for another key does not.
                 rec.pop("route_key", None)
@@ -227,6 +335,12 @@ def main():
                 per[channel] = rec
             accepted += 1
         route_meta(channels_meta.setdefault(channel, {}), sdir, plan, docs, channel, now)
+        if kmeta.get("route_run_at") != now:
+            try:
+                kroute = json.loads((sdir / "klondike-route.json").read_text())
+                kmeta.update(route_run_at=now, route=klondike_boots(kroute))
+            except (OSError, ValueError):
+                pass
         # Channel metadata from the first shard that has it.
         meta = channels_meta.setdefault(channel, {})
         if meta.get("run_at") != now:
@@ -245,6 +359,26 @@ def main():
                             runner_version=plan.get("runner_version"))
             except (OSError, ValueError, KeyError):
                 pass
+    for channel, spec in (plan.get("klondike") or {}).items():
+        kmeta = doc.setdefault("klondike", {}).setdefault(channel, {})
+        klondike_profile_meta(kmeta, spec, plan.get("klondike_profile"))
+        # The skill ids a device must have for a report to count as a
+        # Klondike-test report: what the profile installed in the last run
+        # that routed it against itself, plus the curated skills' own ids.
+        self_ = kmeta.get("self") or {}
+        ids = {m["skill_id"] for m in (self_.get("members") or {}).values() if m.get("skill_id")}
+        ids |= set(self_.get("not_in_store") or [])
+        for cid in spec.get("curated_members") or []:
+            rec = (doc["results"].get(cid) or {}).get(channel) or {}
+            if rec.get("kind") == "skill":
+                ids |= set(rec.get("plugin_ids") or [])
+        kmeta["profile"]["skill_ids"] = sorted(ids)
+        added = set(kmeta["profile"]["added_stages"])
+        kmeta["profile"]["stage_rules"] = [
+            {k: c[k] for k in ("stage", "after", "before") if k in c}
+            for c in ((plan.get("klondike_profile") or {}).get("curated") or {}).get("pipeline", [])
+            if c.get("stage") in added]
+        publish_profile_files(docs, channel, spec)
     doc["generated_at"] = now
     print(f"accepted {accepted} records, rejected {rejected}")
 
