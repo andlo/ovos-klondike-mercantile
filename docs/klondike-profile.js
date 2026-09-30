@@ -15,17 +15,18 @@
     const out = Object.entries(p.left_out || {}).map(([id, why]) =>
       `<li>${code(id)}: ${escapeHtml(why)}</li>`).join("");
     const added = asArray(p.added_stages);
-    const self = k.self || {};
-    const members = Object.keys(self.members || {}).length;
-    const selfLine = self.error ? `not run: ${escapeHtml(self.error)}`
-      : self.run_at ? `${members} profile skills routed together, ${formatDate(self.run_at)}` : "not run yet";
+    const job = k.job || {};
+    const results = Object.values(job.results || {});
+    const members = results.filter((r) => r.member).length;
+    const selfLine = job.error ? `not run: ${escapeHtml(job.error)}`
+      : job.run_at ? `${members} store skills of the profile and ${results.length - members} other skills routed in one core, ${formatDate(job.run_at)}` : "not run yet";
     return `
       <h4 class="compat-subhead">${escapeHtml(ch)}</h4>
       <div class="compat-facts">
         ${renderFactRow("Installer", asArray(p.requirements).filter((r) => r.startsWith("ovos-core[")).map(code).join(" ")
           + (asArray(p.extra_requirements).length ? ` + extra skills ${asArray(p.extra_requirements).map(code).join(" ")}` : ""))}
         ${renderFactRow("Pipeline", added.length ? `installer's, plus ${added.map(code).join(" ")}` : "the installer's, unchanged")}
-        ${renderFactRow("Against itself", selfLine)}
+        ${renderFactRow("Last run", selfLine)}
         ${renderFactRow("Apply it", `<a href="compat/klondike-profile-${encodeURIComponent(ch)}.txt">requirements</a> · <a href="compat/klondike-mycroft-${encodeURIComponent(ch)}.json">mycroft.conf pipeline</a>`)}
       </div>
       ${inList ? `<p class="setup-note">Curated:</p><ul class="compat-misses">${inList}</ul>` : ""}

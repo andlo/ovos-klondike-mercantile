@@ -319,12 +319,20 @@ function collisionList(items, text) {
 function renderKlondike(rec, meta) {
   const kmeta = klondikeMeta(rec.channel);
   if (!kmeta) return "";
-  const k = rec.klondike;
-  const member = ((kmeta.self || {}).members || {})[rec.id];
-  if (!k && !member) return "";
+  const job = kmeta.job || {};
+  const res = (job.results || {})[rec.id];
+  const refused = (job.refused || {})[rec.id];
+  if (refused) {
+    return `<h4 class="compat-subhead">Routing on a well-equipped install (Klondike profile)</h4>
+      <div class="compat-facts">${renderStatRow("Install", escapeHtml(refused))}</div>`;
+  }
+  if (!res) return "";
+  const k = res.routing || {};
+  const member = res.member;
+  const memberIds = new Set(asArray(job.member_skill_ids));
   const profile = kmeta.profile || {};
   const rows = [];
-  if (k) {
+  { // this skill's own rows, with the profile loaded
     if (k.install) rows.push(renderStatRow("Routing", escapeHtml(k.install)));
     if (k.error) rows.push(renderStatRow("Routing", escapeHtml(`not run: ${k.error}`)));
     rows.push(renderRoutingRun("Golden utterances", k.golden, "a profile skill"));
@@ -345,9 +353,10 @@ function renderKlondike(rec, meta) {
   if (member) {
     const cur = asArray(profile.curated).find((c) => c.id === rec.id);
     rows.push(renderStatRow("In the profile", escapeHtml(cur ? `yes, curated: ${cur.function || ""}` : "yes, installed by the OVOS installer")));
-    const own = ((member.routing || {}).golden) || {};
-    const takenBy = collisionList(own.collisions, (c) => `taken by <code>${escapeHtml(c.taken_by || "?")}</code>`);
-    const takesFrom = collisionList(((member.takes_from || {}).golden), (c) => `(a sentence of <code>${escapeHtml(c.from || "?")}</code>)`);
+    const own = k.golden || {};
+    const inside = asArray(own.misses).filter((m) => m.kind === "baseline" && memberIds.has(m.taken_by));
+    const takenBy = collisionList(inside, (c) => `taken by <code>${escapeHtml(c.taken_by || "?")}</code>`);
+    const takesFrom = collisionList((((job.takes_from || {})[rec.id]) || {}).golden, (c) => `(a sentence of <code>${escapeHtml(c.from || "?")}</code>)`);
     if (takenBy || takesFrom) {
       rows.push(`<p class="setup-note">Collides within the profile (all profile skills in one core):</p>`
         + (takenBy ? `<ul class="compat-misses">${takenBy}</ul>` : "")

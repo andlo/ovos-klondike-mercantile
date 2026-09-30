@@ -165,8 +165,6 @@ jobs:
             out/stack-freeze.txt
             out/route.json
             out/route-freeze.txt
-            out/klondike-route.json
-            out/klondike-route-freeze.txt
             out/klondike.json
             out/klondike-freeze.txt
           if-no-files-found: warn

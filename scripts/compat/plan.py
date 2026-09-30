@@ -19,9 +19,11 @@ the pinned ovos-test-harness SHA and RUNNER_VERSION. Results with status
 "error" (infra trouble) are always retried.
 
 Level 3 has two baselines, each with its own key on top of `key`: the
-installer's defaults (route_key) and the Klondike profile (klondike_key,
-issue #13). Per channel the plan also carries one "klondike" job that routes
-the profile against itself; it runs when the profile or the channel changed.
+installer's defaults (route_key, in every shard) and the Klondike profile
+(issue #13). The Klondike part is one job per channel: the profile is
+booted once, with every skill that passed level 2 there (as of the last
+run) loaded next to it. It runs when the profile, the channel or any of
+those skills changed.
 """
 import argparse
 import hashlib
@@ -180,19 +182,16 @@ def main():
                            args.harness_sha, RUNNER_VERSION])
             route_key = key_for([key, baseline["sha256"], args.generator_spec, ROUTE_VERSION]) \
                 if baseline and kind == "skill" else None
-            klondike_key = key_for([key, kprof["sha256"], args.generator_spec, ROUTE_VERSION]) \
-                if kprof and kind == "skill" else None
             prev = previous.get(e["id"], {}).get(channel)
             if (prev and prev.get("key") == key and prev.get("status") in FINAL_STATUSES
                     and route_current(prev, route_key)
-                    and route_current(prev, klondike_key, "klondike_key", "klondike")
                     and not (args.force or args.full)):
                 skipped += 1
                 continue
             todo.append({"id": e["id"], "package": e["package_name"], "version": version,
                          "channel_pinned": pinned, "kind": kind, "repo": repo_url(e),
                          "languages": langs if kind == "skill" else [], "key": key,
-                         "route_key": route_key, "klondike_key": klondike_key})
+                         "route_key": route_key})
         for i in range(0, len(todo), args.shard_size):
             shard = {"channel": channel, "shard": i // args.shard_size + 1,
                      "items": todo[i:i + args.shard_size]}
@@ -200,21 +199,20 @@ def main():
                 shard["baseline"] = json.dumps({"requirements": baseline["requirements"],
                                                 "pipeline": baseline["pipeline"],
                                                 "exclude_ids": device_bound(previous, channel)})
-            if kprof:
-                shard["klondike"] = json.dumps({"requirements": kprof["requirements"],
-                                                "pipeline": kprof["pipeline"],
-                                                "exclude_ids": device_bound(previous, channel)})
             matrix.append(shard)
         if kprof:
+            kitems = klondike_items(feed, previous, channel, pins)
             kprof["self_key"] = key_for([csha, kprof["sha256"], args.harness_sha, RUNNER_VERSION,
-                                         args.generator_spec, ROUTE_VERSION])
+                                         args.generator_spec, ROUTE_VERSION,
+                                         sorted((i["id"], i["version"]) for i in kitems)])
+            kprof["tested"] = len(kitems)
             prev_self = prev_klondike.get(channel) or {}
             if prev_self.get("key") != kprof["self_key"] or args.force or args.full:
                 matrix.append({"channel": channel, "shard": "klondike", "items": [],
-                               "klondike": json.dumps({"self": True, "requirements": kprof["requirements"],
+                               "klondike": json.dumps({"requirements": kprof["requirements"],
                                                        "pipeline": kprof["pipeline"],
                                                        "exclude_ids": device_bound(previous, channel),
-                                                       "feed_map": feed_map(feed)})})
+                                                       "feed_map": feed_map(feed), "items": kitems})})
         summary[channel] = {"constraints_sha256": csha, "to_test": len(todo),
                             "unchanged": skipped, "no_installable_release": unresolved}
         if kprof:
@@ -311,6 +309,24 @@ def channel_profile(profile_def, baseline, channel, feed_by_id, previous, pins, 
     spec["sha256"] = hashlib.sha256(json.dumps([installer, members, pipeline],
                                                sort_keys=True).encode()).hexdigest()
     return spec
+
+
+def klondike_items(feed, previous, channel, pins):
+    """The skills the channel's Klondike job routes against the profile:
+    every store skill that passed level 2 on the channel in the last run,
+    at the version it was tested at. A skill tested for the first time in
+    this run joins the next one."""
+    out = []
+    for e in feed:
+        if not is_candidate(e) or TESTED_TYPES.get(e["component_type"]) != "skill":
+            continue
+        rec = (previous.get(e["id"]) or {}).get(channel) or {}
+        if rec.get("status") != "pass" or not rec.get("plugin_ids") or not rec.get("version_tested"):
+            continue
+        out.append({"id": e["id"], "package": e["package_name"], "version": rec["version_tested"],
+                    "channel_pinned": normalize(e["package_name"]) in pins, "kind": "skill",
+                    "repo": repo_url(e), "plugin_ids": list(rec["plugin_ids"])})
+    return out
 
 
 def feed_map(feed):

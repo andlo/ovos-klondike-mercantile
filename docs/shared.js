@@ -234,10 +234,6 @@ function compatFromRecord(rec) {
     const c = routingCounts(rec, run);
     if (c) out[run] = c;
   }
-  // Level 3 against the Klondike profile (#13): a line of its own, never
-  // part of the level or the badge.
-  const k = routingCounts(rec, "golden", "klondike");
-  if (k) out.klondike = k;
   return out;
 }
 
@@ -321,6 +317,11 @@ function applyCompatResults(skills, doc) {
     const channels = {};
     for (const ch of COMPAT_CHANNELS) {
       if (perChannel[ch]) channels[ch] = compatFromRecord(perChannel[ch]);
+      // Level 3 against the Klondike profile (#13), from the channel's
+      // Klondike job: a line of its own, never part of the level or badge.
+      const kres = ((((doc.klondike || {})[ch] || {}).job || {}).results || {})[skill.id];
+      const k = kres && routingCounts(kres, "golden");
+      if (k && channels[ch]) channels[ch].klondike = k;
     }
     skill.compat = { ...(skill.compat || {}), channels };
   }

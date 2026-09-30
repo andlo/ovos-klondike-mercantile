@@ -28,7 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from compat.feed import (CHANNEL_ORDER, FINAL_STATUSES, LEVEL3_RATIO, SAFE_ID, badge_ids,  # noqa: E402
                          is_candidate, load_results, shields)
 
-STR_FIELDS = {"id": 200, "channel": 20, "key": 32, "klondike_key": 32, "kind": 20, "package": 200,
+STR_FIELDS = {"id": 200, "channel": 20, "key": 32, "kind": 20, "package": 200,
               "requested_version": 64, "version_tested": 64, "tested_at": 40,
               "status": 12, "stage": 20, "reason": 600, "log_excerpt": 4000, "driver": 80, "languages_source": 10}
 NUM_FIELDS = {"level", "duration_seconds", "boot_seconds"}
@@ -66,13 +66,6 @@ def clean(rec):
     out["level"] = min(out.get("level", 0), 2) if out.get("level") in (0, 1, 2, 3) else 0
     if out["status"] == "pass":
         out["level"] = 2
-    if isinstance(rec.get("klondike_key"), str) and out["status"] == "pass":
-        # The Klondike line (#13) never changes the level or the badge.
-        k = clean_routing(rec.get("klondike"))
-        if k:
-            out["klondike"] = k
-    else:
-        out.pop("klondike_key", None)
     if isinstance(rec.get("route_key"), str) and out["status"] == "pass":
         out["route_key"] = rec["route_key"][:32]
         routing = clean_routing(rec.get("routing"))
@@ -234,48 +227,54 @@ def publish_profile_files(docs, channel, spec):
         json.dumps({"intents": {"pipeline": list(spec["pipeline"])}}, indent=2) + "\n")
 
 
-def klondike_self_result(kmeta, sdir, spec, docs, channel, now):
-    """The profile against itself, from the channel's klondike shard. Only
-    ids the plan put in the profile's store map are accepted."""
+def klondike_job_result(kmeta, sdir, spec, docs, channel, now):
+    """The channel's Klondike job: every tested skill against the profile,
+    and the profile's own skills against each other. Only ids the plan put
+    in the job (its items, or a store skill of the profile) are accepted."""
     try:
         out = json.loads((sdir / "klondike.json").read_text())
     except (OSError, ValueError):
         out = None
     if not isinstance(out, dict):
         # Keep the last good result; a key of None makes plan.py retry.
-        kmeta.setdefault("self", {})["last_error"] = {"run_at": now, "reason": "no result (the job did not finish)"}
+        kmeta.setdefault("job", {})["last_error"] = {"run_at": now, "reason": "no result (the job did not finish)"}
         kmeta["key"] = None
         return
-    allowed = {v["id"] for v in (spec.get("feed_map") or {}).values() if isinstance(v, dict)}
     if isinstance(out.get("error"), str):
         # The profile itself did not install (a pip resolution failure is a
         # finding in itself): shown as such, and retried next run.
-        kmeta["self"] = {"run_at": now, "error": out["error"][:500]}
+        kmeta["job"] = {"run_at": now, "error": out["error"][:500]}
         kmeta["key"] = None
         return
-    members = {}
-    for mid, m in (out.get("members") or {}).items():
-        if mid not in allowed or not isinstance(m, dict):
+    allowed = {v["id"] for v in (spec.get("feed_map") or {}).values() if isinstance(v, dict)}
+    allowed |= {i["id"] for i in spec.get("items") or [] if isinstance(i, dict)}
+    results = {}
+    for sid, r in (out.get("results") or {}).items():
+        if sid not in allowed or not isinstance(r, dict):
             continue
-        members[mid] = {"version": str(m.get("version", ""))[:64], "skill_id": str(m.get("skill_id", ""))[:200],
-                        "routing": clean_routing(m.get("routing"))}
-    # Who takes whose sentences, both ways ("taken by X" / "takes from Y").
-    by_skill = {m["skill_id"]: mid for mid, m in members.items()}
+        results[sid] = {"member": r.get("member") is True, "version": str(r.get("version", ""))[:64],
+                        "skill_id": str(r.get("skill_id", ""))[:200], "routing": clean_routing(r.get("routing"))}
+    member_ids = set(_strs(out.get("member_skill_ids"), 200, 200))
+    # Inside the profile, both ways: whose sentences a profile skill takes.
+    by_skill = {r["skill_id"]: sid for sid, r in results.items() if r["member"]}
     takes_from = {}
-    for mid, m in members.items():
+    for sid, r in results.items():
+        if not r["member"]:
+            continue
         for run in ("golden", "generated"):
-            for c in ((m.get("routing") or {}).get(run) or {}).get("collisions") or []:
-                taker = by_skill.get(c.get("taken_by"))
-                if taker:
+            for m in ((r.get("routing") or {}).get(run) or {}).get("misses") or []:
+                taker = by_skill.get(m.get("taken_by")) if m.get("kind") == "baseline" else None
+                if taker and taker != sid:
                     takes_from.setdefault(taker, {}).setdefault(run, []).append(
-                        {"from": mid, "utterance": c.get("utterance"), "lang": c.get("lang")})
-    for taker, runs in takes_from.items():
-        members[taker]["takes_from"] = {r: v[:10] for r, v in runs.items()}
-    kmeta["self"] = {"run_at": now, "members": members,
-                     "not_in_store": _strs(out.get("not_in_store"), 80, 200),
-                     "langs": _strs(out.get("langs"), 10, 20),
-                     "langs_skipped": _strs(out.get("langs_skipped"), 60, 20),
-                     "boots": klondike_boots(out)}
+                        {"from": sid, "utterance": m.get("utterance"), "lang": m.get("lang")})
+    kmeta["job"] = {"run_at": now, "results": results,
+                    "takes_from": {t: {run: v[:10] for run, v in runs.items()} for t, runs in takes_from.items()},
+                    "member_skill_ids": sorted(member_ids),
+                    "not_in_store": _strs(out.get("not_in_store"), 80, 200),
+                    "refused": {str(k)[:200]: str(v)[:300] for k, v in list((out.get("refused") or {}).items())[:80]},
+                    "langs": _strs(out.get("langs"), 10, 20),
+                    "langs_skipped": _strs(out.get("langs_skipped"), 60, 20),
+                    "boots": klondike_boots(out)}
     kmeta["key"] = spec.get("self_key")
     try:
         freeze = (sdir / "klondike-freeze.txt").read_text()[:200_000]
@@ -306,12 +305,11 @@ def main():
         sdir = Path(args.artifacts) / f"shard-{channel}-{n}"
         expected = {i["id"]: i["key"] for i in shard["items"]}
         expected_route = {i["id"]: i.get("route_key") for i in shard["items"]}
-        expected_klondike = {i["id"]: i.get("klondike_key") for i in shard["items"]}
         kmeta = doc.setdefault("klondike", {}).setdefault(channel, {})
         if n == "klondike":
             spec = {**json.loads(shard.get("klondike") or "{}"),
                     "self_key": ((plan.get("klondike") or {}).get(channel) or {}).get("self_key")}
-            klondike_self_result(kmeta, sdir, spec, docs, channel, now)
+            klondike_job_result(kmeta, sdir, spec, docs, channel, now)
             continue
         try:
             records = json.loads((sdir / "results.json").read_text())
@@ -323,9 +321,6 @@ def main():
             if not rec or rec.get("channel") != channel or expected.get(rec.get("id")) != rec.get("key"):
                 rejected += 1
                 continue
-            if rec.get("klondike_key") and rec["klondike_key"] != expected_klondike.get(rec["id"]):
-                rec.pop("klondike_key", None)
-                rec.pop("klondike", None)
             if rec.get("route_key") and rec["route_key"] != expected_route.get(rec["id"]):
                 # Levels 1-2 stand; a level 3 result for another key does not.
                 rec.pop("route_key", None)
@@ -339,12 +334,6 @@ def main():
                 per[channel] = rec
             accepted += 1
         route_meta(channels_meta.setdefault(channel, {}), sdir, plan, docs, channel, now)
-        if kmeta.get("route_run_at") != now:
-            try:
-                kroute = json.loads((sdir / "klondike-route.json").read_text())
-                kmeta.update(route_run_at=now, route=klondike_boots(kroute))
-            except (OSError, ValueError):
-                pass
         # Channel metadata from the first shard that has it.
         meta = channels_meta.setdefault(channel, {})
         if meta.get("run_at") != now:
@@ -367,11 +356,9 @@ def main():
         kmeta = doc.setdefault("klondike", {}).setdefault(channel, {})
         klondike_profile_meta(kmeta, spec, plan.get("klondike_profile"))
         # The skill ids a device must have for a report to count as a
-        # Klondike-test report: what the profile installed in the last run
-        # that routed it against itself, plus the curated skills' own ids.
-        self_ = kmeta.get("self") or {}
-        ids = {m["skill_id"] for m in (self_.get("members") or {}).values() if m.get("skill_id")}
-        ids |= set(self_.get("not_in_store") or [])
+        # Klondike-test report: what the profile installed in the channel's
+        # last Klondike job, plus the curated skills' own ids.
+        ids = set((kmeta.get("job") or {}).get("member_skill_ids") or [])
         for cid in spec.get("curated_members") or []:
             rec = (doc["results"].get(cid) or {}).get(channel) or {}
             if rec.get("kind") == "skill":

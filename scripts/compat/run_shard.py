@@ -266,10 +266,11 @@ ROUTE_MAX_LANGS = int(os.environ.get("COMPAT_ROUTE_MAX_LANGS", "4"))
 # run. Rows past it are left out and the language is marked partial;
 # languages not started are listed as not routed.
 ROUTE_BUDGET_MIN = float(os.environ.get("COMPAT_ROUTE_BUDGET_MIN", "30"))
-# The same per pass against the Klondike profile, and for the job that routes
-# the profile against itself (one job per channel, all profile skills).
-KLONDIKE_BUDGET_MIN = float(os.environ.get("COMPAT_KLONDIKE_BUDGET_MIN", "30"))
-KLONDIKE_SELF_BUDGET_MIN = float(os.environ.get("COMPAT_KLONDIKE_SELF_BUDGET_MIN", "150"))
+# The Klondike job (one per channel, issue #13): its routing budget, and how
+# long one boot may take. The profile alone is ~45 skills to train (835 s
+# locally for en-US, alpha), with every tested skill loaded next to it.
+KLONDIKE_BUDGET_MIN = float(os.environ.get("COMPAT_KLONDIKE_BUDGET_MIN", "240"))
+KLONDIKE_BOOT_TIMEOUT = int(os.environ.get("COMPAT_KLONDIKE_BOOT_TIMEOUT", "3000"))
 # Generated rows are drafted in English only for now: ovoscope generate's
 # default slot values are English-only (ovoscope#224), so other languages
 # skip most templates.
@@ -372,8 +373,6 @@ def prepare_shard(items, results, args, workroot):
     all_runs = {}
     for item, rec in candidates:
         rec["route_key"] = item["route_key"]
-        if item.get("klondike_key") and args.klondike:
-            rec["klondike_key"] = item["klondike_key"]
         try:
             all_runs[item["id"]] = prepare_rows(item, rec, args, workroot)
         except Exception as e:  # noqa: BLE001
@@ -421,8 +420,9 @@ def route_pass(routable, all_runs, spec, field, args, workroot, deadline, label,
             "boots": [{k: b.get(k) for k in BOOT_FIELDS} for b in boots]}
 
 
-def run_boots(py, manifest, langs, skipped, prefix, args, workroot, deadline):
+def run_boots(py, manifest, langs, skipped, prefix, args, workroot, deadline, boot_timeout=None):
     """One route.py process per language, in turn, until `deadline`."""
+    boot_timeout = boot_timeout or args.boot_timeout
     man_path = Path(workroot) / f"{prefix}-manifest.json"
     man_path.write_text(json.dumps(manifest))
     n_rows = sum(len(Path(f).read_text(encoding="utf-8", errors="replace").splitlines())
@@ -440,13 +440,13 @@ def run_boots(py, manifest, langs, skipped, prefix, args, workroot, deadline):
             print(f"    {prefix} {lang}: skipped, out of time", flush=True)
             continue
         out_path = Path(workroot) / f"{prefix}-{lang}.json"
-        budget = int(min(args.boot_timeout + TRAINED_MAX + n_rows * (args.route_timeout + 2) + 300,
+        budget = int(min(boot_timeout + TRAINED_MAX + n_rows * (args.route_timeout + 2) + 300,
                          max(600, left)))
         # route.py stops itself between rows at --budget; that has to come
         # well before this process timeout (one row can take --timeout), or
         # the timeout kills it first and the language reads as timed out.
         rc, log = run([py, str(ROUTE), "--manifest", str(man_path), "--lang", lang,
-                       "--out", str(out_path), "--max-wait", str(args.boot_timeout),
+                       "--out", str(out_path), "--max-wait", str(boot_timeout),
                        "--timeout", str(args.route_timeout),
                        "--budget", str(int(max(60, min(budget, left) - args.route_timeout - 75)))],
                       budget, Path(workroot) / f"{prefix}-{lang}.log")
@@ -497,53 +497,90 @@ def normalize(name):
     return re.sub(r"[-_.]+", "-", name).lower()
 
 
-def klondike_self(args, workroot, deadline):
-    """The Klondike profile against itself (issue #13): every store skill the
-    profile installs, with its own golden (and generated) rows, all in one
-    core per language. `neighbour` is then a collision inside the profile."""
+def install_items(py, args, workroot, candidates, label):
+    """Install the tested skills into a venv that already has a baseline.
+    Returns {id: reason} for those that would not install next to it."""
+    base_cmd = [py, "-m", "pip", "install", "--disable-pip-version-check", "-c", args.constraints]
+    refused = {}
+    for item, rec in candidates:
+        spec = item["package"] if item.get("channel_pinned") else f"{item['package']}=={rec['version_tested']}"
+        rc, out = run(base_cmd + [spec], args.install_timeout, Path(workroot) / "klondike-install.log")
+        if rc != 0:
+            refused[item["id"]] = (f"does not install next to {label}: "
+                                   + (pip_reason(out) if rc is not None else "timed out"))
+    return refused
+
+
+def list_skills(py):
+    listed = subprocess.run([py, "-c", LIST_PLUGINS], capture_output=True, text=True)
+    return json.loads(listed.stdout)
+
+
+def klondike_job(args, workroot, deadline):
+    """Level 3 against the Klondike profile (issue #13): one job per channel,
+    so the profile (~45 skills to train) is booted once per language rather
+    than once per shard. In that one core per language:
+      * the profile's own store skills, with their rows: the profile against
+        itself; a sentence another profile skill takes is a collision;
+      * every other skill that passed level 2 on the channel, with its rows:
+        each skill against the profile. A sentence a profile skill takes
+        counts (a device with the profile would see it); one taken by
+        another tested skill does not (two alternatives outside the profile
+        are never tested against each other, as intended).
+    Which skills are in the profile is read from the venv after the profile
+    alone is installed, so ovos-core[...] never needs expanding by hand."""
     spec = args.klondike
     try:
-        py, _, freeze = build_route_venv(args, workroot, [], spec["requirements"], "klondike-venv",
-                                         "the Klondike profile")
+        py, _, _ = build_route_venv(args, workroot, [], spec["requirements"], "klondike-venv",
+                                    "the Klondike profile")
+        profile_skills = list_skills(py)
     except Exception as e:  # noqa: BLE001 - a resolution failure is a finding in itself
         return {"error": str(e)[:500]}
-    listed = subprocess.run([py, "-c", LIST_PLUGINS], capture_output=True, text=True)
-    try:
-        installed = json.loads(listed.stdout)
-    except ValueError:
-        return {"error": "could not list the installed skills: " + listed.stderr[-300:], "freeze": freeze}
     fmap, exclude = spec.get("feed_map") or {}, set(spec.get("exclude_ids") or [])
-    members, all_runs, not_store = [], {}, []
-    for inst in sorted(installed, key=lambda x: x["skill_id"]):
-        entry = fmap.get(normalize(inst["dist"]))
+    profile_ids = {s["skill_id"] for s in profile_skills} - exclude
+    entries, not_store = [], []
+    for inst in sorted(profile_skills, key=lambda x: x["skill_id"]):
         if inst["skill_id"] in exclude:
             continue
+        entry = fmap.get(normalize(inst["dist"]))
         if not entry or not entry.get("repo"):
             not_store.append(inst["skill_id"])
             continue
-        item = {"id": entry["id"], "repo": entry["repo"], "version": inst["version"], "kind": "skill"}
-        rec = {"id": entry["id"], "version_tested": inst["version"], "plugin_ids": [inst["skill_id"]],
-               "package": inst["dist"]}
+        entries.append(({"id": entry["id"], "repo": entry["repo"], "version": inst["version"], "kind": "skill"},
+                        {"id": entry["id"], "version_tested": inst["version"],
+                         "plugin_ids": [inst["skill_id"]], "package": inst["dist"], "member": True}))
+    member_entry_ids = {i["id"] for i, _ in entries}
+    tested = [i for i in spec.get("items") or []
+              if i["id"] not in member_entry_ids and not set(i.get("plugin_ids") or []) & profile_ids]
+    candidates = [(i, {"id": i["id"], "version_tested": i["version"], "plugin_ids": i["plugin_ids"],
+                       "package": i["package"], "member": False}) for i in tested]
+    refused = install_items(py, args, workroot, candidates, "the Klondike profile")
+    entries += [(i, r) for i, r in candidates if i["id"] not in refused]
+    freeze = subprocess.run([py, "-m", "pip", "freeze", "--disable-pip-version-check"],
+                            capture_output=True, text=True).stdout
+    all_runs = {}
+    for item, rec in entries:
         try:
             runs = prepare_rows(item, rec, args, workroot)
         except Exception as e:  # noqa: BLE001
             rec.setdefault("routing", {})["error"] = f"could not fetch rows: {e}"[:300]
             runs = {}
-        members.append((item, rec))
         if runs:
             all_runs[item["id"]] = runs
-    routable = [(i, r) for i, r in members if all_runs.get(i["id"])]
+    routable = [(i, r) for i, r in entries if all_runs.get(i["id"])]
     langs, skipped = pick_langs({i["id"]: all_runs[i["id"]] for i, _ in routable})
     manifest = {"pipeline": spec.get("pipeline") or [], "exclude_ids": sorted(exclude),
+                "counted_ids": sorted(profile_ids),
                 "items": [{"id": i["id"], "skill_ids": r["plugin_ids"], "runs": all_runs[i["id"]]}
                           for i, r in routable]}
-    boots = run_boots(py, manifest, langs, skipped, "klondike-self", args, workroot,
-                      min(deadline, time.monotonic() + KLONDIKE_SELF_BUDGET_MIN * 60))
+    boots = run_boots(py, manifest, langs, skipped, "klondike", args, workroot,
+                      min(deadline, time.monotonic() + KLONDIKE_BUDGET_MIN * 60), KLONDIKE_BOOT_TIMEOUT)
     aggregate(routable, boots, langs, skipped, "routing")
-    return {"members": {r["id"]: {"version": r["version_tested"], "skill_id": r["plugin_ids"][0],
-                                  "package": r["package"], "routing": r.get("routing")}
-                        for _, r in members},
-            "not_in_store": not_store, "langs": langs, "langs_skipped": skipped, "freeze": freeze,
+    return {"results": {r["id"]: {"member": r["member"], "version": r["version_tested"],
+                                  "skill_id": r["plugin_ids"][0], "routing": r.get("routing")}
+                        for _, r in entries},
+            "refused": refused, "member_skill_ids": sorted(profile_ids), "not_in_store": not_store,
+            "langs": langs, "langs_skipped": skipped, "freeze": freeze,
             "boots": [{k: b.get(k) for k in BOOT_FIELDS} for b in boots]}
 
 
@@ -614,8 +651,8 @@ def main():
     ap.add_argument("--boot-timeout", type=int, default=900)
     # Level 3 (routing). Without --baseline the shard stops at level 2.
     ap.add_argument("--baseline", default="", help="JSON from plan.py: installer requirements + pipeline")
-    ap.add_argument("--klondike", default="", help="JSON from plan.py: the Klondike profile on this "
-                    "channel; with \"self\": true the shard routes the profile against itself")
+    ap.add_argument("--klondike", default="", help="JSON from plan.py for the channel's Klondike job: "
+                    "the profile and the skills to route against it (no items of its own)")
     ap.add_argument("--generator", default="", help="an `ovoscope` executable with `generate` (may be absent)")
     ap.add_argument("--route-timeout", type=float, default=15.0, help="seconds per utterance")
     ap.add_argument("--deadline-minutes", type=float, default=300,
@@ -668,10 +705,10 @@ def main():
             Path(args.out).write_text(json.dumps(results, indent=2))
 
         deadline = started_at + args.deadline_minutes * 60
-        if args.klondike and args.klondike.get("self"):
-            print("==> Klondike profile against itself", flush=True)
+        if args.klondike:
+            print("==> Klondike job: the profile, and every skill against it", flush=True)
             try:
-                out = klondike_self(args, workroot, deadline)
+                out = klondike_job(args, workroot, deadline)
             except Exception as e:  # noqa: BLE001
                 out = {"error": f"{type(e).__name__}: {e}"[:500]}
             write_pass(args, "klondike", out)
@@ -679,9 +716,6 @@ def main():
             passes = [("routing", "route", {"requirements": args.baseline, "pipeline": args.pipeline,
                                             "exclude_ids": args.exclude_ids},
                        "the default skills", ROUTE_BUDGET_MIN)]
-            if args.klondike:
-                passes.append(("klondike", "klondike-route", args.klondike, "the Klondike profile",
-                               KLONDIKE_BUDGET_MIN))
             try:
                 routable, all_runs = prepare_shard(items, results, args, workroot)
             except Exception as e:  # noqa: BLE001 - level 3 trouble never loses levels 1-2
