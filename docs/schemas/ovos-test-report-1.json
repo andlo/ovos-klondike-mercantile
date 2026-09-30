@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ovos-test-report/1",
+  "title": "OVOS test report, version 1",
+  "description": "What one person saw when running skill tests on a real OVOS install, as written by ovos-tui-client's headless mode (ovos-tui --run TARGET --report FILE|-). It names no store; a store decides what a report counts for from who published it. Private by default: no hostname, IP address, user name or home path, and OVOS's replies only with --report-replies (never in a shared report).",
+  "type": "object",
+  "required": ["schema", "manifest", "summary", "steps"],
+  "properties": {
+    "schema": {"const": "ovos-test-report/1"},
+    "title": {"type": "string"},
+    "manifest": {
+      "type": "object",
+      "required": ["created_at", "tool", "stack", "skills"],
+      "properties": {
+        "created_at": {"type": "string", "format": "date-time"},
+        "tool": {"type": "string", "description": "e.g. \"ovos-tui-client 0.3.0\""},
+        "bus": {"enum": ["local", "remote"]},
+        "channel": {"type": ["string", "null"], "description": "installer channel (stable, testing, alpha), from ovos-installer's state file or --channel; null when unknown"},
+        "channel_source": {"type": "string"},
+        "channel_note": {"type": "string", "description": "why the channel is unknown"},
+        "lang": {"type": "string"},
+        "machine": {
+          "type": "object",
+          "properties": {"arch": {"type": ["string", "null"]}, "model": {"type": ["string", "null"]}, "python": {"type": "string"}}
+        },
+        "versions_from": {"enum": ["this environment", "unavailable"]},
+        "stack": {"type": "object", "additionalProperties": {"type": "string"}, "description": "installed versions of the core packages; empty when the bus is on another machine"},
+        "skills": {
+          "type": "object", "minProperties": 1,
+          "description": "the tested skills by skill id",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "package": {"type": ["string", "null"]},
+              "version": {"type": ["string", "null"]},
+              "active": {"type": ["boolean", "null"]}
+            }
+          }
+        },
+        "installed_skills": {"type": "integer"},
+        "config": {
+          "type": "object",
+          "properties": {
+            "lang": {"type": ["string", "null"]},
+            "secondary_langs": {"type": "array", "items": {"type": "string"}},
+            "pipeline": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "steps": {"type": "integer"}, "planned": {"type": "integer"}, "checked": {"type": "integer"},
+        "passed": {"type": "integer"}, "failed": {"type": "integer"}, "timed_out": {"type": "integer"},
+        "sent_without_check": {"type": "integer"}, "answered": {"type": "integer"},
+        "cancelled": {"type": "boolean"}, "duration_s": {"type": "number"}
+      }
+    },
+    "steps": {
+      "type": "array", "maxItems": 2000,
+      "items": {
+        "type": "object",
+        "required": ["utterance", "status"],
+        "properties": {
+          "i": {"type": "integer"},
+          "utterance": {"type": "string"},
+          "lang": {"type": "string"},
+          "expected": {"type": ["string", "null"], "description": "skill_id or skill_id:intent"},
+          "status": {"enum": ["pass", "fail", "timeout", "sent"]},
+          "handled_by": {"type": ["string", "null"]},
+          "answered": {"type": "boolean"},
+          "detail": {"type": "string"},
+          "replies": {"type": "array", "items": {"type": "string"}, "description": "only with --report-replies; a store rejects a shared report that has them"}
+        }
+      }
+    },
+    "notes": {"type": "string", "maxLength": 1000, "description": "the tester's own words about the setup (--notes)"}
+  }
+}

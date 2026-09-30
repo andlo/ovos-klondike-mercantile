@@ -120,32 +120,7 @@
           on your end beyond being in their own list.</li>
       </ul>
 
-      <h2 class="detail-subhead">Forks</h2>
-      <p>
-        Forks are excluded by default (to avoid random personal
-        test-forks), except for a short list of orgs already
-        confirmed as genuine first-party parts of the OVOS ecosystem
-        (OpenVoiceOS, NeonGeckoCom, OscillateLabsLLC, TigreGotico,
-        JarbasHiveMind, smartgic). If your org publishes real,
-        maintained forks and isn't on that list, ask and it can be
-        added.
-      </p>
-
-      <h2 class="detail-subhead">How often does it refresh?</h2>
-      <p>
-        New repos get picked up within a few runs of appearing (the
-        crawler runs every 3 hours). Already-known repos refresh on
-        a rotation, not every run: with roughly 60 refreshed per run
-        out of ~960 known repos total, a full rotation takes about
-        <strong>2 days</strong> - so as a rule of thumb, a change you
-        make today (new topic, added <code>package_name</code>,
-        archived the repo, whatever) should be reflected here within
-        about 2 days, not immediately. If you need a specific repo
-        re-checked sooner,
-        <a href="https://github.com/andlo/ovos-klondike-mercantile">open an issue</a>.
-      </p>
-
-      <h2 class="detail-subhead" id="channel-tests">6. Tested on OVOS release channels</h2>
+      <h2 class="detail-subhead" id="channel-tests">6. Tested on OVOS</h2>
       <p>
         Every <strong>Looks Complete</strong> skill and pipeline plugin (not
         archived) is tested against OVOS's three release channels. The result
@@ -216,6 +191,8 @@
         </li>
         <li>Level 4 (stops when asked) is planned.</li>
       </ul>
+      <h3 class="legend-subhead" id="labels">The labels at a glance</h3>
+      <div data-test-legend></div>
       <p>
         <strong>Recommended order:</strong> the store's default sort. testing
         counts most (ten times alpha), stable three times alpha: a package that
@@ -260,6 +237,118 @@
         packages from PyPI. A result is information, not a verdict: if it looks
         wrong, <a href="https://github.com/andlo/ovos-klondike-mercantile/issues">open an issue</a>.
       </p>
+
+      <h2 class="detail-subhead" id="device-reports">7. Test your skill on a real device</h2>
+      <p>
+        Some skills can't be judged in our tests: they need an API key or an
+        account (<em>needs config</em>), device services (<em>needs device</em>)
+        or hardware. You can test them yourself on a configured device and
+        publish the result. It shows on the card as <strong>✓ alpha · maintainer</strong>,
+        in its own colour so it is never mistaken for our own result, and it
+        ranks above untested entries and below our own tests.
+      </p>
+      <ol class="guide-list">
+        <li><strong>A device on the channel.</strong> The OVOS installer lets you
+          pick testing (its default) or alpha; raspOVOS and ovos-docker images
+          follow alpha unless changed. In ovos-tui-client,
+          <code>Ctrl+P</code> → <strong>OVOS: Release channel</strong> shows which
+          channel the device runs (worked out from its versions, whatever made
+          the install) and how to change it on each kind of install. One device
+          per channel, or switch.</li>
+        <li><strong>The released version, configured.</strong>
+          <code>pip install your-skill==&lt;latest release&gt;</code>, then add
+          the keys or hardware it needs.</li>
+        <li><strong>Utterances.</strong> Your golden file
+          (<code>test/end2end/golden_utterances_&lt;lang&gt;.jsonl</code>) if you
+          have one. If not, <code>ovoscope generate</code> writes a first draft
+          from your <code>.intent</code> files to edit.</li>
+        <li><strong>Run the test on the device</strong> with ovos-tui-client
+          (0.2.0 or newer), in either of two ways. Both save the same
+          <a href="schemas/ovos-test-report-1.json"><code>ovos-test-report/1</code></a>
+          file (<code>….report.json</code>, next to a readable <code>.md</code>) with the installed versions, your skill's version and the channel.
+          <ul>
+            <li><strong>In the TUI:</strong> start <code>ovos-tui</code>, run
+              <code>Ctrl+P</code> → <strong>Test: &lt;your skill&gt; - All</strong>, then
+              <code>Ctrl+P</code> → <strong>Test: Save result…</strong>. A
+              window asks for the channel (already filled in, with how it was
+              found), a note on the setup ("needs an OpenWeather key", "Mark II"),
+              and whether to include OVOS's replies: leave that off. <em>Save and copy</em>
+              puts it on the clipboard; if your terminal doesn't pass that on,
+              <em>Save and show</em> shows it to copy by hand (and
+              <strong>Test: Show last result</strong> shows it again later).</li>
+            <li><strong>Headless</strong>, e.g. from a script:
+              <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report report.json --notes "needs an OpenWeather key"</pre>
+              <code>--channel</code> is optional; if you give it, it must match
+              what the device runs. Don't use <code>--report-replies</code> for a
+              report you share.</li>
+          </ul>
+          Klondike checks the channel again from the versions, so this works on
+          any install (the OVOS installer, raspOVOS, Buildroot, Docker, your own
+          venv). Never edit the report by hand.</li>
+        <li><strong>Check it</strong> with <em>Submit a test report</em> on your
+          skill's detail page: it says whether the report is valid for the
+          channel as it is today and, if not, exactly why.</li>
+        <li><strong>Commit it</strong> as <code>test/reports/testing.json</code>,
+          <code>test/reports/alpha.json</code> or <code>test/reports/stable.json</code>. Klondike picks it up on its next
+          visit to your repo (within about 2 days, see <a href="#refresh">How often does it refresh?</a>),
+          or within 3 hours if you use <strong>🔄 Request update</strong> on the detail page.</li>
+      </ol>
+      <p>
+        <strong>When a report counts:</strong> it is for your latest release;
+        its core versions (ovos-core, ovos-workshop, ovos-padatious,
+        ovos-bus-client, ovos-plugin-manager) are what a channel runs
+        <em>today</em>: allowed by that channel's current constraints (read
+        live, every time) and on the same minor version the channel installs
+        now (alpha's constraints only set minimums, so the second part is what
+        makes an old alpha report stale). The channel is the one the versions
+        match; a report whose versions match no channel, or more than one,
+        doesn't count. Then: the skill loaded, and at level 3 at least 80% of
+        the utterances reached it. A report that no longer counts
+        stays visible, greyed out, as "tested on an older version or channel".
+        A report with private data in it (IP addresses, e-mail addresses, paths
+        under a home folder, things that look like keys) is not published at
+        all; the detail page says so. The test tool is expected to leave host
+        names and settings out in the first place.
+      </p>
+      <p class="guide-note">
+        Users can submit reports from their own setups too, through the same
+        box. Those show as confirmations ("✓ alpha · 4 users") and as honest
+        "doesn't work for me" reports with the setup, and weigh less than our
+        own tests or your report. If you submit one yourself for your own skill,
+        you are pointed here instead, since yours belongs in your repo.
+      </p>
+      <h2 class="detail-subhead">Forks</h2>
+      <p>
+        Forks are excluded by default (to avoid random personal
+        test-forks), except for a short list of orgs already
+        confirmed as genuine first-party parts of the OVOS ecosystem
+        (OpenVoiceOS, NeonGeckoCom, OscillateLabsLLC, TigreGotico,
+        JarbasHiveMind, smartgic). If your org publishes real,
+        maintained forks and isn't on that list, ask and it can be
+        added.
+      </p>
+
+      <h2 class="detail-subhead" id="refresh">How often does it refresh?</h2>
+      <p>
+        New repos get picked up within a few runs of appearing (the
+        crawler runs every 3 hours). Already-known repos refresh on
+        a rotation, not every run: with roughly 60 refreshed per run
+        out of ~960 known repos total, a full rotation takes about
+        <strong>2 days</strong> - so as a rule of thumb, a change you
+        make today (new topic, added <code>package_name</code>,
+        archived the repo, whatever) should be reflected here within
+        about 2 days, not immediately. To have your repo re-checked
+        sooner, use <strong>🔄 Request update</strong> on its detail page:
+        it is picked up by the next crawl, within 3 hours.
+      </p>
+      <p>
+        The tests run on their own schedule: nightly, and only for packages
+        where something that matters changed (see
+        <a href="#channel-tests">6. Tested on OVOS</a>).
+        <strong>🧪 Request test</strong> on the detail page tests one entry
+        right away, at most once a day.
+      </p>
+
     </div>
   </main>
 
@@ -269,5 +358,7 @@
       <a href="skills.json">Raw JSON feed</a>
     </p>
   </footer>
+  <script src="shared.js"></script>
+  <script src="legend.js"></script>
 </body>
 </html>

@@ -169,7 +169,7 @@ ecosystem) vs. **Recently updated** (an existing project shipped a
 fresh release). A repo matching both only shows once, under "New
 repos".
 
-### Tested on OVOS release channels
+### Tested on OVOS
 
 Every Looks Complete skill and pipeline plugin (not archived) is tested
 against OVOS's release channels: **testing** (what the OVOS installer
@@ -224,7 +224,7 @@ package's own load error says it needs an API key, account or identity).
 A skill that only fails with some of its languages configured is a pass
 with those languages flagged, since a device only loads its own.
 
-Shown as a label per channel on cards (with a "Works on OVOS" filter:
+Shown as a label per channel on cards (with a "Tested on OVOS" filter:
 works / routes / fails per channel, works on testing and alpha), the
 default "Recommended" sort (testing ×10, stable ×3, alpha ×1:
 fails 0, untested 1, loads 2, golden routing 3 plus the share routed; ties
@@ -247,7 +247,7 @@ is it" down to "for the maintainer":
    fallback. README setup notes and `settingsmeta.json` settings are
    folded away underneath, labelled as extracted as-is, not verified.
 3. **Try saying**: the full example list (cards truncate it).
-4. **Works with OVOS**: one line per release channel (status, version
+4. **Tested on OVOS**: one line per release channel (status, version
    tested, date) and at most one line saying what is wrong. Versions tested
    against, registrations, languages (by code) and the log excerpt are in a
    folded "Test details"; the log only shows when something failed.

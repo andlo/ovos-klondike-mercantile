@@ -170,7 +170,7 @@ function renderExamples(localized) {
   return examples ? section("Try saying", `<ul class="examples">${examples}</ul>`) : "";
 }
 
-// ---- Works with OVOS ---------------------------------------------------
+// ---- Tested on OVOS ----------------------------------------------------
 
 const FINAL = ["pass", "fail", "unsupported", "needs_device", "needs_config"];
 const STATUS_TEXT = { pass: "✓ loads", unsupported: "not supported", needs_device: "needs device", needs_config: "needs config" };
@@ -292,10 +292,11 @@ function renderWorksWith(skill) {
   const results = (compatDoc && compatDoc.results && compatDoc.results[skill.id]) || {};
   // The feed's compat field arrives with the next crawl (up to 3h after a
   // test run); results.json is fresh immediately, so either is enough.
-  if (!skill.compat && Object.keys(results).length === 0) return "";
+  const people = reportChannels(skill);
+  if (!skill.compat && Object.keys(results).length === 0 && !people.length) return "";
   const channelsMeta = (compatDoc && compatDoc.channels) || {};
   const compat = skill.compat || { channels: {} };
-  const channels = COMPAT_CHANNELS.filter((ch) => results[ch] || channelsMeta[ch]);
+  const channels = COMPAT_CHANNELS.filter((ch) => results[ch] || channelsMeta[ch] || people.includes(ch));
 
   const rows = channels.map((ch) => {
     const rec = results[ch];
@@ -303,7 +304,8 @@ function renderWorksWith(skill) {
       return `
         <div class="compat-row">
           <div class="compat-row-head"><strong>${escapeHtml(ch)}</strong>
-            <span class="compat-label compat-untested">not tested yet</span></div>
+            <span class="compat-label compat-untested">not tested here yet</span></div>
+          ${renderPeopleReports(skill, ch)}
         </div>`;
     }
     const c = (compat.channels || {})[ch] || {};
@@ -321,12 +323,14 @@ function renderWorksWith(skill) {
         </div>
         ${compatSummaryLine(rec)}
         ${fold("Test details", compatDetails(rec, channelsMeta[ch] || {}))}
+        ${renderPeopleReports(skill, ch)}
       </div>`;
   }).join("");
 
-  return section("Works with OVOS", `
+  return section("Tested on OVOS", `
     ${rows || `<p class="setup-note">Not tested yet. It's queued for the next nightly run.</p>`}
-    <p class="setup-note compat-footnote">Installed with each release channel's own package versions and started in a test core with all its languages. <a href="for-maintainers.html#channel-tests">How testing works</a></p>
+    <p class="setup-note compat-footnote">Our own tests install each release channel's own package versions and start the skill in a test core with all its languages. Reports from the maintainer and from users are shown as such, never as our result. <a href="for-maintainers.html#labels">What the labels mean</a> · <a href="for-maintainers.html#channel-tests">How testing works</a></p>
+    ${renderReportBox(skill)}
   `);
 }
 
@@ -392,14 +396,26 @@ function renderMaintainers(skill) {
       return `<div class="compat-snippet"><img src="${escapeHtml(img)}" alt="OVOS ${escapeHtml(ch)} badge" loading="lazy"><code class="install-command">${escapeHtml(md)}</code></div>`;
     }).join("");
 
+  // Grey results: we could not judge it here, but the maintainer can on a
+  // real device (#6, "needs a report" hints).
+  const grey = COMPAT_CHANNELS.filter((ch) => results[ch] && ["needs_config", "needs_device", "unsupported"].includes(results[ch].status));
+  const hint = grey.length ? `
+      <div class="report-hint">
+        <strong>This can't be tested automatically on ${escapeHtml(grey.join(" and "))}.</strong>
+        You can test it on your own configured device and publish the report in your repo as
+        <code>test/reports/&lt;channel&gt;.json</code>; it then shows here as maintainer-tested.
+        <a href="for-maintainers.html#device-reports">How to</a>
+      </div>` : "";
+
   return `
     <section class="detail-section maintainer-section">
       <h2 class="detail-subhead">For the maintainer</h2>
+      ${hint}
       ${fold("README badge", snippets && `<p class="setup-note">Paste into your README. It updates by itself after every test run.</p>${snippets}`)}
       <div class="detail-meta-links">
         ${skill.compat ? `<a href="${testRequestUrl(skill)}" target="_blank" rel="noopener">🧪 Request test</a>` : ""}
         <a href="${updateRequestUrl(skill)}" target="_blank" rel="noopener">🔄 Request update</a>
-        <a href="for-maintainers.html">Guide for maintainers</a>
+        <a href="for-maintainers.html">📖 Guide for maintainers</a>
         <a href="${flagUrl(skill)}" target="_blank" rel="noopener" class="flag-link">🚩 Report a problem</a>
       </div>
     </section>`;
@@ -447,6 +463,7 @@ function renderDetail(skill) {
       ${renderMaintainers(skill)}
     </div>
   `;
+  wireReportBox(skill);
 }
 
 const params = new URLSearchParams(window.location.search);
@@ -459,13 +476,14 @@ if (!wantedId) {
   // Channel test results are optional: a missing or broken results.json
   // must never stop the page from rendering.
   const compatLoad = loadCompatResults(cacheBust).then((doc) => { compatDoc = doc; });
-  Promise.all([fetch(`skills.json${cacheBust}`, { cache: "no-store" }), compatLoad])
+  const reportsLoad = loadReportsIndex(cacheBust).then((doc) => { reportsDoc = doc; });
+  Promise.all([fetch(`skills.json${cacheBust}`, { cache: "no-store" }), compatLoad, reportsLoad])
     .then(([res]) => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
     })
     .then((data) => {
-      const skill = applyCompatResults(data, compatDoc).find((s) => s.id === wantedId);
+      const skill = applyReports(applyCompatResults(data, compatDoc), reportsDoc).find((s) => s.id === wantedId);
       if (!skill) {
         detailRoot.innerHTML = `<p class="loading">Couldn't find that entry - it may have been removed in a later update. <a href="index.html">Back to the store</a>.</p>`;
         return;

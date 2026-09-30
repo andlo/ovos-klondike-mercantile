@@ -44,7 +44,10 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-from compat.feed import attach_compat, load_results
+from compat.feed import attach_compat, is_candidate, load_results
+from reports.build_index import channel_stacks, fetch_constraints, latest_release
+from reports.crawler import sync_maintainer_reports
+from reports.feed import attach_reports, build_index
 
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
@@ -1308,6 +1311,12 @@ def main():
             entry["tier"] = None
 
         merged_entries[entry["id"]] = entry
+        if is_candidate(entry):
+            # Maintainer test reports (#6) from the skill's own repo.
+            synced = {c: s for c, s in sync_maintainer_reports(
+                full_name, entry, fetch_file, DOCS_DIR / "reports").items() if s}
+            if synced:
+                print(f"  REPORTS {full_name}: {synced}")
 
         tier_note = f" [tier {entry['tier']}]" if entry["tier"] is not None else ""
         type_note = f" [{entry['component_type']}]"
@@ -1337,6 +1346,16 @@ def main():
     # the compat field; re-attached on every crawl so a crawler rewrite of
     # an entry never drops or freezes it.
     attach_compat(entries, load_results(DOCS_DIR / "compat" / "results.json"))
+    # Test reports from people (#6 maintainer, #9 community): statuses are
+    # re-derived on every crawl, so a report goes stale when a new release
+    # or a channel bump makes it so, without anyone touching it.
+    reports_index = build_index(entries, DOCS_DIR / "reports", fetch_constraints(),
+                                channel_stacks(DOCS_DIR), latest_release)
+    (DOCS_DIR / "reports").mkdir(parents=True, exist_ok=True)
+    with open(DOCS_DIR / "reports" / "index.json", "w") as f:
+        json.dump(reports_index, f, indent=1, sort_keys=True)
+        f.write("\n")
+    attach_reports(entries, reports_index)
     for entry in entries:
         out_name = entry["id"] + ".json"
         with open(SKILLS_DIR / out_name, "w") as f:

@@ -30,7 +30,8 @@ h1 { margin: 0 0 0.5rem; font-size: 2rem; }
 
 .subtitle {
   color: var(--muted);
-  max-width: 640px;
+  max-width: 720px;
+  text-wrap: balance;
   margin: 0 auto 1.5rem;
   font-size: 0.95rem;
 }
@@ -60,6 +61,24 @@ h1 { margin: 0 0 0.5rem; font-size: 2rem; }
   border-radius: var(--radius);
   padding: 0.75rem 1.1rem;
 }
+
+/* Index: the three info panels as one box instead of four loose ones */
+.info-group {
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.info-group .legend {
+  max-width: none;
+  margin: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+.info-group .legend + .legend { border-top: 1px solid var(--border); }
+.info-group .legend-prose ul { padding-left: 1.2rem; }
 
 .legend summary {
   cursor: pointer;
@@ -922,3 +941,42 @@ footer a { color: var(--accent); }
 .compat-subhead { margin: 0.9rem 0 0.3rem; font-size: 0.95rem; }
 .compat-misses { margin: 0.3rem 0 0.6rem 1.2rem; padding: 0; font-size: 0.85rem; }
 .compat-misses li { margin: 0.15rem 0; }
+
+/* Test reports from people (#6 maintainer, #9 community) */
+.compat-maintainer { background: #eaf1fd; color: #1a5fb4; border-color: #c3d6f5; }
+.people-row { margin: 0.45rem 0 0.1rem; font-size: 0.88rem; }
+.people-stale, .people-invalid { color: var(--muted); }
+.people-why, .people-setup { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
+.people-matrix { border-collapse: collapse; margin: 0.4rem 0; font-size: 0.84rem; }
+.people-matrix th, .people-matrix td { padding: 0.2rem 0.6rem; text-align: left; border-bottom: 1px solid var(--border); }
+.people-matrix th:not(:first-child), .people-matrix td:not(:first-child) { text-align: center; }
+.people-matrix .people-detail td { border-bottom: none; padding-top: 0; }
+.people-list { margin: 0.2rem 0 0.4rem 1rem; padding: 0; }
+.people-outcome { font-weight: 600; margin-right: 0.3rem; }
+.people-works { color: #1e8a4c; }
+.people-partly { color: #5b7a12; }
+.people-doesnt_work { color: #c73e35; }
+.report-input { width: 100%; font-family: ui-monospace, monospace; font-size: 0.8rem; border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; }
+.report-actions { display: flex; gap: 0.5rem; margin: 0.5rem 0; }
+.report-result { font-size: 0.88rem; }
+.report-result p { margin: 0.2rem 0; }
+.report-invalid { color: #c73e35; }
+.report-stale { color: var(--gold); }
+.report-ok { color: #1e8a4c; }
+.report-pending { color: var(--muted); }
+.report-hint { background: #fff8e8; border: 1px solid #f1dcae; border-radius: 8px; padding: 0.6rem 0.8rem; margin: 0.5rem 0 0.8rem; font-size: 0.88rem; }
+
+/* Labels and badges legend (index "What do the labels and badges mean?",
+   for-maintainers "The labels at a glance"); rows drawn by legend.js */
+.legend-subhead { margin: 1rem 0 0.4rem; font-size: 1rem; }
+.legend-table { border-collapse: collapse; width: 100%; font-size: 0.86rem; margin: 0.3rem 0 0.6rem; }
+.legend-table th, .legend-table td { text-align: left; vertical-align: top; padding: 0.35rem 0.6rem 0.35rem 0; border-bottom: 1px solid var(--border); }
+.legend-table th { color: var(--muted); font-weight: 600; font-size: 0.8rem; }
+.legend-table td:nth-child(1), .legend-table td:nth-child(2) { white-space: nowrap; }
+.legend-shield { vertical-align: middle; height: 20px; }
+@media (max-width: 640px) {
+  .legend-table td:nth-child(2), .legend-table th:nth-child(2) { display: none; }
+  .legend-table td:nth-child(1) { white-space: normal; }
+}
+.legend a { color: var(--accent); }
+.legend > .setup-note { margin: 0.6rem 0 0; }
