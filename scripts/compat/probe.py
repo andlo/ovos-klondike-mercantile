@@ -62,6 +62,22 @@ def modern_driver():
     return "secondary_langs" in params
 
 
+def takes_extra_pipelines():
+    """True when this ovoscope's MiniCroft accepts `extra_pipelines`.
+
+    ovoscope 0.13 (testing) forwards unknown keywords to ovos-core's
+    SkillManager, and ovos-core 2.1 raises on `extra_pipelines`. There is no
+    need for it there: ovos-core 2.x IntentService loads every installed
+    `opm.pipeline` plugin by itself (OVOSPipelineFactory.
+    get_installed_pipeline_ids), so the plugin is loaded without it, and the
+    probe still checks that it was."""
+    import inspect
+    import ovoscope
+    params = set(inspect.signature(ovoscope.get_minicroft).parameters)
+    params |= set(inspect.signature(ovoscope.MiniCroft.__init__).parameters)
+    return "extra_pipelines" in params
+
+
 def boot(ids, langs, max_wait, recorder, extra_pipelines=None, settle=2.0):
     """Boot a MiniCroft with `ids`, recording every bus message from the
     start of skill loading. Returns (croft, driver)."""
@@ -79,7 +95,7 @@ def boot(ids, langs, max_wait, recorder, extra_pipelines=None, settle=2.0):
 
         ovoscope.MiniCroft = RecordingMiniCroft
         kwargs = {"lang": langs[0], "secondary_langs": langs[1:], "max_wait": max_wait}
-        if extra_pipelines:
+        if extra_pipelines and takes_extra_pipelines():
             kwargs["extra_pipelines"] = extra_pipelines
         croft = ovoscope.get_minicroft(ids, **kwargs)
         time.sleep(settle)

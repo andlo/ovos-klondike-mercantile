@@ -24,7 +24,8 @@ session, `ovos.intent.unmatched` means nobody, else the first
   wrong_intent  the row's skill took it with another intent
   baseline   a default skill took it: intent theft a real device would see
   unhandled  nobody took it, or only a pipeline stage without a skill
-  neighbour  another skill of this shard took it. Shards are cut by
+  neighbour  another skill of this shard took it (one that is not in
+             `counted_ids` of the manifest, see below). Shards are cut by
              plan.py, not by users, so this is shown as a collision on the
              detail page and left out of the score.
   hang       nobody claimed it and a pipeline stage did not return within
@@ -35,6 +36,14 @@ session, `ovos.intent.unmatched` means nobody, else the first
              row's session (see ASK_ENABLE) and the row is judged as usual,
              so a question from the row's own skill is a hit. `asked`
              counts those hits.
+
+The Klondike job (issue #13) routes the profile's own store skills and
+every other skill tested against the profile in one core. Its manifest
+lists the profile's skill ids as `counted_ids`: a sentence one of those
+takes counts as "baseline" (a real device with the profile would see it),
+while one taken by another tested skill stays a "neighbour", not counted.
+`uncounted_ids` names tested skills that are loaded but have no rows of
+their own (so are not in the manifest's items): they are neighbours too.
 
 Output: one JSON object, rewritten after every row, so a run killed by the
 outer timeout still says how far it got. With --budget, rows past it are
@@ -423,6 +432,8 @@ def main():
               if getattr(ld, "instance", None) is not None}
     out["not_loaded"] = sorted(set(baseline_ids + shard_ids) - loaded)
     known = set(baseline_ids) | set(shard_ids)
+    counted_ids = set(man.get("counted_ids") or [])
+    uncounted_ids = set(man.get("uncounted_ids") or [])
     flush()
 
     try:
@@ -476,7 +487,7 @@ def main():
                     if asked is not None:
                         res["asked"] += 1
                     continue
-            elif who in shard_ids:
+            elif (who in shard_ids or who in uncounted_ids) and who not in counted_ids:
                 res["neighbour"] += 1
                 if len(res["collisions"]) < MAX_MISSES:
                     res["collisions"].append(entry)
@@ -484,6 +495,10 @@ def main():
             elif who is not None:
                 res["baseline"] += 1
                 entry["kind"] = "baseline"
+                # Which stage matched says why (padatious, adapt, m2v, common
+                # query ...): a skill winning through m2v only when many
+                # more intents are loaded reads very differently.
+                entry["stage"] = stage_of(recs)
             else:
                 res["unhandled"] += 1
                 entry["kind"] = "unhandled"

@@ -143,12 +143,13 @@ jobs:
         env:
           ITEMS: ${{ toJSON(matrix.items) }}
           BASELINE: ${{ matrix.baseline }}
+          KLONDIKE: ${{ matrix.klondike }}
         run: |
           printf '%s' "$ITEMS" > items.json
           python3 self/scripts/compat/run_shard.py --channel "${{ matrix.channel }}" \
             --constraints "out/stack/constraints-${{ matrix.channel }}.txt" \
             --base-venv "$RUNNER_TEMP/base" --items items.json --out out/results.json \
-            --baseline "$BASELINE" --generator "$RUNNER_TEMP/gen/bin/ovoscope" \
+            --baseline "$BASELINE" --klondike "$KLONDIKE" --generator "$RUNNER_TEMP/gen/bin/ovoscope" \
             --deadline-minutes 300
       - name: Collect
         if: always()
@@ -164,6 +165,8 @@ jobs:
             out/stack-freeze.txt
             out/route.json
             out/route-freeze.txt
+            out/klondike.json
+            out/klondike-freeze.txt
           if-no-files-found: warn
 
   publish:

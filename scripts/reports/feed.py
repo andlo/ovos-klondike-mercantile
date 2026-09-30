@@ -21,21 +21,26 @@ import json
 import math
 from pathlib import Path
 
-from reports.validate import CHANNELS, check
+from reports.validate import CHANNELS, check, klondike_match
 
 INDEX_VERSION = 1
 MAX_HISTORY = 20
 
 
-def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
+def summarize_entry(entry, stored, constraints, channel_stacks, latest=None, profiles=None):
     """{channel: {"maintainer": {...}|None, "community": {...}}} for one entry.
 
     `stored` is {"maintainer": {channel: report}, "community": {channel: [report, ...]}}.
     `latest` is the current release as PyPI says it now; the feed's
     pypi_version is only a fallback, since the crawler refreshes an entry
     only when its rotation slot comes up (plan.py asks PyPI for the same
-    reason)."""
+    reason).
+
+    `profiles` is the Klondike profile per channel (#13); a current report
+    from a device that runs it is marked "klondike" and counted apart, so a
+    maintainer knows whether it is the most real version of that test."""
     latest = latest or entry.get("pypi_version")
+    profiles = profiles or {}
     out = {}
     for channel in CHANNELS:
         m = (stored.get("maintainer") or {}).get(channel)
@@ -62,8 +67,12 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
                 "problems": [p["message"] for p in res["problems"]][:5],
                 "source": (m.get("_klondike") or {}).get("source"),
             }
+            if res["status"] == "current":
+                match, why = klondike_match(m, profiles.get(channel))
+                row["maintainer"]["klondike"] = match
+                row["maintainer"]["klondike_reason"] = why[:300]
         if community:
-            counts = {"works": 0, "partly": 0, "doesnt_work": 0}
+            counts = {"works": 0, "partly": 0, "doesnt_work": 0, "klondike_works": 0}
             reports, history = [], 0
             for r in community:
                 # Stored under the channel it was resolved to on submission;
@@ -76,8 +85,11 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
                 # A report that did not load counts as "doesn't work", which
                 # is exactly what a community report is for.
                 outcome = v["outcome"] if v["loaded"] else "doesnt_work"
+                match, why = klondike_match(r, profiles.get(channel)) if current else (False, "")
                 if current:
                     counts[outcome] += 1
+                    if match and outcome == "works":
+                        counts["klondike_works"] += 1
                 else:
                     history += 1
                 reports.append({
@@ -86,7 +98,7 @@ def summarize_entry(entry, stored, constraints, channel_stacks, latest=None):
                     "created_at": v["created_at"], "checked": v["checked"], "routed": v["routed"],
                     "hardware": v["hardware"], "languages": v["languages"],
                     "stt": v["stt"], "tts": v["tts"],
-                    "notes": v["notes"],
+                    "notes": v["notes"], "klondike": match,
                     "stale_reason": "" if current else (res["problems"][0]["message"] if res["problems"] else ""),
                 })
             reports.sort(key=lambda x: x.get("created_at") or "", reverse=True)
@@ -121,7 +133,7 @@ def load_stored(reports_dir, entry_id):
     return stored
 
 
-def build_index(entries, reports_dir, constraints, channel_stacks, latest_release=None):
+def build_index(entries, reports_dir, constraints, channel_stacks, latest_release=None, profiles=None):
     """Re-derive every stored report's status; returns the index document.
     `latest_release(package)` returns the current release (or None)."""
     index = {"version": INDEX_VERSION, "entries": {}}
@@ -130,7 +142,7 @@ def build_index(entries, reports_dir, constraints, channel_stacks, latest_releas
         if not stored["maintainer"] and not stored["community"]:
             continue
         latest = latest_release(entry.get("package_name")) if latest_release and entry.get("package_name") else None
-        summary = summarize_entry(entry, stored, constraints, channel_stacks, latest)
+        summary = summarize_entry(entry, stored, constraints, channel_stacks, latest, profiles)
         if summary:
             index["entries"][entry["id"]] = summary
     return index

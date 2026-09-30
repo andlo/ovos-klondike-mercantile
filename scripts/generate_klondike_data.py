@@ -45,7 +45,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from compat.feed import attach_compat, is_candidate, load_results
-from reports.build_index import channel_stacks, fetch_constraints, latest_release
+from reports.build_index import channel_stacks, fetch_constraints, klondike_profiles, latest_release
 from reports.crawler import sync_maintainer_reports
 from reports.feed import attach_reports, build_index
 
@@ -1503,7 +1503,7 @@ def main():
     # re-derived on every crawl, so a report goes stale when a new release
     # or a channel bump makes it so, without anyone touching it.
     reports_index = build_index(entries, DOCS_DIR / "reports", fetch_constraints(),
-                                channel_stacks(DOCS_DIR), latest_release)
+                                channel_stacks(DOCS_DIR), latest_release, klondike_profiles(DOCS_DIR))
     (DOCS_DIR / "reports").mkdir(parents=True, exist_ok=True)
     with open(DOCS_DIR / "reports" / "index.json", "w") as f:
         json.dump(reports_index, f, indent=1, sort_keys=True)

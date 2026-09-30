@@ -191,6 +191,35 @@
         </li>
         <li>Level 4 (stops when asked) is planned.</li>
       </ul>
+      <h3 class="legend-subhead" id="klondike-profile">Level 3 on a well-equipped install: the Klondike profile</h3>
+      <p>
+        A normal install is only half the picture: people add skills. So level 3
+        is also run against a second, larger baseline, the <strong>Klondike
+        profile</strong>: the installer's default skills, plus the installer's
+        <em>extra skills</em> (off by default), plus a short curated list kept in
+        <a href="https://github.com/andlo/ovos-klondike-mercantile/blob/main/compat/klondike-profile.toml"><code>compat/klondike-profile.toml</code></a>,
+        with pipeline plugins placed where their README says. It gives two results:
+      </p>
+      <ul class="guide-list">
+        <li><strong>Every skill against the profile:</strong> a second line in the
+          detail page's Routing block, "Routing on a well-equipped install". A
+          sentence taken by a profile skill that a normal install doesn't have
+          is shown as an overlap: useful to a user, who can pick one. It does not
+          change the level or the badge.</li>
+        <li><strong>The profile against itself:</strong> all profile skills in one
+          core, with all their golden utterances. A profile skill's detail page
+          lists who takes its sentences and whose it takes.</li>
+      </ul>
+      <p>
+        Two alternatives outside the profile (two calculators, say) are never
+        tested against each other: that is intended. A curated entry has to pass
+        level 2 on the channel (otherwise it is left out there, and listed below),
+        cover a function nothing else in the profile covers, need no API key or
+        special hardware, not be desktop- or GUI-only, and speak English at least.
+        OpenVoiceOS first, then andlo, then others. To propose one, open a pull
+        request against the TOML file.
+      </p>
+      <div data-klondike-profile><p class="setup-note">Loading the profile…</p></div>
       <h3 class="legend-subhead" id="labels">The labels at a glance</h3>
       <div data-test-legend></div>
       <p>
@@ -301,6 +330,18 @@
         <li><strong>Check it</strong> with <em>Submit a test report</em> on your
           skill's detail page: it says whether the report is valid for the
           channel as it is today and, if not, exactly why.</li>
+        <li><strong>Optional: a Klondike-profile device.</strong> A report from a
+          device that runs the <a href="#klondike-profile">Klondike profile</a> is
+          the most real version of that test, and shows as such next to ours.
+          Install the profile for your channel into the OVOS venv under the
+          channel's constraints (the <em>requirements</em> link in the profile's
+          box above), set the pipeline from its <em>mycroft.conf pipeline</em>
+          link, restart OVOS, then run
+          <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report -</pre>
+          Klondike compares the report's installed skills and pipeline with the
+          profile and, if something is missing, says what ("3 profile skills
+          missing: …"). ovos-tui-client doesn't know about the profile: it
+          reports what is on the device, and Klondike decides.</li>
         <li><strong>Commit it</strong> as <code>test/reports/testing.json</code>,
           <code>test/reports/alpha.json</code> or <code>test/reports/stable.json</code>. Klondike picks it up on its next
           visit to your repo (within about 2 days, see <a href="#refresh">How often does it refresh?</a>),
@@ -373,5 +414,6 @@
   </footer>
   <script src="shared.js"></script>
   <script src="legend.js"></script>
+  <script src="klondike-profile.js"></script>
 </body>
 </html>

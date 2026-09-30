@@ -12,6 +12,9 @@ Read live from OpenVoiceOS/ovos-installer, like the channel constraints:
 
 Both go into the level 3 key, so an installer change re-tests level 3.
 Used by plan.py (stdlib + jinja2 only).
+
+The Klondike profile (issue #13) is the second baseline, built on this one;
+see read_profile() below.
 """
 import hashlib
 import json
@@ -33,13 +36,13 @@ def _fetch(url, timeout=30):
         return r.read().decode()
 
 
-def render_requirements(template_text):
+def render_requirements(template_text, overrides=None):
     """Requirement lines of the skills template under the default choices.
     Variables the template grows later render as false (ChainableUndefined),
     i.e. an optional extra stays off unless it is one of the defaults above."""
     import jinja2
     env = jinja2.Environment(undefined=jinja2.ChainableUndefined)
-    text = env.from_string(template_text).render(**DEFAULT_VARS)
+    text = env.from_string(template_text).render(**{**DEFAULT_VARS, **(overrides or {})})
     lines = []
     for line in text.splitlines():
         line = line.split("#", 1)[0].strip()
@@ -64,6 +67,91 @@ def load():
     spec["sha256"] = hashlib.sha256(json.dumps(spec, sort_keys=True).encode()).hexdigest()
     spec["source"] = "OpenVoiceOS/ovos-installer@main (default profile, skills on, extra skills off)"
     return spec
+
+
+# --- The Klondike profile (issue #13) --------------------------------------
+# A second, larger baseline: the installer's defaults as above, plus the
+# installer's "extra skills" (its extra-skills template, rendered with that
+# feature on), plus the curated entries in compat/klondike-profile.toml.
+# Which curated entries are in the profile on a channel is decided by
+# plan.py (level 2 on that channel); this module only reads and resolves.
+
+EXTRA_TEMPLATE = f"{INSTALLER_RAW}/ovos_virtualenv/templates/virtualenv/extra-skills-requirements.txt.j2"
+PROFILE_FILE = "compat/klondike-profile.toml"
+# ovos-core 1.x pipeline names (and the short forms in plugin READMEs) for
+# the installer's plugin stage ids, so a profile entry may name either.
+STAGE_ALIASES = {
+    "stop_high": "ovos-stop-pipeline-plugin-high",
+    "stop_medium": "ovos-stop-pipeline-plugin-medium",
+    "stop_low": "ovos-stop-pipeline-plugin-low",
+    "converse": "ovos-converse-pipeline-plugin",
+    "ocp_high": "ovos-ocp-pipeline-plugin-high",
+    "ocp_medium": "ovos-ocp-pipeline-plugin-medium",
+    "ocp_low": "ovos-ocp-pipeline-plugin-low",
+    "padatious_high": "ovos-padatious-pipeline-plugin-high",
+    "padatious_medium": "ovos-padatious-pipeline-plugin-medium",
+    "padatious_low": "ovos-padatious-pipeline-plugin-low",
+    "adapt_high": "ovos-adapt-pipeline-plugin-high",
+    "adapt_medium": "ovos-adapt-pipeline-plugin-medium",
+    "adapt_low": "ovos-adapt-pipeline-plugin-low",
+    "fallback_high": "ovos-fallback-pipeline-plugin-high",
+    "fallback_medium": "ovos-fallback-pipeline-plugin-medium",
+    "fallback_low": "ovos-fallback-pipeline-plugin-low",
+    "common_qa": "ovos-common-query-pipeline-plugin",
+    "common_query": "ovos-common-query-pipeline-plugin",
+}
+
+
+def read_profile(repo_root="."):
+    """The curated part: {"skills": [...], "pipeline": [...]} from the TOML."""
+    import tomllib
+    from pathlib import Path
+    data = tomllib.loads((Path(repo_root) / PROFILE_FILE).read_text())
+    skills, plugins = [], []
+    for s in data.get("skill") or []:
+        if not isinstance(s.get("id"), str):
+            raise ValueError(f"{PROFILE_FILE}: a [[skill]] without an id")
+        skills.append({k: str(s[k]) for k in ("id", "function", "note") if k in s})
+    for p in data.get("pipeline") or []:
+        if not (isinstance(p.get("id"), str) and isinstance(p.get("stage"), str)):
+            raise ValueError(f"{PROFILE_FILE}: a [[pipeline]] needs id and stage")
+        if ("after" in p) == ("before" in p):
+            raise ValueError(f"{PROFILE_FILE}: {p['id']} needs exactly one of after/before")
+        plugins.append({k: str(p[k]) for k in ("id", "stage", "after", "before", "note") if k in p})
+    ids = [s["id"] for s in skills] + [p["id"] for p in plugins]
+    if len(ids) != len(set(ids)):
+        raise ValueError(f"{PROFILE_FILE}: an id is listed twice")
+    return {"skills": skills, "pipeline": plugins}
+
+
+def insert_stages(pipeline, plugins):
+    """(installer pipeline with the plugins' stages inserted, stages added,
+    {stage: why not}). A stage the installer already has is not added; an
+    anchor the installer pipeline lacks leaves the stage out, said why."""
+    out = list(pipeline)
+    added, skipped = [], {}
+    for p in plugins:
+        stage = p["stage"]
+        if stage in out:
+            skipped[stage] = "already in the installer's pipeline"
+            continue
+        anchor = p.get("after") or p.get("before")
+        anchor = STAGE_ALIASES.get(anchor, anchor)
+        if anchor not in out:
+            skipped[stage] = f"{anchor} is not in the installer's pipeline"
+            continue
+        i = out.index(anchor) + (1 if p.get("after") else 0)
+        out.insert(i, stage)
+        added.append(stage)
+    return out, added, skipped
+
+
+def load_extra_requirements():
+    """The installer's extra-skills template, rendered with that feature on."""
+    lines = render_requirements(_fetch(EXTRA_TEMPLATE), {"ovos_installer_feature_extra_skills": True})
+    if not lines:
+        raise RuntimeError("installer extra-skills template rendered no requirements")
+    return lines
 
 
 if __name__ == "__main__":
