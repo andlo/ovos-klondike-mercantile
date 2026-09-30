@@ -177,7 +177,9 @@ function renderActiveFilters() {
     chips.push(`<button type="button" class="chip chip-on chip-remove" data-archived="1" title="Remove this filter">Archived shown <span aria-hidden="true">×</span></button>`);
   }
   box.hidden = chips.length === 0;
-  box.innerHTML = chips.join("") + (chips.length > 1 ? '<button type="button" class="link-button" data-clear="1">Clear all</button>' : "");
+  box.innerHTML = chips.join("") + (chips.length ? '<button type="button" class="clear-button" data-clear="1">✕ Clear all</button>' : "");
+  // the panel's own Clear all buttons (top and bottom) only work when there is something to clear
+  for (const b of document.querySelectorAll("#filters-panel .clear-button")) b.disabled = chips.length === 0;
   const count = document.getElementById("filters-count");
   const n = pickedCount();
   count.hidden = n === 0;
@@ -251,7 +253,7 @@ function initFacets(list, onChange) {
   document.getElementById("filters-toggle").addEventListener("click", () =>
     setPanelOpen(document.getElementById("filters-panel").hidden));
   document.getElementById("filters-done").addEventListener("click", () => setPanelOpen(false));
-  document.getElementById("filters-clear").addEventListener("click", clearFacets);
+  for (const b of document.querySelectorAll("#filters-panel .clear-button")) b.addEventListener("click", clearFacets);
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !document.getElementById("filters-panel").hidden) setPanelOpen(false);
   });

@@ -1116,3 +1116,25 @@ footer a { color: var(--accent); }
 }
 .filters-panel-footer .archived-toggle { display: inline; margin: 0; }
 .filters-panel-footer #filters-done { margin-left: auto; }
+.filters-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+.filters-panel-head .filters-help { margin: 0.25rem 0 0; }
+.clear-button {
+  flex-shrink: 0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #c0392b;
+  background: transparent;
+  color: #c0392b;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.clear-button:hover:not(:disabled) { background: #c0392b; color: #fff; }
+.clear-button:disabled { border-color: var(--border); color: var(--muted); cursor: default; opacity: 0.6; }
+.clear-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }

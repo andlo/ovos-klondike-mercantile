@@ -133,14 +133,17 @@
     <div id="active-filters" class="active-filters" hidden></div>
 
     <div id="filters-panel" class="filters-panel" hidden>
-      <p class="filters-help">Pick as many as you like. Within a group, any of them matches; between groups, all must match.</p>
+      <div class="filters-panel-head">
+        <p class="filters-help">Pick as many as you like. Within a group, any of them matches; between groups, all must match.</p>
+        <button type="button" class="clear-button" data-clear="1">✕ Clear all</button>
+      </div>
       <div id="facets"></div>
       <div class="filters-panel-footer">
         <label class="archived-toggle">
           <input type="checkbox" id="show-archived">
           Show archived repos too
         </label>
-        <button type="button" id="filters-clear" class="link-button">Clear all</button>
+        <button type="button" class="clear-button" data-clear="1">✕ Clear all</button>
         <button type="button" id="filters-done" class="toolbar-button">Done</button>
       </div>
     </div>
