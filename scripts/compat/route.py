@@ -495,6 +495,10 @@ def main():
             elif who is not None:
                 res["baseline"] += 1
                 entry["kind"] = "baseline"
+                # Which stage matched says why (padatious, adapt, m2v, common
+                # query ...): a skill winning through m2v only when many
+                # more intents are loaded reads very differently.
+                entry["stage"] = stage_of(recs)
             else:
                 res["unhandled"] += 1
                 entry["kind"] = "unhandled"

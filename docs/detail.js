@@ -241,7 +241,7 @@ function compatDetails(rec, meta) {
 // rows are separate runs; generated ones stay hidden until
 // COMPAT_PUBLIC_GENERATED (ovoscope#224).
 const MISS_TEXT = {
-  baseline: (m) => `taken by <code>${escapeHtml(m.taken_by || "?")}</code>`,
+  baseline: (m) => `taken by <code>${escapeHtml(m.taken_by || "?")}</code>${m.stage && !/^last message/.test(m.stage) ? ` (via ${escapeHtml(m.stage)})` : ""}`,
   wrong_intent: (m) => `reached another intent${m.fired && m.fired.length ? ` (<code>${escapeHtml(m.fired[0])}</code>)` : ""}`,
   // A pipeline stage that is not a fallback took the sentence without a
   // skill (OCP, persona, the reading pipeline): that is theft too, and
@@ -265,7 +265,7 @@ function renderRoutingRun(title, r, takenBy = "a default skill") {
   if (r.asked) parts.push(`${r.asked} of them ask a follow-up question (answered with “cancel”)`);
   if (r.baseline) parts.push(`${r.baseline} taken by ${takenBy}`);
   if (r.wrong_intent) parts.push(`${r.wrong_intent} reach another of its intents`);
-  if (r.unhandled) parts.push(`${r.unhandled} not handled`);
+  if (r.unhandled) parts.push(`${r.unhandled} not handled by a skill`);
   if (r.hang) parts.push(`${r.hang} stuck in a later stage`);
   if (r.manual) parts.push(`${r.manual} need a human (skipped)`);
   const langs = asArray(r.langs).map((l) => `<code>${escapeHtml(l)}</code>`).join(" ");
