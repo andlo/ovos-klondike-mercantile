@@ -428,18 +428,27 @@ def run_boots(py, manifest, langs, skipped, prefix, args, workroot, deadline):
     n_rows = sum(len(Path(f).read_text(encoding="utf-8", errors="replace").splitlines())
                  for runs in manifest["items"] for fs in runs["runs"].values() for f in fs)
     boots = []
+    last_boot = 0.0
     for lang in langs:
-        if time.monotonic() > deadline - 60:
+        # A language is only started when what is left can pay for its boot
+        # (as long as the last one took) and some rows: on the runners a
+        # boot with every baseline skill trained takes 7-10 minutes, and a
+        # boot that the budget ends before its first row is time for nothing.
+        left = deadline - time.monotonic()
+        if left < last_boot + 120:
             skipped.insert(0, lang)
             print(f"    {prefix} {lang}: skipped, out of time", flush=True)
             continue
         out_path = Path(workroot) / f"{prefix}-{lang}.json"
         budget = int(min(args.boot_timeout + TRAINED_MAX + n_rows * (args.route_timeout + 2) + 300,
-                         max(600, deadline - time.monotonic())))
+                         max(600, left)))
+        # route.py stops itself between rows at --budget; that has to come
+        # well before this process timeout (one row can take --timeout), or
+        # the timeout kills it first and the language reads as timed out.
         rc, log = run([py, str(ROUTE), "--manifest", str(man_path), "--lang", lang,
                        "--out", str(out_path), "--max-wait", str(args.boot_timeout),
                        "--timeout", str(args.route_timeout),
-                       "--budget", str(int(max(60, deadline - time.monotonic())))],
+                       "--budget", str(int(max(60, min(budget, left) - args.route_timeout - 75)))],
                       budget, Path(workroot) / f"{prefix}-{lang}.log")
         try:
             res = json.loads(out_path.read_text())
@@ -465,6 +474,8 @@ def run_boots(py, manifest, langs, skipped, prefix, args, workroot, deadline):
               f"boot={res.get('boot_seconds')}s total={res.get('seconds')}s "
               f"rows={res.get('row_seconds')}", flush=True)
         boots.append(res)
+        if isinstance(res.get("boot_seconds"), (int, float)):
+            last_boot = max(last_boot, res["boot_seconds"])
     return boots
 
 
@@ -569,6 +580,7 @@ def aggregate(routable, boots, langs, skipped, field="routing"):
             agg["status"] = "ok" if counted > 0 else "none"
             if counted <= 0:
                 agg["reason"] = ("could not boot with the baseline" if agg["langs_failed"]
+                                 else "the routing budget ran out before its rows" if agg.get("langs_partial")
                                  else "no rows in the languages routed")
             if run == "golden":
                 agg["langs_not_routed"] = skipped
