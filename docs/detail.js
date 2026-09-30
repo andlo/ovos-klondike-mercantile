@@ -479,6 +479,42 @@ function renderDetail(skill) {
   wireReportBox(skill);
 }
 
+// ?skill=<skill_id>: many entries have no skill_id (only when their
+// skill.json names it), so also try the OVOS convention
+// "<package>.<author>" against the entry's package and owner, and last the
+// package the report itself names (a #report= link from ovos-tui).
+function normPkg(name) {
+  return String(name || "").toLowerCase().replace(/[-_.]+/g, "-");
+}
+
+async function findBySkillId(all, sid) {
+  if (!sid) return null;
+  // skill.json's skill_id sometimes carries an entry point ("x.y=module:Class")
+  const own = (s) => String(s.skill_id || "").toLowerCase().split("=")[0].trim();
+  const exact = all.find((s) => own(s) === sid);
+  if (exact) return exact;
+  const cut = sid.lastIndexOf(".");
+  if (cut > 0) {
+    const base = sid.slice(0, cut);
+    const author = sid.slice(cut + 1);
+    // older OVOS skills are "skill-ovos-x.openvoiceos" in package "ovos-skill-x"
+    const names = new Set([base, base.replace(/^skill-ovos-/, "ovos-skill-")].map(normPkg));
+    const candidates = all.filter((s) => names.has(normPkg(s.package_name)) ||
+      [...names].some((n) => s.id.toLowerCase() === `${author}-${n}`));
+    const byOwner = candidates.find((s) => s.id.toLowerCase().startsWith(`${author}-`));
+    if (byOwner || candidates.length === 1) return byOwner || candidates[0];
+  }
+  if (typeof reportFromLink === "function") {
+    try {
+      const report = JSON.parse(await reportFromLink());
+      const info = (((report || {}).manifest || {}).skills || {})[sid] || {};
+      const matches = all.filter((s) => info.package && normPkg(s.package_name) === normPkg(info.package));
+      if (matches.length === 1) return matches[0];
+    } catch (e) { /* no or unreadable report */ }
+  }
+  return null;
+}
+
 const params = new URLSearchParams(window.location.search);
 const wantedId = params.get("id");
 // ?skill=<skill_id> (e.g. from an ovos-tui report link) finds the entry by its OVOS skill id
@@ -497,8 +533,9 @@ if (!wantedId && !wantedSkill) {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res.json();
     })
-    .then((data) => {
-      const skill = applyReports(applyCompatResults(data, compatDoc), reportsDoc).find((s) => (wantedId ? s.id === wantedId : (s.skill_id || "").toLowerCase() === wantedSkill));
+    .then(async (data) => {
+      const all = applyReports(applyCompatResults(data, compatDoc), reportsDoc);
+      const skill = wantedId ? all.find((s) => s.id === wantedId) : await findBySkillId(all, wantedSkill);
       if (!skill) {
         detailRoot.innerHTML = `<p class="loading">Couldn't find that entry - it may have been removed in a later update. <a href="index.html">Back to the store</a>.</p>`;
         return;
