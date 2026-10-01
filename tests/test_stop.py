@@ -44,7 +44,9 @@ class FakeCore:
             h(msg)
 
     def say(self, original, text, skill_id="count.test"):
-        self._send(Message("speak", {"utterance": text}, {**(original.context or {}), "skill_id": skill_id}))
+        # ovos-core 3 (alpha) says ovos.utterance.speak; older cores "speak"
+        self._send(Message("ovos.utterance.speak", {"utterance": text},
+                           {**(original.context or {}), "skill_id": skill_id}))
 
     def emit(self, msg):
         self._send(msg)
@@ -71,6 +73,17 @@ class FakeCore:
             while not self.stopped.is_set():
                 time.sleep(0.1)
             time.sleep(30)
+        elif said == "start a metronome":
+            # plays from a thread of its own after the handler returned
+            def tick():
+                for _ in range(100):
+                    if self.stopped.is_set():
+                        return
+                    self._send(Message("mycroft.audio.play_sound", {"uri": "tick.wav"},
+                                       {**(msg.context or {}), "skill_id": "metronome.test"}))
+                    time.sleep(0.25)
+            self.say(msg, "starting the metronome", "metronome.test")
+            threading.Thread(target=tick, daemon=True).start()
         elif said == "what's the weather":
             self.say(msg, "sunny", "weather.test")
 
@@ -87,6 +100,8 @@ r = check("count and ignore stop")
 ok(r["result"] == "keeps_going" and r["spoke_after_stop"] > 0 and r["after"], "one that keeps counting: keeps_going")
 r = check("count and hang")
 ok(r["result"] == "stuck", "quiet after stop, but the handler never returns: stuck")
+r = check("start a metronome", ("metronome.test",))
+ok(r["result"] == "stops", "a metronome ticking from its own thread is stopped too")
 r = check("what's the weather", ("weather.test",))
 ok(r["result"] == "nothing_to_stop", "a one-off answer: nothing to stop")
 r = check("nobody knows this")

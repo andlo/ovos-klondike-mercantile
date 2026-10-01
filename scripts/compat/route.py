@@ -100,11 +100,13 @@ ASK_GRACE = 0.5       # an answer the handler itself provides (no real wait)
 ASK_RELEASE = 5.0     # how long the cancel may take to release the handler
 MAX_MISSES = 25
 # Stop check (#16). Output a skill can still be producing after "stop".
-STOP_OUTPUT = ("speak", "mycroft.audio.service.play", "ovos.common_play.play",
+# "speak" before ovos-core 3, "ovos.utterance.speak" on alpha (seen live).
+STOP_OUTPUT = ("speak", "ovos.utterance.speak", "mycroft.audio.service.play", "ovos.common_play.play",
                "mycroft.audio.play_sound", "ovos.audio.service.play")
 STOP_LANG = "en-US"
 STOP_FIRST = 10.0     # seconds to wait for its first speech or playback
-STOP_SETTLE = 1.0     # still busy this long after it first spoke = something to stop
+STOP_SETTLE = 2.5     # watched after its first output: still busy at the end = something to stop
+STOP_BUSY = 1.5       # output in the last this-many seconds of that window = still busy
 STOP_GRACE = 2.0      # time to go quiet after "stop"
 STOP_QUIET = 3.0      # output in this window after the grace = keeps going
 STOP_RETURN = 8.0     # the handler should return within this after "stop"
@@ -299,9 +301,11 @@ def stop_check(croft, utterance, lang, pipeline, own_ids):
         return [m for _, m in list(recs) if _session_of(m) in ("", session_id)]
 
     def output_since(t):
+        # Only this check's own session: it is fresh, so whatever speaks or
+        # plays in it does so for this sentence (a reading provider's story
+        # is spoken under the pipeline's id, not the provider's).
         return [m for at, m in list(recs) if at >= t and m.msg_type in STOP_OUTPUT
-                and _session_of(m) in ("", session_id)
-                and (m.context or {}).get("skill_id") in (None, "", *own_ids)]
+                and _session_of(m) == session_id]
 
     croft.bus.on("message", rec)
     started = time.monotonic()
@@ -323,12 +327,14 @@ def stop_check(croft, utterance, lang, pipeline, own_ids):
             time.sleep(0.05)
         if first is None:
             return {"result": "silent", "utterance": utterance[:200]}
-        # Busy beyond its first sentence? A one-off answer is done by now.
+        # Busy beyond its first sentence? Still in its handler (counting),
+        # or still producing output after it (a metronome plays from a
+        # thread of its own). A one-off answer is quiet and done by now.
         until = first + STOP_SETTLE
-        while time.monotonic() < until and emitter.is_alive():
+        while time.monotonic() < until:
             spoken = end_speech(croft, [m for _, m in recs], session_id, spoken)
             time.sleep(0.05)
-        if not emitter.is_alive():
+        if not emitter.is_alive() and not output_since(max(first + 0.5, until - STOP_BUSY)):
             return {"result": "nothing_to_stop", "utterance": utterance[:200]}
         # Say "stop" in the same session, with the session as core left it
         # (it knows which skill is active there).
@@ -342,17 +348,21 @@ def stop_check(croft, utterance, lang, pipeline, own_ids):
             spoken = end_speech(croft, [m for _, m in recs], session_id, spoken)
             time.sleep(0.05)
         after = output_since(t_stop + STOP_GRACE)
-        signalled = sorted({m.msg_type for _, m in recs[:] if m.msg_type == "mycroft.stop"
-                            or m.msg_type.endswith(".stop") or m.msg_type == "mycroft.stop.handled"})[:5]
+        # What the stop looked like on the bus, for the detail page and for
+        # telling "never told to stop" from "told, and kept going".
+        signalled = sorted({m.msg_type for at, m in list(recs) if at >= t_stop and "stop" in m.msg_type
+                            and m.msg_type != "recognizer_loop:utterance"})[:6]
+        last = max((at for at, m in list(recs) if at >= t_stop and m.msg_type in STOP_OUTPUT
+                    and _session_of(m) == session_id), default=t_stop)
         result = {"utterance": utterance[:200], "spoke_after_stop": len(after),
-                  "stop_messages": signalled}
+                  "stop_messages": signalled, "seconds": round(last - t_stop, 1)}
         if after:
             return {**result, "result": "keeps_going",
                     "after": [str((m.data or {}).get("utterance") or m.msg_type)[:120] for m in after[:3]]}
         emitter.join(max(0.0, STOP_RETURN - (time.monotonic() - t_stop)))
         if emitter.is_alive():
             return {**result, "result": "stuck"}
-        return {**result, "result": "stops", "seconds": round(time.monotonic() - t_stop, 1)}
+        return {**result, "result": "stops"}
     finally:
         croft.bus.remove("message", rec)
 
@@ -402,7 +412,8 @@ def claimant(recs, known_ids):
     if who is None:
         for m in recs:
             sid = (m.context or {}).get("skill_id")
-            if sid in known_ids and m.msg_type == "speak":
+            # ovos-core 3 (alpha) speaks on "ovos.utterance.speak"
+            if sid in known_ids and m.msg_type in ("speak", "ovos.utterance.speak"):
                 who = sid
                 break
     if who is None:
