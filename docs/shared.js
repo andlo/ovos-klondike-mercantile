@@ -184,6 +184,13 @@ const COMPAT_PUBLIC_GENERATED = false;
 // Same as LEVEL3_RATIO in scripts/compat/feed.py.
 const COMPAT_LEVEL3_RATIO = 0.8;
 
+// Same as STOP_RESULTS in scripts/compat/publish.py; only these three mean
+// something on a card ("nothing_to_stop": it was done before "stop").
+function stopResult(rec) {
+  const r = ((rec && rec.routing) || {}).stop || {};
+  return ["stops", "keeps_going", "stuck"].includes(r.result) ? r.result : null;
+}
+
 function routingCounts(rec, run, field = "routing") {
   const r = ((rec && rec[field]) || {})[run] || {};
   if (r.status !== "ok" || !r.counted) return null;
@@ -225,8 +232,16 @@ function compatFromRecord(rec) {
         state = golden.hit === golden.counted && !missing.length && !asArray(rec.warnings).length ? "pass" : "warn";
       }
     }
+    // The stop check (#16), shown only when there was something to stop.
+    const stop = stopResult(rec);
+    if (stop === "stops") label += " · stops";
+    else if (stop === "keeps_going" || stop === "stuck") {
+      label += " · doesn't stop";
+      state = "warn";
+    }
   }
   const out = { label, state, level: (rec && rec.level) || 0 };
+  if (stopResult(rec)) out.stop = stopResult(rec);
   for (const k of ["version_tested", "tested_at", "channel_pinned"]) {
     if (rec && rec[k] !== undefined && rec[k] !== null) out[k] = rec[k];
   }
@@ -263,7 +278,7 @@ function channelScore(c, r) {
   let score;
   if (!c || c.state === "untested" || c.state === "unsupported") score = 1;
   else if (c.state === "fail") score = 0;
-  else if (c.golden) score = 3 + c.golden.hit / c.golden.counted;
+  else if (c.golden) score = 3 + c.golden.hit / c.golden.counted - (["keeps_going", "stuck"].includes(c.stop) ? 0.3 : 0);
   else if (COMPAT_PUBLIC_GENERATED && c.generated) score = 2 + 0.5 * (c.generated.hit / c.generated.counted);
   else score = 2;
   if (!r) return score;

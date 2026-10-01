@@ -193,7 +193,19 @@
               routed that run.</li>
           </ul>
         </li>
-        <li>Level 4 (stops when asked) is planned.</li>
+        <li id="stop-check"><strong>Stop check (skills that keep going):</strong>
+          after its rows, one sentence your skill took is sent again (en-US). If
+          your skill is still busy after its first speech or playback (reading a
+          story, counting, a metronome), "stop" is said in that session, the way
+          a user would, and your skill must go quiet within two seconds and let
+          its handler finish. The label then reads
+          <code>✓ 14/14 golden · stops</code>, or
+          <code>✓ 14/14 golden · doesn't stop</code> when it went on talking or
+          playing, or its handler never returned; the detail page shows what it
+          said after "stop". A skill that answers and is done (most skills) has
+          nothing to stop, and nothing is shown. To pass: implement
+          <code>stop()</code> (or <code>stop_session()</code>) so it ends what
+          your handler is doing, and check for it in loops that speak or play.</li>
       </ul>
       <h3 class="legend-subhead" id="klondike-profile">Level 3 on a well-equipped install: the Klondike profile</h3>
       <p>

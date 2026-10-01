@@ -282,6 +282,22 @@ function renderRoutingRun(title, r, takenBy = "a default skill") {
     ${collisions ? `<p class="setup-note">Also collided with another skill tested in the same run (not counted, as neither is a default skill):</p><ul class="compat-misses">${collisions}</ul>` : ""}`;
 }
 
+// The stop check (#16): one of the skill's own sentences again, then "stop".
+const STOP_TEXT = {
+  stops: (s) => `✓ quiet ${s.seconds != null ? `${s.seconds} s ` : ""}after “stop”`,
+  keeps_going: (s) => `⚠ still ${s.spoke_after_stop ? `spoke ${s.spoke_after_stop}×` : "talking or playing"} after “stop”${asArray(s.after).length ? `: “${s.after[0]}”` : ""}`,
+  stuck: () => "⚠ went quiet after “stop”, but its handler did not finish",
+  nothing_to_stop: () => "nothing to stop: it answered and was done",
+  silent: () => "not checked: it neither spoke nor played",
+  error: (s) => `not checked: ${s.reason || "error"}`,
+};
+
+function renderStopCheck(stop) {
+  if (!stop || !STOP_TEXT[stop.result]) return "";
+  const said = stop.utterance ? ` (after “${stop.utterance}”${stop.lang ? `, ${stop.lang}` : ""})` : "";
+  return renderStatRow("Stop check", escapeHtml(STOP_TEXT[stop.result](stop) + said));
+}
+
 function renderRouting(rec, meta) {
   const routing = rec.routing;
   if (!routing) return "";
@@ -300,6 +316,8 @@ function renderRouting(rec, meta) {
     rows.push(renderStatRow("Left out", escapeHtml(`${route.excluded_ids.join(", ")} (waits for device services, so it cannot finish loading in the test core)`)));
   }
   if (routing.ref) rows.push(renderStatRow("Utterances from", `<code>${escapeHtml(routing.ref)}</code>`));
+  const stopRow = renderStopCheck(routing.stop);
+  if (stopRow) rows.push(stopRow);
   const g = routing.golden || {};
   const chip = (rec.level || 0) >= 3 && g.counted
     ? qualityChip("routes", `${g.hit}/${g.counted} of its golden utterances reach it on ${rec.channel} (level 3)`) : "";
