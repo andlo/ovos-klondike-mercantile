@@ -364,6 +364,7 @@ def channel_profile(profile_def, baseline, channel, feed_by_id, previous, pins, 
     from compat.baseline import insert_stages
     members, left_out, reqs = [], {}, []
     entries = profile_def["curated"]["skills"] + profile_def["curated"]["pipeline"]
+    entries = list({c["id"]: c for c in reversed(entries)}.values())[::-1]  # a plugin with several stages: once
     for c in entries:
         e = feed_by_id.get(c["id"])
         rec = (previous.get(c["id"]) or {}).get(channel) or {}
