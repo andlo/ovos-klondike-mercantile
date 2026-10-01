@@ -53,6 +53,17 @@ function renderTestLegend() {
           <td>Users who ran it on their own setups sent reports saying it works. The detail page shows each setup (hardware, language, STT, TTS), and reports saying it doesn't work too.</td></tr>
       </tbody>
     </table>
+    <table class="legend-table">
+      <thead><tr><th>On a card</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>${renderQualityLabel({ compat: { channels: { testing: { level: 3, golden: { hit: 14, counted: 14 } } } } })}</td>
+          <td>Level 3 on testing: at least 80% of its own golden utterances reach it on a normal install.</td></tr>
+        <tr><td>${renderQualityLabel({ compat: { channels: { testing: { level: 3, golden: { hit: 14, counted: 14 }, klondike: { hit: 13, counted: 14 } } } } })}</td>
+          <td>And still at least 80% on a well-equipped install, with the <a href="for-maintainers.html#klondike-profile">Klondike profile</a> loaded. The strongest label.</td></tr>
+        <tr><td>${renderQualityLabel({ compat: { channels: { alpha: { level: 3, golden: { hit: 14, counted: 14 } } } } })}</td>
+          <td>The same, measured on alpha because testing has no result yet (often: the version testing pins has no golden utterances). Alpha changes all the time, so it says so.</td></tr>
+      </tbody>
+    </table>
     <p class="setup-note">Each card shows one label per tested channel: <strong>testing</strong> (what the OVOS installer installs by default),
       <strong>alpha</strong> and <strong>stable</strong>. Hover a label for the version and date tested. A channel we haven't tested yet shows no label.
       The README badge a maintainer can add says the same as the detail page, e.g.

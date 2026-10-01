@@ -350,6 +350,10 @@ function matchesCompatFilter(skill, value) {
   const [kind, ch] = value.split(":");
   if (kind === "routes") return routes(ch);
   if (kind === "klondike") return klondike(ch);
+  if (kind === "quality") {
+    const q = qualityLabel(skill);
+    return !!q && (ch === "routes" || q.kind === "klondike");
+  }
   return kind === "loads" ? loads(ch) : kind === "fails" ? fails(ch) : true;
 }
 
@@ -359,6 +363,35 @@ function compatTooltip(channel, c) {
   if (c.version_tested) parts.push(`tested v${c.version_tested}${c.channel_pinned ? " (the version this channel pins)" : ""}`);
   if (c.tested_at) parts.push(`on ${formatDate(c.tested_at)}`);
   return parts.filter(Boolean).join(" · ");
+}
+
+// One quality label per card: whether the skill's own golden utterances
+// reach it (level 3), and whether they still do with the Klondike profile
+// loaded (#13). From testing, the installer's default; when testing has no
+// result, from alpha, named in the label since alpha changes all the time.
+// Never from stable (legacy, no longer offered by the installer).
+const QUALITY_CHANNELS = ["testing", "alpha"];
+
+function qualityLabel(skill) {
+  const channels = (skill.compat && skill.compat.channels) || {};
+  for (const ch of QUALITY_CHANNELS) {
+    const c = channels[ch];
+    if (!c || (c.level || 0) < 3 || !c.golden) continue;
+    const k = c.klondike;
+    const proof = !!(k && k.counted && k.hit / k.counted >= COMPAT_LEVEL3_RATIO);
+    return { kind: proof ? "klondike" : "routes", channel: ch, golden: c.golden, klondike: k || null };
+  }
+  return null;
+}
+
+function renderQualityLabel(skill) {
+  const q = qualityLabel(skill);
+  if (!q) return "";
+  const text = (q.kind === "klondike" ? "⛏ Klondike-proof" : "🎯 Routes") + (q.channel === "testing" ? "" : ` · ${q.channel}`);
+  const tip = [`${q.golden.hit}/${q.golden.counted} of its golden utterances reach it on ${q.channel}`,
+    q.klondike ? `${q.klondike.hit}/${q.klondike.counted} with the Klondike profile loaded` : "",
+    q.channel === "alpha" ? "alpha changes all the time; testing has no result yet" : ""].filter(Boolean).join(" · ");
+  return `<span class="compat-label quality-label quality-${q.kind}" title="${escapeHtml(tip)}">${escapeHtml(text)}</span>`;
 }
 
 function renderCompatLabels(skill) {
