@@ -4,7 +4,7 @@
 // matches, between groups all must match. What is picked shows as
 // removable chips under the search box, and lives in the URL hash so a
 // filtered view can be shared or bookmarked.
-// Needs shared.js (escapeHtml, asArray, languageFlag, matchesCompatFilter).
+// Needs shared.js (escapeHtml, asArray, languageLabel, matchesCompatFilter).
 
 const TIER_LABELS = { 1: "Looks Complete", 2: "Incomplete", 3: "Inferred, Unconfirmed" };
 
@@ -76,7 +76,7 @@ const FACETS = [
   {
     id: "language", label: "Language",
     options: (list) => countValues(list, (s) => asArray(s.languages))
-      .map((o) => ({ ...o, html: `${languageFlag(o.value)} ${escapeHtml(o.value)}` })),
+      .map((o) => ({ ...o, html: languageLabel(o.value) })),
     test: (s, v) => asArray(s.languages).includes(v),
     limit: 16, searchable: true,
   },
