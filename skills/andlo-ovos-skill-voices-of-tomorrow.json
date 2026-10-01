@@ -15,9 +15,11 @@
   ],
   "category": "Entertainment",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-voices-of-tomorrow/main/ui/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-voices-of-tomorrow",
   "package_name": "ovos-skill-voices-of-tomorrow",
-  "pypi_version": "0.1.1",
+  "pypi_version": "0.1.2",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
@@ -128,7 +130,7 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-22T16:25:01Z",
-  "last_updated": "2026-07-22T18:16:17.774625Z",
+  "last_updated": "2026-09-30T20:40:17.160423Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
@@ -138,24 +140,24 @@
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.1",
-        "tested_at": "2026-09-30T12:54:14+00:00",
+        "version_tested": "0.1.2",
+        "tested_at": "2026-10-01T09:27:39+00:00",
         "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.1",
-        "tested_at": "2026-09-30T13:06:29+00:00",
+        "version_tested": "0.1.2",
+        "tested_at": "2026-10-01T09:26:39+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.1",
-        "tested_at": "2026-09-30T13:16:44+00:00",
+        "version_tested": "0.1.2",
+        "tested_at": "2026-10-01T09:26:21+00:00",
         "channel_pinned": false
       }
     }

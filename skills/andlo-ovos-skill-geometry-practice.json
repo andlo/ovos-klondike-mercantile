@@ -18,9 +18,11 @@
   ],
   "category": "Education",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-geometry-practice/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-geometry-practice",
   "package_name": "ovos-skill-geometry-practice",
-  "pypi_version": "0.0.1",
+  "pypi_version": "0.0.4",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
@@ -98,7 +100,7 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-08-17T10:58:37Z",
-  "last_updated": "2026-08-17T17:48:43.333498Z",
+  "last_updated": "2026-10-01T10:11:01.214457Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
@@ -108,24 +110,24 @@
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-09-30T13:10:17+00:00",
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-01T09:26:27+00:00",
         "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-09-30T13:09:39+00:00",
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-01T09:25:15+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-09-30T13:25:54+00:00",
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-01T09:25:28+00:00",
         "channel_pinned": false
       }
     }

@@ -16,9 +16,11 @@
   ],
   "category": "Entertainment",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-andrew-lang-tales/main/story-512.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-andrew-lang-tales",
   "package_name": "ovos-skill-andrew-lang-tales",
-  "pypi_version": "0.1.7",
+  "pypi_version": "0.1.9",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
@@ -47,7 +49,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T19:20:27Z",
-  "last_updated": "2026-09-27T08:32:32.858319Z",
+  "last_updated": "2026-10-01T10:33:35.512810Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
@@ -55,26 +57,26 @@
     "channels": {
       "stable": {
         "label": "\u2713 loads",
-        "state": "warn",
+        "state": "pass",
         "level": 2,
-        "version_tested": "0.1.7",
-        "tested_at": "2026-09-30T12:55:13+00:00",
+        "version_tested": "0.1.8",
+        "tested_at": "2026-10-01T09:27:12+00:00",
         "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 loads",
-        "state": "warn",
+        "state": "pass",
         "level": 2,
-        "version_tested": "0.1.7",
-        "tested_at": "2026-09-30T12:54:29+00:00",
+        "version_tested": "0.1.8",
+        "tested_at": "2026-10-01T09:26:37+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 loads",
-        "state": "warn",
+        "state": "pass",
         "level": 2,
-        "version_tested": "0.1.7",
-        "tested_at": "2026-09-30T13:14:49+00:00",
+        "version_tested": "0.1.8",
+        "tested_at": "2026-10-01T09:26:09+00:00",
         "channel_pinned": false
       }
     }

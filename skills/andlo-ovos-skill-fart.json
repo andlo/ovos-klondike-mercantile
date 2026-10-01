@@ -1,39 +1,139 @@
 {
   "id": "andlo-ovos-skill-fart",
-  "skill_id": null,
-  "name": "ovos-skill-fart",
-  "description": "\"who let the dog inside\" - Mycroft will fart when requested or at random intervals",
-  "examples": [],
-  "tags": [],
-  "category": "Other",
-  "icon": null,
+  "skill_id": "ovos-skill-fart.andlo",
+  "name": "Fart",
+  "description": "Makes your voice assistant fart - on request or at random - and deny everything afterwards. Fully offline.",
+  "examples": [
+    "fart",
+    "did you fart",
+    "fart randomly",
+    "stop farting"
+  ],
+  "tags": [
+    "fun",
+    "humor",
+    "entertainment",
+    "prank",
+    "fart"
+  ],
+  "category": "Entertainment",
+  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-fart/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-fart",
-  "package_name": null,
-  "pypi_version": null,
+  "package_name": "ovos-skill-fart",
+  "pypi_version": "1.0.1",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
-  "tier": 2,
+  "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
-  "stars": 0,
+  "stars": 1,
   "forks": 0,
   "open_issues": 0,
-  "on_pypi": false,
-  "has_release": false,
+  "on_pypi": true,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "offline",
   "requires_api_key": false,
   "settings_fields": [],
-  "setup_notes": [],
-  "languages": [
-    "en-us"
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-fart"
+    }
   ],
-  "locale_content": {},
+  "languages": [
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Prut",
+      "description": "F\u00e5r din stemmeassistent til at prutte - p\u00e5 kommando eller helt tilf\u00e6ldigt - og ben\u00e6gte alt bagefter. K\u00f8rer helt offline.",
+      "examples": [
+        "prut",
+        "var det dig der pruttede",
+        "prut tilf\u00e6ldigt",
+        "stop med at prutte"
+      ]
+    },
+    "de-de": {
+      "name": "Pups",
+      "description": "L\u00e4sst deinen Sprachassistenten pupsen - auf Befehl oder zuf\u00e4llig - und danach alles abstreiten. Komplett offline.",
+      "examples": [
+        "pups",
+        "hast du gepupst",
+        "pups zuf\u00e4llig",
+        "h\u00f6r auf zu pupsen"
+      ]
+    },
+    "es-es": {
+      "name": "Pedo",
+      "description": "Hace que tu asistente de voz se tire pedos, cuando se lo pidas o al azar, y que luego lo niegue todo. Funciona sin conexi\u00f3n.",
+      "examples": [
+        "t\u00edrate un pedo",
+        "te has tirado un pedo",
+        "t\u00edrate pedos al azar",
+        "deja de tirarte pedos"
+      ]
+    },
+    "fr-fr": {
+      "name": "Pet",
+      "description": "Fait p\u00e9ter ton assistant vocal, sur demande ou au hasard, puis il nie tout. Fonctionne enti\u00e8rement hors ligne.",
+      "examples": [
+        "p\u00e8te",
+        "c'est toi qui as p\u00e9t\u00e9",
+        "p\u00e8te au hasard",
+        "arr\u00eate de p\u00e9ter"
+      ]
+    },
+    "it-it": {
+      "name": "Scoreggia",
+      "description": "Fa scoreggiare il tuo assistente vocale, su richiesta o a caso, e poi nega tutto. Funziona completamente offline.",
+      "examples": [
+        "scoreggia",
+        "hai scoreggiato",
+        "scoreggia a caso",
+        "smetti di scoreggiare"
+      ]
+    },
+    "nl-nl": {
+      "name": "Scheet",
+      "description": "Laat je spraakassistent scheten laten - op commando of willekeurig - en daarna alles ontkennen. Werkt volledig offline.",
+      "examples": [
+        "laat een scheet",
+        "heb jij een scheet gelaten",
+        "laat willekeurig scheten",
+        "stop met scheten laten"
+      ]
+    },
+    "pt-pt": {
+      "name": "Pum",
+      "description": "Faz o teu assistente de voz dar puns, a pedido ou ao acaso, e depois negar tudo. Funciona totalmente offline.",
+      "examples": [
+        "d\u00e1 um pum",
+        "deste um pum",
+        "d\u00e1 puns ao acaso",
+        "para de dar puns"
+      ]
+    }
+  },
   "in_ovos_localize": false,
   "repo_created_at": "2024-03-28T20:54:48Z",
-  "last_updated": "2024-03-28T21:47:28Z",
+  "last_updated": "2026-10-01T10:10:38.055664Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-fart.andlo",
+    "channels": {}
+  }
 }

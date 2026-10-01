@@ -17,9 +17,11 @@
   ],
   "category": "Information",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-arxiv-papers/main/book-512.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-arxiv-papers",
   "package_name": "ovos-skill-arxiv-papers",
-  "pypi_version": "0.1.5",
+  "pypi_version": "0.1.7",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
@@ -111,7 +113,7 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T18:24:40Z",
-  "last_updated": "2026-09-27T08:17:53.943353Z",
+  "last_updated": "2026-10-01T10:33:50.282322Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
@@ -121,24 +123,24 @@
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.5",
-        "tested_at": "2026-09-30T12:55:47+00:00",
+        "version_tested": "0.1.6",
+        "tested_at": "2026-10-01T09:27:25+00:00",
         "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.5",
-        "tested_at": "2026-09-30T12:54:52+00:00",
+        "version_tested": "0.1.6",
+        "tested_at": "2026-10-01T09:26:43+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.5",
-        "tested_at": "2026-09-30T13:15:00+00:00",
+        "version_tested": "0.1.6",
+        "tested_at": "2026-10-01T09:26:17+00:00",
         "channel_pinned": false
       }
     }

@@ -16,9 +16,11 @@
   ],
   "category": "News",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-ovosblog/main/world-512.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-ovosblog",
   "package_name": "ovos-skill-ovosblog",
-  "pypi_version": "0.1.5",
+  "pypi_version": "0.1.7",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
@@ -48,6 +50,7 @@
     "es-es",
     "fr-fr",
     "it-it",
+    "kab",
     "nl-nl",
     "pt-pt"
   ],
@@ -110,7 +113,7 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T13:53:14Z",
-  "last_updated": "2026-09-27T08:18:24.382993Z",
+  "last_updated": "2026-10-01T10:33:47.937439Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
@@ -120,24 +123,24 @@
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.5",
-        "tested_at": "2026-09-30T12:56:15+00:00",
+        "version_tested": "0.1.6",
+        "tested_at": "2026-10-01T09:26:04+00:00",
         "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.5",
-        "tested_at": "2026-09-30T13:03:28+00:00",
+        "version_tested": "0.1.6",
+        "tested_at": "2026-10-01T09:25:40+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.5",
-        "tested_at": "2026-09-30T13:17:29+00:00",
+        "version_tested": "0.1.6",
+        "tested_at": "2026-10-01T09:25:30+00:00",
         "channel_pinned": false
       }
     }

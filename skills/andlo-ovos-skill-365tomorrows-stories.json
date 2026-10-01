@@ -15,9 +15,11 @@
   ],
   "category": "Entertainment",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-365tomorrows-stories/main/book-512.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-365tomorrows-stories",
   "package_name": "ovos-skill-365tomorrows-stories",
-  "pypi_version": "0.1.5",
+  "pypi_version": "0.1.8",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
@@ -109,7 +111,7 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T23:05:13Z",
-  "last_updated": "2026-09-27T08:18:03.345484Z",
+  "last_updated": "2026-10-01T10:34:06.433563Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
@@ -119,24 +121,24 @@
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.6",
-        "tested_at": "2026-09-30T12:53:05+00:00",
+        "version_tested": "0.1.7",
+        "tested_at": "2026-10-01T09:26:01+00:00",
         "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.6",
-        "tested_at": "2026-09-30T12:52:30+00:00",
+        "version_tested": "0.1.7",
+        "tested_at": "2026-10-01T09:25:35+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.1.6",
-        "tested_at": "2026-09-30T13:03:49+00:00",
+        "version_tested": "0.1.7",
+        "tested_at": "2026-10-01T09:25:50+00:00",
         "channel_pinned": false
       }
     }

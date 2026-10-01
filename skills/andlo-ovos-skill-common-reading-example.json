@@ -12,6 +12,8 @@
   ],
   "category": "Other",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-common-reading-example/main/story-512.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-common-reading-example",
   "package_name": "ovos-skill-common-reading-example",
   "pypi_version": null,
@@ -25,7 +27,7 @@
   "forks": 0,
   "open_issues": 0,
   "on_pypi": false,
-  "has_release": false,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": "ovos-common-reading-pipeline-plugin",
   "connectivity": "online",
@@ -45,7 +47,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-07-21T14:56:13Z",
-  "last_updated": "2026-09-27T09:01:52Z",
+  "last_updated": "2026-09-30T21:46:35Z",
   "is_new_repo": false,
   "is_recently_updated": false
 }

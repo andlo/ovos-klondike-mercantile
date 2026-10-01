@@ -6,7 +6,8 @@
   "examples": [
     "set intercom name to living room",
     "set intercom code to four seven two nine",
-    "send a message to the bedroom"
+    "send a message to the bedroom",
+    "send a message to the bedroom saying dinner is ready"
   ],
   "tags": [
     "intercom",
@@ -17,9 +18,11 @@
   ],
   "category": "Home",
   "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-intercom/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-intercom",
   "package_name": "ovos-skill-intercom",
-  "pypi_version": "0.0.4",
+  "pypi_version": "0.0.6",
   "license": "GPL-3.0",
   "archived": false,
   "author": "andlo",
@@ -39,7 +42,7 @@
   "setup_notes": [
     {
       "heading": "Setup",
-      "content": "Each device needs a **name** and a shared household **code**, set by\nvoice on that specific device:\n\"set intercom name to living room\"\n\"set intercom code to four seven two nine\"\n\nEvery device that should participate says the **same code** - not a\nseparate secret per pair of devices. Say it once per device; any two\ndevices with matching codes can message each other."
+      "content": "Each device needs a **name** and a shared household **code**, set by\nvoice on that specific device:\n\"set intercom name to living room\"\n\"set intercom code to four seven two nine\"\n\nEvery device that should participate says the **same code** - not a\nseparate secret per pair of devices. Say it once per device; any two\ndevices with matching codes can message each other.\n\nThe name and code can also be set in the skill's settings\n(`intercom_name`, `intercom_code` in its `settings.json`, or a\nsettings UI). A new name is advertised as soon as the settings are\nsaved - no restart needed."
     },
     {
       "heading": "Install",
@@ -51,7 +54,8 @@
     "de-de",
     "en-us",
     "es-es",
-    "fr-fr"
+    "fr-fr",
+    "kab"
   ],
   "locale_content": {
     "da-dk": {
@@ -60,7 +64,8 @@
       "examples": [
         "s\u00e6t intercom-navn til stuen",
         "s\u00e6t intercom-kode til fire syv to ni",
-        "send en besked til sovev\u00e6relset"
+        "send en besked til sovev\u00e6relset",
+        "send en besked til sovev\u00e6relset og sig maden er klar"
       ]
     },
     "de-de": {
@@ -69,7 +74,8 @@
       "examples": [
         "setze intercom-namen auf wohnzimmer",
         "setze intercom-code auf vier sieben zwei neun",
-        "sende eine nachricht an schlafzimmer"
+        "sende eine nachricht an schlafzimmer",
+        "sende eine nachricht an das schlafzimmer und sag das essen ist fertig"
       ]
     },
     "es-es": {
@@ -78,7 +84,8 @@
       "examples": [
         "establece el nombre de intercomunicador en sal\u00f3n",
         "establece el c\u00f3digo de intercomunicador en cuatro siete dos nueve",
-        "env\u00eda un mensaje a dormitorio"
+        "env\u00eda un mensaje a dormitorio",
+        "env\u00eda un mensaje a la habitaci\u00f3n diciendo la cena est\u00e1 lista"
       ]
     },
     "fr-fr": {
@@ -87,13 +94,14 @@
       "examples": [
         "d\u00e9finis le nom intercom \u00e0 salon",
         "d\u00e9finis le code intercom \u00e0 quatre sept deux neuf",
-        "envoie un message \u00e0 chambre"
+        "envoie un message \u00e0 chambre",
+        "envoie un message \u00e0 la chambre disant le d\u00eener est pr\u00eat"
       ]
     }
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-08-18T14:51:17Z",
-  "last_updated": "2026-08-18T19:32:07.736726Z",
+  "last_updated": "2026-10-01T10:10:47.347398Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
