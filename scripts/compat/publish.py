@@ -347,6 +347,8 @@ def main():
                 (docs / "compat" / f"stack-{channel}.txt").write_text(freeze)
                 meta.update(run_at=now,
                             constraints_sha256=plan["summary"][channel]["constraints_sha256"],
+                            resolved_stack=plan["summary"][channel].get("resolved_stack"),
+                            stack_moved=plan["summary"][channel].get("stack_moved"),
                             constraints_url=f"https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-{channel}.txt",
                             harness_sha=plan.get("harness_sha"),
                             runner_version=plan.get("runner_version"))

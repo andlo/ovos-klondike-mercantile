@@ -14,9 +14,18 @@ rotation slot comes up (~18h), and a new release should be tested the same
 night.
 
 Incremental: a (package, channel) is re-tested only when its key changes:
-package, resolved version, channel, constraints hash, languages booted,
-the pinned ovos-test-harness SHA and RUNNER_VERSION. Results with status
-"error" (infra trouble) are always retried.
+package, resolved version, channel, the channel's effective stack, languages
+booted, the pinned ovos-test-harness SHA and RUNNER_VERSION. Results with
+status "error" (infra trouble) are always retried.
+
+The effective stack (issue #39) is what the channel installs today of the
+packages that decide whether a skill loads and where an utterance goes
+(STACK_PACKAGES), resolved against PyPI like the skills themselves. It
+replaced a hash of the whole constraints file, which re-tested everything
+when any unrelated line moved (ovos-releases changes the alpha file several
+times a day) and nothing when alpha's floors stayed put while a new
+ovos-core pre-release came out. If PyPI can't be reached for the core
+packages, the key falls back to the file hash for that run.
 
 Level 3 has two baselines, each with its own key on top of `key`: the
 installer's defaults (route_key, in every shard) and the Klondike profile
@@ -107,6 +116,65 @@ def resolve_version(releases, spec):
     return str(allowed[-1]) if allowed else None
 
 
+# What decides whether a skill loads and where an utterance goes. The exact
+# version counts for core and the intent engines; for the rest, a new patch
+# release doesn't re-test the store (major.minor).
+STACK_EXACT = ("ovos-core", "ovos-workshop", "ovos-bus-client", "ovos-plugin-manager",
+               "ovos-padatious", "padacioso", "ovos-adapt-parser")
+STACK_MINOR = ("ovos-config", "ovos-utils", "ovos-m2v-pipeline", "ovos-common-query-pipeline-plugin",
+               "ovos-ocp-pipeline-plugin", "ovos-persona", "ovos-fallback-pipeline-plugin",
+               "ovos-stop-pipeline-plugin", "ovos-converse-pipeline-plugin")
+STACK_PACKAGES = STACK_EXACT + STACK_MINOR
+# Without these the stack says nothing; then the file hash is used instead.
+STACK_REQUIRED = ("ovos-core", "ovos-workshop")
+
+
+def resolve_channel_version(releases, spec, channel):
+    """The version a device on `channel` installs: alpha installs pre-releases
+    (the installer allows them), so its newest release that meets the floor;
+    the other channels as resolve_version()."""
+    if channel != "alpha" or not releases:
+        return resolve_version(releases, spec)
+    allowed = list(SpecifierSet(spec or "", prereleases=True).filter(releases, prereleases=True))
+    return str(allowed[-1]) if allowed else None
+
+
+def stack_level(package, version):
+    """What of a version counts for the key (see STACK_EXACT)."""
+    if version is None or package in STACK_EXACT:
+        return version
+    try:
+        v = Version(version)
+    except InvalidVersion:
+        return version
+    return f"{v.major}.{v.minor}"
+
+
+def effective_stack(pins, channel, stack_releases):
+    """{package: version} a device on this channel installs today."""
+    out = {}
+    for pkg in STACK_PACKAGES:
+        version = resolve_channel_version(stack_releases.get(pkg), pins.get(normalize(pkg), ""), channel)
+        if version:
+            out[pkg] = version
+    return out
+
+
+def stack_signature(stack, csha):
+    """The constraints part of the key: the effective stack, or the file hash
+    when the stack couldn't be resolved (no PyPI)."""
+    if all(stack.get(p) for p in STACK_REQUIRED):
+        return {"stack": sorted((p, stack_level(p, v)) for p, v in stack.items())}
+    return {"constraints_sha256": csha}
+
+
+def stack_moves(old, new):
+    """['ovos-core 3.7.1a3 -> 3.7.2a1', ...] between two effective stacks."""
+    old, new = old or {}, new or {}
+    return [f"{p} {old.get(p) or '-'} -> {new.get(p) or '-'}"
+            for p in STACK_PACKAGES if old.get(p) != new.get(p) and (old or new)]
+
+
 def key_for(parts):
     return hashlib.sha256(json.dumps(parts, sort_keys=True).encode()).hexdigest()[:16]
 
@@ -157,6 +225,11 @@ def main():
                                                    lookup.values())):
             releases[e["id"]] = rel
 
+    stack_releases = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for pkg, rel in zip(STACK_PACKAGES, pool.map(pypi_releases, STACK_PACKAGES)):
+            stack_releases[pkg] = rel
+
     cdir = Path(args.constraints_dir)
     cdir.mkdir(parents=True, exist_ok=True)
     channels = [c.strip() for c in args.channels.split(",") if c.strip()]
@@ -166,6 +239,13 @@ def main():
         (cdir / f"constraints-{channel}.txt").write_bytes(raw)
         csha = hashlib.sha256(raw).hexdigest()
         pins = parse_constraints(raw.decode())
+        stack = effective_stack(pins, channel, stack_releases)
+        ssig = stack_signature(stack, csha)
+        if "constraints_sha256" in ssig:
+            print(f"warning: {channel}: core packages not resolved on PyPI, keying on the constraints file",
+                  file=sys.stderr)
+        prev_stack = ((prev_doc.get("channels") or {}).get(channel) or {}).get("resolved_stack")
+        moved = stack_moves(prev_stack, stack) if prev_stack else []
         kprof = channel_profile(profile_def, baseline, channel, feed_by_id, previous, pins, releases) \
             if profile_def else None
         todo, skipped, unresolved = [], 0, []
@@ -178,7 +258,7 @@ def main():
                 continue
             langs = sorted(set(e.get("languages") or []))
             kind = TESTED_TYPES[e["component_type"]]
-            key = key_for([e["package_name"], version, channel, csha, langs,
+            key = key_for([e["package_name"], version, channel, ssig, langs,
                            args.harness_sha, RUNNER_VERSION])
             route_key = key_for([key, baseline["sha256"], args.generator_spec, ROUTE_VERSION]) \
                 if baseline and kind == "skill" else None
@@ -202,7 +282,7 @@ def main():
             matrix.append(shard)
         if kprof:
             kitems = klondike_items(feed, previous, channel, pins)
-            kprof["self_key"] = key_for([csha, kprof["sha256"], args.harness_sha, RUNNER_VERSION,
+            kprof["self_key"] = key_for([ssig, kprof["sha256"], args.harness_sha, RUNNER_VERSION,
                                          args.generator_spec, ROUTE_VERSION,
                                          sorted((i["id"], i["version"]) for i in kitems)])
             kprof["tested"] = len(kitems)
@@ -213,12 +293,16 @@ def main():
                                                        "pipeline": kprof["pipeline"],
                                                        "exclude_ids": device_bound(previous, channel),
                                                        "feed_map": feed_map(feed), "items": kitems})})
-        summary[channel] = {"constraints_sha256": csha, "to_test": len(todo),
+        summary[channel] = {"constraints_sha256": csha, "resolved_stack": stack,
+                            "keyed_on": "stack" if "stack" in ssig else "constraints file",
+                            "stack_moved": moved, "to_test": len(todo),
                             "unchanged": skipped, "no_installable_release": unresolved}
         if kprof:
             klondike[channel] = kprof
         print(f"{channel}: {len(todo)} to test, {skipped} unchanged, "
               f"{len(unresolved)} without an installable release", file=sys.stderr)
+        for line in moved:
+            print(f"  {channel} moved: {line}", file=sys.stderr)
 
     Path(args.out).write_text(json.dumps({"include": matrix, "summary": summary,
                                           "harness_sha": args.harness_sha,
