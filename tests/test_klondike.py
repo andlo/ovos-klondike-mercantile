@@ -30,8 +30,9 @@ def test_profile_file():
     prof = read_profile(ROOT)
     ids = [s["id"] for s in prof["skills"]]
     ok(len(ids) == len(set(ids)) and len(ids) >= 10, f"profile TOML reads ({len(ids)} curated skills)")
-    ok(any(p["stage"] == "ovos-common-reading-pipeline-plugin" for p in prof["pipeline"]),
-       "the reading pipeline is in the profile")
+    stages = [p["stage"] for p in prof["pipeline"] if p["id"] == "andlo-ovos-common-reading-pipeline-plugin"]
+    ok(stages == ["ovos-common-reading-pipeline-plugin-high", "ovos-common-reading-pipeline-plugin-low"],
+       f"the reading pipeline is in the profile with its -high and -low stages ({stages})")
 
 
 def test_insert_stages():
@@ -73,6 +74,16 @@ def test_membership():
     prev["p"]["testing"]["status"] = "pass"
     spec3 = channel_profile(pdef, baseline, "testing", feed, prev, {"pkg-a": "==1.0.0"}, rel2)
     ok(spec3["sha256"] == spec["sha256"], "a new release of a profile skill alone does not change the key")
+
+    two = {"extra_requirements": [], "curated": {"skills": [], "pipeline": [
+        {"id": "p", "stage": "reading-high", "after": "ovos-stop-pipeline-plugin-high"},
+        {"id": "p", "stage": "reading-low", "before": "ovos-fallback-pipeline-plugin-low"}]}}
+    spec4 = channel_profile(two, baseline, "testing", feed, prev, {}, rel)
+    ok(spec4["curated_members"] == ["p"] and spec4["requirements"].count("pkg-p==1.1.0") == 1,
+       "a plugin with two stages is one member, installed once")
+    ok(spec4["pipeline"] == ["ovos-stop-pipeline-plugin-high", "reading-high", "ovos-converse-pipeline-plugin",
+                             "ovos-padatious-pipeline-plugin-high", "reading-low", "ovos-fallback-pipeline-plugin-low"],
+       f"both stages where declared ({spec4['pipeline']})")
 
 
 def report(installed, pipeline):

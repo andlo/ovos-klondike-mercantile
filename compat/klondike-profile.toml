@@ -23,7 +23,8 @@
 # installer's pipeline (`after` or `before` an installer stage; the legacy
 # names such as stop_high are accepted), so the profile survives changes to
 # the installer template. When the installer's own pipeline already has the
-# stage, nothing is inserted.
+# stage, nothing is inserted. A plugin with several stages lists them as
+# stages = [{ stage = ..., after|before = ... }, ...].
 
 # --- OpenVoiceOS -----------------------------------------------------------
 
@@ -139,6 +140,11 @@ note = "loads without config, so routing is meaningful even if actions cannot ru
 
 [[pipeline]]
 id = "andlo-ovos-common-reading-pipeline-plugin"
-stage = "ovos-common-reading-pipeline-plugin"
-after = "ovos-stop-pipeline-plugin-high"
+# Two stages, as the plugin's README places them: requests that name a kind
+# of text or a collection early, a bare title only after the skills' own
+# intents (so "tell me the time" never reaches a title match first).
+stages = [
+    { stage = "ovos-common-reading-pipeline-plugin-high", after = "ovos-stop-pipeline-plugin-high" },
+    { stage = "ovos-common-reading-pipeline-plugin-low", before = "ovos-fallback-pipeline-plugin-low" },
+]
 note = "meant to become part of OVOS; takes \"tell me …\" sentences, which is what this test should surface"

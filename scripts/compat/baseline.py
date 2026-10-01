@@ -113,12 +113,24 @@ def read_profile(repo_root="."):
             raise ValueError(f"{PROFILE_FILE}: a [[skill]] without an id")
         skills.append({k: str(s[k]) for k in ("id", "function", "note") if k in s})
     for p in data.get("pipeline") or []:
-        if not (isinstance(p.get("id"), str) and isinstance(p.get("stage"), str)):
-            raise ValueError(f"{PROFILE_FILE}: a [[pipeline]] needs id and stage")
-        if ("after" in p) == ("before" in p):
-            raise ValueError(f"{PROFILE_FILE}: {p['id']} needs exactly one of after/before")
-        plugins.append({k: str(p[k]) for k in ("id", "stage", "after", "before", "note") if k in p})
-    ids = [s["id"] for s in skills] + [p["id"] for p in plugins]
+        # One stage (stage + after/before), or several: stages = [{stage, after|before}, ...]
+        # for a plugin with more than one stage (e.g. reading's -high and -low).
+        # Either way every stage comes out as its own entry with the plugin's id.
+        if not isinstance(p.get("id"), str):
+            raise ValueError(f"{PROFILE_FILE}: a [[pipeline]] without an id")
+        stages = p.get("stages") if "stages" in p else [p]
+        if not stages or "stage" in p and "stages" in p:
+            raise ValueError(f"{PROFILE_FILE}: {p['id']} needs stage or stages, not both")
+        for st in stages:
+            if not isinstance(st.get("stage"), str):
+                raise ValueError(f"{PROFILE_FILE}: {p['id']}: a stage without a name")
+            if ("after" in st) == ("before" in st):
+                raise ValueError(f"{PROFILE_FILE}: {p['id']} {st['stage']} needs exactly one of after/before")
+            entry = {"id": p["id"], **{k: str(st[k]) for k in ("stage", "after", "before") if k in st}}
+            if "note" in p:
+                entry["note"] = str(p["note"])
+            plugins.append(entry)
+    ids = [s["id"] for s in skills] + sorted({p["id"] for p in plugins})
     if len(ids) != len(set(ids)):
         raise ValueError(f"{PROFILE_FILE}: an id is listed twice")
     return {"skills": skills, "pipeline": plugins}
