@@ -572,6 +572,7 @@ function renderDetail(skill) {
           <h1>${escapeHtml(localized.name)}</h1>
           <div class="byline">by ${escapeHtml(skill.author)}${versionLabel(skill) ? ` · ${escapeHtml(versionLabel(skill))}` : ""}</div>
           ${renderLanguageFlags(skill, currentSiteLang)}
+          ${renderLocaleCodeNote(skill)}
           ${untranslatedNote}
         </div>
       </div>
@@ -652,7 +653,7 @@ if (!wantedId && !wantedSkill) {
       return res.json();
     })
     .then(async (data) => {
-      const all = applyReports(applyCompatResults(data, compatDoc), reportsDoc);
+      const all = applyReports(applyCompatResults(normalizeSkillLanguages(data), compatDoc), reportsDoc);
       const skill = wantedId ? all.find((s) => s.id === wantedId) : await findBySkillId(all, wantedSkill);
       if (!skill) {
         detailRoot.innerHTML = `<p class="loading">Couldn't find that entry - it may have been removed in a later update. <a href="index.html">Back to the store</a>.</p>`;

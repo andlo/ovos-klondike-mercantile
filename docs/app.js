@@ -376,7 +376,7 @@ Promise.all([
   loadReportsIndex(cacheBust),
 ])
   .then(([skillsData, metaData, compatData, reportsIndex]) => {
-    skills = applyReports(applyCompatResults(skillsData, compatData), reportsIndex);
+    skills = applyReports(applyCompatResults(normalizeSkillLanguages(skillsData), compatData), reportsIndex);
     initFacets(skills, applyFilters);
     populateSiteLangSelect(siteLangSelect);
     renderStatsLine(metaData, skills.length);

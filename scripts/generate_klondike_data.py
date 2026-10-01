@@ -704,7 +704,10 @@ def fetch_ovos_localize_tracked_repos():
         return set()
 
 
-LOCALE_DIR_PATTERN = re.compile(r"^[a-z]{2}(-[a-zA-Z]{2,})?$")
+# Two- OR three-letter language subtag: ISO 639-3 codes such as "kab"
+# (Kabyle) are real OVOS locales - most OpenVoiceOS skills ship a kab/
+# folder - and a two-letter-only pattern silently dropped them.
+LOCALE_DIR_PATTERN = re.compile(r"^[a-z]{2,3}(-[a-zA-Z]{2,})?$")
 
 
 def find_locale_prefix_via_tree(full_name):

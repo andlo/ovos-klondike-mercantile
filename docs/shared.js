@@ -466,16 +466,113 @@ function versionLabel(skill) {
 // emoji flags don't exist on Windows, where they show as two letters
 // ("DK"), so cards and menus use images instead (issue #14). es.svg is the
 // plain civil flag: the full one with its coat of arms is 90 KB.
-const FLAG_REGIONS = new Set(["ao", "ar", "at", "au", "az", "be", "bg", "br", "ca", "ch", "cn", "co", "cz", "de", "dk", "ee", "es", "eu", "fi", "fr", "gb", "gr", "hr", "hu", "id", "il", "in", "ir", "is", "it", "jp", "ke", "kr", "lt", "lv", "mx", "my", "mz", "nl", "no", "nz", "pl", "pt", "ro", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "vn"]);
+// "eu" is deliberately NOT here: in a locale code it is never the European
+// Union, and "eu-eu" (Basque) must not get the EU flag.
+const FLAG_REGIONS = new Set(["ao", "ar", "at", "au", "az", "be", "bg", "br", "ca", "ch", "cn", "co", "cz", "de", "dk", "dz", "ee", "es", "fi", "fr", "gb", "gr", "hr", "hu", "id", "il", "in", "ir", "is", "it", "jp", "ke", "kr", "lt", "lv", "mx", "my", "mz", "nl", "no", "nz", "pl", "pt", "ro", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "vn"]);
+
+// Locale codes as repos actually name their locale/ folders are not always
+// the usual language-REGION form: some are bare ("da"), some use a region
+// that isn't a country ("eu-eu", "ar-xx"). skills.json keeps them exactly
+// as found - the channel tests start each language by its real folder name -
+// but the store shows and filters them under the usual code, so a skill with
+// "da" sits under da-dk with everyone else. Codes not listed here, and that
+// aren't standard, are shown as they are (see isStandardLocale).
+const LOCALE_ALIASES = {
+  "an": "an-es",
+  "ar-xa": "ar-sa",
+  "ar-xx": "ar-sa",
+  "ca": "ca-es",
+  "da": "da-dk",
+  "de": "de-de",
+  "es": "es-es",
+  "eu": "eu-es",
+  "eu-eu": "eu-es",
+  "fr": "fr-fr",
+  "gl": "gl-es",
+  "it": "it-it",
+  "kab": "kab-dz",
+  "nl": "nl-nl",
+  "pt": "pt-pt",
+};
+
+function normalizeLocale(code) {
+  const lower = String(code || "").toLowerCase();
+  return LOCALE_ALIASES[lower] || lower;
+}
+
+// Regions that are valid-looking two-letter codes but no country:
+// private-use/pseudo-locale codes, and "eu".
+const NON_COUNTRY_REGIONS = new Set(["eu", "un", "xa", "xb", "xx", "zz"]);
+
+let regionNamesEn = null;
+try { regionNamesEn = new Intl.DisplayNames(["en"], { type: "region" }); } catch { /* old browser */ }
+
+// true for the usual language-REGION form with a real country as region.
+// Unknown regions ("lm") are the ones Intl can't name - it hands the code
+// back - so no list of every country has to live here.
+function isStandardLocale(code) {
+  const parts = String(code || "").toLowerCase().split("-");
+  if (parts.length !== 2 || !/^[a-z]{2,3}$/.test(parts[0]) || !/^[a-z]{2}$/.test(parts[1])) return false;
+  const region = parts[1];
+  if (NON_COUNTRY_REGIONS.has(region)) return false;
+  if (!regionNamesEn) return true;
+  try { return regionNamesEn.of(region.toUpperCase()) !== region.toUpperCase(); } catch { return false; }
+}
+
+let languageNamesEn = null;
+try { languageNamesEn = new Intl.DisplayNames(["en"], { type: "language" }); } catch { /* old browser */ }
+
+// "da-dk" -> "Danish (Denmark)", "kab" -> "Kabyle"; the code itself if the
+// browser can't name it.
+function languageName(code) {
+  if (!languageNamesEn) return String(code || "");
+  try { return languageNamesEn.of(code) || String(code); } catch { return String(code || ""); }
+}
+
+// Rewrites each skill's languages (and its locale_content keys) to the
+// usual codes, in place, keeping the repo's own folder names in
+// languages_raw. Duplicates collapse ("kab" + "kab-dz" -> one kab-dz).
+// Call once, right after skills.json is loaded.
+function normalizeSkillLanguages(skills) {
+  for (const skill of asArray(skills)) {
+    const raw = asArray(skill.languages);
+    skill.languages_raw = raw;
+    skill.languages = [...new Set(raw.map(normalizeLocale))];
+    if (skill.locale_content) {
+      const content = {};
+      for (const [code, value] of Object.entries(skill.locale_content)) {
+        const key = normalizeLocale(code);
+        // a folder already named the usual way wins over an alias of it
+        if (!(key in content) || key === code.toLowerCase()) content[key] = value;
+      }
+      skill.locale_content = content;
+    }
+  }
+  return skills;
+}
+
+function hasLanguageFlag(localeCode) {
+  const parts = String(localeCode || "").split("-");
+  const region = parts.length > 1 ? parts[parts.length - 1].toLowerCase() : null;
+  return !!region && FLAG_REGIONS.has(region);
+}
 
 // "en-us" -> the flag for "us"; "da-dk" -> the flag for "dk", as an <img>.
 // A bare language code ("en"), or a region without a bundled flag, falls
 // back to the code itself, since there's no single flag for a language.
 function languageFlag(localeCode) {
-  const parts = String(localeCode || "").split("-");
-  const region = parts.length > 1 ? parts[parts.length - 1].toLowerCase() : null;
-  if (!region || !FLAG_REGIONS.has(region)) return escapeHtml(localeCode);
+  if (!hasLanguageFlag(localeCode)) return escapeHtml(localeCode);
+  const parts = String(localeCode).split("-");
+  const region = parts[parts.length - 1].toLowerCase();
   return `<img class="flag" src="flags/${region}.svg" alt="${escapeHtml(region.toUpperCase())}" width="20" height="15" loading="lazy">`;
+}
+
+// Flag and code for a menu: the code once when there's no flag, so a code
+// without one never reads "da da".
+function languageLabel(localeCode) {
+  const code = escapeHtml(localeCode);
+  const inner = hasLanguageFlag(localeCode) ? `${languageFlag(localeCode)} ${code}` : code;
+  return `<span title="${escapeHtml(languageName(localeCode))}">${inner}</span>`;
 }
 
 function renderLanguageFlags(skill, currentLang) {
@@ -483,9 +580,29 @@ function renderLanguageFlags(skill, currentLang) {
   if (languages.length === 0) return "";
   const flags = languages.map((l) => {
     const isCurrent = !!currentLang && l === currentLang;
-    return `<span class="lang-flag${isCurrent ? " lang-flag-current" : ""}" title="${escapeHtml(l)}">${languageFlag(l)}</span>`;
+    const tip = `${languageName(l)} · ${l}`;
+    return `<span class="lang-flag${isCurrent ? " lang-flag-current" : ""}" title="${escapeHtml(tip)}">${languageFlag(l)}</span>`;
   }).join("");
   return `<div class="lang-flags">${flags}</div>`;
+}
+
+// Detail page: the repo's own folder names that the store shows under
+// another code, or that aren't the usual language-REGION form, so the
+// maintainer can see what could be renamed. Empty when all is standard.
+function renderLocaleCodeNote(skill) {
+  const raw = asArray(skill.languages_raw);
+  const notes = [];
+  for (const code of raw) {
+    const lower = String(code).toLowerCase();
+    const shown = normalizeLocale(lower);
+    if (shown !== lower) {
+      notes.push(`<code>${escapeHtml(code)}</code> (shown as ${escapeHtml(shown)})`);
+    } else if (!isStandardLocale(lower)) {
+      notes.push(`<code>${escapeHtml(code)}</code>`);
+    }
+  }
+  if (notes.length === 0) return "";
+  return `<p class="setup-note locale-code-note">Non-standard locale folder name${notes.length > 1 ? "s" : ""} in the repo: ${notes.join(", ")}. The OVOS convention is language-REGION, e.g. da-DK.</p>`;
 }
 
 // Site-wide DISPLAY language - distinct from the existing
