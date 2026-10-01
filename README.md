@@ -198,7 +198,23 @@ offered by the installer today; kept for the next stable release)
   shard and language, not once per skill. Level 3 is reached at 80% of the
   counted rows; the label shows the numbers (`✓ 14/14 golden`). Rows taken
   by another skill of the same shard are collisions, shown but not
-  counted. Up to 4 languages per shard (en-US first).
+  counted. Up to 4 languages per shard (en-US first), at most 30 minutes
+  of routing per shard.
+- **The Klondike test (level 3 on a well-equipped install, #13):** the
+  same rows, routed with the **Klondike profile** loaded: the installer's
+  default skills, its extra skills, and a curated list in
+  `compat/klondike-profile.toml` (skills, and pipeline plugins placed
+  relative to the installer's pipeline, e.g. the common-reading pipeline
+  after stop-high). A curated entry is in the profile on a channel when it
+  passes level 2 there. One job per channel boots the profile once (en-US)
+  with every skill that passed level 2 loaded next to it: a sentence a
+  profile skill takes counts, one another tested skill takes does not
+  (two alternatives outside the profile are never tested against each
+  other). The same run gives the profile against itself. It never changes
+  the level or the channel badge. The profile is published per channel as
+  `docs/compat/klondike-profile-<channel>.txt` (pip requirements) and
+  `klondike-mycroft-<channel>.json` (the pipeline), and test reports from a
+  device that runs it count as Klondike-test reports.
 - **Generated utterances:** for skills without golden files,
   `scripts/compat/generated.py` calls `ovoscope generate`
   (OpenVoiceOS/ovoscope#224, pinned as `GENERATOR_SPEC` in the workflow)
@@ -224,8 +240,14 @@ package's own load error says it needs an API key, account or identity).
 A skill that only fails with some of its languages configured is a pass
 with those languages flagged, since a device only loads its own.
 
-Shown as a label per channel on cards (with a "Tested on OVOS" filter:
-works / routes / fails per channel, works on testing and alpha), the
+Shown as a label per channel on cards, followed by one quality label:
+**🎯 Routes** (level 3: at least 80% of its own golden utterances reach
+it) or **⛏ Klondike Gold** (and still at least 80% with the Klondike
+profile loaded). The quality label comes from testing, the installer's
+default; when testing has no result, from alpha, named in the label
+("🎯 Routes · alpha"); never from stable. Also: a "Tested on OVOS" filter
+(Routes / Klondike Gold; works / routes / fails per channel; works on
+testing and alpha), the
 default "Recommended" sort (testing ×10, stable ×3, alpha ×1:
 fails 0, untested 1, loads 2, golden routing 3 plus the share routed; ties
 by stars), a section on the detail page
