@@ -83,7 +83,37 @@ def test_claimant():
     ok(who == "ovos-skill-weather.openvoiceos", "a fired intent still wins")
 
 
+def test_companion_that_does_not_install():
+    import run_shard
+    provider = ({"id": "andlo-ovos-skill-grimm-tales"}, {"registrations": {"common_reading": ["x"]}})
+    other = ({"id": "OpenVoiceOS-ovos-skill-weather"}, {"registrations": {"intents": ["y"]}, "routing": {"ref": "v1"}})
+    spec = {"requirements": ["ovos-core[skills-essential]"], "pipeline": ["stop_high", "ovos-fallback-pipeline-plugin-low"]}
+    seen = []
+
+    def route(routable, all_runs, sp, field, *a):
+        seen.append(list(sp["requirements"]))
+        if "ovos-common-reading-pipeline-plugin" in sp["requirements"]:
+            for _, r in routable:
+                r.setdefault(field, {})["error"] = "the default skills did not install under the channel constraints: x"
+            return None
+        for _, r in routable:
+            r.setdefault(field, {})["golden"] = {"status": "ok"}
+        return {"boots": 1}
+
+    out = run_shard.route_with_companions([provider, other], {}, spec, "routing", "route", None, None, 0,
+                                          "the default skills", 30, route=route)
+    ok(len(seen) == 2 and "ovos-common-reading-pipeline-plugin" not in seen[1], "retried without the companion")
+    ok("did not install" in out.get("companion_pipelines_failed", ""), "the output says the companion failed")
+    ok("error" not in other[1]["routing"] and other[1]["routing"].get("ref") == "v1", "the rest keeps a clean level 3")
+
+    seen.clear()
+    out = run_shard.route_with_companions([other], {}, spec, "routing", "route", None, None, 0,
+                                          "the default skills", 30, route=route)
+    ok(len(seen) == 1 and "companion_pipelines" not in out, "no provider in the shard: nothing added, no retry")
+
+
 if __name__ == "__main__":
+    test_companion_that_does_not_install()
     test_level2_records_providers()
     test_companions()
     test_claimant()

@@ -653,6 +653,43 @@ def aggregate(routable, boots, langs, skipped, field="routing"):
             rec["level"] = 3
 
 
+def route_with_companions(routable, all_runs, plain_spec, field, name, args, workroot, deadline, label,
+                          budget_min, route=None):
+    """route_pass() with the companion pipelines the shard's providers need
+    (baseline.with_companions). A companion that doesn't install under the
+    channel's constraints (an older channel) must not cost the rest of the
+    shard its level 3: then the pass is routed again without it, and the
+    output says so (companion_pipelines_failed)."""
+    route = route or route_pass
+    spec, companions = with_companions(plain_spec, [r.get("registrations") for _, r in routable])
+    for kind, stages in companions.items():
+        print(f"    {kind} providers in the shard: adding {', '.join(stages) or 'no stage'}", flush=True)
+    print(f"==> level 3: routing against {label} ({', '.join(spec['requirements'])})", flush=True)
+    before = {i["id"]: json.loads(json.dumps(r.get(field))) for i, r in routable}
+    try:
+        out = route(routable, all_runs, spec, field, args, workroot, deadline, label, budget_min)
+    except Exception as e:  # noqa: BLE001
+        out = {"error": f"{type(e).__name__}: {e}"[:500]}
+        print(f"    {name} aborted: {out['error']}", flush=True)
+    failed = next((str((r.get(field) or {}).get("error")) for _, r in routable
+                   if "did not install" in str((r.get(field) or {}).get("error", ""))), None)
+    if companions and failed:
+        print("    the companion pipelines did not install: retrying without them", flush=True)
+        for i, r in routable:
+            if before[i["id"]] is None:
+                r.pop(field, None)
+            else:
+                r[field] = before[i["id"]]
+        try:
+            out = route(routable, all_runs, plain_spec, field, args, workroot, deadline, label, budget_min)
+        except Exception as e:  # noqa: BLE001
+            out = {"error": f"{type(e).__name__}: {e}"[:500]}
+        return dict(out or {}, companion_pipelines_failed=failed[:300])
+    if out and companions:
+        out["companion_pipelines"] = companions
+    return out
+
+
 def write_pass(args, name, out):
     freeze = out.pop("freeze", "")
     if freeze:
@@ -745,19 +782,10 @@ def main():
             except Exception as e:  # noqa: BLE001 - level 3 trouble never loses levels 1-2
                 routable, all_runs = [], {}
                 print(f"    level 3 aborted: {e}", flush=True)
-            for field, name, spec, label, budget_min in passes if routable else []:
-                spec, companions = with_companions(spec, [r.get("registrations") for _, r in routable])
-                for kind, stages in companions.items():
-                    print(f"    {kind} providers in the shard: adding {', '.join(stages) or 'no stage'}", flush=True)
-                print(f"==> level 3: routing against {label} ({', '.join(spec['requirements'])})", flush=True)
-                try:
-                    out = route_pass(routable, all_runs, spec, field, args, workroot, deadline, label, budget_min)
-                except Exception as e:  # noqa: BLE001
-                    out = {"error": f"{type(e).__name__}: {e}"[:500]}
-                    print(f"    {name} aborted: {out['error']}", flush=True)
+            for field, name, plain_spec, label, budget_min in passes if routable else []:
+                out = route_with_companions(routable, all_runs, plain_spec, field, name, args, workroot,
+                                            deadline, label, budget_min)
                 if out:
-                    if companions:
-                        out["companion_pipelines"] = companions
                     write_pass(args, name, out)
                 # Written after every pass: a job killed later keeps this one.
                 Path(args.out).write_text(json.dumps(results, indent=2))
