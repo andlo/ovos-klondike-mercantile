@@ -72,7 +72,6 @@ numpy==2.4.6
 ovos-audio==2.2.8a1
 ovos-bidirectional-translation-plugin==0.1.4a3
 ovos-bus-client==2.11.23a1
-ovos-common-reading-pipeline-plugin==0.2.0
 ovos-config==2.3.11a2
 ovos-core==3.7.2a1
 ovos-date-parser==0.33.2a1
@@ -117,9 +116,9 @@ ovos-skill-geography==0.0.3
 ovos-skill-geography-practice==0.0.4
 ovos-skill-geometry==0.0.3
 ovos-skill-geometry-practice==0.0.2
-ovos-skill-grimm-tales==0.1.6
+ovos-skill-grimm-tales==0.1.7
 ovos-skill-hello-world==0.5.3a2
-ovos-skill-holidays==0.0.2
+ovos-skill-holidays==0.0.3
 ovos-skill-horoscope-readings==0.1.3
 ovos-skill-icanhazdadjokes==0.25.6a2
 ovos-skill-intercom==0.0.5
@@ -128,11 +127,11 @@ ovos-skill-iss-location==0.7.1a1
 ovos-skill-laugh==2.0.0a1
 ovos-skill-local-media==0.2.16a1
 ovos-skill-math-practice==0.0.6
-ovos-skill-metronome==0.0.2
+ovos-skill-metronome==0.0.3
 ovos-skill-morse-code==0.0.1
 ovos-skill-moviemaster==0.7.1a3
 ovos-skill-naptime==0.12.0a2
-ovos-skill-nato-alphabet==0.0.1
+ovos-skill-nato-alphabet==0.0.2
 ovos-skill-network-scanner==0.0.1
 ovos-skill-news==0.4.10a4
 ovos-skill-number-facts==0.5.0a5
@@ -153,7 +152,7 @@ ovos-skill-voices-of-tomorrow==0.1.1
 ovos-skill-volume==0.12.0a3
 ovos-skill-wallpapers==2.8.0a2
 ovos-skill-weather==1.5.1a1
-ovos-skill-white-noise==0.0.1
+ovos-skill-white-noise==0.0.2
 ovos-skill-wiki-offline==0.0.7
 ovos-skill-wikihow==0.7.2a1
 ovos-skill-wikipedia==0.18.3a3
@@ -237,7 +236,7 @@ soupsieve==2.10
 speedtest-cli==2.1.3
 thalovant-languages==0.3.3
 thalovant-skill-custos-fallback==0.1.5
-thalovant-skillkit==0.22.0
+thalovant-skillkit==0.23.0
 threadpoolctl==3.7.0
 timezonefinder==9.0.0
 timezonefinder-data==3.2026.3.post1
