@@ -387,7 +387,7 @@ function qualityLabel(skill) {
 function renderQualityLabel(skill) {
   const q = qualityLabel(skill);
   if (!q) return "";
-  const text = (q.kind === "klondike" ? "⛏ Klondike-proof" : "🎯 Routes") + (q.channel === "testing" ? "" : ` · ${q.channel}`);
+  const text = (q.kind === "klondike" ? "⛏ Klondike Gold" : "🎯 Routes") + (q.channel === "testing" ? "" : ` · ${q.channel}`);
   const tip = [`${q.golden.hit}/${q.golden.counted} of its golden utterances reach it on ${q.channel}`,
     q.klondike ? `${q.klondike.hit}/${q.klondike.counted} with the Klondike profile loaded` : "",
     q.channel === "alpha" ? "alpha changes all the time; testing has no result yet" : ""].filter(Boolean).join(" · ");
