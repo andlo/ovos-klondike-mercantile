@@ -384,6 +384,13 @@ function qualityLabel(skill) {
   return null;
 }
 
+// The same label on the detail page, next to the routing result that
+// earned it on this channel, so a card's label can be traced to it.
+function qualityChip(kind, tip) {
+  const text = kind === "klondike" ? "⛏ Klondike Gold" : "🎯 Routes";
+  return ` <span class="compat-label quality-label quality-${kind}" title="${escapeHtml(tip)}">${text}</span>`;
+}
+
 function renderQualityLabel(skill) {
   const q = qualityLabel(skill);
   if (!q) return "";

@@ -300,7 +300,10 @@ function renderRouting(rec, meta) {
     rows.push(renderStatRow("Left out", escapeHtml(`${route.excluded_ids.join(", ")} (waits for device services, so it cannot finish loading in the test core)`)));
   }
   if (routing.ref) rows.push(renderStatRow("Utterances from", `<code>${escapeHtml(routing.ref)}</code>`));
-  return `<h4 class="compat-subhead">Routing (level 3)</h4><div class="compat-facts">${rows.join("")}</div>`;
+  const g = routing.golden || {};
+  const chip = (rec.level || 0) >= 3 && g.counted
+    ? qualityChip("routes", `${g.hit}/${g.counted} of its golden utterances reach it on ${rec.channel} (level 3)`) : "";
+  return `<h4 class="compat-subhead">Routing (level 3)${chip}</h4><div class="compat-facts">${rows.join("")}</div>`;
 }
 
 // Level 3 against the Klondike profile (#13): the installer's defaults plus
@@ -382,7 +385,10 @@ function renderKlondike(rec, meta) {
     rows.push(renderStatRow("Pipeline", `the profile adds ${asArray(profile.added_stages).map((s) => `<code>${escapeHtml(s)}</code>`).join(" ")} to the installer's pipeline`));
   }
   rows.push(renderStatRow("Profile", `<a href="for-maintainers.html#klondike-profile">what is in it, and how to propose a skill</a>`));
-  return `<h4 class="compat-subhead">Routing on a well-equipped install (Klondike profile)</h4>
+  const kg = k.golden || {};
+  const gold = (rec.level || 0) >= 3 && kg.counted && kg.hit / kg.counted >= COMPAT_LEVEL3_RATIO
+    ? qualityChip("klondike", `${kg.hit}/${kg.counted} still reach it with the Klondike profile loaded on ${rec.channel}`) : "";
+  return `<h4 class="compat-subhead">Routing on a well-equipped install (Klondike profile)${gold}</h4>
     <p class="setup-note">A worst case: the installer's default and extra skills plus a curated set, all loaded together. It does not change the level or the badge.</p>
     <div class="compat-facts">${rows.join("")}</div>`;
 }
