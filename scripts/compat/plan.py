@@ -57,7 +57,7 @@ RUNNER_VERSION = "1"
 # that loaded is re-tested when either key changes; one that did not load
 # never reaches level 3, so only `key` matters for it. Bump when route.py
 # or the level 3 parts of run_shard.py change what a result means.
-ROUTE_VERSION = "2"
+ROUTE_VERSION = "3"  # 3: the stop check (#16)
 # The constraints the OVOS installer itself installs with
 # (ovos-installer: ovos_virtualenv_constraints_url). OpenVoiceOS/OpenVoiceOS
 # carries the same files today; the installer is the reference for "what a

@@ -56,6 +56,12 @@ def load_results(path):
     return json.loads(path.read_text())
 
 
+def stop_result(rec):
+    """The stop check (#16) when it means something: stops / keeps_going / stuck."""
+    r = ((rec or {}).get("routing") or {}).get("stop") or {}
+    return r.get("result") if r.get("result") in ("stops", "keeps_going", "stuck") else None
+
+
 def label(rec):
     """(short text, state) for one result; state is pass/warn/fail/untested."""
     if rec and rec.get("status") in GREY_LABELS:
@@ -67,11 +73,16 @@ def label(rec):
     booted = rec.get("languages_booted") or []
     missing = rec.get("languages_missing") or []
     golden = routing_counts(rec, "golden")
+    stop = stop_result(rec)
     if golden:
         hit, counted = golden
         if hit / counted < LEVEL3_RATIO:
             return f"✓ loads · {hit}/{counted} golden", "warn"
         clean = hit == counted and not missing and not rec.get("warnings")
+        if stop == "stops":
+            return f"✓ {hit}/{counted} golden · stops", "pass" if clean else "warn"
+        if stop in ("keeps_going", "stuck"):
+            return f"✓ {hit}/{counted} golden · doesn't stop", "warn"
         return f"✓ {hit}/{counted} golden", "pass" if clean else "warn"
     if missing and booted:
         return f"✓ loads · {len(booted) - len(missing)}/{len(booted)} langs", "warn"
@@ -83,6 +94,8 @@ def label(rec):
 def compact(rec):
     text, state = label(rec)
     out = {"label": text, "state": state, "level": rec.get("level", 0)}
+    if stop_result(rec):
+        out["stop"] = stop_result(rec)
     for k in ("version_tested", "tested_at", "channel_pinned"):
         if rec.get(k) is not None:
             out[k] = rec[k]

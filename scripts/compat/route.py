@@ -50,6 +50,19 @@ outer timeout still says how far it got. With --budget, rows past it are
 left out and the status is "partial" (issue #15); row_seconds says how long
 rows took (median, p95, max).
 
+Stop check (issue #16, en-US boots only, after all rows): for each skill
+that took one of its own rows, that utterance is sent once more in a fresh
+session. If the skill is still busy after its first speech or playback (a
+story, counting, a metronome), "stop" is said in that session, the way a
+user would, and the skill must go quiet:
+
+  stops            quiet within STOP_GRACE, and its handler returned
+  keeps_going      still speaking or playing after STOP_GRACE
+  stuck            quiet, but its handler did not return within STOP_RETURN
+  nothing_to_stop  it answered and was done before there was anything to
+                   stop (most skills): not a result, shown as nothing
+  silent           it neither spoke nor played within STOP_FIRST
+
 A row waits for its handler to return (or --timeout). Ending it as soon as
 the claim is known was tried for #15 and dropped: a handler still running
 from one row changed the verdicts of later rows (weather's humidity
@@ -86,6 +99,15 @@ ASK_DISABLE = "skill.converse.get_response.disable"
 ASK_GRACE = 0.5       # an answer the handler itself provides (no real wait)
 ASK_RELEASE = 5.0     # how long the cancel may take to release the handler
 MAX_MISSES = 25
+# Stop check (#16). Output a skill can still be producing after "stop".
+STOP_OUTPUT = ("speak", "mycroft.audio.service.play", "ovos.common_play.play",
+               "mycroft.audio.play_sound", "ovos.audio.service.play")
+STOP_LANG = "en-US"
+STOP_FIRST = 10.0     # seconds to wait for its first speech or playback
+STOP_SETTLE = 1.0     # still busy this long after it first spoke = something to stop
+STOP_GRACE = 2.0      # time to go quiet after "stop"
+STOP_QUIET = 3.0      # output in this window after the grace = keeps going
+STOP_RETURN = 8.0     # the handler should return within this after "stop"
 _SESSION_SEQ = itertools.count()
 
 
@@ -249,6 +271,90 @@ def release_question(croft, enable, lang, recs, session_id):
         spoken = end_speech(croft, recs, session_id, spoken)
         time.sleep(0.05)
     return False
+
+
+def stop_check(croft, utterance, lang, pipeline, own_ids):
+    """Issue #16: is a skill that is still talking or playing quiet after
+    the user says "stop"? See the module notes for the results."""
+    from ovos_bus_client.message import Message
+    from ovos_bus_client.session import Session
+    recs = []  # (arrival time, message)
+
+    def rec(serialized):
+        try:
+            m = serialized if isinstance(serialized, Message) else Message.deserialize(serialized)
+        except Exception:  # noqa: BLE001
+            return
+        recs.append((time.monotonic(), m))
+
+    session_id = f"klondike-stop-{next(_SESSION_SEQ):05d}"
+    sess = Session(session_id)
+    sess.lang = lang
+    if pipeline:
+        sess.pipeline = list(pipeline)
+    msg = Message("recognizer_loop:utterance", {"utterances": [utterance], "lang": lang},
+                  {"session": sess.serialize(), "source": "klondike", "destination": "skills"})
+
+    def mine():
+        return [m for _, m in list(recs) if _session_of(m) in ("", session_id)]
+
+    def output_since(t):
+        return [m for at, m in list(recs) if at >= t and m.msg_type in STOP_OUTPUT
+                and _session_of(m) in ("", session_id)
+                and (m.context or {}).get("skill_id") in (None, "", *own_ids)]
+
+    croft.bus.on("message", rec)
+    started = time.monotonic()
+    try:
+        emitter = threading.Thread(target=croft.bus.emit, args=(msg,), daemon=True)
+        emitter.start()
+        spoken, first = 0, None
+        while time.monotonic() - started < STOP_FIRST:
+            spoken = end_speech(croft, [m for _, m in recs], session_id, spoken)
+            out = output_since(started)
+            if out:
+                first = time.monotonic()
+                break
+            if not emitter.is_alive():
+                time.sleep(CAPTURE_SETTLE)
+                if output_since(started):
+                    first = time.monotonic()
+                break
+            time.sleep(0.05)
+        if first is None:
+            return {"result": "silent", "utterance": utterance[:200]}
+        # Busy beyond its first sentence? A one-off answer is done by now.
+        until = first + STOP_SETTLE
+        while time.monotonic() < until and emitter.is_alive():
+            spoken = end_speech(croft, [m for _, m in recs], session_id, spoken)
+            time.sleep(0.05)
+        if not emitter.is_alive():
+            return {"result": "nothing_to_stop", "utterance": utterance[:200]}
+        # Say "stop" in the same session, with the session as core left it
+        # (it knows which skill is active there).
+        latest = next((m.context.get("session") for m in reversed(mine())
+                       if isinstance((m.context or {}).get("session"), dict)), sess.serialize())
+        stop = Message("recognizer_loop:utterance", {"utterances": ["stop"], "lang": lang},
+                       {"session": latest, "source": "klondike", "destination": "skills"})
+        t_stop = time.monotonic()
+        threading.Thread(target=croft.bus.emit, args=(stop,), daemon=True).start()
+        while time.monotonic() - t_stop < STOP_GRACE + STOP_QUIET:
+            spoken = end_speech(croft, [m for _, m in recs], session_id, spoken)
+            time.sleep(0.05)
+        after = output_since(t_stop + STOP_GRACE)
+        signalled = sorted({m.msg_type for _, m in recs[:] if m.msg_type == "mycroft.stop"
+                            or m.msg_type.endswith(".stop") or m.msg_type == "mycroft.stop.handled"})[:5]
+        result = {"utterance": utterance[:200], "spoke_after_stop": len(after),
+                  "stop_messages": signalled}
+        if after:
+            return {**result, "result": "keeps_going",
+                    "after": [str((m.data or {}).get("utterance") or m.msg_type)[:120] for m in after[:3]]}
+        emitter.join(max(0.0, STOP_RETURN - (time.monotonic() - t_stop)))
+        if emitter.is_alive():
+            return {**result, "result": "stuck"}
+        return {**result, "result": "stops", "seconds": round(time.monotonic() - t_stop, 1)}
+    finally:
+        croft.bus.remove("message", rec)
 
 
 def end_speech(croft, recs, session_id, done):
@@ -430,6 +536,7 @@ def main():
                         work.append((item, run, row))
     shard_ids = sorted({sid for item in man["items"] for sid in item["skill_ids"]})
     started = time.monotonic()
+    first_hit = {}  # item id -> (own skill ids, an utterance it took), for the stop check
     try:
         installed = installed_skill_ids()
         baseline_ids = sorted(installed - set(shard_ids) - set(man.get("exclude_ids") or []))
@@ -502,6 +609,8 @@ def main():
                     res["hit"] += 1
                     if asked is not None:
                         res["asked"] += 1
+                    elif item["id"] not in first_hit or (run == "golden" and first_hit[item["id"]][2] != "golden"):
+                        first_hit[item["id"]] = (item["skill_ids"], row["utterance"], run)
                     continue
             elif (who in shard_ids or who in uncounted_ids) and who not in counted_ids:
                 res["neighbour"] += 1
@@ -522,6 +631,19 @@ def main():
             if len(res["misses"]) < MAX_MISSES:
                 res["misses"].append(entry)
         out.pop("current", None)
+        if same_language(args.lang, STOP_LANG) and first_hit:
+            out["stop"] = {}
+            for item_id, (own_ids, utterance, _) in first_hit.items():
+                if args.budget and time.monotonic() - started > args.budget - 30:
+                    out["stop_skipped"] = len(first_hit) - len(out["stop"])
+                    break
+                out["current"] = {"id": item_id, "run": "stop", "utterance": utterance[:200]}
+                flush()
+                try:
+                    out["stop"][item_id] = stop_check(croft, utterance, args.lang, session_pipeline, own_ids)
+                except Exception as e:  # noqa: BLE001 - a stop check never costs the routing result
+                    out["stop"][item_id] = {"result": "error", "reason": f"{type(e).__name__}: {e}"[:200]}
+            out.pop("current", None)
         out["status"] = "ok"
     except BudgetReached as e:
         out.pop("current", None)

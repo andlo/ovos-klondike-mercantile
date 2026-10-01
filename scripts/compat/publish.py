@@ -127,7 +127,30 @@ def clean_routing(routing):
         r = _clean_run(routing.get(run))
         if r:
             out[run] = r
+    stop = clean_stop(routing.get("stop"))
+    if stop:
+        out["stop"] = stop
     return out or None
+
+
+STOP_RESULTS = ("stops", "keeps_going", "stuck", "nothing_to_stop", "silent", "error")
+
+
+def clean_stop(stop):
+    """The stop check (#16) as published: a known result and a few short fields."""
+    if not isinstance(stop, dict) or stop.get("result") not in STOP_RESULTS:
+        return None
+    out = {"result": stop["result"]}
+    for k, cap in (("utterance", 200), ("lang", 20), ("reason", 200)):
+        if isinstance(stop.get(k), str):
+            out[k] = stop[k][:cap]
+    if isinstance(stop.get("spoke_after_stop"), int) and 0 <= stop["spoke_after_stop"] < 10_000:
+        out["spoke_after_stop"] = stop["spoke_after_stop"]
+    if isinstance(stop.get("seconds"), (int, float)) and not isinstance(stop.get("seconds"), bool):
+        out["seconds"] = round(float(stop["seconds"]), 1)
+    if isinstance(stop.get("after"), list):
+        out["after"] = [str(x)[:120] for x in stop["after"][:3]]
+    return out
 
 
 def routing_level3(routing):

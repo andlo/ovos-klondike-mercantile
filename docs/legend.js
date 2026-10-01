@@ -7,6 +7,10 @@
 const LEGEND_ROWS = [
   { rec: { status: "pass", level: 3, routing: { golden: { status: "ok", hit: 14, counted: 14 } } },
     what: "Level 3: its own golden utterances were sent with the OVOS installer's default skills loaded, and they all reached it. The best result." },
+  { rec: { status: "pass", level: 3, routing: { golden: { status: "ok", hit: 14, counted: 14 }, stop: { result: "stops" } } },
+    what: "Level 3, and the stop check: one of its sentences was sent again, and when it was still talking or playing, \"stop\" made it quiet. Only shown for skills that keep going (a story, counting, a metronome)." },
+  { rec: { status: "pass", level: 3, routing: { golden: { status: "ok", hit: 14, counted: 14 }, stop: { result: "keeps_going" } } },
+    what: "Level 3, but it went on talking or playing after \"stop\" (or its handler never finished). The detail page shows what it said." },
   { rec: { status: "pass", level: 2, routing: { golden: { status: "ok", hit: 9, counted: 14 } } },
     what: "Loads, but fewer than 80% of its golden utterances reached it: a default skill took some, or none answered. The detail page lists each miss and who took it." },
   { rec: { status: "pass", level: 2 },

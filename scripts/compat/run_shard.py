@@ -648,6 +648,12 @@ def aggregate(routable, boots, langs, skipped, field="routing"):
             if run == "golden":
                 agg["langs_not_routed"] = skipped
             routing[run] = agg
+        # Stop check (#16): from the en-US boot, which runs it after its rows.
+        for b in boots:
+            stop = (b.get("stop") or {}).get(item["id"])
+            if isinstance(stop, dict) and stop.get("result"):
+                routing["stop"] = {**stop, "lang": b.get("lang")}
+                break
         g = routing.get("golden", {})
         if field == "routing" and g.get("status") == "ok" and g["hit"] / g["counted"] >= LEVEL3_RATIO:
             rec["level"] = 3
