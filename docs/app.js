@@ -55,7 +55,7 @@ function renderCard(skill) {
           </div>
         </div>
         <div class="badges">${renderBadges(skill)}</div>
-        ${renderCompatLabels(skill) || renderQualityLabel(skill) ? `<div class="compat-labels">${renderQualityLabel(skill)}${renderCompatLabels(skill)}</div>` : ""}
+        ${renderCompatLabels(skill) || renderQualityLabel(skill) ? `<div class="compat-labels">${renderCompatLabels(skill)}${renderQualityLabel(skill)}</div>` : ""}
         <p class="description">${escapeHtml(description)}</p>
         <ul class="examples">${examples}</ul>
         <div class="tags">${tags}</div>

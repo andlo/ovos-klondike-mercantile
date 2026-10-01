@@ -11,7 +11,7 @@ const TIER_LABELS = { 1: "Looks Complete", 2: "Incomplete", 3: "Inferred, Unconf
 const COMPAT_OPTIONS = [
   ["tested", "Tested on OVOS"],
   ["quality:routes", "🎯 Routes (its own sentences reach it)"],
-  ["quality:klondike", "⛏ Klondike-proof (also on a well-equipped install)"],
+  ["quality:klondike", "⛏ Klondike Gold (also on a well-equipped install)"],
   ["loads:testing", "✓ Works on testing"],
   ["loads:alpha", "✓ Works on alpha"],
   ["loads:stable", "✓ Works on stable"],
