@@ -146,6 +146,40 @@ def insert_stages(pipeline, plugins):
     return out, added, skipped
 
 
+# A provider skill only works behind the pipeline plugin it provides for, the
+# way a skill only works with its own dependencies. When a shard routes such
+# a skill (level 2 saw it register with that pipeline), the normal-install
+# pass installs the plugin and inserts its stages, where its README puts them.
+COMPANION_PIPELINES = {
+    "common_reading": {
+        "requirement": "ovos-common-reading-pipeline-plugin",
+        "stages": [
+            {"stage": "ovos-common-reading-pipeline-plugin-high", "after": "stop_high"},
+            {"stage": "ovos-common-reading-pipeline-plugin-low", "before": "ovos-fallback-pipeline-plugin-low"},
+        ],
+    },
+}
+
+
+def with_companions(spec, registrations):
+    """(spec with the companion pipelines the given level-2 registrations
+    need, {kind: stages added}). `registrations` is a list of the routed
+    skills' registration dicts; spec is {requirements, pipeline, ...}."""
+    kinds = sorted({k for regs in registrations for k in (regs or {}) if k in COMPANION_PIPELINES})
+    if not kinds:
+        return spec, {}
+    out = dict(spec)
+    reqs, pipeline, added = list(spec.get("requirements") or []), list(spec.get("pipeline") or []), {}
+    for kind in kinds:
+        comp = COMPANION_PIPELINES[kind]
+        if comp["requirement"] not in reqs:
+            reqs.append(comp["requirement"])
+        pipeline, stages, _ = insert_stages(pipeline, comp["stages"])
+        added[kind] = stages
+    out["requirements"], out["pipeline"] = reqs, pipeline
+    return out, added
+
+
 def load_extra_requirements():
     """The installer's extra-skills template, rendered with that feature on."""
     lines = render_requirements(_fetch(EXTRA_TEMPLATE), {"ovos_installer_feature_extra_skills": True})
