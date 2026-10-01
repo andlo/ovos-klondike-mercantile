@@ -66,6 +66,14 @@ id = "OpenVoiceOS-ovos-skill-easter-eggs"
 function = "easter eggs"
 note = "commented out in the installer's extra-skills template"
 
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-color-picker"
+function = "colour lookup (hex, RGB)"
+
+[[skill]]
+id = "OpenVoiceOS-ovos-skill-pokepedia"
+function = "Pokémon facts"
+
 # --- andlo -----------------------------------------------------------------
 
 [[skill]]
@@ -77,17 +85,9 @@ id = "andlo-ovos-skill-convert"
 function = "unit conversion"
 
 [[skill]]
-id = "andlo-ovos-skill-holidays"
-function = "public holidays"
-
-[[skill]]
 id = "andlo-ovos-skill-nato-alphabet"
 function = "spelling aid"
 note = "overlaps spelling? worth seeing"
-
-[[skill]]
-id = "andlo-ovos-skill-white-noise"
-function = "sleep sounds"
 
 [[skill]]
 id = "andlo-ovos-skill-metronome"
@@ -97,6 +97,36 @@ function = "music tool"
 id = "andlo-ovos-skill-grimm-tales"
 function = "story reading"
 note = "provider for the reading pipeline below; one provider is enough"
+
+[[skill]]
+id = "andlo-ovos-skill-ovosblog"
+function = "reads the OVOS blog"
+note = "a second provider for the reading pipeline, next to grimm-tales"
+
+[[skill]]
+id = "andlo-ovos-skill-sound-like"
+function = "animal sounds"
+
+[[skill]]
+id = "andlo-ovos-skill-geography"
+function = "geography facts (offline)"
+
+[[skill]]
+id = "andlo-ovos-skill-geometry"
+function = "geometry terms and formulas"
+
+[[skill]]
+id = "andlo-ovos-skill-tuning-fork"
+function = "reference tones"
+note = "music tool next to metronome and rhythm box, which is worth seeing"
+
+[[skill]]
+id = "andlo-ovos-skill-rhythm-box"
+function = "drum machine"
+
+[[skill]]
+id = "andlo-ovos-skill-network-scanner"
+function = "devices on the local network"
 
 # --- others ----------------------------------------------------------------
 
