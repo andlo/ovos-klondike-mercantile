@@ -271,6 +271,7 @@ ROUTE_BUDGET_MIN = float(os.environ.get("COMPAT_ROUTE_BUDGET_MIN", "30"))
 # locally for en-US, alpha), with every tested skill loaded next to it.
 KLONDIKE_BUDGET_MIN = float(os.environ.get("COMPAT_KLONDIKE_BUDGET_MIN", "240"))
 KLONDIKE_BOOT_TIMEOUT = int(os.environ.get("COMPAT_KLONDIKE_BOOT_TIMEOUT", "3000"))
+KLONDIKE_LANGS = [l.strip() for l in os.environ.get("COMPAT_KLONDIKE_LANGS", "en-US").split(",") if l.strip()]
 # Generated rows are drafted in English only for now: ovoscope generate's
 # default slot values are English-only (ovoscope#224), so other languages
 # skip most templates.
@@ -585,6 +586,10 @@ def klondike_job(args, workroot, deadline):
             all_runs[item["id"]] = runs
     routable = [(i, r) for i, r in entries if all_runs.get(i["id"])]
     langs, skipped = pick_langs({i["id"]: all_runs[i["id"]] for i, _ in routable})
+    # Other languages are routed in the shards already; repeating them here
+    # costs a 16-20 minute boot each on the runners (alpha: 3.5 h for four).
+    skipped = [l for l in langs if l not in KLONDIKE_LANGS] + skipped
+    langs = [l for l in langs if l in KLONDIKE_LANGS]
     manifest = {"pipeline": spec.get("pipeline") or [], "exclude_ids": sorted(exclude),
                 "counted_ids": sorted(profile_ids),
                 "uncounted_ids": sorted({sid for i, r in entries if not r["member"] for sid in r["plugin_ids"]}),

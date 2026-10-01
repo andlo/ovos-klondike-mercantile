@@ -868,6 +868,9 @@ footer a { color: var(--accent); }
   border: 1px solid transparent;
 }
 
+.quality-label { border-width: 1.5px; }
+.quality-routes { background: #e8f1fd; color: #1d5fb8; border-color: #b9d3f5; }
+.quality-klondike { background: #fdf3dc; color: #8a5a00; border-color: #efd391; }
 .compat-pass { background: #eafbf0; color: #1e8a4c; border-color: #bfe9cf; }
 .compat-warn { background: #f4f9e6; color: #5b7a12; border-color: #dbe9b5; }
 .compat-fail { background: #fdeceb; color: #c73e35; border-color: #f5c9c5; }
