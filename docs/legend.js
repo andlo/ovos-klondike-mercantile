@@ -65,7 +65,8 @@ function renderTestLegend() {
       </tbody>
     </table>
     <p class="setup-note">Each card shows one label per tested channel: <strong>testing</strong> (what the OVOS installer installs by default),
-      <strong>alpha</strong> and <strong>stable</strong>. Hover a label for the version and date tested. A channel we haven't tested yet shows no label.
+      <strong>alpha</strong> and <strong>stable</strong>, then at most one quality label (🎯 Routes or ⛏ Klondike Gold, above).
+      Hover a label for the version and date tested, or for the numbers behind a quality label. A channel we haven't tested yet shows no label.
       The README badge a maintainer can add says the same as the detail page, e.g.
       <img class="legend-shield" alt="ovos testing: ✓ 14/14 golden" src="https://img.shields.io/badge/ovos%20testing-%E2%9C%93%2014%2F14%20golden-brightgreen"></p>`;
 }
