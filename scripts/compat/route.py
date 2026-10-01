@@ -267,6 +267,11 @@ def end_speech(croft, recs, session_id, done):
     return len(speaks)
 
 
+# "<prefix><provider skill_id>": the topic a pipeline plugin sends to the
+# provider it chose (ovos-common-reading-pipeline-plugin's fetch request).
+PROVIDER_PICKED = ("ovos.common_reading.fetch_content.",)
+
+
 def claimant(recs, known_ids):
     """(skill_id or None, fired topics of that skill)."""
     types = {m.msg_type for m in recs}
@@ -277,6 +282,17 @@ def claimant(recs, known_ids):
         if ":" in m.msg_type and m.msg_type.split(":", 1)[0] in known_ids:
             who = m.msg_type.split(":", 1)[0]
             break
+    if who is None:
+        # A provider for a pipeline plugin never fires an intent of its own:
+        # the plugin picks it and asks it for the content (the plugin then
+        # speaks under its own id). Being asked is taking the utterance.
+        for m in recs:
+            for prefix in PROVIDER_PICKED:
+                if m.msg_type.startswith(prefix) and m.msg_type[len(prefix):] in known_ids:
+                    who = m.msg_type[len(prefix):]
+                    break
+            if who:
+                break
     if who is None:
         for m in recs:
             sid = (m.context or {}).get("skill_id")

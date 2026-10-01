@@ -200,6 +200,8 @@ def classify(msg_type):
         return "intents"
     if "fallback" in t and "register" in t:
         return "fallback"
+    if t.startswith("ovos.common_reading."):
+        return "common_reading"
     if "common_query" in t:
         return "common_query"
     if "common_play" in t or "ocp" in t:

@@ -36,6 +36,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PROBE = HERE / "probe.py"
+sys.path.insert(0, str(HERE))
+from baseline import with_companions  # noqa: E402
 ANSI = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
 NETWORK_ERRORS = re.compile(
     r"(ConnectionError|ReadTimeout|Max retries exceeded|Temporary failure in name "
@@ -744,6 +746,9 @@ def main():
                 routable, all_runs = [], {}
                 print(f"    level 3 aborted: {e}", flush=True)
             for field, name, spec, label, budget_min in passes if routable else []:
+                spec, companions = with_companions(spec, [r.get("registrations") for _, r in routable])
+                for kind, stages in companions.items():
+                    print(f"    {kind} providers in the shard: adding {', '.join(stages) or 'no stage'}", flush=True)
                 print(f"==> level 3: routing against {label} ({', '.join(spec['requirements'])})", flush=True)
                 try:
                     out = route_pass(routable, all_runs, spec, field, args, workroot, deadline, label, budget_min)
@@ -751,6 +756,8 @@ def main():
                     out = {"error": f"{type(e).__name__}: {e}"[:500]}
                     print(f"    {name} aborted: {out['error']}", flush=True)
                 if out:
+                    if companions:
+                        out["companion_pipelines"] = companions
                     write_pass(args, name, out)
                 # Written after every pass: a job killed later keeps this one.
                 Path(args.out).write_text(json.dumps(results, indent=2))
