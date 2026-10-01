@@ -447,28 +447,20 @@ function versionLabel(skill) {
   return "unreleased";
 }
 
-// Computes a country flag emoji directly from a 2-letter region
-// code via Unicode "regional indicator symbol" math - no lookup
-// table needed. E.g. flagEmoji("us") -> 🇺🇸, flagEmoji("dk") -> 🇩🇰.
-// Falls back to null for anything that isn't a clean 2-letter code
-// (a handful of locale codes are language-only, with no region).
-function flagEmoji(regionCode) {
-  if (!regionCode || regionCode.length !== 2) return null;
-  const upper = regionCode.toUpperCase();
-  if (!/^[A-Z]{2}$/.test(upper)) return null;
-  return String.fromCodePoint(
-    ...[...upper].map((c) => 127397 + c.charCodeAt(0))
-  );
-}
+// Bundled flag SVGs (docs/flags/, from flag-icons, MIT - see flags/LICENSE):
+// emoji flags don't exist on Windows, where they show as two letters
+// ("DK"), so cards and menus use images instead (issue #14). es.svg is the
+// plain civil flag: the full one with its coat of arms is 90 KB.
+const FLAG_REGIONS = new Set(["ao", "ar", "at", "au", "az", "be", "bg", "br", "ca", "ch", "cn", "co", "cz", "de", "dk", "ee", "es", "eu", "fi", "fr", "gb", "gr", "hr", "hu", "id", "il", "in", "ir", "is", "it", "jp", "ke", "kr", "lt", "lv", "mx", "my", "mz", "nl", "no", "nz", "pl", "pt", "ro", "ru", "sa", "se", "sg", "si", "sk", "th", "tr", "tw", "ua", "us", "vn"]);
 
-// "en-us" -> flag for "us"; "da-dk" -> flag for "dk"; a bare
-// language code with no region ("en") falls back to just the code
-// itself, since there's no single flag for a language alone.
+// "en-us" -> the flag for "us"; "da-dk" -> the flag for "dk", as an <img>.
+// A bare language code ("en"), or a region without a bundled flag, falls
+// back to the code itself, since there's no single flag for a language.
 function languageFlag(localeCode) {
-  const parts = localeCode.split("-");
-  const region = parts.length > 1 ? parts[parts.length - 1] : null;
-  const flag = region ? flagEmoji(region) : null;
-  return flag || localeCode;
+  const parts = String(localeCode || "").split("-");
+  const region = parts.length > 1 ? parts[parts.length - 1].toLowerCase() : null;
+  if (!region || !FLAG_REGIONS.has(region)) return escapeHtml(localeCode);
+  return `<img class="flag" src="flags/${region}.svg" alt="${escapeHtml(region.toUpperCase())}" width="20" height="15" loading="lazy">`;
 }
 
 function renderLanguageFlags(skill, currentLang) {
@@ -543,7 +535,8 @@ function populateSiteLangSelect(selectEl) {
   for (const { code, label } of SITE_LANGUAGES) {
     const opt = document.createElement("option");
     opt.value = code;
-    opt.textContent = `${languageFlag(code)} ${label}`;
+    // <option> can't hold an image, and emoji flags show as "DK" on Windows
+    opt.textContent = label;
     selectEl.appendChild(opt);
   }
   selectEl.value = getSiteLanguage();
