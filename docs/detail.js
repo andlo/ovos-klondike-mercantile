@@ -404,6 +404,15 @@ function renderKlondike(rec, meta) {
     rows.push(renderStatRow("Pipeline", `the profile adds ${asArray(profile.added_stages).map((s) => `<code>${escapeHtml(s)}</code>`).join(" ")} to the installer's pipeline`));
   }
   rows.push(renderStatRow("Profile", `<a href="for-maintainers.html#klondike-profile">what is in it, and how to propose a skill</a>`));
+  { // the same core on a device (#48): the job's frozen stack, then ovos-tui
+    const ch = encodeURIComponent(rec.channel);
+    const sid = asArray(rec.plugin_ids)[0] || "<skill_id>";
+    rows.push(renderStatRow("Reproduce on a device",
+      `<code>pip install -r ${escapeHtml(PAGES_URL)}/compat/klondike-stack-${ch}.txt</code>, `
+      + `the <a href="compat/klondike-mycroft-${ch}.json">pipeline</a> in mycroft.conf, restart OVOS, then `
+      + `<code>ovos-tui --run ${escapeHtml(sid)}</code>`
+      + ` <span class="setup-note">(until #48 the device's judge can still differ in edge cases)</span>`));
+  }
   const kg = k.golden || {};
   const gold = (rec.level || 0) >= 3 && kg.counted && kg.hit / kg.counted >= COMPAT_LEVEL3_RATIO
     ? qualityChip("klondike", `${kg.hit}/${kg.counted} still reach it with the Klondike profile loaded on ${rec.channel}`) : "";
