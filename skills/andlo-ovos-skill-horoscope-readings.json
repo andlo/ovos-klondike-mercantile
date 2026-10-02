@@ -96,28 +96,40 @@
     "badge_id": "ovos-skill-horoscope-readings.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 0/4 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.1.4",
-        "tested_at": "2026-10-01T09:28:03+00:00",
-        "channel_pinned": false
+        "version_tested": "0.1.5",
+        "tested_at": "2026-10-02T06:26:57+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 0,
+          "counted": 4
+        }
       },
       "testing": {
-        "label": "\u2713 loads",
+        "label": "\u2713 4/4 golden",
         "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.4",
-        "tested_at": "2026-10-01T09:27:15+00:00",
-        "channel_pinned": false
+        "level": 3,
+        "version_tested": "0.1.5",
+        "tested_at": "2026-10-02T06:36:46+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 4,
+          "counted": 4
+        }
       },
       "alpha": {
-        "label": "\u2713 loads",
+        "label": "\u2713 4/4 golden",
         "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.4",
-        "tested_at": "2026-10-01T09:26:15+00:00",
-        "channel_pinned": false
+        "level": 3,
+        "version_tested": "0.1.5",
+        "tested_at": "2026-10-02T06:57:06+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 4,
+          "counted": 4
+        }
       }
     }
   }

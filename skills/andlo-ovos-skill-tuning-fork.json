@@ -67,28 +67,40 @@
     "badge_id": "ovos-skill-tuning-fork.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 2/12 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-10-01T09:27:26+00:00",
-        "channel_pinned": false
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-02T06:31:54+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 2,
+          "counted": 12
+        }
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 2/12 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-10-01T09:26:33+00:00",
-        "channel_pinned": false
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-02T06:52:12+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 2,
+          "counted": 12
+        }
       },
       "alpha": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 6/12 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-10-01T09:26:07+00:00",
-        "channel_pinned": false
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-02T07:28:13+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 6,
+          "counted": 12
+        }
       }
     }
   }

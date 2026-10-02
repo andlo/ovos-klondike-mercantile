@@ -67,28 +67,43 @@
     "badge_id": "ovos-skill-metronome.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 5/10 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-01T09:28:29+00:00",
-        "channel_pinned": false
+        "stop": "stops",
+        "version_tested": "0.0.4",
+        "tested_at": "2026-10-02T06:26:04+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 5,
+          "counted": 10
+        }
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 4/10 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-01T09:27:29+00:00",
-        "channel_pinned": false
+        "stop": "stops",
+        "version_tested": "0.0.4",
+        "tested_at": "2026-10-02T06:36:34+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 4,
+          "counted": 10
+        }
       },
       "alpha": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 5/10 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-01T09:26:33+00:00",
-        "channel_pinned": false
+        "stop": "stops",
+        "version_tested": "0.0.4",
+        "tested_at": "2026-10-02T06:56:31+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 5,
+          "counted": 10
+        }
       }
     }
   }

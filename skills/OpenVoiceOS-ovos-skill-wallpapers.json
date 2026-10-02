@@ -712,8 +712,9 @@
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
+        "stop": "stops",
         "version_tested": "1.0.9",
-        "tested_at": "2026-09-30T12:55:58+00:00",
+        "tested_at": "2026-10-02T06:27:02+00:00",
         "channel_pinned": true
       },
       "testing": {
@@ -721,15 +722,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.0.9",
-        "tested_at": "2026-09-30T13:04:22+00:00",
+        "tested_at": "2026-10-02T06:50:26+00:00",
         "channel_pinned": true
       },
       "alpha": {
         "label": "\u2713 loads \u00b7 10/23 golden",
         "state": "warn",
         "level": 2,
-        "version_tested": "2.8.0a2",
-        "tested_at": "2026-09-30T13:17:55+00:00",
+        "version_tested": "2.8.1a1",
+        "tested_at": "2026-10-02T07:25:33+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 10,

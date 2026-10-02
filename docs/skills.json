@@ -119,28 +119,40 @@
       "badge_id": "ovos-skill-365tomorrows-stories.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:26:01+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:25:59+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:25:35+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:33:40+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:25:50+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:50:56+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         }
       }
     }
@@ -235,7 +247,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.24",
-          "tested_at": "2026-09-30T12:53:50+00:00",
+          "tested_at": "2026-10-02T06:26:48+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -243,19 +255,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.28",
-          "tested_at": "2026-09-30T12:53:14+00:00",
+          "tested_at": "2026-10-02T06:34:34+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 190/198 golden",
+          "label": "\u2713 191/199 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.12.31a5",
-          "tested_at": "2026-09-30T13:03:55+00:00",
+          "version_tested": "0.12.33a1",
+          "tested_at": "2026-10-02T06:51:04+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 190,
-            "counted": 198
+            "hit": 191,
+            "counted": 199
           }
         }
       }
@@ -375,28 +387,41 @@
       "badge_id": "ovos-skill-andersen-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/6 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:26:53+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:27:52+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 6
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 6/6 golden \u00b7 stops",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:26:21+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:35:41+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 6
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 4/4 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:25:59+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T07:01:31+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 4
+          }
         }
       }
     }
@@ -459,28 +484,41 @@
       "badge_id": "ovos-skill-andrew-lang-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-01T09:27:12+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.9",
+          "tested_at": "2026-10-02T06:28:10+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-01T09:26:37+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.9",
+          "tested_at": "2026-10-02T06:35:58+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden \u00b7 stops",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-01T09:26:09+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.1.9",
+          "tested_at": "2026-10-02T07:01:44+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         }
       }
     }
@@ -612,7 +650,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.13",
-          "tested_at": "2026-09-30T12:55:26+00:00",
+          "tested_at": "2026-10-02T06:28:21+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -620,7 +658,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.14",
-          "tested_at": "2026-09-30T12:54:36+00:00",
+          "tested_at": "2026-10-02T06:36:05+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -628,7 +666,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.13.5a4",
-          "tested_at": "2026-09-30T13:14:54+00:00",
+          "tested_at": "2026-10-02T07:01:52+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 0,
@@ -805,28 +843,40 @@
       "badge_id": "ovos-skill-arxiv-papers.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:27:25+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:28:38+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:26:43+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:36:22+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:26:17+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T07:02:02+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         }
       }
     }
@@ -927,7 +977,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.19",
-          "tested_at": "2026-09-30T12:56:04+00:00",
+          "tested_at": "2026-10-02T06:28:52+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -935,7 +985,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.19",
-          "tested_at": "2026-09-30T12:55:06+00:00",
+          "tested_at": "2026-10-02T06:36:36+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -943,7 +993,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2a6",
-          "tested_at": "2026-09-30T13:15:06+00:00",
+          "tested_at": "2026-10-02T07:02:10+00:00",
           "channel_pinned": true
         }
       }
@@ -1021,7 +1071,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.7",
-          "tested_at": "2026-09-30T12:56:26+00:00",
+          "tested_at": "2026-10-02T06:29:09+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -1029,18 +1079,18 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.7",
-          "tested_at": "2026-09-30T12:55:25+00:00",
+          "tested_at": "2026-10-02T06:36:55+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 32/33 golden",
+          "label": "\u2713 31/33 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.7.2a4",
-          "tested_at": "2026-09-30T13:15:51+00:00",
+          "version_tested": "0.7.2a5",
+          "tested_at": "2026-10-02T07:02:57+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 32,
+            "hit": 31,
             "counted": 33
           }
         }
@@ -1307,27 +1357,35 @@
       "badge_id": "ovos-skill-bechstein-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:27:42+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:26:06+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:26:57+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:34:20+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:26:25+00:00",
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:52:31+00:00",
           "channel_pinned": false
         }
       }
@@ -1403,28 +1461,40 @@
       "badge_id": "ovos-skill-calculator.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 3/25 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-09-30T12:52:59+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:26:27+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 25
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 3/25 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-09-30T12:52:43+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:34:33+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 25
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 25/25 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-09-30T13:04:10+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:52:37+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 25,
+            "counted": 25
+          }
         }
       }
     }
@@ -1503,7 +1573,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.4",
-          "tested_at": "2026-09-30T12:53:12+00:00",
+          "tested_at": "2026-10-02T06:26:41+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -1511,19 +1581,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.4",
-          "tested_at": "2026-09-30T12:52:50+00:00",
+          "tested_at": "2026-10-02T06:34:40+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 17/17 golden",
+          "label": "\u2713 18/18 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "1.4.0a1",
-          "tested_at": "2026-09-30T13:04:23+00:00",
+          "tested_at": "2026-10-02T06:52:51+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 17,
-            "counted": 17
+            "hit": 18,
+            "counted": 18
           }
         }
       }
@@ -1705,7 +1775,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-30T12:54:15+00:00",
+          "tested_at": "2026-10-02T06:27:41+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -1713,15 +1783,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-30T12:53:20+00:00",
+          "tested_at": "2026-10-02T06:35:24+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.1a1",
-          "tested_at": "2026-09-30T13:05:13+00:00",
+          "version_tested": "0.7.2a1",
+          "tested_at": "2026-10-02T06:53:42+00:00",
           "channel_pinned": true
         }
       }
@@ -1936,24 +2006,24 @@
           "label": "not supported",
           "state": "unsupported",
           "level": 1,
-          "version_tested": "0.3.0",
-          "tested_at": "2026-10-01T09:27:56+00:00",
+          "version_tested": "0.3.2",
+          "tested_at": "2026-10-02T06:28:01+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.3.0",
-          "tested_at": "2026-10-01T09:27:04+00:00",
+          "version_tested": "0.3.2",
+          "tested_at": "2026-10-02T06:35:42+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.3.0",
-          "tested_at": "2026-10-01T09:26:33+00:00",
+          "version_tested": "0.3.2",
+          "tested_at": "2026-10-02T06:54:30+00:00",
           "channel_pinned": false
         }
       }
@@ -2033,7 +2103,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.13",
-          "tested_at": "2026-09-30T12:54:36+00:00",
+          "tested_at": "2026-10-02T06:28:05+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -2041,19 +2111,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.13",
-          "tested_at": "2026-09-30T12:53:38+00:00",
+          "tested_at": "2026-10-02T06:35:49+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 22/22 golden",
+          "label": "\u2713 21/21 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.8.1a2",
-          "tested_at": "2026-09-30T13:06:01+00:00",
+          "version_tested": "0.8.2a1",
+          "tested_at": "2026-10-02T06:54:36+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 22,
-            "counted": 22
+            "hit": 21,
+            "counted": 21
           }
         }
       }
@@ -2125,27 +2195,35 @@
       "badge_id": "ovos-skill-cosquin-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:27:59+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:28:22+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:27:10+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:36:03+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:26:41+00:00",
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-02T06:55:23+00:00",
           "channel_pinned": false
         }
       }
@@ -2327,7 +2405,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.4.20",
-          "tested_at": "2026-09-30T12:55:06+00:00",
+          "tested_at": "2026-10-02T06:28:36+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -2335,19 +2413,19 @@
           "state": "warn",
           "level": 2,
           "version_tested": "1.1.5",
-          "tested_at": "2026-09-30T12:54:00+00:00",
+          "tested_at": "2026-10-02T06:36:10+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 144/144 golden",
+          "label": "\u2713 145/145 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "1.11.1a1",
-          "tested_at": "2026-09-30T13:06:54+00:00",
+          "version_tested": "1.11.4a1",
+          "tested_at": "2026-10-02T06:55:29+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 144,
-            "counted": 144
+            "hit": 145,
+            "counted": 145
           }
         }
       }
@@ -2436,7 +2514,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.8",
-          "tested_at": "2026-09-30T12:58:26+00:00",
+          "tested_at": "2026-10-02T06:25:33+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -2444,19 +2522,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.8",
-          "tested_at": "2026-09-30T13:00:55+00:00",
+          "tested_at": "2026-10-02T06:34:53+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 22/22 golden",
-          "state": "pass",
+          "label": "\u2713 20/21 golden",
+          "state": "warn",
           "level": 3,
-          "version_tested": "0.9.0a2",
-          "tested_at": "2026-09-30T13:10:12+00:00",
+          "version_tested": "0.9.0a3",
+          "tested_at": "2026-10-02T06:55:32+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 22,
-            "counted": 22
+            "hit": 20,
+            "counted": 21
           }
         }
       }
@@ -2532,7 +2610,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.15",
-          "tested_at": "2026-09-30T12:52:50+00:00",
+          "tested_at": "2026-10-02T06:26:38+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -2540,18 +2618,18 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.19",
-          "tested_at": "2026-09-30T12:52:18+00:00",
+          "tested_at": "2026-10-02T06:36:07+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 17/22 golden",
+          "label": "\u2713 loads \u00b7 15/22 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.7.0a3",
-          "tested_at": "2026-09-30T13:08:18+00:00",
+          "tested_at": "2026-10-02T06:56:29+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 17,
+            "hit": 15,
             "counted": 22
           }
         }
@@ -2860,7 +2938,44 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-fart.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 45/45 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "1.0.1",
+          "tested_at": "2026-10-02T06:26:59+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 45,
+            "counted": 45
+          }
+        },
+        "testing": {
+          "label": "\u2713 33/34 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "1.0.1",
+          "tested_at": "2026-10-02T06:36:27+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 33,
+            "counted": 34
+          }
+        },
+        "alpha": {
+          "label": "\u2713 22/22 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "1.0.1",
+          "tested_at": "2026-10-02T06:57:53+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 22,
+            "counted": 22
+          }
+        }
+      }
     }
   },
   {
@@ -2939,7 +3054,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.5.0",
-          "tested_at": "2026-09-30T12:53:43+00:00",
+          "tested_at": "2026-10-02T06:27:40+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -2947,15 +3062,15 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.5.0",
-          "tested_at": "2026-09-30T12:53:12+00:00",
+          "tested_at": "2026-10-02T06:36:59+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "needs device",
           "state": "unsupported",
           "level": 1,
-          "version_tested": "0.9.0a4",
-          "tested_at": "2026-09-30T13:09:43+00:00",
+          "version_tested": "0.9.1a1",
+          "tested_at": "2026-10-02T06:58:18+00:00",
           "channel_pinned": true
         }
       }
@@ -3082,28 +3197,40 @@
       "badge_id": "ovos-skill-geography.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 9/49 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T13:09:31+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.5",
+          "tested_at": "2026-10-02T06:42:56+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 9,
+            "counted": 49
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 8/40 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T13:09:04+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.5",
+          "tested_at": "2026-10-02T06:52:16+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 8,
+            "counted": 40
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 28/28 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T13:24:52+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.5",
+          "tested_at": "2026-10-02T07:13:28+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 28,
+            "counted": 28
+          }
         }
       }
     }
@@ -3218,28 +3345,41 @@
       "badge_id": "ovos-skill-geography-practice.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-10-01T09:28:13+00:00",
-          "channel_pinned": false
+          "label": "\u2713 22/27 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.0.6",
+          "tested_at": "2026-10-02T06:43:12+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 22,
+            "counted": 27
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-10-01T09:27:18+00:00",
-          "channel_pinned": false
+          "label": "\u2713 16/20 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.0.6",
+          "tested_at": "2026-10-02T06:52:26+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 16,
+            "counted": 20
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 18/18 golden \u00b7 stops",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-10-01T09:26:49+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.0.6",
+          "tested_at": "2026-10-02T07:13:55+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 18,
+            "counted": 18
+          }
         }
       }
     }
@@ -3354,28 +3494,40 @@
       "badge_id": "ovos-skill-geometry.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 4/37 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T13:10:02+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:43:27+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 37
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 3/25 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T13:09:28+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:52:36+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 25
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 25/25 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T13:25:34+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T07:14:13+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 25,
+            "counted": 25
+          }
         }
       }
     }
@@ -3489,28 +3641,43 @@
       "badge_id": "ovos-skill-geometry-practice.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:26:27+00:00",
-          "channel_pinned": false
+          "label": "\u2713 31/36 golden \u00b7 stops",
+          "state": "warn",
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:43:42+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 31,
+            "counted": 36
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:25:15+00:00",
-          "channel_pinned": false
+          "label": "\u2713 20/24 golden \u00b7 stops",
+          "state": "warn",
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:52:46+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 20,
+            "counted": 24
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 24/24 golden \u00b7 stops",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:25:28+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T07:14:31+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 24,
+            "counted": 24
+          }
         }
       }
     }
@@ -3719,28 +3886,40 @@
       "badge_id": "ovos-skill-grimm-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/8 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:27:01+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:25:38+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 8
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 8/8 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:25:35+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:35:42+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 8,
+            "counted": 8
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 5/5 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-01T09:25:47+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:56:38+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 5,
+            "counted": 5
+          }
         }
       }
     }
@@ -5171,7 +5350,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:27:48+00:00",
+          "tested_at": "2026-10-02T06:26:40+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -5179,7 +5358,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:27:07+00:00",
+          "tested_at": "2026-10-02T06:36:35+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -5187,7 +5366,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:25:56+00:00",
+          "tested_at": "2026-10-02T06:56:47+00:00",
           "channel_pinned": false
         }
       }
@@ -5291,28 +5470,40 @@
       "badge_id": "ovos-skill-horoscope-readings.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/4 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.4",
-          "tested_at": "2026-10-01T09:28:03+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.5",
+          "tested_at": "2026-10-02T06:26:57+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 4
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 4/4 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.4",
-          "tested_at": "2026-10-01T09:27:15+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-10-02T06:36:46+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 4
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 4/4 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.4",
-          "tested_at": "2026-10-01T09:26:15+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-10-02T06:57:06+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 4
+          }
         }
       }
     }
@@ -5643,28 +5834,40 @@
       "badge_id": "ovos-skill-intercom.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 4/34 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-09-30T12:53:46+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.7",
+          "tested_at": "2026-10-02T06:27:14+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 34
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 3/34 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-09-30T13:01:03+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.7",
+          "tested_at": "2026-10-02T06:36:58+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 34
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-09-30T13:11:01+00:00",
-          "channel_pinned": false
+          "label": "\u2713 17/18 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-10-02T06:57:11+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 17,
+            "counted": 18
+          }
         }
       }
     }
@@ -5818,7 +6021,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.16",
-          "tested_at": "2026-09-30T12:54:02+00:00",
+          "tested_at": "2026-10-02T06:27:29+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -5826,19 +6029,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.16",
-          "tested_at": "2026-09-30T13:01:13+00:00",
+          "tested_at": "2026-10-02T06:37:08+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 46/46 golden",
+          "label": "\u2713 45/45 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.7.1a1",
-          "tested_at": "2026-09-30T13:11:24+00:00",
+          "tested_at": "2026-10-02T06:57:33+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 46,
-            "counted": 46
+            "hit": 45,
+            "counted": 45
           }
         }
       }
@@ -5921,7 +6124,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-09-30T12:54:29+00:00",
+          "tested_at": "2026-10-02T06:28:20+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -5929,15 +6132,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-09-30T13:01:59+00:00",
+          "tested_at": "2026-10-02T06:37:35+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 29/29 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.4a3",
-          "tested_at": "2026-09-30T13:12:33+00:00",
+          "version_tested": "0.2.5a1",
+          "tested_at": "2026-10-02T06:58:38+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 29,
@@ -6029,7 +6232,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.7",
-          "tested_at": "2026-09-30T12:54:43+00:00",
+          "tested_at": "2026-10-02T06:28:34+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -6037,15 +6240,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.7",
-          "tested_at": "2026-09-30T13:02:07+00:00",
+          "tested_at": "2026-10-02T06:37:43+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 21/21 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.25.6a2",
-          "tested_at": "2026-09-30T13:13:30+00:00",
+          "version_tested": "0.25.6a3",
+          "tested_at": "2026-10-02T06:59:35+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 21,
@@ -6240,7 +6443,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-30T12:55:04+00:00",
+          "tested_at": "2026-10-02T06:28:54+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -6248,7 +6451,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-30T13:02:25+00:00",
+          "tested_at": "2026-10-02T06:37:59+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -6256,7 +6459,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-09-30T13:14:26+00:00",
+          "tested_at": "2026-10-02T07:00:31+00:00",
           "channel_pinned": false
         }
       }
@@ -6451,28 +6654,42 @@
       "badge_id": "ovos-skill-math-practice.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 41/66 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-01T09:28:17+00:00",
-          "channel_pinned": false
+          "stop": "stops",
+          "version_tested": "0.0.8",
+          "tested_at": "2026-10-02T06:25:50+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 41,
+            "counted": 66
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 41/66 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-01T09:27:23+00:00",
-          "channel_pinned": false
+          "stop": "stops",
+          "version_tested": "0.0.8",
+          "tested_at": "2026-10-02T06:36:27+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 41,
+            "counted": 66
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-01T09:26:21+00:00",
-          "channel_pinned": false
+          "label": "\u2713 64/66 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-10-02T06:56:15+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 64,
+            "counted": 66
+          }
         }
       }
     }
@@ -6546,28 +6763,43 @@
       "badge_id": "ovos-skill-metronome.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 5/10 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:28:29+00:00",
-          "channel_pinned": false
+          "stop": "stops",
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:26:04+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 5,
+            "counted": 10
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 4/10 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:27:29+00:00",
-          "channel_pinned": false
+          "stop": "stops",
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:36:34+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 10
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 5/10 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-01T09:26:33+00:00",
-          "channel_pinned": false
+          "stop": "stops",
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-02T06:56:31+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 5,
+            "counted": 10
+          }
         }
       }
     }
@@ -6694,28 +6926,40 @@
       "badge_id": "ovos-skill-morse-code.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 2/6 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:28:40+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:26:17+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 6
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 2/6 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:27:34+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:36:41+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 6
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 2/5 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:46+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:56:46+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 5
+          }
         }
       }
     }
@@ -6806,7 +7050,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.12",
-          "tested_at": "2026-09-30T12:53:20+00:00",
+          "tested_at": "2026-10-02T06:26:30+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -6814,19 +7058,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.12",
-          "tested_at": "2026-09-30T13:01:07+00:00",
+          "tested_at": "2026-10-02T06:36:48+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 123/126 golden",
-          "state": "warn",
+          "label": "\u2713 96/96 golden",
+          "state": "pass",
           "level": 3,
           "version_tested": "0.7.1a3",
-          "tested_at": "2026-09-30T13:13:16+00:00",
+          "tested_at": "2026-10-02T06:57:00+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 123,
-            "counted": 126
+            "hit": 96,
+            "counted": 96
           }
         }
       }
@@ -7124,7 +7368,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.15",
-          "tested_at": "2026-09-30T12:54:35+00:00",
+          "tested_at": "2026-10-02T06:27:47+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -7132,19 +7376,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.15",
-          "tested_at": "2026-09-30T13:02:17+00:00",
+          "tested_at": "2026-10-02T06:38:33+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 10/16 golden",
+          "label": "\u2713 loads \u00b7 7/11 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.12.0a2",
-          "tested_at": "2026-09-30T13:14:36+00:00",
+          "version_tested": "0.12.0a7",
+          "tested_at": "2026-10-02T06:58:19+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 10,
-            "counted": 16
+            "hit": 7,
+            "counted": 11
           }
         }
       }
@@ -7217,28 +7461,40 @@
       "badge_id": "ovos-skill-nato-alphabet.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
+          "label": "\u2713 6/6 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:28:52+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:28:24+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 6
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 6/6 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:27:39+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:39:14+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 6
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 3/3 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:58+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:59:23+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
         }
       }
     }
@@ -7266,6 +7522,8 @@
     ],
     "category": "Home",
     "icon": "https://www.home-assistant.io/images/home-assistant-logo.svg",
+    "icon_source": "skill.json",
+    "icon_color": null,
     "source": "https://github.com/mikejgray/neon-homeassistant-skill",
     "package_name": "neon-homeassistant-skill",
     "pypi_version": "0.0.24",
@@ -7308,7 +7566,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-09-30T12:55:22+00:00",
+          "tested_at": "2026-10-02T06:28:37+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -7316,7 +7574,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-09-30T13:02:57+00:00",
+          "tested_at": "2026-10-02T06:39:21+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -7324,7 +7582,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-09-30T13:15:53+00:00",
+          "tested_at": "2026-10-02T06:59:37+00:00",
           "channel_pinned": false
         }
       }
@@ -7426,21 +7684,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:54:33+00:00",
+          "tested_at": "2026-10-02T06:28:56+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:42+00:00",
+          "tested_at": "2026-10-02T06:39:30+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:08:16+00:00",
+          "tested_at": "2026-10-02T06:59:54+00:00",
           "channel_pinned": false
         }
       }
@@ -7512,21 +7770,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:54:35+00:00",
+          "tested_at": "2026-10-02T06:25:51+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:43+00:00",
+          "tested_at": "2026-10-02T06:37:28+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:08:19+00:00",
+          "tested_at": "2026-10-02T06:57:31+00:00",
           "channel_pinned": false
         }
       }
@@ -7583,21 +7841,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:54:36+00:00",
+          "tested_at": "2026-10-02T06:25:53+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:45+00:00",
+          "tested_at": "2026-10-02T06:37:30+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:08:23+00:00",
+          "tested_at": "2026-10-02T06:57:36+00:00",
           "channel_pinned": false
         }
       }
@@ -7649,21 +7907,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:54:38+00:00",
+          "tested_at": "2026-10-02T06:25:56+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:46+00:00",
+          "tested_at": "2026-10-02T06:37:32+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:08:27+00:00",
+          "tested_at": "2026-10-02T06:57:40+00:00",
           "channel_pinned": false
         }
       }
@@ -7718,21 +7976,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:52:26+00:00",
+          "tested_at": "2026-10-02T06:25:58+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:23+00:00",
+          "tested_at": "2026-10-02T06:37:34+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:06:45+00:00",
+          "tested_at": "2026-10-02T06:57:44+00:00",
           "channel_pinned": false
         }
       }
@@ -7788,21 +8046,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:52:29+00:00",
+          "tested_at": "2026-10-02T06:26:01+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:24+00:00",
+          "tested_at": "2026-10-02T06:37:36+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:06:50+00:00",
+          "tested_at": "2026-10-02T06:57:49+00:00",
           "channel_pinned": false
         }
       }
@@ -7856,21 +8114,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:52:32+00:00",
+          "tested_at": "2026-10-02T06:26:03+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:25+00:00",
+          "tested_at": "2026-10-02T06:37:38+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:06:54+00:00",
+          "tested_at": "2026-10-02T06:57:53+00:00",
           "channel_pinned": false
         }
       }
@@ -7925,21 +8183,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:52:38+00:00",
+          "tested_at": "2026-10-02T06:26:10+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:30+00:00",
+          "tested_at": "2026-10-02T06:37:45+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:07:03+00:00",
+          "tested_at": "2026-10-02T06:58:01+00:00",
           "channel_pinned": false
         }
       }
@@ -7995,21 +8253,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:52:41+00:00",
+          "tested_at": "2026-10-02T06:26:12+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:31+00:00",
+          "tested_at": "2026-10-02T06:37:47+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:07:08+00:00",
+          "tested_at": "2026-10-02T06:58:05+00:00",
           "channel_pinned": false
         }
       }
@@ -8073,21 +8331,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:52:44+00:00",
+          "tested_at": "2026-10-02T06:25:34+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T08:54:32+00:00",
+          "tested_at": "2026-10-02T06:38:55+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:07:12+00:00",
+          "tested_at": "2026-10-02T07:00:10+00:00",
           "channel_pinned": false
         }
       }
@@ -8164,28 +8422,40 @@
       "badge_id": "ovos-skill-network-scanner.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 8/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.1",
-          "tested_at": "2026-09-30T12:55:40+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.2",
+          "tested_at": "2026-10-02T06:25:36+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 8,
+            "counted": 12
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 8/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.1",
-          "tested_at": "2026-09-30T13:03:06+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.2",
+          "tested_at": "2026-10-02T06:38:57+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 8,
+            "counted": 12
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 12/12 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.1",
-          "tested_at": "2026-09-30T13:16:10+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-10-02T07:00:14+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 12,
+            "counted": 12
+          }
         }
       }
     }
@@ -8335,7 +8605,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.12",
-          "tested_at": "2026-09-30T12:55:56+00:00",
+          "tested_at": "2026-10-02T06:25:50+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -8343,7 +8613,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.12",
-          "tested_at": "2026-09-30T13:03:15+00:00",
+          "tested_at": "2026-10-02T06:39:07+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -8351,7 +8621,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.5.0a5",
-          "tested_at": "2026-09-30T13:16:28+00:00",
+          "tested_at": "2026-10-02T07:00:32+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 35,
@@ -8450,7 +8720,9 @@
     "examples": [],
     "tags": [],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/ohealthy/ovos/main/static/logo-ov.svg",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/ohealthy/ovos",
     "package_name": "open-webui",
     "pypi_version": "0.11.4",
@@ -8601,28 +8873,42 @@
       "badge_id": "ovos-skill-ovosblog.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:26:04+00:00",
-          "channel_pinned": false
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:26:45+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden \u00b7 stops",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:25:40+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T06:39:52+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 2/2 golden \u00b7 stops",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.6",
-          "tested_at": "2026-10-01T09:25:30+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-02T07:01:33+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
         }
       }
     }
@@ -8680,23 +8966,23 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.0.9",
-          "tested_at": "2026-09-29T14:53:16+00:00",
+          "tested_at": "2026-10-02T06:27:25+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
-          "version_tested": "1.0.9",
-          "tested_at": "2026-09-30T08:55:41+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "version_tested": "1.0.9",
+          "tested_at": "2026-10-02T06:40:28+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
           "version_tested": "1.6.7a2",
-          "tested_at": "2026-09-30T09:06:57+00:00",
+          "tested_at": "2026-10-02T07:01:42+00:00",
           "channel_pinned": true
         }
       }
@@ -9804,23 +10090,23 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.1.7",
-          "tested_at": "2026-09-29T14:53:19+00:00",
+          "tested_at": "2026-10-02T06:27:27+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
-          "version_tested": "1.1.9",
-          "tested_at": "2026-09-30T08:55:43+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "version_tested": "1.1.9",
+          "tested_at": "2026-10-02T06:40:34+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
           "version_tested": "1.1.19a1",
-          "tested_at": "2026-09-30T09:07:03+00:00",
+          "tested_at": "2026-10-02T07:01:50+00:00",
           "channel_pinned": true
         }
       }
@@ -9985,23 +10271,23 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.3.1",
-          "tested_at": "2026-09-29T14:53:22+00:00",
+          "tested_at": "2026-10-02T06:27:29+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
           "version_tested": "2.1.1",
-          "tested_at": "2026-09-30T08:55:46+00:00",
+          "tested_at": "2026-10-02T06:40:40+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "3.7.2a1",
-          "tested_at": "2026-09-30T09:07:09+00:00",
+          "version_tested": "3.7.2a2",
+          "tested_at": "2026-10-02T07:01:58+00:00",
           "channel_pinned": true
         }
       }
@@ -11320,23 +11606,23 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-09-29T14:53:26+00:00",
+          "tested_at": "2026-10-02T06:27:32+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T08:55:48+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
           "label": "needs config",
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-09-30T09:07:15+00:00",
+          "tested_at": "2026-10-02T06:40:46+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T07:02:07+00:00",
           "channel_pinned": false
         }
       }
@@ -12101,7 +12387,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.9",
-          "tested_at": "2026-09-29T14:53:31+00:00",
+          "tested_at": "2026-10-02T06:26:00+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -12109,15 +12395,15 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.9",
-          "tested_at": "2026-09-30T08:55:53+00:00",
+          "tested_at": "2026-10-02T06:39:44+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.29.3a1",
-          "tested_at": "2026-09-30T09:07:22+00:00",
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.29.4a1",
+          "tested_at": "2026-10-02T07:04:43+00:00",
           "channel_pinned": true
         }
       }
@@ -14454,23 +14740,23 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.1.14",
-          "tested_at": "2026-09-29T14:53:38+00:00",
+          "tested_at": "2026-10-02T06:26:05+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
-          "version_tested": "1.1.18",
-          "tested_at": "2026-09-30T08:55:55+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "1.5.6a2",
-          "tested_at": "2026-09-30T09:07:29+00:00",
+          "version_tested": "1.1.18",
+          "tested_at": "2026-10-02T06:39:50+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "1.5.7a1",
+          "tested_at": "2026-10-02T07:04:51+00:00",
           "channel_pinned": true
         }
       }
@@ -14861,15 +15147,15 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.4.3",
-          "tested_at": "2026-09-29T14:53:41+00:00",
+          "tested_at": "2026-10-02T06:26:09+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
           "version_tested": "1.4.3",
-          "tested_at": "2026-09-30T08:55:58+00:00",
+          "tested_at": "2026-10-02T06:39:56+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -14877,7 +15163,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.7a1",
-          "tested_at": "2026-09-30T09:07:35+00:00",
+          "tested_at": "2026-10-02T07:04:59+00:00",
           "channel_pinned": true
         }
       }
@@ -16268,6 +16554,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/matthewdva/ovos-phal-plugin-media-led",
     "package_name": "ovos-phal-plugin-media-led",
     "pypi_version": null,
@@ -17985,7 +18273,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.11",
-          "tested_at": "2026-09-30T12:53:12+00:00",
+          "tested_at": "2026-10-02T06:26:12+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -17993,7 +18281,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.11",
-          "tested_at": "2026-09-30T13:01:39+00:00",
+          "tested_at": "2026-10-02T06:40:02+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -18001,7 +18289,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.9.0a1",
-          "tested_at": "2026-09-30T13:13:44+00:00",
+          "tested_at": "2026-10-02T07:05:07+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 14,
@@ -18191,24 +18479,27 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "stop": "stops",
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-30T12:54:09+00:00",
+          "tested_at": "2026-10-02T06:27:17+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "stop": "stops",
           "version_tested": "0.0.2",
-          "tested_at": "2026-09-30T13:02:43+00:00",
+          "tested_at": "2026-10-02T06:41:01+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 15/15 golden",
+          "label": "\u2713 15/15 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.6.1a1",
-          "tested_at": "2026-09-30T13:14:35+00:00",
+          "stop": "stops",
+          "version_tested": "0.6.1a2",
+          "tested_at": "2026-10-02T07:05:59+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 15,
@@ -18314,7 +18605,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-09-30T12:54:23+00:00",
+          "tested_at": "2026-10-02T06:27:33+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -18322,15 +18613,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-09-30T13:02:57+00:00",
+          "tested_at": "2026-10-02T06:41:13+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 11/11 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.6.0a1",
-          "tested_at": "2026-09-30T13:16:46+00:00",
+          "version_tested": "0.6.0a2",
+          "tested_at": "2026-10-02T07:08:14+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 11,
@@ -18613,21 +18904,21 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.4",
-          "tested_at": "2026-09-30T12:54:58+00:00",
+          "tested_at": "2026-10-02T06:28:17+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T13:03:38+00:00",
+          "tested_at": "2026-10-02T06:41:51+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T13:18:35+00:00",
+          "tested_at": "2026-10-02T07:10:03+00:00",
           "channel_pinned": false
         }
       }
@@ -18921,7 +19212,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.3",
-          "tested_at": "2026-09-30T12:55:12+00:00",
+          "tested_at": "2026-10-02T06:28:34+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -18929,7 +19220,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.0",
-          "tested_at": "2026-09-30T13:03:40+00:00",
+          "tested_at": "2026-10-02T06:41:53+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -18937,7 +19228,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.0.0a1",
-          "tested_at": "2026-09-30T13:18:39+00:00",
+          "tested_at": "2026-10-02T07:10:08+00:00",
           "channel_pinned": true
         }
       }
@@ -19080,6 +19371,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/mike99mac/ovos-skill-mpc-mike99mac",
     "package_name": null,
     "pypi_version": null,
@@ -20034,7 +20327,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.1.4",
-          "tested_at": "2026-09-30T12:55:42+00:00",
+          "tested_at": "2026-10-02T06:25:36+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -20042,7 +20335,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.4",
-          "tested_at": "2026-09-30T13:04:26+00:00",
+          "tested_at": "2026-10-02T06:39:41+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -20050,7 +20343,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.4",
-          "tested_at": "2026-09-30T13:21:38+00:00",
+          "tested_at": "2026-10-02T07:09:55+00:00",
           "channel_pinned": false
         }
       }
@@ -20140,7 +20433,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-09-30T12:55:56+00:00",
+          "tested_at": "2026-10-02T06:26:13+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -20148,7 +20441,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.0",
-          "tested_at": "2026-09-30T13:04:43+00:00",
+          "tested_at": "2026-10-02T06:40:34+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -20156,7 +20449,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.0.2a7",
-          "tested_at": "2026-09-30T13:22:02+00:00",
+          "tested_at": "2026-10-02T07:10:19+00:00",
           "channel_pinned": true
         }
       }
@@ -20793,7 +21086,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.13",
-          "tested_at": "2026-09-30T12:56:09+00:00",
+          "tested_at": "2026-10-02T06:26:27+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -20801,19 +21094,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.13",
-          "tested_at": "2026-09-30T13:04:54+00:00",
+          "tested_at": "2026-10-02T06:40:44+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 15/16 golden",
+          "label": "\u2713 12/15 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.18.3a3",
-          "tested_at": "2026-09-30T13:22:28+00:00",
+          "version_tested": "0.18.4a1",
+          "tested_at": "2026-10-02T07:10:47+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 15,
-            "counted": 16
+            "hit": 12,
+            "counted": 15
           }
         }
       }
@@ -20902,7 +21195,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.8",
-          "tested_at": "2026-09-30T12:52:48+00:00",
+          "tested_at": "2026-10-02T06:27:04+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -20910,7 +21203,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.8",
-          "tested_at": "2026-09-30T13:02:58+00:00",
+          "tested_at": "2026-10-02T06:41:33+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -20918,7 +21211,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.12.1a3",
-          "tested_at": "2026-09-30T13:14:24+00:00",
+          "tested_at": "2026-10-02T07:11:44+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 8,
@@ -21016,7 +21309,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-09-30T12:54:06+00:00",
+          "tested_at": "2026-10-02T06:27:21+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -21024,15 +21317,15 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.2.6",
-          "tested_at": "2026-09-30T13:03:59+00:00",
+          "tested_at": "2026-10-02T06:41:50+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.13.2a2",
-          "tested_at": "2026-09-30T13:15:13+00:00",
+          "version_tested": "0.13.3a1",
+          "tested_at": "2026-10-02T07:12:37+00:00",
           "channel_pinned": true
         }
       }
@@ -26119,6 +26412,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/mikejgray/ovos-windows",
     "package_name": "ovos-windows",
     "pypi_version": null,
@@ -27333,6 +27628,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/mosiwon/ovos_tts_plugin-google-cloud-translate",
     "package_name": "ovos-tts-plugin-google-cloud-translate",
     "pypi_version": null,
@@ -27643,7 +27940,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.20",
-          "tested_at": "2026-09-30T12:54:31+00:00",
+          "tested_at": "2026-10-02T06:27:39+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -27651,18 +27948,18 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.25",
-          "tested_at": "2026-09-30T13:04:11+00:00",
+          "tested_at": "2026-10-02T06:42:05+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 65/67 golden",
+          "label": "\u2713 63/67 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.11.0a4",
-          "tested_at": "2026-09-30T13:16:38+00:00",
+          "version_tested": "0.11.0a5",
+          "tested_at": "2026-10-02T07:14:04+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 65,
+            "hit": 63,
             "counted": 67
           }
         }
@@ -28248,7 +28545,44 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-recipe-helper.andlo",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 6/9 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.1",
+          "tested_at": "2026-10-02T06:27:55+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 9
+          }
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 3/9 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.1",
+          "tested_at": "2026-10-02T06:42:21+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 9
+          }
+        },
+        "alpha": {
+          "label": "\u2713 6/6 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.1",
+          "tested_at": "2026-10-02T07:14:58+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 6
+          }
+        }
+      }
     }
   },
   {
@@ -28320,28 +28654,40 @@
       "badge_id": "ovos-skill-rhythm-box.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:59+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:28:09+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 12
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:21+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:42:33+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 12
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:25:38+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T07:15:25+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 12
+          }
         }
       }
     }
@@ -28486,7 +28832,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-30T12:55:04+00:00",
+          "tested_at": "2026-10-02T06:25:35+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -28494,7 +28840,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-30T13:04:30+00:00",
+          "tested_at": "2026-10-02T06:41:19+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -28502,7 +28848,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.7.0a3",
-          "tested_at": "2026-09-30T13:17:40+00:00",
+          "tested_at": "2026-10-02T07:15:00+00:00",
           "channel_pinned": true
         }
       }
@@ -28708,7 +29054,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2",
-          "tested_at": "2026-09-30T12:55:25+00:00",
+          "tested_at": "2026-10-02T06:26:47+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -28716,7 +29062,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2",
-          "tested_at": "2026-09-30T13:04:44+00:00",
+          "tested_at": "2026-10-02T06:42:39+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -28724,7 +29070,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2",
-          "tested_at": "2026-09-30T13:18:30+00:00",
+          "tested_at": "2026-10-02T07:15:51+00:00",
           "channel_pinned": false
         }
       }
@@ -28851,7 +29197,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.3",
-          "tested_at": "2026-09-30T12:55:43+00:00",
+          "tested_at": "2026-10-02T06:27:04+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -28859,15 +29205,16 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.3",
-          "tested_at": "2026-09-30T13:04:55+00:00",
+          "tested_at": "2026-10-02T06:42:50+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "stop": "stops",
           "version_tested": "1.4.3",
-          "tested_at": "2026-09-30T13:18:47+00:00",
+          "tested_at": "2026-10-02T07:16:10+00:00",
           "channel_pinned": false
         }
       }
@@ -28970,21 +29317,21 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.4",
-          "tested_at": "2026-09-30T12:59:35+00:00",
+          "tested_at": "2026-10-02T06:30:51+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:02:00+00:00",
+          "tested_at": "2026-10-02T06:45:44+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:11:40+00:00",
+          "tested_at": "2026-10-02T07:17:04+00:00",
           "channel_pinned": false
         }
       }
@@ -29065,21 +29412,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:57:45+00:00",
+          "tested_at": "2026-10-02T06:31:10+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:02:02+00:00",
+          "tested_at": "2026-10-02T06:45:46+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:11:43+00:00",
+          "tested_at": "2026-10-02T07:17:08+00:00",
           "channel_pinned": false
         }
       }
@@ -29176,7 +29523,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-09-30T12:52:43+00:00",
+          "tested_at": "2026-10-02T06:31:13+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -29184,7 +29531,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-09-30T13:07:58+00:00",
+          "tested_at": "2026-10-02T06:45:48+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -29192,7 +29539,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-09-30T13:19:21+00:00",
+          "tested_at": "2026-10-02T07:17:12+00:00",
           "channel_pinned": false
         }
       }
@@ -29275,21 +29622,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:58:01+00:00",
+          "tested_at": "2026-10-02T06:31:27+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:02:11+00:00",
+          "tested_at": "2026-10-02T06:45:56+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:12:01+00:00",
+          "tested_at": "2026-10-02T07:17:30+00:00",
           "channel_pinned": false
         }
       }
@@ -30549,28 +30896,40 @@
       "badge_id": "ovos-skill-sound-like.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 3/6 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:27:12+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:31:29+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 6
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 3/6 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:27+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:45:58+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 6
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
+          "label": "\u2713 6/6 golden",
           "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:25:53+00:00",
-          "channel_pinned": false
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T07:17:33+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 6
+          }
         }
       }
     }
@@ -30770,7 +31129,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-09-30T12:53:21+00:00",
+          "tested_at": "2026-10-02T06:25:31+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -30778,15 +31137,16 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-09-30T13:02:52+00:00",
+          "tested_at": "2026-10-02T06:48:27+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "stop": "stuck",
           "version_tested": "0.10.0a3",
-          "tested_at": "2026-09-30T13:15:21+00:00",
+          "tested_at": "2026-10-02T07:23:51+00:00",
           "channel_pinned": true
         }
       }
@@ -30868,7 +31228,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-09-30T12:54:30+00:00",
+          "tested_at": "2026-10-02T06:27:15+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -30876,7 +31236,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-09-30T13:04:11+00:00",
+          "tested_at": "2026-10-02T06:49:58+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -30884,7 +31244,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.13.1a1",
-          "tested_at": "2026-09-30T13:16:15+00:00",
+          "tested_at": "2026-10-02T07:24:46+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 14,
@@ -31037,7 +31397,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.8",
-          "tested_at": "2026-09-30T12:58:10+00:00",
+          "tested_at": "2026-10-02T06:30:53+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -31045,15 +31405,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.8",
-          "tested_at": "2026-09-30T13:05:37+00:00",
+          "tested_at": "2026-10-02T06:51:34+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 114/114 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.3.0a1",
-          "tested_at": "2026-09-30T13:17:07+00:00",
+          "version_tested": "0.4.0a1",
+          "tested_at": "2026-10-02T07:25:40+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 114,
@@ -31152,14 +31512,14 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-29T14:57:08+00:00",
+          "tested_at": "2026-10-02T06:31:13+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-09-30T09:00:39+00:00",
+          "tested_at": "2026-10-02T06:51:50+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -31167,7 +31527,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-09-30T13:18:12+00:00",
+          "tested_at": "2026-10-02T07:26:48+00:00",
           "channel_pinned": false
         }
       }
@@ -31296,7 +31656,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.11",
-          "tested_at": "2026-09-30T12:58:31+00:00",
+          "tested_at": "2026-10-02T06:31:16+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -31304,15 +31664,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.11",
-          "tested_at": "2026-09-30T13:05:51+00:00",
+          "tested_at": "2026-10-02T06:51:52+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads \u00b7 23/31 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.9.3a1",
-          "tested_at": "2026-09-30T13:18:21+00:00",
+          "version_tested": "0.9.3a2",
+          "tested_at": "2026-10-02T07:26:58+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 23,
@@ -31496,28 +31856,40 @@
       "badge_id": "ovos-skill-tuning-fork.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 2/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:27:26+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:31:54+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 12
+          }
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 2/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:33+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:52:12+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 12
+          }
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 6/12 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:07+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T07:28:13+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 12
+          }
         }
       }
     }
@@ -31648,35 +32020,35 @@
       "badge_id": "ovos-skill-convert.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 13/13 golden",
+          "label": "\u2713 25/25 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-09-30T12:59:14+00:00",
+          "version_tested": "0.0.10",
+          "tested_at": "2026-10-02T06:32:07+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 13,
-            "counted": 13
+            "hit": 25,
+            "counted": 25
           }
         },
         "testing": {
-          "label": "\u2713 13/13 golden",
+          "label": "\u2713 25/25 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-09-30T13:06:18+00:00",
+          "version_tested": "0.0.10",
+          "tested_at": "2026-10-02T06:52:19+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 13,
-            "counted": 13
+            "hit": 25,
+            "counted": 25
           }
         },
         "alpha": {
           "label": "\u2713 13/13 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-09-30T13:19:50+00:00",
+          "version_tested": "0.0.10",
+          "tested_at": "2026-10-02T07:28:28+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 13,
@@ -31768,6 +32140,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/mohitkale/voiceforge",
     "package_name": "voiceforge",
     "pypi_version": null,
@@ -31939,7 +32313,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-01T09:27:39+00:00",
+          "tested_at": "2026-10-02T06:32:25+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -31947,7 +32321,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-01T09:26:39+00:00",
+          "tested_at": "2026-10-02T06:52:32+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -31955,7 +32329,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-01T09:26:21+00:00",
+          "tested_at": "2026-10-02T07:28:58+00:00",
           "channel_pinned": false
         }
       }
@@ -32116,7 +32490,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.16",
-          "tested_at": "2026-09-30T12:55:12+00:00",
+          "tested_at": "2026-10-02T06:25:45+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -32124,15 +32498,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.16",
-          "tested_at": "2026-09-30T13:03:24+00:00",
+          "tested_at": "2026-10-02T06:48:50+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.12.0a3",
-          "tested_at": "2026-09-30T13:16:51+00:00",
+          "version_tested": "0.12.1a1",
+          "tested_at": "2026-10-02T07:24:31+00:00",
           "channel_pinned": true
         }
       }
@@ -32861,8 +33235,9 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "stop": "stops",
           "version_tested": "1.0.9",
-          "tested_at": "2026-09-30T12:55:58+00:00",
+          "tested_at": "2026-10-02T06:27:02+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -32870,15 +33245,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.9",
-          "tested_at": "2026-09-30T13:04:22+00:00",
+          "tested_at": "2026-10-02T06:50:26+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads \u00b7 10/23 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "2.8.0a2",
-          "tested_at": "2026-09-30T13:17:55+00:00",
+          "version_tested": "2.8.1a1",
+          "tested_at": "2026-10-02T07:25:33+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 10,
@@ -32995,7 +33370,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.18",
-          "tested_at": "2026-09-30T13:08:09+00:00",
+          "tested_at": "2026-10-02T06:37:36+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -33003,19 +33378,19 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.6",
-          "tested_at": "2026-09-30T13:17:02+00:00",
+          "tested_at": "2026-10-02T07:03:20+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 117/117 golden",
+          "label": "\u2713 85/85 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "1.5.1a1",
-          "tested_at": "2026-09-30T13:19:36+00:00",
+          "version_tested": "1.5.1a2",
+          "tested_at": "2026-10-02T07:27:09+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 117,
-            "counted": 117
+            "hit": 85,
+            "counted": 85
           }
         }
       }
@@ -33092,27 +33467,31 @@
       "badge_id": "ovos-skill-white-noise.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 1/13 golden",
+          "state": "warn",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:27:56+00:00",
-          "channel_pinned": false
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T06:38:10+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 1,
+            "counted": 13
+          }
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:49+00:00",
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T07:07:31+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-01T09:26:30+00:00",
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-02T07:35:30+00:00",
           "channel_pinned": false
         }
       }
@@ -33222,7 +33601,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-30T13:09:09+00:00",
+          "tested_at": "2026-10-02T06:38:21+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -33230,7 +33609,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-30T13:21:12+00:00",
+          "tested_at": "2026-10-02T07:07:38+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -33238,7 +33617,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-09-30T13:29:04+00:00",
+          "tested_at": "2026-10-02T07:35:47+00:00",
           "channel_pinned": false
         }
       }
@@ -33319,7 +33698,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.3",
-          "tested_at": "2026-09-30T13:09:25+00:00",
+          "tested_at": "2026-10-02T06:38:34+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -33327,15 +33706,15 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.3",
-          "tested_at": "2026-09-30T13:21:21+00:00",
+          "tested_at": "2026-10-02T07:07:48+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.2a1",
-          "tested_at": "2026-09-30T13:29:10+00:00",
+          "version_tested": "0.7.2a2",
+          "tested_at": "2026-10-02T07:35:54+00:00",
           "channel_pinned": true
         }
       }
@@ -33419,7 +33798,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.5",
-          "tested_at": "2026-09-30T13:09:49+00:00",
+          "tested_at": "2026-10-02T06:38:52+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -33427,7 +33806,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.5",
-          "tested_at": "2026-09-30T13:21:36+00:00",
+          "tested_at": "2026-10-02T07:08:07+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -33435,7 +33814,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.0a1",
-          "tested_at": "2026-09-30T13:30:01+00:00",
+          "tested_at": "2026-10-02T07:36:45+00:00",
           "channel_pinned": true
         }
       }

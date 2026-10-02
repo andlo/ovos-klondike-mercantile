@@ -80,28 +80,42 @@
     "badge_id": "ovos-skill-math-practice.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 41/66 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.7",
-        "tested_at": "2026-10-01T09:28:17+00:00",
-        "channel_pinned": false
+        "stop": "stops",
+        "version_tested": "0.0.8",
+        "tested_at": "2026-10-02T06:25:50+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 41,
+          "counted": 66
+        }
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 41/66 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.7",
-        "tested_at": "2026-10-01T09:27:23+00:00",
-        "channel_pinned": false
+        "stop": "stops",
+        "version_tested": "0.0.8",
+        "tested_at": "2026-10-02T06:36:27+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 41,
+          "counted": 66
+        }
       },
       "alpha": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.7",
-        "tested_at": "2026-10-01T09:26:21+00:00",
-        "channel_pinned": false
+        "label": "\u2713 64/66 golden",
+        "state": "warn",
+        "level": 3,
+        "version_tested": "0.0.8",
+        "tested_at": "2026-10-02T06:56:15+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 64,
+          "counted": 66
+        }
       }
     }
   }

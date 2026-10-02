@@ -107,28 +107,43 @@
     "badge_id": "ovos-skill-geometry-practice.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-01T09:26:27+00:00",
-        "channel_pinned": false
+        "label": "\u2713 31/36 golden \u00b7 stops",
+        "state": "warn",
+        "level": 3,
+        "stop": "stops",
+        "version_tested": "0.0.4",
+        "tested_at": "2026-10-02T06:43:42+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 31,
+          "counted": 36
+        }
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-01T09:25:15+00:00",
-        "channel_pinned": false
+        "label": "\u2713 20/24 golden \u00b7 stops",
+        "state": "warn",
+        "level": 3,
+        "stop": "stops",
+        "version_tested": "0.0.4",
+        "tested_at": "2026-10-02T06:52:46+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 20,
+          "counted": 24
+        }
       },
       "alpha": {
-        "label": "\u2713 loads",
+        "label": "\u2713 24/24 golden \u00b7 stops",
         "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-01T09:25:28+00:00",
-        "channel_pinned": false
+        "level": 3,
+        "stop": "stops",
+        "version_tested": "0.0.4",
+        "tested_at": "2026-10-02T07:14:31+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 24,
+          "counted": 24
+        }
       }
     }
   }

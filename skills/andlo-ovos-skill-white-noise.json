@@ -69,27 +69,31 @@
     "badge_id": "ovos-skill-white-noise.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 1/13 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-10-01T09:27:56+00:00",
-        "channel_pinned": false
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-02T06:38:10+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 1,
+          "counted": 13
+        }
       },
       "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-10-01T09:26:49+00:00",
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-02T07:07:31+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-10-01T09:26:30+00:00",
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-02T07:35:30+00:00",
         "channel_pinned": false
       }
     }

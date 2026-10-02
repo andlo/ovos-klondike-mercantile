@@ -69,28 +69,40 @@
     "badge_id": "ovos-skill-network-scanner.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 8/12 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.1",
-        "tested_at": "2026-09-30T12:55:40+00:00",
-        "channel_pinned": false
+        "version_tested": "0.0.2",
+        "tested_at": "2026-10-02T06:25:36+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 8,
+          "counted": 12
+        }
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 8/12 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.0.1",
-        "tested_at": "2026-09-30T13:03:06+00:00",
-        "channel_pinned": false
+        "version_tested": "0.0.2",
+        "tested_at": "2026-10-02T06:38:57+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 8,
+          "counted": 12
+        }
       },
       "alpha": {
-        "label": "\u2713 loads",
+        "label": "\u2713 12/12 golden",
         "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.1",
-        "tested_at": "2026-09-30T13:16:10+00:00",
-        "channel_pinned": false
+        "level": 3,
+        "version_tested": "0.0.2",
+        "tested_at": "2026-10-02T07:00:14+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 12,
+          "counted": 12
+        }
       }
     }
   }

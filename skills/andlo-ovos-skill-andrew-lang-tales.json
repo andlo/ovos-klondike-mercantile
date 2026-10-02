@@ -56,28 +56,41 @@
     "badge_id": "ovos-skill-andrew-lang-tales.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 0/2 golden",
+        "state": "warn",
         "level": 2,
-        "version_tested": "0.1.8",
-        "tested_at": "2026-10-01T09:27:12+00:00",
-        "channel_pinned": false
+        "version_tested": "0.1.9",
+        "tested_at": "2026-10-02T06:28:10+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 0,
+          "counted": 2
+        }
       },
       "testing": {
-        "label": "\u2713 loads",
+        "label": "\u2713 2/2 golden",
         "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.8",
-        "tested_at": "2026-10-01T09:26:37+00:00",
-        "channel_pinned": false
+        "level": 3,
+        "version_tested": "0.1.9",
+        "tested_at": "2026-10-02T06:35:58+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 2,
+          "counted": 2
+        }
       },
       "alpha": {
-        "label": "\u2713 loads",
+        "label": "\u2713 2/2 golden \u00b7 stops",
         "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.8",
-        "tested_at": "2026-10-01T09:26:09+00:00",
-        "channel_pinned": false
+        "level": 3,
+        "stop": "stops",
+        "version_tested": "0.1.9",
+        "tested_at": "2026-10-02T07:01:44+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 2,
+          "counted": 2
+        }
       }
     }
   }

@@ -21,6 +21,8 @@
   ],
   "category": "Home",
   "icon": "https://www.home-assistant.io/images/home-assistant-logo.svg",
+  "icon_source": "skill.json",
+  "icon_color": null,
   "source": "https://github.com/mikejgray/neon-homeassistant-skill",
   "package_name": "neon-homeassistant-skill",
   "pypi_version": "0.0.24",
@@ -63,7 +65,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.24",
-        "tested_at": "2026-09-30T12:55:22+00:00",
+        "tested_at": "2026-10-02T06:28:37+00:00",
         "channel_pinned": false
       },
       "testing": {
@@ -71,7 +73,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.24",
-        "tested_at": "2026-09-30T13:02:57+00:00",
+        "tested_at": "2026-10-02T06:39:21+00:00",
         "channel_pinned": false
       },
       "alpha": {
@@ -79,7 +81,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.24",
-        "tested_at": "2026-09-30T13:15:53+00:00",
+        "tested_at": "2026-10-02T06:59:37+00:00",
         "channel_pinned": false
       }
     }
