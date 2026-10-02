@@ -119,27 +119,27 @@
     "badge_id": "ovos-skill-geography.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 9/49 golden",
+        "label": "\u2713 loads \u00b7 9/55 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.5",
-        "tested_at": "2026-10-02T06:42:56+00:00",
+        "tested_at": "2026-10-02T14:25:13+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 9,
-          "counted": 49
+          "counted": 55
         }
       },
       "testing": {
-        "label": "\u2713 loads \u00b7 8/40 golden",
+        "label": "\u2713 loads \u00b7 11/41 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.5",
-        "tested_at": "2026-10-02T06:52:16+00:00",
+        "tested_at": "2026-10-02T14:34:23+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 8,
-          "counted": 40
+          "hit": 11,
+          "counted": 41
         }
       },
       "alpha": {
@@ -147,7 +147,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.5",
-        "tested_at": "2026-10-02T07:13:28+00:00",
+        "tested_at": "2026-10-02T14:51:58+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 28,
