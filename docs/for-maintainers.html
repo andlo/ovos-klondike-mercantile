@@ -177,7 +177,13 @@
               <code>skill_id</code> and <code>intent_label</code> (or
               <code>expected_intent</code>); rows with
               <code>"needs_manual": true</code> are skipped. The same format
-              <code>ovoscope golden</code> runs. Rows from your default branch are
+              <code>ovoscope golden</code> runs. A skill that answers OCP's search
+              (a <code>@ocp_search</code> handler) gets "play …" and "start …"
+              sentences through OCP, not through its intent: OCP picking your
+              result counts as reaching your skill. Add
+              <code>"intent_type": "ocp"</code> to a row that must go that way;
+              keep its <code>intent_label</code>, which <code>ovoscope golden</code>
+              still checks against your intent files. Rows from your default branch are
               not used: they may name intents the released version does not have.</li>
             <li><strong>Score:</strong> level 3 is reached when at least 80% of
               the counted rows reach your skill; the label always shows the
