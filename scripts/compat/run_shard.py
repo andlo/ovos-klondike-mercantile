@@ -390,7 +390,10 @@ def prepare_shard(items, results, args, workroot):
 
 BOOT_FIELDS = ("lang", "status", "reason", "driver", "pipeline", "pipeline_dropped", "baseline_ids",
                "not_loaded", "boot_seconds", "seconds", "log_excerpt", "questions_not_released",
-               "row_seconds", "budget_skipped")
+               "row_seconds", "budget_skipped",
+               # the routing judge and, while it is compared, where it differs from
+               # the old one (issue #48)
+               "judge", "judge_diff_count", "judge_diff")
 
 
 def route_pass(routable, all_runs, spec, field, args, workroot, deadline, label, budget_min):
@@ -725,6 +728,11 @@ def main():
     ap.add_argument("--deadline-minutes", type=float, default=300,
                     help="no new routing boot starts after this many minutes (job time limit)")
     args = ap.parse_args()
+    # The routing judge setup_channel.sh put next to the stack (issue #48);
+    # route.py reads ROUTING_JUDGE_DIR, child processes inherit it.
+    judge_dir = Path(args.constraints).resolve().parent / "routing-judge"
+    if judge_dir.is_dir():
+        os.environ.setdefault("ROUTING_JUDGE_DIR", str(judge_dir))
     started_at = time.monotonic()
     baseline = json.loads(args.baseline) if args.baseline else None
     args.baseline = (baseline or {}).get("requirements") or []

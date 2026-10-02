@@ -77,6 +77,13 @@ print("==> default language plugins present:", lang.get("translation_module"), l
 EOF
 
 python3 -m pip freeze --disable-pip-version-check > "$WORK/stack-freeze.txt"
+
+# The routing judge (issue #48) goes NEXT to the stack (--target, no deps;
+# it has none), after the freeze, so it is never part of what is tested or
+# of what a device reproduces. route.py finds it via ROUTING_JUDGE_DIR.
+JUDGE_SPEC="$(grep -v '^\s*#' "$(dirname "$0")/../../compat/routing-judge.txt" | grep -m1 .)"
+python3 -m pip install --disable-pip-version-check -q --no-deps --target "$WORK/routing-judge" "$JUDGE_SPEC"
+echo "==> routing judge: $JUDGE_SPEC"
 python3 - "$WORK/stack.json" <<'EOF'
 import json, sys, platform
 from importlib.metadata import version, PackageNotFoundError

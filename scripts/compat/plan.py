@@ -57,7 +57,11 @@ RUNNER_VERSION = "1"
 # that loaded is re-tested when either key changes; one that did not load
 # never reaches level 3, so only `key` matters for it. Bump when route.py
 # or the level 3 parts of run_shard.py change what a result means.
-ROUTE_VERSION = "4"  # 3: the stop check (#16); 4: OCP picks count as taken
+ROUTE_VERSION = "5"  # 3: the stop check (#16); 4: OCP picks count as taken; 5: ovos-routing-judge (#48)
+# The routing judge's pin (compat/routing-judge.txt) is part of the level 3
+# keys too: a new judge release re-tests level 3 by itself.
+ROUTING_JUDGE = next((l.strip() for l in (Path(__file__).resolve().parents[2] / "compat" / "routing-judge.txt")
+                      .read_text().splitlines() if l.strip() and not l.lstrip().startswith("#")), "")
 # The constraints the OVOS installer itself installs with
 # (ovos-installer: ovos_virtualenv_constraints_url). OpenVoiceOS/OpenVoiceOS
 # carries the same files today; the installer is the reference for "what a
@@ -260,7 +264,7 @@ def main():
             kind = TESTED_TYPES[e["component_type"]]
             key = key_for([e["package_name"], version, channel, ssig, langs,
                            args.harness_sha, RUNNER_VERSION])
-            route_key = key_for([key, baseline["sha256"], args.generator_spec, ROUTE_VERSION]) \
+            route_key = key_for([key, baseline["sha256"], args.generator_spec, ROUTE_VERSION, ROUTING_JUDGE]) \
                 if baseline and kind == "skill" else None
             prev = previous.get(e["id"], {}).get(channel)
             if (prev and prev.get("key") == key and prev.get("status") in FINAL_STATUSES
@@ -283,7 +287,7 @@ def main():
         if kprof:
             kitems = klondike_items(feed, previous, channel, pins)
             kprof["self_key"] = key_for([ssig, kprof["sha256"], args.harness_sha, RUNNER_VERSION,
-                                         args.generator_spec, ROUTE_VERSION,
+                                         args.generator_spec, ROUTE_VERSION, ROUTING_JUDGE,
                                          sorted((i["id"], i["version"]) for i in kitems)])
             kprof["tested"] = len(kitems)
             prev_self = prev_klondike.get(channel) or {}

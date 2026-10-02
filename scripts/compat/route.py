@@ -82,6 +82,20 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from probe import boot, modern_driver, same_language  # noqa: E402
 
+# The verdict comes from ovos-routing-judge (issue #48), the judge
+# ovos-tui-client uses too, so a row reads the same on a device. It is
+# installed next to the stack, not in it (setup_channel.sh, --target), so it
+# never shows up in the frozen stack a device reproduces; appended, not
+# prepended, so it can never shadow a package of the stack under test.
+_JUDGE_DIR = os.environ.get("ROUTING_JUDGE_DIR")
+if _JUDGE_DIR and _JUDGE_DIR not in sys.path:
+    sys.path.append(_JUDGE_DIR)
+from ovos_routing_judge import Claim as JudgeClaim, judge as judge_row  # noqa: E402
+from ovos_routing_judge import __version__ as JUDGE_VERSION  # noqa: E402
+# Until the shared judge has been compared on a full run, the old claimant
+# below judges every row too and differences are written out (judge_diff).
+MAX_JUDGE_DIFFS = 200
+
 EOF_TYPES = {"ovos.utterance.handled", "mycroft.skill.handler.complete",
              "complete_intent_failure", "ovos.intent.unmatched"}
 CAPTURE_SETTLE = 0.4
@@ -244,7 +258,7 @@ def capture(croft, utterance, lang, pipeline, timeout):
     finally:
         croft.bus.remove("message", rec)
     kept = list(recs)[:cut] if cut is not None else list(recs)
-    return [m for m in kept if _session_of(m) in ("", session_id)], hung, asked
+    return [m for m in kept if _session_of(m) in ("", session_id)], hung, asked, session_id
 
 
 def open_question(recs, session_id):
@@ -454,6 +468,16 @@ def claimant(recs, known_ids):
     return who, fired
 
 
+def legacy_kind(own, who, fired, expected, intent_type, hung):
+    """The verdict the old claimant gave (before ovos-routing-judge), for the
+    judge_diff comparison only."""
+    if hung and who is None:
+        return "hang"
+    if who == own:
+        return "hit" if expected_fired(own, expected, fired, intent_type) else "wrong_intent"
+    return "other" if who is not None else "unhandled"
+
+
 def expected_fired(own, expected, fired, intent_type=None):
     """Did the row's own skill take it the way the row says?
 
@@ -569,7 +593,7 @@ def main():
     args = ap.parse_args()
 
     man = json.load(open(args.manifest))
-    out = {"lang": args.lang, "status": "running", "results": {}}
+    out = {"lang": args.lang, "status": "running", "results": {}, "judge": JUDGE_VERSION}
 
     row_times = []
 
@@ -639,10 +663,27 @@ def main():
             out["current"] = {"id": item["id"], "run": run, "utterance": row["utterance"][:200]}
             flush()
             t_row = time.monotonic()
-            recs, hung, asked = capture(croft, row["utterance"], row["lang"], session_pipeline, args.timeout)
+            recs, hung, asked, row_session = capture(croft, row["utterance"], row["lang"],
+                                                     session_pipeline, args.timeout)
             row_times.append(time.monotonic() - t_row)
-            who, fired = claimant(recs, known)
             expected = row.get("expected_intent", row.get("intent_label"))
+            verdict = judge_row(JudgeClaim.from_messages(recs, known, session_id=row_session),
+                                [own],
+                                expected=expected, intent_type=row.get("intent_type"),
+                                hung=hung, known_ids=known)
+            who, fired = verdict.taker, list(verdict.fired)
+            # Shadow: the old claimant's verdict, to compare (issue #48).
+            old_who, old_fired = claimant(recs, known)
+            old_kind = legacy_kind(own, old_who, old_fired, expected, row.get("intent_type"), hung)
+            new_kind = {"other": "other", "captured": "wrong_intent"}.get(verdict.kind, verdict.kind)
+            if old_kind != new_kind or (old_kind == "other" and old_who != who):
+                diffs = out.setdefault("judge_diff", [])
+                out["judge_diff_count"] = out.get("judge_diff_count", 0) + 1
+                if len(diffs) < MAX_JUDGE_DIFFS:
+                    diffs.append({"id": item["id"], "run": run, "utterance": row["utterance"][:200],
+                                  "expected": expected, "old": old_kind, "old_taker": old_who,
+                                  "new": verdict.kind, "new_taker": who, "via": verdict.via,
+                                  "detail": verdict.detail[:200]})
             entry = {"utterance": row["utterance"][:200], "expected": expected, "taken_by": who}
             if asked is not None:
                 # Whoever asked handled the sentence: the verdict below is
@@ -650,18 +691,22 @@ def main():
                 entry["asked"] = True
                 if asked is False:
                     out["questions_not_released"] = out.get("questions_not_released", 0) + 1
-            if hung and who is None:
+            if verdict.kind == "hang":
                 # Nobody claimed it and a pipeline stage never returned: the
                 # sentence got past every intent stage to one that blocks.
                 res["hang"] += 1
                 if len(res["misses"]) < MAX_MISSES:
                     res["misses"].append({**entry, "kind": "hang", "stage": stage_of(recs)})
                 continue
-            if who == own:
-                if not expected_fired(own, expected, fired, row.get("intent_type")):
+            if verdict.kind in ("hit", "wrong_intent", "captured"):
+                if verdict.kind != "hit":
+                    # captured: its pending question took the sentence as the
+                    # answer - its own skill, but not the intent the row names
                     res["wrong_intent"] += 1
                     entry["fired"] = sorted(set(fired))[:3]
                     entry["kind"] = "wrong_intent"
+                    if verdict.kind == "captured":
+                        entry["captured"] = True
                 else:
                     res["hit"] += 1
                     if OCP_FIRED in fired:
