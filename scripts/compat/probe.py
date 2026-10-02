@@ -44,6 +44,16 @@ def bcp47(lang):
     return lang
 
 
+def _minicroft_class():
+    """ovoscope's own MiniCroft, not the recording subclass boot() swaps in:
+    that one's `__init__(*a, **kw)` declares no options, so asking it would
+    say the driver takes neither languages nor extra pipelines (it made
+    every pipeline probe on alpha boot without its own stage, which
+    ovoscope then blacklisted)."""
+    import ovoscope
+    return getattr(ovoscope.MiniCroft, "_klondike_base", ovoscope.MiniCroft)
+
+
 def modern_driver():
     """True when ovoscope's get_minicroft takes lang/secondary_langs.
 
@@ -58,7 +68,7 @@ def modern_driver():
     # get_minicroft forwards lang/secondary_langs to MiniCroft via **kwargs,
     # so the constructor is where the modern driver declares them.
     params = set(inspect.signature(ovoscope.get_minicroft).parameters)
-    params |= set(inspect.signature(ovoscope.MiniCroft.__init__).parameters)
+    params |= set(inspect.signature(_minicroft_class().__init__).parameters)
     return "secondary_langs" in params
 
 
@@ -74,7 +84,7 @@ def takes_extra_pipelines():
     import inspect
     import ovoscope
     params = set(inspect.signature(ovoscope.get_minicroft).parameters)
-    params |= set(inspect.signature(ovoscope.MiniCroft.__init__).parameters)
+    params |= set(inspect.signature(_minicroft_class().__init__).parameters)
     return "extra_pipelines" in params
 
 
@@ -83,19 +93,22 @@ def boot(ids, langs, max_wait, recorder, extra_pipelines=None, settle=2.0):
     start of skill loading. Returns (croft, driver)."""
     import ovoscope
     if modern_driver():
-        base = ovoscope.MiniCroft
+        base = _minicroft_class()
+        extra_ok = takes_extra_pipelines()
 
         # get_minicroft() constructs and starts the croft itself; skills load
         # in start(), after __init__ built the FakeBus, so subscribing at the
         # end of __init__ sees every registration.
         class RecordingMiniCroft(base):
+            _klondike_base = base
+
             def __init__(self, *a, **kw):
                 super().__init__(*a, **kw)
                 self.bus.on("message", recorder)
 
         ovoscope.MiniCroft = RecordingMiniCroft
         kwargs = {"lang": langs[0], "secondary_langs": langs[1:], "max_wait": max_wait}
-        if extra_pipelines and takes_extra_pipelines():
+        if extra_pipelines and extra_ok:
             kwargs["extra_pipelines"] = extra_pipelines
         croft = ovoscope.get_minicroft(ids, **kwargs)
         time.sleep(settle)

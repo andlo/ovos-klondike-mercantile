@@ -79,7 +79,7 @@ def clean(rec):
 
 
 RUN_INTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual",
-            "not_loaded", "total", "counted", "asked")
+            "not_loaded", "total", "counted", "asked", "via_ocp")
 MISS_STRS = {"utterance": 200, "expected": 200, "taken_by": 200, "kind": 20, "stage": 80, "lang": 20}
 
 

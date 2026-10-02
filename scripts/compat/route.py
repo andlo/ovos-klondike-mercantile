@@ -387,6 +387,27 @@ def end_speech(croft, recs, session_id, done):
 # provider it chose (ovos-common-reading-pipeline-plugin's fetch request).
 PROVIDER_PICKED = ("ovos.common_reading.fetch_content.",)
 
+# OCP (the common play pipeline) takes "play ..." / "start ..." sentences
+# before padatious. A skill that answers OCP's search never fires an intent:
+# OCP picks the best result and plays it ("ovos.common_play.play"), or,
+# without a player in the core under test, only lists the results with the
+# best one first ("ovos.common_play.search.populate", key "playlist"). The skill_id of that
+# first track is the skill OCP chose. A golden row says it goes through OCP
+# with `"intent_type": "ocp"` (see expected_fired).
+OCP_PICKED = ("ovos.common_play.play", "ovos.common_play.search.populate")
+OCP_FIRED = "ocp:play"
+OCP_ROUTE = "ocp"
+
+
+def ocp_pick(msg):
+    """skill_id of the track OCP picked in a play/populate message, or None."""
+    data = msg.data or {}
+    tracks = data.get("tracks") or data.get("playlist") or []
+    first = tracks[0] if tracks else None
+    if isinstance(first, dict):
+        return first.get("skill_id")
+    return getattr(first, "skill_id", None)
+
 
 def claimant(recs, known_ids):
     """(skill_id or None, fired topics of that skill)."""
@@ -409,6 +430,13 @@ def claimant(recs, known_ids):
                     break
             if who:
                 break
+    via_ocp = False
+    if who is None:
+        for name in OCP_PICKED:
+            sid = next((ocp_pick(m) for m in recs if m.msg_type == name and ocp_pick(m)), None)
+            if sid in known_ids:
+                who, via_ocp = sid, True
+                break
     if who is None:
         for m in recs:
             sid = (m.context or {}).get("skill_id")
@@ -421,7 +449,25 @@ def claimant(recs, known_ids):
     fired = [m.msg_type for m in recs if m.msg_type.startswith(f"{who}:")]
     fired += [str(m.data.get("name")) for m in recs if m.msg_type == "mycroft.skill.handler.start"
               and str(m.data.get("name", "")).startswith(f"{who}:")]
+    if via_ocp:
+        fired.append(OCP_FIRED)
     return who, fired
+
+
+def expected_fired(own, expected, fired, intent_type=None):
+    """Did the row's own skill take it the way the row says?
+
+    A row with `"intent_type": "ocp"` (a provenance field `ovoscope golden`
+    tolerates) must go through OCP's search; its intent_label still names
+    the intent the same sentence reaches where OCP does not take it. A row
+    without it is also met when OCP handed the sentence to the skill: the
+    skill gets it either way, and golden files written before a skill
+    answered OCP name only its intent."""
+    if str(intent_type or "").lower() == OCP_ROUTE:
+        return OCP_FIRED in fired
+    if not expected:
+        return True
+    return OCP_FIRED in fired or any(f in label_forms(own, expected) for f in fired)
 
 
 def stage_of(recs):
@@ -612,12 +658,14 @@ def main():
                     res["misses"].append({**entry, "kind": "hang", "stage": stage_of(recs)})
                 continue
             if who == own:
-                if expected and not any(f in label_forms(own, expected) for f in fired):
+                if not expected_fired(own, expected, fired, row.get("intent_type")):
                     res["wrong_intent"] += 1
                     entry["fired"] = sorted(set(fired))[:3]
                     entry["kind"] = "wrong_intent"
                 else:
                     res["hit"] += 1
+                    if OCP_FIRED in fired:
+                        res["via_ocp"] = res.get("via_ocp", 0) + 1
                     if asked is not None:
                         res["asked"] += 1
                     elif item["id"] not in first_hit or (run == "golden" and first_hit[item["id"]][2] != "golden"):

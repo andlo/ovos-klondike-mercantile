@@ -263,6 +263,7 @@ function renderRoutingRun(title, r, takenBy = "a default skill") {
   }
   const parts = [`${r.hit}/${r.counted} reach the skill`];
   if (r.asked) parts.push(`${r.asked} of them ask a follow-up question (answered with “cancel”)`);
+  if (r.via_ocp) parts.push(`${r.via_ocp} of them through OCP's search (the skill answers “play …”)`);
   if (r.baseline) parts.push(`${r.baseline} taken by ${takenBy}`);
   if (r.wrong_intent) parts.push(`${r.wrong_intent} reach another of its intents`);
   if (r.unhandled) parts.push(`${r.unhandled} not handled by a skill`);
