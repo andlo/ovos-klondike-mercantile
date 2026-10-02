@@ -49,6 +49,7 @@ orjson==3.12.0
 ovos-audio==0.4.0
 ovos-classifiers==0.0.0a59
 ovos-common-query-pipeline-plugin==1.1.7
+ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==1.2.2
 ovos-core==1.3.1
 ovos-date-parser==0.6.4
@@ -56,20 +57,22 @@ ovos-dinkum-listener==0.4.0
 ovos-gui-api-client==0.1.0
 ovos-lang-parser==0.0.2
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
-ovos-media==2.4.4a1
+ovos-media==2.4.5a1
 ovos-number-parser==0.3.2
 ovos-ocp-pipeline-plugin==1.1.14
 ovos-plugin-manager==0.9.0
+ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.1.24
+ovos-skill-andersen-tales==0.1.8
+ovos-skill-andrew-lang-tales==0.1.9
+ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.2.7
 ovos-skill-boot-finished==0.5.0
-ovos-skill-count @ git+https://github.com/OpenVoiceOS/ovos-skill-count@732329dbf27d30235cead5b0289fab884c92626f
+ovos-skill-count @ git+https://github.com/OpenVoiceOS/ovos-skill-count@680bcb89dfd885144b5c36b4b9269fbe58ff55df
 ovos-skill-date-time==0.4.20
 ovos-skill-diagnostics==0.0.8
 ovos-skill-dictation==0.2.15
 ovos-skill-fallback-unknown==0.1.6
-ovos-skill-geography==0.0.3
-ovos-skill-geography-practice==0.0.5
 ovos-skill-hello-world==0.2.1
 ovos-skill-ip==0.2.8
 ovos-skill-naptime==0.3.15
@@ -84,7 +87,7 @@ ovos-skill-wikipedia==0.8.13
 ovos-skill-wolfie==0.5.8
 ovos-solver-bm25-plugin==0.0.1
 ovos-solver-yes-no-plugin==0.2.8
-ovos-spec-tools==1.14.0a1
+ovos-spec-tools==1.14.0a8
 ovos-translate-server-plugin==0.0.2
 ovos-utils==0.8.5
 ovos-utterance-normalizer==0.2.3
@@ -93,7 +96,7 @@ ovos-workshop==3.4.0
 ovos_adapt_parser==1.0.9
 ovos_bus_client==1.3.7
 ovos_gui==1.3.4
-ovos_m2v_pipeline @ git+https://github.com/OpenVoiceOS/ovos-m2v-pipeline@4ec8244faeb6e4e2a49070b3c45178ddf9254b88
+ovos_m2v_pipeline @ git+https://github.com/OpenVoiceOS/ovos-m2v-pipeline@253e82b35607f271f2c88bcdaac85a1f53381b09
 ovos_openai_plugin==2.0.6
 ovos_padatious==1.4.3
 ovos_persona==0.6.24

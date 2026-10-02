@@ -55,16 +55,21 @@ nebulento @ git+https://github.com/OpenVoiceOS/nebulento@e0cc4536365559be3d33f14
 nltk==3.10.3
 numpy==2.4.6
 ovos-audio==1.2.0
+ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==2.1.1
 ovos-date-parser==0.29.0
 ovos-dinkum-listener==0.5.0
 ovos-gui-api-client==0.1.0
 ovos-lang-parser==0.0.2
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
-ovos-media==2.4.4a1
+ovos-media==2.4.5a1
 ovos-number-parser==0.19.13
 ovos-plugin-manager==2.2.0
+ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.1.28
+ovos-skill-andersen-tales==0.1.8
+ovos-skill-andrew-lang-tales==0.1.9
+ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.2.7
 ovos-skill-boot-finished==0.5.0
 ovos-skill-count==0.0.2
@@ -72,8 +77,6 @@ ovos-skill-date-time==1.1.5
 ovos-skill-diagnostics==0.0.8
 ovos-skill-dictation==0.2.19
 ovos-skill-fallback-unknown==0.1.9
-ovos-skill-geography==0.0.3
-ovos-skill-geography-practice==0.0.5
 ovos-skill-hello-world==0.2.1
 ovos-skill-ip==0.2.8
 ovos-skill-naptime==0.3.15
@@ -89,7 +92,7 @@ ovos-skill-wikipedia==0.8.13
 ovos-skill-wolfie==0.5.8
 ovos-solver-bm25-plugin==0.1.0
 ovos-solver-yes-no-plugin==0.2.8
-ovos-spec-tools==1.14.0a1
+ovos-spec-tools==1.14.0a8
 ovos-utterance-normalizer==0.2.3
 ovos-utterance-plugin-cancel==0.2.8
 ovos-workshop==7.0.6
