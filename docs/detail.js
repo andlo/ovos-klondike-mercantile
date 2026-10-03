@@ -74,6 +74,7 @@ function renderArchivedWarning(skill) {
       issue responses are expected. Everything shown here reflects
       its last state before archiving - it may still work exactly as
       described, just isn't being maintained.
+      ${installerChannels(skill).length ? `<br><strong>${escapeHtml(installerNote(skill))}</strong>` : ""}
     </div>
   `;
 }

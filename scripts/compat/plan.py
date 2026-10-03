@@ -2,8 +2,11 @@
 """Decide what the compat run tests, and split it into shards.
 
 Tested: Looks Complete (tier 1) Skills and Pipeline Plugins that are not
-archived. Other plugin types (TTS, STT, wake word ...) need hardware or
-models and are not meaningful in MiniCroft.
+archived, plus everything the OVOS installer installs on the channel,
+whatever its store status (issue #54, compat/installer.py): an archived
+skill or a "Memory Plugin" the installer still uses reaches users all the
+same. Other plugin types (TTS, STT, wake word ...) need hardware or models
+and are not meaningful in MiniCroft.
 
 Version tested per channel: the newest release on PyPI that the channel's
 constraints allow. For a package the channel does not pin that is simply the
@@ -219,24 +222,41 @@ def main():
     only = {s.strip() for s in args.only.split(",") if s.strip()}
 
     candidates = [e for e in feed if is_candidate(e) and (not only or e["id"] in only)]
+    # What the installer installs, per channel (#54): read before the PyPI
+    # lookups so its entries get a resolved version too.
+    extra_reqs = (profile_def or {}).get("extra_requirements") or []
+    stack_releases = {}
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for pkg, rel in zip(STACK_PACKAGES, pool.map(pypi_releases, STACK_PACKAGES)):
+            stack_releases[pkg] = rel
+    channels = [c.strip() for c in args.channels.split(",") if c.strip()]
+    installer = {}
+    if baseline:
+        from compat.installer import core_requires, entries as installer_entries
+        for channel in channels:
+            pins = parse_constraints(fetch(CONSTRAINTS_URL.format(channel=channel)).decode())
+            core = effective_stack(pins, channel, stack_releases).get("ovos-core")
+            requires = core_requires(core) if core else []
+            if not requires:
+                print(f"warning: {channel}: ovos-core {core} requirements unknown, "
+                      f"installer entries follow the store rule", file=sys.stderr)
+            installer[channel] = installer_entries(feed, requires, baseline["requirements"], extra_reqs,
+                                                   baseline["pipeline"], previous)
+    extra_ids = {sid for m in installer.values() for sid in m
+                 if sid in feed_by_id and (not only or sid in only)}
+    candidates += [feed_by_id[sid] for sid in sorted(extra_ids - {e["id"] for e in candidates})]
     # Curated profile entries need a resolved version too, also in an --only run.
     curated = [feed_by_id[c["id"]] for c in ((profile_def or {}).get("curated") or {}).get("skills", [])
                + ((profile_def or {}).get("curated") or {}).get("pipeline", []) if c["id"] in feed_by_id]
     lookup = {e["id"]: e for e in candidates + curated}
     releases = {}
     with ThreadPoolExecutor(max_workers=8) as pool:
-        for e, rel in zip(lookup.values(), pool.map(lambda e: pypi_releases(e["package_name"]),
+        for e, rel in zip(lookup.values(), pool.map(lambda e: pypi_releases(package_of(e, installer)),
                                                    lookup.values())):
             releases[e["id"]] = rel
 
-    stack_releases = {}
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        for pkg, rel in zip(STACK_PACKAGES, pool.map(pypi_releases, STACK_PACKAGES)):
-            stack_releases[pkg] = rel
-
     cdir = Path(args.constraints_dir)
     cdir.mkdir(parents=True, exist_ok=True)
-    channels = [c.strip() for c in args.channels.split(",") if c.strip()]
     matrix, summary, klondike = [], {}, {}
     for channel in channels:
         raw = fetch(CONSTRAINTS_URL.format(channel=channel))
@@ -253,16 +273,20 @@ def main():
         kprof = channel_profile(profile_def, baseline, channel, feed_by_id, previous, pins, releases) \
             if profile_def else None
         todo, skipped, unresolved = [], 0, []
+        inst = installer.get(channel) or {}
         for e in candidates:
-            pkg = normalize(e["package_name"])
+            if not is_candidate(e) and e["id"] not in inst:
+                continue  # installed by the installer on another channel only
+            package = package_of(e, installer)
+            pkg = normalize(package)
             pinned = pkg in pins
             version = resolve_version(releases.get(e["id"]), pins.get(pkg, ""))
             if version is None:
                 unresolved.append(e["id"])
                 continue
             langs = sorted(set(e.get("languages") or []))
-            kind = TESTED_TYPES[e["component_type"]]
-            key = key_for([e["package_name"], version, channel, ssig, langs,
+            kind = (inst.get(e["id"]) or {}).get("kind") or TESTED_TYPES[e["component_type"]]
+            key = key_for([package, version, channel, ssig, langs,
                            args.harness_sha, RUNNER_VERSION])
             route_key = key_for([key, baseline["sha256"], args.generator_spec, ROUTE_VERSION, ROUTING_JUDGE]) \
                 if baseline and kind == "skill" else None
@@ -272,7 +296,7 @@ def main():
                     and not (args.force or args.full)):
                 skipped += 1
                 continue
-            todo.append({"id": e["id"], "package": e["package_name"], "version": version,
+            todo.append({"id": e["id"], "package": package, "version": version,
                          "channel_pinned": pinned, "kind": kind, "repo": repo_url(e),
                          "languages": langs if kind == "skill" else [], "key": key,
                          "route_key": route_key})
@@ -285,7 +309,7 @@ def main():
                                                 "exclude_ids": device_bound(previous, channel)})
             matrix.append(shard)
         if kprof:
-            kitems = klondike_items(feed, previous, channel, pins)
+            kitems = klondike_items(feed, previous, channel, pins, inst)
             kprof["self_key"] = key_for([ssig, kprof["sha256"], args.harness_sha, RUNNER_VERSION,
                                          args.generator_spec, ROUTE_VERSION, ROUTING_JUDGE,
                                          sorted((i["id"], i["version"]) for i in kitems)])
@@ -296,11 +320,12 @@ def main():
                                "klondike": json.dumps({"requirements": kprof["requirements"],
                                                        "pipeline": kprof["pipeline"],
                                                        "exclude_ids": device_bound(previous, channel),
-                                                       "feed_map": feed_map(feed), "items": kitems})})
+                                                       "feed_map": feed_map(feed, inst), "items": kitems})})
         summary[channel] = {"constraints_sha256": csha, "resolved_stack": stack,
                             "keyed_on": "stack" if "stack" in ssig else "constraints file",
                             "stack_moved": moved, "to_test": len(todo),
-                            "unchanged": skipped, "no_installable_release": unresolved}
+                            "unchanged": skipped, "no_installable_release": unresolved,
+                            "installer": inst}
         if kprof:
             klondike[channel] = kprof
         print(f"{channel}: {len(todo)} to test, {skipped} unchanged, "
@@ -400,25 +425,42 @@ def channel_profile(profile_def, baseline, channel, feed_by_id, previous, pins, 
     return spec
 
 
-def klondike_items(feed, previous, channel, pins):
+def package_of(entry, installer):
+    """The pip name to test an entry by: the store's, else the one the
+    installer installs it as (#54: repos whose package name the crawler
+    could not read)."""
+    if entry.get("package_name"):
+        return entry["package_name"]
+    for m in installer.values():
+        if entry["id"] in m:
+            return m[entry["id"]]["package"]
+    return None
+
+
+def klondike_items(feed, previous, channel, pins, inst=None):
     """The skills the channel's Klondike job routes against the profile:
     every store skill that passed level 2 on the channel in the last run,
     at the version it was tested at. A skill tested for the first time in
     this run joins the next one."""
     out = []
     for e in feed:
-        if not is_candidate(e) or TESTED_TYPES.get(e["component_type"]) != "skill":
+        mine = (inst or {}).get(e["id"])
+        if mine:
+            if mine["kind"] != "skill":
+                continue
+        elif not is_candidate(e) or TESTED_TYPES.get(e["component_type"]) != "skill":
             continue
         rec = (previous.get(e["id"]) or {}).get(channel) or {}
         if rec.get("status") != "pass" or not rec.get("plugin_ids") or not rec.get("version_tested"):
             continue
-        out.append({"id": e["id"], "package": e["package_name"], "version": rec["version_tested"],
-                    "channel_pinned": normalize(e["package_name"]) in pins, "kind": "skill",
+        package = e.get("package_name") or mine["package"]
+        out.append({"id": e["id"], "package": package, "version": rec["version_tested"],
+                    "channel_pinned": normalize(package) in pins, "kind": "skill",
                     "repo": repo_url(e), "plugin_ids": list(rec["plugin_ids"])})
     return out
 
 
-def feed_map(feed):
+def feed_map(feed, inst=None):
     """{normalized package: {id, repo}} of every skill in the store, so the
     profile job can tell which installed skills are store entries (and fetch
     their golden files) without knowing what ovos-core[...] expands to."""
@@ -426,6 +468,12 @@ def feed_map(feed):
     for e in feed:
         if e.get("component_type") == "Skill" and e.get("package_name") and not e.get("archived"):
             out.setdefault(normalize(e["package_name"]), {"id": e["id"], "repo": repo_url(e)})
+    # What the installer installs counts as a store skill too, archived or
+    # not (#54), so the Klondike job fetches its golden files.
+    by_id = {e["id"]: e for e in feed}
+    for sid, m in (inst or {}).items():
+        if m["kind"] == "skill" and sid in by_id:
+            out.setdefault(normalize(m["package"]), {"id": sid, "repo": repo_url(by_id[sid])})
     return out
 
 

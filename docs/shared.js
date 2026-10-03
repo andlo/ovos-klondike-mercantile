@@ -161,7 +161,9 @@ function renderBadges(skill) {
     badges.push(`<span class="badge badge-warn">No license</span>`);
   }
   if (skill.archived) {
-    badges.push(`<span class="badge badge-warn">Archived</span>`);
+    badges.push(installerChannels(skill).length
+      ? `<span class="badge badge-warn" title="${escapeHtml(installerNote(skill))}">Archived · still installed by OVOS</span>`
+      : `<span class="badge badge-warn">Archived</span>`);
   }
   return badges.join("");
 }
@@ -324,9 +326,27 @@ function loadReportsIndex(cacheBust) {
     .catch(() => null);
 }
 
+// Channels on which the OVOS installer installs this entry (#54), from
+// compat/results.json "installer", as the last test run read it.
+function installerChannels(skill) {
+  return asArray(skill.installer_channels);
+}
+
+function installerNote(skill) {
+  const chans = installerChannels(skill);
+  const extra = skill.installer_profile === "extra" ? " with extra skills on" : "";
+  return chans.length ? `The OVOS installer still installs it${extra} (${chans.join(", ")}), so it is tested like any other entry.` : "";
+}
+
 function applyCompatResults(skills, doc) {
   const results = (doc && doc.results) || {};
+  const installer = (doc && doc.installer) || {};
   for (const skill of skills) {
+    const chans = COMPAT_CHANNELS.filter((ch) => (installer[ch] || {})[skill.id]);
+    if (chans.length) {
+      skill.installer_channels = chans;
+      skill.installer_profile = installer[chans[0]][skill.id].profile;
+    }
     const perChannel = results[skill.id];
     if (!perChannel) continue;
     const channels = {};

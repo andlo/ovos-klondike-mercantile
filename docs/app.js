@@ -306,7 +306,9 @@ function applyFilters() {
   const filtered = skills.filter((s) =>
     matchesSearch(s, query) &&
     facetsMatch(s) &&
-    (showArchived || !s.archived)
+    // An archived entry the OVOS installer still installs (#54) is what
+    // users run, so it stays visible without the archived toggle.
+    (showArchived || !s.archived || installerChannels(s).length > 0)
   );
   const sorted = sortSkills(filtered, sortOrder.value);
 

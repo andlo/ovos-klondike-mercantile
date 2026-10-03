@@ -46,6 +46,8 @@ def store_index(skills):
     by_repo = {e["id"].lower(): e["id"] for e in skills}  # "<owner>-<repo>"
 
     def find(rid):
+        if rid in by_repo.values():
+            return rid
         if rid in by_sid:
             return by_sid[rid]
         name, _, owner = rid.partition(".")
@@ -64,9 +66,11 @@ def stage_plugin(stage):
     return STAGE_SUFFIX.sub("", stage)
 
 
-def row(runtime_id, kind, store_id, rec, kres, note=None):
+def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False):
     """One entry of a profile on one channel."""
     out = {"runtime_id": runtime_id, "store_id": store_id, "kind": kind}
+    if archived:
+        out["archived"] = True
     if not store_id:
         out.update(state="not_in_store", label="not in the store", level=None)
     else:
@@ -108,7 +112,7 @@ def sort_key(r):
     return (r["kind"] != "pipeline", (r["store_id"] or r["runtime_id"]).lower())
 
 
-def channel_report(doc, channel, rt, find=lambda rid: None):
+def channel_report(doc, channel, rt, find=lambda rid: None, archived=frozenset()):
     results = doc.get("results") or {}
     route = ((doc.get("channels") or {}).get(channel) or {}).get("route") or {}
     kl = (doc.get("klondike") or {}).get(channel) or {}
@@ -118,6 +122,7 @@ def channel_report(doc, channel, rt, find=lambda rid: None):
         return None
 
     added = set(prof.get("added_stages") or [])
+    inst = (doc.get("installer") or {}).get(channel) or {}
     seen = set()
 
     def collect(ids, kind, notes=None):
@@ -131,12 +136,22 @@ def channel_report(doc, channel, rt, find=lambda rid: None):
             rec = (results.get(sid) or {}).get(channel) if sid else None
             if sid and rec and rec.get("plugin_ids") and rid == sid:
                 rid = rec["plugin_ids"][0]
-            rows.append(row(rid, kind, sid, rec, job.get(sid) if sid else None, (notes or {}).get(key)))
+            elif rid == sid and (inst.get(sid) or {}).get("package"):
+                rid = inst[sid]["package"]  # not tested yet: the pip name it is installed as
+            rows.append(row(rid, kind, sid, rec, job.get(sid) if sid else None, (notes or {}).get(key),
+                            archived=sid in archived))
         return sorted(rows, key=sort_key)
 
+    # What the installer installs on this channel (#54), as plan.py read it
+    # from ovos-core's extras: it decides Default vs Extra. The ids the
+    # routing job saw installed are added after it, so nothing it booted
+    # goes missing (and one the store lacks still shows as not in the store).
+    inst_ids = lambda profile, kind: sorted(i for i, m in inst.items()  # noqa: E731
+                                            if m.get("profile") == profile and m.get("kind") == kind)
     pipe_default = [stage_plugin(s) for s in route.get("pipeline_used") or route.get("pipeline_requested") or []
                     if s not in added]
-    default = collect(pipe_default, "pipeline") + collect(route["baseline_ids"], "skill")
+    default = collect(inst_ids("default", "pipeline") + pipe_default, "pipeline") \
+        + collect(inst_ids("default", "skill") + route["baseline_ids"], "skill")
     default.sort(key=sort_key)
 
     curated = prof.get("curated") or []
@@ -145,7 +160,7 @@ def channel_report(doc, channel, rt, find=lambda rid: None):
                        for rec in (results.get(sid) or {}).values() for pid in rec.get("plugin_ids") or []}
     extra_ids = [s for s in prof.get("skill_ids") or [] if s not in curated_runtime
                  and rt.get(s) not in curated_ids]
-    extra = collect(extra_ids, "skill")
+    extra = collect(inst_ids("extra", "skill") + extra_ids, "skill")
 
     notes = {c["id"]: c.get("function") for c in curated}
     for sid, why in (prof.get("left_out") or {}).items():
@@ -178,9 +193,10 @@ def channel_report(doc, channel, rt, find=lambda rid: None):
 def build(doc, skills=()):
     rt = runtime_index(doc.get("results") or {})
     find = store_index(skills)
+    archived = frozenset(e["id"] for e in skills if e.get("archived"))
     channels = {}
     for ch in CHANNEL_ORDER:
-        rep = channel_report(doc, ch, rt, find)
+        rep = channel_report(doc, ch, rt, find, archived)
         if rep:
             channels[ch] = rep
     # Stamped with the results' time, not now: the file only changes when

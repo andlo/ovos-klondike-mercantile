@@ -47,6 +47,7 @@
         "klondike": {"$ref": "#/$defs/counts", "description": "golden utterances routed with the whole curated profile loaded"},
         "gold": {"type": "boolean"},
         "in_profile": {"type": "boolean", "description": "curated profile only: false when left out on this channel"},
+        "archived": {"type": "boolean", "description": "the store entry's repo is archived (still in the profile because the installer installs it)"},
         "note": {"type": "string"}
       }
     },

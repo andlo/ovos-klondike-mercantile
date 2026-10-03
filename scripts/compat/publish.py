@@ -395,6 +395,16 @@ def main():
             for c in ((plan.get("klondike_profile") or {}).get("curated") or {}).get("pipeline", [])
             if c.get("stage") in added]
         publish_profile_files(docs, channel, spec)
+    # What the OVOS installer installs per channel (#54), as plan.py read it:
+    # {store id: {profile, kind, package}}. The site marks archived entries
+    # that are still installed, and the profile overview splits Default and
+    # Extra by it.
+    for channel, summ in (plan.get("summary") or {}).items():
+        inst = summ.get("installer")
+        if isinstance(inst, dict) and inst:
+            doc.setdefault("installer", {})[channel] = {
+                str(k)[:200]: {f: str(v.get(f))[:100] for f in ("profile", "kind", "package") if v.get(f)}
+                for k, v in inst.items() if SAFE_ID.match(str(k)) and isinstance(v, dict)}
     doc["generated_at"] = now
     print(f"accepted {accepted} records, rejected {rejected}")
 

@@ -95,7 +95,10 @@ LAN_LIBS = {"zeroconf"}
 # ([project.entry-points."..."]) - many newer OVOS repos have moved
 # to pyproject.toml exclusively, found while investigating why OCP/
 # pipeline/persona components were being skipped entirely.
-ENTRY_POINT_GROUP_PATTERN = re.compile(r'"(ovos\.plugin\.[\w.]+|opm\.[\w.]+)"')
+# Either quote: OVOS's own skill template writes
+# entry_points={'opm.skill': ...} (#54: ovos-skill-hello-world and
+# ovos-skill-fallback-unknown were filed as Infrastructure for it).
+ENTRY_POINT_GROUP_PATTERN = re.compile(r"""["'](ovos\.plugin\.[\w.]+|opm\.[\w.]+)["']""")
 
 # Readable labels for known entry-point group suffixes (prefix
 # "ovos.plugin."/"opm." stripped before matching). Checked as
@@ -645,6 +648,14 @@ def derive_package_name(setup_text, pyproject_text):
     match = re.search(r"""name\s*=\s*["']([\w.-]+)["']""", setup_text)
     if match:
         return match.group(1)
+    # setup(name=PYPI_NAME) with PYPI_NAME = "..." further up, as OVOS's
+    # skill template does (#54).
+    match = re.search(r"""\bname\s*=\s*([A-Za-z_]\w*)\s*[,)]""", setup_text)
+    if match:
+        const = re.search(r"""^\s*%s\s*=\s*["']([\w.-]+)["']""" % re.escape(match.group(1)),
+                          setup_text, re.MULTILINE)
+        if const:
+            return const.group(1)
     match = re.search(r"""^\s*name\s*=\s*["']([\w.-]+)["']""", pyproject_text, re.MULTILINE)
     return match.group(1) if match else None
 
