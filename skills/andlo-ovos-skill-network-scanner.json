@@ -69,31 +69,31 @@
     "badge_id": "ovos-skill-network-scanner.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.2",
-        "tested_at": "2026-10-03T13:55:00+00:00",
-        "channel_pinned": false
-      },
-      "testing": {
         "label": "\u2713 loads \u00b7 8/12 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.2",
-        "tested_at": "2026-10-03T10:57:55+00:00",
+        "tested_at": "2026-10-03T18:18:44+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 8,
           "counted": 12
         }
       },
+      "testing": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.2",
+        "tested_at": "2026-10-03T18:30:55+00:00",
+        "channel_pinned": false
+      },
       "alpha": {
         "label": "\u2713 12/12 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.2",
-        "tested_at": "2026-10-03T11:20:05+00:00",
+        "tested_at": "2026-10-03T18:38:27+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 12,

@@ -11,6 +11,8 @@
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-core",
   "package_name": "ovos-core",
   "pypi_version": "2.1.1",
@@ -20,9 +22,9 @@
   "tier": 1,
   "component_type": "Pipeline Plugin",
   "type_group": "Plugin",
-  "stars": 295,
+  "stars": 296,
   "forks": 30,
-  "open_issues": 15,
+  "open_issues": 17,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -48,6 +50,8 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
+    "kab-dz",
     "nl-be",
     "nl-nl",
     "pl-pl",
@@ -69,15 +73,14 @@
         "state": "unsupported",
         "level": 1,
         "version_tested": "1.3.1",
-        "tested_at": "2026-10-02T09:26:56+00:00",
+        "tested_at": "2026-10-03T18:20:49+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "2.1.1",
-        "tested_at": "2026-10-02T09:40:06+00:00",
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-10-03T18:31:42+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -85,7 +88,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "3.7.2a2",
-        "tested_at": "2026-10-03T11:21:37+00:00",
+        "tested_at": "2026-10-03T18:40:09+00:00",
         "channel_pinned": true
       }
     }

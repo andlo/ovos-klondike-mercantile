@@ -119,31 +119,34 @@
       "badge_id": "ovos-skill-365tomorrows-stories.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T13:52:45+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-10-03T18:19:01+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T13:51:50+00:00",
+          "tested_at": "2026-10-03T18:27:08+00:00",
           "channel_pinned": false
         },
         "alpha": {
-          "label": "\u2713 2/2 golden \u00b7 stops",
-          "state": "pass",
-          "level": 3,
-          "stop": "stops",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T11:08:50+00:00",
+          "tested_at": "2026-10-03T18:34:20+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
+            "hit": 0,
             "counted": 2
           }
         }
@@ -240,15 +243,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.24",
-          "tested_at": "2026-10-03T13:53:39+00:00",
+          "tested_at": "2026-10-03T18:19:56+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.28",
-          "tested_at": "2026-10-03T13:52:20+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:54+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -256,7 +258,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.12.33a1",
-          "tested_at": "2026-10-03T11:08:58+00:00",
+          "tested_at": "2026-10-03T18:34:29+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 191,
@@ -380,19 +382,23 @@
       "badge_id": "ovos-skill-andersen-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/6 golden",
+          "state": "warn",
           "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T13:54:34+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-10-03T18:20:52+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 6
+          }
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T13:52:49+00:00",
+          "tested_at": "2026-10-03T18:27:57+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -400,7 +406,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T11:19:16+00:00",
+          "tested_at": "2026-10-03T18:45:11+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 4,
@@ -468,19 +474,23 @@
       "badge_id": "ovos-skill-andrew-lang-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
           "version_tested": "0.1.9",
-          "tested_at": "2026-10-03T13:54:53+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-10-03T18:21:11+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.9",
-          "tested_at": "2026-10-03T13:52:59+00:00",
+          "tested_at": "2026-10-03T18:28:12+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -488,7 +498,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.9",
-          "tested_at": "2026-10-03T11:19:28+00:00",
+          "tested_at": "2026-10-03T18:45:23+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -627,15 +637,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.13",
-          "tested_at": "2026-10-03T13:55:06+00:00",
+          "tested_at": "2026-10-03T18:21:23+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.5.14",
-          "tested_at": "2026-10-03T13:53:04+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:28:19+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -643,7 +652,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.13.5a4",
-          "tested_at": "2026-10-03T11:19:36+00:00",
+          "tested_at": "2026-10-03T18:45:31+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 0,
@@ -822,19 +831,23 @@
       "badge_id": "ovos-skill-arxiv-papers.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T13:55:28+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-10-03T18:21:43+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T13:53:13+00:00",
+          "tested_at": "2026-10-03T18:28:21+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -842,7 +855,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T11:19:45+00:00",
+          "tested_at": "2026-10-03T18:45:40+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 0,
@@ -948,15 +961,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.19",
-          "tested_at": "2026-10-03T13:55:45+00:00",
+          "tested_at": "2026-10-03T18:22:00+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.19",
-          "tested_at": "2026-10-03T13:53:22+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:28:35+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -964,7 +976,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2a6",
-          "tested_at": "2026-10-03T11:19:54+00:00",
+          "tested_at": "2026-10-03T18:45:48+00:00",
           "channel_pinned": true
         }
       }
@@ -1042,7 +1054,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.7",
-          "tested_at": "2026-10-03T13:56:07+00:00",
+          "tested_at": "2026-10-03T18:22:20+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -1050,7 +1062,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.7",
-          "tested_at": "2026-10-03T13:53:34+00:00",
+          "tested_at": "2026-10-03T18:28:36+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -1058,7 +1070,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.7.2a5",
-          "tested_at": "2026-10-03T11:20:41+00:00",
+          "tested_at": "2026-10-03T18:46:34+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 31,
@@ -1332,19 +1344,23 @@
       "badge_id": "ovos-skill-bechstein-tales.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T13:52:52+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-10-03T18:19:00+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T13:58:14+00:00",
+          "tested_at": "2026-10-03T18:27:31+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -1352,7 +1368,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T11:10:42+00:00",
+          "tested_at": "2026-10-03T18:34:30+00:00",
           "channel_pinned": false
         }
       }
@@ -1428,19 +1444,23 @@
       "badge_id": "ovos-skill-calculator.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
+          "label": "\u2713 loads \u00b7 3/25 golden",
+          "state": "warn",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T13:53:09+00:00",
-          "channel_pinned": false
+          "tested_at": "2026-10-03T18:19:16+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 25
+          }
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T13:58:25+00:00",
+          "tested_at": "2026-10-03T18:27:44+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -1448,7 +1468,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T11:10:51+00:00",
+          "tested_at": "2026-10-03T18:34:39+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 25,
@@ -1532,15 +1552,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.4",
-          "tested_at": "2026-10-03T13:53:22+00:00",
+          "tested_at": "2026-10-03T18:19:29+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.0.4",
-          "tested_at": "2026-10-03T10:45:22+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:51+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -1548,7 +1567,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "1.4.0a1",
-          "tested_at": "2026-10-03T11:11:08+00:00",
+          "tested_at": "2026-10-03T18:34:57+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 18,
@@ -1734,15 +1753,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T13:54:11+00:00",
+          "tested_at": "2026-10-03T18:20:04+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T10:46:01+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:53+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -1750,7 +1768,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.2a1",
-          "tested_at": "2026-10-03T11:12:01+00:00",
+          "tested_at": "2026-10-03T18:35:50+00:00",
           "channel_pinned": true
         }
       }
@@ -1966,15 +1984,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.3.2",
-          "tested_at": "2026-10-02T12:15:12+00:00",
+          "tested_at": "2026-10-03T18:20:26+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.2",
-          "tested_at": "2026-10-02T12:15:06+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:55+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -1982,7 +1999,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.2",
-          "tested_at": "2026-10-03T11:12:52+00:00",
+          "tested_at": "2026-10-03T18:36:41+00:00",
           "channel_pinned": false
         }
       }
@@ -2062,15 +2079,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.13",
-          "tested_at": "2026-10-03T13:54:32+00:00",
+          "tested_at": "2026-10-03T18:20:30+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.13",
-          "tested_at": "2026-10-03T10:46:19+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:58+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -2078,7 +2094,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.8.2a1",
-          "tested_at": "2026-10-03T11:13:00+00:00",
+          "tested_at": "2026-10-03T18:36:50+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 21,
@@ -2154,31 +2170,31 @@
       "badge_id": "ovos-skill-cosquin-tales.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-10-03T18:20:50+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T13:54:49+00:00",
+          "tested_at": "2026-10-03T18:28:00+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T10:46:32+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-03T11:13:50+00:00",
+          "tested_at": "2026-10-03T18:37:39+00:00",
           "channel_pinned": false
         }
       }
@@ -2362,15 +2378,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.4.20",
-          "tested_at": "2026-10-03T13:55:04+00:00",
+          "tested_at": "2026-10-03T18:21:03+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads \u00b7 18/20 langs",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "1.1.5",
-          "tested_at": "2026-10-03T10:46:38+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:28:17+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -2378,7 +2393,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "1.11.4a1",
-          "tested_at": "2026-10-03T11:13:59+00:00",
+          "tested_at": "2026-10-03T18:37:48+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 144,
@@ -2471,15 +2486,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.8",
-          "tested_at": "2026-10-03T13:58:24+00:00",
+          "tested_at": "2026-10-03T18:18:46+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.2.8",
-          "tested_at": "2026-10-03T10:54:07+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:55+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -2487,7 +2501,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.9.0a3",
-          "tested_at": "2026-10-03T11:10:45+00:00",
+          "tested_at": "2026-10-03T18:35:04+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 20,
@@ -2567,15 +2581,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.15",
-          "tested_at": "2026-10-03T13:52:47+00:00",
+          "tested_at": "2026-10-03T18:19:48+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.2.19",
-          "tested_at": "2026-10-03T10:54:50+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:57+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -2583,7 +2596,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.7.0a3",
-          "tested_at": "2026-10-03T11:11:41+00:00",
+          "tested_at": "2026-10-03T18:36:01+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 15,
@@ -2899,31 +2912,30 @@
       "badge_id": "ovos-skill-fart.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.0.1",
-          "tested_at": "2026-10-03T13:53:49+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 34/34 golden",
+          "label": "\u2713 45/45 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "1.0.1",
-          "tested_at": "2026-10-03T10:55:41+00:00",
+          "tested_at": "2026-10-03T18:20:15+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 34,
-            "counted": 34
+            "hit": 45,
+            "counted": 45
           }
+        },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:27:59+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 22/22 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "1.0.1",
-          "tested_at": "2026-10-03T11:13:14+00:00",
+          "tested_at": "2026-10-03T18:37:48+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 22,
@@ -3009,7 +3021,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.5.0",
-          "tested_at": "2026-10-02T09:27:40+00:00",
+          "tested_at": "2026-10-03T18:20:51+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -3017,7 +3029,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.5.0",
-          "tested_at": "2026-10-02T09:36:28+00:00",
+          "tested_at": "2026-10-03T18:28:01+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -3025,7 +3037,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.9.1a1",
-          "tested_at": "2026-10-03T11:13:43+00:00",
+          "tested_at": "2026-10-03T18:38:16+00:00",
           "channel_pinned": true
         }
       }
@@ -3152,31 +3164,31 @@
       "badge_id": "ovos-skill-geography.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 loads \u00b7 9/50 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.5",
+          "tested_at": "2026-10-03T18:36:07+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 9,
+            "counted": 50
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-03T13:54:40+00:00",
+          "tested_at": "2026-10-03T18:44:39+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 9/41 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-10-03T10:56:12+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 9,
-            "counted": 41
-          }
         },
         "alpha": {
           "label": "\u2713 28/28 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-03T11:28:51+00:00",
+          "tested_at": "2026-10-03T18:53:25+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 28,
@@ -3296,24 +3308,24 @@
       "badge_id": "ovos-skill-geography-practice.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.6",
-          "tested_at": "2026-10-03T13:54:55+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
           "label": "\u2713 22/27 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.6",
-          "tested_at": "2026-10-03T10:56:20+00:00",
+          "tested_at": "2026-10-03T18:36:23+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 22,
             "counted": 27
           }
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.6",
+          "tested_at": "2026-10-03T18:44:50+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 18/18 golden \u00b7 stops",
@@ -3321,7 +3333,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.6",
-          "tested_at": "2026-10-03T11:29:17+00:00",
+          "tested_at": "2026-10-03T18:53:50+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 18,
@@ -3441,31 +3453,31 @@
       "badge_id": "ovos-skill-geometry.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 loads \u00b7 4/37 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-03T18:36:38+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 37
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T13:55:10+00:00",
+          "tested_at": "2026-10-03T18:45:00+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 3/28 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T10:56:27+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 28
-          }
         },
         "alpha": {
           "label": "\u2713 25/25 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T11:29:38+00:00",
+          "tested_at": "2026-10-03T18:54:11+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 25,
@@ -3584,25 +3596,25 @@
       "badge_id": "ovos-skill-geometry-practice.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T13:55:25+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 20/24 golden \u00b7 stops",
+          "label": "\u2713 31/36 golden \u00b7 stops",
           "state": "warn",
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T10:56:35+00:00",
+          "tested_at": "2026-10-03T18:36:53+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 20,
-            "counted": 24
+            "hit": 31,
+            "counted": 36
           }
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-03T18:45:11+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 24/24 golden \u00b7 stops",
@@ -3610,7 +3622,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T11:30:01+00:00",
+          "tested_at": "2026-10-03T18:54:34+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 24,
@@ -3619,87 +3631,6 @@
         }
       }
     }
-  },
-  {
-    "id": "OpenVoiceOS-ovos-good-manners-pipeline-plugin",
-    "skill_id": "ovos-good-manners-pipeline-plugin.openvoiceos",
-    "name": "Good Manners",
-    "description": "Listens to how you ask, not just what you ask: compliments good manners and reprimands foul language, after your request has been answered as usual. A pipeline plugin that never gets in the way of the answer.",
-    "examples": [
-      "What time is it, please?",
-      "Could you please tell me a joke?",
-      "If you don't mind, what's the weather like?"
-    ],
-    "tags": [
-      "manners",
-      "politeness",
-      "profanity",
-      "fun",
-      "pipeline"
-    ],
-    "category": "Other",
-    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-good-manners-pipeline-plugin/master/goodmanner.png",
-    "icon_source": "skill.json",
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-good-manners-pipeline-plugin",
-    "package_name": "ovos-good-manners-pipeline-plugin",
-    "pypi_version": null,
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 2,
-    "component_type": "Pipeline Plugin",
-    "type_group": "Plugin",
-    "stars": 2,
-    "forks": 4,
-    "open_issues": 6,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-good-manners-pipeline-plugin"
-      },
-      {
-        "heading": "Configuration",
-        "content": "Put the plugin **first** in the pipeline in `mycroft.conf`, followed by your normal pipeline:\n\n{\n  \"intents\": {\n    \"pipeline\": [\n      \"ovos-good-manners-pipeline-plugin\",\n      \"stop_high\",\n      \"converse\",\n      \"...\"\n    ],\n    \"ovos-good-manners-pipeline-plugin\": {\n      \"polite_threshold\": 4,\n      \"polite_timeout\": 10,\n      \"max_delay\": 20\n    }\n  }\n}\n\n| Setting | Default | Meaning |\n|---|---|---|\n| `polite_threshold` | `4` | polite requests in a row before you get a compliment |\n| `polite_timeout` | `10` | minutes without a polite request before the streak starts over |\n| `max_delay` | `20` | seconds after the utterance after which a comeback is dropped instead of said late |\n\nSince the pipeline is chosen per session, a HiveMind client can enable or disable the plugin through its\u2026"
-      }
-    ],
-    "languages": [
-      "da-dk",
-      "de-de",
-      "en-us"
-    ],
-    "locale_content": {
-      "da-dk": {
-        "name": "God opf\u00f8rsel",
-        "description": "Lytter til hvordan du sp\u00f8rger, ikke kun hvad du sp\u00f8rger om: roser god opf\u00f8rsel og irettes\u00e6tter grimt sprog, efter at dit sp\u00f8rgsm\u00e5l er besvaret som normalt. Et pipeline-plugin, der aldrig st\u00e5r i vejen for svaret.",
-        "examples": [
-          "Hvad er klokken, v\u00e6r s\u00f8d at sige det",
-          "Vil du v\u00e6re s\u00f8d at fort\u00e6lle en vittighed",
-          "Hvis du ikke har noget imod det, hvordan er vejret?"
-        ]
-      },
-      "de-de": {
-        "name": "Gute Manieren",
-        "description": "Achtet darauf, wie du fragst, nicht nur was du fragst: lobt gute Manieren und tadelt Schimpfw\u00f6rter, nachdem deine Anfrage wie gewohnt beantwortet wurde. Ein Pipeline-Plugin, das der Antwort nie im Weg steht.",
-        "examples": [
-          "Wie sp\u00e4t ist es, bitte?",
-          "Erz\u00e4hl mir bitte einen Witz",
-          "Wenn es dir nichts ausmacht, wie ist das Wetter?"
-        ]
-      }
-    },
-    "in_ovos_localize": false,
-    "repo_created_at": "2019-01-10T03:26:14Z",
-    "last_updated": "2026-10-01T21:08:23Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
   },
   {
     "id": "andlo-ovos-skill-grimm-tales",
@@ -3824,31 +3755,31 @@
       "badge_id": "ovos-skill-grimm-tales.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 loads \u00b7 0/8 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-03T18:18:41+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 8
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T13:55:42+00:00",
+          "tested_at": "2026-10-03T18:28:12+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 5/5 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T10:56:43+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 5,
-            "counted": 5
-          }
         },
         "alpha": {
           "label": "\u2713 5/5 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T11:13:52+00:00",
+          "tested_at": "2026-10-03T18:35:27+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 5,
@@ -5324,7 +5255,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T13:56:01+00:00",
+          "tested_at": "2026-10-03T18:19:31+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -5332,7 +5263,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T10:56:54+00:00",
+          "tested_at": "2026-10-03T18:29:07+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -5340,7 +5271,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:14:04+00:00",
+          "tested_at": "2026-10-03T18:35:38+00:00",
           "channel_pinned": false
         }
       }
@@ -5444,31 +5375,31 @@
       "badge_id": "ovos-skill-horoscope-readings.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 loads \u00b7 0/4 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-10-03T18:19:47+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 4
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-10-03T13:52:47+00:00",
+          "tested_at": "2026-10-03T18:29:19+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 4/4 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.5",
-          "tested_at": "2026-10-03T10:56:06+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 4,
-            "counted": 4
-          }
         },
         "alpha": {
           "label": "\u2713 4/4 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.5",
-          "tested_at": "2026-10-03T11:14:25+00:00",
+          "tested_at": "2026-10-03T18:36:00+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 4,
@@ -5807,31 +5738,31 @@
       "badge_id": "ovos-skill-intercom.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 loads \u00b7 4/34 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-10-03T18:20:04+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 34
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T13:53:45+00:00",
+          "tested_at": "2026-10-03T18:29:32+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 3/34 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T10:57:03+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 34
-          }
         },
         "alpha": {
           "label": "\u2713 17/18 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T11:14:32+00:00",
+          "tested_at": "2026-10-03T18:36:08+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 17,
@@ -5990,15 +5921,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.16",
-          "tested_at": "2026-10-03T13:54:01+00:00",
+          "tested_at": "2026-10-03T18:20:19+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.2.16",
-          "tested_at": "2026-10-03T10:57:13+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:29:43+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -6006,7 +5936,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.7.1a1",
-          "tested_at": "2026-10-03T11:14:54+00:00",
+          "tested_at": "2026-10-03T18:36:32+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 45,
@@ -6093,15 +6023,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T13:54:50+00:00",
+          "tested_at": "2026-10-03T18:21:00+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T10:57:56+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:29:45+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -6109,7 +6038,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.2.5a1",
-          "tested_at": "2026-10-03T11:16:02+00:00",
+          "tested_at": "2026-10-03T18:37:42+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 29,
@@ -6201,15 +6130,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.7",
-          "tested_at": "2026-10-03T13:55:04+00:00",
+          "tested_at": "2026-10-03T18:21:14+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.7",
-          "tested_at": "2026-10-03T10:58:04+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:29:47+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -6217,7 +6145,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.25.6a3",
-          "tested_at": "2026-10-03T11:16:58+00:00",
+          "tested_at": "2026-10-03T18:38:41+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 21,
@@ -6412,7 +6340,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-10-02T09:28:26+00:00",
+          "tested_at": "2026-10-03T18:21:34+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -6420,7 +6348,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-10-02T09:35:38+00:00",
+          "tested_at": "2026-10-03T18:29:49+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -6428,7 +6356,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-10-03T11:17:54+00:00",
+          "tested_at": "2026-10-03T18:39:39+00:00",
           "channel_pinned": false
         }
       }
@@ -6623,32 +6551,32 @@
       "badge_id": "ovos-skill-math-practice.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-10-03T13:55:24+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 41/66 golden",
+          "label": "\u2713 loads \u00b7 46/66 golden",
           "state": "warn",
           "level": 2,
           "stop": "stops",
           "version_tested": "0.0.8",
-          "tested_at": "2026-10-03T10:58:20+00:00",
+          "tested_at": "2026-10-03T18:18:53+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 41,
+            "hit": 46,
             "counted": 66
           }
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-10-03T18:30:02+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 32/33 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.8",
-          "tested_at": "2026-10-03T11:17:56+00:00",
+          "tested_at": "2026-10-03T18:35:30+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 32,
@@ -6727,25 +6655,25 @@
       "badge_id": "ovos-skill-metronome.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-10-03T13:55:38+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
           "label": "\u2713 9/10 golden \u00b7 stops",
           "state": "warn",
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-03T10:58:27+00:00",
+          "tested_at": "2026-10-03T18:19:05+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 9,
             "counted": 10
           }
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.5",
+          "tested_at": "2026-10-03T18:30:07+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 5/5 golden \u00b7 stops",
@@ -6753,7 +6681,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-03T11:18:14+00:00",
+          "tested_at": "2026-10-03T18:35:43+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 5,
@@ -6887,31 +6815,31 @@
       "badge_id": "ovos-skill-morse-code.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T13:55:51+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
           "label": "\u2713 6/6 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T10:58:34+00:00",
+          "tested_at": "2026-10-03T18:19:17+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
             "counted": 6
           }
         },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-03T18:30:12+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:18:28+00:00",
+          "tested_at": "2026-10-03T18:35:56+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -7007,15 +6935,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.12",
-          "tested_at": "2026-10-03T13:52:48+00:00",
+          "tested_at": "2026-10-03T18:19:29+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.12",
-          "tested_at": "2026-10-03T10:56:03+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:30:17+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -7023,7 +6950,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.7.1a3",
-          "tested_at": "2026-10-03T11:18:42+00:00",
+          "tested_at": "2026-10-03T18:36:08+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 96,
@@ -7329,15 +7256,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.15",
-          "tested_at": "2026-10-03T13:53:59+00:00",
+          "tested_at": "2026-10-03T18:20:30+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.15",
-          "tested_at": "2026-10-03T10:57:15+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:30:18+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -7345,7 +7271,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.12.0a7",
-          "tested_at": "2026-10-03T11:19:58+00:00",
+          "tested_at": "2026-10-03T18:37:12+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 7,
@@ -7422,31 +7348,31 @@
       "badge_id": "ovos-skill-nato-alphabet.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T13:54:25+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
           "label": "\u2713 6/6 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T10:57:39+00:00",
+          "tested_at": "2026-10-03T18:21:06+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
             "counted": 6
           }
         },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-03T18:30:20+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:21:02+00:00",
+          "tested_at": "2026-10-03T18:38:14+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -7523,15 +7449,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-10-03T13:54:39+00:00",
+          "tested_at": "2026-10-03T18:21:18+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.24",
-          "tested_at": "2026-10-03T10:57:46+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:30:25+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -7539,7 +7464,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-10-03T11:21:17+00:00",
+          "tested_at": "2026-10-03T18:38:27+00:00",
           "channel_pinned": false
         }
       }
@@ -7643,21 +7568,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:28:22+00:00",
+          "tested_at": "2026-10-03T18:21:32+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:39:29+00:00",
+          "tested_at": "2026-10-03T18:30:26+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:21:32+00:00",
+          "tested_at": "2026-10-03T18:38:39+00:00",
           "channel_pinned": false
         }
       }
@@ -7731,21 +7656,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:16+00:00",
+          "tested_at": "2026-10-03T18:18:56+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:31+00:00",
+          "tested_at": "2026-10-03T18:31:19+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:08+00:00",
+          "tested_at": "2026-10-03T18:37:16+00:00",
           "channel_pinned": false
         }
       }
@@ -7804,21 +7729,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:20+00:00",
+          "tested_at": "2026-10-03T18:18:59+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:33+00:00",
+          "tested_at": "2026-10-03T18:31:21+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:12+00:00",
+          "tested_at": "2026-10-03T18:37:19+00:00",
           "channel_pinned": false
         }
       }
@@ -7872,21 +7797,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:22+00:00",
+          "tested_at": "2026-10-03T18:19:00+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:35+00:00",
+          "tested_at": "2026-10-03T18:31:23+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:17+00:00",
+          "tested_at": "2026-10-03T18:37:22+00:00",
           "channel_pinned": false
         }
       }
@@ -7943,21 +7868,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:25+00:00",
+          "tested_at": "2026-10-03T18:19:02+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:37+00:00",
+          "tested_at": "2026-10-03T18:31:25+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:21+00:00",
+          "tested_at": "2026-10-03T18:37:24+00:00",
           "channel_pinned": false
         }
       }
@@ -8015,21 +7940,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:28+00:00",
+          "tested_at": "2026-10-03T18:19:04+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:39+00:00",
+          "tested_at": "2026-10-03T18:31:27+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:25+00:00",
+          "tested_at": "2026-10-03T18:37:27+00:00",
           "channel_pinned": false
         }
       }
@@ -8085,21 +8010,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:31+00:00",
+          "tested_at": "2026-10-03T18:19:06+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:41+00:00",
+          "tested_at": "2026-10-03T18:31:29+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:30+00:00",
+          "tested_at": "2026-10-03T18:37:30+00:00",
           "channel_pinned": false
         }
       }
@@ -8156,21 +8081,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:39+00:00",
+          "tested_at": "2026-10-03T18:19:11+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:46+00:00",
+          "tested_at": "2026-10-03T18:31:35+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:37+00:00",
+          "tested_at": "2026-10-03T18:37:37+00:00",
           "channel_pinned": false
         }
       }
@@ -8228,21 +8153,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:42+00:00",
+          "tested_at": "2026-10-03T18:19:13+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:37:48+00:00",
+          "tested_at": "2026-10-03T18:31:37+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:42+00:00",
+          "tested_at": "2026-10-03T18:37:40+00:00",
           "channel_pinned": false
         }
       }
@@ -8308,21 +8233,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:25:02+00:00",
+          "tested_at": "2026-10-03T18:18:41+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:38:23+00:00",
+          "tested_at": "2026-10-03T18:30:53+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:20:03+00:00",
+          "tested_at": "2026-10-03T18:38:23+00:00",
           "channel_pinned": false
         }
       }
@@ -8399,31 +8324,31 @@
       "badge_id": "ovos-skill-network-scanner.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.2",
-          "tested_at": "2026-10-03T13:55:00+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
           "label": "\u2713 loads \u00b7 8/12 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-03T10:57:55+00:00",
+          "tested_at": "2026-10-03T18:18:44+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 8,
             "counted": 12
           }
         },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.2",
+          "tested_at": "2026-10-03T18:30:55+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2713 12/12 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-03T11:20:05+00:00",
+          "tested_at": "2026-10-03T18:38:27+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 12,
@@ -8578,15 +8503,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.12",
-          "tested_at": "2026-10-03T13:55:15+00:00",
+          "tested_at": "2026-10-03T18:19:00+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.12",
-          "tested_at": "2026-10-03T10:58:04+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:02+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -8594,7 +8518,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.5.0a5",
-          "tested_at": "2026-10-03T11:20:21+00:00",
+          "tested_at": "2026-10-03T18:38:44+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 35,
@@ -8848,25 +8772,24 @@
       "badge_id": "ovos-skill-ovosblog.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-10-03T18:19:56+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T13:55:34+00:00",
+          "tested_at": "2026-10-03T18:31:03+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 2/2 golden \u00b7 stops",
-          "state": "pass",
-          "level": 3,
-          "stop": "stops",
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T10:58:19+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
         },
         "alpha": {
           "label": "\u2713 2/2 golden \u00b7 stops",
@@ -8874,7 +8797,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-03T11:21:18+00:00",
+          "tested_at": "2026-10-03T18:39:44+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -8939,15 +8862,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.0.9",
-          "tested_at": "2026-10-02T09:26:49+00:00",
+          "tested_at": "2026-10-03T18:20:43+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.0.9",
-          "tested_at": "2026-10-02T09:39:56+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:40+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -8955,7 +8877,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.6.7a2",
-          "tested_at": "2026-10-03T11:21:26+00:00",
+          "tested_at": "2026-10-03T18:39:53+00:00",
           "channel_pinned": true
         }
       }
@@ -9712,6 +9634,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-busmon",
     "package_name": "ovos-busmon",
     "pypi_version": "0.1.0",
@@ -9764,6 +9688,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-chromadb-embeddings-plugin",
     "package_name": "ovos-chromadb-embeddings-plugin",
     "pypi_version": "0.0.0",
@@ -9813,6 +9739,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-classifiers",
     "package_name": "ovos-classifiers",
     "pypi_version": "0.0.0a59",
@@ -9820,7 +9748,7 @@
     "archived": true,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "G2P Plugin",
+    "component_type": "Solver Plugin",
     "type_group": "Plugin",
     "stars": 3,
     "forks": 6,
@@ -9901,6 +9829,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-cli-client",
     "package_name": "ovos-cli-client",
     "pypi_version": "0.0.1",
@@ -9945,6 +9875,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-color-parser",
     "package_name": "ovos_color_parser",
     "pypi_version": "0.11.3",
@@ -10032,6 +9964,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-common-query-pipeline-plugin",
     "package_name": "ovos_common_query_pipeline_plugin",
     "pypi_version": "1.1.9",
@@ -10071,6 +10005,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "pt-br",
       "pt-pt"
@@ -10089,15 +10024,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.1.7",
-          "tested_at": "2026-10-02T09:26:53+00:00",
+          "tested_at": "2026-10-03T18:20:46+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.1.9",
-          "tested_at": "2026-10-02T09:40:01+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:41+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -10105,7 +10039,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.19a1",
-          "tested_at": "2026-10-03T11:21:32+00:00",
+          "tested_at": "2026-10-03T18:40:01+00:00",
           "channel_pinned": true
         }
       }
@@ -10124,6 +10058,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-config",
     "package_name": "ovos-config",
     "pypi_version": "2.1.1",
@@ -10135,7 +10071,7 @@
     "type_group": "Tool",
     "stars": 3,
     "forks": 14,
-    "open_issues": 14,
+    "open_issues": 15,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -10165,10 +10101,12 @@
     "examples": [],
     "tags": [],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-control-panel/dev/ovos_webui/static/icon-512.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-control-panel",
     "package_name": "ovos-control-panel",
-    "pypi_version": "0.0.1a45",
+    "pypi_version": "0.0.1a46",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -10177,7 +10115,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 0,
-    "open_issues": 6,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -10195,7 +10133,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-10T17:37:33Z",
-    "last_updated": "2026-09-24T18:48:49.200438Z",
+    "last_updated": "2026-10-01T22:15:54.598836Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -10212,6 +10150,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-core",
     "package_name": "ovos-core",
     "pypi_version": "2.1.1",
@@ -10221,9 +10161,9 @@
     "tier": 1,
     "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
-    "stars": 295,
+    "stars": 296,
     "forks": 30,
-    "open_issues": 15,
+    "open_issues": 17,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -10249,6 +10189,8 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
+      "kab-dz",
       "nl-be",
       "nl-nl",
       "pl-pl",
@@ -10270,15 +10212,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.3.1",
-          "tested_at": "2026-10-02T09:26:56+00:00",
+          "tested_at": "2026-10-03T18:20:49+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "2.1.1",
-          "tested_at": "2026-10-02T09:40:06+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:42+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -10286,7 +10227,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "3.7.2a2",
-          "tested_at": "2026-10-03T11:21:37+00:00",
+          "tested_at": "2026-10-03T18:40:09+00:00",
           "channel_pinned": true
         }
       }
@@ -10304,6 +10245,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-coreferee-plugin",
     "package_name": "ovos-coreferee-plugin",
     "pypi_version": null,
@@ -10348,6 +10291,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-date-parser",
     "package_name": "ovos-date-parser",
     "pypi_version": "0.29.0",
@@ -10359,7 +10304,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 8,
-    "open_issues": 61,
+    "open_issues": 66,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -10378,6 +10323,7 @@
       "es",
       "fr",
       "it",
+      "kab",
       "pt"
     ],
     "locale_content": {},
@@ -10400,6 +10346,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ddg-plugin",
     "package_name": "ovos-ddg-plugin",
     "pypi_version": "1.1.2a1",
@@ -10439,6 +10387,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "pt-pt"
     ],
     "locale_content": {},
@@ -10446,7 +10395,7 @@
     "repo_created_at": "2025-11-22T20:45:33Z",
     "last_updated": "2026-09-02T12:24:50.037927Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "builderjer-ovos-diagnostics",
@@ -10510,6 +10459,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-dialog-normalizer-plugin",
     "package_name": "ovos-dialog-normalizer-plugin",
     "pypi_version": "0.0.1",
@@ -10560,6 +10511,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-dinkum-listener",
     "package_name": "ovos-dinkum-listener",
     "pypi_version": "0.5.0",
@@ -10609,6 +10562,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-docker",
     "package_name": null,
     "pypi_version": null,
@@ -10620,7 +10575,7 @@
     "type_group": "Infrastructure",
     "stars": 64,
     "forks": 21,
-    "open_issues": 4,
+    "open_issues": 5,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -10638,7 +10593,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-05-07T17:20:53Z",
-    "last_updated": "2026-09-29T23:26:05Z",
+    "last_updated": "2026-10-03T18:00:55Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -10766,6 +10721,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-docker-stt",
     "package_name": null,
     "pypi_version": null,
@@ -10805,7 +10762,7 @@
     "repo_created_at": "2023-05-31T02:30:07Z",
     "last_updated": "2026-09-29T21:31:26Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-docker-tts",
@@ -10821,6 +10778,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-docker-tts",
     "package_name": null,
     "pypi_version": null,
@@ -10852,7 +10811,7 @@
     "repo_created_at": "2023-06-24T15:44:23Z",
     "last_updated": "2026-09-01T17:20:19Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-docker-tx",
@@ -10866,6 +10825,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-docker-tx",
     "package_name": null,
     "pypi_version": null,
@@ -10897,7 +10858,7 @@
     "repo_created_at": "2023-08-21T22:04:19Z",
     "last_updated": "2026-09-01T17:20:26Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-docs-viewer",
@@ -10910,6 +10871,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-docs-viewer",
     "package_name": "ovos-docs-viewer",
     "pypi_version": "0.0.1",
@@ -10954,6 +10917,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-document-chunkers",
     "package_name": "ovos-document-chunkers",
     "pypi_version": "0.1.1",
@@ -11062,6 +11027,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-flashrank-reranker-plugin",
     "package_name": "ovos-flashrank-reranker-plugin",
     "pypi_version": "0.0.0",
@@ -11114,6 +11081,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gguf-embeddings-plugin",
     "package_name": "ovos-gguf-embeddings-plugin",
     "pypi_version": "0.0.0",
@@ -11121,8 +11090,8 @@
     "archived": true,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Tool",
-    "type_group": "Tool",
+    "component_type": "Text Plugin",
+    "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 5,
@@ -11155,6 +11124,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gguf-plugin",
     "package_name": "ovos-gguf-plugin",
     "pypi_version": "1.2.6a1",
@@ -11162,7 +11133,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Summarizer Plugin",
+    "component_type": "Detect Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
@@ -11210,6 +11181,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gguf-translate-plugin",
     "package_name": "ovos_gguf_translate",
     "pypi_version": "0.0.1",
@@ -11239,6 +11212,91 @@
     "is_recently_updated": false
   },
   {
+    "id": "OpenVoiceOS-ovos-good-manners-pipeline-plugin",
+    "skill_id": null,
+    "name": "ovos-good-manners-pipeline-plugin",
+    "description": "OVOS pipeline plugin that listens to how you ask: compliments good manners and reprimands foul language, without getting in the way of the answer",
+    "examples": [],
+    "tags": [
+      "hivemind",
+      "manners",
+      "openvoiceos",
+      "ovos",
+      "pipeline",
+      "plugin",
+      "politeness",
+      "profanity",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-good-manners-pipeline-plugin",
+    "package_name": "ovos-good-manners-pipeline-plugin",
+    "pypi_version": "0.0.2",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Pipeline Plugin",
+    "type_group": "Plugin",
+    "stars": 3,
+    "forks": 4,
+    "open_issues": 3,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-good-manners-pipeline-plugin"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Put the plugin **first** in the pipeline in `mycroft.conf`, followed by your normal pipeline:\n\n{\n  \"intents\": {\n    \"pipeline\": [\n      \"ovos-good-manners-pipeline-plugin\",\n      \"stop_high\",\n      \"converse\",\n      \"...\"\n    ],\n    \"ovos-good-manners-pipeline-plugin\": {\n      \"polite_threshold\": 4,\n      \"polite_timeout\": 10,\n      \"max_delay\": 20\n    }\n  }\n}\n\n| Setting | Default | Meaning |\n|---|---|---|\n| `polite_threshold` | `4` | polite requests in a row before you get a compliment |\n| `polite_timeout` | `10` | minutes without a polite request before the streak starts over |\n| `max_delay` | `20` | seconds after the utterance after which a comeback is dropped instead of said late |\n\nSince the pipeline is chosen per session, a HiveMind client can enable or disable the plugin through its\u2026"
+      }
+    ],
+    "languages": [
+      "da-dk",
+      "de-de",
+      "en-us"
+    ],
+    "locale_content": {
+      "da-dk": {
+        "name": "God opf\u00f8rsel",
+        "description": "Lytter til hvordan du sp\u00f8rger, ikke kun hvad du sp\u00f8rger om: roser god opf\u00f8rsel og irettes\u00e6tter grimt sprog, efter at dit sp\u00f8rgsm\u00e5l er besvaret som normalt. Et pipeline-plugin, der aldrig st\u00e5r i vejen for svaret.",
+        "examples": [
+          "Hvad er klokken, v\u00e6r s\u00f8d at sige det",
+          "Vil du v\u00e6re s\u00f8d at fort\u00e6lle en vittighed",
+          "Hvis du ikke har noget imod det, hvordan er vejret?"
+        ]
+      },
+      "de-de": {
+        "name": "Gute Manieren",
+        "description": "Achtet darauf, wie du fragst, nicht nur was du fragst: lobt gute Manieren und tadelt Schimpfw\u00f6rter, nachdem deine Anfrage wie gewohnt beantwortet wurde. Ein Pipeline-Plugin, das der Antwort nie im Weg steht.",
+        "examples": [
+          "Wie sp\u00e4t ist es, bitte?",
+          "Erz\u00e4hl mir bitte einen Witz",
+          "Wenn es dir nichts ausmacht, wie ist das Wetter?"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2019-01-10T03:26:14Z",
+    "last_updated": "2026-10-03T12:01:36.600168Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "OpenVoiceOS-ovos-good-manners-pipeline-plugin",
+      "channels": {}
+    }
+  },
+  {
     "id": "OpenVoiceOS-ovos-google-translate-plugin",
     "skill_id": null,
     "name": "ovos-google-translate-plugin",
@@ -11250,6 +11308,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-google-translate-plugin",
     "package_name": "ovos-google-translate-plugin",
     "pypi_version": "0.0.4a3",
@@ -11295,6 +11355,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gui",
     "package_name": "ovos-gui",
     "pypi_version": "1.3.4",
@@ -11340,6 +11402,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gui-api-client",
     "package_name": "ovos-gui-api-client",
     "pypi_version": "0.1.0",
@@ -11381,6 +11445,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gui-plugin-shell-companion",
     "package_name": "ovos_gui_plugin_shell_companion",
     "pypi_version": "1.0.6",
@@ -11388,8 +11454,8 @@
     "archived": true,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Tool",
-    "type_group": "Tool",
+    "component_type": "Gui Plugin",
+    "type_group": "Plugin",
     "stars": 2,
     "forks": 4,
     "open_issues": 7,
@@ -11420,6 +11486,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-hardware-helpers",
     "package_name": "ovos_hardware_helpers",
     "pypi_version": "1.0.2",
@@ -11615,15 +11683,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T09:26:59+00:00",
+          "tested_at": "2026-10-03T18:20:53+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "needs config",
-          "state": "unsupported",
-          "level": 1,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T09:40:11+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:44+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -11631,7 +11698,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:21:43+00:00",
+          "tested_at": "2026-10-03T18:40:17+00:00",
           "channel_pinned": false
         }
       }
@@ -11650,6 +11717,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-hivemind-pipeline-plugin",
     "package_name": "ovos-hivemind-pipeline-plugin",
     "pypi_version": "0.0.3",
@@ -11657,8 +11726,8 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Tool",
-    "type_group": "Tool",
+    "component_type": "Pipeline Plugin",
+    "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 5,
@@ -11707,6 +11776,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-i2c-detection",
     "package_name": "ovos_i2c_detection",
     "pypi_version": "0.0.5",
@@ -11751,6 +11822,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-i2csound",
     "package_name": null,
     "pypi_version": null,
@@ -11795,6 +11868,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-installer",
     "package_name": null,
     "pypi_version": null,
@@ -11804,7 +11879,7 @@
     "tier": null,
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
-    "stars": 323,
+    "stars": 324,
     "forks": 61,
     "open_issues": 8,
     "on_pypi": false,
@@ -11824,7 +11899,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-11-07T20:31:20Z",
-    "last_updated": "2026-09-29T10:44:05Z",
+    "last_updated": "2026-10-03T09:54:37Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -11983,7 +12058,9 @@
       "openvoiceos"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-landing-page/main/public/images/logo.svg",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-landing-page",
     "package_name": null,
     "pypi_version": null,
@@ -11995,7 +12072,7 @@
     "type_group": "Infrastructure",
     "stars": 6,
     "forks": 4,
-    "open_issues": 19,
+    "open_issues": 18,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -12008,9 +12085,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-04T15:01:45Z",
-    "last_updated": "2026-09-26T10:15:08Z",
+    "last_updated": "2026-10-03T10:02:54Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-lang-detector-classics-plugin",
@@ -12024,6 +12101,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin",
     "package_name": "ovos-lang-detector-classics-plugin",
     "pypi_version": "0.0.2a4",
@@ -12071,6 +12150,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-lang-detector-fasttext-plugin",
     "package_name": "ovos-lang-detector-fasttext-plugin",
     "pypi_version": "0.1.2",
@@ -12115,6 +12196,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-lang-parser",
     "package_name": "ovos-lang-parser",
     "pypi_version": "0.0.2",
@@ -12157,6 +12240,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-legacy-mycroft-gui-plugin",
     "package_name": "ovos-legacy-mycroft-gui-plugin",
     "pypi_version": null,
@@ -12201,6 +12286,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-lingua-franca",
     "package_name": "ovos-lingua-franca",
     "pypi_version": "0.4.7",
@@ -12252,6 +12339,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-listener",
     "package_name": "ovos-listener",
     "pypi_version": "0.0.3",
@@ -12305,7 +12394,9 @@
       "voice-assistant"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-localize/dev/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-localize",
     "package_name": "ovos-localize",
     "pypi_version": "0.1.0a24",
@@ -12317,7 +12408,7 @@
     "type_group": "Tool",
     "stars": 8,
     "forks": 3,
-    "open_issues": 106,
+    "open_issues": 66,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -12354,6 +12445,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-m2v-pipeline",
     "package_name": "ovos_m2v_pipeline",
     "pypi_version": "0.0.9",
@@ -12364,8 +12457,8 @@
     "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
     "stars": 1,
-    "forks": 4,
-    "open_issues": 16,
+    "forks": 5,
+    "open_issues": 20,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -12398,15 +12491,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.9",
-          "tested_at": "2026-10-02T09:25:06+00:00",
+          "tested_at": "2026-10-03T18:18:48+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2717 doesn't load",
+          "label": "\u2717 doesn't install",
           "state": "fail",
-          "level": 1,
-          "version_tested": "0.0.9",
-          "tested_at": "2026-10-02T09:38:19+00:00",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:36+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -12414,7 +12506,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.29.4a1",
-          "tested_at": "2026-10-03T11:22:49+00:00",
+          "tested_at": "2026-10-03T18:39:40+00:00",
           "channel_pinned": true
         }
       }
@@ -12429,6 +12521,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ma-player",
     "package_name": "ovos-ma-player",
     "pypi_version": "0.1.1a3",
@@ -12524,6 +12618,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-mark1-utils",
     "package_name": "ovos-mark1-utils",
     "pypi_version": "0.0.1",
@@ -12566,6 +12662,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin",
     "package_name": "ovos-markov-pipeline-plugin",
     "pypi_version": "0.5.2a2",
@@ -12657,9 +12755,11 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media",
     "package_name": "ovos-media",
-    "pypi_version": "2.4.4a1",
+    "pypi_version": "2.4.5a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -12693,7 +12793,7 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2024-01-09T00:18:26Z",
-    "last_updated": "2026-09-28T11:56:36.391647Z",
+    "last_updated": "2026-10-01T15:20:02.372374Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -12706,9 +12806,11 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-classifier",
     "package_name": "ovos-media-classifier",
-    "pypi_version": "0.2.1a1",
+    "pypi_version": "0.2.1a2",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -12736,6 +12838,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "pl-pl",
       "pt-br",
@@ -12744,7 +12847,7 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2026-06-23T16:53:26Z",
-    "last_updated": "2026-09-03T02:05:03.918386Z",
+    "last_updated": "2026-10-01T18:41:58.778534Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -12760,6 +12863,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-chromecast",
     "package_name": "ovos_media_plugin_chromecast",
     "pypi_version": "0.1.3",
@@ -12767,7 +12872,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
@@ -12806,6 +12911,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-cli",
     "package_name": "ovos-media-plugin-cli",
     "pypi_version": "0.0.6a1",
@@ -12817,7 +12924,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -12855,6 +12962,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-ffplay",
     "package_name": "ovos-media-plugin-ffplay",
     "pypi_version": "0.0.5a1",
@@ -12890,7 +12999,7 @@
     "repo_created_at": "2025-01-28T18:41:30Z",
     "last_updated": "2026-09-02T18:39:56.245406Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-mass",
@@ -12901,6 +13010,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mass",
     "package_name": "ovos-media-plugin-mass",
     "pypi_version": "0.1.1a2",
@@ -12950,6 +13061,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mplayer",
     "package_name": "ovos-media-plugin-mplayer",
     "pypi_version": "0.2.2a1",
@@ -12957,11 +13070,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -13000,6 +13113,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-mpv",
     "package_name": "ovos-media-plugin-mpv",
     "pypi_version": "1.0.2a1",
@@ -13007,7 +13122,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 1,
@@ -13031,7 +13146,7 @@
     "repo_created_at": "2024-07-17T21:47:35Z",
     "last_updated": "2026-09-02T18:40:49.368370Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-qt5",
@@ -13047,6 +13162,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-qt5",
     "package_name": "ovos-media-plugin-qt5",
     "pypi_version": "0.1.0a2",
@@ -13054,8 +13171,8 @@
     "archived": true,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Tool",
-    "type_group": "Tool",
+    "component_type": "Web Plugin",
+    "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
     "open_issues": 3,
@@ -13097,6 +13214,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-spotify",
     "package_name": "ovos_media_plugin_spotify",
     "pypi_version": "0.2.7",
@@ -13146,6 +13265,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-plugin-vlc",
     "package_name": "ovos-media-plugin-vlc",
     "pypi_version": "0.2.1a1",
@@ -13153,11 +13274,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Audio Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -13181,7 +13302,7 @@
     "repo_created_at": "2024-04-10T02:13:20Z",
     "last_updated": "2026-09-02T18:39:11.210608Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "NeonGeckoCom-ovos-media-plugin-webbrowser",
@@ -13288,6 +13409,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-bandcamp",
     "package_name": "ovos-media-provider-bandcamp",
     "pypi_version": "0.0.1a4",
@@ -14759,15 +14882,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.1.14",
-          "tested_at": "2026-10-02T09:25:12+00:00",
+          "tested_at": "2026-10-03T18:18:53+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.1.18",
-          "tested_at": "2026-10-02T09:38:24+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:39+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -14775,7 +14897,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.5.7a1",
-          "tested_at": "2026-10-03T11:22:57+00:00",
+          "tested_at": "2026-10-03T18:39:49+00:00",
           "channel_pinned": true
         }
       }
@@ -15166,15 +15288,14 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "1.4.3",
-          "tested_at": "2026-10-02T09:25:15+00:00",
+          "tested_at": "2026-10-03T18:18:57+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.4.3",
-          "tested_at": "2026-10-02T09:38:29+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:41+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -15182,7 +15303,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.7a1",
-          "tested_at": "2026-10-03T11:23:04+00:00",
+          "tested_at": "2026-10-03T18:39:58+00:00",
           "channel_pinned": true
         }
       }
@@ -18385,15 +18506,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.11",
-          "tested_at": "2026-10-03T13:55:53+00:00",
+          "tested_at": "2026-10-03T18:19:00+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.2.11",
-          "tested_at": "2026-10-03T10:58:33+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:43+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -18401,7 +18521,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.9.0a1",
-          "tested_at": "2026-10-03T11:23:10+00:00",
+          "tested_at": "2026-10-03T18:40:06+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 14,
@@ -18591,17 +18711,17 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "stop": "stops",
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-03T13:52:46+00:00",
+          "tested_at": "2026-10-03T18:20:07+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "stops",
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-03T10:59:19+00:00",
+          "tested_at": "2026-10-03T18:31:45+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -18610,7 +18730,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.6.1a2",
-          "tested_at": "2026-10-03T11:24:02+00:00",
+          "tested_at": "2026-10-03T18:40:57+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 15,
@@ -18716,15 +18836,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-10-03T13:53:10+00:00",
+          "tested_at": "2026-10-03T18:20:23+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.6",
-          "tested_at": "2026-10-03T10:59:37+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:10+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -18732,7 +18851,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.6.0a2",
-          "tested_at": "2026-10-03T11:25:49+00:00",
+          "tested_at": "2026-10-03T18:43:09+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 11,
@@ -19021,21 +19140,21 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.4",
-          "tested_at": "2026-10-03T13:54:04+00:00",
+          "tested_at": "2026-10-03T18:21:00+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:40:13+00:00",
+          "tested_at": "2026-10-03T18:32:12+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:27:35+00:00",
+          "tested_at": "2026-10-03T18:44:57+00:00",
           "channel_pinned": false
         }
       }
@@ -19372,15 +19491,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.3",
-          "tested_at": "2026-10-03T13:54:21+00:00",
+          "tested_at": "2026-10-03T18:21:18+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.1.0",
-          "tested_at": "2026-10-03T11:01:00+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:14+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -19388,7 +19506,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.0.0a1",
-          "tested_at": "2026-10-03T11:27:38+00:00",
+          "tested_at": "2026-10-03T18:45:01+00:00",
           "channel_pinned": true
         }
       }
@@ -20509,23 +20627,21 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.1.4",
-          "tested_at": "2026-10-02T09:25:02+00:00",
+          "tested_at": "2026-10-03T18:18:54+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.4",
-          "tested_at": "2026-10-03T11:01:39+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:53+00:00",
           "channel_pinned": false
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.4",
-          "tested_at": "2026-10-03T11:25:57+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:41:52+00:00",
           "channel_pinned": false
         }
       }
@@ -20615,15 +20731,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-03T13:55:02+00:00",
+          "tested_at": "2026-10-03T18:19:50+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.1.0",
-          "tested_at": "2026-10-03T11:01:56+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:55+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -20631,7 +20746,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.0.2a7",
-          "tested_at": "2026-10-03T11:26:22+00:00",
+          "tested_at": "2026-10-03T18:41:55+00:00",
           "channel_pinned": true
         }
       }
@@ -21276,27 +21391,26 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.13",
-          "tested_at": "2026-10-03T13:55:18+00:00",
+          "tested_at": "2026-10-03T18:20:05+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.8.13",
-          "tested_at": "2026-10-03T11:02:06+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:31:58+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 12/16 golden",
+          "label": "\u2713 12/15 golden",
           "state": "warn",
-          "level": 2,
+          "level": 3,
           "version_tested": "0.18.4a1",
-          "tested_at": "2026-10-03T11:26:50+00:00",
+          "tested_at": "2026-10-03T18:42:18+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 12,
-            "counted": 16
+            "counted": 15
           }
         }
       }
@@ -21385,15 +21499,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.8",
-          "tested_at": "2026-10-03T13:55:39+00:00",
+          "tested_at": "2026-10-03T18:20:50+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.5.8",
-          "tested_at": "2026-10-03T11:02:34+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:00+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -21401,7 +21514,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.12.1a3",
-          "tested_at": "2026-10-03T11:27:47+00:00",
+          "tested_at": "2026-10-03T18:43:13+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 8,
@@ -21499,15 +21612,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-10-03T13:56:00+00:00",
+          "tested_at": "2026-10-03T18:21:10+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2717 doesn't load",
+          "label": "\u2717 doesn't install",
           "state": "fail",
-          "level": 1,
-          "version_tested": "0.2.6",
-          "tested_at": "2026-10-02T09:42:12+00:00",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:02+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -21515,7 +21627,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.13.3a1",
-          "tested_at": "2026-10-03T11:28:40+00:00",
+          "tested_at": "2026-10-03T18:44:04+00:00",
           "channel_pinned": true
         }
       }
@@ -28108,15 +28220,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.20",
-          "tested_at": "2026-10-03T13:52:52+00:00",
+          "tested_at": "2026-10-03T18:21:34+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.25",
-          "tested_at": "2026-10-03T11:02:52+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:05+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -28124,7 +28235,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.11.0a5",
-          "tested_at": "2026-10-03T11:30:06+00:00",
+          "tested_at": "2026-10-03T18:45:31+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 63,
@@ -28719,31 +28830,30 @@
       "badge_id": "ovos-skill-recipe-helper.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.1",
-          "tested_at": "2026-10-03T13:53:35+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 6/9 golden",
+          "label": "\u2713 loads \u00b7 3/9 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.1",
-          "tested_at": "2026-10-03T11:00:20+00:00",
+          "tested_at": "2026-10-03T18:21:53+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 6,
+            "hit": 3,
             "counted": 9
           }
+        },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:07+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 6/6 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.1",
-          "tested_at": "2026-10-03T11:31:00+00:00",
+          "tested_at": "2026-10-03T18:46:23+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -28822,31 +28932,31 @@
       "badge_id": "ovos-skill-rhythm-box.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T13:54:03+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
           "label": "\u2713 loads \u00b7 0/12 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T11:01:06+00:00",
+          "tested_at": "2026-10-03T18:22:09+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 0,
             "counted": 12
           }
         },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.4",
+          "tested_at": "2026-10-03T18:32:09+00:00",
+          "channel_pinned": false
+        },
         "alpha": {
           "label": "\u2713 loads \u00b7 0/12 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T11:31:29+00:00",
+          "tested_at": "2026-10-03T18:46:48+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 0,
@@ -28996,15 +29106,14 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T13:54:16+00:00",
+          "tested_at": "2026-10-03T18:18:43+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads \u00b7 10/11 langs",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T11:01:14+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:49+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -29012,7 +29121,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.7.0a3",
-          "tested_at": "2026-10-03T11:28:07+00:00",
+          "tested_at": "2026-10-03T18:47:56+00:00",
           "channel_pinned": true
         }
       }
@@ -29222,15 +29331,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2",
-          "tested_at": "2026-10-03T13:54:36+00:00",
+          "tested_at": "2026-10-03T18:19:58+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.0.2",
-          "tested_at": "2026-10-03T11:01:59+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:52+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -29238,7 +29346,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2",
-          "tested_at": "2026-10-03T11:29:01+00:00",
+          "tested_at": "2026-10-03T18:48:48+00:00",
           "channel_pinned": false
         }
       }
@@ -29365,23 +29473,23 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.3",
-          "tested_at": "2026-10-03T13:54:53+00:00",
+          "tested_at": "2026-10-03T18:20:14+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.4.3",
-          "tested_at": "2026-10-03T11:02:12+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:32:54+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
+          "stop": "stops",
           "version_tested": "1.4.3",
-          "tested_at": "2026-10-03T11:29:21+00:00",
+          "tested_at": "2026-10-03T18:49:08+00:00",
           "channel_pinned": false
         }
       }
@@ -29484,21 +29592,21 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.4",
-          "tested_at": "2026-10-03T13:58:07+00:00",
+          "tested_at": "2026-10-03T18:23:29+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:45:46+00:00",
+          "tested_at": "2026-10-03T18:32:59+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:30:13+00:00",
+          "tested_at": "2026-10-03T18:50:06+00:00",
           "channel_pinned": false
         }
       }
@@ -29579,21 +29687,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:29:09+00:00",
+          "tested_at": "2026-10-03T18:23:48+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:45:48+00:00",
+          "tested_at": "2026-10-03T18:33:01+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:30:17+00:00",
+          "tested_at": "2026-10-03T18:50:10+00:00",
           "channel_pinned": false
         }
       }
@@ -29690,15 +29798,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-10-03T13:58:26+00:00",
+          "tested_at": "2026-10-03T18:23:51+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "2.2.2",
-          "tested_at": "2026-10-03T11:05:55+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:33:03+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -29706,7 +29813,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-10-03T11:30:21+00:00",
+          "tested_at": "2026-10-03T18:50:14+00:00",
           "channel_pinned": false
         }
       }
@@ -29789,21 +29896,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:29:23+00:00",
+          "tested_at": "2026-10-03T18:24:04+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:45:58+00:00",
+          "tested_at": "2026-10-03T18:33:06+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:30:38+00:00",
+          "tested_at": "2026-10-03T18:50:31+00:00",
           "channel_pinned": false
         }
       }
@@ -30126,7 +30233,21 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T13:53:01+00:00",
+          "tested_at": "2026-10-03T18:24:07+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:33:08+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:50:35+00:00",
           "channel_pinned": false
         }
       }
@@ -31085,31 +31206,31 @@
       "badge_id": "ovos-skill-sound-like.andlo",
       "channels": {
         "stable": {
+          "label": "\u2713 5/6 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-10-03T18:19:20+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 5,
+            "counted": 6
+          }
+        },
+        "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T13:53:04+00:00",
+          "tested_at": "2026-10-03T18:33:07+00:00",
           "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 3/6 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:06:02+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 6
-          }
         },
         "alpha": {
           "label": "\u2713 6/6 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:30:42+00:00",
+          "tested_at": "2026-10-03T18:49:44+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -31314,24 +31435,23 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.6",
-          "tested_at": "2026-10-03T13:53:17+00:00",
+          "tested_at": "2026-10-03T18:19:36+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.6",
-          "tested_at": "2026-10-03T11:06:09+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:33:14+00:00",
           "channel_pinned": true
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "keeps_going",
+          "stop": "stops",
           "version_tested": "0.10.0a3",
-          "tested_at": "2026-10-03T11:29:40+00:00",
+          "tested_at": "2026-10-03T18:49:59+00:00",
           "channel_pinned": true
         }
       }
@@ -31413,7 +31533,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-10-03T13:54:42+00:00",
+          "tested_at": "2026-10-03T18:21:17+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -31421,7 +31541,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.2.6",
-          "tested_at": "2026-10-03T11:01:39+00:00",
+          "tested_at": "2026-10-03T18:33:16+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -31429,7 +31549,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.13.1a1",
-          "tested_at": "2026-10-03T11:30:36+00:00",
+          "tested_at": "2026-10-03T18:50:54+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 14,
@@ -31582,15 +31702,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.8",
-          "tested_at": "2026-10-03T13:58:23+00:00",
+          "tested_at": "2026-10-03T18:25:31+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-10-03T11:04:30+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:35:56+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -31598,7 +31717,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.4.0a1",
-          "tested_at": "2026-10-03T11:31:30+00:00",
+          "tested_at": "2026-10-03T18:51:47+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 114,
@@ -31701,14 +31820,14 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T10:51:29+00:00",
+          "tested_at": "2026-10-03T18:25:56+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-03T11:04:45+00:00",
+          "tested_at": "2026-10-03T18:35:58+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -31716,7 +31835,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-10-03T11:32:39+00:00",
+          "tested_at": "2026-10-03T18:52:55+00:00",
           "channel_pinned": false
         }
       }
@@ -31847,15 +31966,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.11",
-          "tested_at": "2026-10-03T10:51:32+00:00",
+          "tested_at": "2026-10-03T18:25:59+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.11",
-          "tested_at": "2026-10-03T11:04:47+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:36:00+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -31863,7 +31981,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.9.3a2",
-          "tested_at": "2026-10-03T11:32:49+00:00",
+          "tested_at": "2026-10-03T18:53:05+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 23,
@@ -32052,7 +32170,7 @@
           "level": 2,
           "stop": "stuck",
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T10:52:13+00:00",
+          "tested_at": "2026-10-03T18:26:27+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 7,
@@ -32060,24 +32178,19 @@
           }
         },
         "testing": {
-          "label": "\u2713 loads \u00b7 7/12 golden",
-          "state": "warn",
+          "label": "\u2713 loads",
+          "state": "pass",
           "level": 2,
-          "stop": "stops",
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T11:05:03+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 7,
-            "counted": 12
-          }
+          "tested_at": "2026-10-03T18:36:03+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 11/12 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-03T11:34:03+00:00",
+          "tested_at": "2026-10-03T18:54:23+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 11,
@@ -32217,7 +32330,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.10",
-          "tested_at": "2026-10-03T10:52:26+00:00",
+          "tested_at": "2026-10-03T18:26:42+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 25,
@@ -32225,23 +32338,19 @@
           }
         },
         "testing": {
-          "label": "\u2713 25/25 golden",
+          "label": "\u2713 loads",
           "state": "pass",
-          "level": 3,
+          "level": 2,
           "version_tested": "0.0.10",
-          "tested_at": "2026-10-03T11:05:09+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 25,
-            "counted": 25
-          }
+          "tested_at": "2026-10-03T18:36:10+00:00",
+          "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 13/13 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.10",
-          "tested_at": "2026-10-03T11:34:18+00:00",
+          "tested_at": "2026-10-03T18:54:38+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 13,
@@ -32506,15 +32615,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-03T13:52:45+00:00",
+          "tested_at": "2026-10-03T18:19:01+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.2",
-          "tested_at": "2026-10-03T11:05:22+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:33:21+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -32522,7 +32630,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-03T11:34:48+00:00",
+          "tested_at": "2026-10-03T19:00:34+00:00",
           "channel_pinned": false
         }
       }
@@ -32685,15 +32793,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.16",
-          "tested_at": "2026-10-03T13:53:32+00:00",
+          "tested_at": "2026-10-03T18:19:45+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.16",
-          "tested_at": "2026-10-03T11:05:34+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:33:22+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -32701,7 +32808,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.12.1a1",
-          "tested_at": "2026-10-03T11:43:22+00:00",
+          "tested_at": "2026-10-03T19:00:43+00:00",
           "channel_pinned": true
         }
       }
@@ -33430,9 +33537,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "stops",
           "version_tested": "1.0.9",
-          "tested_at": "2026-10-03T10:47:19+00:00",
+          "tested_at": "2026-10-03T18:20:18+00:00",
           "channel_pinned": true
         },
         "testing": {
@@ -33440,7 +33546,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.9",
-          "tested_at": "2026-10-03T11:01:53+00:00",
+          "tested_at": "2026-10-03T18:33:23+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -33448,7 +33554,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.8.1a1",
-          "tested_at": "2026-10-03T11:44:33+00:00",
+          "tested_at": "2026-10-03T19:01:55+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 10,
@@ -33565,27 +33671,26 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.18",
-          "tested_at": "2026-10-03T10:59:51+00:00",
+          "tested_at": "2026-10-03T18:30:35+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "1.0.6",
-          "tested_at": "2026-10-03T11:15:22+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:46:57+00:00",
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 109/109 golden",
+          "label": "\u2713 98/98 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "1.5.1a2",
-          "tested_at": "2026-10-03T11:46:22+00:00",
+          "tested_at": "2026-10-03T19:03:43+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 109,
-            "counted": 109
+            "hit": 98,
+            "counted": 98
           }
         }
       }
@@ -33667,7 +33772,7 @@
           "level": 2,
           "stop": "stops",
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:00:29+00:00",
+          "tested_at": "2026-10-03T18:31:01+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -33679,7 +33784,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:20:05+00:00",
+          "tested_at": "2026-10-03T18:46:59+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -33687,7 +33792,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-03T11:56:50+00:00",
+          "tested_at": "2026-10-03T19:14:28+00:00",
           "channel_pinned": false
         }
       }
@@ -33797,7 +33902,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T11:00:42+00:00",
+          "tested_at": "2026-10-03T18:31:13+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -33805,7 +33910,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T11:20:12+00:00",
+          "tested_at": "2026-10-03T18:47:04+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -33813,7 +33918,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-03T11:57:07+00:00",
+          "tested_at": "2026-10-03T19:14:44+00:00",
           "channel_pinned": false
         }
       }
@@ -33894,15 +33999,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.3",
-          "tested_at": "2026-10-03T11:00:57+00:00",
+          "tested_at": "2026-10-03T18:31:26+00:00",
           "channel_pinned": true
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.3",
-          "tested_at": "2026-10-03T11:20:22+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:47:32+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -33910,7 +34014,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.2a2",
-          "tested_at": "2026-10-03T11:57:15+00:00",
+          "tested_at": "2026-10-03T19:14:52+00:00",
           "channel_pinned": true
         }
       }
@@ -33994,15 +34098,14 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.5",
-          "tested_at": "2026-10-03T11:01:18+00:00",
+          "tested_at": "2026-10-03T18:31:45+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.2.5",
-          "tested_at": "2026-10-03T11:20:40+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-10-03T18:47:34+00:00",
           "channel_pinned": true
         },
         "alpha": {
@@ -34010,7 +34113,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.0a1",
-          "tested_at": "2026-10-03T11:58:07+00:00",
+          "tested_at": "2026-10-03T19:15:44+00:00",
           "channel_pinned": true
         }
       }

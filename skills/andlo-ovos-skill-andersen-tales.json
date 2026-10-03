@@ -112,19 +112,23 @@
     "badge_id": "ovos-skill-andersen-tales.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 0/6 golden",
+        "state": "warn",
         "level": 2,
         "version_tested": "0.1.8",
-        "tested_at": "2026-10-03T13:54:34+00:00",
-        "channel_pinned": false
+        "tested_at": "2026-10-03T18:20:52+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 0,
+          "counted": 6
+        }
       },
       "testing": {
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.8",
-        "tested_at": "2026-10-03T13:52:49+00:00",
+        "tested_at": "2026-10-03T18:27:57+00:00",
         "channel_pinned": false
       },
       "alpha": {
@@ -132,7 +136,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.1.8",
-        "tested_at": "2026-10-03T11:19:16+00:00",
+        "tested_at": "2026-10-03T18:45:11+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 4,

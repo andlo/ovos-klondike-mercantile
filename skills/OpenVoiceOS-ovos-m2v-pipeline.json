@@ -13,6 +13,8 @@
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-m2v-pipeline",
   "package_name": "ovos_m2v_pipeline",
   "pypi_version": "0.0.9",
@@ -23,8 +25,8 @@
   "component_type": "Pipeline Plugin",
   "type_group": "Plugin",
   "stars": 1,
-  "forks": 4,
-  "open_issues": 16,
+  "forks": 5,
+  "open_issues": 20,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -57,15 +59,14 @@
         "state": "unsupported",
         "level": 1,
         "version_tested": "0.0.9",
-        "tested_at": "2026-10-02T09:25:06+00:00",
+        "tested_at": "2026-10-03T18:18:48+00:00",
         "channel_pinned": false
       },
       "testing": {
-        "label": "\u2717 doesn't load",
+        "label": "\u2717 doesn't install",
         "state": "fail",
-        "level": 1,
-        "version_tested": "0.0.9",
-        "tested_at": "2026-10-02T09:38:19+00:00",
+        "level": 0,
+        "tested_at": "2026-10-03T18:31:36+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -73,7 +74,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.29.4a1",
-        "tested_at": "2026-10-03T11:22:49+00:00",
+        "tested_at": "2026-10-03T18:39:40+00:00",
         "channel_pinned": true
       }
     }

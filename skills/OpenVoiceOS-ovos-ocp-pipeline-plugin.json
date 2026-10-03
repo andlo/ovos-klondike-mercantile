@@ -67,15 +67,14 @@
         "state": "unsupported",
         "level": 1,
         "version_tested": "1.1.14",
-        "tested_at": "2026-10-02T09:25:12+00:00",
+        "tested_at": "2026-10-03T18:18:53+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "1.1.18",
-        "tested_at": "2026-10-02T09:38:24+00:00",
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-10-03T18:31:39+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -83,7 +82,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.5.7a1",
-        "tested_at": "2026-10-03T11:22:57+00:00",
+        "tested_at": "2026-10-03T18:39:49+00:00",
         "channel_pinned": true
       }
     }

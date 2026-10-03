@@ -64,31 +64,31 @@
     "badge_id": "ovos-skill-morse-code.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T13:55:51+00:00",
-        "channel_pinned": false
-      },
-      "testing": {
         "label": "\u2713 6/6 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T10:58:34+00:00",
+        "tested_at": "2026-10-03T18:19:17+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 6,
           "counted": 6
         }
       },
+      "testing": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-03T18:30:12+00:00",
+        "channel_pinned": false
+      },
       "alpha": {
         "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T11:18:28+00:00",
+        "tested_at": "2026-10-03T18:35:56+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 3,
