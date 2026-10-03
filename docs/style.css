@@ -1207,6 +1207,11 @@ img.flag {
 .profile-near { color: #5b7a12; font-weight: 600; }
 .profile-bad { color: #c73e35; font-weight: 600; }
 .profile-foot { margin-top: 1.2rem; }
+.profile-compare-sum { margin-bottom: 0.4rem; }
+.profile-compare-sum td, .profile-compare-sum th { text-align: left; }
+.profile-compare td:nth-child(n+3) { white-space: nowrap; }
 @media (max-width: 600px) {
-  .profile-table th:nth-child(3), .profile-table td:nth-child(3) { display: none; }
+  .profile-table:not(.profile-compare):not(.profile-compare-sum) th:nth-child(3),
+  .profile-table:not(.profile-compare):not(.profile-compare-sum) td:nth-child(3) { display: none; }
+  .profile-compare th:nth-child(2), .profile-compare td:nth-child(2) { display: none; }
 }
