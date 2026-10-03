@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-10-03T13:59:14+00:00",
+ "generated_at": "2026-10-03T17:31:59+00:00",
  "channels": {
   "stable": {
-   "run_at": "2026-10-03T13:59:14+00:00",
-   "klondike_run_at": "2026-10-03T13:50:02+00:00",
+   "run_at": "2026-10-03T17:31:59+00:00",
+   "klondike_run_at": "2026-10-03T17:31:59+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-stable.txt",
    "profiles": [
@@ -380,7 +380,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.8.13",
-       "tested_at": "2026-10-03T13:55:18+00:00",
+       "tested_at": "2026-10-03T14:02:19+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -573,12 +573,15 @@
        "runtime_id": "ovos-skill-calculator.andlo",
        "store_id": "andlo-ovos-skill-calculator",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 2/16 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T13:53:09+00:00",
-       "golden": null,
+       "tested_at": "2026-10-03T14:02:29+00:00",
+       "golden": {
+        "hit": 2,
+        "counted": 16
+       },
        "klondike": {
         "hit": 2,
         "counted": 16
@@ -612,12 +615,15 @@
        "runtime_id": "ovos-skill-geography.andlo",
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 4/14 golden",
        "level": 2,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T13:54:40+00:00",
-       "golden": null,
+       "tested_at": "2026-10-03T14:02:42+00:00",
+       "golden": {
+        "hit": 4,
+        "counted": 14
+       },
        "klondike": {
         "hit": 4,
         "counted": 14
@@ -630,12 +636,15 @@
        "runtime_id": "ovos-skill-geometry.andlo",
        "store_id": "andlo-ovos-skill-geometry",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 0/7 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T13:55:10+00:00",
-       "golden": null,
+       "tested_at": "2026-10-03T14:03:27+00:00",
+       "golden": {
+        "hit": 0,
+        "counted": 7
+       },
        "klondike": {
         "hit": 2,
         "counted": 13
@@ -706,7 +715,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T13:55:00+00:00",
+       "tested_at": "2026-10-03T14:04:28+00:00",
        "golden": null,
        "klondike": {
         "hit": 4,
@@ -756,12 +765,15 @@
        "runtime_id": "ovos-skill-sound-like.andlo",
        "store_id": "andlo-ovos-skill-sound-like",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 4/6 golden",
        "level": 2,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T13:53:04+00:00",
-       "golden": null,
+       "tested_at": "2026-10-03T14:04:10+00:00",
+       "golden": {
+        "hit": 4,
+        "counted": 6
+       },
        "klondike": {
         "hit": 3,
         "counted": 3
@@ -778,7 +790,7 @@
        "label": "✓ loads · 7/12 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T10:52:13+00:00",
+       "tested_at": "2026-10-03T14:04:23+00:00",
        "golden": {
         "hit": 7,
         "counted": 12
@@ -998,9 +1010,11 @@
    ]
   },
   "testing": {
-   "run_at": "2026-10-03T13:50:02+00:00",
-   "klondike_run_at": "2026-10-03T13:50:02+00:00",
-   "pipeline_not_loaded": [],
+   "run_at": "2026-10-03T17:31:59+00:00",
+   "klondike_run_at": "2026-10-03T17:31:59+00:00",
+   "pipeline_not_loaded": [
+    "ovos-m2v-pipeline-high"
+   ],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-testing.txt",
    "profiles": [
     {
@@ -1397,7 +1411,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.8.13",
-       "tested_at": "2026-10-03T11:02:06+00:00",
+       "tested_at": "2026-10-03T14:01:02+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -1571,12 +1585,15 @@
        "runtime_id": "ovos-skill-calculator.andlo",
        "store_id": "andlo-ovos-skill-calculator",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 2/16 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T13:58:25+00:00",
-       "golden": null,
+       "tested_at": "2026-10-03T14:01:26+00:00",
+       "golden": {
+        "hit": 2,
+        "counted": 16
+       },
        "klondike": {
         "hit": 2,
         "counted": 16
@@ -1611,13 +1628,13 @@
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 9/41 golden",
+       "label": "✓ loads · 4/14 golden",
        "level": 2,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T10:56:12+00:00",
+       "tested_at": "2026-10-03T14:01:33+00:00",
        "golden": {
-        "hit": 9,
-        "counted": 41
+        "hit": 4,
+        "counted": 14
        },
        "klondike": {
         "hit": 4,
@@ -1631,15 +1648,12 @@
        "runtime_id": "ovos-skill-geometry.andlo",
        "store_id": "andlo-ovos-skill-geometry",
        "kind": "skill",
-       "state": "warn",
-       "label": "✓ loads · 3/28 golden",
+       "state": "pass",
+       "label": "✓ loads",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T10:56:27+00:00",
-       "golden": {
-        "hit": 3,
-        "counted": 28
-       },
+       "tested_at": "2026-10-03T14:02:14+00:00",
+       "golden": null,
        "klondike": {
         "hit": 2,
         "counted": 13
@@ -1715,15 +1729,12 @@
        "runtime_id": "ovos-skill-network-scanner.andlo",
        "store_id": "andlo-ovos-skill-network-scanner",
        "kind": "skill",
-       "state": "warn",
-       "label": "✓ loads · 8/12 golden",
+       "state": "pass",
+       "label": "✓ loads",
        "level": 2,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T10:57:55+00:00",
-       "golden": {
-        "hit": 8,
-        "counted": 12
-       },
+       "tested_at": "2026-10-03T14:02:52+00:00",
+       "golden": null,
        "klondike": {
         "hit": 4,
         "counted": 6
@@ -1779,12 +1790,12 @@
        "store_id": "andlo-ovos-skill-sound-like",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 3/6 golden",
+       "label": "✓ loads · 4/6 golden",
        "level": 2,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T11:06:02+00:00",
+       "tested_at": "2026-10-03T14:02:11+00:00",
        "golden": {
-        "hit": 3,
+        "hit": 4,
         "counted": 6
        },
        "klondike": {
@@ -1803,7 +1814,7 @@
        "label": "✓ loads · 7/12 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T11:05:03+00:00",
+       "tested_at": "2026-10-03T14:02:16+00:00",
        "golden": {
         "hit": 7,
         "counted": 12
@@ -2023,8 +2034,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-10-03T13:50:02+00:00",
-   "klondike_run_at": "2026-10-03T13:50:02+00:00",
+   "run_at": "2026-10-03T17:31:59+00:00",
+   "klondike_run_at": "2026-10-03T17:31:59+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-alpha.txt",
    "profiles": [
@@ -2314,7 +2325,10 @@
        "label": "untested",
        "level": null,
        "golden": null,
-       "klondike": null,
+       "klondike": {
+        "hit": 19,
+        "counted": 19
+       },
        "gold": false
       },
       {
@@ -2485,7 +2499,7 @@
        "label": "✓ loads · 12/16 golden",
        "level": 2,
        "version": "0.18.4a1",
-       "tested_at": "2026-10-03T11:26:50+00:00",
+       "tested_at": "2026-10-03T14:01:19+00:00",
        "golden": {
         "hit": 12,
         "counted": 16
@@ -2672,13 +2686,13 @@
        "store_id": "andlo-ovos-skill-calculator",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 25/25 golden",
+       "label": "✓ 16/16 golden",
        "level": 3,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T11:10:51+00:00",
+       "tested_at": "2026-10-03T14:01:36+00:00",
        "golden": {
-        "hit": 25,
-        "counted": 25
+        "hit": 16,
+        "counted": 16
        },
        "klondike": {
         "hit": 16,
@@ -2714,13 +2728,13 @@
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 28/28 golden",
+       "label": "✓ 14/14 golden",
        "level": 3,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T11:28:51+00:00",
+       "tested_at": "2026-10-03T14:01:52+00:00",
        "golden": {
-        "hit": 28,
-        "counted": 28
+        "hit": 14,
+        "counted": 14
        },
        "klondike": {
         "hit": 14,
@@ -2735,13 +2749,13 @@
        "store_id": "andlo-ovos-skill-geometry",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 25/25 golden",
+       "label": "✓ 13/13 golden",
        "level": 3,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T11:29:38+00:00",
+       "tested_at": "2026-10-03T14:02:33+00:00",
        "golden": {
-        "hit": 25,
-        "counted": 25
+        "hit": 13,
+        "counted": 13
        },
        "klondike": {
         "hit": 13,
@@ -2819,13 +2833,13 @@
        "store_id": "andlo-ovos-skill-network-scanner",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 12/12 golden",
+       "label": "✓ 5/5 golden",
        "level": 3,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T11:20:05+00:00",
+       "tested_at": "2026-10-03T14:03:49+00:00",
        "golden": {
-        "hit": 12,
-        "counted": 12
+        "hit": 5,
+        "counted": 5
        },
        "klondike": {
         "hit": 5,
@@ -2885,7 +2899,7 @@
        "label": "✓ 6/6 golden",
        "level": 3,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T11:30:42+00:00",
+       "tested_at": "2026-10-03T14:02:35+00:00",
        "golden": {
         "hit": 6,
         "counted": 6
@@ -2902,14 +2916,14 @@
        "runtime_id": "ovos-skill-tuning-fork.andlo",
        "store_id": "andlo-ovos-skill-tuning-fork",
        "kind": "skill",
-       "state": "warn",
-       "label": "✓ 11/12 golden",
+       "state": "pass",
+       "label": "✓ 10/10 golden",
        "level": 3,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T11:34:03+00:00",
+       "tested_at": "2026-10-03T14:02:48+00:00",
        "golden": {
-        "hit": 11,
-        "counted": 12
+        "hit": 10,
+        "counted": 10
        },
        "klondike": {
         "hit": 3,
