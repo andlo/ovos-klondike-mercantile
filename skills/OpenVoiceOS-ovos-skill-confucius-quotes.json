@@ -25,7 +25,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 5,
-  "open_issues": 3,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -51,6 +51,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -58,7 +59,18 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Awalen n Confucius",
+      "description": "Awalen n Confucius",
+      "examples": [
+        "Anwa Confucius",
+        "Awal n Confucius",
+        "Melmi ilul Confucius",
+        "Melmi yemmut Confucius"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2020-06-09T18:48:28Z",
   "last_updated": "2026-03-09T20:10:38.331235Z",

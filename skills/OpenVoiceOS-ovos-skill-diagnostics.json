@@ -39,7 +39,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 5,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -60,6 +60,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -68,7 +69,27 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "lqem n core n ovos",
+        "asegzawal n CPU",
+        "asegzawal n disk",
+        "tes\u025bi\u1e0d tutlayin nni\u1e0den",
+        "asegzawal n GPU",
+        "asegzawal n kernel",
+        "tutlayin yellan",
+        "asegzawal n tkatut",
+        "anda tellid",
+        "ini-yi tutlayt-ik",
+        "segmi teddukule\u1e0d",
+        "d acu-t tutlayt-iw",
+        "anda lli\u0263"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2025-03-06T11:55:30Z",
   "last_updated": "2025-03-27T07:25:42.554089Z",

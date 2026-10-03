@@ -23,7 +23,7 @@
   "type_group": "Skill",
   "stars": 6,
   "forks": 5,
-  "open_issues": 3,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -53,6 +53,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -61,7 +62,14 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "examples": [
+        "sekker askript ___",
+        "sekker askript ___"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2024-03-06T17:55:00Z",
   "last_updated": "2025-06-08T23:17:55.153335Z",

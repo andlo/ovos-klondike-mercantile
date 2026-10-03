@@ -25,7 +25,7 @@
   "type_group": "Skill",
   "stars": 9,
   "forks": 8,
-  "open_issues": 7,
+  "open_issues": 8,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -46,6 +46,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -54,7 +55,16 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Tazmert n usel\u0263u",
+      "description": "yettaru awal n useqdac \u0263er ufaylu n u\u1e0dris skudmi yermed",
+      "examples": [
+        "bdu asel\u0263u",
+        "se\u1e25bes asel\u0263u"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2017-03-05T18:10:49Z",
   "last_updated": "2026-02-27T13:12:27.828536Z",

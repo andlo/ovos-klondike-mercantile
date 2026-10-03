@@ -50,6 +50,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -58,7 +59,17 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Camera",
+      "description": "Take pictures with a connected webcam by voice.",
+      "examples": [
+        "takami\u1e5bat tella",
+        "\u0263er anda tteddunt tiwlafin-iw",
+        "sqedec takami\u1e5bat akken ad t\u1e6de\u1e6d\u1e6dfe\u1e0d tawlaft"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2018-03-27T15:44:21Z",
   "last_updated": "2025-01-24T16:57:37.905723Z",

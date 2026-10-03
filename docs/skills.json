@@ -198,7 +198,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 4,
-    "open_issues": 17,
+    "open_issues": 20,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -221,6 +221,7 @@
       "gl-es",
       "hu-hu",
       "it-it",
+      "kab",
       "nl-nl",
       "pl-pl",
       "pt-br",
@@ -229,7 +230,31 @@
       "sv-fi",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "name": "Alerts",
+        "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service.",
+        "examples": [
+          "anwa awitayen yellan",
+          "sfe\u1e0d alarma-inu",
+          "err alarma-inu ad yili yettwasel",
+          "sers priorit\u00e9 n alarma-inu",
+          "err alarma-inu ad yales yal yal yiwen",
+          "sbedd-iyi-d tadyant tamaynut",
+          "xdem-iyi-d tabdart tamaynut",
+          "rnu-yi-d asmekti amaynut asmekti",
+          "smektay-iyi ad ssiwe\u1e0d aqjun yal \u1e63\u1e63be\u1e25 n ussan n ddurt \u0263ef 7",
+          "sader azday",
+          "kkes akk tibdiwin-inu",
+          "kkes tabdart n twuriwin-inu",
+          "anta alarma i s\u025bi\u0263",
+          "sken-iyi-d twuriwin-inu",
+          "anwi tibdiwin i s\u025bi\u0263",
+          "sbe\u025b\u025bed alarma-inu \u0263er sdat",
+          "d acu i d-yeqqimen deg timer"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2023-02-09T21:13:49Z",
     "last_updated": "2025-12-15T00:19:54.660158Z",
@@ -585,7 +610,7 @@
     "type_group": "Skill",
     "stars": 3,
     "forks": 5,
-    "open_issues": 10,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -615,6 +640,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "oc-fr",
       "pl-pl",
@@ -623,7 +649,15 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "examples": [
+          "Ldi ____",
+          "Sekker ____",
+          "Mdel ____ "
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2021-12-13T22:13:24Z",
     "last_updated": "2025-06-08T21:48:08.498840Z",
@@ -1033,6 +1067,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "pl-pl",
       "pt-br",
@@ -1040,7 +1075,17 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "examples": [
+          "bdu asekles",
+          "bdu asekles amaynut {name}",
+          "bdu asekles amaynut isem-is {name}",
+          "bdu asekles a\u0263ectan amaynut isem-is {name}",
+          "aha sekles "
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2024-01-19T01:56:54Z",
     "last_updated": "2025-06-07T23:20:38.766942Z",
@@ -1246,8 +1291,8 @@
     "icon_source": "repo",
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-bandcamp",
-    "package_name": "ovos-skill-bandcamp",
-    "pypi_version": null,
+    "package_name": "skill-bandcamp",
+    "pypi_version": "0.0.8",
     "license": "Apache-2.0",
     "archived": true,
     "author": "OpenVoiceOS",
@@ -1257,9 +1302,9 @@
     "stars": 5,
     "forks": 3,
     "open_issues": 5,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": true,
-    "in_ovos_store": true,
+    "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
     "requires_api_key": false,
@@ -1274,9 +1319,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2018-04-09T05:39:31Z",
-    "last_updated": "2026-09-02T18:37:48Z",
+    "last_updated": "2024-12-02T17:48:34.333656Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "andlo-ovos-skill-bechstein-tales",
@@ -1530,6 +1575,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "oc-fr",
       "pl-pl",
@@ -1538,7 +1584,17 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "name": "Camera",
+        "description": "Take pictures with a connected webcam by voice.",
+        "examples": [
+          "takami\u1e5bat tella",
+          "\u0263er anda tteddunt tiwlafin-iw",
+          "sqedec takami\u1e5bat akken ad t\u1e6de\u1e6d\u1e6dfe\u1e0d tawlaft"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2018-03-27T15:44:21Z",
     "last_updated": "2025-01-24T16:57:37.905723Z",
@@ -1597,18 +1653,18 @@
     "icon_source": null,
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt",
-    "package_name": "ovos-skill-fallback-chatgpt",
-    "pypi_version": null,
+    "package_name": "skill-ovos-fallback-chatgpt",
+    "pypi_version": "0.1.13",
     "license": "Apache-2.0",
     "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 22,
     "forks": 18,
     "open_issues": 4,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
@@ -1681,7 +1737,7 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2023-01-30T17:22:18Z",
-    "last_updated": "2025-01-31T06:19:52Z",
+    "last_updated": "2025-01-25T19:01:27.922748Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -1711,7 +1767,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
-    "open_issues": 4,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -1732,6 +1788,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "pl-pl",
       "pt-br",
@@ -1739,7 +1796,13 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "examples": [
+          "sken-iyi-d ini adal"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2024-03-15T03:21:44Z",
     "last_updated": "2025-02-28T01:39:28.501868Z",
@@ -2032,7 +2095,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 5,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2058,6 +2121,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "pl-pl",
       "pt-br",
@@ -2065,7 +2129,18 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "name": "Awalen n Confucius",
+        "description": "Awalen n Confucius",
+        "examples": [
+          "Anwa Confucius",
+          "Awal n Confucius",
+          "Melmi ilul Confucius",
+          "Melmi yemmut Confucius"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2020-06-09T18:48:28Z",
     "last_updated": "2026-03-09T20:10:38.331235Z",
@@ -2305,7 +2380,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 10,
-    "open_issues": 10,
+    "open_issues": 12,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -2341,6 +2416,8 @@
       "gl-es",
       "hu-hu",
       "it-it",
+      "kab",
+      "kab-dz",
       "nl-nl",
       "pl-pl",
       "pt-br",
@@ -2362,6 +2439,19 @@
           "Di-me la hora",
           "Cu\u00e1n ye lo d\u00eda d'o libro?",
           "Qu\u00e9 hora ye en Par\u00eds?"
+        ]
+      },
+      "kab": {
+        "name": "Azemz d ssa\u025ba",
+        "description": "Awi ssa\u025ba, azemz d wass n ddu\u1e5bt",
+        "examples": [
+          "D acu-t ssa\u025ba tura?",
+          "Ini-yi-d ass n ddu\u1e5bt",
+          "Ac\u1e25al n wussan i d-yeqqimen \u0263er 4 yulyu",
+          "D acu-t wazemz n wass-a?",
+          "Sken-iyi-d ssa\u025ba",
+          "Anwa ass i d Yennayer 2027?",
+          "D acu-t ssa\u025ba tura di Pari?"
         ]
       }
     },
@@ -2538,7 +2628,7 @@
     "type_group": "Skill",
     "stars": 9,
     "forks": 8,
-    "open_issues": 7,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2559,6 +2649,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "oc-fr",
       "pl-pl",
@@ -2567,7 +2658,16 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "name": "Tazmert n usel\u0263u",
+        "description": "yettaru awal n useqdac \u0263er ufaylu n u\u1e0dris skudmi yermed",
+        "examples": [
+          "bdu asel\u0263u",
+          "se\u1e25bes asel\u0263u"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2017-03-05T18:10:49Z",
     "last_updated": "2026-02-27T13:12:27.828536Z",
@@ -2974,7 +3074,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
-    "open_issues": 3,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -3000,6 +3100,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "pl-pl",
       "pt-br",
@@ -3007,7 +3108,17 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "name": "Asenker yekfa",
+        "description": "Askar-agi i\u021b\u021bak-d isallen mi ara yekfu usenker n OpenVoiceOS yerna imukan me\u1e5b\u1e5ba ddan yerna \u021beddun.",
+        "examples": [
+          "Ma yewjed unagraw?",
+          "Rmed il\u0263a n uwjeb.",
+          "Sens il\u0263a n uwjeb."
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2024-01-19T01:32:33Z",
     "last_updated": "2025-05-15T16:46:12.652443Z",
@@ -13453,6 +13564,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-local",
     "package_name": "ovos-media-provider-local",
     "pypi_version": "0.0.1a5",
@@ -13488,7 +13601,7 @@
     "repo_created_at": "2026-08-13T18:47:32Z",
     "last_updated": "2026-09-02T18:40:52.274749Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-mass",
@@ -13499,6 +13612,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-mass",
     "package_name": "ovos-media-provider-mass",
     "pypi_version": "0.0.1a6",
@@ -13545,9 +13660,11 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-news",
     "package_name": "ovos-media-provider-news",
-    "pypi_version": "0.0.1a6",
+    "pypi_version": "0.0.1a7",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -13578,7 +13695,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-25T22:45:39Z",
-    "last_updated": "2026-09-02T19:24:59.280469Z",
+    "last_updated": "2026-10-01T21:22:28.504456Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -13591,6 +13708,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-pyradios",
     "package_name": "ovos-media-provider-pyradios",
     "pypi_version": "0.0.1a5",
@@ -13733,6 +13852,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-somafm",
     "package_name": "ovos-media-provider-somafm",
     "pypi_version": "0.0.1a5",
@@ -13768,7 +13889,7 @@
     "repo_created_at": "2026-06-22T23:10:07Z",
     "last_updated": "2026-09-02T18:40:18.050674Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-soundcloud",
@@ -13779,6 +13900,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-soundcloud",
     "package_name": "ovos-media-provider-soundcloud",
     "pypi_version": "0.0.1a4",
@@ -13825,6 +13948,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-spotify",
     "package_name": "ovos-media-provider-spotify",
     "pypi_version": "0.0.1a6",
@@ -13871,6 +13996,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-tunein",
     "package_name": "ovos-media-provider-tunein",
     "pypi_version": "0.0.1a4",
@@ -13902,7 +14029,7 @@
     "repo_created_at": "2026-06-22T23:10:00Z",
     "last_updated": "2026-08-31T13:57:06.168923Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-youtube",
@@ -13913,6 +14040,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-youtube",
     "package_name": "ovos-media-provider-youtube",
     "pypi_version": "0.0.1a4",
@@ -13948,7 +14077,7 @@
     "repo_created_at": "2026-06-22T22:52:52Z",
     "last_updated": "2026-08-31T13:57:18.488076Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-youtube-music",
@@ -13959,6 +14088,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-youtube-music",
     "package_name": "ovos-media-provider-youtube-music",
     "pypi_version": "0.0.1a3",
@@ -14005,6 +14136,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-memory-plugins",
     "package_name": "ovos-memory-plugins",
     "pypi_version": "1.2.0a2",
@@ -14055,6 +14188,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-messagebus",
     "package_name": "ovos-messagebus",
     "pypi_version": "0.0.10",
@@ -14066,7 +14201,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 3,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14097,6 +14232,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-messagebus-chat-plugin",
     "package_name": "ovos-messagebus-chat-plugin",
     "pypi_version": "0.1.3a1",
@@ -14132,7 +14269,7 @@
     "repo_created_at": "2026-05-18T16:19:42Z",
     "last_updated": "2026-08-31T12:35:13.223217Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-microphone-plugin-alsa",
@@ -14147,6 +14284,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-microphone-plugin-alsa",
     "package_name": "ovos_microphone_plugin_alsa",
     "pypi_version": "0.1.3",
@@ -14197,6 +14336,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-microphone-plugin-files",
     "package_name": "ovos-microphone-plugin-files",
     "pypi_version": "0.0.1",
@@ -14243,6 +14384,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-microphone-plugin-pyaudio",
     "package_name": "ovos-microphone-plugin-pyaudio",
     "pypi_version": "0.0.0a4",
@@ -14289,6 +14432,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-microphone-plugin-sounddevice",
     "package_name": "ovos_microphone_plugin_sounddevice",
     "pypi_version": "0.0.2",
@@ -14479,6 +14624,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-number-parser",
     "package_name": "ovos-number-parser",
     "pypi_version": "0.19.13",
@@ -14490,7 +14637,7 @@
     "type_group": "Tool",
     "stars": 4,
     "forks": 5,
-    "open_issues": 14,
+    "open_issues": 16,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14527,6 +14674,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-audio-plugin",
     "package_name": "ovos_plugin_common_play",
     "pypi_version": "1.3.1",
@@ -14591,6 +14740,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-bandcamp-plugin",
     "package_name": "ovos-ocp-bandcamp-plugin",
     "pypi_version": "0.0.2",
@@ -14638,6 +14789,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-files-plugin",
     "package_name": "ovos-ocp-files-plugin",
     "pypi_version": "0.13.1",
@@ -14685,6 +14838,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-m3u-plugin",
     "package_name": "ovos-ocp-m3u-plugin",
     "pypi_version": "0.0.2",
@@ -14780,6 +14935,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-news-plugin",
     "package_name": "ovos_ocp_news_plugin",
     "pypi_version": "0.1.2",
@@ -14828,6 +14985,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-pipeline-plugin",
     "package_name": "ovos_ocp_pipeline_plugin",
     "pypi_version": "1.1.18",
@@ -14839,7 +14998,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 4,
-    "open_issues": 11,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14917,6 +15076,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-rss-plugin",
     "package_name": "ovos_ocp_rss_plugin",
     "pypi_version": "0.1.2",
@@ -14965,6 +15126,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-ocp-youtube-plugin",
     "package_name": "ovos_ocp_youtube_plugin",
     "pypi_version": "0.0.6",
@@ -15055,7 +15218,9 @@
       "plugin"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/robot.svg",
+    "icon_source": "readme",
+    "icon_color": "#40DBB0",
     "source": "https://github.com/OpenVoiceOS/ovos-openai-plugin",
     "package_name": "ovos_openai_plugin",
     "pypi_version": "2.0.6",
@@ -15063,7 +15228,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Persona",
+    "component_type": "Transformer Plugin",
     "type_group": "Plugin",
     "stars": 9,
     "forks": 8,
@@ -15102,6 +15267,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-opendata-server",
     "package_name": "ovos-opendata-server",
     "pypi_version": null,
@@ -15131,7 +15298,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-03-07T22:47:46Z",
-    "last_updated": "2026-09-26T13:44:28Z",
+    "last_updated": "2026-10-02T02:13:19Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -15144,6 +15311,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-option-matcher-fuzzy-plugin",
     "package_name": "ovos-option-matcher-fuzzy-plugin",
     "pypi_version": "0.0.1",
@@ -15202,6 +15371,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-org-website",
     "package_name": "ovos-org-website",
     "pypi_version": null,
@@ -15233,7 +15404,7 @@
     "repo_created_at": "2024-02-18T16:24:57Z",
     "last_updated": "2026-09-01T17:20:40Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-padatious-pipeline-plugin",
@@ -15248,6 +15419,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-padatious-pipeline-plugin",
     "package_name": "ovos_padatious",
     "pypi_version": "1.4.3",
@@ -15320,6 +15493,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-persona",
     "package_name": "ovos-persona",
     "pypi_version": "0.7.1",
@@ -15388,6 +15563,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-persona-server",
     "package_name": "ovos-persona-server",
     "pypi_version": "0.5.0",
@@ -15436,6 +15613,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-personal-backend",
     "package_name": "ovos-local-backend",
     "pypi_version": "0.1.5",
@@ -17618,7 +17797,9 @@
       "tigregotico"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-plugin-arena/dev/frontend-static/public/favicon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-plugin-arena",
     "package_name": "ovos-plugin-arena",
     "pypi_version": null,
@@ -17643,9 +17824,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-06T11:10:29Z",
-    "last_updated": "2026-09-25T01:40:15Z",
+    "last_updated": "2026-10-03T09:20:04Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-plugin-linguonnx",
@@ -17656,6 +17837,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-plugin-linguonnx",
     "package_name": "ovos-plugin-linguonnx",
     "pypi_version": "0.3.3a1",
@@ -17703,6 +17886,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-plugin-manager",
     "package_name": "ovos-plugin-manager",
     "pypi_version": "2.2.0",
@@ -17714,7 +17899,7 @@
     "type_group": "Tool",
     "stars": 14,
     "forks": 13,
-    "open_issues": 33,
+    "open_issues": 32,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -17795,6 +17980,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-pydantic-models",
     "package_name": "ovos-pydantic-models",
     "pypi_version": "0.1.1",
@@ -17887,6 +18074,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-qdrant-embeddings-plugin",
     "package_name": "ovos-qdrant-embeddings-plugin",
     "pypi_version": "0.0.1a10",
@@ -18231,7 +18420,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 6,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18454,7 +18643,7 @@
     "type_group": "Skill",
     "stars": 6,
     "forks": 5,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18484,6 +18673,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "oc-fr",
       "pl-pl",
@@ -18492,7 +18682,14 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "examples": [
+          "sekker askript ___",
+          "sekker askript ___"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2024-03-06T17:55:00Z",
     "last_updated": "2025-06-08T23:17:55.153335Z",
@@ -18664,7 +18861,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 3,
-    "open_issues": 5,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18690,6 +18887,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "oc-fr",
       "pl-pl",
@@ -18794,6 +18992,7 @@
       "eu-es",
       "fa-ir",
       "fi-fi",
+      "fil-ph",
       "fr-fr",
       "gl-es",
       "he-il",
@@ -18802,6 +19001,7 @@
       "id-id",
       "it-it",
       "ja-jp",
+      "kab",
       "ko-kr",
       "lt-lt",
       "lv-lv",
@@ -29311,6 +29511,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "oc-fr",
       "pt-br",
@@ -31659,7 +31860,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -31680,6 +31881,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "oc-fr",
       "pl-pl",
@@ -31688,7 +31890,27 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "kab": {
+        "name": "System Diagnostics",
+        "description": "Report system information such as CPU usage, memory usage, and language settings.",
+        "examples": [
+          "lqem n core n ovos",
+          "asegzawal n CPU",
+          "asegzawal n disk",
+          "tes\u025bi\u1e0d tutlayin nni\u1e0den",
+          "asegzawal n GPU",
+          "asegzawal n kernel",
+          "tutlayin yellan",
+          "asegzawal n tkatut",
+          "anda tellid",
+          "ini-yi tutlayt-ik",
+          "segmi teddukule\u1e0d",
+          "d acu-t tutlayt-iw",
+          "anda lli\u0263"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2025-03-06T11:55:30Z",
     "last_updated": "2025-03-27T07:25:42.554089Z",
@@ -31927,7 +32149,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 3,
-    "open_issues": 10,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -31947,6 +32169,7 @@
       "fr-fr",
       "gl-es",
       "it-it",
+      "kab",
       "nl-nl",
       "pt-br",
       "pt-pt",

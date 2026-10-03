@@ -27,7 +27,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 3,
+  "open_issues": 6,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -53,6 +53,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -60,7 +61,17 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Asenker yekfa",
+      "description": "Askar-agi i\u021b\u021bak-d isallen mi ara yekfu usenker n OpenVoiceOS yerna imukan me\u1e5b\u1e5ba ddan yerna \u021beddun.",
+      "examples": [
+        "Ma yewjed unagraw?",
+        "Rmed il\u0263a n uwjeb.",
+        "Sens il\u0263a n uwjeb."
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2024-01-19T01:32:33Z",
   "last_updated": "2025-05-15T16:46:12.652443Z",

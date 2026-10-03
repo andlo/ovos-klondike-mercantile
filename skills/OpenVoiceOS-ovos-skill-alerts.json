@@ -43,7 +43,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 4,
-  "open_issues": 17,
+  "open_issues": 20,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -66,6 +66,7 @@
     "gl-es",
     "hu-hu",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -74,7 +75,31 @@
     "sv-fi",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Alerts",
+      "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service.",
+      "examples": [
+        "anwa awitayen yellan",
+        "sfe\u1e0d alarma-inu",
+        "err alarma-inu ad yili yettwasel",
+        "sers priorit\u00e9 n alarma-inu",
+        "err alarma-inu ad yales yal yal yiwen",
+        "sbedd-iyi-d tadyant tamaynut",
+        "xdem-iyi-d tabdart tamaynut",
+        "rnu-yi-d asmekti amaynut asmekti",
+        "smektay-iyi ad ssiwe\u1e0d aqjun yal \u1e63\u1e63be\u1e25 n ussan n ddurt \u0263ef 7",
+        "sader azday",
+        "kkes akk tibdiwin-inu",
+        "kkes tabdart n twuriwin-inu",
+        "anta alarma i s\u025bi\u0263",
+        "sken-iyi-d twuriwin-inu",
+        "anwi tibdiwin i s\u025bi\u0263",
+        "sbe\u025b\u025bed alarma-inu \u0263er sdat",
+        "d acu i d-yeqqimen deg timer"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2023-02-09T21:13:49Z",
   "last_updated": "2025-12-15T00:19:54.660158Z",
