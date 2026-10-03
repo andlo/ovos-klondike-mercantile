@@ -95,20 +95,23 @@ def excerpt(text, anchor_patterns=("Traceback (most recent call last)", "ERROR",
 # "does not install next to the channel's versions", not quietly downgrade
 # the core it is then tested on (ovos-skill-pokepedia 0.1.4 needs
 # ovos-workshop<9 and took the alpha Klondike profile from ovos-core 3.7.2a2
-# to 2.2.4a1). Same list as STACK_PACKAGES in plan.py, plus everything else
-# named ovos-core/ovos-workshop alike.
+# to 2.2.4a1). Only the packages that define the channel are locked, and
+# only as released on PyPI: the harness installs some engines from git
+# without deps (padacioso 2.4.3a1 next to testing's ovos-workshop 7.0.6,
+# which wants padacioso<2), and locking those froze an install no testing
+# device has, so nearly everything failed at level 0 on testing (#61).
 LOCKED_STACK = ("ovos-core", "ovos-workshop", "ovos-bus-client", "ovos-plugin-manager", "ovos-config",
-                "ovos-utils", "ovos-padatious", "padacioso", "ovos-adapt-parser", "ovos-m2v-pipeline",
-                "ovos-common-query-pipeline-plugin", "ovos-ocp-pipeline-plugin", "ovos-persona",
-                "ovoscope")
+                "ovos-utils")
 
 
 def write_stack_lock(base_python, path):
     """Pin the base venv's LOCKED_STACK versions in a constraints file;
     returns {normalized name: version} of what was locked."""
+    # direct_url.json marks a git/URL install; those are never locked.
     listed = subprocess.run([base_python, "-c",
                              "import json; from importlib.metadata import distributions as d; "
-                             "print(json.dumps({x.metadata['Name']: x.version for x in d()}))"],
+                             "print(json.dumps({x.metadata['Name']: x.version for x in d() "
+                             "if not x.read_text('direct_url.json')}))"],
                             capture_output=True, text=True)
     try:
         installed = json.loads(listed.stdout or "{}")

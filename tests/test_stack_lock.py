@@ -4,6 +4,7 @@
 1. write_stack_lock pins the base venv's stack packages, nothing else
 2. every pip install carries the channel constraints and the lock
 3. a package under test that is part of the stack is left out of its own lock
+4. only the packages that define the channel are locked (not the intent engines)
 """
 import sys
 import tempfile
@@ -49,7 +50,14 @@ def test_lock():
            "without a lock: the channel constraints only")
 
 
+def test_scope():
+    ok("padacioso" not in run_shard.LOCKED_STACK and "ovos-padatious" not in run_shard.LOCKED_STACK,
+       "intent engines are not locked (the harness may install them from git)")
+    ok({"ovos-core", "ovos-workshop"} <= set(run_shard.LOCKED_STACK), "ovos-core and ovos-workshop are")
+
+
 if __name__ == "__main__":
     test_lock()
+    test_scope()
     print("\nALL OK" if not fails else f"\n{fails} FAILED")
     sys.exit(1 if fails else 0)
