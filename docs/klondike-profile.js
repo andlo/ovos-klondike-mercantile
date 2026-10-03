@@ -29,6 +29,7 @@
         ${renderFactRow("Pipeline", added.length ? `installer's, plus ${added.map(code).join(" ")}` : "the installer's, unchanged")}
         ${renderFactRow("Last run", selfLine)}
         ${renderFactRow("Apply it", `<a href="compat/klondike-profile-${encodeURIComponent(ch)}.txt">requirements</a> · <a href="compat/klondike-mycroft-${encodeURIComponent(ch)}.json">mycroft.conf pipeline</a>`)}
+        ${renderFactRow("Reproduce a result", `install the job's <a href="compat/klondike-stack-${encodeURIComponent(ch)}.txt">exact stack</a> (same versions, plus every skill it routed) with ${code(`pip install -r klondike-stack-${ch}.txt`)}, set the pipeline, restart OVOS, then ${code("ovos-tui --run <skill_id>")}`)}
       </div>
       ${inList ? `<p class="setup-note">Curated:</p><ul class="compat-misses">${inList}</ul>` : ""}
       ${out ? `<p class="setup-note">Left out on ${escapeHtml(ch)}:</p><ul class="compat-misses">${out}</ul>` : ""}`;
