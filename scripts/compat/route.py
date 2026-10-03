@@ -442,6 +442,22 @@ def expected_fired(own, expected, fired, intent_type=None):
     return not expected or OCP_FIRED in fired or not intents or intent_matches(expected, intents, own)
 
 
+def matched_pipeline(recs):
+    """The pipeline plugin that matched the sentence (#52), as ovos-core 3
+    attributes it: the ``ovos.intent.matched`` notification, or the
+    ``pipeline_id`` stamped on the dispatch. None on a core that does not
+    say (ovos-core 2.x on testing, 1.x on stable): attribution is then not
+    measurable there, which is not the same as "no plugin took it"."""
+    for m in recs:
+        if m.msg_type == "ovos.intent.matched" and (m.data or {}).get("pipeline_id"):
+            return str(m.data["pipeline_id"])[:80]
+    for m in recs:
+        pid = (m.context or {}).get("pipeline_id")
+        if pid:
+            return str(pid)[:80]
+    return None
+
+
 def stage_of(recs):
     for m in reversed(recs):
         ctx = m.context or {}
@@ -612,6 +628,19 @@ def main():
                                 hung=hung, known_ids=known)
             who, fired = verdict.taker, list(verdict.fired)
             entry = {"utterance": row["utterance"][:200], "expected": expected, "taken_by": who}
+            # Which pipeline plugin took it (#52): per run, hits and misses
+            # by plugin, so a plugin's reach and what it takes from the
+            # skills the rows belong to can be counted.
+            pid = matched_pipeline(recs)
+            if pid:
+                out["attribution"] = True
+                by = res.setdefault("by_pipeline", {}).setdefault(pid, {"hit": 0, "miss": 0})
+                # Its own skill on another intent is not taken from it.
+                if verdict.kind == "hit":
+                    by["hit"] += 1
+                elif verdict.kind not in ("wrong_intent", "captured"):
+                    by["miss"] += 1
+                entry["pipeline"] = pid
             if asked is not None:
                 # Whoever asked handled the sentence: the verdict below is
                 # the usual one. `asked` counts the hits among them.

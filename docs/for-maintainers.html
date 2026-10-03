@@ -134,6 +134,9 @@
         <strong>⛏ Klondike Gold</strong> when they still do with the
         <a href="#klondike-profile">Klondike profile</a> loaded. It is taken from testing,
         or from alpha (and says so) when testing has no result yet.
+        The <a href="profiles.html">test overview</a> shows the same results
+        grouped the way a device gets them: the installer's defaults, its
+        extra skills, and the Klondike profile, per channel.
       </p>
       <ul class="guide-list">
         <li><strong>testing</strong>: what the OVOS installer installs by
@@ -173,7 +176,10 @@
               off), which today installs
               <code>ovos-core[skills-essential,skills-internet,skills-audio]</code>.
               The channel's constraints decide their versions. The pipeline order
-              is the installer's too. The detail page lists what was loaded.</li>
+              is the installer's too. The detail page lists what was loaded.
+              A stage of that pipeline that does not load on a channel (its
+              plugin is missing something) is left out of the routing, as it is
+              on a device there, and the test overview says so for that channel.</li>
             <li><strong>Golden files:</strong>
               <code>test/end2end/golden_utterances*.jsonl</code> at the git tag of
               the version tested (<code>v1.2.3</code> or <code>1.2.3</code>), one
@@ -203,6 +209,19 @@
               routed that run.</li>
           </ul>
         </li>
+        <li id="routing-pipelines"><strong>Level 3, routes (pipeline plugins):</strong>
+          a pipeline plugin has no golden utterances of its own to reach; what
+          matters is what it does to everyone else's. In the
+          <a href="#klondike-profile">Klondike test</a> every sentence is
+          traced to the pipeline plugin that matched it, and for each plugin the
+          test counts the sentences it <em>reaches</em> (took and handed to the
+          skill they belong to) and the ones it <em>takes</em> (took from the
+          skill they belong to; the overview lists a few). A pipeline plugin of
+          the Klondike profile earns <strong>⛏ Gold</strong> when it reaches
+          some and takes none. This needs OVOS to say which plugin matched a
+          sentence, which ovos-core 3 does (alpha today); on the other channels
+          it shows as not measurable rather than as a guess. Level 1 and 2 are
+          as above: it installs, and its stage loads.</li>
         <li id="stop-check"><strong>Stop check (skills that keep going):</strong>
           after its rows, one sentence your skill took is sent again (en-US). If
           your skill is still busy after its first speech or playback (reading a

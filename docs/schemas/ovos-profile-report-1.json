@@ -47,6 +47,9 @@
         "klondike": {"$ref": "#/$defs/counts", "description": "golden utterances routed with the whole curated profile loaded"},
         "gold": {"type": "boolean"},
         "in_profile": {"type": "boolean", "description": "curated profile only: false when left out on this channel"},
+        "pipeline_route": {"type": "object", "description": "pipeline plugins only (#52): from the Klondike job, the rows it took for the skill they belong to (reaches) and from that skill (takes); measured is false on a core that does not attribute matches",
+                           "properties": {"measured": {"type": "boolean"}, "reaches": {"type": "integer"}, "takes": {"type": "integer"},
+                                          "examples": {"type": "array", "items": {"type": "object"}}}},
         "archived": {"type": "boolean", "description": "the store entry's repo is archived (still in the profile because the installer installs it)"},
         "note": {"type": "string"}
       }

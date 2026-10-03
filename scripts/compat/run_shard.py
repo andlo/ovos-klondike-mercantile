@@ -392,7 +392,9 @@ BOOT_FIELDS = ("lang", "status", "reason", "driver", "pipeline", "pipeline_dropp
                "not_loaded", "boot_seconds", "seconds", "log_excerpt", "questions_not_released",
                "row_seconds", "budget_skipped",
                # the routing judge's version (issue #48)
-               "judge")
+               "judge",
+               # the core says which pipeline plugin matched each row (#52)
+               "attribution")
 
 
 def route_pass(routable, all_runs, spec, field, args, workroot, deadline, label, budget_min):
@@ -634,6 +636,10 @@ def aggregate(routable, boots, langs, skipped, field="routing"):
                     agg.setdefault("langs_partial", []).append(b["lang"])
                 for k in COUNTS:
                     agg[k] += r.get(k, 0)
+                for pid, c in (r.get("by_pipeline") or {}).items():
+                    tot = agg.setdefault("by_pipeline", {}).setdefault(pid, {"hit": 0, "miss": 0})
+                    tot["hit"] += c.get("hit", 0)
+                    tot["miss"] += c.get("miss", 0)
                 for m in r.get("misses", []):
                     agg["misses"].append({**m, "lang": b["lang"]})
                 for m in r.get("collisions", []):
