@@ -391,9 +391,8 @@ def prepare_shard(items, results, args, workroot):
 BOOT_FIELDS = ("lang", "status", "reason", "driver", "pipeline", "pipeline_dropped", "baseline_ids",
                "not_loaded", "boot_seconds", "seconds", "log_excerpt", "questions_not_released",
                "row_seconds", "budget_skipped",
-               # the routing judge and, while it is compared, where it differs from
-               # the old one (issue #48)
-               "judge", "judge_diff_count", "judge_diff")
+               # the routing judge's version (issue #48)
+               "judge")
 
 
 def route_pass(routable, all_runs, spec, field, args, workroot, deadline, label, budget_min):
