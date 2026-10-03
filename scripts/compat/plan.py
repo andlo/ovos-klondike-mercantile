@@ -54,7 +54,7 @@ from compat.feed import FINAL_STATUSES, TESTED_TYPES, is_candidate  # noqa: E402
 
 # Bump when probe.py/run_shard.py change what a result means; every package
 # is then re-tested once.
-RUNNER_VERSION = "2"  # 2: the channel stack is locked in every install (no silent core downgrades)
+RUNNER_VERSION = "3"  # 2: the channel stack is locked in every install; 3: only the core packages, never git installs
 # Level 3 has its own key (route_key) on top of `key`: the baseline
 # (installer skills + pipeline), the generator and ROUTE_VERSION. A skill
 # that loaded is re-tested when either key changes; one that did not load
