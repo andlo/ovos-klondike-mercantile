@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test overview · OVOS Klondike Mercantile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="detail-header profiles-header">
+    <a href="index.html" class="back-link">← Back to the store</a>
+  </header>
+
+  <main class="detail-root profiles-root">
+    <div class="detail-card">
+      <h1>Test overview by install profile</h1>
+      <p class="guide-intro">
+        What passes in an OVOS install, profile by profile. Each profile
+        builds on the one before it: <strong>Default</strong> is what the
+        OVOS installer puts on, <strong>Extra</strong> adds the installer's
+        extra skills, and <strong>Klondike</strong> adds the curated
+        entries of the <a href="for-maintainers.html#klondike-profile">Klondike profile</a>.
+        The rows are the store's own channel tests; nothing here is tested twice.
+      </p>
+
+      <div class="profile-tabs" role="tablist" data-profile-tabs></div>
+      <p class="setup-note" data-profile-meta></p>
+      <div class="profile-summary" data-profile-summary></div>
+
+      <label class="profile-filter">
+        <input type="checkbox" data-profile-problems> Only show what does not pass cleanly
+      </label>
+
+      <div data-profile-sections><p class="loading">Loading test results…</p></div>
+
+      <p class="setup-note profile-foot">
+        Levels: 0 doesn't install · 1 installs but doesn't load · 2 loads ·
+        3 its golden utterances reach it. <em>Klondike</em> is the same golden
+        utterances routed with the whole Klondike profile loaded (en-US).
+        Pipeline plugins are judged like skills for now, which does not
+        fit them well (<a href="https://github.com/andlo/ovos-klondike-mercantile/issues/52">#52</a>).
+        Data: <a href="compat/profile-report.json">profile-report.json</a>
+        (<a href="schemas/ovos-profile-report-1.json">ovos-profile-report/1</a>).
+      </p>
+    </div>
+  </main>
+
+  <script src="shared.js"></script>
+  <script src="profiles.js"></script>
+</body>
+</html>

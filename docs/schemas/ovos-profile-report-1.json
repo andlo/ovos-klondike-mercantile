@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ovos-profile-report/1",
+  "title": "OVOS profile report, version 1",
+  "description": "Which skills and pipeline plugins of an install profile pass, per release channel. Profiles build on each other (default, then extra, then a curated profile such as Klondike's). Rows are keyed by the runtime id (skill_id or pipeline plugin id), so a tool on a device (ovos-tui-client) can write the same report without knowing any store; store_id is set only by a store. Klondike writes docs/compat/profile-report.json with scripts/compat/profile_report.py.",
+  "type": "object",
+  "required": ["schema", "channels"],
+  "properties": {
+    "schema": {"const": "ovos-profile-report/1"},
+    "generated_at": {"type": ["string", "null"], "format": "date-time"},
+    "channels": {
+      "type": "object",
+      "propertyNames": {"enum": ["stable", "testing", "alpha"]},
+      "additionalProperties": {"$ref": "#/$defs/channel"}
+    }
+  },
+  "$defs": {
+    "counts": {
+      "type": ["object", "null"],
+      "required": ["hit", "counted"],
+      "properties": {"hit": {"type": "integer"}, "counted": {"type": "integer"}}
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "total": {"type": "integer"}, "in_store": {"type": "integer"},
+        "loads": {"type": "integer", "description": "state pass or warn"},
+        "fails": {"type": "integer"}, "not_testable": {"type": "integer"},
+        "untested": {"type": "integer"}, "not_in_store": {"type": "integer"},
+        "routes": {"type": "integer", "description": "level 3: its golden utterances reach it"},
+        "gold": {"type": "integer", "description": "level 3 and still routes with the curated profile loaded"}
+      }
+    },
+    "entry": {
+      "type": "object",
+      "required": ["runtime_id", "kind", "state"],
+      "properties": {
+        "runtime_id": {"type": "string"},
+        "store_id": {"type": ["string", "null"]},
+        "kind": {"enum": ["skill", "pipeline"]},
+        "state": {"enum": ["pass", "warn", "fail", "unsupported", "untested", "not_in_store"]},
+        "label": {"type": "string"},
+        "level": {"type": ["integer", "null"], "minimum": 0, "maximum": 3},
+        "version": {"type": "string"},
+        "tested_at": {"type": "string", "format": "date-time"},
+        "golden": {"$ref": "#/$defs/counts"},
+        "klondike": {"$ref": "#/$defs/counts", "description": "golden utterances routed with the whole curated profile loaded"},
+        "gold": {"type": "boolean"},
+        "in_profile": {"type": "boolean", "description": "curated profile only: false when left out on this channel"},
+        "note": {"type": "string"}
+      }
+    },
+    "profile": {
+      "type": "object",
+      "required": ["id", "entries", "summary"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "builds_on": {"type": ["string", "null"]},
+        "source": {"type": ["string", "null"]},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "summary": {"$ref": "#/$defs/summary", "description": "this profile's own entries"},
+        "cumulative": {"$ref": "#/$defs/summary", "description": "this profile plus the ones it builds on"}
+      }
+    },
+    "channel": {
+      "type": "object",
+      "required": ["profiles"],
+      "properties": {
+        "run_at": {"type": ["string", "null"]},
+        "klondike_run_at": {"type": ["string", "null"]},
+        "constraints_url": {"type": ["string", "null"]},
+        "profiles": {"type": "array", "items": {"$ref": "#/$defs/profile"}}
+      }
+    }
+  }
+}
