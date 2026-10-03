@@ -50,12 +50,15 @@
     return `<span class="compat-label compat-${escapeHtml(cls)}" title="${escapeHtml(tip)}">${STATE_MARK[e.state] ? STATE_MARK[e.state] + " " : ""}${escapeHtml(e.label || e.state)}</span>`;
   }
 
-  function klondikeCell(e) {
-    if (!e.klondike) return `<span class="profile-dim">–</span>`;
+  // The Klondike routing as a quiet addition to the result, not a column:
+  // the ⛏ Gold chip when it earned it, else a muted "with Klondike" count.
+  function klondikeNote(e) {
+    if (e.gold) {
+      return ` <span class="compat-label quality-label quality-klondike" title="level 3, and ${e.klondike.hit}/${e.klondike.counted} still reach it with the Klondike profile loaded">⛏ Gold</span>`;
+    }
+    if (!e.klondike) return "";
     const k = e.klondike;
-    const gold = e.gold ? ` <span class="compat-label quality-label quality-klondike" title="level 3, and still routes with the Klondike profile loaded">⛏ Gold</span>` : "";
-    const cls = k.hit === k.counted ? "profile-ok" : k.hit / k.counted >= COMPAT_LEVEL3_RATIO ? "profile-near" : "profile-bad";
-    return `<span class="${cls}">${k.hit}/${k.counted}</span>${gold}`;
+    return `<div class="profile-sub" title="golden utterances that still reach it with the whole Klondike profile loaded (en-US)">with Klondike: ${k.hit}/${k.counted}</div>`;
   }
 
   function summaryBox(p) {
@@ -84,17 +87,16 @@
         <td>${nameCell(e)}</td>
         <td><span class="profile-kind profile-kind-${escapeHtml(e.kind)}">${escapeHtml(e.kind)}</span></td>
         <td class="profile-dim">${e.version ? escapeHtml(e.version) : "–"}</td>
-        <td>${resultCell(e)}</td>
-        <td>${klondikeCell(e)}</td>
+        <td>${resultCell(e)}${klondikeNote(e)}</td>
       </tr>`).join("")
-      : `<tr><td colspan="5" class="profile-dim">Everything here passes cleanly.</td></tr>`;
+      : `<tr><td colspan="4" class="profile-dim">Everything here passes cleanly.</td></tr>`;
     const s = p.summary;
     return `
       <h2 class="detail-subhead" id="${escapeHtml(channel)}-${p.id}">${escapeHtml(PROFILE_TITLE[p.id] || p.name)}
         <span class="profile-head-count">${s.loads}/${s.total - s.not_in_store - s.untested - s.not_testable} load</span></h2>
       ${p.source ? `<p class="setup-note">${escapeHtml(p.source)}</p>` : ""}
       <div class="profile-table-wrap"><table class="profile-table">
-        <thead><tr><th>Entry</th><th>Type</th><th>Version</th><th>Result</th><th>Klondike</th></tr></thead>
+        <thead><tr><th>Entry</th><th>Type</th><th>Version</th><th>Result</th></tr></thead>
         <tbody>${body}</tbody>
       </table></div>`;
   }
@@ -104,10 +106,19 @@
   // channel with testing, the installer's default.
   const COMPARE_ORDER = ["stable", "testing", "alpha"];
 
-  function score(e) {
-    if (!e || ["untested", "unsupported", "not_in_store"].includes(e.state)) return null;
-    if (e.state === "fail") return 0;
-    return e.golden ? 3 + e.golden.hit / e.golden.counted : 2;
+
+  // ▲▼ only where both this channel and testing have golden counts, so a
+  // deeper test is never read as a better skill. Golden here but none on
+  // testing: a grey ▲ (newly measured, nothing to compare with).
+  function compareArrow(e, ref) {
+    if (!e || !ref || e === ref || !e.golden || !e.golden.counted) return "";
+    if (!ref.golden || !ref.golden.counted) {
+      return ` <span class="profile-new" title="golden utterances measured here, none on testing to compare with">▲</span>`;
+    }
+    const a = e.golden.hit / e.golden.counted, b = ref.golden.hit / ref.golden.counted;
+    if (Math.abs(a - b) < 0.001) return "";
+    return a > b ? ` <span class="profile-ok" title="more golden utterances reach it than on testing">▲</span>`
+      : ` <span class="profile-bad" title="fewer golden utterances reach it than on testing">▼</span>`;
   }
 
   function compactCell(e, ref) {
@@ -119,15 +130,14 @@
     else if (e.state === "unsupported") text = "–";
     else text = e.golden ? `✓ ${e.golden.hit}/${e.golden.counted}` : "✓ loads";
     const cls = e.state === "not_in_store" ? "untested" : e.state;
-    const a = score(e), b = score(ref);
-    const arrow = ref && ref !== e && a !== null && b !== null && Math.abs(a - b) > 0.001
-      ? (a > b ? ` <span class="profile-ok" title="better than testing">▲</span>` : ` <span class="profile-bad" title="worse than testing">▼</span>`) : "";
-    const k = e.klondike ? `<div class="profile-sub">K ${e.klondike.hit}/${e.klondike.counted}${e.gold ? " ⛏" : ""}</div>` : "";
+    const arrow = compareArrow(e, ref);
+    const k = e.gold ? `<div class="profile-sub" title="⛏ Klondike Gold: ${e.klondike.hit}/${e.klondike.counted} with the Klondike profile loaded">⛏ Gold</div>`
+      : e.klondike ? `<div class="profile-sub" title="with the Klondike profile loaded">with Klondike: ${e.klondike.hit}/${e.klondike.counted}</div>` : "";
     return `<td><span class="compat-label compat-${escapeHtml(cls)}" title="${escapeHtml(e.label || e.state)}${e.version ? " · v" + escapeHtml(e.version) : ""}">${escapeHtml(text)}</span>${arrow}${k}</td>`;
   }
 
   function differs(cells) {
-    const sig = cells.filter(Boolean).map((e) => `${e.state}|${score(e)}|${e.klondike ? e.klondike.hit + "/" + e.klondike.counted : ""}`);
+    const sig = cells.filter(Boolean).map((e) => `${e.state}|${e.golden ? e.golden.hit + "/" + e.golden.counted : ""}|${e.klondike ? e.klondike.hit + "/" + e.klondike.counted : ""}`);
     return new Set(sig).size > 1;
   }
 
@@ -140,7 +150,7 @@
       return `<td><strong>${s.loads}</strong><span class="profile-dim">/${testable}</span>
         <div class="profile-sub">${s.routes} level 3${s.gold ? ` · ${s.gold} ⛏` : ""}${s.fails ? ` · <span class="profile-bad">${s.fails} ✗</span>` : ""}</div></td>`;
     };
-    metaEl.innerHTML = "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. ▲▼: better or worse than testing.";
+    metaEl.innerHTML = "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing.";
     summaryEl.innerHTML = `<div class="profile-table-wrap"><table class="profile-table profile-compare-sum">
       <thead><tr><th>Profile</th>${chans.map((c) => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead>
       <tbody>${profileIds.map((id) => `<tr><td><strong>${escapeHtml(PROFILE_TITLE[id])}</strong></td>${chans.map((c) => {
