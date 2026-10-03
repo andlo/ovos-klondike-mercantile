@@ -275,6 +275,157 @@ function renderTimelineChart(list) {
   `;
 }
 
+// --- Test, golden, language and activity stats ------------------------------
+// Same filtered list as the rest of the stats. "Tested" is every entry the
+// channel tests cover (Looks Complete skills and pipeline plugins, plus what
+// the OVOS installer installs), i.e. those with a compat channel map.
+
+const TEST_SEGMENTS = [
+  { key: "level3", label: "Level 3 (its golden utterances reach it)", color: "#1e8a4c" },
+  { key: "loads", label: "Loads", color: "#86c9a1" },
+  { key: "fails", label: "Fails to install or load", color: "#c73e35" },
+  { key: "grey", label: "Not testable here (needs a device, key or account)", color: "#b9bec7" },
+  { key: "untested", label: "Not tested yet", color: "#e2e5ea" },
+];
+
+function testedPool(list) {
+  return list.filter((s) => s.compat && s.compat.channels);
+}
+
+function stackedRow(label, counts, segments, max, title) {
+  const total = segments.reduce((n, seg) => n + (counts[seg.key] || 0), 0);
+  const parts = segments.map((seg) => {
+    const n = counts[seg.key] || 0;
+    if (!n) return "";
+    return `<div class="chart-fill" style="width:${(n / total) * 100}%;background:${seg.color}" title="${escapeHtml(`${seg.label}: ${n}`)}"></div>`;
+  }).join("");
+  return `
+    <div class="chart-row">
+      <div class="chart-label">${escapeHtml(label)}</div>
+      <div class="chart-track-bg"><div class="chart-track" style="width:${(total / max) * 100}%">${parts}</div></div>
+      <div class="chart-value" title="${escapeHtml(title || "")}">${total}</div>
+    </div>`;
+}
+
+function chartLegend(segments) {
+  return `<div class="chart-legend">${segments.map((seg) =>
+    `<span class="chart-legend-item"><span class="chart-swatch" style="background:${seg.color}"></span>${escapeHtml(seg.label)}</span>`).join("")}</div>`;
+}
+
+function renderTestChart(list) {
+  const pool = testedPool(list);
+  if (!pool.length) return "";
+  const rows = ["testing", "alpha", "stable"].map((ch) => {
+    const counts = {};
+    for (const s of pool) {
+      const c = s.compat.channels[ch];
+      const key = !c || c.state === "untested" ? "untested"
+        : c.state === "fail" ? "fails"
+        : c.state === "unsupported" ? "grey"
+        : (c.level || 0) >= 3 ? "level3" : "loads";
+      counts[key] = (counts[key] || 0) + 1;
+    }
+    return stackedRow(ch, counts, TEST_SEGMENTS, pool.length);
+  }).join("");
+  return `
+    <h4>Test results by channel</h4>
+    <div class="chart-block">${rows}${chartLegend(TEST_SEGMENTS)}</div>
+    <p class="chart-caveat">
+      The ${pool.length} entries the store tests: Looks Complete skills and pipeline plugins, and
+      everything the OVOS installer puts on. <strong>testing</strong> is what the installer
+      installs by default. Grouped the way a device gets them in the
+      <a href="profiles.html">test overview</a>; what each level means:
+      <a href="for-maintainers.html#channel-tests">Tested on OVOS</a>.
+    </p>`;
+}
+
+const GOLDEN_SEGMENTS = [
+  { key: "with", label: "Golden utterances in its release", color: "#1f7ae0" },
+  { key: "without", label: "None, so routing can't be measured", color: "#e2e5ea" },
+];
+
+function renderGoldenChart(list) {
+  const pool = testedPool(list).filter((s) => s.type_group === "Skill");
+  if (!pool.length) return "";
+  const rows = ["testing", "alpha", "stable"].map((ch) => {
+    const counts = { with: 0, without: 0 };
+    for (const s of pool) {
+      const c = s.compat.channels[ch];
+      if (!c || !["pass", "warn"].includes(c.state)) continue;  // only skills that load can be routed
+      counts[c.golden ? "with" : "without"] += 1;
+    }
+    return stackedRow(ch, counts, GOLDEN_SEGMENTS, pool.length);
+  }).join("");
+  return `
+    <h4>Tested skills with golden utterances</h4>
+    <div class="chart-block">${rows}${chartLegend(GOLDEN_SEGMENTS)}</div>
+    <p class="chart-caveat">
+      Of the tested skills that load. Without golden utterances in the released version a skill can't
+      reach level 3, and nobody can tell whether a default skill takes its sentences.
+      <a href="for-maintainers.html#routing">How to add them</a>: the same files <code>ovoscope golden</code> runs.
+    </p>`;
+}
+
+function renderLanguageChart(list) {
+  const counts = {};
+  for (const s of list) {
+    if (s.type_group !== "Skill") continue;
+    for (const base of new Set(asArray(s.languages).map((c) => String(c).toLowerCase().split(/[-_]/)[0]))) {
+      counts[base] = (counts[base] || 0) + 1;
+    }
+  }
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 15);
+  if (!sorted.length) return "";
+  const max = sorted[0][1];
+  const rows = sorted.map(([base, count]) => `
+      <div class="chart-row">
+        <div class="chart-label" title="${escapeHtml(base)}">${escapeHtml(languageName(base) || base)}</div>
+        <div class="chart-track-bg"><div class="chart-track" style="width:${(count / max) * 100}%"><div class="chart-fill" style="width:100%;background:#5b3fb8"></div></div></div>
+        <div class="chart-value">${count}</div>
+      </div>`).join("");
+  return `
+    <h4>Skills per language (top 15)</h4>
+    <div class="chart-block">${rows}</div>
+    <p class="chart-caveat">
+      A skill counts for a language when it ships locale files for it, however complete.
+      Help translating: <a href="https://openvoiceos.github.io/ovos-localize/">ovos-localize</a>.
+    </p>`;
+}
+
+const ACTIVITY_SEGMENTS = [
+  { key: "m6", label: "Updated in the last 6 months", color: "#1e8a4c" },
+  { key: "m12", label: "6-12 months ago", color: "#86c9a1" },
+  { key: "y3", label: "1-3 years ago", color: "#d9b26a" },
+  { key: "old", label: "More than 3 years ago", color: "#b9bec7" },
+  { key: "archived", label: "Archived", color: "#8a8f98" },
+];
+
+function renderActivityChart(list) {
+  const now = Date.now();
+  const groups = ["Skill", "Plugin", "Tool"];
+  const data = groups.map((g) => {
+    const counts = {};
+    for (const s of list) {
+      if (s.type_group !== g) continue;
+      let key = "archived";
+      if (!s.archived) {
+        const t = Date.parse(s.last_updated || "");
+        if (Number.isNaN(t)) continue;
+        const days = (now - t) / 86400000;
+        key = days < 183 ? "m6" : days < 365 ? "m12" : days < 1095 ? "y3" : "old";
+      }
+      counts[key] = (counts[key] || 0) + 1;
+    }
+    return [g, counts];
+  });
+  const max = Math.max(1, ...data.map(([, c]) => Object.values(c).reduce((a, b) => a + b, 0)));
+  const rows = data.map(([g, counts]) => stackedRow(`${g}s`, counts, ACTIVITY_SEGMENTS, max)).join("");
+  return `
+    <h4>Activity: last update of the repo</h4>
+    <div class="chart-block">${rows}${chartLegend(ACTIVITY_SEGMENTS)}</div>
+    <p class="chart-caveat">Like everything here, it counts what the store shows: archived repos only with "show archived" on.</p>`;
+}
+
 function renderStatsSection(list) {
   const totalSkills = list.filter((s) => s.type_group === "Skill").length;
   const totalPlugins = list.filter((s) => s.type_group === "Plugin").length;
@@ -288,13 +439,19 @@ function renderStatsSection(list) {
       <div class="stat-summary-cell"><div class="stat-summary-number">${totalPlugins}</div><div class="stat-summary-label">Plugins</div></div>
       <div class="stat-summary-cell"><div class="stat-summary-number">${totalTools}</div><div class="stat-summary-label">Tools</div></div>
       <div class="stat-summary-cell"><div class="stat-summary-number">${totalAuthors}</div><div class="stat-summary-label">Authors/orgs</div></div>
+      <div class="stat-summary-cell"><div class="stat-summary-number">${testedPool(list).length}</div><div class="stat-summary-label">Tested</div></div>
+      <div class="stat-summary-cell"><div class="stat-summary-number">${list.filter((s) => (qualityLabel(s) || {}).kind === "klondike").length}</div><div class="stat-summary-label">⛏ Klondike Gold</div></div>
     </div>
   `;
 
   statsContent.innerHTML =
     summary +
+    renderTestChart(list) +
+    renderGoldenChart(list) +
     renderTypeTierChart(list) +
+    renderLanguageChart(list) +
     renderAuthorChart(list) +
+    renderActivityChart(list) +
     renderTimelineChart(list);
 }
 
