@@ -71,6 +71,8 @@
         "run_at": {"type": ["string", "null"]},
         "klondike_run_at": {"type": ["string", "null"]},
         "constraints_url": {"type": ["string", "null"]},
+        "pipeline_not_loaded": {"type": "array", "items": {"type": "string"},
+                                "description": "stages of the installer's pipeline the routing runs had to leave out; level 3 here ran without them"},
         "profiles": {"type": "array", "items": {"$ref": "#/$defs/profile"}}
       }
     }

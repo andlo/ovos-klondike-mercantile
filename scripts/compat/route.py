@@ -80,7 +80,7 @@ import traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from probe import boot, modern_driver, same_language  # noqa: E402
+from probe import boot, intent_service, modern_driver, same_language  # noqa: E402
 
 # The verdict comes from ovos-routing-judge (issue #48), the judge
 # ovos-tui-client uses too, so a row reads the same on a device. It is
@@ -162,6 +162,33 @@ def available_stages(pipeline):
                 base = stage[: -len(suffix)]
                 break
         (keep if base in installed else dropped).append(stage)
+    return keep, dropped
+
+
+def loaded_stages(croft, pipeline):
+    """(stages whose plugin the intent service actually loaded, the rest).
+    available_stages() only sees that a plugin is installed; one whose
+    constructor fails (ovos-m2v-pipeline 0.0.9 on testing: "Converting a
+    legacy pipeline requires scikit-learn and skops") is skipped by
+    ovos-core with an ERROR line and nothing else, so the run went on as if
+    the installer's pipeline were complete (#52). Unknown when the service
+    does not list its plugins: then everything is kept."""
+    try:
+        loaded = set(getattr(intent_service(croft), "pipeline_plugins", None) or {})
+    except Exception:  # noqa: BLE001
+        loaded = set()
+    if not loaded:
+        return list(pipeline), []
+    keep, dropped = [], []
+    for stage in pipeline:
+        base = stage
+        for suffix in ("-high", "-medium", "-low"):
+            if stage.endswith(suffix):
+                base = stage[: -len(suffix)]
+                break
+        (keep if base in loaded else dropped).append(stage)
+    for stage in dropped:
+        print(f"warning: pipeline stage {stage} did not load; left out of the row sessions", file=sys.stderr)
     return keep, dropped
 
 
@@ -447,6 +474,9 @@ def boot_route(ids, lang, pipeline, max_wait):
             if not legacy_train(croft, max_wait):
                 dropped = dropped + ["(padatious did not confirm training)"]
         time.sleep(2.0)
+        if keep:
+            keep, more = loaded_stages(croft, keep)
+            dropped += more
         if keep:
             keep, more = warm_models(croft, keep)
             dropped += more

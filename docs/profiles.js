@@ -167,7 +167,7 @@
       return `<td><strong>${s.loads}</strong><span class="profile-dim">/${testable}</span>
         <div class="profile-sub">${s.routes} level 3${s.gold ? ` · ${s.gold} ⛏` : ""}${s.fails ? ` · <span class="profile-bad">${s.fails} ✗</span>` : ""}</div></td>`;
     };
-    metaEl.innerHTML = "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing.";
+    metaEl.innerHTML = chans.map((c) => pipelineWarning(c, report.channels[c])).join("") + "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing.";
     summaryEl.innerHTML = `<div class="profile-table-wrap"><table class="profile-table profile-fixed profile-compare-sum">${summaryCols(chans.length)}
       <thead><tr><th>Profile</th>${chans.map((c) => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead>
       <tbody>${profileIds.map((id) => `<tr><td><strong>${escapeHtml(PROFILE_TITLE[id])}</strong></td>${chans.map((c) => {
@@ -202,6 +202,14 @@
     }).join("");
   }
 
+  // A channel whose installer pipeline did not come up in full: level 3
+  // there ran without those stages (#52).
+  function pipelineWarning(c, ch) {
+    const missing = asArray(ch && ch.pipeline_not_loaded);
+    if (!missing.length) return "";
+    return `<span class="profile-pipe-warn" title="Level 3 on ${escapeHtml(c)} ran without these stages">⚠ ${escapeHtml(c)}: the installer's pipeline is incomplete, ${missing.map((s) => `<code>${escapeHtml(s)}</code>`).join(", ")} did not load</span><br>`;
+  }
+
   function render() {
     tabsEl.innerHTML = ["compare", ...TAB_ORDER.filter((c) => report.channels[c])].map((c) =>
       `<button type="button" role="tab" class="profile-tab${c === channel ? " active" : ""}" aria-selected="${c === channel}" data-channel="${c}">${c === "compare" ? "⇄ compare channels" : escapeHtml(c)}</button>`).join("");
@@ -211,7 +219,7 @@
     }
     if (channel === "compare") return renderCompare();
     const ch = report.channels[channel];
-    metaEl.innerHTML = [ch.run_at ? `Routing run ${formatDate(ch.run_at)}` : "",
+    metaEl.innerHTML = pipelineWarning(channel, ch) + [ch.run_at ? `Routing run ${formatDate(ch.run_at)}` : "",
       ch.klondike_run_at ? `Klondike job ${formatDate(ch.klondike_run_at)}` : "",
       channel === "alpha" ? "alpha changes all the time" : "",
       channel === "stable" ? "stable is no longer offered by the installer" : ""].filter(Boolean).join(" · ");
