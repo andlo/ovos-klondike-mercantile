@@ -394,7 +394,9 @@ BOOT_FIELDS = ("lang", "status", "reason", "driver", "pipeline", "pipeline_dropp
                # the routing judge's version (issue #48)
                "judge",
                # the core says which pipeline plugin matched each row (#52)
-               "attribution")
+               "attribution",
+               # the per-row timeout of level 3 (#59)
+               "timeout")
 
 
 def route_pass(routable, all_runs, spec, field, args, workroot, deadline, label, budget_min):
