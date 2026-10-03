@@ -333,6 +333,14 @@ def main():
         for line in moved:
             print(f"  {channel} moved: {line}", file=sys.stderr)
 
+    # Longest jobs first: the Klondike jobs take 1-2 h and read the
+    # previous run's level-2 results, so they never wait for this run's
+    # shards. With max-parallel 12 they were queued behind every shard and
+    # alpha's started an hour in, setting the run's end. Alpha first (the
+    # most rows and languages), then testing, then stable; shards in the
+    # same channel order after them.
+    order = {"alpha": 0, "testing": 1, "stable": 2}
+    matrix.sort(key=lambda sh: (sh["shard"] != "klondike", order.get(sh["channel"], 9)))
     Path(args.out).write_text(json.dumps({"include": matrix, "summary": summary,
                                           "harness_sha": args.harness_sha,
                                           "runner_version": RUNNER_VERSION,
