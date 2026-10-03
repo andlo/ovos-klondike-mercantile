@@ -56,7 +56,8 @@
       : escapeHtml(label);
     const sub = label !== e.runtime_id ? `<div class="profile-sub"><code>${escapeHtml(e.runtime_id)}</code></div>` : "";
     const note = e.note ? `<div class="profile-sub">${escapeHtml(e.note)}</div>` : "";
-    return `${main}${sub}${note}`;
+    const arch = e.archived ? ` <span class="badge badge-warn" title="The repo is archived on GitHub, but the OVOS installer still installs it">archived</span>` : "";
+    return `${main}${arch}${sub}${note}`;
   }
 
   function resultCell(e) {
