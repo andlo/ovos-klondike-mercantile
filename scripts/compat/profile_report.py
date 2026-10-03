@@ -186,7 +186,14 @@ def channel_report(doc, channel, rt, find=lambda rid: None, archived=frozenset()
         p["summary"] = summary(p["entries"])
         running += [r for r in p["entries"] if r.get("in_profile", True)]
         p["cumulative"] = summary(running)
+    # Stages of the installer's pipeline the routing runs had to leave out
+    # (not installed, did not load, model did not load): level 3 on this
+    # channel ran on an incomplete pipeline (#52). Notes such as "(channel
+    # default used: 13 stages)" are not stages.
+    boots = [route] + list((kl.get("job") or {}).get("boots") or [])
+    not_loaded = sorted({s for b in boots for s in b.get("pipeline_dropped") or [] if not s.startswith("(")})
     return {"run_at": route.get("run_at"), "klondike_run_at": (kl.get("job") or {}).get("run_at"),
+            "pipeline_not_loaded": not_loaded,
             "constraints_url": (doc["channels"][channel]).get("constraints_url"), "profiles": profiles}
 
 
