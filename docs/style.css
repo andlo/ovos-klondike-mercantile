@@ -1210,9 +1210,18 @@ img.flag {
 .profile-foot { margin-top: 1.2rem; }
 .profile-compare-sum { margin-bottom: 0.4rem; }
 .profile-compare-sum td, .profile-compare-sum th { text-align: left; }
-.profile-compare td:nth-child(n+3) { white-space: nowrap; }
+.profile-fixed { table-layout: fixed; }
+.profile-fixed td:first-child { overflow-wrap: anywhere; }
+.profile-fixed .compat-label { white-space: normal; }
 @media (max-width: 600px) {
-  .profile-table:not(.profile-compare):not(.profile-compare-sum) th:nth-child(3),
-  .profile-table:not(.profile-compare):not(.profile-compare-sum) td:nth-child(3) { display: none; }
-  .profile-compare th:nth-child(2), .profile-compare td:nth-child(2) { display: none; }
+  /* narrow screens: keep the fixed layout (columns still line up), but
+     squeeze the type column to nothing and drop the runtime id line */
+  .profile-fixed { font-size: 0.8rem; }
+  .profile-table th { letter-spacing: 0; text-transform: none; }
+  .profile-table td, .profile-table th { padding: 0.4rem 0.3rem; }
+  .profile-col-type { width: 0 !important; }
+  .profile-fixed:not(.profile-compare-sum) td:nth-child(2),
+  .profile-fixed:not(.profile-compare-sum) th:nth-child(2) { padding: 0; overflow: hidden; font-size: 0; }
+  .profile-table .profile-sub code { display: none; }
+  .profile-fixed .compat-label { font-size: 0.68rem; padding: 0.1rem 0.3rem; }
 }

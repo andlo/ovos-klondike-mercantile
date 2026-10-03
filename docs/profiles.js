@@ -29,6 +29,22 @@
     return d ? Math.round((100 * n) / d) : 0;
   }
 
+  // Same column widths in every table on a tab (fixed layout), so the
+  // columns line up from Default to + Klondike and in the summary above.
+  const ENTRY_W = 40, TYPE_W = 10;
+  function cols(widths) {
+    return `<colgroup>${widths.map(([w, cls]) => `<col${cls ? ` class="${cls}"` : ""} style="width:${w}%">`).join("")}</colgroup>`;
+  }
+  function channelCols(n) {
+    const w = (100 - ENTRY_W - TYPE_W) / n;
+    return cols([[ENTRY_W], [TYPE_W, "profile-col-type"], ...Array(n).fill([w])]);
+  }
+  function summaryCols(n) {
+    const w = (100 - ENTRY_W - TYPE_W) / n;
+    return cols([[ENTRY_W + TYPE_W], ...Array(n).fill([w])]);
+  }
+  const PROFILE_COLS = cols([[46], [10, "profile-col-type"], [12], [32]]);
+
   function isProblem(e) {
     return e.state !== "pass" || (e.klondike && e.klondike.hit < e.klondike.counted);
   }
@@ -95,7 +111,7 @@
       <h2 class="detail-subhead" id="${escapeHtml(channel)}-${p.id}">${escapeHtml(PROFILE_TITLE[p.id] || p.name)}
         <span class="profile-head-count">${s.loads}/${s.total - s.not_in_store - s.untested - s.not_testable} load</span></h2>
       ${p.source ? `<p class="setup-note">${escapeHtml(p.source)}</p>` : ""}
-      <div class="profile-table-wrap"><table class="profile-table">
+      <div class="profile-table-wrap"><table class="profile-table profile-fixed">${PROFILE_COLS}
         <thead><tr><th>Entry</th><th>Type</th><th>Version</th><th>Result</th></tr></thead>
         <tbody>${body}</tbody>
       </table></div>`;
@@ -151,7 +167,7 @@
         <div class="profile-sub">${s.routes} level 3${s.gold ? ` · ${s.gold} ⛏` : ""}${s.fails ? ` · <span class="profile-bad">${s.fails} ✗</span>` : ""}</div></td>`;
     };
     metaEl.innerHTML = "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing.";
-    summaryEl.innerHTML = `<div class="profile-table-wrap"><table class="profile-table profile-compare-sum">
+    summaryEl.innerHTML = `<div class="profile-table-wrap"><table class="profile-table profile-fixed profile-compare-sum">${summaryCols(chans.length)}
       <thead><tr><th>Profile</th>${chans.map((c) => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead>
       <tbody>${profileIds.map((id) => `<tr><td><strong>${escapeHtml(PROFILE_TITLE[id])}</strong></td>${chans.map((c) => {
         const p = prof(c, id); return p ? cell(p.cumulative || p.summary) : `<td class="profile-dim">–</td>`;
@@ -179,7 +195,7 @@
         </tr>`).join("")
         : `<tr><td colspan="${2 + chans.length}" class="profile-dim">No differences between the channels.</td></tr>`;
       return `<h2 class="detail-subhead" id="compare-${id}">${escapeHtml(PROFILE_TITLE[id])}</h2>
-        <div class="profile-table-wrap"><table class="profile-table profile-compare">
+        <div class="profile-table-wrap"><table class="profile-table profile-fixed profile-compare">${channelCols(chans.length)}
           <thead><tr><th>Entry</th><th>Type</th>${chans.map((c) => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead>
           <tbody>${body}</tbody></table></div>`;
     }).join("");
