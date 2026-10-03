@@ -1162,3 +1162,66 @@ img.flag {
   object-fit: cover;
 }
 .chip img.flag { margin-right: 0.15rem; }
+
+/* Test overview by install profile (profiles.html) */
+.profiles-header, .profiles-root { max-width: 960px; }
+.profile-tabs { display: flex; gap: 0.4rem; margin: 1rem 0 0.4rem; flex-wrap: wrap; }
+.profile-tab {
+  border: 1px solid var(--border); background: var(--card-bg); color: var(--text);
+  border-radius: 999px; padding: 0.3rem 0.9rem; font: inherit; font-size: 0.9rem; cursor: pointer;
+}
+.profile-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.profile-summary {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem; margin: 0.8rem 0 1rem;
+}
+.profile-box {
+  display: flex; flex-direction: column; gap: 0.2rem; padding: 0.9rem 1rem;
+  border: 1px solid var(--border); border-radius: 10px; color: var(--text); text-decoration: none;
+}
+.profile-box:hover { border-color: var(--accent); }
+.profile-box-title { font-weight: 600; }
+.profile-box-big { font-size: 1.8rem; font-weight: 700; line-height: 1.1; }
+.profile-box-big small { font-size: 1rem; color: var(--muted); font-weight: 500; }
+.profile-box-sub { font-size: 0.8rem; color: var(--muted); }
+.profile-filter { display: flex; gap: 0.4rem; align-items: center; font-size: 0.88rem; color: var(--muted); }
+.profile-head-count { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+.profile-table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+.profile-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.profile-table th {
+  text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em;
+  color: var(--muted); font-weight: 600; padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border);
+}
+.profile-table td { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.profile-table td a { color: var(--accent); text-decoration: none; }
+.profile-table td a:hover { text-decoration: underline; }
+.profile-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; overflow-wrap: anywhere; }
+.profile-out td { opacity: 0.6; }
+.profile-kind {
+  font-size: 0.72rem; border-radius: 6px; padding: 0.05rem 0.4rem;
+  background: #f1f2f4; color: var(--muted); white-space: nowrap;
+}
+.profile-kind-pipeline { background: #efeafd; color: #5b3fb8; }
+.profile-dim { color: var(--muted); }
+.profile-new { color: #9aa2ae; }
+.profile-ok { color: #1e8a4c; font-weight: 600; }
+.profile-near { color: #5b7a12; font-weight: 600; }
+.profile-bad { color: #c73e35; font-weight: 600; }
+.profile-foot { margin-top: 1.2rem; }
+.profile-compare-sum { margin-bottom: 0.4rem; }
+.profile-compare-sum td, .profile-compare-sum th { text-align: left; }
+.profile-fixed { table-layout: fixed; }
+.profile-fixed td:first-child { overflow-wrap: anywhere; }
+.profile-fixed .compat-label { white-space: normal; }
+@media (max-width: 600px) {
+  /* narrow screens: keep the fixed layout (columns still line up), but
+     squeeze the type column to nothing and drop the runtime id line */
+  .profile-fixed { font-size: 0.8rem; }
+  .profile-table th { letter-spacing: 0; text-transform: none; }
+  .profile-table td, .profile-table th { padding: 0.4rem 0.3rem; }
+  .profile-col-type { width: 0 !important; }
+  .profile-fixed:not(.profile-compare-sum) td:nth-child(2),
+  .profile-fixed:not(.profile-compare-sum) th:nth-child(2) { padding: 0; overflow: hidden; font-size: 0; }
+  .profile-table .profile-sub code { display: none; }
+  .profile-fixed .compat-label { font-size: 0.68rem; padding: 0.1rem 0.3rem; }
+}

@@ -201,6 +201,7 @@ jobs:
             git fetch -q origin main && git reset -q --hard origin/main
             python3 scripts/compat/publish.py --plan "$RUNNER_TEMP/artifacts/plan/plan.json" \
               --artifacts "$RUNNER_TEMP/artifacts"
+            python3 scripts/compat/profile_report.py
             git add docs/compat docs/badges
             git diff --cached --quiet && { echo "nothing to commit"; break; }
             git commit -q -m "chore: update channel compat results [automated]"
