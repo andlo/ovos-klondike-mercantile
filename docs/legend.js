@@ -66,6 +66,9 @@ function renderTestLegend() {
           <td>And still at least 80% on a well-equipped install, with the <a href="for-maintainers.html#klondike-profile">Klondike profile</a> loaded. The strongest label.</td></tr>
         <tr><td>${renderQualityLabel({ compat: { channels: { alpha: { level: 3, golden: { hit: 14, counted: 14 } } } } })}</td>
           <td>The same, measured on alpha because testing has no result yet (often: the version testing pins has no golden utterances). Alpha changes all the time, so it says so.</td></tr>
+        <tr><td>${renderQualityLabel({ compat: { channels: { alpha: { state: "pass", pipeline_route: { measured: true, inProfile: true, reaches: 5, takes: 0 } } } } })}</td>
+          <td>A pipeline plugin the Klondike profile adds: in the Klondike test it took sentences for the skills they belong to and none from another skill.
+            Measured on alpha for now (<a href="for-maintainers.html#routing-pipelines">why</a>).</td></tr>
       </tbody>
     </table>
     <p class="setup-note">Each card shows one label per tested channel: <strong>testing</strong> (what the OVOS installer installs by default),

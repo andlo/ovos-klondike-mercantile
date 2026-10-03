@@ -135,7 +135,10 @@ def channel_report(doc, channel, rt, find=lambda rid: None, archived=frozenset()
     ptakes = kjob.get("pipelines") or {}
 
     def ptake_of(rid, rec):
-        """What the Klondike job saw this pipeline plugin take, by any of its ids."""
+        """What the Klondike job saw this pipeline plugin take, by any of its ids
+        (None for a job from before #52, which did not count it)."""
+        if "pipelines" not in kjob:
+            return None
         ids = list(dict.fromkeys([rid] + list((rec or {}).get("plugin_ids") or [])))
         found = [ptakes[i] for i in ids if i in ptakes]
         out = {"measured": measured, "reaches": sum(f.get("reaches", 0) for f in found),

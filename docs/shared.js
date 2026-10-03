@@ -338,6 +338,34 @@ function installerNote(skill) {
   return chans.length ? `The OVOS installer still installs it${extra} (${chans.join(", ")}), so it is tested like any other entry.` : "";
 }
 
+// Level 3 for a pipeline plugin (#52), from the channel's Klondike job:
+// the sentences it took and handed to the skill they belong to (reaches)
+// and the ones it took from that skill (takes). measured is false where
+// the channel's ovos-core does not say which plugin matched a sentence;
+// inProfile when the Klondike profile adds its stage (Gold is only given
+// to those: the installer's own stages are what everything is measured on).
+function pipelineRoute(doc, ch, pluginIds) {
+  const k = ((doc && doc.klondike) || {})[ch] || {};
+  const job = k.job || {};
+  // A job from before #52 has no "pipelines": nothing to say yet.
+  if (!job.run_at || !("pipelines" in job)) return null;
+  const ids = asArray(pluginIds);
+  const found = ids.map((i) => (job.pipelines || {})[i]).filter(Boolean);
+  const added = asArray((k.profile || {}).added_stages).map((s) => s.replace(/-(high|medium|low)$/, ""));
+  return {
+    measured: job.attribution === true, channel: ch,
+    reaches: found.reduce((n, f) => n + (f.reaches || 0), 0),
+    takes: found.reduce((n, f) => n + (f.takes || 0), 0),
+    examples: found.flatMap((f) => asArray(f.examples)).slice(0, 5),
+    inProfile: ids.some((i) => added.includes(i)),
+  };
+}
+
+function pipelineGold(c) {
+  const p = c && c.pipeline_route;
+  return !!(p && p.measured && p.inProfile && p.reaches > 0 && p.takes === 0 && ["pass", "warn"].includes(c.state));
+}
+
 function applyCompatResults(skills, doc) {
   const results = (doc && doc.results) || {};
   const installer = (doc && doc.installer) || {};
@@ -352,6 +380,10 @@ function applyCompatResults(skills, doc) {
     const channels = {};
     for (const ch of COMPAT_CHANNELS) {
       if (perChannel[ch]) channels[ch] = compatFromRecord(perChannel[ch]);
+      if (perChannel[ch] && perChannel[ch].kind === "pipeline") {
+        const pr = pipelineRoute(doc, ch, perChannel[ch].plugin_ids);
+        if (pr) channels[ch].pipeline_route = pr;
+      }
       // Level 3 against the Klondike profile (#13), from the channel's
       // Klondike job: a line of its own, never part of the level or badge.
       const kres = ((((doc.klondike || {})[ch] || {}).job || {}).results || {})[skill.id];
@@ -409,6 +441,13 @@ const QUALITY_CHANNELS = ["testing", "alpha"];
 
 function qualityLabel(skill) {
   const channels = (skill.compat && skill.compat.channels) || {};
+  // A pipeline plugin of the Klondike profile (#52): Gold when it reaches
+  // skills and takes from none, where that is measured.
+  for (const ch of QUALITY_CHANNELS) {
+    if (pipelineGold(channels[ch])) {
+      return { kind: "klondike", channel: ch, pipeline: channels[ch].pipeline_route };
+    }
+  }
   for (const ch of QUALITY_CHANNELS) {
     const c = channels[ch];
     if (!c || (c.level || 0) < 3 || !c.golden) continue;
@@ -430,7 +469,9 @@ function renderQualityLabel(skill) {
   const q = qualityLabel(skill);
   if (!q) return "";
   const text = (q.kind === "klondike" ? "⛏ Klondike Gold" : "🎯 Routes") + (q.channel === "testing" ? "" : ` · ${q.channel}`);
-  const tip = [`${q.golden.hit}/${q.golden.counted} of its golden utterances reach it on ${q.channel}`,
+  const tip = q.pipeline ? [`In the Klondike test on ${q.channel}: took ${q.pipeline.reaches} sentences for the skills they belong to, and none from another skill`,
+    q.channel === "alpha" ? "measured on alpha: testing's ovos-core does not say which pipeline plugin matched" : ""].filter(Boolean).join(" · ")
+    : [`${q.golden.hit}/${q.golden.counted} of its golden utterances reach it on ${q.channel}`,
     q.klondike ? `${q.klondike.hit}/${q.klondike.counted} with the Klondike profile loaded` : "",
     q.channel === "alpha" ? "alpha changes all the time; testing has no result yet" : ""].filter(Boolean).join(" · ");
   return `<span class="compat-label quality-label quality-${q.kind}" title="${escapeHtml(tip)}">${escapeHtml(text)}</span>`;

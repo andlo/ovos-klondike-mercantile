@@ -1203,6 +1203,7 @@ img.flag {
 }
 .profile-kind-pipeline { background: #efeafd; color: #5b3fb8; }
 .profile-dim { color: var(--muted); }
+.compat-fail-text { color: #c73e35; font-weight: 600; }
 .profile-new { color: #9aa2ae; }
 .profile-pipe-warn { color: #8a5a00; font-weight: 600; }
 .profile-pipe-warn code { font-weight: 500; }

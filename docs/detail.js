@@ -339,9 +339,55 @@ function collisionList(items, text) {
     `<li><code>${escapeHtml(c.lang || "")}</code> “${escapeHtml(c.utterance || "")}” ${text(c)}</li>`).join("");
 }
 
+// A pipeline plugin's routing in the row head and one line under it, so
+// it is seen without opening the test details (#52).
+function pipelineHead(c, rec) {
+  const p = c && c.pipeline_route;
+  return p && pipelineGold(c)
+    ? qualityChip("klondike", `took ${p.reaches} sentences for their skills and none from another skill, in the Klondike test on ${rec.channel}`) : "";
+}
+
+function pipelineLine(c) {
+  const p = c && c.pipeline_route;
+  if (!p) return "";
+  if (!p.measured) return `<p class="setup-note">Routing in the Klondike test: not measurable on this channel.</p>`;
+  return `<p class="setup-note">Routing in the Klondike test: reaches ${p.reaches} · ${p.takes
+    ? `<span class="compat-fail-text">takes ${p.takes}</span> (the test details say which)` : "takes none"}.</p>`;
+}
+
+// Level 3 for a pipeline plugin (#52): what it did to everyone else's
+// sentences in the channel's Klondike test.
+function renderPipelineKlondike(rec, kmeta) {
+  const p = pipelineRoute(compatDoc, rec.channel, rec.plugin_ids);
+  if (!p) return "";
+  const installer = new Set(asArray((kmeta.profile || {}).pipeline).map((s) => s.replace(/-(high|medium|low)$/, "")));
+  const where = p.inProfile ? "yes, the profile adds its stage to the installer's pipeline"
+    : asArray(rec.plugin_ids).some((i) => installer.has(i)) ? "yes, it is part of the installer's own pipeline"
+    : "no: it is only tested at levels 1 and 2 until it is";
+  const rows = [renderStatRow("In the profile", escapeHtml(where))];
+  if (!p.measured) {
+    rows.push(renderStatRow("Routing", escapeHtml("not measurable on this channel: its ovos-core does not say which pipeline plugin matched a sentence (ovos-core 3, on alpha, does)")));
+  } else {
+    rows.push(renderStatRow("Reaches", escapeHtml(`${p.reaches} sentences, handed to the skill they belong to`)));
+    rows.push(renderStatRow("Takes", p.takes
+      ? `<span class="compat-fail-text">${escapeHtml(`${p.takes} sentences from the skill they belong to`)}</span>`
+      : escapeHtml("none")));
+    const ex = asArray(p.examples).map((x) =>
+      `<li>“${escapeHtml(x.utterance || "")}” (a sentence of <code>${escapeHtml(x.from || "?")}</code>${x.taken_by ? `, given to <code>${escapeHtml(x.taken_by)}</code>` : ""})</li>`).join("");
+    if (ex) rows.push(`<p class="setup-note">Sentences it took:</p><ul class="compat-misses">${ex}</ul>`);
+  }
+  rows.push(renderStatRow("How it is measured", `<a href="for-maintainers.html#routing-pipelines">level 3 for pipeline plugins</a>`));
+  const gold = pipelineGold({ pipeline_route: p, state: rec.status === "pass" ? "pass" : "fail" })
+    ? qualityChip("klondike", `took ${p.reaches} sentences for their skills and none from another skill, on ${rec.channel}`) : "";
+  return `<h4 class="compat-subhead">Routing on a well-equipped install (Klondike test)${gold}</h4>
+    <p class="setup-note">Every sentence of the Klondike test is traced to the pipeline plugin that matched it.</p>
+    <div class="compat-facts">${rows.join("")}</div>`;
+}
+
 function renderKlondike(rec, meta) {
   const kmeta = klondikeMeta(rec.channel);
   if (!kmeta) return "";
+  if (rec.kind === "pipeline") return renderPipelineKlondike(rec, kmeta);
   const job = kmeta.job || {};
   const res = (job.results || {})[rec.id];
   const refused = (job.refused || {})[rec.id];
@@ -451,10 +497,10 @@ function renderWorksWith(skill) {
       <div class="compat-row">
         <div class="compat-row-head">
           <strong>${escapeHtml(ch)}</strong>
-          <span class="compat-label compat-${escapeHtml(state)}">${escapeHtml(text)}</span>
+          <span class="compat-label compat-${escapeHtml(state)}">${escapeHtml(text)}</span>${pipelineHead(c, rec)}
           <span class="compat-meta">${escapeHtml(meta)}</span>
         </div>
-        ${compatSummaryLine(rec)}
+        ${compatSummaryLine(rec)}${pipelineLine(c)}
         ${fold("Test details", compatDetails(rec, channelsMeta[ch] || {}))}
         ${renderPeopleReports(skill, ch)}
       </div>`;
