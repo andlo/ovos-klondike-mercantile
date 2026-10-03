@@ -80,7 +80,8 @@ def clean(rec):
 
 RUN_INTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual",
             "not_loaded", "total", "counted", "asked", "via_ocp")
-MISS_STRS = {"utterance": 200, "expected": 200, "taken_by": 200, "kind": 20, "stage": 80, "lang": 20}
+MISS_STRS = {"utterance": 200, "expected": 200, "taken_by": 200, "kind": 20, "stage": 80, "lang": 20,
+             "pipeline": 80}
 
 
 def _clean_miss(m):
@@ -109,6 +110,10 @@ def _clean_run(r):
     for k, cap in (("misses", 25), ("collisions", 10)):
         if isinstance(r.get(k), list):
             out[k] = [c for c in (_clean_miss(m) for m in r[k][:cap]) if c]
+    if isinstance(r.get("by_pipeline"), dict):
+        out["by_pipeline"] = {
+            str(pid)[:80]: {k: c[k] for k in ("hit", "miss") if isinstance(c.get(k), int) and 0 <= c[k] < 100_000}
+            for pid, c in list(r["by_pipeline"].items())[:30] if isinstance(c, dict)}
     if out["status"] == "ok":
         counted, hit = out.get("counted", 0), out.get("hit")
         if not (counted > 0 and hit is not None) or hit > counted or counted > out.get("total", counted):
@@ -213,7 +218,8 @@ def klondike_boots(out):
              "seconds": b.get("seconds") if isinstance(b.get("seconds"), (int, float)) else None,
              "pipeline_used": _strs(b.get("pipeline"), 30, 80),
              "pipeline_dropped": _strs(b.get("pipeline_dropped"), 30, 80),
-             "baseline_count": len(b["baseline_ids"]) if isinstance(b.get("baseline_ids"), list) else None}
+             "baseline_count": len(b["baseline_ids"]) if isinstance(b.get("baseline_ids"), list) else None,
+             "attribution": b.get("attribution") is True}
             for b in boots[:10]]
 
 
@@ -248,6 +254,27 @@ def publish_profile_files(docs, channel, spec):
     (comp / f"klondike-profile-{channel}.txt").write_text("\n".join(head + list(spec["requirements"])) + "\n")
     (comp / f"klondike-mycroft-{channel}.json").write_text(
         json.dumps({"intents": {"pipeline": list(spec["pipeline"])}}, indent=2) + "\n")
+
+
+def pipeline_takes(results):
+    """Per pipeline plugin, over every row the Klondike job routed (#52):
+    reaches = rows it took that were meant for the skill it gave them to,
+    takes = rows it took from the skill they belong to, with a few of them.
+    Only on a core that attributes matches (ovos-core 3, alpha today)."""
+    out = {}
+    for sid, r in results.items():
+        for run in ("golden",):
+            rr = ((r.get("routing") or {}).get(run) or {})
+            for pid, c in (rr.get("by_pipeline") or {}).items():
+                t = out.setdefault(pid, {"reaches": 0, "takes": 0, "examples": []})
+                t["reaches"] += c.get("hit", 0)
+                t["takes"] += c.get("miss", 0)
+            for m in rr.get("misses") or []:
+                pid = m.get("pipeline")
+                if pid in out and len(out[pid]["examples"]) < 5:
+                    out[pid]["examples"].append({"from": sid, "utterance": m.get("utterance"),
+                                                 "taken_by": m.get("taken_by"), "kind": m.get("kind")})
+    return out
 
 
 def klondike_job_result(kmeta, sdir, spec, docs, channel, now):
@@ -291,6 +318,9 @@ def klondike_job_result(kmeta, sdir, spec, docs, channel, now):
                     takes_from.setdefault(taker, {}).setdefault(run, []).append(
                         {"from": sid, "utterance": m.get("utterance"), "lang": m.get("lang")})
     kmeta["job"] = {"run_at": now, "results": results,
+                    "pipelines": pipeline_takes(results),
+                    "attribution": any(b.get("attribution") is True for b in out.get("boots") or []
+                                       if isinstance(b, dict)),
                     "takes_from": {t: {run: v[:10] for run, v in runs.items()} for t, runs in takes_from.items()},
                     "member_skill_ids": sorted(member_ids),
                     "not_in_store": _strs(out.get("not_in_store"), 80, 200),

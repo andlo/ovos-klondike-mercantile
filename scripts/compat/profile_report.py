@@ -66,7 +66,7 @@ def stage_plugin(stage):
     return STAGE_SUFFIX.sub("", stage)
 
 
-def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False):
+def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False, ptake=None):
     """One entry of a profile on one channel."""
     out = {"runtime_id": runtime_id, "store_id": store_id, "kind": kind}
     if archived:
@@ -87,6 +87,13 @@ def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False):
     k = routing_counts(kres, "golden") if kres else None
     out["klondike"] = {"hit": k[0], "counted": k[1]} if k else None
     out["gold"] = bool(golden and k and (out["level"] or 0) >= 3 and k[0] / k[1] >= LEVEL3_RATIO)
+    if kind == "pipeline" and ptake is not None:
+        # Level 3 for a pipeline plugin (#52), from the Klondike job: the
+        # rows it took for the skill they belong to, and the rows it took
+        # from their skill. Only where the core attributes matches.
+        out["pipeline_route"] = ptake
+        out["gold"] = bool(ptake.get("measured") and ptake.get("reaches", 0) > 0 and ptake.get("takes", 0) == 0
+                           and out["state"] in ("pass", "warn"))
     if note:
         out["note"] = note
     return out
@@ -123,6 +130,20 @@ def channel_report(doc, channel, rt, find=lambda rid: None, archived=frozenset()
 
     added = set(prof.get("added_stages") or [])
     inst = (doc.get("installer") or {}).get(channel) or {}
+    kjob = kl.get("job") or {}
+    measured = kjob.get("attribution") is True
+    ptakes = kjob.get("pipelines") or {}
+
+    def ptake_of(rid, rec):
+        """What the Klondike job saw this pipeline plugin take, by any of its ids."""
+        ids = list(dict.fromkeys([rid] + list((rec or {}).get("plugin_ids") or [])))
+        found = [ptakes[i] for i in ids if i in ptakes]
+        out = {"measured": measured, "reaches": sum(f.get("reaches", 0) for f in found),
+               "takes": sum(f.get("takes", 0) for f in found)}
+        ex = [e for f in found for e in f.get("examples") or []][:5]
+        if ex:
+            out["examples"] = ex
+        return out
     seen = set()
 
     def collect(ids, kind, notes=None):
@@ -139,7 +160,7 @@ def channel_report(doc, channel, rt, find=lambda rid: None, archived=frozenset()
             elif rid == sid and (inst.get(sid) or {}).get("package"):
                 rid = inst[sid]["package"]  # not tested yet: the pip name it is installed as
             rows.append(row(rid, kind, sid, rec, job.get(sid) if sid else None, (notes or {}).get(key),
-                            archived=sid in archived))
+                            archived=sid in archived, ptake=ptake_of(rid, rec) if kind == "pipeline" else None))
         return sorted(rows, key=sort_key)
 
     # What the installer installs on this channel (#54), as plan.py read it

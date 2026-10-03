@@ -67,9 +67,23 @@
     return `<span class="compat-label compat-${escapeHtml(cls)}" title="${escapeHtml(tip)}">${STATE_MARK[e.state] ? STATE_MARK[e.state] + " " : ""}${escapeHtml(e.label || e.state)}</span>`;
   }
 
+  // Level 3 for a pipeline plugin (#52): what it took in the Klondike job.
+  function pipelineNote(e) {
+    const p = e.pipeline_route;
+    if (!p.measured) {
+      return `<div class="profile-sub" title="This channel's ovos-core does not say which pipeline plugin matched; alpha does">routing: not measurable here</div>`;
+    }
+    if (!p.reaches && !p.takes) return `<div class="profile-sub">routing: took no sentences</div>`;
+    const tip = asArray(p.examples).map((x) => `"${x.utterance}" (from ${x.from}${x.taken_by ? `, to ${x.taken_by}` : ""})`).join("\n");
+    const takes = p.takes ? `<span class="profile-bad" title="${escapeHtml(tip)}">takes ${p.takes}</span>` : "takes 0";
+    const gold = e.gold ? ` <span class="compat-label quality-label quality-klondike" title="reaches its skills and takes nothing from others">⛏ Gold</span>` : "";
+    return `${gold}<div class="profile-sub">routing: reaches ${p.reaches} · ${takes}</div>`;
+  }
+
   // The Klondike routing as a quiet addition to the result, not a column:
   // the ⛏ Gold chip when it earned it, else a muted "with Klondike" count.
   function klondikeNote(e) {
+    if (e.pipeline_route) return pipelineNote(e);
     if (e.gold) {
       return ` <span class="compat-label quality-label quality-klondike" title="level 3, and ${e.klondike.hit}/${e.klondike.counted} still reach it with the Klondike profile loaded">⛏ Gold</span>`;
     }
@@ -148,7 +162,10 @@
     else text = e.golden ? `✓ ${e.golden.hit}/${e.golden.counted}` : "✓ loads";
     const cls = e.state === "not_in_store" ? "untested" : e.state;
     const arrow = compareArrow(e, ref);
-    const k = e.gold ? `<div class="profile-sub" title="⛏ Klondike Gold: ${e.klondike.hit}/${e.klondike.counted} with the Klondike profile loaded">⛏ Gold</div>`
+    const pr = e.pipeline_route;
+    const k = pr && pr.measured && (pr.reaches || pr.takes)
+      ? `<div class="profile-sub">${e.gold ? "⛏ Gold · " : ""}reaches ${pr.reaches} · ${pr.takes ? `<span class="profile-bad">takes ${pr.takes}</span>` : "takes 0"}</div>`
+      : e.gold && e.klondike ? `<div class="profile-sub" title="⛏ Klondike Gold: ${e.klondike.hit}/${e.klondike.counted} with the Klondike profile loaded">⛏ Gold</div>`
       : e.klondike ? `<div class="profile-sub" title="with the Klondike profile loaded">with Klondike: ${e.klondike.hit}/${e.klondike.counted}</div>` : "";
     return `<td><span class="compat-label compat-${escapeHtml(cls)}" title="${escapeHtml(e.label || e.state)}${e.version ? " · v" + escapeHtml(e.version) : ""}">${escapeHtml(text)}</span>${arrow}${k}</td>`;
   }
