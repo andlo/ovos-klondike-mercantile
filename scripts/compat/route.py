@@ -90,11 +90,8 @@ from probe import boot, modern_driver, same_language  # noqa: E402
 _JUDGE_DIR = os.environ.get("ROUTING_JUDGE_DIR")
 if _JUDGE_DIR and _JUDGE_DIR not in sys.path:
     sys.path.append(_JUDGE_DIR)
-from ovos_routing_judge import Claim as JudgeClaim, judge as judge_row  # noqa: E402
+from ovos_routing_judge import Claim as JudgeClaim, intent_matches, judge as judge_row  # noqa: E402
 from ovos_routing_judge import __version__ as JUDGE_VERSION  # noqa: E402
-# Until the shared judge has been compared on a full run, the old claimant
-# below judges every row too and differences are written out (judge_diff).
-MAX_JUDGE_DIFFS = 200
 
 EOF_TYPES = {"ovos.utterance.handled", "mycroft.skill.handler.complete",
              "complete_intent_failure", "ovos.intent.unmatched"}
@@ -397,101 +394,25 @@ def end_speech(croft, recs, session_id, done):
     return len(speaks)
 
 
-# "<prefix><provider skill_id>": the topic a pipeline plugin sends to the
-# provider it chose (ovos-common-reading-pipeline-plugin's fetch request).
-PROVIDER_PICKED = ("ovos.common_reading.fetch_content.",)
-
-# OCP (the common play pipeline) takes "play ..." / "start ..." sentences
-# before padatious. A skill that answers OCP's search never fires an intent:
-# OCP picks the best result and plays it ("ovos.common_play.play"), or,
-# without a player in the core under test, only lists the results with the
-# best one first ("ovos.common_play.search.populate", key "playlist"). The skill_id of that
-# first track is the skill OCP chose. A golden row says it goes through OCP
-# with `"intent_type": "ocp"` (see expected_fired).
-OCP_PICKED = ("ovos.common_play.play", "ovos.common_play.search.populate")
+# Who took a sentence is ovos-routing-judge's call (issue #48): OCP picks,
+# pipeline plugins' providers, common query and fallbacks included. These
+# wrappers keep the names the stop check and the tests use.
 OCP_FIRED = "ocp:play"
-OCP_ROUTE = "ocp"
 
 
-def ocp_pick(msg):
-    """skill_id of the track OCP picked in a play/populate message, or None."""
-    data = msg.data or {}
-    tracks = data.get("tracks") or data.get("playlist") or []
-    first = tracks[0] if tracks else None
-    if isinstance(first, dict):
-        return first.get("skill_id")
-    return getattr(first, "skill_id", None)
-
-
-def claimant(recs, known_ids):
-    """(skill_id or None, fired topics of that skill)."""
-    types = {m.msg_type for m in recs}
-    if "ovos.intent.unmatched" in types:
-        return None, []
-    who = None
-    for m in recs:
-        if ":" in m.msg_type and m.msg_type.split(":", 1)[0] in known_ids:
-            who = m.msg_type.split(":", 1)[0]
-            break
-    if who is None:
-        # A provider for a pipeline plugin never fires an intent of its own:
-        # the plugin picks it and asks it for the content (the plugin then
-        # speaks under its own id). Being asked is taking the utterance.
-        for m in recs:
-            for prefix in PROVIDER_PICKED:
-                if m.msg_type.startswith(prefix) and m.msg_type[len(prefix):] in known_ids:
-                    who = m.msg_type[len(prefix):]
-                    break
-            if who:
-                break
-    via_ocp = False
-    if who is None:
-        for name in OCP_PICKED:
-            sid = next((ocp_pick(m) for m in recs if m.msg_type == name and ocp_pick(m)), None)
-            if sid in known_ids:
-                who, via_ocp = sid, True
-                break
-    if who is None:
-        for m in recs:
-            sid = (m.context or {}).get("skill_id")
-            # ovos-core 3 (alpha) speaks on "ovos.utterance.speak"
-            if sid in known_ids and m.msg_type in ("speak", "ovos.utterance.speak"):
-                who = sid
-                break
-    if who is None:
-        return None, []
-    fired = [m.msg_type for m in recs if m.msg_type.startswith(f"{who}:")]
-    fired += [str(m.data.get("name")) for m in recs if m.msg_type == "mycroft.skill.handler.start"
-              and str(m.data.get("name", "")).startswith(f"{who}:")]
-    if via_ocp:
-        fired.append(OCP_FIRED)
-    return who, fired
-
-
-def legacy_kind(own, who, fired, expected, intent_type, hung):
-    """The verdict the old claimant gave (before ovos-routing-judge), for the
-    judge_diff comparison only."""
-    if hung and who is None:
-        return "hang"
-    if who == own:
-        return "hit" if expected_fired(own, expected, fired, intent_type) else "wrong_intent"
-    return "other" if who is not None else "unhandled"
+def claimant(recs, known_ids, session_id=None):
+    """(skill_id or None, what fired for that skill) - the shared judge's taker."""
+    claim = JudgeClaim.from_messages(recs, known_ids, session_id=session_id)
+    who = claim.taker(known_ids)
+    return who, (claim.fired(who) if who else [])
 
 
 def expected_fired(own, expected, fired, intent_type=None):
-    """Did the row's own skill take it the way the row says?
-
-    A row with `"intent_type": "ocp"` (a provenance field `ovoscope golden`
-    tolerates) must go through OCP's search; its intent_label still names
-    the intent the same sentence reaches where OCP does not take it. A row
-    without it is also met when OCP handed the sentence to the skill: the
-    skill gets it either way, and golden files written before a skill
-    answered OCP name only its intent."""
-    if str(intent_type or "").lower() == OCP_ROUTE:
+    """Did the fired topics meet the row? The shared judge's rule."""
+    if str(intent_type or "").lower() == "ocp":
         return OCP_FIRED in fired
-    if not expected:
-        return True
-    return OCP_FIRED in fired or any(f in label_forms(own, expected) for f in fired)
+    intents = [f for f in fired if f != OCP_FIRED]
+    return not expected or OCP_FIRED in fired or not intents or intent_matches(expected, intents, own)
 
 
 def stage_of(recs):
@@ -506,18 +427,6 @@ def stage_of(recs):
         if m.msg_type not in ("recognizer_loop:utterance",) and not m.msg_type.startswith("mycroft.skills."):
             return f"last message: {m.msg_type}"[:80]
     return None
-
-
-def _bare(name):
-    return name[:-len(".intent")] if name.endswith(".intent") else name
-
-
-def label_forms(skill_id, expected):
-    """Both spellings of the expected intent topic. ovos-workshop 1.x (stable)
-    dispatches padatious intents as `skill:Name.intent`, current versions as
-    `skill:Name`; a row may name it either way."""
-    name = _bare(expected.split(":", 1)[1] if ":" in expected else expected)
-    return {f"{skill_id}:{name}", f"{skill_id}:{name}.intent"}
 
 
 def boot_route(ids, lang, pipeline, max_wait):
@@ -672,18 +581,6 @@ def main():
                                 expected=expected, intent_type=row.get("intent_type"),
                                 hung=hung, known_ids=known)
             who, fired = verdict.taker, list(verdict.fired)
-            # Shadow: the old claimant's verdict, to compare (issue #48).
-            old_who, old_fired = claimant(recs, known)
-            old_kind = legacy_kind(own, old_who, old_fired, expected, row.get("intent_type"), hung)
-            new_kind = {"other": "other", "captured": "wrong_intent"}.get(verdict.kind, verdict.kind)
-            if old_kind != new_kind or (old_kind == "other" and old_who != who):
-                diffs = out.setdefault("judge_diff", [])
-                out["judge_diff_count"] = out.get("judge_diff_count", 0) + 1
-                if len(diffs) < MAX_JUDGE_DIFFS:
-                    diffs.append({"id": item["id"], "run": run, "utterance": row["utterance"][:200],
-                                  "expected": expected, "old": old_kind, "old_taker": old_who,
-                                  "new": verdict.kind, "new_taker": who, "via": verdict.via,
-                                  "detail": verdict.detail[:200]})
             entry = {"utterance": row["utterance"][:200], "expected": expected, "taken_by": who}
             if asked is not None:
                 # Whoever asked handled the sentence: the verdict below is
