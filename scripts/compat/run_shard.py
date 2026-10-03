@@ -89,6 +89,52 @@ def excerpt(text, anchor_patterns=("Traceback (most recent call last)", "ERROR",
     return out[-MAX_EXCERPT:]
 
 
+# The channel's own OVOS stack, as setup_channel.sh installed it into the
+# base venv, is locked to those exact versions in every later install: a
+# package that needs an older ovos-core or ovos-workshop must fail as
+# "does not install next to the channel's versions", not quietly downgrade
+# the core it is then tested on (ovos-skill-pokepedia 0.1.4 needs
+# ovos-workshop<9 and took the alpha Klondike profile from ovos-core 3.7.2a2
+# to 2.2.4a1). Same list as STACK_PACKAGES in plan.py, plus everything else
+# named ovos-core/ovos-workshop alike.
+LOCKED_STACK = ("ovos-core", "ovos-workshop", "ovos-bus-client", "ovos-plugin-manager", "ovos-config",
+                "ovos-utils", "ovos-padatious", "padacioso", "ovos-adapt-parser", "ovos-m2v-pipeline",
+                "ovos-common-query-pipeline-plugin", "ovos-ocp-pipeline-plugin", "ovos-persona",
+                "ovoscope")
+
+
+def write_stack_lock(base_python, path):
+    """Pin the base venv's LOCKED_STACK versions in a constraints file;
+    returns {normalized name: version} of what was locked."""
+    listed = subprocess.run([base_python, "-c",
+                             "import json; from importlib.metadata import distributions as d; "
+                             "print(json.dumps({x.metadata['Name']: x.version for x in d()}))"],
+                            capture_output=True, text=True)
+    try:
+        installed = json.loads(listed.stdout or "{}")
+    except ValueError:
+        installed = {}
+    locked = {normalize(n): v for n, v in installed.items() if normalize(n) in LOCKED_STACK}
+    Path(path).write_text("".join(f"{n}=={v}\n" for n, v in sorted(locked.items())))
+    return locked
+
+
+def pip_install_cmd(py, args, own=()):
+    """pip install under the channel constraints and the stack lock. A
+    package under test that is itself part of the stack (a pipeline plugin)
+    is left out of the lock: its own resolved version is what is tested."""
+    cmd = [py, "-m", "pip", "install", "--disable-pip-version-check", "-c", args.constraints]
+    if getattr(args, "stack_lock", None):
+        own = {normalize(o) for o in own}
+        if own & set(args.stack_locked):
+            lock = Path(args.stack_lock).with_name("stack-lock-" + "-".join(sorted(own))[:60] + ".txt")
+            lock.write_text("".join(f"{n}=={v}\n" for n, v in sorted(args.stack_locked.items()) if n not in own))
+            cmd += ["-c", str(lock)]
+        else:
+            cmd += ["-c", args.stack_lock]
+    return cmd
+
+
 def pip_reason(output):
     """One line saying WHY pip gave up, e.g. "neon-skill-about 1.0.4 depends
     on ovos-workshop~=0.0; channel pins ovos-workshop<3.5.0,>=3.4.0"."""
@@ -165,8 +211,7 @@ def test_item(item, args, workroot):
         # release, still under the channel constraints.
         spec = item["package"] if item.get("channel_pinned") or not item.get("version") \
             else f"{item['package']}=={item['version']}"
-        rc, out = run([py, "-m", "pip", "install", "--disable-pip-version-check",
-                       "-c", args.constraints, spec],
+        rc, out = run(pip_install_cmd(py, args, [item["package"]]) + [spec],
                       args.install_timeout, Path(workroot) / "install.log")
         if rc != 0:
             if rc is None:
@@ -325,7 +370,7 @@ def build_route_venv(args, workroot, candidates, requirements, name="route-venv"
         shutil.rmtree(venv)
     shutil.copytree(args.base_venv, venv, symlinks=True)
     py = str(venv / "bin" / "python")
-    base_cmd = [py, "-m", "pip", "install", "--disable-pip-version-check", "-c", args.constraints]
+    base_cmd = pip_install_cmd(py, args)
     rc, out = run(base_cmd + list(requirements), args.install_timeout, Path(workroot) / f"{name}-baseline.log")
     if rc != 0:
         raise RuntimeError(f"{label} did not install under the channel constraints: "
@@ -525,11 +570,11 @@ def normalize(name):
 def install_items(py, args, workroot, candidates, label):
     """Install the tested skills into a venv that already has a baseline.
     Returns {id: reason} for those that would not install next to it."""
-    base_cmd = [py, "-m", "pip", "install", "--disable-pip-version-check", "-c", args.constraints]
     refused = {}
     for item, rec in candidates:
         spec = item["package"] if item.get("channel_pinned") else f"{item['package']}=={rec['version_tested']}"
-        rc, out = run(base_cmd + [spec], args.install_timeout, Path(workroot) / "klondike-install.log")
+        rc, out = run(pip_install_cmd(py, args, [item["package"]]) + [spec], args.install_timeout,
+                      Path(workroot) / "klondike-install.log")
         if rc != 0:
             refused[item["id"]] = (f"does not install next to {label}: "
                                    + (pip_reason(out) if rc is not None else "timed out"))
@@ -750,6 +795,9 @@ def main():
     items = json.loads(Path(args.items).read_text())
     results = []
     with tempfile.TemporaryDirectory(prefix="compat-") as workroot:
+        args.stack_lock = str(Path(workroot) / "stack-lock.txt")
+        args.stack_locked = write_stack_lock(str(Path(args.base_venv) / "bin" / "python"), args.stack_lock)
+        print("stack lock: " + ", ".join(f"{n}=={v}" for n, v in sorted(args.stack_locked.items())), flush=True)
         # Canary: an empty MiniCroft on the untouched base venv. If the test
         # driver itself cannot boot on this channel, no package is to blame,
         # so every item becomes "error" (retried, never published as a ✗).
