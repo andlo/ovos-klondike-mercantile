@@ -472,6 +472,27 @@ def stage_of(recs):
     return None
 
 
+def waiting_on(recs):
+    """Who a hung row was still waiting for (issue #59): common-query
+    providers that said they were searching and never said they were done,
+    and fallback skills that were asked and never answered. Sorted ids, at
+    most 5."""
+    searching = {}
+    for m in recs:
+        data = m.data or {}
+        if m.msg_type == "question:query.response" and data.get("skill_id"):
+            searching[data["skill_id"]] = bool(data.get("searching"))
+    asked, answered = set(), set()
+    for m in recs:
+        t = m.msg_type
+        if t.startswith("ovos.skills.fallback.") and t.endswith(".request"):
+            asked.add(t[len("ovos.skills.fallback."):-len(".request")])
+        elif t.startswith("ovos.skills.fallback.") and t.endswith(".response"):
+            answered.add(t[len("ovos.skills.fallback."):-len(".response")])
+    pending = {sid for sid, busy in searching.items() if busy} | (asked - answered)
+    return sorted(pending)[:5]
+
+
 def boot_route(ids, lang, pipeline, max_wait):
     """(croft, driver, pipeline actually on the row sessions, dropped stages)."""
     if modern_driver():
@@ -548,7 +569,8 @@ def main():
     args = ap.parse_args()
 
     man = json.load(open(args.manifest))
-    out = {"lang": args.lang, "status": "running", "results": {}, "judge": JUDGE_VERSION}
+    out = {"lang": args.lang, "status": "running", "results": {}, "judge": JUDGE_VERSION,
+           "timeout": args.timeout}
 
     row_times = []
 
@@ -652,7 +674,8 @@ def main():
                 # sentence got past every intent stage to one that blocks.
                 res["hang"] += 1
                 if len(res["misses"]) < MAX_MISSES:
-                    res["misses"].append({**entry, "kind": "hang", "stage": stage_of(recs)})
+                    res["misses"].append({**entry, "kind": "hang", "stage": stage_of(recs),
+                                          "waiting_on": waiting_on(recs)})
                 continue
             if verdict.kind in ("hit", "wrong_intent", "captured"):
                 if verdict.kind != "hit":

@@ -36,6 +36,10 @@ on:
         description: "Re-test everything"
         type: boolean
         default: false
+      route_timeout:
+        description: "Seconds per level 3 utterance (empty = 15; issue #59 tries longer for common query)"
+        required: false
+        default: ""
 
 concurrency:
   group: channel-compat
@@ -144,12 +148,14 @@ jobs:
           ITEMS: ${{ toJSON(matrix.items) }}
           BASELINE: ${{ matrix.baseline }}
           KLONDIKE: ${{ matrix.klondike }}
+          ROUTE_TIMEOUT: ${{ inputs.route_timeout }}
         run: |
           printf '%s' "$ITEMS" > items.json
           python3 self/scripts/compat/run_shard.py --channel "${{ matrix.channel }}" \
             --constraints "out/stack/constraints-${{ matrix.channel }}.txt" \
             --base-venv "$RUNNER_TEMP/base" --items items.json --out out/results.json \
             --baseline "$BASELINE" --klondike "$KLONDIKE" --generator "$RUNNER_TEMP/gen/bin/ovoscope" \
+            --route-timeout "${ROUTE_TIMEOUT:-15}" \
             --deadline-minutes 300
       - name: Collect
         if: always()
