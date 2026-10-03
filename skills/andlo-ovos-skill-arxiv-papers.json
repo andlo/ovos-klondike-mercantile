@@ -144,14 +144,14 @@
         }
       },
       "alpha": {
-        "label": "\u2713 2/2 golden",
-        "state": "pass",
-        "level": 3,
+        "label": "\u2713 loads \u00b7 0/2 golden",
+        "state": "warn",
+        "level": 2,
         "version_tested": "0.1.7",
-        "tested_at": "2026-10-02T19:25:58+00:00",
+        "tested_at": "2026-10-03T08:44:55+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 2,
+          "hit": 0,
           "counted": 2
         }
       }

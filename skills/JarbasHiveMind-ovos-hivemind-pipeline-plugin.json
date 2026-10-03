@@ -13,6 +13,8 @@
   ],
   "category": "Other",
   "icon": null,
+  "icon_source": null,
+  "icon_color": null,
   "source": "https://github.com/JarbasHiveMind/ovos-hivemind-pipeline-plugin",
   "package_name": "ovos-hivemind-pipeline-plugin",
   "pypi_version": "0.0.3",
@@ -80,11 +82,11 @@
         "channel_pinned": false
       },
       "alpha": {
-        "label": "\u2717 doesn't load",
-        "state": "fail",
+        "label": "needs config",
+        "state": "unsupported",
         "level": 1,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-02T10:01:56+00:00",
+        "tested_at": "2026-10-03T08:35:49+00:00",
         "channel_pinned": false
       }
     }

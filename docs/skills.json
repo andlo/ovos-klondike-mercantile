@@ -147,7 +147,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-02T19:15:13+00:00",
+          "tested_at": "2026-10-03T08:33:41+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 0,
@@ -259,15 +259,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 172/184 golden",
+          "label": "\u2713 190/199 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "0.12.33a1",
-          "tested_at": "2026-10-02T19:15:21+00:00",
+          "tested_at": "2026-10-03T08:33:48+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 172,
-            "counted": 184
+            "hit": 190,
+            "counted": 199
           }
         }
       }
@@ -412,15 +412,16 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden",
+          "label": "\u2713 4/4 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
+          "stop": "stops",
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-02T19:25:30+00:00",
+          "tested_at": "2026-10-03T08:44:30+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
-            "counted": 2
+            "hit": 4,
+            "counted": 4
           }
         }
       }
@@ -514,7 +515,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.1.9",
-          "tested_at": "2026-10-02T19:25:41+00:00",
+          "tested_at": "2026-10-03T08:44:41+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -665,15 +666,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 0/16 golden",
+          "label": "\u2713 loads \u00b7 0/22 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.13.5a4",
-          "tested_at": "2026-10-02T19:25:49+00:00",
+          "tested_at": "2026-10-03T08:44:48+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 0,
-            "counted": 16
+            "counted": 22
           }
         }
       }
@@ -870,14 +871,14 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-02T19:25:58+00:00",
+          "tested_at": "2026-10-03T08:44:55+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
+            "hit": 0,
             "counted": 2
           }
         }
@@ -996,7 +997,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.2a6",
-          "tested_at": "2026-10-02T19:26:06+00:00",
+          "tested_at": "2026-10-03T08:45:02+00:00",
           "channel_pinned": true
         }
       }
@@ -1086,15 +1087,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 24/25 golden",
+          "label": "\u2713 31/33 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "0.7.2a5",
-          "tested_at": "2026-10-02T19:26:51+00:00",
+          "tested_at": "2026-10-03T08:45:46+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 24,
-            "counted": 25
+            "hit": 31,
+            "counted": 33
           }
         }
       }
@@ -1388,7 +1389,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-02T19:20:51+00:00",
+          "tested_at": "2026-10-03T08:33:35+00:00",
           "channel_pinned": false
         }
       }
@@ -1492,7 +1493,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-02T19:20:57+00:00",
+          "tested_at": "2026-10-03T08:33:44+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 25,
@@ -1592,7 +1593,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "1.4.0a1",
-          "tested_at": "2026-10-02T19:21:12+00:00",
+          "tested_at": "2026-10-03T08:34:01+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 18,
@@ -1794,7 +1795,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.2a1",
-          "tested_at": "2026-10-02T19:22:03+00:00",
+          "tested_at": "2026-10-03T08:34:54+00:00",
           "channel_pinned": true
         }
       }
@@ -2026,7 +2027,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.2",
-          "tested_at": "2026-10-02T12:14:51+00:00",
+          "tested_at": "2026-10-03T08:35:45+00:00",
           "channel_pinned": false
         }
       }
@@ -2122,7 +2123,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.8.2a1",
-          "tested_at": "2026-10-02T19:22:52+00:00",
+          "tested_at": "2026-10-03T08:35:53+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 21,
@@ -2226,7 +2227,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-02T19:23:40+00:00",
+          "tested_at": "2026-10-03T08:36:43+00:00",
           "channel_pinned": false
         }
       }
@@ -2422,14 +2423,14 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 145/145 golden",
+          "label": "\u2713 144/145 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "1.11.4a1",
-          "tested_at": "2026-10-02T19:23:46+00:00",
+          "tested_at": "2026-10-03T08:36:51+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 145,
+            "hit": 144,
             "counted": 145
           }
         }
@@ -2535,7 +2536,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.9.0a3",
-          "tested_at": "2026-10-02T19:26:29+00:00",
+          "tested_at": "2026-10-03T08:33:31+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 20,
@@ -2627,15 +2628,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 11/16 golden",
+          "label": "\u2713 loads \u00b7 15/22 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.7.0a3",
-          "tested_at": "2026-10-02T19:21:25+00:00",
+          "tested_at": "2026-10-03T08:34:26+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 11,
-            "counted": 16
+            "hit": 15,
+            "counted": 22
           }
         }
       }
@@ -2971,15 +2972,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 11/11 golden",
+          "label": "\u2713 22/22 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "1.0.1",
-          "tested_at": "2026-10-02T19:22:55+00:00",
+          "tested_at": "2026-10-03T08:35:50+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 11,
-            "counted": 11
+            "hit": 22,
+            "counted": 22
           }
         }
       }
@@ -3077,7 +3078,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.9.1a1",
-          "tested_at": "2026-10-02T09:57:43+00:00",
+          "tested_at": "2026-10-03T08:36:16+00:00",
           "channel_pinned": true
         }
       }
@@ -3228,15 +3229,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 14/14 golden",
+          "label": "\u2713 28/28 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-02T19:23:21+00:00",
+          "tested_at": "2026-10-03T08:51:25+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 14,
-            "counted": 14
+            "hit": 28,
+            "counted": 28
           }
         }
       }
@@ -3376,16 +3377,16 @@
           }
         },
         "alpha": {
-          "label": "\u2713 9/9 golden \u00b7 stops",
+          "label": "\u2713 18/18 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.6",
-          "tested_at": "2026-10-02T19:23:43+00:00",
+          "tested_at": "2026-10-03T08:51:46+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 9,
-            "counted": 9
+            "hit": 18,
+            "counted": 18
           }
         }
       }
@@ -3525,15 +3526,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 13/13 golden",
+          "label": "\u2713 25/25 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-02T19:24:03+00:00",
+          "tested_at": "2026-10-03T08:52:06+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 13,
-            "counted": 13
+            "hit": 25,
+            "counted": 25
           }
         }
       }
@@ -3674,16 +3675,16 @@
           }
         },
         "alpha": {
-          "label": "\u2713 12/12 golden \u00b7 stops",
+          "label": "\u2713 24/24 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-02T19:24:23+00:00",
+          "tested_at": "2026-10-03T08:52:26+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 12,
-            "counted": 12
+            "hit": 24,
+            "counted": 24
           }
         }
       }
@@ -3917,16 +3918,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 3/3 golden \u00b7 stops",
+          "label": "\u2713 5/5 golden",
           "state": "pass",
           "level": 3,
-          "stop": "stops",
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-02T19:24:43+00:00",
+          "tested_at": "2026-10-03T08:33:32+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 3,
-            "counted": 3
+            "hit": 5,
+            "counted": 5
           }
         }
       }
@@ -4200,6 +4200,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-audio-binary-protocol",
     "package_name": "hivemind-audio-binary-protocol",
     "pypi_version": "2.1.5",
@@ -4211,7 +4213,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -4260,6 +4262,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/HiveMind-cli",
     "package_name": "HiveMind-cli",
     "pypi_version": "0.4.1",
@@ -4271,7 +4275,7 @@
     "type_group": "Tool",
     "stars": 7,
     "forks": 7,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -4307,6 +4311,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/HiveMind-community-docs",
     "package_name": null,
     "pypi_version": null,
@@ -4318,7 +4324,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -4331,7 +4337,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-10-13T23:01:38Z",
-    "last_updated": "2026-09-25T19:21:11Z",
+    "last_updated": "2026-10-01T09:50:22Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -4352,6 +4358,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/HiveMind-core",
     "package_name": "hivemind-core",
     "pypi_version": "4.0.0",
@@ -4363,7 +4371,7 @@
     "type_group": "Tool",
     "stars": 16,
     "forks": 1,
-    "open_issues": 10,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -4403,6 +4411,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-docker",
     "package_name": null,
     "pypi_version": null,
@@ -4414,7 +4424,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 8,
+    "open_issues": 9,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -4436,7 +4446,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-09-10T23:05:41Z",
-    "last_updated": "2026-09-29T12:23:53Z",
+    "last_updated": "2026-10-03T04:10:57Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -4453,7 +4463,9 @@
       "voice-assistant"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/JarbasHiveMind/hivemind-homeassistant/dev/custom_components/hivemind/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-homeassistant",
     "package_name": null,
     "pypi_version": null,
@@ -4506,6 +4518,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-http-protocol",
     "package_name": "hivemind-http-protocol",
     "pypi_version": "0.0.1",
@@ -4558,6 +4572,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/HiveMind-matrix-bridge",
     "package_name": "HiveMind-matrix-bridge",
     "pypi_version": "0.1.1",
@@ -4611,6 +4627,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-media-player",
     "package_name": "hivemind-player-protocol",
     "pypi_version": "0.1.2a2",
@@ -4670,6 +4688,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-mic-satellite",
     "package_name": "hivemind-mic-satellite",
     "pypi_version": "0.7.1",
@@ -4722,6 +4742,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-mqtt-protocol",
     "package_name": "hivemind-mqtt-protocol",
     "pypi_version": "0.2.5a2",
@@ -4733,7 +4755,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 6,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -4775,6 +4797,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-ovos-agent-plugin",
     "package_name": "hivemind-ovos-agent-plugin",
     "pypi_version": "0.1.0",
@@ -4785,8 +4809,8 @@
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
-    "forks": 1,
-    "open_issues": 3,
+    "forks": 2,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -4825,6 +4849,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-persona-agent-plugin",
     "package_name": "hivemind-persona-agent-plugin",
     "pypi_version": "0.0.1",
@@ -4880,6 +4906,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-plugin-manager",
     "package_name": "hivemind-plugin-manager",
     "pypi_version": "0.5.0",
@@ -4926,6 +4954,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-test-harness",
     "package_name": "hivemind-test-harness",
     "pypi_version": null,
@@ -4936,8 +4966,8 @@
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
-    "forks": 1,
-    "open_issues": 6,
+    "forks": 0,
+    "open_issues": 7,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -4955,9 +4985,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-14T14:57:24Z",
-    "last_updated": "2026-09-29T02:08:31Z",
+    "last_updated": "2026-10-01T15:07:44Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-HiveMind-voice-relay",
@@ -4978,6 +5008,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/HiveMind-voice-relay",
     "package_name": "HiveMind-voice-relay",
     "pypi_version": "1.0.1",
@@ -4989,7 +5021,7 @@
     "type_group": "Tool",
     "stars": 1,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -5042,6 +5074,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/HiveMind-voice-sat",
     "package_name": "HiveMind-voice-sat",
     "pypi_version": "2.0.1",
@@ -5051,7 +5085,7 @@
     "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
-    "stars": 24,
+    "stars": 23,
     "forks": 13,
     "open_issues": 4,
     "on_pypi": true,
@@ -5099,7 +5133,9 @@
       "websocket"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://raw.githubusercontent.com/JarbasHiveMind/hivemind-websocket-client/dev/logo.png",
+    "icon_source": "repo",
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-websocket-client",
     "package_name": "hivemind_bus_client",
     "pypi_version": "0.4.4",
@@ -5110,8 +5146,8 @@
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
-    "forks": 8,
-    "open_issues": 7,
+    "forks": 7,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -5161,6 +5197,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-websocket-protocol",
     "package_name": "hivemind-websocket-protocol",
     "pypi_version": "0.0.3",
@@ -5211,6 +5249,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivescope",
     "package_name": "hivescope",
     "pypi_version": "0.1.0",
@@ -5374,7 +5414,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T19:24:52+00:00",
+          "tested_at": "2026-10-03T08:33:42+00:00",
           "channel_pinned": false
         }
       }
@@ -5503,15 +5543,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden",
+          "label": "\u2713 4/4 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.5",
-          "tested_at": "2026-10-02T19:23:14+00:00",
+          "tested_at": "2026-10-03T08:34:04+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
-            "counted": 2
+            "hit": 4,
+            "counted": 4
           }
         }
       }
@@ -5870,15 +5910,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 9/9 golden",
-          "state": "pass",
+          "label": "\u2713 17/18 golden",
+          "state": "warn",
           "level": 3,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-02T19:23:22+00:00",
+          "tested_at": "2026-10-03T08:34:13+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 9,
-            "counted": 9
+            "hit": 17,
+            "counted": 18
           }
         }
       }
@@ -6045,15 +6085,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 34/34 golden",
+          "label": "\u2713 45/45 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.7.1a1",
-          "tested_at": "2026-10-02T19:23:46+00:00",
+          "tested_at": "2026-10-03T08:34:37+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 34,
-            "counted": 34
+            "hit": 45,
+            "counted": 45
           }
         }
       }
@@ -6148,15 +6188,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 20/20 golden",
+          "label": "\u2713 29/29 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.2.5a1",
-          "tested_at": "2026-10-02T19:25:01+00:00",
+          "tested_at": "2026-10-03T08:35:49+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 20,
-            "counted": 20
+            "hit": 29,
+            "counted": 29
           }
         }
       }
@@ -6256,15 +6296,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 15/15 golden",
+          "label": "\u2713 21/21 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.25.6a3",
-          "tested_at": "2026-10-02T19:25:58+00:00",
+          "tested_at": "2026-10-03T08:36:48+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 15,
-            "counted": 15
+            "hit": 21,
+            "counted": 21
           }
         }
       }
@@ -6471,7 +6511,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-10-02T09:58:49+00:00",
+          "tested_at": "2026-10-03T08:37:47+00:00",
           "channel_pinned": false
         }
       }
@@ -6692,15 +6732,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 32/33 golden",
+          "label": "\u2713 64/66 golden",
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.8",
-          "tested_at": "2026-10-02T19:26:54+00:00",
+          "tested_at": "2026-10-03T08:33:28+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 32,
-            "counted": 33
+            "hit": 64,
+            "counted": 66
           }
         }
       }
@@ -6801,16 +6841,16 @@
           }
         },
         "alpha": {
-          "label": "\u2713 5/5 golden \u00b7 stops",
-          "state": "pass",
+          "label": "\u2713 9/10 golden \u00b7 stops",
+          "state": "warn",
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-02T19:27:09+00:00",
+          "tested_at": "2026-10-03T08:33:44+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 5,
-            "counted": 5
+            "hit": 9,
+            "counted": 10
           }
         }
       }
@@ -6968,7 +7008,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T19:27:23+00:00",
+          "tested_at": "2026-10-03T08:33:58+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -7076,15 +7116,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 121/125 golden",
-          "state": "warn",
+          "label": "\u2713 96/96 golden",
+          "state": "pass",
           "level": 3,
           "version_tested": "0.7.1a3",
-          "tested_at": "2026-10-02T19:30:11+00:00",
+          "tested_at": "2026-10-03T08:34:13+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 121,
-            "counted": 125
+            "hit": 96,
+            "counted": 96
           }
         }
       }
@@ -7396,15 +7436,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 10/17 golden",
+          "label": "\u2713 loads \u00b7 7/11 golden",
           "state": "warn",
           "level": 2,
           "version_tested": "0.12.0a7",
-          "tested_at": "2026-10-02T19:31:31+00:00",
+          "tested_at": "2026-10-03T08:35:31+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 10,
-            "counted": 17
+            "hit": 7,
+            "counted": 11
           }
         }
       }
@@ -7501,15 +7541,15 @@
           }
         },
         "alpha": {
-          "label": "\u2713 6/6 golden",
+          "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T19:32:34+00:00",
+          "tested_at": "2026-10-03T08:36:35+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 6,
-            "counted": 6
+            "hit": 3,
+            "counted": 3
           }
         }
       }
@@ -7598,7 +7638,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-10-02T19:32:49+00:00",
+          "tested_at": "2026-10-03T08:36:50+00:00",
           "channel_pinned": false
         }
       }
@@ -7714,7 +7754,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T10:00:49+00:00",
+          "tested_at": "2026-10-03T08:37:06+00:00",
           "channel_pinned": false
         }
       }
@@ -7800,7 +7840,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:57:34+00:00",
+          "tested_at": "2026-10-03T08:33:39+00:00",
           "channel_pinned": false
         }
       }
@@ -7871,7 +7911,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:57:38+00:00",
+          "tested_at": "2026-10-03T08:33:43+00:00",
           "channel_pinned": false
         }
       }
@@ -7937,7 +7977,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:57:42+00:00",
+          "tested_at": "2026-10-03T08:33:47+00:00",
           "channel_pinned": false
         }
       }
@@ -8006,7 +8046,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:57:46+00:00",
+          "tested_at": "2026-10-03T08:33:52+00:00",
           "channel_pinned": false
         }
       }
@@ -8076,7 +8116,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:57:50+00:00",
+          "tested_at": "2026-10-03T08:33:56+00:00",
           "channel_pinned": false
         }
       }
@@ -8144,7 +8184,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:57:54+00:00",
+          "tested_at": "2026-10-03T08:34:00+00:00",
           "channel_pinned": false
         }
       }
@@ -8213,7 +8253,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:58:02+00:00",
+          "tested_at": "2026-10-03T08:34:09+00:00",
           "channel_pinned": false
         }
       }
@@ -8283,7 +8323,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:58:06+00:00",
+          "tested_at": "2026-10-03T08:34:13+00:00",
           "channel_pinned": false
         }
       }
@@ -8361,7 +8401,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T10:00:00+00:00",
+          "tested_at": "2026-10-03T08:33:51+00:00",
           "channel_pinned": false
         }
       }
@@ -8466,7 +8506,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-02T19:33:05+00:00",
+          "tested_at": "2026-10-03T08:33:56+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 12,
@@ -8637,7 +8677,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.5.0a5",
-          "tested_at": "2026-10-02T19:33:22+00:00",
+          "tested_at": "2026-10-03T08:34:14+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 35,
@@ -8921,7 +8961,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-02T19:34:22+00:00",
+          "tested_at": "2026-10-03T08:35:15+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -8996,11 +9036,11 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
           "version_tested": "1.6.7a2",
-          "tested_at": "2026-10-02T10:01:31+00:00",
+          "tested_at": "2026-10-03T08:35:25+00:00",
           "channel_pinned": true
         }
       }
@@ -10122,11 +10162,11 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
           "version_tested": "1.1.19a1",
-          "tested_at": "2026-10-02T10:01:40+00:00",
+          "tested_at": "2026-10-03T08:35:33+00:00",
           "channel_pinned": true
         }
       }
@@ -10307,7 +10347,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "3.7.2a2",
-          "tested_at": "2026-10-02T10:01:48+00:00",
+          "tested_at": "2026-10-03T08:35:41+00:00",
           "channel_pinned": true
         }
       }
@@ -11579,6 +11619,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/ovos-hivemind-pipeline-plugin",
     "package_name": "ovos-hivemind-pipeline-plugin",
     "pypi_version": "0.0.3",
@@ -11646,11 +11688,11 @@
           "channel_pinned": false
         },
         "alpha": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
+          "label": "needs config",
+          "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T10:01:56+00:00",
+          "tested_at": "2026-10-03T08:35:49+00:00",
           "channel_pinned": false
         }
       }
@@ -12427,11 +12469,11 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
           "version_tested": "0.29.4a1",
-          "tested_at": "2026-10-02T10:04:29+00:00",
+          "tested_at": "2026-10-03T08:33:31+00:00",
           "channel_pinned": true
         }
       }
@@ -14784,11 +14826,11 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
           "version_tested": "1.5.7a1",
-          "tested_at": "2026-10-02T10:04:37+00:00",
+          "tested_at": "2026-10-03T08:33:40+00:00",
           "channel_pinned": true
         }
       }
@@ -15195,7 +15237,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.7a1",
-          "tested_at": "2026-10-02T10:04:46+00:00",
+          "tested_at": "2026-10-03T08:33:49+00:00",
           "channel_pinned": true
         }
       }
@@ -18344,7 +18386,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.9.0a1",
-          "tested_at": "2026-10-02T19:34:31+00:00",
+          "tested_at": "2026-10-03T08:33:57+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 14,
@@ -18554,7 +18596,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.6.1a2",
-          "tested_at": "2026-10-02T19:30:12+00:00",
+          "tested_at": "2026-10-03T08:34:48+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 15,
@@ -18676,7 +18718,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.6.0a2",
-          "tested_at": "2026-10-02T19:31:51+00:00",
+          "tested_at": "2026-10-03T08:36:58+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 11,
@@ -18732,19 +18774,21 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/ovos-skill-fallback-hivemind",
-    "package_name": null,
-    "pypi_version": null,
+    "package_name": "ovos-skill-fallback-hivemind",
+    "pypi_version": "0.0.0a10",
     "license": "Apache-2.0",
     "archived": true,
     "author": "JarbasHiveMind",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
     "open_issues": 2,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
@@ -18770,7 +18814,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-05-19T22:48:58Z",
-    "last_updated": "2025-06-11T12:44:04Z",
+    "last_updated": "2024-05-21T13:52:57.890315Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -18975,7 +19019,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T10:09:46+00:00",
+          "tested_at": "2026-10-03T08:38:47+00:00",
           "channel_pinned": false
         }
       }
@@ -19285,7 +19329,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.0.0a1",
-          "tested_at": "2026-10-02T19:33:34+00:00",
+          "tested_at": "2026-10-03T08:38:51+00:00",
           "channel_pinned": true
         }
       }
@@ -19469,13 +19513,15 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JoergZ2/ovos-skill-my-dummy-skill",
     "package_name": null,
     "pypi_version": null,
     "license": null,
     "archived": false,
     "author": "JoergZ2",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
@@ -19515,13 +19561,15 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JoergZ2/ovos-skill-my-foxess-cloud",
     "package_name": null,
     "pypi_version": null,
     "license": null,
     "archived": false,
     "author": "JoergZ2",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
@@ -19560,6 +19608,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JoergZ2/ovos-skill-my-mpd",
     "package_name": null,
     "pypi_version": null,
@@ -19606,14 +19656,16 @@
       "voice-assistant"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/list.svg",
+    "icon_source": "readme",
+    "icon_color": "#22A7F0",
     "source": "https://github.com/JoergZ2/ovos-skill-my-mpd-player",
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
     "archived": false,
     "author": "JoergZ2",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
@@ -19644,7 +19696,7 @@
     "repo_created_at": "2024-04-05T15:47:45Z",
     "last_updated": "2026-09-29T09:23:34Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JoergZ2-ovos-skill-my-samsungctl",
@@ -19660,14 +19712,16 @@
       "voice-assistant"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/robot.svg",
+    "icon_source": "readme",
+    "icon_color": "#22A7F0",
     "source": "https://github.com/JoergZ2/ovos-skill-my-samsungctl",
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
     "archived": false,
     "author": "JoergZ2",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
@@ -19711,14 +19765,16 @@
       "voice-assistant"
     ],
     "category": "Other",
-    "icon": null,
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/tools.svg",
+    "icon_source": "readme",
+    "icon_color": "#22A7F0",
     "source": "https://github.com/JoergZ2/ovos-skill-my-sqlite",
     "package_name": null,
     "pypi_version": null,
     "license": "Apache-2.0",
     "archived": false,
     "author": "JoergZ2",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
@@ -19764,6 +19820,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JoergZ2/ovos-skill-my-tasmota-mqtt",
     "package_name": "ovos-skill-my-tasmota-mqtt",
     "pypi_version": null,
@@ -20404,7 +20462,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.4",
-          "tested_at": "2026-10-02T19:36:23+00:00",
+          "tested_at": "2026-10-03T08:33:23+00:00",
           "channel_pinned": false
         }
       }
@@ -20510,7 +20568,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.0.2a7",
-          "tested_at": "2026-10-02T19:36:45+00:00",
+          "tested_at": "2026-10-03T08:33:44+00:00",
           "channel_pinned": true
         }
       }
@@ -20972,13 +21030,15 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JoergZ2/ovos-skill-wakeup",
     "package_name": "ovos-skill-wakeup",
     "pypi_version": null,
     "license": "Apache-2.0",
     "archived": false,
     "author": "JoergZ2",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
@@ -21161,14 +21221,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 15/16 golden",
+          "label": "\u2713 loads \u00b7 12/16 golden",
           "state": "warn",
-          "level": 3,
+          "level": 2,
+          "stop": "stops",
           "version_tested": "0.18.4a1",
-          "tested_at": "2026-10-02T19:37:08+00:00",
+          "tested_at": "2026-10-03T08:34:08+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 15,
+            "hit": 12,
             "counted": 16
           }
         }
@@ -21274,7 +21335,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.12.1a3",
-          "tested_at": "2026-10-02T19:37:59+00:00",
+          "tested_at": "2026-10-03T08:35:01+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 8,
@@ -21388,7 +21449,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.13.3a1",
-          "tested_at": "2026-10-02T19:38:48+00:00",
+          "tested_at": "2026-10-03T08:35:53+00:00",
           "channel_pinned": true
         }
       }
@@ -21651,6 +21712,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin",
     "package_name": "ovos-solver-hivemind-plugin",
     "pypi_version": "0.0.3",
@@ -23239,6 +23302,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/FormigTeen/ovos-stt-plugin-wit",
     "package_name": "ovos-stt-plugin-wit",
     "pypi_version": null,
@@ -24395,6 +24460,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/FormigTeen/ovos-tts-plugin-elevenlabs",
     "package_name": "ovos-tts-plugin-elevenlabs",
     "pypi_version": "0.1.0",
@@ -27987,7 +28054,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.11.0a5",
-          "tested_at": "2026-10-02T19:36:19+00:00",
+          "tested_at": "2026-10-03T08:37:19+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 63,
@@ -28104,6 +28171,8 @@
     ],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/poorman_handshake",
     "package_name": "poorman_handshake",
     "pypi_version": "1.0.1",
@@ -28608,7 +28677,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.1",
-          "tested_at": "2026-10-02T19:37:13+00:00",
+          "tested_at": "2026-10-03T08:38:11+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -28715,7 +28784,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-02T19:37:38+00:00",
+          "tested_at": "2026-10-03T08:38:37+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 0,
@@ -28881,7 +28950,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.7.0a3",
-          "tested_at": "2026-10-02T19:37:51+00:00",
+          "tested_at": "2026-10-03T08:33:42+00:00",
           "channel_pinned": true
         }
       }
@@ -28974,6 +29043,8 @@
     "tags": [],
     "category": "Other",
     "icon": null,
+    "icon_source": null,
+    "icon_color": null,
     "source": "https://github.com/JhonCleyton/SisOvos",
     "package_name": "SisOvos",
     "pypi_version": null,
@@ -29104,9 +29175,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "stops",
           "version_tested": "1.0.2",
-          "tested_at": "2026-10-02T19:38:42+00:00",
+          "tested_at": "2026-10-03T08:34:33+00:00",
           "channel_pinned": false
         }
       }
@@ -29250,7 +29320,7 @@
           "level": 2,
           "stop": "stuck",
           "version_tested": "1.4.3",
-          "tested_at": "2026-10-02T19:39:01+00:00",
+          "tested_at": "2026-10-03T08:34:55+00:00",
           "channel_pinned": false
         }
       }
@@ -29367,7 +29437,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T10:16:24+00:00",
+          "tested_at": "2026-10-03T08:35:45+00:00",
           "channel_pinned": false
         }
       }
@@ -29462,7 +29532,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T10:16:27+00:00",
+          "tested_at": "2026-10-03T08:35:49+00:00",
           "channel_pinned": false
         }
       }
@@ -29575,7 +29645,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.2",
-          "tested_at": "2026-10-02T19:39:47+00:00",
+          "tested_at": "2026-10-03T08:35:53+00:00",
           "channel_pinned": false
         }
       }
@@ -29672,7 +29742,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T10:16:44+00:00",
+          "tested_at": "2026-10-03T08:36:10+00:00",
           "channel_pinned": false
         }
       }
@@ -30964,7 +31034,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T19:40:02+00:00",
+          "tested_at": "2026-10-03T08:36:14+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -31184,9 +31254,9 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "stuck",
+          "stop": "keeps_going",
           "version_tested": "0.10.0a3",
-          "tested_at": "2026-10-02T19:38:00+00:00",
+          "tested_at": "2026-10-03T08:35:16+00:00",
           "channel_pinned": true
         }
       }
@@ -31284,7 +31354,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.13.1a1",
-          "tested_at": "2026-10-02T19:38:55+00:00",
+          "tested_at": "2026-10-03T08:36:11+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 14,
@@ -31453,7 +31523,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.4.0a1",
-          "tested_at": "2026-10-02T19:39:49+00:00",
+          "tested_at": "2026-10-03T08:37:05+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 114,
@@ -31556,14 +31626,14 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:30:21+00:00",
+          "tested_at": "2026-10-03T08:34:00+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-02T09:51:14+00:00",
+          "tested_at": "2026-10-03T08:33:21+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -31571,7 +31641,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.5",
-          "tested_at": "2026-10-02T19:41:00+00:00",
+          "tested_at": "2026-10-03T08:38:15+00:00",
           "channel_pinned": false
         }
       }
@@ -31718,7 +31788,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.9.3a2",
-          "tested_at": "2026-10-02T19:41:09+00:00",
+          "tested_at": "2026-10-03T08:38:24+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 23,
@@ -31932,7 +32002,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-02T19:42:24+00:00",
+          "tested_at": "2026-10-03T08:39:42+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 11,
@@ -32096,7 +32166,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.10",
-          "tested_at": "2026-10-02T19:42:39+00:00",
+          "tested_at": "2026-10-03T08:39:57+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 13,
@@ -32377,7 +32447,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-02T19:43:09+00:00",
+          "tested_at": "2026-10-03T08:40:28+00:00",
           "channel_pinned": false
         }
       }
@@ -32554,7 +32624,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.12.1a1",
-          "tested_at": "2026-10-02T19:41:03+00:00",
+          "tested_at": "2026-10-03T08:36:04+00:00",
           "channel_pinned": true
         }
       }
@@ -33301,7 +33371,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.8.1a1",
-          "tested_at": "2026-10-02T19:42:15+00:00",
+          "tested_at": "2026-10-03T08:37:14+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 10,
@@ -33430,15 +33500,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 117/117 golden",
+          "label": "\u2713 96/96 golden",
           "state": "pass",
           "level": 3,
           "version_tested": "1.5.1a2",
-          "tested_at": "2026-10-02T19:44:09+00:00",
+          "tested_at": "2026-10-03T08:39:00+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 117,
-            "counted": 117
+            "hit": 96,
+            "counted": 96
           }
         }
       }
@@ -33544,7 +33614,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-02T19:54:46+00:00",
+          "tested_at": "2026-10-03T08:49:24+00:00",
           "channel_pinned": false
         }
       }
@@ -33670,7 +33740,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-02T19:55:03+00:00",
+          "tested_at": "2026-10-03T08:49:39+00:00",
           "channel_pinned": false
         }
       }
@@ -33767,7 +33837,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.2a2",
-          "tested_at": "2026-10-02T19:55:12+00:00",
+          "tested_at": "2026-10-03T08:49:48+00:00",
           "channel_pinned": true
         }
       }
@@ -33867,7 +33937,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.0a1",
-          "tested_at": "2026-10-02T19:56:05+00:00",
+          "tested_at": "2026-10-03T08:50:39+00:00",
           "channel_pinned": true
         }
       }
