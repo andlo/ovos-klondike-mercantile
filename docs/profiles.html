@@ -21,7 +21,51 @@
         extra skills, and <strong>Klondike</strong> adds the curated
         entries of the <a href="for-maintainers.html#klondike-profile">Klondike profile</a>.
         The rows are the store's own channel tests; nothing here is tested twice.
+        Everything the installer puts on is tested, whatever its status in the
+        store, so a gap here is a gap on real devices.
       </p>
+
+      <details class="profile-howto">
+        <summary>How to read this page</summary>
+        <table class="legend-table">
+          <tbody>
+            <tr><td><span class="compat-label compat-pass">✓ loads</span></td>
+              <td>Installs under the channel's own versions and loads in a test core (level 2).
+                No golden utterances were measured, so it says nothing about whether sentences reach it.</td></tr>
+            <tr><td><span class="compat-label compat-pass">✓ 14/14 golden</span></td>
+              <td>Level 3: 14 of its 14 own golden utterances reached it with the installer's default
+                skills loaded. Below 80% it shows as <span class="compat-label compat-warn">✓ loads · 9/14 golden</span>.</td></tr>
+            <tr><td><span class="compat-label compat-fail">✗ doesn't load</span></td>
+              <td>Installs but fails to load (level 1), or <em>doesn't install</em> at all (level 0).
+                The entry's detail page shows why.</td></tr>
+            <tr><td><span class="compat-label compat-untested">· untested</span></td>
+              <td>In the store, but no result on this channel yet (e.g. just added to the tests).</td></tr>
+            <tr><td><span class="compat-label compat-unsupported">– needs device</span></td>
+              <td>Not a failure: it needs a real device, a key or an account, or the channel cannot run this kind of package.</td></tr>
+            <tr><td><span class="compat-label compat-untested">∅ not in the store</span></td>
+              <td>The installer puts it on, but the store has no entry for it, so it is not tested here.</td></tr>
+            <tr><td><span class="badge badge-warn">archived</span></td>
+              <td>The repo is archived on GitHub, but the installer still installs it.</td></tr>
+            <tr><td>with Klondike: 13/14</td>
+              <td>The same golden utterances, routed with the whole Klondike profile loaded (en-US): does it still
+                get its sentences on a well-equipped install?</td></tr>
+            <tr><td><span class="compat-label quality-label quality-klondike">⛏ Gold</span></td>
+              <td>A skill: level 3, and at least 80% still reach it with the Klondike profile loaded.
+                A pipeline plugin: in the Klondike test it took sentences for the skills they belong to,
+                and took none from other skills.</td></tr>
+            <tr><td>routing: reaches 5 · takes 0</td>
+              <td>Pipeline plugins: in the Klondike test, how many sentences it took and handed to the skill they
+                belong to, and how many it took from the skill they belong to (hover for which). Measured only where
+                OVOS says which plugin matched a sentence (alpha today); elsewhere it reads <em>not measurable here</em>.</td></tr>
+            <tr><td><span class="profile-pipe-warn">⚠ the installer's pipeline is incomplete</span></td>
+              <td>A stage of the installer's own pipeline did not load on this channel, so level 3 there ran
+                without it, as a device on that channel would.</td></tr>
+            <tr><td><span class="profile-ok">▲</span> <span class="profile-bad">▼</span> <span class="profile-new">▲</span></td>
+              <td>Compare view: more or fewer golden utterances reach it than on testing, only where both channels
+                have golden utterances. Grey: measured here, nothing on testing to compare with.</td></tr>
+          </tbody>
+        </table>
+      </details>
 
       <div class="profile-tabs" role="tablist" data-profile-tabs></div>
       <p class="setup-note" data-profile-meta></p>
@@ -34,14 +78,11 @@
       <div data-profile-sections><p class="loading">Loading test results…</p></div>
 
       <p class="setup-note profile-foot">
-        Levels: 0 doesn't install · 1 installs but doesn't load · 2 loads ·
-        3 its golden utterances reach it. "With Klondike" is the same golden
-        utterances routed with the whole Klondike profile loaded (en-US);
-        ⛏ Gold when it still routes there.
-        Pipeline plugins are judged like skills for now, which does not
-        fit them well (<a href="https://github.com/andlo/ovos-klondike-mercantile/issues/52">#52</a>).
+        How the tests work, level by level: <a href="for-maintainers.html#channel-tests">Tested on OVOS</a>
+        in the maintainer guide.
         Data: <a href="compat/profile-report.json">profile-report.json</a>
-        (<a href="schemas/ovos-profile-report-1.json">ovos-profile-report/1</a>).
+        (<a href="schemas/ovos-profile-report-1.json">ovos-profile-report/1</a>), the same format
+        <a href="https://github.com/andlo/ovos-tui-client">ovos-tui-client</a> can write for a device.
       </p>
     </div>
   </main>
