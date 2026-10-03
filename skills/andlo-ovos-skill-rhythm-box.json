@@ -67,23 +67,19 @@
     "badge_id": "ovos-skill-rhythm-box.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 0/12 golden",
-        "state": "warn",
+        "label": "\u2713 loads",
+        "state": "pass",
         "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-02T18:56:55+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 0,
-          "counted": 12
-        }
+        "tested_at": "2026-10-03T13:54:03+00:00",
+        "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 loads \u00b7 0/12 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-02T19:11:15+00:00",
+        "tested_at": "2026-10-03T11:01:06+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 0,
@@ -95,7 +91,7 @@
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-03T08:38:37+00:00",
+        "tested_at": "2026-10-03T11:31:29+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 0,

@@ -56,37 +56,27 @@
     "badge_id": "ovos-skill-andrew-lang-tales.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 0/2 golden",
-        "state": "warn",
+        "label": "\u2713 loads",
+        "state": "pass",
         "level": 2,
         "version_tested": "0.1.9",
-        "tested_at": "2026-10-02T18:57:56+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 0,
-          "counted": 2
-        }
+        "tested_at": "2026-10-03T13:54:53+00:00",
+        "channel_pinned": false
       },
       "testing": {
-        "label": "\u2713 2/2 golden \u00b7 stops",
+        "label": "\u2713 loads",
         "state": "pass",
-        "level": 3,
-        "stop": "stops",
+        "level": 2,
         "version_tested": "0.1.9",
-        "tested_at": "2026-10-02T18:57:49+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 2,
-          "counted": 2
-        }
+        "tested_at": "2026-10-03T13:52:59+00:00",
+        "channel_pinned": false
       },
       "alpha": {
-        "label": "\u2713 2/2 golden \u00b7 stops",
+        "label": "\u2713 2/2 golden",
         "state": "pass",
         "level": 3,
-        "stop": "stops",
         "version_tested": "0.1.9",
-        "tested_at": "2026-10-03T08:44:41+00:00",
+        "tested_at": "2026-10-03T11:19:28+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 2,

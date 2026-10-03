@@ -107,17 +107,12 @@
     "badge_id": "ovos-skill-geometry-practice.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 31/36 golden \u00b7 stops",
-        "state": "warn",
-        "level": 3,
-        "stop": "stops",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-02T18:58:31+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 31,
-          "counted": 36
-        }
+        "tested_at": "2026-10-03T13:55:25+00:00",
+        "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 20/24 golden \u00b7 stops",
@@ -125,7 +120,7 @@
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-02T19:06:22+00:00",
+        "tested_at": "2026-10-03T10:56:35+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 20,
@@ -138,7 +133,7 @@
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-03T08:52:26+00:00",
+        "tested_at": "2026-10-03T11:30:01+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 24,

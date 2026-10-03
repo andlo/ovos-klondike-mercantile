@@ -68,35 +68,27 @@
     "badge_id": "ovos-skill-calculator.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 3/25 golden",
-        "state": "warn",
+        "label": "\u2713 loads",
+        "state": "pass",
         "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-02T18:56:42+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 25
-        }
+        "tested_at": "2026-10-03T13:53:09+00:00",
+        "channel_pinned": false
       },
       "testing": {
-        "label": "\u2713 loads \u00b7 4/25 golden",
-        "state": "warn",
+        "label": "\u2713 loads",
+        "state": "pass",
         "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-02T18:56:00+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 4,
-          "counted": 25
-        }
+        "tested_at": "2026-10-03T13:58:25+00:00",
+        "channel_pinned": false
       },
       "alpha": {
         "label": "\u2713 25/25 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-03T08:33:44+00:00",
+        "tested_at": "2026-10-03T11:10:51+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 25,

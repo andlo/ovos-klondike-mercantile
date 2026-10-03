@@ -136,26 +136,22 @@
     "badge_id": "ovos-skill-fart.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 45/45 golden",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.1",
+        "tested_at": "2026-10-03T13:53:49+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
+        "label": "\u2713 34/34 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "1.0.1",
-        "tested_at": "2026-10-02T18:56:53+00:00",
+        "tested_at": "2026-10-03T10:55:41+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 45,
-          "counted": 45
-        }
-      },
-      "testing": {
-        "label": "\u2713 33/34 golden",
-        "state": "warn",
-        "level": 3,
-        "version_tested": "1.0.1",
-        "tested_at": "2026-10-02T19:05:12+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 33,
+          "hit": 34,
           "counted": 34
         }
       },
@@ -164,7 +160,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "1.0.1",
-        "tested_at": "2026-10-03T08:35:50+00:00",
+        "tested_at": "2026-10-03T11:13:14+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 22,

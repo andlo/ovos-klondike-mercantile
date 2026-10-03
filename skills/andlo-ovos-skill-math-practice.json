@@ -80,41 +80,36 @@
     "badge_id": "ovos-skill-math-practice.andlo",
     "channels": {
       "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.8",
+        "tested_at": "2026-10-03T13:55:24+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
         "label": "\u2713 loads \u00b7 41/66 golden",
         "state": "warn",
         "level": 2,
         "stop": "stops",
         "version_tested": "0.0.8",
-        "tested_at": "2026-10-02T18:58:31+00:00",
+        "tested_at": "2026-10-03T10:58:20+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 41,
           "counted": 66
         }
       },
-      "testing": {
-        "label": "\u2713 loads \u00b7 44/66 golden",
-        "state": "warn",
-        "level": 2,
-        "stop": "stops",
-        "version_tested": "0.0.8",
-        "tested_at": "2026-10-02T19:08:13+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 44,
-          "counted": 66
-        }
-      },
       "alpha": {
-        "label": "\u2713 64/66 golden",
+        "label": "\u2713 32/33 golden",
         "state": "warn",
         "level": 3,
         "version_tested": "0.0.8",
-        "tested_at": "2026-10-03T08:33:28+00:00",
+        "tested_at": "2026-10-03T11:17:56+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 64,
-          "counted": 66
+          "hit": 32,
+          "counted": 33
         }
       }
     }

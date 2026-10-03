@@ -74,26 +74,22 @@
     "badge_id": "ovos-skill-sound-like.andlo",
     "channels": {
       "stable": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-03T13:53:04+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
         "label": "\u2713 loads \u00b7 3/6 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-02T18:56:20+00:00",
+        "tested_at": "2026-10-03T11:06:02+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 3,
-          "counted": 6
-        }
-      },
-      "testing": {
-        "label": "\u2713 6/6 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-02T19:15:58+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 6,
           "counted": 6
         }
       },
@@ -102,7 +98,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T08:36:14+00:00",
+        "tested_at": "2026-10-03T11:30:42+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 6,
