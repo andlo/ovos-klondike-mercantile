@@ -54,7 +54,6 @@ numpy==2.4.6
 ovos-audio==2.2.8a1
 ovos-bidirectional-translation-plugin==0.1.4a3
 ovos-bus-client==2.11.25a1
-ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==3.6.1a3
 ovos-core==3.7.2a2
 ovos-date-parser==0.33.3a1
@@ -70,14 +69,13 @@ ovos-number-parser==0.23.1a1
 ovos-option-matcher-fuzzy-plugin==0.0.2a1
 ovos-persona==0.9.0a28
 ovos-plugin-manager==2.12.5a1
-ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.12.33a1
-ovos-skill-andersen-tales==0.1.8
-ovos-skill-andrew-lang-tales==0.1.9
 ovos-skill-application-launcher==0.13.5a4
-ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.7.2a5
 ovos-skill-boot-finished==0.9.1a1
+ovos-skill-camera==1.4.0a1
+ovos-skill-color-picker==0.7.2a1
+ovos-skill-confucius-quotes==0.8.2a1
 ovos-skill-count==0.6.1a2
 ovos-skill-date-time==1.11.4a1
 ovos-skill-ddg==0.6.0a2
@@ -121,7 +119,7 @@ packaging==26.3
 padacioso==2.4.3a1
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
-platformdirs==4.12.2
+platformdirs==4.12.3
 pluggy==1.6.0
 prettytable==3.18.0
 psutil==7.2.2
@@ -138,7 +136,7 @@ pytest-json-report==1.5.0
 pytest-metadata==3.1.1
 pytest-timeout==2.4.0
 python-dateutil==2.9.0.post0
-pytz==2026.4
+pytz==2026.5
 pywikihow==0.5.7
 PyYAML==6.0.3
 quebra-frases==0.3.7

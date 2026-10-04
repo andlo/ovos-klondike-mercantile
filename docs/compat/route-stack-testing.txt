@@ -55,7 +55,6 @@ nebulento @ git+https://github.com/OpenVoiceOS/nebulento@e0cc4536365559be3d33f14
 nltk==3.10.3
 numpy==2.4.6
 ovos-audio==1.2.0
-ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==2.1.1
 ovos-date-parser==0.29.0
 ovos-dinkum-listener==0.5.0
@@ -65,13 +64,12 @@ ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pip
 ovos-media==2.4.5a1
 ovos-number-parser==0.19.13
 ovos-plugin-manager==2.2.0
-ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.1.28
-ovos-skill-andersen-tales==0.1.8
-ovos-skill-andrew-lang-tales==0.1.9
-ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.2.7
 ovos-skill-boot-finished==0.5.0
+ovos-skill-camera==1.0.4
+ovos-skill-color-picker==0.0.7
+ovos-skill-confucius-quotes==0.1.13
 ovos-skill-count==0.0.2
 ovos-skill-date-time==1.1.5
 ovos-skill-diagnostics==0.0.8
@@ -98,6 +96,7 @@ ovos-utterance-plugin-cancel==0.2.8
 ovos-workshop==7.0.6
 ovos_adapt_parser==1.0.9
 ovos_bus_client==1.5.0
+ovos_color_parser==0.11.3
 ovos_common_query_pipeline_plugin==1.1.9
 ovos_core==2.1.1
 ovos_gui==1.3.4
@@ -117,7 +116,7 @@ packaging==26.3
 padacioso==1.0.0
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
-platformdirs==4.12.2
+platformdirs==4.12.3
 pluggy==1.6.0
 psutil==7.2.2
 ptyprocess==0.7.0
@@ -132,7 +131,7 @@ pytest-metadata==3.1.1
 pytest-timeout==2.4.0
 python-crfsuite==0.9.12
 python-dateutil==2.9.0.post0
-pytz==2026.4
+pytz==2026.5
 pywikihow==0.5.7
 PyYAML==6.0.3
 quebra-frases==0.3.7
