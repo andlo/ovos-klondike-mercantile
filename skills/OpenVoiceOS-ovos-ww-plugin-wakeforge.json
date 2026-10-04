@@ -18,9 +18,9 @@
   "tier": 1,
   "component_type": "Wake Word Plugin",
   "type_group": "Plugin",
-  "stars": 0,
+  "stars": 1,
   "forks": 0,
-  "open_issues": 1,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -35,7 +35,7 @@
     },
     {
       "heading": "Config keys",
-      "content": "| key | default | description |\n|-----|---------|-------------|\n| `featurizer` | \u2014 (required) | feature-extractor ONNX (path or URL), or a pretrained featurizer name such as `wakehubert`; optional when the model names its featurizer |\n| `featurizer_revision` | bundled or latest | Hugging Face revision (branch, tag or commit) of a pretrained featurizer; a revision other than the bundled one is downloaded |\n| `model` | \u2014 (required) | classifier-head ONNX (path or URL), or a ready model: `alexa`, `hey_mycroft`, `hey_mycroft_synthetic`, `wake_up` |\n| `vad` | none | optional VAD ONNX for an extra channel |\n| `threshold` | `0.5` | detection threshold; a ready model or any head whose ONNX metadata carries `default_threshold` uses that instead (`0.99` alexa, `0.965` hey_mycroft, `0.998` hey_mycrof\u2026"
+      "content": "| key | default | description |\n|-----|---------|-------------|\n| `featurizer` | \u2014 (required) | feature-extractor ONNX (path or URL), or a pretrained featurizer name such as `wakehubert`; optional when the model names its featurizer |\n| `featurizer_revision` | pinned per featurizer | Hugging Face revision (branch, tag or commit) of a pretrained featurizer |\n| `models_revision` | pinned in the plugin | Hugging Face revision of the `OpenVoiceOS/wakehubert-wakewords` repository that a ready model is downloaded from |\n| `model` | \u2014 (required) | classifier-head ONNX (path or URL), or a ready model: `wakehubert_alexa`, `wakehubert_android`, `wakehubert_computer`, `wakehubert_hello_nabu`, `wakehubert_hey_chatterbox`, `wakehubert_hey_computer`, `wakehubert_hey_floyd`, `wakehubert_hey_jarvis`, `wak\u2026"
     }
   ],
   "languages": [],
@@ -44,5 +44,5 @@
   "repo_created_at": "2026-06-22T22:35:30Z",
   "last_updated": "2026-09-30T18:47:46.408845Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }

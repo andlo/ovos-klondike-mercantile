@@ -15,7 +15,7 @@
   "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-openWakeWord",
   "package_name": "ovos-ww-plugin-openwakeword",
-  "pypi_version": "0.4.1",
+  "pypi_version": "0.4.6",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -24,12 +24,12 @@
   "type_group": "Plugin",
   "stars": 2,
   "forks": 5,
-  "open_issues": 6,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
   "settings_fields": [],
   "setup_notes": [
@@ -46,7 +46,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2023-03-02T18:26:44Z",
-  "last_updated": "2024-04-22T00:59:34.839114Z",
+  "last_updated": "2026-10-01T13:03:30.354807Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }
