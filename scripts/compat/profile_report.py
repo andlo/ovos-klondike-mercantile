@@ -84,6 +84,14 @@ def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False, ptake=
                 out["tested_at"] = rec["tested_at"]
     golden = routing_counts(rec, "golden") if rec else None
     out["golden"] = {"hit": golden[0], "counted": golden[1]} if golden else None
+    if golden:
+        # The languages behind the count, so the compare view only compares
+        # channels on the languages they all routed.
+        g = rec["routing"]["golden"]
+        if g.get("langs"):
+            out["golden"]["langs"] = list(g["langs"])
+        if g.get("by_lang"):
+            out["golden"]["by_lang"] = dict(g["by_lang"])
     k = routing_counts(kres, "golden") if kres else None
     out["klondike"] = {"hit": k[0], "counted": k[1]} if k else None
     out["gold"] = bool(golden and k and (out["level"] or 0) >= 3 and k[0] / k[1] >= LEVEL3_RATIO)

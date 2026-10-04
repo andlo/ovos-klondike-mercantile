@@ -114,6 +114,16 @@ def _clean_run(r):
         out["by_pipeline"] = {
             str(pid)[:80]: {k: c[k] for k in ("hit", "miss") if isinstance(c.get(k), int) and 0 <= c[k] < 100_000}
             for pid, c in list(r["by_pipeline"].items())[:30] if isinstance(c, dict)}
+    if isinstance(r.get("by_lang"), dict):
+        by_lang = {}
+        for lang, c in list(r["by_lang"].items())[:60]:
+            if not isinstance(c, dict):
+                continue
+            hit, cnt = c.get("hit"), c.get("counted")
+            if all(isinstance(x, int) and not isinstance(x, bool) for x in (hit, cnt)) and 0 <= hit <= cnt < 100_000:
+                by_lang[str(lang)[:20]] = {"hit": hit, "counted": cnt}
+        if by_lang:
+            out["by_lang"] = by_lang
     if out["status"] == "ok":
         counted, hit = out.get("counted", 0), out.get("hit")
         if not (counted > 0 and hit is not None) or hit > counted or counted > out.get("total", counted):

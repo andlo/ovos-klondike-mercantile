@@ -686,6 +686,11 @@ def aggregate(routable, boots, langs, skipped, field="routing"):
                     agg.setdefault("langs_partial", []).append(b["lang"])
                 for k in COUNTS:
                     agg[k] += r.get(k, 0)
+                # Per language, so channels that routed different languages
+                # can be compared on the ones they share.
+                lc = r.get("total", 0) - r.get("manual", 0) - r.get("neighbour", 0) - r.get("not_loaded", 0)
+                if lc > 0:
+                    agg.setdefault("by_lang", {})[b["lang"]] = {"hit": r.get("hit", 0), "counted": lc}
                 for pid, c in (r.get("by_pipeline") or {}).items():
                     tot = agg.setdefault("by_pipeline", {}).setdefault(pid, {"hit": 0, "miss": 0})
                     tot["hit"] += c.get("hit", 0)
