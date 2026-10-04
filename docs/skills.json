@@ -6741,7 +6741,7 @@
     "archived": false,
     "author": "TigreGotico",
     "tier": 1,
-    "component_type": "Segmentation Plugin",
+    "component_type": "Postag Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -10131,7 +10131,7 @@
     "archived": false,
     "author": "TigreGotico",
     "tier": 2,
-    "component_type": "Transformer Plugin",
+    "component_type": "Extractive Qa Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
@@ -10159,7 +10159,7 @@
     "repo_created_at": "2026-03-09T18:45:36Z",
     "last_updated": "2026-08-31T12:58:43Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-cli-client",
@@ -14810,7 +14810,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-05-19T20:24:44Z",
-    "last_updated": "2026-09-28T00:17:17Z",
+    "last_updated": "2026-10-03T11:58:21Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -15180,7 +15180,7 @@
     "repo_created_at": "2026-04-29T11:01:45Z",
     "last_updated": "2026-09-03T12:49:19.763081Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-ocp-news-plugin",
@@ -30053,7 +30053,7 @@
     "type_group": "Skill",
     "stars": 21,
     "forks": 7,
-    "open_issues": 2,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -30330,6 +30330,17 @@
       "sv-se"
     ],
     "locale_content": {
+      "da-dk": {
+        "name": "skill-meal-plan",
+        "description": "En OVOS stemmeskill til m\u00e5ltidsforslag",
+        "examples": [
+          "Hvad skal jeg lave til aftensmad?",
+          "Hvad skal jeg spise?",
+          "Hvad skal jeg spise i aften?",
+          "Jeg er sulten",
+          "Hvad skal vi have til aften?"
+        ]
+      },
       "fr-fr": {
         "name": "Plan de repas",
         "description": "Un skill OVOS qui sugg\u00e8re un repas et vous aide \u00e0 g\u00e9rer votre liste de repas.",
@@ -30339,6 +30350,17 @@
           "Ajoute un repas \u00e0 ma liste de repas",
           "Supprime un repas de ma liste",
           "Quels sont mes repas ?"
+        ]
+      },
+      "sv-se": {
+        "name": "skill-meal-plan",
+        "description": "En OVOS r\u00f6stskill f\u00f6r m\u00e5ltidsf\u00f6rslag",
+        "examples": [
+          "Vad ska jag laga till middag?",
+          "Vad ska jag \u00e4ta?",
+          "Vad ska jag \u00e4ta ikv\u00e4ll?",
+          "Jag \u00e4r hungrig",
+          "Vad blir det till middag?"
         ]
       }
     },

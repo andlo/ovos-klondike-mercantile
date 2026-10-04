@@ -49,6 +49,17 @@
     "sv-se"
   ],
   "locale_content": {
+    "da-dk": {
+      "name": "skill-meal-plan",
+      "description": "En OVOS stemmeskill til m\u00e5ltidsforslag",
+      "examples": [
+        "Hvad skal jeg lave til aftensmad?",
+        "Hvad skal jeg spise?",
+        "Hvad skal jeg spise i aften?",
+        "Jeg er sulten",
+        "Hvad skal vi have til aften?"
+      ]
+    },
     "fr-fr": {
       "name": "Plan de repas",
       "description": "Un skill OVOS qui sugg\u00e8re un repas et vous aide \u00e0 g\u00e9rer votre liste de repas.",
@@ -58,6 +69,17 @@
         "Ajoute un repas \u00e0 ma liste de repas",
         "Supprime un repas de ma liste",
         "Quels sont mes repas ?"
+      ]
+    },
+    "sv-se": {
+      "name": "skill-meal-plan",
+      "description": "En OVOS r\u00f6stskill f\u00f6r m\u00e5ltidsf\u00f6rslag",
+      "examples": [
+        "Vad ska jag laga till middag?",
+        "Vad ska jag \u00e4ta?",
+        "Vad ska jag \u00e4ta ikv\u00e4ll?",
+        "Jag \u00e4r hungrig",
+        "Vad blir det till middag?"
       ]
     }
   },
