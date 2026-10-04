@@ -141,37 +141,82 @@
   // ▲▼ only where both this channel and testing have golden counts, so a
   // deeper test is never read as a better skill. Golden here but none on
   // testing: a grey ▲ (newly measured, nothing to compare with).
-  function compareArrow(e, ref) {
-    if (!e || !ref || e === ref || !e.golden || !e.golden.counted) return "";
-    if (!ref.golden || !ref.golden.counted) {
+  // A shard routes en-US plus the languages its skills share, so one skill
+  // can be routed in three languages on stable and two on alpha. Counts are
+  // compared on the languages every channel with golden routed: per-language
+  // counts when the results have them, the totals when the language sets are
+  // the same, otherwise not at all (shown as ≠).
+  const hasGolden = (e) => e && e.golden && e.golden.counted;
+  function comparable(cells) {
+    const withG = cells.filter(hasGolden);
+    if (withG.length < 2) return { counts: new Map(withG.map((e) => [e, e.golden])), langs: null };
+    const sets = withG.map((e) => asArray(e.golden.langs));
+    const common = sets[0].filter((l) => sets.every((s) => s.includes(l)));
+    if (withG.every((e) => e.golden.by_lang) && common.length) {
+      const counts = new Map();
+      for (const e of withG) {
+        const c = { hit: 0, counted: 0 };
+        for (const l of common) {
+          const x = e.golden.by_lang[l] || { hit: 0, counted: 0 };
+          c.hit += x.hit; c.counted += x.counted;
+        }
+        if (c.counted) counts.set(e, c);
+      }
+      if (counts.size === withG.length) return { counts, langs: common };
+    }
+    const same = sets.every((s) => s.length && s.length === sets[0].length && s.every((l) => sets[0].includes(l)));
+    if (same) return { counts: new Map(withG.map((e) => [e, e.golden])), langs: sets[0] };
+    return { counts: new Map(), langs: null, mismatch: true };
+  }
+
+  function compareArrow(e, ref, cmp) {
+    if (!e || !ref || e === ref || !hasGolden(e)) return "";
+    if (!hasGolden(ref)) {
       return ` <span class="profile-new" title="golden utterances measured here, none on testing to compare with">▲</span>`;
     }
-    const a = e.golden.hit / e.golden.counted, b = ref.golden.hit / ref.golden.counted;
+    const ce = cmp.counts.get(e), cr = cmp.counts.get(ref);
+    if (!ce || !cr) return "";
+    const a = ce.hit / ce.counted, b = cr.hit / cr.counted;
     if (Math.abs(a - b) < 0.001) return "";
     return a > b ? ` <span class="profile-ok" title="more golden utterances reach it than on testing">▲</span>`
       : ` <span class="profile-bad" title="fewer golden utterances reach it than on testing">▼</span>`;
   }
 
-  function compactCell(e, ref) {
+  function compactCell(e, ref, cmp) {
     if (!e) return `<td class="profile-dim">–</td>`;
-    let text;
+    let text, langNote = "", mark = "";
+    const shown = (cmp && cmp.counts.get(e)) || e.golden;
     if (e.state === "fail") text = e.level ? "✗ load" : "✗ install";
     else if (e.state === "not_in_store") text = "∅";
     else if (e.state === "untested") text = "·";
     else if (e.state === "unsupported") text = "–";
-    else text = e.golden ? `✓ ${e.golden.hit}/${e.golden.counted}` : "✓ loads";
+    else text = e.golden ? `✓ ${shown.hit}/${shown.counted}` : "✓ loads";
+    if (hasGolden(e)) {
+      const here = asArray(e.golden.langs).join(", ");
+      if (cmp && cmp.mismatch) {
+        mark = ` <span class="profile-dim" title="the channels routed different languages (here: ${escapeHtml(here)}), so this count is not compared">≠</span>`;
+        langNote = ` · in ${here}`;
+      } else if (cmp && cmp.langs && shown !== e.golden) {
+        langNote = ` · ${e.golden.hit}/${e.golden.counted} in ${here}; compared in ${cmp.langs.join(", ")}`;
+      } else if (here) {
+        langNote = ` · in ${here}`;
+      }
+    }
     const cls = e.state === "not_in_store" ? "untested" : e.state;
-    const arrow = compareArrow(e, ref);
+    const arrow = compareArrow(e, ref, cmp) + mark;
     const pr = e.pipeline_route;
     const k = pr && pr.measured && (pr.reaches || pr.takes)
       ? `<div class="profile-sub">${e.gold ? "⛏ Gold · " : ""}reaches ${pr.reaches} · ${pr.takes ? `<span class="profile-bad">takes ${pr.takes}</span>` : "takes 0"}</div>`
       : e.gold && e.klondike ? `<div class="profile-sub" title="⛏ Klondike Gold: ${e.klondike.hit}/${e.klondike.counted} with the Klondike profile loaded">⛏ Gold</div>`
       : e.klondike ? `<div class="profile-sub" title="with the Klondike profile loaded">with Klondike: ${e.klondike.hit}/${e.klondike.counted}</div>` : "";
-    return `<td><span class="compat-label compat-${escapeHtml(cls)}" title="${escapeHtml(e.label || e.state)}${e.version ? " · v" + escapeHtml(e.version) : ""}">${escapeHtml(text)}</span>${arrow}${k}</td>`;
+    return `<td><span class="compat-label compat-${escapeHtml(cls)}" title="${escapeHtml(e.label || e.state)}${e.version ? " · v" + escapeHtml(e.version) : ""}${escapeHtml(langNote)}">${escapeHtml(text)}</span>${arrow}${k}</td>`;
   }
 
-  function differs(cells) {
-    const sig = cells.filter(Boolean).map((e) => `${e.state}|${e.golden ? e.golden.hit + "/" + e.golden.counted : ""}|${e.klondike ? e.klondike.hit + "/" + e.klondike.counted : ""}`);
+  function differs(cells, cmp) {
+    const sig = cells.filter(Boolean).map((e) => {
+      const g = cmp.counts.get(e) || e.golden;
+      return `${e.state}|${g ? g.hit + "/" + g.counted : ""}|${e.klondike ? e.klondike.hit + "/" + e.klondike.counted : ""}`;
+    });
     return new Set(sig).size > 1;
   }
 
@@ -184,7 +229,7 @@
       return `<td><strong>${s.loads}</strong><span class="profile-dim">/${testable}</span>
         <div class="profile-sub">${s.routes} level 3${s.gold ? ` · ${s.gold} ⛏` : ""}${s.fails ? ` · <span class="profile-bad">${s.fails} ✗</span>` : ""}</div></td>`;
     };
-    metaEl.innerHTML = chans.map((c) => pipelineWarning(c, report.channels[c])).join("") + "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing.";
+    metaEl.innerHTML = chans.map((c) => pipelineWarning(c, report.channels[c])).join("") + "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. Golden counts are compared on the languages every channel routed, so a channel that also routed German is not counted against one that did not; hover a count for its languages. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing; ≠: the channels routed different languages and there are no per-language counts yet, so it is not compared.";
     summaryEl.innerHTML = `<div class="profile-table-wrap"><table class="profile-table profile-fixed profile-compare-sum">${summaryCols(chans.length)}
       <thead><tr><th>Profile</th>${chans.map((c) => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead>
       <tbody>${profileIds.map((id) => `<tr><td><strong>${escapeHtml(PROFILE_TITLE[id])}</strong></td>${chans.map((c) => {
@@ -205,11 +250,12 @@
         }
       }
       const mine = [...rows.values()].filter((r) => r.profile === id)
-        .filter((r) => !onlyDiff || differs(chans.map((c) => r.by[c])));
+        .map((r) => ({ ...r, cmp: comparable(chans.map((c) => r.by[c])) }))
+        .filter((r) => !onlyDiff || differs(chans.map((c) => r.by[c]), r.cmp));
       const body = mine.length ? mine.map((r) => `<tr>
           <td>${nameCell(r.entry)}</td>
           <td><span class="profile-kind profile-kind-${escapeHtml(r.entry.kind)}">${escapeHtml(r.entry.kind)}</span></td>
-          ${chans.map((c) => compactCell(r.by[c], r.by.testing)).join("")}
+          ${chans.map((c) => compactCell(r.by[c], r.by.testing, r.cmp)).join("")}
         </tr>`).join("")
         : `<tr><td colspan="${2 + chans.length}" class="profile-dim">No differences between the channels.</td></tr>`;
       return `<h2 class="detail-subhead" id="compare-${id}">${escapeHtml(PROFILE_TITLE[id])}</h2>
