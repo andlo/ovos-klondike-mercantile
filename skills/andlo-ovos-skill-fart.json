@@ -136,39 +136,39 @@
     "badge_id": "ovos-skill-fart.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 45/45 golden",
+        "label": "\u2713 11/11 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "1.0.1",
-        "tested_at": "2026-10-03T21:23:09+00:00",
+        "tested_at": "2026-10-04T10:57:17+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 45,
-          "counted": 45
+          "hit": 11,
+          "counted": 11
         }
       },
       "testing": {
-        "label": "\u2713 33/34 golden",
-        "state": "warn",
-        "level": 3,
-        "version_tested": "1.0.1",
-        "tested_at": "2026-10-03T21:32:57+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 33,
-          "counted": 34
-        }
-      },
-      "alpha": {
-        "label": "\u2713 22/22 golden",
+        "label": "\u2713 11/11 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "1.0.1",
-        "tested_at": "2026-10-03T21:53:06+00:00",
+        "tested_at": "2026-10-04T10:33:07+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 22,
-          "counted": 22
+          "hit": 11,
+          "counted": 11
+        }
+      },
+      "alpha": {
+        "label": "\u2713 11/11 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "1.0.1",
+        "tested_at": "2026-10-04T09:58:54+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 11,
+          "counted": 11
         }
       }
     }

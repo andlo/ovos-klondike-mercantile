@@ -108,40 +108,40 @@
     "badge_id": "ovos-skill-geography-practice.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 22/27 golden",
+        "label": "\u2713 8/10 golden",
         "state": "warn",
         "level": 3,
         "version_tested": "0.0.6",
-        "tested_at": "2026-10-03T21:39:12+00:00",
+        "tested_at": "2026-10-04T11:13:09+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 22,
-          "counted": 27
+          "hit": 8,
+          "counted": 10
         }
       },
       "testing": {
-        "label": "\u2713 17/21 golden",
+        "label": "\u2713 8/10 golden",
         "state": "warn",
         "level": 3,
         "version_tested": "0.0.6",
-        "tested_at": "2026-10-03T21:48:51+00:00",
+        "tested_at": "2026-10-04T10:48:58+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 17,
-          "counted": 21
+          "hit": 8,
+          "counted": 10
         }
       },
       "alpha": {
-        "label": "\u2713 18/18 golden \u00b7 stops",
+        "label": "\u2713 9/9 golden \u00b7 stops",
         "state": "pass",
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.6",
-        "tested_at": "2026-10-03T22:09:09+00:00",
+        "tested_at": "2026-10-04T10:14:52+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 18,
-          "counted": 18
+          "hit": 9,
+          "counted": 9
         }
       }
     }

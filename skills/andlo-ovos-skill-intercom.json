@@ -108,39 +108,39 @@
     "badge_id": "ovos-skill-intercom.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 4/34 golden",
+        "label": "\u2713 loads \u00b7 1/9 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.7",
-        "tested_at": "2026-10-03T21:21:55+00:00",
+        "tested_at": "2026-10-04T10:58:19+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 4,
-          "counted": 34
+          "hit": 1,
+          "counted": 9
         }
       },
       "testing": {
-        "label": "\u2713 loads \u00b7 3/34 golden",
+        "label": "\u2713 loads \u00b7 1/9 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.7",
-        "tested_at": "2026-10-03T21:33:57+00:00",
+        "tested_at": "2026-10-04T10:35:42+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 3,
-          "counted": 34
+          "hit": 1,
+          "counted": 9
         }
       },
       "alpha": {
-        "label": "\u2713 17/18 golden",
-        "state": "warn",
+        "label": "\u2713 9/9 golden",
+        "state": "pass",
         "level": 3,
         "version_tested": "0.0.7",
-        "tested_at": "2026-10-03T21:51:58+00:00",
+        "tested_at": "2026-10-04T09:57:28+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 17,
-          "counted": 18
+          "hit": 9,
+          "counted": 9
         }
       }
     }

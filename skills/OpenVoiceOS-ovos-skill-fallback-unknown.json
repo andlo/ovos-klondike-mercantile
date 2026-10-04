@@ -70,7 +70,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.6",
-        "tested_at": "2026-10-03T21:25:33+00:00",
+        "tested_at": "2026-10-04T11:08:03+00:00",
         "channel_pinned": true
       },
       "testing": {
@@ -78,19 +78,19 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.9",
-        "tested_at": "2026-10-03T21:46:16+00:00",
+        "tested_at": "2026-10-04T10:47:00+00:00",
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 loads \u00b7 0/25 golden",
+        "label": "\u2713 loads \u00b7 0/9 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.3.1a3",
-        "tested_at": "2026-10-03T22:25:59+00:00",
+        "tested_at": "2026-10-04T10:01:37+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 0,
-          "counted": 25
+          "counted": 9
         }
       }
     }

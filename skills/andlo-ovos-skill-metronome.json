@@ -67,42 +67,42 @@
     "badge_id": "ovos-skill-metronome.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 9/10 golden \u00b7 stops",
-        "state": "warn",
+        "label": "\u2713 5/5 golden \u00b7 stops",
+        "state": "pass",
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.5",
-        "tested_at": "2026-10-03T21:21:04+00:00",
+        "tested_at": "2026-10-04T11:01:19+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 9,
-          "counted": 10
+          "hit": 5,
+          "counted": 5
         }
       },
       "testing": {
-        "label": "\u2713 9/10 golden \u00b7 stops",
+        "label": "\u2713 4/5 golden \u00b7 stops",
         "state": "warn",
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.5",
-        "tested_at": "2026-10-03T21:32:22+00:00",
+        "tested_at": "2026-10-04T10:38:25+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 9,
-          "counted": 10
+          "hit": 4,
+          "counted": 5
         }
       },
       "alpha": {
-        "label": "\u2713 9/10 golden \u00b7 stops",
-        "state": "warn",
+        "label": "\u2713 5/5 golden \u00b7 stops",
+        "state": "pass",
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.5",
-        "tested_at": "2026-10-03T21:54:30+00:00",
+        "tested_at": "2026-10-04T09:56:49+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 9,
-          "counted": 10
+          "hit": 5,
+          "counted": 5
         }
       }
     }

@@ -121,39 +121,39 @@
     "badge_id": "ovos-skill-grimm-tales.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 0/8 golden",
+        "label": "\u2713 loads \u00b7 0/3 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.1.8",
-        "tested_at": "2026-10-03T21:20:49+00:00",
+        "tested_at": "2026-10-04T10:57:09+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 0,
-          "counted": 8
+          "counted": 3
         }
       },
       "testing": {
-        "label": "\u2713 8/8 golden",
+        "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.1.8",
-        "tested_at": "2026-10-03T21:32:35+00:00",
+        "tested_at": "2026-10-04T10:34:24+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 8,
-          "counted": 8
+          "hit": 3,
+          "counted": 3
         }
       },
       "alpha": {
-        "label": "\u2713 5/5 golden",
+        "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.1.8",
-        "tested_at": "2026-10-03T21:51:16+00:00",
+        "tested_at": "2026-10-04T09:56:46+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 5,
-          "counted": 5
+          "hit": 3,
+          "counted": 3
         }
       }
     }

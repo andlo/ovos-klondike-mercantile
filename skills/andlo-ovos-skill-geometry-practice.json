@@ -107,42 +107,42 @@
     "badge_id": "ovos-skill-geometry-practice.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 31/36 golden \u00b7 stops",
+        "label": "\u2713 10/12 golden \u00b7 stops",
         "state": "warn",
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-03T21:39:44+00:00",
+        "tested_at": "2026-10-04T11:13:32+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 31,
-          "counted": 36
+          "hit": 10,
+          "counted": 12
         }
       },
       "testing": {
-        "label": "\u2713 20/24 golden \u00b7 stops",
+        "label": "\u2713 10/12 golden \u00b7 stops",
         "state": "warn",
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-03T21:49:11+00:00",
+        "tested_at": "2026-10-04T10:49:18+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 20,
-          "counted": 24
+          "hit": 10,
+          "counted": 12
         }
       },
       "alpha": {
-        "label": "\u2713 24/24 golden \u00b7 stops",
+        "label": "\u2713 12/12 golden \u00b7 stops",
         "state": "pass",
         "level": 3,
         "stop": "stops",
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-03T22:09:53+00:00",
+        "tested_at": "2026-10-04T10:15:29+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 24,
-          "counted": 24
+          "hit": 12,
+          "counted": 12
         }
       }
     }

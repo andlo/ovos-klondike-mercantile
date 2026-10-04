@@ -74,39 +74,39 @@
     "badge_id": "ovos-skill-sound-like.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 5/6 golden",
-        "state": "warn",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T21:21:32+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 5,
-          "counted": 6
-        }
-      },
-      "testing": {
-        "label": "\u2713 loads \u00b7 3/6 golden",
-        "state": "warn",
-        "level": 2,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T21:42:14+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 6
-        }
-      },
-      "alpha": {
-        "label": "\u2713 6/6 golden",
+        "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T22:20:30+00:00",
+        "tested_at": "2026-10-04T11:10:35+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 6,
-          "counted": 6
+          "hit": 3,
+          "counted": 3
+        }
+      },
+      "testing": {
+        "label": "\u2713 3/3 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-04T10:52:23+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 3,
+          "counted": 3
+        }
+      },
+      "alpha": {
+        "label": "\u2713 3/3 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-04T10:22:13+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 3,
+          "counted": 3
         }
       }
     }
