@@ -12,7 +12,6 @@ cffi==2.1.1
 charset-normalizer==3.5.2
 click==8.5.0
 cloudpickle==3.1.2
-colorspacious==1.1.2
 combo_lock==0.3.1
 crf_query_xtract==0.2.0
 dateparser==1.4.3
@@ -49,8 +48,8 @@ oauthlib==3.3.1
 orjson==3.12.0
 ovos-audio==0.4.0
 ovos-classifiers==0.0.0a59
-ovos-color-parser==0.0.8
 ovos-common-query-pipeline-plugin==1.1.7
+ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==1.2.2
 ovos-core==1.3.1
 ovos-date-parser==0.6.4
@@ -62,12 +61,13 @@ ovos-media==2.4.5a1
 ovos-number-parser==0.3.2
 ovos-ocp-pipeline-plugin==1.1.14
 ovos-plugin-manager==0.9.0
+ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.1.24
+ovos-skill-andersen-tales==0.1.8
+ovos-skill-andrew-lang-tales==0.1.9
+ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.2.7
 ovos-skill-boot-finished==0.5.0
-ovos-skill-camera==1.0.4
-ovos-skill-color-picker==0.0.7
-ovos-skill-confucius-quotes==0.1.13
 ovos-skill-count @ git+https://github.com/OpenVoiceOS/ovos-skill-count@680bcb89dfd885144b5c36b4b9269fbe58ff55df
 ovos-skill-date-time==0.4.20
 ovos-skill-diagnostics==0.0.8
