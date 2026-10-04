@@ -47,7 +47,7 @@ function renderTestLegend() {
   const users = renderCompatLabels({ compat: { channels: { testing: compatFromRecord(LEGEND_ROWS[2].rec) } },
     reports: { testing: { works: 4 } } });
   return `
-    <table class="legend-table">
+    <table class="legend-table legend-table-3">
       <thead><tr><th>On a card</th><th>On the detail page and the README badge</th><th>Meaning</th></tr></thead>
       <tbody>
         ${rows}

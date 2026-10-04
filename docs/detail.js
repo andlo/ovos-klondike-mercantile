@@ -341,15 +341,26 @@ function collisionList(items, text) {
 
 // A pipeline plugin's routing in the row head and one line under it, so
 // it is seen without opening the test details (#52).
+// Whether this pipeline plugin runs in the Klondike test at all: its stage
+// is added by the profile, or it is part of the installer's own pipeline.
+function pipelineInKlondike(rec, p) {
+  if (!p) return false;
+  if (p.inProfile) return true;
+  const kmeta = klondikeMeta(rec.channel) || {};
+  const installer = new Set(asArray((kmeta.profile || {}).pipeline).map((s) => s.replace(/-(high|medium|low)$/, "")));
+  return asArray(rec.plugin_ids).some((i) => installer.has(i));
+}
+
 function pipelineHead(c, rec) {
   const p = c && c.pipeline_route;
   return p && pipelineGold(c)
     ? qualityChip("klondike", `took ${p.reaches} sentences for their skills and none from another skill, in the Klondike test on ${rec.channel}`) : "";
 }
 
-function pipelineLine(c) {
+function pipelineLine(c, rec) {
   const p = c && c.pipeline_route;
-  if (!p) return "";
+  // Nothing to say where it does not install, or is not in the test at all.
+  if (!p || !["pass", "warn"].includes(c.state) || !pipelineInKlondike(rec, p)) return "";
   if (!p.measured) return `<p class="setup-note">Routing in the Klondike test: not measurable on this channel.</p>`;
   return `<p class="setup-note">Routing in the Klondike test: reaches ${p.reaches} · ${p.takes
     ? `<span class="compat-fail-text">takes ${p.takes}</span> (the test details say which)` : "takes none"}.</p>`;
@@ -360,11 +371,16 @@ function pipelineLine(c) {
 function renderPipelineKlondike(rec, kmeta) {
   const p = pipelineRoute(compatDoc, rec.channel, rec.plugin_ids);
   if (!p) return "";
-  const installer = new Set(asArray((kmeta.profile || {}).pipeline).map((s) => s.replace(/-(high|medium|low)$/, "")));
+  const inTest = pipelineInKlondike(rec, p);
   const where = p.inProfile ? "yes, the profile adds its stage to the installer's pipeline"
-    : asArray(rec.plugin_ids).some((i) => installer.has(i)) ? "yes, it is part of the installer's own pipeline"
-    : "no: it is only tested at levels 1 and 2 until it is";
+    : inTest ? "yes, it is part of the installer's own pipeline"
+    : "no";
   const rows = [renderStatRow("In the profile", escapeHtml(where))];
+  if (!inTest) {
+    rows.push(`<p class="setup-note">This plugin is not in the Klondike profile, so the Klondike test does not load it and its routing is not measured. It is tested at levels 1 and 2 above; <a href="for-maintainers.html#klondike-profile">how an entry gets into the profile</a>.</p>`);
+    return `<h4 class="compat-subhead">Routing on a well-equipped install (Klondike test)</h4>
+    <div class="compat-facts">${rows.join("")}</div>`;
+  }
   if (!p.measured) {
     rows.push(renderStatRow("Routing", escapeHtml("not measurable on this channel: its ovos-core does not say which pipeline plugin matched a sentence (ovos-core 3, on alpha, does)")));
   } else {
@@ -387,7 +403,7 @@ function renderPipelineKlondike(rec, kmeta) {
 function renderKlondike(rec, meta) {
   const kmeta = klondikeMeta(rec.channel);
   if (!kmeta) return "";
-  if (rec.kind === "pipeline") return renderPipelineKlondike(rec, kmeta);
+  if (rec.kind === "pipeline") return rec.status === "pass" ? renderPipelineKlondike(rec, kmeta) : "";
   const job = kmeta.job || {};
   const res = (job.results || {})[rec.id];
   const refused = (job.refused || {})[rec.id];
@@ -500,7 +516,7 @@ function renderWorksWith(skill) {
           <span class="compat-label compat-${escapeHtml(state)}">${escapeHtml(text)}</span>${pipelineHead(c, rec)}
           <span class="compat-meta">${escapeHtml(meta)}</span>
         </div>
-        ${compatSummaryLine(rec)}${pipelineLine(c)}
+        ${compatSummaryLine(rec)}${pipelineLine(c, rec)}
         ${fold("Test details", compatDetails(rec, channelsMeta[ch] || {}))}
         ${renderPeopleReports(skill, ch)}
       </div>`;
