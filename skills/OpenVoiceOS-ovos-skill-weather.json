@@ -46,7 +46,7 @@
   "type_group": "Skill",
   "stars": 3,
   "forks": 10,
-  "open_issues": 12,
+  "open_issues": 16,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -81,6 +81,7 @@
     "gl-es",
     "hu-hu",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -91,7 +92,32 @@
     "sv-se",
     "tr-tr"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Tignawt",
+      "description": "Steqsi \u0263ef tignawt, \u0263ef usanay, \u0263ef ugeffur i d-iteddun d wugar. Tzemre\u1e0d ad testeqsi\u1e0d da\u0263en \u0263ef temdinin nni\u1e0den n uma\u1e0dal. Isefka-agi d ay d-yekkan seg OpenMeteo.",
+      "examples": [
+        "Ac\u1e25al i d lambubya n wa\u1e0du tura di Tizi Wezzu",
+        "Ad yili usemmi\u1e0d ass-a di Tizi Wezzu",
+        "Yella wa\u1e0du tura di Tizi Wezzu",
+        "Melmi ara d-ye\u0263li ugeffur nnig-i di Tizi Wezzu",
+        "D melmi ara d-yeffe\u0263 yi\u1e6dij ass-a di Tizi Wezzu",
+        "D melmi ara ye\u0263li yi\u1e6dij ass-a di Tizi Wezzu",
+        "Ac\u1e25al i d ddrejat tura di Tizi Wezzu",
+        "D acu i d lexba\u1e5b n waman i sin wussan di Tizi Wezzu",
+        "tella l\u1e25ala ifaz ass-a di Tizi Wezzu",
+        "Ac\u1e25al i d lambubya s ubadu di Tizi Wezzu",
+        "Ad yili \u1e5b\u1e5be\u1e0d ass n arim",
+        "Ad yili wa\u1e0du ass-a",
+        "Ac\u1e25al i d-yeqqimen i ugeffur",
+        "D melmi ara d-yali wass azekka di Tizi Wezzu",
+        "D melmi ara ye\u1e0dlem wass ass-a di Tizi Wezzu",
+        "Ac\u1e25al ara yi\u0263 \u1e5b\u1e5be\u1e0d azekka",
+        "Amek ara tili l\u1e25ala deg wass n lareb\u025ba di Tizi Wezzu",
+        "ad d-ye\u0263li udfel"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2021-06-08T08:00:33Z",
   "last_updated": "2025-07-30T16:46:48.043142Z",
@@ -105,26 +131,27 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.18",
-        "tested_at": "2026-10-03T18:30:35+00:00",
+        "tested_at": "2026-10-03T21:35:54+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:46:57+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.6",
+        "tested_at": "2026-10-03T21:52:02+00:00",
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 98/98 golden",
+        "label": "\u2713 85/85 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "1.5.1a2",
-        "tested_at": "2026-10-03T19:03:43+00:00",
+        "tested_at": "2026-10-03T22:26:15+00:00",
         "channel_pinned": true,
         "golden": {
-          "hit": 98,
-          "counted": 98
+          "hit": 85,
+          "counted": 85
         }
       }
     }

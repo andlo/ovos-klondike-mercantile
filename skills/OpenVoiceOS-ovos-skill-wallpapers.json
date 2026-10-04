@@ -30,7 +30,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 4,
-  "open_issues": 4,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -692,6 +692,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -699,7 +700,19 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Abeddel n Ugdil",
+      "description": "Tugniwin seg subreddit yettwafernen.",
+      "examples": [
+        "agdil ajdid",
+        "beddel agdil \u0263er tabi\u025bt",
+        "sken-iyi-d tugna",
+        "sken-iyi-d tugna n i\u1e0dan",
+        "sers-t d agilal-iw"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2020-07-07T03:54:03Z",
   "last_updated": "2024-12-04T22:37:11.430893Z",
@@ -712,8 +725,9 @@
         "label": "\u2713 loads",
         "state": "pass",
         "level": 2,
+        "stop": "stops",
         "version_tested": "1.0.9",
-        "tested_at": "2026-10-03T18:20:18+00:00",
+        "tested_at": "2026-10-03T21:23:35+00:00",
         "channel_pinned": true
       },
       "testing": {
@@ -721,7 +735,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.0.9",
-        "tested_at": "2026-10-03T18:33:23+00:00",
+        "tested_at": "2026-10-03T21:43:36+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -729,7 +743,7 @@
         "state": "warn",
         "level": 2,
         "version_tested": "2.8.1a1",
-        "tested_at": "2026-10-03T19:01:55+00:00",
+        "tested_at": "2026-10-03T22:24:20+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 10,

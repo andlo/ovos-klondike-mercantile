@@ -128,7 +128,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.10",
-        "tested_at": "2026-10-03T18:26:42+00:00",
+        "tested_at": "2026-10-03T21:21:20+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 25,
@@ -136,23 +136,27 @@
         }
       },
       "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.0.10",
-        "tested_at": "2026-10-03T18:36:10+00:00",
-        "channel_pinned": false
-      },
-      "alpha": {
-        "label": "\u2713 13/13 golden",
+        "label": "\u2713 8/8 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.0.10",
-        "tested_at": "2026-10-03T18:54:38+00:00",
+        "tested_at": "2026-10-03T21:42:33+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 13,
-          "counted": 13
+          "hit": 8,
+          "counted": 8
+        }
+      },
+      "alpha": {
+        "label": "\u2713 8/8 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.0.10",
+        "tested_at": "2026-10-03T22:22:33+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 8,
+          "counted": 8
         }
       }
     }

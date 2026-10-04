@@ -29,7 +29,7 @@
   "type_group": "Skill",
   "stars": 3,
   "forks": 5,
-  "open_issues": 4,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -50,6 +50,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -58,7 +59,19 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "A\u1e0dfar n ISS",
+      "description": "\u1e0cfer amkan n ISS",
+      "examples": [
+        "Anda tella ISS",
+        "Anwa yellan deg tzeqqa n wallal?",
+        "Melmi ara d-t\u025beddi ISS",
+        "Ini-yi \u0263ef ISS",
+        "ac\u1e25al n medden deg tzeqqa n wallal"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2020-06-26T03:33:52Z",
   "last_updated": "2025-06-08T23:17:58.537971Z",
@@ -72,14 +85,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.16",
-        "tested_at": "2026-10-03T18:20:19+00:00",
+        "tested_at": "2026-10-03T21:22:08+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:29:43+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.2.16",
+        "tested_at": "2026-10-03T21:34:10+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -87,7 +101,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.7.1a1",
-        "tested_at": "2026-10-03T18:36:32+00:00",
+        "tested_at": "2026-10-03T21:52:22+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 45,

@@ -36,7 +36,7 @@
   "type_group": "Skill",
   "stars": 6,
   "forks": 9,
-  "open_issues": 3,
+  "open_issues": 5,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -62,6 +62,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -70,7 +71,24 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Bebbuc",
+      "description": "Err OpenVoiceOS d bebbuc ara ialsen! Sers \u0263ef OVOS ad d-yales ayen teb\u0263i\u1e0d.",
+      "examples": [
+        "ini i\u1e0delli n lxir, Gracie",
+        "ales Yiwen n yi\u1e0d n tegrest yerkan, mi lli\u0263 xemmeme\u0263, \u025begg\u1e0de\u0263 akked wex\u1e63as, \u0263ef wa\u1e6das n yidlisen yettwattun",
+        "mmeslay zemre\u0263 ad ini\u0263 ayen teb\u0263i\u1e0d!",
+        "Ales ayen i [tura kan] tenni\u1e0d",
+        "Ales-t",
+        "Tzemre\u1e0d ad t-tealse\u1e0d?",
+        "D acu i [tura kan] nni\u0263?",
+        "Ini-yi d acu i [tura kan] nni\u0263.",
+        "bdu bebbuc",
+        "ssense\u0263 bebbuc"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2017-03-04T22:33:40Z",
   "last_updated": "2025-06-10T02:18:07.477724Z",
@@ -84,25 +102,26 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.20",
-        "tested_at": "2026-10-03T18:21:34+00:00",
+        "tested_at": "2026-10-03T21:24:59+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:32:05+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.25",
+        "tested_at": "2026-10-03T21:37:49+00:00",
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 63/67 golden",
+        "label": "\u2713 64/67 golden",
         "state": "warn",
         "level": 3,
         "version_tested": "0.11.0a5",
-        "tested_at": "2026-10-03T18:45:31+00:00",
+        "tested_at": "2026-10-03T22:17:02+00:00",
         "channel_pinned": true,
         "golden": {
-          "hit": 63,
+          "hit": 64,
           "counted": 67
         }
       }

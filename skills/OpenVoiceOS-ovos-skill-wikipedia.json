@@ -23,7 +23,7 @@
   "type_group": "Skill",
   "stars": 10,
   "forks": 12,
-  "open_issues": 9,
+  "open_issues": 10,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -49,6 +49,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -56,7 +57,21 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Wikipidya",
+      "description": "Steqsi Wikipedia akken ad tafe\u1e0d tiririyin i yesteqsiyen-ik me\u1e5b\u1e5ba. Awi-d kan agzul, ne\u0263 suter ugar akken ad tafe\u1e0d tal\u0263ut talqayant.",
+      "examples": [
+        "Ini-yi-d kra \u0263ef Elon Musk",
+        "Ini-yi-d kra \u0263ef yibawen",
+        "Nadi deg Wikipedia \u0263ef yibawen",
+        "Ini-yi-d kra \u0263ef Pembroke Welsh Corgi",
+        "Nadi \u0263ef ccakula",
+        "Ugar n tel\u0263ut",
+        "Ini-yi-d ugar"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2020-12-05T16:12:35Z",
   "last_updated": "2025-06-08T22:32:49.328946Z",
@@ -70,26 +85,27 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.8.13",
-        "tested_at": "2026-10-03T18:20:05+00:00",
+        "tested_at": "2026-10-03T21:23:52+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:31:58+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.8.13",
+        "tested_at": "2026-10-03T21:36:54+00:00",
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 12/15 golden",
+        "label": "\u2713 15/16 golden",
         "state": "warn",
         "level": 3,
         "version_tested": "0.18.4a1",
-        "tested_at": "2026-10-03T18:42:18+00:00",
+        "tested_at": "2026-10-03T22:13:55+00:00",
         "channel_pinned": true,
         "golden": {
-          "hit": 12,
-          "counted": 15
+          "hit": 15,
+          "counted": 16
         }
       }
     }

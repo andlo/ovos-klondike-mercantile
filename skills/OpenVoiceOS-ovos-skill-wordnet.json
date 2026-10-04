@@ -23,7 +23,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 3,
-  "open_issues": 8,
+  "open_issues": 9,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -41,6 +41,7 @@
     "ar-xx",
     "bg-bg",
     "ca-es",
+    "cmn-cn",
     "da-dk",
     "de-de",
     "el-gr",
@@ -58,6 +59,7 @@
     "is-is",
     "it-it",
     "ja-jp",
+    "kab",
     "lt-lt",
     "nb-no",
     "nl-nl",
@@ -70,9 +72,19 @@
     "sk-sk",
     "sl-si",
     "sv-se",
-    "th-th"
+    "th-th",
+    "zsm-my"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Askill n Wordnet",
+      "description": "Seqdec Wordnet i tririt \u0263ef isteqsiyen am wid n umawal.",
+      "examples": [
+        "d acu-t usefru n ...",
+        "d acu-t awal amgarad n ..."
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2024-02-19T21:04:45Z",
   "last_updated": "2025-11-05T00:46:07.599718Z",
@@ -86,14 +98,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.6",
-        "tested_at": "2026-10-03T18:21:10+00:00",
+        "tested_at": "2026-10-03T21:24:37+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
+        "label": "\u2717 doesn't load",
         "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:32:02+00:00",
+        "level": 1,
+        "version_tested": "0.2.6",
+        "tested_at": "2026-10-03T21:37:35+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -101,7 +114,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.13.3a1",
-        "tested_at": "2026-10-03T18:44:04+00:00",
+        "tested_at": "2026-10-03T22:15:37+00:00",
         "channel_pinned": true
       }
     }

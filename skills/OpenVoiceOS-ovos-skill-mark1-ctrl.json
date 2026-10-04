@@ -43,7 +43,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 2,
-  "open_issues": 3,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -70,6 +70,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -78,7 +79,31 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Mark 1 Enclosure Control",
+      "description": "Control the Mycroft Mark 1 enclosure by voice.",
+      "examples": [
+        "se\u0263me\u1e0d allen",
+        "rnu tafeggagt",
+        "xdem allen imhewwlen",
+        "b\u0263i\u0263 yini n wallen udmawan",
+        "b\u0263i\u0263 allen kaki",
+        "b\u0263i\u0263 udem n usflid",
+        "\u1e63ubb allen",
+        "wali \u0263er uzelma\u1e0d",
+        "wali \u0263er sin idisan",
+        "wali \u0263er uyeffus",
+        "refd allen",
+        "wali ddaw d nnig",
+        "seddi allen-ik",
+        "e\u01e7\u01e7 kullec am zik",
+        "sken-d tadmert",
+        "zzi allen",
+        "b\u0263i\u0263 udem n uxemmem"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2018-04-09T21:39:14Z",
   "last_updated": "2026-04-04T04:32:02.377027Z",
@@ -92,7 +117,7 @@
         "state": "fail",
         "level": 1,
         "version_tested": "0.0.1",
-        "tested_at": "2026-10-03T18:21:34+00:00",
+        "tested_at": "2026-10-03T21:23:05+00:00",
         "channel_pinned": false
       },
       "testing": {
@@ -100,7 +125,7 @@
         "state": "fail",
         "level": 1,
         "version_tested": "0.0.1",
-        "tested_at": "2026-10-03T18:29:49+00:00",
+        "tested_at": "2026-10-03T21:35:08+00:00",
         "channel_pinned": false
       },
       "alpha": {
@@ -108,7 +133,7 @@
         "state": "fail",
         "level": 1,
         "version_tested": "0.0.1",
-        "tested_at": "2026-10-03T18:39:39+00:00",
+        "tested_at": "2026-10-03T21:55:30+00:00",
         "channel_pinned": false
       }
     }

@@ -28,7 +28,7 @@
   "type_group": "Skill",
   "stars": 7,
   "forks": 9,
-  "open_issues": 6,
+  "open_issues": 13,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -67,6 +67,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pt-br",
     "pt-pt",
@@ -86,14 +87,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.2.3",
-        "tested_at": "2026-10-03T18:21:18+00:00",
+        "tested_at": "2026-10-03T21:21:52+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:32:14+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.1.0",
+        "tested_at": "2026-10-03T21:35:01+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -101,7 +103,7 @@
         "state": "warn",
         "level": 2,
         "version_tested": "2.0.0a1",
-        "tested_at": "2026-10-03T18:45:01+00:00",
+        "tested_at": "2026-10-03T22:10:42+00:00",
         "channel_pinned": true
       }
     }

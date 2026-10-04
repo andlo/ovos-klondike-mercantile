@@ -20,7 +20,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 2,
-  "open_issues": 6,
+  "open_issues": 7,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -50,6 +50,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -57,7 +58,18 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Pokepedia",
+      "description": "Answer questions about Pokemon and compare two of them by type advantage.",
+      "examples": [
+        "muk mgal muk",
+        "pokemon muk",
+        "ti\u0263awsiwin n muk",
+        "pokemon muk d anaw acu-t"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2026-05-12T15:30:53Z",
   "last_updated": "2026-05-12T18:23:26.079186Z",
@@ -71,21 +83,22 @@
         "state": "fail",
         "level": 1,
         "version_tested": "0.1.4",
-        "tested_at": "2026-10-03T18:18:54+00:00",
+        "tested_at": "2026-10-03T21:23:21+00:00",
         "channel_pinned": false
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:31:53+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.4",
+        "tested_at": "2026-10-03T21:36:31+00:00",
         "channel_pinned": false
       },
       "alpha": {
         "label": "\u2717 doesn't install",
         "state": "fail",
         "level": 0,
-        "tested_at": "2026-10-03T18:41:52+00:00",
+        "tested_at": "2026-10-03T22:13:31+00:00",
         "channel_pinned": false
       }
     }

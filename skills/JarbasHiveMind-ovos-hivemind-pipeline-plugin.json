@@ -70,14 +70,15 @@
         "state": "unsupported",
         "level": 1,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T18:20:53+00:00",
+        "tested_at": "2026-10-03T21:21:30+00:00",
         "channel_pinned": false
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:31:44+00:00",
+        "label": "needs config",
+        "state": "unsupported",
+        "level": 1,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-10-03T21:33:43+00:00",
         "channel_pinned": false
       },
       "alpha": {
@@ -85,7 +86,7 @@
         "state": "unsupported",
         "level": 1,
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-03T18:40:17+00:00",
+        "tested_at": "2026-10-03T21:56:53+00:00",
         "channel_pinned": false
       }
     }

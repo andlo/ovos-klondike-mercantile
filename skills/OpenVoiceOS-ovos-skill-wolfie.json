@@ -60,6 +60,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -67,7 +68,20 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Wolfram Alpha",
+      "description": "Seqdec Wolfram Alpha i tigawin n tmusni tamatut.",
+      "examples": [
+        "steqsi awtul acu-t urar n tafat",
+        "D ac\u1e25al ay ye\u025blay u\u1e0dar n Everest?",
+        "Melmi i d-yeffe\u0263 The Rocky Horror Picture Show?",
+        "D acu-t isem n Madonna n tidet?",
+        "D ac\u1e25al 18 s 4?",
+        "D ac\u1e25al n yinces deg umitr?"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2020-12-08T10:42:07Z",
   "last_updated": "2025-06-08T22:33:04.764467Z",
@@ -81,14 +95,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.5.8",
-        "tested_at": "2026-10-03T18:20:50+00:00",
+        "tested_at": "2026-10-03T21:24:15+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:32:00+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.5.8",
+        "tested_at": "2026-10-03T21:37:18+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -96,7 +111,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.12.1a3",
-        "tested_at": "2026-10-03T18:43:13+00:00",
+        "tested_at": "2026-10-03T22:14:48+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 8,

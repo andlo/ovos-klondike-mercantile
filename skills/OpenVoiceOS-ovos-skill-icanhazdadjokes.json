@@ -35,7 +35,7 @@
   "type_group": "Skill",
   "stars": 4,
   "forks": 7,
-  "open_issues": 4,
+  "open_issues": 6,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -58,6 +58,7 @@
     "gl-es",
     "hu-hu",
     "it-it",
+    "kab",
     "lt-lt",
     "nl-nl",
     "pl-pl",
@@ -66,7 +67,21 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Ccetla",
+      "description": "Sfe\u1e5b\u1e25 ass-ik s ccetla n baba. Ur nettwakel ara ad te\u1e0dse\u1e0d, maca yezmer ad tes\u025beddi\u1e0d allen-ik.",
+      "examples": [
+        "Ini-yi ccetla.",
+        "Awi-d ccetla.",
+        "Tes\u025bi\u1e0d ccetla?",
+        "Tzemre\u1e0d ad d-tawi\u1e0d ccetla?",
+        "Se\u1e25su-yi.",
+        "Ini-yi ccetla \u0263ef yimjuhad n tu\u0263mas.",
+        "Tes\u025bi\u1e0d ccetla n Chuck Norris?"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2020-12-05T17:42:52Z",
   "last_updated": "2025-06-08T23:18:44.122053Z",
@@ -80,14 +95,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.3.7",
-        "tested_at": "2026-10-03T18:21:14+00:00",
+        "tested_at": "2026-10-03T21:22:51+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:29:47+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.3.7",
+        "tested_at": "2026-10-03T21:34:49+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -95,7 +111,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.25.6a3",
-        "tested_at": "2026-10-03T18:38:41+00:00",
+        "tested_at": "2026-10-03T21:54:33+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 21,

@@ -59,7 +59,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 5,
-  "open_issues": 10,
+  "open_issues": 11,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -85,6 +85,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -93,7 +94,45 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "A\u1e0debbe\u1e5b n Ta\u0263ect",
+      "description": "S\u1e0debbe\u1e5b ta\u0263ect n OVOS s tebrat n imeslayen",
+      "examples": [
+        "ta\u0263ect tamezwarut",
+        "beddel imesli",
+        "sgens ta\u0263ect",
+        "aswir n ta\u0263ect \u0263er adday",
+        "ta\u0263ect \u0263er adday",
+        "aswir n ta\u0263ect \u0263er afellay",
+        "sbadu ta\u0263ect \u0263er akmal",
+        "sbadu aswir n ta\u0263ect \u0263er akmal",
+        "beddel asgens",
+        "aswir n ta\u0263ect adday",
+        "aswir n ta\u0263ect afellay",
+        "ta\u0263ect \u0263er aswir afellay",
+        "ta\u0263ect n akmal",
+        "sbadu ta\u0263ect \u0263er alemmas",
+        "err ta\u0263ect",
+        "ta\u0263ect n alemmas",
+        "ta\u0263ect afellay",
+        "sgens imesli",
+        "sers imesli",
+        "sers asgens",
+        "ta\u0263ect \u0263er afellay",
+        "ta\u0263ect n akmal",
+        "sbadu ta\u0263ect",
+        "sbadu ta\u0263ect \u0263er amezwer",
+        "sbadu aswir n ta\u0263ect \u0263er amezwer",
+        "ta\u0263ect adday",
+        "ta\u0263ect afellay",
+        "ta\u0263ect adday",
+        "asgens",
+        "sers asgens n ta\u0263ect",
+        "ta\u0263ect n unezwi"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2021-08-11T20:18:54Z",
   "last_updated": "2025-06-08T21:49:17.322939Z",
@@ -107,14 +146,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.16",
-        "tested_at": "2026-10-03T18:19:45+00:00",
+        "tested_at": "2026-10-03T21:22:38+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:33:22+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.16",
+        "tested_at": "2026-10-03T21:43:13+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -122,7 +162,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.12.1a1",
-        "tested_at": "2026-10-03T19:00:43+00:00",
+        "tested_at": "2026-10-03T22:23:12+00:00",
         "channel_pinned": true
       }
     }

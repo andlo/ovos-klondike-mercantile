@@ -28,7 +28,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 2,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -54,6 +54,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "pl-pl",
     "pt-br",
@@ -61,7 +62,18 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Awalen n Yuwan Fuster",
+      "description": "Awal n wass n Fuster",
+      "examples": [
+        "examples[0]: Ini-yi-d anzi n Fuster",
+        "examples[1]: Awal n wass n Fuster.",
+        "examples[2]: Awal n wass n Yuwan Fuster.",
+        "examples[3]: Ini-yi-d awal n Yuwan Fuster."
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2024-12-19T01:20:43Z",
   "last_updated": "2025-03-06T15:43:48.143289Z",
@@ -75,14 +87,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.0.4",
-        "tested_at": "2026-10-03T18:21:00+00:00",
+        "tested_at": "2026-10-03T21:22:40+00:00",
         "channel_pinned": false
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:29:45+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.0.4",
+        "tested_at": "2026-10-03T21:34:39+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -90,7 +103,7 @@
         "state": "pass",
         "level": 3,
         "version_tested": "0.2.5a1",
-        "tested_at": "2026-10-03T18:37:42+00:00",
+        "tested_at": "2026-10-03T21:53:35+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 29,

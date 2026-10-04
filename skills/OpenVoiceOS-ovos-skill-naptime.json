@@ -29,7 +29,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 5,
-  "open_issues": 4,
+  "open_issues": 6,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -58,6 +58,8 @@
     "gl-es",
     "hu-hu",
     "it-it",
+    "kab",
+    "kab-dz",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -68,7 +70,17 @@
     "sv-se",
     "tr-tr"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "Akud n \u1e6d\u1e6des",
+      "description": "Sers am\u025biwen \u0263er \u1e6d\u1e6des ticki ur teb\u0263i\u1e0d ara ad k-yeqleq.",
+      "examples": [
+        "Ru\u1e25 ad \u1e6d\u1e6dse\u0263",
+        "Akud n \u1e6d\u1e6des",
+        "Ekker"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2021-09-06T12:46:20Z",
   "last_updated": "2025-06-08T21:48:46.994625Z",
@@ -82,14 +94,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.3.15",
-        "tested_at": "2026-10-03T18:20:30+00:00",
+        "tested_at": "2026-10-03T21:22:13+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:30:18+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.3.15",
+        "tested_at": "2026-10-03T21:33:48+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -97,7 +110,7 @@
         "state": "warn",
         "level": 2,
         "version_tested": "0.12.0a7",
-        "tested_at": "2026-10-03T18:37:12+00:00",
+        "tested_at": "2026-10-03T21:56:20+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 7,

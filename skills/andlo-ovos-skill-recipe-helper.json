@@ -128,30 +128,35 @@
     "badge_id": "ovos-skill-recipe-helper.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 3/9 golden",
+        "label": "\u2713 loads \u00b7 2/9 golden",
         "state": "warn",
         "level": 2,
         "version_tested": "0.1.1",
-        "tested_at": "2026-10-03T18:21:53+00:00",
+        "tested_at": "2026-10-03T21:25:18+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 3,
+          "hit": 2,
           "counted": 9
         }
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:32:07+00:00",
-        "channel_pinned": false
+        "label": "\u2713 loads \u00b7 0/9 golden",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.1.1",
+        "tested_at": "2026-10-03T21:38:04+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 0,
+          "counted": 9
+        }
       },
       "alpha": {
         "label": "\u2713 6/6 golden",
         "state": "pass",
         "level": 3,
         "version_tested": "0.1.1",
-        "tested_at": "2026-10-03T18:46:23+00:00",
+        "tested_at": "2026-10-03T22:17:53+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 6,

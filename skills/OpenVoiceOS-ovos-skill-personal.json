@@ -74,13 +74,25 @@
     "gl-es",
     "hu-hu",
     "it-it",
+    "kab",
     "nl-nl",
     "pt-br",
     "pt-pt",
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "name": "La\u1e63el n umallal",
+      "description": "Issin amezruy d \u1e6d\u1e6dbi\u025ba n umallal. Steqsi \u0263ef \u00ab tlalit \u00bb d la\u1e63el n umallal-aa ihedd\u1e5ben, ternu\u1e0d ad tessine\u1e0d tarba\u025bt i t-id-yesnulfan s wudem yeldin i yal yiwen.",
+      "examples": [
+        "Melmi i k-id-xedmen?",
+        "D acu-k?",
+        "Anda i d-tlule\u1e0d?",
+        "Anwa i k-id-ixedmen?"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2021-06-08T15:04:59Z",
   "last_updated": "2025-06-08T21:32:32.357408Z",
@@ -94,14 +106,15 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.1.19",
-        "tested_at": "2026-10-03T18:22:00+00:00",
+        "tested_at": "2026-10-03T21:24:37+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:28:35+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.19",
+        "tested_at": "2026-10-03T21:32:17+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -109,7 +122,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.0.2a6",
-        "tested_at": "2026-10-03T18:45:48+00:00",
+        "tested_at": "2026-10-03T22:00:24+00:00",
         "channel_pinned": true
       }
     }

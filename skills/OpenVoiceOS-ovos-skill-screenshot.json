@@ -55,6 +55,7 @@
     "fr-fr",
     "gl-es",
     "it-it",
+    "kab",
     "nl-nl",
     "oc-fr",
     "pl-pl",
@@ -63,7 +64,18 @@
     "ru-ru",
     "sv-se"
   ],
-  "locale_content": {},
+  "locale_content": {
+    "kab": {
+      "examples": [
+        "\u1e6d\u1e6def tugna n ugdil",
+        "\u1e6d\u1e6def tugna n ugdil",
+        "\u1e6d\u1e6def agdil",
+        "tugna n ugdil",
+        "sekles tugna n ugdil",
+        "\u1e6d\u1e6def agdil n uselkim"
+      ]
+    }
+  },
   "in_ovos_localize": true,
   "repo_created_at": "2024-11-17T13:56:41Z",
   "last_updated": "2025-03-16T13:12:04.694661Z",
@@ -77,14 +89,15 @@
         "state": "warn",
         "level": 2,
         "version_tested": "0.0.7",
-        "tested_at": "2026-10-03T18:18:43+00:00",
+        "tested_at": "2026-10-03T21:21:43+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:32:49+00:00",
+        "label": "\u2713 loads \u00b7 10/11 langs",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.0.7",
+        "tested_at": "2026-10-03T21:35:13+00:00",
         "channel_pinned": true
       },
       "alpha": {
@@ -92,7 +105,7 @@
         "state": "pass",
         "level": 2,
         "version_tested": "1.7.0a3",
-        "tested_at": "2026-10-03T18:47:56+00:00",
+        "tested_at": "2026-10-03T22:17:31+00:00",
         "channel_pinned": true
       }
     }

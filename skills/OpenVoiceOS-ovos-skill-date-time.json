@@ -122,25 +122,26 @@
         "state": "pass",
         "level": 2,
         "version_tested": "0.4.20",
-        "tested_at": "2026-10-03T18:21:03+00:00",
+        "tested_at": "2026-10-03T21:23:08+00:00",
         "channel_pinned": true
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-03T18:28:17+00:00",
+        "label": "\u2713 loads \u00b7 18/20 langs",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "1.1.5",
+        "tested_at": "2026-10-03T21:31:38+00:00",
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 144/145 golden",
+        "label": "\u2713 145/145 golden",
         "state": "warn",
         "level": 3,
         "version_tested": "1.11.4a1",
-        "tested_at": "2026-10-03T18:37:48+00:00",
+        "tested_at": "2026-10-03T21:53:08+00:00",
         "channel_pinned": true,
         "golden": {
-          "hit": 144,
+          "hit": 145,
           "counted": 145
         }
       }
