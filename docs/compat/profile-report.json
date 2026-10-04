@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-10-03T19:47:22+00:00",
+ "generated_at": "2026-10-04T00:20:43+00:00",
  "channels": {
   "stable": {
-   "run_at": "2026-10-03T19:47:22+00:00",
-   "klondike_run_at": "2026-10-03T19:47:22+00:00",
+   "run_at": "2026-10-04T00:20:43+00:00",
+   "klondike_run_at": "2026-10-04T00:20:43+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-stable.txt",
    "profiles": [
@@ -22,7 +22,7 @@
        "label": "not supported",
        "level": 1,
        "version": "1.0.9",
-       "tested_at": "2026-10-03T18:20:43+00:00",
+       "tested_at": "2026-10-03T21:23:09+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -40,7 +40,7 @@
        "label": "not supported",
        "level": 1,
        "version": "1.1.7",
-       "tested_at": "2026-10-03T18:20:46+00:00",
+       "tested_at": "2026-10-03T21:23:12+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -58,7 +58,7 @@
        "label": "not supported",
        "level": 1,
        "version": "1.3.1",
-       "tested_at": "2026-10-03T18:20:49+00:00",
+       "tested_at": "2026-10-03T21:23:14+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -76,7 +76,7 @@
        "label": "not supported",
        "level": 1,
        "version": "0.0.9",
-       "tested_at": "2026-10-03T18:18:48+00:00",
+       "tested_at": "2026-10-03T21:21:36+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -94,7 +94,7 @@
        "label": "not supported",
        "level": 1,
        "version": "1.1.14",
-       "tested_at": "2026-10-03T18:18:53+00:00",
+       "tested_at": "2026-10-03T21:21:40+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -112,7 +112,7 @@
        "label": "not supported",
        "level": 1,
        "version": "1.4.3",
-       "tested_at": "2026-10-03T18:18:57+00:00",
+       "tested_at": "2026-10-03T21:21:42+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -126,9 +126,11 @@
        "runtime_id": "ovos-persona-pipeline-plugin",
        "store_id": "OpenVoiceOS-ovos-persona",
        "kind": "pipeline",
-       "state": "untested",
-       "label": "untested",
-       "level": null,
+       "state": "unsupported",
+       "label": "not supported",
+       "level": 1,
+       "version": "0.6.24",
+       "tested_at": "2026-10-03T21:25:30+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -146,7 +148,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.24",
-       "tested_at": "2026-10-03T18:19:56+00:00",
+       "tested_at": "2026-10-03T21:22:38+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -159,7 +161,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.7",
-       "tested_at": "2026-10-03T18:22:20+00:00",
+       "tested_at": "2026-10-03T21:24:59+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -172,7 +174,7 @@
        "label": "needs device",
        "level": 1,
        "version": "0.5.0",
-       "tested_at": "2026-10-03T18:20:51+00:00",
+       "tested_at": "2026-10-03T21:23:41+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -185,7 +187,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.4.20",
-       "tested_at": "2026-10-03T18:21:03+00:00",
+       "tested_at": "2026-10-03T21:23:08+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -198,7 +200,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.6",
-       "tested_at": "2026-10-03T18:20:23+00:00",
+       "tested_at": "2026-10-03T21:22:52+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -211,7 +213,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.0.8",
-       "tested_at": "2026-10-03T18:25:31+00:00",
+       "tested_at": "2026-10-03T21:26:39+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -224,7 +226,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.15",
-       "tested_at": "2026-10-03T18:19:48+00:00",
+       "tested_at": "2026-10-03T21:22:41+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -237,7 +239,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.6",
-       "tested_at": "2026-10-03T18:21:46+00:00",
+       "tested_at": "2026-10-03T21:25:33+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -250,7 +252,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.1",
-       "tested_at": "2026-10-03T18:22:47+00:00",
+       "tested_at": "2026-10-03T21:26:11+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -263,7 +265,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.8",
-       "tested_at": "2026-10-03T18:18:46+00:00",
+       "tested_at": "2026-10-03T21:21:27+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -276,7 +278,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.15",
-       "tested_at": "2026-10-03T18:20:30+00:00",
+       "tested_at": "2026-10-03T21:22:13+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -289,7 +291,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.20",
-       "tested_at": "2026-10-03T18:21:34+00:00",
+       "tested_at": "2026-10-03T21:24:59+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -302,7 +304,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.19",
-       "tested_at": "2026-10-03T18:22:00+00:00",
+       "tested_at": "2026-10-03T21:24:37+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -315,7 +317,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.6",
-       "tested_at": "2026-10-03T18:19:36+00:00",
+       "tested_at": "2026-10-03T21:21:44+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -328,7 +330,7 @@
        "label": "✓ loads · 19/20 langs",
        "level": 2,
        "version": "0.2.6",
-       "tested_at": "2026-10-03T18:21:17+00:00",
+       "tested_at": "2026-10-03T21:23:15+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -341,7 +343,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.16",
-       "tested_at": "2026-10-03T18:19:45+00:00",
+       "tested_at": "2026-10-03T21:22:38+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -354,7 +356,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.18",
-       "tested_at": "2026-10-03T18:30:35+00:00",
+       "tested_at": "2026-10-03T21:35:54+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -367,7 +369,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.3",
-       "tested_at": "2026-10-03T18:31:26+00:00",
+       "tested_at": "2026-10-03T21:37:05+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -380,7 +382,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.8.13",
-       "tested_at": "2026-10-03T18:20:05+00:00",
+       "tested_at": "2026-10-03T21:23:52+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -393,7 +395,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.5.8",
-       "tested_at": "2026-10-03T18:20:50+00:00",
+       "tested_at": "2026-10-03T21:24:15+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -404,8 +406,8 @@
       "in_store": 27,
       "loads": 19,
       "fails": 0,
-      "not_testable": 7,
-      "untested": 1,
+      "not_testable": 8,
+      "untested": 0,
       "not_in_store": 0,
       "routes": 0,
       "gold": 0
@@ -415,8 +417,8 @@
       "in_store": 27,
       "loads": 19,
       "fails": 0,
-      "not_testable": 7,
-      "untested": 1,
+      "not_testable": 8,
+      "untested": 0,
       "not_in_store": 0,
       "routes": 0,
       "gold": 0
@@ -436,7 +438,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T18:20:07+00:00",
+       "tested_at": "2026-10-03T21:22:38+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -449,7 +451,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.7",
-       "tested_at": "2026-10-03T18:21:14+00:00",
+       "tested_at": "2026-10-03T21:22:51+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -463,7 +465,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.12",
-       "tested_at": "2026-10-03T18:23:04+00:00",
+       "tested_at": "2026-10-03T21:26:32+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -477,7 +479,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.4.5",
-       "tested_at": "2026-10-03T18:23:19+00:00",
+       "tested_at": "2026-10-03T21:26:51+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -491,7 +493,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.5",
-       "tested_at": "2026-10-03T18:23:38+00:00",
+       "tested_at": "2026-10-03T21:27:15+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -505,7 +507,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.5",
-       "tested_at": "2026-10-03T18:23:54+00:00",
+       "tested_at": "2026-10-03T21:27:34+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -519,7 +521,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.7",
-       "tested_at": "2026-10-03T18:24:08+00:00",
+       "tested_at": "2026-10-03T21:29:54+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -541,8 +543,8 @@
       "in_store": 34,
       "loads": 26,
       "fails": 0,
-      "not_testable": 7,
-      "untested": 1,
+      "not_testable": 8,
+      "untested": 0,
       "not_in_store": 0,
       "routes": 0,
       "gold": 0
@@ -562,7 +564,7 @@
        "label": "not supported",
        "level": 1,
        "version": "0.3.2",
-       "tested_at": "2026-10-03T18:20:26+00:00",
+       "tested_at": "2026-10-03T21:22:42+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -577,7 +579,7 @@
        "label": "✓ loads · 3/25 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:19:16+00:00",
+       "tested_at": "2026-10-03T21:21:31+00:00",
        "golden": {
         "hit": 3,
         "counted": 25
@@ -598,7 +600,7 @@
        "label": "✓ 25/25 golden",
        "level": 3,
        "version": "0.0.10",
-       "tested_at": "2026-10-03T18:26:42+00:00",
+       "tested_at": "2026-10-03T21:21:20+00:00",
        "golden": {
         "hit": 25,
         "counted": 25
@@ -619,7 +621,7 @@
        "label": "✓ loads · 9/50 golden",
        "level": 2,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T18:36:07+00:00",
+       "tested_at": "2026-10-03T21:38:57+00:00",
        "golden": {
         "hit": 9,
         "counted": 50
@@ -640,7 +642,7 @@
        "label": "✓ loads · 4/37 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:36:38+00:00",
+       "tested_at": "2026-10-03T21:39:27+00:00",
        "golden": {
         "hit": 4,
         "counted": 37
@@ -661,7 +663,7 @@
        "label": "✓ loads · 0/8 golden",
        "level": 2,
        "version": "0.1.8",
-       "tested_at": "2026-10-03T18:18:41+00:00",
+       "tested_at": "2026-10-03T21:20:49+00:00",
        "golden": {
         "hit": 0,
         "counted": 8
@@ -682,7 +684,7 @@
        "label": "✓ 9/10 golden · stops",
        "level": 3,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T18:19:05+00:00",
+       "tested_at": "2026-10-03T21:21:04+00:00",
        "golden": {
         "hit": 9,
         "counted": 10
@@ -703,7 +705,7 @@
        "label": "✓ 6/6 golden",
        "level": 3,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T18:21:06+00:00",
+       "tested_at": "2026-10-03T21:22:38+00:00",
        "golden": {
         "hit": 6,
         "counted": 6
@@ -724,7 +726,7 @@
        "label": "✓ loads · 8/12 golden",
        "level": 2,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T18:18:44+00:00",
+       "tested_at": "2026-10-03T21:21:28+00:00",
        "golden": {
         "hit": 8,
         "counted": 12
@@ -745,7 +747,7 @@
        "label": "✓ loads · 0/2 golden",
        "level": 2,
        "version": "0.1.8",
-       "tested_at": "2026-10-03T18:19:56+00:00",
+       "tested_at": "2026-10-03T21:22:29+00:00",
        "golden": {
         "hit": 0,
         "counted": 2
@@ -766,7 +768,7 @@
        "label": "✓ loads · 0/12 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:22:09+00:00",
+       "tested_at": "2026-10-03T21:21:30+00:00",
        "golden": {
         "hit": 0,
         "counted": 12
@@ -787,7 +789,7 @@
        "label": "✓ 5/6 golden",
        "level": 3,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T18:19:20+00:00",
+       "tested_at": "2026-10-03T21:21:32+00:00",
        "golden": {
         "hit": 5,
         "counted": 6
@@ -808,7 +810,7 @@
        "label": "✓ loads · 7/12 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:26:27+00:00",
+       "tested_at": "2026-10-03T21:27:19+00:00",
        "golden": {
         "hit": 7,
         "counted": 12
@@ -829,7 +831,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.0.7",
-       "tested_at": "2026-10-03T18:20:04+00:00",
+       "tested_at": "2026-10-03T21:22:25+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -844,7 +846,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.13",
-       "tested_at": "2026-10-03T18:20:30+00:00",
+       "tested_at": "2026-10-03T21:22:44+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -859,7 +861,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.11",
-       "tested_at": "2026-10-03T18:25:59+00:00",
+       "tested_at": "2026-10-03T21:27:00+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -874,7 +876,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.0.2",
-       "tested_at": "2026-10-03T18:19:58+00:00",
+       "tested_at": "2026-10-03T21:22:53+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -889,7 +891,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.16",
-       "tested_at": "2026-10-03T18:20:19+00:00",
+       "tested_at": "2026-10-03T21:22:08+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -904,7 +906,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.3",
-       "tested_at": "2026-10-03T18:21:18+00:00",
+       "tested_at": "2026-10-03T21:21:52+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -919,7 +921,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.0.12",
-       "tested_at": "2026-10-03T18:19:29+00:00",
+       "tested_at": "2026-10-03T21:21:25+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -934,7 +936,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.1.12",
-       "tested_at": "2026-10-03T18:19:00+00:00",
+       "tested_at": "2026-10-03T21:21:42+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -949,7 +951,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.1.4",
-       "tested_at": "2026-10-03T18:18:54+00:00",
+       "tested_at": "2026-10-03T21:23:21+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -964,7 +966,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.5",
-       "tested_at": "2026-10-03T18:31:45+00:00",
+       "tested_at": "2026-10-03T21:24:21+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -979,7 +981,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.6",
-       "tested_at": "2026-10-03T18:21:10+00:00",
+       "tested_at": "2026-10-03T21:24:37+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -994,7 +996,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.4.3",
-       "tested_at": "2026-10-03T18:20:14+00:00",
+       "tested_at": "2026-10-03T21:23:11+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -1018,8 +1020,8 @@
       "in_store": 57,
       "loads": 49,
       "fails": 0,
-      "not_testable": 7,
-      "untested": 1,
+      "not_testable": 8,
+      "untested": 0,
       "not_in_store": 0,
       "routes": 4,
       "gold": 4
@@ -1028,8 +1030,8 @@
    ]
   },
   "testing": {
-   "run_at": "2026-10-03T17:31:59+00:00",
-   "klondike_run_at": "2026-10-03T19:47:22+00:00",
+   "run_at": "2026-10-04T00:20:43+00:00",
+   "klondike_run_at": "2026-10-04T00:20:43+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -1042,76 +1044,130 @@
      "source": "OpenVoiceOS/ovos-installer@main (default profile, skills on, extra skills off)",
      "entries": [
       {
-       "runtime_id": "ovos_adapt_parser",
+       "runtime_id": "ovos-common-reading-pipeline-plugin",
+       "store_id": "andlo-ovos-common-reading-pipeline-plugin",
+       "kind": "pipeline",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.3.2",
+       "tested_at": "2026-10-03T21:31:18+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
+      },
+      {
+       "runtime_id": "ovos-adapt-pipeline-plugin",
        "store_id": "OpenVoiceOS-ovos-adapt-pipeline-plugin",
        "kind": "pipeline",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:40+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.0.9",
+       "tested_at": "2026-10-03T21:34:50+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
-       "runtime_id": "ovos_common_query_pipeline_plugin",
+       "runtime_id": "ovos-common-query-pipeline-plugin",
        "store_id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
        "kind": "pipeline",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:41+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.1.9",
+       "tested_at": "2026-10-03T21:34:56+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
-       "runtime_id": "ovos-core",
+       "runtime_id": "ovos-converse-pipeline-plugin",
        "store_id": "OpenVoiceOS-ovos-core",
        "kind": "pipeline",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:42+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "2.1.1",
+       "tested_at": "2026-10-03T21:35:02+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
-       "runtime_id": "ovos_m2v_pipeline",
+       "runtime_id": "ovos-m2v-pipeline",
        "store_id": "OpenVoiceOS-ovos-m2v-pipeline",
        "kind": "pipeline",
        "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:36+00:00",
+       "label": "✗ doesn't load",
+       "level": 1,
+       "version": "0.0.9",
+       "tested_at": "2026-10-03T21:33:50+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
-       "runtime_id": "ovos_ocp_pipeline_plugin",
+       "runtime_id": "ovos-ocp-pipeline-plugin",
        "store_id": "OpenVoiceOS-ovos-ocp-pipeline-plugin",
        "kind": "pipeline",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:39+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.1.18",
+       "tested_at": "2026-10-03T21:33:54+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
-       "runtime_id": "ovos_padatious",
+       "runtime_id": "ovos-padatious-pipeline-plugin",
        "store_id": "OpenVoiceOS-ovos-padatious-pipeline-plugin",
        "kind": "pipeline",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:41+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.4.3",
+       "tested_at": "2026-10-03T21:33:59+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
        "runtime_id": "ovos-persona-pipeline-plugin",
@@ -1121,19 +1177,25 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.7.1",
-       "tested_at": "2026-10-03T18:33:40+00:00",
+       "tested_at": "2026-10-03T21:46:10+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": false,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
-       "runtime_id": "ovos-skill-alerts",
+       "runtime_id": "ovos-skill-alerts.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-alerts",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:27:54+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.28",
+       "tested_at": "2026-10-03T21:30:57+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -1146,7 +1208,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.7",
-       "tested_at": "2026-10-03T18:28:36+00:00",
+       "tested_at": "2026-10-03T21:32:31+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -1159,7 +1221,7 @@
        "label": "needs device",
        "level": 1,
        "version": "0.5.0",
-       "tested_at": "2026-10-03T18:28:01+00:00",
+       "tested_at": "2026-10-03T21:33:24+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -1172,67 +1234,72 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T18:31:45+00:00",
+       "tested_at": "2026-10-03T21:34:34+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-date-time",
+       "runtime_id": "ovos-skill-date-time.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-date-time",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:28:17+00:00",
+       "state": "warn",
+       "label": "✓ loads · 18/20 langs",
+       "level": 2,
+       "version": "1.1.5",
+       "tested_at": "2026-10-03T21:31:38+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-ddg",
+       "runtime_id": "ovos-skill-ddg.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-ddg",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:32:10+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.3.6",
+       "tested_at": "2026-10-03T21:34:43+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-diagnostics",
+       "runtime_id": "ovos-skill-diagnostics.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-diagnostics",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:35:56+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.0.8",
+       "tested_at": "2026-10-03T21:45:01+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-dictation",
+       "runtime_id": "ovos-skill-dictation.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-dictation",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:27:57+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.2.19",
+       "tested_at": "2026-10-03T21:32:36+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-fallback-unknown",
+       "runtime_id": "ovos-skill-fallback-unknown.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-fallback-unknown",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:33:46+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.9",
+       "tested_at": "2026-10-03T21:46:16+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -1245,79 +1312,85 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.1",
-       "tested_at": "2026-10-03T18:33:48+00:00",
+       "tested_at": "2026-10-03T21:47:08+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-ip",
+       "runtime_id": "ovos-skill-ip.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-ip",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:27:55+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.2.8",
+       "tested_at": "2026-10-03T21:31:09+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-naptime",
+       "runtime_id": "ovos-skill-naptime.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-naptime",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:30:18+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.3.15",
+       "tested_at": "2026-10-03T21:33:48+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-parrot",
+       "runtime_id": "ovos-skill-parrot.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-parrot",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:32:05+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.25",
+       "tested_at": "2026-10-03T21:37:49+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-personal",
+       "runtime_id": "ovos-skill-personal.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-personal",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:28:35+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.19",
+       "tested_at": "2026-10-03T21:32:17+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-randomness",
+       "runtime_id": "skill-ovos-randomness.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-randomness",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:55+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.1.0",
+       "tested_at": "2026-10-03T21:36:45+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-speedtest",
+       "runtime_id": "ovos-skill-speedtest.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-speedtest",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:33:14+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.3.6",
+       "tested_at": "2026-10-03T21:42:21+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -1330,77 +1403,82 @@
        "label": "✓ loads · 19/20 langs",
        "level": 2,
        "version": "0.2.6",
-       "tested_at": "2026-10-03T18:33:16+00:00",
+       "tested_at": "2026-10-03T21:43:25+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-volume",
+       "runtime_id": "ovos-skill-volume.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-volume",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:33:22+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.16",
+       "tested_at": "2026-10-03T21:43:13+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-weather",
+       "runtime_id": "ovos-skill-weather.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-weather",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:46:57+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.0.6",
+       "tested_at": "2026-10-03T21:52:02+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-wikihow",
+       "runtime_id": "ovos-skill-wikihow.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-wikihow",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:47:32+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.3.3",
+       "tested_at": "2026-10-03T21:54:45+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-wikipedia",
+       "runtime_id": "ovos-skill-wikipedia.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-wikipedia",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:58+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.8.13",
+       "tested_at": "2026-10-03T21:36:54+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-wolfie",
+       "runtime_id": "ovos-skill-wolfie.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-wolfie",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:32:00+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.5.8",
+       "tested_at": "2026-10-03T21:37:18+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       }
      ],
      "summary": {
-      "total": 29,
-      "in_store": 29,
-      "loads": 5,
-      "fails": 23,
+      "total": 30,
+      "in_store": 30,
+      "loads": 28,
+      "fails": 1,
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
@@ -1408,10 +1486,10 @@
       "gold": 0
      },
      "cumulative": {
-      "total": 29,
-      "in_store": 29,
-      "loads": 5,
-      "fails": 23,
+      "total": 30,
+      "in_store": 30,
+      "loads": 28,
+      "fails": 1,
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
@@ -1426,78 +1504,84 @@
      "source": "OVOS installer extra skills: ovos-core[skills-media], ovos-skill-icanhazdadjokes",
      "entries": [
       {
-       "runtime_id": "ovos-skill-icanhazdadjokes",
+       "runtime_id": "ovos-skill-icanhazdadjokes.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-icanhazdadjokes",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:29:47+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.3.7",
+       "tested_at": "2026-10-03T21:34:49+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-local-media",
+       "runtime_id": "ovos-skill-local-media.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-local-media",
        "kind": "skill",
        "archived": true,
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:35:27+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.2.12",
+       "tested_at": "2026-10-03T21:47:28+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-news",
+       "runtime_id": "ovos-skill-news.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-news",
        "kind": "skill",
        "archived": true,
        "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:35:29+00:00",
+       "label": "✗ doesn't load",
+       "level": 1,
+       "version": "0.4.6",
+       "tested_at": "2026-10-03T21:47:43+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-pyradios",
+       "runtime_id": "ovos-skill-pyradios.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-pyradios",
        "kind": "skill",
        "archived": true,
        "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:35:31+00:00",
+       "label": "✗ doesn't load",
+       "level": 1,
+       "version": "0.1.5",
+       "tested_at": "2026-10-03T21:48:08+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-somafm",
+       "runtime_id": "skill-ovos-somafm.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-somafm",
        "kind": "skill",
        "archived": true,
        "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:35:33+00:00",
+       "label": "✗ doesn't load",
+       "level": 1,
+       "version": "0.1.5",
+       "tested_at": "2026-10-03T21:48:29+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
       },
       {
-       "runtime_id": "ovos-skill-youtube-music",
+       "runtime_id": "ovos-skill-youtube-music.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-youtube-music",
        "kind": "skill",
        "archived": true,
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:35:37+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.7",
+       "tested_at": "2026-10-03T21:48:16+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -1506,8 +1590,8 @@
      "summary": {
       "total": 6,
       "in_store": 6,
-      "loads": 0,
-      "fails": 6,
+      "loads": 3,
+      "fails": 3,
       "not_testable": 0,
       "untested": 0,
       "not_in_store": 0,
@@ -1515,10 +1599,10 @@
       "gold": 0
      },
      "cumulative": {
-      "total": 35,
-      "in_store": 35,
-      "loads": 5,
-      "fails": 29,
+      "total": 36,
+      "in_store": 36,
+      "loads": 31,
+      "fails": 4,
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
@@ -1533,29 +1617,22 @@
      "source": "compat/klondike-profile.toml (curated)",
      "entries": [
       {
-       "runtime_id": "ovos-common-reading-pipeline-plugin",
-       "store_id": "andlo-ovos-common-reading-pipeline-plugin",
-       "kind": "pipeline",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:27:55+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "in_profile": true
-      },
-      {
        "runtime_id": "ovos-skill-calculator.andlo",
        "store_id": "andlo-ovos-skill-calculator",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 3/25 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:27:44+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:30:21+00:00",
+       "golden": {
+        "hit": 3,
+        "counted": 25
+       },
+       "klondike": {
+        "hit": 2,
+        "counted": 16
+       },
        "gold": false,
        "note": "arithmetic",
        "in_profile": true
@@ -1565,13 +1642,19 @@
        "store_id": "andlo-ovos-skill-convert",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ loads",
-       "level": 2,
+       "label": "✓ 8/8 golden",
+       "level": 3,
        "version": "0.0.10",
-       "tested_at": "2026-10-03T18:36:10+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
+       "tested_at": "2026-10-03T21:42:33+00:00",
+       "golden": {
+        "hit": 8,
+        "counted": 8
+       },
+       "klondike": {
+        "hit": 8,
+        "counted": 8
+       },
+       "gold": true,
        "note": "unit conversion",
        "in_profile": true
       },
@@ -1579,13 +1662,19 @@
        "runtime_id": "ovos-skill-geography.andlo",
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 9/41 golden",
        "level": 2,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T18:44:39+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:48:40+00:00",
+       "golden": {
+        "hit": 9,
+        "counted": 41
+       },
+       "klondike": {
+        "hit": 4,
+        "counted": 14
+       },
        "gold": false,
        "note": "geography facts (offline)",
        "in_profile": true
@@ -1594,13 +1683,19 @@
        "runtime_id": "ovos-skill-geometry.andlo",
        "store_id": "andlo-ovos-skill-geometry",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 3/25 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:45:00+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:49:01+00:00",
+       "golden": {
+        "hit": 3,
+        "counted": 25
+       },
+       "klondike": {
+        "hit": 2,
+        "counted": 13
+       },
        "gold": false,
        "note": "geometry terms and formulas",
        "in_profile": true
@@ -1610,12 +1705,18 @@
        "store_id": "andlo-ovos-skill-grimm-tales",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ loads",
-       "level": 2,
+       "label": "✓ 8/8 golden",
+       "level": 3,
        "version": "0.1.8",
-       "tested_at": "2026-10-03T18:28:12+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:32:35+00:00",
+       "golden": {
+        "hit": 8,
+        "counted": 8
+       },
+       "klondike": {
+        "hit": 0,
+        "counted": 3
+       },
        "gold": false,
        "note": "story reading",
        "in_profile": true
@@ -1624,14 +1725,20 @@
        "runtime_id": "ovos-skill-metronome.andlo",
        "store_id": "andlo-ovos-skill-metronome",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
-       "level": 2,
+       "state": "warn",
+       "label": "✓ 9/10 golden · stops",
+       "level": 3,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T18:30:07+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
+       "tested_at": "2026-10-03T21:32:22+00:00",
+       "golden": {
+        "hit": 9,
+        "counted": 10
+       },
+       "klondike": {
+        "hit": 4,
+        "counted": 5
+       },
+       "gold": true,
        "note": "music tool",
        "in_profile": true
       },
@@ -1640,13 +1747,19 @@
        "store_id": "andlo-ovos-skill-nato-alphabet",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ loads",
-       "level": 2,
+       "label": "✓ 6/6 golden",
+       "level": 3,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T18:30:20+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
+       "tested_at": "2026-10-03T21:34:13+00:00",
+       "golden": {
+        "hit": 6,
+        "counted": 6
+       },
+       "klondike": {
+        "hit": 3,
+        "counted": 3
+       },
+       "gold": true,
        "note": "spelling aid",
        "in_profile": true
       },
@@ -1654,13 +1767,19 @@
        "runtime_id": "ovos-skill-network-scanner.andlo",
        "store_id": "andlo-ovos-skill-network-scanner",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 8/12 golden",
        "level": 2,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T18:30:55+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:33:15+00:00",
+       "golden": {
+        "hit": 8,
+        "counted": 12
+       },
+       "klondike": {
+        "hit": 4,
+        "counted": 6
+       },
        "gold": false,
        "note": "devices on the local network",
        "in_profile": true
@@ -1670,12 +1789,18 @@
        "store_id": "andlo-ovos-skill-ovosblog",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ loads",
-       "level": 2,
+       "label": "✓ 2/2 golden · stops",
+       "level": 3,
        "version": "0.1.8",
-       "tested_at": "2026-10-03T18:31:03+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:34:17+00:00",
+       "golden": {
+        "hit": 2,
+        "counted": 2
+       },
+       "klondike": {
+        "hit": 0,
+        "counted": 2
+       },
        "gold": false,
        "note": "reads the OVOS blog",
        "in_profile": true
@@ -1684,13 +1809,19 @@
        "runtime_id": "ovos-skill-rhythm-box.andlo",
        "store_id": "andlo-ovos-skill-rhythm-box",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 0/12 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:32:09+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:35:06+00:00",
+       "golden": {
+        "hit": 0,
+        "counted": 12
+       },
+       "klondike": {
+        "hit": 0,
+        "counted": 6
+       },
        "gold": false,
        "note": "drum machine",
        "in_profile": true
@@ -1699,13 +1830,19 @@
        "runtime_id": "ovos-skill-sound-like.andlo",
        "store_id": "andlo-ovos-skill-sound-like",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 3/6 golden",
        "level": 2,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T18:33:07+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:42:14+00:00",
+       "golden": {
+        "hit": 3,
+        "counted": 6
+       },
+       "klondike": {
+        "hit": 3,
+        "counted": 3
+       },
        "gold": false,
        "note": "animal sounds",
        "in_profile": true
@@ -1714,165 +1851,32 @@
        "runtime_id": "ovos-skill-tuning-fork.andlo",
        "store_id": "andlo-ovos-skill-tuning-fork",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 7/12 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:36:03+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T21:45:41+00:00",
+       "golden": {
+        "hit": 7,
+        "counted": 12
+       },
+       "klondike": {
+        "hit": 1,
+        "counted": 6
+       },
        "gold": false,
        "note": "reference tones",
        "in_profile": true
       },
       {
-       "runtime_id": "OpenVoiceOS-ovos-skill-color-picker",
+       "runtime_id": "ovos-skill-color-picker.krisgesling",
        "store_id": "OpenVoiceOS-ovos-skill-color-picker",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:27:53+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "colour lookup (hex, RGB)",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-confucius-quotes",
-       "store_id": "OpenVoiceOS-ovos-skill-confucius-quotes",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:27:58+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "quotes",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-days-in-history",
-       "store_id": "OpenVoiceOS-ovos-skill-days-in-history",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:36:00+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "on this day",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-easter-eggs",
-       "store_id": "OpenVoiceOS-ovos-skill-easter-eggs",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:32:52+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "easter eggs",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-iss-location",
-       "store_id": "OpenVoiceOS-ovos-skill-iss-location",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:29:43+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "ISS position",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-laugh",
-       "store_id": "OpenVoiceOS-ovos-skill-laugh",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:32:14+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "laugh",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-moviemaster",
-       "store_id": "OpenVoiceOS-ovos-skill-moviemaster",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:30:17+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "movies",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-number-facts",
-       "store_id": "OpenVoiceOS-ovos-skill-number-facts",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:02+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "number trivia",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-pokepedia",
-       "store_id": "OpenVoiceOS-ovos-skill-pokepedia",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:31:53+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "Pokémon facts",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-word-of-the-day",
-       "store_id": "OpenVoiceOS-ovos-skill-word-of-the-day",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:47:34+00:00",
-       "golden": null,
-       "klondike": null,
-       "gold": false,
-       "note": "word of the day",
-       "in_profile": true
-      },
-      {
-       "runtime_id": "OpenVoiceOS-ovos-skill-wordnet",
-       "store_id": "OpenVoiceOS-ovos-skill-wordnet",
-       "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:32:02+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.0.7",
+       "tested_at": "2026-10-03T21:31:06+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -1880,48 +1884,199 @@
        "in_profile": false
       },
       {
-       "runtime_id": "OscillateLabsLLC-skill-homeassistant",
-       "store_id": "OscillateLabsLLC-skill-homeassistant",
+       "runtime_id": "ovos-skill-confucius-quotes.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-confucius-quotes",
        "kind": "skill",
-       "state": "fail",
-       "label": "✗ doesn't install",
-       "level": 0,
-       "tested_at": "2026-10-03T18:32:54+00:00",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.13",
+       "tested_at": "2026-10-03T21:31:23+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
-       "note": "smart home",
-       "in_profile": true
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-days-in-history.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-days-in-history",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.3.11",
+       "tested_at": "2026-10-03T21:45:20+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "skill-easter-eggs.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-easter-eggs",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.0.2",
+       "tested_at": "2026-10-03T21:36:43+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-iss-location.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-iss-location",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.2.16",
+       "tested_at": "2026-10-03T21:34:10+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-laugh.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-laugh",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.1.0",
+       "tested_at": "2026-10-03T21:35:01+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-moviemaster.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-moviemaster",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.0.12",
+       "tested_at": "2026-10-03T21:32:33+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-number-facts.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-number-facts",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.12",
+       "tested_at": "2026-10-03T21:33:24+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-pokepedia.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-pokepedia",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.1.4",
+       "tested_at": "2026-10-03T21:36:31+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-word-of-the-day.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-word-of-the-day",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "0.2.5",
+       "tested_at": "2026-10-03T21:45:20+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "ovos-skill-wordnet.openvoiceos",
+       "store_id": "OpenVoiceOS-ovos-skill-wordnet",
+       "kind": "skill",
+       "state": "fail",
+       "label": "✗ doesn't load",
+       "level": 1,
+       "version": "0.2.6",
+       "tested_at": "2026-10-03T21:37:35+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
+      },
+      {
+       "runtime_id": "skill-homeassistant.oscillatelabsllc",
+       "store_id": "OscillateLabsLLC-skill-homeassistant",
+       "kind": "skill",
+       "state": "pass",
+       "label": "✓ loads",
+       "level": 2,
+       "version": "1.4.3",
+       "tested_at": "2026-10-03T21:36:54+00:00",
+       "golden": null,
+       "klondike": null,
+       "gold": false,
+       "note": "left out on testing: level 2 on testing: fail",
+       "in_profile": false
       }
      ],
      "summary": {
-      "total": 25,
-      "in_store": 25,
-      "loads": 12,
-      "fails": 13,
+      "total": 24,
+      "in_store": 24,
+      "loads": 23,
+      "fails": 1,
       "not_testable": 0,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 0,
-      "gold": 0
+      "routes": 5,
+      "gold": 3
      },
      "cumulative": {
-      "total": 59,
-      "in_store": 59,
-      "loads": 17,
-      "fails": 41,
+      "total": 48,
+      "in_store": 48,
+      "loads": 43,
+      "fails": 4,
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 0,
-      "gold": 0
+      "routes": 5,
+      "gold": 3
      }
     }
    ]
   },
   "alpha": {
-   "run_at": "2026-10-03T19:47:22+00:00",
-   "klondike_run_at": "2026-10-03T19:47:22+00:00",
+   "run_at": "2026-10-04T00:20:43+00:00",
+   "klondike_run_at": "2026-10-04T00:20:43+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-alpha.txt",
    "profiles": [
@@ -1939,10 +2094,15 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.6.7a2",
-       "tested_at": "2026-10-03T18:39:53+00:00",
+       "tested_at": "2026-10-03T21:57:02+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
        "runtime_id": "ovos-common-query-pipeline-plugin",
@@ -1952,10 +2112,15 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.1.19a1",
-       "tested_at": "2026-10-03T18:40:01+00:00",
+       "tested_at": "2026-10-03T21:57:08+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 0,
+        "takes": 0
+       }
       },
       {
        "runtime_id": "ovos-converse-pipeline-plugin",
@@ -1965,10 +2130,47 @@
        "label": "✓ loads",
        "level": 2,
        "version": "3.7.2a2",
-       "tested_at": "2026-10-03T18:40:09+00:00",
+       "tested_at": "2026-10-03T21:57:14+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 0,
+        "takes": 6,
+        "examples": [
+         {
+          "from": "OpenVoiceOS-ovos-skill-days-in-history",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-ddg.openvoiceos",
+          "utterance": "give me another fact"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-days-in-history",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-ddg.openvoiceos",
+          "utterance": "continue"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-naptime",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-ddg.openvoiceos",
+          "utterance": "wake up"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-word-of-the-day",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-ddg.openvoiceos",
+          "utterance": "spell that"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-word-of-the-day",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-ddg.openvoiceos",
+          "utterance": "spell it out for me"
+         }
+        ]
+       }
       },
       {
        "runtime_id": "ovos-m2v-pipeline",
@@ -1978,10 +2180,35 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.29.4a1",
-       "tested_at": "2026-10-03T18:39:40+00:00",
+       "tested_at": "2026-10-03T21:57:03+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 0,
+        "takes": 3,
+        "examples": [
+         {
+          "from": "OpenVoiceOS-ovos-skill-days-in-history",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-alerts.openvoiceos",
+          "utterance": "another event"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-days-in-history",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-parrot.openvoiceos",
+          "utterance": "tell me more"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-naptime",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-alerts.openvoiceos",
+          "utterance": "stop sleeping"
+         }
+        ]
+       }
       },
       {
        "runtime_id": "ovos-ocp-pipeline-plugin",
@@ -1991,10 +2218,47 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.5.7a1",
-       "tested_at": "2026-10-03T18:39:49+00:00",
+       "tested_at": "2026-10-03T21:57:13+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 5,
+        "takes": 24,
+        "examples": [
+         {
+          "from": "OpenVoiceOS-ovos-skill-audio-recording",
+          "kind": "hang",
+          "taken_by": null,
+          "utterance": "can you start a new audio capture"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-audio-recording",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "can you start a new recording"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-audio-recording",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "start a recording session"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-audio-recording",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "start a new recording"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-audio-recording",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "start a recording called interview"
+         }
+        ]
+       }
       },
       {
        "runtime_id": "ovos-padatious-pipeline-plugin",
@@ -2004,10 +2268,47 @@
        "label": "✓ loads",
        "level": 2,
        "version": "2.2.7a1",
-       "tested_at": "2026-10-03T18:39:58+00:00",
+       "tested_at": "2026-10-03T21:57:22+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 1032,
+        "takes": 53,
+        "examples": [
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "baseline",
+          "taken_by": "skill-ovos-spelling.openvoiceos",
+          "utterance": "are there any events tomorrow"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "baseline",
+          "taken_by": "skill-ovos-spelling.openvoiceos",
+          "utterance": "do we have any alarms set"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "baseline",
+          "taken_by": "skill-ovos-spelling.openvoiceos",
+          "utterance": "are there any reminders stored"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "wrong_intent",
+          "taken_by": "ovos-skill-alerts.openvoiceos",
+          "utterance": "change my reminder to a voice reminder"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "wrong_intent",
+          "taken_by": "ovos-skill-alerts.openvoiceos",
+          "utterance": "change the next alarm to a recording"
+         }
+        ]
+       }
       },
       {
        "runtime_id": "ovos-persona-pipeline-plugin",
@@ -2017,10 +2318,47 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.9.0a28",
-       "tested_at": "2026-10-03T19:04:34+00:00",
+       "tested_at": "2026-10-03T22:25:48+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false
+       "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 0,
+        "takes": 15,
+        "examples": [
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "start an alarm with an audiobook"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "wake me up with music"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "wake me up to the radio at 7"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "wake me with the news"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "could you wake me up with music"
+         }
+        ]
+       }
       },
       {
        "runtime_id": "ovos-skill-alerts.openvoiceos",
@@ -2030,13 +2368,16 @@
        "label": "✓ 191/199 golden",
        "level": 3,
        "version": "0.12.33a1",
-       "tested_at": "2026-10-03T18:34:29+00:00",
+       "tested_at": "2026-10-03T21:49:24+00:00",
        "golden": {
         "hit": 191,
         "counted": 199
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 173,
+        "counted": 184
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-audio-recording.openvoiceos",
@@ -2046,12 +2387,15 @@
        "label": "✓ 31/33 golden",
        "level": 3,
        "version": "0.7.2a5",
-       "tested_at": "2026-10-03T18:46:34+00:00",
+       "tested_at": "2026-10-03T22:01:11+00:00",
        "golden": {
         "hit": 31,
         "counted": 33
        },
-       "klondike": null,
+       "klondike": {
+        "hit": 18,
+        "counted": 25
+       },
        "gold": false
       },
       {
@@ -2062,7 +2406,7 @@
        "label": "needs device",
        "level": 1,
        "version": "0.9.1a1",
-       "tested_at": "2026-10-03T18:38:16+00:00",
+       "tested_at": "2026-10-03T21:53:35+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2075,29 +2419,35 @@
        "label": "✓ 15/15 golden · stops",
        "level": 3,
        "version": "0.6.1a2",
-       "tested_at": "2026-10-03T18:40:57+00:00",
+       "tested_at": "2026-10-03T21:58:23+00:00",
        "golden": {
         "hit": 15,
         "counted": 15
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 11,
+        "counted": 11
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-date-time.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-date-time",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ 144/145 golden",
+       "label": "✓ 145/145 golden",
        "level": 3,
        "version": "1.11.4a1",
-       "tested_at": "2026-10-03T18:37:48+00:00",
+       "tested_at": "2026-10-03T21:53:08+00:00",
        "golden": {
-        "hit": 144,
+        "hit": 145,
         "counted": 145
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 113,
+        "counted": 115
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-ddg.openvoiceos",
@@ -2107,13 +2457,16 @@
        "label": "✓ 11/11 golden",
        "level": 3,
        "version": "0.6.0a2",
-       "tested_at": "2026-10-03T18:43:09+00:00",
+       "tested_at": "2026-10-03T22:00:36+00:00",
        "golden": {
         "hit": 11,
         "counted": 11
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 8,
+        "counted": 8
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-diagnostics.openvoiceos",
@@ -2123,13 +2476,16 @@
        "label": "✓ 114/114 golden",
        "level": 3,
        "version": "0.4.0a1",
-       "tested_at": "2026-10-03T18:51:47+00:00",
+       "tested_at": "2026-10-03T22:22:36+00:00",
        "golden": {
         "hit": 114,
         "counted": 114
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 75,
+        "counted": 75
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-dictation.openvoiceos",
@@ -2139,12 +2495,15 @@
        "label": "✓ loads · 15/22 golden",
        "level": 2,
        "version": "0.7.0a3",
-       "tested_at": "2026-10-03T18:36:01+00:00",
+       "tested_at": "2026-10-03T21:51:25+00:00",
        "golden": {
         "hit": 15,
         "counted": 22
        },
-       "klondike": null,
+       "klondike": {
+        "hit": 11,
+        "counted": 16
+       },
        "gold": false
       },
       {
@@ -2152,15 +2511,18 @@
        "store_id": "OpenVoiceOS-ovos-skill-fallback-unknown",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 0/16 golden",
+       "label": "✓ loads · 0/25 golden",
        "level": 2,
        "version": "0.3.1a3",
-       "tested_at": "2026-10-03T19:04:45+00:00",
+       "tested_at": "2026-10-03T22:25:59+00:00",
        "golden": {
         "hit": 0,
-        "counted": 16
+        "counted": 25
        },
-       "klondike": null,
+       "klondike": {
+        "hit": 0,
+        "counted": 9
+       },
        "gold": false
       },
       {
@@ -2168,16 +2530,19 @@
        "store_id": "OpenVoiceOS-ovos-skill-hello-world",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 29/29 golden",
+       "label": "✓ 41/41 golden",
        "level": 3,
        "version": "0.5.4a1",
-       "tested_at": "2026-10-03T19:04:54+00:00",
+       "tested_at": "2026-10-03T22:26:08+00:00",
        "golden": {
-        "hit": 29,
-        "counted": 29
+        "hit": 41,
+        "counted": 41
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 19,
+        "counted": 19
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-ip.openvoiceos",
@@ -2187,13 +2552,16 @@
        "label": "✓ 20/21 golden",
        "level": 3,
        "version": "0.9.0a3",
-       "tested_at": "2026-10-03T18:35:04+00:00",
+       "tested_at": "2026-10-03T21:50:29+00:00",
        "golden": {
         "hit": 20,
         "counted": 21
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 13,
+        "counted": 13
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-naptime.openvoiceos",
@@ -2203,12 +2571,15 @@
        "label": "✓ loads · 7/11 golden",
        "level": 2,
        "version": "0.12.0a7",
-       "tested_at": "2026-10-03T18:37:12+00:00",
+       "tested_at": "2026-10-03T21:56:20+00:00",
        "golden": {
         "hit": 7,
         "counted": 11
        },
-       "klondike": null,
+       "klondike": {
+        "hit": 7,
+        "counted": 11
+       },
        "gold": false
       },
       {
@@ -2216,16 +2587,19 @@
        "store_id": "OpenVoiceOS-ovos-skill-parrot",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ 63/67 golden",
+       "label": "✓ 64/67 golden",
        "level": 3,
        "version": "0.11.0a5",
-       "tested_at": "2026-10-03T18:45:31+00:00",
+       "tested_at": "2026-10-03T22:17:02+00:00",
        "golden": {
-        "hit": 63,
+        "hit": 64,
         "counted": 67
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 46,
+        "counted": 49
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-personal.openvoiceos",
@@ -2235,7 +2609,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.0.2a6",
-       "tested_at": "2026-10-03T18:45:48+00:00",
+       "tested_at": "2026-10-03T22:00:24+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2248,7 +2622,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "2.0.2a7",
-       "tested_at": "2026-10-03T18:41:55+00:00",
+       "tested_at": "2026-10-03T22:13:33+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2261,7 +2635,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.10.0a3",
-       "tested_at": "2026-10-03T18:49:59+00:00",
+       "tested_at": "2026-10-03T22:20:46+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2274,13 +2648,16 @@
        "label": "✓ 14/14 golden",
        "level": 3,
        "version": "0.13.1a1",
-       "tested_at": "2026-10-03T18:50:54+00:00",
+       "tested_at": "2026-10-03T22:21:41+00:00",
        "golden": {
         "hit": 14,
         "counted": 14
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 11,
+        "counted": 11
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-volume.openvoiceos",
@@ -2290,7 +2667,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.12.1a1",
-       "tested_at": "2026-10-03T19:00:43+00:00",
+       "tested_at": "2026-10-03T22:23:12+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2300,16 +2677,19 @@
        "store_id": "OpenVoiceOS-ovos-skill-weather",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 98/98 golden",
+       "label": "✓ 85/85 golden",
        "level": 3,
        "version": "1.5.1a2",
-       "tested_at": "2026-10-03T19:03:43+00:00",
+       "tested_at": "2026-10-03T22:26:15+00:00",
        "golden": {
-        "hit": 98,
-        "counted": 98
+        "hit": 85,
+        "counted": 85
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 117,
+        "counted": 117
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-wikihow.openvoiceos",
@@ -2319,9 +2699,12 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.7.2a2",
-       "tested_at": "2026-10-03T19:14:52+00:00",
+       "tested_at": "2026-10-03T22:37:18+00:00",
        "golden": null,
-       "klondike": null,
+       "klondike": {
+        "hit": 4,
+        "counted": 5
+       },
        "gold": false
       },
       {
@@ -2329,16 +2712,19 @@
        "store_id": "OpenVoiceOS-ovos-skill-wikipedia",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ 12/15 golden",
+       "label": "✓ 15/16 golden",
        "level": 3,
        "version": "0.18.4a1",
-       "tested_at": "2026-10-03T18:42:18+00:00",
+       "tested_at": "2026-10-03T22:13:55+00:00",
        "golden": {
-        "hit": 12,
-        "counted": 15
+        "hit": 15,
+        "counted": 16
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 10,
+        "counted": 11
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-wolfie.openvoiceos",
@@ -2348,13 +2734,16 @@
        "label": "✓ 8/8 golden",
        "level": 3,
        "version": "0.12.1a3",
-       "tested_at": "2026-10-03T18:43:13+00:00",
+       "tested_at": "2026-10-03T22:14:48+00:00",
        "golden": {
         "hit": 8,
         "counted": 8
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 5,
+        "counted": 5
+       },
+       "gold": true
       }
      ],
      "summary": {
@@ -2366,7 +2755,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 13,
-      "gold": 0
+      "gold": 12
      },
      "cumulative": {
       "total": 29,
@@ -2377,7 +2766,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 13,
-      "gold": 0
+      "gold": 12
      }
     },
     {
@@ -2394,13 +2783,16 @@
        "label": "✓ 21/21 golden",
        "level": 3,
        "version": "0.25.6a3",
-       "tested_at": "2026-10-03T18:38:41+00:00",
+       "tested_at": "2026-10-03T21:54:33+00:00",
        "golden": {
         "hit": 21,
         "counted": 21
        },
-       "klondike": null,
-       "gold": false
+       "klondike": {
+        "hit": 15,
+        "counted": 15
+       },
+       "gold": true
       },
       {
        "runtime_id": "ovos-skill-local-media.openvoiceos",
@@ -2411,7 +2803,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.16a1",
-       "tested_at": "2026-10-03T19:05:56+00:00",
+       "tested_at": "2026-10-03T22:27:10+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2425,7 +2817,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.4.10a4",
-       "tested_at": "2026-10-03T19:06:33+00:00",
+       "tested_at": "2026-10-03T22:27:46+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2439,7 +2831,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.1.6a8",
-       "tested_at": "2026-10-03T19:06:42+00:00",
+       "tested_at": "2026-10-03T22:27:55+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2453,7 +2845,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.1.6a9",
-       "tested_at": "2026-10-03T19:06:51+00:00",
+       "tested_at": "2026-10-03T22:28:03+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2467,7 +2859,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.1.10a3",
-       "tested_at": "2026-10-03T19:07:01+00:00",
+       "tested_at": "2026-10-03T22:25:46+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2482,7 +2874,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 1,
-      "gold": 0
+      "gold": 1
      },
      "cumulative": {
       "total": 35,
@@ -2493,7 +2885,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 14,
-      "gold": 0
+      "gold": 13
      }
     },
     {
@@ -2510,10 +2902,29 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.2",
-       "tested_at": "2026-10-03T18:36:41+00:00",
+       "tested_at": "2026-10-03T21:52:07+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
+       "pipeline_route": {
+        "measured": true,
+        "reaches": 13,
+        "takes": 2,
+        "examples": [
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a paper from arxiv"
+         },
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a research paper from the arxiv"
+         }
+        ]
+       },
        "in_profile": true
       },
       {
@@ -2524,13 +2935,16 @@
        "label": "✓ 25/25 golden",
        "level": 3,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:34:39+00:00",
+       "tested_at": "2026-10-03T21:50:13+00:00",
        "golden": {
         "hit": 25,
         "counted": 25
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 16,
+        "counted": 16
+       },
+       "gold": true,
        "note": "arithmetic",
        "in_profile": true
       },
@@ -2539,16 +2953,19 @@
        "store_id": "andlo-ovos-skill-convert",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 13/13 golden",
+       "label": "✓ 8/8 golden",
        "level": 3,
        "version": "0.0.10",
-       "tested_at": "2026-10-03T18:54:38+00:00",
+       "tested_at": "2026-10-03T22:22:33+00:00",
        "golden": {
-        "hit": 13,
-        "counted": 13
+        "hit": 8,
+        "counted": 8
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 8,
+        "counted": 8
+       },
+       "gold": true,
        "note": "unit conversion",
        "in_profile": true
       },
@@ -2560,13 +2977,16 @@
        "label": "✓ 28/28 golden",
        "level": 3,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T18:53:25+00:00",
+       "tested_at": "2026-10-03T22:08:44+00:00",
        "golden": {
         "hit": 28,
         "counted": 28
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 14,
+        "counted": 14
+       },
+       "gold": true,
        "note": "geography facts (offline)",
        "in_profile": true
       },
@@ -2578,13 +2998,16 @@
        "label": "✓ 25/25 golden",
        "level": 3,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:54:11+00:00",
+       "tested_at": "2026-10-03T22:09:30+00:00",
        "golden": {
         "hit": 25,
         "counted": 25
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 13,
+        "counted": 13
+       },
+       "gold": true,
        "note": "geometry terms and formulas",
        "in_profile": true
       },
@@ -2596,13 +3019,16 @@
        "label": "✓ 5/5 golden",
        "level": 3,
        "version": "0.1.8",
-       "tested_at": "2026-10-03T18:35:27+00:00",
+       "tested_at": "2026-10-03T21:51:16+00:00",
        "golden": {
         "hit": 5,
         "counted": 5
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 3,
+        "counted": 3
+       },
+       "gold": true,
        "note": "story reading",
        "in_profile": true
       },
@@ -2610,17 +3036,20 @@
        "runtime_id": "ovos-skill-metronome.andlo",
        "store_id": "andlo-ovos-skill-metronome",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ 5/5 golden · stops",
+       "state": "warn",
+       "label": "✓ 9/10 golden · stops",
        "level": 3,
        "version": "0.0.5",
-       "tested_at": "2026-10-03T18:35:43+00:00",
+       "tested_at": "2026-10-03T21:54:30+00:00",
        "golden": {
+        "hit": 9,
+        "counted": 10
+       },
+       "klondike": {
         "hit": 5,
         "counted": 5
        },
-       "klondike": null,
-       "gold": false,
+       "gold": true,
        "note": "music tool",
        "in_profile": true
       },
@@ -2632,13 +3061,16 @@
        "label": "✓ 3/3 golden",
        "level": 3,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T18:38:14+00:00",
+       "tested_at": "2026-10-03T21:57:23+00:00",
        "golden": {
         "hit": 3,
         "counted": 3
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 3,
+        "counted": 3
+       },
+       "gold": true,
        "note": "spelling aid",
        "in_profile": true
       },
@@ -2650,13 +3082,16 @@
        "label": "✓ 12/12 golden",
        "level": 3,
        "version": "0.0.2",
-       "tested_at": "2026-10-03T18:38:27+00:00",
+       "tested_at": "2026-10-03T21:55:42+00:00",
        "golden": {
         "hit": 12,
         "counted": 12
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 5,
+        "counted": 6
+       },
+       "gold": true,
        "note": "devices on the local network",
        "in_profile": true
       },
@@ -2668,13 +3103,16 @@
        "label": "✓ 2/2 golden · stops",
        "level": 3,
        "version": "0.1.8",
-       "tested_at": "2026-10-03T18:39:44+00:00",
+       "tested_at": "2026-10-03T21:56:55+00:00",
        "golden": {
         "hit": 2,
         "counted": 2
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 2,
+        "counted": 2
+       },
+       "gold": true,
        "note": "reads the OVOS blog",
        "in_profile": true
       },
@@ -2686,12 +3124,15 @@
        "label": "✓ loads · 0/12 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:46:48+00:00",
+       "tested_at": "2026-10-03T22:17:14+00:00",
        "golden": {
         "hit": 0,
         "counted": 12
        },
-       "klondike": null,
+       "klondike": {
+        "hit": 0,
+        "counted": 6
+       },
        "gold": false,
        "note": "drum machine",
        "in_profile": true
@@ -2704,13 +3145,16 @@
        "label": "✓ 6/6 golden",
        "level": 3,
        "version": "0.0.3",
-       "tested_at": "2026-10-03T18:49:44+00:00",
+       "tested_at": "2026-10-03T22:20:30+00:00",
        "golden": {
         "hit": 6,
         "counted": 6
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 3,
+        "counted": 3
+       },
+       "gold": true,
        "note": "animal sounds",
        "in_profile": true
       },
@@ -2722,12 +3166,15 @@
        "label": "✓ 11/12 golden",
        "level": 3,
        "version": "0.0.4",
-       "tested_at": "2026-10-03T18:54:23+00:00",
+       "tested_at": "2026-10-03T22:25:11+00:00",
        "golden": {
         "hit": 11,
         "counted": 12
        },
-       "klondike": null,
+       "klondike": {
+        "hit": 3,
+        "counted": 6
+       },
        "gold": false,
        "note": "reference tones",
        "in_profile": true
@@ -2740,7 +3187,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.7.2a1",
-       "tested_at": "2026-10-03T18:35:50+00:00",
+       "tested_at": "2026-10-03T21:51:18+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2755,13 +3202,16 @@
        "label": "✓ 21/21 golden",
        "level": 3,
        "version": "0.8.2a1",
-       "tested_at": "2026-10-03T18:36:50+00:00",
+       "tested_at": "2026-10-03T21:52:13+00:00",
        "golden": {
         "hit": 21,
         "counted": 21
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 13,
+        "counted": 13
+       },
+       "gold": true,
        "note": "quotes",
        "in_profile": true
       },
@@ -2770,15 +3220,18 @@
        "store_id": "OpenVoiceOS-ovos-skill-days-in-history",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 23/31 golden",
+       "label": "✓ loads · 23/30 golden",
        "level": 2,
        "version": "0.9.3a2",
-       "tested_at": "2026-10-03T18:53:05+00:00",
+       "tested_at": "2026-10-03T22:23:54+00:00",
        "golden": {
         "hit": 23,
-        "counted": 31
+        "counted": 30
        },
-       "klondike": null,
+       "klondike": {
+        "hit": 14,
+        "counted": 19
+       },
        "gold": false,
        "note": "on this day",
        "in_profile": true
@@ -2791,7 +3244,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.0.2",
-       "tested_at": "2026-10-03T18:48:48+00:00",
+       "tested_at": "2026-10-03T22:18:23+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2806,13 +3259,16 @@
        "label": "✓ 45/45 golden",
        "level": 3,
        "version": "0.7.1a1",
-       "tested_at": "2026-10-03T18:36:32+00:00",
+       "tested_at": "2026-10-03T21:52:22+00:00",
        "golden": {
         "hit": 45,
         "counted": 45
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 34,
+        "counted": 34
+       },
+       "gold": true,
        "note": "ISS position",
        "in_profile": true
       },
@@ -2824,7 +3280,7 @@
        "label": "✓ loads · 14/17 langs",
        "level": 2,
        "version": "2.0.0a1",
-       "tested_at": "2026-10-03T18:45:01+00:00",
+       "tested_at": "2026-10-03T22:10:42+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2839,13 +3295,16 @@
        "label": "✓ 96/96 golden",
        "level": 3,
        "version": "0.7.1a3",
-       "tested_at": "2026-10-03T18:36:08+00:00",
+       "tested_at": "2026-10-03T21:55:00+00:00",
        "golden": {
         "hit": 96,
         "counted": 96
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 95,
+        "counted": 96
+       },
+       "gold": true,
        "note": "movies",
        "in_profile": true
       },
@@ -2857,13 +3316,16 @@
        "label": "✓ 35/35 golden",
        "level": 3,
        "version": "0.5.0a5",
-       "tested_at": "2026-10-03T18:38:44+00:00",
+       "tested_at": "2026-10-03T21:55:57+00:00",
        "golden": {
         "hit": 35,
         "counted": 35
        },
-       "klondike": null,
-       "gold": false,
+       "klondike": {
+        "hit": 23,
+        "counted": 23
+       },
+       "gold": true,
        "note": "number trivia",
        "in_profile": true
       },
@@ -2874,24 +3336,30 @@
        "state": "fail",
        "label": "✗ doesn't install",
        "level": 0,
-       "tested_at": "2026-10-03T18:41:52+00:00",
+       "tested_at": "2026-10-03T22:13:31+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
-       "note": "Pokémon facts",
-       "in_profile": true
+       "note": "left out on alpha: level 2 on alpha: fail",
+       "in_profile": false
       },
       {
        "runtime_id": "ovos-skill-word-of-the-day.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-word-of-the-day",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ loads",
+       "state": "warn",
+       "label": "✓ loads · 19/28 golden",
        "level": 2,
        "version": "0.8.0a1",
-       "tested_at": "2026-10-03T19:15:44+00:00",
-       "golden": null,
-       "klondike": null,
+       "tested_at": "2026-10-03T22:24:52+00:00",
+       "golden": {
+        "hit": 19,
+        "counted": 28
+       },
+       "klondike": {
+        "hit": 6,
+        "counted": 10
+       },
        "gold": false,
        "note": "word of the day",
        "in_profile": true
@@ -2904,7 +3372,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.13.3a1",
-       "tested_at": "2026-10-03T18:44:04+00:00",
+       "tested_at": "2026-10-03T22:15:37+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2919,7 +3387,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.4.3",
-       "tested_at": "2026-10-03T18:49:08+00:00",
+       "tested_at": "2026-10-03T22:18:45+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2936,18 +3404,18 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 15,
-      "gold": 0
+      "gold": 14
      },
      "cumulative": {
-      "total": 60,
-      "in_store": 60,
+      "total": 59,
+      "in_store": 59,
       "loads": 54,
-      "fails": 5,
+      "fails": 4,
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
       "routes": 29,
-      "gold": 0
+      "gold": 27
      }
     }
    ]

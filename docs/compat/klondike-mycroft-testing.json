@@ -2,7 +2,6 @@
   "intents": {
     "pipeline": [
       "ovos-stop-pipeline-plugin-high",
-      "ovos-common-reading-pipeline-plugin-high",
       "ovos-converse-pipeline-plugin",
       "ovos-ocp-pipeline-plugin-high",
       "ovos-persona-pipeline-plugin-high",
@@ -15,7 +14,6 @@
       "ovos-common-query-pipeline-plugin",
       "ovos-fallback-pipeline-plugin-medium",
       "ovos-persona-pipeline-plugin-low",
-      "ovos-common-reading-pipeline-plugin-low",
       "ovos-fallback-pipeline-plugin-low"
     ]
   }
