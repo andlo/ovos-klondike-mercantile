@@ -635,7 +635,7 @@ function renderDetail(skill) {
   const fallbackIcon = genericIconFor(skill);
   const icon = skill.icon || fallbackIcon;
   const untranslatedNote = (currentSiteLang !== "en-us" && !localized.translated)
-    ? `<div class="untranslated-note">Not yet translated - showing English</div>` : "";
+    ? `<div class="untranslated-note">No translation in this language yet - showing English${skill.in_ovos_localize ? ` · <a href="https://openvoiceos.github.io/ovos-localize/" target="_blank" rel="noopener">help translate</a>` : ""}</div>` : "";
 
   detailRoot.innerHTML = `
     <div class="detail-card">
@@ -644,7 +644,7 @@ function renderDetail(skill) {
              onerror="this.onerror=null;this.className='detail-icon';this.removeAttribute('style');this.src='${fallbackIcon}'">
         <div>
           <h1>${escapeHtml(localized.name)}</h1>
-          <div class="byline">by ${escapeHtml(skill.author)}${versionLabel(skill) ? ` · ${escapeHtml(versionLabel(skill))}` : ""}</div>
+          <div class="byline">by <a href="https://github.com/${encodeURIComponent(skill.author)}" target="_blank" rel="noopener">${escapeHtml(skill.author)}</a>${versionLabel(skill) ? ` · ${escapeHtml(versionLabel(skill))}` : ""}</div>
           ${renderLanguageFlags(skill, currentSiteLang)}
           ${renderLocaleCodeNote(skill)}
           ${untranslatedNote}

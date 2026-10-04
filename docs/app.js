@@ -37,7 +37,7 @@ function renderCard(skill) {
   // English (there's nothing to fall back FROM), and not shown for
   // skills that DO have a real translation.
   const untranslatedNote = (currentSiteLang !== "en-us" && !localized.translated)
-    ? `<div class="untranslated-note">Not yet translated - showing English</div>`
+    ? `<div class="untranslated-note">No translation in this language yet - showing English</div>`
     : "";
 
   return `

@@ -392,7 +392,7 @@ def fetch_skill_json_for_locale(full_name, locale, locale_prefix=""):
         return None
 
 
-def fetch_locale_content(full_name, languages, locale_prefix=""):
+def fetch_locale_content(full_name, languages, locale_prefix="", dir_names=None):
     """For each non-English language a Skill is already confirmed to
     have (from fetch_locale_languages), fetches THAT language's own
     skill.json and keeps just the user-facing fields worth showing
@@ -411,11 +411,14 @@ def fetch_locale_content(full_name, languages, locale_prefix=""):
     through to fetch_skill_json_for_locale() rather than re-guessed
     from package_name, so this stays correct for skills whose locale/
     directory the package-name guess doesn't predict."""
+    dir_names = dir_names or {}
     content = {}
     for lang in languages:
         if lang.startswith("en"):
             continue
-        data = fetch_skill_json_for_locale(full_name, lang, locale_prefix)
+        # Fetch by the folder's real spelling (da-DK), key by the
+        # lowercased code (da-dk) - see fetch_locale_languages().
+        data = fetch_skill_json_for_locale(full_name, dir_names.get(lang, lang), locale_prefix)
         if not data:
             continue
         entry = {}
@@ -804,12 +807,20 @@ def fetch_locale_languages(full_name, package_name=None):
             if data:
                 locale_prefix = prefix
     if not data:
-        return [], None
-    languages = sorted(set(
-        item["name"].lower() for item in data
-        if item.get("type") == "dir" and LOCALE_DIR_PATTERN.match(item["name"])
-    ))
-    return languages, locale_prefix
+        return [], None, {}
+    # Lowercased code -> the folder name exactly as the repo spells it.
+    # The codes are lowercased for display/filtering, but GitHub paths
+    # are case-sensitive: fetching locale/da-dk/skill.json from a repo
+    # whose folder is da-DK is a 404. fetch_locale_content() must use
+    # the real folder name, or every repo with upper-case regions
+    # (most of OpenVoiceOS) silently gets no translated text.
+    dir_names = {}
+    for item in sorted(data, key=lambda i: i.get("name", "")):
+        name = item.get("name", "")
+        if item.get("type") == "dir" and LOCALE_DIR_PATTERN.match(name):
+            dir_names.setdefault(name.lower(), name)
+    languages = sorted(dir_names)
+    return languages, locale_prefix, dir_names
 
 
 def extract_pipeline(description):
@@ -1134,13 +1145,13 @@ def build_entry(full_name, repo, skill_json, tier, component_type, package_name_
     # genuinely locale-less majority of plugins/tools, so this only
     # costs extra calls for entries that actually have something to
     # find.
-    languages, locale_prefix = fetch_locale_languages(full_name, package_name)
+    languages, locale_prefix, locale_dir_names = fetch_locale_languages(full_name, package_name)
 
     # Translated display content (name/description/examples) for
     # every non-English language listed above - see
     # fetch_locale_content()'s docstring. Languages-gated: an entry
     # with no locale folders at all costs nothing extra here.
-    locale_content = fetch_locale_content(full_name, languages, locale_prefix or "") if languages else {}
+    locale_content = fetch_locale_content(full_name, languages, locale_prefix or "", locale_dir_names) if languages else {}
 
     version, requires_dist, pypi_release_date = pypi_info(package_name)
     github_release = latest_github_release(full_name)
