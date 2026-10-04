@@ -176,7 +176,7 @@ const COMPAT_LEVEL_TEXT = {
   0: "level 0: does not install under the channel's constraints",
   1: "level 1: installs, but does not load in MiniCroft",
   2: "level 2: installs and loads in MiniCroft",
-  3: "level 3: its golden utterances reach it with the OVOS installer's default skills loaded",
+  3: "level 3: its en-US golden utterances reach it with the OVOS installer's default skills loaded",
 };
 
 // Same switch as PUBLIC_GENERATED in scripts/compat/feed.py: generated
@@ -193,10 +193,22 @@ function stopResult(rec) {
   return ["stops", "keeps_going", "stuck"].includes(r.result) ? r.result : null;
 }
 
-function routingCounts(rec, run, field = "routing") {
-  const r = ((rec && rec[field]) || {})[run] || {};
-  if (r.status !== "ok" || !r.counted) return null;
+// The counts that decide level 3 (#67, feed.py level3_counts): the en-US
+// rows. Which other languages a run routes depends on the shard and the
+// routing budget, so they are language coverage, not the level. A result
+// from before the per-language counts falls back to its totals.
+const COMPAT_LEVEL3_LANG = "en-US";
+function level3Counts(r) {
+  if (!r || r.status !== "ok" || !r.counted) return null;
+  if (r.by_lang && typeof r.by_lang === "object") {
+    const c = r.by_lang[COMPAT_LEVEL3_LANG];
+    return c && c.counted ? { hit: c.hit || 0, counted: c.counted } : null;
+  }
   return { hit: r.hit || 0, counted: r.counted };
+}
+
+function routingCounts(rec, run, field = "routing") {
+  return level3Counts(((rec && rec[field]) || {})[run]);
 }
 
 // Same rules as scripts/compat/feed.py label(): one short label and a

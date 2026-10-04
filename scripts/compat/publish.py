@@ -25,7 +25,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from compat.feed import (CHANNEL_ORDER, FINAL_STATUSES, LEVEL3_RATIO, SAFE_ID, badge_ids,  # noqa: E402
+from compat.feed import (CHANNEL_ORDER, FINAL_STATUSES, LEVEL3_RATIO, SAFE_ID, level3_counts, badge_ids,  # noqa: E402
                          is_candidate, load_results, shields)
 
 STR_FIELDS = {"id": 200, "channel": 20, "key": 32, "kind": 20, "package": 200,
@@ -169,10 +169,11 @@ def clean_stop(stop):
 
 
 def routing_level3(routing):
-    g = (routing or {}).get("golden") or {}
-    if g.get("status") != "ok" or g.get("hit", 0) > g.get("counted", 0):
+    """Level 3 from the en-US golden rows (#67, feed.level3_counts)."""
+    c = level3_counts((routing or {}).get("golden"))
+    if not c or c[0] > c[1]:
         return False
-    return g["hit"] / g["counted"] >= LEVEL3_RATIO
+    return c[0] / c[1] >= LEVEL3_RATIO
 
 
 def _strs(v, n, cap):

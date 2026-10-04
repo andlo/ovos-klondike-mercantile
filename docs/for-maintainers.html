@@ -196,8 +196,9 @@
               still checks against your intent files. Rows from your default branch are
               not used: they may name intents the released version does not have.</li>
             <li><strong>Score:</strong> level 3 is reached when at least 80% of
-              the counted rows reach your skill; the label always shows the
-              numbers, e.g. <code>✓ 14/14 golden</code>. A miss says who took the
+              the counted <code>en-US</code> rows reach your skill; the label always shows the
+              numbers, e.g. <code>✓ 14/14 golden</code>. A skill without en-US golden
+              utterances does not reach level 3. A miss says who took the
               sentence (a default skill, another of your intents, or nobody). A
               sentence taken by another <em>tested</em> skill that is not a
               default skill is shown as a collision and not counted: which
@@ -206,7 +207,10 @@
             <li><strong>Languages:</strong> each language is a boot of its own
               with every default skill trained, so a run routes en-US plus the
               languages most skills in it have rows for; the rest is listed as not
-              routed that run.</li>
+              routed that run. Which those are depends on the other skills in the
+              run, not on yours, so only en-US decides level 3 (and so the channels
+              compare the same thing). The other languages are shown on the detail
+              page per language, as language coverage.</li>
           </ul>
         </li>
         <li id="routing-pipelines"><strong>Level 3, routes (pipeline plugins):</strong>

@@ -229,7 +229,7 @@
       return `<td><strong>${s.loads}</strong><span class="profile-dim">/${testable}</span>
         <div class="profile-sub">${s.routes} level 3${s.gold ? ` · ${s.gold} ⛏` : ""}${s.fails ? ` · <span class="profile-bad">${s.fails} ✗</span>` : ""}</div></td>`;
     };
-    metaEl.innerHTML = chans.map((c) => pipelineWarning(c, report.channels[c])).join("") + "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. Golden counts are compared on the languages every channel routed, so a channel that also routed German is not counted against one that did not; hover a count for its languages. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing; ≠: the channels routed different languages and there are no per-language counts yet, so it is not compared.";
+    metaEl.innerHTML = chans.map((c) => pipelineWarning(c, report.channels[c])).join("") + "Loads / testable, level 3 and ⛏ Gold, per profile (running totals) and channel. Golden counts are the en-US ones, which decide level 3; hover a count for its languages. ▲▼: more or fewer golden utterances reach it than on testing (only where both have golden); grey ▲: golden measured here, none on testing; ≠: an older result without per-language counts, routed in different languages than the other channels, so it is not compared.";
     summaryEl.innerHTML = `<div class="profile-table-wrap"><table class="profile-table profile-fixed profile-compare-sum">${summaryCols(chans.length)}
       <thead><tr><th>Profile</th>${chans.map((c) => `<th>${escapeHtml(c)}</th>`).join("")}</tr></thead>
       <tbody>${profileIds.map((id) => `<tr><td><strong>${escapeHtml(PROFILE_TITLE[id])}</strong></td>${chans.map((c) => {

@@ -262,6 +262,12 @@ function renderRoutingRun(title, r, takenBy = "a default skill") {
   if (r.status !== "ok") {
     return renderStatRow(title, escapeHtml(r.reason || "not run"));
   }
+  // Per-language counts (#67): en-US decides level 3, the rest is coverage.
+  const by = r.by_lang && typeof r.by_lang === "object" ? r.by_lang : null;
+  const en = level3Counts(r);
+  const head = !by ? "" : en
+    ? `${en.hit}/${en.counted} in ${COMPAT_LEVEL3_LANG} reach the skill (this decides level 3)`
+    : `no ${COMPAT_LEVEL3_LANG} golden utterances, and level 3 is decided on ${COMPAT_LEVEL3_LANG}`;
   const parts = [`${r.hit}/${r.counted} reach the skill`];
   if (r.asked) parts.push(`${r.asked} of them ask a follow-up question (answered with “cancel”)`);
   if (r.via_ocp) parts.push(`${r.via_ocp} of them through OCP's search (the skill answers “play …”)`);
@@ -270,7 +276,10 @@ function renderRoutingRun(title, r, takenBy = "a default skill") {
   if (r.unhandled) parts.push(`${r.unhandled} not handled by a skill`);
   if (r.hang) parts.push(`${r.hang} stuck in a later stage`);
   if (r.manual) parts.push(`${r.manual} need a human (skipped)`);
-  const langs = asArray(r.langs).map((l) => `<code>${escapeHtml(l)}</code>`).join(" ");
+  const langs = asArray(r.langs).map((l) => {
+    const c = by && by[l];
+    return `<code>${escapeHtml(l)}</code>${c ? ` ${c.hit}/${c.counted}` : ""}`;
+  }).join(by ? " · " : " ");
   const notRouted = asArray(r.langs_not_routed);
   if (asArray(r.langs_partial).length) parts.push(`run stopped early in ${r.langs_partial.join(", ")}`);
   const misses = asArray(r.misses).map((m) =>
@@ -278,7 +287,8 @@ function renderRoutingRun(title, r, takenBy = "a default skill") {
   const collisions = asArray(r.collisions).map((m) =>
     `<li><code>${escapeHtml(m.lang || "")}</code> “${escapeHtml(m.utterance)}” went to <code>${escapeHtml(m.taken_by || "?")}</code></li>`).join("");
   return `
-    ${renderStatRow(title, escapeHtml(parts.join(" · ")))}
+    ${head ? renderStatRow(title, escapeHtml(head)) : ""}
+    ${renderStatRow(head ? "All languages routed" : title, escapeHtml(parts.join(" · ")))}
     ${langs ? renderStatRow("Languages routed", langs + (notRouted.length ? ` <span class="setup-note">(not routed this run: ${escapeHtml(notRouted.join(", "))})</span>` : "")) : ""}
     ${misses ? `<ul class="compat-misses">${misses}</ul>` : ""}
     ${collisions ? `<p class="setup-note">Also collided with another skill tested in the same run (not counted, as neither is a default skill):</p><ul class="compat-misses">${collisions}</ul>` : ""}`;
@@ -320,9 +330,9 @@ function renderRouting(rec, meta) {
   if (routing.ref) rows.push(renderStatRow("Utterances from", `<code>${escapeHtml(routing.ref)}</code>`));
   const stopRow = renderStopCheck(routing.stop);
   if (stopRow) rows.push(stopRow);
-  const g = routing.golden || {};
-  const chip = (rec.level || 0) >= 3 && g.counted
-    ? qualityChip("routes", `${g.hit}/${g.counted} of its golden utterances reach it on ${rec.channel} (level 3)`) : "";
+  const g = level3Counts(routing.golden);
+  const chip = (rec.level || 0) >= 3 && g
+    ? qualityChip("routes", `${g.hit}/${g.counted} of its ${COMPAT_LEVEL3_LANG} golden utterances reach it on ${rec.channel} (level 3)`) : "";
   return `<h4 class="compat-subhead">Routing (level 3)${chip}</h4><div class="compat-facts">${rows.join("")}</div>`;
 }
 
