@@ -16,10 +16,12 @@ on:
       - "docs/index.html"
       - "docs/detail.html"
       - "docs/for-maintainers.html"
+      - "docs/profiles.html"
       - "docs/app.js"
       - "docs/detail.js"
       - "docs/shared.js"
       - "docs/style.css"
+      - "docs/theme.js"
   workflow_dispatch: {}
 
 permissions:
