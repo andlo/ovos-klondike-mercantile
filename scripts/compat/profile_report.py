@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from compat.feed import CHANNEL_ORDER, LEVEL3_RATIO, label, routing_counts  # noqa: E402
+from compat.feed import CHANNEL_ORDER, LEVEL3_LANG, LEVEL3_RATIO, label, routing_counts  # noqa: E402
 
 SCHEMA = "ovos-profile-report/1"
 STAGE_SUFFIX = re.compile(r"-(high|medium|low)$")
@@ -86,12 +86,14 @@ def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False, ptake=
     out["golden"] = {"hit": golden[0], "counted": golden[1]} if golden else None
     if golden:
         # The languages behind the count, so the compare view only compares
-        # channels on the languages they all routed.
+        # channels on the languages they all routed: en-US where the result
+        # has per-language counts (#67), else every language routed.
         g = rec["routing"]["golden"]
-        if g.get("langs"):
-            out["golden"]["langs"] = list(g["langs"])
         if g.get("by_lang"):
+            out["golden"]["langs"] = [LEVEL3_LANG]
             out["golden"]["by_lang"] = dict(g["by_lang"])
+        elif g.get("langs"):
+            out["golden"]["langs"] = list(g["langs"])
     k = routing_counts(kres, "golden") if kres else None
     out["klondike"] = {"hit": k[0], "counted": k[1]} if k else None
     out["gold"] = bool(golden and k and (out["level"] or 0) >= 3 and k[0] / k[1] >= LEVEL3_RATIO)

@@ -305,7 +305,7 @@ def test_item(item, args, workroot):
 
 
 ROUTE = HERE / "route.py"
-from feed import LEVEL3_RATIO  # noqa: E402
+from feed import LEVEL3_RATIO, level3_counts  # noqa: E402
 # Languages routed per shard. Golden files often cover 15-25 languages and
 # every language is a boot of its own with the whole baseline training
 # (see route.py), so a shard routes en-US plus the languages most of its
@@ -717,8 +717,9 @@ def aggregate(routable, boots, langs, skipped, field="routing"):
             if isinstance(stop, dict) and stop.get("result"):
                 routing["stop"] = {**stop, "lang": b.get("lang")}
                 break
-        g = routing.get("golden", {})
-        if field == "routing" and g.get("status") == "ok" and g["hit"] / g["counted"] >= LEVEL3_RATIO:
+        # Level 3 from the en-US rows (#67); publish re-derives it the same way.
+        c = level3_counts(routing.get("golden"))
+        if field == "routing" and c and c[0] / c[1] >= LEVEL3_RATIO:
             rec["level"] = 3
 
 

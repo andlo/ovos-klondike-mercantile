@@ -61,7 +61,7 @@ function renderTestLegend() {
       <thead><tr><th>On a card</th><th>Meaning</th></tr></thead>
       <tbody>
         <tr><td>${renderQualityLabel({ compat: { channels: { testing: { level: 3, golden: { hit: 14, counted: 14 } } } } })}</td>
-          <td>Level 3 on testing: at least 80% of its own golden utterances reach it on a normal install.</td></tr>
+          <td>Level 3 on testing: at least 80% of its own en-US golden utterances reach it on a normal install.</td></tr>
         <tr><td>${renderQualityLabel({ compat: { channels: { testing: { level: 3, golden: { hit: 14, counted: 14 }, klondike: { hit: 13, counted: 14 } } } } })}</td>
           <td>And still at least 80% on a well-equipped install, with the <a href="for-maintainers.html#klondike-profile">Klondike profile</a> loaded. The strongest label.</td></tr>
         <tr><td>${renderQualityLabel({ compat: { channels: { alpha: { level: 3, golden: { hit: 14, counted: 14 } } } } })}</td>

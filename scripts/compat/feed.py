@@ -35,12 +35,30 @@ LEVEL3_RATIO = 0.8
 PUBLIC_GENERATED = False
 
 
-def routing_counts(rec, run):
-    """(hit, counted) of a finished routing run, else None."""
-    r = ((rec or {}).get("routing") or {}).get(run) or {}
-    if r.get("status") != "ok" or not r.get("counted"):
+LEVEL3_LANG = "en-US"
+
+
+def level3_counts(r):
+    """(hit, counted) that decides level 3 for one routing run, else None.
+
+    The en-US rows (#67): which other languages a run routes depends on the
+    shard and the routing budget, not on the skill, so they are reported as
+    language coverage and don't decide the level. A result from before the
+    per-language counts (no by_lang) falls back to its totals."""
+    if not isinstance(r, dict) or r.get("status") != "ok" or not r.get("counted"):
         return None
+    by = r.get("by_lang")
+    if isinstance(by, dict):
+        c = by.get(LEVEL3_LANG)
+        if not isinstance(c, dict) or not c.get("counted"):
+            return None
+        return c.get("hit", 0), c["counted"]
     return r.get("hit", 0), r["counted"]
+
+
+def routing_counts(rec, run):
+    """(hit, counted) of a finished routing run that decides level 3, else None."""
+    return level3_counts(((rec or {}).get("routing") or {}).get(run))
 
 
 def is_candidate(entry):
