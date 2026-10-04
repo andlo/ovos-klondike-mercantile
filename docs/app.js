@@ -285,7 +285,7 @@ const TEST_SEGMENTS = [
   { key: "loads", label: "Loads", color: "#86c9a1" },
   { key: "fails", label: "Fails to install or load", color: "#c73e35" },
   { key: "grey", label: "Not testable here (needs a device, key or account)", color: "#b9bec7" },
-  { key: "untested", label: "Not tested yet", color: "#e2e5ea" },
+  { key: "untested", label: "Not tested yet", color: "var(--border)" },
 ];
 
 function testedPool(list) {
@@ -341,7 +341,7 @@ function renderTestChart(list) {
 
 const GOLDEN_SEGMENTS = [
   { key: "with", label: "Golden utterances in its release", color: "#1f7ae0" },
-  { key: "without", label: "None, so routing can't be measured", color: "#e2e5ea" },
+  { key: "without", label: "None, so routing can't be measured", color: "var(--border)" },
 ];
 
 function renderGoldenChart(list) {
