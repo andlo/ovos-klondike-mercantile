@@ -5,6 +5,11 @@
 #
 # Usage: device_setup.sh <stable|testing|alpha> [venv-dir]
 #
+# Prefer ovos-tui-client's `ovos-tui --set-channel <channel>` (0.3.0a2+): the
+# same rules, plus a dry run and the TUI's own palette command. This script is
+# for a device without ovos-tui-client, and is where those rules were first
+# tried on hardware.
+#
 # Run it after ovos-installer, on the device, as the user owning the venv.
 # Everything is read live (constraints and the harness stack), never stored.
 #

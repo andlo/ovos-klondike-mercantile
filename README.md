@@ -231,9 +231,11 @@ translate/lang-detect plugins, and a test driver (ovoscope) whose own
 declared requirements accept the channel. On stable that is ovoscope
 0.6.0, driven through the same boot helper.
 
-A real device can be brought onto the same stack with
-`scripts/compat/device_setup.sh <channel>`, run on the device after the
-OVOS installer (in its OVOS venv, as the user that owns it). An installer
+A real device can be brought onto the same stack with ovos-tui-client's
+`ovos-tui --set-channel <channel>` (0.3.0a2 or newer), run on the device after
+the OVOS installer (in its OVOS venv, as the user that owns it);
+`scripts/compat/device_setup.sh <channel>` does the same for a device without
+ovos-tui-client, and is where it was prototyped. An installer
 install is not always the channel: it resolves in separate batches, and
 on alpha with pre-releases allowed for everything, so a device can end up
 below the channel's floors, with third-party betas (httpx 1.0.dev6 broke
@@ -245,6 +247,8 @@ the channel names upgraded under constraints and lock, and pre-releases
 outside the channel moved to final releases unless a dependent asks for
 one. What cannot follow the channel is reported, never downgraded into
 place. On a Mark II this gave the same versions as `klondike-stack-alpha.txt`.
+The two must keep the same rules: `LOCKED_STACK` here, `setchannel.LOCKED_STACK`
+there.
 
 Results that are not the package's fault are never shown as a failure:
 `error` (infrastructure trouble, retried next run), `unsupported`
