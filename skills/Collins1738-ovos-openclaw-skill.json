@@ -1,0 +1,46 @@
+{
+  "id": "Collins1738-ovos-openclaw-skill",
+  "skill_id": null,
+  "name": "ovos-openclaw-skill",
+  "description": "An installable OVOS skill that sends explicitly addressed voice requests to a",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/Collins1738/ovos-openclaw-skill",
+  "package_name": "ovos-openclaw-skill",
+  "pypi_version": null,
+  "license": "MIT",
+  "archived": false,
+  "author": "Collins1738",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install and configure",
+      "content": "python3.11 -m pip install ."
+    }
+  ],
+  "languages": [
+    "en-us"
+  ],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-10-05T17:07:27Z",
+  "last_updated": "2026-10-05T18:31:35Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
