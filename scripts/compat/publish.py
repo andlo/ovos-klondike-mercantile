@@ -258,13 +258,13 @@ def publish_profile_files(docs, channel, spec):
     comp = docs / "compat"
     comp.mkdir(parents=True, exist_ok=True)
     head = [f"# Klondike profile, {channel} channel: a well-equipped OVOS install.",
-            "# On a device: run scripts/compat/device_setup.sh " + channel + " first, then install",
-            "# into the OVOS virtualenv under the channel's constraints and the core lock it leaves:",
-            f"#   cd ~/.cache/klondike-device/{channel}",
+            f"# On a device: run `ovos-tui --set-channel {channel}` (ovos-tui-client 0.3.0a2+) first,",
+            "# then install into the OVOS virtualenv under the channel's constraints and the core lock it leaves:",
+            f'#   cd "$(ls -d ~/.cache/ovos-tui-client/set-channel/{channel}/* | tail -1)"',
             f"#   ~/.venvs/ovos/bin/pip install -c constraints.txt -c lock.txt -r klondike-profile-{channel}.txt",
-            "# run device_setup.sh once more, then set the pipeline from klondike-mycroft-"
+            f"# run `ovos-tui --set-channel {channel}` once more, then set the pipeline from klondike-mycroft-"
             + channel + ".json in mycroft.conf.",
-            "# Without device_setup.sh: pip install -c https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/"
+            "# Without ovos-tui: pip install -c https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/"
             f"constraints-{channel}.txt -r klondike-profile-{channel}.txt", ""]
     (comp / f"klondike-profile-{channel}.txt").write_text("\n".join(head + list(spec["requirements"])) + "\n")
     (comp / f"klondike-mycroft-{channel}.json").write_text(
