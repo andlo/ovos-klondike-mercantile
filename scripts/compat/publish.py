@@ -261,7 +261,13 @@ def publish_profile_files(docs, channel, spec):
             "# Install into the OVOS virtualenv under the channel's constraints:",
             f"#   pip install -c https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/"
             f"constraints-{channel}.txt -r klondike-profile-{channel}.txt",
-            "# Then set the pipeline from klondike-mycroft-" + channel + ".json in mycroft.conf.", ""]
+            "# Then set the pipeline from klondike-mycroft-" + channel + ".json in mycroft.conf.",
+            "#",
+            "# To reproduce a Klondike result exactly, install the job's own stack instead",
+            "# (the same versions, plus every skill the job routed in the same core):",
+            f"#   pip install -r klondike-stack-{channel}.txt",
+            "# then restart OVOS and run the skill's golden utterances with ovos-tui-client:",
+            "#   ovos-tui --run <skill_id> --report -", ""]
     (comp / f"klondike-profile-{channel}.txt").write_text("\n".join(head + list(spec["requirements"])) + "\n")
     (comp / f"klondike-mycroft-{channel}.json").write_text(
         json.dumps({"intents": {"pipeline": list(spec["pipeline"])}}, indent=2) + "\n")
