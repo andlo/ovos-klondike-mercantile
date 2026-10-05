@@ -151,7 +151,7 @@
         <li><strong>Level 1, installs:</strong> <code>pip install</code> of your
           package under the channel's own constraints file
           (<code>constraints-&lt;channel&gt;.txt</code> from
-          <a href="https://github.com/OpenVoiceOS/ovos-releases">OpenVoiceOS/ovos-releases</a>,
+          <a href="https://github.com/OpenVoiceOS/OpenVoiceOS">OpenVoiceOS/OpenVoiceOS</a>,
           the same file the OVOS installer uses, fetched live). This catches dependency conflicts with what a device on
           that channel actually runs. If the channel pins your package itself, the
           version it pins is the one tested.</li>
@@ -337,10 +337,38 @@
           <code>Ctrl+P</code> → <strong>OVOS: Release channel</strong> shows which
           channel the device runs (worked out from its versions, whatever made
           the install) and how to change it on each kind of install. One device
-          per channel, or switch.</li>
-        <li><strong>The released version, configured.</strong>
-          <code>pip install your-skill==&lt;latest release&gt;</code>, then add
-          the keys or hardware it needs.</li>
+          per channel, or switch.
+          <br><br>
+          <strong>Make it the channel, not just close to it.</strong> An install
+          is not always exactly the channel it was made for: the installer
+          resolves in separate batches (on alpha with pre-releases allowed for
+          everything), so a device can end up below the channel's versions,
+          with third-party betas, or with plugins that conflict with the core.
+          A report from such a device says little about the channel. After the
+          installer, run this on the device, in the OVOS venv as the user that
+          owns it, with your channel:
+          <pre class="setup-content">curl -fsSLO https://raw.githubusercontent.com/andlo/ovos-klondike-mercantile/main/scripts/compat/device_setup.sh
+bash device_setup.sh testing        # or alpha, stable; the venv is ~/.venvs/ovos unless given as a 2nd argument</pre>
+          It builds the device's stack the way our tests build theirs: the
+          channel's packages by name under its live constraints, without
+          <code>--pre</code>; ovos-core, ovos-workshop, ovos-bus-client,
+          ovos-plugin-manager, ovos-config and ovos-utils then locked; everything
+          else the channel names upgraded next to them; pre-releases nothing
+          asks for moved to final releases. It never downgrades the core: a
+          package that would need that is reported and left as it is. It ends
+          with what changed, what can't follow the channel and <code>pip check</code>,
+          and keeps a <code>pip freeze</code> from before and after in
+          <code>~/.cache/klondike-device/&lt;channel&gt;/</code>. Restart OVOS
+          afterwards. Running it again is safe, and the way to keep a device on
+          the channel as it moves.</li>
+        <li><strong>The released version, configured.</strong> Install it under
+          the channel's constraints, so it can't move the device off the channel:
+          <pre class="setup-content">cd ~/.cache/klondike-device/&lt;channel&gt;     # left there by device_setup.sh
+~/.venvs/ovos/bin/pip install -c constraints.txt -c lock.txt your-skill==&lt;latest release&gt;</pre>
+          <code>lock.txt</code> holds the core versions, so pip refuses rather
+          than quietly changing ovos-core or ovos-workshop for your skill. If it
+          refuses, your skill doesn't fit the channel: that is the result, not
+          something to force. Then add the keys or hardware it needs.</li>
         <li><strong>Utterances.</strong> Your golden file
           (<code>test/end2end/golden_utterances_&lt;lang&gt;.jsonl</code>) if you
           have one. If not, <code>ovoscope generate</code> writes a first draft
@@ -388,9 +416,14 @@
           device that runs the <a href="#klondike-profile">Klondike profile</a> is
           the most real version of that test, and shows as such next to ours.
           Install the profile for your channel into the OVOS venv under the
-          channel's constraints (the <em>requirements</em> link in the profile's
-          box above), set the pipeline from its <em>mycroft.conf pipeline</em>
-          link, restart OVOS, then run
+          channel's constraints and the lock (the <em>requirements</em> link in
+          the profile's box above):
+          <pre class="setup-content">cd ~/.cache/klondike-device/&lt;channel&gt;
+curl -fsSLO https://andlo.github.io/ovos-klondike-mercantile/compat/klondike-profile-&lt;channel&gt;.txt
+~/.venvs/ovos/bin/pip install -c constraints.txt -c lock.txt -r klondike-profile-&lt;channel&gt;.txt</pre>
+          run <code>device_setup.sh</code> once more so everything the profile
+          added follows the channel too, set the pipeline from its
+          <em>mycroft.conf pipeline</em> link, restart OVOS, then run
           <pre class="setup-content">ovos-tui --run &lt;your skill_id&gt; --report -</pre>
           Klondike compares the report's installed skills and pipeline with the
           profile and, if something is missing, says what ("3 profile skills

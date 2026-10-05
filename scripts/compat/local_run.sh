@@ -18,7 +18,7 @@ printf '%s' "${KLONDIKE:-}" > "$OUT/klondike-arg.json"
 podman run --rm --cgroup-manager=cgroupfs \
   -e GENERATOR_SPEC="${GENERATOR_SPEC:-}" -e COMPAT_ROUTE_MAX_LANGS="${COMPAT_ROUTE_MAX_LANGS:-4}" \
   -e COMPAT_ROUTE_BUDGET_MIN="${COMPAT_ROUTE_BUDGET_MIN:-30}" -e COMPAT_KLONDIKE_BUDGET_MIN="${COMPAT_KLONDIKE_BUDGET_MIN:-240}" \
-  -e CHANNEL_CONSTRAINTS_BASE_URL="${CHANNEL_CONSTRAINTS_BASE_URL:-https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main}" \
+  -e CHANNEL_CONSTRAINTS_BASE_URL="${CHANNEL_CONSTRAINTS_BASE_URL:-https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main}" \
   -v "$REPO:/repo:ro,z" -v "$HARNESS:/harness:ro,z" -v "$ITEMS:/items.json:ro,z" -v "$OUT:/out:z" \
   docker.io/library/python:3.11-bookworm bash -c "
     set -euo pipefail
