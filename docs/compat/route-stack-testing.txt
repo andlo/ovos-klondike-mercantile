@@ -52,10 +52,10 @@ memory-tempfile==2.2.3
 model2vec==0.9.0
 narwhals==2.26.0
 nebulento @ git+https://github.com/OpenVoiceOS/nebulento@e0cc4536365559be3d33f144e8cdf102d037fd5a
+nested-lookup==0.2.25
 nltk==3.10.3
 numpy==2.4.6
 ovos-audio==1.2.0
-ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==2.1.1
 ovos-date-parser==0.29.0
 ovos-dinkum-listener==0.5.0
@@ -65,11 +65,7 @@ ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pip
 ovos-media==2.4.5a1
 ovos-number-parser==0.19.13
 ovos-plugin-manager==2.2.0
-ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.1.28
-ovos-skill-andersen-tales==0.1.8
-ovos-skill-andrew-lang-tales==0.1.9
-ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.2.7
 ovos-skill-boot-finished==0.5.0
 ovos-skill-count==0.0.2
@@ -149,6 +145,7 @@ scikit-learn==1.9.1
 scipy==1.17.1
 simplematch==1.4
 six==1.17.0
+skill-homeassistant==1.4.4
 sklearn-crfsuite==0.5.0
 snowballstemmer==3.1.1
 soupsieve==2.10
@@ -169,7 +166,8 @@ url-normalize==3.0.1
 urllib3==2.8.0
 vobject==0.9.9
 watchdog==2.3.1
-wcwidth==0.9.1
+wcwidth==0.9.2
+webcolors==25.10.0
 websocket-client==1.9.2
 x-wr-timezone==1.0.1
 xxhash==4.0.1
