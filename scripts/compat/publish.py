@@ -258,7 +258,7 @@ def publish_profile_files(docs, channel, spec):
     comp = docs / "compat"
     comp.mkdir(parents=True, exist_ok=True)
     head = [f"# Klondike profile, {channel} channel: a well-equipped OVOS install.",
-            f"# On a device: run `ovos-tui --set-channel {channel}` (ovos-tui-client 0.3.0a2+) first,",
+            f"# On a device: run `ovos-tui --set-channel {channel}` (ovos-tui-client 0.3.0a6+) first,",
             "# then install into the OVOS virtualenv under the channel's constraints and the core lock it leaves:",
             f'#   cd "$(ls -d ~/.cache/ovos-tui-client/set-channel/{channel}/* | tail -1)"',
             f"#   ~/.venvs/ovos/bin/pip install -c constraints.txt -c lock.txt -r klondike-profile-{channel}.txt",

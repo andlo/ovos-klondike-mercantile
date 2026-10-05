@@ -5,7 +5,7 @@
 #
 # Usage: device_setup.sh <stable|testing|alpha> [venv-dir]
 #
-# Prefer ovos-tui-client's `ovos-tui --set-channel <channel>` (0.3.0a2+): the
+# Prefer ovos-tui-client's `ovos-tui --set-channel <channel>` (0.3.0a6+): the
 # same rules, plus a dry run and the TUI's own palette command. This script is
 # for a device without ovos-tui-client, and is where those rules were first
 # tried on hardware.

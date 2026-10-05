@@ -232,7 +232,7 @@ declared requirements accept the channel. On stable that is ovoscope
 0.6.0, driven through the same boot helper.
 
 A real device can be brought onto the same stack with ovos-tui-client's
-`ovos-tui --set-channel <channel>` (0.3.0a2 or newer), run on the device after
+`ovos-tui --set-channel <channel>` (0.3.0a6 or newer), run on the device after
 the OVOS installer (in its OVOS venv, as the user that owns it);
 `scripts/compat/device_setup.sh <channel>` does the same for a device without
 ovos-tui-client, and is where it was prototyped. An installer
