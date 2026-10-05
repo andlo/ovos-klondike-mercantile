@@ -46,6 +46,13 @@ def test_later_installs_locked():
        f"every install after the stack uses the constraints and the lock ({len(installs)} calls)")
 
 
+def test_stack_limited_to_device():
+    ok("stack = [n for n in harness if n in installed or n in pipeline]" in SCRIPT,
+       "the harness stack only touches what the device has or its pipeline names")
+    ok('"ovos-padatious-pipeline-plugin": "ovos-padatious"' in SCRIPT,
+       "repo names map to distribution names as in the harness's resolve.py")
+
+
 def test_test_tools_excluded():
     ok("TEST_TOOLS" in SCRIPT and "ovoscope" in SCRIPT.split("TEST_TOOLS =", 1)[1].splitlines()[0],
        "ovoscope (the harness's test driver) is kept off the device")
@@ -55,6 +62,7 @@ if __name__ == "__main__":
     test_lock_matches_store()
     test_no_pre()
     test_later_installs_locked()
+    test_stack_limited_to_device()
     test_test_tools_excluded()
     print("\nALL OK" if not fails else f"\n{fails} FAILED")
     sys.exit(1 if fails else 0)

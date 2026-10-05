@@ -17,7 +17,7 @@ from reports.feed import build_index  # noqa: E402
 from reports.validate import CHANNELS  # noqa: E402
 
 # The constraints the OVOS installer uses, as the channel tests do (plan.py).
-CONSTRAINTS_URL = "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-{channel}.txt"
+CONSTRAINTS_URL = "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-{channel}.txt"
 
 
 def fetch_constraints():

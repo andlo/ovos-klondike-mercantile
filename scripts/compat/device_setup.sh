@@ -11,7 +11,10 @@
 #   1. Channel stack: the packages ovos-test-harness's requirements name that
 #      the channel's constraints also name are installed BY NAME under
 #      -c constraints (--upgrade), so the channel decides their version.
-#      This is the stack setup_channel.sh gets from install_channel.sh.
+#      This is the stack setup_channel.sh gets from install_channel.sh,
+#      limited to what the device has or its intent pipeline names (a
+#      headless box gets no ovos-gui; a pipeline stage with its plugin
+#      missing, like padatious, gets it).
 #      pip is used without --pre: a pre-release is only taken where the
 #      constraint line itself names one, so third-party dev releases
 #      (httpx 1.0.devN) stay out.
@@ -54,6 +57,12 @@ from importlib.metadata import distributions
 
 norm = lambda n: re.sub(r"[-_.]+", "-", n or "").lower()
 NAME = re.compile(r"^\s*([A-Za-z0-9][A-Za-z0-9._-]*)")
+# Repos whose distribution name is not the repo name (as in the harness's
+# test/channel_compat/resolve.py).
+DIST_NAME_OVERRIDES = {
+    "ovos-adapt-pipeline-plugin": "ovos-adapt-parser",
+    "ovos-padatious-pipeline-plugin": "ovos-padatious",
+}
 
 def names(path):
     out = []
@@ -61,8 +70,8 @@ def names(path):
         line = line.strip()
         if line.startswith("git+"):
             # git+https://github.com/OpenVoiceOS/ovos-core@dev -> ovos-core
-            repo = line.split("#", 1)[0].rsplit("/", 1)[-1].split("@", 1)[0]
-            out.append(norm(repo.removesuffix(".git")))
+            repo = norm(line.split("#", 1)[0].rsplit("/", 1)[-1].split("@", 1)[0].removesuffix(".git"))
+            out.append(DIST_NAME_OVERRIDES.get(repo, repo))
             continue
         line = line.split("#", 1)[0].strip()
         if not line:
@@ -76,12 +85,34 @@ def names(path):
 TEST_TOOLS = {"ovoscope", "pytest", "pytest-json-report", "pytest-timeout", "ovos-spec-tools"}
 
 channel = set(names("constraints.txt"))
-stack = [n for n in names("harness-requirements.txt") if n in channel and n not in TEST_TOOLS]
 installed = {norm(d.metadata["Name"]) for d in distributions()}
-rest = sorted(n for n in installed & channel if n not in stack and n not in TEST_TOOLS)
+
+# The device's own intent pipeline: a stage's plugin belongs on the device
+# even when the installer left it out (ovos-padatious-pipeline-plugin-high
+# in mycroft.conf with no padatious installed).
+pipeline = set()
+try:
+    from ovos_config import Configuration
+    for stage in (Configuration().get("intents") or {}).get("pipeline") or []:
+        plugin = norm(re.sub(r"-(high|medium|low)$", "", stage))
+        pipeline.add(DIST_NAME_OVERRIDES.get(plugin, plugin))
+except Exception as e:  # noqa: BLE001 - no config: only what is installed
+    print(f"    (could not read the intent pipeline: {e})")
+
+# The harness stack, limited to what this device has or its pipeline asks
+# for: a headless box gets no ovos-gui just because the harness tests it.
+harness = [n for n in names("harness-requirements.txt") if n in channel and n not in TEST_TOOLS]
+stack = [n for n in harness if n in installed or n in pipeline]
+skipped = [n for n in harness if n not in stack]
+rest = sorted(n for n in installed & channel if n not in harness and n not in TEST_TOOLS)
 open("stack.txt", "w").write("\n".join(stack) + "\n")
 open("rest.txt", "w").write("\n".join(rest) + "\n")
 print(f"    channel names {len(channel)} packages; stack {len(stack)}, other installed {len(rest)}")
+added = [n for n in stack if n not in installed]
+if added:
+    print(f"    added for the device's pipeline: {', '.join(added)}")
+if skipped:
+    print(f"    harness stack not on this device, left out: {', '.join(skipped)}")
 EOF
 
 echo "==> [1/4] channel stack"

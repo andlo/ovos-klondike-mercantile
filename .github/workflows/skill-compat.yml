@@ -58,7 +58,7 @@ env:
   CHANNELS: stable,testing,alpha
   # The installer's own constraints source; install_channel.sh (harness)
   # reads this variable, plan.py uses the same URL.
-  CHANNEL_CONSTRAINTS_BASE_URL: https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main
+  CHANNEL_CONSTRAINTS_BASE_URL: https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main
   # `ovoscope generate` (OpenVoiceOS/ovoscope#224, under review) drafts
   # utterances for skills without golden files. Only its CLI and the rows'
   # `source` field are used (scripts/compat/generated.py); an ovoscope

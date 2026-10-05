@@ -178,7 +178,7 @@ offered by the installer today; kept for the next stable release)
 (issue #6, phases 1-2):
 
 - **Level 1, installs:** `pip install` under the channel's own
-  `constraints-<channel>.txt` from OpenVoiceOS/ovos-releases (the file the
+  `constraints-<channel>.txt` from OpenVoiceOS/OpenVoiceOS (the file the
   installer itself uses), fetched live.
   When the channel pins the package itself, that pinned version is tested.
 - **Level 2, loads:** booted in MiniCroft with every language the

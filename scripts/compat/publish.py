@@ -258,10 +258,14 @@ def publish_profile_files(docs, channel, spec):
     comp = docs / "compat"
     comp.mkdir(parents=True, exist_ok=True)
     head = [f"# Klondike profile, {channel} channel: a well-equipped OVOS install.",
-            "# Install into the OVOS virtualenv under the channel's constraints:",
-            f"#   pip install -c https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/"
-            f"constraints-{channel}.txt -r klondike-profile-{channel}.txt",
-            "# Then set the pipeline from klondike-mycroft-" + channel + ".json in mycroft.conf.", ""]
+            "# On a device: run scripts/compat/device_setup.sh " + channel + " first, then install",
+            "# into the OVOS virtualenv under the channel's constraints and the core lock it leaves:",
+            f"#   cd ~/.cache/klondike-device/{channel}",
+            f"#   ~/.venvs/ovos/bin/pip install -c constraints.txt -c lock.txt -r klondike-profile-{channel}.txt",
+            "# run device_setup.sh once more, then set the pipeline from klondike-mycroft-"
+            + channel + ".json in mycroft.conf.",
+            "# Without device_setup.sh: pip install -c https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/"
+            f"constraints-{channel}.txt -r klondike-profile-{channel}.txt", ""]
     (comp / f"klondike-profile-{channel}.txt").write_text("\n".join(head + list(spec["requirements"])) + "\n")
     (comp / f"klondike-mycroft-{channel}.json").write_text(
         json.dumps({"intents": {"pipeline": list(spec["pipeline"])}}, indent=2) + "\n")
@@ -413,7 +417,7 @@ def main():
                             constraints_sha256=plan["summary"][channel]["constraints_sha256"],
                             resolved_stack=plan["summary"][channel].get("resolved_stack"),
                             stack_moved=plan["summary"][channel].get("stack_moved"),
-                            constraints_url=f"https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-{channel}.txt",
+                            constraints_url=f"https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-{channel}.txt",
                             harness_sha=plan.get("harness_sha"),
                             runner_version=plan.get("runner_version"))
             except (OSError, ValueError, KeyError):

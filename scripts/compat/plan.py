@@ -25,7 +25,7 @@ The effective stack (issue #39) is what the channel installs today of the
 packages that decide whether a skill loads and where an utterance goes
 (STACK_PACKAGES), resolved against PyPI like the skills themselves. It
 replaced a hash of the whole constraints file, which re-tested everything
-when any unrelated line moved (ovos-releases changes the alpha file several
+when any unrelated line moved (OpenVoiceOS/OpenVoiceOS changes the alpha file several
 times a day) and nothing when alpha's floors stayed put while a new
 ovos-core pre-release came out. If PyPI can't be reached for the core
 packages, the key falls back to the file hash for that run.
@@ -66,10 +66,11 @@ ROUTE_VERSION = "5"  # 3: the stop check (#16); 4: OCP picks count as taken; 5: 
 ROUTING_JUDGE = next((l.strip() for l in (Path(__file__).resolve().parents[2] / "compat" / "routing-judge.txt")
                       .read_text().splitlines() if l.strip() and not l.lstrip().startswith("#")), "")
 # The constraints the OVOS installer itself installs with
-# (ovos-installer: ovos_virtualenv_constraints_url). OpenVoiceOS/OpenVoiceOS
-# carries the same files today; the installer is the reference for "what a
+# (ovos-installer: ovos_virtualenv_constraints_url, still under the old
+# name OpenVoiceOS/ovos-releases, which GitHub redirects to
+# OpenVoiceOS/OpenVoiceOS); the installer is the reference for "what a
 # device on this channel runs".
-CONSTRAINTS_BASE = "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main"
+CONSTRAINTS_BASE = "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main"
 CONSTRAINTS_URL = CONSTRAINTS_BASE + "/constraints-{channel}.txt"
 NAME_RE = re.compile(r"^\s*([A-Za-z0-9][A-Za-z0-9._-]*)\s*(\[[^\]]*\])?\s*([^;#]*)")
 
