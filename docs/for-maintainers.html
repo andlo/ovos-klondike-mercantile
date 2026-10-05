@@ -345,13 +345,15 @@
           everything), so a device can end up below the channel's versions,
           with third-party betas, or with plugins that conflict with the core.
           A report from such a device says little about the channel. After the
-          installer, let ovos-tui-client (0.3.0a2 or newer) make it the channel,
+          installer, let ovos-tui-client (0.3.0a6 or newer) make it the channel,
           on the device, in the OVOS venv as the user that owns it:
-          <pre class="setup-content">~/.venvs/ovos/bin/pip install "ovos-tui-client>=0.3.0a2"     # no --pre: that would take betas of everything
+          <pre class="setup-content">~/.venvs/ovos/bin/pip install "ovos-tui-client>=0.3.0a6"     # no --pre: that would take betas of everything
 ovos-tui --set-channel testing --dry-run    # what it would change (or alpha, stable)
 ovos-tui --set-channel testing</pre>
-          or <code>Ctrl+P</code> → <strong>OVOS: Make this install &lt;channel&gt;…</strong>
-          in the TUI, which shows the dry run first and asks. It builds the
+          or in the TUI: the <strong>Set channel: &lt;channel&gt;…</strong> buttons in
+          <strong>OVOS: Release channel</strong>, or <code>Ctrl+P</code> →
+          <strong>OVOS: Set channel: &lt;channel&gt;…</strong> (the same as
+          <code>--set-channel</code>), which show the dry run first and ask. It builds the
           device's stack the way our tests build theirs: the channel's packages by
           name under its live constraints, without <code>--pre</code>; ovos-core,
           ovos-workshop, ovos-bus-client, ovos-plugin-manager, ovos-config and
