@@ -1,7 +1,10 @@
 # Klondike profile, stable channel: a well-equipped OVOS install.
-# Install into the OVOS virtualenv under the channel's constraints:
-#   pip install -c https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-stable.txt -r klondike-profile-stable.txt
-# Then set the pipeline from klondike-mycroft-stable.json in mycroft.conf.
+# On a device: run `ovos-tui --set-channel stable` (ovos-tui-client 0.3.0a6+) first,
+# then install into the OVOS virtualenv under the channel's constraints and the core lock it leaves:
+#   cd "$(ls -d ~/.cache/ovos-tui-client/set-channel/stable/* | tail -1)"
+#   ~/.venvs/ovos/bin/pip install -c constraints.txt -c lock.txt -r klondike-profile-stable.txt
+# run `ovos-tui --set-channel stable` once more, then set the pipeline from klondike-mycroft-stable.json in mycroft.conf.
+# Without ovos-tui: pip install -c https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt -r klondike-profile-stable.txt
 
 ovos-core[skills-essential,skills-internet]
 ovos-core[skills-audio]
