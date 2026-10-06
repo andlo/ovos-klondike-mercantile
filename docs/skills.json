@@ -2765,12 +2765,12 @@
     "icon_source": "readme",
     "icon_color": "#22a7f0",
     "source": "https://github.com/0xrushi/EWON-ovos-skills",
-    "package_name": null,
+    "package_name": "ovos-skill-MyEwonSkill",
     "pypi_version": null,
     "license": "Apache-2.0",
     "archived": false,
     "author": "0xrushi",
-    "tier": 3,
+    "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
@@ -5683,17 +5683,17 @@
     "icon_color": null,
     "source": "https://github.com/thalovant/thalovant-skill-interaction-modes",
     "package_name": "thalovant-skill-interaction-modes",
-    "pypi_version": null,
+    "pypi_version": "0.1.9",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
     "forks": 0,
     "open_issues": 0,
-    "on_pypi": false,
+    "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
@@ -5768,12 +5768,257 @@
       "zh-sg",
       "zh-tw"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "an-es": {
+        "name": "Modos d'interacci\u00f3n",
+        "description": "Encienda u desactiva los modos temporals de client per voz."
+      },
+      "ar-sa": {
+        "name": "\u0623\u0633\u0627\u0644\u064a\u0628 \u0627\u0644\u062a\u0641\u0627\u0639\u0644",
+        "description": "\u0642\u0645 \u0628\u062a\u0634\u063a\u064a\u0644 \u0623\u0648 \u0625\u064a\u0642\u0627\u0641 \u0623\u0648\u0636\u0627\u0639 \u0627\u0644\u0639\u0645\u064a\u0644 \u0627\u0644\u0645\u0624\u0642\u062a \u0628\u0635\u0648\u062a"
+      },
+      "ast-es": {
+        "name": "Los modos d'interacci\u00f3n",
+        "description": "Enviar o desconectar los modos temporales del cliente por voz."
+      },
+      "az-az": {
+        "name": "\u018flaq\u0259 Modlar\u0131",
+        "description": "M\u00fcv\u0259qq\u0259ti m\u00fc\u015ft\u0259ri rejimini s\u0259sl\u0259 a\u00e7\u0131n v\u0259 ya s\u00f6nd\u00fcr\u00fcn."
+      },
+      "bg-bg": {
+        "name": "\u041c\u043e\u0434\u0438 \u043d\u0430 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435",
+        "description": "\u0412\u043a\u043b\u044e\u0447\u0435\u0442\u0435 \u0438\u043b\u0438 \u0438\u0437\u043a\u043b\u044e\u0447\u0435\u0442\u0435 \u0440\u0435\u0436\u0438\u043c\u0430 \u043d\u0430 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u0438\u044f \u043a\u043b\u0438\u0435\u043d\u0442 \u0447\u0440\u0435\u0437 \u0433\u043b\u0430\u0441."
+      },
+      "ca-es": {
+        "name": "Modes d'interacci\u00f3",
+        "description": "Activar o desactivar els m\u00f2dols de client temporal per veu."
+      },
+      "cs-cz": {
+        "name": "Mody interakce",
+        "description": "Vypn\u011bte nebo vypn\u011bte do\u010dasn\u00e9 re\u017eimy klienta hlasem."
+      },
+      "da-dk": {
+        "name": "Interaktionsmodus",
+        "description": "T\u00e6nd eller sluk midlertidige klienttilstande med tale."
+      },
+      "de-at": {
+        "name": "Interaktionsweisen",
+        "description": "Schalten Sie die tempor\u00e4ren Client-Modus per Stimme ein oder aus."
+      },
+      "de-ch": {
+        "name": "Interaktionsweisen",
+        "description": "Schalten Sie die tempor\u00e4ren Client-Modus per Stimme ein oder aus."
+      },
+      "de-de": {
+        "name": "Interaktionsweisen",
+        "description": "Schalten Sie die tempor\u00e4ren Client-Modus per Stimme ein oder aus."
+      },
+      "el-gr": {
+        "name": "\u03a4\u03cd\u03c0\u03bf\u03b9 \u03b1\u03bb\u03bb\u03b7\u03bb\u03b5\u03c0\u03af\u03b4\u03c1\u03b1\u03c3\u03b7\u03c2",
+        "description": "\u0395\u03bd\u03b5\u03c1\u03b3\u03bf\u03c0\u03bf\u03b9\u03ae\u03c3\u03c4\u03b5 \u03ae \u03b1\u03c0\u03b5\u03bd\u03b5\u03c1\u03b3\u03bf\u03c0\u03bf\u03b9\u03ae\u03c3\u03c4\u03b5 \u03c4\u03b9\u03c2 \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03af\u03b5\u03c2 \u03c0\u03c1\u03bf\u03c3\u03c9\u03c1\u03b9\u03bd\u03ce\u03bd \u03c0\u03b5\u03bb\u03b1\u03c4\u03ce\u03bd \u03bc\u03b5 \u03c6\u03c9\u03bd\u03ae."
+      },
+      "es-ar": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-co": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-es": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-mx": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-us": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "et-ee": {
+        "name": "Interaktsiooniviisid",
+        "description": "L\u00fclita ajutine kliendi re\u017eiim h\u00e4\u00e4lega sisse v\u00f5i v\u00e4lja."
+      },
+      "eu-es": {
+        "name": "Elkarrekintza Modua",
+        "description": "Aldi baterako bezero modua ahots bidez aktibatu edo itzali."
+      },
+      "fa-ir": {
+        "name": "\u0631\u0648\u0634 \u0647\u0627\u06cc \u062a\u0639\u0627\u0645\u0644",
+        "description": "\u062d\u0627\u0644\u062a \u0645\u0648\u0642\u062a \u0645\u0634\u062a\u0631\u06cc \u0631\u0627 \u0628\u0627 \u0635\u062f\u0627 \u0641\u0639\u0627\u0644 \u06cc\u0627 \u062e\u0627\u0645\u0648\u0634 \u06a9\u0646\u06cc\u062f."
+      },
+      "fi-fi": {
+        "name": "Yhteisty\u00f6muodot",
+        "description": "K\u00e4ynnist\u00e4 tai sammuttaa v\u00e4liaikainen asiakastulku \u00e4\u00e4nell\u00e4."
+      },
+      "fr-be": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "fr-ca": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "fr-ch": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "fr-fr": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "gl-es": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Activa ou desactiva os modos de cliente temporal por voz."
+      },
+      "he-il": {
+        "name": "\u05d0\u05de\u05e6\u05e2\u05d9 \u05d0\u05d9\u05e0\u05d8\u05e8\u05d0\u05e7\u05e6\u05d9\u05d4",
+        "description": "\u05ea\u05e4\u05e2\u05d9\u05dc \u05d0\u05d5 \u05ea\u05db\u05d1\u05d4 \u05d0\u05ea \u05de\u05e6\u05d1 \u05d4\u05dc\u05e7\u05d5\u05d7 \u05d4\u05d6\u05de\u05e0\u05d9 \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05e7\u05d5\u05dc."
+      },
+      "hi-in": {
+        "name": "\u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0947 \u0924\u0930\u0940\u0915\u0947",
+        "description": "\u0905\u0938\u094d\u0925\u093e\u092f\u0940 \u0915\u094d\u0932\u093e\u0907\u0902\u091f \u092e\u094b\u0921 \u0915\u094b \u0906\u0935\u093e\u091c \u0926\u094d\u0935\u093e\u0930\u093e \u091a\u093e\u0932\u0942 \u092f\u093e \u092c\u0902\u0926 \u0915\u0930\u0947\u0902\u0964"
+      },
+      "hr-hr": {
+        "name": "Moda interakcije",
+        "description": "Ukloni ili isklju\u010di privremeni re\u017eimi klijenta glasom."
+      },
+      "hu-hu": {
+        "name": "Interakt\u00edv m\u00f3dok",
+        "description": "A hangon kereszt\u00fcl kapcsolja vagy kapcsolja be a \u00e1tmeneti \u00fcgyf\u00e9l m\u00f3dokat."
+      },
+      "id-id": {
+        "name": "Modus Interaksi",
+        "description": "Pindahkan mode klien sementara ke atau mati dengan suara."
+      },
+      "it-it": {
+        "name": "Modalit\u00e0 di interazione",
+        "description": "Accendere o disattivare le modalit\u00e0 temporanee del cliente per voce."
+      },
+      "ja-jp": {
+        "name": "\u76f8\u4e92\u4f5c\u7528\u65b9\u5f0f",
+        "description": "\u81e8\u6642\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u30e2\u30fc\u30c9\u3092\u97f3\u58f0\u3067\u30aa\u30f3\u307e\u305f\u306f\u30aa\u30d5\u306b\u3057\u307e\u3059"
+      },
+      "ko-kr": {
+        "name": "\uc0c1\ud638 \uc791\uc6a9 \ubc29\uc2dd",
+        "description": "\uc74c\uc131\uc73c\ub85c \uc77c\uc2dc\uc801\uc778 \ud074\ub77c\uc774\uc5b8\ud2b8 \ubaa8\ub4dc\ub97c \ucf1c\uac70\ub098 \ub044\uc138\uc694."
+      },
+      "lt-lt": {
+        "name": "Veiksm\u0173 b\u016bdai",
+        "description": "\u012ejungti arba i\u0161jungti laikinojo kliento re\u017eimus balso b\u016bdu."
+      },
+      "lv-lv": {
+        "name": "Interakcijas veidi",
+        "description": "Atkl\u0101jiet vai izsl\u0113gjiet pagaidu klienta re\u017e\u012bmus ar balsi."
+      },
+      "ms-my": {
+        "name": "Mod interaksi",
+        "description": "Matikan atau matikan mod pelanggan sementara melalui suara."
+      },
+      "nb-no": {
+        "name": "Interaksjonsmoder",
+        "description": "Sl\u00e5 p\u00e5 eller av med stemme."
+      },
+      "nl-be": {
+        "name": "Interactie-modus",
+        "description": "Doe de tijdelijke cli\u00ebntmodus via stem aan of uit."
+      },
+      "nl-nl": {
+        "name": "Interactie-modus",
+        "description": "Doe de tijdelijke cli\u00ebntmodus via stem aan of uit."
+      },
+      "oc-fr": {
+        "name": "Mods d'interaccion",
+        "description": "Activar o desactivar los m\u00f2des de client temporari per vocala."
+      },
+      "pl-pl": {
+        "name": "Mody interakcji",
+        "description": "W\u0142\u0105cz lub wy\u0142\u0105cz tryby czasowego klienta g\u0142osowo."
+      },
+      "pt-ao": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "pt-br": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "pt-mz": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "pt-pt": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "ro-ro": {
+        "name": "Moduri de interac\u021biune",
+        "description": "Ac\u0163iona\u0163i sau dezactiva\u0163i modul client temporar prin voce."
+      },
+      "ru-ru": {
+        "name": "\u0421\u043f\u043e\u0441\u043e\u0431\u044b \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f",
+        "description": "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0438\u043b\u0438 \u0432\u044b\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0440\u0435\u0436\u0438\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0433\u043e \u043a\u043b\u0438\u0435\u043d\u0442\u0430 \u043f\u043e \u0433\u043e\u043b\u043e\u0441\u0443."
+      },
+      "sk-sk": {
+        "name": "Mody interakcie",
+        "description": "Vypnite alebo vypnite do\u010dasn\u00e9 re\u017eimy klienta hlasom."
+      },
+      "sl-si": {
+        "name": "Re\u0161itve za interakcijo",
+        "description": "Za\u010dasni na\u010dini klijenta vklju\u010dite ali izklopite glasovno."
+      },
+      "sv-fi": {
+        "name": "Interaktionsmodi",
+        "description": "St\u00e4ll p\u00e5 eller av med r\u00f6st."
+      },
+      "sv-se": {
+        "name": "Interaktionsmodi",
+        "description": "St\u00e4ll p\u00e5 eller av med r\u00f6st."
+      },
+      "sw-ke": {
+        "name": "Njia za Maingiliano",
+        "description": "Weka au uache njia za mtumiaji wa muda kwa sauti."
+      },
+      "th-th": {
+        "name": "\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e01\u0e32\u0e23\u0e1b\u0e0f\u0e34\u0e2a\u0e31\u0e21\u0e1e\u0e31\u0e19\u0e18\u0e4c",
+        "description": "\u0e40\u0e1b\u0e34\u0e14\u0e2b\u0e23\u0e37\u0e2d\u0e1b\u0e34\u0e14\u0e42\u0e2b\u0e21\u0e14\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32\u0e0a\u0e31\u0e48\u0e27\u0e04\u0e23\u0e32\u0e27\u0e14\u0e49\u0e27\u0e22\u0e40\u0e2a\u0e35\u0e22\u0e07"
+      },
+      "tr-tr": {
+        "name": "Etkinlik Modlar\u0131",
+        "description": "Ge\u00e7ici istemci modlar\u0131n\u0131 sesle a\u00e7\u0131n veya kapat\u0131n."
+      },
+      "uk-ua": {
+        "name": "\u041c\u043e\u0434\u0438 \u0432\u0437\u0430\u0454\u043c\u043e\u0434\u0456\u0457",
+        "description": "\u0417\u0430\u043f\u0443\u0441\u0442\u0438\u0442\u0438 \u0430\u0431\u043e \u0432\u0438\u043a\u043b\u044e\u0447\u0438\u0442\u0438 \u0440\u0435\u0436\u0438\u043c \u0442\u0438\u043c\u0447\u0430\u0441\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u0456\u0454\u043d\u0442\u0430 \u0433\u043e\u043b\u043e\u0441\u043e\u043c."
+      },
+      "vi-vn": {
+        "name": "C\u00e1c ph\u01b0\u01a1ng th\u1ee9c t\u01b0\u01a1ng t\u00e1c",
+        "description": "\u0110\u1ed9ng th\u00e1i kh\u00e1ch h\u00e0ng t\u1ea1m th\u1eddi b\u1eadt ho\u1eb7c t\u1eaft b\u1eb1ng gi\u1ecdng n\u00f3i."
+      },
+      "zh-cn": {
+        "name": "\u4e92\u52a8\u65b9\u5f0f",
+        "description": "\u901a\u8fc7\u8bed\u97f3\u542f\u52a8\u6216\u5173\u95ed\u4e34\u65f6\u5ba2\u6237\u7aef\u6a21\u5f0f."
+      },
+      "zh-sg": {
+        "name": "\u4e92\u52a8\u65b9\u5f0f",
+        "description": "\u901a\u8fc7\u8bed\u97f3\u542f\u52a8\u6216\u5173\u95ed\u4e34\u65f6\u5ba2\u6237\u7aef\u6a21\u5f0f."
+      },
+      "zh-tw": {
+        "name": "\u4e92\u52d5\u65b9\u5f0f",
+        "description": "\u901a\u904e\u8a9e\u97f3\u555f\u52d5\u6216\u95dc\u9589\u81e8\u6642\u5ba2\u6236\u7aef\u6a21\u5f0f."
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2026-05-26T13:21:29Z",
-    "last_updated": "2026-09-30T14:16:50Z",
+    "last_updated": "2026-10-04T12:33:51.480728Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": true,
+    "compat": {
+      "badge_id": "thalovant-skill-interaction-modes",
+      "channels": {}
+    }
   },
   {
     "id": "SiC-Gamelab-interactive-stories-ovos",
@@ -19371,6 +19616,47 @@
     }
   },
   {
+    "id": "trueflint-ovos-skill-display-control",
+    "skill_id": null,
+    "name": "ovos-skill-display-control",
+    "description": "Control your Open Voice OS display with your voice, and have it wake when you speak the wake word",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/smile.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
+    "source": "https://github.com/trueflint/ovos-skill-display-control",
+    "package_name": "ovos-skill-display-control",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "trueflint",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-09T16:04:11Z",
+    "last_updated": "2026-08-10T03:37:45Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "MenneBos-ovos-skill-esp32sat",
     "skill_id": null,
     "name": "ovos-skill-esp32sat",
@@ -19713,6 +19999,56 @@
         }
       }
     }
+  },
+  {
+    "id": "trueflint-ovos-skill-goodnight",
+    "skill_id": null,
+    "name": "ovos-skill-goodnight",
+    "description": "An OpenVoiceOS skill that connects to Home Assistant and controls a \"daytime mode\" input_boolean when you tell it good morning or good night",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/trueflint/ovos-skill-goodnight",
+    "package_name": "ovos-skill-goodnight",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "trueflint",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-skill-goodnight\n\nOr via `ovos-pip`:\n\novos-pip install ovos-skill-goodnight"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Edit your skill settings file (typically `~/.config/mycroft/skills/ovos-skill-goodnight.tjlee/settings.json`) and set the following:\n\n{\n    \"hass_url\": \"http://homeassistant.local:8123\",\n    \"hass_api_token\": \"your-long-lived-access-token\",\n    \"hass_entity_id\": \"input_boolean.daytime_mode\"\n}\n\n| Setting | Default | Description |\n|---|---|---|\n| `hass_url` | `http://homeassistant.local:8123` | Base URL of your Home Assistant instance |\n| `hass_api_token` | *(required)* | Long-lived access token from your HA profile |\n| `hass_entity_id` | `input_boolean.daytime_mode` | The `input_boolean` entity to control |\n\n### Getting a Home Assistant Token\n\n1. In Home Assistant, go to your profile (bottom-left avatar)\n2. Scroll to **Long-Lived Access Tokens**\n3. Click **Create Token**, give it a name, an\u2026"
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-09T16:22:23Z",
+    "last_updated": "2026-06-05T02:13:23Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-hello-world",
@@ -23424,6 +23760,54 @@
     "in_ovos_localize": false,
     "repo_created_at": "2024-10-04T02:50:37Z",
     "last_updated": "2025-01-15T21:47:15.294807Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "timonvanhasselt-ovos-stt-plugin-needle",
+    "skill_id": null,
+    "name": "ovos-stt-plugin-needle",
+    "description": "An offline, privacy-respecting Speech-to-Text plugin for Open Voice OS (OVOS) powered by Needle and the **Whistle** model.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/timonvanhasselt/ovos-stt-plugin-needle",
+    "package_name": "ovos-stt-plugin-needle",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "timonvanhasselt",
+    "tier": 2,
+    "component_type": "STT Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "offline",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-stt-plugin-needle"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Add the following configuration to your OVOS STT settings:\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-needle\"\n    }\n}"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-10-06T13:45:36Z",
+    "last_updated": "2026-10-06T15:33:46Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -28645,50 +29029,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "mosiwon-ovos_tts_plugin-google-cloud-translate",
-    "skill_id": null,
-    "name": "ovos_tts_plugin-google-cloud-translate",
-    "description": "pip install git+https://github.com/mosiwon/ovos_tts_plugin-google-cloud-translate.git",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/mosiwon/ovos_tts_plugin-google-cloud-translate",
-    "package_name": "ovos-tts-plugin-google-cloud-translate",
-    "pypi_version": null,
-    "license": null,
-    "archived": false,
-    "author": "mosiwon",
-    "tier": 2,
-    "component_type": "Tool",
-    "type_group": "Tool",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Configuration",
-        "content": "* in mycroft.conf\n{\n  \"tts\": {\n    \"module\": \"google_translate_tts\",\n    \"google_translate_tts\": {\n      \"api_key\": \"YOUR_GOOGLE_API_KEY\",\n      \"lang\": \"ko\"\n    }\n  }\n}"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2024-07-03T04:55:54Z",
-    "last_updated": "2024-07-03T04:57:03Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "OpenVoiceOS-ovos_tts_transformer_FlashSR",
     "skill_id": null,
     "name": "ovos_tts_transformer_FlashSR",
@@ -32623,6 +32963,45 @@
     }
   },
   {
+    "id": "Ricardo-ChenTY-TF-OVOS",
+    "skill_id": null,
+    "name": "TF-OVOS",
+    "description": "This repository is a lightweight harness for the TF-OVCOS proposal:",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/Ricardo-ChenTY/TF-OVOS",
+    "package_name": "tf-ovos",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "Ricardo-ChenTY",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-12T01:46:46Z",
+    "last_updated": "2026-07-23T03:34:44Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "thalovant-thalovant-skill-custos-fallback",
     "skill_id": null,
     "name": "thalovant-skill-custos-fallback",
@@ -32756,7 +33135,7 @@
     "icon_color": null,
     "source": "https://github.com/thalovant/thalovant-skillkit",
     "package_name": "thalovant-skillkit",
-    "pypi_version": "0.23.0",
+    "pypi_version": "0.24.2",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
@@ -32786,7 +33165,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-08T01:58:37Z",
-    "last_updated": "2026-10-01T01:26:50.856550Z",
+    "last_updated": "2026-10-04T00:10:25.257145Z",
     "is_new_repo": true,
     "is_recently_updated": true
   },
