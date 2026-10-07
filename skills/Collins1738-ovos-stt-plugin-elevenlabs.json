@@ -1,0 +1,48 @@
+{
+  "id": "Collins1738-ovos-stt-plugin-elevenlabs",
+  "skill_id": null,
+  "name": "ovos-stt-plugin-elevenlabs",
+  "description": "Use ElevenLabs Scribe v2 as an OpenVoiceOS speech-to-text provider. OVOS captures",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/Collins1738/ovos-stt-plugin-elevenlabs",
+  "package_name": "ovos-stt-plugin-elevenlabs",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "Collins1738",
+  "tier": 2,
+  "component_type": "STT Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-stt-plugin-elevenlabs\n\nFor local development:\n\npip install -e '.[test]'"
+    },
+    {
+      "heading": "Configure OVOS",
+      "content": "Keep local Whisper as the fallback so network or provider failures do not stop\nvoice input:\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-elevenlabs\",\n    \"fallback_module\": \"ovos-stt-plugin-whispercpp\",\n    \"ovos-stt-plugin-elevenlabs\": {\n      \"model\": \"scribe_v2\",\n      \"no_verbatim\": true,\n      \"timeout\": 30\n    },\n    \"ovos-stt-plugin-whispercpp\": {\n      \"model\": \"small.en\"\n    }\n  }\n}\n\n`no_verbatim=true` removes filler words, false starts, and non-speech sounds.\nOptional `keyterms` can improve uncommon-name recognition but currently add a\n20% surcharge to ElevenLabs transcription charges."
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-10-06T23:03:53Z",
+  "last_updated": "2026-10-06T23:06:38Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
