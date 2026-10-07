@@ -2,6 +2,7 @@ ahocorasick-ner @ git+https://github.com/TigreGotico/ahocorasick-ner@172b19cf2b9
 annotated-types==0.8.0
 anyio==4.15.1
 attrs==26.1.0
+babel==2.18.0
 beautifulsoup4==4.15.0
 bs4==0.0.2
 caldav==1.6.0
@@ -24,14 +25,14 @@ future==1.0.0
 geocoder==1.38.1
 h11==0.16.0
 h3==4.5.0
-hf-xet==1.6.0
+hf-xet==1.7.0
 httpcore==1.0.9
 httpx==0.28.1
 huggingface_hub==1.33.0
 icalendar==5.0.14
 idna==3.20
 ifaddr==0.2.0
-iniconfig==2.3.0
+iniconfig==2.3.1
 Jinja2==3.1.6
 joblib==1.6.0
 json-database==0.10.1
@@ -54,8 +55,7 @@ numpy==2.4.6
 ovos-audio==2.2.8a1
 ovos-bidirectional-translation-plugin==0.1.4a3
 ovos-bus-client==2.11.25a1
-ovos-common-reading-pipeline-plugin==0.3.2
-ovos-config==3.8.0a1
+ovos-config==3.8.1a1
 ovos-core==3.7.2a2
 ovos-date-parser==0.33.3a1
 ovos-ddg-plugin==1.1.2a1
@@ -70,12 +70,7 @@ ovos-number-parser==0.23.1a1
 ovos-option-matcher-fuzzy-plugin==0.0.2a1
 ovos-persona==0.9.0a28
 ovos-plugin-manager==2.12.5a1
-ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.12.36a1
-ovos-skill-andersen-tales==0.1.8
-ovos-skill-andrew-lang-tales==0.1.9
-ovos-skill-application-launcher==0.13.5a4
-ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.7.2a5
 ovos-skill-boot-finished==0.9.1a1
 ovos-skill-count==0.6.1a2
@@ -160,6 +155,9 @@ skops==0.16.0
 snowballstemmer==3.1.1
 soupsieve==2.10
 speedtest-cli==2.1.3
+thalovant-languages==0.3.3
+thalovant-skill-interaction-modes==0.1.9
+thalovant-skillkit==0.24.2
 threadpoolctl==3.7.0
 timezonefinder==9.0.0
 timezonefinder-data==3.2026.3.post1
@@ -170,7 +168,7 @@ typing-inspection==0.4.4
 typing_extensions==4.16.0
 tzdata==2026.5
 tzlocal==5.4.4
-unicode-rbnf==2.4.0
+unicode-rbnf==2.4.1
 url-normalize==3.0.1
 urllib3==2.8.0
 vobject==0.9.9

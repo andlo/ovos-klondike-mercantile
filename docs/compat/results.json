@@ -1,14 +1,14 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "50280d184997dcd706dd31b518b08bbaa289d8d5f33e8892fd09a5b664def42a",
+      "constraints_sha256": "2fc983554567189cac92af98ca6aa3b4e6a5284ffc3cafb351b9acd5903e2b69",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
         "ovos-adapt-parser": "1.6.7a2",
         "ovos-bus-client": "2.11.25a1",
         "ovos-common-query-pipeline-plugin": "1.1.19a1",
-        "ovos-config": "3.8.0a1",
+        "ovos-config": "3.8.1a1",
         "ovos-core": "3.7.2a2",
         "ovos-m2v-pipeline": "0.30.0a1",
         "ovos-ocp-pipeline-plugin": "1.5.7a1",
@@ -21,6 +21,8 @@
       },
       "route": {
         "baseline_ids": [
+          "ovos-skill-alerts.openvoiceos",
+          "ovos-skill-audio-recording.openvoiceos",
           "ovos-skill-count.openvoiceos",
           "ovos-skill-date-time.openvoiceos",
           "ovos-skill-ddg.openvoiceos",
@@ -31,6 +33,7 @@
           "ovos-skill-ip.openvoiceos",
           "ovos-skill-naptime.openvoiceos",
           "ovos-skill-parrot.openvoiceos",
+          "ovos-skill-personal.openvoiceos",
           "ovos-skill-speedtest.openvoiceos",
           "ovos-skill-volume.openvoiceos",
           "ovos-skill-weather.openvoiceos",
@@ -69,7 +72,6 @@
         ],
         "pipeline_used": [
           "ovos-stop-pipeline-plugin-high",
-          "ovos-common-reading-pipeline-plugin-high",
           "ovos-converse-pipeline-plugin",
           "ovos-ocp-pipeline-plugin-high",
           "ovos-persona-pipeline-plugin-high",
@@ -82,43 +84,31 @@
           "ovos-common-query-pipeline-plugin",
           "ovos-fallback-pipeline-plugin-medium",
           "ovos-persona-pipeline-plugin-low",
-          "ovos-common-reading-pipeline-plugin-low",
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-10-06T11:12:32+00:00",
+        "run_at": "2026-10-07T09:26:07+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 3.92,
-              "median": 0.54,
-              "n": 512,
-              "p95": 2.53
+              "max": 1.37,
+              "median": 0.43,
+              "n": 28,
+              "p95": 0.46
             },
-            "seconds": 956.3,
-            "status": "ok"
-          },
-          {
-            "lang": "da-DK",
-            "row_seconds": {
-              "max": 15.03,
-              "median": 0.55,
-              "n": 31,
-              "p95": 15.03
-            },
-            "seconds": 540.1,
+            "seconds": 501.3,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-06T11:12:32+00:00",
+      "run_at": "2026-10-07T09:26:07+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
           "ovos-adapt-parser": "1.6.7a2",
           "ovos-bus-client": "2.11.25a1",
-          "ovos-config": "3.8.0a1",
+          "ovos-config": "3.8.1a1",
           "ovos-core": "3.7.2a2",
           "ovos-padatious": "2.2.7a1",
           "ovos-plugin-manager": "2.12.5a1",
@@ -127,15 +117,15 @@
           "ovos-workshop": "9.8.14a1",
           "ovoscope": "1.11.2a1"
         },
-        "python": "3.11.16"
+        "python": "3.11.17"
       },
       "stack_moved": [
-        "ovos-config 3.6.1a3 -> 3.8.0a1"
+        "ovos-config 3.8.0a1 -> 3.8.1a1"
       ]
     },
     "stable": {
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
-      "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-stable.txt",
+      "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
         "ovos-adapt-parser": "1.0.9",
@@ -220,7 +210,7 @@
           }
         ]
       },
-      "run_at": "2026-10-05T11:24:02+00:00",
+      "run_at": "2026-10-07T09:26:07+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -241,7 +231,7 @@
     },
     "testing": {
       "constraints_sha256": "31346e2153f4e36bad186310ae0f998ef6fc864221bfe6331c0608a5a5b95259",
-      "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-testing.txt",
+      "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-testing.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
         "ovos-adapt-parser": "1.0.9",
@@ -342,7 +332,7 @@
           }
         ]
       },
-      "run_at": "2026-10-05T11:24:02+00:00",
+      "run_at": "2026-10-07T09:26:07+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -362,7 +352,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-10-06T11:12:32+00:00",
+  "generated_at": "2026-10-07T09:26:07+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -51768,6 +51758,246 @@
         "stage": "install",
         "status": "fail",
         "tested_at": "2026-10-04T10:54:42+00:00"
+      }
+    },
+    "thalovant-thalovant-skill-interaction-modes": {
+      "alpha": {
+        "boot_seconds": 141.0,
+        "channel": "alpha",
+        "channel_pinned": false,
+        "driver": "ovoscope modern",
+        "duration_seconds": 145.5,
+        "id": "thalovant-thalovant-skill-interaction-modes",
+        "intents_by_lang": {
+          "an-es": 6,
+          "ar-sa": 6,
+          "ast-es": 6,
+          "az-az": 6,
+          "bg-bg": 6,
+          "ca-es": 6,
+          "cs-cz": 6,
+          "da-dk": 6,
+          "de-at": 6,
+          "de-ch": 6,
+          "de-de": 6,
+          "el-gr": 6,
+          "en-au": 6,
+          "en-ca": 6,
+          "en-gb": 6,
+          "en-nz": 6,
+          "en-us": 6,
+          "es-ar": 6,
+          "es-co": 6,
+          "es-es": 6,
+          "es-mx": 6,
+          "es-us": 6,
+          "et-ee": 6,
+          "eu-es": 6,
+          "fa-ir": 6,
+          "fi-fi": 6,
+          "fr-be": 6,
+          "fr-ca": 6,
+          "fr-ch": 6,
+          "fr-fr": 6,
+          "gl-es": 6,
+          "he-il": 6,
+          "hi-in": 6,
+          "hr-hr": 6,
+          "hu-hu": 6,
+          "id-id": 6,
+          "it-it": 6,
+          "ja-jp": 6,
+          "ko-kr": 6,
+          "lt-lt": 6,
+          "lv-lv": 6,
+          "ms-my": 6,
+          "nb-no": 6,
+          "nl-be": 6,
+          "nl-nl": 6,
+          "oc-fr": 6,
+          "pl-pl": 6,
+          "pt-ao": 6,
+          "pt-br": 6,
+          "pt-mz": 6,
+          "pt-pt": 6,
+          "ro-ro": 6,
+          "ru-ru": 6,
+          "sk-sk": 6,
+          "sl-si": 6,
+          "sv-fi": 6,
+          "sv-se": 6,
+          "sw-ke": 6,
+          "th-th": 6,
+          "tr-tr": 6
+        },
+        "key": "0e19d3220dcea86d",
+        "kind": "skill",
+        "languages_booted": [
+          "en-US",
+          "an-ES",
+          "ar-SA",
+          "ast-ES",
+          "az-AZ",
+          "bg-BG",
+          "ca-ES",
+          "cs-CZ",
+          "da-DK",
+          "de-AT",
+          "de-CH",
+          "de-DE",
+          "el-GR",
+          "en-AU",
+          "en-CA",
+          "en-GB",
+          "en-NZ",
+          "es-AR",
+          "es-CO",
+          "es-ES",
+          "es-MX",
+          "es-US",
+          "et-EE",
+          "eu-ES",
+          "fa-IR",
+          "fi-FI",
+          "fr-BE",
+          "fr-CA",
+          "fr-CH",
+          "fr-FR",
+          "gl-ES",
+          "he-IL",
+          "hi-IN",
+          "hr-HR",
+          "hu-HU",
+          "id-ID",
+          "it-IT",
+          "ja-JP",
+          "ko-KR",
+          "lt-LT",
+          "lv-LV",
+          "ms-MY",
+          "nb-NO",
+          "nl-BE",
+          "nl-NL",
+          "oc-FR",
+          "pl-PL",
+          "pt-AO",
+          "pt-BR",
+          "pt-MZ",
+          "pt-PT",
+          "ro-RO",
+          "ru-RU",
+          "sk-SK",
+          "sl-SI",
+          "sv-FI",
+          "sv-SE",
+          "sw-KE",
+          "th-TH",
+          "tr-TR"
+        ],
+        "level": 2,
+        "package": "thalovant-skill-interaction-modes",
+        "plugin_ids": [
+          "thalovant-skill-interaction-modes.thalovant"
+        ],
+        "registrations": {
+          "fallback": 1,
+          "intents": 390
+        },
+        "requested_version": "0.1.9",
+        "route_key": "080a65d2b0272b4f",
+        "routing": {
+          "generated": {
+            "asked": 0,
+            "baseline": 0,
+            "by_lang": {
+              "en-US": {
+                "counted": 28,
+                "hit": 27
+              }
+            },
+            "by_pipeline": {
+              "ovos-padatious-pipeline-plugin": {
+                "hit": 27,
+                "miss": 0
+              },
+              "ovos-persona-pipeline-plugin": {
+                "hit": 0,
+                "miss": 1
+              }
+            },
+            "collisions": [],
+            "counted": 28,
+            "hang": 0,
+            "hit": 27,
+            "langs": [
+              "en-US"
+            ],
+            "langs_failed": [],
+            "manual": 0,
+            "misses": [
+              {
+                "expected": "party.mode.enable",
+                "kind": "unhandled",
+                "lang": "en-US",
+                "pipeline": "ovos-persona-pipeline-plugin",
+                "stage": "ovos-persona-pipeline-plugin",
+                "utterance": "enable party mode"
+              }
+            ],
+            "neighbour": 0,
+            "not_loaded": 0,
+            "status": "ok",
+            "total": 28,
+            "unhandled": 1,
+            "wrong_intent": 0
+          },
+          "golden": {
+            "reason": "no test/end2end/golden_utterances*.jsonl at v0.1.9",
+            "status": "none"
+          },
+          "ref": "v0.1.9",
+          "stop": {
+            "lang": "en-US",
+            "result": "nothing_to_stop",
+            "utterance": "what mode are we in"
+          }
+        },
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-10-07T09:13:36+00:00",
+        "version_tested": "0.1.9"
+      },
+      "stable": {
+        "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 1.5,
+        "id": "thalovant-thalovant-skill-interaction-modes",
+        "key": "1420e65cf8cdcbfe",
+        "kind": "skill",
+        "level": 0,
+        "log_excerpt": "n-modes==0.1.9\n  Downloading thalovant_skill_interaction_modes-0.1.9-py3-none-any.whl.metadata (2.3 kB)\nINFO: pip is looking at multiple versions of thalovant-skill-interaction-modes to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install thalovant-skill-interaction-modes==0.1.9 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-interaction-modes 0.1.9 depends on ovos-workshop>=8.0.0\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "thalovant-skill-interaction-modes",
+        "reason": "thalovant-skill-interaction-modes 0.1.9 depends on ovos-workshop>=8.0.0; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
+        "requested_version": "0.1.9",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-10-07T09:14:00+00:00"
+      },
+      "testing": {
+        "channel": "testing",
+        "channel_pinned": false,
+        "duration_seconds": 1.7,
+        "id": "thalovant-thalovant-skill-interaction-modes",
+        "key": "c29e4d993c0102de",
+        "kind": "skill",
+        "level": 0,
+        "log_excerpt": "n-modes==0.1.9\n  Downloading thalovant_skill_interaction_modes-0.1.9-py3-none-any.whl.metadata (2.3 kB)\nINFO: pip is looking at multiple versions of thalovant-skill-interaction-modes to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install thalovant-skill-interaction-modes==0.1.9 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-interaction-modes 0.1.9 depends on ovos-workshop>=8.0.0\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "thalovant-skill-interaction-modes",
+        "reason": "thalovant-skill-interaction-modes 0.1.9 depends on ovos-workshop>=8.0.0; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
+        "requested_version": "0.1.9",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-10-07T09:13:45+00:00"
       }
     }
   }

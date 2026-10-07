@@ -1,12 +1,12 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-10-06T11:12:32+00:00",
+ "generated_at": "2026-10-07T09:26:07+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-10-05T11:24:02+00:00",
    "klondike_run_at": "2026-10-06T11:12:32+00:00",
    "pipeline_not_loaded": [],
-   "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-stable.txt",
+   "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
    "profiles": [
     {
      "id": "default",
@@ -1215,7 +1215,7 @@
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
-   "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-releases/main/constraints-testing.txt",
+   "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-testing.txt",
    "profiles": [
     {
      "id": "default",
@@ -2416,7 +2416,7 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-10-06T11:12:32+00:00",
+   "run_at": "2026-10-07T09:26:07+00:00",
    "klondike_run_at": "2026-10-06T11:12:32+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
