@@ -1,6 +1,6 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-10-07T09:26:07+00:00",
+ "generated_at": "2026-10-08T11:19:15+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-10-05T11:24:02+00:00",
@@ -2417,7 +2417,7 @@
   },
   "alpha": {
    "run_at": "2026-10-07T09:26:07+00:00",
-   "klondike_run_at": "2026-10-06T11:12:32+00:00",
+   "klondike_run_at": "2026-10-08T11:19:15+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2615,38 +2615,38 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 1035,
-        "takes": 50,
+        "reaches": 1031,
+        "takes": 55,
         "examples": [
          {
           "from": "OpenVoiceOS-ovos-skill-alerts",
-          "kind": "wrong_intent",
-          "taken_by": "ovos-skill-alerts.openvoiceos",
-          "utterance": "change my reminder to a voice reminder"
+          "kind": "baseline",
+          "taken_by": "skill-ovos-spelling.openvoiceos",
+          "utterance": "cancel my alarms and reminders"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "baseline",
+          "taken_by": "skill-ovos-spelling.openvoiceos",
+          "utterance": "cancel all alarms and timers"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "baseline",
+          "taken_by": "skill-ovos-spelling.openvoiceos",
+          "utterance": "do we have any alarms set"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "baseline",
+          "taken_by": "skill-ovos-spelling.openvoiceos",
+          "utterance": "are there any reminders stored"
          },
          {
           "from": "OpenVoiceOS-ovos-skill-alerts",
           "kind": "wrong_intent",
           "taken_by": "ovos-skill-alerts.openvoiceos",
           "utterance": "change the next alarm to a recording"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-date-time",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-geometry.andlo",
-          "utterance": "what's the time again"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-date-time",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-geometry.andlo",
-          "utterance": "what's today's date again"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-days-in-history",
-          "kind": "baseline",
-          "taken_by": "skill-ovos-spelling.openvoiceos",
-          "utterance": "one more"
          }
         ]
        }
@@ -2728,7 +2728,7 @@
         }
        },
        "klondike": {
-        "hit": 176,
+        "hit": 173,
         "counted": 184
        },
        "gold": true
@@ -2760,7 +2760,7 @@
         }
        },
        "klondike": {
-        "hit": 18,
+        "hit": 17,
         "counted": 25
        },
        "gold": false

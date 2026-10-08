@@ -352,7 +352,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-10-07T09:26:07+00:00",
+  "generated_at": "2026-10-08T11:19:15+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -904,7 +904,7 @@
               "ovos-common-reading-pipeline-plugin-low",
               "ovos-fallback-pipeline-plugin-low"
             ],
-            "seconds": 6046.5,
+            "seconds": 6279.9,
             "status": "ok"
           }
         ],
@@ -1117,37 +1117,37 @@
             "examples": [
               {
                 "from": "OpenVoiceOS-ovos-skill-alerts",
-                "kind": "wrong_intent",
-                "taken_by": "ovos-skill-alerts.openvoiceos",
-                "utterance": "change my reminder to a voice reminder"
+                "kind": "baseline",
+                "taken_by": "skill-ovos-spelling.openvoiceos",
+                "utterance": "cancel my alarms and reminders"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "kind": "baseline",
+                "taken_by": "skill-ovos-spelling.openvoiceos",
+                "utterance": "cancel all alarms and timers"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "kind": "baseline",
+                "taken_by": "skill-ovos-spelling.openvoiceos",
+                "utterance": "do we have any alarms set"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "kind": "baseline",
+                "taken_by": "skill-ovos-spelling.openvoiceos",
+                "utterance": "are there any reminders stored"
               },
               {
                 "from": "OpenVoiceOS-ovos-skill-alerts",
                 "kind": "wrong_intent",
                 "taken_by": "ovos-skill-alerts.openvoiceos",
                 "utterance": "change the next alarm to a recording"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-date-time",
-                "kind": "baseline",
-                "taken_by": "ovos-skill-geometry.andlo",
-                "utterance": "what's the time again"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-date-time",
-                "kind": "baseline",
-                "taken_by": "ovos-skill-geometry.andlo",
-                "utterance": "what's today's date again"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-days-in-history",
-                "kind": "baseline",
-                "taken_by": "skill-ovos-spelling.openvoiceos",
-                "utterance": "one more"
               }
             ],
-            "reaches": 1035,
-            "takes": 50
+            "reaches": 1031,
+            "takes": 55
           },
           "ovos-persona-pipeline-plugin": {
             "examples": [
@@ -1197,12 +1197,12 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 220,
-                    "hit": 207
+                    "hit": 206
                   }
                 },
                 "by_pipeline": {
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 207,
+                    "hit": 206,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -1213,24 +1213,13 @@
                 "collisions": [],
                 "counted": 220,
                 "hang": 0,
-                "hit": 207,
+                "hit": 206,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
                 "misses": [
-                  {
-                    "expected": "change_media_properties",
-                    "fired": [
-                      "ovos-skill-alerts.openvoiceos:reschedule_alert"
-                    ],
-                    "kind": "wrong_intent",
-                    "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
-                    "utterance": "change my reminders to an audio file"
-                  },
                   {
                     "expected": "create_reminder_recurring",
                     "kind": "unhandled",
@@ -1320,6 +1309,28 @@
                     "lang": "en-US",
                     "pipeline": "ovos-padatious-pipeline-plugin",
                     "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "utterance": "delete my shopping list"
+                  },
+                  {
+                    "expected": "delete_list",
+                    "fired": [
+                      "ovos-skill-alerts.openvoiceos:delete_list_entries"
+                    ],
+                    "kind": "wrong_intent",
+                    "lang": "en-US",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "utterance": "delete my groceries list"
+                  },
+                  {
+                    "expected": "delete_list",
+                    "fired": [
+                      "ovos-skill-alerts.openvoiceos:delete_list_entries"
+                    ],
+                    "kind": "wrong_intent",
+                    "lang": "en-US",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "ovos-skill-alerts.openvoiceos",
                     "utterance": "delete my todo list"
                   },
                   {
@@ -1336,21 +1347,21 @@
                 "status": "ok",
                 "total": 220,
                 "unhandled": 11,
-                "wrong_intent": 2
+                "wrong_intent": 3
               },
               "golden": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 4,
                 "by_lang": {
                   "en-US": {
                     "counted": 184,
-                    "hit": 176
+                    "hit": 173
                   }
                 },
                 "by_pipeline": {
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 176,
-                    "miss": 0
+                    "hit": 173,
+                    "miss": 4
                   },
                   "ovos-persona-pipeline-plugin": {
                     "hit": 0,
@@ -1360,7 +1371,7 @@
                 "collisions": [],
                 "counted": 184,
                 "hang": 0,
-                "hit": 176,
+                "hit": 173,
                 "langs": [
                   "en-US"
                 ],
@@ -1422,15 +1433,40 @@
                     "utterance": "my alarm cancel it"
                   },
                   {
-                    "expected": "change_media_properties",
-                    "fired": [
-                      "ovos-skill-alerts.openvoiceos:reschedule_alert"
-                    ],
-                    "kind": "wrong_intent",
+                    "expected": "cancel_alert",
+                    "kind": "baseline",
                     "lang": "en-US",
                     "pipeline": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
-                    "utterance": "change my reminder to a voice reminder"
+                    "stage": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "skill-ovos-spelling.openvoiceos",
+                    "utterance": "cancel my alarms and reminders"
+                  },
+                  {
+                    "expected": "cancel_alert",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "stage": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "skill-ovos-spelling.openvoiceos",
+                    "utterance": "cancel all alarms and timers"
+                  },
+                  {
+                    "expected": "list_alerts",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "stage": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "skill-ovos-spelling.openvoiceos",
+                    "utterance": "do we have any alarms set"
+                  },
+                  {
+                    "expected": "list_alerts",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "stage": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "skill-ovos-spelling.openvoiceos",
+                    "utterance": "are there any reminders stored"
                   },
                   {
                     "expected": "change_media_properties",
@@ -1489,7 +1525,7 @@
                 "status": "ok",
                 "total": 184,
                 "unhandled": 6,
-                "wrong_intent": 2
+                "wrong_intent": 1
               },
               "ref": "0.12.36a1",
               "stop": {
@@ -1829,11 +1865,11 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 1,
                 "by_lang": {
                   "en-US": {
                     "counted": 25,
-                    "hit": 18
+                    "hit": 17
                   }
                 },
                 "by_pipeline": {
@@ -1842,8 +1878,8 @@
                     "miss": 6
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 18,
-                    "miss": 0
+                    "hit": 17,
+                    "miss": 1
                   },
                   "ovos-persona-pipeline-plugin": {
                     "hit": 0,
@@ -1853,7 +1889,7 @@
                 "collisions": [],
                 "counted": 25,
                 "hang": 1,
-                "hit": 18,
+                "hit": 17,
                 "langs": [
                   "en-US"
                 ],
@@ -1914,6 +1950,15 @@
                     "pipeline": "ovos-ocp-pipeline-plugin",
                     "stage": "ovos-ocp-pipeline-plugin",
                     "utterance": "can you start a new audio capture"
+                  },
+                  {
+                    "expected": "start_recording",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "stage": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "skill-ovos-spelling.openvoiceos",
+                    "utterance": "could you please initiate an audio recording titled lecture"
                   },
                   {
                     "expected": "start_recording",
@@ -4432,7 +4477,7 @@
               "ref": "0.7.1a1",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "silent",
                 "utterance": "where 's the space station right now"
               }
             },
@@ -6595,7 +6640,7 @@
                 ],
                 "lang": "en-US",
                 "result": "keeps_going",
-                "seconds": 3.0,
+                "seconds": 3.1,
                 "spoke_after_stop": 1,
                 "utterance": "change current wall paper"
               }
@@ -7613,11 +7658,11 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-f8dg8dzc/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-phi2jfwy/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "golden": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-f8dg8dzc/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-phi2jfwy/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "stop": {
@@ -7736,7 +7781,9 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "stops",
+                "seconds": 1.0,
+                "spoke_after_stop": 0,
                 "utterance": "tell me a story from 365 tomorrows"
               }
             },
@@ -7833,7 +7880,7 @@
               "stop": {
                 "lang": "en-US",
                 "result": "stops",
-                "seconds": 0.9,
+                "seconds": 1.1,
                 "spoke_after_stop": 0,
                 "utterance": "read me a story by hans christian andersen"
               }
@@ -7931,7 +7978,7 @@
               "stop": {
                 "lang": "en-US",
                 "result": "stops",
-                "seconds": 0.6,
+                "seconds": 0.1,
                 "spoke_after_stop": 0,
                 "utterance": "read me a story from the fairy books"
               }
@@ -10984,9 +11031,83 @@
             },
             "skill_id": "thalovant-skill-custos-fallback.thalovant",
             "version": "0.1.5"
+          },
+          "thalovant-thalovant-skill-interaction-modes": {
+            "member": false,
+            "routing": {
+              "generated": {
+                "asked": 0,
+                "baseline": 0,
+                "by_lang": {
+                  "en-US": {
+                    "counted": 28,
+                    "hit": 26
+                  }
+                },
+                "by_pipeline": {
+                  "ovos-ocp-pipeline-plugin": {
+                    "hit": 0,
+                    "miss": 1
+                  },
+                  "ovos-padatious-pipeline-plugin": {
+                    "hit": 26,
+                    "miss": 0
+                  },
+                  "ovos-persona-pipeline-plugin": {
+                    "hit": 0,
+                    "miss": 1
+                  }
+                },
+                "collisions": [],
+                "counted": 28,
+                "hang": 0,
+                "hit": 26,
+                "langs": [
+                  "en-US"
+                ],
+                "langs_failed": [],
+                "manual": 0,
+                "misses": [
+                  {
+                    "expected": "party.mode.enable",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "pipeline": "ovos-ocp-pipeline-plugin",
+                    "stage": "ovos-ocp-pipeline-plugin",
+                    "utterance": "start party mode"
+                  },
+                  {
+                    "expected": "party.mode.enable",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "pipeline": "ovos-persona-pipeline-plugin",
+                    "stage": "ovos-persona-pipeline-plugin",
+                    "utterance": "enable party mode"
+                  }
+                ],
+                "neighbour": 0,
+                "not_loaded": 0,
+                "status": "ok",
+                "total": 28,
+                "unhandled": 2,
+                "wrong_intent": 0
+              },
+              "golden": {
+                "reason": "no test/end2end/golden_utterances*.jsonl at v0.1.9",
+                "status": "none"
+              },
+              "ref": "v0.1.9",
+              "stop": {
+                "lang": "en-US",
+                "result": "nothing_to_stop",
+                "utterance": "what mode are we in"
+              }
+            },
+            "skill_id": "thalovant-skill-interaction-modes.thalovant",
+            "version": "0.1.9"
           }
         },
-        "run_at": "2026-10-06T11:12:32+00:00",
+        "run_at": "2026-10-08T11:19:15+00:00",
         "takes_from": {
           "OpenVoiceOS-ovos-skill-alerts": {
             "generated": [
@@ -11215,6 +11336,31 @@
             ],
             "golden": [
               {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "lang": "en-US",
+                "utterance": "cancel my alarms and reminders"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "lang": "en-US",
+                "utterance": "cancel all alarms and timers"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "lang": "en-US",
+                "utterance": "do we have any alarms set"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "lang": "en-US",
+                "utterance": "are there any reminders stored"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-audio-recording",
+                "lang": "en-US",
+                "utterance": "could you please initiate an audio recording titled lecture"
+              },
+              {
                 "from": "OpenVoiceOS-ovos-skill-days-in-history",
                 "lang": "en-US",
                 "utterance": "one more"
@@ -11238,31 +11384,6 @@
                 "from": "OpenVoiceOS-ovos-skill-fallback-unknown",
                 "lang": "en-US",
                 "utterance": "who did"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-fallback-unknown",
-                "lang": "en-US",
-                "utterance": "who does"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-fallback-unknown",
-                "lang": "en-US",
-                "utterance": "who will"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-fallback-unknown",
-                "lang": "en-US",
-                "utterance": "why did"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-fallback-unknown",
-                "lang": "en-US",
-                "utterance": "why does"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-fallback-unknown",
-                "lang": "en-US",
-                "utterance": "why will"
               }
             ]
           },
@@ -11349,7 +11470,7 @@
           }
         }
       },
-      "key": "e298d9256deaf2e8",
+      "key": "92d5678e5a998eb5",
       "profile": {
         "added_stages": [
           "ovos-common-reading-pipeline-plugin-high",
