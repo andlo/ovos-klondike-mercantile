@@ -211,6 +211,26 @@ function routingCounts(rec, run, field = "routing") {
   return level3Counts(((rec && rec[field]) || {})[run]);
 }
 
+// A fallback of last resort (#75), same rule as last_resort() in
+// scripts/compat/feed.py and ovos-tui-client 0.3.0a14: a fallback in OVOS's
+// low band (priority above 90, after everything else) whose en-US golden
+// utterances went to another skill or stage at least half the time. They
+// can't measure it on a real install, so it is graded by level 2.
+const COMPAT_LAST_RESORT_ABOVE = 90;
+const COMPAT_LAST_RESORT_LABEL = "✓ loads · last-resort fallback";
+const COMPAT_LAST_RESORT_NOTE = "a fallback of last resort: its golden utterances reach other skills and stages first, as they should, so they don't measure it; graded by level 2";
+function takenCounts(r) {
+  if (!r || r.status !== "ok" || !r.counted) return null;
+  const c = r.by_lang && typeof r.by_lang === "object" ? r.by_lang[COMPAT_LEVEL3_LANG] : r;
+  return c && c.counted && Number.isInteger(c.taken) ? { taken: c.taken, counted: c.counted } : null;
+}
+function isLastResort(rec) {
+  if (!rec || rec.status !== "pass" || (rec.kind || "skill") !== "skill") return false;
+  if (!Number.isInteger(rec.fallback_priority) || rec.fallback_priority <= COMPAT_LAST_RESORT_ABOVE) return false;
+  const c = takenCounts(((rec.routing) || {}).golden);
+  return !!c && c.taken * 2 >= c.counted;
+}
+
 // Same rules as scripts/compat/feed.py label(): one short label and a
 // state (pass / warn / fail / unsupported / untested) per channel result.
 // Pages read docs/compat/results.json directly, so a finished test run
@@ -236,7 +256,11 @@ function compatFromRecord(rec) {
       label = `✓ loads · ${booted.length - missing.length}/${booted.length} langs`;
       state = "warn";
     }
-    const golden = routingCounts(rec, "golden");
+    const golden = isLastResort(rec) ? null : routingCounts(rec, "golden");
+    if (isLastResort(rec)) {
+      label = COMPAT_LAST_RESORT_LABEL;
+      state = asArray(rec.warnings).length ? "warn" : "pass";
+    }
     if (golden) {
       if (golden.hit / golden.counted < COMPAT_LEVEL3_RATIO) {
         label = `✓ loads · ${golden.hit}/${golden.counted} golden`;
@@ -247,7 +271,7 @@ function compatFromRecord(rec) {
       }
     }
     // The stop check (#16), shown only when there was something to stop.
-    const stop = stopResult(rec);
+    const stop = isLastResort(rec) ? null : stopResult(rec);
     if (stop === "stops") label += " · stops";
     else if (stop === "keeps_going" || stop === "stuck") {
       label += " · doesn't stop";
@@ -258,6 +282,10 @@ function compatFromRecord(rec) {
   if (stopResult(rec)) out.stop = stopResult(rec);
   for (const k of ["version_tested", "tested_at", "channel_pinned"]) {
     if (rec && rec[k] !== undefined && rec[k] !== null) out[k] = rec[k];
+  }
+  if (isLastResort(rec)) {
+    out.last_resort = true;
+    return out;
   }
   for (const run of COMPAT_PUBLIC_GENERATED ? ["golden", "generated"] : ["golden"]) {
     const c = routingCounts(rec, run);
@@ -400,7 +428,7 @@ function applyCompatResults(skills, doc) {
       // Klondike job: a line of its own, never part of the level or badge.
       const kres = ((((doc.klondike || {})[ch] || {}).job || {}).results || {})[skill.id];
       const k = kres && routingCounts(kres, "golden");
-      if (k && channels[ch]) channels[ch].klondike = k;
+      if (k && channels[ch] && !channels[ch].last_resort) channels[ch].klondike = k;
     }
     skill.compat = { ...(skill.compat || {}), channels };
   }
@@ -439,6 +467,7 @@ function matchesCompatFilter(skill, value) {
 function compatTooltip(channel, c) {
   const parts = [`${channel}: ${c.label}`, COMPAT_LEVEL_TEXT[c.level] || ""];
   if (c.state === "unsupported") parts.push("not testable here: see the detail page");
+  if (c.last_resort) parts.push(COMPAT_LAST_RESORT_NOTE);
   if (c.version_tested) parts.push(`tested v${c.version_tested}${c.channel_pinned ? " (the version this channel pins)" : ""}`);
   if (c.tested_at) parts.push(`on ${formatDate(c.tested_at)}`);
   return parts.filter(Boolean).join(" · ");

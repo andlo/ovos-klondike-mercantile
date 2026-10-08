@@ -44,7 +44,7 @@ boots = [
 run_shard.aggregate([(item, rec)], boots, ["en-US", "da-DK", "de-DE"], [], "routing")
 g = rec["routing"]["golden"]
 ok(g["counted"] == 24 and g["hit"] == 3, "totals are summed over the languages")
-ok(g.get("by_lang") == {"en-US": {"hit": 1, "counted": 12}, "da-DK": {"hit": 2, "counted": 12}},
+ok(g.get("by_lang") == {"en-US": {"hit": 1, "counted": 12, "taken": 0}, "da-DK": {"hit": 2, "counted": 12, "taken": 0}},
    "by_lang: per language, without manual rows, and no entry for a language with nothing counted")
 
 # 2. publish
