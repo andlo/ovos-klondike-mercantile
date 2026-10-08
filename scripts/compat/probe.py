@@ -235,6 +235,7 @@ class Recorder:
         self.kinds = {}
         self.other_types = {}
         self.intents_by_lang = {}
+        self.fallback_priorities = []
 
     def owns(self, data, context):
         sid = (context or {}).get("skill_id") or data.get("skill_id")
@@ -266,6 +267,10 @@ class Recorder:
         self.kinds[kind].add((name, lang))
         if kind == "intents":
             self.intents_by_lang.setdefault(lang, set()).add(name)
+        if mtype.lower().endswith("fallback.register"):
+            # ovos-core reads no priority as 101 (the very last)
+            prio = data.get("priority")
+            self.fallback_priorities.append(prio if isinstance(prio, int) and not isinstance(prio, bool) else 101)
 
     def summary(self):
         regs = {k: len(v) for k, v in self.kinds.items()}
@@ -355,6 +360,10 @@ def probe_skill(args, result):
         regs, by_lang = recorder.summary()
         result["registrations"] = regs
         result["intents_by_lang"] = by_lang
+        if recorder.fallback_priorities:
+            # its first fallback's place in OVOS's order (lower runs first):
+            # decides whether it is a fallback of last resort (#75)
+            result["fallback_priority"] = min(recorder.fallback_priorities)
         if failures:
             result.update(status="fail", reason="; ".join(failures))
             return

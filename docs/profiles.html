@@ -36,6 +36,10 @@
             <tr><td><span class="compat-label compat-pass">✓ 14/14 golden</span></td>
               <td>Level 3: 14 of its 14 own golden utterances reached it with the installer's default
                 skills loaded. Below 80% it shows as <span class="compat-label compat-warn">✓ loads · 9/14 golden</span>.</td></tr>
+            <tr><td><span class="compat-label compat-pass">✓ loads · last-resort fallback</span></td>
+              <td>A fallback that runs after everything else (like fallback-unknown's “I don't know”), whose
+                golden utterances went to other skills and stages first, as they should on a real install.
+                They can't measure it, so it is graded by level 2. A broken fallback isn't marked so.</td></tr>
             <tr><td><span class="compat-label compat-fail">✗ doesn't load</span></td>
               <td>Installs but fails to load (level 1), or <em>doesn't install</em> at all (level 0).
                 The entry's detail page shows why.</td></tr>

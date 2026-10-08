@@ -293,7 +293,7 @@ def main():
                 if baseline and kind == "skill" else None
             prev = previous.get(e["id"], {}).get(channel)
             if (prev and prev.get("key") == key and prev.get("status") in FINAL_STATUSES
-                    and route_current(prev, route_key)
+                    and route_current(prev, route_key) and not needs_fallback_priority(prev)
                     and not (args.force or args.full)):
                 skipped += 1
                 continue
@@ -370,6 +370,20 @@ def device_bound(previous, channel):
             if rec.get("status") == "needs_device":
                 ids.update(rec.get("plugin_ids") or [])
     return sorted(ids)
+
+
+FALLBACK_PRIORITY_SINCE = "2026-10-09"
+
+
+def needs_fallback_priority(prev):
+    """A fallback skill tested before its priority was recorded (#75): test it
+    once more, so a fallback of last resort can be told from the others.
+    Only these few results, not a new RUNNER_VERSION for every result."""
+    regs = prev.get("registrations") or {}
+    # Only results from before the probe recorded it: one the probe tested
+    # since without a priority keeps its key, so it is never retested in a loop.
+    return (prev.get("status") == "pass" and bool(regs.get("fallback")) and "fallback_priority" not in prev
+            and str(prev.get("tested_at") or "") < FALLBACK_PRIORITY_SINCE)
 
 
 def route_current(prev, route_key, key_field="route_key", field="routing"):

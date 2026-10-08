@@ -279,7 +279,7 @@ def test_item(item, args, workroot):
 
         rec["version_tested"] = probe.get("version_installed")
         for k in ("plugin_ids", "registrations", "intents_by_lang", "languages_booted",
-                  "languages_missing", "warnings", "stages", "boot_seconds", "driver"):
+                  "languages_missing", "warnings", "stages", "boot_seconds", "driver", "fallback_priority"):
             if probe.get(k) not in (None, [], {}):
                 rec[k] = probe[k]
         if probe.get("status") in ("unsupported", "needs_device"):
@@ -663,7 +663,7 @@ def klondike_job(args, workroot, deadline):
 
 
 COUNTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual", "not_loaded", "total",
-          "asked")
+          "asked", "taken")
 
 
 def aggregate(routable, boots, langs, skipped, field="routing"):
@@ -690,7 +690,8 @@ def aggregate(routable, boots, langs, skipped, field="routing"):
                 # can be compared on the ones they share.
                 lc = r.get("total", 0) - r.get("manual", 0) - r.get("neighbour", 0) - r.get("not_loaded", 0)
                 if lc > 0:
-                    agg.setdefault("by_lang", {})[b["lang"]] = {"hit": r.get("hit", 0), "counted": lc}
+                    agg.setdefault("by_lang", {})[b["lang"]] = {"hit": r.get("hit", 0), "counted": lc,
+                                                                "taken": r.get("taken", 0)}
                 for pid, c in (r.get("by_pipeline") or {}).items():
                     tot = agg.setdefault("by_pipeline", {}).setdefault(pid, {"hit": 0, "miss": 0})
                     tot["hit"] += c.get("hit", 0)

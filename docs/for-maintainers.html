@@ -227,6 +227,19 @@
           sentence, which ovos-core 3 does (alpha today); on the other channels
           it shows as not measurable rather than as a guess. Level 1 and 2 are
           as above: it installs, and its stage loads.</li>
+        <li id="last-resort"><strong>A fallback of last resort:</strong>
+          a skill whose fallback runs after everything else (priority above 90,
+          OVOS's low fallback band), like fallback-unknown's “I don't know”,
+          answers only what nothing else takes. On a real install its golden
+          utterances reach other skills and stages first, as they should, so
+          they can't measure it. When at least half of its en-US golden
+          utterances went to another skill or stage, it is graded by level 2
+          and labelled <code>✓ loads · last-resort fallback</code>, without
+          golden counts. Measured, not named: the same skill on an install with
+          nothing before it routes as usual. A broken fallback (its handler
+          fails, or it says nothing) isn't marked so, because there the misses
+          point at the skill itself. A device's profile report from
+          ovos-tui-client uses the same label.</li>
         <li id="stop-check"><strong>Stop check (skills that keep going):</strong>
           after its rows, one sentence your skill took is sent again (en-US). If
           your skill is still busy after its first speech or playback (reading a
