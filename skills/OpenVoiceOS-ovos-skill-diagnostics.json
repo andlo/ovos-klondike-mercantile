@@ -70,6 +70,195 @@
     "sv-se"
   ],
   "locale_content": {
+    "ca-es": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "versi\u00f3 del core d'ovos",
+        "est\u00e0s usant molta cpu ara mateix",
+        "diagn\u00f2stic del disc",
+        "parles m\u00e9s d'una llengua",
+        "diagn\u00f2stic de la gpu",
+        "diagn\u00f2stic del nucli",
+        "quantes lleng\u00fces parles",
+        "diagn\u00f2stic de mem\u00f2ria",
+        "saps on ets",
+        "quant fa que vas arrencar",
+        "en quina llengua parlo",
+        "on em trobo"
+      ]
+    },
+    "da-dk": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "ovos core version",
+        "cpu diagnostik",
+        "disk diagnostik",
+        "har du sekund\u00e6re sprog",
+        "har du en gpu",
+        "kerne diagnostik",
+        "tilg\u00e6ngelige sprog",
+        "hukommelsesdiagnostik",
+        "hvor er du",
+        "fort\u00e6l mig dit sprog",
+        "fort\u00e6l mig din oppetid",
+        "hvilket sprog taler jeg",
+        "hvor er jeg"
+      ]
+    },
+    "de-de": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "ovos Core-Version",
+        "CPU Diagnose",
+        "Festplatten Diagnose",
+        "Hast Du zus\u00e4tzliche Sprachen",
+        "Grafikkarten Diagnose",
+        "Kernel Diagnose",
+        "Verf\u00fcgbare Sprachen",
+        "Speicherdiagnose",
+        "Wo bist du",
+        "sag mir deine Sprache",
+        "nenne mir deine Laufzeit",
+        "in welcher Sprache rede ich",
+        "wo bin ich"
+      ]
+    },
+    "es-co": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "qu\u00e9 versi\u00f3n de ovos usas",
+        "dime tu uso de CPU",
+        "diagn\u00f3stico del disco",
+        "Tienes otros idiomas",
+        "Tienes una GPU",
+        "Qu\u00e9 kernel tienes",
+        "Idiomas disponibles",
+        "uso actual de memoria",
+        "d\u00f3nde est\u00e1s",
+        "dime tu idioma",
+        "cu\u00e1nto hace que arrancaste",
+        "en qu\u00e9 idioma hablo",
+        "D\u00f3nde estoy"
+      ]
+    },
+    "es-es": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "qu\u00e9 versi\u00f3n de ovos usas",
+        "dime tu uso de CPU",
+        "diagn\u00f3stico del disco",
+        "Tienes otros idiomas",
+        "Tienes una GPU",
+        "Qu\u00e9 kernel tienes",
+        "Idiomas disponibles",
+        "uso actual de memoria",
+        "d\u00f3nde est\u00e1s",
+        "dime tu idioma",
+        "cu\u00e1nto hace que arrancaste",
+        "en qu\u00e9 idioma hablo",
+        "D\u00f3nde estoy"
+      ]
+    },
+    "eu-es": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "ovos core bertsioa",
+        "zein da uneko cpu karga",
+        "disko diagnostikoa",
+        "badakizu beste hizkuntzarik",
+        "gpu diagnostikoa",
+        "kernel diagnostikoa",
+        "hizkuntza diagnostikoa",
+        "memoria gutxi duzu",
+        "non zaude",
+        "esan zure hizkuntza",
+        "noiztik zaude martxan",
+        "zein hizkuntzatan ari naiz",
+        "non nago"
+      ]
+    },
+    "fa-ir": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "\u06a9\u062f\u0627\u0645 \u0646\u0633\u062e\u0647 \u0627\u06cc\u0646 \u0627\u0633\u062a",
+        "\u062a\u0634\u062e\u06cc\u0635 CPU",
+        "\u062f\u06cc\u0633\u06a9 \u062a\u0634\u062e\u06cc\u0635",
+        "\u0686\u0647 \u0632\u0628\u0627\u0646 \u0647\u0627\u06cc \u0627\u0636\u0627\u0641\u06cc \u062f\u0627\u0631\u06cc\u062f",
+        "\u062a\u0634\u062e\u06cc\u0635 GPS",
+        "\u062a\u0634\u062e\u06cc\u0635 \u0647\u0633\u062a\u0647 \u0627\u06cc",
+        "\u0644\u06cc\u0633\u062a \u0632\u0628\u0627\u0646 \u0647\u0627",
+        "\u062a\u0634\u062e\u06cc\u0635 RAM",
+        "\u06a9\u062c\u0627 \u0647\u0633\u062a\u06cc",
+        "\u0632\u0628\u0627\u0646 \u0627\u0635\u0644\u06cc \u0634\u0645\u0627 \u0686\u06cc\u0633\u062a",
+        "\u0648\u0642\u062a\u06cc \u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u06cc\u062f",
+        "\u0686\u0647 \u0632\u0628\u0627\u0646\u06cc \u0635\u062d\u0628\u062a \u0645\u06cc \u06a9\u0646\u0645",
+        "\u0645\u0646 \u06a9\u062c\u0627 \u0647\u0633\u062a\u0645"
+      ]
+    },
+    "fr-fr": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "version du core ovos",
+        "diagnostic processeur",
+        "diagnostic du disque",
+        "parles-tu d'autres langues",
+        "as-tu un GPU",
+        "diagnostic du noyau",
+        "liste tes langues",
+        "diagnostic m\u00e9moire",
+        "o\u00f9 es-tu",
+        "quelle langue utilises-tu",
+        "depuis quand tournes-tu",
+        "quelle langue utilisons-nous",
+        "o\u00f9 suis-je"
+      ]
+    },
+    "gl-es": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "dime a versi\u00f3n do core",
+        "diagn\u00f3stico da CPU",
+        "diagn\u00f3stico do disco",
+        "que outras linguas tes",
+        "tes unha GPU",
+        "que kernel tes",
+        "idiomas dispo\u00f1ibles",
+        "uso actual da memoria",
+        "onde est\u00e1s",
+        "que lingua est\u00e1s a usar",
+        "canto hai que arrincaches",
+        "en que lingua falo",
+        "onde estou"
+      ]
+    },
+    "it-it": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "che versione del core hai",
+        "diagnostico C P U",
+        "diagnostica del disco",
+        "hai lingue secondarie",
+        "hai una G P U?",
+        "quale kernel hai",
+        "lingue disponibili",
+        "ti resta poca memoria",
+        "dove sei",
+        "lingua principale?",
+        "da quando sei in funzione",
+        "in che lingua parlo",
+        "dove mi trovo"
+      ]
+    },
     "kab": {
       "name": "System Diagnostics",
       "description": "Report system information such as CPU usage, memory usage, and language settings.",
@@ -87,6 +276,139 @@
         "segmi teddukule\u1e0d",
         "d acu-t tutlayt-iw",
         "anda lli\u0263"
+      ]
+    },
+    "nl-nl": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "ovos core versie",
+        "hoe druk is je processor",
+        "schijf diagnose",
+        "spreek je meer dan \u00e9\u00e9n taal",
+        "gpu diagnose",
+        "kernel diagnose",
+        "beschikbare talen",
+        "raakt je geheugen op",
+        "waar ben je",
+        "vertel me je taal",
+        "wat is je uptime",
+        "welke taal spreek ik",
+        "waar ben ik"
+      ]
+    },
+    "oc-fr": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "version del core d'ovos",
+        "diagnostic del processor",
+        "diagnostic del disc",
+        "parlas mai d'una lenga",
+        "as una G P U",
+        "quin nucli as",
+        "lengas disponiblas",
+        "quanta ram utilizas",
+        "ont si\u00e1s",
+        "ditz-me ta lenga",
+        "dempu\u00e8i quand foncionas",
+        "quina lenga parli",
+        "ont soi"
+      ]
+    },
+    "pl-pl": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "wersja r\u0105czka ovs",
+        "diagnostyka cpu",
+        "ile zosta\u0142o dysku",
+        "Czy masz j\u0119zyki drugie",
+        "Masz gpu",
+        "co j\u0105dro macie",
+        "lista j\u0119zyk\u00f3w",
+        "ham diagnostyka",
+        "Gdzie jeste\u015b?",
+        "kt\u00f3ry j\u0119zyk u\u017cywasz",
+        "Kiedy zacz\u0119\u0142a\u015b",
+        "Kt\u00f3ry j\u0119zyk m\u00f3wi\u0119",
+        "Gdzie ja jestem?"
+      ]
+    },
+    "pt-br": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "vers\u00e3o do core do ovos",
+        "diagn\u00f3stico de cpu",
+        "diagn\u00f3stico do disco",
+        "me diga seus idiomas extras",
+        "diagn\u00f3stico da gpu",
+        "diagn\u00f3stico do kernel",
+        "idiomas dispon\u00edveis",
+        "diagn\u00f3stico de mem\u00f3ria",
+        "onde voc\u00ea est\u00e1",
+        "me diga o seu idioma",
+        "desde quando voc\u00ea est\u00e1 rodando",
+        "que l\u00edngua eu estou usando",
+        "onde eu estou"
+      ]
+    },
+    "pt-pt": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "vers\u00e3o do core do ovos",
+        "carga atual do cpu",
+        "diagn\u00f3stico do disco",
+        "tem l\u00ednguas secund\u00e1rias",
+        "diagn\u00f3stico da gpu",
+        "qual o kernel que tem",
+        "quantas l\u00ednguas fala",
+        "diagn\u00f3stico de mem\u00f3ria",
+        "onde est\u00e1s",
+        "qual \u00e9 o seu idioma padr\u00e3o",
+        "desde quando est\u00e1 a funcionar",
+        "que idioma estou a usar",
+        "onde estou"
+      ]
+    },
+    "ru-ru": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "\u0447\u0442\u043e \u044d\u0442\u043e \u0437\u0430 \u0432\u0435\u0440\u0441\u0438\u044f?",
+        "cpu \u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0430",
+        "\u0414\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0430 \u0434\u0438\u0441\u043a\u0430",
+        "\u0421\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u0441\u0432\u043e\u0438 \u044f\u0437\u044b\u043a\u0438.",
+        "\u0415\u0441\u0442\u044c \u043b\u0438 \u0433\u043f\u0443",
+        "\u0434\u0438\u0430\u0433\u043d\u043e\u0441\u0442\u0438\u043a\u0430 \u044f\u0434\u0435\u0440",
+        "\u0412\u0430\u0448\u0438 \u044f\u0437\u044b\u043a\u0438",
+        "\u0427\u0442\u043e \u0443 \u0432\u0430\u0441 \u0435\u0441\u0442\u044c?",
+        "\u0413\u0434\u0435 \u0442\u044b?",
+        "\u0421\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u0441\u0432\u043e\u0439 \u044f\u0437\u044b\u043a.",
+        "\u041a\u043e\u0433\u0434\u0430 \u0442\u044b \u043d\u0430\u0447\u0430\u043b?",
+        "\u043d\u0430 \u043a\u0430\u043a\u043e\u043c \u044f\u0437\u044b\u043a\u0435 \u044f \u0433\u043e\u0432\u043e\u0440\u044e",
+        "\u0433\u0434\u0435 \u044f \u0441\u0435\u0439\u0447\u0430\u0441"
+      ]
+    },
+    "sv-se": {
+      "name": "System Diagnostics",
+      "description": "Report system information such as CPU usage, memory usage, and language settings.",
+      "examples": [
+        "ovos core version",
+        "anv\u00e4nder du mycket processor",
+        "disk diagnostik",
+        "kan du tala andra spr\u00e5k",
+        "gpu diagnostik",
+        "kernel diagnostik",
+        "tillg\u00e4ngliga spr\u00e5k",
+        "hur mycket minne \u00e4r ledigt",
+        "var \u00e4r du",
+        "ber\u00e4tta ditt spr\u00e5k",
+        "vad \u00e4r din drifttid",
+        "vilket spr\u00e5k talar jag",
+        "var \u00e4r jag"
       ]
     }
   },

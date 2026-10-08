@@ -43,7 +43,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 4,
-  "open_issues": 20,
+  "open_issues": 18,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -76,6 +76,246 @@
     "sv-se"
   ],
   "locale_content": {
+    "ca-es": {
+      "name": "Alertes",
+      "description": "Una habilitat per a gestionar alarmes, temporitzadors, recordatoris, esdeveniments i tasques pendents i, opcionalment, sincronitzar-los amb un servei CalDAV.",
+      "examples": [
+        "Posa una alarma a les 8 AM.",
+        "Inicia un temporitzador de pa durant 30 minuts.",
+        "Programa un esdeveniment de tennis per a les 14:00 de divendres amb una durada de 2 hores.",
+        "Estableix una alarma di\u00e0ria per a les 8 del mat\u00ed.",
+        "Estableix una alarma per a les 8 del mat\u00ed tots els dissabtes.",
+        "recorda'm de treure les escombraries cada dijous i diumenge a les 19h.",
+        "desperta'm a les 8 del mat\u00ed amb m\u00fasica.",
+        "Quan \u00e9s la meva pr\u00f2xima alarma?",
+        "Quins s\u00f3n els meus recordatoris?",
+        "Cancel\u00b7la totes les alarmes.",
+        "Cancel\u00b7la tots els temporitzadors.",
+        "Cancel\u00b7la tots els recordatoris.",
+        "Qu\u00e8 m'he perdut?",
+        "M'he perdut alguna cosa?"
+      ]
+    },
+    "cs-cz": {
+      "name": "Upozorn\u011bn\u00ed",
+      "description": "Dovednost pro spr\u00e1vu bud\u00edk\u016f, \u010dasova\u010d\u016f, p\u0159ipom\u00ednek, ud\u00e1lost\u00ed a \u00fakol\u016f, voliteln\u011b se synchronizac\u00ed se slu\u017ebou CalDAV.",
+      "examples": [
+        "Nastav bud\u00edk na 8 r\u00e1no.",
+        "Spus\u0165 \u010dasova\u010d na chleba na 30 minut.",
+        "Napl\u00e1nuj na p\u00e1tek od 14:00 tenis na dv\u011b hodiny.",
+        "Nastav denn\u00ed bud\u00edk na 8 r\u00e1no.",
+        "Nastav bud\u00edk na 8 r\u00e1no v sobotu.",
+        "P\u0159ipome\u0148 mi vyn\u00e9st ko\u0161 ka\u017ed\u00fd \u010dtvrtek a ned\u011bli v 19:00.",
+        "Vzbu\u010f m\u011b v 8 r\u00e1no hudbou.",
+        "Kdy m\u00e1m dal\u0161\u00ed bud\u00edk?",
+        "Jak\u00e9 m\u00e1m p\u0159ipom\u00ednky?",
+        "Zru\u0161 v\u0161echny bud\u00edky.",
+        "Zru\u0161 v\u0161echny \u010dasova\u010de.",
+        "Zru\u0161 v\u0161echny p\u0159ipom\u00ednky.",
+        "Co jsem zme\u0161kal?",
+        "Zme\u0161kal jsem n\u011bco?"
+      ]
+    },
+    "da-dk": {
+      "name": "Advarsler",
+      "description": "En f\u00e6rdighed til at administrere alarmer, timere, p\u00e5mindelser, begivenheder og g\u00f8rem\u00e5l og eventuelt synkronisere dem med en CalDAV-tjeneste.",
+      "examples": [
+        "Indstil en alarm til kl. 8.",
+        "Start en br\u00f8dtimer i 30 minutter.",
+        "Planl\u00e6g en tennisbegivenhed til kl. 14.00 p\u00e5 fredag, der str\u00e6kker sig over 2 timer.",
+        "Indstil en daglig alarm til kl.",
+        "Indstil en alarm til kl. 8 om l\u00f8rdagen.",
+        "mindemig om at tage skraldet ud hver torsdag og s\u00f8ndag kl. 19.00.",
+        "v\u00e6k mig kl. 8 med musik.",
+        "Hvorn\u00e5r er min n\u00e6ste alarm?",
+        "Hvad er mine p\u00e5mindelser?",
+        "Annuller alle alarmer.",
+        "Annuller alle timere.",
+        "Annuller alle p\u00e5mindelser.",
+        "Hvad gik jeg glip af?",
+        "Gik jeg glip af noget?"
+      ]
+    },
+    "de-de": {
+      "name": "Benachrichtigungen",
+      "description": "Ein Skill zum Verwalten von Alarmen, Timern, Erinnerungen, Ereignissen und Aufgaben und optional zum Synchronisieren dieser mit einem CalDAV-Dienst.",
+      "examples": [
+        "Stelle den Wecker auf 8 Uhr.",
+        "Starte einen Brottimer f\u00fcr 30 Minuten.",
+        "Plane f\u00fcr Freitag 14:00 Uhr ein Tennis-Event mit einer Dauer von 2 Stunden.",
+        "Stelle t\u00e4glich einen Wecker auf 8 Uhr.",
+        "Stelle den Wecker samstags auf 8:00 Uhr.",
+        "erinnere mich jeden Donnerstag und Sonntag um 19\u00a0Uhr daran, den M\u00fcll rauszubringen.",
+        "weck mich um 8 Uhr mit Musik.",
+        "Wann ist mein n\u00e4chster Alarm?",
+        "Was sind meine Erinnerungen?",
+        "Alle Alarme abbrechen.\nBreche alle Alarme ab",
+        "Alle Timer abbrechen.",
+        "Alle Erinnerungen abbrechen.",
+        "Was habe ich verpasst?",
+        "Habe ich etwas verpasst?"
+      ]
+    },
+    "es-co": {
+      "name": "Alertas",
+      "description": "Una skill para gestionar alarmas, temporizadores, recordatorios, eventos, tareas pendientes y, opcionalmente, sincronizarlos con un servicio CalDAV.",
+      "examples": [
+        "Pon una alarma a las 8 a.m.",
+        "Inicia un temporizador para el pan de 30 minutos.",
+        "Programa un evento de tenis para las 14:00 del viernes con una duraci\u00f3n de 2 horas.",
+        "Establece una alarma diaria para las 8 de la ma\u00f1ana.",
+        "Establece una alarma para las 8 de la ma\u00f1ana todos los s\u00e1bados.",
+        "recuerda sacar la basura cada jueves y domingo a las 19h.",
+        "despi\u00e9rtame a las 8 de la ma\u00f1ana con m\u00fasica.",
+        "\u00bfCu\u00e1ndo es mi pr\u00f3xima alarma?",
+        "\u00bfCu\u00e1les son mis recordatorios?",
+        "Cancela todas las alarmas.",
+        "Cancela todos los temporizadores.",
+        "Cancela todos los recordatorios.",
+        "\u00bfQu\u00e9 me he perdido?",
+        "\u00bfMe he perdido algo?"
+      ]
+    },
+    "es-es": {
+      "name": "Alertas",
+      "description": "Una skill para gestionar alarmas, temporizadores, recordatorios, eventos, tareas pendientes y, opcionalmente, sincronizarlos con un servicio CalDAV.",
+      "examples": [
+        "Pon una alarma a las 8 a.m.",
+        "Inicia un temporizador para el pan de 30 minutos.",
+        "Programa un evento de tenis para las 14:00 del viernes con una duraci\u00f3n de 2 horas.",
+        "Establece una alarma diaria para las 8 de la ma\u00f1ana.",
+        "Establece una alarma para las 8 de la ma\u00f1ana todos los s\u00e1bados.",
+        "recuerda sacar la basura cada jueves y domingo a las 19h.",
+        "despi\u00e9rtame a las 8 de la ma\u00f1ana con m\u00fasica.",
+        "\u00bfCu\u00e1ndo es mi pr\u00f3xima alarma?",
+        "\u00bfCu\u00e1les son mis recordatorios?",
+        "Cancela todas las alarmas.",
+        "Cancela todos los temporizadores.",
+        "Cancela todos los recordatorios.",
+        "\u00bfQu\u00e9 me he perdido?",
+        "\u00bfMe he perdido algo?"
+      ]
+    },
+    "eu-es": {
+      "name": "Alertak",
+      "description": "Alarmak, tenporizadoreak, oroigarriak, gertaerak eta zereginak kudeatzeko trebetasuna, eta nahi izanez gero CalDAV zerbitzu batekin sinkronizatzeko.",
+      "examples": [
+        "Jarri alarma bat goizeko 8etan.",
+        "Abiarazi ogiaren tenporizadorea 30 minuturako.",
+        "Antolatu tenis gertaera bat ostiralean arratsaldeko 2etan, 2 orduz.",
+        "Jarri eguneroko alarma bat goizeko 8etan.",
+        "Jarri alarma bat larunbatetan goizeko 8etan.",
+        "gogorarazi zaborra ateratzeko ostegun eta igande bakoitzean arratsaldeko 7etan.",
+        "esnatu nazazu goizeko 8etan musikarekin.",
+        "Noiz da nire hurrengo alarma?",
+        "Zein dira nire oroigarriak?",
+        "Ezeztatu alarma guztiak.",
+        "Ezeztatu tenporizadore guztiak.",
+        "Ezeztatu oroigarri guztiak.",
+        "Zer galdu dut?",
+        "Zerbait galdu al dut?"
+      ]
+    },
+    "fa-ir": {
+      "name": "Alerts",
+      "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service.",
+      "examples": [
+        "Set an alarm for 8 AM.",
+        "Start a timer for 30 minutes.",
+        "Schedule an appointment for tennis on friday at 2 PM.",
+        "Set a daily alarm for 8 AM.",
+        "Set an alarm for 8 AM on saturdays.",
+        "remind me to take out the trash every Thursday and Sunday at 7 PM.",
+        "wake me up at 8 AM with music.",
+        "When is my next alarm?",
+        "What are my upcoming reminders?",
+        "Cancel all alarms.",
+        "Cancel all timers.",
+        "Cancel all reminders.",
+        "What did I miss today?",
+        "Did I miss anything?"
+      ]
+    },
+    "fr-fr": {
+      "name": "Alertes",
+      "description": "G\u00e9rez vos alarmes, minuteurs, rappels, \u00e9v\u00e9nements et listes de t\u00e2ches, avec une synchronisation CalDAV en option.",
+      "examples": [
+        "R\u00e8gle une alarme \u00e0 8 heures.",
+        "Lance un minuteur de 30 minutes pour le pain.",
+        "Programme un \u00e9v\u00e9nement de tennis vendredi \u00e0 14 heures pendant 2 heures.",
+        "R\u00e8gle une alarme quotidienne \u00e0 8 heures.",
+        "R\u00e8gle une alarme \u00e0 8 heures le samedi.",
+        "Rappelle-moi de sortir les poubelles tous les jeudis et dimanches \u00e0 19 heures.",
+        "R\u00e9veille-moi \u00e0 8 heures avec de la musique.",
+        "Quelle est ma prochaine alarme ?",
+        "Quels sont mes rappels ?",
+        "Annule toutes les alarmes.",
+        "Annule tous les minuteurs.",
+        "Annule tous les rappels.",
+        "Qu'est-ce que j'ai manqu\u00e9 ?",
+        "Ai-je manqu\u00e9 quelque chose ?"
+      ]
+    },
+    "gl-es": {
+      "name": "Alertas",
+      "description": "Unha habilidade para xestionar alarmas, temporizadores, recordatorios, eventos e tarefas pendentes, e opcionalmente sincronizalos cun servizo CalDAV.",
+      "examples": [
+        "Configura unha alarma para as 8 da ma\u00f1\u00e1.",
+        "Inicia un temporizador para o pan de 30 minutos.",
+        "Programa un evento de tenis para o venres \u00e1s 14:00 cunha duraci\u00f3n de 2 horas.",
+        "Configura unha alarma diaria para as 8 da ma\u00f1\u00e1.",
+        "Configura unha alarma para as 8 da ma\u00f1\u00e1 dos s\u00e1bados.",
+        "L\u00e9mbrame sacar o lixo todos os xoves e domingos \u00e1s 19:00.",
+        "\u00c9spertarme \u00e1s 8 da ma\u00f1\u00e1 con m\u00fasica.",
+        "Cando soa a mi\u00f1a pr\u00f3xima alarma?",
+        "Cales son os meus recordatorios?",
+        "Cancela todas as alarmas.",
+        "Cancela todos os temporizadores.",
+        "Cancela todos os recordatorios.",
+        "Que perd\u00edn?",
+        "Perd\u00edn algo?"
+      ]
+    },
+    "hu-hu": {
+      "name": "Riaszt\u00e1sok",
+      "description": "K\u00e9szs\u00e9g \u00e9breszt\u0151k, id\u0151z\u00edt\u0151k, eml\u00e9keztet\u0151k, esem\u00e9nyek \u00e9s teend\u0151k kezel\u00e9s\u00e9re, ig\u00e9ny szerint CalDAV szolg\u00e1ltat\u00e1ssal szinkroniz\u00e1lva.",
+      "examples": [
+        "\u00c1ll\u00edts be \u00e9breszt\u0151t reggel 8-ra.",
+        "Ind\u00edts keny\u00e9rs\u00fct\u00e9s id\u0151z\u00edt\u0151t 30 percre.",
+        "\u00dctemezz egy teniszesem\u00e9nyt p\u00e9ntek 14 \u00f3r\u00e1ra, k\u00e9t \u00f3ra hosszan.",
+        "\u00c1ll\u00edts be napi \u00e9breszt\u0151t reggel 8-ra.",
+        "\u00c1ll\u00edts be \u00e9breszt\u0151t szombatonk\u00e9nt reggel 8-ra.",
+        "eml\u00e9keztess, hogy vigyem ki a szemetet minden cs\u00fct\u00f6rt\u00f6k\u00f6n \u00e9s vas\u00e1rnap 19 \u00f3rakor.",
+        "\u00e9bressz fel reggel 8-kor zen\u00e9vel.",
+        "Mikor lesz a k\u00f6vetkez\u0151 \u00e9breszt\u0151m?",
+        "Milyen eml\u00e9keztet\u0151im vannak?",
+        "T\u00f6r\u00f6ld az \u00f6sszes \u00e9breszt\u0151t.",
+        "T\u00f6r\u00f6ld az \u00f6sszes id\u0151z\u00edt\u0151t.",
+        "T\u00f6r\u00f6ld az \u00f6sszes eml\u00e9keztet\u0151t.",
+        "Mir\u0151l maradtam le?",
+        "Lemaradtam valamir\u0151l?"
+      ]
+    },
+    "it-it": {
+      "name": "Avvisi",
+      "description": "Una competenza per gestire allarmi, timer, promemoria, eventi e cose da fare e, facoltativamente, per sincronizzarli con un servizio CalDAV.",
+      "examples": [
+        "Imposta una sveglia per le 8.",
+        "Imposta un timer per la cottura del pane su 30 minuti.",
+        "Organizza un evento di tennis della durata di 2 ore per le ore 14 di venerd\u00ec.",
+        "Imposta una sveglia giornaliera per le 8.",
+        "Imposta la sveglia alle 8 del mattino per ogni sabato.",
+        "ricordami di portare fuori la spazzatura ogni gioved\u00ec e domenica alle 19.",
+        "svegliami alle 8 del mattino con la musica.",
+        "Quando \u00e8 la mia prossima sveglia?",
+        "Quali sono i miei promemoria?",
+        "Annulla tutti gli allarmi.",
+        "Annulla tutti i timer.",
+        "Annulla tutti i promemoria.",
+        "Cosa mi sono perso?",
+        "Mi sono perso qualcosa?"
+      ]
+    },
     "kab": {
       "name": "Alerts",
       "description": "A skill to manage alarms, timers, reminders, events and todos and optionally sync them with a CalDAV service.",
@@ -97,6 +337,126 @@
         "anwi tibdiwin i s\u025bi\u0263",
         "sbe\u025b\u025bed alarma-inu \u0263er sdat",
         "d acu i d-yeqqimen deg timer"
+      ]
+    },
+    "nl-nl": {
+      "name": "Herinneringen en meldingen",
+      "description": "Een skill om wekkers, timers, herinneringen, agenda-afspraken en taken te plannen en te beheren. En deze eventueel te synchroniseren met een CalDAV-service.",
+      "examples": [
+        "Zet een wekker om 8 uur 's ochtends.",
+        "Zet een timer voor 30 minuten",
+        "Plan een tenniswedstrijd van twee uur voor vrijdag om drie uur 's middags.",
+        "Stel een dagelijkse wekker in om 8 uur 's ochtends.",
+        "Zet op zaterdagen een wekker om 8.00 uur",
+        "herinner mij eraan om elke donderdag en zondag om 19.00 uur het vuilnis buiten te zetten.",
+        "Maak me om 8 uur 's ochtends wakker met muziek.",
+        "Wanneer is mijn volgende wekker?",
+        "Wat zijn mijn herinneringen?",
+        "Annuleer alle wekkers.",
+        "Annuleer alle timers.",
+        "Annuleer alle herinneringen.",
+        "Wat heb ik gemist?",
+        "Heb ik iets gemist?"
+      ]
+    },
+    "pl-pl": {
+      "name": "Alerty",
+      "description": "Umiej\u0119tno\u015b\u0107 do zarz\u0105dzania alarmami, minutnikami, przypomnieniami, wydarzeniami i listami zada\u0144, opcjonalnie z synchronizacj\u0105 z us\u0142ug\u0105 CalDAV.",
+      "examples": [
+        "Ustaw alarm na 8 rano.",
+        "W\u0142\u0105cz minutnik na chleb na 30 minut.",
+        "Zaplanuj wydarzenie tenis na pi\u0105tek na 14:00 na dwie godziny.",
+        "Ustaw codzienny alarm na 8 rano.",
+        "Ustaw alarm na 8 rano w soboty.",
+        "przypominaj mi o wyniesieniu \u015bmieci w ka\u017cdy czwartek i niedziel\u0119 o 19:00.",
+        "obud\u017a mnie o 8 rano muzyk\u0105.",
+        "Kiedy jest m\u00f3j nast\u0119pny alarm?",
+        "Jakie mam przypomnienia?",
+        "Anuluj wszystkie alarmy.",
+        "Anuluj wszystkie minutniki.",
+        "Anuluj wszystkie przypomnienia.",
+        "Co mnie omin\u0119\u0142o?",
+        "Czy co\u015b mnie omin\u0119\u0142o?"
+      ]
+    },
+    "pt-br": {
+      "name": "Alertas",
+      "description": "Uma habilidade para gerenciar alarmes, timers, lembretes, eventos e listas de tarefas e, opcionalmente, sincroniz\u00e1-los com um servi\u00e7o CalDAV.",
+      "examples": [
+        "Coloque um alarme para as 8 da manh\u00e3.",
+        "Coloque um timer de 30 minutos.",
+        "Agende um evento de t\u00eanis para sexta-feira \u00e0s 14h com dura\u00e7\u00e3o de 2 horas.",
+        "Defina um alarme todo dia \u00e0s 8 da manh\u00e3.",
+        "Coloque um alarme para as 8 da manh\u00e3 nos s\u00e1bados.",
+        "me lembre de levar o lixo para fora toda quinta e domingo \u00e0s 19h.",
+        "me acorde \u00e0s 8 da manh\u00e3 com m\u00fasica.",
+        "Quando \u00e9 meu alarme pr\u00f3ximo?",
+        "Quais s\u00e3o meus lembretes pr\u00f3ximos?",
+        "Cancele todos os alarmes.",
+        "Cancele todos os timers.",
+        "Cancele todos os lembretes.",
+        "O que eu perdi hoje?",
+        "Perdi alguma coisa?"
+      ]
+    },
+    "pt-pt": {
+      "name": "Alertas",
+      "description": "Uma habilidade para gerir alarmes, temporizadores, lembretes, eventos e listas de tarefas e, opcionalmente, sincroniz\u00e1-los com um servi\u00e7o CalDAV.",
+      "examples": [
+        "p\u00f5e um alarme para as 8 da manh\u00e3",
+        "p\u00f5e um temporizador de 30 minutos",
+        "agenda um compromisso de t\u00e9nis na sexta \u00e0s 14 horas",
+        "acorda-me \u00e0s 8 da manh\u00e3",
+        "acorda-me com m\u00fasica \u00e0s 8 da manh\u00e3",
+        "lembra-me de levar o lixo \u00e0 rua \u00e0s 19 horas",
+        "cria um lembrete para a consulta \u00e0s 15 horas",
+        "novo alarme",
+        "temporizador novo de 10 minutos",
+        "lista alarmes",
+        "cancelar alarmes",
+        "cancelar temporizadores",
+        "cancelar lembretes",
+        "alertas perdidos"
+      ]
+    },
+    "ru-ru": {
+      "name": "\u041e\u043f\u043e\u0432\u0435\u0449\u0435\u043d\u0438\u044f",
+      "description": "\u041d\u0430\u0432\u044b\u043a \u0434\u043b\u044f \u0443\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0431\u0443\u0434\u0438\u043b\u044c\u043d\u0438\u043a\u0430\u043c\u0438, \u0442\u0430\u0439\u043c\u0435\u0440\u0430\u043c\u0438, \u043d\u0430\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u044f\u043c\u0438, \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f\u043c\u0438 \u0438 \u0441\u043f\u0438\u0441\u043a\u0430\u043c\u0438 \u0434\u0435\u043b, \u0430 \u0442\u0430\u043a\u0436\u0435 \u0434\u043b\u044f \u0438\u0445 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u0441\u043e \u0441\u043b\u0443\u0436\u0431\u043e\u0439 CalDAV \u043f\u0440\u0438 \u0436\u0435\u043b\u0430\u043d\u0438\u0438.",
+      "examples": [
+        "\u043f\u043e\u0441\u0442\u0430\u0432\u044c \u0431\u0443\u0434\u0438\u043b\u044c\u043d\u0438\u043a \u043d\u0430 8 \u0443\u0442\u0440\u0430",
+        "\u043d\u043e\u0432\u044b\u0439 \u0431\u0443\u0434\u0438\u043b\u044c\u043d\u0438\u043a \u043d\u0430 8 \u0443\u0442\u0440\u0430",
+        "\u043f\u043e\u0441\u0442\u0430\u0432\u044c \u0442\u0430\u0439\u043c\u0435\u0440 \u043d\u0430 30 \u043c\u0438\u043d\u0443\u0442",
+        "\u043d\u043e\u0432\u044b\u0439 \u0442\u0430\u0439\u043c\u0435\u0440 \u043d\u0430 10 \u043c\u0438\u043d\u0443\u0442",
+        "\u0437\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u0443\u0439 \u0432\u0441\u0442\u0440\u0435\u0447\u0443 \u0432 \u043f\u044f\u0442\u043d\u0438\u0446\u0443 \u0432 14 \u0447\u0430\u0441\u043e\u0432",
+        "\u043d\u0430\u043f\u043e\u043c\u043d\u0438 \u043c\u043d\u0435 \u0432\u044b\u043d\u0435\u0441\u0442\u0438 \u043c\u0443\u0441\u043e\u0440 \u0432 19 \u0447\u0430\u0441\u043e\u0432",
+        "\u0441\u043e\u0437\u0434\u0430\u0439 \u043d\u0430\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u0435 \u043e \u0432\u0438\u0437\u0438\u0442\u0435 \u043a \u0432\u0440\u0430\u0447\u0443",
+        "\u043a\u0430\u043a\u0438\u0435 \u043d\u0430\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u044f",
+        "\u043e\u0442\u043c\u0435\u043d\u0438\u0442\u044c \u043d\u0430\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u044f",
+        "\u043e\u0442\u043c\u0435\u043d\u0438\u0442\u044c \u0442\u0430\u0439\u043c\u0435\u0440\u044b",
+        "\u043e\u0442\u043c\u0435\u043d\u0438\u0442\u044c \u043c\u0435\u0440\u043e\u043f\u0440\u0438\u044f\u0442\u0438\u044f",
+        "\u0443\u0434\u0430\u043b\u0438\u0442\u044c \u043d\u0430\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u0435",
+        "\u043a\u0430\u043a\u0438\u0435 \u043d\u0430\u043f\u043e\u043c\u0438\u043d\u0430\u043d\u0438\u044f \u044f \u043f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u043b",
+        "\u043a\u0430\u043a\u0438\u0435 \u0442\u0430\u0439\u043c\u0435\u0440\u044b \u044f \u043f\u0440\u043e\u043f\u0443\u0441\u0442\u0438\u043b"
+      ]
+    },
+    "sv-se": {
+      "name": "Alerts",
+      "description": "En f\u00e4rdighet f\u00f6r att hantera larm, timers, p\u00e5minnelser, h\u00e4ndelser och att g\u00f6ra-listor, och att eventuellt synkronisera dem med en CalDAV-tj\u00e4nst.",
+      "examples": [
+        "S\u00e4tt ett larm till klockan 8.",
+        "Starta en timer p\u00e5 30 minuter.",
+        "Planera ett m\u00f6te f\u00f6r tennis p\u00e5 fredag klockan 14.",
+        "S\u00e4tt ett larm varje dag klockan 8.",
+        "S\u00e4tt ett larm till klockan 8 p\u00e5 l\u00f6rdagar.",
+        "P\u00e5minn mig om att sl\u00e4nga soporna varje torsdag och s\u00f6ndag klockan 19.",
+        "V\u00e4ck mig klockan 8 med musik.",
+        "N\u00e4r \u00e4r mitt n\u00e4sta larm?",
+        "Vilka \u00e4r mina kommande p\u00e5minnelser?",
+        "Avbryt alla mina larm.",
+        "Avbryt alla mina timers.",
+        "Avbryt alla mina p\u00e5minnelser.",
+        "Vilka larm har jag missat?",
+        "Har jag missat n\u00e5got?"
       ]
     }
   },

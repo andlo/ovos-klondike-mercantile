@@ -58,6 +58,95 @@
     "sv-se"
   ],
   "locale_content": {
+    "ca-es": {
+      "examples": [
+        "comen\u00e7a l'enregistrament",
+        "enregistrament nou amb nom {name}",
+        "comen\u00e7a un enregistrament amb nom {name}",
+        "comen\u00e7a un nou enregistrament d'\u00e0udio anomenat {name}",
+        "inicia l'enregistrament"
+      ]
+    },
+    "da-dk": {
+      "examples": [
+        "begynd at optage",
+        "ny optagelse med navnet {name}",
+        "start en optagelse kaldet {name}",
+        "start en ny lydoptagelse kaldet {name}",
+        "start optagelse"
+      ]
+    },
+    "de-de": {
+      "examples": [
+        "Aufnahme starten",
+        "neue Aufnahme mit dem Namen {name}",
+        "starte eine Aufnahme mit dem Namen {name}",
+        "Starte eine neue Audioaufnahme mit dem Namen {name}",
+        "Aufnahme starten"
+      ]
+    },
+    "es-co": {
+      "examples": [
+        "comenzar (la grabaci\u00f3n|a grabar)\nempezar (la grabaci\u00f3n|a grabar)",
+        "nueva grabaci\u00f3n (llamada|con el nombre) {name}",
+        "(Inicia|Empieza) una grabaci\u00f3n (llamada|con el nombre) {name}",
+        "(Inicia|Empieza) una nueva grabaci\u00f3n de audio (llamada|con el nombre) {name}",
+        "comienza (la grabaci\u00f3n|a grabar)\nempieza (la grabaci\u00f3n|a grabar)"
+      ]
+    },
+    "es-es": {
+      "examples": [
+        "comenzar (la grabaci\u00f3n|a grabar)\nempezar (la grabaci\u00f3n|a grabar)",
+        "nueva grabaci\u00f3n (llamada|con el nombre) {name}",
+        "(Inicia|Empieza) una grabaci\u00f3n (llamada|con el nombre) {name}",
+        "(Inicia|Empieza) una nueva grabaci\u00f3n de audio (llamada|con el nombre) {name}",
+        "comienza (la grabaci\u00f3n|a grabar)\nempieza (la grabaci\u00f3n|a grabar)"
+      ]
+    },
+    "eu-es": {
+      "examples": [
+        "hasi grabaketa",
+        "grabaketa berria izena {name} duena",
+        "hasi {name} izeneko grabaketa",
+        "hasi {name} izeneko audio grabaketa berria"
+      ]
+    },
+    "fa-ir": {
+      "examples": [
+        "\u0634\u0631\u0648\u0639 \u0636\u0628\u0637",
+        "\u0634\u0631\u0648\u0639 \u0636\u0628\u0637 \u062c\u062f\u06cc\u062f \u0628\u0647 \u0627\u0633\u0645 {name}",
+        "\u0634\u0631\u0648\u0639 \u0636\u0628\u0637 \u062c\u062f\u06cc\u062f \u0628\u0647 \u0627\u0633\u0645 {name}",
+        "\u0634\u0631\u0648\u0639 \u0636\u0628\u0637 \u0635\u062f\u0627\u06cc \u062c\u062f\u06cc\u062f \u0628\u0647 \u0627\u0633\u0645 {name}",
+        "\u0634\u0631\u0648\u0639 \u06a9\u0631\u062f\u0646 \u0636\u0628\u0637"
+      ]
+    },
+    "fr-fr": {
+      "examples": [
+        "Commence l'enregistrement",
+        "Cr\u00e9e un enregistrement nomm\u00e9 {name}",
+        "D\u00e9marre un enregistrement appel\u00e9 {name}",
+        "D\u00e9marre un nouvel enregistrement audio nomm\u00e9 {name}",
+        "Enregistre maintenant"
+      ]
+    },
+    "gl-es": {
+      "examples": [
+        "comezar a gravar",
+        "nova gravaci\u00f3n co nome {name}",
+        "comezar unha gravaci\u00f3n chamada {name}",
+        "comezar unha nova gravaci\u00f3n de audio chamada {name}",
+        "comezar a gravar"
+      ]
+    },
+    "it-it": {
+      "examples": [
+        "inizia registrazione",
+        "nuova registrazione chiamata {name}",
+        "avvia una registrazione chiamata {name}",
+        "avvia una nuova registrazione audio chiamata {name}",
+        "avvia registrazione"
+      ]
+    },
     "kab": {
       "examples": [
         "bdu asekles",
@@ -65,6 +154,56 @@
         "bdu asekles amaynut isem-is {name}",
         "bdu asekles a\u0263ectan amaynut isem-is {name}",
         "aha sekles "
+      ]
+    },
+    "nl-nl": {
+      "examples": [
+        "begin met opnemen",
+        "nieuwe opname genaamd {name}",
+        "start een opname genaamd {name}",
+        "start een nieuwe audio-opname genaamd {name}",
+        "start opname"
+      ]
+    },
+    "pl-pl": {
+      "name": "Audio Recording",
+      "description": "Record audio to a file by voice. While a recording runs, the skill turns off the wake word and speech to text. It needs ovos-dinkum-listener.",
+      "examples": [
+        "inicjuj nagranie"
+      ]
+    },
+    "pt-br": {
+      "examples": [
+        "come\u00e7ar grava\u00e7\u00e3o",
+        "nova grava\u00e7\u00e3o chamada {name}",
+        "iniciar uma grava\u00e7\u00e3o chamada {name}",
+        "iniciar uma nova grava\u00e7\u00e3o de \u00e1udio chamada {name}",
+        "come\u00e7ar a gravar"
+      ]
+    },
+    "pt-pt": {
+      "examples": [
+        "come\u00e7ar a grava\u00e7\u00e3o",
+        "nova grava\u00e7\u00e3o chamada {name}",
+        "come\u00e7ar uma grava\u00e7\u00e3o chamada {name}",
+        "come\u00e7ar uma nova grava\u00e7\u00e3o de \u00e1udio chamada {name}",
+        "come\u00e7ar a gravar"
+      ]
+    },
+    "ru-ru": {
+      "name": "Audio Recording",
+      "description": "Record audio to a file by voice. While a recording runs, the skill turns off the wake word and speech to text. It needs ovos-dinkum-listener.",
+      "examples": [
+        "\u0437\u0430\u043f\u0438\u0441\u0438 \u0437\u0432\u0443\u043a\u0430"
+      ]
+    },
+    "sv-se": {
+      "examples": [
+        "b\u00f6rja spela in",
+        "ny inspelning som heter {name}",
+        "starta en inspelning som heter {name}",
+        "starta en ny ljudinspelning som heter {name}",
+        "starta inspelning"
       ]
     }
   },

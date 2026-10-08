@@ -56,12 +56,148 @@
     "sv-se"
   ],
   "locale_content": {
+    "ca-es": {
+      "name": "Habilitat de dictat",
+      "description": "Mentre est\u00e0 activada, transcriu de forma cont\u00ednua la parla de l'usuari en un fitxer de text",
+      "examples": [
+        "comen\u00e7a el dictat",
+        "finalitza el dictat"
+      ]
+    },
+    "da-dk": {
+      "name": "Diktatf\u00e6rdighed",
+      "description": "transskriberer l\u00f8bende brugertale til tekstfil, mens den er aktiveret",
+      "examples": [
+        "start diktat",
+        "afslut diktat"
+      ]
+    },
+    "de-de": {
+      "name": "Diktier Skill",
+      "description": "transkribiert Sprache kontinuierlich in eine Textdatei, solange diese aktiviert ist",
+      "examples": [
+        "Diktat starten",
+        "Diktat beenden"
+      ]
+    },
+    "es-co": {
+      "name": "Habilidad de dictado",
+      "description": "transcribe de forma continua el habla del usuario a un archivo de texto mientras est\u00e1 activada",
+      "examples": [
+        "iniciar dictado",
+        "terminar dictado"
+      ]
+    },
+    "es-es": {
+      "name": "Habilidad de dictado",
+      "description": "transcribe de forma continua el habla del usuario a un archivo de texto mientras est\u00e1 activada",
+      "examples": [
+        "iniciar dictado",
+        "terminar dictado"
+      ]
+    },
+    "eu-es": {
+      "name": "Diktaketa trebetasuna",
+      "description": "aktibatuta dagoen bitartean erabiltzailearen ahotsa etengabe testu fitxategi batera transkribatzen du",
+      "examples": [
+        "hasi diktaketa",
+        "amaitu diktaketa"
+      ]
+    },
+    "fa-ir": {
+      "name": "Dictation skill",
+      "description": "continuously transcribes user speech to text file while enabled",
+      "examples": [
+        "\u0634\u0631\u0648\u0639 \u062f\u06cc\u06a9\u062a\u0627\u062a\u0648\u0631\u06cc",
+        "\u062a\u0648\u0642\u0641 \u062f\u06cc\u06a9\u062a\u0627\u062a\u0648\u0631\u06cc"
+      ]
+    },
+    "fr-fr": {
+      "name": "Dict\u00e9e",
+      "description": "Transcrit ce que vous dites tant que la dict\u00e9e est active.",
+      "examples": [
+        "D\u00e9marre la dict\u00e9e",
+        "Arr\u00eate la dict\u00e9e"
+      ]
+    },
+    "gl-es": {
+      "name": "Habilidade de Ditado",
+      "description": "transcribe de xeito continuo a fala da persoa usuaria a un ficheiro de texto en canto est\u00e1 habilitada",
+      "examples": [
+        "(comeza|comezar|empeza|empezar|inicia|iniciar|encomeza|encomezar|enceta|encetar|principia|principiar) o ditado",
+        "(rematar|remata|acabar|acaba|finalizar|finaliza|terminar|termina|conclu\u00edr|concl\u00fae) o ditado"
+      ]
+    },
+    "it-it": {
+      "name": "Dictation skill",
+      "description": "trascrive continuamente il parlato dell'utente in un file di testo mentre \u00e8 attiva",
+      "examples": [
+        "avvia dettatura",
+        "termina dettatura"
+      ]
+    },
     "kab": {
       "name": "Tazmert n usel\u0263u",
       "description": "yettaru awal n useqdac \u0263er ufaylu n u\u1e0dris skudmi yermed",
       "examples": [
         "bdu asel\u0263u",
         "se\u1e25bes asel\u0263u"
+      ]
+    },
+    "nl-nl": {
+      "name": "Dictaat vaardigheid",
+      "description": "transcribeert continu de spraak van de gebruiker naar een tekstbestand zolang het is ingeschakeld",
+      "examples": [
+        "start dictaat",
+        "stop dictaat"
+      ]
+    },
+    "oc-fr": {
+      "name": "Abilitat de dictat",
+      "description": "Quand es activada, transcriu de contunh la paraula de l'utilizaire dins un fichi\u00e8r de t\u00e8xt",
+      "examples": [
+        "comen\u00e7a lo dictat",
+        "final\u00eds lo dictat"
+      ]
+    },
+    "pl-pl": {
+      "name": "Dictation skill",
+      "description": "continuously transcribes user speech to text file while enabled",
+      "examples": [
+        "inicjuj dyktacj\u0119",
+        "anuluj dyktacj\u0119"
+      ]
+    },
+    "pt-br": {
+      "name": "Skill de ditado",
+      "description": "transcreve continuamente a fala do usu\u00e1rio para um arquivo de texto enquanto estiver habilitado",
+      "examples": [
+        "come\u00e7ar o ditado",
+        "fim do ditado"
+      ]
+    },
+    "pt-pt": {
+      "name": "Skill de ditado",
+      "description": "transcreve continuamente a fala do utilizador para um ficheiro de texto enquanto estiver ativo",
+      "examples": [
+        "come\u00e7ar o ditado",
+        "terminar o ditado"
+      ]
+    },
+    "ru-ru": {
+      "name": "Dictation skill",
+      "description": "continuously transcribes user speech to text file while enabled",
+      "examples": [
+        "\u043d\u0430\u0447\u0430\u0442\u044c \u0434\u0438\u043a\u0442\u043e\u0432\u043a\u0443",
+        "\u041a\u043e\u043d\u0435\u0446 \u0442\u0435\u043a\u0441\u0442\u0430"
+      ]
+    },
+    "sv-se": {
+      "name": "Dikteringsf\u00e4rdighet",
+      "description": "transkriberar kontinuerligt anv\u00e4ndarens tal till en textfil medan den \u00e4r aktiverad",
+      "examples": [
+        "starta diktering",
+        "avsluta diktering"
       ]
     }
   },

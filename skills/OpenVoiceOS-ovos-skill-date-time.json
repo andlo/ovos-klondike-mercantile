@@ -6,9 +6,9 @@
   "examples": [
     "What time is it?",
     "Tell me the day of the week",
-    "How many days until July 4th",
-    "What's the date?",
-    "Show me the time",
+    "How many days are left until July 4th",
+    "What date is it?",
+    "Do you have the time",
     "What day is Memorial Day 2020?",
     "What time is it in Paris?"
   ],
@@ -34,7 +34,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 10,
-  "open_issues": 12,
+  "open_issues": 10,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -95,6 +95,158 @@
         "Qu\u00e9 hora ye en Par\u00eds?"
       ]
     },
+    "ca-es": {
+      "name": "Data i hora",
+      "description": "Obteniu l'hora, la data, el dia de la setmana",
+      "examples": [
+        "Quina hora \u00e9s?",
+        "Digues-me el dia de la setmana",
+        "Quants dies falten per al 24 de juny?",
+        "Quina data som?",
+        "Mostra'm l'hora",
+        "Quin dia \u00e9s el dia del Punt Volat de 2026?",
+        "Quina hora \u00e9s a Par\u00eds?"
+      ]
+    },
+    "cs-cz": {
+      "name": "Datum a \u010das",
+      "description": "Z\u00edskejte \u010das, datum, den v t\u00fddnu",
+      "examples": [
+        "Kolik je hodin?",
+        "\u0158ekni mi, kter\u00fd je den v t\u00fddnu",
+        "Kolik dn\u00ed zb\u00fdv\u00e1 do 4. \u010dervence",
+        "Jak\u00e9 je datum?",
+        "Uka\u017e mi \u010das",
+        "Na jak\u00fd den p\u0159ipad\u00e1 Memorial Day 2020?",
+        "Kolik je hodin v Pa\u0159\u00ed\u017ei?"
+      ]
+    },
+    "da-dk": {
+      "name": "Dato og tid",
+      "description": "F\u00e5 tid, dato, ugedag",
+      "examples": [
+        "Hvad er klokken?",
+        "Fort\u00e6l mig ugedagen",
+        "Hvor mange dage indtil 4. juli",
+        "Hvad er datoen?",
+        "Vis mig tiden",
+        "Hvilken dag er Memorial Day 2020?",
+        "Hvad er klokken i Paris?"
+      ]
+    },
+    "de-de": {
+      "name": "Datum und Uhrzeit",
+      "description": "Erfrage die Uhrzeit, das Datum, den Wochentag",
+      "examples": [
+        "Wie sp\u00e4t ist es?",
+        "Sag mir den Wochentag",
+        "Wie viele Tage bis zum 4. Juli",
+        "Welches Datum haben wir?",
+        "Zeig mir die Zeit",
+        "Welcher Tag ist der Memorial Day 2020?",
+        "Wie sp\u00e4t ist es in Paris?"
+      ]
+    },
+    "es-co": {
+      "name": "Fecha y hora",
+      "description": "Informaci\u00f3n sobre la hora, la fecha y el d\u00eda de la semana",
+      "examples": [
+        "\u00bfQu\u00e9 hora es?",
+        "Dime el d\u00eda de la semana",
+        "\u00bfCuantos d\u00edas faltan para el 24 de junio?",
+        "\u00bfQue d\u00eda es?",
+        "Dime la hora",
+        "\u00bfCu\u00e1ndo es el d\u00eda del libro?",
+        "\u00bfQu\u00e9 hora es en Par\u00eds?"
+      ]
+    },
+    "es-es": {
+      "name": "Fecha y hora",
+      "description": "Informaci\u00f3n sobre la hora, la fecha y el d\u00eda de la semana",
+      "examples": [
+        "\u00bfQu\u00e9 hora es?",
+        "Dime el d\u00eda de la semana",
+        "\u00bfCuantos d\u00edas faltan para el 24 de junio?",
+        "\u00bfQue d\u00eda es?",
+        "Dime la hora",
+        "\u00bfCu\u00e1ndo es el d\u00eda del libro?",
+        "\u00bfQu\u00e9 hora es en Par\u00eds?"
+      ]
+    },
+    "eu-es": {
+      "name": "Data eta ordua",
+      "description": "Jakin ordua, data, asteko eguna",
+      "examples": [
+        "Zer ordu da?",
+        "Esadazu asteko eguna",
+        "Zenbat egun falta dira uztailaren 4a arte",
+        "Zein data da?",
+        "Erakutsi ordua",
+        "Zein egunetan da 2020ko Oroitzapen Eguna?",
+        "Zer ordu da Parisen?"
+      ]
+    },
+    "fa-ir": {
+      "name": "\u062a\u0627\u0631\u06cc\u062e \u0648 \u0632\u0645\u0627\u0646",
+      "description": "\u0641\u0647\u0645\u06cc\u062f\u0646 \u0632\u0645\u0627\u0646\u060c \u062a\u0627\u0631\u06cc\u062e \u0648 \u0631\u0648\u0632 \u0647\u0641\u062a\u0647"
+    },
+    "fi-fi": {
+      "name": "P\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja aika",
+      "description": "Kerro kellonaika, p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4 ja viikonp\u00e4iv\u00e4",
+      "examples": [
+        "mik\u00e4 on t\u00e4m\u00e4n p\u00e4iv\u00e4n p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4",
+        "Aika, kiitos.",
+        "monesko p\u00e4iv\u00e4 t\u00e4n\u00e4\u00e4n on",
+        "mik\u00e4 viikonp\u00e4iv\u00e4 t\u00e4n\u00e4\u00e4n on",
+        "mik\u00e4 kuukausi nyt on",
+        "mik\u00e4 vuosi nyt on",
+        "onko t\u00e4m\u00e4 vuosi karkausvuosi",
+        "milloin on seuraava karkausvuosi"
+      ]
+    },
+    "fr-fr": {
+      "name": "Date et heure",
+      "description": "Obtenez l'heure, la date et le jour de la semaine",
+      "examples": [
+        "Quelle heure est-il?",
+        "Dis-moi le jour de la semaine",
+        "Combien de jours avant le 14 juillet",
+        "Quelle est la date ?",
+        "Montre-moi l'heure",
+        "Quel jour est la Toussaint 2025 ?",
+        "Quelle heure est-il \u00e0 Paris ?"
+      ]
+    },
+    "gl-es": {
+      "name": "Data e Hora",
+      "description": "Obt\u00e9n a hora, a data, o d\u00eda da semana",
+      "examples": [
+        "Que hora \u00e9?",
+        "Dime o d\u00eda da semana",
+        "Cantos d\u00edas faltan para o 4 de xullo",
+        "Que d\u00eda \u00e9 hoxe?",
+        "Dime que hora \u00e9",
+        "Que d\u00eda \u00e9 o martes de entroido de 2025?",
+        "Que hora \u00e9 en Par\u00eds?"
+      ]
+    },
+    "hu-hu": {
+      "name": "D\u00e1tum \u00e9s id\u0151",
+      "description": "Id\u0151, d\u00e1tum \u00e9s a h\u00e9t napj\u00e1nak lek\u00e9rdez\u00e9se."
+    },
+    "it-it": {
+      "name": "Data e ora",
+      "description": "Chiedi l'ora, la data, il giorno della settimana",
+      "examples": [
+        "Che ora \u00e8?",
+        "Che giorno \u00e8 oggi",
+        "Quanti giorni mancano a 15 maggio",
+        "Qual'\u00e8 la data di oggi",
+        "Che ore sono?",
+        "Che giorno della settimana \u00e8 15 maggio",
+        "Dammi l'ora a Parigi"
+      ]
+    },
     "kab": {
       "name": "Azemz d ssa\u025ba",
       "description": "Awi ssa\u025ba, azemz d wass n ddu\u1e5bt",
@@ -107,6 +259,92 @@
         "Anwa ass i d Yennayer 2027?",
         "D acu-t ssa\u025ba tura di Pari?"
       ]
+    },
+    "nl-nl": {
+      "name": "Datum en tijd",
+      "description": "Hoor de tijd, datum en dag van de week",
+      "examples": [
+        "Hoe laat is het?",
+        "Welke dag is het?",
+        "Hoeveel dagen tot 4 juli?",
+        "Wat is de datum?",
+        "Wat is de huidige tijd?",
+        "Welke dag is 4 mei?",
+        "Hoe laat is het in Parijs?"
+      ]
+    },
+    "pl-pl": {
+      "name": "Data i czas",
+      "description": "Sprawdzanie godziny, daty i dnia tygodnia.",
+      "examples": [
+        "Jak\u0105 mamy godzin\u0119?",
+        "Jaki dzie\u0144 tygodnia jest dzisiaj?",
+        "Jaka jest dzisiejsza data?",
+        "Kt\u00f3rego dzisiaj mamy?",
+        "Podaj mi godzin\u0119",
+        "Ile dni zosta\u0142o do Bo\u017cego Narodzenia?",
+        "Aktualna godzina w Warszawie"
+      ]
+    },
+    "pt-br": {
+      "name": "Data e hora",
+      "description": "Obtenha a hora, a data e o dia da semana",
+      "examples": [
+        "Que horas s\u00e3o?",
+        "Diga-me o dia da semana",
+        "Quantos dias faltam para 4 de julho",
+        "Qual \u00e9 a data?",
+        "Mostre-me as horas",
+        "Que dia \u00e9 o Memorial Day de 2020?",
+        "Que horas s\u00e3o em Paris?"
+      ]
+    },
+    "pt-pt": {
+      "name": "Data e Hora",
+      "description": "Obt\u00e9m a hora, a data, o dia da semana",
+      "examples": [
+        "Que horas s\u00e3o?",
+        "Diz-me o dia da semana",
+        "Quantos dias faltam para 4 de julho",
+        "Qual \u00e9 a data?",
+        "Mostra-me a hora",
+        "Que dia \u00e9 o Dia Memorial de 2020?",
+        "Que horas s\u00e3o em Paris?"
+      ]
+    },
+    "ru-ru": {
+      "name": "\u0414\u0430\u0442\u0430 \u0438 \u0432\u0440\u0435\u043c\u044f",
+      "description": "\u0412\u0440\u0435\u043c\u044f, \u0434\u0430\u0442\u0430, \u0434\u0435\u043d\u044c \u043d\u0435\u0434\u0435\u043b\u0438"
+    },
+    "sv-fi": {
+      "name": "Datum och tid",
+      "description": "F\u00e5 reda p\u00e5 tiden, datumet, veckodagen",
+      "examples": [
+        "Vad \u00e4r klockan?",
+        "S\u00e4g vilken veckodag det \u00e4r",
+        "Hur m\u00e5nga dagar \u00e4r det till den 4 juli",
+        "Vilket datum \u00e4r det?",
+        "Visa mig klockan",
+        "Vilken dag \u00e4r minnesdagen 2020?",
+        "Vad \u00e4r klockan i Paris?"
+      ]
+    },
+    "sv-se": {
+      "name": "Datum och tid",
+      "description": "F\u00e5 tiden, datumet, veckodagen",
+      "examples": [
+        "Vad \u00e4r klockan?",
+        "Ber\u00e4tta vilken veckodag det \u00e4r",
+        "Hur m\u00e5nga dagar \u00e4r det till den 4 juli",
+        "Vad \u00e4r dagens datum?",
+        "Visa mig klockan",
+        "Vilken dag \u00e4r Memorial Day 2020?",
+        "Vad \u00e4r klockan i Paris?"
+      ]
+    },
+    "tr-tr": {
+      "name": "Tarih ve Saat",
+      "description": "Saati, tarihi ve haftan\u0131n g\u00fcn\u00fcn\u00fc \u00f6\u011frenin."
     }
   },
   "in_ovos_localize": true,

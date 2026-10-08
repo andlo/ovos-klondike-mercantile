@@ -27,7 +27,7 @@
   "type_group": "Skill",
   "stars": 0,
   "forks": 3,
-  "open_issues": 6,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": true,
@@ -62,6 +62,96 @@
     "sv-se"
   ],
   "locale_content": {
+    "ca-es": {
+      "name": "Habilitat d'engegada finalitzada",
+      "description": "L'habilitat d'engegada acabada proporciona notificacions quan l'OpenVoiceOS s'ha iniciat completament i tots els serveis b\u00e0sics estan preparats",
+      "examples": [
+        "El sistema est\u00e0 preparat?",
+        "Activa les notificacions preparades.",
+        "Desactiva les notificacions preparades."
+      ]
+    },
+    "da-dk": {
+      "name": "F\u00e6rdig booting f\u00e6rdighed",
+      "description": "F\u00e6rdigheden til f\u00e6rdig opstart giver besked, n\u00e5r OpenVoiceOS er fuldt startet, og alle kernetjenester er klar",
+      "examples": [
+        "Er systemet klar?",
+        "Aktiver klarmeddelelser.",
+        "Deaktiver klarmeddelelser."
+      ]
+    },
+    "de-de": {
+      "name": "Finished Booting Skill",
+      "description": "Die Fertig-Boot-Funktion gibt Benachrichtigungen aus, wenn OpenVoiceOS vollst\u00e4ndig gestartet ist und alle Kerndienste bereit sind",
+      "examples": [
+        "Ist das System bereit?",
+        "Aktiviere die Bereitschaftsbenachrichtigungen.",
+        "Deaktiviere Bereitschaftsbenachrichtigungen."
+      ]
+    },
+    "es-co": {
+      "name": "Habilidad de arranque finalizado",
+      "description": "La habilidad de arranque finalizado proporciona notificaciones cuando OpenVoiceOS se ha iniciado por completo y todos los servicios principales est\u00e1n listos",
+      "examples": [
+        "\u00bfEst\u00e1 listo el sistema?",
+        "Habilitar notificaciones de preparaci\u00f3n.",
+        "Desactivar notificaciones de preparaci\u00f3n."
+      ]
+    },
+    "es-es": {
+      "name": "Habilidad de arranque finalizado",
+      "description": "La habilidad de arranque finalizado proporciona notificaciones cuando OpenVoiceOS se ha iniciado por completo y todos los servicios principales est\u00e1n listos",
+      "examples": [
+        "\u00bfEst\u00e1 listo el sistema?",
+        "Habilitar notificaciones de preparaci\u00f3n.",
+        "Desactivar notificaciones de preparaci\u00f3n."
+      ]
+    },
+    "eu-es": {
+      "name": "Abioa amaituta trebetasuna",
+      "description": "Abioa amaituta trebetasunak jakinarazpenak ematen ditu OpenVoiceOS erabat abiarazi denean eta oinarrizko zerbitzu guztiak prest daudenean",
+      "examples": [
+        "Sistema prest dago?",
+        "Gaitu prest dagoela adierazteko jakinarazpena",
+        "Desgaitu prest dagoela adierazteko jakinarazpena"
+      ]
+    },
+    "fa-ir": {
+      "name": "Finished Booting Skill",
+      "description": "The Finished Booting skill provides notifications when OpenVoiceOS has fully started and all core services are ready",
+      "examples": [
+        "\u0622\u06cc\u0627 \u0622\u0645\u0627\u062f\u0647 \u0647\u0633\u062a\u06cc\u062f",
+        "\u0639\u062f\u0645 \u0627\u0645\u06a9\u0627\u0646 \u0634\u0631\u0648\u0639 \u0635\u062f\u0627",
+        "\u0627\u0645\u06a9\u0627\u0646 \u0634\u0631\u0648\u0639 \u0635\u062f\u0627"
+      ]
+    },
+    "fr-fr": {
+      "name": "D\u00e9marrage termin\u00e9",
+      "description": "Vous avertit quand OpenVoiceOS a compl\u00e8tement d\u00e9marr\u00e9 et que les services principaux sont pr\u00eats.",
+      "examples": [
+        "Est-ce que le syst\u00e8me est pr\u00eat ?",
+        "Active les notifications de d\u00e9marrage.",
+        "D\u00e9sactive les notifications de d\u00e9marrage."
+      ]
+    },
+    "gl-es": {
+      "name": "Habilidade \"Rematado o arranque\"",
+      "description": "A habilidade \"Rematado o arranque\" proporciona notificaci\u00f3ns cando OpenVoiceOS acaba de iniciarse por completo e todos os servizos principais est\u00e1n listos",
+      "examples": [
+        "Est\u00e1 (listo|preparado) o sistema?",
+        "Activar (as|) notificaci\u00f3ns de estado.",
+        "Desactivar (as|) notificaci\u00f3ns de estado."
+      ]
+    },
+    "it-it": {
+      "name": "Competenza Fine di avvio",
+      "description": "La competenza Fine di avvio fornisce notifiche quando OpenVoiceOS \u00e8 completamente avviato e tutti i servizi principali sono pronti",
+      "examples": [
+        "Il sistema \u00e8 pronto?",
+        "Abilita le notifiche di \"pronto\".",
+        "Disattiva le notifiche di \"pronto\"."
+      ]
+    },
     "kab": {
       "name": "Asenker yekfa",
       "description": "Askar-agi i\u021b\u021bak-d isallen mi ara yekfu usenker n OpenVoiceOS yerna imukan me\u1e5b\u1e5ba ddan yerna \u021beddun.",
@@ -69,6 +159,60 @@
         "Ma yewjed unagraw?",
         "Rmed il\u0263a n uwjeb.",
         "Sens il\u0263a n uwjeb."
+      ]
+    },
+    "nl-nl": {
+      "name": "Ik ben er klaar voor - skill",
+      "description": "De \"Ik ben er klaar voor\" skill geeft meldingen wanneer OpenVoiceOS volledig is gestart en alle onderdelen klaar zijn voor gebruik.",
+      "examples": [
+        "Is het systeem opgestart?",
+        "Schakel opstartmelding in.",
+        "Schakel opstartmelding uit."
+      ]
+    },
+    "pl-pl": {
+      "name": "Finished Booting Skill",
+      "description": "The Finished Booting skill provides notifications when OpenVoiceOS has fully started and all core services are ready",
+      "examples": [
+        "Zaczynasz?",
+        "wy\u0142\u0105cz gotowy d\u017awi\u0119k",
+        "Uaktywni\u0107 d\u017awi\u0119k gotowy"
+      ]
+    },
+    "pt-br": {
+      "name": "Skill de inicializa\u00e7\u00e3o finalizada",
+      "description": "A skill de inicializa\u00e7\u00e3o finalizada fornece notifica\u00e7\u00f5es quando OpenVoiceOS reiniciou completamente and todos os servi\u00e7os b\u00e1sicos est\u00e3o prontos",
+      "examples": [
+        "O sistema est\u00e1 pronto?",
+        "Habilitar notifica\u00e7\u00f5es prontas.",
+        "Desabilite as notifica\u00e7\u00f5es prontas."
+      ]
+    },
+    "pt-pt": {
+      "name": "Skill de Arranque Conclu\u00eddo",
+      "description": "A skill de Arranque Conclu\u00eddo avisa quando o OpenVoiceOS terminou de arrancar e todos os servi\u00e7os principais est\u00e3o prontos",
+      "examples": [
+        "O sistema est\u00e1 pronto?",
+        "Ativar as notifica\u00e7\u00f5es de pronto.",
+        "Desativar as notifica\u00e7\u00f5es de pronto."
+      ]
+    },
+    "ru-ru": {
+      "name": "Finished Booting Skill",
+      "description": "The Finished Booting skill provides notifications when OpenVoiceOS has fully started and all core services are ready",
+      "examples": [
+        "\u0422\u044b \u0433\u043e\u0442\u043e\u0432?",
+        "\u041e\u0442\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0433\u043e\u0442\u043e\u0432\u044b\u0439 \u0437\u0432\u0443\u043a",
+        "\u043f\u0440\u0438\u0433\u043e\u0442\u043e\u0432\u0438\u0442\u044c \u0437\u0432\u0443\u043a"
+      ]
+    },
+    "sv-se": {
+      "name": "F\u00e4rdigstartad-skill",
+      "description": "F\u00e4rdigstartad-skillen ger meddelanden n\u00e4r OpenVoiceOS har startat helt och alla k\u00e4rntj\u00e4nster \u00e4r redo",
+      "examples": [
+        "\u00c4r systemet redo?",
+        "Aktivera redomeddelanden.",
+        "Inaktivera redomeddelanden."
       ]
     }
   },
