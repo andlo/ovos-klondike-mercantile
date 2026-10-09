@@ -65,6 +65,104 @@
     "sv-se"
   ],
   "locale_content": {
+    "ca-es": {
+      "examples": [
+        "fes una captura de pantalla",
+        "fes una captura",
+        "captura la pantalla",
+        "captura la pantalla",
+        "desa una captura",
+        "grava la pantalla"
+      ]
+    },
+    "da-dk": {
+      "examples": [
+        "tag sk\u00e6rmbillede",
+        "tag et sk\u00e6rmbillede",
+        "fang sk\u00e6rmen",
+        "sk\u00e6rmbillede af sk\u00e6rmen",
+        "gem et sk\u00e6rmbillede",
+        "grib sk\u00e6rmen"
+      ]
+    },
+    "de-de": {
+      "examples": [
+        "Screenshot machen",
+        "Mach einen Screenshot",
+        "Bildschirm aufnehmen",
+        "Screenshot des Displays",
+        "einen Screenshot speichern",
+        "Bildschirm speichern"
+      ]
+    },
+    "es-co": {
+      "examples": [
+        "haz captura de pantalla",
+        "haz una captura de pantalla",
+        "captura la pantalla",
+        "captura la pantalla",
+        "guarda una captura de pantalla",
+        "captura la pantalla"
+      ]
+    },
+    "es-es": {
+      "examples": [
+        "haz captura de pantalla",
+        "haz una captura de pantalla",
+        "captura la pantalla",
+        "captura la pantalla",
+        "guarda una captura de pantalla",
+        "captura la pantalla"
+      ]
+    },
+    "eu-es": {
+      "examples": [
+        "egin pantaila-argazkia",
+        "egin pantaila-argazki bat",
+        "kapturatu pantaila",
+        "kapturatu pantaila",
+        "gorde pantaila-argazki bat",
+        "kapturatu pantaila"
+      ]
+    },
+    "fa-ir": {
+      "name": "Screenshot",
+      "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
+      "examples": [
+        "\u0635\u0641\u062d\u0647 \u0646\u0645\u0627\u06cc\u0634 \u06a9\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc \u0634\u0648\u062f",
+        "\u0635\u0641\u062d\u0647 \u0646\u0645\u0627\u06cc\u0634"
+      ]
+    },
+    "fr-fr": {
+      "examples": [
+        "prendre une capture d'\u00e9cran",
+        "faire une capture d'\u00e9cran",
+        "capturer l'\u00e9cran",
+        "capture l'\u00e9cran",
+        "enregistrer une capture d'\u00e9cran",
+        "capture d'\u00e9cran"
+      ]
+    },
+    "gl-es": {
+      "examples": [
+        "facer (unha|) captura de pantalla",
+        "facer unha captura de pantalla",
+        "capturar a pantalla",
+        "capturar a pantalla",
+        "gardar unha captura de pantalla",
+        "capturar a pantalla"
+      ]
+    },
+    "it-it": {
+      "examples": [
+        "fai uno screenshot",
+        "fai una schermata",
+        "cattura lo schermo",
+        "screenshot dello schermo",
+        "salva uno screenshot",
+        "cattura la schermata"
+      ]
+    },
     "kab": {
       "examples": [
         "\u1e6d\u1e6def tugna n ugdil",
@@ -73,6 +171,72 @@
         "tugna n ugdil",
         "sekles tugna n ugdil",
         "\u1e6d\u1e6def agdil n uselkim"
+      ]
+    },
+    "nl-nl": {
+      "examples": [
+        "maak een schermafbeelding",
+        "maak een schermafbeelding",
+        "leg het scherm vast",
+        "maak een schermafbeelding van het scherm",
+        "bewaar een schermafbeelding",
+        "leg het scherm vast"
+      ]
+    },
+    "oc-fr": {
+      "examples": [
+        "fai una captura d'ecran",
+        "fai una captura",
+        "captura l'ecran",
+        "fai una captura de la pantalha",
+        "garda una captura d'ecran",
+        "enregistra l'ecran"
+      ]
+    },
+    "pl-pl": {
+      "name": "Screenshot",
+      "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
+      "examples": [
+        "Gdzie id\u0105 zrzuty ekranu",
+        "z\u0142apa\u0107 ekran"
+      ]
+    },
+    "pt-br": {
+      "examples": [
+        "tirar captura de tela",
+        "tirar uma captura de tela",
+        "capturar a tela",
+        "captura de tela do monitor",
+        "salvar uma captura de tela",
+        "capturar a tela do computador"
+      ]
+    },
+    "pt-pt": {
+      "examples": [
+        "tirar captura de ecr\u00e3",
+        "tirar uma captura de ecr\u00e3",
+        "capturar a tela",
+        null,
+        "guardar uma captura de ecr\u00e3",
+        null
+      ]
+    },
+    "ru-ru": {
+      "name": "Screenshot",
+      "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
+      "examples": [
+        "\u043a\u0443\u0434\u0430 \u0438\u0434\u0443\u0442 \u0441\u043a\u0440\u0438\u043d\u0448\u043e\u0442\u044b",
+        "\u0421\u043a\u0440\u0438\u043d\u0448\u043e\u0442"
+      ]
+    },
+    "sv-se": {
+      "examples": [
+        "ta en sk\u00e4rmdump",
+        "ta sk\u00e4rmdump",
+        "f\u00e5nga sk\u00e4rmen",
+        "sk\u00e4rmdump av sk\u00e4rmen",
+        "spara en sk\u00e4rmdump",
+        "f\u00e5nga sk\u00e4rmen nu"
       ]
     }
   },

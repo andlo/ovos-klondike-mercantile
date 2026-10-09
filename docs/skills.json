@@ -18713,6 +18713,66 @@
     "is_recently_updated": true
   },
   {
+    "id": "reklis-ovos-n8n-jarvis-softphone",
+    "skill_id": null,
+    "name": "ovos-n8n-jarvis-softphone",
+    "description": "A Flask-based API bridge that connects Baresip (SIP client) with Twilio's conference calling system, enabling seamless integration between local SIP infrastructure and cloud-based telephony services.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/reklis/ovos-n8n-jarvis-softphone",
+    "package_name": "ovos-n8n-jarvis-softphone",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "reklis",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "### 1. Clone the Repository\n\ngit clone <repository-url>\ncd ovos-n8n-jarvis-softphone\n\n### 2. Install Dependencies\n\nUsing uv (recommended):\nuv sync\n\nOr using pip:\npip install -r requirements.txt\n\n### 3. Environment Configuration\n\nCreate a `.env` file in the project root:"
+      },
+      {
+        "heading": "Baresip Configuration",
+        "content": "BARESIP_HOST=127.0.0.1\nBARESIP_CONS_PORT=5555\nBARESIP_DOMAIN=your-sip-domain.com"
+      },
+      {
+        "heading": "Twilio Configuration",
+        "content": "TWILIO_ACCOUNT_SID=your_account_sid\nTWILIO_AUTH_TOKEN=your_auth_token\nTWILIO_CALLER_ID=+1234567890\nTWILIO_SIP_URI=+1234567890@yourdomain.pstn.twilio.com\nTWILIO_PSTN_DOMAIN=yourdomain.pstn.twilio.com\n\n### 4. Baresip Configuration\n\nEnsure Baresip is configured with:\n- Console port enabled (default: 5555)\n- SIP account configured\n- Network access to Twilio SIP endpoints\n\n## Usage\n\n### Running the API Server\n\n#### Development Mode\npython app.py\n\n#### Production Mode (using uv)"
+      },
+      {
+        "heading": "uv will automatically install dependencies in .venv",
+        "content": "uv run python app.py\n\n#### As a systemd service"
+      },
+      {
+        "heading": "TwiML Configuration",
+        "content": "The project includes an example `twiml.xml` file for Twilio webhook configuration.\nConfigure this TwiML in your Twilio sip domain endpoint bucket."
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-18T01:27:43Z",
+    "last_updated": "2025-08-18T20:38:37Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-number-parser",
     "skill_id": null,
     "name": "ovos-number-parser",
@@ -26606,6 +26666,131 @@
       "sv-se"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "Viquip\u00e8dia",
+        "description": "Consulteu la Viquip\u00e8dia per a obtenir respostes a totes les vostres preguntes. Obteniu nom\u00e9s un resum o demaneu m\u00e9s informaci\u00f3 per a obtenir informaci\u00f3 detallada.",
+        "examples": [
+          "Parla'm d'Elon Musk",
+          "Parla'm dels fesols",
+          "Consulta la Viquip\u00e8dia sobre fesols",
+          "Parla'm del Pembroke Welsh Corgi",
+          "Cerca sobre xocolata",
+          "M\u00e9s informaci\u00f3",
+          "Digues-me m\u00e9s",
+          "Busca a la wikipedia qui era Joan Maragall",
+          "Busca informaci\u00f3 sobre el Barri Vell de Banyoles",
+          "Qu\u00e8 saps del Canig\u00f3?"
+        ]
+      },
+      "da-dk": {
+        "name": "Wikipedia",
+        "description": "Sp\u00f8rg Wikipedia for at f\u00e5 svar p\u00e5 alle dine sp\u00f8rgsm\u00e5l. F\u00e5 blot et resum\u00e9, eller bed om mere for at f\u00e5 dybdeg\u00e5ende information.",
+        "examples": [
+          "Fort\u00e6l mig om Elon Musk",
+          "Fort\u00e6l mig om b\u00f8nner",
+          "Tjek Wikipedia for b\u00f8nner",
+          "Fort\u00e6l mig om Pembroke Welsh Corgi",
+          "S\u00f8g efter chokolade",
+          "Mere information",
+          "Fort\u00e6l mig mere"
+        ]
+      },
+      "de-de": {
+        "name": "Wikipedia",
+        "description": "Suche in Wikipedia nach Antworten auf all Deine Fragen. Erhalte nur eine Zusammenfassung oder frage nach weiteren Informationen, um tiefer gehende Informationen zu erhalten.",
+        "examples": [
+          "Erz\u00e4hl mir von Elon Musk",
+          "Erz\u00e4hl mir von Bohnen",
+          "Checke Wikipedia zu Bohnen",
+          "Erz\u00e4hle mir etwas \u00fcber den Pembroke Welsh Corgi",
+          "Suche nach Schokolade",
+          "Weitere Informationen",
+          "Erz\u00e4hl mir mehr"
+        ]
+      },
+      "es-co": {
+        "name": "Wikipedia",
+        "description": "Consulta la Wikipedia para obtener respuestas a tus preguntas. Pide un resumen o m\u00e1s informaci\u00f3n para tener m\u00e1s detalles.",
+        "examples": [
+          "Busca detalles de las habichuelas en la wikipedia",
+          "Busca wikipedia para Elon Musk",
+          "abre wiki al azar"
+        ]
+      },
+      "es-es": {
+        "name": "Wikipedia",
+        "description": "Consulta la Wikipedia para obtener respuestas a tus preguntas. Pide un resumen o m\u00e1s informaci\u00f3n para tener m\u00e1s detalles.",
+        "examples": [
+          "H\u00e1blame de Elon Musk",
+          "H\u00e1blamde de las habichuelas",
+          "Consulta la Wikipedia sobre las habichuelas",
+          "Expl\u00edcame sobre el Pembroke Welsh Corgi",
+          "Busca sobre el chocolate",
+          "M\u00e1s informaci\u00f3n",
+          "Cu\u00e9ntame m\u00e1s"
+        ]
+      },
+      "eu-es": {
+        "name": "Wikipedia",
+        "description": "Galdetu Wikipediari zure galdera guztien erantzunak. Lortu laburpen bat soilik, edo eskatu gehiago informazio sakonagoa jasotzeko.",
+        "examples": [
+          "Kontatu iezadazu Elon Musken inguruan",
+          "Kontatu iezadazu babarrunen inguruan",
+          "Begiratu Wikipedian babarrunei buruz",
+          "Kontatu iezadazu Pembroke Welsh Corgi arrazari buruz",
+          "Bilatu txokolatea",
+          "Informazio gehiago",
+          "Kontatu gehiago"
+        ]
+      },
+      "fa-ir": {
+        "name": "Wikipedia",
+        "description": "\u0627\u0632 \u0648\u06cc\u06a9\u06cc\u200c\u067e\u062f\u06cc\u0627 \u0628\u0631\u0627\u06cc \u067e\u0627\u0633\u062e \u0628\u0647 \u0647\u0645\u0647 \u067e\u0631\u0633\u0634\u200c\u0647\u0627\u06cc \u062e\u0648\u062f \u0628\u067e\u0631\u0633\u06cc\u062f. \u0641\u0642\u0637 \u06cc\u06a9 \u062e\u0644\u0627\u0635\u0647 \u0628\u06af\u06cc\u0631\u06cc\u062f\u060c \u06cc\u0627 \u0628\u0631\u0627\u06cc \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0628\u06cc\u0634\u062a\u0631 \u062f\u0631\u062e\u0648\u0627\u0633\u062a \u06a9\u0646\u06cc\u062f.",
+        "examples": [
+          "\u0648\u06cc\u06a9\u06cc\u067e\u062f\u06cc\u0627 \u0631\u0627 \u0628\u0631\u0631\u0633\u06cc \u06a9\u0646\u06cc\u062f \u0644\u0648\u0628\u06cc\u0627",
+          "\u0628\u0647 \u0645\u0646 \u0628\u06af\u0648\u06cc\u06cc\u062f \u062f\u0631\u0628\u0627\u0631\u0647 \u0627\u06cc\u0644\u0627\u0646 \u0645\u0627\u0633\u06a9 \u062f\u0631 \u0648\u06cc\u06a9\u06cc\u067e\u062f\u06cc\u0627",
+          "\u0648\u06cc\u06a9\u06cc\u067e\u062f\u06cc\u0627 \u062a\u0635\u0627\u062f\u0641\u06cc"
+        ]
+      },
+      "fr-fr": {
+        "name": "Wikip\u00e9dia",
+        "description": "Interrogez Wikip\u00e9dia pour obtenir un r\u00e9sum\u00e9 ou plus de d\u00e9tails sur un sujet.",
+        "examples": [
+          "Qui est Elon Musk sur Wikip\u00e9dia ?",
+          "Cherche les haricots sur Wikip\u00e9dia",
+          "Parle-moi du Welsh Corgi Pembroke sur Wikip\u00e9dia",
+          "Cherche le chocolat sur Wikip\u00e9dia",
+          "Ouvre une page Wikip\u00e9dia au hasard",
+          "Qui est Marie Curie sur Wikip\u00e9dia ?",
+          "Cherche Ada Lovelace sur Wikip\u00e9dia"
+        ]
+      },
+      "gl-es": {
+        "name": "Wikipedia",
+        "description": "Consulta na Wikipedia para obter respostas a todas as t\u00faas preguntas. Obt\u00e9n s\u00f3 un resumo ou solicita informaci\u00f3n m\u00e1is detallada.",
+        "examples": [
+          "F\u00e1lame de Elon Musk",
+          "F\u00e1lame dos feix\u00f3ns",
+          "Consulta a entrada na Wikipedia sobre os feix\u00f3ns",
+          "F\u00e1lame do Pembroke Welsh Corgi",
+          "Busca \"chocolate\"",
+          "M\u00e1is informaci\u00f3n",
+          "C\u00f3ntame m\u00e1is"
+        ]
+      },
+      "it-it": {
+        "name": "Wikipedia",
+        "description": "Interroga Wikipedia per rispondere a tutte le tue domande. Ottieni solo un riassunto, oppure chiedi maggiori dettagli per informazioni approfondite.",
+        "examples": [
+          "Parlami di Elon Musk",
+          "Parlami dei fagioli",
+          "Cerca fagioli su Wikipedia",
+          "Parlami del Pembroke Welsh Corgi",
+          "Cerca cioccolato",
+          "Maggiori informazioni",
+          "Dimmi di pi\u00f9"
+        ]
+      },
       "kab": {
         "name": "Wikipidya",
         "description": "Steqsi Wikipedia akken ad tafe\u1e0d tiririyin i yesteqsiyen-ik me\u1e5b\u1e5ba. Awi-d kan agzul, ne\u0263 suter ugar akken ad tafe\u1e0d tal\u0263ut talqayant.",
@@ -26617,6 +26802,84 @@
           "Nadi \u0263ef ccakula",
           "Ugar n tel\u0263ut",
           "Ini-yi-d ugar"
+        ]
+      },
+      "nl-nl": {
+        "name": "Wikipedia",
+        "description": "Vraag Wikipedia om antwoorden op al je vragen. Krijg een samenvatting, of vraag om meer voor diepgaande informatie.",
+        "examples": [
+          "Vertel me over Elon Musk",
+          "Vertel me over bonen",
+          "Zoek bonen op in Wikipedia",
+          "Vertel me over de Pembroke Welsh Corgi",
+          "Zoek naar chocolade",
+          "Meer informatie",
+          "Vertel me meer"
+        ]
+      },
+      "pl-pl": {
+        "name": "Wikipedia",
+        "description": "Zapytaj Wikipedi\u0119 o odpowiedzi na wszystkie swoje pytania. Uzyskaj samo streszczenie albo popro\u015b o wi\u0119cej, aby dowiedzie\u0107 si\u0119 szczeg\u00f3\u0142\u00f3w.",
+        "examples": [
+          "Opowiedz mi o Elonie Musku",
+          "Opowiedz mi o fasoli",
+          "Sprawd\u017a w Wikipedii fasol\u0119",
+          "Opowiedz mi o corgi walijskim pembroke",
+          "Wyszukaj czekolad\u0119",
+          "Wi\u0119cej informacji",
+          "Powiedz mi wi\u0119cej"
+        ]
+      },
+      "pt-br": {
+        "name": "Wikip\u00e9dia",
+        "description": "Consulte a Wikip\u00e9dia para obter respostas para todas as suas perguntas. Obtenha apenas um resumo ou pe\u00e7a mais informa\u00e7\u00f5es para obter informa\u00e7\u00f5es mais detalhadas.",
+        "examples": [
+          "Fale-me sobre Elon Musk",
+          "Conte-me sobre o feij\u00e3o",
+          "Busque por feij\u00f5es na Wikip\u00e9dia",
+          "Conte-me sobre o Pembroke Welsh Corgi",
+          "Procure por chocolate",
+          "Mais informa\u00e7\u00f5es",
+          "Conte-me mais"
+        ]
+      },
+      "pt-pt": {
+        "name": "Wikipedia",
+        "description": "Consulta a Wikipedia para obteres respostas a todas as tuas perguntas. Recebe um resumo, ou pede mais para obteres informa\u00e7\u00e3o aprofundada.",
+        "examples": [
+          "Fala-me sobre o Elon Musk",
+          "Fala-me sobre feij\u00f5es",
+          "Procura feij\u00f5es na Wikipedia",
+          "Fala-me sobre o Pembroke Welsh Corgi",
+          "Procura por chocolate",
+          "Mais informa\u00e7\u00e3o",
+          "Diz-me mais"
+        ]
+      },
+      "ru-ru": {
+        "name": "\u0412\u0438\u043a\u0438\u043f\u0435\u0434\u0438\u044f",
+        "description": "\u0418\u0449\u0438 \u043e\u0442\u0432\u0435\u0442\u044b \u043d\u0430 \u0432\u0441\u0435 \u0441\u0432\u043e\u0438 \u0432\u043e\u043f\u0440\u043e\u0441\u044b \u0432 \u0412\u0438\u043a\u0438\u043f\u0435\u0434\u0438\u0438. \u041f\u043e\u043b\u0443\u0447\u0438 \u043a\u0440\u0430\u0442\u043a\u0443\u044e \u0441\u0432\u043e\u0434\u043a\u0443 \u0438\u043b\u0438 \u043f\u043e\u043f\u0440\u043e\u0441\u0438 \u0431\u043e\u043b\u044c\u0448\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e\u0441\u0442\u0435\u0439.",
+        "examples": [
+          "\u0420\u0430\u0441\u0441\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u043e\u0431 \u0418\u043b\u043e\u043d\u0435 \u041c\u0430\u0441\u043a\u0435",
+          "\u0420\u0430\u0441\u0441\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u043e \u0444\u0430\u0441\u043e\u043b\u0438",
+          "\u041f\u0440\u043e\u0432\u0435\u0440\u044c \u0412\u0438\u043a\u0438\u043f\u0435\u0434\u0438\u044e \u043f\u0440\u043e \u0444\u0430\u0441\u043e\u043b\u044c",
+          "\u0420\u0430\u0441\u0441\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u043e \u0432\u0435\u043b\u044c\u0448-\u043a\u043e\u0440\u0433\u0438 \u043f\u0435\u043c\u0431\u0440\u043e\u043a",
+          "\u041d\u0430\u0439\u0434\u0438 \u0448\u043e\u043a\u043e\u043b\u0430\u0434",
+          "\u0411\u043e\u043b\u044c\u0448\u0435 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438",
+          "\u0420\u0430\u0441\u0441\u043a\u0430\u0436\u0438 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u0435\u0435"
+        ]
+      },
+      "sv-se": {
+        "name": "Wikipedia",
+        "description": "Fr\u00e5ga Wikipedia om svar p\u00e5 alla dina fr\u00e5gor. F\u00e5 bara en sammanfattning, eller be om mer f\u00f6r f\u00f6rdjupad information.",
+        "examples": [
+          "Ber\u00e4tta om Elon Musk",
+          "Ber\u00e4tta om b\u00f6nor",
+          "Kolla Wikipedia efter b\u00f6nor",
+          "Ber\u00e4tta om Pembroke Welsh Corgi",
+          "S\u00f6k efter choklad",
+          "Mer information",
+          "Ber\u00e4tta mer"
         ]
       }
     },
@@ -26684,7 +26947,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 5,
-    "open_issues": 8,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -26730,6 +26993,118 @@
       "sv-se"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "Wolfram Alpha",
+        "description": "Useu Wolfram Alpha per a preguntes de coneixement general.",
+        "examples": [
+          "pregunta al llop quina \u00e9s la velocitat de la llum",
+          "Quina al\u00e7ada t\u00e9 l'Everest?",
+          "Quan es va estrenar The Rocky Horror Picture Show?",
+          "Quin \u00e9s el nom real de Madonna?",
+          "Quant \u00e9s 18 per 4?",
+          "Quantes polzades t\u00e9 un metre?"
+        ]
+      },
+      "da-dk": {
+        "name": "Wolfram Alpha",
+        "description": "Brug Wolfram Alpha til generelle videnssp\u00f8rgsm\u00e5l.",
+        "examples": [
+          "sp\u00f8rg ulven, hvad lysets hastighed er",
+          "Hvor h\u00f8jt er Mount Everest?",
+          "Hvorn\u00e5r blev The Rocky Horror Picture Show udgivet?",
+          "Hvad er Madonnas rigtige navn?",
+          "Hvad er 18 gange 4?",
+          "Hvor mange tommer i en meter?"
+        ]
+      },
+      "de-de": {
+        "name": "Wolfram Alpha",
+        "description": "Verwende Wolfram Alpha f\u00fcr Fragen zum Allgemeinwissen.",
+        "examples": [
+          "frage den Wolf wie hoch die Lichtgeschwindigkeit ist",
+          "Wie hoch ist der Mount Everest?",
+          "Wann kam die Rocky Horror Picture Show in die Kinos?",
+          "Wie ist Madonnas richtiger Name?",
+          "Was ist 18 mal 4?",
+          "Wie viele Zoll sind ein Meter?"
+        ]
+      },
+      "es-co": {
+        "name": "Wolfram Alpha",
+        "description": "Utilice Wolfram Alpha para preguntas de cultura general.",
+        "examples": [
+          "preg\u00fantale al lobo cu\u00e1l es la velocidad de la luz",
+          "\u00bfqu\u00e9 dice Wolfram sobre el Monte Everest?"
+        ]
+      },
+      "es-es": {
+        "name": "Wolfram Alpha",
+        "description": "Utilice Wolfram Alpha para preguntas de cultura general.",
+        "examples": [
+          "Preg\u00fantale al lobo cu\u00e1l es la velocidad de la luz",
+          "\u00bfQu\u00e9 altura tiene el Monte Everest?",
+          "\u00bfCu\u00e1ndo se estren\u00f3 The Rocky Horror Picture Show?",
+          "\u00bfCu\u00e1l es el verdadero nombre de Madonna?",
+          "\u00bfCu\u00e1nto es 18 por 4?",
+          "\u00bfCu\u00e1ntas pulgadas hay en un metro?"
+        ]
+      },
+      "eu-es": {
+        "name": "Wolfram Alpha",
+        "description": "Erabili Wolfram Alpha kultura orokorreko galderetarako.",
+        "examples": [
+          "galdetu otsoari zein den argiaren abiadura",
+          "Zein da Everest mendiaren garaiera?",
+          "Noiz estreinatu zen The Rocky Horror Picture Show?",
+          "Zein da Madonnaren benetako izena?",
+          "Zenbat da 18 bider 4?",
+          "Zenbat hazbete ditu metro batek?"
+        ]
+      },
+      "fa-ir": {
+        "name": "Wolfram Alpha",
+        "description": "\u0627\u0632 Wolfram Alpha \u0628\u0631\u0627\u06cc \u0633\u0648\u0627\u0644\u0627\u062a \u062f\u0627\u0646\u0634 \u0639\u0645\u0648\u0645\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f.",
+        "examples": [
+          "\u0627\u0632 \u06af\u0631\u06af \u0628\u067e\u0631\u0633 \u0633\u0631\u0639\u062a \u0646\u0648\u0631 \u0686\u0642\u062f\u0631 \u0627\u0633\u062a",
+          "\u0648\u0644\u0641\u0631\u0627\u0645 \u062f\u0631\u0628\u0627\u0631\u0647 \u06a9\u0648\u0647 \u0627\u0648\u0631\u0633\u062a \u0686\u0647 \u0645\u06cc \u06af\u0648\u06cc\u062f"
+        ]
+      },
+      "fr-fr": {
+        "name": "Wolfram Alpha",
+        "description": "Posez vos questions \u00e0 Wolfram Alpha pour les calculs, les conversions et les questions factuelles.",
+        "examples": [
+          "Demande \u00e0 Wolfram Alpha quelle est la vitesse de la lumi\u00e8re",
+          "Quelle est la hauteur du mont Everest ?",
+          "Quand Rocky Horror Picture Show est-il sorti ?",
+          "Quel est le vrai nom de Madonna ?",
+          "Combien font 18 fois 4 ?",
+          "Combien de pouces y a-t-il dans un m\u00e8tre ?"
+        ]
+      },
+      "gl-es": {
+        "name": "Wolfram Alpha",
+        "description": "Usa Wolfram Alpha para preguntas de co\u00f1ecemento xeral.",
+        "examples": [
+          "preg\u00fantalle ao lobo cal \u00e9 a velocidade da luz",
+          "Canto mide o Monte Everest?",
+          "Cando se estreou The Rocky Horror Picture Show?",
+          "Cal \u00e9 o nome real de Madonna?",
+          "Canto \u00e9 18 por 4?",
+          "Cantas polgadas hai nun metro?"
+        ]
+      },
+      "it-it": {
+        "name": "Wolfram Alpha",
+        "description": "Usa Wolfram Alpha per domande di cultura generale.",
+        "examples": [
+          "chiedi al lupo qual \u00e8 la velocit\u00e0 della luce",
+          "Quanto \u00e8 alto il Monte Everest?",
+          "Quando \u00e8 uscito The Rocky Horror Picture Show?",
+          "Qual \u00e8 il vero nome di Madonna?",
+          "Quanto fa 18 per 4?",
+          "Quanti pollici ci sono in un metro?"
+        ]
+      },
       "kab": {
         "name": "Wolfram Alpha",
         "description": "Seqdec Wolfram Alpha i tigawin n tmusni tamatut.",
@@ -26740,6 +27115,70 @@
           "D acu-t isem n Madonna n tidet?",
           "D ac\u1e25al 18 s 4?",
           "D ac\u1e25al n yinces deg umitr?"
+        ]
+      },
+      "nl-nl": {
+        "name": "Wolfram Alpha",
+        "description": "Gebruik Wolfram Alpha voor algemene kennisvragen.",
+        "examples": [
+          "vraag de wolf wat de snelheid van het licht is",
+          "Hoe hoog is de Mount Everest?",
+          "Wanneer kwam The Rocky Horror Picture Show uit?",
+          "Wat is Madonna's echte naam?",
+          "Wat is 18 keer 4?",
+          "Hoeveel inches in een meter?"
+        ]
+      },
+      "pl-pl": {
+        "name": "Wolfram Alpha",
+        "description": "U\u017cyj Wolfram Alpha do pyta\u0144 z wiedzy og\u00f3lnej.",
+        "examples": [
+          "zapytaj wilka o pr\u0119dko\u015b\u0107 \u015bwiat\u0142a",
+          "co wolfram m\u00f3wi o Mount Everest"
+        ]
+      },
+      "pt-br": {
+        "name": "Wolfram Alpha",
+        "description": "Use o Wolfram Alpha para perguntas gerais de conhecimento.",
+        "examples": [
+          "pergunte ao lobo qual \u00e9 a velocidade da luz",
+          "Qual \u00e9 a altura do Monte Everest?",
+          "Quando o The Rocky Horror Picture Show foi lan\u00e7ado?",
+          "Qual \u00e9 o nome verdadeiro da Madonna?",
+          "Quanto \u00e9 18 vezes 4?",
+          "Quantas polegadas tem um metro?"
+        ]
+      },
+      "pt-pt": {
+        "name": "Wolfram Alpha",
+        "description": "Usa o Wolfram Alpha para perguntas de conhecimento geral.",
+        "examples": [
+          "pergunta ao lobo qual \u00e9 a velocidade da luz",
+          "Qual \u00e9 a altura do Monte Evereste?",
+          "Quando foi lan\u00e7ado o The Rocky Horror Picture Show?",
+          "Qual \u00e9 o verdadeiro nome da Madonna?",
+          "Quanto \u00e9 18 vezes 4?",
+          "Quantas polegadas tem um metro?"
+        ]
+      },
+      "ru-ru": {
+        "name": "Wolfram Alpha",
+        "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 Wolfram Alpha \u0434\u043b\u044f \u0432\u043e\u043f\u0440\u043e\u0441\u043e\u0432 \u043d\u0430 \u043e\u0431\u0449\u0438\u0435 \u0437\u043d\u0430\u043d\u0438\u044f.",
+        "examples": [
+          "\u0441\u043f\u0440\u043e\u0441\u0438 \u0432\u043e\u043b\u043a\u0430 \u043e \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438 \u0441\u0432\u0435\u0442\u0430",
+          "\u0447\u0442\u043e \u0432\u043e\u043b\u044c\u0444\u0440\u0430\u043c \u0433\u043e\u0432\u043e\u0440\u0438\u0442 \u043e \u0433\u043e\u0440\u0435 \u042d\u0432\u0435\u0440\u0435\u0441\u0442"
+        ]
+      },
+      "sv-se": {
+        "name": "Wolfram Alpha",
+        "description": "Anv\u00e4nd Wolfram Alpha f\u00f6r allm\u00e4nna kunskapsfr\u00e5gor.",
+        "examples": [
+          "fr\u00e5ga vargen vad ljusets hastighet \u00e4r",
+          "Hur h\u00f6gt \u00e4r Mount Everest?",
+          "N\u00e4r sl\u00e4pptes The Rocky Horror Picture Show?",
+          "Vad \u00e4r Madonnas riktiga namn?",
+          "Vad \u00e4r 18 g\u00e5nger 4?",
+          "Hur m\u00e5nga tum \u00e4r en meter?"
         ]
       }
     },
@@ -26807,7 +27246,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 3,
-    "open_issues": 9,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -26860,12 +27299,287 @@
       "zsm-my"
     ],
     "locale_content": {
+      "ar-xx": {
+        "name": "\u0645\u0647\u0627\u0631\u0629 \u0648\u0648\u0631\u062f\u0646\u062a",
+        "description": "\u0627\u0633\u062a\u062e\u062f\u0645 \u0648\u0648\u0631\u062f\u0646\u062a \u0644\u0644\u0625\u062c\u0627\u0628\u0629 \u0639\u0644\u0649 \u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0642\u0627\u0645\u0648\u0633.",
+        "examples": [
+          "\u0627\u0628\u062d\u062b \u0641\u064a \u0648\u0648\u0631\u062f\u0646\u062a \u0639\u0646 ...",
+          "\u0627\u0633\u0623\u0644 \u0648\u0648\u0631\u062f\u0646\u062a \u0639\u0646 ..."
+        ]
+      },
+      "bg-bg": {
+        "name": "\u0423\u043c\u0435\u043d\u0438\u0435 \u0423\u044a\u0440\u0434\u043d\u0435\u0442",
+        "description": "\u0418\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0439\u0442\u0435 \u0423\u044a\u0440\u0434\u043d\u0435\u0442 \u0437\u0430 \u043e\u0442\u0433\u043e\u0432\u043e\u0440\u0438 \u043d\u0430 \u0440\u0435\u0447\u043d\u0438\u043a\u043e\u0432\u0438 \u0432\u044a\u043f\u0440\u043e\u0441\u0438.",
+        "examples": [
+          "\u0442\u044a\u0440\u0441\u0438 \u0432 \u0443\u044a\u0440\u0434\u043d\u0435\u0442 ...",
+          "\u043f\u0438\u0442\u0430\u0439 \u0443\u044a\u0440\u0434\u043d\u0435\u0442 \u0437\u0430 ..."
+        ]
+      },
+      "ca-es": {
+        "name": "Habilitat de Wordnet",
+        "description": "Usa Wordnet per a respondre q\u00fcestions relacionades amb diccioanris.",
+        "examples": [
+          "quina \u00e9s la definici\u00f3 de ...",
+          "quin \u00e9s l'ant\u00f2nim de..."
+        ]
+      },
+      "cmn-cn": {
+        "name": "WordNet \u6280\u80fd",
+        "description": "\u4f7f\u7528 WordNet \u56de\u7b54\u8bcd\u5178\u7c7b\u95ee\u9898\u3002",
+        "examples": [
+          "\u5728WordNet\u4e2d\u641c\u7d22...",
+          "\u95eeWordNet\u5173\u4e8e..."
+        ]
+      },
+      "da-dk": {
+        "name": "Wordnet f\u00e6rdighed",
+        "description": "Brug Wordnet til at besvare ordbogslignende sp\u00f8rgsm\u00e5l.",
+        "examples": [
+          "hvad er definitionen p\u00e5...",
+          "hvad er antonymet til..."
+        ]
+      },
+      "de-de": {
+        "name": "Wordnet Skill",
+        "description": "Verwende Wordnet, um w\u00f6rterbuch\u00e4hnliche Fragen zu beantworten.",
+        "examples": [
+          "was ist die Definition von ...",
+          "was ist das Antonym von ..."
+        ]
+      },
+      "el-gr": {
+        "name": "\u0394\u03b5\u03be\u03b9\u03cc\u03c4\u03b7\u03c4\u03b1 Wordnet",
+        "description": "\u03a7\u03c1\u03b7\u03c3\u03b9\u03bc\u03bf\u03c0\u03bf\u03b9\u03b5\u03af \u03c4\u03bf Wordnet \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c0\u03b1\u03bd\u03c4\u03ae\u03c3\u03b5\u03b9 \u03c3\u03b5 \u03b5\u03c1\u03c9\u03c4\u03ae\u03c3\u03b5\u03b9\u03c2 \u03c4\u03cd\u03c0\u03bf\u03c5 \u03bb\u03b5\u03be\u03b9\u03ba\u03bf\u03cd.",
+        "examples": [
+          "\u03c0\u03bf\u03b9\u03bf\u03c2 \u03b5\u03af\u03bd\u03b1\u03b9 \u03bf \u03bf\u03c1\u03b9\u03c3\u03bc\u03cc\u03c2 \u03c4\u03bf\u03c5 ...",
+          "\u03c0\u03bf\u03b9\u03bf \u03b5\u03af\u03bd\u03b1\u03b9 \u03c4\u03bf \u03b1\u03bd\u03c4\u03ce\u03bd\u03c5\u03bc\u03bf \u03c4\u03bf\u03c5 ..."
+        ]
+      },
+      "es-co": {
+        "name": "Wordnet Skill",
+        "description": "Utiliza Wordnet para responder preguntas tipo diccionario.",
+        "examples": [
+          "Busca perro en WordNet",
+          "\u00bfQu\u00e9 dice WordNet sobre casa?",
+          "Pregunta a WordNet sobre feliz"
+        ]
+      },
+      "es-es": {
+        "name": "Wordnet Skill",
+        "description": "Utiliza Wordnet para responder preguntas tipo diccionario.",
+        "examples": [
+          "\u00bfCu\u00e1l es la definici\u00f3n de...?",
+          "\u00bfCu\u00e1l es el ant\u00f3nimo de...?"
+        ]
+      },
+      "eu-es": {
+        "name": "Wordnet trebetasuna",
+        "description": "Erabili Wordnet hiztegi motako galderak erantzuteko.",
+        "examples": [
+          "zein da ... hitzaren definizioa",
+          "zein da ... hitzaren antonimoa"
+        ]
+      },
+      "fa-ir": {
+        "name": "Wordnet Skill",
+        "description": "\u0627\u0632 Wordnet \u0628\u0631\u0627\u06cc \u067e\u0627\u0633\u062e \u0628\u0647 \u067e\u0631\u0633\u0634 \u0647\u0627\u06cc \u0641\u0631\u0647\u0646\u06af \u0644\u063a\u062a\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f.",
+        "examples": [
+          "\u0645\u0639\u0646\u06cc \u062e\u0627\u0646\u0647 \u0686\u06cc\u0633\u062a",
+          "\u0645\u062a\u0631\u0627\u062f\u0641 \u0634\u0627\u062f \u0686\u06cc\u0633\u062a",
+          "\u0645\u062a\u0636\u0627\u062f \u0628\u0632\u0631\u06af"
+        ]
+      },
+      "fi-fi": {
+        "name": "WordNet-taito",
+        "description": "K\u00e4yt\u00e4 WordNeti\u00e4 sanakirjakysymyksiin vastaamiseen.",
+        "examples": [
+          "hae WordNetist\u00e4 ...",
+          "kysy WordNetilt\u00e4 ..."
+        ]
+      },
+      "fr-fr": {
+        "name": "WordNet",
+        "description": "Utilisez WordNet pour r\u00e9pondre \u00e0 des questions de type dictionnaire.",
+        "examples": [
+          "Quelle est la d\u00e9finition de _______ ?",
+          "Quel est l'antonyme de _______ ?"
+        ]
+      },
+      "gl-es": {
+        "name": "Habilidade Wordnet",
+        "description": "Usa Wordnet para responder preguntas de tipo dicionario.",
+        "examples": [
+          "cal \u00e9 a definici\u00f3n de...",
+          "cal \u00e9 o ant\u00f3nimo de..."
+        ]
+      },
+      "he-il": {
+        "name": "\u05de\u05d9\u05d5\u05de\u05e0\u05d5\u05ea WordNet",
+        "description": "\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-WordNet \u05db\u05d3\u05d9 \u05dc\u05e2\u05e0\u05d5\u05ea \u05e2\u05dc \u05e9\u05d0\u05dc\u05d5\u05ea \u05de\u05d9\u05dc\u05d5\u05e0\u05d9\u05d5\u05ea.",
+        "examples": [
+          "\u05d7\u05e4\u05e9 \u05d1-WordNet ...",
+          "\u05e9\u05d0\u05dc \u05d0\u05ea WordNet \u05e2\u05dc ..."
+        ]
+      },
+      "hr-hr": {
+        "name": "WordNet vje\u0161tina",
+        "description": "Koristi WordNet za odgovore na rje\u010dni\u010dka pitanja.",
+        "examples": [
+          "pretra\u017ei WordNet za ...",
+          "pitaj WordNet o ..."
+        ]
+      },
+      "id-id": {
+        "name": "Keterampilan WordNet",
+        "description": "Gunakan WordNet untuk menjawab pertanyaan kamus.",
+        "examples": [
+          "cari di WordNet ...",
+          "tanya WordNet tentang ..."
+        ]
+      },
+      "is-is": {
+        "name": "WordNet f\u00e6rni",
+        "description": "Nota\u00f0u WordNet til a\u00f0 svara or\u00f0ab\u00f3karspurningum.",
+        "examples": [
+          "leita \u00ed WordNet a\u00f0 ...",
+          "spyrja WordNet um ..."
+        ]
+      },
+      "it-it": {
+        "name": "Wordnet Skill",
+        "description": "Usa Wordnet per rispondere a domande di tipo dizionario.",
+        "examples": [
+          "qual \u00e8 la definizione di ...",
+          "qual \u00e8 il contrario di ..."
+        ]
+      },
+      "ja-jp": {
+        "name": "WordNet \u30b9\u30ad\u30eb",
+        "description": "WordNet \u3092\u4f7f\u3063\u3066\u8f9e\u66f8\u306e\u3088\u3046\u306a\u8cea\u554f\u306b\u7b54\u3048\u307e\u3059\u3002",
+        "examples": [
+          "WordNet\u3067...\u3092\u691c\u7d22\u3057\u3066",
+          "WordNet\u306b...\u306b\u3064\u3044\u3066\u805e\u3044\u3066"
+        ]
+      },
       "kab": {
         "name": "Askill n Wordnet",
         "description": "Seqdec Wordnet i tririt \u0263ef isteqsiyen am wid n umawal.",
         "examples": [
           "d acu-t usefru n ...",
           "d acu-t awal amgarad n ..."
+        ]
+      },
+      "lt-lt": {
+        "name": "WordNet \u012fg\u016bdis",
+        "description": "Naudokite WordNet atsakyti \u012f \u017eodyno klausimus.",
+        "examples": [
+          "ie\u0161koti WordNet ...",
+          "klausk WordNet apie ..."
+        ]
+      },
+      "nb-no": {
+        "name": "WordNet-ferdighet",
+        "description": "Bruk WordNet til \u00e5 svare p\u00e5 ordboksp\u00f8rsm\u00e5l.",
+        "examples": [
+          "s\u00f8k i WordNet etter ...",
+          "sp\u00f8r WordNet om ..."
+        ]
+      },
+      "nl-nl": {
+        "name": "Wordnet Skill",
+        "description": "Gebruik Wordnet om woordenboekachtige vragen te beantwoorden.",
+        "examples": [
+          "wat is de definitie van ...",
+          "wat is het tegenovergestelde van ..."
+        ]
+      },
+      "nn-no": {
+        "name": "WordNet-ferdigheit",
+        "description": "Bruk WordNet til \u00e5 svara p\u00e5 ordboksp\u00f8rsm\u00e5l.",
+        "examples": [
+          "s\u00f8k i WordNet etter ...",
+          "sp\u00f8r WordNet om ..."
+        ]
+      },
+      "pl-pl": {
+        "name": "Umiej\u0119tno\u015b\u0107 Wordnet",
+        "description": "U\u017cywa Wordnet do odpowiadania na pytania w stylu s\u0142ownikowym.",
+        "examples": [
+          "jaka jest definicja ...",
+          "jaki jest antonim ..."
+        ]
+      },
+      "pt-br": {
+        "name": "Skill Wordnet",
+        "description": "Usa o Wordnet para responder perguntas de dicion\u00e1rio.",
+        "examples": [
+          "qual \u00e9 a defini\u00e7\u00e3o de ...",
+          "qual \u00e9 o ant\u00f4nimo de ..."
+        ]
+      },
+      "pt-pt": {
+        "name": "Skill Wordnet",
+        "description": "Usa a Wordnet para responder a perguntas de dicion\u00e1rio.",
+        "examples": [
+          "qual \u00e9 a defini\u00e7\u00e3o de ...",
+          "qual \u00e9 o ant\u00f3nimo de ..."
+        ]
+      },
+      "ro-ro": {
+        "name": "Abilitate Wordnet",
+        "description": "Folose\u0219te Wordnet pentru a r\u0103spunde la \u00eentreb\u0103ri de tip dic\u021bionar.",
+        "examples": [
+          "care este defini\u021bia pentru ...",
+          "care este antonimul pentru ..."
+        ]
+      },
+      "ru-ru": {
+        "name": "Wordnet Skill",
+        "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 Wordnet \u0434\u043b\u044f \u043e\u0442\u0432\u0435\u0442\u043e\u0432 \u043d\u0430 \u0441\u043b\u043e\u0432\u0430\u0440\u043d\u044b\u0435 \u0432\u043e\u043f\u0440\u043e\u0441\u044b.",
+        "examples": [
+          "\u0447\u0442\u043e \u043e\u0437\u043d\u0430\u0447\u0430\u0435\u0442 \u0441\u043b\u043e\u0432\u043e \u0434\u043e\u043c",
+          "\u043a\u0430\u043a\u043e\u0439 \u0441\u0438\u043d\u043e\u043d\u0438\u043c \u043a \u0440\u0430\u0434\u043e\u0441\u0442\u044c",
+          "\u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u043a\u043e\u0448\u043a\u0430"
+        ]
+      },
+      "sk-sk": {
+        "name": "Schopnos\u0165 WordNet",
+        "description": "Pou\u017eite WordNet na odpovedanie na slovn\u00edkov\u00e9 ot\u00e1zky.",
+        "examples": [
+          "h\u013eadaj v WordNet ...",
+          "op\u00fdtaj sa WordNet na ..."
+        ]
+      },
+      "sl-si": {
+        "name": "Zmo\u017enost WordNet",
+        "description": "Uporabi WordNet za odgovore na slovarska vpra\u0161anja.",
+        "examples": [
+          "i\u0161\u010di v WordNet ...",
+          "vpra\u0161aj WordNet o ..."
+        ]
+      },
+      "sv-se": {
+        "name": "Wordnet Skill",
+        "description": "Anv\u00e4nd Wordnet f\u00f6r att svara p\u00e5 ordboksliknande fr\u00e5gor.",
+        "examples": [
+          "vad \u00e4r definitionen av ...",
+          "vad \u00e4r motsatsen till ..."
+        ]
+      },
+      "th-th": {
+        "name": "\u0e2a\u0e01\u0e34\u0e25 WordNet",
+        "description": "\u0e43\u0e0a\u0e49 WordNet \u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e15\u0e2d\u0e1a\u0e04\u0e33\u0e16\u0e32\u0e21\u0e41\u0e1a\u0e1a\u0e1e\u0e08\u0e19\u0e32\u0e19\u0e38\u0e01\u0e23\u0e21",
+        "examples": [
+          "\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e43\u0e19 WordNet ...",
+          "\u0e16\u0e32\u0e21 WordNet \u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e01\u0e31\u0e1a ..."
+        ]
+      },
+      "zsm-my": {
+        "name": "Kemahiran WordNet",
+        "description": "Guna WordNet untuk menjawab pertanyaan kamus.",
+        "examples": [
+          "cari dalam WordNet ...",
+          "tanya WordNet tentang ..."
         ]
       }
     },
@@ -27494,7 +28208,7 @@
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-spec-tools",
     "package_name": "ovos-spec-tools",
-    "pypi_version": "1.14.0a8",
+    "pypi_version": "1.15.2a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -27503,7 +28217,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 7,
+    "open_issues": 6,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -27524,9 +28238,9 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2026-05-22T10:53:04Z",
-    "last_updated": "2026-10-01T18:43:00.541190Z",
+    "last_updated": "2026-10-08T20:57:36.914351Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-stt-plugin-azure",
@@ -27824,7 +28538,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "STT Plugin",
     "type_group": "Plugin",
     "stars": 5,
     "forks": 5,
@@ -34701,6 +35415,104 @@
       "sv-se"
     ],
     "locale_content": {
+      "ca-es": {
+        "examples": [
+          "fes una captura de pantalla",
+          "fes una captura",
+          "captura la pantalla",
+          "captura la pantalla",
+          "desa una captura",
+          "grava la pantalla"
+        ]
+      },
+      "da-dk": {
+        "examples": [
+          "tag sk\u00e6rmbillede",
+          "tag et sk\u00e6rmbillede",
+          "fang sk\u00e6rmen",
+          "sk\u00e6rmbillede af sk\u00e6rmen",
+          "gem et sk\u00e6rmbillede",
+          "grib sk\u00e6rmen"
+        ]
+      },
+      "de-de": {
+        "examples": [
+          "Screenshot machen",
+          "Mach einen Screenshot",
+          "Bildschirm aufnehmen",
+          "Screenshot des Displays",
+          "einen Screenshot speichern",
+          "Bildschirm speichern"
+        ]
+      },
+      "es-co": {
+        "examples": [
+          "haz captura de pantalla",
+          "haz una captura de pantalla",
+          "captura la pantalla",
+          "captura la pantalla",
+          "guarda una captura de pantalla",
+          "captura la pantalla"
+        ]
+      },
+      "es-es": {
+        "examples": [
+          "haz captura de pantalla",
+          "haz una captura de pantalla",
+          "captura la pantalla",
+          "captura la pantalla",
+          "guarda una captura de pantalla",
+          "captura la pantalla"
+        ]
+      },
+      "eu-es": {
+        "examples": [
+          "egin pantaila-argazkia",
+          "egin pantaila-argazki bat",
+          "kapturatu pantaila",
+          "kapturatu pantaila",
+          "gorde pantaila-argazki bat",
+          "kapturatu pantaila"
+        ]
+      },
+      "fa-ir": {
+        "name": "Screenshot",
+        "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
+        "examples": [
+          "\u0635\u0641\u062d\u0647 \u0646\u0645\u0627\u06cc\u0634 \u06a9\u062c\u0627 \u0630\u062e\u06cc\u0631\u0647 \u0645\u06cc \u0634\u0648\u062f",
+          "\u0635\u0641\u062d\u0647 \u0646\u0645\u0627\u06cc\u0634"
+        ]
+      },
+      "fr-fr": {
+        "examples": [
+          "prendre une capture d'\u00e9cran",
+          "faire une capture d'\u00e9cran",
+          "capturer l'\u00e9cran",
+          "capture l'\u00e9cran",
+          "enregistrer une capture d'\u00e9cran",
+          "capture d'\u00e9cran"
+        ]
+      },
+      "gl-es": {
+        "examples": [
+          "facer (unha|) captura de pantalla",
+          "facer unha captura de pantalla",
+          "capturar a pantalla",
+          "capturar a pantalla",
+          "gardar unha captura de pantalla",
+          "capturar a pantalla"
+        ]
+      },
+      "it-it": {
+        "examples": [
+          "fai uno screenshot",
+          "fai una schermata",
+          "cattura lo schermo",
+          "screenshot dello schermo",
+          "salva uno screenshot",
+          "cattura la schermata"
+        ]
+      },
       "kab": {
         "examples": [
           "\u1e6d\u1e6def tugna n ugdil",
@@ -34709,6 +35521,72 @@
           "tugna n ugdil",
           "sekles tugna n ugdil",
           "\u1e6d\u1e6def agdil n uselkim"
+        ]
+      },
+      "nl-nl": {
+        "examples": [
+          "maak een schermafbeelding",
+          "maak een schermafbeelding",
+          "leg het scherm vast",
+          "maak een schermafbeelding van het scherm",
+          "bewaar een schermafbeelding",
+          "leg het scherm vast"
+        ]
+      },
+      "oc-fr": {
+        "examples": [
+          "fai una captura d'ecran",
+          "fai una captura",
+          "captura l'ecran",
+          "fai una captura de la pantalha",
+          "garda una captura d'ecran",
+          "enregistra l'ecran"
+        ]
+      },
+      "pl-pl": {
+        "name": "Screenshot",
+        "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
+        "examples": [
+          "Gdzie id\u0105 zrzuty ekranu",
+          "z\u0142apa\u0107 ekran"
+        ]
+      },
+      "pt-br": {
+        "examples": [
+          "tirar captura de tela",
+          "tirar uma captura de tela",
+          "capturar a tela",
+          "captura de tela do monitor",
+          "salvar uma captura de tela",
+          "capturar a tela do computador"
+        ]
+      },
+      "pt-pt": {
+        "examples": [
+          "tirar captura de ecr\u00e3",
+          "tirar uma captura de ecr\u00e3",
+          "capturar a tela",
+          null,
+          "guardar uma captura de ecr\u00e3",
+          null
+        ]
+      },
+      "ru-ru": {
+        "name": "Screenshot",
+        "description": "Take a screenshot by voice. The skill saves the image as a PNG file and shows a notification with the file location.",
+        "examples": [
+          "\u043a\u0443\u0434\u0430 \u0438\u0434\u0443\u0442 \u0441\u043a\u0440\u0438\u043d\u0448\u043e\u0442\u044b",
+          "\u0421\u043a\u0440\u0438\u043d\u0448\u043e\u0442"
+        ]
+      },
+      "sv-se": {
+        "examples": [
+          "ta en sk\u00e4rmdump",
+          "ta sk\u00e4rmdump",
+          "f\u00e5nga sk\u00e4rmen",
+          "sk\u00e4rmdump av sk\u00e4rmen",
+          "spara en sk\u00e4rmdump",
+          "f\u00e5nga sk\u00e4rmen nu"
         ]
       }
     },
@@ -36769,7 +37647,16 @@
       "fr-fr",
       "gl-es"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "fr-fr": {
+        "name": "SomaFM",
+        "examples": [
+          "Joue SomaFM",
+          "Joue Secret Agent",
+          "Joue Metal Detector"
+        ]
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2021-10-07T13:39:47Z",
     "last_updated": "2024-12-02T18:33:50.088739Z",
@@ -37002,7 +37889,29 @@
       "pt-pt",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "da-dk": {
+        "name": "Soundcloud Skill",
+        "examples": [
+          "afspil piratech i soundcloud",
+          "afspil piratech nuclear chill"
+        ]
+      },
+      "fr-fr": {
+        "name": "SoundCloud",
+        "examples": [
+          "joue piratech sur soundcloud",
+          "joue piratech nuclear chill sur soundcloud"
+        ]
+      },
+      "sv-se": {
+        "name": "Soundcloud Skill",
+        "examples": [
+          "spela piratech i soundcloud",
+          "spela piratech nuclear chill"
+        ]
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2021-09-26T22:17:25Z",
     "last_updated": "2024-12-02T18:33:49.992329Z",
@@ -37073,11 +37982,146 @@
       "tr-tr"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "Test de velocitat",
+        "description": "Executa una prova d'amplada de banda d'internet usant speedtest.net",
+        "examples": [
+          "executa una prova de velocitat"
+        ]
+      },
+      "da-dk": {
+        "name": "Hastighedstest",
+        "description": "k\u00f8rer en internetb\u00e5ndbreddetest ved hj\u00e6lp af speedtest.net",
+        "examples": [
+          "k\u00f8r en hastighedstest"
+        ]
+      },
+      "de-de": {
+        "name": "Speedtest",
+        "description": "f\u00fchrt einen Internet-Bandbreitentest mit speedtest.net durch",
+        "examples": [
+          "Mache einen Geschwindigkeitstest"
+        ]
+      },
+      "el-gr": {
+        "name": "Speedtest",
+        "description": "\u03b5\u03ba\u03c4\u03b5\u03bb\u03b5\u03af \u03b4\u03bf\u03ba\u03b9\u03bc\u03ae \u03b5\u03cd\u03c1\u03bf\u03c5\u03c2 \u03b6\u03ce\u03bd\u03b7\u03c2 \u03b4\u03b9\u03b1\u03b4\u03b9\u03ba\u03c4\u03cd\u03bf\u03c5 \u03c7\u03c1\u03b7\u03c3\u03b9\u03bc\u03bf\u03c0\u03bf\u03b9\u03ce\u03bd\u03c4\u03b1\u03c2 speedtest.net",
+        "examples": [
+          "\u03c4\u03c1\u03ad\u03be\u03b5 \u03b4\u03bf\u03ba\u03b9\u03bc\u03ae \u03c4\u03b1\u03c7\u03cd\u03c4\u03b7\u03c4\u03b1\u03c2"
+        ]
+      },
+      "es-co": {
+        "name": "Prueba de velocidad",
+        "description": "Realiza una prueba de velocidad de Internet utilizando speedtest.net",
+        "examples": [
+          "haz una prueba de velocidad"
+        ]
+      },
+      "es-es": {
+        "name": "Prueba de velocidad",
+        "description": "Realiza una prueba de velocidad de Internet utilizando speedtest.net",
+        "examples": [
+          "haz una prueba de velocidad"
+        ]
+      },
+      "eu-es": {
+        "name": "Abiadura-proba",
+        "description": "speedtest.net erabiliz interneteko banda-zabaleraren proba egiten du",
+        "examples": [
+          "exekutatu abiadura-froga"
+        ]
+      },
+      "fa-ir": {
+        "name": "\u062a\u0633\u062a \u0633\u0631\u0639\u062a",
+        "description": "\u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a speedtest.net \u067e\u0647\u0646\u0627\u06cc \u0628\u0627\u0646\u062f \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0627 \u0622\u0632\u0645\u0627\u06cc\u0634 \u0645\u06cc\u200c\u06a9\u0646\u062f",
+        "examples": [
+          "\u0622\u0632\u0645\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+        ]
+      },
+      "fr-fr": {
+        "name": "Test de d\u00e9bit",
+        "description": "Lance un test de bande passante Internet avec speedtest.net.",
+        "examples": [
+          "Lance un test de d\u00e9bit"
+        ]
+      },
+      "gl-es": {
+        "name": "Proba de velocidade",
+        "description": "realiza unha proba de ancho de banda de Internet usando speedtest.net",
+        "examples": [
+          "realizar unha proba de velocidade"
+        ]
+      },
+      "it-it": {
+        "name": "Speedtest",
+        "description": "esegue un test della banda internet usando speedtest.net",
+        "examples": [
+          "esegui un test di velocit\u00e0"
+        ]
+      },
       "kab": {
         "name": "Test n t\u0263awla",
         "description": "yesqadar t\u0263awla n internet s useqdec n speedtest.net",
         "examples": [
           "sekker test n t\u0263awla"
+        ]
+      },
+      "nl-nl": {
+        "name": "Snelheidstest",
+        "description": "voert een bandbreedtetest uit op internet met behulp van speedtest.net",
+        "examples": [
+          "start een snelheidstest",
+          "meet de internet snelheid"
+        ]
+      },
+      "oc-fr": {
+        "name": "Pr\u00f2va de velocitat",
+        "description": "Executa una pr\u00f2va de la larguesa de banda d'internet amb speedtest.net",
+        "examples": [
+          "executa una pr\u00f2va de velocitat"
+        ]
+      },
+      "pl-pl": {
+        "name": "Speedtest",
+        "description": "runs an internet bandwidth test using speedtest.net",
+        "examples": [
+          "wykona\u0107 test pr\u0119dko\u015bci"
+        ]
+      },
+      "pt-br": {
+        "name": "Speedtest",
+        "description": "executa um teste de largura de banda de internet usando speedtest.net",
+        "examples": [
+          "fa\u00e7a um teste de velocidade da internet",
+          "teste de velocidade"
+        ]
+      },
+      "pt-pt": {
+        "name": "Teste de velocidade",
+        "description": "executa um teste de largura de banda da Internet utilizando o speedtest.net",
+        "examples": [
+          "realizar um teste de velocidade"
+        ]
+      },
+      "ru-ru": {
+        "name": "Speedtest",
+        "description": "\u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0435\u0442 \u0442\u0435\u0441\u0442 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0430 \u0447\u0435\u0440\u0435\u0437 speedtest.net",
+        "examples": [
+          "\u0437\u0430\u043f\u0443\u0441\u0442\u0438 \u0442\u0435\u0441\u0442 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438"
+        ]
+      },
+      "sv-se": {
+        "name": "Speedtest",
+        "description": "k\u00f6r ett internethastighetstest med speedtest.net",
+        "examples": [
+          "k\u00f6r ett hastighetstest"
+        ]
+      },
+      "tr-tr": {
+        "name": "Speedtest",
+        "description": "speedtest.net kullanarak internet bant geni\u015fli\u011fi testi \u00e7al\u0131\u015ft\u0131r\u0131r",
+        "examples": [
+          "h\u0131z testi \u00e7al\u0131\u015ft\u0131r"
         ]
       }
     },
@@ -37180,7 +38224,156 @@
       "ru-ru",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "ca-es": {
+        "name": "Habilitat de lletreig",
+        "examples": [
+          "Com s'escriu arquitectura?",
+          "Lletreja omnipot\u00e8ncia",
+          "Com s'escriu burocr\u00e0cia?",
+          "Lletreja ornitorrinc"
+        ]
+      },
+      "da-dk": {
+        "name": "Stavef\u00e6rdighed",
+        "examples": [
+          "Hvordan staves jordsvin?",
+          "Stav almagt",
+          "Hvordan staver du bureaukrati?",
+          "Stav succotash",
+          "Giv mig stavningen af onomatopoietikon"
+        ]
+      },
+      "de-de": {
+        "name": "Buchstabier Skill",
+        "examples": [
+          "Wie buchstabiert man Erdferkel?",
+          "Buchstabiere Allmacht",
+          "Wie buchstabiert man B\u00fcrokratie?",
+          "Buchstabiere Succotash "
+        ]
+      },
+      "es-co": {
+        "name": "Habilidad de deletreo",
+        "examples": [
+          "\u00bfC\u00f3mo se escribe oficinista?",
+          "Deletrea la palabra omnipotencia",
+          "\u00bfPuedes escribir la palabra burocracia?",
+          "\u00bfCu\u00e1les son las letras de onomatopeya?",
+          "Dame las letras de \u00e9xito"
+        ]
+      },
+      "es-es": {
+        "name": "Habilidad de deletreo",
+        "examples": [
+          "\u00bfC\u00f3mo se escribe oficinista?",
+          "Deletrea la palabra omnipotencia",
+          "\u00bfPuedes escribir la palabra burocracia?",
+          "\u00bfCu\u00e1les son las letras de onomatopeya?",
+          "Dame las letras de \u00e9xito"
+        ]
+      },
+      "eu-es": {
+        "name": "Hitzaren idazketa",
+        "examples": [
+          "Nola idazten da aardvark?",
+          "Letreiatu botere absolutu",
+          "Nola idazten da burokrazia?",
+          "Zein da onomatopeia hitzaren idazketa?",
+          "Eman iezadazu arrakasta hitzaren idazketa"
+        ]
+      },
+      "fa-ir": {
+        "name": "\u0645\u0647\u0627\u0631\u062a \u0647\u062c\u06cc \u06a9\u0631\u062f\u0646",
+        "examples": [
+          "\u0627\u0633\u067e\u06cc\u0644 \u06a9\u062a\u0627\u0628",
+          "\u0634\u0645\u0627 \u0645\u06cc \u062a\u0648\u0627\u0646\u06cc\u062f \u0627\u0633\u067e\u06cc\u0644 \u06a9\u062a\u0627\u0628"
+        ]
+      },
+      "fr-fr": {
+        "name": "Orthographe",
+        "examples": [
+          "Comment s'\u00e9crit ornithorynque ?",
+          "\u00c9pelle omnipotence",
+          "Quelle est l'orthographe de bureaucratie ?",
+          "\u00c9pelle anticonstitutionnellement"
+        ]
+      },
+      "gl-es": {
+        "name": "Soletreador",
+        "examples": [
+          "Como se escribe aardvark?",
+          "Escribe omnipotencia",
+          "Podes darme as letras de burocracia?",
+          "Soletrear succotash"
+        ]
+      },
+      "it-it": {
+        "name": "Spelling Skill",
+        "examples": [
+          "Come si scrive formaggio?",
+          "Scandisci onnipotenza",
+          "Come si scrive burocrazia?",
+          "Qual \u00e8 l'ortografia di onomatopea?",
+          "Dammi l'ortografia di gnomo"
+        ]
+      },
+      "nl-nl": {
+        "name": "Spelling Skill",
+        "examples": [
+          "Hoe spel je aardvarken?",
+          "Spel almacht",
+          "Hoe spel je bureaucratie?",
+          "Wat is de spelling van onomatopee?",
+          "Hoe schrijf je gnoom?"
+        ]
+      },
+      "oc-fr": {
+        "name": "Abiletat d'espelacion",
+        "examples": [
+          "Coss\u00ed s'escriu arquitectura?",
+          "Esp\u00e8la omnipot\u00e9ncia",
+          "Coss\u00ed s'escriu burocracia?",
+          "Esp\u00e8la ornitorrinc"
+        ]
+      },
+      "pt-br": {
+        "name": "Spelling Skill",
+        "examples": [
+          "Como voc\u00ea soletra tatu?",
+          "Soletre onipot\u00eancia",
+          "Como soletra burocracia?",
+          "Qual \u00e9 a soletra\u00e7\u00e3o de sucotache?",
+          "Pode voc\u00ea me dar a soletra\u00e7\u00e3o de onomatopeia?"
+        ]
+      },
+      "pt-pt": {
+        "name": "Soletra\u00e7\u00e3o",
+        "examples": [
+          "Como se escreve burocracia?",
+          "Soletra a palavra onomatopeia",
+          "Qual \u00e9 a soletra\u00e7\u00e3o de tatu?",
+          "Podes soletrar burocracia para mim?"
+        ]
+      },
+      "ru-ru": {
+        "name": "\u041d\u0430\u0432\u044b\u043a \u043f\u0440\u0430\u0432\u043e\u043f\u0438\u0441\u0430\u043d\u0438\u044f",
+        "examples": [
+          "\u041a\u0430\u043a \u043f\u0438\u0448\u0435\u0442\u0441\u044f \u043a\u043d\u0438\u0433\u0430",
+          "\u0437\u0430\u043a\u043b\u0438\u043d\u0430\u043d\u0438\u0435 \u043a\u043d\u0438\u0433\u0430"
+        ]
+      },
+      "sv-se": {
+        "name": "Spelling Skill",
+        "examples": [
+          "Hur stavar man myrslok?",
+          "Stava allsm\u00e4ktig",
+          "Hur stavar man byr\u00e5krati?",
+          "Vad \u00e4r stavningen av onomatopoesi?",
+          "Ge mig stavningen av dv\u00e4rg"
+        ]
+      }
+    },
     "in_ovos_localize": true,
     "repo_created_at": "2023-12-09T16:35:32Z",
     "last_updated": "2025-02-27T20:14:15.350702Z",
@@ -38191,7 +39384,16 @@
       "sv-fi",
       "sv-se"
     ],
-    "locale_content": {},
+    "locale_content": {
+      "fr-fr": {
+        "name": "TuneIn",
+        "description": "Lancez des stations de radio internet avec TuneIn.",
+        "examples": [
+          "Lance FIP sur TuneIn",
+          "Mets du jazz sur TuneIn"
+        ]
+      }
+    },
     "in_ovos_localize": false,
     "repo_created_at": "2021-10-12T19:24:04Z",
     "last_updated": "2024-11-17T14:36:25.158562Z",
@@ -38856,7 +40058,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 5,
-    "open_issues": 11,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -38892,6 +40094,352 @@
       "sv-se"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "Control de volum",
+        "description": "Controleu el volum d'OVOS amb ordres verbals",
+        "examples": [
+          "volum predeterminat",
+          "commuta l'\u00e0udio",
+          "silencia el volum",
+          "abaixa el nivell de volum",
+          "volum avall",
+          "apuja el volum",
+          "posa el volum al m\u00e0xim",
+          "posa el nivell de volum al m\u00e0xim",
+          "commuta el silenci",
+          "nivell de volum baix",
+          "nivell de volum alt",
+          "volum al nivell m\u00e9s alt",
+          "volum m\u00e0xim",
+          "posa el volum a la meitat",
+          "restaura el volum",
+          "volum mitj\u00e0",
+          "volum alt",
+          "silencia l'\u00e0udio",
+          "no silenc\u00efis l'\u00e0udio",
+          "deixa de silenciar",
+          "volum alt",
+          "m\u00e0xim volum",
+          "restableix el volum",
+          "posa el volum per defecte",
+          "posa el nivell de volum per defecte",
+          "volum baix",
+          "volum alt",
+          "volum baix",
+          "silencia",
+          "no silenci\u00efs el volum",
+          "volum m\u00e0xim"
+        ]
+      },
+      "da-dk": {
+        "name": "Lydstyrkekontrol",
+        "description": "Styr lydstyrken p\u00e5 OVOS med verbale kommandoer",
+        "examples": [
+          "standard lydstyrke",
+          "skift lyd",
+          "d\u00e6mp lydstyrken",
+          "lydstyrke til lavt",
+          "volumen til lav",
+          "lydstyrken til h\u00f8j",
+          "indstille lydstyrken til maksimum",
+          "indstille lydstyrken til maksimum",
+          "sl\u00e5 mute til",
+          "lydstyrke lav",
+          "h\u00f8j lydstyrke",
+          "lydstyrke til h\u00f8jt niveau",
+          "maksimal lydstyrke",
+          "indstill volumen til medium",
+          "genopret lydstyrken",
+          "medium volumen",
+          "volumen h\u00f8j",
+          "sl\u00e5 lyden fra",
+          "sl\u00e5 lyden til",
+          "sl\u00e5 lyden til",
+          "volumen til h\u00f8j",
+          "max volumen",
+          "nulstil lydstyrken",
+          "indstill lydstyrken til standard",
+          "indstill lydstyrken til standard",
+          "lav lydstyrke",
+          "h\u00f8j lydstyrke",
+          "volumen lav",
+          "stum",
+          "sl\u00e5 lyden til",
+          "topvolumen"
+        ]
+      },
+      "de-de": {
+        "name": "Lautst\u00e4rkeregelung",
+        "description": "Steuere die Lautst\u00e4rke von OVOS mit verbalen Befehlen",
+        "examples": [
+          "Standardlautst\u00e4rke",
+          "Audio umschalten",
+          "Mute Lautst\u00e4rke\nSchalte Lautst\u00e4rke stumm",
+          "Lautst\u00e4rke zu niedrig",
+          "Lautst\u00e4rke zu niedrig",
+          "Lautst\u00e4rke zu hoch",
+          "Lautst\u00e4rke auf Maximum stellen\nStelle Lautst\u00e4rke auf Maximum",
+          "Lautst\u00e4rke auf Maximum einstellen",
+          "Mute umschalten",
+          "Lautst\u00e4rke niedrig",
+          "Lautst\u00e4rke hoch",
+          "Lautst\u00e4rke auf hohen Pegel einstellen",
+          "Maximale Lautst\u00e4rke",
+          "Lautst\u00e4rke auf mittel stellen",
+          "Volume wiederherstellen",
+          "mittlere Lautst\u00e4rke",
+          "Lautst\u00e4rke hoch",
+          "Ton stummschalten",
+          "Ton einschalten",
+          "Stummschaltung aufheben",
+          "Lautst\u00e4rke zu hoch",
+          "Maximale Lautst\u00e4rke",
+          "Lautst\u00e4rke zur\u00fccksetzen",
+          "Lautst\u00e4rke auf Standard einstellen",
+          "Lautst\u00e4rke auf Standardwert einstellen",
+          "geringe Lautst\u00e4rke",
+          "hohe Lautst\u00e4rke",
+          "Lautst\u00e4rke niedrig",
+          "stummschalten",
+          "Stummschaltung aufheben",
+          "h\u00f6chste Lautst\u00e4rke"
+        ]
+      },
+      "es-co": {
+        "name": "Control de volumen",
+        "description": "Controla el volumen de OVOS con comandos verbales",
+        "examples": [
+          "volumen predeterminado",
+          "alternar audio",
+          "silenciar el volumen",
+          "el nivel de volumen es demasiado bajo",
+          "el volumen es demasiado bajo",
+          "el nivel de volumen es demasiado alto",
+          "ajusta el volumen al m\u00e1ximo",
+          "ajusta el nivel de volumen al m\u00e1ximo",
+          "alternar el silencio",
+          "nivel de volumen bajo",
+          "nivel de volumen alto",
+          "volumen a nivel alto",
+          "volumen m\u00e1ximo",
+          "ajusta el volumen a medio",
+          "restaurar volumen",
+          "volumen medio",
+          "volumen alto",
+          "silenciar audio",
+          "activar el audio",
+          "silenciar",
+          "volumen alto",
+          "volumen m\u00e1ximo",
+          "restablecer el volumen",
+          "ajustar el volumen a los valores predeterminados",
+          "ajustar el nivel de volumen al valor predeterminado",
+          "volumen bajo",
+          "volumen alto",
+          "volumen bajo",
+          "silenciar",
+          "activar el volumen",
+          "volumen m\u00e1ximo"
+        ]
+      },
+      "es-es": {
+        "name": "Control de volumen",
+        "description": "Controla el volumen de OVOS con comandos verbales",
+        "examples": [
+          "volumen predeterminado",
+          "(alternar|conmutar) audio",
+          "silenciar el volumen",
+          "(el|) nivel de volumen (es|est\u00e1|) demasiado bajo",
+          "(el|) volumen (es|est\u00e1|) demasiado bajo",
+          "(el|) nivel de volumen (es|est\u00e1|) demasiado alto",
+          "(ajusta|sube) el volumen al m\u00e1ximo",
+          "(ajusta|sube) el nivel de volumen al m\u00e1ximo",
+          "(alternar|conmutar) el silencio",
+          "nivel de volumen bajo",
+          "nivel de volumen alto",
+          "volumen a nivel alto",
+          "volumen m\u00e1ximo",
+          "ajusta el volumen a medio",
+          "restaurar volumen",
+          "volumen medio",
+          "volumen alto",
+          "silenciar audio",
+          "(activar|desmutear) el audio",
+          "(silenciar|desmutear)",
+          "volumen alto",
+          "volumen m\u00e1ximo",
+          "restablecer el volumen",
+          "ajustar el volumen a los valores predeterminados",
+          "ajustar el nivel de volumen al valor predeterminado",
+          "volumen bajo",
+          "volumen alto",
+          "volumen bajo",
+          "silenciar",
+          "(activar|desmutear) el volumen",
+          "volumen m\u00e1ximo"
+        ]
+      },
+      "eu-es": {
+        "name": "Bolumen kontrola",
+        "description": "Kontrolatu OVOSen bolumena ahozko aginduekin",
+        "examples": [
+          "bolumen lehenetsia",
+          "aldatu audioa",
+          "mututu bolumena",
+          "bolumen maila baxura",
+          "bolumena baxura",
+          "bolumen maila altura",
+          "jarri bolumena gehienezkoan",
+          "jarri bolumen maila gehienezkoan",
+          "aldatu mututzea",
+          "bolumen maila baxua",
+          "bolumen maila altua",
+          "bolumena maila altura",
+          "gehienezko bolumena",
+          "jarri bolumena erdian",
+          "berreskuratu bolumena",
+          "erdiko bolumena",
+          "bolumen altua",
+          "mututu audioa",
+          "kendu audioaren mututzea",
+          "kendu mututzea",
+          "bolumena altura",
+          "gehienezko bolumena",
+          "berrezarri bolumena",
+          "jarri bolumena lehenetsian",
+          "jarri bolumen maila lehenetsian",
+          "bolumen baxua",
+          "bolumen altua",
+          "bolumena baxua",
+          "mututu",
+          "kendu bolumenaren mututzea",
+          "gehieneko bolumena"
+        ]
+      },
+      "fa-ir": {
+        "name": "\u062a\u0646\u0638\u06cc\u0645 \u0628\u0644\u0646\u062f\u06cc",
+        "description": "\u062a\u0646\u0638\u06cc\u0645 \u0628\u0644\u0646\u062f\u06cc \u0635\u062f\u0627\u06cc OVOS \u0628\u0627 \u062f\u0633\u062a\u0648\u0631\u200c\u0647\u0627\u06cc \u06a9\u0644\u0627\u0645\u06cc",
+        "examples": [
+          "\u0628\u0644\u0646\u062f\u06cc \u067e\u06cc\u0634\u200c\u0641\u0631\u0636",
+          "\u0628\u0631\u0639\u06a9\u0633 \u06a9\u0631\u062f\u0646 \u0635\u062f\u0627",
+          "\u0628\u06cc\u200c\u0635\u062f\u0627 \u06a9\u0631\u062f\u0646",
+          "\u067e\u0627\u06cc\u06cc\u0646 \u0628\u0631\u062f\u0646 \u0628\u0644\u0646\u062f\u06cc",
+          "\u067e\u0627\u06cc\u06cc\u0646 \u0631\u0641\u062a\u0646 \u0628\u0644\u0646\u062f\u06cc",
+          "\u0628\u0627\u0644\u0627 \u0628\u0631\u062f\u0646 \u0628\u0644\u0646\u062f\u06cc",
+          "\u0628\u06cc\u0634\u06cc\u0646\u0647 \u06a9\u0631\u062f\u0646 \u0628\u0644\u0646\u062f\u06cc",
+          "\u062d\u062f\u0627\u06a9\u062b\u0631 \u06a9\u0631\u062f\u0646 \u0628\u0644\u0646\u062f\u06cc",
+          "\u0628\u0631\u0639\u06a9\u0633 \u06a9\u0631\u062f\u0646 \u062d\u0627\u0644\u062a \u0628\u06cc\u200c\u0635\u062f\u0627",
+          "\u0628\u0644\u0646\u062f\u06cc \u06a9\u0645",
+          "\u0628\u0644\u0646\u062f\u06cc \u0632\u06cc\u0627\u062f",
+          "\u0628\u0644\u0646\u062f \u06a9\u0631\u062f\u0646 \u0635\u062f\u0627",
+          "\u062d\u062f\u0627\u06a9\u062b\u0631 \u0628\u0644\u0646\u062f\u06cc",
+          "\u0645\u06cc\u0627\u0646\u0647 \u06a9\u0631\u062f\u0646 \u0628\u0644\u0646\u062f\u06cc",
+          "\u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u06cc \u0628\u0644\u0646\u062f\u06cc",
+          "\u0628\u0644\u0646\u062f\u06cc \u0645\u06cc\u0627\u0646\u0647",
+          "\u0628\u0644\u0646\u062f\u06cc \u0628\u0627\u0644\u0627",
+          "\u0628\u06cc\u200c\u0635\u062f\u0627 \u06a9\u0631\u062f\u0646",
+          "\u0635\u062f\u0627\u062f\u0627\u0631 \u06a9\u0631\u062f\u0646",
+          "\u0635\u062f\u0627 \u062f\u0627\u0631 \u06a9\u0631\u062f\u0646",
+          "\u0628\u06cc\u0634\u200c\u062a\u0631 \u06a9\u0631\u062f\u0646 \u0628\u0644\u0646\u062f\u06cc",
+          "\u0628\u0644\u0646\u062f\u06cc \u062a\u0627 \u062a\u0647",
+          "\u0628\u0627\u0632\u0646\u0634\u0627\u0646\u06cc \u0628\u0644\u0646\u062f\u06cc",
+          "\u0628\u0627\u0632\u0646\u0634\u0627\u0646\u06cc \u0628\u0644\u0646\u062f\u06cc \u0628\u0647 \u067e\u06cc\u0634\u0641\u0631\u0636",
+          "\u0628\u0627\u0632\u0646\u0634\u0627\u0646\u06cc \u0633\u0637\u062d \u0628\u0644\u0646\u062f\u06cc \u0628\u0647 \u067e\u06cc\u0634\u0641\u0631\u0636",
+          "\u0635\u062f\u0627\u06cc \u06a9\u0645",
+          "\u0635\u062f\u0627\u06cc \u0632\u06cc\u0627\u062f",
+          "\u0635\u062f\u0627\u06cc \u067e\u0627\u06cc\u06cc\u0646",
+          "\u0628\u06cc\u200c\u0635\u062f\u0627 \u06a9\u0631\u062f\u0646",
+          "\u0628\u0627 \u0635\u062f\u0627 \u06a9\u0631\u062f\u0646",
+          "\u0628\u0644\u0646\u062f\u06cc \u0628\u0627\u0644\u0627"
+        ]
+      },
+      "fr-fr": {
+        "name": "Contr\u00f4le du volume",
+        "description": "Contr\u00f4lez le volume d'OVOS avec des commandes vocales.",
+        "examples": [
+          "Volume par d\u00e9faut",
+          "Bascule la sourdine",
+          "Coupe le son",
+          "Mets le volume sur faible",
+          "Mets le volume sur \u00e9lev\u00e9",
+          "Mets le volume au maximum",
+          "Restaure le volume"
+        ]
+      },
+      "gl-es": {
+        "name": "Control de Volume",
+        "description": "Controla o volume de OVOS con comandos verbais",
+        "examples": [
+          "volume predefinido",
+          "alternar audio",
+          "silenciar volume",
+          "baixar o nivel de volume",
+          "baixar o volume",
+          "subir nivel de volume",
+          "fixar o volume no m\u00e1ximo",
+          "fixar o nivel de volume no m\u00e1ximo",
+          "alternar silencio",
+          "nivel de volume baixo",
+          "nivel de volume alto",
+          "volume no nivel alto",
+          "m\u00e1ximo volume",
+          "fixar un volume intermedio",
+          "restaurar o volume",
+          "volume medio",
+          "volume alto",
+          "silenciar o audio",
+          "activar o audio",
+          "activar o son",
+          "subir o volume",
+          "volume m\u00e1ximo",
+          "restablecer o volume",
+          "fixar o volume no predefinido",
+          "fixar o nivel de volume no predefinido",
+          "baixo volume",
+          "alto volume",
+          "volume baixo",
+          "silenciar",
+          "activar o volume",
+          "o volume m\u00e1is alto"
+        ]
+      },
+      "it-it": {
+        "name": "Controllo Volume",
+        "description": "Controlla il volume con la voce!",
+        "examples": [
+          "Imposta il volume di default",
+          "Alza il volume",
+          "Stai zitto",
+          "Abbassa il volume",
+          "Metti il volume basso",
+          "Alza il volume",
+          "Alza il volume al massimo",
+          "Alza il volume al massimo",
+          "Stai zitto",
+          "Sussurra",
+          "Grida",
+          "[UNUSED]",
+          "[UNUSED]",
+          "Imposta il volume al valore predefinito",
+          "Ripristina il volume",
+          "[UNUSED]",
+          "Alza il volume",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]",
+          "[UNUSED]"
+        ]
+      },
       "kab": {
         "name": "A\u1e0debbe\u1e5b n Ta\u0263ect",
         "description": "S\u1e0debbe\u1e5b ta\u0263ect n OVOS s tebrat n imeslayen",
@@ -38927,6 +40475,221 @@
           "asgens",
           "sers asgens n ta\u0263ect",
           "ta\u0263ect n unezwi"
+        ]
+      },
+      "nl-nl": {
+        "name": "Volume Control",
+        "description": "Bedien het volume van OVOS met gesproken opdrachten",
+        "examples": [
+          "standaard volume",
+          "schakel geluid",
+          "volume dempen",
+          "volumeniveau naar laag",
+          "volume naar laag",
+          "volumeniveau naar hoog",
+          "zet volume op maximaal",
+          "zet volumeniveau op maximaal",
+          "schakel dempen",
+          "volumeniveau laag",
+          "volumeniveau hoog",
+          "volume naar hoog niveau",
+          "maximaal volume",
+          "zet volume op gemiddeld",
+          "herstel volume",
+          "gemiddeld volume",
+          "volume hoog",
+          "geluid dempen",
+          "geluid dempen opheffen",
+          "dempen opheffen",
+          "volume naar hoog",
+          "maximaal volume",
+          "volume resetten",
+          "zet volume op standaard",
+          "zet volumeniveau op standaard",
+          "laag volume",
+          "hoog volume",
+          "volume laag",
+          "dempen",
+          "dempen opheffen volume",
+          "hoogste volume"
+        ]
+      },
+      "oc-fr": {
+        "name": "Contrar\u00f2tle del volum",
+        "description": "Contrarotlatz lo volum d'OVOS amb de comandas vocalas",
+        "examples": [
+          "volum per def\u00e8cte",
+          "bascula l'\u00e0udio",
+          "amud\u00eds lo volum",
+          "niv\u00e8l de volum bas",
+          "volum bas",
+          "niv\u00e8l de volum naut",
+          "met lo volum al maximum",
+          "met lo niv\u00e8l de volum al maximum",
+          "bascula lo silenci",
+          "niv\u00e8l de volum bas",
+          "niv\u00e8l de volum naut",
+          "volum a niv\u00e8l naut",
+          "volum maximal",
+          "met lo volum a mejan",
+          "restaura lo volum",
+          "volum mejan",
+          "volum naut",
+          "amud\u00eds l'\u00e0udio",
+          "l\u00e8va lo silenci de l'\u00e0udio",
+          "l\u00e8va lo silenci",
+          "volum naut",
+          "volum maximal",
+          "restabl\u00eds lo volum",
+          "met lo volum per def\u00e8cte",
+          "met lo niv\u00e8l de volum per def\u00e8cte",
+          "volum bas",
+          "volum naut",
+          "volum bas",
+          "amud\u00eds",
+          "l\u00e8va lo silenci del volum",
+          "volum maximal"
+        ]
+      },
+      "pl-pl": {
+        "name": "Volume Control",
+        "description": "Control the volume of OVOS with verbal commands",
+        "examples": [
+          "zmiana obj\u0119to\u015bci",
+          "obj\u0119to\u015b\u0107",
+          "G\u0142o\u015bniej.",
+          "Ciszej",
+          "Obj\u0119to\u015b\u0107 a\u017c do g\u00f3ry",
+          "wyci\u0105\u0107",
+          "prze\u0142\u0105czanie audio",
+          "zresetowa\u0107 obj\u0119to\u015b\u0107",
+          "Unmutuj audio"
+        ]
+      },
+      "pt-br": {
+        "name": "Controle de volume",
+        "description": "Controle o volume do OVOS com comandos verbais",
+        "examples": [
+          "volume padr\u00e3o",
+          "alternar \u00e1udio",
+          "volume em mudo",
+          "abaixe o volume",
+          "abaixe o volume",
+          "aumente o volume",
+          "ajuste o volume para o m\u00e1ximo",
+          "ajuste o n\u00edvel de volume para o m\u00e1ximo",
+          "acionar mudo",
+          "n\u00edvel de volume baixo",
+          "n\u00edvel de volume alto",
+          "aumente o volume",
+          "volume m\u00e1ximo",
+          "ajuste o volume para m\u00e9dio",
+          "restaurar volume",
+          "volume m\u00e9dio",
+          "volume alto",
+          "silenciar \u00e1udio",
+          "ativar \u00e1udio",
+          "ativar som",
+          "aumentar volume",
+          "volume m\u00e1ximo",
+          "redefinir volume",
+          "definir volume para o padr\u00e3o",
+          "definir o n\u00edvel de volume para o padr\u00e3o",
+          "baixo volume",
+          "alto volume",
+          "volume baixo",
+          "mudo",
+          "ativar volume",
+          "volume m\u00e1ximo"
+        ]
+      },
+      "pt-pt": {
+        "name": "Controlo de volume",
+        "description": "Controle o volume do OVOS com comandos verbais",
+        "examples": [
+          "volume padr\u00e3o",
+          "alternar \u00e1udio",
+          "silenciar o volume",
+          "n\u00edvel de volume para baixo",
+          "volume para baixo",
+          "n\u00edvel de volume para alto",
+          "definir o volume para o m\u00e1ximo",
+          "definir o n\u00edvel de volume para o m\u00e1ximo",
+          "alternar mudo",
+          "n\u00edvel de volume baixo",
+          "n\u00edvel de volume elevado",
+          "volume para alto n\u00edvel",
+          "volume m\u00e1ximo",
+          "definir volume para m\u00e9dio",
+          "repor volume",
+          "volume m\u00e9dio",
+          "volume alto",
+          "silenciar \u00e1udio",
+          "ativar \u00e1udio",
+          "ativar o som",
+          "volume para alto",
+          "volume m\u00e1ximo",
+          "redefinir volume",
+          "definir o volume para o padr\u00e3o",
+          "definir o n\u00edvel de volume para o padr\u00e3o",
+          "volume baixo",
+          "alto volume",
+          "volume baixo",
+          "mudo",
+          "ativar volume",
+          "volume superior"
+        ]
+      },
+      "ru-ru": {
+        "name": "Volume Control",
+        "description": "Control the volume of OVOS with verbal commands",
+        "examples": [
+          "\u0418\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u0435 \u043e\u0431\u044a\u0435\u043c\u0430",
+          "\u043e\u0431\u044a\u0435\u043c",
+          "\u0433\u0440\u043e\u043c\u0447\u0435",
+          "\u041f\u043e\u0442\u0438\u0448\u0435.",
+          "\u043f\u043e\u043b\u043d\u044b\u0439 \u0437\u0432\u0443\u043a",
+          "\u043d\u0435\u043c\u043e\u0439",
+          "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u0435 \u043d\u0435\u043c\u043e\u0439.",
+          "\u043f\u0435\u0440\u0435\u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043e\u0431\u044a\u0435\u043c",
+          "\u041e\u0442\u0434\u0430\u0439 \u043c\u043d\u0435 \u0437\u0432\u0443\u043a."
+        ]
+      },
+      "sv-se": {
+        "name": "Volymkontroll",
+        "description": "Styr volymen p\u00e5 OVOS med r\u00f6stkommandon",
+        "examples": [
+          "standardvolym",
+          "v\u00e4xla ljud",
+          "st\u00e4ng av volymen",
+          "volymniv\u00e5 till l\u00e5g",
+          "volym till l\u00e5g",
+          "volymniv\u00e5 till h\u00f6g",
+          "st\u00e4ll in volymen till maximum",
+          "st\u00e4ll in volymniv\u00e5n till maximum",
+          "v\u00e4xla tystnad",
+          "volymniv\u00e5 l\u00e5g",
+          "volymniv\u00e5 h\u00f6g",
+          "volym till h\u00f6g niv\u00e5",
+          "maximal volym",
+          "st\u00e4ll in volymen till medel",
+          "\u00e5terst\u00e4ll volymen",
+          "medelvolym",
+          "volym h\u00f6g",
+          "st\u00e4ng av ljud",
+          "s\u00e4tt p\u00e5 ljud",
+          "s\u00e4tt p\u00e5",
+          "volym till h\u00f6g",
+          "max volym",
+          "\u00e5terst\u00e4ll volym",
+          "st\u00e4ll in volymen till standard",
+          "st\u00e4ll in volymniv\u00e5n till standard",
+          "l\u00e5g volym",
+          "h\u00f6g volym",
+          "volym l\u00e5g",
+          "tyst",
+          "s\u00e4tt p\u00e5 volym",
+          "toppvolym"
         ]
       }
     },
@@ -39677,6 +41440,116 @@
       "sv-se"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "Canviador del fons de pantalla",
+        "description": "Imatges de subreddits seleccionats",
+        "examples": [
+          "fons de pantalla nou",
+          "canvia el fons de pantalla a natura",
+          "mostra'm un dibuix",
+          "mostra'm una imatge amb gossos",
+          "fes que sigui el fons de pantalla"
+        ]
+      },
+      "da-dk": {
+        "name": "Tapetskifter",
+        "description": "Billeder fra udvalgte subreddits.",
+        "examples": [
+          "nyt tapet",
+          "skifte tapet til natur",
+          "vis mig et billede",
+          "vis mig et billede med hunde",
+          "g\u00f8r det til mit tapet"
+        ]
+      },
+      "de-de": {
+        "name": "Wallpaper Changer",
+        "description": "Bilder aus ausgew\u00e4hlten Subreddits.",
+        "examples": [
+          "neues Hintergrundbild",
+          "\u00c4ndere das Hintergrundbild in Natur",
+          "zeig mir ein Bild\nzeige mir ein Bild",
+          "zeig mir ein Bild mit Hunden",
+          "mache das zu meinem Hintergrundbild"
+        ]
+      },
+      "es-co": {
+        "name": "Wallpaper Changer",
+        "description": "Im\u00e1genes de subreddits seleccionados.",
+        "examples": [
+          "nuevo fondo de pantalla",
+          "Cambiar el fondo de pantalla a naturaleza",
+          "Mu\u00e9strame una foto",
+          "Mu\u00e9strame una foto con perros",
+          "Haz que sea mi fondo de pantalla"
+        ]
+      },
+      "es-es": {
+        "name": "Wallpaper Changer",
+        "description": "Im\u00e1genes de subreddits seleccionados.",
+        "examples": [
+          "nuevo fondo de pantalla",
+          "Cambiar el fondo de pantalla a naturaleza",
+          "Mu\u00e9strame una foto",
+          "Mu\u00e9strame una foto con perros",
+          "Haz que sea mi fondo de pantalla"
+        ]
+      },
+      "eu-es": {
+        "name": "Horma-paperen aldatzailea",
+        "description": "Hautatutako subredditetako irudiak.",
+        "examples": [
+          "horma-paper berria",
+          "aldatu horma-papera naturara",
+          "erakutsi argazki bat",
+          "erakutsi txakurrekin argazki bat",
+          "jarri hori nire horma-paper gisa"
+        ]
+      },
+      "fa-ir": {
+        "name": "Wallpaper Changer",
+        "description": "Pictures from selected subreddits.",
+        "examples": [
+          "\u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0627\u063a\u0630 \u062f\u06cc\u0648\u0627\u0631\u06cc",
+          "\u062a\u063a\u06cc\u06cc\u0631 \u06a9\u0627\u063a\u0630 \u062f\u06cc\u0648\u0627\u0631\u06cc \u062f\u0631 \u0645\u0648\u0631\u062f \u0637\u0628\u06cc\u0639\u062a",
+          "\u06cc\u06a9 \u0639\u06a9\u0633 \u0628\u0647 \u0645\u0646 \u0646\u0634\u0627\u0646 \u062f\u0647\u06cc\u062f",
+          "\u0628\u0647 \u0645\u0646 \u06cc\u06a9 \u0639\u06a9\u0633 \u0646\u0634\u0627\u0646 \u062f\u0647\u06cc\u062f \u0633\u06af",
+          "\u0627\u06cc\u0646 \u06a9\u0627\u063a\u0630 \u062f\u06cc\u0648\u0627\u0631\u06cc \u0631\u0627 \u0646\u0635\u0628 \u06a9\u0646\u06cc\u062f"
+        ]
+      },
+      "fr-fr": {
+        "name": "Fonds d'\u00e9cran",
+        "description": "Des images issues de sources s\u00e9lectionn\u00e9es.",
+        "examples": [
+          "un nouveau fond d'\u00e9cran",
+          "change le fond d'\u00e9cran pour la nature",
+          "montre-moi une image",
+          "montre-moi une image de chiens",
+          "mets cette image en fond d'\u00e9cran"
+        ]
+      },
+      "gl-es": {
+        "name": "Cambiador de fondos de pantalla",
+        "description": "Imaxes de subreddits seleccionados.",
+        "examples": [
+          "novo fondo de pantalla",
+          "cambiar o fondo de pantalla \u00e1 natureza",
+          "m\u00f3strame unha imaxe",
+          "m\u00f3strame unha foto de cans",
+          "converte esa imaxe no meu fondo de pantalla"
+        ]
+      },
+      "it-it": {
+        "name": "Cambia Sfondo",
+        "description": "Immagini da subreddit selezionati.",
+        "examples": [
+          "nuovo sfondo",
+          "cambia lo sfondo con la natura",
+          "mostrami un'immagine",
+          "mostrami un'immagine con i cani",
+          "imposta quella come sfondo"
+        ]
+      },
       "kab": {
         "name": "Abeddel n Ugdil",
         "description": "Tugniwin seg subreddit yettwafernen.",
@@ -39686,6 +41559,72 @@
           "sken-iyi-d tugna",
           "sken-iyi-d tugna n i\u1e0dan",
           "sers-t d agilal-iw"
+        ]
+      },
+      "nl-nl": {
+        "name": "Achtergrond Wisselaar",
+        "description": "Afbeeldingen van geselecteerde subreddits.",
+        "examples": [
+          "nieuwe achtergrond",
+          "verander achtergrond naar natuur",
+          "laat me een afbeelding zien",
+          "laat me een afbeelding met honden zien",
+          "maak dat mijn achtergrond"
+        ]
+      },
+      "pl-pl": {
+        "name": "Wallpaper Changer",
+        "description": "Pictures from selected subreddits.",
+        "examples": [
+          "Zmie\u0144 tapet\u0119",
+          "zmie\u0144 tapet\u0119 o naturze",
+          "poka\u017c mi zdj\u0119cie",
+          "poka\u017c mi zdj\u0119cie o psach",
+          "ustaw tapet\u0119"
+        ]
+      },
+      "pt-br": {
+        "name": "Trocar Papel de Parede",
+        "description": "Imagens de subreddits selecionados.",
+        "examples": [
+          "novo papel de parede",
+          "mude o papel de parede para natureza",
+          "me mostre uma imagem",
+          "me mostre uma imagem com cachorros",
+          "defina isso como meu papel de parede"
+        ]
+      },
+      "pt-pt": {
+        "name": "Mudar Fundo de Ecr\u00e3",
+        "description": "Imagens de subreddits selecionados.",
+        "examples": [
+          "novo fundo de ecr\u00e3",
+          "muda o fundo de ecr\u00e3 para natureza",
+          "mostra-me uma imagem",
+          "mostra-me uma imagem com c\u00e3es",
+          "define isso como o meu fundo de ecr\u00e3"
+        ]
+      },
+      "ru-ru": {
+        "name": "Wallpaper Changer",
+        "description": "Pictures from selected subreddits.",
+        "examples": [
+          "\u0438\u0437\u043c\u0435\u043d\u0438\u0442\u044c \u043e\u0431\u043e\u0438",
+          "\u0441\u043c\u0435\u043d\u0438\u0442\u044c \u043e\u0431\u043e\u0438 \u043f\u0440\u0438\u0440\u043e\u0434\u0435",
+          "\u041f\u043e\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u044e.",
+          "\u041f\u043e\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u0444\u043e\u0442\u043e\u0433\u0440\u0430\u0444\u0438\u044e \u043e \u0441\u043e\u0431\u0430\u043a\u0430\u0445",
+          "\u0443\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c \u043e\u0431\u043e\u0438"
+        ]
+      },
+      "sv-se": {
+        "name": "Bakgrundsbyte",
+        "description": "Bilder fr\u00e5n utvalda subreddits.",
+        "examples": [
+          "ny bakgrundsbild",
+          "byt bakgrundsbild till natur",
+          "visa mig en bild",
+          "visa mig en bild med hundar",
+          "g\u00f6r den till min bakgrundsbild"
         ]
       }
     },
@@ -39776,7 +41715,7 @@
     "type_group": "Skill",
     "stars": 3,
     "forks": 10,
-    "open_issues": 16,
+    "open_issues": 14,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -39823,6 +41762,309 @@
       "tr-tr"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "Temps",
+        "description": "Obteniu les condicions meteorol\u00f2giques, les previsions, les precipitacions esperades i molt m\u00e9s! Tamb\u00e9 podeu demanar per altres ciutats del m\u00f3n. Les condicions actuals i les previsions meteorol\u00f2giques provenen d'OpenMeteo",
+        "examples": [
+          "Em fa falta humidificador ?",
+          "Far\u00e0 fred a Barcelona?",
+          "A quanta velocitat bufa el vent ?",
+          "A quina hora comen\u00e7ar\u00e0 a ploure ?",
+          "A quina hora comen\u00e7a a haver-hi llum ?",
+          "A quina hora es fa de nit ?",
+          "Far\u00e0 calor aquesta nit?",
+          "Com \u00e9s oratge a Barcelona?",
+          "S'espera boira densa per aquesta nit ?",
+          "Hi ha humitat a Barcelona?",
+          "Estar\u00e0 g\u00e8lid a Barcelona?",
+          "Fa vent hui ?",
+          "Digues-me quan plour\u00e0.",
+          "Horari de l'albada d'avui.",
+          "Hora de la posta de sol d'hui.",
+          "Quina temperatura hi haur\u00e0 a la 9 del mat\u00ed dilluns ?",
+          "Previsi\u00f3 per dimarts a la 3 del vespre a Barcelona.",
+          "hi ha n\u00favols a Barcelona"
+        ]
+      },
+      "cs-cz": {
+        "name": "Po\u010das\u00ed",
+        "description": "Zjist\u011bte po\u010das\u00ed, p\u0159edpov\u011b\u010f, o\u010dek\u00e1van\u00e9 sr\u00e1\u017eky a dal\u0161\u00ed. M\u016f\u017eete se tak\u00e9 zeptat na jin\u00e1 m\u011bsta po cel\u00e9m sv\u011bt\u011b. Aktu\u00e1ln\u00ed po\u010das\u00ed a p\u0159edpov\u011bdi poch\u00e1zej\u00ed z OpenMeteo.",
+        "examples": [
+          "Jak\u00e1 je te\u010f vlhkost vzduchu v Praze",
+          "Bude dnes zima v Praze",
+          "Je dnes venku v\u011btrno v Praze",
+          "Kdy bude p\u0159\u00ed\u0161t\u011b pr\u0161et v Praze",
+          "V kolik hodin vych\u00e1z\u00ed slunce dnes v Praze",
+          "V kolik hodin zapad\u00e1 slunce dnes v Praze",
+          "Jak\u00e1 je aktu\u00e1ln\u00ed teplota v Praze",
+          "Jak\u00e1 je p\u0159edpov\u011b\u010f po\u010das\u00ed na dva dn\u00ed v Praze",
+          "je zamra\u010deno",
+          "Jak\u00e1 je vlhkost vzduchu",
+          "Bude chladno dnes v Praze",
+          "Jak siln\u00fd je v\u00edtr v Praze",
+          "Kdy za\u010dne pr\u0161et v Praze",
+          "V kolik hodin vych\u00e1z\u00ed slunce dnes",
+          "V kolik hodin zapad\u00e1 slunce dnes",
+          "Kolik stup\u0148\u016f bude maxim\u00e1ln\u011b dnes",
+          "Jak\u00e9 bude po\u010das\u00ed dnes v Praze",
+          "jsou tam mraky z\u00edtra v Praze"
+        ]
+      },
+      "da-dk": {
+        "name": "Vejr",
+        "description": "F\u00e5 vejrforhold, prognoser, forventet nedb\u00f8r og meget mere! Du kan ogs\u00e5 sp\u00f8rge efter andre byer rundt om i verden. Aktuelle forhold og vejrudsigter kommer fra OpenMeteo",
+        "examples": [
+          "Er luften t\u00f8r eller fugtig",
+          "Bliver det koldt i K\u00f8benhavn?",
+          "Skal jeg sikre udend\u00f8rs genstande p\u00e5 grund af vind",
+          "fort\u00e6l mig, hvorn\u00e5r det vil regne",
+          "hvad er daggrytid",
+          "hvad er skumringstidspunktet",
+          "hvor hedt er det",
+          "eventuelle advarsler i weekenden",
+          "Er det dystert udenfor",
+          "Har jeg brug for en luftfugter i dag",
+          "Skal jeg tage en jakke p\u00e5 i K\u00f8benhavn?",
+          "er det bl\u00e6sende i dag",
+          "hvorn\u00e5r er den n\u00e6ste nedb\u00f8r",
+          "hvad tid st\u00e5r solen op",
+          "hvad tid g\u00e5r solen ned",
+          "Skal jeg forvente frost l\u00f8rdag",
+          "hvad er vejret vejrudsigt kl. 11 eftermiddag i K\u00f8benhavn",
+          "forventes tyk t\u00e5ge i nat i K\u00f8benhavn"
+        ]
+      },
+      "de-de": {
+        "name": "Wetter",
+        "description": "Erhalte Wetterbedingungen, Prognosen, erwartete Niederschl\u00e4ge und mehr! Du kannst auch nach anderen St\u00e4dten auf der ganzen Welt fragen. Aktuelle Bedingungen und Wettervorhersagen stammen von OpenMeteo",
+        "examples": [
+          "Luftfeuchtigkeit in Prozent",
+          "Wird es kalt in Berlin?",
+          "gibt es starke Windb\u00f6en",
+          "Sag mir, wann es regnen wird",
+          "Sonnenaufgang f\u00fcr heute",
+          "Sonnenuntergang f\u00fcr heute",
+          "Wie ist die Temperatur",
+          "aktuelle Wetter",
+          "ist es bew\u00f6lkt heute",
+          "ist die Luft trocken oder feucht",
+          "Brauche ich eine Jacke in Berlin?",
+          "ist es jetzt in Berlin windig",
+          "um wie viel Uhr wird es anfangen zu regnen",
+          "wann geht die Sonne auf in Berlin",
+          "wann endet das Abendlicht in Berlin",
+          "Wie ist die Temperatur in Berlin drau\u00dfen",
+          "Vorhersage f\u00fcr Sonntag um 12 pm",
+          "wird in Berlin ein Sturm erwartet"
+        ]
+      },
+      "es-co": {
+        "name": "El tiempo",
+        "description": "Informaci\u00f3n sobre las condiciones meteorol\u00f3gicas, las previsiones, las precipitaciones y mucho m\u00e1s. Tambi\u00e9n puedes preguntar sobre otras ciudades del mundo. Las condiciones actuales y las previsiones provienen de OpenMeteo",
+        "examples": [
+          "Humedad actual",
+          "Har\u00e1 fr\u00edo en Madrid",
+          "Se esperan condiciones de viento en Madrid",
+          "Dime cu\u00e1ndo llover\u00e1",
+          "Hora de el amanecer de hoy",
+          "Hora de el atardecer de hoy",
+          "Har\u00e1 mucho calor esta noche",
+          "Condici\u00f3n",
+          "est\u00e1 nublado hoy en Madrid",
+          "El aire est\u00e1 seco o h\u00famedo hoy",
+          "Necesito abrigo en Madrid",
+          "Deber\u00eda guardar los objetos que tengo al aire libre a causa del viento en Madrid",
+          "A qu\u00e9 hora empezar\u00e1 a llover en Madrid",
+          "A qu\u00e9 hora empieza el amanecer",
+          "A qu\u00e9 hora es el atardecer",
+          "Cu\u00e1l ser\u00e1 la temperatura m\u00ednima hoy por la ma\u00f1ana",
+          "Dime la previsi\u00f3n de el tiempo a las 19",
+          "Llover\u00e1 durante el fin de semana"
+        ]
+      },
+      "es-es": {
+        "name": "Temps",
+        "description": "Informaci\u00f3n sobre las condiciones meteorol\u00f3gicas, las previsiones, las precipitaciones y mucho m\u00e1s. Tambi\u00e9n puedes preguntar sobre otras ciudades del mundo. Las condiciones actuales y las previsiones provienen de OpenMeteo",
+        "examples": [
+          "Humedad actual",
+          "Har\u00e1 fr\u00edo en Madrid",
+          "Se esperan condiciones de viento en Madrid",
+          "Dime cu\u00e1ndo llover\u00e1",
+          "Hora de el amanecer de hoy",
+          "Hora de el atardecer de hoy",
+          "Har\u00e1 mucho calor esta noche",
+          "Condici\u00f3n",
+          "est\u00e1 nublado hoy en Madrid",
+          "El aire est\u00e1 seco o h\u00famedo hoy",
+          "Necesito abrigo en Madrid",
+          "Deber\u00eda guardar los objetos que tengo al aire libre a causa del viento en Madrid",
+          "A qu\u00e9 hora empezar\u00e1 a llover en Madrid",
+          "A qu\u00e9 hora empieza el amanecer",
+          "A qu\u00e9 hora es el atardecer",
+          "Cu\u00e1l ser\u00e1 la temperatura m\u00ednima hoy por la ma\u00f1ana",
+          "Dime la previsi\u00f3n de el tiempo a las 19",
+          "Llover\u00e1 durante el fin de semana"
+        ]
+      },
+      "eu-es": {
+        "name": "Eguraldia",
+        "description": "Galdetu eguraldia, iragarpena, espero den euria eta gehiago. Munduko beste hiri batzuei buruz ere galde dezakezu. Datuak OpenMeteo zerbitzutik datoz.",
+        "examples": [
+          "Zein da orain hezetasun maila Bilbon",
+          "Hotza egingo du gaur Bilbon",
+          "Haizea dago orain Bilbon",
+          "Noiz egingo du euria berriro Bilbon",
+          "Zer ordutan atera da eguzkia gaur Bilbon",
+          "Zer ordutan sartuko da eguzkia gaur Bilbon",
+          "Zenbat gradu daude orain Bilbon",
+          "Zein da eguraldiaren iragarpena hurrengo bi egunetarako Bilbon",
+          "dago eguzkitsu gaur Bilbon",
+          "Hezegailu bat behar dut gaur",
+          "Beroa dago kanpoan orain Bilbon",
+          "Haizea izango da",
+          "Zenbat denbora falta da euria hasteko",
+          "Zer ordutan argituko du bihar Bilbon",
+          "Noiz da ilunabarra gaur",
+          "Zenbateko beroa egingo du bihar",
+          "Nolako eguraldia egingo du asteazkenean Bilbon",
+          "izotza egongo da"
+        ]
+      },
+      "fa-ir": {
+        "name": "\u0622\u0628 \u0648 \u0647\u0648\u0627",
+        "description": "\u0634\u0631\u0627\u06cc\u0637 \u0622\u0628 \u0648 \u0647\u0648\u0627\u060c \u067e\u06cc\u0634 \u0628\u06cc\u0646\u06cc\u060c \u0628\u0627\u0631\u0634 \u0645\u0648\u0631\u062f \u0627\u0646\u062a\u0638\u0627\u0631 \u0648 \u0628\u06cc\u0634\u062a\u0631. \u0645\u06cc \u062a\u0648\u0627\u0646\u06cc\u062f \u0622\u0628 \u0648 \u0647\u0648\u0627\u06cc \u0634\u0647\u0631\u0647\u0627\u06cc \u062f\u06cc\u06af\u0631 \u062c\u0647\u0627\u0646 \u0631\u0627 \u0647\u0645 \u0628\u067e\u0631\u0633\u06cc\u062f. \u0634\u0631\u0627\u06cc\u0637 \u0641\u0639\u0644\u06cc \u0648 \u067e\u06cc\u0634 \u0628\u06cc\u0646\u06cc \u0627\u0632 OpenMeteo \u0645\u06cc \u0622\u06cc\u062f.",
+        "examples": [
+          "\u0631\u0637\u0648\u0628\u062a \u0641\u0639\u0644\u06cc",
+          "\u0622\u06cc\u0627 \u062f\u0627\u063a \u0627\u0633\u062a",
+          "\u0622\u06cc\u0627 \u0628\u0627\u062f \u0627\u0633\u062a",
+          "\u0686\u0647 \u0632\u0645\u0627\u0646\u06cc \u0628\u0627\u0631\u0627\u0646 \u0628\u0639\u062f\u06cc \u0645\u06cc \u0628\u0627\u0631\u062f\u061f",
+          "\u0632\u0645\u0627\u0646 \u0637\u0644\u0648\u0639 \u062e\u0648\u0631\u0634\u06cc\u062f \u0686\u06cc\u0633\u062a",
+          "\u0632\u0645\u0627\u0646 \u063a\u0631\u0648\u0628 \u0622\u0641\u062a\u0627\u0628",
+          "\u062f\u0631\u062c\u0647 \u062d\u0631\u0627\u0631\u062a \u0686\u06cc\u0633\u062a",
+          "\u067e\u06cc\u0634 \u0628\u06cc\u0646\u06cc \u0627\u0645\u0631\u0648\u0632 \u0686\u06cc\u0633\u062a",
+          "\u0622\u06cc\u0627 \u0627\u0628\u0631 \u0627\u0633\u062a"
+        ]
+      },
+      "fi-fi": {
+        "name": "S\u00e4\u00e4",
+        "description": "Kysy s\u00e4\u00e4t\u00e4, ennustetta, odotettua sadem\u00e4\u00e4r\u00e4\u00e4 ja paljon muuta. Voit kysy\u00e4 my\u00f6s muista kaupungeista ymp\u00e4ri maailmaa. Nykyinen s\u00e4\u00e4 ja ennusteet tulevat OpenMeteosta.",
+        "examples": [
+          "mik\u00e4 on ilmankosteus juuri nyt Helsingiss\u00e4",
+          "onko t\u00e4n\u00e4\u00e4n kosteaa",
+          "tuleeko t\u00e4n\u00e4\u00e4n kylm\u00e4 Helsingiss\u00e4",
+          "tarvitsenko takin t\u00e4n\u00e4\u00e4n",
+          "tuuleeko kovaa juuri nyt Helsingiss\u00e4",
+          "kuinka kova tuuli on",
+          "milloin alkaa taas sataa Helsingiss\u00e4",
+          "milloin sade alkaa",
+          "mihin aikaan aurinko nousee t\u00e4n\u00e4\u00e4n Helsingiss\u00e4",
+          "milloin on auringonnousu t\u00e4n\u00e4\u00e4n Helsingiss\u00e4",
+          "mihin aikaan aurinko laskee t\u00e4n\u00e4\u00e4n Helsingiss\u00e4",
+          "milloin on auringonlasku t\u00e4n\u00e4\u00e4n Helsingiss\u00e4",
+          "mik\u00e4 on l\u00e4mp\u00f6tila juuri nyt Helsingiss\u00e4",
+          "mik\u00e4 on l\u00e4mp\u00f6tila t\u00e4n\u00e4 iltana Helsingiss\u00e4",
+          "mik\u00e4 on s\u00e4\u00e4ennuste seuraaville kahdelle p\u00e4iv\u00e4lle Helsingiss\u00e4",
+          "millainen s\u00e4\u00e4 on tiistaina Helsingiss\u00e4",
+          "onko t\u00e4n\u00e4\u00e4n aurinkoista Helsingiss\u00e4",
+          "onko pilvist\u00e4"
+        ]
+      },
+      "fr-fr": {
+        "name": "M\u00e9t\u00e9o",
+        "description": "Consultez la m\u00e9t\u00e9o actuelle, les pr\u00e9visions, l'humidit\u00e9 et les prochaines pluies. Vous pouvez aussi demander la m\u00e9t\u00e9o d'une autre ville. Les donn\u00e9es proviennent d'Open-Meteo.",
+        "examples": [
+          "quel est le taux d'humidit\u00e9",
+          "Va-t-il faire froid \u00e0 Lyon?",
+          "y a-t-il du vent",
+          "quand pleuvra-t-il",
+          "\u00e0 quelle heure est le lever du soleil",
+          "\u00e0 quelle heure est le coucher du soleil",
+          "quelle est la temp\u00e9rature",
+          "quel temps fait-il",
+          "est-ce que le ciel est d\u00e9gag\u00e9",
+          "l'air est-il humide",
+          "fera-t-il chaud",
+          "est-ce venteux dans Lyon",
+          "\u00e0 quelle heure commencera la pluie",
+          "quelle est l'heure du lever du soleil dans Lyon",
+          "quelle est l'heure du coucher du soleil dans Lyon",
+          "ai-je besoin d'une veste \u00e0 Lyon",
+          "quel temps fera-t-il dimanche",
+          "est-ce qu'il neige demain \u00e0 Lyon"
+        ]
+      },
+      "gl-es": {
+        "name": "O tempo",
+        "description": "Obt\u00e9n as condici\u00f3ns meteorol\u00f3xicas, previsi\u00f3ns, precipitaci\u00f3ns esperadas e moito m\u00e1is! Tam\u00e9n podes consultar o tempo noutras cidades do mundo. As condici\u00f3ns actuais e as previsi\u00f3ns meteorol\u00f3xicas prove\u00f1en de OpenMeteo",
+        "examples": [
+          "cal \u00e9 o nivel de humidade",
+          "Vai facer fr\u00edo en Vigo?",
+          "cal \u00e9 a velocidade do vento",
+          "a que hora comeza a chover",
+          "a que hora sae o sol",
+          "a que hora anoitece",
+          "vai ir calor hoxe",
+          "vai ir calor ma\u00f1\u00e1 en Vigo",
+          "hai sol",
+          "hai humidade en Vigo",
+          "Necesito abrigo en Vigo?",
+          "hai algunha alerta por vento",
+          "cando vai chover novamente",
+          "cal \u00e9 a hora do amencer en Vigo",
+          "cal \u00e9 a hora do anoitecer hoxe",
+          "cal \u00e9 a temperatura \u00e1s 8 da ma\u00f1\u00e1 martes",
+          "previsi\u00f3n para m\u00e9rcores \u00e1 1 da tarde",
+          "est\u00e1 a nevar en Vigo"
+        ]
+      },
+      "hu-hu": {
+        "name": "Id\u0151j\u00e1r\u00e1s",
+        "description": "K\u00e9rdezd le az id\u0151j\u00e1r\u00e1st, az el\u0151rejelz\u00e9st, a v\u00e1rhat\u00f3 csapad\u00e9kot \u00e9s m\u00e9g t\u00f6bbet. A vil\u00e1g m\u00e1s v\u00e1rosair\u00f3l is k\u00e9rdezhetsz. Az aktu\u00e1lis id\u0151j\u00e1r\u00e1s \u00e9s az el\u0151rejelz\u00e9sek az OpenMeteo adatai.",
+        "examples": [
+          "Mennyi most a p\u00e1ratartalom Budapest v\u00e1rosban",
+          "Hideg lesz ma Budapest v\u00e1rosban",
+          "Szeles most az id\u0151 Budapest v\u00e1rosban",
+          "Mikor fog legk\u00f6zelebb esni az es\u0151 Budapest v\u00e1rosban",
+          "H\u00e1nykor kel fel a nap ma Budapest v\u00e1rosban",
+          "H\u00e1nykor nyugszik le a nap ma Budapest v\u00e1rosban",
+          "Mennyi most a h\u0151m\u00e9rs\u00e9klet Budapest v\u00e1rosban",
+          "Milyen az id\u0151j\u00e1r\u00e1s-el\u0151rejelz\u00e9s k\u00e9t napra Budapest v\u00e1rosban",
+          "felh\u0151s van",
+          "Mennyi a p\u00e1ratartalom",
+          "H\u0171v\u00f6s lesz ma Budapest v\u00e1rosban",
+          "Milyen er\u0151s a sz\u00e9l Budapest v\u00e1rosban",
+          "Mikor kezd el esni Budapest v\u00e1rosban",
+          "H\u00e1nykor kel fel a nap ma",
+          "H\u00e1nykor nyugszik le a nap ma",
+          "H\u00e1ny fok lesz maximum holnap Budapest v\u00e1rosban",
+          "Milyen lesz az id\u0151j\u00e1r\u00e1s holnaput\u00e1n Budapest v\u00e1rosban",
+          "lesznek felh\u0151k ma"
+        ]
+      },
+      "it-it": {
+        "name": "Che tempo fa?",
+        "description": "Condizioni metereologiche da tutto il mondo e previsioni",
+        "examples": [
+          "Qual \u00e8 adesso l'umidit\u00e0 a Roma",
+          "Quanta umidit\u00e0 \u00e8 prevista a Roma",
+          "Far\u00e0 freddo oggi a Roma",
+          "Far\u00e0 caldo a Roma",
+          "Tira vento adesso a Roma",
+          "Ci sar\u00e0 vento domani",
+          "Quando piover\u00e0 di nuovo a Roma",
+          "Tra quanto comincia la pioggia oggi a Roma",
+          "A che ora sorge il sole oggi a Roma",
+          "A che ora sorge il sole",
+          "A che ora tramonta il sole oggi a Roma",
+          "A che ora tramonta il sole",
+          "Qual \u00e8 la temperatura attuale a Roma",
+          "Quanti gradi ci saranno stanotte",
+          "Che previsioni ci sono per i prossimi due giorni a Roma",
+          "Che previsioni ci sono per domani mattina a Roma",
+          "\u00e8 nuvoloso",
+          "\u00e8 soleggiato"
+        ]
+      },
       "kab": {
         "name": "Tignawt",
         "description": "Steqsi \u0263ef tignawt, \u0263ef usanay, \u0263ef ugeffur i d-iteddun d wugar. Tzemre\u1e0d ad testeqsi\u1e0d da\u0263en \u0263ef temdinin nni\u1e0den n uma\u1e0dal. Isefka-agi d ay d-yekkan seg OpenMeteo.",
@@ -39845,6 +42087,222 @@
           "Ac\u1e25al ara yi\u0263 \u1e5b\u1e5be\u1e0d azekka",
           "Amek ara tili l\u1e25ala deg wass n lareb\u025ba di Tizi Wezzu",
           "ad d-ye\u0263li udfel"
+        ]
+      },
+      "nl-nl": {
+        "name": "Weer",
+        "description": "Ontvang de weersvoorspellingen, verwachte neerslag en meer! Je kunt ook vragen naar het weerbeeld in andere steden over de hele wereld. Huidige weergegevens en voorspellingen komen van OpenMeteo",
+        "examples": [
+          "heb ik een luchtbevochtiger nodig",
+          "Wordt het koud in Utrecht?",
+          "hoe hard waait het",
+          "gaat het regenen",
+          "hoe laat gaat de zon op",
+          "hoe laat gaat de zon onder",
+          "wat is de temperatuur dinsdag avond",
+          "gaat het onweren op dinsdag",
+          "hoe bewolkt of helder is het",
+          "hoe vochtig is het in Utrecht",
+          "Moet ik een jas aan in Utrecht?",
+          "moet ik oppassen voor harde wind",
+          "komt er snel regen aan",
+          "tijd van zonsopgang vandaag",
+          "tijd van zonsondergang vandaag",
+          "wat is de laagste temperatuur in Utrecht op morgen",
+          "hoe is het weer in Utrecht donderdag",
+          "zullen er wolken zijn vandaag"
+        ]
+      },
+      "oc-fr": {
+        "name": "Temps",
+        "description": "Obten\u00e8tz las condicions meteorologicas, las previsions, las precipitacions esperadas e f\u00f2r\u00e7a mai! Pod\u00e8tz tanben demandar per autre vilas del mond. Las condicions actualas e las previsions meteorologicas provenon de OpenMeteo",
+        "examples": [
+          "Me fa fauta umidificador ?",
+          "Far\u00e0 fred a Tolosa?",
+          "A quant velocitat bufa lo vent ?",
+          "A quin ora comen\u00e7ar\u00e0 a pl\u00f2ure ?",
+          "A quin ora comen\u00e7a a i aver lum ?",
+          "A quin ora se fa de nu\u00e8ch ?",
+          "Far\u00e0 calor aquela nu\u00e8ch?",
+          "Coss\u00ed es temps a Tolosa?",
+          "S'esp\u00e8ra bruma densa per aquela nu\u00e8ch ?",
+          "I a umiditat a Tolosa?",
+          "Far\u00e0 calorassa a Tolosa?",
+          "Fa vent u\u00e8i a Tolosa?",
+          "Explica-me quand plour\u00e0.",
+          "Orari del alba d'u\u00e8i.",
+          "Ora de la ponduda de solelh d'u\u00e8i.",
+          "Quin temperatura i aur\u00e0 a la 6 del ser deman ?",
+          "Prevision per dimars a la 11 del mi\u00e8gjorn a Tolosa.",
+          "La prevision an\u00f3ncia plu\u00e8ja ?"
+        ]
+      },
+      "pl-pl": {
+        "name": "Pogoda",
+        "description": "Sprawd\u017a pogod\u0119, prognoz\u0119, spodziewane opady i wi\u0119cej. Mo\u017cesz te\u017c zapyta\u0107 o inne miasta na \u015bwiecie. Aktualna pogoda i prognozy pochodz\u0105 z OpenMeteo.",
+        "examples": [
+          "Jaka jest teraz wilgotno\u015b\u0107 powietrza w Krakowie",
+          "B\u0119dzie dzi\u015b zimno w Krakowie",
+          "Czy jest dzi\u015b wietrznie w Krakowie",
+          "Kiedy znowu b\u0119dzie pada\u0107 w Krakowie",
+          "O kt\u00f3rej wschodzi s\u0142o\u0144ce dzi\u015b w Krakowie",
+          "O kt\u00f3rej zachodzi s\u0142o\u0144ce dzi\u015b w Krakowie",
+          "Jaka jest teraz temperatura w Krakowie",
+          "Jaka jest prognoza pogody na dwa dni w Krakowie",
+          "jest pochmurno",
+          "Jaka jest wilgotno\u015b\u0107 powietrza",
+          "B\u0119dzie ch\u0142odno dzi\u015b w Krakowie",
+          "Jak silny jest wiatr w Krakowie",
+          "Kiedy zacznie pada\u0107 w Krakowie",
+          "O kt\u00f3rej wschodzi s\u0142o\u0144ce dzi\u015b",
+          "O kt\u00f3rej zachodzi s\u0142o\u0144ce dzi\u015b",
+          "Ile stopni maksymalnie b\u0119dzie jutro w Krakowie",
+          "Jaka b\u0119dzie pogoda pojutrze w Krakowie",
+          "b\u0119d\u0105 chmury dzisiaj"
+        ]
+      },
+      "pt-br": {
+        "name": "Clima",
+        "description": "Veja as condi\u00e7\u00f5es clim\u00e1ticas, previs\u00f5es, precipita\u00e7\u00e3o esperada e muito mais! Voc\u00ea tamb\u00e9m pode perguntar sobre outras cidades ao redor do mundo. As condi\u00e7\u00f5es atuais e as previs\u00f5es meteorol\u00f3gicas v\u00eam do OpenMeteo.",
+        "examples": [
+          "est\u00e1 abafado l\u00e1 fora",
+          "Vai fazer frio em Recife?",
+          "devo me preocupar com ventos fortes",
+          "a chuva vai chegar em breve",
+          "a que horas come\u00e7a a luz do dia",
+          "a que horas escurece",
+          "Qual \u00e9 a temperatura",
+          "vai chover na quarta",
+          "estar\u00e1 ensolarado hoje",
+          "o ar est\u00e1 seco ou \u00famido em Recife",
+          "Preciso de casaco em Recife?",
+          "haver\u00e1 vento forte hoje em Recife",
+          "quando ser\u00e1 a pr\u00f3xima chuva",
+          "qual \u00e9 o hor\u00e1rio do nascer do sol em Recife",
+          "qual \u00e9 o hor\u00e1rio do p\u00f4r do sol em Recife",
+          "qu\u00e3o quente vai ficar hoje em Recife",
+          "como est\u00e1 o tempo na pr\u00f3ximo domingo",
+          "devo me preocupar com neblina"
+        ]
+      },
+      "pt-pt": {
+        "name": "Meteorologia",
+        "description": "Consulte as condi\u00e7\u00f5es meteorol\u00f3gicas, as previs\u00f5es, a precipita\u00e7\u00e3o esperada e muito mais! Tamb\u00e9m pode perguntar por outras cidades do mundo. As condi\u00e7\u00f5es atuais e as previs\u00f5es v\u00eam do OpenMeteo.",
+        "examples": [
+          "Qual \u00e9 agora a humidade do ar em Porto",
+          "Vai estar frio hoje em Porto",
+          "Est\u00e1 a fazer vento agora em Porto",
+          "Quando \u00e9 que volta a chover em Porto",
+          "A que horas nasce o sol hoje em Porto",
+          "A que horas se p\u00f5e o sol hoje em Porto",
+          "Qual \u00e9 a temperatura atual em Porto",
+          "Qual \u00e9 a previs\u00e3o do tempo para os pr\u00f3ximos dois dias em Porto",
+          "est\u00e1 nublado",
+          "Preciso de um desumidificador hoje",
+          "Vai estar calor segunda",
+          "Vai haver vento",
+          "Daqui a quanto tempo come\u00e7a a chuva",
+          "Quando \u00e9 o nascer do sol hoje",
+          "Quando \u00e9 o p\u00f4r do sol hoje",
+          "Quanto calor vai fazer amanh\u00e3",
+          "Como vai estar o tempo na segunda em Porto",
+          "vai cair neve amanh\u00e3 em Porto"
+        ]
+      },
+      "ru-ru": {
+        "name": "\u041f\u043e\u0433\u043e\u0434\u0430",
+        "description": "\u0423\u0437\u043d\u0430\u0439\u0442\u0435 \u043f\u043e\u0433\u043e\u0434\u0443, \u043f\u0440\u043e\u0433\u043d\u043e\u0437, \u043e\u0436\u0438\u0434\u0430\u0435\u043c\u044b\u0435 \u043e\u0441\u0430\u0434\u043a\u0438 \u0438 \u043c\u043d\u043e\u0433\u043e\u0435 \u0434\u0440\u0443\u0433\u043e\u0435. \u041c\u043e\u0436\u043d\u043e \u0441\u043f\u0440\u043e\u0441\u0438\u0442\u044c \u0438 \u043e \u0434\u0440\u0443\u0433\u0438\u0445 \u0433\u043e\u0440\u043e\u0434\u0430\u0445 \u043c\u0438\u0440\u0430. \u0422\u0435\u043a\u0443\u0449\u0430\u044f \u043f\u043e\u0433\u043e\u0434\u0430 \u0438 \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u044b \u043f\u0440\u0438\u0445\u043e\u0434\u044f\u0442 \u0438\u0437 OpenMeteo.",
+        "examples": [
+          "\u041a\u0430\u043a\u0430\u044f \u0441\u0435\u0439\u0447\u0430\u0441 \u0432\u043b\u0430\u0436\u043d\u043e\u0441\u0442\u044c \u0432\u043e\u0437\u0434\u0443\u0445\u0430 \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u0411\u0443\u0434\u0435\u0442 \u043b\u0438 \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0445\u043e\u043b\u043e\u0434\u043d\u043e \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u0421\u0438\u043b\u044c\u043d\u044b\u0439 \u043b\u0438 \u0441\u0435\u0439\u0447\u0430\u0441 \u0432\u0435\u0442\u0435\u0440 \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u041a\u043e\u0433\u0434\u0430 \u0441\u043d\u043e\u0432\u0430 \u043f\u043e\u0439\u0434\u0451\u0442 \u0434\u043e\u0436\u0434\u044c \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u0412\u043e \u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0432\u043e\u0441\u0445\u043e\u0434\u0438\u0442 \u0441\u043e\u043b\u043d\u0446\u0435 \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u0412\u043e \u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u0445\u043e\u0434\u0438\u0442 \u0441\u043e\u043b\u043d\u0446\u0435 \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u041a\u0430\u043a\u0430\u044f \u0441\u0435\u0439\u0447\u0430\u0441 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u041a\u0430\u043a\u043e\u0439 \u043f\u0440\u043e\u0433\u043d\u043e\u0437 \u043f\u043e\u0433\u043e\u0434\u044b \u043d\u0430 \u0434\u0432\u0430 \u0434\u043d\u0435\u0439 \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u043e\u0431\u043b\u0430\u0447\u043d\u043e",
+          "\u041a\u0430\u043a\u0430\u044f \u0432\u043b\u0430\u0436\u043d\u043e\u0441\u0442\u044c \u0432\u043e\u0437\u0434\u0443\u0445\u0430",
+          "\u0411\u0443\u0434\u0435\u0442 \u043b\u0438 \u043f\u0440\u043e\u0445\u043b\u0430\u0434\u043d\u043e \u0441\u0435\u0433\u043e\u0434\u043d\u044f \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u041d\u0430\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0441\u0438\u043b\u044c\u043d\u044b\u0439 \u0432\u0435\u0442\u0435\u0440 \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u041a\u043e\u0433\u0434\u0430 \u043d\u0430\u0447\u043d\u0451\u0442\u0441\u044f \u0434\u043e\u0436\u0434\u044c \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u0412\u043e \u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0432\u043e\u0441\u0445\u043e\u0434\u0438\u0442 \u0441\u043e\u043b\u043d\u0446\u0435 \u0441\u0435\u0433\u043e\u0434\u043d\u044f",
+          "\u0412\u043e \u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u0445\u043e\u0434\u0438\u0442 \u0441\u043e\u043b\u043d\u0446\u0435 \u0441\u0435\u0433\u043e\u0434\u043d\u044f",
+          "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0433\u0440\u0430\u0434\u0443\u0441\u043e\u0432 \u0431\u0443\u0434\u0435\u0442 \u043c\u0430\u043a\u0441\u0438\u043c\u0443\u043c \u0437\u0430\u0432\u0442\u0440\u0430 \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u041a\u0430\u043a\u0430\u044f \u0431\u0443\u0434\u0435\u0442 \u043f\u043e\u0433\u043e\u0434\u0430 \u043f\u043e\u0441\u043b\u0435\u0437\u0430\u0432\u0442\u0440\u0430 \u0432 \u041a\u0430\u0437\u0430\u043d\u0438",
+          "\u0435\u0441\u0442\u044c \u043e\u0431\u043b\u0430\u043a\u0430 \u0437\u0430\u0432\u0442\u0440\u0430"
+        ]
+      },
+      "sv-fi": {
+        "name": "V\u00e4der",
+        "description": "F\u00e5 v\u00e4derl\u00e4get, prognoser, v\u00e4ntad nederb\u00f6rd och mycket mer. Du kan ocks\u00e5 fr\u00e5ga om andra st\u00e4der i v\u00e4rlden. Aktuellt v\u00e4der och prognoser kommer fr\u00e5n OpenMeteo.",
+        "examples": [
+          "Vad \u00e4r luftfuktigheten just nu i Helsingfors",
+          "\u00c4r det fuktigt idag",
+          "Blir det kallt idag i Helsingfors",
+          "Beh\u00f6ver jag jacka idag",
+          "Bl\u00e5ser det mycket just nu i Helsingfors",
+          "Hur h\u00e5rd \u00e4r vinden",
+          "N\u00e4r kommer det att regna igen i Helsingfors",
+          "N\u00e4r b\u00f6rjar det regna",
+          "Hur dags g\u00e5r solen upp idag i Helsingfors",
+          "N\u00e4r \u00e4r soluppg\u00e5ngen idag i Helsingfors",
+          "Hur dags g\u00e5r solen ner idag i Helsingfors",
+          "N\u00e4r \u00e4r solnedg\u00e5ngen idag i Helsingfors",
+          "Vad \u00e4r temperaturen just nu i Helsingfors",
+          "Vad blir temperaturen i kv\u00e4ll i Helsingfors",
+          "Vad \u00e4r v\u00e4derprognosen f\u00f6r de kommande tv\u00e5 dagarna i Helsingfors",
+          "Hur blir v\u00e4dret p\u00e5 tisdag i Helsingfors",
+          "\u00e4r det idag soligt i Helsingfors",
+          "\u00e4r det molnigt"
+        ]
+      },
+      "sv-se": {
+        "name": "V\u00e4der",
+        "description": "F\u00e5 v\u00e4derl\u00e4get, prognoser, v\u00e4ntad nederb\u00f6rd och mycket mer. Du kan ocks\u00e5 fr\u00e5ga om andra st\u00e4der i v\u00e4rlden. Aktuellt v\u00e4der och prognoser kommer fr\u00e5n OpenMeteo.",
+        "examples": [
+          "Vad \u00e4r luftfuktigheten just nu i G\u00f6teborg",
+          "Vilken luftfuktighet v\u00e4ntas i G\u00f6teborg",
+          "Blir det kallt idag i G\u00f6teborg",
+          "Blir det varmt i G\u00f6teborg",
+          "Bl\u00e5ser det mycket just nu i G\u00f6teborg",
+          "Blir det bl\u00e5sigt idag i G\u00f6teborg",
+          "N\u00e4r kommer det att regna igen i G\u00f6teborg",
+          "Hur l\u00e5ng tid tills regnet b\u00f6rjar idag i G\u00f6teborg",
+          "Hur dags g\u00e5r solen upp idag i G\u00f6teborg",
+          "Hur dags g\u00e5r solen upp",
+          "Hur dags g\u00e5r solen ner idag i G\u00f6teborg",
+          "Hur dags g\u00e5r solen ner",
+          "Vad \u00e4r temperaturen just nu i G\u00f6teborg",
+          "Hur m\u00e5nga grader blir det i natt",
+          "Vad \u00e4r v\u00e4derprognosen f\u00f6r de kommande tv\u00e5 dagarna i G\u00f6teborg",
+          "Vad \u00e4r prognosen f\u00f6r i kv\u00e4ll i G\u00f6teborg",
+          "\u00e4r det molnigt",
+          "v\u00e4ntas sol i G\u00f6teborg"
+        ]
+      },
+      "tr-tr": {
+        "name": "Hava Durumu",
+        "description": "Hava durumunu, tahminleri, beklenen ya\u011f\u0131\u015f\u0131 ve daha fazlas\u0131n\u0131 \u00f6\u011frenin. D\u00fcnyan\u0131n ba\u015fka \u015fehirlerini de sorabilirsiniz. G\u00fcncel hava durumu ve tahminler OpenMeteo kaynakl\u0131d\u0131r.",
+        "examples": [
+          "\u015eu anda nem oran\u0131 ne kadar \u0130zmir i\u00e7in",
+          "Bug\u00fcn hava so\u011fuk olacak m\u0131 \u0130zmir i\u00e7in",
+          "\u015eu anda r\u00fczgar var m\u0131 \u0130zmir i\u00e7in",
+          "Bir dahaki ya\u011fmur ne zaman ya\u011facak \u0130zmir i\u00e7in",
+          "Bug\u00fcn g\u00fcne\u015f saat ka\u00e7ta do\u011fuyor \u0130zmir i\u00e7in",
+          "Bug\u00fcn g\u00fcne\u015f saat ka\u00e7ta bat\u0131yor \u0130zmir i\u00e7in",
+          "\u015eu anki s\u0131cakl\u0131k ka\u00e7 derece \u0130zmir i\u00e7in",
+          "\u00d6n\u00fcm\u00fczdeki iki g\u00fcn i\u00e7in hava durumu nas\u0131l \u0130zmir i\u00e7in",
+          "Bug\u00fcn hava g\u00fcne\u015fli mi \u0130zmir i\u00e7in",
+          "Bug\u00fcn hava \u00e7ok nemli mi \u0130zmir i\u00e7in",
+          "Bug\u00fcn hava serin olacak m\u0131 \u0130zmir i\u00e7in",
+          "R\u00fczgar ne kadar kuvvetli \u0130zmir i\u00e7in",
+          "Ya\u011fmur ne zaman ba\u015flayacak \u0130zmir i\u00e7in",
+          "Bug\u00fcn g\u00fcne\u015f saat ka\u00e7ta do\u011fuyor",
+          "Bug\u00fcn g\u00fcne\u015f saat ka\u00e7ta bat\u0131yor",
+          "Yar\u0131n en fazla ka\u00e7 derece olacak \u0130zmir i\u00e7in",
+          "\u00d6b\u00fcr g\u00fcn hava nas\u0131l olacak \u0130zmir i\u00e7in",
+          "Bug\u00fcn ya\u011fmur ihtimali var m\u0131"
         ]
       }
     },
@@ -40178,12 +42636,140 @@
       "sv-se"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "WikiHow",
+        "description": "Com fer gaireb\u00e9 qualsevolcosa",
+        "examples": [
+          "com bullir un ou",
+          "Com puc aconseguir que el meu gos deixi de bordar?"
+        ]
+      },
+      "da-dk": {
+        "name": "WikiHow",
+        "description": "S\u00e5dan g\u00f8r du n\u00e6sten alt.",
+        "examples": [
+          "hvordan koger man et \u00e6g",
+          "hvordan f\u00e5r jeg min hund til at stoppe med at g\u00f8"
+        ]
+      },
+      "de-de": {
+        "name": "WikiHow",
+        "description": "Wie man fast alles macht.",
+        "examples": [
+          "Wie man ein Ei kocht",
+          "wie bringe ich meinen Hund dazu, mit dem Bellen aufzuh\u00f6ren"
+        ]
+      },
+      "es-co": {
+        "name": "WikiHow",
+        "description": "C\u00f3mo hacer casi todo.",
+        "examples": [
+          "c\u00f3mo hervir un huevo",
+          "busca wikihow para pizza"
+        ]
+      },
+      "es-es": {
+        "name": "WikiHow",
+        "description": "C\u00f3mo hacer casi todo.",
+        "examples": [
+          "C\u00f3mo hervir un huevo",
+          "C\u00f3mo puedo hacer que mi perro deje de ladrar"
+        ]
+      },
+      "eu-es": {
+        "name": "WikiHow",
+        "description": "Ia edozer nola egin jakiteko.",
+        "examples": [
+          "nola egosi arrautza bat",
+          "nola egin nire zakurrak zaunkarik ez egiteko"
+        ]
+      },
+      "fa-ir": {
+        "name": "WikiHow",
+        "description": "\u0686\u06af\u0648\u0646\u0647 \u062a\u0642\u0631\u06cc\u0628\u0627\u064b \u0647\u0631 \u06a9\u0627\u0631\u06cc \u0631\u0627 \u0627\u0646\u062c\u0627\u0645 \u062f\u0647\u06cc\u0645.",
+        "examples": [
+          "\u0686\u06af\u0648\u0646\u0647 \u0645\u06cc \u062a\u0648\u0627\u0646\u0645 \u06cc\u06a9 \u062a\u062e\u0645 \u0645\u0631\u063a \u0622\u0628 \u067e\u0632 \u06a9\u0646\u0645",
+          "\u062c\u0633\u062a\u062c\u0648 \u067e\u06cc\u062a\u0632\u0627 \u062f\u0631 wikihow"
+        ]
+      },
+      "fr-fr": {
+        "name": "WikiHow",
+        "description": "Des explications \u00e9tape par \u00e9tape pour les questions pratiques du quotidien.",
+        "examples": [
+          "Comment faire cuire un oeuf dur ?",
+          "Comment faire pour que mon chien arr\u00eate d'aboyer ?"
+        ]
+      },
+      "gl-es": {
+        "name": "WikiHow",
+        "description": "Como facer case calquera cousa.",
+        "examples": [
+          "como ferver un ovo",
+          "como consigo que o meu can deixe de ladrar"
+        ]
+      },
+      "it-it": {
+        "name": "WikiHow",
+        "description": "Come fare quasi qualsiasi cosa.",
+        "examples": [
+          "come si fa bollire un uovo",
+          "come faccio a far smettere di abbaiare il mio cane"
+        ]
+      },
       "kab": {
         "name": "WikiHow",
         "description": "Amek ara nexdem qrib kullec.",
         "examples": [
           "amek ara nsellew tamellalt",
           "amek ara s\u1e25ebse\u0263 aqjun-inu ad yeqqar"
+        ]
+      },
+      "nl-nl": {
+        "name": "WikiHow",
+        "description": "Hoe je bijna alles doet.",
+        "examples": [
+          "hoe kook je een ei",
+          "hoe zorg ik dat mijn hond stopt met blaffen"
+        ]
+      },
+      "pl-pl": {
+        "name": "WikiHow",
+        "description": "Jak zrobi\u0107 niemal wszystko.",
+        "examples": [
+          "w jaki spos\u00f3b ugotowa\u0107 jajko",
+          "wyszukaj wiki-how pizza"
+        ]
+      },
+      "pt-br": {
+        "name": "WikiHow",
+        "description": "Como fazer quase tudo.",
+        "examples": [
+          "como cozinhar um ovo",
+          "como fa\u00e7o meu cachorro parar de latir"
+        ]
+      },
+      "pt-pt": {
+        "name": "WikiHow",
+        "description": "Como fazer quase tudo.",
+        "examples": [
+          "como cozer um ovo",
+          "como fa\u00e7o para o meu c\u00e3o parar de ladrar"
+        ]
+      },
+      "ru-ru": {
+        "name": "WikiHow",
+        "description": "\u041a\u0430\u043a \u0434\u0435\u043b\u0430\u0442\u044c \u043f\u043e\u0447\u0442\u0438 \u0432\u0441\u0435.",
+        "examples": [
+          "\u041a\u0430\u043a \u0441\u0432\u0430\u0440\u0438\u0442\u044c \u044f\u0439\u0446\u043e",
+          "\u043f\u043e\u0438\u0441\u043a \u043f\u0438\u0446\u0446\u044b \u043d\u0430 wikihow"
+        ]
+      },
+      "sv-se": {
+        "name": "WikiHow",
+        "description": "Hur man g\u00f6r n\u00e4stan allt.",
+        "examples": [
+          "hur kokar man ett \u00e4gg",
+          "hur f\u00e5r jag min hund att sluta sk\u00e4lla"
         ]
       }
     },
@@ -40259,6 +42845,94 @@
       "sv-se"
     ],
     "locale_content": {
+      "ca-es": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "lletreja-ho"
+        ]
+      },
+      "da-dk": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "hvad var g\u00e5rsdagens ord",
+          "stav det",
+          "dagens ord"
+        ]
+      },
+      "de-de": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "was war das wort des tages gestern",
+          "buchstabiere das",
+          "was ist das wort des tages"
+        ]
+      },
+      "es-co": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "cu\u00e1l era la palabra de ayer",
+          "deletr\u00e9ala",
+          "palabra del d\u00eda"
+        ]
+      },
+      "es-es": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "cu\u00e1l era la palabra de ayer",
+          "deletr\u00e9ala",
+          "palabra del d\u00eda"
+        ]
+      },
+      "eu-es": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "esan atzoko hitza",
+          "letreiatu ozen",
+          "eman eguneko hitza"
+        ]
+      },
+      "fa-ir": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "\u06a9\u0644\u0645\u0647 \u062f\u06cc\u0631\u0648\u0632 \u0631\u0627 \u0628\u0647 \u0645\u0646 \u0628\u06af\u0648",
+          "\u0686\u0637\u0648\u0631 \u0647\u062c\u06cc \u0645\u06cc \u0634\u0648\u062f",
+          "\u06a9\u0644\u0645\u0647 \u0631\u0648\u0632"
+        ]
+      },
+      "fr-fr": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "quel \u00e9tait le mot d'hier",
+          "\u00e9pelle-le",
+          "mot du jour"
+        ]
+      },
+      "gl-es": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "cal foi a palabra de onte",
+          "deletr\u00e9ao",
+          "palabra do d\u00eda"
+        ]
+      },
+      "it-it": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "dimmi la parola di ieri",
+          "scandiscila",
+          "qual \u00e8 la parola di oggi"
+        ]
+      },
       "kab": {
         "name": "Word Of The Day",
         "description": "Speak the word of the day and spell it on request.",
@@ -40266,6 +42940,60 @@
           "dacu-t wawal n yi\u1e0delli",
           "sefru-t s wawalen",
           "awal n wass"
+        ]
+      },
+      "nl-nl": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "vertel me het woord van gisteren",
+          "spel het uit",
+          "wat is het woord van de dag"
+        ]
+      },
+      "pl-pl": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "powiedz mi wczorajsze s\u0142owo",
+          "jak to si\u0119 pisze",
+          "podaj mi s\u0142owo dnia"
+        ]
+      },
+      "pt-br": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "me diga a palavra de ontem",
+          "soletra pra mim",
+          "me d\u00ea a palavra do dia"
+        ]
+      },
+      "pt-pt": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "qual era a palavra de ontem",
+          "soletra isso",
+          "palavra di\u00e1ria"
+        ]
+      },
+      "ru-ru": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "\u0441\u043a\u0430\u0436\u0438 \u043c\u043d\u0435 \u0432\u0447\u0435\u0440\u0430\u0448\u043d\u0435\u0435 \u0441\u043b\u043e\u0432\u043e",
+          "\u043a\u0430\u043a \u044d\u0442\u043e \u043f\u0438\u0448\u0435\u0442\u0441\u044f",
+          "\u043a\u0430\u043a\u043e\u0435 \u0441\u043b\u043e\u0432\u043e \u0434\u043d\u044f"
+        ]
+      },
+      "sv-se": {
+        "name": "Word Of The Day",
+        "description": "Speak the word of the day and spell it on request.",
+        "examples": [
+          "ber\u00e4tta g\u00e5rdagens ord",
+          "stava det \u00e5t mig",
+          "vad \u00e4r dagens ord"
         ]
       }
     },

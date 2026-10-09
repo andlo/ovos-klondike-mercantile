@@ -23,7 +23,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 3,
-  "open_issues": 9,
+  "open_issues": 8,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -76,12 +76,287 @@
     "zsm-my"
   ],
   "locale_content": {
+    "ar-xx": {
+      "name": "\u0645\u0647\u0627\u0631\u0629 \u0648\u0648\u0631\u062f\u0646\u062a",
+      "description": "\u0627\u0633\u062a\u062e\u062f\u0645 \u0648\u0648\u0631\u062f\u0646\u062a \u0644\u0644\u0625\u062c\u0627\u0628\u0629 \u0639\u0644\u0649 \u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0642\u0627\u0645\u0648\u0633.",
+      "examples": [
+        "\u0627\u0628\u062d\u062b \u0641\u064a \u0648\u0648\u0631\u062f\u0646\u062a \u0639\u0646 ...",
+        "\u0627\u0633\u0623\u0644 \u0648\u0648\u0631\u062f\u0646\u062a \u0639\u0646 ..."
+      ]
+    },
+    "bg-bg": {
+      "name": "\u0423\u043c\u0435\u043d\u0438\u0435 \u0423\u044a\u0440\u0434\u043d\u0435\u0442",
+      "description": "\u0418\u0437\u043f\u043e\u043b\u0437\u0432\u0430\u0439\u0442\u0435 \u0423\u044a\u0440\u0434\u043d\u0435\u0442 \u0437\u0430 \u043e\u0442\u0433\u043e\u0432\u043e\u0440\u0438 \u043d\u0430 \u0440\u0435\u0447\u043d\u0438\u043a\u043e\u0432\u0438 \u0432\u044a\u043f\u0440\u043e\u0441\u0438.",
+      "examples": [
+        "\u0442\u044a\u0440\u0441\u0438 \u0432 \u0443\u044a\u0440\u0434\u043d\u0435\u0442 ...",
+        "\u043f\u0438\u0442\u0430\u0439 \u0443\u044a\u0440\u0434\u043d\u0435\u0442 \u0437\u0430 ..."
+      ]
+    },
+    "ca-es": {
+      "name": "Habilitat de Wordnet",
+      "description": "Usa Wordnet per a respondre q\u00fcestions relacionades amb diccioanris.",
+      "examples": [
+        "quina \u00e9s la definici\u00f3 de ...",
+        "quin \u00e9s l'ant\u00f2nim de..."
+      ]
+    },
+    "cmn-cn": {
+      "name": "WordNet \u6280\u80fd",
+      "description": "\u4f7f\u7528 WordNet \u56de\u7b54\u8bcd\u5178\u7c7b\u95ee\u9898\u3002",
+      "examples": [
+        "\u5728WordNet\u4e2d\u641c\u7d22...",
+        "\u95eeWordNet\u5173\u4e8e..."
+      ]
+    },
+    "da-dk": {
+      "name": "Wordnet f\u00e6rdighed",
+      "description": "Brug Wordnet til at besvare ordbogslignende sp\u00f8rgsm\u00e5l.",
+      "examples": [
+        "hvad er definitionen p\u00e5...",
+        "hvad er antonymet til..."
+      ]
+    },
+    "de-de": {
+      "name": "Wordnet Skill",
+      "description": "Verwende Wordnet, um w\u00f6rterbuch\u00e4hnliche Fragen zu beantworten.",
+      "examples": [
+        "was ist die Definition von ...",
+        "was ist das Antonym von ..."
+      ]
+    },
+    "el-gr": {
+      "name": "\u0394\u03b5\u03be\u03b9\u03cc\u03c4\u03b7\u03c4\u03b1 Wordnet",
+      "description": "\u03a7\u03c1\u03b7\u03c3\u03b9\u03bc\u03bf\u03c0\u03bf\u03b9\u03b5\u03af \u03c4\u03bf Wordnet \u03b3\u03b9\u03b1 \u03bd\u03b1 \u03b1\u03c0\u03b1\u03bd\u03c4\u03ae\u03c3\u03b5\u03b9 \u03c3\u03b5 \u03b5\u03c1\u03c9\u03c4\u03ae\u03c3\u03b5\u03b9\u03c2 \u03c4\u03cd\u03c0\u03bf\u03c5 \u03bb\u03b5\u03be\u03b9\u03ba\u03bf\u03cd.",
+      "examples": [
+        "\u03c0\u03bf\u03b9\u03bf\u03c2 \u03b5\u03af\u03bd\u03b1\u03b9 \u03bf \u03bf\u03c1\u03b9\u03c3\u03bc\u03cc\u03c2 \u03c4\u03bf\u03c5 ...",
+        "\u03c0\u03bf\u03b9\u03bf \u03b5\u03af\u03bd\u03b1\u03b9 \u03c4\u03bf \u03b1\u03bd\u03c4\u03ce\u03bd\u03c5\u03bc\u03bf \u03c4\u03bf\u03c5 ..."
+      ]
+    },
+    "es-co": {
+      "name": "Wordnet Skill",
+      "description": "Utiliza Wordnet para responder preguntas tipo diccionario.",
+      "examples": [
+        "Busca perro en WordNet",
+        "\u00bfQu\u00e9 dice WordNet sobre casa?",
+        "Pregunta a WordNet sobre feliz"
+      ]
+    },
+    "es-es": {
+      "name": "Wordnet Skill",
+      "description": "Utiliza Wordnet para responder preguntas tipo diccionario.",
+      "examples": [
+        "\u00bfCu\u00e1l es la definici\u00f3n de...?",
+        "\u00bfCu\u00e1l es el ant\u00f3nimo de...?"
+      ]
+    },
+    "eu-es": {
+      "name": "Wordnet trebetasuna",
+      "description": "Erabili Wordnet hiztegi motako galderak erantzuteko.",
+      "examples": [
+        "zein da ... hitzaren definizioa",
+        "zein da ... hitzaren antonimoa"
+      ]
+    },
+    "fa-ir": {
+      "name": "Wordnet Skill",
+      "description": "\u0627\u0632 Wordnet \u0628\u0631\u0627\u06cc \u067e\u0627\u0633\u062e \u0628\u0647 \u067e\u0631\u0633\u0634 \u0647\u0627\u06cc \u0641\u0631\u0647\u0646\u06af \u0644\u063a\u062a\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f.",
+      "examples": [
+        "\u0645\u0639\u0646\u06cc \u062e\u0627\u0646\u0647 \u0686\u06cc\u0633\u062a",
+        "\u0645\u062a\u0631\u0627\u062f\u0641 \u0634\u0627\u062f \u0686\u06cc\u0633\u062a",
+        "\u0645\u062a\u0636\u0627\u062f \u0628\u0632\u0631\u06af"
+      ]
+    },
+    "fi-fi": {
+      "name": "WordNet-taito",
+      "description": "K\u00e4yt\u00e4 WordNeti\u00e4 sanakirjakysymyksiin vastaamiseen.",
+      "examples": [
+        "hae WordNetist\u00e4 ...",
+        "kysy WordNetilt\u00e4 ..."
+      ]
+    },
+    "fr-fr": {
+      "name": "WordNet",
+      "description": "Utilisez WordNet pour r\u00e9pondre \u00e0 des questions de type dictionnaire.",
+      "examples": [
+        "Quelle est la d\u00e9finition de _______ ?",
+        "Quel est l'antonyme de _______ ?"
+      ]
+    },
+    "gl-es": {
+      "name": "Habilidade Wordnet",
+      "description": "Usa Wordnet para responder preguntas de tipo dicionario.",
+      "examples": [
+        "cal \u00e9 a definici\u00f3n de...",
+        "cal \u00e9 o ant\u00f3nimo de..."
+      ]
+    },
+    "he-il": {
+      "name": "\u05de\u05d9\u05d5\u05de\u05e0\u05d5\u05ea WordNet",
+      "description": "\u05d4\u05e9\u05ea\u05de\u05e9 \u05d1-WordNet \u05db\u05d3\u05d9 \u05dc\u05e2\u05e0\u05d5\u05ea \u05e2\u05dc \u05e9\u05d0\u05dc\u05d5\u05ea \u05de\u05d9\u05dc\u05d5\u05e0\u05d9\u05d5\u05ea.",
+      "examples": [
+        "\u05d7\u05e4\u05e9 \u05d1-WordNet ...",
+        "\u05e9\u05d0\u05dc \u05d0\u05ea WordNet \u05e2\u05dc ..."
+      ]
+    },
+    "hr-hr": {
+      "name": "WordNet vje\u0161tina",
+      "description": "Koristi WordNet za odgovore na rje\u010dni\u010dka pitanja.",
+      "examples": [
+        "pretra\u017ei WordNet za ...",
+        "pitaj WordNet o ..."
+      ]
+    },
+    "id-id": {
+      "name": "Keterampilan WordNet",
+      "description": "Gunakan WordNet untuk menjawab pertanyaan kamus.",
+      "examples": [
+        "cari di WordNet ...",
+        "tanya WordNet tentang ..."
+      ]
+    },
+    "is-is": {
+      "name": "WordNet f\u00e6rni",
+      "description": "Nota\u00f0u WordNet til a\u00f0 svara or\u00f0ab\u00f3karspurningum.",
+      "examples": [
+        "leita \u00ed WordNet a\u00f0 ...",
+        "spyrja WordNet um ..."
+      ]
+    },
+    "it-it": {
+      "name": "Wordnet Skill",
+      "description": "Usa Wordnet per rispondere a domande di tipo dizionario.",
+      "examples": [
+        "qual \u00e8 la definizione di ...",
+        "qual \u00e8 il contrario di ..."
+      ]
+    },
+    "ja-jp": {
+      "name": "WordNet \u30b9\u30ad\u30eb",
+      "description": "WordNet \u3092\u4f7f\u3063\u3066\u8f9e\u66f8\u306e\u3088\u3046\u306a\u8cea\u554f\u306b\u7b54\u3048\u307e\u3059\u3002",
+      "examples": [
+        "WordNet\u3067...\u3092\u691c\u7d22\u3057\u3066",
+        "WordNet\u306b...\u306b\u3064\u3044\u3066\u805e\u3044\u3066"
+      ]
+    },
     "kab": {
       "name": "Askill n Wordnet",
       "description": "Seqdec Wordnet i tririt \u0263ef isteqsiyen am wid n umawal.",
       "examples": [
         "d acu-t usefru n ...",
         "d acu-t awal amgarad n ..."
+      ]
+    },
+    "lt-lt": {
+      "name": "WordNet \u012fg\u016bdis",
+      "description": "Naudokite WordNet atsakyti \u012f \u017eodyno klausimus.",
+      "examples": [
+        "ie\u0161koti WordNet ...",
+        "klausk WordNet apie ..."
+      ]
+    },
+    "nb-no": {
+      "name": "WordNet-ferdighet",
+      "description": "Bruk WordNet til \u00e5 svare p\u00e5 ordboksp\u00f8rsm\u00e5l.",
+      "examples": [
+        "s\u00f8k i WordNet etter ...",
+        "sp\u00f8r WordNet om ..."
+      ]
+    },
+    "nl-nl": {
+      "name": "Wordnet Skill",
+      "description": "Gebruik Wordnet om woordenboekachtige vragen te beantwoorden.",
+      "examples": [
+        "wat is de definitie van ...",
+        "wat is het tegenovergestelde van ..."
+      ]
+    },
+    "nn-no": {
+      "name": "WordNet-ferdigheit",
+      "description": "Bruk WordNet til \u00e5 svara p\u00e5 ordboksp\u00f8rsm\u00e5l.",
+      "examples": [
+        "s\u00f8k i WordNet etter ...",
+        "sp\u00f8r WordNet om ..."
+      ]
+    },
+    "pl-pl": {
+      "name": "Umiej\u0119tno\u015b\u0107 Wordnet",
+      "description": "U\u017cywa Wordnet do odpowiadania na pytania w stylu s\u0142ownikowym.",
+      "examples": [
+        "jaka jest definicja ...",
+        "jaki jest antonim ..."
+      ]
+    },
+    "pt-br": {
+      "name": "Skill Wordnet",
+      "description": "Usa o Wordnet para responder perguntas de dicion\u00e1rio.",
+      "examples": [
+        "qual \u00e9 a defini\u00e7\u00e3o de ...",
+        "qual \u00e9 o ant\u00f4nimo de ..."
+      ]
+    },
+    "pt-pt": {
+      "name": "Skill Wordnet",
+      "description": "Usa a Wordnet para responder a perguntas de dicion\u00e1rio.",
+      "examples": [
+        "qual \u00e9 a defini\u00e7\u00e3o de ...",
+        "qual \u00e9 o ant\u00f3nimo de ..."
+      ]
+    },
+    "ro-ro": {
+      "name": "Abilitate Wordnet",
+      "description": "Folose\u0219te Wordnet pentru a r\u0103spunde la \u00eentreb\u0103ri de tip dic\u021bionar.",
+      "examples": [
+        "care este defini\u021bia pentru ...",
+        "care este antonimul pentru ..."
+      ]
+    },
+    "ru-ru": {
+      "name": "Wordnet Skill",
+      "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 Wordnet \u0434\u043b\u044f \u043e\u0442\u0432\u0435\u0442\u043e\u0432 \u043d\u0430 \u0441\u043b\u043e\u0432\u0430\u0440\u043d\u044b\u0435 \u0432\u043e\u043f\u0440\u043e\u0441\u044b.",
+      "examples": [
+        "\u0447\u0442\u043e \u043e\u0437\u043d\u0430\u0447\u0430\u0435\u0442 \u0441\u043b\u043e\u0432\u043e \u0434\u043e\u043c",
+        "\u043a\u0430\u043a\u043e\u0439 \u0441\u0438\u043d\u043e\u043d\u0438\u043c \u043a \u0440\u0430\u0434\u043e\u0441\u0442\u044c",
+        "\u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u043a\u043e\u0448\u043a\u0430"
+      ]
+    },
+    "sk-sk": {
+      "name": "Schopnos\u0165 WordNet",
+      "description": "Pou\u017eite WordNet na odpovedanie na slovn\u00edkov\u00e9 ot\u00e1zky.",
+      "examples": [
+        "h\u013eadaj v WordNet ...",
+        "op\u00fdtaj sa WordNet na ..."
+      ]
+    },
+    "sl-si": {
+      "name": "Zmo\u017enost WordNet",
+      "description": "Uporabi WordNet za odgovore na slovarska vpra\u0161anja.",
+      "examples": [
+        "i\u0161\u010di v WordNet ...",
+        "vpra\u0161aj WordNet o ..."
+      ]
+    },
+    "sv-se": {
+      "name": "Wordnet Skill",
+      "description": "Anv\u00e4nd Wordnet f\u00f6r att svara p\u00e5 ordboksliknande fr\u00e5gor.",
+      "examples": [
+        "vad \u00e4r definitionen av ...",
+        "vad \u00e4r motsatsen till ..."
+      ]
+    },
+    "th-th": {
+      "name": "\u0e2a\u0e01\u0e34\u0e25 WordNet",
+      "description": "\u0e43\u0e0a\u0e49 WordNet \u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e15\u0e2d\u0e1a\u0e04\u0e33\u0e16\u0e32\u0e21\u0e41\u0e1a\u0e1a\u0e1e\u0e08\u0e19\u0e32\u0e19\u0e38\u0e01\u0e23\u0e21",
+      "examples": [
+        "\u0e04\u0e49\u0e19\u0e2b\u0e32\u0e43\u0e19 WordNet ...",
+        "\u0e16\u0e32\u0e21 WordNet \u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e01\u0e31\u0e1a ..."
+      ]
+    },
+    "zsm-my": {
+      "name": "Kemahiran WordNet",
+      "description": "Guna WordNet untuk menjawab pertanyaan kamus.",
+      "examples": [
+        "cari dalam WordNet ...",
+        "tanya WordNet tentang ..."
       ]
     }
   },

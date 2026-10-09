@@ -62,11 +62,146 @@
     "tr-tr"
   ],
   "locale_content": {
+    "ca-es": {
+      "name": "Test de velocitat",
+      "description": "Executa una prova d'amplada de banda d'internet usant speedtest.net",
+      "examples": [
+        "executa una prova de velocitat"
+      ]
+    },
+    "da-dk": {
+      "name": "Hastighedstest",
+      "description": "k\u00f8rer en internetb\u00e5ndbreddetest ved hj\u00e6lp af speedtest.net",
+      "examples": [
+        "k\u00f8r en hastighedstest"
+      ]
+    },
+    "de-de": {
+      "name": "Speedtest",
+      "description": "f\u00fchrt einen Internet-Bandbreitentest mit speedtest.net durch",
+      "examples": [
+        "Mache einen Geschwindigkeitstest"
+      ]
+    },
+    "el-gr": {
+      "name": "Speedtest",
+      "description": "\u03b5\u03ba\u03c4\u03b5\u03bb\u03b5\u03af \u03b4\u03bf\u03ba\u03b9\u03bc\u03ae \u03b5\u03cd\u03c1\u03bf\u03c5\u03c2 \u03b6\u03ce\u03bd\u03b7\u03c2 \u03b4\u03b9\u03b1\u03b4\u03b9\u03ba\u03c4\u03cd\u03bf\u03c5 \u03c7\u03c1\u03b7\u03c3\u03b9\u03bc\u03bf\u03c0\u03bf\u03b9\u03ce\u03bd\u03c4\u03b1\u03c2 speedtest.net",
+      "examples": [
+        "\u03c4\u03c1\u03ad\u03be\u03b5 \u03b4\u03bf\u03ba\u03b9\u03bc\u03ae \u03c4\u03b1\u03c7\u03cd\u03c4\u03b7\u03c4\u03b1\u03c2"
+      ]
+    },
+    "es-co": {
+      "name": "Prueba de velocidad",
+      "description": "Realiza una prueba de velocidad de Internet utilizando speedtest.net",
+      "examples": [
+        "haz una prueba de velocidad"
+      ]
+    },
+    "es-es": {
+      "name": "Prueba de velocidad",
+      "description": "Realiza una prueba de velocidad de Internet utilizando speedtest.net",
+      "examples": [
+        "haz una prueba de velocidad"
+      ]
+    },
+    "eu-es": {
+      "name": "Abiadura-proba",
+      "description": "speedtest.net erabiliz interneteko banda-zabaleraren proba egiten du",
+      "examples": [
+        "exekutatu abiadura-froga"
+      ]
+    },
+    "fa-ir": {
+      "name": "\u062a\u0633\u062a \u0633\u0631\u0639\u062a",
+      "description": "\u0628\u0627 \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u0627\u0632 \u0633\u0627\u06cc\u062a speedtest.net \u067e\u0647\u0646\u0627\u06cc \u0628\u0627\u0646\u062f \u0627\u06cc\u0646\u062a\u0631\u0646\u062a \u0631\u0627 \u0622\u0632\u0645\u0627\u06cc\u0634 \u0645\u06cc\u200c\u06a9\u0646\u062f",
+      "examples": [
+        "\u0622\u0632\u0645\u0627\u06cc\u0634 \u0633\u0631\u0639\u062a \u0627\u06cc\u0646\u062a\u0631\u0646\u062a"
+      ]
+    },
+    "fr-fr": {
+      "name": "Test de d\u00e9bit",
+      "description": "Lance un test de bande passante Internet avec speedtest.net.",
+      "examples": [
+        "Lance un test de d\u00e9bit"
+      ]
+    },
+    "gl-es": {
+      "name": "Proba de velocidade",
+      "description": "realiza unha proba de ancho de banda de Internet usando speedtest.net",
+      "examples": [
+        "realizar unha proba de velocidade"
+      ]
+    },
+    "it-it": {
+      "name": "Speedtest",
+      "description": "esegue un test della banda internet usando speedtest.net",
+      "examples": [
+        "esegui un test di velocit\u00e0"
+      ]
+    },
     "kab": {
       "name": "Test n t\u0263awla",
       "description": "yesqadar t\u0263awla n internet s useqdec n speedtest.net",
       "examples": [
         "sekker test n t\u0263awla"
+      ]
+    },
+    "nl-nl": {
+      "name": "Snelheidstest",
+      "description": "voert een bandbreedtetest uit op internet met behulp van speedtest.net",
+      "examples": [
+        "start een snelheidstest",
+        "meet de internet snelheid"
+      ]
+    },
+    "oc-fr": {
+      "name": "Pr\u00f2va de velocitat",
+      "description": "Executa una pr\u00f2va de la larguesa de banda d'internet amb speedtest.net",
+      "examples": [
+        "executa una pr\u00f2va de velocitat"
+      ]
+    },
+    "pl-pl": {
+      "name": "Speedtest",
+      "description": "runs an internet bandwidth test using speedtest.net",
+      "examples": [
+        "wykona\u0107 test pr\u0119dko\u015bci"
+      ]
+    },
+    "pt-br": {
+      "name": "Speedtest",
+      "description": "executa um teste de largura de banda de internet usando speedtest.net",
+      "examples": [
+        "fa\u00e7a um teste de velocidade da internet",
+        "teste de velocidade"
+      ]
+    },
+    "pt-pt": {
+      "name": "Teste de velocidade",
+      "description": "executa um teste de largura de banda da Internet utilizando o speedtest.net",
+      "examples": [
+        "realizar um teste de velocidade"
+      ]
+    },
+    "ru-ru": {
+      "name": "Speedtest",
+      "description": "\u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0435\u0442 \u0442\u0435\u0441\u0442 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0430 \u0447\u0435\u0440\u0435\u0437 speedtest.net",
+      "examples": [
+        "\u0437\u0430\u043f\u0443\u0441\u0442\u0438 \u0442\u0435\u0441\u0442 \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438"
+      ]
+    },
+    "sv-se": {
+      "name": "Speedtest",
+      "description": "k\u00f6r ett internethastighetstest med speedtest.net",
+      "examples": [
+        "k\u00f6r ett hastighetstest"
+      ]
+    },
+    "tr-tr": {
+      "name": "Speedtest",
+      "description": "speedtest.net kullanarak internet bant geni\u015fli\u011fi testi \u00e7al\u0131\u015ft\u0131r\u0131r",
+      "examples": [
+        "h\u0131z testi \u00e7al\u0131\u015ft\u0131r"
       ]
     }
   },

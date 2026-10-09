@@ -23,7 +23,7 @@
   "type_group": "Skill",
   "stars": 1,
   "forks": 5,
-  "open_issues": 8,
+  "open_issues": 7,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -69,6 +69,118 @@
     "sv-se"
   ],
   "locale_content": {
+    "ca-es": {
+      "name": "Wolfram Alpha",
+      "description": "Useu Wolfram Alpha per a preguntes de coneixement general.",
+      "examples": [
+        "pregunta al llop quina \u00e9s la velocitat de la llum",
+        "Quina al\u00e7ada t\u00e9 l'Everest?",
+        "Quan es va estrenar The Rocky Horror Picture Show?",
+        "Quin \u00e9s el nom real de Madonna?",
+        "Quant \u00e9s 18 per 4?",
+        "Quantes polzades t\u00e9 un metre?"
+      ]
+    },
+    "da-dk": {
+      "name": "Wolfram Alpha",
+      "description": "Brug Wolfram Alpha til generelle videnssp\u00f8rgsm\u00e5l.",
+      "examples": [
+        "sp\u00f8rg ulven, hvad lysets hastighed er",
+        "Hvor h\u00f8jt er Mount Everest?",
+        "Hvorn\u00e5r blev The Rocky Horror Picture Show udgivet?",
+        "Hvad er Madonnas rigtige navn?",
+        "Hvad er 18 gange 4?",
+        "Hvor mange tommer i en meter?"
+      ]
+    },
+    "de-de": {
+      "name": "Wolfram Alpha",
+      "description": "Verwende Wolfram Alpha f\u00fcr Fragen zum Allgemeinwissen.",
+      "examples": [
+        "frage den Wolf wie hoch die Lichtgeschwindigkeit ist",
+        "Wie hoch ist der Mount Everest?",
+        "Wann kam die Rocky Horror Picture Show in die Kinos?",
+        "Wie ist Madonnas richtiger Name?",
+        "Was ist 18 mal 4?",
+        "Wie viele Zoll sind ein Meter?"
+      ]
+    },
+    "es-co": {
+      "name": "Wolfram Alpha",
+      "description": "Utilice Wolfram Alpha para preguntas de cultura general.",
+      "examples": [
+        "preg\u00fantale al lobo cu\u00e1l es la velocidad de la luz",
+        "\u00bfqu\u00e9 dice Wolfram sobre el Monte Everest?"
+      ]
+    },
+    "es-es": {
+      "name": "Wolfram Alpha",
+      "description": "Utilice Wolfram Alpha para preguntas de cultura general.",
+      "examples": [
+        "Preg\u00fantale al lobo cu\u00e1l es la velocidad de la luz",
+        "\u00bfQu\u00e9 altura tiene el Monte Everest?",
+        "\u00bfCu\u00e1ndo se estren\u00f3 The Rocky Horror Picture Show?",
+        "\u00bfCu\u00e1l es el verdadero nombre de Madonna?",
+        "\u00bfCu\u00e1nto es 18 por 4?",
+        "\u00bfCu\u00e1ntas pulgadas hay en un metro?"
+      ]
+    },
+    "eu-es": {
+      "name": "Wolfram Alpha",
+      "description": "Erabili Wolfram Alpha kultura orokorreko galderetarako.",
+      "examples": [
+        "galdetu otsoari zein den argiaren abiadura",
+        "Zein da Everest mendiaren garaiera?",
+        "Noiz estreinatu zen The Rocky Horror Picture Show?",
+        "Zein da Madonnaren benetako izena?",
+        "Zenbat da 18 bider 4?",
+        "Zenbat hazbete ditu metro batek?"
+      ]
+    },
+    "fa-ir": {
+      "name": "Wolfram Alpha",
+      "description": "\u0627\u0632 Wolfram Alpha \u0628\u0631\u0627\u06cc \u0633\u0648\u0627\u0644\u0627\u062a \u062f\u0627\u0646\u0634 \u0639\u0645\u0648\u0645\u06cc \u0627\u0633\u062a\u0641\u0627\u062f\u0647 \u06a9\u0646\u06cc\u062f.",
+      "examples": [
+        "\u0627\u0632 \u06af\u0631\u06af \u0628\u067e\u0631\u0633 \u0633\u0631\u0639\u062a \u0646\u0648\u0631 \u0686\u0642\u062f\u0631 \u0627\u0633\u062a",
+        "\u0648\u0644\u0641\u0631\u0627\u0645 \u062f\u0631\u0628\u0627\u0631\u0647 \u06a9\u0648\u0647 \u0627\u0648\u0631\u0633\u062a \u0686\u0647 \u0645\u06cc \u06af\u0648\u06cc\u062f"
+      ]
+    },
+    "fr-fr": {
+      "name": "Wolfram Alpha",
+      "description": "Posez vos questions \u00e0 Wolfram Alpha pour les calculs, les conversions et les questions factuelles.",
+      "examples": [
+        "Demande \u00e0 Wolfram Alpha quelle est la vitesse de la lumi\u00e8re",
+        "Quelle est la hauteur du mont Everest ?",
+        "Quand Rocky Horror Picture Show est-il sorti ?",
+        "Quel est le vrai nom de Madonna ?",
+        "Combien font 18 fois 4 ?",
+        "Combien de pouces y a-t-il dans un m\u00e8tre ?"
+      ]
+    },
+    "gl-es": {
+      "name": "Wolfram Alpha",
+      "description": "Usa Wolfram Alpha para preguntas de co\u00f1ecemento xeral.",
+      "examples": [
+        "preg\u00fantalle ao lobo cal \u00e9 a velocidade da luz",
+        "Canto mide o Monte Everest?",
+        "Cando se estreou The Rocky Horror Picture Show?",
+        "Cal \u00e9 o nome real de Madonna?",
+        "Canto \u00e9 18 por 4?",
+        "Cantas polgadas hai nun metro?"
+      ]
+    },
+    "it-it": {
+      "name": "Wolfram Alpha",
+      "description": "Usa Wolfram Alpha per domande di cultura generale.",
+      "examples": [
+        "chiedi al lupo qual \u00e8 la velocit\u00e0 della luce",
+        "Quanto \u00e8 alto il Monte Everest?",
+        "Quando \u00e8 uscito The Rocky Horror Picture Show?",
+        "Qual \u00e8 il vero nome di Madonna?",
+        "Quanto fa 18 per 4?",
+        "Quanti pollici ci sono in un metro?"
+      ]
+    },
     "kab": {
       "name": "Wolfram Alpha",
       "description": "Seqdec Wolfram Alpha i tigawin n tmusni tamatut.",
@@ -79,6 +191,70 @@
         "D acu-t isem n Madonna n tidet?",
         "D ac\u1e25al 18 s 4?",
         "D ac\u1e25al n yinces deg umitr?"
+      ]
+    },
+    "nl-nl": {
+      "name": "Wolfram Alpha",
+      "description": "Gebruik Wolfram Alpha voor algemene kennisvragen.",
+      "examples": [
+        "vraag de wolf wat de snelheid van het licht is",
+        "Hoe hoog is de Mount Everest?",
+        "Wanneer kwam The Rocky Horror Picture Show uit?",
+        "Wat is Madonna's echte naam?",
+        "Wat is 18 keer 4?",
+        "Hoeveel inches in een meter?"
+      ]
+    },
+    "pl-pl": {
+      "name": "Wolfram Alpha",
+      "description": "U\u017cyj Wolfram Alpha do pyta\u0144 z wiedzy og\u00f3lnej.",
+      "examples": [
+        "zapytaj wilka o pr\u0119dko\u015b\u0107 \u015bwiat\u0142a",
+        "co wolfram m\u00f3wi o Mount Everest"
+      ]
+    },
+    "pt-br": {
+      "name": "Wolfram Alpha",
+      "description": "Use o Wolfram Alpha para perguntas gerais de conhecimento.",
+      "examples": [
+        "pergunte ao lobo qual \u00e9 a velocidade da luz",
+        "Qual \u00e9 a altura do Monte Everest?",
+        "Quando o The Rocky Horror Picture Show foi lan\u00e7ado?",
+        "Qual \u00e9 o nome verdadeiro da Madonna?",
+        "Quanto \u00e9 18 vezes 4?",
+        "Quantas polegadas tem um metro?"
+      ]
+    },
+    "pt-pt": {
+      "name": "Wolfram Alpha",
+      "description": "Usa o Wolfram Alpha para perguntas de conhecimento geral.",
+      "examples": [
+        "pergunta ao lobo qual \u00e9 a velocidade da luz",
+        "Qual \u00e9 a altura do Monte Evereste?",
+        "Quando foi lan\u00e7ado o The Rocky Horror Picture Show?",
+        "Qual \u00e9 o verdadeiro nome da Madonna?",
+        "Quanto \u00e9 18 vezes 4?",
+        "Quantas polegadas tem um metro?"
+      ]
+    },
+    "ru-ru": {
+      "name": "Wolfram Alpha",
+      "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0439\u0442\u0435 Wolfram Alpha \u0434\u043b\u044f \u0432\u043e\u043f\u0440\u043e\u0441\u043e\u0432 \u043d\u0430 \u043e\u0431\u0449\u0438\u0435 \u0437\u043d\u0430\u043d\u0438\u044f.",
+      "examples": [
+        "\u0441\u043f\u0440\u043e\u0441\u0438 \u0432\u043e\u043b\u043a\u0430 \u043e \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u0438 \u0441\u0432\u0435\u0442\u0430",
+        "\u0447\u0442\u043e \u0432\u043e\u043b\u044c\u0444\u0440\u0430\u043c \u0433\u043e\u0432\u043e\u0440\u0438\u0442 \u043e \u0433\u043e\u0440\u0435 \u042d\u0432\u0435\u0440\u0435\u0441\u0442"
+      ]
+    },
+    "sv-se": {
+      "name": "Wolfram Alpha",
+      "description": "Anv\u00e4nd Wolfram Alpha f\u00f6r allm\u00e4nna kunskapsfr\u00e5gor.",
+      "examples": [
+        "fr\u00e5ga vargen vad ljusets hastighet \u00e4r",
+        "Hur h\u00f6gt \u00e4r Mount Everest?",
+        "N\u00e4r sl\u00e4pptes The Rocky Horror Picture Show?",
+        "Vad \u00e4r Madonnas riktiga namn?",
+        "Vad \u00e4r 18 g\u00e5nger 4?",
+        "Hur m\u00e5nga tum \u00e4r en meter?"
       ]
     }
   },
