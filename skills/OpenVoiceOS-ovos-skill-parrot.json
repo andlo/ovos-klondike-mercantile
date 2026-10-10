@@ -368,16 +368,12 @@
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 46/49 golden",
-        "state": "warn",
-        "level": 3,
-        "version_tested": "0.11.1a1",
-        "tested_at": "2026-10-09T09:39:07+00:00",
-        "channel_pinned": true,
-        "golden": {
-          "hit": 46,
-          "counted": 49
-        }
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.11.1a2",
+        "tested_at": "2026-10-10T09:16:09+00:00",
+        "channel_pinned": true
       }
     }
   }

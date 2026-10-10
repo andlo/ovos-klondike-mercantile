@@ -644,15 +644,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 176/184 golden",
+          "label": "\u2713 52/55 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.12.36a1",
-          "tested_at": "2026-10-09T09:37:03+00:00",
+          "version_tested": "0.12.36a2",
+          "tested_at": "2026-10-10T08:57:24+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 176,
-            "counted": 184
+            "hit": 52,
+            "counted": 55
           }
         }
       }
@@ -2494,16 +2494,12 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 9/9 golden",
+          "label": "\u2713 loads",
           "state": "pass",
-          "level": 3,
-          "version_tested": "1.4.0a2",
-          "tested_at": "2026-10-09T09:37:21+00:00",
-          "channel_pinned": true,
-          "golden": {
-            "hit": 9,
-            "counted": 9
-          }
+          "level": 2,
+          "version_tested": "1.4.0a3",
+          "tested_at": "2026-10-10T09:09:06+00:00",
+          "channel_pinned": true
         }
       }
     }
@@ -2792,8 +2788,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.3a1",
-          "tested_at": "2026-10-09T09:38:14+00:00",
+          "version_tested": "0.7.3a2",
+          "tested_at": "2026-10-10T09:09:59+00:00",
           "channel_pinned": true
         }
       }
@@ -3836,15 +3832,15 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 115/115 golden",
+          "label": "\u2713 loads \u00b7 1/5 golden",
           "state": "warn",
-          "level": 3,
-          "version_tested": "1.11.7a2",
-          "tested_at": "2026-10-09T09:40:11+00:00",
+          "level": 2,
+          "version_tested": "1.11.8a1",
+          "tested_at": "2026-10-10T09:10:51+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 115,
-            "counted": 115
+            "hit": 1,
+            "counted": 5
           }
         }
       }
@@ -5258,7 +5254,7 @@
     "repo_created_at": "2026-08-16T19:34:38Z",
     "last_updated": "2026-10-01T10:10:21.472667Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
+    "is_recently_updated": true,
     "compat": {
       "badge_id": "ovos-skill-geography-practice.andlo",
       "channels": {
@@ -12732,16 +12728,12 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 23/23 golden",
+          "label": "\u2713 loads",
           "state": "pass",
-          "level": 3,
-          "version_tested": "0.5.0a6",
-          "tested_at": "2026-10-09T09:37:15+00:00",
-          "channel_pinned": true,
-          "golden": {
-            "hit": 23,
-            "counted": 23
-          }
+          "level": 2,
+          "version_tested": "0.5.0a7",
+          "tested_at": "2026-10-10T09:14:46+00:00",
+          "channel_pinned": true
         }
       }
     }
@@ -16279,7 +16271,7 @@
     "type_group": "Infrastructure",
     "stars": 1,
     "forks": 0,
-    "open_issues": 6,
+    "open_issues": 8,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -16297,7 +16289,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T20:54:26Z",
-    "last_updated": "2026-10-04T18:40:27Z",
+    "last_updated": "2026-10-10T10:36:01Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -16759,8 +16751,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.33.0a1",
-          "tested_at": "2026-10-09T09:36:34+00:00",
+          "version_tested": "0.33.1a1",
+          "tested_at": "2026-10-10T09:15:59+00:00",
           "channel_pinned": true
         }
       }
@@ -34598,16 +34590,12 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 46/49 golden",
-          "state": "warn",
-          "level": 3,
-          "version_tested": "0.11.1a1",
-          "tested_at": "2026-10-09T09:39:07+00:00",
-          "channel_pinned": true,
-          "golden": {
-            "hit": 46,
-            "counted": 49
-          }
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.11.1a2",
+          "tested_at": "2026-10-10T09:16:09+00:00",
+          "channel_pinned": true
         }
       }
     }
@@ -35893,25 +35881,24 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "1.0.2",
-          "tested_at": "2026-10-04T11:11:40+00:00",
+          "version_tested": "1.2.2",
+          "tested_at": "2026-10-10T08:58:06+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "1.0.2",
-          "tested_at": "2026-10-04T10:52:20+00:00",
+          "version_tested": "1.2.2",
+          "tested_at": "2026-10-10T08:57:19+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "stops",
-          "version_tested": "1.0.2",
-          "tested_at": "2026-10-09T09:41:32+00:00",
+          "version_tested": "1.2.2",
+          "tested_at": "2026-10-10T09:17:04+00:00",
           "channel_pinned": false
         }
       }
@@ -36050,7 +36037,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.4",
-          "tested_at": "2026-10-05T10:06:37+00:00",
+          "tested_at": "2026-10-10T08:59:13+00:00",
           "channel_pinned": false
         },
         "testing": {
@@ -36058,7 +36045,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.4",
-          "tested_at": "2026-10-05T10:04:36+00:00",
+          "tested_at": "2026-10-10T08:58:43+00:00",
           "channel_pinned": false
         },
         "alpha": {
@@ -36067,7 +36054,7 @@
           "level": 2,
           "stop": "stuck",
           "version_tested": "1.4.4",
-          "tested_at": "2026-10-09T09:41:50+00:00",
+          "tested_at": "2026-10-10T08:57:12+00:00",
           "channel_pinned": false
         }
       }
@@ -40799,7 +40786,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.12.1a3",
-          "tested_at": "2026-10-09T09:43:01+00:00",
+          "tested_at": "2026-10-10T08:58:06+00:00",
           "channel_pinned": true
         }
       }
@@ -42409,16 +42396,12 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 117/117 golden",
+          "label": "\u2713 loads",
           "state": "pass",
-          "level": 3,
-          "version_tested": "1.5.3a1",
-          "tested_at": "2026-10-09T10:01:03+00:00",
-          "channel_pinned": true,
-          "golden": {
-            "hit": 117,
-            "counted": 117
-          }
+          "level": 2,
+          "version_tested": "1.5.3a2",
+          "tested_at": "2026-10-10T08:59:19+00:00",
+          "channel_pinned": true
         }
       }
     }
