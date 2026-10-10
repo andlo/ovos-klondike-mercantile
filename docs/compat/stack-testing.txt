@@ -11,9 +11,9 @@ filelock==3.32.7
 fsspec==2026.9.0
 h11==0.16.0
 hf-xet==1.7.0
-httpcore==1.0.9
-httpx==0.28.1
-huggingface_hub==1.33.0
+httpcore2==2.13.1
+httpx2==2.13.1
+huggingface_hub==2.2.0
 idna==3.20
 importlib_metadata==9.0.1
 iniconfig==2.3.1
@@ -44,7 +44,7 @@ ovos-skill-fallback-unknown==0.1.9
 ovos-skill-hello-world==0.2.1
 ovos-skill-parrot==0.1.25
 ovos-solver-yes-no-plugin==0.2.8
-ovos-spec-tools==1.15.0a1
+ovos-spec-tools==1.15.2a1
 ovos-utterance-plugin-cancel==0.2.8
 ovos-workshop==7.0.6
 ovos_adapt_parser==1.0.9
@@ -88,9 +88,10 @@ simplematch==1.4
 six==1.17.0
 snowballstemmer==3.1.1
 SpeechRecognition==3.17.0
-tokenizers==0.23.2
+tokenizers==0.23.3
 tornado==6.5.10
 tqdm==4.70.1
+truststore==0.10.4
 typing_extensions==4.16.0
 unicode-rbnf==2.4.1
 urllib3==2.8.0
