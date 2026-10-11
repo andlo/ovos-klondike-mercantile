@@ -14146,8 +14146,8 @@
     "archived": false,
     "author": "evok3dx",
     "tier": 2,
-    "component_type": "Pipeline Plugin",
-    "type_group": "Plugin",
+    "component_type": "Skill",
+    "type_group": "Skill",
     "stars": 0,
     "forks": 0,
     "open_issues": 0,
@@ -14158,16 +14158,21 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [],
+    "setup_notes": [
+      {
+        "heading": "Before you install",
+        "content": "- Use **Linux Mint 22.x on X11, x86_64**, with a working microphone and audio\n  output. Mint 22.3 is the reviewed desktop target. The current isolation setup\n  requires Polkit's JavaScript rules backend; Mint 21.3's Polkit 0.105 is not\n  supported for isolation. See [Requirements and stack](#requirements-and-stack).\n- Have **CPython 3.11.16** available for the OVOS virtual environment, the exact Python\n  version required by the reviewed runtime. A newer system Python does not\n  replace this requirement; do not replace the operating system's Python. See\n  [preparing Python](docs/07-installer-updates.md#preparing-python).\n- Keep at least **8 GiB free** on the filesystem used for OVOS staging and\n  rollback, plus room for voice models and Ollama's model storage. Ollama may\n  store downloads o\u2026"
+      }
+    ],
     "languages": [
       "en-us"
     ],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-09T00:38:09Z",
-    "last_updated": "2026-10-01T22:40:38Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
+    "last_updated": "2026-10-10T20:21:35Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
@@ -19423,66 +19428,6 @@
     "last_updated": "2026-10-02T02:13:19Z",
     "is_new_repo": false,
     "is_recently_updated": true
-  },
-  {
-    "id": "OpenVoiceOS-ovos-option-matcher-fuzzy-plugin",
-    "skill_id": null,
-    "name": "ovos-option-matcher-fuzzy-plugin",
-    "description": "Fuzzy-match `OptionMatcherEngine` plugin for OpenVoiceOS.",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-option-matcher-fuzzy-plugin",
-    "package_name": "ovos-option-matcher-fuzzy-plugin",
-    "pypi_version": "0.0.1",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Option Matcher Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 2,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-option-matcher-fuzzy-plugin\n\nWith optional numeric-fallback support (handles positions above 10 and raw digit references):\n\npip install \"ovos-option-matcher-fuzzy-plugin[number-parser]\""
-      }
-    ],
-    "languages": [
-      "ca-es",
-      "cs-cz",
-      "da-dk",
-      "de-de",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "pl-pl",
-      "pt-br",
-      "pt-pt",
-      "sv-se"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": true,
-    "repo_created_at": "2026-03-18T18:26:25Z",
-    "last_updated": "2026-04-08T22:21:01.164020Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-org-website",
@@ -26402,9 +26347,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-07T05:55:07Z",
-    "last_updated": "2026-10-07T05:55:15Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "last_updated": "2026-10-07T15:50:19Z",
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "JoergZ2-ovos-skill-wakeup",
