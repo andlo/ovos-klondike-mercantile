@@ -1,7 +1,7 @@
 ahocorasick-ner @ git+https://github.com/TigreGotico/ahocorasick-ner@172b19cf2b9640fdb4319cd8378a9d990235b56c
 aiofiles==25.1.0
 aiohappyeyeballs==2.7.1
-aiohttp==3.14.4
+aiohttp==3.14.5
 aiosignal==1.4.0
 annotated-types==0.8.0
 anyio==4.15.1
@@ -65,7 +65,7 @@ mediavocab==1.3.0a3
 memory-tempfile==2.2.3
 model2vec==0.9.0
 mss==10.2.0
-multidict==6.9.1
+multidict==7.1.0
 narwhals==2.27.1
 nebulento @ git+https://github.com/OpenVoiceOS/nebulento@e0cc4536365559be3d33f144e8cdf102d037fd5a
 neon-homeassistant-skill==0.0.24
@@ -75,7 +75,7 @@ ovos-audio==2.2.8a1
 ovos-bidirectional-translation-plugin==0.1.4a3
 ovos-bus-client==2.11.25a1
 ovos-common-reading-pipeline-plugin==0.3.2
-ovos-config==3.8.1a1
+ovos-config==3.8.2a1
 ovos-core==3.7.4a1
 ovos-date-parser==0.34.1a1
 ovos-ddg-plugin==1.1.2a1
@@ -191,7 +191,7 @@ padacioso==2.4.3a1
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
 Pint==0.25.3
-platformdirs==4.12.4
+platformdirs==4.13.0
 pluggy==1.6.0
 prettytable==3.18.0
 propcache==0.5.4
@@ -236,12 +236,12 @@ skill-monster-scanner==2.2.2
 skops==0.16.0
 skyfield==1.55
 snowballstemmer==3.1.1
-soupsieve==2.10
+soupsieve==3.0.1
 speedtest-cli==2.1.3
 thalovant-languages==0.3.5
 thalovant-skill-custos-fallback==0.1.5
 thalovant-skill-interaction-modes==0.1.9
-thalovant-skillkit==0.24.2
+thalovant-skillkit==0.25.0
 threadpoolctl==3.7.0
 timezonefinder==9.0.0
 timezonefinder-data==3.2026.3.post1
