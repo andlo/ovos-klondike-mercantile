@@ -39,8 +39,8 @@ nebulento @ git+https://github.com/OpenVoiceOS/nebulento@8af5d46f252cde812c6a4f6
 numpy==2.4.6
 ovos-audio==2.2.8a2
 ovos-bidirectional-translation-plugin==0.1.4a3
-ovos-bus-client==2.11.25a1
-ovos-config==3.8.2a1
+ovos-bus-client==2.11.26a1
+ovos-config==3.9.0a1
 ovos-core==3.7.4a1
 ovos-date-parser==0.34.1a1
 ovos-dinkum-listener==0.11.0a2
@@ -54,7 +54,7 @@ ovos-number-parser==0.23.2a1
 ovos-option-matcher-fuzzy-plugin==0.0.2a1
 ovos-persona==0.9.0a28
 ovos-plugin-manager==2.12.5a1
-ovos-skill-count==0.6.2a1
+ovos-skill-count==0.6.2a2
 ovos-skill-fallback-unknown==0.3.2a1
 ovos-skill-hello-world==0.5.4a2
 ovos-skill-parrot==0.11.1a2
@@ -114,7 +114,7 @@ threadpoolctl==3.7.0
 tokenizers==0.23.3
 tornado==6.5.10
 tqdm==4.70.1
-truststore==0.10.4
+truststore==0.10.5
 typing-inspection==0.4.4
 typing_extensions==4.16.0
 tzlocal==5.4.4
