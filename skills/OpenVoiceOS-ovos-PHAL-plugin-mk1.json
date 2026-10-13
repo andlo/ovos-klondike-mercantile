@@ -24,8 +24,8 @@
   "component_type": "PHAL Plugin",
   "type_group": "Plugin",
   "stars": 1,
-  "forks": 3,
-  "open_issues": 6,
+  "forks": 4,
+  "open_issues": 12,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -37,6 +37,10 @@
     {
       "heading": "Install",
       "content": "pip install ovos-PHAL-plugin-mk1"
+    },
+    {
+      "heading": "Configuration",
+      "content": "On Mark 1 hardware the plugin loads with no configuration at all. To enable it\nelsewhere, or to change the serial port, add a block under the plugin's\nentry-point name:\n\n\"PHAL\": {\n  \"ovos-phal-mk1\": {\n    \"enabled\": true,\n    \"port\": \"/dev/ttyAMA0\",\n    \"rate\": 9600,\n    \"timeout\": 5.0\n  }\n}\n\n`port` accepts any pyserial URL, so `\"socket://127.0.0.1:5555\"` points the\nplugin at a virtual faceplate such as\n[ovos-virtual-mark1](https://github.com/OscillateLabsLLC/ovos-virtual-mark1).\nThe older `ovos-PHAL-plugin-mk1` key is still read as a fallback."
     }
   ],
   "languages": [],
