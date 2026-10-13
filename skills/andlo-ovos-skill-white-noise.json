@@ -90,12 +90,17 @@
         "channel_pinned": false
       },
       "alpha": {
-        "label": "\u2713 loads",
-        "state": "pass",
+        "label": "\u2713 loads \u00b7 2/7 golden",
+        "state": "warn",
         "level": 2,
+        "stop": "stops",
         "version_tested": "0.0.3",
-        "tested_at": "2026-10-09T10:09:08+00:00",
-        "channel_pinned": false
+        "tested_at": "2026-10-13T10:18:11+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 2,
+          "counted": 7
+        }
       }
     }
   }
