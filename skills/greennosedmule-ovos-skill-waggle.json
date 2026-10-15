@@ -16,7 +16,7 @@
   "archived": false,
   "author": "greennosedmule",
   "tier": 2,
-  "component_type": "Pipeline Plugin",
+  "component_type": "Toolbox Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install on a hub",
-      "content": "Needs ovos-core 2.x. Install the package into ovos-core's environment, which registers the `opm.pipeline` plugin `ovos-waggle-pipeline-plugin`, and add its stage to `intents.pipeline` in `mycroft.conf`, right after the converse stage:\n\n\"pipeline\": [\"\u2026\", \"ovos-converse-pipeline-plugin\", \"ovos-waggle-pipeline-plugin-high\", \"\u2026\"]\n\nEach phone's HiveMind client must be allowed to send the Waggle message types:\n\nhivemind-core allow-msg waggle.capabilities <id>\nhivemind-core allow-msg waggle.intent.response <id>\nhivemind-core allow-msg waggle.query.response <id>\n\nThe stage only answers phones that have announced Waggle capabilities, so other satellites keep using the hub's own skills. See SPEC.md \"Hub setup\"."
+      "content": "Needs ovos-core 3.x (the OVOS alphas; tested with 3.7.4a1). Install the package into ovos-core's environment, which registers the `opm.pipeline` plugin `ovos-waggle-pipeline-plugin` and the `opm.agents.toolbox` plugin `ovos-waggle-tools`, and add its stage to `intents.pipeline` in `mycroft.conf`, right after the converse stage:\n\n\"pipeline\": [\"\u2026\", \"ovos-converse-pipeline-plugin\", \"ovos-waggle-pipeline-plugin-high\", \"\u2026\"]\n\nEach phone's HiveMind client must be allowed to send the Waggle message types:\n\nhivemind-core allow-msg waggle.capabilities <id>\nhivemind-core allow-msg waggle.intent.response <id>\nhivemind-core allow-msg waggle.query.response <id>\n\nThe stage only answers phones that have announced Waggle capabilities, so other satellites keep using the hub's own skills. Their capabilities\u2026"
     }
   ],
   "languages": [
@@ -40,7 +40,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-10-07T05:55:07Z",
-  "last_updated": "2026-10-07T15:50:19Z",
+  "last_updated": "2026-10-15T04:46:08Z",
   "is_new_repo": true,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }
