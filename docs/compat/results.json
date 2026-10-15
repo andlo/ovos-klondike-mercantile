@@ -1,7 +1,7 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "c9c84d2f70ca1470ed5f417c91bbf46b28a174d855b3bb6c2647e25680d3ace0",
+      "constraints_sha256": "71e9f0ad489ee3443d5c34b233c4a3b33d9b156edf290aa303e7fee0c638ba17",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
@@ -21,6 +21,8 @@
       },
       "route": {
         "baseline_ids": [
+          "ovos-skill-alerts.openvoiceos",
+          "ovos-skill-audio-recording.openvoiceos",
           "ovos-skill-count.openvoiceos",
           "ovos-skill-date-time.openvoiceos",
           "ovos-skill-ddg.openvoiceos",
@@ -31,7 +33,7 @@
           "ovos-skill-ip.openvoiceos",
           "ovos-skill-naptime.openvoiceos",
           "ovos-skill-parrot.openvoiceos",
-          "ovos-skill-speedtest.openvoiceos",
+          "ovos-skill-personal.openvoiceos",
           "ovos-skill-volume.openvoiceos",
           "ovos-skill-weather.openvoiceos",
           "ovos-skill-wikihow.openvoiceos",
@@ -69,7 +71,6 @@
         ],
         "pipeline_used": [
           "ovos-stop-pipeline-plugin-high",
-          "ovos-common-reading-pipeline-plugin-high",
           "ovos-converse-pipeline-plugin",
           "ovos-ocp-pipeline-plugin-high",
           "ovos-persona-pipeline-plugin-high",
@@ -82,37 +83,37 @@
           "ovos-common-query-pipeline-plugin",
           "ovos-fallback-pipeline-plugin-medium",
           "ovos-persona-pipeline-plugin-low",
-          "ovos-common-reading-pipeline-plugin-low",
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-10-14T09:33:17+00:00",
+        "run_at": "2026-10-15T09:16:53+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 4.08,
-              "median": 0.55,
-              "n": 348,
-              "p95": 2.73
+              "max": 15.04,
+              "median": 15.03,
+              "n": 10,
+              "p95": 15.04
             },
-            "seconds": 752.7,
+            "seconds": 603.5,
+            "status": "ok"
+          },
+          {
+            "lang": "ca-ES",
+            "row_seconds": {},
+            "seconds": 430.9,
             "status": "ok"
           },
           {
             "lang": "da-DK",
-            "row_seconds": {
-              "max": 15.05,
-              "median": 2.53,
-              "n": 8,
-              "p95": 15.05
-            },
-            "seconds": 429.4,
+            "row_seconds": {},
+            "seconds": 376.3,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-14T09:33:17+00:00",
+      "run_at": "2026-10-15T09:16:53+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -129,9 +130,7 @@
         },
         "python": "3.11.17"
       },
-      "stack_moved": [
-        "ovos-workshop 9.8.16a1 -> 9.8.16a2"
-      ]
+      "stack_moved": []
     },
     "stable": {
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
@@ -218,7 +217,7 @@
           }
         ]
       },
-      "run_at": "2026-10-14T09:33:17+00:00",
+      "run_at": "2026-10-15T09:16:53+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -338,7 +337,7 @@
           }
         ]
       },
-      "run_at": "2026-10-14T09:33:17+00:00",
+      "run_at": "2026-10-15T09:16:53+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -358,7 +357,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-10-14T09:33:17+00:00",
+  "generated_at": "2026-10-15T09:16:53+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -910,7 +909,7 @@
               "ovos-common-reading-pipeline-plugin-low",
               "ovos-fallback-pipeline-plugin-low"
             ],
-            "seconds": 5019.1,
+            "seconds": 5029.4,
             "status": "ok"
           }
         ],
@@ -938,10 +937,10 @@
           "oc-FR",
           "cs-CZ",
           "hu-HU",
-          "fi-FI",
-          "ro-RO",
           "tr-TR",
           "el-GR",
+          "fi-FI",
+          "ro-RO",
           "lt-LT",
           "sv-FI",
           "bg-BG",
@@ -1085,7 +1084,7 @@
                 "utterance": "before"
               }
             ],
-            "reaches": 1,
+            "reaches": 3,
             "takes": 1
           },
           "ovos-ocp-pipeline-plugin": {
@@ -1157,7 +1156,7 @@
                 "utterance": "count to 7"
               }
             ],
-            "reaches": 339,
+            "reaches": 337,
             "takes": 16
           },
           "ovos-persona-pipeline-plugin": {
@@ -1190,12 +1189,12 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 210,
-                    "hit": 202
+                    "hit": 203
                   }
                 },
                 "by_pipeline": {
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 202,
+                    "hit": 203,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -1206,24 +1205,13 @@
                 "collisions": [],
                 "counted": 210,
                 "hang": 0,
-                "hit": 202,
+                "hit": 203,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
                 "misses": [
-                  {
-                    "expected": "change_media_properties",
-                    "fired": [
-                      "ovos-skill-alerts.openvoiceos:reschedule_alert"
-                    ],
-                    "kind": "wrong_intent",
-                    "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
-                    "utterance": "change my reminders to an audio file"
-                  },
                   {
                     "expected": "change_until",
                     "fired": [
@@ -1289,7 +1277,7 @@
                 "status": "ok",
                 "total": 210,
                 "unhandled": 6,
-                "wrong_intent": 2
+                "wrong_intent": 1
               },
               "golden": {
                 "asked": 0,
@@ -1302,11 +1290,11 @@
                 },
                 "by_pipeline": {
                   "ovos-m2v-pipeline": {
-                    "hit": 1,
+                    "hit": 3,
                     "miss": 0
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 53,
+                    "hit": 51,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -1343,10 +1331,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -1469,10 +1457,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -1789,10 +1777,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -1907,10 +1895,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -2063,10 +2051,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -2274,10 +2262,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -2392,10 +2380,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -2510,10 +2498,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -2660,10 +2648,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -2903,10 +2891,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3021,10 +3009,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3152,10 +3140,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3270,10 +3258,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3465,10 +3453,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3555,10 +3543,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3668,10 +3656,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3798,10 +3786,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -3939,10 +3927,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -4246,10 +4234,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -4376,10 +4364,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -4491,10 +4479,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -4680,10 +4668,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -4875,10 +4863,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -4980,10 +4968,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -5093,10 +5081,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -5244,10 +5232,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -5373,10 +5361,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -5505,10 +5493,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -5621,10 +5609,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -5697,43 +5685,30 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 10,
-                    "hit": 9
+                    "hit": 10
                   }
                 },
                 "by_pipeline": {
-                  "ovos-ocp-pipeline-plugin": {
-                    "hit": 0,
-                    "miss": 1
-                  },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 9,
+                    "hit": 10,
                     "miss": 0
                   }
                 },
                 "collisions": [],
                 "counted": 10,
                 "hang": 0,
-                "hit": 9,
+                "hit": 10,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [
-                  {
-                    "expected": "speedtest_intent",
-                    "kind": "unhandled",
-                    "lang": "en-US",
-                    "pipeline": "ovos-ocp-pipeline-plugin",
-                    "stage": "ovos-ocp-pipeline-plugin",
-                    "utterance": "start a speed test"
-                  }
-                ],
+                "misses": [],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 10,
-                "unhandled": 1,
+                "unhandled": 0,
                 "wrong_intent": 0
               },
               "golden": {
@@ -5743,7 +5718,9 @@
                 "counted": 0,
                 "hang": 0,
                 "hit": 0,
-                "langs": [],
+                "langs": [
+                  "en-US"
+                ],
                 "langs_failed": [],
                 "langs_not_routed": [
                   "da-DK",
@@ -5766,10 +5743,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -5797,31 +5774,27 @@
                   "zh-CN",
                   "zsm-MY"
                 ],
-                "manual": 0,
+                "manual": 28,
                 "misses": [],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "reason": "no rows in the languages routed",
                 "status": "none",
-                "total": 0,
+                "total": 28,
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "0.10.0a3",
+              "ref": "0.10.0a4",
               "stop": {
-                "after": [
-                  "Your download speed is 1018.55 Megabit per second and your upload speed is 62.60 Megabit per second.",
-                  "ping is 1800000.00 milliseconds"
-                ],
                 "lang": "en-US",
-                "result": "keeps_going",
-                "seconds": 3.4,
-                "spoke_after_stop": 2,
+                "result": "stuck",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
                 "utterance": "run a speed test"
               }
             },
             "skill_id": "ovos-skill-speedtest.openvoiceos",
-            "version": "0.10.0a3"
+            "version": "0.10.0a4"
           },
           "OpenVoiceOS-ovos-skill-spelling": {
             "member": true,
@@ -5874,10 +5847,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -6004,10 +5977,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -6070,7 +6043,7 @@
                 "by_pipeline": {
                   "ovos-fallback-pipeline-plugin": {
                     "hit": 0,
-                    "miss": 27
+                    "miss": 29
                   },
                   "ovos-m2v-pipeline": {
                     "hit": 0,
@@ -6078,7 +6051,7 @@
                   },
                   "ovos-padatious-pipeline-plugin": {
                     "hit": 36,
-                    "miss": 2
+                    "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
                     "hit": 0,
@@ -6116,9 +6089,9 @@
                     "expected": "make_wallpaper",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "stage": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "pipeline": "ovos-fallback-pipeline-plugin",
+                    "stage": "ovos-fallback-pipeline-plugin",
+                    "taken_by": "ovos-skill-ddg.openvoiceos",
                     "utterance": "change the wallpaper to this one"
                   },
                   {
@@ -6134,9 +6107,9 @@
                     "expected": "make_wallpaper",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "stage": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "pipeline": "ovos-fallback-pipeline-plugin",
+                    "stage": "ovos-fallback-pipeline-plugin",
+                    "taken_by": "ovos-skill-ddg.openvoiceos",
                     "utterance": "change the wall paper to this one"
                   },
                   {
@@ -6424,10 +6397,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -6539,13 +6512,10 @@
               },
               "ref": "2.8.1a1",
               "stop": {
-                "after": [
-                  "enjoy your new wallpaper"
-                ],
                 "lang": "en-US",
-                "result": "keeps_going",
-                "seconds": 3.5,
-                "spoke_after_stop": 1,
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
                 "utterance": "change current wall paper"
               }
             },
@@ -6656,10 +6626,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -6746,10 +6716,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7002,10 +6972,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7100,10 +7070,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7341,10 +7311,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7479,10 +7449,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7549,11 +7519,11 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-ief1wmr6/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-drnlt82e/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "golden": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-ief1wmr6/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-drnlt82e/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "stop": {
@@ -7634,10 +7604,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7677,9 +7647,7 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.3,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "tell me a story from 365 tomorrows"
               }
             },
@@ -7737,10 +7705,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7781,7 +7749,7 @@
               "stop": {
                 "lang": "en-US",
                 "result": "stops",
-                "seconds": 0.4,
+                "seconds": 0.5,
                 "spoke_after_stop": 0,
                 "utterance": "read me a story by hans christian andersen"
               }
@@ -7840,10 +7808,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -7941,10 +7909,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8028,10 +7996,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8125,10 +8093,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8254,10 +8222,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8341,10 +8309,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8491,10 +8459,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8620,10 +8588,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8674,7 +8642,7 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 7,
+                "asked": 8,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
@@ -8786,10 +8754,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8826,14 +8794,7 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "v0.0.6",
-              "stop": {
-                "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.1,
-                "spoke_after_stop": 0,
-                "utterance": "quiz me on regions"
-              }
+              "ref": "v0.0.6"
             },
             "skill_id": "ovos-skill-geography-practice.andlo",
             "version": "0.0.6"
@@ -8917,10 +8878,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -8971,7 +8932,7 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 7,
+                "asked": 8,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
@@ -9046,10 +9007,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -9090,7 +9051,7 @@
               "stop": {
                 "lang": "en-US",
                 "result": "stops",
-                "seconds": 0.1,
+                "seconds": 0.0,
                 "spoke_after_stop": 0,
                 "utterance": "quiz me on what you taught me"
               }
@@ -9149,10 +9110,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -9192,7 +9153,9 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "stops",
+                "seconds": 0.1,
+                "spoke_after_stop": 0,
                 "utterance": "read me a story from grimm"
               }
             },
@@ -9309,10 +9272,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -9410,10 +9373,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -9583,10 +9546,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -9730,10 +9693,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -9837,10 +9800,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -9947,10 +9910,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -10086,10 +10049,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -10197,10 +10160,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -10300,10 +10263,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -10458,10 +10421,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -10608,10 +10571,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -10713,10 +10676,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -10916,10 +10879,10 @@
                   "oc-FR",
                   "cs-CZ",
                   "hu-HU",
-                  "fi-FI",
-                  "ro-RO",
                   "tr-TR",
                   "el-GR",
+                  "fi-FI",
+                  "ro-RO",
                   "lt-LT",
                   "sv-FI",
                   "bg-BG",
@@ -11139,7 +11102,7 @@
             "version": "0.1.11"
           }
         },
-        "run_at": "2026-10-14T09:33:17+00:00",
+        "run_at": "2026-10-15T09:16:53+00:00",
         "takes_from": {
           "OpenVoiceOS-ovos-skill-alerts": {
             "generated": [
@@ -11450,7 +11413,7 @@
           }
         }
       },
-      "key": "fdf4270feed030ee",
+      "key": "b5985daf679ef840",
       "profile": {
         "added_stages": [
           "ovos-common-reading-pipeline-plugin-high",
@@ -34916,11 +34879,11 @@
     },
     "OpenVoiceOS-ovos-skill-speedtest": {
       "alpha": {
-        "boot_seconds": 48.0,
+        "boot_seconds": 48.1,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 50.5,
+        "duration_seconds": 50.6,
         "id": "OpenVoiceOS-ovos-skill-speedtest",
         "intents_by_lang": {
           "ca-es": 2,
@@ -34945,7 +34908,7 @@
           "sv-se": 2,
           "tr-tr": 2
         },
-        "key": "760ec0ff25595c43",
+        "key": "97cf2c25b5eee524",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -34978,8 +34941,8 @@
         "registrations": {
           "intents": 42
         },
-        "requested_version": "0.10.0a3",
-        "route_key": "324bc3404810e9f7",
+        "requested_version": "0.10.0a4",
+        "route_key": "6859a6f8afebe611",
         "routing": {
           "generated": {
             "asked": 0,
@@ -34987,43 +34950,30 @@
             "by_lang": {
               "en-US": {
                 "counted": 10,
-                "hit": 9
+                "hit": 10
               }
             },
             "by_pipeline": {
-              "ovos-ocp-pipeline-plugin": {
-                "hit": 0,
-                "miss": 1
-              },
               "ovos-padatious-pipeline-plugin": {
-                "hit": 9,
+                "hit": 10,
                 "miss": 0
               }
             },
             "collisions": [],
             "counted": 10,
             "hang": 0,
-            "hit": 9,
+            "hit": 10,
             "langs": [
               "en-US"
             ],
             "langs_failed": [],
             "manual": 0,
-            "misses": [
-              {
-                "expected": "speedtest_intent",
-                "kind": "unhandled",
-                "lang": "en-US",
-                "pipeline": "ovos-ocp-pipeline-plugin",
-                "stage": "ovos-ocp-pipeline-plugin",
-                "utterance": "start a speed test"
-              }
-            ],
+            "misses": [],
             "neighbour": 0,
             "not_loaded": 0,
             "status": "ok",
             "total": 10,
-            "unhandled": 1,
+            "unhandled": 0,
             "wrong_intent": 0
           },
           "golden": {
@@ -35033,33 +34983,43 @@
             "counted": 0,
             "hang": 0,
             "hit": 0,
-            "langs": [],
+            "langs": [
+              "en-US",
+              "ca-ES",
+              "da-DK"
+            ],
             "langs_failed": [],
             "langs_not_routed": [
               "de-DE",
-              "ca-ES",
+              "el-GR",
+              "es-CO",
               "es-ES",
               "eu-ES",
+              "fa-IR",
               "fr-FR",
               "gl-ES",
               "it-IT",
+              "kab",
               "nl-NL",
               "oc-FR",
+              "pl-PL",
               "pt-BR",
               "pt-PT",
-              "sv-SE"
+              "ru-RU",
+              "sv-SE",
+              "tr-TR"
             ],
-            "manual": 0,
+            "manual": 48,
             "misses": [],
             "neighbour": 0,
             "not_loaded": 0,
             "reason": "no rows in the languages routed",
             "status": "none",
-            "total": 0,
+            "total": 48,
             "unhandled": 0,
             "wrong_intent": 0
           },
-          "ref": "0.10.0a3",
+          "ref": "0.10.0a4",
           "stop": {
             "lang": "en-US",
             "result": "stuck",
@@ -35070,8 +35030,8 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-14T08:01:11+00:00",
-        "version_tested": "0.10.0a3"
+        "tested_at": "2026-10-15T07:44:09+00:00",
+        "version_tested": "0.10.0a4"
       },
       "stable": {
         "boot_seconds": 40.3,
@@ -38925,6 +38885,167 @@
         "version_tested": "0.1.7"
       }
     },
+    "OscillateLabsLLC-doublecheck": {
+      "alpha": {
+        "boot_seconds": 3.2,
+        "channel": "alpha",
+        "channel_pinned": false,
+        "driver": "ovoscope modern",
+        "duration_seconds": 5.6,
+        "id": "OscillateLabsLLC-doublecheck",
+        "key": "a6660c5e77c83b5e",
+        "kind": "skill",
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "es-ES",
+          "eu-ES",
+          "fa-IR",
+          "fr-FR",
+          "gl-ES",
+          "it-IT",
+          "nl-NL",
+          "pl-PL",
+          "pt-BR",
+          "pt-PT",
+          "ru-RU",
+          "sv-SE"
+        ],
+        "level": 2,
+        "log_excerpt": "elines:326 - WARNING - Pipeline plugin 'ovos-m2v-pipeline' is blacklisted in 'intents.blacklisted_pipelines' but also selected in 'intents.pipeline'; the blacklist wins and it will stay disabled\n2026-10-15 07:44:01.217 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-m2v-prototype-pipeline'\n2026-10-15 07:44:01.218 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-hierarchical-pipeline-plugin'\n2026-10-15 07:44:01.218 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-pipeline-plugin'\n2026-10-15 07:44:01.219 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-ocp-pipeline-plugin'\n2026-10-15 07:44:01.219 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:326 - WARNING - Pipeline plugin 'ovos-ocp-pipeline-plugin' is blacklisted in 'intents.blacklisted_pipelines' but also selected in 'intents.pipeline'; the blacklist wins and it will stay disabled\n2026-10-15 07:44:01.220 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-ocp-pipeline-plugin-legacy'\n2026-10-15 07:44:01.220 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-domain-pipeline-plugin'\n2026-10-15 07:44:01.221 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-hierarchical-pipeline-plugin'\n2026-10-15 07:44:01.221 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-pipeline-plugin'\n2026-10-15 07:44:01.263 - OVOS - ovos_padatious.opm:__init__:315 - INFO - Padatious class: IntentContainer\n2026-10-15 07:44:01.265 - OVOS - ovos_core.intent_services.service:on_ready:192 - INFO - IntentService is ready.\n2026-10-15 07:44:01.266 - OVOS - ovos_core.skill_manager:on_alive:58 - INFO - Skills Manager is alive.\n2026-10-15 07:44:01.266 - OVOS - ovoscope:load_plugin_skills:907 - INFO - loading skill plugins\n2026-10-15 07:44:01.276 - OVOS - ovos_workshop.skill_launcher:load:472 - INFO - ATTEMPTING TO LOAD PLUGIN SKILL: ovos-skill-doublecheck.oscillatelabsllc\n2026-10-15 07:44:01.292 - ovos-skill-doublecheck.oscillatelabsllc - INFO - First run of ovos-skill-doublecheck.oscillatelabsllc\n2026-10-15 07:44:01.293 - OVOS - ovos_workshop.skills.ovos:on_ready_status:757 - INFO - ovos-skill-doublecheck.oscillatelabsllc is ready.\n2026-10-15 07:44:01.294 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:450 - INFO - Skill ovos-skill-doublecheck.oscillatelabsllc loaded successfully\n2026-10-15 07:44:01.294 - OVOS - ovoscope:load_plugin_skills:915 - INFO - Loaded skill: ovos-skill-doublecheck.oscillatelabsllc\n2026-10-15 07:44:01.295 - OVOS - ovoscope:run:1010 - INFO - Skills all loaded!\n2026-10-15 07:44:01.295 - OVOS - ovos_core.skill_manager:on_ready:62 - INFO - Skills Manager is ready.\n2026-10-15 07:44:01.366 - OVOS - ovoscope:get_minicroft:1472 - INFO - MiniCroft: no skill registered an intent, so nothing can be outstanding; skipping the trained wait (trainers reporting work=['ovos-padatious-pipeline-plugin'])\n2026-10-15 07:44:03.367 - OVOS - ovos_core.skill_manager:on_stopping:70 - INFO - Skills Manager is shutting down...\n2026-10-15 07:44:03.367 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:818 - INFO - Unloading plugin skill: ovos-skill-doublecheck.oscillatelabsllc\n2026-10-15 07:44:03.367 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:771 - INFO - ovos-skill-doublecheck.oscillatelabsllc is shutting down...\n2026-10-15 07:44:03.369 - OVOS - ovos_core.intent_services.service:on_stopping:200 - INFO - IntentService is shutting down...",
+        "package": "ovos-skill-doublecheck",
+        "plugin_ids": [
+          "ovos-skill-doublecheck.oscillatelabsllc"
+        ],
+        "requested_version": "1.0.0",
+        "route_key": "83017ec319668826",
+        "routing": {
+          "generated": {
+            "reason": "no rows: no .intent templates, or every template was skipped",
+            "status": "none"
+          },
+          "golden": {
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.0",
+            "status": "none"
+          },
+          "ref": "v1.0.0"
+        },
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-10-15T07:43:57+00:00",
+        "version_tested": "1.0.0",
+        "warnings": [
+          "loaded but registered nothing (no intents, fallback or provider)"
+        ]
+      },
+      "stable": {
+        "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.2,
+        "id": "OscillateLabsLLC-doublecheck",
+        "key": "aa88b17895b9b3eb",
+        "kind": "skill",
+        "level": 0,
+        "log_excerpt": "ied: ovos-utils>=0.8.1 in /tmp/compat-biugi09j/venv/lib/python3.11/site-packages (from ovos-skill-doublecheck==1.0.0) (0.8.5)\nINFO: pip is looking at multiple versions of ovos-skill-doublecheck to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-doublecheck==1.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-doublecheck 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "ovos-skill-doublecheck",
+        "reason": "ovos-skill-doublecheck 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
+        "requested_version": "1.0.0",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-10-15T07:45:20+00:00"
+      },
+      "testing": {
+        "channel": "testing",
+        "channel_pinned": false,
+        "duration_seconds": 1.7,
+        "id": "OscillateLabsLLC-doublecheck",
+        "key": "f85369ea8ac3d18a",
+        "kind": "skill",
+        "level": 0,
+        "log_excerpt": "ied: ovos-utils>=0.8.1 in /tmp/compat-eo62l9pc/venv/lib/python3.11/site-packages (from ovos-skill-doublecheck==1.0.0) (0.8.4)\nINFO: pip is looking at multiple versions of ovos-skill-doublecheck to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-doublecheck==1.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-doublecheck 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "ovos-skill-doublecheck",
+        "reason": "ovos-skill-doublecheck 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
+        "requested_version": "1.0.0",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-10-15T07:44:26+00:00"
+      }
+    },
+    "OscillateLabsLLC-hangup": {
+      "alpha": {
+        "boot_seconds": 3.2,
+        "channel": "alpha",
+        "channel_pinned": false,
+        "driver": "ovoscope modern",
+        "duration_seconds": 5.6,
+        "id": "OscillateLabsLLC-hangup",
+        "key": "f9f36d7803910180",
+        "kind": "skill",
+        "languages_booted": [
+          "en-US"
+        ],
+        "level": 2,
+        "log_excerpt": "ntent_services.service:handle_reload_pipelines:326 - WARNING - Pipeline plugin 'ovos-m2v-pipeline' is blacklisted in 'intents.blacklisted_pipelines' but also selected in 'intents.pipeline'; the blacklist wins and it will stay disabled\n2026-10-15 07:44:07.237 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-m2v-prototype-pipeline'\n2026-10-15 07:44:07.238 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-hierarchical-pipeline-plugin'\n2026-10-15 07:44:07.239 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-pipeline-plugin'\n2026-10-15 07:44:07.239 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-ocp-pipeline-plugin'\n2026-10-15 07:44:07.240 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:326 - WARNING - Pipeline plugin 'ovos-ocp-pipeline-plugin' is blacklisted in 'intents.blacklisted_pipelines' but also selected in 'intents.pipeline'; the blacklist wins and it will stay disabled\n2026-10-15 07:44:07.240 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-ocp-pipeline-plugin-legacy'\n2026-10-15 07:44:07.241 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-domain-pipeline-plugin'\n2026-10-15 07:44:07.241 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-hierarchical-pipeline-plugin'\n2026-10-15 07:44:07.242 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-pipeline-plugin'\n2026-10-15 07:44:07.283 - OVOS - ovos_padatious.opm:__init__:315 - INFO - Padatious class: IntentContainer\n2026-10-15 07:44:07.284 - OVOS - ovos_core.intent_services.service:on_ready:192 - INFO - IntentService is ready.\n2026-10-15 07:44:07.285 - OVOS - ovos_core.skill_manager:on_alive:58 - INFO - Skills Manager is alive.\n2026-10-15 07:44:07.285 - OVOS - ovoscope:load_plugin_skills:907 - INFO - loading skill plugins\n2026-10-15 07:44:07.295 - OVOS - ovos_workshop.skill_launcher:load:472 - INFO - ATTEMPTING TO LOAD PLUGIN SKILL: ovos-skill-hangup.oscillatelabsllc\n2026-10-15 07:44:07.297 - ovos-skill-hangup.oscillatelabsllc - INFO - First run of ovos-skill-hangup.oscillatelabsllc\n2026-10-15 07:44:07.298 - OVOS - ovos_workshop.skills.ovos:on_ready_status:757 - INFO - ovos-skill-hangup.oscillatelabsllc is ready.\n2026-10-15 07:44:07.299 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:450 - INFO - Skill ovos-skill-hangup.oscillatelabsllc loaded successfully\n2026-10-15 07:44:07.299 - OVOS - ovoscope:load_plugin_skills:915 - INFO - Loaded skill: ovos-skill-hangup.oscillatelabsllc\n2026-10-15 07:44:07.299 - OVOS - ovoscope:run:1010 - INFO - Skills all loaded!\n2026-10-15 07:44:07.300 - OVOS - ovos_core.skill_manager:on_ready:62 - INFO - Skills Manager is ready.\n2026-10-15 07:44:07.385 - OVOS - ovoscope:get_minicroft:1472 - INFO - MiniCroft: no skill registered an intent, so nothing can be outstanding; skipping the trained wait (trainers reporting work=['ovos-padatious-pipeline-plugin'])\n2026-10-15 07:44:09.386 - OVOS - ovos_core.skill_manager:on_stopping:70 - INFO - Skills Manager is shutting down...\n2026-10-15 07:44:09.386 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:818 - INFO - Unloading plugin skill: ovos-skill-hangup.oscillatelabsllc\n2026-10-15 07:44:09.387 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:771 - INFO - ovos-skill-hangup.oscillatelabsllc is shutting down...\n2026-10-15 07:44:09.388 - OVOS - ovos_core.intent_services.service:on_stopping:200 - INFO - IntentService is shutting down...",
+        "package": "ovos-skill-hangup",
+        "plugin_ids": [
+          "ovos-skill-hangup.oscillatelabsllc"
+        ],
+        "requested_version": "1.0.0",
+        "route_key": "922628ca72d7c70d",
+        "routing": {
+          "generated": {
+            "reason": "no rows: no .intent templates, or every template was skipped",
+            "status": "none"
+          },
+          "golden": {
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.0",
+            "status": "none"
+          },
+          "ref": "v1.0.0"
+        },
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-10-15T07:44:03+00:00",
+        "version_tested": "1.0.0",
+        "warnings": [
+          "loaded but registered nothing (no intents, fallback or provider)"
+        ]
+      },
+      "stable": {
+        "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.0,
+        "id": "OscillateLabsLLC-hangup",
+        "key": "b981ea3c85e816d2",
+        "kind": "skill",
+        "level": 0,
+        "log_excerpt": " already satisfied: ovos-utils>=0.8.1 in /tmp/compat-biugi09j/venv/lib/python3.11/site-packages (from ovos-skill-hangup==1.0.0) (0.8.5)\nINFO: pip is looking at multiple versions of ovos-skill-hangup to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-hangup==1.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "ovos-skill-hangup",
+        "reason": "ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
+        "requested_version": "1.0.0",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-10-15T07:45:23+00:00"
+      },
+      "testing": {
+        "channel": "testing",
+        "channel_pinned": false,
+        "duration_seconds": 1.8,
+        "id": "OscillateLabsLLC-hangup",
+        "key": "14ff62578ce4eab9",
+        "kind": "skill",
+        "level": 0,
+        "log_excerpt": " already satisfied: ovos-utils>=0.8.1 in /tmp/compat-eo62l9pc/venv/lib/python3.11/site-packages (from ovos-skill-hangup==1.0.0) (0.8.4)\nINFO: pip is looking at multiple versions of ovos-skill-hangup to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-hangup==1.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "ovos-skill-hangup",
+        "reason": "ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
+        "requested_version": "1.0.0",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-10-15T07:44:28+00:00"
+      }
+    },
     "OscillateLabsLLC-skill-homeassistant": {
       "alpha": {
         "boot_seconds": 45.6,
@@ -39526,6 +39647,90 @@
         "stage": "install",
         "status": "fail",
         "tested_at": "2026-10-04T10:52:20+00:00"
+      }
+    },
+    "OscillateLabsLLC-switchboard": {
+      "alpha": {
+        "boot_seconds": 3.2,
+        "channel": "alpha",
+        "channel_pinned": false,
+        "driver": "ovoscope modern",
+        "duration_seconds": 5.4,
+        "id": "OscillateLabsLLC-switchboard",
+        "key": "447b06621e41a943",
+        "kind": "pipeline",
+        "level": 2,
+        "package": "ovos-switchboard-pipeline-plugin",
+        "plugin_ids": [
+          "ovos-switchboard-classifier-pipeline-plugin",
+          "ovos-switchboard-decider-pipeline-plugin",
+          "ovos-switchboard-echo-pipeline-plugin",
+          "ovos-switchboard-exact-pipeline-plugin",
+          "ovos-switchboard-llm-pipeline-plugin",
+          "ovos-switchboard-prefix-pipeline-plugin"
+        ],
+        "requested_version": "1.1.1",
+        "stage": "load",
+        "stages": [
+          "ovos-switchboard-classifier-pipeline-plugin",
+          "ovos-switchboard-decider-pipeline-plugin",
+          "ovos-switchboard-echo-pipeline-plugin",
+          "ovos-switchboard-exact-pipeline-plugin",
+          "ovos-switchboard-llm-pipeline-plugin",
+          "ovos-switchboard-prefix-pipeline-plugin"
+        ],
+        "status": "pass",
+        "tested_at": "2026-10-15T07:45:03+00:00",
+        "version_tested": "1.1.1"
+      },
+      "stable": {
+        "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.2,
+        "id": "OscillateLabsLLC-switchboard",
+        "key": "b0b71957019aef94",
+        "kind": "pipeline",
+        "level": 0,
+        "log_excerpt": "/compat-biugi09j/venv/lib/python3.11/site-packages (from ovos-switchboard-pipeline-plugin==1.1.1) (1.3.7)\nINFO: pip is looking at multiple versions of ovos-switchboard-pipeline-plugin to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-switchboard-pipeline-plugin==1.1.1 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-switchboard-pipeline-plugin 1.1.1 depends on ovos-plugin-manager>=2.0.0\n    The user requested (constraint) ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "ovos-switchboard-pipeline-plugin",
+        "reason": "ovos-switchboard-pipeline-plugin 1.1.1 depends on ovos-plugin-manager>=2.0.0; channel pins ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0",
+        "requested_version": "1.1.1",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-10-15T07:45:25+00:00"
+      },
+      "testing": {
+        "boot_seconds": 5.3,
+        "channel": "testing",
+        "channel_pinned": false,
+        "driver": "ovoscope modern",
+        "duration_seconds": 14.0,
+        "id": "OscillateLabsLLC-switchboard",
+        "key": "2c30ab840eed423a",
+        "kind": "pipeline",
+        "level": 2,
+        "package": "ovos-switchboard-pipeline-plugin",
+        "plugin_ids": [
+          "ovos-switchboard-classifier-pipeline-plugin",
+          "ovos-switchboard-decider-pipeline-plugin",
+          "ovos-switchboard-echo-pipeline-plugin",
+          "ovos-switchboard-exact-pipeline-plugin",
+          "ovos-switchboard-llm-pipeline-plugin",
+          "ovos-switchboard-prefix-pipeline-plugin"
+        ],
+        "requested_version": "1.1.1",
+        "stage": "load",
+        "stages": [
+          "ovos-switchboard-classifier-pipeline-plugin",
+          "ovos-switchboard-decider-pipeline-plugin",
+          "ovos-switchboard-echo-pipeline-plugin",
+          "ovos-switchboard-exact-pipeline-plugin",
+          "ovos-switchboard-llm-pipeline-plugin",
+          "ovos-switchboard-prefix-pipeline-plugin"
+        ],
+        "status": "pass",
+        "tested_at": "2026-10-15T07:44:30+00:00",
+        "version_tested": "1.1.1"
       }
     },
     "andlo-ovos-common-reading-pipeline-plugin": {
