@@ -1,0 +1,68 @@
+{
+  "id": "OscillateLabsLLC-doublecheck",
+  "skill_id": null,
+  "name": "doublecheck",
+  "description": "Doublecheck: an OVOS skill that asks before running a high-risk request Switchboard held, and runs it only on a clear yes.",
+  "examples": [],
+  "tags": [
+    "ovos",
+    "status-active"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/OscillateLabsLLC/doublecheck",
+  "package_name": "ovos-skill-doublecheck",
+  "pypi_version": "1.0.0",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-doublecheck\n\nThen set `\"high_risk\": \"confirm\"` under `intents.switchboard` in `mycroft.conf`.\n\nPython 3.11-3.14. Works with ovos-workshop 0.x (Neon) and current OVOS."
+    }
+  ],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fa-ir",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pl-pl",
+    "pt-br",
+    "pt-pt",
+    "ru-ru",
+    "sv-se"
+  ],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-10-14T19:43:58Z",
+  "last_updated": "2026-10-15T00:41:27.392061Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "OscillateLabsLLC-doublecheck",
+    "channels": {}
+  }
+}
