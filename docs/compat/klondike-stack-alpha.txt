@@ -92,7 +92,7 @@ ovos-option-matcher-fuzzy-plugin==0.0.2a1
 ovos-persona==0.9.0a28
 ovos-plugin-manager==2.12.5a1
 ovos-skill-365tomorrows-stories==0.1.8
-ovos-skill-alerts==0.12.37a1
+ovos-skill-alerts==0.12.49a1
 ovos-skill-andersen-tales==0.1.8
 ovos-skill-andrew-lang-tales==0.1.9
 ovos-skill-application-launcher==0.13.6a1
@@ -108,11 +108,12 @@ ovos-skill-confucius-quotes==0.8.2a3
 ovos-skill-convert==0.0.10
 ovos-skill-cosquin-tales==0.1.7
 ovos-skill-count==0.6.2a2
-ovos-skill-date-time==1.11.8a1
+ovos-skill-date-time==1.11.12a1
 ovos-skill-days-in-history==0.9.3a3
 ovos-skill-ddg==0.6.0a3
 ovos-skill-diagnostics==0.4.0a3
 ovos-skill-dictation==0.7.0a5
+ovos-skill-doublecheck==1.0.0
 ovos-skill-fallback-unknown==0.3.2a1
 ovos-skill-fart==1.0.1
 ovos-skill-fuster-quotes==0.2.5a3
@@ -121,6 +122,7 @@ ovos-skill-geography-practice==0.0.6
 ovos-skill-geometry==0.0.4
 ovos-skill-geometry-practice==0.0.4
 ovos-skill-grimm-tales==0.1.8
+ovos-skill-hangup==1.0.0
 ovos-skill-hello-world==0.5.4a2
 ovos-skill-holidays==0.0.3
 ovos-skill-horoscope-readings==0.1.5
@@ -128,7 +130,7 @@ ovos-skill-icanhazdadjokes==0.25.6a5
 ovos-skill-intercom==0.0.7
 ovos-skill-ip==0.9.0a4
 ovos-skill-iss-location==0.8.0a1
-ovos-skill-laugh==2.0.0a1
+ovos-skill-laugh==2.0.0a7
 ovos-skill-local-media==0.2.16a1
 ovos-skill-math-practice==0.0.8
 ovos-skill-metronome==0.0.5
@@ -141,9 +143,9 @@ ovos-skill-news==0.4.10a4
 ovos-skill-number-facts==0.5.0a7
 ovos-skill-ovosblog==0.1.8
 ovos-skill-parrot==0.11.1a2
-ovos-skill-personal==1.0.2a6
+ovos-skill-personal==1.1.0a1
 ovos-skill-pyradios==0.1.6a8
-ovos-skill-randomness==2.0.2a7
+ovos-skill-randomness==2.0.2a8
 ovos-skill-recipe-helper==0.1.1
 ovos-skill-rhythm-box==0.0.4
 ovos-skill-screenshot==1.7.0a3
@@ -170,7 +172,7 @@ ovos-typed-slots-transformer==0.0.1a4
 ovos-utils==0.15.4a2
 ovos-utterance-normalizer==0.2.5a2
 ovos-utterance-plugin-cancel==0.3.4a2
-ovos-wikipedia-plugin==1.1.2a2
+ovos-wikipedia-plugin==1.1.2a3
 ovos-wolfram-alpha-plugin==1.1.2a1
 ovos-wordnet-plugin==0.1.4a3
 ovos-workshop==9.8.16a2
@@ -178,7 +180,7 @@ ovos-yes-no-plugin==0.4.0a1
 ovos_adapt_parser==1.6.7a2
 ovos_color_parser==0.12.1a3
 ovos_common_query_pipeline_plugin==1.1.19a1
-ovos_m2v_pipeline==0.33.1a1
+ovos_m2v_pipeline==0.34.0a1
 ovos_ocp_pipeline_plugin==1.5.7a1
 ovos_openai_plugin==2.0.12a1
 ovos_padatious==2.2.7a1
@@ -191,8 +193,8 @@ padacioso==2.4.3a1
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
 Pint==0.25.3
-platformdirs==4.13.0
-pluggy==1.6.0
+platformdirs==4.13.3
+pluggy==1.7.0
 prettytable==3.18.0
 propcache==0.5.4
 psutil==7.2.2
@@ -230,8 +232,8 @@ sentence_stream==1.3.0
 sgp4==2.27
 simplematch==1.4
 six==1.17.0
-skill-easter-eggs==1.2.2
-skill-homeassistant==1.4.4
+skill-easter-eggs==1.2.5
+skill-homeassistant==1.4.5
 skill-monster-scanner==2.2.2
 skops==0.16.0
 skyfield==1.55
@@ -241,7 +243,7 @@ speedtest-cli==2.1.3
 thalovant-languages==0.3.5
 thalovant-skill-custos-fallback==0.1.6
 thalovant-skill-interaction-modes==0.1.11
-thalovant-skillkit==0.25.0
+thalovant-skillkit==0.28.0
 threadpoolctl==3.7.0
 timezonefinder==9.0.0
 timezonefinder-data==3.2026.3.post1
