@@ -257,7 +257,7 @@ function stageTook(stage) {
   return !!stage && !/fallback|^last message|stop-pipeline/.test(stage);
 }
 
-function renderRoutingRun(title, r, takenBy = "a default skill") {
+function renderRoutingRun(title, r, takenBy = "a default skill", graded = true) {
   if (!r) return "";
   if (r.status !== "ok") {
     return renderStatRow(title, escapeHtml(r.reason || "not run"));
@@ -266,7 +266,7 @@ function renderRoutingRun(title, r, takenBy = "a default skill") {
   const by = r.by_lang && typeof r.by_lang === "object" ? r.by_lang : null;
   const en = level3Counts(r);
   const head = !by ? "" : en
-    ? `${en.hit}/${en.counted} in ${COMPAT_LEVEL3_LANG} reach the skill (this decides level 3)`
+    ? `${en.hit}/${en.counted} in ${COMPAT_LEVEL3_LANG} reach the skill${graded ? " (this decides level 3)" : ""}`
     : `no ${COMPAT_LEVEL3_LANG} golden utterances, and level 3 is decided on ${COMPAT_LEVEL3_LANG}`;
   const parts = [`${r.hit}/${r.counted} reach the skill`];
   if (r.asked) parts.push(`${r.asked} of them ask a follow-up question (answered with “cancel”)`);
@@ -317,7 +317,11 @@ function renderRouting(rec, meta) {
   const rows = [];
   if (routing.install) rows.push(renderStatRow("Routing", escapeHtml(routing.install)));
   if (routing.error) rows.push(renderStatRow("Routing", escapeHtml(`not run: ${routing.error}`)));
-  rows.push(renderRoutingRun("Golden utterances", routing.golden));
+  if (isLastResort(rec)) {
+    const t = takenCounts(routing.golden);
+    rows.push(renderStatRow("Graded by level 2", escapeHtml(`${COMPAT_LAST_RESORT_NOTE} (${t.taken} of its ${t.counted} ${COMPAT_LEVEL3_LANG} golden utterances went to another skill or stage)`)));
+  }
+  rows.push(renderRoutingRun("Golden utterances", routing.golden, undefined, !isLastResort(rec)));
   if (COMPAT_PUBLIC_GENERATED) rows.push(renderRoutingRun("Generated utterances", routing.generated));
   const against = [
     asArray(route.baseline_requirements).join(", "),

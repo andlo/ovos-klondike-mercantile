@@ -31,6 +31,9 @@ session, `ovos.intent.unmatched` means nobody, else the first
   hang       nobody claimed it and a pipeline stage did not return within
              --timeout (typically a common-query provider that blocks); a
              miss, with the stage it was stuck in
+  taken      (not an outcome of its own) baseline rows, plus unhandled
+             rows a stage other than the fallbacks took (persona, common
+             query): what a fallback of last resort is judged by (#75)
   asked      (not an outcome of its own) the skill that took the row asked
              a follow-up question; it is answered with "cancel" in the
              row's session (see ASK_ENABLE) and the row is judged as usual,
@@ -73,6 +76,7 @@ import argparse
 import itertools
 import json
 import os
+import re
 import sys
 import threading
 import time
@@ -472,6 +476,14 @@ def stage_of(recs):
     return None
 
 
+def stage_took(stage):
+    """A stage other than the fallbacks (persona, common query ...) took the
+    sentence, though no skill answered it. With `baseline` rows this is
+    `taken`: what a fallback of last resort is judged by (#75). Same rule as
+    stageTook() in docs/detail.js."""
+    return bool(stage) and not re.search(r"fallback|^last message|stop-pipeline", stage)
+
+
 def waiting_on(recs):
     """Who a hung row was still waiting for (issue #59): common-query
     providers that said they were searching and never said they were done,
@@ -625,7 +637,7 @@ def main():
                 raise BudgetReached(f"routing budget reached; {left} rows not run")
             res = out["results"].setdefault(item["id"], {}).setdefault(run, {
                 "hit": 0, "wrong_intent": 0, "baseline": 0, "unhandled": 0, "neighbour": 0,
-                "hang": 0, "manual": 0, "not_loaded": 0, "total": 0, "asked": 0,
+                "hang": 0, "manual": 0, "not_loaded": 0, "total": 0, "asked": 0, "taken": 0,
                 "misses": [], "collisions": []})
             res["total"] += 1
             if row.get("needs_manual"):
@@ -702,6 +714,7 @@ def main():
                 continue
             elif who is not None:
                 res["baseline"] += 1
+                res["taken"] += 1
                 entry["kind"] = "baseline"
                 # Which stage matched says why (padatious, adapt, m2v, common
                 # query ...): a skill winning through m2v only when many
@@ -711,6 +724,8 @@ def main():
                 res["unhandled"] += 1
                 entry["kind"] = "unhandled"
                 entry["stage"] = stage_of(recs)
+                if stage_took(entry["stage"]):
+                    res["taken"] += 1
             if len(res["misses"]) < MAX_MISSES:
                 res["misses"].append(entry)
         out.pop("current", None)

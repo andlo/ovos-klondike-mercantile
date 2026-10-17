@@ -22,7 +22,8 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from compat.feed import CHANNEL_ORDER, LEVEL3_LANG, LEVEL3_RATIO, label, routing_counts  # noqa: E402
+from compat.feed import (CHANNEL_ORDER, LAST_RESORT_NOTE, LEVEL3_LANG, LEVEL3_RATIO, label, last_resort,  # noqa: E402
+                         routing_counts)
 
 SCHEMA = "ovos-profile-report/1"
 STAGE_SUFFIX = re.compile(r"-(high|medium|low)$")
@@ -82,7 +83,11 @@ def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False, ptake=
                 out["version"] = rec["version_tested"]
             if rec.get("tested_at"):
                 out["tested_at"] = rec["tested_at"]
-    golden = routing_counts(rec, "golden") if rec else None
+    resort = last_resort(rec)
+    if resort:
+        # graded by level 2 (#75): no golden counts, here or from the Klondike job
+        note = "; ".join(filter(None, [note, LAST_RESORT_NOTE]))
+    golden = routing_counts(rec, "golden") if rec and not resort else None
     out["golden"] = {"hit": golden[0], "counted": golden[1]} if golden else None
     if golden:
         # The languages behind the count, so the compare view only compares
@@ -94,7 +99,7 @@ def row(runtime_id, kind, store_id, rec, kres, note=None, archived=False, ptake=
             out["golden"]["by_lang"] = dict(g["by_lang"])
         elif g.get("langs"):
             out["golden"]["langs"] = list(g["langs"])
-    k = routing_counts(kres, "golden") if kres else None
+    k = routing_counts(kres, "golden") if kres and not resort else None
     out["klondike"] = {"hit": k[0], "counted": k[1]} if k else None
     out["gold"] = bool(golden and k and (out["level"] or 0) >= 3 and k[0] / k[1] >= LEVEL3_RATIO)
     if kind == "pipeline" and ptake is not None:

@@ -61,6 +61,46 @@ def routing_counts(rec, run):
     return level3_counts(((rec or {}).get("routing") or {}).get(run))
 
 
+# A fallback of last resort (#75), the rule of ovos-tui-client 0.3.0a14
+# (andlo/ovos-tui-client#80): fallback-unknown ("I don't know") answers what
+# nothing else takes, so on a real install its golden utterances reach other
+# skills and stages first, as they should, and can't measure it. Measured,
+# not named: a skill whose fallback is in OVOS's low band (priority above
+# 90: ovos-fallback-pipeline-plugin-low, after everything else) and whose
+# en-US golden utterances went to another skill or stage at least half the
+# time. A high or medium fallback (application-launcher, priority 4) is not
+# a last resort: what takes its sentences is shown as usual. One that is
+# broken (its handler fails, or it says nothing) isn't marked either: there
+# the misses point at the skill itself.
+LAST_RESORT_ABOVE = 90
+LAST_RESORT_LABEL = "✓ loads · last-resort fallback"
+LAST_RESORT_NOTE = ("a fallback of last resort: its golden utterances reach other skills and stages "
+                    "first, as they should, so they don't measure it; graded by level 2")
+
+
+def taken_counts(r):
+    """(taken by another skill or stage, counted) of the en-US rows of one
+    routing run, else None (also for a result from before `taken` was counted)."""
+    if not isinstance(r, dict) or r.get("status") != "ok" or not r.get("counted"):
+        return None
+    by = r.get("by_lang")
+    c = by.get(LEVEL3_LANG) if isinstance(by, dict) else r
+    if not isinstance(c, dict) or not c.get("counted") or not isinstance(c.get("taken"), int):
+        return None
+    return c["taken"], c["counted"]
+
+
+def last_resort(rec):
+    """Is this result a fallback of last resort (#75)?"""
+    if not rec or rec.get("status") != "pass" or rec.get("kind", "skill") != "skill":
+        return False
+    prio = rec.get("fallback_priority")
+    if not isinstance(prio, int) or isinstance(prio, bool) or prio <= LAST_RESORT_ABOVE:
+        return False
+    c = taken_counts(((rec.get("routing") or {}).get("golden")))
+    return bool(c and c[0] * 2 >= c[1])
+
+
 def is_candidate(entry):
     """Looks Complete (tier 1), a tested type, not archived, has a package."""
     return (entry.get("tier") == 1 and entry.get("component_type") in TESTED_TYPES
@@ -90,6 +130,8 @@ def label(rec):
         return ("✗ doesn't install", "fail") if rec.get("level", 0) == 0 else ("✗ doesn't load", "fail")
     booted = rec.get("languages_booted") or []
     missing = rec.get("languages_missing") or []
+    if last_resort(rec):
+        return LAST_RESORT_LABEL, "warn" if rec.get("warnings") else "pass"
     golden = routing_counts(rec, "golden")
     stop = stop_result(rec)
     if golden:
@@ -117,6 +159,10 @@ def compact(rec):
     for k in ("version_tested", "tested_at", "channel_pinned"):
         if rec.get(k) is not None:
             out[k] = rec[k]
+    if last_resort(rec):
+        # graded by level 2: no golden counts on the card (#75)
+        out["last_resort"] = True
+        return out
     runs = ("golden", "generated") if PUBLIC_GENERATED else ("golden",)
     for run in runs:
         counts = routing_counts(rec, run)

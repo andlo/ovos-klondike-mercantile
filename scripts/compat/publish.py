@@ -44,6 +44,9 @@ def clean(rec):
     for k in NUM_FIELDS:
         if isinstance(rec.get(k), (int, float)) and not isinstance(rec.get(k), bool):
             out[k] = rec[k]
+    prio = rec.get("fallback_priority")
+    if isinstance(prio, int) and not isinstance(prio, bool) and -1000 < prio < 1000:
+        out["fallback_priority"] = prio
     if isinstance(rec.get("channel_pinned"), bool):
         out["channel_pinned"] = rec["channel_pinned"]
     for k, cap in LIST_FIELDS.items():
@@ -79,7 +82,7 @@ def clean(rec):
 
 
 RUN_INTS = ("hit", "wrong_intent", "baseline", "unhandled", "neighbour", "hang", "manual",
-            "not_loaded", "total", "counted", "asked", "via_ocp")
+            "not_loaded", "total", "counted", "asked", "via_ocp", "taken")
 MISS_STRS = {"utterance": 200, "expected": 200, "taken_by": 200, "kind": 20, "stage": 80, "lang": 20,
              "pipeline": 80}
 
@@ -122,6 +125,9 @@ def _clean_run(r):
             hit, cnt = c.get("hit"), c.get("counted")
             if all(isinstance(x, int) and not isinstance(x, bool) for x in (hit, cnt)) and 0 <= hit <= cnt < 100_000:
                 by_lang[str(lang)[:20]] = {"hit": hit, "counted": cnt}
+                taken = c.get("taken")
+                if isinstance(taken, int) and not isinstance(taken, bool) and 0 <= taken <= cnt - hit:
+                    by_lang[str(lang)[:20]]["taken"] = taken
         if by_lang:
             out["by_lang"] = by_lang
     if out["status"] == "ok":
