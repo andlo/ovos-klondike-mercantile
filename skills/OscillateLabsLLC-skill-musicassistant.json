@@ -69,27 +69,30 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "skill-musicassistant",
+    "badge_id": "skill-musicassistant.oscillatelabsllc",
     "channels": {
       "stable": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-04T11:10:31+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.1",
+        "tested_at": "2026-10-18T07:26:49+00:00",
         "channel_pinned": false
       },
       "testing": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-04T10:52:20+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.1",
+        "tested_at": "2026-10-18T07:26:30+00:00",
         "channel_pinned": false
       },
       "alpha": {
-        "label": "\u2717 doesn't install",
-        "state": "fail",
-        "level": 0,
-        "tested_at": "2026-10-17T07:35:47+00:00",
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "1.0.1",
+        "tested_at": "2026-10-18T07:25:56+00:00",
         "channel_pinned": false
       }
     }
