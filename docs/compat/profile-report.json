@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-10-18T07:36:32+00:00",
+ "generated_at": "2026-10-19T09:36:47+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-10-18T07:36:32+00:00",
-   "klondike_run_at": "2026-10-17T08:42:20+00:00",
+   "klondike_run_at": "2026-10-19T09:36:47+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
    "profiles": [
@@ -1211,7 +1211,7 @@
   },
   "testing": {
    "run_at": "2026-10-18T07:36:32+00:00",
-   "klondike_run_at": "2026-10-17T08:42:20+00:00",
+   "klondike_run_at": "2026-10-19T09:36:47+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -2202,7 +2202,7 @@
         }
        },
        "klondike": {
-        "hit": 1,
+        "hit": 2,
         "counted": 6
        },
        "gold": false,
@@ -2417,7 +2417,7 @@
   },
   "alpha": {
    "run_at": "2026-10-18T07:36:32+00:00",
-   "klondike_run_at": "2026-10-17T08:42:20+00:00",
+   "klondike_run_at": "2026-10-19T09:36:47+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2527,7 +2527,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 10,
+        "reaches": 9,
         "takes": 6,
         "examples": [
          {
@@ -2627,20 +2627,14 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 337,
-        "takes": 17,
+        "reaches": 339,
+        "takes": 16,
         "examples": [
          {
           "from": "OpenVoiceOS-ovos-skill-date-time",
           "kind": "baseline",
           "taken_by": "ovos-skill-convert.andlo",
           "utterance": "how many days are there between march 1 and june 5"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-date-time",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-alerts.openvoiceos",
-          "utterance": "how many days between christmas and new year's eve"
          },
          {
           "from": "OpenVoiceOS-ovos-skill-moviemaster",
@@ -2659,6 +2653,12 @@
           "kind": "baseline",
           "taken_by": "ovos-skill-geometry.andlo",
           "utterance": "what's today's word"
+         },
+         {
+          "from": "andlo-ovos-skill-math-practice",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-count.openvoiceos",
+          "utterance": "count to 7"
          }
         ]
        }
@@ -2789,7 +2789,7 @@
         }
        },
        "klondike": {
-        "hit": 2,
+        "hit": 3,
         "counted": 5
        },
        "gold": false
@@ -3226,11 +3226,25 @@
        "tested_at": "2026-10-17T07:14:10+00:00",
        "golden": null,
        "klondike": null,
-       "gold": true,
+       "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 15,
-        "takes": 0
+        "reaches": 13,
+        "takes": 2,
+        "examples": [
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a paper from arxiv"
+         },
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a research paper from the arxiv"
+         }
+        ]
        },
        "in_profile": true
       },
@@ -3879,7 +3893,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 14,
-      "gold": 14
+      "gold": 13
      },
      "cumulative": {
       "total": 59,
@@ -3890,7 +3904,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 19,
-      "gold": 18
+      "gold": 17
      }
     }
    ]
