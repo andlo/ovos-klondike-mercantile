@@ -12988,7 +12988,7 @@
     "icon_color": null,
     "source": "https://github.com/ohealthy/ovos",
     "package_name": "open-webui",
-    "pypi_version": "0.12.2",
+    "pypi_version": "0.12.3",
     "license": "NOASSERTION",
     "archived": false,
     "author": "ohealthy",
@@ -13010,7 +13010,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-11T18:00:20Z",
-    "last_updated": "2026-10-14T21:14:15.016334Z",
+    "last_updated": "2026-10-16T11:53:34.760139Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -18133,54 +18133,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-25T22:28:01Z",
     "last_updated": "2026-08-13T18:56:17Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "TigreGotico-ovos-media-provider-radio-tuga",
-    "skill_id": null,
-    "name": "ovos-media-provider-radio-tuga",
-    "description": "This is an OVOS **MediaProvider** plugin for Portuguese internet radio. It replaces the",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/TigreGotico/ovos-media-provider-radio-tuga",
-    "package_name": "ovos-media-provider-radio-tuga",
-    "pypi_version": null,
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "TigreGotico",
-    "tier": 2,
-    "component_type": "Provider Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 1,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-media-provider-radio-tuga"
-      },
-      {
-        "heading": "Configuration",
-        "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `min_confidence` | `60` | Minimum fuzzy-match confidence (0-100) for a station to be returned. |\n| `max_results` | `10` | Maximum number of matching stations returned per search. |"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-06-25T22:28:25Z",
-    "last_updated": "2026-08-13T18:56:30Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -25300,6 +25252,110 @@
     "is_recently_updated": false
   },
   {
+    "id": "ecosphereplus-ovos-skill-omva-enroll-voice",
+    "skill_id": null,
+    "name": "ovos-skill-omva-enroll-voice",
+    "description": "Provides natural voice interface for enrolling user voices with semantic intent recognition supporting phrases like 'enroll my voice', 'save my voice', 'remember me', and other semantically similar expressions. Integrates with SpeechBrain ECAPA-TDNN for voice identification.",
+    "examples": [
+      "Enroll my voice",
+      "Save my voice",
+      "Remember me",
+      "Enroll my voice as John",
+      "Register my voice as Mary Smith",
+      "Learn my voice",
+      "Add my voice to the system",
+      "Set up voice recognition for me"
+    ],
+    "tags": [
+      "voice",
+      "enrollment",
+      "biometric",
+      "recognition",
+      "speechbrain",
+      "voiceid"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/ecosphereplus/ovos-skill-omva-enroll-voice/main/microphone",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/ecosphereplus/ovos-skill-omva-enroll-voice",
+    "package_name": "omva-skill-voice-enrollment",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "ecosphereplus",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "target_samples",
+        "type": "number",
+        "label": "Number of voice samples to collect"
+      },
+      {
+        "name": "min_audio_duration",
+        "type": "number",
+        "label": "Minimum audio duration (seconds)"
+      },
+      {
+        "name": "max_audio_duration",
+        "type": "number",
+        "label": "Maximum audio duration (seconds)"
+      },
+      {
+        "name": "quality_threshold",
+        "type": "number",
+        "label": "Audio quality threshold (0.0-1.0)"
+      },
+      {
+        "name": "confirmation_required",
+        "type": "checkbox",
+        "label": "Require confirmation before enrollment"
+      },
+      {
+        "name": "replace_existing_profiles",
+        "type": "checkbox",
+        "label": "Allow replacing existing voice profiles"
+      },
+      {
+        "name": "relationship_words",
+        "type": "text",
+        "label": "Relationship words for third-person enrollment (comma-separated)"
+      }
+    ],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "The skill can be configured through the settings interface:\n\n- **target_samples**: Number of voice samples to collect (default: 3)\n- **min_audio_duration**: Minimum audio duration in seconds (default: 3.0)\n- **max_audio_duration**: Maximum audio duration in seconds (default: 10.0)\n- **quality_threshold**: Audio quality threshold 0.0-1.0 (default: 0.7)\n- **confirmation_required**: Whether to require confirmation (default: true)\n- **replace_existing_profiles**: Allow replacing existing profiles (default: false)"
+      },
+      {
+        "heading": "Installation",
+        "content": "1. Install the skill:\npip install omva-skill-voice-enrollment\n\n2. Ensure the OMVA voice identification plugin is installed:\npip install ovos-audio-transformer-plugin-omva-voiceid\n\n3. The skill will be automatically loaded by OVOS."
+      }
+    ],
+    "languages": [
+      "en-us",
+      "es-es",
+      "fr-fr"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-30T11:09:48Z",
+    "last_updated": "2025-09-01T17:07:51Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "jaredcobb-ovos-skill-openai",
     "skill_id": null,
     "name": "ovos-skill-openai",
@@ -29559,51 +29615,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2023-08-04T22:02:36Z",
     "last_updated": "2024-06-07T00:45:28Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "OpenVoiceOS-ovos-stt-plugin-xabier-zuazo",
-    "skill_id": null,
-    "name": "ovos-stt-plugin-xabier-zuazo",
-    "description": "",
-    "examples": [],
-    "tags": [
-      "deprecated",
-      "plugin",
-      "speech-to-text",
-      "stt",
-      "tigregotico"
-    ],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-stt-plugin-xabier-zuazo",
-    "package_name": "ovos-stt-plugin-xabier-zuazo",
-    "pypi_version": null,
-    "license": null,
-    "archived": true,
-    "author": "OpenVoiceOS",
-    "tier": 2,
-    "component_type": "Tool",
-    "type_group": "Tool",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2024-10-04T02:51:41Z",
-    "last_updated": "2024-10-04T03:29:14Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
