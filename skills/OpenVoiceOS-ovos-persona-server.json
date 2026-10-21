@@ -34,10 +34,6 @@
     {
       "heading": "Persona Config Examples",
       "content": "### LLM persona (OpenAI-compatible backend)\n\n{\n  \"name\": \"gpt-persona\",\n  \"handlers\": [\"ovos-chat-openai-plugin\"],\n  \"ovos-chat-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Knowledge-base + LLM fallback\n\n{\n  \"name\": \"smart-assistant\",\n  \"handlers\": [\n    \"ovos-wikipedia-plugin\",\n    \"ovos-ddg-plugin\",\n    \"ovos-wordnet-plugin\",\n    \"ovos-chat-openai-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ],\n  \"ovos-chat-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Rivescript chatbot (no GPU, no API key)\n\n{\n  \"name\": \"rivescript-bot\",\n  \"handlers\": [\n    \"ovos-solver-rivescript-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ]\n}\n\n---"
-    },
-    {
-      "heading": "Installing the MCP extra",
-      "content": "pip install ovos-persona-server[mcp]\n\nWithout the `[mcp]` extra, or without passing `--mcp`, only the UTCP endpoints are active."
     }
   ],
   "languages": [],

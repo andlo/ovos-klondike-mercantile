@@ -203,7 +203,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 4,
-    "open_issues": 10,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -3493,7 +3493,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 10,
-    "open_issues": 10,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -18091,6 +18091,54 @@
     "is_recently_updated": false
   },
   {
+    "id": "TigreGotico-ovos-media-provider-radio-tuga",
+    "skill_id": null,
+    "name": "ovos-media-provider-radio-tuga",
+    "description": "This is an OVOS **MediaProvider** plugin for Portuguese internet radio. It replaces the",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/TigreGotico/ovos-media-provider-radio-tuga",
+    "package_name": "ovos-media-provider-radio-tuga",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "TigreGotico",
+    "tier": 2,
+    "component_type": "Provider Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-media-provider-radio-tuga"
+      },
+      {
+        "heading": "Configuration",
+        "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `min_confidence` | `60` | Minimum fuzzy-match confidence (0-100) for a station to be returned. |\n| `max_results` | `10` | Maximum number of matching stations returned per search. |"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-06-25T22:28:25Z",
+    "last_updated": "2026-08-13T18:56:30Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-media-provider-somafm",
     "skill_id": null,
     "name": "ovos-media-provider-somafm",
@@ -18387,7 +18435,7 @@
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-memory-plugins",
     "package_name": "ovos-memory-plugins",
-    "pypi_version": "1.2.0a2",
+    "pypi_version": "1.2.3a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -18407,18 +18455,18 @@
     "setup_notes": [
       {
         "heading": "Install",
-        "content": "pip install ovos-memory-plugins"
+        "content": "pip install --pre ovos-memory-plugins"
       },
       {
         "heading": "Step 1: remember the last few turns (no setup)",
-        "content": "The simplest memory: a sliding window of recent turns. No models, no endpoints.\n\n{\n  \"name\": \"MyAssistant\",\n  \"memory_module\": \"ovos-memory-plugin-recency\",\n  \"ovos-memory-plugin-recency\": {\n    \"max_history\": 10,\n    \"system_prompt\": \"You are a helpful assistant.\"\n  }\n}\n\nThe assistant can now handle \"and what about tomorrow?\" because the previous\nturns are still in context. That is all most short conversations need."
+        "content": "The simplest memory: a sliding window of recent turns. No models, no endpoints.\n\n{\n  \"name\": \"MyAssistant\",\n  \"handlers\": [\"ovos-chat-openai-plugin\"],\n  \"ovos-chat-openai-plugin\": {\n    \"api_url\": \"http://localhost:8080/v1\",\n    \"allow_system_prompts\": true\n  },\n  \"memory_module\": \"ovos-memory-plugin-recency\",\n  \"ovos-memory-plugin-recency\": {\n    \"max_history\": 10,\n    \"system_prompt\": \"You are a helpful assistant.\"\n  }\n}\n\nThe assistant can now handle \"and what about tomorrow?\" because the previous\nturns are still in context. That is all most short conversations need."
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-10T14:57:42Z",
-    "last_updated": "2026-09-10T20:19:57.573657Z",
+    "last_updated": "2026-10-21T10:42:14.053784Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -18824,7 +18872,7 @@
     "type_group": "Tool",
     "stars": 4,
     "forks": 5,
-    "open_issues": 16,
+    "open_issues": 17,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19416,7 +19464,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Translate Plugin",
+    "component_type": "Detect Plugin",
     "type_group": "Plugin",
     "stars": 9,
     "forks": 8,
@@ -19431,7 +19479,7 @@
     "setup_notes": [
       {
         "heading": "Install",
-        "content": "pip install ovos-openai-plugin"
+        "content": "pip install --pre ovos-openai-plugin"
       }
     ],
     "languages": [],
@@ -19677,7 +19725,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Pipeline Plugin",
+    "component_type": "Memory Plugin",
     "type_group": "Plugin",
     "stars": 8,
     "forks": 6,
@@ -19692,7 +19740,7 @@
     "setup_notes": [
       {
         "heading": "Installation",
-        "content": "pip install ovos-persona\n\n---"
+        "content": "pip install --pre ovos-persona\n\n---"
       },
       {
         "heading": "Pipeline Configuration",
@@ -19725,36 +19773,7 @@
     "repo_created_at": "2023-03-25T05:15:52Z",
     "last_updated": "2026-01-23T10:59:47.267314Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-persona-pipeline-plugin",
-      "channels": {
-        "stable": {
-          "label": "not supported",
-          "state": "unsupported",
-          "level": 1,
-          "version_tested": "0.6.24",
-          "tested_at": "2026-10-04T11:15:55+00:00",
-          "channel_pinned": true
-        },
-        "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.7.1",
-          "tested_at": "2026-10-04T10:56:04+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.9.0a32",
-          "tested_at": "2026-10-21T08:00:23+00:00",
-          "channel_pinned": true
-        }
-      }
-    }
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-persona-server",
@@ -19792,10 +19811,6 @@
       {
         "heading": "Persona Config Examples",
         "content": "### LLM persona (OpenAI-compatible backend)\n\n{\n  \"name\": \"gpt-persona\",\n  \"handlers\": [\"ovos-chat-openai-plugin\"],\n  \"ovos-chat-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Knowledge-base + LLM fallback\n\n{\n  \"name\": \"smart-assistant\",\n  \"handlers\": [\n    \"ovos-wikipedia-plugin\",\n    \"ovos-ddg-plugin\",\n    \"ovos-wordnet-plugin\",\n    \"ovos-chat-openai-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ],\n  \"ovos-chat-openai-plugin\": {\n    \"api_key\": \"sk-...\",\n    \"model\": \"gpt-4o-mini\"\n  }\n}\n\n### Rivescript chatbot (no GPU, no API key)\n\n{\n  \"name\": \"rivescript-bot\",\n  \"handlers\": [\n    \"ovos-solver-rivescript-plugin\",\n    \"ovos-solver-failure-plugin\"\n  ]\n}\n\n---"
-      },
-      {
-        "heading": "Installing the MCP extra",
-        "content": "pip install ovos-persona-server[mcp]\n\nWithout the `[mcp]` extra, or without passing `--mcp`, only the UTCP endpoints are active."
       }
     ],
     "languages": [],
@@ -22032,9 +22047,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-06T11:10:29Z",
-    "last_updated": "2026-10-15T16:08:03Z",
+    "last_updated": "2026-10-21T14:51:57Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-plugin-linguonnx",
@@ -22319,7 +22334,7 @@
     "repo_created_at": "2025-07-17T23:17:04Z",
     "last_updated": "2026-09-18T01:18:53.008832Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "svhozt-ovos-rasa-skills",
@@ -35727,84 +35742,6 @@
         }
       }
     }
-  },
-  {
-    "id": "smartgic-ovos-skill-share-to-mirror",
-    "skill_id": "ovos-skill-share-to-mirror.smartgic",
-    "name": "Share To Mirror (YouTube Control)",
-    "description": "Control YouTube playback on MagicMirror via MMM-ShareToMirror with intelligent search, Shorts/long video support, and anti-repetition.",
-    "examples": [
-      "play a video about cooking on the mirror",
-      "play shorts about cats on the mirror",
-      "play long videos about history on the mirror",
-      "play the video called bohemian rhapsody on the mirror",
-      "play something from ted talks channel on the mirror",
-      "pause the video on the mirror",
-      "resume the video on the mirror",
-      "stop the video on the mirror",
-      "rewind 30 seconds on the mirror",
-      "forward 10 seconds on the mirror",
-      "restart the video on the mirror",
-      "skip this video on the mirror",
-      "whats playing on the mirror"
-    ],
-    "tags": [
-      "youtube",
-      "magicmirror",
-      "share",
-      "video",
-      "cast",
-      "shorts",
-      "intelligent-search",
-      "multilingual"
-    ],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/smartgic/ovos-skill-share-to-mirror",
-    "package_name": "ovos-skill-share-to-mirror",
-    "pypi_version": null,
-    "license": null,
-    "archived": false,
-    "author": "smartgic",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": "online",
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "\ud83d\udce6 Installation",
-        "content": "Install the skill using `pip`:\n\npip install git+https://github.com/smartgic/ovos-skill-share-to-mirror.git\n\n---"
-      },
-      {
-        "heading": "\u2699\ufe0f Configuration",
-        "content": "Setting up the skill requires configuring both your MagicMirror\u00b2 and your OVOS device.\n\n### Step 1: Set Up MMM-ShareToMirror on Your MagicMirror\u00b2\n\nAdd the following configuration to your `~/MagicMirror/config/config.js`:\n\n{\n  module: \"MMM-ShareToMirror\",\n  position: \"bottom_center\",\n  config: {\n    // Basic server settings\n    port: 8570,\n    https: {\n      enabled: false,   // Enable for HTTPS (requires SSL certificates)\n      keyPath: \"\",      // Path to SSL private key\n      certPath: \"\"      // Path to SSL certificate\n    },\n\n    // Hide the module UI (videos appear as overlay)\n    invisible: true,\n\n    // Video overlay appearance\n    overlay: {\n      width: \"70vw\",\n      maxWidth: \"1280px\",\n      aspectRatio: \"16 / 9\",\n      top: \"50%\",\n      left: \"50%\",\n      zIndex: 9999,\n      bor\u2026"
-      },
-      {
-        "heading": "Step 2: Configure the OVOS Skill",
-        "content": "Configure the skill settings either through the OVOS GUI or by editing the settings file directly.\n\n**Settings file location:** `~/.config/mycroft/skills/ovos-skill-share-to-mirror.smartgic/settings.json`\n\n**Basic configuration:**\n\n{\n  \"base_url\": \"http://<MIRROR_IP>:8570\",\n  \"verify_ssl\": true,\n  \"request_timeout\": 6,\n\n  \"caption_enabled\": false,\n  \"caption_lang\": \"en\",\n  \"quality_target\": \"auto\",\n  \"quality_lock\": false,\n\n  \"search_backend\": \"yt_dlp\",\n  \"youtube_api_key\": \"\"\n}\n\n**Configuration Options Explained:**\n\n- `base_url`: The full URL to your MagicMirror\u00b2 (replace `<MIRROR_IP>` with the actual IP)\n- `verify_ssl`: Set to `false` only if using self-signed certificates for testing\n- `request_timeout`: How long to wait for responses from the mirror (in seconds)\n- `search_backend`: Use\u2026"
-      }
-    ],
-    "languages": [
-      "en-us",
-      "fr-fr"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-08-14T20:06:26Z",
-    "last_updated": "2025-08-15T00:39:54Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
   },
   {
     "id": "JhonCleyton-SisOvos",

@@ -11,7 +11,7 @@
   "icon_color": null,
   "source": "https://github.com/OpenVoiceOS/ovos-memory-plugins",
   "package_name": "ovos-memory-plugins",
-  "pypi_version": "1.2.0a2",
+  "pypi_version": "1.2.3a1",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OpenVoiceOS",
@@ -31,18 +31,18 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install ovos-memory-plugins"
+      "content": "pip install --pre ovos-memory-plugins"
     },
     {
       "heading": "Step 1: remember the last few turns (no setup)",
-      "content": "The simplest memory: a sliding window of recent turns. No models, no endpoints.\n\n{\n  \"name\": \"MyAssistant\",\n  \"memory_module\": \"ovos-memory-plugin-recency\",\n  \"ovos-memory-plugin-recency\": {\n    \"max_history\": 10,\n    \"system_prompt\": \"You are a helpful assistant.\"\n  }\n}\n\nThe assistant can now handle \"and what about tomorrow?\" because the previous\nturns are still in context. That is all most short conversations need."
+      "content": "The simplest memory: a sliding window of recent turns. No models, no endpoints.\n\n{\n  \"name\": \"MyAssistant\",\n  \"handlers\": [\"ovos-chat-openai-plugin\"],\n  \"ovos-chat-openai-plugin\": {\n    \"api_url\": \"http://localhost:8080/v1\",\n    \"allow_system_prompts\": true\n  },\n  \"memory_module\": \"ovos-memory-plugin-recency\",\n  \"ovos-memory-plugin-recency\": {\n    \"max_history\": 10,\n    \"system_prompt\": \"You are a helpful assistant.\"\n  }\n}\n\nThe assistant can now handle \"and what about tomorrow?\" because the previous\nturns are still in context. That is all most short conversations need."
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-06-10T14:57:42Z",
-  "last_updated": "2026-09-10T20:19:57.573657Z",
+  "last_updated": "2026-10-21T10:42:14.053784Z",
   "is_new_repo": false,
   "is_recently_updated": false
 }

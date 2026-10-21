@@ -19,7 +19,7 @@
   "archived": false,
   "author": "OpenVoiceOS",
   "tier": 1,
-  "component_type": "Translate Plugin",
+  "component_type": "Detect Plugin",
   "type_group": "Plugin",
   "stars": 9,
   "forks": 8,
@@ -34,7 +34,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install ovos-openai-plugin"
+      "content": "pip install --pre ovos-openai-plugin"
     }
   ],
   "languages": [],
