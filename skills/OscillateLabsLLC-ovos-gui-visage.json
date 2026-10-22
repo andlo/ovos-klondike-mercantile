@@ -1,0 +1,51 @@
+{
+  "id": "OscillateLabsLLC-ovos-gui-visage",
+  "skill_id": null,
+  "name": "ovos-gui-visage",
+  "description": "Modern GUI client for OpenVoiceOS, based on the style of the 2018 Mycroft Mark II Kickstarter concept video",
+  "examples": [],
+  "tags": [
+    "flutter",
+    "macos",
+    "openvoiceos",
+    "ovos",
+    "status-active",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/OscillateLabsLLC/ovos-gui-visage/main/web/favicon.png",
+  "icon_source": "repo",
+  "icon_color": null,
+  "source": "https://github.com/OscillateLabsLLC/ovos-gui-visage",
+  "package_name": null,
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": null,
+  "component_type": "Infrastructure",
+  "type_group": "Infrastructure",
+  "stars": 2,
+  "forks": 0,
+  "open_issues": 9,
+  "on_pypi": false,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "Visage runs on the machine where OVOS runs. It needs OVOS's GUI service as well, which is a one-time\nsetup (next section).\n\n**macOS 12 or later**, with Homebrew:\n\nbrew install --cask oscillatelabsllc/tap/ovos-gui-visage\n\nThe cask installs `OVOS Visage.app` in `/Applications`. Without Homebrew, download\n`ovos-gui-visage-<version>-macos.zip` from the\n[releases](https://github.com/OscillateLabsLLC/ovos-gui-visage/releases), unzip it and move the\napp to `/Applications`. The app is signed with a Developer ID and notarised, so it opens without\nany security prompt. `docs/PACKAGING.md` describes how a release is built.\n\n**Linux, including a Raspberry Pi** (amd64 or arm64): Visage runs in a browser, served by a small\ncontainer on the OVOS machine:\n\ndocker run -d --name visage --restart unless-stopp\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-10-19T00:30:07Z",
+  "last_updated": "2026-10-19T18:34:20Z",
+  "is_new_repo": true,
+  "is_recently_updated": true
+}
