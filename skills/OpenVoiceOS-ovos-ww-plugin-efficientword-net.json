@@ -1,0 +1,48 @@
+{
+  "id": "OpenVoiceOS-ovos-ww-plugin-efficientword-net",
+  "skill_id": null,
+  "name": "ovos-ww-plugin-efficientword-net",
+  "description": "OVOS wake-word plugin for EfficientWord-Net, few-shot hotword detection",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-efficientword-net",
+  "package_name": "ovos-ww-plugin-efficientword-net",
+  "pypi_version": "0.0.1a2",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": 2,
+  "component_type": "Wake Word Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 1,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install --pre ovos-ww-plugin-efficientword-net\n\nThe plugin needs only `onnxruntime` and `numpy`. It carries the quantized EfficientWord-Net model (22 MB) and the upstream sample references, so it works offline and does not install PyAudio."
+    },
+    {
+      "heading": "Configuration",
+      "content": "Use one of the bundled wake words: `alexa`, `balloon`, `computer`, `lights_off`, `lights_on`, `mobile` or `mycroft`.\n\n\"hotwords\": {\n  \"computer\": {\n    \"module\": \"ovos-ww-plugin-efficientword-net\",\n    \"listen\": true\n  }\n},\n\"listener\": {\"wake_word\": \"computer\"}\n\nOr give your own recordings: a folder of 16-bit WAV files, one wake word per file, at least 4 files. Any sample rate works.\n\n\"hotwords\": {\n  \"hey_computer\": {\n    \"module\": \"ovos-ww-plugin-efficientword-net\",\n    \"samples\": \"~/wakewords/hey_computer\",\n    \"listen\": true\n  }\n}\n\n| Key | Default | Meaning |\n|---|---|---|\n| `wakeword` | key phrase, spaces as `_` | Name of a bundled reference |\n| `samples` | | Folder or list of WAV recordings; replaces the bundled reference |\n| `reference_file` | | A `*_ref.json` file made by EfficientW\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-10-22T15:58:49Z",
+  "last_updated": "2026-10-22T16:07:37.380031Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
