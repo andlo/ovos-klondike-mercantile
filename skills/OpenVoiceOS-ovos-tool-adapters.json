@@ -31,7 +31,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install ovos-tool-adapters[mcp]    # MCP support\npip install ovos-tool-adapters[utcp]   # UTCP support\npip install ovos-tool-adapters[mcp,utcp]"
+      "content": "pip install --pre ovos-tool-adapters[mcp]    # MCP support\npip install --pre ovos-tool-adapters[utcp]   # UTCP support\npip install --pre ovos-tool-adapters[mcp,utcp]"
     }
   ],
   "languages": [],

@@ -24,7 +24,7 @@
   "type_group": "Tool",
   "stars": 16,
   "forks": 5,
-  "open_issues": 10,
+  "open_issues": 9,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -35,7 +35,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install ovos-tts-server"
+      "content": "pip install --pre ovos-tts-server"
     },
     {
       "heading": "Configuration",
