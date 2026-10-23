@@ -2,7 +2,7 @@
   "id": "evok3dx-OVOS-Commands",
   "skill_id": null,
   "name": "OVOS-Commands",
-  "description": "Jarvis makes everyday desktop control feel natural while keeping execution",
+  "description": "Jarvis lets you control your Linux desktop by voice. Standard commands run",
   "examples": [],
   "tags": [],
   "category": "Other",
@@ -16,8 +16,8 @@
   "archived": false,
   "author": "evok3dx",
   "tier": 2,
-  "component_type": "Skill",
-  "type_group": "Skill",
+  "component_type": "Pipeline Plugin",
+  "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
   "open_issues": 0,
@@ -31,7 +31,11 @@
   "setup_notes": [
     {
       "heading": "Before you install",
-      "content": "- Use **Linux Mint 22.x on X11, x86_64**, with a working microphone and audio\n  output. Mint 22.3 is the reviewed desktop target. The current isolation setup\n  requires Polkit's JavaScript rules backend; Mint 21.3's Polkit 0.105 is not\n  supported for isolation. See [Requirements and stack](#requirements-and-stack).\n- Have **CPython 3.11.16** available for the OVOS virtual environment, the exact Python\n  version required by the reviewed runtime. A newer system Python does not\n  replace this requirement; do not replace the operating system's Python. See\n  [preparing Python](docs/07-installer-updates.md#preparing-python).\n- Keep at least **8 GiB free** on the filesystem used for OVOS staging and\n  rollback, plus room for voice models and Ollama's model storage. Ollama may\n  store downloads o\u2026"
+      "content": "- Use **Linux Mint 22.x, X11 and x86_64**, with a working microphone and speakers.\n  Mint 22.3 is the tested desktop target. See [Requirements and stack](#requirements-and-stack).\n- Setup prepares its own **Python 3.11.16** when needed. System Python stays\n  unchanged. See [Python setup](docs/07-installer-updates.md#preparing-python)\n  if you already have an OVOS environment using another Python version.\n- Keep at least **8 GiB free** for installation and rollback, plus room for\n  voice and AI models. Check the filesystem holding Ollama's model storage;\n  free space in your home directory may not cover those downloads.\n- Install and start **Ollama** using its [Linux setup guide](https://docs.ollama.com/linux).\n  Jarvis reuses an existing installation; it does not install Ollama.\n- Internet\u2026"
+    },
+    {
+      "heading": "Install Jarvis",
+      "content": "Download the archive and matching `.sha256` from\n[Releases](https://github.com/evok3dx/OVOS-Commands/releases/latest):\n\nversion=4.8.5\nsha256sum --check \"ovos-commands-$version.tar.gz.sha256\"\ntar -xzf \"ovos-commands-$version.tar.gz\"\ncd \"ovos-commands-$version\"\nbash scripts/install.sh\n\nSetup checks prerequisites, installs OVOS and offers network isolation.\nIsolation is recommended and needs administrator approval. Existing isolation\nchoices are preserved. Reading and dictation use optional Speech Note.\n\nFor a read-only preflight, run `bash scripts/install.sh --check`.\nFor Jarvis **4.5 or later**, update through **Updates** in the Control Centre.\nSee the [installation and upgrade guide](docs/07-installer-updates.md) for details.\n\nflowchart TD\n  A[\"Fresh install or update\"] --> B[\"Check system\u2026"
     }
   ],
   "languages": [
@@ -40,7 +44,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-09-09T00:38:09Z",
-  "last_updated": "2026-10-12T18:53:05Z",
+  "last_updated": "2026-10-21T19:33:36Z",
   "is_new_repo": false,
   "is_recently_updated": true
 }
