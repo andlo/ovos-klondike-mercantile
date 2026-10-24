@@ -28,7 +28,7 @@
   "type_group": "Tool",
   "stars": 0,
   "forks": 0,
-  "open_issues": 3,
+  "open_issues": 4,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -39,7 +39,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install hivemind-persona-agent-plugin\n\nOr from source:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-persona-agent-plugin\ncd hivemind-persona-agent-plugin\npip install -e ."
+      "content": "uv pip install --prerelease=allow hivemind-core hivemind-persona-agent-plugin\n\nThe plugin needs a hivemind-core alpha, so the install allows prereleases. A stable\n`hivemind-core` resolves to 4.0.0, which conflicts with the plugin.\n\nOr from source:\n\ngit clone https://github.com/JarbasHiveMind/hivemind-persona-agent-plugin\ncd hivemind-persona-agent-plugin\nuv pip install --prerelease=allow hivemind-core -e ."
     },
     {
       "heading": "2. Configure hivemind-core",
