@@ -1,6 +1,6 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-10-23T09:24:40+00:00",
+ "generated_at": "2026-10-24T09:01:08+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-10-18T07:36:32+00:00",
@@ -2416,8 +2416,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-10-23T09:24:40+00:00",
-   "klondike_run_at": "2026-10-23T09:24:40+00:00",
+   "run_at": "2026-10-24T09:01:08+00:00",
+   "klondike_run_at": "2026-10-24T09:01:08+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2527,7 +2527,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 10,
+        "reaches": 12,
         "takes": 7,
         "examples": [
          {
@@ -2627,7 +2627,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 336,
+        "reaches": 334,
         "takes": 16,
         "examples": [
          {
@@ -2720,8 +2720,8 @@
        "state": "warn",
        "label": "✓ 53/55 golden",
        "level": 3,
-       "version": "0.12.49a3",
-       "tested_at": "2026-10-23T07:56:17+00:00",
+       "version": "0.12.52a1",
+       "tested_at": "2026-10-24T07:36:24+00:00",
        "golden": {
         "hit": 53,
         "counted": 55,
@@ -2785,24 +2785,20 @@
        "store_id": "OpenVoiceOS-ovos-skill-date-time",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 2/5 golden",
-       "level": 2,
-       "version": "1.11.12a1",
-       "tested_at": "2026-10-23T07:57:19+00:00",
+       "label": "✓ 4/5 golden",
+       "level": 3,
+       "version": "1.12.0a1",
+       "tested_at": "2026-10-24T07:47:21+00:00",
        "golden": {
-        "hit": 2,
+        "hit": 4,
         "counted": 5,
         "langs": [
          "en-US"
         ],
         "by_lang": {
-         "da-DK": {
-          "counted": 4,
-          "hit": 3
-         },
          "en-US": {
           "counted": 5,
-          "hit": 2
+          "hit": 4
          }
         }
        },
@@ -3045,8 +3041,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.5.4a1",
-       "tested_at": "2026-10-23T08:22:09+00:00",
+       "version": "1.5.5a1",
+       "tested_at": "2026-10-24T07:51:56+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3068,25 +3064,21 @@
        "runtime_id": "ovos-skill-wikipedia.openvoiceos",
        "store_id": "OpenVoiceOS-ovos-skill-wikipedia",
        "kind": "skill",
-       "state": "warn",
-       "label": "✓ 10/11 golden",
+       "state": "pass",
+       "label": "✓ 11/11 golden",
        "level": 3,
-       "version": "0.18.5a1",
-       "tested_at": "2026-10-23T07:55:59+00:00",
+       "version": "0.18.6a1",
+       "tested_at": "2026-10-24T07:50:11+00:00",
        "golden": {
-        "hit": 10,
+        "hit": 11,
         "counted": 11,
         "langs": [
          "en-US"
         ],
         "by_lang": {
-         "da-DK": {
-          "counted": 5,
-          "hit": 2
-         },
          "en-US": {
           "counted": 11,
-          "hit": 10
+          "hit": 11
          }
         }
        },
@@ -3118,7 +3110,7 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 5,
+      "routes": 6,
       "gold": 5
      },
      "cumulative": {
@@ -3129,7 +3121,7 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 5,
+      "routes": 6,
       "gold": 5
      }
     },
@@ -3242,7 +3234,7 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 5,
+      "routes": 6,
       "gold": 5
      }
     },
@@ -3263,11 +3255,25 @@
        "tested_at": "2026-10-23T07:56:52+00:00",
        "golden": null,
        "klondike": null,
-       "gold": true,
+       "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 15,
-        "takes": 0
+        "reaches": 13,
+        "takes": 2,
+        "examples": [
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a paper from arxiv"
+         },
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a research paper from the arxiv"
+         }
+        ]
        },
        "in_profile": true
       },
@@ -3716,8 +3722,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "0.9.3a3",
-       "tested_at": "2026-10-23T08:16:09+00:00",
+       "version": "0.10.0a1",
+       "tested_at": "2026-10-24T07:50:32+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3932,7 +3938,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 14,
-      "gold": 14
+      "gold": 13
      },
      "cumulative": {
       "total": 59,
@@ -3942,8 +3948,8 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 19,
-      "gold": 19
+      "routes": 20,
+      "gold": 18
      }
     }
    ]
