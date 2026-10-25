@@ -143,15 +143,14 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden \u00b7 stops",
-          "state": "pass",
-          "level": 3,
-          "stop": "stops",
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-23T07:56:08+00:00",
+          "tested_at": "2026-10-25T07:49:22+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
+            "hit": 0,
             "counted": 2
           }
         }
@@ -649,8 +648,8 @@
           "label": "\u2713 53/55 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.12.52a1",
-          "tested_at": "2026-10-24T07:36:24+00:00",
+          "version_tested": "0.12.53a1",
+          "tested_at": "2026-10-25T07:49:30+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 53,
@@ -802,7 +801,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-23T08:07:38+00:00",
+          "tested_at": "2026-10-25T08:01:00+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -898,7 +897,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.9",
-          "tested_at": "2026-10-23T08:07:48+00:00",
+          "tested_at": "2026-10-25T08:01:11+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -1183,7 +1182,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.13.6a1",
-          "tested_at": "2026-10-23T08:07:57+00:00",
+          "tested_at": "2026-10-25T08:01:19+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 0,
@@ -1386,14 +1385,14 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-23T08:08:05+00:00",
+          "tested_at": "2026-10-25T08:01:28+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
+            "hit": 0,
             "counted": 2
           }
         }
@@ -1604,7 +1603,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.0a1",
-          "tested_at": "2026-10-23T08:08:14+00:00",
+          "tested_at": "2026-10-25T08:01:36+00:00",
           "channel_pinned": true
         }
       }
@@ -1848,7 +1847,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.2a6",
-          "tested_at": "2026-10-23T08:08:27+00:00",
+          "tested_at": "2026-10-25T08:01:51+00:00",
           "channel_pinned": true
         }
       }
@@ -2147,7 +2146,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-23T07:56:06+00:00",
+          "tested_at": "2026-10-25T07:49:17+00:00",
           "channel_pinned": false
         }
       }
@@ -2251,7 +2250,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-23T07:56:14+00:00",
+          "tested_at": "2026-10-25T07:49:24+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 16,
@@ -2500,7 +2499,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.0a3",
-          "tested_at": "2026-10-23T07:56:25+00:00",
+          "tested_at": "2026-10-25T07:49:33+00:00",
           "channel_pinned": true
         }
       }
@@ -2791,7 +2790,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.3a2",
-          "tested_at": "2026-10-23T07:56:38+00:00",
+          "tested_at": "2026-10-25T07:49:43+00:00",
           "channel_pinned": true
         }
       }
@@ -3023,7 +3022,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.2",
-          "tested_at": "2026-10-23T07:56:52+00:00",
+          "tested_at": "2026-10-25T07:49:54+00:00",
           "channel_pinned": false
         }
       }
@@ -3289,7 +3288,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.8.3a1",
-          "tested_at": "2026-10-23T07:57:00+00:00",
+          "tested_at": "2026-10-25T07:50:01+00:00",
           "channel_pinned": true
         }
       }
@@ -3381,7 +3380,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-23T07:57:11+00:00",
+          "tested_at": "2026-10-25T07:50:11+00:00",
           "channel_pinned": false
         }
       }
@@ -3829,14 +3828,14 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 4/5 golden",
+          "label": "\u2713 loads \u00b7 3/5 golden",
           "state": "warn",
-          "level": 3,
-          "version_tested": "1.12.0a1",
-          "tested_at": "2026-10-24T07:47:21+00:00",
+          "level": 2,
+          "version_tested": "1.12.0a2",
+          "tested_at": "2026-10-25T07:50:18+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 4,
+            "hit": 3,
             "counted": 5
           }
         }
@@ -4146,7 +4145,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.9.0a4",
-          "tested_at": "2026-10-23T07:56:03+00:00",
+          "tested_at": "2026-10-25T07:49:26+00:00",
           "channel_pinned": true
         }
       }
@@ -4384,7 +4383,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.0a5",
-          "tested_at": "2026-10-23T07:56:17+00:00",
+          "tested_at": "2026-10-25T07:49:39+00:00",
           "channel_pinned": true
         }
       }
@@ -4475,7 +4474,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "1.0.0",
-          "tested_at": "2026-10-23T07:57:30+00:00",
+          "tested_at": "2026-10-25T07:50:45+00:00",
           "channel_pinned": false
         }
       }
@@ -4815,7 +4814,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "1.0.1",
-          "tested_at": "2026-10-23T07:57:37+00:00",
+          "tested_at": "2026-10-25T07:50:52+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 11,
@@ -5072,7 +5071,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.9.3a1",
-          "tested_at": "2026-10-23T07:57:47+00:00",
+          "tested_at": "2026-10-25T07:51:02+00:00",
           "channel_pinned": true
         }
       }
@@ -5227,7 +5226,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-23T08:12:52+00:00",
+          "tested_at": "2026-10-25T08:06:07+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 14,
@@ -5376,7 +5375,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.6",
-          "tested_at": "2026-10-23T08:13:02+00:00",
+          "tested_at": "2026-10-25T08:06:17+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 12,
@@ -5524,7 +5523,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-23T08:13:12+00:00",
+          "tested_at": "2026-10-25T08:06:26+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 13,
@@ -5674,7 +5673,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-23T07:55:40+00:00",
+          "tested_at": "2026-10-25T07:49:42+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 12,
@@ -5831,11 +5830,12 @@
           }
         },
         "alpha": {
-          "label": "\u2713 3/3 golden",
+          "label": "\u2713 3/3 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
+          "stop": "stops",
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-23T07:55:50+00:00",
+          "tested_at": "2026-10-25T07:49:52+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -6070,7 +6070,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "1.0.0",
-          "tested_at": "2026-10-23T07:56:00+00:00",
+          "tested_at": "2026-10-25T07:50:02+00:00",
           "channel_pinned": false
         }
       }
@@ -7401,7 +7401,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-23T07:56:07+00:00",
+          "tested_at": "2026-10-25T07:50:09+00:00",
           "channel_pinned": false
         }
       }
@@ -7534,7 +7534,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.5",
-          "tested_at": "2026-10-23T07:56:17+00:00",
+          "tested_at": "2026-10-25T07:50:20+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -7983,7 +7983,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.11",
-          "tested_at": "2026-10-23T07:56:24+00:00",
+          "tested_at": "2026-10-25T07:50:27+00:00",
           "channel_pinned": false
         }
       }
@@ -8169,7 +8169,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-23T07:56:37+00:00",
+          "tested_at": "2026-10-25T07:50:40+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 7,
@@ -8536,7 +8536,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.8.0a1",
-          "tested_at": "2026-10-23T07:56:48+00:00",
+          "tested_at": "2026-10-25T07:50:51+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 1,
@@ -8812,7 +8812,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.2.5a3",
-          "tested_at": "2026-10-23T07:55:59+00:00",
+          "tested_at": "2026-10-25T07:49:30+00:00",
           "channel_pinned": true
         }
       }
@@ -9158,7 +9158,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.26.0a1",
-          "tested_at": "2026-10-23T07:56:18+00:00",
+          "tested_at": "2026-10-25T07:49:50+00:00",
           "channel_pinned": true
         }
       }
@@ -9949,7 +9949,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-10-23T07:56:36+00:00",
+          "tested_at": "2026-10-25T07:50:08+00:00",
           "channel_pinned": false
         }
       }
@@ -10174,7 +10174,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.8",
-          "tested_at": "2026-10-23T07:56:44+00:00",
+          "tested_at": "2026-10-25T07:50:17+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 32,
@@ -10284,7 +10284,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-23T07:56:56+00:00",
+          "tested_at": "2026-10-25T07:50:28+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 4,
@@ -10446,7 +10446,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-23T07:57:07+00:00",
+          "tested_at": "2026-10-25T07:50:39+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -10789,7 +10789,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.7.2a1",
-          "tested_at": "2026-10-23T07:57:18+00:00",
+          "tested_at": "2026-10-25T07:50:50+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 96,
@@ -11319,8 +11319,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.12.1a2",
-          "tested_at": "2026-10-23T07:58:04+00:00",
+          "version_tested": "0.12.2a1",
+          "tested_at": "2026-10-25T07:51:36+00:00",
           "channel_pinned": true
         }
       }
@@ -11421,7 +11421,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-23T07:56:06+00:00",
+          "tested_at": "2026-10-25T07:49:13+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -11514,7 +11514,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-10-23T07:56:17+00:00",
+          "tested_at": "2026-10-25T07:49:22+00:00",
           "channel_pinned": false
         }
       }
@@ -11632,7 +11632,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:32+00:00",
+          "tested_at": "2026-10-25T07:49:33+00:00",
           "channel_pinned": false
         }
       }
@@ -11720,7 +11720,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:37+00:00",
+          "tested_at": "2026-10-25T07:49:36+00:00",
           "channel_pinned": false
         }
       }
@@ -11793,7 +11793,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:41+00:00",
+          "tested_at": "2026-10-25T07:49:39+00:00",
           "channel_pinned": false
         }
       }
@@ -11861,7 +11861,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:45+00:00",
+          "tested_at": "2026-10-25T07:49:42+00:00",
           "channel_pinned": false
         }
       }
@@ -11932,7 +11932,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:49+00:00",
+          "tested_at": "2026-10-25T07:49:45+00:00",
           "channel_pinned": false
         }
       }
@@ -12004,7 +12004,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:54+00:00",
+          "tested_at": "2026-10-25T07:49:48+00:00",
           "channel_pinned": false
         }
       }
@@ -12074,7 +12074,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:12+00:00",
+          "tested_at": "2026-10-25T07:49:17+00:00",
           "channel_pinned": false
         }
       }
@@ -12145,7 +12145,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:20+00:00",
+          "tested_at": "2026-10-25T07:49:25+00:00",
           "channel_pinned": false
         }
       }
@@ -12217,7 +12217,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:25+00:00",
+          "tested_at": "2026-10-25T07:49:29+00:00",
           "channel_pinned": false
         }
       }
@@ -12297,7 +12297,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:29+00:00",
+          "tested_at": "2026-10-25T07:49:33+00:00",
           "channel_pinned": false
         }
       }
@@ -12402,7 +12402,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-23T07:56:33+00:00",
+          "tested_at": "2026-10-25T07:49:38+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -12885,7 +12885,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.0a7",
-          "tested_at": "2026-10-23T07:56:46+00:00",
+          "tested_at": "2026-10-25T07:49:51+00:00",
           "channel_pinned": true
         }
       }
@@ -13165,7 +13165,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-23T07:57:28+00:00",
+          "tested_at": "2026-10-25T07:50:32+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -13246,7 +13246,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.6.8a1",
-          "tested_at": "2026-10-23T07:57:37+00:00",
+          "tested_at": "2026-10-25T07:50:40+00:00",
           "channel_pinned": true
         }
       }
@@ -14420,7 +14420,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.20a1",
-          "tested_at": "2026-10-23T07:56:03+00:00",
+          "tested_at": "2026-10-25T07:49:22+00:00",
           "channel_pinned": true
         }
       }
@@ -14608,7 +14608,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "3.7.5a1",
-          "tested_at": "2026-10-23T07:56:11+00:00",
+          "tested_at": "2026-10-25T07:49:30+00:00",
           "channel_pinned": true
         }
       }
@@ -14776,7 +14776,7 @@
     "repo_created_at": "2025-11-22T20:45:33Z",
     "last_updated": "2026-10-21T10:17:00.925929Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "builderjer-ovos-diagnostics",
@@ -14905,7 +14905,7 @@
     "type_group": "Tool",
     "stars": 10,
     "forks": 8,
-    "open_issues": 22,
+    "open_issues": 21,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -14956,7 +14956,7 @@
     "type_group": "Infrastructure",
     "stars": 64,
     "forks": 21,
-    "open_issues": 3,
+    "open_issues": 5,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -14974,7 +14974,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-05-07T17:20:53Z",
-    "last_updated": "2026-10-21T11:43:52Z",
+    "last_updated": "2026-10-25T03:47:21Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -15557,12 +15557,12 @@
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-gguf-plugin",
     "package_name": "ovos-gguf-plugin",
-    "pypi_version": "1.2.6a1",
+    "pypi_version": "1.2.8a1",
     "license": "MIT",
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Summarizer Plugin",
+    "component_type": "Detect Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
@@ -15590,7 +15590,7 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2024-07-20T23:33:09Z",
-    "last_updated": "2026-09-24T18:55:29.482472Z",
+    "last_updated": "2026-10-22T19:08:50.690153Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -15743,7 +15743,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-23T07:56:19+00:00",
+          "tested_at": "2026-10-25T07:49:38+00:00",
           "channel_pinned": false
         }
       }
@@ -15821,7 +15821,7 @@
     "type_group": "Tool",
     "stars": 3,
     "forks": 5,
-    "open_issues": 18,
+    "open_issues": 20,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -16203,7 +16203,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-23T07:56:28+00:00",
+          "tested_at": "2026-10-25T07:49:47+00:00",
           "channel_pinned": false
         }
       }
@@ -16384,9 +16384,9 @@
     "tier": null,
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
-    "stars": 328,
+    "stars": 330,
     "forks": 60,
-    "open_issues": 6,
+    "open_issues": 7,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -16404,7 +16404,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-11-07T20:31:20Z",
-    "last_updated": "2026-10-21T09:24:18Z",
+    "last_updated": "2026-10-25T09:11:55Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -16544,9 +16544,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-04T15:01:45Z",
-    "last_updated": "2026-10-21T07:01:37Z",
+    "last_updated": "2026-10-23T20:37:22Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-lang-detector-classics-plugin",
@@ -16867,7 +16867,7 @@
     "type_group": "Tool",
     "stars": 8,
     "forks": 3,
-    "open_issues": 61,
+    "open_issues": 62,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -16913,11 +16913,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Pipeline Plugin",
+    "component_type": "Text Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 5,
-    "open_issues": 9,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -16941,36 +16941,7 @@
     "repo_created_at": "2025-05-08T05:12:04Z",
     "last_updated": "2026-03-04T03:17:36.005766Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-m2v-pipeline",
-      "channels": {
-        "stable": {
-          "label": "not supported",
-          "state": "unsupported",
-          "level": 1,
-          "version_tested": "0.0.9",
-          "tested_at": "2026-10-04T11:06:09+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2717 doesn't load",
-          "state": "fail",
-          "level": 1,
-          "version_tested": "0.0.9",
-          "tested_at": "2026-10-04T10:45:30+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.37.1a1",
-          "tested_at": "2026-10-23T07:56:36+00:00",
-          "channel_pinned": true
-        }
-      }
-    }
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-ma-player",
@@ -17631,7 +17602,7 @@
     "archived": true,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Web Plugin",
+    "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
@@ -18426,7 +18397,7 @@
     "repo_created_at": "2026-06-10T14:57:42Z",
     "last_updated": "2026-10-21T10:42:14.053784Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-messagebus",
@@ -19250,7 +19221,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.5.8a1",
-          "tested_at": "2026-10-23T07:56:46+00:00",
+          "tested_at": "2026-10-25T07:50:06+00:00",
           "channel_pinned": true
         }
       }
@@ -19657,7 +19628,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.8a1",
-          "tested_at": "2026-10-23T07:56:55+00:00",
+          "tested_at": "2026-10-25T07:50:15+00:00",
           "channel_pinned": true
         }
       }
@@ -23002,7 +22973,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.9.0a3",
-          "tested_at": "2026-10-23T07:57:03+00:00",
+          "tested_at": "2026-10-25T07:50:23+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 8,
@@ -23213,7 +23184,7 @@
           "level": 2,
           "stop": "stops",
           "version_tested": "0.6.2a2",
-          "tested_at": "2026-10-23T07:55:56+00:00",
+          "tested_at": "2026-10-25T07:49:42+00:00",
           "channel_pinned": true
         }
       }
@@ -23333,7 +23304,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.6.0a3",
-          "tested_at": "2026-10-23T07:58:22+00:00",
+          "tested_at": "2026-10-25T07:51:53+00:00",
           "channel_pinned": true
         }
       }
@@ -23560,7 +23531,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.2a1",
-          "tested_at": "2026-10-23T07:58:36+00:00",
+          "tested_at": "2026-10-25T07:52:04+00:00",
           "channel_pinned": true
         }
       }
@@ -23858,7 +23829,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:58:44+00:00",
+          "tested_at": "2026-10-25T07:52:11+00:00",
           "channel_pinned": false
         }
       }
@@ -24217,7 +24188,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.6.0a1",
-          "tested_at": "2026-10-23T07:58:48+00:00",
+          "tested_at": "2026-10-25T07:52:14+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 4,
@@ -24566,7 +24537,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.0.0a7",
-          "tested_at": "2026-10-23T07:59:01+00:00",
+          "tested_at": "2026-10-25T07:52:25+00:00",
           "channel_pinned": true
         }
       }
@@ -25860,7 +25831,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T08:00:58+00:00",
+          "tested_at": "2026-10-25T07:54:16+00:00",
           "channel_pinned": false
         }
       }
@@ -25967,7 +25938,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.0.2a8",
-          "tested_at": "2026-10-23T08:01:03+00:00",
+          "tested_at": "2026-10-25T07:54:20+00:00",
           "channel_pinned": true
         }
       }
@@ -26888,14 +26859,14 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 11/11 golden",
-          "state": "pass",
+          "label": "\u2713 10/11 golden",
+          "state": "warn",
           "level": 3,
           "version_tested": "0.18.6a1",
-          "tested_at": "2026-10-24T07:50:11+00:00",
+          "tested_at": "2026-10-25T07:49:13+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 11,
+            "hit": 10,
             "counted": 11
           }
         }
@@ -27191,7 +27162,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.13.0a1",
-          "tested_at": "2026-10-23T07:56:23+00:00",
+          "tested_at": "2026-10-25T07:49:30+00:00",
           "channel_pinned": true
         }
       }
@@ -27588,7 +27559,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.14.0a1",
-          "tested_at": "2026-10-23T07:56:40+00:00",
+          "tested_at": "2026-10-25T07:49:44+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 5,
@@ -34705,7 +34676,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.11.1a2",
-          "tested_at": "2026-10-23T07:56:53+00:00",
+          "tested_at": "2026-10-25T07:49:54+00:00",
           "channel_pinned": true
         }
       }
@@ -35333,7 +35304,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.1",
-          "tested_at": "2026-10-23T07:57:08+00:00",
+          "tested_at": "2026-10-25T07:50:06+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -35440,7 +35411,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-23T07:57:20+00:00",
+          "tested_at": "2026-10-25T07:50:15+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 0,
@@ -35782,7 +35753,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.7.0a3",
-          "tested_at": "2026-10-23T07:57:31+00:00",
+          "tested_at": "2026-10-25T07:50:24+00:00",
           "channel_pinned": true
         }
       }
@@ -35931,7 +35902,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.2.5",
-          "tested_at": "2026-10-23T07:57:43+00:00",
+          "tested_at": "2026-10-25T07:50:34+00:00",
           "channel_pinned": false
         }
       }
@@ -36087,7 +36058,7 @@
           "level": 2,
           "stop": "stuck",
           "version_tested": "1.4.5",
-          "tested_at": "2026-10-23T07:55:58+00:00",
+          "tested_at": "2026-10-25T07:49:00+00:00",
           "channel_pinned": false
         }
       }
@@ -36204,7 +36175,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:37+00:00",
+          "tested_at": "2026-10-25T07:49:27+00:00",
           "channel_pinned": false
         }
       }
@@ -36321,7 +36292,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:40+00:00",
+          "tested_at": "2026-10-25T07:49:30+00:00",
           "channel_pinned": false
         }
       }
@@ -36434,7 +36405,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.3",
-          "tested_at": "2026-10-23T07:56:42+00:00",
+          "tested_at": "2026-10-25T07:49:32+00:00",
           "channel_pinned": false
         }
       }
@@ -36534,7 +36505,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.1",
-          "tested_at": "2026-10-23T07:56:49+00:00",
+          "tested_at": "2026-10-25T07:49:39+00:00",
           "channel_pinned": false
         }
       }
@@ -36871,7 +36842,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-23T07:56:59+00:00",
+          "tested_at": "2026-10-25T07:49:49+00:00",
           "channel_pinned": false
         }
       }
@@ -37867,7 +37838,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-23T07:57:02+00:00",
+          "tested_at": "2026-10-25T07:49:52+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -38253,9 +38224,9 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "stuck",
+          "stop": "keeps_going",
           "version_tested": "0.10.0a4",
-          "tested_at": "2026-10-23T07:57:11+00:00",
+          "tested_at": "2026-10-25T07:50:01+00:00",
           "channel_pinned": true
         }
       }
@@ -38503,7 +38474,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.13.2a1",
-          "tested_at": "2026-10-23T08:15:05+00:00",
+          "tested_at": "2026-10-25T08:06:28+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 10,
@@ -38641,7 +38612,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.1",
-          "tested_at": "2026-10-23T08:15:20+00:00",
+          "tested_at": "2026-10-25T08:06:41+00:00",
           "channel_pinned": false
         }
       }
@@ -39132,7 +39103,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.4.1a1",
-          "tested_at": "2026-10-23T08:15:29+00:00",
+          "tested_at": "2026-10-25T08:06:49+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 2,
@@ -39290,7 +39261,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-10-23T08:16:00+00:00",
+          "tested_at": "2026-10-25T08:07:19+00:00",
           "channel_pinned": false
         }
       }
@@ -39493,8 +39464,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.10.0a1",
-          "tested_at": "2026-10-24T07:50:32+00:00",
+          "version_tested": "0.10.1a1",
+          "tested_at": "2026-10-25T08:07:29+00:00",
           "channel_pinned": true
         }
       }
@@ -39712,7 +39683,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-23T08:17:02+00:00",
+          "tested_at": "2026-10-25T08:08:51+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -39876,7 +39847,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.10",
-          "tested_at": "2026-10-23T08:17:13+00:00",
+          "tested_at": "2026-10-25T08:09:02+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 8,
@@ -40157,7 +40128,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-23T08:17:26+00:00",
+          "tested_at": "2026-10-25T08:09:16+00:00",
           "channel_pinned": false
         }
       }
@@ -40936,7 +40907,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.12.2a1",
-          "tested_at": "2026-10-23T08:20:30+00:00",
+          "tested_at": "2026-10-25T08:15:54+00:00",
           "channel_pinned": true
         }
       }
@@ -41870,8 +41841,9 @@
           "label": "\u2713 loads \u00b7 11/23 golden",
           "state": "warn",
           "level": 2,
+          "stop": "stops",
           "version_tested": "2.8.1a1",
-          "tested_at": "2026-10-23T08:21:04+00:00",
+          "tested_at": "2026-10-25T08:16:11+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 11,
@@ -42549,7 +42521,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.5.5a1",
-          "tested_at": "2026-10-24T07:51:56+00:00",
+          "tested_at": "2026-10-25T08:16:57+00:00",
           "channel_pinned": true
         }
       }
@@ -42650,8 +42622,9 @@
           "label": "\u2713 loads \u00b7 2/7 golden",
           "state": "warn",
           "level": 2,
+          "stop": "stops",
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-23T08:34:16+00:00",
+          "tested_at": "2026-10-25T08:23:57+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -42781,7 +42754,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-23T08:34:27+00:00",
+          "tested_at": "2026-10-25T08:24:06+00:00",
           "channel_pinned": false
         }
       }
@@ -43240,7 +43213,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.8.0a1",
-          "tested_at": "2026-10-23T08:34:36+00:00",
+          "tested_at": "2026-10-25T08:24:12+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 7,
