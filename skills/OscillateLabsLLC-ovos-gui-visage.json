@@ -27,7 +27,7 @@
   "type_group": "Infrastructure",
   "stars": 2,
   "forks": 0,
-  "open_issues": 9,
+  "open_issues": 2,
   "on_pypi": false,
   "has_release": true,
   "in_ovos_store": false,
@@ -38,14 +38,14 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "Visage runs on the machine where OVOS runs. It needs OVOS's GUI service as well, which is a one-time\nsetup (next section).\n\n**macOS 12 or later**, with Homebrew:\n\nbrew install --cask oscillatelabsllc/tap/ovos-gui-visage\n\nThe cask installs `OVOS Visage.app` in `/Applications`. Without Homebrew, download\n`ovos-gui-visage-<version>-macos.zip` from the\n[releases](https://github.com/OscillateLabsLLC/ovos-gui-visage/releases), unzip it and move the\napp to `/Applications`. The app is signed with a Developer ID and notarised, so it opens without\nany security prompt. `docs/PACKAGING.md` describes how a release is built.\n\n**Linux, including a Raspberry Pi** (amd64 or arm64): Visage runs in a browser, served by a small\ncontainer on the OVOS machine:\n\ndocker run -d --name visage --restart unless-stopp\u2026"
+      "content": "Visage runs on the machine where OVOS runs. It needs OVOS's GUI service as well, which is a one-time\nsetup (next section).\n\n**macOS 12 or later**, with Homebrew:\n\nbrew install --cask oscillatelabsllc/tap/ovos-gui-visage\n\nThe cask installs `OVOS Visage.app` in `/Applications`. Without Homebrew, download\n`ovos-gui-visage-<version>-macos.zip` from the\n[releases](https://github.com/OscillateLabsLLC/ovos-gui-visage/releases), unzip it and move the\napp to `/Applications`. The app is signed with a Developer ID and notarised, so it opens without\nany security prompt. `docs/PACKAGING.md` describes how a release is built.\n\n**Debian 12, Raspberry Pi OS Bookworm or Ubuntu 24.04** (amd64 or arm64): download\n`ovos-gui-visage_<version>_<arch>.deb` for your machine from the\n[releases](https://github.com/Os\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-10-19T00:30:07Z",
-  "last_updated": "2026-10-19T18:34:20Z",
+  "last_updated": "2026-10-26T03:52:54Z",
   "is_new_repo": true,
-  "is_recently_updated": true
+  "is_recently_updated": false
 }
