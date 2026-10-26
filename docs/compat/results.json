@@ -1,7 +1,7 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "7e3f2c944b8fc8ab317343f9377d8ae0ae5609b4789d61a664b1fb74f7700eef",
+      "constraints_sha256": "d95b42a4b8982def96195e3be7ecf0d2f30d40d9505cbaccd547850fc3676ffc",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
@@ -10,7 +10,7 @@
         "ovos-common-query-pipeline-plugin": "1.1.20a1",
         "ovos-config": "3.9.0a1",
         "ovos-core": "3.7.5a1",
-        "ovos-m2v-pipeline": "0.37.1a1",
+        "ovos-m2v-pipeline": "0.37.3a1",
         "ovos-ocp-pipeline-plugin": "1.5.8a1",
         "ovos-padatious": "2.2.8a1",
         "ovos-persona": "0.9.0a35",
@@ -21,6 +21,8 @@
       },
       "route": {
         "baseline_ids": [
+          "ovos-skill-alerts.openvoiceos",
+          "ovos-skill-audio-recording.openvoiceos",
           "ovos-skill-count.openvoiceos",
           "ovos-skill-date-time.openvoiceos",
           "ovos-skill-ddg.openvoiceos",
@@ -31,6 +33,7 @@
           "ovos-skill-ip.openvoiceos",
           "ovos-skill-naptime.openvoiceos",
           "ovos-skill-parrot.openvoiceos",
+          "ovos-skill-personal.openvoiceos",
           "ovos-skill-speedtest.openvoiceos",
           "ovos-skill-volume.openvoiceos",
           "ovos-skill-weather.openvoiceos",
@@ -69,7 +72,6 @@
         ],
         "pipeline_used": [
           "ovos-stop-pipeline-plugin-high",
-          "ovos-common-reading-pipeline-plugin-high",
           "ovos-converse-pipeline-plugin",
           "ovos-ocp-pipeline-plugin-high",
           "ovos-persona-pipeline-plugin-high",
@@ -82,48 +84,37 @@
           "ovos-common-query-pipeline-plugin",
           "ovos-fallback-pipeline-plugin-medium",
           "ovos-persona-pipeline-plugin-low",
-          "ovos-common-reading-pipeline-plugin-low",
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-10-25T09:17:47+00:00",
+        "run_at": "2026-10-26T09:32:01+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 6.52,
-              "median": 0.55,
-              "n": 348,
-              "p95": 2.7
+              "max": 1.11,
+              "median": 0.43,
+              "n": 50,
+              "p95": 0.66
             },
-            "seconds": 678.1,
+            "seconds": 404.0,
+            "status": "ok"
+          },
+          {
+            "lang": "ca-ES",
+            "row_seconds": {},
+            "seconds": 348.2,
             "status": "ok"
           },
           {
             "lang": "da-DK",
-            "row_seconds": {
-              "max": 6.09,
-              "median": 2.53,
-              "n": 8,
-              "p95": 6.09
-            },
-            "seconds": 361.1,
-            "status": "ok"
-          },
-          {
-            "lang": "de-DE",
-            "row_seconds": {
-              "max": 6.51,
-              "median": 6.08,
-              "n": 7,
-              "p95": 6.51
-            },
-            "seconds": 348.9,
+            "row_seconds": {},
+            "seconds": 348.7,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-25T09:17:47+00:00",
+      "run_at": "2026-10-26T09:32:01+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -136,12 +127,12 @@
           "ovos-translate-server-plugin": "0.0.10a1",
           "ovos-utils": "0.15.6a1",
           "ovos-workshop": "9.8.20a1",
-          "ovoscope": "1.11.3a1"
+          "ovoscope": "1.12.0a2"
         },
         "python": "3.11.17"
       },
       "stack_moved": [
-        "padacioso 2.4.3a1 -> 2.4.4a1"
+        "ovos-m2v-pipeline 0.37.1a1 -> 0.37.3a1"
       ]
     },
     "stable": {
@@ -216,22 +207,22 @@
         ],
         "pipeline_used": [],
         "route_version": "5",
-        "run_at": "2026-10-18T07:36:32+00:00",
+        "run_at": "2026-10-26T09:32:01+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 0.98,
+              "max": 15.01,
               "median": 0.42,
-              "n": 75,
-              "p95": 0.95
+              "n": 12,
+              "p95": 15.01
             },
-            "seconds": 57.3,
+            "seconds": 52.2,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-18T07:36:32+00:00",
+      "run_at": "2026-10-26T09:32:01+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -338,22 +329,22 @@
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-10-18T07:36:32+00:00",
+        "run_at": "2026-10-26T09:32:01+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 15.01,
+              "max": 15.04,
               "median": 0.43,
-              "n": 75,
-              "p95": 15.01
+              "n": 12,
+              "p95": 15.04
             },
-            "seconds": 332.1,
+            "seconds": 214.6,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-18T07:36:32+00:00",
+      "run_at": "2026-10-26T09:32:01+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -373,7 +364,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-10-25T09:17:47+00:00",
+  "generated_at": "2026-10-26T09:32:01+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -925,7 +916,7 @@
               "ovos-common-reading-pipeline-plugin-low",
               "ovos-fallback-pipeline-plugin-low"
             ],
-            "seconds": 4800.8,
+            "seconds": 4678.5,
             "status": "ok"
           }
         ],
@@ -1039,22 +1030,9 @@
         "not_in_store": [],
         "pipelines": {
           "ovos-common-reading-pipeline-plugin": {
-            "examples": [
-              {
-                "from": "andlo-ovos-skill-arxiv-papers",
-                "kind": "unhandled",
-                "taken_by": null,
-                "utterance": "read me a paper from arxiv"
-              },
-              {
-                "from": "andlo-ovos-skill-arxiv-papers",
-                "kind": "unhandled",
-                "taken_by": null,
-                "utterance": "read me a research paper from the arxiv"
-              }
-            ],
-            "reaches": 13,
-            "takes": 2
+            "examples": [],
+            "reaches": 15,
+            "takes": 0
           },
           "ovos-fallback-pipeline-plugin": {
             "examples": [
@@ -1125,7 +1103,7 @@
                 "utterance": "i want to open something"
               }
             ],
-            "reaches": 8,
+            "reaches": 9,
             "takes": 7
           },
           "ovos-ocp-pipeline-plugin": {
@@ -1197,7 +1175,7 @@
                 "utterance": "count to 7"
               }
             ],
-            "reaches": 338,
+            "reaches": 337,
             "takes": 16
           },
           "ovos-persona-pipeline-plugin": {
@@ -1248,12 +1226,12 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 210,
-                    "hit": 205
+                    "hit": 206
                   }
                 },
                 "by_pipeline": {
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 205,
+                    "hit": 206,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -1264,7 +1242,7 @@
                 "collisions": [],
                 "counted": 210,
                 "hang": 0,
-                "hit": 205,
+                "hit": 206,
                 "langs": [
                   "en-US"
                 ],
@@ -1278,17 +1256,6 @@
                     "pipeline": "ovos-persona-pipeline-plugin",
                     "stage": "ovos-persona-pipeline-plugin",
                     "utterance": "change the priority to 10 of my reminders"
-                  },
-                  {
-                    "expected": "change_until",
-                    "fired": [
-                      "ovos-skill-alerts.openvoiceos:reschedule_alert"
-                    ],
-                    "kind": "wrong_intent",
-                    "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
-                    "utterance": "change my reminders until 5 minutes"
                   },
                   {
                     "expected": "create_alarm",
@@ -1320,7 +1287,7 @@
                 "status": "ok",
                 "total": 210,
                 "unhandled": 4,
-                "wrong_intent": 1
+                "wrong_intent": 0
               },
               "golden": {
                 "asked": 2,
@@ -2169,11 +2136,11 @@
                 },
                 "by_pipeline": {
                   "ovos-m2v-pipeline": {
-                    "hit": 2,
+                    "hit": 4,
                     "miss": 0
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 26,
+                    "hit": 24,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -2596,11 +2563,11 @@
                     "miss": 1
                   },
                   "ovos-m2v-pipeline": {
-                    "hit": 1,
+                    "hit": 2,
                     "miss": 0
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 2,
+                    "hit": 1,
                     "miss": 1
                   }
                 },
@@ -3476,6 +3443,7 @@
                     "utterance": "lets play rock paper scissors lizard spock"
                   },
                   {
+                    "asked": true,
                     "expected": "rock_paper_scissors_lizard_spock_intent",
                     "kind": "unhandled",
                     "lang": "en-US",
@@ -5872,10 +5840,14 @@
               },
               "ref": "0.10.0a4",
               "stop": {
+                "after": [
+                  "Your download speed is 1246.22 Megabit per second and your upload speed is 550.44 Megabit per second.",
+                  "ping is 49.62 milliseconds"
+                ],
                 "lang": "en-US",
-                "result": "stuck",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
+                "result": "keeps_going",
+                "seconds": 4.4,
+                "spoke_after_stop": 2,
                 "utterance": "run a speed test"
               }
             },
@@ -6185,7 +6157,7 @@
                 "by_pipeline": {
                   "ovos-fallback-pipeline-plugin": {
                     "hit": 0,
-                    "miss": 21
+                    "miss": 22
                   },
                   "ovos-m2v-pipeline": {
                     "hit": 0,
@@ -6193,7 +6165,7 @@
                   },
                   "ovos-padatious-pipeline-plugin": {
                     "hit": 40,
-                    "miss": 1
+                    "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
                     "hit": 0,
@@ -6248,9 +6220,9 @@
                     "expected": "make_wallpaper",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "stage": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "pipeline": "ovos-fallback-pipeline-plugin",
+                    "stage": "ovos-fallback-pipeline-plugin",
+                    "taken_by": "ovos-skill-ddg.openvoiceos",
                     "utterance": "change the wall paper to this one"
                   },
                   {
@@ -6667,13 +6639,10 @@
               },
               "ref": "2.8.1a1",
               "stop": {
-                "after": [
-                  "enjoy your new wallpaper"
-                ],
                 "lang": "en-US",
-                "result": "keeps_going",
-                "seconds": 2.8,
-                "spoke_after_stop": 1,
+                "result": "stops",
+                "seconds": 0.6,
+                "spoke_after_stop": 0,
                 "utterance": "change current wall paper"
               }
             },
@@ -7697,11 +7666,11 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-4uv1cn9d/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-hlfhl3gk/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "golden": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-4uv1cn9d/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-hlfhl3gk/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "stop": {
@@ -7958,9 +7927,7 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "tell me a story from 365 tomorrows"
               }
             },
@@ -8162,9 +8129,7 @@
               "ref": "v0.1.9",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "read me a story from the fairy books"
               }
             },
@@ -8184,19 +8149,19 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 2,
-                    "hit": 0
+                    "hit": 2
                   }
                 },
                 "by_pipeline": {
                   "ovos-common-reading-pipeline-plugin": {
-                    "hit": 0,
-                    "miss": 2
+                    "hit": 2,
+                    "miss": 0
                   }
                 },
                 "collisions": [],
                 "counted": 2,
                 "hang": 0,
-                "hit": 0,
+                "hit": 2,
                 "langs": [
                   "en-US"
                 ],
@@ -8254,30 +8219,20 @@
                   "zsm-MY"
                 ],
                 "manual": 0,
-                "misses": [
-                  {
-                    "kind": "unhandled",
-                    "lang": "en-US",
-                    "pipeline": "ovos-common-reading-pipeline-plugin",
-                    "stage": "ovos-common-reading-pipeline-plugin",
-                    "utterance": "read me a paper from arxiv"
-                  },
-                  {
-                    "kind": "unhandled",
-                    "lang": "en-US",
-                    "pipeline": "ovos-common-reading-pipeline-plugin",
-                    "stage": "ovos-common-reading-pipeline-plugin",
-                    "utterance": "read me a research paper from the arxiv"
-                  }
-                ],
+                "misses": [],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 2,
-                "unhandled": 2,
+                "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "v0.1.7"
+              "ref": "v0.1.7",
+              "stop": {
+                "lang": "en-US",
+                "result": "nothing_to_stop",
+                "utterance": "read me a paper from arxiv"
+              }
             },
             "skill_id": "ovos-skill-arxiv-papers.andlo",
             "version": "0.1.7"
@@ -9262,7 +9217,7 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 6,
+                "asked": 7,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
@@ -9495,39 +9450,29 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 1,
+                "baseline": 0,
                 "by_lang": {
                   "en-US": {
                     "counted": 23,
-                    "hit": 22
+                    "hit": 23
                   }
                 },
                 "by_pipeline": {
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 22,
-                    "miss": 1
+                    "hit": 23,
+                    "miss": 0
                   }
                 },
                 "collisions": [],
                 "counted": 23,
                 "hang": 0,
-                "hit": 22,
+                "hit": 23,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [
-                  {
-                    "expected": "when_is_holiday",
-                    "kind": "baseline",
-                    "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "stage": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-date-time.openvoiceos",
-                    "utterance": "when's christmas day"
-                  }
-                ],
+                "misses": [],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
@@ -9643,7 +9588,9 @@
               "ref": "v0.1.5",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
                 "utterance": "read me the horoscope for virgo"
               }
             },
@@ -11464,7 +11411,7 @@
             "version": "0.1.11"
           }
         },
-        "run_at": "2026-10-25T09:17:47+00:00",
+        "run_at": "2026-10-26T09:32:01+00:00",
         "takes_from": {
           "OpenVoiceOS-ovos-skill-alerts": {
             "generated": [
@@ -11716,7 +11663,7 @@
           }
         }
       },
-      "key": "b62e42ffc2ffd836",
+      "key": "19b90803574b3984",
       "profile": {
         "added_stages": [
           "ovos-common-reading-pipeline-plugin-high",
@@ -23388,13 +23335,13 @@
     },
     "OpenVoiceOS-ovos-m2v-pipeline": {
       "alpha": {
-        "boot_seconds": 6.0,
+        "boot_seconds": 3.3,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 9.5,
+        "duration_seconds": 5.4,
         "id": "OpenVoiceOS-ovos-m2v-pipeline",
-        "key": "3e5afc5c1fb293a2",
+        "key": "c06aeff47be12399",
         "kind": "pipeline",
         "level": 2,
         "package": "ovos_m2v_pipeline",
@@ -23402,15 +23349,15 @@
           "ovos-m2v-pipeline",
           "ovos-m2v-prototype-pipeline"
         ],
-        "requested_version": "0.37.1a1",
+        "requested_version": "0.37.3a1",
         "stage": "load",
         "stages": [
           "ovos-m2v-pipeline-high",
           "ovos-m2v-prototype-pipeline-high"
         ],
         "status": "pass",
-        "tested_at": "2026-10-25T07:49:55+00:00",
-        "version_tested": "0.37.1a1"
+        "tested_at": "2026-10-26T08:07:04+00:00",
+        "version_tested": "0.37.3a1"
       },
       "stable": {
         "boot_seconds": 0.8,
@@ -27092,11 +27039,11 @@
     },
     "OpenVoiceOS-ovos-skill-days-in-history": {
       "alpha": {
-        "boot_seconds": 69.4,
+        "boot_seconds": 37.1,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 78.2,
+        "duration_seconds": 43.4,
         "id": "OpenVoiceOS-ovos-skill-days-in-history",
         "intents_by_lang": {
           "ca-es": 11,
@@ -27119,7 +27066,7 @@
           "ru-ru": 4,
           "sv-se": 11
         },
-        "key": "4fe494911032c65b",
+        "key": "4bfbfbab5b7639da",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -27154,7 +27101,7 @@
           ]
         },
         "requested_version": "0.10.1a1",
-        "route_key": "bb31ec83d8ca312c",
+        "route_key": "bf15649038333298",
         "routing": {
           "generated": {
             "asked": 0,
@@ -27292,27 +27239,27 @@
             "hit": 0,
             "langs": [
               "en-US",
-              "da-DK",
-              "de-DE"
+              "ca-ES",
+              "da-DK"
             ],
             "langs_failed": [],
             "langs_not_routed": [
-              "es-ES",
-              "fr-FR",
-              "it-IT",
-              "nl-NL",
-              "pt-PT",
-              "ca-ES",
-              "eu-ES",
-              "gl-ES",
-              "oc-FR",
-              "pt-BR",
-              "sv-SE",
+              "de-DE",
               "es-CO",
+              "es-ES",
+              "eu-ES",
               "fa-IR",
+              "fr-FR",
+              "gl-ES",
+              "it-IT",
               "kab",
+              "nl-NL",
+              "oc-FR",
               "pl-PL",
-              "ru-RU"
+              "pt-BR",
+              "pt-PT",
+              "ru-RU",
+              "sv-SE"
             ],
             "manual": 88,
             "misses": [],
@@ -27333,15 +27280,15 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-25T08:07:29+00:00",
+        "tested_at": "2026-10-26T08:06:16+00:00",
         "version_tested": "0.10.1a1"
       },
       "stable": {
-        "boot_seconds": 38.8,
+        "boot_seconds": 37.3,
         "channel": "stable",
         "channel_pinned": true,
         "driver": "ovoscope legacy (no lang/wait options)",
-        "duration_seconds": 43.2,
+        "duration_seconds": 40.8,
         "id": "OpenVoiceOS-ovos-skill-days-in-history",
         "intents_by_lang": {
           "ca-es": 10,
@@ -27353,7 +27300,7 @@
           "pt-pt": 11,
           "unknown": 1
         },
-        "key": "7107122809233279",
+        "key": "549f82dffe5b6a64",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -27373,88 +27320,7 @@
           "intents": 62
         },
         "requested_version": "0.3.11",
-        "route_key": "b31e4301522f4dcf",
-        "routing": {
-          "generated": {
-            "asked": 0,
-            "baseline": 0,
-            "by_lang": {
-              "en-US": {
-                "counted": 12,
-                "hit": 12
-              }
-            },
-            "collisions": [],
-            "counted": 12,
-            "hang": 0,
-            "hit": 12,
-            "langs": [
-              "en-US"
-            ],
-            "langs_failed": [],
-            "manual": 0,
-            "misses": [],
-            "neighbour": 0,
-            "not_loaded": 0,
-            "status": "ok",
-            "total": 12,
-            "unhandled": 0,
-            "wrong_intent": 0
-          },
-          "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at 0.3.11",
-            "status": "none"
-          },
-          "ref": "0.3.11",
-          "stop": {
-            "lang": "en-US",
-            "result": "nothing_to_stop",
-            "utterance": "who was born today in history"
-          }
-        },
-        "stage": "load",
-        "status": "pass",
-        "tested_at": "2026-10-04T11:10:48+00:00",
-        "version_tested": "0.3.11"
-      },
-      "testing": {
-        "boot_seconds": 62.1,
-        "channel": "testing",
-        "channel_pinned": true,
-        "driver": "ovoscope modern",
-        "duration_seconds": 67.0,
-        "id": "OpenVoiceOS-ovos-skill-days-in-history",
-        "intents_by_lang": {
-          "ca-es": 10,
-          "da-dk": 8,
-          "de-de": 8,
-          "en-us": 8,
-          "eu-es": 8,
-          "gl-es": 8,
-          "pt-pt": 11,
-          "unknown": 1
-        },
-        "key": "21d8b737b63f5cb7",
-        "kind": "skill",
-        "languages_booted": [
-          "en-US",
-          "ca-ES",
-          "da-DK",
-          "de-DE",
-          "eu-ES",
-          "gl-ES",
-          "pt-PT"
-        ],
-        "level": 2,
-        "package": "ovos-skill-days-in-history",
-        "plugin_ids": [
-          "ovos-skill-days-in-history.openvoiceos"
-        ],
-        "registrations": {
-          "intents": 62
-        },
-        "requested_version": "0.3.11",
-        "route_key": "615884c21084eca8",
+        "route_key": "014d0116d5635566",
         "routing": {
           "generated": {
             "asked": 0,
@@ -27473,9 +27339,6 @@
               "en-US"
             ],
             "langs_failed": [],
-            "langs_partial": [
-              "en-US"
-            ],
             "manual": 0,
             "misses": [
               {
@@ -27504,11 +27367,112 @@
             "reason": "no test/end2end/golden_utterances*.jsonl at 0.3.11",
             "status": "none"
           },
-          "ref": "0.3.11"
+          "ref": "0.3.11",
+          "stop": {
+            "lang": "en-US",
+            "result": "nothing_to_stop",
+            "utterance": "who was born today in history"
+          }
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-04T10:54:30+00:00",
+        "tested_at": "2026-10-26T08:07:02+00:00",
+        "version_tested": "0.3.11"
+      },
+      "testing": {
+        "boot_seconds": 61.8,
+        "channel": "testing",
+        "channel_pinned": true,
+        "driver": "ovoscope modern",
+        "duration_seconds": 68.8,
+        "id": "OpenVoiceOS-ovos-skill-days-in-history",
+        "intents_by_lang": {
+          "ca-es": 10,
+          "da-dk": 8,
+          "de-de": 8,
+          "en-us": 8,
+          "eu-es": 8,
+          "gl-es": 8,
+          "pt-pt": 11,
+          "unknown": 1
+        },
+        "key": "cca9f8f342df06a6",
+        "kind": "skill",
+        "languages_booted": [
+          "en-US",
+          "ca-ES",
+          "da-DK",
+          "de-DE",
+          "eu-ES",
+          "gl-ES",
+          "pt-PT"
+        ],
+        "level": 2,
+        "package": "ovos-skill-days-in-history",
+        "plugin_ids": [
+          "ovos-skill-days-in-history.openvoiceos"
+        ],
+        "registrations": {
+          "intents": 62
+        },
+        "requested_version": "0.3.11",
+        "route_key": "e30ee812c988229b",
+        "routing": {
+          "generated": {
+            "asked": 0,
+            "baseline": 0,
+            "by_lang": {
+              "en-US": {
+                "counted": 12,
+                "hit": 10
+              }
+            },
+            "collisions": [],
+            "counted": 12,
+            "hang": 2,
+            "hit": 10,
+            "langs": [
+              "en-US"
+            ],
+            "langs_failed": [],
+            "manual": 0,
+            "misses": [
+              {
+                "expected": "today_in_history",
+                "kind": "hang",
+                "lang": "en-US",
+                "stage": "last message: question:query.response",
+                "utterance": "tell me about happened on tomorrow"
+              },
+              {
+                "expected": "today_in_history",
+                "kind": "hang",
+                "lang": "en-US",
+                "stage": "last message: question:query.response",
+                "utterance": "tell me about historical events happened on tomorrow"
+              }
+            ],
+            "neighbour": 0,
+            "not_loaded": 0,
+            "status": "ok",
+            "total": 12,
+            "unhandled": 0,
+            "wrong_intent": 0
+          },
+          "golden": {
+            "reason": "no test/end2end/golden_utterances*.jsonl at 0.3.11",
+            "status": "none"
+          },
+          "ref": "0.3.11",
+          "stop": {
+            "lang": "en-US",
+            "result": "nothing_to_stop",
+            "utterance": "who was born today in history"
+          }
+        },
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-10-26T08:06:42+00:00",
         "version_tested": "0.3.11"
       }
     },

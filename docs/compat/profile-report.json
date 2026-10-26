@@ -1,9 +1,9 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-10-25T09:17:47+00:00",
+ "generated_at": "2026-10-26T09:32:01+00:00",
  "channels": {
   "stable": {
-   "run_at": "2026-10-18T07:36:32+00:00",
+   "run_at": "2026-10-26T09:32:01+00:00",
    "klondike_run_at": "2026-10-19T09:36:47+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
@@ -1041,7 +1041,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.11",
-       "tested_at": "2026-10-04T11:10:48+00:00",
+       "tested_at": "2026-10-26T08:07:02+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -1210,7 +1210,7 @@
    ]
   },
   "testing": {
-   "run_at": "2026-10-18T07:36:32+00:00",
+   "run_at": "2026-10-26T09:32:01+00:00",
    "klondike_run_at": "2026-10-19T09:36:47+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
@@ -2247,7 +2247,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.11",
-       "tested_at": "2026-10-04T10:54:30+00:00",
+       "tested_at": "2026-10-26T08:06:42+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2416,8 +2416,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-10-25T09:17:47+00:00",
-   "klondike_run_at": "2026-10-25T09:17:47+00:00",
+   "run_at": "2026-10-26T09:32:01+00:00",
+   "klondike_run_at": "2026-10-26T09:32:01+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2520,14 +2520,14 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "0.37.1a1",
-       "tested_at": "2026-10-25T07:49:55+00:00",
+       "version": "0.37.3a1",
+       "tested_at": "2026-10-26T08:07:04+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 8,
+        "reaches": 9,
         "takes": 7,
         "examples": [
          {
@@ -2627,7 +2627,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 338,
+        "reaches": 337,
         "takes": 16,
         "examples": [
          {
@@ -3267,25 +3267,11 @@
        "tested_at": "2026-10-25T07:49:54+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false,
+       "gold": true,
        "pipeline_route": {
         "measured": true,
-        "reaches": 13,
-        "takes": 2,
-        "examples": [
-         {
-          "from": "andlo-ovos-skill-arxiv-papers",
-          "kind": "unhandled",
-          "taken_by": null,
-          "utterance": "read me a paper from arxiv"
-         },
-         {
-          "from": "andlo-ovos-skill-arxiv-papers",
-          "kind": "unhandled",
-          "taken_by": null,
-          "utterance": "read me a research paper from the arxiv"
-         }
-        ]
+        "reaches": 15,
+        "takes": 0
        },
        "in_profile": true
       },
@@ -3735,7 +3721,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.10.1a1",
-       "tested_at": "2026-10-25T08:07:29+00:00",
+       "tested_at": "2026-10-26T08:06:16+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3950,7 +3936,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 14,
-      "gold": 13
+      "gold": 14
      },
      "cumulative": {
       "total": 59,
@@ -3961,7 +3947,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 19,
-      "gold": 18
+      "gold": 19
      }
     }
    ]
