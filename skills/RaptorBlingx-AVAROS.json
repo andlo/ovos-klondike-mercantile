@@ -39,7 +39,7 @@
   "setup_notes": [
     {
       "heading": "First-run configuration",
-      "content": "The web wizard guides an operator through:\n\n1. Platform endpoint and authentication\n2. Connection test\n3. Asset registration\n4. Platform resource linking\n5. Metric mapping\n6. Intent activation\n7. Optional PREVENTION configuration\n\nAVAROS remains usable without PREVENTION; anomaly and drift commands are disabled when no PREVENTION endpoint is configured."
+      "content": "The web wizard guides an operator through:\n\n1. Platform endpoint and authentication\n2. Connection test\n3. Asset registration\n4. Platform resource linking\n5. Metric mapping\n6. Intent activation\n7. Optional PREVENTION configuration\n\nAVAROS remains usable without PREVENTION; anomaly and drift commands are disabled when no PREVENTION endpoint is configured.\nAVAROS is deterministic, advisory, and read-only. It does not control equipment, infer process-parameter causality without a configured model, or judge performance without a configured objective."
     }
   ],
   "languages": [
@@ -48,7 +48,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-03-03T06:02:11Z",
-  "last_updated": "2026-09-21T08:22:51Z",
+  "last_updated": "2026-10-23T08:23:08Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }
