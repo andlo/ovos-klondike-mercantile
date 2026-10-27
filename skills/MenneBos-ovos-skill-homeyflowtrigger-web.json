@@ -1,0 +1,47 @@
+{
+  "id": "MenneBos-ovos-skill-homeyflowtrigger-web",
+  "skill_id": null,
+  "name": "ovos-skill-homeyflowtrigger-web",
+  "description": "OVOS-skill die **Homey-flows start met een spraakopdracht**. Dit is de variant met een **ingebouwde",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/MenneBos/ovos-skill-homeyflowtrigger-web/main/homeyflow/web/static/img/logo.png",
+  "icon_source": "repo",
+  "icon_color": null,
+  "source": "https://github.com/MenneBos/ovos-skill-homeyflowtrigger-web",
+  "package_name": "ovos-skill-homeyflowtrigger-web",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "MenneBos",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Installatie (Docker)",
+      "content": "1. Maak de map voor je gegevens en zet je Homey-gegevens in `config/config.json`\n   (voorbeeld: `config.example.json`). Een API-key maak je in Homey onder *Instellingen \u2192 API-sleutels*.\n\n   {\n     \"homey\": { \"address\": \"http://192.168.1.50\", \"token\": \"<API-key>\" },\n     \"web\": { \"host\": \"0.0.0.0\", \"port\": 8200, \"allowed_hosts\": [] },\n     \"language\": \"nl-nl\",\n     \"training\": { \"mode\": \"live\", \"timeout\": 120 }\n   }\n\n   Adres en token kunnen ook via `HOMEYFLOW_HOMEY_ADDRESS` en `HOMEYFLOW_HOMEY_TOKEN`.\n   `language` moet overeenkomen met de taal waarin OVOS luistert (standaard `nl-nl`).\n\n2. Kopieer `.env.example` naar `.env` en vul het Docker-netwerk en de OVOS-config in.\n   Het voorbeeld in `docker-compose.yml` gaat uit van een extern netwerk (`OVOS_NETWORK`) en dezelfde\n   OVOS-configmap\u2026"
+    }
+  ],
+  "languages": [
+    "en-us",
+    "nl-nl"
+  ],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-10-15T20:24:10Z",
+  "last_updated": "2026-10-15T22:29:08Z",
+  "is_new_repo": true,
+  "is_recently_updated": true
+}
