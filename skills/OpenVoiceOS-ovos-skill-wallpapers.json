@@ -30,7 +30,7 @@
   "type_group": "Skill",
   "stars": 2,
   "forks": 4,
-  "open_issues": 4,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -914,16 +914,16 @@
         "channel_pinned": true
       },
       "alpha": {
-        "label": "\u2713 loads \u00b7 11/23 golden",
+        "label": "\u2713 loads \u00b7 11/22 golden",
         "state": "warn",
         "level": 2,
         "stop": "stops",
         "version_tested": "2.8.1a1",
-        "tested_at": "2026-10-25T08:16:11+00:00",
+        "tested_at": "2026-10-28T09:04:22+00:00",
         "channel_pinned": true,
         "golden": {
           "hit": 11,
-          "counted": 23
+          "counted": 22
         }
       }
     }

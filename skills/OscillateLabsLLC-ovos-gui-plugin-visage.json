@@ -1,0 +1,48 @@
+{
+  "id": "OscillateLabsLLC-ovos-gui-plugin-visage",
+  "skill_id": null,
+  "name": "ovos-gui-plugin-visage",
+  "description": "OVOS-GUI-1 render adapter (opm.gui_adapter) that streams GUI templates to ovos-gui-visage clients",
+  "examples": [],
+  "tags": [],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/OscillateLabsLLC/ovos-gui-plugin-visage",
+  "package_name": "ovos-gui-plugin-visage",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OscillateLabsLLC",
+  "tier": 2,
+  "component_type": "Gui Adapter Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "The adapter needs the `gui` branch of `ovos-plugin-manager`. Install that branch first:\n\npip install \"git+https://github.com/OpenVoiceOS/ovos-plugin-manager@gui\"\npip install \"git+https://github.com/OscillateLabsLLC/ovos-gui-plugin-visage\"\n\nThe plugin registers in the entry-point group `opm.gui_adapter` with the name\n`ovos-gui-plugin-visage`. `ovos-gui` loads all installed adapters when it starts."
+    },
+    {
+      "heading": "Configure",
+      "content": "Put this block in `mycroft.conf`. All keys are optional. The values below are the defaults.\n\n{\n  \"gui\": {\n    \"adapters\": {\n      \"ovos-gui-plugin-visage\": {\n        \"host\": \"127.0.0.1\",\n        \"port\": 18182,\n        \"path\": \"/gui1\",\n        \"hello_timeout\": 5,\n        \"max_backlog\": 256\n      }\n    }\n  }\n}\n\n| Key | Meaning |\n|---|---|\n| `host` | Address that the websocket server listens on. Use `0.0.0.0` for clients on other hosts. |\n| `port` | TCP port of the websocket server. |\n| `path` | URL path of the endpoint. The server refuses other paths with HTTP 404. |\n| `hello_timeout` | Seconds that a client has to send `hello`. After this time, the server closes the socket. |\n| `max_backlog` | Number of frames that can wait for one client. If a client is slower, the server closes it with co\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-10-24T17:35:07Z",
+  "last_updated": "2026-10-27T22:57:14Z",
+  "is_new_repo": true,
+  "is_recently_updated": false
+}
