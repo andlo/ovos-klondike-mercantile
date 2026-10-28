@@ -1,0 +1,48 @@
+{
+  "id": "OpenVoiceOS-ovos-solver-plugin-aiml",
+  "skill_id": null,
+  "name": "ovos-solver-plugin-aiml",
+  "description": "An OVOS question solver plugin that answers with an AIML chatbot. It uses the Alice chatbot brain to hold open-ended conversation. It answers utterances that no other skill or solver handles, so most utterances get some response.",
+  "examples": [],
+  "tags": [
+    "openvoiceos",
+    "plugin",
+    "solver"
+  ],
+  "category": "Other",
+  "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/robot.svg",
+  "icon_source": "readme",
+  "icon_color": "#40DBB0",
+  "source": "https://github.com/OpenVoiceOS/ovos-solver-plugin-aiml",
+  "package_name": "ovos-solver-aiml-plugin",
+  "pypi_version": "0.0.1",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "OpenVoiceOS",
+  "tier": 1,
+  "component_type": "Chat Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 3,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-solver-aiml-plugin"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2023-02-04T22:01:38Z",
+  "last_updated": "2025-06-08T18:28:59.681386Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
