@@ -143,14 +143,14 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-28T08:58:26+00:00",
+          "tested_at": "2026-10-29T08:54:13+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
+            "hit": 0,
             "counted": 2
           }
         }
@@ -645,14 +645,14 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 53/55 golden",
+          "label": "\u2713 52/55 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.12.53a1",
-          "tested_at": "2026-10-28T08:58:34+00:00",
+          "version_tested": "0.12.58a1",
+          "tested_at": "2026-10-29T08:54:23+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 53,
+            "hit": 52,
             "counted": 55
           }
         }
@@ -801,7 +801,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-28T09:09:19+00:00",
+          "tested_at": "2026-10-29T09:05:51+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -893,11 +893,12 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden",
+          "label": "\u2713 2/2 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
+          "stop": "stops",
           "version_tested": "0.1.9",
-          "tested_at": "2026-10-28T09:09:30+00:00",
+          "tested_at": "2026-10-29T09:06:04+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -1182,7 +1183,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.13.6a1",
-          "tested_at": "2026-10-28T09:09:39+00:00",
+          "tested_at": "2026-10-29T09:06:12+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 0,
@@ -1390,7 +1391,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-28T09:09:47+00:00",
+          "tested_at": "2026-10-29T09:06:21+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -1604,7 +1605,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.0a1",
-          "tested_at": "2026-10-28T09:09:55+00:00",
+          "tested_at": "2026-10-29T09:06:30+00:00",
           "channel_pinned": true
         }
       }
@@ -1848,7 +1849,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.7.2a6",
-          "tested_at": "2026-10-28T09:10:07+00:00",
+          "tested_at": "2026-10-29T09:06:43+00:00",
           "channel_pinned": true
         }
       }
@@ -2147,7 +2148,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-28T08:58:04+00:00",
+          "tested_at": "2026-10-29T08:54:00+00:00",
           "channel_pinned": false
         }
       }
@@ -2251,7 +2252,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-28T08:58:10+00:00",
+          "tested_at": "2026-10-29T08:54:09+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 16,
@@ -2499,8 +2500,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "1.4.0a3",
-          "tested_at": "2026-10-28T08:58:19+00:00",
+          "version_tested": "1.4.0a4",
+          "tested_at": "2026-10-29T08:54:20+00:00",
           "channel_pinned": true
         }
       }
@@ -2790,8 +2791,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.3a2",
-          "tested_at": "2026-10-28T08:58:29+00:00",
+          "version_tested": "0.7.3a3",
+          "tested_at": "2026-10-29T08:54:33+00:00",
           "channel_pinned": true
         }
       }
@@ -3023,7 +3024,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.2",
-          "tested_at": "2026-10-28T08:58:39+00:00",
+          "tested_at": "2026-10-29T08:54:47+00:00",
           "channel_pinned": false
         }
       }
@@ -3288,8 +3289,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.8.3a1",
-          "tested_at": "2026-10-28T08:58:45+00:00",
+          "version_tested": "0.8.3a2",
+          "tested_at": "2026-10-29T08:54:56+00:00",
           "channel_pinned": true
         }
       }
@@ -3381,7 +3382,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.7",
-          "tested_at": "2026-10-28T08:58:54+00:00",
+          "tested_at": "2026-10-29T08:55:08+00:00",
           "channel_pinned": false
         }
       }
@@ -3829,14 +3830,14 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 4/5 golden",
+          "label": "\u2713 loads \u00b7 2/5 golden",
           "state": "warn",
-          "level": 3,
-          "version_tested": "1.12.0a3",
-          "tested_at": "2026-10-28T08:59:00+00:00",
+          "level": 2,
+          "version_tested": "1.12.0a4",
+          "tested_at": "2026-10-29T08:55:16+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 4,
+            "hit": 2,
             "counted": 5
           }
         }
@@ -4146,7 +4147,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.9.0a5",
-          "tested_at": "2026-10-28T08:58:43+00:00",
+          "tested_at": "2026-10-29T08:54:04+00:00",
           "channel_pinned": true
         }
       }
@@ -4383,8 +4384,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.7.0a5",
-          "tested_at": "2026-10-28T08:58:58+00:00",
+          "version_tested": "0.7.0a6",
+          "tested_at": "2026-10-29T08:54:21+00:00",
           "channel_pinned": true
         }
       }
@@ -4475,7 +4476,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "1.0.0",
-          "tested_at": "2026-10-28T09:00:06+00:00",
+          "tested_at": "2026-10-29T08:55:30+00:00",
           "channel_pinned": false
         }
       }
@@ -4815,7 +4816,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "1.0.1",
-          "tested_at": "2026-10-28T09:00:14+00:00",
+          "tested_at": "2026-10-29T08:55:39+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 11,
@@ -5072,7 +5073,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.9.3a1",
-          "tested_at": "2026-10-28T09:00:26+00:00",
+          "tested_at": "2026-10-29T08:55:50+00:00",
           "channel_pinned": true
         }
       }
@@ -5227,7 +5228,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-28T09:15:33+00:00",
+          "tested_at": "2026-10-29T09:10:59+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 14,
@@ -5376,7 +5377,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.6",
-          "tested_at": "2026-10-28T09:15:46+00:00",
+          "tested_at": "2026-10-29T09:11:10+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 12,
@@ -5524,7 +5525,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-28T09:15:57+00:00",
+          "tested_at": "2026-10-29T09:11:22+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 13,
@@ -5674,7 +5675,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-28T08:58:53+00:00",
+          "tested_at": "2026-10-29T08:54:15+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 12,
@@ -5835,7 +5836,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-28T08:59:05+00:00",
+          "tested_at": "2026-10-29T08:54:25+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -6070,7 +6071,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "1.0.0",
-          "tested_at": "2026-10-28T08:59:17+00:00",
+          "tested_at": "2026-10-29T08:54:38+00:00",
           "channel_pinned": false
         }
       }
@@ -7401,7 +7402,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-28T08:59:26+00:00",
+          "tested_at": "2026-10-29T08:54:45+00:00",
           "channel_pinned": false
         }
       }
@@ -7534,7 +7535,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.5",
-          "tested_at": "2026-10-28T08:59:39+00:00",
+          "tested_at": "2026-10-29T08:54:56+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -7607,6 +7608,364 @@
     "last_updated": "2026-06-23T08:37:50Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "thalovant-thalovant-skill-interaction-modes",
+    "skill_id": "thalovant-skill-interaction-modes",
+    "name": "Interaction Modes",
+    "description": "Temporary client-scoped modes such as party mode for Thalovant hubs.",
+    "examples": [
+      "Turn on party mode.",
+      "Back to normal.",
+      "What mode are we in?"
+    ],
+    "tags": [
+      "mode",
+      "party",
+      "session"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/thalovant/thalovant-skill-interaction-modes",
+    "package_name": "thalovant-skill-interaction-modes",
+    "pypi_version": "0.1.11",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "thalovant",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 3,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "an-es",
+      "ar-sa",
+      "ast-es",
+      "az-az",
+      "bg-bg",
+      "ca-es",
+      "cs-cz",
+      "da-dk",
+      "de-at",
+      "de-ch",
+      "de-de",
+      "el-gr",
+      "en-au",
+      "en-ca",
+      "en-gb",
+      "en-nz",
+      "en-us",
+      "es-ar",
+      "es-co",
+      "es-es",
+      "es-mx",
+      "es-us",
+      "et-ee",
+      "eu-es",
+      "fa-ir",
+      "fi-fi",
+      "fr-be",
+      "fr-ca",
+      "fr-ch",
+      "fr-fr",
+      "gl-es",
+      "he-il",
+      "hi-in",
+      "hr-hr",
+      "hu-hu",
+      "id-id",
+      "it-it",
+      "ja-jp",
+      "ko-kr",
+      "lt-lt",
+      "lv-lv",
+      "ms-my",
+      "nb-no",
+      "nl-be",
+      "nl-nl",
+      "oc-fr",
+      "pl-pl",
+      "pt-ao",
+      "pt-br",
+      "pt-mz",
+      "pt-pt",
+      "ro-ro",
+      "ru-ru",
+      "sk-sk",
+      "sl-si",
+      "sv-fi",
+      "sv-se",
+      "sw-ke",
+      "th-th",
+      "tr-tr",
+      "uk-ua",
+      "vi-vn",
+      "zh-cn",
+      "zh-sg",
+      "zh-tw"
+    ],
+    "locale_content": {
+      "an-es": {
+        "name": "Modos d'interacci\u00f3n",
+        "description": "Encienda u desactiva los modos temporals de client per voz."
+      },
+      "ar-sa": {
+        "name": "\u0623\u0633\u0627\u0644\u064a\u0628 \u0627\u0644\u062a\u0641\u0627\u0639\u0644",
+        "description": "\u0642\u0645 \u0628\u062a\u0634\u063a\u064a\u0644 \u0623\u0648 \u0625\u064a\u0642\u0627\u0641 \u0623\u0648\u0636\u0627\u0639 \u0627\u0644\u0639\u0645\u064a\u0644 \u0627\u0644\u0645\u0624\u0642\u062a \u0628\u0635\u0648\u062a"
+      },
+      "ast-es": {
+        "name": "Los modos d'interacci\u00f3n",
+        "description": "Enviar o desconectar los modos temporales del cliente por voz."
+      },
+      "az-az": {
+        "name": "\u018flaq\u0259 Modlar\u0131",
+        "description": "M\u00fcv\u0259qq\u0259ti m\u00fc\u015ft\u0259ri rejimini s\u0259sl\u0259 a\u00e7\u0131n v\u0259 ya s\u00f6nd\u00fcr\u00fcn."
+      },
+      "bg-bg": {
+        "name": "\u041c\u043e\u0434\u0438 \u043d\u0430 \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435",
+        "description": "\u0412\u043a\u043b\u044e\u0447\u0435\u0442\u0435 \u0438\u043b\u0438 \u0438\u0437\u043a\u043b\u044e\u0447\u0435\u0442\u0435 \u0440\u0435\u0436\u0438\u043c\u0430 \u043d\u0430 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u0438\u044f \u043a\u043b\u0438\u0435\u043d\u0442 \u0447\u0440\u0435\u0437 \u0433\u043b\u0430\u0441."
+      },
+      "ca-es": {
+        "name": "Modes d'interacci\u00f3",
+        "description": "Activar o desactivar els m\u00f2dols de client temporal per veu."
+      },
+      "cs-cz": {
+        "name": "Mody interakce",
+        "description": "Vypn\u011bte nebo vypn\u011bte do\u010dasn\u00e9 re\u017eimy klienta hlasem."
+      },
+      "da-dk": {
+        "name": "Interaktionsmodus",
+        "description": "T\u00e6nd eller sluk midlertidige klienttilstande med tale."
+      },
+      "de-at": {
+        "name": "Interaktionsweisen",
+        "description": "Schalten Sie die tempor\u00e4ren Client-Modus per Stimme ein oder aus."
+      },
+      "de-ch": {
+        "name": "Interaktionsweisen",
+        "description": "Schalten Sie die tempor\u00e4ren Client-Modus per Stimme ein oder aus."
+      },
+      "de-de": {
+        "name": "Interaktionsweisen",
+        "description": "Schalten Sie die tempor\u00e4ren Client-Modus per Stimme ein oder aus."
+      },
+      "el-gr": {
+        "name": "\u03a4\u03cd\u03c0\u03bf\u03b9 \u03b1\u03bb\u03bb\u03b7\u03bb\u03b5\u03c0\u03af\u03b4\u03c1\u03b1\u03c3\u03b7\u03c2",
+        "description": "\u0395\u03bd\u03b5\u03c1\u03b3\u03bf\u03c0\u03bf\u03b9\u03ae\u03c3\u03c4\u03b5 \u03ae \u03b1\u03c0\u03b5\u03bd\u03b5\u03c1\u03b3\u03bf\u03c0\u03bf\u03b9\u03ae\u03c3\u03c4\u03b5 \u03c4\u03b9\u03c2 \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03af\u03b5\u03c2 \u03c0\u03c1\u03bf\u03c3\u03c9\u03c1\u03b9\u03bd\u03ce\u03bd \u03c0\u03b5\u03bb\u03b1\u03c4\u03ce\u03bd \u03bc\u03b5 \u03c6\u03c9\u03bd\u03ae."
+      },
+      "es-ar": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-co": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-es": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-mx": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "es-us": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Encienda o desactiva los modos temporales de cliente por voz."
+      },
+      "et-ee": {
+        "name": "Interaktsiooniviisid",
+        "description": "L\u00fclita ajutine kliendi re\u017eiim h\u00e4\u00e4lega sisse v\u00f5i v\u00e4lja."
+      },
+      "eu-es": {
+        "name": "Elkarrekintza Modua",
+        "description": "Aldi baterako bezero modua ahots bidez aktibatu edo itzali."
+      },
+      "fa-ir": {
+        "name": "\u0631\u0648\u0634 \u0647\u0627\u06cc \u062a\u0639\u0627\u0645\u0644",
+        "description": "\u062d\u0627\u0644\u062a \u0645\u0648\u0642\u062a \u0645\u0634\u062a\u0631\u06cc \u0631\u0627 \u0628\u0627 \u0635\u062f\u0627 \u0641\u0639\u0627\u0644 \u06cc\u0627 \u062e\u0627\u0645\u0648\u0634 \u06a9\u0646\u06cc\u062f."
+      },
+      "fi-fi": {
+        "name": "Yhteisty\u00f6muodot",
+        "description": "K\u00e4ynnist\u00e4 tai sammuttaa v\u00e4liaikainen asiakastulku \u00e4\u00e4nell\u00e4."
+      },
+      "fr-be": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "fr-ca": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "fr-ch": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "fr-fr": {
+        "name": "Interaction Modes",
+        "description": "Active ou desactive les modes temporaires du client par la voix."
+      },
+      "gl-es": {
+        "name": "Modos de interacci\u00f3n",
+        "description": "Activa ou desactiva os modos de cliente temporal por voz."
+      },
+      "he-il": {
+        "name": "\u05d0\u05de\u05e6\u05e2\u05d9 \u05d0\u05d9\u05e0\u05d8\u05e8\u05d0\u05e7\u05e6\u05d9\u05d4",
+        "description": "\u05ea\u05e4\u05e2\u05d9\u05dc \u05d0\u05d5 \u05ea\u05db\u05d1\u05d4 \u05d0\u05ea \u05de\u05e6\u05d1 \u05d4\u05dc\u05e7\u05d5\u05d7 \u05d4\u05d6\u05de\u05e0\u05d9 \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05e7\u05d5\u05dc."
+      },
+      "hi-in": {
+        "name": "\u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0947 \u0924\u0930\u0940\u0915\u0947",
+        "description": "\u0905\u0938\u094d\u0925\u093e\u092f\u0940 \u0915\u094d\u0932\u093e\u0907\u0902\u091f \u092e\u094b\u0921 \u0915\u094b \u0906\u0935\u093e\u091c \u0926\u094d\u0935\u093e\u0930\u093e \u091a\u093e\u0932\u0942 \u092f\u093e \u092c\u0902\u0926 \u0915\u0930\u0947\u0902\u0964"
+      },
+      "hr-hr": {
+        "name": "Moda interakcije",
+        "description": "Ukloni ili isklju\u010di privremeni re\u017eimi klijenta glasom."
+      },
+      "hu-hu": {
+        "name": "Interakt\u00edv m\u00f3dok",
+        "description": "A hangon kereszt\u00fcl kapcsolja vagy kapcsolja be a \u00e1tmeneti \u00fcgyf\u00e9l m\u00f3dokat."
+      },
+      "id-id": {
+        "name": "Modus Interaksi",
+        "description": "Pindahkan mode klien sementara ke atau mati dengan suara."
+      },
+      "it-it": {
+        "name": "Modalit\u00e0 di interazione",
+        "description": "Accendere o disattivare le modalit\u00e0 temporanee del cliente per voce."
+      },
+      "ja-jp": {
+        "name": "\u76f8\u4e92\u4f5c\u7528\u65b9\u5f0f",
+        "description": "\u81e8\u6642\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u30e2\u30fc\u30c9\u3092\u97f3\u58f0\u3067\u30aa\u30f3\u307e\u305f\u306f\u30aa\u30d5\u306b\u3057\u307e\u3059"
+      },
+      "ko-kr": {
+        "name": "\uc0c1\ud638 \uc791\uc6a9 \ubc29\uc2dd",
+        "description": "\uc74c\uc131\uc73c\ub85c \uc77c\uc2dc\uc801\uc778 \ud074\ub77c\uc774\uc5b8\ud2b8 \ubaa8\ub4dc\ub97c \ucf1c\uac70\ub098 \ub044\uc138\uc694."
+      },
+      "lt-lt": {
+        "name": "Veiksm\u0173 b\u016bdai",
+        "description": "\u012ejungti arba i\u0161jungti laikinojo kliento re\u017eimus balso b\u016bdu."
+      },
+      "lv-lv": {
+        "name": "Interakcijas veidi",
+        "description": "Atkl\u0101jiet vai izsl\u0113gjiet pagaidu klienta re\u017e\u012bmus ar balsi."
+      },
+      "ms-my": {
+        "name": "Mod interaksi",
+        "description": "Matikan atau matikan mod pelanggan sementara melalui suara."
+      },
+      "nb-no": {
+        "name": "Interaksjonsmoder",
+        "description": "Sl\u00e5 p\u00e5 eller av med stemme."
+      },
+      "nl-be": {
+        "name": "Interactie-modus",
+        "description": "Doe de tijdelijke cli\u00ebntmodus via stem aan of uit."
+      },
+      "nl-nl": {
+        "name": "Interactie-modus",
+        "description": "Doe de tijdelijke cli\u00ebntmodus via stem aan of uit."
+      },
+      "oc-fr": {
+        "name": "Mods d'interaccion",
+        "description": "Activar o desactivar los m\u00f2des de client temporari per vocala."
+      },
+      "pl-pl": {
+        "name": "Mody interakcji",
+        "description": "W\u0142\u0105cz lub wy\u0142\u0105cz tryby czasowego klienta g\u0142osowo."
+      },
+      "pt-ao": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "pt-br": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "pt-mz": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "pt-pt": {
+        "name": "Modos de intera\u00e7\u00e3o",
+        "description": "Ativar ou desativar os modos de cliente tempor\u00e1rio por voz."
+      },
+      "ro-ro": {
+        "name": "Moduri de interac\u021biune",
+        "description": "Ac\u0163iona\u0163i sau dezactiva\u0163i modul client temporar prin voce."
+      },
+      "ru-ru": {
+        "name": "\u0421\u043f\u043e\u0441\u043e\u0431\u044b \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f",
+        "description": "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0438\u043b\u0438 \u0432\u044b\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0440\u0435\u0436\u0438\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0433\u043e \u043a\u043b\u0438\u0435\u043d\u0442\u0430 \u043f\u043e \u0433\u043e\u043b\u043e\u0441\u0443."
+      },
+      "sk-sk": {
+        "name": "Mody interakcie",
+        "description": "Vypnite alebo vypnite do\u010dasn\u00e9 re\u017eimy klienta hlasom."
+      },
+      "sl-si": {
+        "name": "Re\u0161itve za interakcijo",
+        "description": "Za\u010dasni na\u010dini klijenta vklju\u010dite ali izklopite glasovno."
+      },
+      "sv-fi": {
+        "name": "Interaktionsmodi",
+        "description": "St\u00e4ll p\u00e5 eller av med r\u00f6st."
+      },
+      "sv-se": {
+        "name": "Interaktionsmodi",
+        "description": "St\u00e4ll p\u00e5 eller av med r\u00f6st."
+      },
+      "sw-ke": {
+        "name": "Njia za Maingiliano",
+        "description": "Weka au uache njia za mtumiaji wa muda kwa sauti."
+      },
+      "th-th": {
+        "name": "\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e01\u0e32\u0e23\u0e1b\u0e0f\u0e34\u0e2a\u0e31\u0e21\u0e1e\u0e31\u0e19\u0e18\u0e4c",
+        "description": "\u0e40\u0e1b\u0e34\u0e14\u0e2b\u0e23\u0e37\u0e2d\u0e1b\u0e34\u0e14\u0e42\u0e2b\u0e21\u0e14\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32\u0e0a\u0e31\u0e48\u0e27\u0e04\u0e23\u0e32\u0e27\u0e14\u0e49\u0e27\u0e22\u0e40\u0e2a\u0e35\u0e22\u0e07"
+      },
+      "tr-tr": {
+        "name": "Etkinlik Modlar\u0131",
+        "description": "Ge\u00e7ici istemci modlar\u0131n\u0131 sesle a\u00e7\u0131n veya kapat\u0131n."
+      },
+      "uk-ua": {
+        "name": "\u041c\u043e\u0434\u0438 \u0432\u0437\u0430\u0454\u043c\u043e\u0434\u0456\u0457",
+        "description": "\u0417\u0430\u043f\u0443\u0441\u0442\u0438\u0442\u0438 \u0430\u0431\u043e \u0432\u0438\u043a\u043b\u044e\u0447\u0438\u0442\u0438 \u0440\u0435\u0436\u0438\u043c \u0442\u0438\u043c\u0447\u0430\u0441\u043e\u0432\u043e\u0433\u043e \u043a\u043b\u0456\u0454\u043d\u0442\u0430 \u0433\u043e\u043b\u043e\u0441\u043e\u043c."
+      },
+      "vi-vn": {
+        "name": "C\u00e1c ph\u01b0\u01a1ng th\u1ee9c t\u01b0\u01a1ng t\u00e1c",
+        "description": "\u0110\u1ed9ng th\u00e1i kh\u00e1ch h\u00e0ng t\u1ea1m th\u1eddi b\u1eadt ho\u1eb7c t\u1eaft b\u1eb1ng gi\u1ecdng n\u00f3i."
+      },
+      "zh-cn": {
+        "name": "\u4e92\u52a8\u65b9\u5f0f",
+        "description": "\u901a\u8fc7\u8bed\u97f3\u542f\u52a8\u6216\u5173\u95ed\u4e34\u65f6\u5ba2\u6237\u7aef\u6a21\u5f0f."
+      },
+      "zh-sg": {
+        "name": "\u4e92\u52a8\u65b9\u5f0f",
+        "description": "\u901a\u8fc7\u8bed\u97f3\u542f\u52a8\u6216\u5173\u95ed\u4e34\u65f6\u5ba2\u6237\u7aef\u6a21\u5f0f."
+      },
+      "zh-tw": {
+        "name": "\u4e92\u52d5\u65b9\u5f0f",
+        "description": "\u901a\u904e\u8a9e\u97f3\u555f\u52d5\u6216\u95dc\u9589\u81e8\u6642\u5ba2\u6236\u7aef\u6a21\u5f0f."
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-26T13:21:29Z",
+    "last_updated": "2026-10-13T03:13:34.889373Z",
+    "is_new_repo": false,
+    "is_recently_updated": true,
+    "compat": {
+      "badge_id": "thalovant-skill-interaction-modes",
+      "channels": {}
+    }
   },
   {
     "id": "SiC-Gamelab-interactive-stories-ovos",
@@ -7788,7 +8147,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-28T08:59:48+00:00",
+          "tested_at": "2026-10-29T08:55:03+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 7,
@@ -8155,7 +8514,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.8.0a2",
-          "tested_at": "2026-10-28T09:00:00+00:00",
+          "tested_at": "2026-10-29T08:55:14+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 1,
@@ -8430,8 +8789,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.2.5a3",
-          "tested_at": "2026-10-28T09:00:31+00:00",
+          "version_tested": "0.2.5a4",
+          "tested_at": "2026-10-29T08:55:44+00:00",
           "channel_pinned": true
         }
       }
@@ -8776,8 +9135,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.26.0a2",
-          "tested_at": "2026-10-28T08:58:34+00:00",
+          "version_tested": "0.26.0a3",
+          "tested_at": "2026-10-29T08:54:04+00:00",
           "channel_pinned": true
         }
       }
@@ -9568,7 +9927,7 @@
           "state": "fail",
           "level": 1,
           "version_tested": "0.0.1",
-          "tested_at": "2026-10-28T08:58:50+00:00",
+          "tested_at": "2026-10-29T08:54:22+00:00",
           "channel_pinned": false
         }
       }
@@ -9655,7 +10014,7 @@
     "archived": false,
     "author": "TigreGotico",
     "tier": 1,
-    "component_type": "Detect Plugin",
+    "component_type": "Keywords Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -9793,7 +10152,7 @@
           "state": "warn",
           "level": 3,
           "version_tested": "0.0.8",
-          "tested_at": "2026-10-28T08:58:59+00:00",
+          "tested_at": "2026-10-29T08:54:30+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 32,
@@ -9903,7 +10262,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.0.5",
-          "tested_at": "2026-10-28T08:59:11+00:00",
+          "tested_at": "2026-10-29T08:54:42+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 4,
@@ -10065,7 +10424,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-28T08:59:22+00:00",
+          "tested_at": "2026-10-29T08:54:53+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -10408,7 +10767,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.7.2a1",
-          "tested_at": "2026-10-28T08:59:33+00:00",
+          "tested_at": "2026-10-29T08:55:04+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 96,
@@ -10417,6 +10776,54 @@
         }
       }
     }
+  },
+  {
+    "id": "trueflint-mqtt-ovos-bridge",
+    "skill_id": null,
+    "name": "mqtt-ovos-bridge",
+    "description": "Make your Open Voice OS an MQTT device",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/trueflint/mqtt-ovos-bridge",
+    "package_name": "mqtt-ovos-bridge",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "trueflint",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "### 1. Clone the repository\n\ngit clone https://github.com/trueflint/mqtt-ovos-bridge.git\ncd mqtt-ovos-bridge\n\n### 2. Create your configuration file\n\nmkdir -p ~/.config/mqtt-ovos-bridge\ncp config.example.json ~/.config/mqtt-ovos-bridge/config.json\n\nEdit `~/.config/mqtt-ovos-bridge/config.json` and fill in your MQTT broker's address and credentials:\n\n{\n  \"mqtt\": {\n    \"host\": \"192.168.1.x\",\n    \"port\": 1883,\n    \"username\": \"your_mqtt_username\",\n    \"password\": \"your_mqtt_password\"\n  }\n}\n\nIf your broker does not require authentication, you can leave `username` and `password` as empty strings or omit them.\n\n### 3. Install\n\nmake install\n\nThis installs the Python package, registers a systemd user service, and starts it. If a config file already exists at the path above it will not be overwritte\u2026"
+      },
+      {
+        "heading": "Uninstalling",
+        "content": "make uninstall\n\nThis stops and removes the systemd service and uninstalls the Python package. Your config file in `~/.config/mqtt-ovos-bridge/` is left in place."
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-09T15:40:08Z",
+    "last_updated": "2026-05-09T15:50:48Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-music-assistant",
@@ -10890,8 +11297,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.12.2a2",
-          "tested_at": "2026-10-28T09:00:23+00:00",
+          "version_tested": "0.12.2a3",
+          "tested_at": "2026-10-29T08:55:50+00:00",
           "channel_pinned": true
         }
       }
@@ -10992,7 +11399,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-28T09:00:35+00:00",
+          "tested_at": "2026-10-29T08:56:02+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -11085,7 +11492,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.24",
-          "tested_at": "2026-10-28T08:58:43+00:00",
+          "tested_at": "2026-10-29T08:54:03+00:00",
           "channel_pinned": false
         }
       }
@@ -11203,7 +11610,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:58:58+00:00",
+          "tested_at": "2026-10-29T08:54:17+00:00",
           "channel_pinned": false
         }
       }
@@ -11291,7 +11698,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:59:02+00:00",
+          "tested_at": "2026-10-29T08:54:21+00:00",
           "channel_pinned": false
         }
       }
@@ -11364,7 +11771,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:59:07+00:00",
+          "tested_at": "2026-10-29T08:54:25+00:00",
           "channel_pinned": false
         }
       }
@@ -11432,7 +11839,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:59:11+00:00",
+          "tested_at": "2026-10-29T08:54:29+00:00",
           "channel_pinned": false
         }
       }
@@ -11503,7 +11910,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:59:15+00:00",
+          "tested_at": "2026-10-29T08:54:33+00:00",
           "channel_pinned": false
         }
       }
@@ -11575,7 +11982,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:59:20+00:00",
+          "tested_at": "2026-10-29T08:54:37+00:00",
           "channel_pinned": false
         }
       }
@@ -11645,7 +12052,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:59:24+00:00",
+          "tested_at": "2026-10-29T08:54:41+00:00",
           "channel_pinned": false
         }
       }
@@ -11716,7 +12123,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:58:26+00:00",
+          "tested_at": "2026-10-29T08:53:54+00:00",
           "channel_pinned": false
         }
       }
@@ -11788,7 +12195,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:58:32+00:00",
+          "tested_at": "2026-10-29T08:53:58+00:00",
           "channel_pinned": false
         }
       }
@@ -11868,7 +12275,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:58:36+00:00",
+          "tested_at": "2026-10-29T08:54:01+00:00",
           "channel_pinned": false
         }
       }
@@ -11973,7 +12380,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-28T08:58:40+00:00",
+          "tested_at": "2026-10-29T08:54:04+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -12456,7 +12863,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.5.0a8",
-          "tested_at": "2026-10-28T08:58:53+00:00",
+          "tested_at": "2026-10-29T08:54:16+00:00",
           "channel_pinned": true
         }
       }
@@ -12736,7 +13143,7 @@
           "level": 3,
           "stop": "stops",
           "version_tested": "0.1.8",
-          "tested_at": "2026-10-28T08:59:30+00:00",
+          "tested_at": "2026-10-29T08:54:41+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -12817,7 +13224,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.6.8a1",
-          "tested_at": "2026-10-28T08:59:39+00:00",
+          "tested_at": "2026-10-29T08:54:49+00:00",
           "channel_pinned": true
         }
       }
@@ -13032,6 +13439,54 @@
     "in_ovos_localize": false,
     "repo_created_at": "2022-08-05T12:02:12Z",
     "last_updated": "2026-06-25T16:51:21.178336Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-audio-transformer-plugin-bandpass",
+    "skill_id": null,
+    "name": "ovos-audio-transformer-plugin-bandpass",
+    "description": "Band-pass filter audio transformer for OpenVoiceOS",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-audio-transformer-plugin-bandpass",
+    "package_name": "ovos-audio-transformer-plugin-bandpass",
+    "pypi_version": "0.0.1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Audio Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-audio-transformer-plugin-bandpass"
+      },
+      {
+        "heading": "Configure",
+        "content": "Enable it in `mycroft.conf` under `audio_transformers`. Any component that runs\nthe audio-transformer pipeline, such as the listener or the STT server, applies it:\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-bandpass\": {\n      \"low_hz\": 300,\n      \"high_hz\": 3400,\n      \"order\": 4,\n      \"sample_rate\": 16000\n    }\n  }\n}\n\n| Option | Default | Meaning |\n|--------|---------|---------|\n| `low_hz` | `300` | Lower edge of the pass-band, in Hz. |\n| `high_hz` | `3400` | Upper edge of the pass-band, in Hz. |\n| `order` | `4` | Butterworth filter order. Higher is a steeper roll-off. |\n| `sample_rate` | `16000` | Sample rate of the incoming PCM audio, in Hz. |\n\nEdges are clamped into the open interval below Nyquist, so an aggressive band on a\nlow sample rate degrades gracefully ins\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-07-17T19:30:33Z",
+    "last_updated": "2026-07-17T19:31:35.483963Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -13681,7 +14136,7 @@
     "archived": false,
     "author": "TigreGotico",
     "tier": 2,
-    "component_type": "Summarizer Plugin",
+    "component_type": "Memory Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
@@ -13943,7 +14398,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.20a1",
-          "tested_at": "2026-10-28T08:59:47+00:00",
+          "tested_at": "2026-10-29T08:54:56+00:00",
           "channel_pinned": true
         }
       }
@@ -14131,7 +14586,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "3.7.5a1",
-          "tested_at": "2026-10-28T08:58:26+00:00",
+          "tested_at": "2026-10-29T08:53:44+00:00",
           "channel_pinned": true
         }
       }
@@ -15219,7 +15674,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.2",
-          "tested_at": "2026-10-28T08:58:34+00:00",
+          "tested_at": "2026-10-29T08:53:50+00:00",
           "channel_pinned": false
         }
       }
@@ -15550,6 +16005,48 @@
     "is_recently_updated": false
   },
   {
+    "id": "timonvanhasselt-ovos-hello-world-braille",
+    "skill_id": null,
+    "name": "ovos-hello-world-braille",
+    "description": "`sudo apt-get install brltty`",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/timonvanhasselt/ovos-hello-world-braille",
+    "package_name": null,
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "timonvanhasselt",
+    "tier": 3,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "nl-nl"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-06-10T09:55:58Z",
+    "last_updated": "2024-07-16T07:51:08Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "femelo-ovos-hierarchical-knn-pipeline",
     "skill_id": null,
     "name": "ovos-hierarchical-knn-pipeline",
@@ -15685,7 +16182,7 @@
           "state": "unsupported",
           "level": 1,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-28T08:58:42+00:00",
+          "tested_at": "2026-10-29T08:53:56+00:00",
           "channel_pinned": false
         }
       }
@@ -15985,7 +16482,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T20:54:26Z",
-    "last_updated": "2026-10-26T12:58:38Z",
+    "last_updated": "2026-10-29T10:18:01Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -17550,6 +18047,54 @@
     "is_recently_updated": false
   },
   {
+    "id": "TigreGotico-ovos-media-provider-radio-spain",
+    "skill_id": null,
+    "name": "ovos-media-provider-radio-spain",
+    "description": "OVOS **MediaProvider** plugin for Spanish internet radio. Replaces the",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/TigreGotico/ovos-media-provider-radio-spain",
+    "package_name": "ovos-media-provider-radio-spain",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "TigreGotico",
+    "tier": 2,
+    "component_type": "Provider Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-media-provider-radio-spain"
+      },
+      {
+        "heading": "Configuration",
+        "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `min_confidence` | `60` | Minimum fuzzy-match confidence (0-100) for a station to be returned. |\n| `max_results` | `10` | Maximum number of matching stations returned per search. |"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-06-25T22:28:01Z",
+    "last_updated": "2026-08-13T18:56:17Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-media-provider-somafm",
     "skill_id": null,
     "name": "ovos-media-provider-somafm",
@@ -18655,7 +19200,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.5.8a1",
-          "tested_at": "2026-10-28T08:58:51+00:00",
+          "tested_at": "2026-10-29T08:54:03+00:00",
           "channel_pinned": true
         }
       }
@@ -19015,8 +19560,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "2.2.8a1",
-          "tested_at": "2026-10-28T08:58:59+00:00",
+          "version_tested": "2.3.2a1",
+          "tested_at": "2026-10-29T08:54:09+00:00",
           "channel_pinned": true
         }
       }
@@ -21615,6 +22160,47 @@
     "is_recently_updated": true
   },
   {
+    "id": "svhozt-ovos-rasa-skills",
+    "skill_id": null,
+    "name": "ovos-rasa-skills",
+    "description": "container_name: ovos_rasa_skill",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/svhozt/ovos-rasa-skills",
+    "package_name": "ovos-rasa-skill",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "svhozt",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-12-13T23:36:46Z",
+    "last_updated": "2023-12-13T23:40:25Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "reklis-ovos-remote-music-service",
     "skill_id": null,
     "name": "ovos-remote-music-service",
@@ -21765,6 +22351,48 @@
     "is_recently_updated": true
   },
   {
+    "id": "timonvanhasselt-ovos-selfiecamera-mac-skill",
+    "skill_id": null,
+    "name": "ovos-selfiecamera-mac-skill",
+    "description": "",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/timonvanhasselt/ovos-selfiecamera-mac-skill",
+    "package_name": "ovos-selfiecamera-mac-skill",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "timonvanhasselt",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "nl-nl"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-02-05T08:49:17Z",
+    "last_updated": "2026-02-05T08:50:01Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-shell",
     "skill_id": null,
     "name": "ovos-shell",
@@ -21905,6 +22533,48 @@
     "is_recently_updated": false
   },
   {
+    "id": "timonvanhasselt-ovos-skill-blackstories",
+    "skill_id": null,
+    "name": "ovos-skill-blackstories",
+    "description": "An OpenVoiceOS  prototype skill of Black Riddles. You are playing against/with AI, but you can play with the whole family or friends.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/timonvanhasselt/ovos-skill-blackstories",
+    "package_name": "ovos-skill-blackstories",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "timonvanhasselt",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us",
+      "nl-nl"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-06-24T15:00:09Z",
+    "last_updated": "2025-06-24T18:52:42Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "andlo-ovos-skill-browser",
     "skill_id": null,
     "name": "ovos-skill-browser",
@@ -21944,6 +22614,53 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-03T19:00:56Z",
     "last_updated": "2026-08-04T08:38:58Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "strugee-ovos-skill-ci-test",
+    "skill_id": null,
+    "name": "ovos-skill-ci-test",
+    "description": "Information about your skill",
+    "examples": [
+      "Hello world",
+      "How are you?",
+      "Thank you"
+    ],
+    "tags": [
+      "ovos skill"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/strugee/ovos-skill-ci-test",
+    "package_name": "projen-mycroft-example",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "strugee",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-08-06T21:33:14Z",
+    "last_updated": "2023-08-06T21:49:26Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -22149,8 +22866,8 @@
           "label": "\u2713 8/8 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.9.0a3",
-          "tested_at": "2026-10-28T08:59:07+00:00",
+          "version_tested": "0.9.0a4",
+          "tested_at": "2026-10-29T08:54:15+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 8,
@@ -22361,7 +23078,7 @@
           "level": 2,
           "stop": "stops",
           "version_tested": "0.6.2a2",
-          "tested_at": "2026-10-28T08:59:19+00:00",
+          "tested_at": "2026-10-29T08:54:26+00:00",
           "channel_pinned": true
         }
       }
@@ -22480,12 +23197,53 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.6.0a3",
-          "tested_at": "2026-10-28T09:01:46+00:00",
+          "version_tested": "0.6.0a4",
+          "tested_at": "2026-10-29T08:56:16+00:00",
           "channel_pinned": true
         }
       }
     }
+  },
+  {
+    "id": "trueflint-ovos-skill-display-control",
+    "skill_id": null,
+    "name": "ovos-skill-display-control",
+    "description": "Control your Open Voice OS display with your voice, and have it wake when you speak the wake word",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/smile.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
+    "source": "https://github.com/trueflint/ovos-skill-display-control",
+    "package_name": "ovos-skill-display-control",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "trueflint",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-09T16:04:11Z",
+    "last_updated": "2026-08-10T03:37:45Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "MenneBos-ovos-skill-esp32sat",
@@ -22667,7 +23425,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.3.2a1",
-          "tested_at": "2026-10-28T08:58:28+00:00",
+          "tested_at": "2026-10-29T08:53:39+00:00",
           "channel_pinned": true
         }
       }
@@ -22965,11 +23723,61 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:58:36+00:00",
+          "tested_at": "2026-10-29T08:53:45+00:00",
           "channel_pinned": false
         }
       }
     }
+  },
+  {
+    "id": "trueflint-ovos-skill-goodnight",
+    "skill_id": null,
+    "name": "ovos-skill-goodnight",
+    "description": "An OpenVoiceOS skill that connects to Home Assistant and controls a \"daytime mode\" input_boolean when you tell it good morning or good night",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/trueflint/ovos-skill-goodnight",
+    "package_name": "ovos-skill-goodnight",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "trueflint",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-skill-goodnight\n\nOr via `ovos-pip`:\n\novos-pip install ovos-skill-goodnight"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Edit your skill settings file (typically `~/.config/mycroft/skills/ovos-skill-goodnight.tjlee/settings.json`) and set the following:\n\n{\n    \"hass_url\": \"http://homeassistant.local:8123\",\n    \"hass_api_token\": \"your-long-lived-access-token\",\n    \"hass_entity_id\": \"input_boolean.daytime_mode\"\n}\n\n| Setting | Default | Description |\n|---|---|---|\n| `hass_url` | `http://homeassistant.local:8123` | Base URL of your Home Assistant instance |\n| `hass_api_token` | *(required)* | Long-lived access token from your HA profile |\n| `hass_entity_id` | `input_boolean.daytime_mode` | The `input_boolean` entity to control |\n\n### Getting a Home Assistant Token\n\n1. In Home Assistant, go to your profile (bottom-left avatar)\n2. Scroll to **Long-Lived Access Tokens**\n3. Click **Create Token**, give it a name, an\u2026"
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-05-09T16:22:23Z",
+    "last_updated": "2026-06-05T02:13:23Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OscillateLabsLLC-ovos-skill-gui1-demo",
@@ -23320,7 +24128,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.6.0a1",
-          "tested_at": "2026-10-28T08:58:40+00:00",
+          "tested_at": "2026-10-29T08:53:48+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 4,
@@ -23669,7 +24477,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "2.0.0a7",
-          "tested_at": "2026-10-28T08:58:52+00:00",
+          "tested_at": "2026-10-29T08:53:57+00:00",
           "channel_pinned": true
         }
       }
@@ -24963,7 +25771,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T09:00:50+00:00",
+          "tested_at": "2026-10-29T08:55:43+00:00",
           "channel_pinned": false
         }
       }
@@ -25070,7 +25878,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.0.2a8",
-          "tested_at": "2026-10-28T09:00:55+00:00",
+          "tested_at": "2026-10-29T08:55:45+00:00",
           "channel_pinned": true
         }
       }
@@ -25994,8 +26802,8 @@
           "label": "\u2713 11/11 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.18.6a1",
-          "tested_at": "2026-10-28T09:01:07+00:00",
+          "version_tested": "0.18.6a2",
+          "tested_at": "2026-10-29T08:55:57+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 11,
@@ -26293,8 +27101,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.13.0a1",
-          "tested_at": "2026-10-28T09:01:28+00:00",
+          "version_tested": "0.13.0a2",
+          "tested_at": "2026-10-29T08:56:10+00:00",
           "channel_pinned": true
         }
       }
@@ -26690,8 +27498,8 @@
           "label": "\u2713 5/5 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.14.0a1",
-          "tested_at": "2026-10-28T08:58:32+00:00",
+          "version_tested": "0.14.1a1",
+          "tested_at": "2026-10-29T08:53:54+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 5,
@@ -27938,6 +28746,54 @@
     "last_updated": "2025-01-15T21:47:15.294807Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "timonvanhasselt-ovos-stt-plugin-needle",
+    "skill_id": null,
+    "name": "ovos-stt-plugin-needle",
+    "description": "An offline, privacy-respecting Speech-to-Text plugin for Open Voice OS (OVOS) powered by Needle and the **Whistle** model.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/timonvanhasselt/ovos-stt-plugin-needle",
+    "package_name": "ovos-stt-plugin-needle",
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "timonvanhasselt",
+    "tier": 2,
+    "component_type": "STT Plugin",
+    "type_group": "Plugin",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "offline",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "pip install ovos-stt-plugin-needle"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Add the following configuration to your OVOS STT settings:\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-needle\"\n    }\n}"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-10-06T13:45:36Z",
+    "last_updated": "2026-10-06T15:33:46Z",
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-stt-plugin-nemo",
@@ -31374,6 +32230,45 @@
     "is_recently_updated": false
   },
   {
+    "id": "suvanbanerjee-ovos-vad-plugin-energy",
+    "skill_id": null,
+    "name": "ovos-vad-plugin-energy",
+    "description": "",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/suvanbanerjee/ovos-vad-plugin-energy",
+    "package_name": "ovos-vad-plugin-energy",
+    "pypi_version": "0.0.0",
+    "license": "MIT",
+    "archived": false,
+    "author": "suvanbanerjee",
+    "tier": 1,
+    "component_type": "Vad Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2024-07-29T17:48:40Z",
+    "last_updated": "2024-08-05T18:37:09.542119Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-vad-plugin-noise",
     "skill_id": null,
     "name": "ovos-vad-plugin-noise",
@@ -33025,47 +33920,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "JoergZ2-ovos_skill_my_db_timetable",
-    "skill_id": null,
-    "name": "ovos_skill_my_db_timetable",
-    "description": "Skill for getting timetable information of selected station in Germany.",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/JoergZ2/ovos_skill_my_db_timetable",
-    "package_name": null,
-    "pypi_version": null,
-    "license": null,
-    "archived": false,
-    "author": "JoergZ2",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [
-      "de-de"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-09-05T13:59:14Z",
-    "last_updated": "2025-09-16T06:33:14Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "g-mecha-ovos_test_lunch",
     "skill_id": null,
     "name": "ovos_test_lunch",
@@ -33305,6 +34159,45 @@
     "in_ovos_localize": false,
     "repo_created_at": "2025-06-09T01:05:27Z",
     "last_updated": "2026-07-02T19:04:40.495071Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "suzhiba-ovostock",
+    "skill_id": null,
+    "name": "ovostock",
+    "description": "ovoStock is a Machine Learning toolkit for making stock market predictions.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/suzhiba/ovostock",
+    "package_name": "ovostock",
+    "pypi_version": "0.1.0",
+    "license": "MIT",
+    "archived": false,
+    "author": "suzhiba",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2016-11-12T05:00:54Z",
+    "last_updated": "2016-07-06T20:45:22Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -33682,7 +34575,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.11.1a3",
-          "tested_at": "2026-10-28T08:58:45+00:00",
+          "tested_at": "2026-10-29T08:54:05+00:00",
           "channel_pinned": true
         }
       }
@@ -34310,7 +35203,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.1.1",
-          "tested_at": "2026-10-28T08:59:01+00:00",
+          "tested_at": "2026-10-29T08:54:16+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -34417,7 +35310,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-28T08:59:13+00:00",
+          "tested_at": "2026-10-29T08:54:26+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 0,
@@ -34759,7 +35652,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.7.0a4",
-          "tested_at": "2026-10-28T08:59:24+00:00",
+          "tested_at": "2026-10-29T08:54:35+00:00",
           "channel_pinned": true
         }
       }
@@ -34907,7 +35800,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.2.5",
-          "tested_at": "2026-10-28T08:59:36+00:00",
+          "tested_at": "2026-10-29T08:54:46+00:00",
           "channel_pinned": false
         }
       }
@@ -35062,7 +35955,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.4.5",
-          "tested_at": "2026-10-28T08:59:54+00:00",
+          "tested_at": "2026-10-29T08:55:04+00:00",
           "channel_pinned": false
         }
       }
@@ -35179,7 +36072,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T09:00:43+00:00",
+          "tested_at": "2026-10-29T08:55:37+00:00",
           "channel_pinned": false
         }
       }
@@ -35296,7 +36189,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:58:00+00:00",
+          "tested_at": "2026-10-29T08:53:44+00:00",
           "channel_pinned": false
         }
       }
@@ -35409,7 +36302,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "2.2.3",
-          "tested_at": "2026-10-28T08:58:03+00:00",
+          "tested_at": "2026-10-29T08:53:48+00:00",
           "channel_pinned": false
         }
       }
@@ -35509,7 +36402,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.0.1",
-          "tested_at": "2026-10-28T08:58:10+00:00",
+          "tested_at": "2026-10-29T08:53:55+00:00",
           "channel_pinned": false
         }
       }
@@ -35846,7 +36739,7 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-28T08:58:20+00:00",
+          "tested_at": "2026-10-29T08:54:05+00:00",
           "channel_pinned": false
         }
       }
@@ -36842,7 +37735,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-28T08:58:22+00:00",
+          "tested_at": "2026-10-29T08:54:08+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -37228,9 +38121,9 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "stop": "stuck",
+          "stop": "stops",
           "version_tested": "0.10.0a5",
-          "tested_at": "2026-10-28T08:58:31+00:00",
+          "tested_at": "2026-10-29T08:54:17+00:00",
           "channel_pinned": true
         }
       }
@@ -37478,7 +38371,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.13.2a1",
-          "tested_at": "2026-10-28T08:58:40+00:00",
+          "tested_at": "2026-10-29T08:54:27+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 10,
@@ -37616,7 +38509,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "1.1.1",
-          "tested_at": "2026-10-28T08:58:50+00:00",
+          "tested_at": "2026-10-29T08:54:36+00:00",
           "channel_pinned": false
         }
       }
@@ -38106,8 +38999,8 @@
           "label": "\u2713 2/2 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.4.1a1",
-          "tested_at": "2026-10-28T09:01:40+00:00",
+          "version_tested": "0.4.1a2",
+          "tested_at": "2026-10-29T08:56:47+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 2,
@@ -38265,7 +39158,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.6",
-          "tested_at": "2026-10-28T09:02:07+00:00",
+          "tested_at": "2026-10-29T08:57:17+00:00",
           "channel_pinned": false
         }
       }
@@ -38473,7 +39366,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.10.1a1",
-          "tested_at": "2026-10-28T09:02:14+00:00",
+          "tested_at": "2026-10-29T08:57:27+00:00",
           "channel_pinned": true
         }
       }
@@ -38691,7 +39584,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.4",
-          "tested_at": "2026-10-28T09:03:27+00:00",
+          "tested_at": "2026-10-29T08:58:56+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -38855,7 +39748,7 @@
           "state": "pass",
           "level": 3,
           "version_tested": "0.0.10",
-          "tested_at": "2026-10-28T09:03:36+00:00",
+          "tested_at": "2026-10-29T08:59:07+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 8,
@@ -39136,7 +40029,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.1.2",
-          "tested_at": "2026-10-28T09:03:46+00:00",
+          "tested_at": "2026-10-29T08:59:20+00:00",
           "channel_pinned": false
         }
       }
@@ -39914,8 +40807,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.12.2a2",
-          "tested_at": "2026-10-28T09:03:53+00:00",
+          "version_tested": "0.12.2a3",
+          "tested_at": "2026-10-29T08:59:29+00:00",
           "channel_pinned": true
         }
       }
@@ -40846,16 +41739,16 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 loads \u00b7 11/22 golden",
+          "label": "\u2713 loads \u00b7 11/23 golden",
           "state": "warn",
           "level": 2,
           "stop": "stops",
-          "version_tested": "2.8.1a1",
-          "tested_at": "2026-10-28T09:04:22+00:00",
+          "version_tested": "2.8.1a2",
+          "tested_at": "2026-10-29T09:00:01+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 11,
-            "counted": 22
+            "counted": 23
           }
         }
       }
@@ -41528,8 +42421,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "1.5.5a2",
-          "tested_at": "2026-10-28T09:23:43+00:00",
+          "version_tested": "1.5.5a3",
+          "tested_at": "2026-10-29T09:21:13+00:00",
           "channel_pinned": true
         }
       }
@@ -41632,7 +42525,7 @@
           "level": 2,
           "stop": "stops",
           "version_tested": "0.0.3",
-          "tested_at": "2026-10-28T09:36:02+00:00",
+          "tested_at": "2026-10-29T09:32:55+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -41762,7 +42655,7 @@
           "state": "pass",
           "level": 2,
           "version_tested": "0.0.7",
-          "tested_at": "2026-10-28T09:36:13+00:00",
+          "tested_at": "2026-10-29T09:33:07+00:00",
           "channel_pinned": false
         }
       }
@@ -42221,7 +43114,7 @@
           "state": "warn",
           "level": 2,
           "version_tested": "0.8.0a2",
-          "tested_at": "2026-10-28T09:36:47+00:00",
+          "tested_at": "2026-10-29T09:33:16+00:00",
           "channel_pinned": true,
           "golden": {
             "hit": 7,
