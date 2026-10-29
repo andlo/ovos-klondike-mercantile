@@ -13036,6 +13036,54 @@
     "is_recently_updated": false
   },
   {
+    "id": "OpenVoiceOS-ovos-audio-transformer-plugin-bandpass",
+    "skill_id": null,
+    "name": "ovos-audio-transformer-plugin-bandpass",
+    "description": "Band-pass filter audio transformer for OpenVoiceOS",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-audio-transformer-plugin-bandpass",
+    "package_name": "ovos-audio-transformer-plugin-bandpass",
+    "pypi_version": "0.0.1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Audio Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-audio-transformer-plugin-bandpass"
+      },
+      {
+        "heading": "Configure",
+        "content": "Enable it in `mycroft.conf` under `audio_transformers`. Any component that runs\nthe audio-transformer pipeline, such as the listener or the STT server, applies it:\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-bandpass\": {\n      \"low_hz\": 300,\n      \"high_hz\": 3400,\n      \"order\": 4,\n      \"sample_rate\": 16000\n    }\n  }\n}\n\n| Option | Default | Meaning |\n|--------|---------|---------|\n| `low_hz` | `300` | Lower edge of the pass-band, in Hz. |\n| `high_hz` | `3400` | Upper edge of the pass-band, in Hz. |\n| `order` | `4` | Butterworth filter order. Higher is a steeper roll-off. |\n| `sample_rate` | `16000` | Sample rate of the incoming PCM audio, in Hz. |\n\nEdges are clamped into the open interval below Nyquist, so an aggressive band on a\nlow sample rate degrades gracefully ins\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-07-17T19:30:33Z",
+    "last_updated": "2026-07-17T19:31:35.483963Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-audio-transformer-plugin-ggwave",
     "skill_id": null,
     "name": "ovos-audio-transformer-plugin-ggwave",
@@ -13803,6 +13851,56 @@
     "last_updated": "2026-09-03T18:13:29.644949Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "evok3dx-OVOS-Commands",
+    "skill_id": null,
+    "name": "OVOS-Commands",
+    "description": "Jarvis lets you control your Linux desktop by voice. Standard commands run",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/evok3dx/OVOS-Commands",
+    "package_name": "ovos-skill-jarvis-dispatcher",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "evok3dx",
+    "tier": 2,
+    "component_type": "Pipeline Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Before you install",
+        "content": "- Use **Linux Mint 22.x, X11 and x86_64**, with a working microphone and speakers.\n  Mint 22.3 is the tested desktop target. See [Requirements and stack](#requirements-and-stack).\n- Setup prepares its own **Python 3.11.16** when needed. System Python stays\n  unchanged. See [Python setup](docs/07-installer-updates.md#preparing-python)\n  if you already have an OVOS environment using another Python version.\n- Keep at least **8 GiB free** for installation and rollback, plus room for\n  voice and AI models. Check the filesystem holding Ollama's model storage;\n  free space in your home directory may not cover those downloads.\n- Install and start **Ollama** using its [Linux setup guide](https://docs.ollama.com/linux).\n  Jarvis reuses an existing installation; it does not install Ollama.\n- Internet\u2026"
+      },
+      {
+        "heading": "Install Jarvis",
+        "content": "Download the archive and matching `.sha256` from\n[Releases](https://github.com/evok3dx/OVOS-Commands/releases/latest):\n\nversion=4.9.0\nsha256sum --check \"ovos-commands-$version.tar.gz.sha256\"\ntar -xzf \"ovos-commands-$version.tar.gz\"\ncd \"ovos-commands-$version\"\nbash scripts/install.sh\n\nSetup checks prerequisites, installs OVOS and offers network isolation.\nIsolation is recommended and needs administrator approval. Existing isolation\nchoices are preserved. Reading and dictation use optional Speech Note.\n\nFor a read-only preflight, run `bash scripts/install.sh --check`.\nFor Jarvis **4.5 or later**, update through **Updates** in the Control Centre.\nSee the [installation and upgrade guide](docs/07-installer-updates.md) for details.\n\nflowchart TD\n  A[\"Fresh install or update\"] --> B[\"Check system\u2026"
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-09-09T00:38:09Z",
+    "last_updated": "2026-10-26T20:06:54Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-common-query-pipeline-plugin",
@@ -15400,7 +15498,7 @@
     "repo_created_at": "2026-10-24T17:35:07Z",
     "last_updated": "2026-10-27T22:57:14Z",
     "is_new_repo": true,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OscillateLabsLLC-ovos-gui-visage",
@@ -15429,7 +15527,7 @@
     "tier": null,
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
-    "stars": 2,
+    "stars": 3,
     "forks": 0,
     "open_issues": 2,
     "on_pypi": false,
@@ -15449,9 +15547,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-19T00:30:07Z",
-    "last_updated": "2026-10-26T03:52:54Z",
+    "last_updated": "2026-10-27T23:14:34Z",
     "is_new_repo": true,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-hardware-helpers",
@@ -21432,6 +21530,50 @@
     "is_recently_updated": false
   },
   {
+    "id": "femelo-ovos-pyhtmx-gui-metapackage",
+    "skill_id": null,
+    "name": "ovos-pyhtmx-gui-metapackage",
+    "description": "Metapackage for setting up a development environment for the PyHTMX GUI client",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/femelo/ovos-pyhtmx-gui-metapackage",
+    "package_name": "ovos-pyhtmx-gui-metapackage",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "femelo",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "To install this metapackage and all its dependencies, you can use pip:\n\npip install .\n\nThis will install the following packages from their respective GitHub branches:\n\n- `ovos-gui@add-pyhtmx-system-pages`\n- `ovos-audio@add-audio-duration`\n- `ovos-dinkum-listener@add-audio-duration`\n- `ovos-skill-homescreen@add-pyhtmx-gui-resources`\n- `ovos-plugin-common-play@add-pyhtmx-resources`\n- `ovos-skill-date-time@add-pyhtmx-time-page`\n- `ovos-skill-weather@add-units-to-weather-params`\n- `ovos-pyhtmx-gui-client@main`"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-02-02T20:09:11Z",
+    "last_updated": "2026-02-09T18:01:17Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-qdrant-embeddings-plugin",
     "skill_id": null,
     "name": "ovos-qdrant-embeddings-plugin",
@@ -22833,8 +22975,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-27T22:51:11Z",
     "last_updated": "2026-10-27T22:51:15Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-skill-hello-world",
@@ -24099,6 +24241,160 @@
     "is_recently_updated": false
   },
   {
+    "id": "ecosphereplus-ovos-skill-omva-enroll-voice",
+    "skill_id": null,
+    "name": "ovos-skill-omva-enroll-voice",
+    "description": "Provides natural voice interface for enrolling user voices with semantic intent recognition supporting phrases like 'enroll my voice', 'save my voice', 'remember me', and other semantically similar expressions. Integrates with SpeechBrain ECAPA-TDNN for voice identification.",
+    "examples": [
+      "Enroll my voice",
+      "Save my voice",
+      "Remember me",
+      "Enroll my voice as John",
+      "Register my voice as Mary Smith",
+      "Learn my voice",
+      "Add my voice to the system",
+      "Set up voice recognition for me"
+    ],
+    "tags": [
+      "voice",
+      "enrollment",
+      "biometric",
+      "recognition",
+      "speechbrain",
+      "voiceid"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/ecosphereplus/ovos-skill-omva-enroll-voice/main/microphone",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/ecosphereplus/ovos-skill-omva-enroll-voice",
+    "package_name": "omva-skill-voice-enrollment",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "ecosphereplus",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "target_samples",
+        "type": "number",
+        "label": "Number of voice samples to collect"
+      },
+      {
+        "name": "min_audio_duration",
+        "type": "number",
+        "label": "Minimum audio duration (seconds)"
+      },
+      {
+        "name": "max_audio_duration",
+        "type": "number",
+        "label": "Maximum audio duration (seconds)"
+      },
+      {
+        "name": "quality_threshold",
+        "type": "number",
+        "label": "Audio quality threshold (0.0-1.0)"
+      },
+      {
+        "name": "confirmation_required",
+        "type": "checkbox",
+        "label": "Require confirmation before enrollment"
+      },
+      {
+        "name": "replace_existing_profiles",
+        "type": "checkbox",
+        "label": "Allow replacing existing voice profiles"
+      },
+      {
+        "name": "relationship_words",
+        "type": "text",
+        "label": "Relationship words for third-person enrollment (comma-separated)"
+      }
+    ],
+    "setup_notes": [
+      {
+        "heading": "Configuration",
+        "content": "The skill can be configured through the settings interface:\n\n- **target_samples**: Number of voice samples to collect (default: 3)\n- **min_audio_duration**: Minimum audio duration in seconds (default: 3.0)\n- **max_audio_duration**: Maximum audio duration in seconds (default: 10.0)\n- **quality_threshold**: Audio quality threshold 0.0-1.0 (default: 0.7)\n- **confirmation_required**: Whether to require confirmation (default: true)\n- **replace_existing_profiles**: Allow replacing existing profiles (default: false)"
+      },
+      {
+        "heading": "Installation",
+        "content": "1. Install the skill:\npip install omva-skill-voice-enrollment\n\n2. Ensure the OMVA voice identification plugin is installed:\npip install ovos-audio-transformer-plugin-omva-voiceid\n\n3. The skill will be automatically loaded by OVOS."
+      }
+    ],
+    "languages": [
+      "en-us",
+      "es-es",
+      "fr-fr"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-08-30T11:09:48Z",
+    "last_updated": "2025-09-01T17:07:51Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "jaredcobb-ovos-skill-openai",
+    "skill_id": null,
+    "name": "ovos-skill-openai",
+    "description": "An OVOS fallback skill for interacting with the OpenAI API",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/jaredcobb/ovos-skill-openai",
+    "package_name": "ovos-skill-openai",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "jaredcobb",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "To install the `ovos-skill-openai` skill, run the following command:\n\npip3 install git+https://github.com/jaredcobb/ovos-skill-openai.git"
+      },
+      {
+        "heading": "Configuration",
+        "content": "The `settings.json` configuration file may contain the following properties. Only `api_key` is required:\n\n- `api_key`: Your OpenAI API key [REQUIRED]\n- `model`: The OpenAI GPT model you wish to use (default is \"gpt-3.5-turbo\")\n- `system_prompt`: The system prompt for initiating conversations with the GPT model. This is how you give the model some personality. We have a basic default.\n- `wait_timeout`: The maximum amount of time OVOS should wait while speaking dialog to you. Some ChatGPT responses may take a while to finish.\n- `audio_files`: An array of audio files (one or many) to shuffle and play while we wait for the OpenAI response. The `gpt-4` model is particularly slow at times. This gives the user some feedback that it's processing. Must be an absolute path to a file on the device. A\u2026"
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-10-29T18:55:21Z",
+    "last_updated": "2023-12-17T22:46:54Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OscillateLabsLLC-ovos-skill-openhab",
     "skill_id": "ovos-skill-openhab.mikejgray=ovos_skill_openhab:openHABSkill",
     "name": "ovos-skill-openhab",
@@ -25102,6 +25398,52 @@
     "last_updated": "2026-08-16T19:59:19Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "greennosedmule-ovos-skill-waggle",
+    "skill_id": null,
+    "name": "ovos-skill-waggle",
+    "description": "Phone actions for OpenVoiceOS over HiveMind: the Waggle protocol, library and hub plugin",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/greennosedmule/ovos-skill-waggle",
+    "package_name": "ovos-skill-waggle",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "greennosedmule",
+    "tier": 2,
+    "component_type": "Pipeline Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install on a hub",
+        "content": "Needs ovos-core 3.x (the OVOS alphas; tested with 3.7.4a1). Install the package into ovos-core's environment, which registers the `opm.pipeline` plugin `ovos-waggle-pipeline-plugin` and the `opm.agents.toolbox` plugin `ovos-waggle-tools`, and add its stage to `intents.pipeline` in `mycroft.conf`, right after the converse stage:\n\n\"pipeline\": [\"\u2026\", \"ovos-converse-pipeline-plugin\", \"ovos-waggle-pipeline-plugin-high\", \"\u2026\"]\n\nEach phone's HiveMind client must be allowed to send the Waggle message types:\n\nhivemind-core allow-msg waggle.capabilities <id>\nhivemind-core allow-msg waggle.intent.response <id>\nhivemind-core allow-msg waggle.query.response <id>\n\nThe stage only answers phones that have announced Waggle capabilities, so other satellites keep using the hub's own skills. Their capabilities\u2026"
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-10-07T05:55:07Z",
+    "last_updated": "2026-10-18T03:39:58Z",
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "JoergZ2-ovos-skill-wakeup",
@@ -29275,6 +29617,45 @@
     "is_recently_updated": false
   },
   {
+    "id": "jaredcobb-ovos-tts-plugin-elevenlabs",
+    "skill_id": null,
+    "name": "ovos-tts-plugin-elevenlabs",
+    "description": "ElevenLabs TTS plugin for OVOS",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/jaredcobb/ovos-tts-plugin-elevenlabs",
+    "package_name": "ovos-tts-plugin-elevenlabs",
+    "pypi_version": "0.1.0",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "jaredcobb",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-01-04T20:17:19Z",
+    "last_updated": "2025-12-16T22:26:55.858505Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-tts-plugin-espeakNG",
     "skill_id": null,
     "name": "ovos-tts-plugin-espeakNG",
@@ -30930,7 +31311,7 @@
     "type_group": "Plugin",
     "stars": 2,
     "forks": 3,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -31257,7 +31638,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 1,
@@ -31348,7 +31729,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -31454,7 +31835,7 @@
     "type_group": "Tool",
     "stars": 6,
     "forks": 18,
-    "open_issues": 34,
+    "open_issues": 28,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -32139,7 +32520,7 @@
     "type_group": "Plugin",
     "stars": 13,
     "forks": 5,
-    "open_issues": 4,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -32464,22 +32845,22 @@
     "is_recently_updated": false
   },
   {
-    "id": "JoergZ2-ovos_skill_my_db_timetable",
+    "id": "g-mecha-ovos_test_lunch",
     "skill_id": null,
-    "name": "ovos_skill_my_db_timetable",
-    "description": "Skill for getting timetable information of selected station in Germany.",
+    "name": "ovos_test_lunch",
+    "description": "Git project to figure out how ovos works",
     "examples": [],
     "tags": [],
     "category": "Other",
     "icon": null,
     "icon_source": null,
     "icon_color": null,
-    "source": "https://github.com/JoergZ2/ovos_skill_my_db_timetable",
-    "package_name": null,
+    "source": "https://github.com/g-mecha/ovos_test_lunch",
+    "package_name": "ovos-skill-lunch",
     "pypi_version": null,
     "license": null,
     "archived": false,
-    "author": "JoergZ2",
+    "author": "g-mecha",
     "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
@@ -32495,12 +32876,12 @@
     "settings_fields": [],
     "setup_notes": [],
     "languages": [
-      "de-de"
+      "en-us"
     ],
     "locale_content": {},
     "in_ovos_localize": false,
-    "repo_created_at": "2025-09-05T13:59:14Z",
-    "last_updated": "2025-09-16T06:33:14Z",
+    "repo_created_at": "2024-11-26T13:37:39Z",
+    "last_updated": "2024-11-28T14:08:46Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -32611,6 +32992,54 @@
     "is_recently_updated": true
   },
   {
+    "id": "ksnishat-ovoscan-pipeline",
+    "skill_id": null,
+    "name": "ovoscan-pipeline",
+    "description": "End-to-End Industrial MLOps Pipeline for Automated Quality Control. Features YOLOv8 for defect detection, ZenML orchestration, and a Generative AI Agent (Llama 3) for technical reporting.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/ksnishat/ovoscan-pipeline",
+    "package_name": "ovoscan-pipeline",
+    "pypi_version": null,
+    "license": "MIT",
+    "archived": false,
+    "author": "ksnishat",
+    "tier": 2,
+    "component_type": "Tool",
+    "type_group": "Tool",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "2. Environment Setup",
+        "content": "conda create -n ovoscan-env python=3.10 -y\nconda activate ovoscan-env\npip install -r requirements.txt"
+      },
+      {
+        "heading": "Configuration",
+        "content": "| Variable | Default | Purpose |\n|----------|---------|---------|\n| `KNOWLEDGE_BASE_PATH` | `knowledge_base/hatchery_manual.txt` | Manual to index |\n| `CHROMA_PERSIST_DIR` | `data/chroma` | Vector store location |\n| `CHROMA_COLLECTION` | `hatchery_rules` | Collection name |\n| `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |\n| `OLLAMA_MODEL` | `llama3.2` | Generation model |\n| `OLLAMA_HOST` | `http://localhost:11434` | Ollama endpoint |\n\nTo index your own manual instead:\n\nKNOWLEDGE_BASE_PATH=/path/to/your/manual.txt python -m src.agent.rag\n\n> **Hardware note:** a 4 GB GPU cannot hold a 26B model. Use a small model\n> (1B-3B) for responsive RAG, or accept CPU-bound latency with a larger one."
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-01-14T23:03:35Z",
+    "last_updated": "2026-10-17T16:25:02Z",
+    "is_new_repo": false,
+    "is_recently_updated": true
+  },
+  {
     "id": "OpenVoiceOS-ovoscope",
     "skill_id": null,
     "name": "ovoscope",
@@ -32636,7 +33065,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 1,
-    "open_issues": 11,
+    "open_issues": 10,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -33413,7 +33842,7 @@
     "repo_created_at": "2025-01-17T06:00:40Z",
     "last_updated": "2026-09-26T15:03:52Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-raspovos-manual",
@@ -35244,6 +35673,50 @@
     "is_recently_updated": false
   },
   {
+    "id": "jumper047-skill-ovos-mqtt-adapter",
+    "skill_id": null,
+    "name": "skill-ovos-mqtt-adapter",
+    "description": "Skill for OVOS to be controlled via MQTT protocol ",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/jumper047/skill-ovos-mqtt-adapter",
+    "package_name": null,
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "jumper047",
+    "tier": 3,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "Go to [[https://account.mycroft.ai/skills]], find Installer skill, paste url https://github.com/jumper047/mycroft-mqtt-adapter into \"Skill URL\" field and press \"Save\". As alternate way you can connect to your Mycroft instance via ssh and enter `mycroft-skill install https://github.com/jumper047/mycroft-mqtt-adapter`"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-12-09T10:47:34Z",
+    "last_updated": "2024-03-08T00:49:38Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-skill-ovos-mycroftgui",
     "skill_id": null,
     "name": "skill-ovos-mycroftgui",
@@ -35477,6 +35950,45 @@
     "last_updated": "2026-10-11T12:17:08Z",
     "is_new_repo": false,
     "is_recently_updated": true
+  },
+  {
+    "id": "jumper047-skill-ovos-scripting",
+    "skill_id": null,
+    "name": "skill-ovos-scripting",
+    "description": "Create aliases and simple scripts",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/svgs/solid/code.svg",
+    "icon_source": "readme",
+    "icon_color": "#22a7f0",
+    "source": "https://github.com/jumper047/skill-ovos-scripting",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "jumper047",
+    "tier": 3,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-12-10T12:21:49Z",
+    "last_updated": "2023-12-10T13:43:48Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-skill-ovos-settings",
@@ -36758,7 +37270,7 @@
     "type_group": "Infrastructure",
     "stars": 12,
     "forks": 0,
-    "open_issues": 17,
+    "open_issues": 18,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -36771,7 +37283,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-05-29T22:30:36Z",
-    "last_updated": "2026-10-26T04:19:09Z",
+    "last_updated": "2026-10-28T05:11:17Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
