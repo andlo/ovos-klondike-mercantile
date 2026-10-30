@@ -10,17 +10,17 @@ fann2==1.0.7
 filelock==3.32.7
 fsspec==2026.9.0
 h11==0.16.0
-hf-xet==1.7.0
+hf-xet==1.7.1
 httpcore2==2.16.0
 httpx2==2.16.0
-huggingface_hub==2.3.0
+huggingface_hub==2.4.0
 idna==3.20
 importlib_metadata==10.1.0
 iniconfig==2.3.1
 Jinja2==3.1.6
 joblib==1.6.0
 json-database==0.10.1
-keyword-template-matcher @ git+https://github.com/TigreGotico/kw-template-matcher@2518c9895e1a47044ede2862da7f9a550ff05d7f
+keyword-template-matcher @ git+https://github.com/TigreGotico/kw-template-matcher@03daef61d66c916ea5043c9d73f9225bf44eeea8
 kthread==0.2.3
 langcodes==3.5.1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
@@ -36,7 +36,7 @@ ovos-config==2.1.1
 ovos-dinkum-listener==0.5.0
 ovos-gui-api-client==0.1.0
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
-ovos-media==2.4.5a1
+ovos-media==2.4.5a2
 ovos-number-parser==0.19.13
 ovos-plugin-manager==2.2.0
 ovos-skill-count==0.0.2
@@ -44,7 +44,7 @@ ovos-skill-fallback-unknown==0.1.9
 ovos-skill-hello-world==0.2.1
 ovos-skill-parrot==0.1.25
 ovos-solver-yes-no-plugin==0.2.8
-ovos-spec-tools==1.16.0a1
+ovos-spec-tools==1.16.2a1
 ovos-utterance-plugin-cancel==0.2.8
 ovos-workshop==7.0.6
 ovos_adapt_parser==1.0.9
@@ -62,7 +62,7 @@ ovos_translate_server_plugin==0.0.5
 ovos_utils==0.8.4
 ovoscope==0.13.1
 packaging==26.3
-padacioso @ git+https://github.com/OpenVoiceOS/padacioso@4e6b1aee22e9e9b524101b2bd2c12577984e8037
+padacioso @ git+https://github.com/OpenVoiceOS/padacioso@27f11c2b0c528fb50a9be41989100446b5bb2264
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
 pluggy==1.7.0
@@ -71,7 +71,7 @@ pyahocorasick==2.3.1
 pyee==12.1.1
 Pygments==2.21.0
 PyStemmer==3.1.0
-pytest==9.1.1
+pytest==9.2.0
 pytest-json-report==1.5.0
 pytest-metadata==3.1.1
 pytest-timeout==2.4.0
