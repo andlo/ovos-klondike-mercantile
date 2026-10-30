@@ -22983,7 +22983,7 @@
     "repo_created_at": "2018-10-05T19:13:32Z",
     "last_updated": "2026-09-27T09:12:44Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-count",
@@ -30225,6 +30225,59 @@
     "in_ovos_localize": false,
     "repo_created_at": "2024-12-15T13:02:19Z",
     "last_updated": "2025-06-08T18:38:05.015639Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "OscillateLabsLLC-ovos-tts-plugin-audio8",
+    "skill_id": null,
+    "name": "ovos-tts-plugin-audio8",
+    "description": "OVOS TTS plugin for Audio8 TTS 0.6B: one-shot voice cloning, faster than real time on CUDA and Apple Silicon",
+    "examples": [],
+    "tags": [
+      "ovos",
+      "status-poc",
+      "tts",
+      "voice-cloning"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OscillateLabsLLC/ovos-tts-plugin-audio8",
+    "package_name": "ovos-tts-plugin-audio8",
+    "pypi_version": "0.2.0",
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 1,
+    "component_type": "TTS Plugin",
+    "type_group": "Plugin",
+    "stars": 1,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-tts-plugin-audio8"
+      },
+      {
+        "heading": "Configure",
+        "content": "\"tts\": {\n  \"module\": \"ovos-tts-plugin-audio8\",\n  \"ovos-tts-plugin-audio8\": {\n    \"voice\": \"seven\",\n    \"voices\": {\n      \"seven\": {\n        \"reference_audio\": \"/home/ovos/voices/regeneration_cycle.wav\",\n        \"reference_text\": \"Oh six hundred hours, regeneration cycle complete.\"\n      }\n    }\n  }\n}\n\nThe defaults select the fastest settings for your hardware. You must set only `voice` and `voices`.\n\n| Key | Default | Meaning |\n| :--- | :--- | :--- |\n| `voice` | none | Name of an entry in `voices`. If you do not set it, the model uses its own default voice. |\n| `voices` | `{}` | Map of voice name to `reference_audio` and `reference_text`. |\n| `device` | `auto` | `cuda`, `mps` or `cpu`. `auto` selects CUDA, then MPS, then CPU. |\n| `decoder` | `auto` | `cuda_graph`, `compile`, `eager` or `mo\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-10-29T16:34:30Z",
+    "last_updated": "2026-10-29T20:30:14.453128Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
