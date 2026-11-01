@@ -13465,6 +13465,54 @@
     "is_recently_updated": false
   },
   {
+    "id": "OpenVoiceOS-ovos-audio-transformer-plugin-bandpass",
+    "skill_id": null,
+    "name": "ovos-audio-transformer-plugin-bandpass",
+    "description": "Band-pass filter audio transformer for OpenVoiceOS",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-audio-transformer-plugin-bandpass",
+    "package_name": "ovos-audio-transformer-plugin-bandpass",
+    "pypi_version": "0.0.1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "Audio Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 2,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-audio-transformer-plugin-bandpass"
+      },
+      {
+        "heading": "Configure",
+        "content": "Enable it in `mycroft.conf` under `audio_transformers`. Any component that runs\nthe audio-transformer pipeline, such as the listener or the STT server, applies it:\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-bandpass\": {\n      \"low_hz\": 300,\n      \"high_hz\": 3400,\n      \"order\": 4,\n      \"sample_rate\": 16000\n    }\n  }\n}\n\n| Option | Default | Meaning |\n|--------|---------|---------|\n| `low_hz` | `300` | Lower edge of the pass-band, in Hz. |\n| `high_hz` | `3400` | Upper edge of the pass-band, in Hz. |\n| `order` | `4` | Butterworth filter order. Higher is a steeper roll-off. |\n| `sample_rate` | `16000` | Sample rate of the incoming PCM audio, in Hz. |\n\nEdges are clamped into the open interval below Nyquist, so an aggressive band on a\nlow sample rate degrades gracefully ins\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-07-17T19:30:33Z",
+    "last_updated": "2026-07-17T19:31:35.483963Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-audio-transformer-plugin-ggwave",
     "skill_id": null,
     "name": "ovos-audio-transformer-plugin-ggwave",
@@ -14494,7 +14542,7 @@
     "tier": 1,
     "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
-    "stars": 297,
+    "stars": 299,
     "forks": 31,
     "open_issues": 17,
     "on_pypi": true,
@@ -14688,7 +14736,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Toolbox Plugin",
+    "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
@@ -14926,9 +14974,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-05-07T17:20:53Z",
-    "last_updated": "2026-10-27T03:42:56Z",
+    "last_updated": "2026-10-31T01:45:33Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "BurakTaskk-ovos-docker-2",
@@ -15145,6 +15193,53 @@
     "last_updated": "2026-10-06T18:23:20Z",
     "is_new_repo": false,
     "is_recently_updated": true
+  },
+  {
+    "id": "OpenVoiceOS-ovos-docker-tx",
+    "skill_id": null,
+    "name": "ovos-docker-tx",
+    "description": "Docker image definitions for Open Voice OS translation (tx) microservices. Each image runs `ovos-translate-server` over HTTP and serves translation and language detection through a specific engine plugin.",
+    "examples": [],
+    "tags": [
+      "docker",
+      "openvoiceos"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-docker-tx",
+    "package_name": null,
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "This repo has no Python package. It only ships Dockerfiles and a build script. Build the images locally:\n\ndocker build -f base/Dockerfile -t smartgic/ovos-tx-server-base:alpha ./base\ndocker build -f nllb/Dockerfile -t smartgic/ovos-tx-server-nllb:alpha ./nllb\ndocker build -f google/Dockerfile -t smartgic/ovos-tx-server-google:alpha ./google\n\nThe engine images (`nllb`, `google`) build `FROM smartgic/ovos-tx-server-base:${TAG}`, so build the base image first, or pull it, before you build an engine image. Pass `--build-arg ALPHA=true` to install pre-release or git-based dependencies instead of the released packages."
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2023-08-21T22:04:19Z",
+    "last_updated": "2026-09-01T17:20:26Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-docs-viewer",
@@ -15374,7 +15469,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -15467,7 +15562,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Transformer Plugin",
+    "component_type": "Summarizer Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
@@ -15675,7 +15770,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Detect Plugin",
+    "component_type": "Translate Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -15699,7 +15794,7 @@
     "repo_created_at": "2024-02-23T22:19:46Z",
     "last_updated": "2026-09-26T11:49:39.477146Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-gui",
@@ -15726,7 +15821,7 @@
     "type_group": "Tool",
     "stars": 3,
     "forks": 5,
-    "open_issues": 20,
+    "open_issues": 19,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -16313,7 +16408,7 @@
     "repo_created_at": "2023-12-20T23:12:10Z",
     "last_updated": "2026-09-28T09:48:58Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-installer",
@@ -16339,7 +16434,7 @@
     "type_group": "Infrastructure",
     "stars": 330,
     "forks": 60,
-    "open_issues": 7,
+    "open_issues": 5,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -16357,7 +16452,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-11-07T20:31:20Z",
-    "last_updated": "2026-10-26T22:22:18Z",
+    "last_updated": "2026-11-01T11:19:33Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -16497,9 +16592,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-04T15:01:45Z",
-    "last_updated": "2026-10-27T08:26:38Z",
+    "last_updated": "2026-10-31T09:01:43Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-lang-detector-classics-plugin",
@@ -16546,7 +16641,7 @@
     "repo_created_at": "2024-02-23T04:54:57Z",
     "last_updated": "2026-09-26T14:28:42.140725Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-lang-detector-fasttext-plugin",
@@ -16820,7 +16915,7 @@
     "type_group": "Tool",
     "stars": 8,
     "forks": 3,
-    "open_issues": 62,
+    "open_issues": 63,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -16866,11 +16961,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Text Plugin",
+    "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 5,
-    "open_issues": 10,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -16894,7 +16989,36 @@
     "repo_created_at": "2025-05-08T05:12:04Z",
     "last_updated": "2026-03-04T03:17:36.005766Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-m2v-pipeline",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.0.9",
+          "tested_at": "2026-10-04T11:06:09+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.9",
+          "tested_at": "2026-10-04T10:45:30+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.38.0a1",
+          "tested_at": "2026-10-30T09:41:20+00:00",
+          "channel_pinned": true
+        }
+      }
+    }
   },
   {
     "id": "OpenVoiceOS-ovos-ma-player",
@@ -17143,7 +17267,7 @@
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media",
     "package_name": "ovos-media",
-    "pypi_version": "2.4.5a1",
+    "pypi_version": "2.4.5a2",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
@@ -17152,7 +17276,7 @@
     "type_group": "Tool",
     "stars": 3,
     "forks": 4,
-    "open_issues": 12,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -17177,7 +17301,7 @@
     "locale_content": {},
     "in_ovos_localize": true,
     "repo_created_at": "2024-01-09T00:18:26Z",
-    "last_updated": "2026-10-01T15:20:02.372374Z",
+    "last_updated": "2026-10-28T11:44:47.055198Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -17233,7 +17357,7 @@
     "repo_created_at": "2026-06-23T16:53:26Z",
     "last_updated": "2026-10-01T18:41:58.778534Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-chromecast",
@@ -17256,7 +17380,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Video Plugin",
+    "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 3,
@@ -17482,7 +17606,7 @@
     "repo_created_at": "2022-08-06T13:37:47Z",
     "last_updated": "2026-09-28T17:09:10.402880Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-media-plugin-mpv",
@@ -17506,7 +17630,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Video Plugin",
+    "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 3,
@@ -17555,7 +17679,7 @@
     "archived": true,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Video Plugin",
+    "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
@@ -17658,7 +17782,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 2,
-    "component_type": "Video Plugin",
+    "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -18017,6 +18141,54 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-22T23:10:58Z",
     "last_updated": "2026-09-16T19:22:22.035668Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "TigreGotico-ovos-media-provider-radio-spain",
+    "skill_id": null,
+    "name": "ovos-media-provider-radio-spain",
+    "description": "OVOS **MediaProvider** plugin for Spanish internet radio. Replaces the",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/TigreGotico/ovos-media-provider-radio-spain",
+    "package_name": "ovos-media-provider-radio-spain",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "TigreGotico",
+    "tier": 2,
+    "component_type": "Provider Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-media-provider-radio-spain"
+      },
+      {
+        "heading": "Configuration",
+        "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `min_confidence` | `60` | Minimum fuzzy-match confidence (0-100) for a station to be returned. |\n| `max_results` | `10` | Maximum number of matching stations returned per search. |"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-06-25T22:28:01Z",
+    "last_updated": "2026-08-13T18:56:17Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -25196,110 +25368,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2025-08-30T13:40:16Z",
     "last_updated": "2025-09-07T10:05:25Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "ecosphereplus-ovos-skill-omva-enroll-voice",
-    "skill_id": null,
-    "name": "ovos-skill-omva-enroll-voice",
-    "description": "Provides natural voice interface for enrolling user voices with semantic intent recognition supporting phrases like 'enroll my voice', 'save my voice', 'remember me', and other semantically similar expressions. Integrates with SpeechBrain ECAPA-TDNN for voice identification.",
-    "examples": [
-      "Enroll my voice",
-      "Save my voice",
-      "Remember me",
-      "Enroll my voice as John",
-      "Register my voice as Mary Smith",
-      "Learn my voice",
-      "Add my voice to the system",
-      "Set up voice recognition for me"
-    ],
-    "tags": [
-      "voice",
-      "enrollment",
-      "biometric",
-      "recognition",
-      "speechbrain",
-      "voiceid"
-    ],
-    "category": "Other",
-    "icon": "https://raw.githubusercontent.com/ecosphereplus/ovos-skill-omva-enroll-voice/main/microphone",
-    "icon_source": "skill.json",
-    "icon_color": null,
-    "source": "https://github.com/ecosphereplus/ovos-skill-omva-enroll-voice",
-    "package_name": "omva-skill-voice-enrollment",
-    "pypi_version": null,
-    "license": "NOASSERTION",
-    "archived": false,
-    "author": "ecosphereplus",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": "online",
-    "requires_api_key": false,
-    "settings_fields": [
-      {
-        "name": "target_samples",
-        "type": "number",
-        "label": "Number of voice samples to collect"
-      },
-      {
-        "name": "min_audio_duration",
-        "type": "number",
-        "label": "Minimum audio duration (seconds)"
-      },
-      {
-        "name": "max_audio_duration",
-        "type": "number",
-        "label": "Maximum audio duration (seconds)"
-      },
-      {
-        "name": "quality_threshold",
-        "type": "number",
-        "label": "Audio quality threshold (0.0-1.0)"
-      },
-      {
-        "name": "confirmation_required",
-        "type": "checkbox",
-        "label": "Require confirmation before enrollment"
-      },
-      {
-        "name": "replace_existing_profiles",
-        "type": "checkbox",
-        "label": "Allow replacing existing voice profiles"
-      },
-      {
-        "name": "relationship_words",
-        "type": "text",
-        "label": "Relationship words for third-person enrollment (comma-separated)"
-      }
-    ],
-    "setup_notes": [
-      {
-        "heading": "Configuration",
-        "content": "The skill can be configured through the settings interface:\n\n- **target_samples**: Number of voice samples to collect (default: 3)\n- **min_audio_duration**: Minimum audio duration in seconds (default: 3.0)\n- **max_audio_duration**: Maximum audio duration in seconds (default: 10.0)\n- **quality_threshold**: Audio quality threshold 0.0-1.0 (default: 0.7)\n- **confirmation_required**: Whether to require confirmation (default: true)\n- **replace_existing_profiles**: Allow replacing existing profiles (default: false)"
-      },
-      {
-        "heading": "Installation",
-        "content": "1. Install the skill:\npip install omva-skill-voice-enrollment\n\n2. Ensure the OMVA voice identification plugin is installed:\npip install ovos-audio-transformer-plugin-omva-voiceid\n\n3. The skill will be automatically loaded by OVOS."
-      }
-    ],
-    "languages": [
-      "en-us",
-      "es-es",
-      "fr-fr"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-08-30T11:09:48Z",
-    "last_updated": "2025-09-01T17:07:51Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
