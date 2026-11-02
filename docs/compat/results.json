@@ -1,7 +1,7 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "fc508c5d5941d019e26609690cd20dd8e7d629e67d2322a8df4073a0390360d7",
+      "constraints_sha256": "261aceb7bc1220ae7f33e12547f70b031c3c7707c189c5afd8b988d3cc4d6316",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
@@ -21,6 +21,8 @@
       },
       "route": {
         "baseline_ids": [
+          "ovos-skill-alerts.openvoiceos",
+          "ovos-skill-audio-recording.openvoiceos",
           "ovos-skill-count.openvoiceos",
           "ovos-skill-date-time.openvoiceos",
           "ovos-skill-ddg.openvoiceos",
@@ -31,6 +33,7 @@
           "ovos-skill-ip.openvoiceos",
           "ovos-skill-naptime.openvoiceos",
           "ovos-skill-parrot.openvoiceos",
+          "ovos-skill-personal.openvoiceos",
           "ovos-skill-speedtest.openvoiceos",
           "ovos-skill-volume.openvoiceos",
           "ovos-skill-weather.openvoiceos",
@@ -69,7 +72,6 @@
         ],
         "pipeline_used": [
           "ovos-stop-pipeline-plugin-high",
-          "ovos-common-reading-pipeline-plugin-high",
           "ovos-converse-pipeline-plugin",
           "ovos-ocp-pipeline-plugin-high",
           "ovos-persona-pipeline-plugin-high",
@@ -82,37 +84,37 @@
           "ovos-common-query-pipeline-plugin",
           "ovos-fallback-pipeline-plugin-medium",
           "ovos-persona-pipeline-plugin-low",
-          "ovos-common-reading-pipeline-plugin-low",
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-10-30T10:31:03+00:00",
+        "run_at": "2026-11-02T10:20:15+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 4.89,
-              "median": 0.55,
-              "n": 334,
-              "p95": 2.59
+              "max": 1.27,
+              "median": 0.48,
+              "n": 20,
+              "p95": 1.27
             },
-            "seconds": 733.2,
+            "seconds": 428.8,
+            "status": "ok"
+          },
+          {
+            "lang": "ca-ES",
+            "row_seconds": {},
+            "seconds": 369.3,
             "status": "ok"
           },
           {
             "lang": "da-DK",
-            "row_seconds": {
-              "max": 3.32,
-              "median": 2.52,
-              "n": 4,
-              "p95": 3.32
-            },
-            "seconds": 352.3,
+            "row_seconds": {},
+            "seconds": 350.2,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-30T10:31:03+00:00",
+      "run_at": "2026-11-02T10:20:15+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -129,10 +131,7 @@
         },
         "python": "3.11.17"
       },
-      "stack_moved": [
-        "ovos-workshop 9.9.0a1 -> 9.10.1a1",
-        "ovos-m2v-pipeline 0.37.6a1 -> 0.38.0a1"
-      ]
+      "stack_moved": []
     },
     "stable": {
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
@@ -363,7 +362,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-10-31T10:22:42+00:00",
+  "generated_at": "2026-11-02T10:20:15+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -33232,11 +33231,11 @@
     },
     "OpenVoiceOS-ovos-skill-number-facts": {
       "alpha": {
-        "boot_seconds": 11.4,
+        "boot_seconds": 9.3,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 15.3,
+        "duration_seconds": 12.1,
         "id": "OpenVoiceOS-ovos-skill-number-facts",
         "intents_by_lang": {
           "ca-es": 4,
@@ -33250,7 +33249,7 @@
           "fr-fr": 4,
           "gl-es": 4,
           "it-it": 4,
-          "kab-kab": 2,
+          "kab-kab": 4,
           "nl-nl": 4,
           "oc-fr": 4,
           "pl-pl": 4,
@@ -33259,7 +33258,7 @@
           "ru-ru": 4,
           "sv-se": 4
         },
-        "key": "710ddcbd54437f05",
+        "key": "95392f6318ce96bc",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -33288,10 +33287,10 @@
           "ovos-skill-number-facts.openvoiceos"
         ],
         "registrations": {
-          "intents": 74
+          "intents": 76
         },
-        "requested_version": "0.6.2a1",
-        "route_key": "9940f65e51ef5bf8",
+        "requested_version": "0.6.2a3",
+        "route_key": "58501cae26ca4893",
         "routing": {
           "generated": {
             "asked": 0,
@@ -33334,8 +33333,8 @@
             "hit": 0,
             "langs": [
               "en-US",
-              "da-DK",
-              "ca-ES"
+              "ca-ES",
+              "da-DK"
             ],
             "langs_failed": [],
             "langs_not_routed": [
@@ -33366,7 +33365,7 @@
             "unhandled": 0,
             "wrong_intent": 0
           },
-          "ref": "0.6.2a1",
+          "ref": "0.6.2a3",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -33375,8 +33374,8 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-30T08:59:32+00:00",
-        "version_tested": "0.6.2a1"
+        "tested_at": "2026-11-02T09:56:35+00:00",
+        "version_tested": "0.6.2a3"
       },
       "stable": {
         "boot_seconds": 69.6,
