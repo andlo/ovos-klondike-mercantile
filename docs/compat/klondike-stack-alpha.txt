@@ -4,7 +4,7 @@ aiohappyeyeballs==2.7.1
 aiohttp==3.14.5
 aiosignal==1.4.0
 annotated-types==0.8.0
-anyio==4.15.1
+anyio==4.16.0
 attrs==26.1.0
 babel==2.18.0
 beautifulsoup4==4.15.0
@@ -36,7 +36,7 @@ geocoder==1.38.1
 h11==0.16.0
 h3==4.5.0
 hf-xet==1.8.0
-holidays==0.107
+holidays==0.108
 httpcore==1.0.9
 httpcore2==2.16.0
 httpx==0.28.1
@@ -144,7 +144,7 @@ ovos-skill-naptime==0.12.2a3
 ovos-skill-nato-alphabet==0.0.3
 ovos-skill-network-scanner==0.0.2
 ovos-skill-news==0.4.10a4
-ovos-skill-number-facts==0.6.2a1
+ovos-skill-number-facts==0.6.2a3
 ovos-skill-ovosblog==0.1.8
 ovos-skill-parrot==0.11.1a3
 ovos-skill-personal==1.1.0a1
@@ -197,7 +197,7 @@ padacioso==2.5.4a1
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
 Pint==0.25.3
-platformdirs==4.14.0
+platformdirs==4.14.3
 pluggy==1.7.0
 prettytable==3.18.0
 propcache==0.5.4
@@ -267,7 +267,7 @@ unicode-rbnf==2.4.1
 url-normalize==3.1.0
 urllib3==2.8.0
 vobject==0.9.9
-watchdog==6.0.0
+watchdog==7.0.0
 wcwidth==0.9.4
 webcolors==25.10.0
 websocket-client==1.9.2
@@ -277,4 +277,4 @@ x-wr-timezone==1.0.1
 xxhash==4.0.2
 yarl==1.25.1
 ytmusicapi==1.12.3
-zeroconf==0.152.0
+zeroconf==0.153.0
