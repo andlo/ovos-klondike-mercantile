@@ -1,19 +1,19 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "261aceb7bc1220ae7f33e12547f70b031c3c7707c189c5afd8b988d3cc4d6316",
+      "constraints_sha256": "5b0a0d9bd5b7844e066bbfbbe0139c1e65cd03ad827db3736137db62e39e0c20",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
         "ovos-adapt-parser": "1.6.8a1",
         "ovos-bus-client": "2.11.29a1",
         "ovos-common-query-pipeline-plugin": "1.1.20a1",
-        "ovos-config": "3.9.0a1",
+        "ovos-config": "3.9.0a2",
         "ovos-core": "3.7.5a1",
         "ovos-m2v-pipeline": "0.38.0a1",
         "ovos-ocp-pipeline-plugin": "1.5.8a1",
         "ovos-padatious": "2.3.2a1",
-        "ovos-persona": "0.9.0a35",
+        "ovos-persona": "0.9.0a36",
         "ovos-plugin-manager": "3.1.0a1",
         "ovos-utils": "0.15.7a2",
         "ovos-workshop": "9.10.1a1",
@@ -87,40 +87,28 @@
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-11-02T10:20:15+00:00",
+        "run_at": "2026-11-04T10:01:36+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 1.27,
-              "median": 0.48,
-              "n": 20,
-              "p95": 1.27
+              "max": 15.04,
+              "median": 0.42,
+              "n": 80,
+              "p95": 0.44
             },
-            "seconds": 428.8,
-            "status": "ok"
-          },
-          {
-            "lang": "ca-ES",
-            "row_seconds": {},
-            "seconds": 369.3,
-            "status": "ok"
-          },
-          {
-            "lang": "da-DK",
-            "row_seconds": {},
-            "seconds": 350.2,
+            "seconds": 617.5,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-11-02T10:20:15+00:00",
+      "run_at": "2026-11-04T10:01:36+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
           "ovos-adapt-parser": "1.6.8a1",
           "ovos-bus-client": "2.11.29a1",
-          "ovos-config": "3.9.0a1",
+          "ovos-config": "3.9.0a2",
           "ovos-core": "3.7.5a1",
           "ovos-padatious": "2.3.2a1",
           "ovos-plugin-manager": "2.12.5a1",
@@ -131,7 +119,10 @@
         },
         "python": "3.11.17"
       },
-      "stack_moved": []
+      "stack_moved": [
+        "ovos-config 3.9.0a1 -> 3.9.0a2",
+        "ovos-persona 0.9.0a35 -> 0.9.0a36"
+      ]
     },
     "stable": {
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
@@ -205,22 +196,22 @@
         ],
         "pipeline_used": [],
         "route_version": "5",
-        "run_at": "2026-10-26T09:32:01+00:00",
+        "run_at": "2026-11-04T10:01:36+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 15.01,
+              "max": 15.04,
               "median": 0.42,
-              "n": 12,
-              "p95": 15.01
+              "n": 80,
+              "p95": 2.35
             },
-            "seconds": 52.2,
+            "seconds": 93.5,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-30T10:31:03+00:00",
+      "run_at": "2026-11-04T10:01:36+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -235,7 +226,7 @@
           "ovos-workshop": "3.4.0",
           "ovoscope": "0.6.0"
         },
-        "python": "3.11.17"
+        "python": "3.11.18"
       },
       "stack_moved": []
     },
@@ -327,22 +318,22 @@
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-10-26T09:32:01+00:00",
+        "run_at": "2026-11-04T10:01:36+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
               "max": 15.04,
               "median": 0.43,
-              "n": 12,
+              "n": 80,
               "p95": 15.04
             },
-            "seconds": 214.6,
+            "seconds": 317.8,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-10-30T10:31:03+00:00",
+      "run_at": "2026-11-04T10:01:36+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -362,7 +353,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-11-03T11:30:29+00:00",
+  "generated_at": "2026-11-04T10:01:36+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -11880,7 +11871,7 @@
           "ovos-skill-tuning-fork==0.0.4",
           "ovos-skill-rhythm-box==0.0.4",
           "ovos-skill-network-scanner==0.0.2",
-          "skill-homeassistant==1.4.5",
+          "skill-homeassistant==1.4.6",
           "ovos-common-reading-pipeline-plugin==0.3.2"
         ],
         "sha256": "7f82c89ed35da4667f5581f2b57d9d2ac94d892f997ed8838580e8bc2b89ca6a",
@@ -17259,7 +17250,7 @@
           "ovos-skill-tuning-fork==0.0.4",
           "ovos-skill-rhythm-box==0.0.4",
           "ovos-skill-network-scanner==0.0.2",
-          "skill-homeassistant==1.4.5"
+          "skill-homeassistant==1.4.6"
         ],
         "sha256": "6fdb90db8e465a4fd37eff4dd3ce08b7d0ac2b1fbd20ffaeacc4ee949880bbc4",
         "skill_ids": [
@@ -22363,7 +22354,7 @@
           "ovos-skill-tuning-fork==0.0.4",
           "ovos-skill-rhythm-box==0.0.4",
           "ovos-skill-network-scanner==0.0.2",
-          "skill-homeassistant==1.4.5",
+          "skill-homeassistant==1.4.6",
           "ovos-common-reading-pipeline-plugin==0.3.2"
         ],
         "sha256": "50e9ec287d2a812653bc278a5dc24d04b8fb886dc97794e19cef23c6ca3a8a77",
@@ -23583,27 +23574,27 @@
     },
     "OpenVoiceOS-ovos-persona": {
       "alpha": {
-        "boot_seconds": 6.1,
+        "boot_seconds": 5.0,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 9.6,
+        "duration_seconds": 7.4,
         "id": "OpenVoiceOS-ovos-persona",
-        "key": "19ce1a3772218794",
+        "key": "ddc577f9ef94bb70",
         "kind": "pipeline",
         "level": 2,
         "package": "ovos-persona",
         "plugin_ids": [
           "ovos-persona-pipeline-plugin"
         ],
-        "requested_version": "0.9.0a35",
+        "requested_version": "0.9.0a36",
         "stage": "load",
         "stages": [
           "ovos-persona-pipeline-plugin-high"
         ],
         "status": "pass",
-        "tested_at": "2026-10-30T09:41:28+00:00",
-        "version_tested": "0.9.0a35"
+        "tested_at": "2026-11-04T09:49:16+00:00",
+        "version_tested": "0.9.0a36"
       },
       "stable": {
         "boot_seconds": 0.3,
@@ -39431,40 +39422,40 @@
     },
     "OscillateLabsLLC-hangup": {
       "alpha": {
-        "boot_seconds": 3.9,
+        "boot_seconds": 3.4,
         "channel": "alpha",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 7.5,
+        "duration_seconds": 6.5,
         "id": "OscillateLabsLLC-hangup",
-        "key": "2e673c8b8e55b828",
+        "key": "3772933e8f5f1983",
         "kind": "skill",
         "languages_booted": [
           "en-US"
         ],
         "level": 2,
-        "log_excerpt": "pelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-common-query-pipeline-plugin'\n2026-10-30 08:59:11.135 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-adapt-domain-pipeline-plugin'\n2026-10-30 08:59:11.135 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-adapt-hierarchical-pipeline-plugin'\n2026-10-30 08:59:11.149 - OVOS - ovos_padatious.opm:__init__:347 - INFO - Padatious class: IntentContainer\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-m2v-pipeline'\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:326 - WARNING - Pipeline plugin 'ovos-m2v-pipeline' is blacklisted in 'intents.blacklisted_pipelines' but also selected in 'intents.pipeline'; the blacklist wins and it will stay disabled\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-m2v-prototype-pipeline'\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-hierarchical-pipeline-plugin'\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-pipeline-plugin'\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-domain-pipeline-plugin'\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-hierarchical-pipeline-plugin'\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-pipeline-plugin'\n2026-10-30 08:59:11.150 - OVOS - ovos_core.intent_services.service:on_ready:192 - INFO - IntentService is ready.\n2026-10-30 08:59:11.151 - OVOS - ovos_core.skill_manager:on_alive:58 - INFO - Skills Manager is alive.\n2026-10-30 08:59:11.151 - OVOS - ovoscope:load_plugin_skills:904 - INFO - loading skill plugins\n2026-10-30 08:59:11.176 - OVOS - ovos_workshop.skill_launcher:load:472 - INFO - ATTEMPTING TO LOAD PLUGIN SKILL: ovos-skill-hangup.oscillatelabsllc\n2026-10-30 08:59:11.180 - ovos-skill-hangup.oscillatelabsllc - INFO - First run of ovos-skill-hangup.oscillatelabsllc\n2026-10-30 08:59:11.180 - OVOS - ovos_workshop.skills.ovos:on_ready_status:757 - INFO - ovos-skill-hangup.oscillatelabsllc is ready.\n2026-10-30 08:59:11.181 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:450 - INFO - Skill ovos-skill-hangup.oscillatelabsllc loaded successfully\n2026-10-30 08:59:11.181 - OVOS - ovoscope:load_plugin_skills:912 - INFO - Loaded skill: ovos-skill-hangup.oscillatelabsllc\n2026-10-30 08:59:11.182 - OVOS - ovoscope:run:1007 - INFO - Skills all loaded!\n2026-10-30 08:59:11.182 - OVOS - ovos_core.skill_manager:on_ready:62 - INFO - Skills Manager is ready.\n2026-10-30 08:59:11.251 - OVOS - ovoscope:get_minicroft:1469 - INFO - MiniCroft: no skill registered an intent, so nothing can be outstanding; skipping the trained wait (trainers reporting work=[])\n2026-10-30 08:59:13.252 - OVOS - ovos_core.skill_manager:on_stopping:70 - INFO - Skills Manager is shutting down...\n2026-10-30 08:59:13.252 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:818 - INFO - Unloading plugin skill: ovos-skill-hangup.oscillatelabsllc\n2026-10-30 08:59:13.252 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:771 - INFO - ovos-skill-hangup.oscillatelabsllc is shutting down...\n2026-10-30 08:59:13.254 - OVOS - ovos_core.intent_services.service:on_stopping:200 - INFO - IntentService is shutting down...",
+        "log_excerpt": "ad_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-adapt-domain-pipeline-plugin'\n2026-11-04 09:49:13.572 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-adapt-hierarchical-pipeline-plugin'\n2026-11-04 09:49:13.580 - OVOS - ovos_padatious.opm:__init__:347 - INFO - Padatious class: IntentContainer\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-persona-pipeline-plugin'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-m2v-pipeline'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:326 - WARNING - Pipeline plugin 'ovos-m2v-pipeline' is blacklisted in 'intents.blacklisted_pipelines' but also selected in 'intents.pipeline'; the blacklist wins and it will stay disabled\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-m2v-prototype-pipeline'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-hierarchical-pipeline-plugin'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-nebulento-pipeline-plugin'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-domain-pipeline-plugin'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-hierarchical-pipeline-plugin'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:handle_reload_pipelines:318 - INFO - Skipping blacklisted pipeline plugin: 'ovos-linha-fina-pipeline-plugin'\n2026-11-04 09:49:13.580 - OVOS - ovos_core.intent_services.service:on_ready:192 - INFO - IntentService is ready.\n2026-11-04 09:49:13.581 - OVOS - ovos_core.skill_manager:on_alive:58 - INFO - Skills Manager is alive.\n2026-11-04 09:49:13.581 - OVOS - ovoscope:load_plugin_skills:904 - INFO - loading skill plugins\n2026-11-04 09:49:13.595 - OVOS - ovos_workshop.skill_launcher:load:472 - INFO - ATTEMPTING TO LOAD PLUGIN SKILL: ovos-skill-hangup.oscillatelabsllc\n2026-11-04 09:49:13.598 - ovos-skill-hangup.oscillatelabsllc - INFO - First run of ovos-skill-hangup.oscillatelabsllc\n2026-11-04 09:49:13.598 - OVOS - ovos_workshop.skills.ovos:on_ready_status:757 - INFO - ovos-skill-hangup.oscillatelabsllc is ready.\n2026-11-04 09:49:13.599 - OVOS - ovos_workshop.skill_launcher:_communicate_load_status:450 - INFO - Skill ovos-skill-hangup.oscillatelabsllc loaded successfully\n2026-11-04 09:49:13.599 - OVOS - ovoscope:load_plugin_skills:912 - INFO - Loaded skill: ovos-skill-hangup.oscillatelabsllc\n2026-11-04 09:49:13.599 - OVOS - ovoscope:run:1007 - INFO - Skills all loaded!\n2026-11-04 09:49:13.599 - OVOS - ovos_core.skill_manager:on_ready:62 - INFO - Skills Manager is ready.\n2026-11-04 09:49:13.681 - OVOS - ovoscope:get_minicroft:1469 - INFO - MiniCroft: no skill registered an intent, so nothing can be outstanding; skipping the trained wait (trainers reporting work=[])\n2026-11-04 09:49:15.682 - OVOS - ovos_core.skill_manager:on_stopping:70 - INFO - Skills Manager is shutting down...\n2026-11-04 09:49:15.682 - OVOS - ovos_core.skill_manager:_unload_plugin_skill:818 - INFO - Unloading plugin skill: ovos-skill-hangup.oscillatelabsllc\n2026-11-04 09:49:15.682 - OVOS - ovos_workshop.skills.ovos:on_stopping_status:771 - INFO - ovos-skill-hangup.oscillatelabsllc is shutting down...\n2026-11-04 09:49:15.683 - OVOS - ovos_core.intent_services.service:on_stopping:200 - INFO - IntentService is shutting down...",
         "package": "ovos-skill-hangup",
         "plugin_ids": [
           "ovos-skill-hangup.oscillatelabsllc"
         ],
-        "requested_version": "1.0.0",
-        "route_key": "80ce7b92de3ccd62",
+        "requested_version": "1.0.1",
+        "route_key": "53cf7c3bea553541",
         "routing": {
           "generated": {
             "reason": "no rows: no .intent templates, or every template was skipped",
             "status": "none"
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.0",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.1",
             "status": "none"
           },
-          "ref": "v1.0.0"
+          "ref": "v1.0.1"
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-30T08:59:05+00:00",
-        "version_tested": "1.0.0",
+        "tested_at": "2026-11-04T09:49:09+00:00",
+        "version_tested": "1.0.1",
         "warnings": [
           "loaded but registered nothing (no intents, fallback or provider)"
         ]
@@ -39472,43 +39463,43 @@
       "stable": {
         "channel": "stable",
         "channel_pinned": false,
-        "duration_seconds": 2.0,
+        "duration_seconds": 1.5,
         "id": "OscillateLabsLLC-hangup",
-        "key": "b981ea3c85e816d2",
+        "key": "63d4e8207edbafcd",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": " already satisfied: ovos-utils>=0.8.1 in /tmp/compat-biugi09j/venv/lib/python3.11/site-packages (from ovos-skill-hangup==1.0.0) (0.8.5)\nINFO: pip is looking at multiple versions of ovos-skill-hangup to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-hangup==1.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": " already satisfied: ovos-utils>=0.8.1 in /tmp/compat-zfw3873g/venv/lib/python3.11/site-packages (from ovos-skill-hangup==1.0.1) (0.8.5)\nINFO: pip is looking at multiple versions of ovos-skill-hangup to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-hangup==1.0.1 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-hangup 1.0.1 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "ovos-skill-hangup",
-        "reason": "ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
-        "requested_version": "1.0.0",
+        "reason": "ovos-skill-hangup 1.0.1 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
+        "requested_version": "1.0.1",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-15T07:45:23+00:00"
+        "tested_at": "2026-11-04T09:50:01+00:00"
       },
       "testing": {
         "channel": "testing",
         "channel_pinned": false,
-        "duration_seconds": 1.8,
+        "duration_seconds": 1.7,
         "id": "OscillateLabsLLC-hangup",
-        "key": "14ff62578ce4eab9",
+        "key": "5ba5332804486271",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": " already satisfied: ovos-utils>=0.8.1 in /tmp/compat-eo62l9pc/venv/lib/python3.11/site-packages (from ovos-skill-hangup==1.0.0) (0.8.4)\nINFO: pip is looking at multiple versions of ovos-skill-hangup to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-hangup==1.0.0 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": " already satisfied: ovos-utils>=0.8.1 in /tmp/compat-lbhn711y/venv/lib/python3.11/site-packages (from ovos-skill-hangup==1.0.1) (0.8.4)\nINFO: pip is looking at multiple versions of ovos-skill-hangup to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-skill-hangup==1.0.1 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-skill-hangup 1.0.1 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "ovos-skill-hangup",
-        "reason": "ovos-skill-hangup 1.0.0 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
-        "requested_version": "1.0.0",
+        "reason": "ovos-skill-hangup 1.0.1 depends on ovos-workshop!=1.*, !=2.*, !=3.*, !=4.*, !=5.*, !=6.*, !=7.* and >=0.1.7; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
+        "requested_version": "1.0.1",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-15T07:44:28+00:00"
+        "tested_at": "2026-11-04T09:49:12+00:00"
       }
     },
     "OscillateLabsLLC-skill-homeassistant": {
       "alpha": {
-        "boot_seconds": 29.2,
+        "boot_seconds": 26.2,
         "channel": "alpha",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 34.1,
+        "duration_seconds": 31.1,
         "id": "OscillateLabsLLC-skill-homeassistant",
         "intents_by_lang": {
           "da-dk": 28,
@@ -39520,7 +39511,7 @@
           "pl-pl": 24,
           "sv-se": 28
         },
-        "key": "7df8b0bff9741d06",
+        "key": "5e98d8417a99c2d1",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -39540,8 +39531,8 @@
         "registrations": {
           "intents": 172
         },
-        "requested_version": "1.4.5",
-        "route_key": "d0eac211075bcc30",
+        "requested_version": "1.4.6",
+        "route_key": "25f41fa4ac23fe38",
         "routing": {
           "generated": {
             "asked": 0,
@@ -39589,27 +39580,29 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.4.5",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.4.6",
             "status": "none"
           },
-          "ref": "v1.4.5",
+          "ref": "v1.4.6",
           "stop": {
             "lang": "en-US",
-            "result": "nothing_to_stop",
+            "result": "stuck",
+            "seconds": 0.0,
+            "spoke_after_stop": 0,
             "utterance": "Disable Home Assistant"
           }
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-30T09:00:26+00:00",
-        "version_tested": "1.4.5"
+        "tested_at": "2026-11-04T09:49:24+00:00",
+        "version_tested": "1.4.6"
       },
       "stable": {
-        "boot_seconds": 238.1,
+        "boot_seconds": 241.6,
         "channel": "stable",
         "channel_pinned": false,
         "driver": "ovoscope legacy (no lang/wait options)",
-        "duration_seconds": 242.1,
+        "duration_seconds": 244.7,
         "id": "OscillateLabsLLC-skill-homeassistant",
         "intents_by_lang": {
           "da-dk": 14,
@@ -39621,7 +39614,7 @@
           "pl-pl": 14,
           "sv-se": 14
         },
-        "key": "b5ba8326fa4da71b",
+        "key": "1f60d6def73c6427",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -39641,8 +39634,8 @@
         "registrations": {
           "intents": 88
         },
-        "requested_version": "1.4.5",
-        "route_key": "c31657b1095e8797",
+        "requested_version": "1.4.6",
+        "route_key": "d18cd8f0bfcfa002",
         "routing": {
           "generated": {
             "asked": 0,
@@ -39671,10 +39664,10 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.4.5",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.4.6",
             "status": "none"
           },
-          "ref": "v1.4.5",
+          "ref": "v1.4.6",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -39683,15 +39676,15 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-16T08:06:11+00:00",
-        "version_tested": "1.4.5"
+        "tested_at": "2026-11-04T09:50:03+00:00",
+        "version_tested": "1.4.6"
       },
       "testing": {
-        "boot_seconds": 222.9,
+        "boot_seconds": 135.0,
         "channel": "testing",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 226.3,
+        "duration_seconds": 138.2,
         "id": "OscillateLabsLLC-skill-homeassistant",
         "intents_by_lang": {
           "da-dk": 14,
@@ -39703,7 +39696,7 @@
           "pl-pl": 14,
           "sv-se": 14
         },
-        "key": "996a73f7320dd291",
+        "key": "941cef4e23e6b140",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -39723,8 +39716,8 @@
         "registrations": {
           "intents": 88
         },
-        "requested_version": "1.4.5",
-        "route_key": "ab63480555d9bf20",
+        "requested_version": "1.4.6",
+        "route_key": "26e681f2e1c4f4c0",
         "routing": {
           "generated": {
             "asked": 0,
@@ -39761,10 +39754,10 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.4.5",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.4.6",
             "status": "none"
           },
-          "ref": "v1.4.5",
+          "ref": "v1.4.6",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -39773,35 +39766,35 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-16T08:00:50+00:00",
-        "version_tested": "1.4.5"
+        "tested_at": "2026-11-04T09:49:14+00:00",
+        "version_tested": "1.4.6"
       }
     },
     "OscillateLabsLLC-skill-mac-application-launcher": {
       "alpha": {
         "channel": "alpha",
         "channel_pinned": false,
-        "duration_seconds": 1.7,
+        "duration_seconds": 2.6,
         "id": "OscillateLabsLLC-skill-mac-application-launcher",
-        "key": "94f67022a0d32624",
+        "key": "92e7256fd2130bfe",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": "mp/compat-qaqdwt7g/venv/lib/python3.11/site-packages (from skill-mac-application-launcher==1.0.5) (2.11.29a1)\nINFO: pip is looking at multiple versions of skill-mac-application-launcher to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-mac-application-launcher==1.0.5 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-mac-application-launcher 1.0.5 depends on ovos-plugin-manager~=0.9.0\n    The user requested (constraint) ovos-plugin-manager==2.12.5a1,>=2.12.5a1\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "mp/compat-rstgow59/venv/lib/python3.11/site-packages (from skill-mac-application-launcher==1.0.6) (2.11.29a1)\nINFO: pip is looking at multiple versions of skill-mac-application-launcher to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-mac-application-launcher==1.0.6 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-mac-application-launcher 1.0.6 depends on ovos-plugin-manager~=0.9.0\n    The user requested (constraint) ovos-plugin-manager==2.12.5a1,>=2.12.5a1\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "skill-mac-application-launcher",
-        "reason": "skill-mac-application-launcher 1.0.5 depends on ovos-plugin-manager~=0.9.0; channel pins ovos-plugin-manager==2.12.5a1,>=2.12.5a1",
-        "requested_version": "1.0.5",
+        "reason": "skill-mac-application-launcher 1.0.6 depends on ovos-plugin-manager~=0.9.0; channel pins ovos-plugin-manager==2.12.5a1,>=2.12.5a1",
+        "requested_version": "1.0.6",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-30T08:58:56+00:00"
+        "tested_at": "2026-11-04T09:49:55+00:00"
       },
       "stable": {
-        "boot_seconds": 16.1,
+        "boot_seconds": 47.3,
         "channel": "stable",
         "channel_pinned": false,
         "driver": "ovoscope legacy (no lang/wait options)",
-        "duration_seconds": 19.0,
+        "duration_seconds": 49.1,
         "id": "OscillateLabsLLC-skill-mac-application-launcher",
-        "key": "d58975efb6ccea51",
+        "key": "c784e6fc6fff80c5",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -39822,98 +39815,98 @@
         "registrations": {
           "fallback": 1
         },
-        "requested_version": "1.0.5",
-        "route_key": "8362854fdba5128d",
+        "requested_version": "1.0.6",
+        "route_key": "e5112ec6c79187f3",
         "routing": {
           "generated": {
             "reason": "no rows: no .intent templates, or every template was skipped",
             "status": "none"
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.5",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.6",
             "status": "none"
           },
-          "ref": "v1.0.5"
+          "ref": "v1.0.6"
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-16T08:10:15+00:00",
-        "version_tested": "1.0.5"
+        "tested_at": "2026-11-04T09:54:10+00:00",
+        "version_tested": "1.0.6"
       },
       "testing": {
         "channel": "testing",
         "channel_pinned": false,
-        "duration_seconds": 1.8,
+        "duration_seconds": 1.6,
         "id": "OscillateLabsLLC-skill-mac-application-launcher",
-        "key": "b2b606b8ea4b22b0",
+        "key": "a5604784521e9147",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": "n /tmp/compat-xqmt5q4q/venv/lib/python3.11/site-packages (from skill-mac-application-launcher==1.0.5) (1.5.0)\nINFO: pip is looking at multiple versions of skill-mac-application-launcher to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-mac-application-launcher==1.0.5 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-mac-application-launcher 1.0.5 depends on ovos-plugin-manager~=0.9.0\n    The user requested (constraint) ovos-plugin-manager<3.0.0,==2.2.0,>=1.0.3\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "n /tmp/compat-lbhn711y/venv/lib/python3.11/site-packages (from skill-mac-application-launcher==1.0.6) (1.5.0)\nINFO: pip is looking at multiple versions of skill-mac-application-launcher to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-mac-application-launcher==1.0.6 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-mac-application-launcher 1.0.6 depends on ovos-plugin-manager~=0.9.0\n    The user requested (constraint) ovos-plugin-manager<3.0.0,==2.2.0,>=1.0.3\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "skill-mac-application-launcher",
-        "reason": "skill-mac-application-launcher 1.0.5 depends on ovos-plugin-manager~=0.9.0; channel pins ovos-plugin-manager<3.0.0,==2.2.0,>=1.0.3",
-        "requested_version": "1.0.5",
+        "reason": "skill-mac-application-launcher 1.0.6 depends on ovos-plugin-manager~=0.9.0; channel pins ovos-plugin-manager<3.0.0,==2.2.0,>=1.0.3",
+        "requested_version": "1.0.6",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-16T08:04:37+00:00"
+        "tested_at": "2026-11-04T09:51:33+00:00"
       }
     },
     "OscillateLabsLLC-skill-meal-plan": {
       "alpha": {
         "channel": "alpha",
         "channel_pinned": false,
-        "duration_seconds": 1.8,
+        "duration_seconds": 2.5,
         "id": "OscillateLabsLLC-skill-meal-plan",
-        "key": "760918f130820287",
+        "key": "8f18e55f6ddb45c3",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": "eady satisfied: ovos-utils>=0.0.30,~=0.0 in /tmp/compat-qaqdwt7g/venv/lib/python3.11/site-packages (from skill-meal-plan==2.2.3) (0.15.7a2)\nINFO: pip is looking at multiple versions of skill-meal-plan to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-meal-plan==2.2.3 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-meal-plan 2.2.3 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop==9.10.1a1,>=8.3.0a1\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "eady satisfied: ovos-utils>=0.0.30,~=0.0 in /tmp/compat-rstgow59/venv/lib/python3.11/site-packages (from skill-meal-plan==2.2.4) (0.15.7a2)\nINFO: pip is looking at multiple versions of skill-meal-plan to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-meal-plan==2.2.4 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-meal-plan 2.2.4 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop==9.10.1a1,>=8.3.0a1\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "skill-meal-plan",
-        "reason": "skill-meal-plan 2.2.3 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop==9.10.1a1,>=8.3.0a1",
-        "requested_version": "2.2.3",
+        "reason": "skill-meal-plan 2.2.4 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop==9.10.1a1,>=8.3.0a1",
+        "requested_version": "2.2.4",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-30T08:58:58+00:00"
+        "tested_at": "2026-11-04T09:49:58+00:00"
       },
       "stable": {
         "channel": "stable",
         "channel_pinned": false,
-        "duration_seconds": 2.4,
+        "duration_seconds": 1.3,
         "id": "OscillateLabsLLC-skill-meal-plan",
-        "key": "c0743988953c0c4c",
+        "key": "b201bc983866c0bc",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": "already satisfied: ovos-utils>=0.0.30,~=0.0 in /tmp/compat-3u3m244e/venv/lib/python3.11/site-packages (from skill-meal-plan==2.2.3) (0.8.5)\nINFO: pip is looking at multiple versions of skill-meal-plan to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-meal-plan==2.2.3 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-meal-plan 2.2.3 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "already satisfied: ovos-utils>=0.0.30,~=0.0 in /tmp/compat-zfw3873g/venv/lib/python3.11/site-packages (from skill-meal-plan==2.2.4) (0.8.5)\nINFO: pip is looking at multiple versions of skill-meal-plan to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-meal-plan==2.2.4 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-meal-plan 2.2.4 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "skill-meal-plan",
-        "reason": "skill-meal-plan 2.2.3 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
-        "requested_version": "2.2.3",
+        "reason": "skill-meal-plan 2.2.4 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
+        "requested_version": "2.2.4",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-16T08:10:34+00:00"
+        "tested_at": "2026-11-04T09:55:01+00:00"
       },
       "testing": {
         "channel": "testing",
         "channel_pinned": false,
-        "duration_seconds": 1.7,
+        "duration_seconds": 1.6,
         "id": "OscillateLabsLLC-skill-meal-plan",
-        "key": "e5b3a39387b9bc3e",
+        "key": "1dcc4c74067e0617",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": "already satisfied: ovos-utils>=0.0.30,~=0.0 in /tmp/compat-xqmt5q4q/venv/lib/python3.11/site-packages (from skill-meal-plan==2.2.3) (0.8.4)\nINFO: pip is looking at multiple versions of skill-meal-plan to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-meal-plan==2.2.3 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-meal-plan 2.2.3 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "already satisfied: ovos-utils>=0.0.30,~=0.0 in /tmp/compat-lbhn711y/venv/lib/python3.11/site-packages (from skill-meal-plan==2.2.4) (0.8.4)\nINFO: pip is looking at multiple versions of skill-meal-plan to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install skill-meal-plan==2.2.4 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    skill-meal-plan 2.2.4 depends on ovos-workshop>=0.0.12 and ~=0.0\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "skill-meal-plan",
-        "reason": "skill-meal-plan 2.2.3 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
-        "requested_version": "2.2.3",
+        "reason": "skill-meal-plan 2.2.4 depends on ovos-workshop>=0.0.12 and ~=0.0; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
+        "requested_version": "2.2.4",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-16T08:04:39+00:00"
+        "tested_at": "2026-11-04T09:51:35+00:00"
       }
     },
     "OscillateLabsLLC-skill-monster-scanner": {
       "alpha": {
-        "boot_seconds": 3.8,
+        "boot_seconds": 3.9,
         "channel": "alpha",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 5.7,
+        "duration_seconds": 6.5,
         "id": "OscillateLabsLLC-skill-monster-scanner",
         "intents_by_lang": {
           "da-dk": 1,
@@ -39922,7 +39915,7 @@
           "sv-se": 1,
           "unknown": 1
         },
-        "key": "0771fcc8cf7c1ccc",
+        "key": "d27c54ebfa359d45",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -39938,30 +39931,30 @@
         "registrations": {
           "intents": 5
         },
-        "requested_version": "2.2.3",
-        "route_key": "e15feccf3b8a06eb",
+        "requested_version": "2.2.4",
+        "route_key": "77ea69531839350e",
         "routing": {
           "generated": {
             "reason": "no rows: no .intent templates, or every template was skipped",
             "status": "none"
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v2.2.3",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v2.2.4",
             "status": "none"
           },
-          "ref": "v2.2.3"
+          "ref": "v2.2.4"
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-30T08:59:00+00:00",
-        "version_tested": "2.2.3"
+        "tested_at": "2026-11-04T09:50:01+00:00",
+        "version_tested": "2.2.4"
       },
       "stable": {
-        "boot_seconds": 11.0,
+        "boot_seconds": 9.7,
         "channel": "stable",
         "channel_pinned": false,
         "driver": "ovoscope legacy (no lang/wait options)",
-        "duration_seconds": 13.6,
+        "duration_seconds": 11.3,
         "id": "OscillateLabsLLC-skill-monster-scanner",
         "intents_by_lang": {
           "da-dk": 7,
@@ -39970,7 +39963,7 @@
           "sv-se": 7,
           "unknown": 1
         },
-        "key": "0a9236d0936604d0",
+        "key": "59f63f7958a26719",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -39986,30 +39979,30 @@
         "registrations": {
           "intents": 39
         },
-        "requested_version": "2.2.3",
-        "route_key": "6c99e1a757a5edfa",
+        "requested_version": "2.2.4",
+        "route_key": "1444292ba6f4b7e0",
         "routing": {
           "generated": {
             "reason": "no rows: no .intent templates, or every template was skipped",
             "status": "none"
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v2.2.3",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v2.2.4",
             "status": "none"
           },
-          "ref": "v2.2.3"
+          "ref": "v2.2.4"
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-16T08:10:37+00:00",
-        "version_tested": "2.2.3"
+        "tested_at": "2026-11-04T09:55:03+00:00",
+        "version_tested": "2.2.4"
       },
       "testing": {
-        "boot_seconds": 5.7,
+        "boot_seconds": 5.6,
         "channel": "testing",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 7.8,
+        "duration_seconds": 7.5,
         "id": "OscillateLabsLLC-skill-monster-scanner",
         "intents_by_lang": {
           "da-dk": 7,
@@ -40018,7 +40011,7 @@
           "sv-se": 7,
           "unknown": 1
         },
-        "key": "529cdaf7460c017d",
+        "key": "9c4350318facd267",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -40034,38 +40027,38 @@
         "registrations": {
           "intents": 39
         },
-        "requested_version": "2.2.3",
-        "route_key": "b749d8c55fb1c40b",
+        "requested_version": "2.2.4",
+        "route_key": "479c8ad16b451e50",
         "routing": {
           "generated": {
             "reason": "no rows: no .intent templates, or every template was skipped",
             "status": "none"
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v2.2.3",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v2.2.4",
             "status": "none"
           },
-          "ref": "v2.2.3"
+          "ref": "v2.2.4"
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-16T08:04:41+00:00",
-        "version_tested": "2.2.3"
+        "tested_at": "2026-11-04T09:51:37+00:00",
+        "version_tested": "2.2.4"
       }
     },
     "OscillateLabsLLC-skill-musicassistant": {
       "alpha": {
-        "boot_seconds": 6.7,
+        "boot_seconds": 7.0,
         "channel": "alpha",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 9.1,
+        "duration_seconds": 10.4,
         "id": "OscillateLabsLLC-skill-musicassistant",
         "intents_by_lang": {
           "en-us": 32,
           "fr-fr": 32
         },
-        "key": "b3b5a01cc40e7da7",
+        "key": "fc71f0a409908971",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -40080,8 +40073,8 @@
           "fallback": 1,
           "intents": 64
         },
-        "requested_version": "1.0.1",
-        "route_key": "5b087508d7249dc7",
+        "requested_version": "1.0.2",
+        "route_key": "29d0892d0503973d",
         "routing": {
           "generated": {
             "asked": 0,
@@ -40138,10 +40131,10 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.1",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.2",
             "status": "none"
           },
-          "ref": "v1.0.1",
+          "ref": "v1.0.2",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -40150,21 +40143,21 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-30T08:59:06+00:00",
-        "version_tested": "1.0.1"
+        "tested_at": "2026-11-04T09:50:08+00:00",
+        "version_tested": "1.0.2"
       },
       "stable": {
-        "boot_seconds": 33.5,
+        "boot_seconds": 10.0,
         "channel": "stable",
         "channel_pinned": false,
         "driver": "ovoscope legacy (no lang/wait options)",
-        "duration_seconds": 36.5,
+        "duration_seconds": 12.1,
         "id": "OscillateLabsLLC-skill-musicassistant",
         "intents_by_lang": {
           "en-us": 37,
           "fr-fr": 34
         },
-        "key": "8a52b0efdb207d6e",
+        "key": "deac5e8e9b58ed6b",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -40179,22 +40172,22 @@
           "fallback": 1,
           "intents": 71
         },
-        "requested_version": "1.0.1",
-        "route_key": "8a21d251d3925e69",
+        "requested_version": "1.0.2",
+        "route_key": "d05b83fc825066be",
         "routing": {
           "generated": {
             "asked": 0,
-            "baseline": 5,
+            "baseline": 4,
             "by_lang": {
               "en-US": {
                 "counted": 75,
-                "hit": 69
+                "hit": 68
               }
             },
             "collisions": [],
             "counted": 75,
-            "hang": 0,
-            "hit": 69,
+            "hang": 2,
+            "hit": 68,
             "langs": [
               "en-US"
             ],
@@ -40218,6 +40211,20 @@
                 "utterance": "skip track in the london"
               },
               {
+                "expected": "now_playing",
+                "kind": "hang",
+                "lang": "en-US",
+                "stage": "last message: question:query.response",
+                "utterance": "what's playing in the london"
+              },
+              {
+                "expected": "now_playing",
+                "kind": "hang",
+                "lang": "en-US",
+                "stage": "last message: question:query.response",
+                "utterance": "what is playing in the london"
+              },
+              {
                 "expected": "previous",
                 "kind": "baseline",
                 "lang": "en-US",
@@ -40239,14 +40246,6 @@
                 "lang": "en-US",
                 "stage": "last message: recognizer_loop:audio_output_end",
                 "utterance": "previous song in the london"
-              },
-              {
-                "expected": "volume",
-                "kind": "baseline",
-                "lang": "en-US",
-                "stage": "last message: recognizer_loop:audio_output_end",
-                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
-                "utterance": "unmute in the london"
               }
             ],
             "neighbour": 0,
@@ -40257,10 +40256,10 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.1",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.2",
             "status": "none"
           },
-          "ref": "v1.0.1",
+          "ref": "v1.0.2",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -40269,21 +40268,21 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-18T07:26:49+00:00",
-        "version_tested": "1.0.1"
+        "tested_at": "2026-11-04T09:55:14+00:00",
+        "version_tested": "1.0.2"
       },
       "testing": {
-        "boot_seconds": 16.6,
+        "boot_seconds": 5.9,
         "channel": "testing",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 19.7,
+        "duration_seconds": 8.3,
         "id": "OscillateLabsLLC-skill-musicassistant",
         "intents_by_lang": {
           "en-us": 37,
           "fr-fr": 34
         },
-        "key": "e8e4bd9073da5a79",
+        "key": "600444b2ab636f7a",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -40298,22 +40297,22 @@
           "fallback": 1,
           "intents": 71
         },
-        "requested_version": "1.0.1",
-        "route_key": "45ce9a3ab78c84bf",
+        "requested_version": "1.0.2",
+        "route_key": "8b060521f3ce47e8",
         "routing": {
           "generated": {
             "asked": 0,
-            "baseline": 0,
+            "baseline": 1,
             "by_lang": {
               "en-US": {
                 "counted": 75,
-                "hit": 66
+                "hit": 67
               }
             },
             "collisions": [],
             "counted": 75,
-            "hang": 8,
-            "hit": 66,
+            "hang": 6,
+            "hit": 67,
             "langs": [
               "en-US"
             ],
@@ -40349,25 +40348,26 @@
                 "utterance": "what is playing in the london"
               },
               {
-                "expected": "previous",
-                "kind": "hang",
+                "expected": "pause",
+                "kind": "baseline",
                 "lang": "en-US",
-                "stage": "last message: ovos.skills.fallback.pong",
-                "utterance": "previous track in the london"
+                "stage": "last message: ovos.utterance.handled",
+                "taken_by": "ovos-skill-wolfie.openvoiceos",
+                "utterance": "pause the music in the london"
               },
               {
-                "expected": "previous",
+                "expected": "pause",
                 "kind": "hang",
                 "lang": "en-US",
                 "stage": "last message: ovos.skills.fallback.pong",
-                "utterance": "last track in the london"
+                "utterance": "unpause the music in the london"
               },
               {
-                "expected": "previous",
+                "expected": "pause",
                 "kind": "hang",
                 "lang": "en-US",
                 "stage": "last message: ovos.skills.fallback.pong",
-                "utterance": "previous song in the london"
+                "utterance": "pause music in the london"
               },
               {
                 "expected": "shuffle",
@@ -40375,13 +40375,6 @@
                 "lang": "en-US",
                 "stage": "last message: recognizer_loop:audio_output_end",
                 "utterance": "enable shuffle"
-              },
-              {
-                "expected": "volume",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: ovos.skills.fallback.pong",
-                "utterance": "unmute in the london"
               }
             ],
             "neighbour": 0,
@@ -40392,10 +40385,10 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.1",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.2",
             "status": "none"
           },
-          "ref": "v1.0.1",
+          "ref": "v1.0.2",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -40404,19 +40397,19 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-18T07:26:30+00:00",
-        "version_tested": "1.0.1"
+        "tested_at": "2026-11-04T09:51:45+00:00",
+        "version_tested": "1.0.2"
       }
     },
     "OscillateLabsLLC-switchboard": {
       "alpha": {
-        "boot_seconds": 3.3,
+        "boot_seconds": 3.5,
         "channel": "alpha",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 5.9,
+        "duration_seconds": 6.4,
         "id": "OscillateLabsLLC-switchboard",
-        "key": "0700d92fbf48e050",
+        "key": "842fd9435c03dde9",
         "kind": "pipeline",
         "level": 2,
         "package": "ovos-switchboard-pipeline-plugin",
@@ -40428,7 +40421,7 @@
           "ovos-switchboard-llm-pipeline-plugin",
           "ovos-switchboard-prefix-pipeline-plugin"
         ],
-        "requested_version": "1.1.1",
+        "requested_version": "1.1.2",
         "stage": "load",
         "stages": [
           "ovos-switchboard-classifier-pipeline-plugin",
@@ -40439,33 +40432,33 @@
           "ovos-switchboard-prefix-pipeline-plugin"
         ],
         "status": "pass",
-        "tested_at": "2026-10-30T09:18:32+00:00",
-        "version_tested": "1.1.1"
+        "tested_at": "2026-11-04T09:50:19+00:00",
+        "version_tested": "1.1.2"
       },
       "stable": {
         "channel": "stable",
         "channel_pinned": false,
-        "duration_seconds": 2.2,
+        "duration_seconds": 1.4,
         "id": "OscillateLabsLLC-switchboard",
-        "key": "b0b71957019aef94",
+        "key": "79bc4927ab379423",
         "kind": "pipeline",
         "level": 0,
-        "log_excerpt": "/compat-biugi09j/venv/lib/python3.11/site-packages (from ovos-switchboard-pipeline-plugin==1.1.1) (1.3.7)\nINFO: pip is looking at multiple versions of ovos-switchboard-pipeline-plugin to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-switchboard-pipeline-plugin==1.1.1 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-switchboard-pipeline-plugin 1.1.1 depends on ovos-plugin-manager>=2.0.0\n    The user requested (constraint) ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "/compat-zfw3873g/venv/lib/python3.11/site-packages (from ovos-switchboard-pipeline-plugin==1.1.2) (1.3.7)\nINFO: pip is looking at multiple versions of ovos-switchboard-pipeline-plugin to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-switchboard-pipeline-plugin==1.1.2 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-switchboard-pipeline-plugin 1.1.2 depends on ovos-plugin-manager>=2.0.0\n    The user requested (constraint) ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "ovos-switchboard-pipeline-plugin",
-        "reason": "ovos-switchboard-pipeline-plugin 1.1.1 depends on ovos-plugin-manager>=2.0.0; channel pins ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0",
-        "requested_version": "1.1.1",
+        "reason": "ovos-switchboard-pipeline-plugin 1.1.2 depends on ovos-plugin-manager>=2.0.0; channel pins ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0",
+        "requested_version": "1.1.2",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-15T07:45:25+00:00"
+        "tested_at": "2026-11-04T09:55:27+00:00"
       },
       "testing": {
-        "boot_seconds": 5.3,
+        "boot_seconds": 5.2,
         "channel": "testing",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 14.0,
+        "duration_seconds": 13.2,
         "id": "OscillateLabsLLC-switchboard",
-        "key": "2c30ab840eed423a",
+        "key": "489ca8b9b66f08c3",
         "kind": "pipeline",
         "level": 2,
         "package": "ovos-switchboard-pipeline-plugin",
@@ -40477,7 +40470,7 @@
           "ovos-switchboard-llm-pipeline-plugin",
           "ovos-switchboard-prefix-pipeline-plugin"
         ],
-        "requested_version": "1.1.1",
+        "requested_version": "1.1.2",
         "stage": "load",
         "stages": [
           "ovos-switchboard-classifier-pipeline-plugin",
@@ -40488,8 +40481,8 @@
           "ovos-switchboard-prefix-pipeline-plugin"
         ],
         "status": "pass",
-        "tested_at": "2026-10-15T07:44:30+00:00",
-        "version_tested": "1.1.1"
+        "tested_at": "2026-11-04T09:51:54+00:00",
+        "version_tested": "1.1.2"
       }
     },
     "andlo-ovos-common-reading-pipeline-plugin": {
