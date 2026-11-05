@@ -4,15 +4,15 @@ aiohappyeyeballs==2.7.1
 aiohttp==3.14.5
 aiosignal==1.4.0
 anyascii==0.3.3
-anyio==4.15.1
+anyio==4.16.0
 attrs==26.1.0
 beautifulsoup4==4.15.0
-bm25s==0.3.14
+bm25s==0.3.16
 brill-postagger==0.1.2
 bs4==0.0.2
 caldav==1.6.0
 cattrs==26.2.1
-certifi==2026.10.18
+certifi==2026.10.23
 cffi==2.1.1
 charset-normalizer==3.5.2
 click==8.5.0
@@ -20,7 +20,7 @@ cloudpickle==3.1.2
 colorspacious==1.1.2
 combo_lock==0.3.1
 crf_query_xtract==0.2.0
-dateparser==1.4.3
+dateparser==1.5.0
 dbus-next==0.2.3
 dead-simple-cache==1.2.2
 decorator==5.3.1
@@ -38,37 +38,38 @@ future==1.0.0
 geocoder==1.38.1
 h11==0.16.0
 h3==4.5.0
-holidays==0.106
+holidays==0.108
 httpcore==1.0.9
 httpx==0.28.1
 icalendar==5.0.14
 icepool==2.1.3
 idna==3.20
 ifaddr==0.2.0
-importlib_metadata==9.0.1
+importlib_metadata==10.1.0
 iniconfig==2.3.1
 joblib==1.6.0
 jplephem==2.24
 json-database==0.10.1
-keyword-template-matcher @ git+https://github.com/TigreGotico/kw-template-matcher@2518c9895e1a47044ede2862da7f9a550ff05d7f
+keyword-template-matcher @ git+https://github.com/TigreGotico/kw-template-matcher@03daef61d66c916ea5043c9d73f9225bf44eeea8
 kthread==0.2.3
 langcodes==3.3.0
+linguatag==0.1.5a1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
 lxml==6.1.3
-ma-http-client==0.2.1
+ma-http-client==0.2.2
 mac-vendor-lookup==0.1.15
 markdown-it-py==4.2.0
 mashumaro==3.23
 mdurl==0.1.2
 memory-tempfile==2.2.3
 mss==10.2.0
-multidict==7.1.0
+multidict==7.2.1
 music_assistant_models_loose==0.0.1
-narwhals==2.27.1
+narwhals==2.28.0
 nebulento @ git+https://github.com/OpenVoiceOS/nebulento@8af5d46f252cde812c6a4f64d9c1062a582db238
 neon-homeassistant-skill==0.0.24
 nested-lookup==0.2.25
-nltk==3.10.3
+nltk==3.10.4
 numpy==1.26.4
 oauthlib==3.3.1
 orjson==3.13.0
@@ -84,7 +85,7 @@ ovos-gui-api-client==0.1.0
 ovos-lang-parser==0.0.2
 ovos-mark1-utils==0.0.1
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
-ovos-media==2.4.5a1
+ovos-media==2.4.5a2
 ovos-number-parser==0.3.2
 ovos-ocp-pipeline-plugin==1.1.14
 ovos-plugin-common-play==1.2.1
@@ -105,7 +106,7 @@ ovos-skill-color-picker==0.0.7
 ovos-skill-confucius-quotes==0.1.13
 ovos-skill-convert==0.0.10
 ovos-skill-cosquin-tales==0.1.7
-ovos-skill-count @ git+https://github.com/OpenVoiceOS/ovos-skill-count@54bd362003f33a77f39867f71a456429841f8599
+ovos-skill-count @ git+https://github.com/OpenVoiceOS/ovos-skill-count@22253e76aa568d867d302f32cdb8b0f1e819cf37
 ovos-skill-date-time==0.4.20
 ovos-skill-days-in-history==0.3.11
 ovos-skill-diagnostics==0.0.8
@@ -163,7 +164,7 @@ ovos-skill-word-of-the-day==0.2.5
 ovos-skill-youtube-music==0.1.7
 ovos-solver-bm25-plugin==0.0.1
 ovos-solver-yes-no-plugin==0.2.8
-ovos-spec-tools==1.16.0a1
+ovos-spec-tools==1.17.1a1
 ovos-translate-server-plugin==0.0.2
 ovos-utils==0.8.5
 ovos-utterance-normalizer==0.2.3
@@ -172,7 +173,7 @@ ovos-workshop==3.4.0
 ovos_adapt_parser==1.0.9
 ovos_bus_client==1.3.7
 ovos_gui==1.3.4
-ovos_m2v_pipeline @ git+https://github.com/OpenVoiceOS/ovos-m2v-pipeline@194cfd03e25cf4cf6d3c4d27bab7bcad93ad5a4c
+ovos_m2v_pipeline @ git+https://github.com/OpenVoiceOS/ovos-m2v-pipeline@e3f3dc19b125addb300724dde6601f1943cdc4af
 ovos_openai_plugin==2.0.6
 ovos_padatious==1.4.3
 ovos_persona==0.6.24
@@ -187,24 +188,24 @@ padacioso==1.1.1a1
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
 Pint==0.25.3
-platformdirs==4.13.5
+platformdirs==4.14.5
 pluggy==1.7.0
 propcache==0.5.4
 psutil==7.2.2
 ptyprocess==0.7.0
 pyahocorasick==2.3.1
-pycparser==3.11
+pycparser==3.12
 pyee==12.1.1
 Pygments==2.21.0
 pyradios==2.1.1
 PyStemmer==3.1.0
-pytest==9.1.1
+pytest==9.2.0
 pytest-json-report==1.5.0
 pytest-metadata==3.1.1
 pytest-timeout==2.4.0
 python-crfsuite==0.9.12
 python-dateutil==2.9.0.post0
-pytz==2026.5
+pytz==2026.6
 pywikihow==0.5.7
 PyYAML==6.0.3
 quebra-frases==0.3.7
@@ -223,32 +224,32 @@ sgp4==2.27
 simplematch==1.4
 six==1.17.0
 skill-easter-eggs==1.2.5
-skill-homeassistant==1.4.5
-skill-mac-application-launcher==1.0.5
-skill-monster-scanner==2.2.3
-skill-musicassistant==1.0.1
+skill-homeassistant==1.4.6
+skill-mac-application-launcher==1.0.6
+skill-monster-scanner==2.2.4
+skill-musicassistant==1.0.2
 sklearn-crfsuite==0.5.0
 skyfield==1.55
 snowballstemmer==3.1.1
-soupsieve==3.0.3
+soupsieve==4.0.1
 SpeechRecognition==3.17.0
 speedtest-cli==2.1.3
 tabulate==0.10.0
 threadpoolctl==3.7.0
 timezonefinder==5.2.0
-tmdbv3api==1.9.0
-tornado==6.5.10
+tmdbv3api==1.10.0
+tornado==6.6
 tqdm==4.70.1
 tutubo==4.0.0
 typing_extensions==4.16.0
-tzdata==2026.5
-tzlocal==5.4.4
+tzdata==2026.6
+tzlocal==5.4.5
 unicode-rbnf==2.4.1
-url-normalize==3.0.1
+url-normalize==3.1.0
 urllib3==2.8.0
 vobject==0.9.9
 watchdog==2.3.1
-wcwidth==0.9.2
+wcwidth==0.9.4
 webcolors==25.10.0
 websocket-client==1.9.2
 wikipedia==1.4.0
@@ -256,5 +257,5 @@ x-wr-timezone==1.0.1
 xxhash==4.0.2
 yarl==1.25.1
 ytmusicapi==1.12.3
-zeroconf==0.151.5
-zipp==4.1.1
+zeroconf==0.153.0
+zipp==4.1.2

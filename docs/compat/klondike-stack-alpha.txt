@@ -18,7 +18,7 @@ chronologia==0.31.7a2
 click==8.5.0
 cloudpickle==3.1.2
 combo_lock==0.3.1
-dateparser==1.4.3
+dateparser==1.5.0
 dbus-next==0.2.3
 dead-simple-cache==1.2.2
 decorator==5.3.1
@@ -54,9 +54,10 @@ keyword-template-matcher==0.1.11a1
 kthread==0.2.3
 langcodes==3.5.1
 language_data==1.4.0
+linguatag==0.1.5a1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
 lxml==6.1.3
-ma-http-client==0.2.1
+ma-http-client==0.2.2
 mac-vendor-lookup==0.1.15
 marisa-trie==1.4.1
 markdown-it-py==4.2.0
@@ -79,21 +80,21 @@ ovos-audio==2.2.9a1
 ovos-bidirectional-translation-plugin==0.1.5a1
 ovos-bus-client==2.11.29a1
 ovos-common-reading-pipeline-plugin==0.3.2
-ovos-config==3.9.0a1
+ovos-config==3.9.0a2
 ovos-core==3.7.5a1
 ovos-date-parser==0.35.7a1
-ovos-ddg-plugin==1.1.6a1
+ovos-ddg-plugin==1.1.7a1
 ovos-dinkum-listener==0.11.3a1
 ovos-gui==1.6.0a1
 ovos-gui-api-client==0.1.0
-ovos-lang-parser==0.8.0a2
+ovos-lang-parser==0.8.0a3
 ovos-mark1-utils==0.0.1
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
 ovos-media==2.4.5a2
 ovos-media-classifier==0.2.1a2
 ovos-number-parser==0.24.3a1
 ovos-option-matcher-fuzzy-plugin==0.0.3a1
-ovos-persona==0.9.0a35
+ovos-persona==0.9.0a36
 ovos-plugin-manager==2.12.5a1
 ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.12.58a1
@@ -126,7 +127,7 @@ ovos-skill-geography-practice==0.0.6
 ovos-skill-geometry==0.0.4
 ovos-skill-geometry-practice==0.0.4
 ovos-skill-grimm-tales==0.1.8
-ovos-skill-hangup==1.0.0
+ovos-skill-hangup==1.0.1
 ovos-skill-hello-world==0.6.0a2
 ovos-skill-holidays==0.0.3
 ovos-skill-horoscope-readings==0.1.5
@@ -170,7 +171,7 @@ ovos-skill-wolfie==0.13.0a2
 ovos-skill-word-of-the-day==0.8.0a2
 ovos-skill-wordnet==0.14.2a1
 ovos-skill-youtube-music==0.1.10a3
-ovos-spec-tools==1.16.2a1
+ovos-spec-tools==1.17.1a1
 ovos-translate-server-plugin==0.0.10a1
 ovos-typed-slots-transformer==0.0.1a5
 ovos-utils==0.15.7a2
@@ -197,7 +198,7 @@ padacioso==2.5.4a1
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
 Pint==0.25.3
-platformdirs==4.14.3
+platformdirs==4.14.5
 pluggy==1.7.0
 prettytable==3.18.0
 propcache==0.5.4
@@ -205,8 +206,8 @@ psutil==7.2.2
 ptyprocess==0.7.0
 pyahocorasick==2.3.1
 pycparser==3.12
-pydantic==2.14.2
-pydantic_core==2.50.2
+pydantic==2.14.3
+pydantic_core==2.50.4
 pyee==13.0.1
 Pygments==2.21.0
 pyradios==2.1.1
@@ -238,18 +239,18 @@ sgp4==2.27
 simplematch==1.4
 six==1.17.0
 skill-easter-eggs==1.2.5
-skill-homeassistant==1.4.5
-skill-monster-scanner==2.2.3
-skill-musicassistant==1.0.1
+skill-homeassistant==1.4.6
+skill-monster-scanner==2.2.4
+skill-musicassistant==1.0.2
 skops==0.16.0
 skyfield==1.55
 snowballstemmer==3.1.1
-soupsieve==3.0.4
+soupsieve==4.0.1
 speedtest-cli==2.1.3
-thalovant-languages==0.3.5
+thalovant-languages==0.3.6
 thalovant-skill-custos-fallback==0.1.6
 thalovant-skill-interaction-modes==0.1.11
-thalovant-skillkit==0.28.0
+thalovant-skillkit==0.29.0
 threadpoolctl==3.7.0
 timezonefinder==9.0.0
 timezonefinder-data==3.2026.3.post1
@@ -259,7 +260,7 @@ tornado==6.6
 tqdm==4.70.1
 truststore==0.10.5
 tutubo==4.0.0
-typing-inspection==0.4.4
+typing-inspection==0.4.5
 typing_extensions==4.16.0
 tzdata==2026.6
 tzlocal==5.4.5
@@ -267,7 +268,7 @@ unicode-rbnf==2.4.1
 url-normalize==3.1.0
 urllib3==2.8.0
 vobject==0.9.9
-watchdog==7.0.0
+watchdog==7.1.0
 wcwidth==0.9.4
 webcolors==25.10.0
 websocket-client==1.9.2

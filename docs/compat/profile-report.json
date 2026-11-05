@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-04T10:01:36+00:00",
+ "generated_at": "2026-11-05T11:22:43+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-11-04T10:01:36+00:00",
-   "klondike_run_at": "2026-10-19T09:36:47+00:00",
+   "klondike_run_at": "2026-11-05T11:22:43+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
    "profiles": [
@@ -1211,7 +1211,7 @@
   },
   "testing": {
    "run_at": "2026-11-04T10:01:36+00:00",
-   "klondike_run_at": "2026-10-19T09:36:47+00:00",
+   "klondike_run_at": "2026-11-05T11:22:43+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -1893,7 +1893,7 @@
        },
        "klondike": {
         "hit": 4,
-        "counted": 13
+        "counted": 14
        },
        "gold": false,
        "note": "geography facts (offline)",
@@ -2202,7 +2202,7 @@
         }
        },
        "klondike": {
-        "hit": 2,
+        "hit": 1,
         "counted": 6
        },
        "gold": false,
@@ -2417,7 +2417,7 @@
   },
   "alpha": {
    "run_at": "2026-11-04T10:01:36+00:00",
-   "klondike_run_at": "2026-11-03T11:30:29+00:00",
+   "klondike_run_at": "2026-11-05T11:22:43+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2627,14 +2627,20 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 351,
-        "takes": 16,
+        "reaches": 350,
+        "takes": 17,
         "examples": [
          {
           "from": "OpenVoiceOS-ovos-skill-date-time",
           "kind": "baseline",
           "taken_by": "ovos-skill-convert.andlo",
           "utterance": "how many days are there between march 1 and june 5"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-date-time",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-alerts.openvoiceos",
+          "utterance": "how many days between christmas and new year's eve"
          },
          {
           "from": "OpenVoiceOS-ovos-skill-moviemaster",
@@ -2653,12 +2659,6 @@
           "kind": "baseline",
           "taken_by": "ovos-skill-geometry.andlo",
           "utterance": "what's today's word"
-         },
-         {
-          "from": "andlo-ovos-skill-math-practice",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-count.openvoiceos",
-          "utterance": "count to 7"
          }
         ]
        }
@@ -2807,7 +2807,7 @@
         }
        },
        "klondike": {
-        "hit": 3,
+        "hit": 2,
         "counted": 5
        },
        "gold": false
