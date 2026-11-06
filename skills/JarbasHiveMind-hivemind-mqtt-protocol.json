@@ -17,8 +17,8 @@
   "icon_color": null,
   "source": "https://github.com/JarbasHiveMind/hivemind-mqtt-protocol",
   "package_name": "hivemind-mqtt-protocol",
-  "pypi_version": "0.2.5a2",
-  "license": null,
+  "pypi_version": "0.3.0a1",
+  "license": "Apache-2.0",
   "archived": false,
   "author": "JarbasHiveMind",
   "tier": 2,
@@ -26,7 +26,7 @@
   "type_group": "Tool",
   "stars": 0,
   "forks": 1,
-  "open_issues": 7,
+  "open_issues": 3,
   "on_pypi": true,
   "has_release": false,
   "in_ovos_store": false,
@@ -37,7 +37,7 @@
   "setup_notes": [
     {
       "heading": "Configuration keys",
-      "content": "| Key | Default | Description |\n|---|---|---|\n| `broker_host` | `localhost` | MQTT broker hostname or IP |\n| `broker_port` | `1883` | Broker port (8883 for TLS) |\n| `broker_username` | none | MQTT broker username for the master |\n| `broker_password` | none | MQTT broker password for the master |\n| `tls` | `false` | Enable TLS |\n| `tls_ca_certs` | none | Path to CA bundle |\n| `tls_certfile` | none | Path to client cert (mTLS) |\n| `tls_keyfile` | none | Path to client key (mTLS) |\n| `topic_prefix` | `hivemind` | Topic namespace prefix |\n| `qos` | `1` | Default MQTT QoS for control frames |\n| `idle_timeout` | `300` | Seconds of silence before evicting a peer (0 = off) |"
+      "content": "| Key | Default | Description |\n|---|---|---|\n| `broker_host` | `localhost` | MQTT broker hostname or IP |\n| `broker_port` | `1883` | Broker port (8883 for TLS) |\n| `broker_username` | none | MQTT broker username for the master |\n| `broker_password` | none | MQTT broker password for the master |\n| `tls` | `false` | Enable TLS |\n| `tls_ca_certs` | none | Path to CA bundle |\n| `tls_certfile` | none | Path to client cert (mTLS) |\n| `tls_keyfile` | none | Path to client key (mTLS) |\n| `topic_prefix` | `hivemind` | Topic namespace prefix |\n| `topic_namespace` | \u2014 | Optional topic namespace, so a broker ACL can grant one listener its own topic tree |\n| `qos` | `1` | Default MQTT QoS for control frames |\n| `idle_timeout` | `300` | Seconds of silence before evicting a peer (0 = off) |\n| `client_id\u2026"
     },
     {
       "heading": "Install",
@@ -48,7 +48,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-06-04T18:25:55Z",
-  "last_updated": "2026-09-10T21:03:09.999962Z",
+  "last_updated": "2026-11-02T18:52:20.032799Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }
