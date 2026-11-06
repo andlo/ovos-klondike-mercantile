@@ -87,22 +87,22 @@
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-11-04T10:01:36+00:00",
+        "run_at": "2026-11-06T10:00:21+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 15.04,
+              "max": 1.14,
               "median": 0.42,
-              "n": 80,
+              "n": 75,
               "p95": 0.44
             },
-            "seconds": 617.5,
+            "seconds": 490.4,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-11-04T10:01:36+00:00",
+      "run_at": "2026-11-06T10:00:21+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -117,12 +117,9 @@
           "ovos-workshop": "9.10.1a1",
           "ovoscope": "1.12.1a1"
         },
-        "python": "3.11.17"
+        "python": "3.11.18"
       },
-      "stack_moved": [
-        "ovos-config 3.9.0a1 -> 3.9.0a2",
-        "ovos-persona 0.9.0a35 -> 0.9.0a36"
-      ]
+      "stack_moved": []
     },
     "stable": {
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
@@ -196,22 +193,22 @@
         ],
         "pipeline_used": [],
         "route_version": "5",
-        "run_at": "2026-11-04T10:01:36+00:00",
+        "run_at": "2026-11-06T10:00:21+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 15.04,
+              "max": 0.98,
               "median": 0.42,
-              "n": 80,
-              "p95": 2.35
+              "n": 75,
+              "p95": 0.42
             },
-            "seconds": 93.5,
+            "seconds": 54.1,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-11-04T10:01:36+00:00",
+      "run_at": "2026-11-06T10:00:21+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -318,22 +315,22 @@
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-11-04T10:01:36+00:00",
+        "run_at": "2026-11-06T10:00:21+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
               "max": 15.04,
               "median": 0.43,
-              "n": 80,
-              "p95": 15.04
+              "n": 75,
+              "p95": 0.44
             },
-            "seconds": 317.8,
+            "seconds": 247.8,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-11-04T10:01:36+00:00",
+      "run_at": "2026-11-06T10:00:21+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -348,12 +345,12 @@
           "ovos-workshop": "7.0.6",
           "ovoscope": "0.13.1"
         },
-        "python": "3.11.17"
+        "python": "3.11.18"
       },
       "stack_moved": []
     }
   },
-  "generated_at": "2026-11-05T11:22:43+00:00",
+  "generated_at": "2026-11-06T10:00:21+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -40186,17 +40183,17 @@
     },
     "OscillateLabsLLC-skill-musicassistant": {
       "alpha": {
-        "boot_seconds": 7.0,
+        "boot_seconds": 8.1,
         "channel": "alpha",
         "channel_pinned": false,
         "driver": "ovoscope modern",
-        "duration_seconds": 10.4,
+        "duration_seconds": 12.0,
         "id": "OscillateLabsLLC-skill-musicassistant",
         "intents_by_lang": {
           "en-us": 32,
           "fr-fr": 32
         },
-        "key": "fc71f0a409908971",
+        "key": "5a2338f6b3d9851a",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -40211,22 +40208,22 @@
           "fallback": 1,
           "intents": 64
         },
-        "requested_version": "1.0.2",
-        "route_key": "29d0892d0503973d",
+        "requested_version": "1.0.3",
+        "route_key": "024e63aff3cb21cd",
         "routing": {
           "generated": {
             "asked": 0,
-            "baseline": 1,
+            "baseline": 5,
             "by_lang": {
               "en-US": {
                 "counted": 75,
-                "hit": 73
+                "hit": 69
               }
             },
             "by_pipeline": {
               "ovos-padatious-pipeline-plugin": {
-                "hit": 73,
-                "miss": 1
+                "hit": 69,
+                "miss": 5
               },
               "ovos-persona-pipeline-plugin": {
                 "hit": 0,
@@ -40236,7 +40233,7 @@
             "collisions": [],
             "counted": 75,
             "hang": 0,
-            "hit": 73,
+            "hit": 69,
             "langs": [
               "en-US"
             ],
@@ -40259,6 +40256,42 @@
                 "pipeline": "ovos-persona-pipeline-plugin",
                 "stage": "ovos-persona-pipeline-plugin",
                 "utterance": "enable shuffle"
+              },
+              {
+                "expected": "volume",
+                "kind": "baseline",
+                "lang": "en-US",
+                "pipeline": "ovos-padatious-pipeline-plugin",
+                "stage": "ovos-padatious-pipeline-plugin",
+                "taken_by": "ovos-skill-volume.openvoiceos",
+                "utterance": "mute"
+              },
+              {
+                "expected": "volume",
+                "kind": "baseline",
+                "lang": "en-US",
+                "pipeline": "ovos-padatious-pipeline-plugin",
+                "stage": "ovos-padatious-pipeline-plugin",
+                "taken_by": "ovos-skill-volume.openvoiceos",
+                "utterance": "mute the volume"
+              },
+              {
+                "expected": "volume",
+                "kind": "baseline",
+                "lang": "en-US",
+                "pipeline": "ovos-padatious-pipeline-plugin",
+                "stage": "ovos-padatious-pipeline-plugin",
+                "taken_by": "ovos-skill-volume.openvoiceos",
+                "utterance": "unmute"
+              },
+              {
+                "expected": "volume",
+                "kind": "baseline",
+                "lang": "en-US",
+                "pipeline": "ovos-padatious-pipeline-plugin",
+                "stage": "ovos-padatious-pipeline-plugin",
+                "taken_by": "ovos-skill-volume.openvoiceos",
+                "utterance": "unmute the volume"
               }
             ],
             "neighbour": 0,
@@ -40269,10 +40302,10 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.2",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.3",
             "status": "none"
           },
-          "ref": "v1.0.2",
+          "ref": "v1.0.3",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -40281,21 +40314,21 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-11-04T09:50:08+00:00",
-        "version_tested": "1.0.2"
+        "tested_at": "2026-11-06T09:50:10+00:00",
+        "version_tested": "1.0.3"
       },
       "stable": {
-        "boot_seconds": 10.0,
+        "boot_seconds": 28.0,
         "channel": "stable",
         "channel_pinned": false,
         "driver": "ovoscope legacy (no lang/wait options)",
-        "duration_seconds": 12.1,
+        "duration_seconds": 31.0,
         "id": "OscillateLabsLLC-skill-musicassistant",
         "intents_by_lang": {
           "en-us": 37,
           "fr-fr": 34
         },
-        "key": "deac5e8e9b58ed6b",
+        "key": "5a321ada6267eea6",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -40310,202 +40343,129 @@
           "fallback": 1,
           "intents": 71
         },
-        "requested_version": "1.0.2",
-        "route_key": "d05b83fc825066be",
+        "requested_version": "1.0.3",
+        "route_key": "166ca2d6312a391c",
         "routing": {
           "generated": {
             "asked": 0,
-            "baseline": 4,
+            "baseline": 2,
             "by_lang": {
               "en-US": {
                 "counted": 75,
-                "hit": 68
+                "hit": 73
+              }
+            },
+            "collisions": [],
+            "counted": 75,
+            "hang": 0,
+            "hit": 73,
+            "langs": [
+              "en-US"
+            ],
+            "langs_failed": [],
+            "manual": 0,
+            "misses": [
+              {
+                "expected": "next",
+                "kind": "baseline",
+                "lang": "en-US",
+                "stage": "last message: recognizer_loop:audio_output_end",
+                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
+                "utterance": "next track in the london"
+              },
+              {
+                "expected": "next",
+                "kind": "baseline",
+                "lang": "en-US",
+                "stage": "last message: recognizer_loop:audio_output_end",
+                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
+                "utterance": "skip track in the london"
+              }
+            ],
+            "neighbour": 0,
+            "not_loaded": 0,
+            "status": "ok",
+            "total": 75,
+            "unhandled": 0,
+            "wrong_intent": 0
+          },
+          "golden": {
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.3",
+            "status": "none"
+          },
+          "ref": "v1.0.3",
+          "stop": {
+            "lang": "en-US",
+            "result": "nothing_to_stop",
+            "utterance": "like this song"
+          }
+        },
+        "stage": "load",
+        "status": "pass",
+        "tested_at": "2026-11-06T09:51:01+00:00",
+        "version_tested": "1.0.3"
+      },
+      "testing": {
+        "boot_seconds": 15.4,
+        "channel": "testing",
+        "channel_pinned": false,
+        "driver": "ovoscope modern",
+        "duration_seconds": 17.5,
+        "id": "OscillateLabsLLC-skill-musicassistant",
+        "intents_by_lang": {
+          "en-us": 37,
+          "fr-fr": 34
+        },
+        "key": "04f4bd55b7413187",
+        "kind": "skill",
+        "languages_booted": [
+          "en-US",
+          "fr-FR"
+        ],
+        "level": 2,
+        "package": "skill-musicassistant",
+        "plugin_ids": [
+          "skill-musicassistant.oscillatelabsllc"
+        ],
+        "registrations": {
+          "fallback": 1,
+          "intents": 71
+        },
+        "requested_version": "1.0.3",
+        "route_key": "451d1c94de4dd619",
+        "routing": {
+          "generated": {
+            "asked": 0,
+            "baseline": 0,
+            "by_lang": {
+              "en-US": {
+                "counted": 75,
+                "hit": 72
               }
             },
             "collisions": [],
             "counted": 75,
             "hang": 2,
-            "hit": 68,
+            "hit": 72,
             "langs": [
               "en-US"
             ],
             "langs_failed": [],
             "manual": 0,
             "misses": [
-              {
-                "expected": "next",
-                "kind": "baseline",
-                "lang": "en-US",
-                "stage": "last message: recognizer_loop:audio_output_end",
-                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
-                "utterance": "next track in the london"
-              },
-              {
-                "expected": "next",
-                "kind": "baseline",
-                "lang": "en-US",
-                "stage": "last message: recognizer_loop:audio_output_end",
-                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
-                "utterance": "skip track in the london"
-              },
-              {
-                "expected": "now_playing",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: question:query.response",
-                "utterance": "what's playing in the london"
-              },
-              {
-                "expected": "now_playing",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: question:query.response",
-                "utterance": "what is playing in the london"
-              },
-              {
-                "expected": "previous",
-                "kind": "baseline",
-                "lang": "en-US",
-                "stage": "last message: recognizer_loop:audio_output_end",
-                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
-                "utterance": "previous track in the london"
-              },
-              {
-                "expected": "previous",
-                "kind": "baseline",
-                "lang": "en-US",
-                "stage": "last message: recognizer_loop:audio_output_end",
-                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
-                "utterance": "last track in the london"
-              },
-              {
-                "expected": "previous",
-                "kind": "unhandled",
-                "lang": "en-US",
-                "stage": "last message: recognizer_loop:audio_output_end",
-                "utterance": "previous song in the london"
-              }
-            ],
-            "neighbour": 0,
-            "not_loaded": 0,
-            "status": "ok",
-            "total": 75,
-            "unhandled": 1,
-            "wrong_intent": 0
-          },
-          "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.2",
-            "status": "none"
-          },
-          "ref": "v1.0.2",
-          "stop": {
-            "lang": "en-US",
-            "result": "nothing_to_stop",
-            "utterance": "like this song"
-          }
-        },
-        "stage": "load",
-        "status": "pass",
-        "tested_at": "2026-11-04T09:55:14+00:00",
-        "version_tested": "1.0.2"
-      },
-      "testing": {
-        "boot_seconds": 5.9,
-        "channel": "testing",
-        "channel_pinned": false,
-        "driver": "ovoscope modern",
-        "duration_seconds": 8.3,
-        "id": "OscillateLabsLLC-skill-musicassistant",
-        "intents_by_lang": {
-          "en-us": 37,
-          "fr-fr": 34
-        },
-        "key": "600444b2ab636f7a",
-        "kind": "skill",
-        "languages_booted": [
-          "en-US",
-          "fr-FR"
-        ],
-        "level": 2,
-        "package": "skill-musicassistant",
-        "plugin_ids": [
-          "skill-musicassistant.oscillatelabsllc"
-        ],
-        "registrations": {
-          "fallback": 1,
-          "intents": 71
-        },
-        "requested_version": "1.0.2",
-        "route_key": "8b060521f3ce47e8",
-        "routing": {
-          "generated": {
-            "asked": 0,
-            "baseline": 1,
-            "by_lang": {
-              "en-US": {
-                "counted": 75,
-                "hit": 67
-              }
-            },
-            "collisions": [],
-            "counted": 75,
-            "hang": 6,
-            "hit": 67,
-            "langs": [
-              "en-US"
-            ],
-            "langs_failed": [],
-            "manual": 0,
-            "misses": [
-              {
-                "expected": "next",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: ovos.skills.fallback.pong",
-                "utterance": "next track in the london"
-              },
-              {
-                "expected": "next",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: ovos.skills.fallback.pong",
-                "utterance": "skip track in the london"
-              },
-              {
-                "expected": "now_playing",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: question:query.response",
-                "utterance": "what's playing in the london"
-              },
-              {
-                "expected": "now_playing",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: question:query.response",
-                "utterance": "what is playing in the london"
-              },
               {
                 "expected": "pause",
-                "kind": "baseline",
+                "kind": "hang",
                 "lang": "en-US",
-                "stage": "last message: ovos.utterance.handled",
-                "taken_by": "ovos-skill-wolfie.openvoiceos",
+                "stage": "last message: ovos.skills.fallback.ping",
                 "utterance": "pause the music in the london"
               },
               {
                 "expected": "pause",
                 "kind": "hang",
                 "lang": "en-US",
-                "stage": "last message: ovos.skills.fallback.pong",
+                "stage": "last message: ovos.skills.fallback.ping",
                 "utterance": "unpause the music in the london"
-              },
-              {
-                "expected": "pause",
-                "kind": "hang",
-                "lang": "en-US",
-                "stage": "last message: ovos.skills.fallback.pong",
-                "utterance": "pause music in the london"
               },
               {
                 "expected": "shuffle",
@@ -40523,10 +40483,10 @@
             "wrong_intent": 0
           },
           "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.2",
+            "reason": "no test/end2end/golden_utterances*.jsonl at v1.0.3",
             "status": "none"
           },
-          "ref": "v1.0.2",
+          "ref": "v1.0.3",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -40535,8 +40495,8 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-11-04T09:51:45+00:00",
-        "version_tested": "1.0.2"
+        "tested_at": "2026-11-06T09:50:15+00:00",
+        "version_tested": "1.0.3"
       }
     },
     "OscillateLabsLLC-switchboard": {

@@ -7,7 +7,7 @@ chronologia==0.31.7a2
 click==8.5.0
 cloudpickle==3.1.2
 combo_lock==0.3.1
-dateparser==1.4.3
+dateparser==1.5.0
 dbus-next==0.2.3
 filelock==3.32.7
 fsspec==2026.9.0
@@ -26,7 +26,7 @@ keyword-template-matcher==0.1.11a1
 kthread==0.2.3
 langcodes==3.5.1
 language_data==1.4.0
-linguatag==0.1.3a1
+linguatag==0.1.5a1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
 marisa-trie==1.4.1
 markdown-it-py==4.2.0
@@ -85,8 +85,8 @@ pluggy==1.7.0
 prettytable==3.18.0
 ptyprocess==0.7.0
 pyahocorasick==2.3.1
-pydantic==2.14.2
-pydantic_core==2.50.2
+pydantic==2.14.3
+pydantic_core==2.50.4
 pyee==13.0.1
 Pygments==2.21.0
 PyStemmer==3.1.0
@@ -111,17 +111,17 @@ simplematch==1.4
 six==1.17.0
 skops==0.16.0
 snowballstemmer==3.1.1
-threadpoolctl==3.7.0
+threadpoolctl==3.8.0
 tokenizers==0.23.3
 tornado==6.6
 tqdm==4.70.1
 truststore==0.10.5
-typing-inspection==0.4.4
+typing-inspection==0.4.5
 typing_extensions==4.16.0
 tzlocal==5.4.5
 unicode-rbnf==2.4.1
 urllib3==2.8.0
-watchdog==7.0.0
+watchdog==7.1.0
 wcwidth==0.9.4
 websocket-client==1.9.2
 xxhash==4.0.2
