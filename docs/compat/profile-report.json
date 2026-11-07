@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-06T10:00:21+00:00",
+ "generated_at": "2026-11-07T10:46:32+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-11-06T10:00:21+00:00",
-   "klondike_run_at": "2026-11-05T11:22:43+00:00",
+   "klondike_run_at": "2026-11-07T10:46:32+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
    "profiles": [
@@ -1211,7 +1211,7 @@
   },
   "testing": {
    "run_at": "2026-11-06T10:00:21+00:00",
-   "klondike_run_at": "2026-11-05T11:22:43+00:00",
+   "klondike_run_at": "2026-11-07T10:46:32+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -2006,7 +2006,7 @@
         }
        },
        "klondike": {
-        "hit": 4,
+        "hit": 5,
         "counted": 5
        },
        "gold": true,
@@ -2417,7 +2417,7 @@
   },
   "alpha": {
    "run_at": "2026-11-06T10:00:21+00:00",
-   "klondike_run_at": "2026-11-05T11:22:43+00:00",
+   "klondike_run_at": "2026-11-07T10:46:32+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2527,7 +2527,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 19,
+        "reaches": 22,
         "takes": 2,
         "examples": [
          {
@@ -2627,7 +2627,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 350,
+        "reaches": 347,
         "takes": 17,
         "examples": [
          {
@@ -3271,11 +3271,25 @@
        "tested_at": "2026-10-30T08:59:43+00:00",
        "golden": null,
        "klondike": null,
-       "gold": true,
+       "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 15,
-        "takes": 0
+        "reaches": 13,
+        "takes": 2,
+        "examples": [
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a paper from arxiv"
+         },
+         {
+          "from": "andlo-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a research paper from the arxiv"
+         }
+        ]
        },
        "in_profile": true
       },
@@ -3940,7 +3954,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 14,
-      "gold": 14
+      "gold": 13
      },
      "cumulative": {
       "total": 59,
@@ -3951,7 +3965,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 19,
-      "gold": 19
+      "gold": 18
      }
     }
    ]
