@@ -23902,52 +23902,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OscillateLabsLLC-ovos-skill-gui1-demo",
-    "skill_id": null,
-    "name": "ovos-skill-gui1-demo",
-    "description": "An OVOS skill that shows every OVOS-GUI-1 template and surface, for render-backend conformance runs",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OscillateLabsLLC/ovos-skill-gui1-demo",
-    "package_name": "ovos-skill-gui1-demo",
-    "pypi_version": null,
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OscillateLabsLLC",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "The skill needs `ovos-workshop` and `ovos-bus-client`. The command below installs it into the isolated GUI-1 venv:\n\njust install          # uv pip install --python ~/.venvs/ovos-gui1/bin/python --no-deps -e .\n\nRestart the skills service after you install. ovos-core does not import a package that was installed after it started.\n\nSkill id: `ovos-skill-gui1-demo.oscillatelabs`. Entry point group: `opm.skill`."
-      }
-    ],
-    "languages": [
-      "en-us"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-10-27T22:51:11Z",
-    "last_updated": "2026-10-27T22:51:15Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
-  },
-  {
     "id": "OpenVoiceOS-ovos-skill-hello-world",
     "skill_id": null,
     "name": "ovos-skill-hello-world",
@@ -34179,24 +34133,15 @@
     "has_release": false,
     "in_ovos_store": false,
     "pipeline": null,
-    "connectivity": "online",
+    "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "2. Environment Setup",
-        "content": "conda create -n ovoscan-env python=3.10 -y\nconda activate ovoscan-env\npip install -r requirements.txt"
-      },
-      {
-        "heading": "Configuration",
-        "content": "| Variable | Default | Purpose |\n|----------|---------|---------|\n| `KNOWLEDGE_BASE_PATH` | `knowledge_base/hatchery_manual.txt` | Manual to index |\n| `CHROMA_PERSIST_DIR` | `data/chroma` | Vector store location |\n| `CHROMA_COLLECTION` | `hatchery_rules` | Collection name |\n| `EMBEDDING_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | Embedding model |\n| `OLLAMA_MODEL` | `llama3.2` | Generation model |\n| `OLLAMA_HOST` | `http://localhost:11434` | Ollama endpoint |\n\nTo index your own manual instead:\n\nKNOWLEDGE_BASE_PATH=/path/to/your/manual.txt python -m src.agent.rag\n\n> **Hardware note:** a 4 GB GPU cannot hold a 26B model. Use a small model\n> (1B-3B) for responsive RAG, or accept CPU-bound latency with a larger one."
-      }
-    ],
+    "setup_notes": [],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-14T23:03:35Z",
-    "last_updated": "2026-11-04T19:21:38Z",
+    "last_updated": "2026-11-09T19:28:03Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
