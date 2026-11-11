@@ -1,7 +1,7 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "5b0a0d9bd5b7844e066bbfbbe0139c1e65cd03ad827db3736137db62e39e0c20",
+      "constraints_sha256": "36ad106b4f8f70d7cc91f7addfa3bf3df4042f3e64385fc07ad9c6901a1b3ac1",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
@@ -102,7 +102,7 @@
           }
         ]
       },
-      "run_at": "2026-11-06T10:00:21+00:00",
+      "run_at": "2026-11-11T09:51:23+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -208,7 +208,7 @@
           }
         ]
       },
-      "run_at": "2026-11-06T10:00:21+00:00",
+      "run_at": "2026-11-11T09:51:23+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -330,7 +330,7 @@
           }
         ]
       },
-      "run_at": "2026-11-06T10:00:21+00:00",
+      "run_at": "2026-11-11T09:51:23+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -350,7 +350,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-11-07T10:46:32+00:00",
+  "generated_at": "2026-11-11T09:51:23+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -52951,250 +52951,52 @@
     },
     "thalovant-thalovant-skill-interaction-modes": {
       "alpha": {
-        "boot_seconds": 12.3,
         "channel": "alpha",
         "channel_pinned": false,
-        "driver": "ovoscope modern",
-        "duration_seconds": 16.7,
+        "duration_seconds": 14.0,
         "id": "thalovant-thalovant-skill-interaction-modes",
-        "intents_by_lang": {
-          "an-es": 6,
-          "ar-sa": 6,
-          "ast-es": 6,
-          "az-az": 6,
-          "bg-bg": 6,
-          "ca-es": 6,
-          "cs-cz": 6,
-          "da-dk": 6,
-          "de-at": 6,
-          "de-ch": 6,
-          "de-de": 6,
-          "el-gr": 6,
-          "en-au": 6,
-          "en-ca": 6,
-          "en-gb": 6,
-          "en-nz": 6,
-          "en-us": 6,
-          "es-ar": 6,
-          "es-co": 6,
-          "es-es": 6,
-          "es-mx": 6,
-          "es-us": 6,
-          "et-ee": 6,
-          "eu-es": 6,
-          "fa-ir": 6,
-          "fi-fi": 6,
-          "fr-be": 6,
-          "fr-ca": 6,
-          "fr-ch": 6,
-          "fr-fr": 6,
-          "gl-es": 6,
-          "he-il": 6,
-          "hi-in": 6,
-          "hr-hr": 6,
-          "hu-hu": 6,
-          "id-id": 6,
-          "it-it": 6,
-          "ja-jp": 6,
-          "ko-kr": 6,
-          "lt-lt": 6,
-          "lv-lv": 6,
-          "ms-my": 6,
-          "nb-no": 6,
-          "nl-be": 6,
-          "nl-nl": 6,
-          "oc-fr": 6,
-          "pl-pl": 6,
-          "pt-ao": 6,
-          "pt-br": 6,
-          "pt-mz": 6,
-          "pt-pt": 6,
-          "ro-ro": 6,
-          "ru-ru": 6,
-          "sk-sk": 6,
-          "sl-si": 6,
-          "sv-fi": 6,
-          "sv-se": 6,
-          "sw-ke": 6,
-          "th-th": 6,
-          "tr-tr": 6
-        },
-        "key": "cbadf7cdf4c00b1c",
+        "key": "2d9c3d171e843693",
         "kind": "skill",
-        "languages_booted": [
-          "en-US",
-          "an-ES",
-          "ar-SA",
-          "ast-ES",
-          "az-AZ",
-          "bg-BG",
-          "ca-ES",
-          "cs-CZ",
-          "da-DK",
-          "de-AT",
-          "de-CH",
-          "de-DE",
-          "el-GR",
-          "en-AU",
-          "en-CA",
-          "en-GB",
-          "en-NZ",
-          "es-AR",
-          "es-CO",
-          "es-ES",
-          "es-MX",
-          "es-US",
-          "et-EE",
-          "eu-ES",
-          "fa-IR",
-          "fi-FI",
-          "fr-BE",
-          "fr-CA",
-          "fr-CH",
-          "fr-FR",
-          "gl-ES",
-          "he-IL",
-          "hi-IN",
-          "hr-HR",
-          "hu-HU",
-          "id-ID",
-          "it-IT",
-          "ja-JP",
-          "ko-KR",
-          "lt-LT",
-          "lv-LV",
-          "ms-MY",
-          "nb-NO",
-          "nl-BE",
-          "nl-NL",
-          "oc-FR",
-          "pl-PL",
-          "pt-AO",
-          "pt-BR",
-          "pt-MZ",
-          "pt-PT",
-          "ro-RO",
-          "ru-RU",
-          "sk-SK",
-          "sl-SI",
-          "sv-FI",
-          "sv-SE",
-          "sw-KE",
-          "th-TH",
-          "tr-TR"
-        ],
-        "level": 2,
+        "level": 0,
+        "log_excerpt": "O: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.\nERROR: Cannot install combo-lock==0.3.1, ovos-utils and thalovant-skill-interaction-modes==0.1.12 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-interaction-modes 0.1.12 depends on filelock<5 and >=4.2.1; python_version >= \"3.11\"\n    combo-lock 0.3.1 depends on filelock~=3.0\n    combo-lock 0.3.0 depends on filelock~=3.0\n    combo-lock 0.2.6 depends on filelock~=3.0\n    combo-lock 0.2.5 depends on filelock~=3.0\n    combo-lock 0.2.4 depends on filelock~=3.0\n    combo-lock 0.2.3 depends on filelock~=3.0\n    combo-lock 0.2.2 depends on filelock~=3.0\n    combo-lock 0.2.1 depends on filelock~=3.2\n    combo-lock 0.2.0 depends on filelock~=3.2.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    filelock\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "thalovant-skill-interaction-modes",
-        "plugin_ids": [
-          "thalovant-skill-interaction-modes.thalovant"
-        ],
-        "registrations": {
-          "fallback": 1,
-          "intents": 390
-        },
-        "requested_version": "0.1.11",
-        "route_key": "01aa33476f202290",
-        "routing": {
-          "generated": {
-            "asked": 0,
-            "baseline": 0,
-            "by_lang": {
-              "en-US": {
-                "counted": 30,
-                "hit": 28
-              }
-            },
-            "by_pipeline": {
-              "ovos-padatious-pipeline-plugin": {
-                "hit": 28,
-                "miss": 0
-              },
-              "ovos-persona-pipeline-plugin": {
-                "hit": 0,
-                "miss": 2
-              }
-            },
-            "collisions": [],
-            "counted": 30,
-            "hang": 0,
-            "hit": 28,
-            "langs": [
-              "en-US"
-            ],
-            "langs_failed": [],
-            "manual": 0,
-            "misses": [
-              {
-                "expected": "party.mode.enable",
-                "kind": "unhandled",
-                "lang": "en-US",
-                "pipeline": "ovos-persona-pipeline-plugin",
-                "stage": "ovos-persona-pipeline-plugin",
-                "utterance": "enable party mode"
-              },
-              {
-                "expected": "party.mode.enable",
-                "kind": "unhandled",
-                "lang": "en-US",
-                "pipeline": "ovos-persona-pipeline-plugin",
-                "stage": "ovos-persona-pipeline-plugin",
-                "utterance": "activate party mode"
-              }
-            ],
-            "neighbour": 0,
-            "not_loaded": 0,
-            "status": "ok",
-            "total": 30,
-            "unhandled": 2,
-            "wrong_intent": 0
-          },
-          "golden": {
-            "reason": "no test/end2end/golden_utterances*.jsonl at v0.1.11",
-            "status": "none"
-          },
-          "ref": "v0.1.11",
-          "stop": {
-            "lang": "en-US",
-            "result": "nothing_to_stop",
-            "utterance": "what mode are we in"
-          }
-        },
-        "stage": "load",
-        "status": "pass",
-        "tested_at": "2026-10-30T08:59:34+00:00",
-        "version_tested": "0.1.11"
+        "reason": "thalovant-skill-interaction-modes 0.1.12 depends on filelock<5 and >=4.2.1; python_version >= \"3.11\"; combo-lock 0.3.1 depends on filelock~=3.0; combo-lock 0.3.0 depends on filelock~=3.0; combo-lock 0.2.6 depends on filelock~=3.0; combo-lock 0.2.5 depends on filelock~=3.0; combo-lock 0.2.4 depends on filelock~=3.0; combo-lock 0.2.3 depends on filelock~=3.0; combo-lock 0.2.2 depends on filelock~=3.0; combo-lock 0.2.1 depends on filelock~=3.2; combo-lock 0.2.0 depends on filelock~=3.2.0",
+        "requested_version": "0.1.12",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-11-11T09:50:52+00:00"
       },
       "stable": {
         "channel": "stable",
         "channel_pinned": false,
-        "duration_seconds": 2.4,
+        "duration_seconds": 2.2,
         "id": "thalovant-thalovant-skill-interaction-modes",
-        "key": "97950a57771baa2e",
+        "key": "0d05139376d23be3",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": "odes==0.1.11\n  Downloading thalovant_skill_interaction_modes-0.1.11-py3-none-any.whl.metadata (2.3 kB)\nINFO: pip is looking at multiple versions of thalovant-skill-interaction-modes to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install thalovant-skill-interaction-modes==0.1.11 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-interaction-modes 0.1.11 depends on ovos-workshop>=8.0.0\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "odes==0.1.12\n  Downloading thalovant_skill_interaction_modes-0.1.12-py3-none-any.whl.metadata (3.1 kB)\nINFO: pip is looking at multiple versions of thalovant-skill-interaction-modes to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install thalovant-skill-interaction-modes==0.1.12 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-interaction-modes 0.1.12 depends on ovos-workshop>=8.0.0\n    The user requested (constraint) ovos-workshop<3.5.0,==3.4.0,>=3.4.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "thalovant-skill-interaction-modes",
-        "reason": "thalovant-skill-interaction-modes 0.1.11 depends on ovos-workshop>=8.0.0; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
-        "requested_version": "0.1.11",
+        "reason": "thalovant-skill-interaction-modes 0.1.12 depends on ovos-workshop>=8.0.0; channel pins ovos-workshop<3.5.0,==3.4.0,>=3.4.0",
+        "requested_version": "0.1.12",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-30T09:30:40+00:00"
+        "tested_at": "2026-11-11T09:51:04+00:00"
       },
       "testing": {
         "channel": "testing",
         "channel_pinned": false,
-        "duration_seconds": 1.7,
+        "duration_seconds": 1.3,
         "id": "thalovant-thalovant-skill-interaction-modes",
-        "key": "a3a23414186d9e89",
+        "key": "eb851a58bf58623e",
         "kind": "skill",
         "level": 0,
-        "log_excerpt": "odes==0.1.11\n  Downloading thalovant_skill_interaction_modes-0.1.11-py3-none-any.whl.metadata (2.3 kB)\nINFO: pip is looking at multiple versions of thalovant-skill-interaction-modes to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install thalovant-skill-interaction-modes==0.1.11 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-interaction-modes 0.1.11 depends on ovos-workshop>=8.0.0\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "log_excerpt": "odes==0.1.12\n  Downloading thalovant_skill_interaction_modes-0.1.12-py3-none-any.whl.metadata (3.1 kB)\nINFO: pip is looking at multiple versions of thalovant-skill-interaction-modes to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install thalovant-skill-interaction-modes==0.1.12 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    thalovant-skill-interaction-modes 0.1.12 depends on ovos-workshop>=8.0.0\n    The user requested (constraint) ovos-workshop<8.0.0,==7.0.6,>=7.0.6\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-workshop\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
         "package": "thalovant-skill-interaction-modes",
-        "reason": "thalovant-skill-interaction-modes 0.1.11 depends on ovos-workshop>=8.0.0; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
-        "requested_version": "0.1.11",
+        "reason": "thalovant-skill-interaction-modes 0.1.12 depends on ovos-workshop>=8.0.0; channel pins ovos-workshop<8.0.0,==7.0.6,>=7.0.6",
+        "requested_version": "0.1.12",
         "stage": "install",
         "status": "fail",
-        "tested_at": "2026-10-30T09:28:31+00:00"
+        "tested_at": "2026-11-11T09:50:42+00:00"
       }
     }
   }
