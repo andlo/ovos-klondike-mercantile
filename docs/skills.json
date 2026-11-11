@@ -7624,12 +7624,12 @@
       "session"
     ],
     "category": "Other",
-    "icon": null,
-    "icon_source": null,
+    "icon": "https://raw.githubusercontent.com/thalovant/.github/main/profile/assets/thalovant-logo-light.png",
+    "icon_source": "readme",
     "icon_color": null,
     "source": "https://github.com/thalovant/thalovant-skill-interaction-modes",
     "package_name": "thalovant-skill-interaction-modes",
-    "pypi_version": "0.1.11",
+    "pypi_version": "0.1.12",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
@@ -7638,7 +7638,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7646,7 +7646,12 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "Open the Thalovant marketplace on your hub and add **Interaction Modes**. Or install it yourself:\n\npip install thalovant-skill-interaction-modes"
+      }
+    ],
     "languages": [
       "an-es",
       "ar-sa",
@@ -7958,32 +7963,31 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2026-05-26T13:21:29Z",
-    "last_updated": "2026-10-13T03:13:34.889373Z",
+    "last_updated": "2026-11-10T18:20:52.876175Z",
     "is_new_repo": false,
-    "is_recently_updated": true,
+    "is_recently_updated": false,
     "compat": {
-      "badge_id": "thalovant-skill-interaction-modes.thalovant",
+      "badge_id": "thalovant-skill-interaction-modes",
       "channels": {
         "stable": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-30T09:30:40+00:00",
+          "tested_at": "2026-11-11T09:51:04+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-10-30T09:28:31+00:00",
+          "tested_at": "2026-11-11T09:50:42+00:00",
           "channel_pinned": false
         },
         "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.11",
-          "tested_at": "2026-10-30T08:59:34+00:00",
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-11-11T09:50:52+00:00",
           "channel_pinned": false
         }
       }
@@ -28213,8 +28217,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-11-09T14:54:28Z",
     "last_updated": "2026-11-09T15:28:40Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-stt-plugin-azure",
@@ -28779,8 +28783,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-06T13:45:36Z",
     "last_updated": "2026-10-06T15:33:46Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-stt-plugin-nemo",
@@ -39115,7 +39119,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -39204,7 +39208,7 @@
     "id": "thalovant-thalovant-skillkit",
     "skill_id": null,
     "name": "thalovant-skillkit",
-    "description": "Shared plumbing for the Thalovant OVOS skills",
+    "description": "Build, test, and package Thalovant skills for OpenVoiceOS.",
     "examples": [],
     "tags": [
       "openvoiceos",
@@ -39215,12 +39219,12 @@
       "voice-assistant"
     ],
     "category": "Other",
-    "icon": null,
-    "icon_source": null,
+    "icon": "https://raw.githubusercontent.com/thalovant/.github/main/profile/assets/thalovant-logo-light.png",
+    "icon_source": "readme",
     "icon_color": null,
     "source": "https://github.com/thalovant/thalovant-skillkit",
     "package_name": "thalovant-skillkit",
-    "pypi_version": "0.30.0",
+    "pypi_version": "0.36.1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
@@ -39250,7 +39254,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-08T01:58:37Z",
-    "last_updated": "2026-11-05T22:05:13.062551Z",
+    "last_updated": "2026-11-10T19:50:44.932146Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
