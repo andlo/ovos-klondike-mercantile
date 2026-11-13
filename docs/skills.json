@@ -18066,6 +18066,54 @@
     "is_recently_updated": false
   },
   {
+    "id": "TigreGotico-ovos-media-provider-radio-spain",
+    "skill_id": null,
+    "name": "ovos-media-provider-radio-spain",
+    "description": "OVOS **MediaProvider** plugin for Spanish internet radio. Replaces the",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/TigreGotico/ovos-media-provider-radio-spain",
+    "package_name": "ovos-media-provider-radio-spain",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "TigreGotico",
+    "tier": 2,
+    "component_type": "Provider Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-media-provider-radio-spain"
+      },
+      {
+        "heading": "Configuration",
+        "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `min_confidence` | `60` | Minimum fuzzy-match confidence (0-100) for a station to be returned. |\n| `max_results` | `10` | Maximum number of matching stations returned per search. |"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-06-25T22:28:01Z",
+    "last_updated": "2026-08-13T18:56:17Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-media-provider-somafm",
     "skill_id": null,
     "name": "ovos-media-provider-somafm",
@@ -23877,6 +23925,52 @@
     "is_recently_updated": false
   },
   {
+    "id": "OscillateLabsLLC-ovos-skill-gui1-demo",
+    "skill_id": null,
+    "name": "ovos-skill-gui1-demo",
+    "description": "An OVOS skill that shows every OVOS-GUI-1 template and surface, for render-backend conformance runs",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OscillateLabsLLC/ovos-skill-gui1-demo",
+    "package_name": "ovos-skill-gui1-demo",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OscillateLabsLLC",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "The skill needs `ovos-workshop` and `ovos-bus-client`. The command below installs it into the isolated GUI-1 venv:\n\njust install          # uv pip install --python ~/.venvs/ovos-gui1/bin/python --no-deps -e .\n\nRestart the skills service after you install. ovos-core does not import a package that was installed after it started.\n\nSkill id: `ovos-skill-gui1-demo.oscillatelabs`. Entry point group: `opm.skill`."
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-10-27T22:51:11Z",
+    "last_updated": "2026-10-27T22:51:15Z",
+    "is_new_repo": true,
+    "is_recently_updated": true
+  },
+  {
     "id": "OpenVoiceOS-ovos-skill-hello-world",
     "skill_id": null,
     "name": "ovos-skill-hello-world",
@@ -28169,8 +28263,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-09T02:14:13Z",
     "last_updated": "2026-10-13T00:38:55Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-start-launcher",
@@ -28488,7 +28582,7 @@
     "repo_created_at": "2026-02-27T00:49:20Z",
     "last_updated": "2026-10-11T11:16:49Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "Collins1738-ovos-stt-plugin-elevenlabs",
@@ -28562,7 +28656,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Audio Plugin",
+    "component_type": "STT Plugin",
     "type_group": "Plugin",
     "stars": 5,
     "forks": 5,
@@ -34006,47 +34100,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2020-12-21T16:12:26Z",
     "last_updated": "2023-10-11T20:14:41.147483Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "JoergZ2-ovos_skill_my_db_timetable",
-    "skill_id": null,
-    "name": "ovos_skill_my_db_timetable",
-    "description": "Skill for getting timetable information of selected station in Germany.",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/JoergZ2/ovos_skill_my_db_timetable",
-    "package_name": null,
-    "pypi_version": null,
-    "license": null,
-    "archived": false,
-    "author": "JoergZ2",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [
-      "de-de"
-    ],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-09-05T13:59:14Z",
-    "last_updated": "2025-09-16T06:33:14Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -42828,8 +42881,8 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Skill",
-    "type_group": "Skill",
+    "component_type": "Persona",
+    "type_group": "Plugin",
     "stars": 4,
     "forks": 8,
     "open_issues": 3,
@@ -43008,36 +43061,7 @@
     "repo_created_at": "2018-01-23T09:41:23Z",
     "last_updated": "2025-06-08T22:04:04.795081Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-skill-wikihow.openvoiceos",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.3",
-          "tested_at": "2026-10-04T11:17:21+00:00",
-          "channel_pinned": true
-        },
-        "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.3.3",
-          "tested_at": "2026-10-04T10:57:35+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.7.3a3",
-          "tested_at": "2026-10-30T09:27:53+00:00",
-          "channel_pinned": true
-        }
-      }
-    }
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-word-of-the-day",
