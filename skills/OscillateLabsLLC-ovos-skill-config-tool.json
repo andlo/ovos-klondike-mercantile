@@ -13,7 +13,7 @@
   "icon_color": null,
   "source": "https://github.com/OscillateLabsLLC/ovos-skill-config-tool",
   "package_name": "ovos-skill-config-tool",
-  "pypi_version": "1.0.4",
+  "pypi_version": "1.1.0",
   "license": "Apache-2.0",
   "archived": false,
   "author": "OscillateLabsLLC",
@@ -41,7 +41,7 @@
     },
     {
       "heading": "Install the tool",
-      "content": "pip install ovos-skill-config-tool\n\n#### Running\n\nOnce installed, run the tool from your terminal (ensure your virtual environment is active if you used one):\n\novos-skill-config-tool\n\nThe application will be available at `http://0.0.0.0:8000` by default.\n\n#### Authentication (Pip Install)\n\nBy default, the application uses Basic Authentication with the credentials:\n\n- **Username**: `ovos`\n- **Password**: `ovos`\n\nYou can override these by setting environment variables _before_ running the application:\n\n- `OVOS_CONFIG_USERNAME`: Sets the username.\n- `OVOS_CONFIG_PASSWORD`: Sets the password.\n\nExample:\n\nexport OVOS_CONFIG_USERNAME=myuser\nexport OVOS_CONFIG_PASSWORD=mypassword\novos-skill-config-tool\n\nAll API endpoints under `/api/v1/` require Basic Authentication. The web UI uses the same crede\u2026"
+      "content": "pip install ovos-skill-config-tool\n\n#### Running\n\nOnce installed, run the tool from your terminal (ensure your virtual environment is active if you used one):\n\novos-skill-config-tool\n\nThe application will be available at `http://0.0.0.0:8000` by default, which means every\ndevice on your network can reach it. Set `CONFIG_HOST=127.0.0.1` to allow only the machine\nit runs on, and `CONFIG_PORT` to change the port.\n\n#### Authentication (Pip Install)\n\nBy default, the application uses Basic Authentication with the credentials:\n\n- **Username**: `ovos`\n- **Password**: `ovos`\n\nYou can override these by setting environment variables _before_ running the application:\n\n- `OVOS_CONFIG_USERNAME`: Sets the username.\n- `OVOS_CONFIG_PASSWORD`: Sets the password.\n\nExample:\n\nexport OVOS_CONFIG_USERNAME=myuser\u2026"
     },
     {
       "heading": "Configuration File (`config.json`)",
@@ -60,7 +60,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2024-12-21T00:51:14Z",
-  "last_updated": "2026-11-04T03:26:13.153180Z",
+  "last_updated": "2026-11-09T01:44:05.101822Z",
   "is_new_repo": false,
   "is_recently_updated": true
 }

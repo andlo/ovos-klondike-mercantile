@@ -6046,7 +6046,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-13T00:32:13Z",
     "last_updated": "2026-11-04T03:26:56.446193Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true,
     "compat": {
       "badge_id": "ovos-skill-hangup.oscillatelabsllc",
@@ -17032,8 +17032,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-11-08T22:49:27Z",
     "last_updated": "2026-11-09T01:47:25Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-mark1-utils",
@@ -18062,54 +18062,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-22T23:10:58Z",
     "last_updated": "2026-09-16T19:22:22.035668Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "TigreGotico-ovos-media-provider-radio-spain",
-    "skill_id": null,
-    "name": "ovos-media-provider-radio-spain",
-    "description": "OVOS **MediaProvider** plugin for Spanish internet radio. Replaces the",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/TigreGotico/ovos-media-provider-radio-spain",
-    "package_name": "ovos-media-provider-radio-spain",
-    "pypi_version": null,
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "TigreGotico",
-    "tier": 2,
-    "component_type": "Provider Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 1,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-media-provider-radio-spain"
-      },
-      {
-        "heading": "Configuration",
-        "content": "| Key | Default | Description |\n|-----|---------|-------------|\n| `min_confidence` | `60` | Minimum fuzzy-match confidence (0-100) for a station to be returned. |\n| `max_results` | `10` | Maximum number of matching stations returned per search. |"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-06-25T22:28:01Z",
-    "last_updated": "2026-08-13T18:56:17Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -23037,7 +22989,7 @@
     "icon_color": null,
     "source": "https://github.com/OscillateLabsLLC/ovos-skill-config-tool",
     "package_name": "ovos-skill-config-tool",
-    "pypi_version": "1.0.4",
+    "pypi_version": "1.1.0",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OscillateLabsLLC",
@@ -23065,7 +23017,7 @@
       },
       {
         "heading": "Install the tool",
-        "content": "pip install ovos-skill-config-tool\n\n#### Running\n\nOnce installed, run the tool from your terminal (ensure your virtual environment is active if you used one):\n\novos-skill-config-tool\n\nThe application will be available at `http://0.0.0.0:8000` by default.\n\n#### Authentication (Pip Install)\n\nBy default, the application uses Basic Authentication with the credentials:\n\n- **Username**: `ovos`\n- **Password**: `ovos`\n\nYou can override these by setting environment variables _before_ running the application:\n\n- `OVOS_CONFIG_USERNAME`: Sets the username.\n- `OVOS_CONFIG_PASSWORD`: Sets the password.\n\nExample:\n\nexport OVOS_CONFIG_USERNAME=myuser\nexport OVOS_CONFIG_PASSWORD=mypassword\novos-skill-config-tool\n\nAll API endpoints under `/api/v1/` require Basic Authentication. The web UI uses the same crede\u2026"
+        "content": "pip install ovos-skill-config-tool\n\n#### Running\n\nOnce installed, run the tool from your terminal (ensure your virtual environment is active if you used one):\n\novos-skill-config-tool\n\nThe application will be available at `http://0.0.0.0:8000` by default, which means every\ndevice on your network can reach it. Set `CONFIG_HOST=127.0.0.1` to allow only the machine\nit runs on, and `CONFIG_PORT` to change the port.\n\n#### Authentication (Pip Install)\n\nBy default, the application uses Basic Authentication with the credentials:\n\n- **Username**: `ovos`\n- **Password**: `ovos`\n\nYou can override these by setting environment variables _before_ running the application:\n\n- `OVOS_CONFIG_USERNAME`: Sets the username.\n- `OVOS_CONFIG_PASSWORD`: Sets the password.\n\nExample:\n\nexport OVOS_CONFIG_USERNAME=myuser\u2026"
       },
       {
         "heading": "Configuration File (`config.json`)",
@@ -23084,7 +23036,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-12-21T00:51:14Z",
-    "last_updated": "2026-11-04T03:26:13.153180Z",
+    "last_updated": "2026-11-09T01:44:05.101822Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -30991,7 +30943,7 @@
       "kokoro",
       "neon",
       "ovos",
-      "status-poc",
+      "status-active",
       "tts"
     ],
     "category": "Other",
@@ -31009,7 +30961,7 @@
     "type_group": "Plugin",
     "stars": 3,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -31033,7 +30985,7 @@
     "repo_created_at": "2026-05-03T01:45:15Z",
     "last_updated": "2026-10-10T02:09:16.795507Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "aka0kuro-ovos-tts-plugin-lingva",
@@ -32729,7 +32681,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-09T14:09:55Z",
     "last_updated": "2026-11-04T03:05:41.615033Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -32777,7 +32729,7 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-11T22:25:39Z",
     "last_updated": "2026-10-19T01:20:41Z",
-    "is_new_repo": true,
+    "is_new_repo": false,
     "is_recently_updated": true
   },
   {
@@ -34104,6 +34056,47 @@
     "is_recently_updated": false
   },
   {
+    "id": "JoergZ2-ovos_skill_my_db_timetable",
+    "skill_id": null,
+    "name": "ovos_skill_my_db_timetable",
+    "description": "Skill for getting timetable information of selected station in Germany.",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/JoergZ2/ovos_skill_my_db_timetable",
+    "package_name": null,
+    "pypi_version": null,
+    "license": null,
+    "archived": false,
+    "author": "JoergZ2",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "de-de"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2025-09-05T13:59:14Z",
+    "last_updated": "2025-09-16T06:33:14Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "g-mecha-ovos_test_lunch",
     "skill_id": null,
     "name": "ovos_test_lunch",
@@ -34195,7 +34188,7 @@
     "repo_created_at": "2026-01-26T12:36:58Z",
     "last_updated": "2026-10-11T11:55:08Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos_tts_transformer_NovaSR",
@@ -34248,7 +34241,7 @@
     "repo_created_at": "2026-01-26T12:35:02Z",
     "last_updated": "2026-10-11T07:44:01Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "ksnishat-ovoscan-pipeline",
@@ -35120,7 +35113,7 @@
     "repo_created_at": "2024-11-25T12:08:27Z",
     "last_updated": "2026-10-13T17:21:07Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-raspovos-audio-setup",
@@ -38616,7 +38609,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-05-29T22:30:36Z",
-    "last_updated": "2026-11-08T05:39:06Z",
+    "last_updated": "2026-11-14T05:55:47Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
