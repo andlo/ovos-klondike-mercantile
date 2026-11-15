@@ -3,7 +3,7 @@ annotated-types==0.8.0
 anyio==4.16.0
 certifi==2026.10.23
 charset-normalizer==3.5.2
-chronologia==0.31.7a2
+chronologia==0.31.36a1
 click==8.5.1
 cloudpickle==3.1.2
 combo_lock==0.3.1
@@ -26,7 +26,7 @@ keyword-template-matcher==0.1.11a1
 kthread==0.2.3
 langcodes==3.5.1
 language_data==1.4.0
-linguatag==0.2.1a1
+linguatag==0.2.7a1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
 marisa-trie==1.4.1
 markdown-it-py==4.3.0
@@ -43,7 +43,7 @@ ovos-bidirectional-translation-plugin==0.1.5a1
 ovos-bus-client==2.11.29a1
 ovos-config==3.9.0a2
 ovos-core==3.7.5a1
-ovos-date-parser==0.35.23a1
+ovos-date-parser==0.36.2a1
 ovos-dinkum-listener==0.11.3a1
 ovos-gui==1.6.0a1
 ovos-gui-api-client==0.1.0
@@ -51,7 +51,7 @@ ovos-lang-parser==0.8.0a3
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
 ovos-media==2.4.5a2
 ovos-media-classifier==0.2.1a2
-ovos-number-parser==0.24.25a1
+ovos-number-parser==0.24.60a1
 ovos-option-matcher-fuzzy-plugin==0.0.3a1
 ovos-persona==0.9.0a36
 ovos-plugin-manager==2.12.5a1
@@ -68,7 +68,7 @@ ovos-utterance-plugin-cancel==0.3.4a2
 ovos-workshop==9.10.1a1
 ovos-yes-no-plugin==0.4.1a1
 ovos_adapt_parser==1.6.8a1
-ovos_color_parser==0.12.4a1
+ovos_color_parser==0.12.8a1
 ovos_common_query_pipeline_plugin==1.1.20a1
 ovos_m2v_pipeline==0.38.0a1
 ovos_ocp_pipeline_plugin==1.5.8a1
