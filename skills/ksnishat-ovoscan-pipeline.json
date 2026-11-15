@@ -2,7 +2,7 @@
   "id": "ksnishat-ovoscan-pipeline",
   "skill_id": null,
   "name": "ovoscan-pipeline",
-  "description": "End-to-End Industrial MLOps Pipeline for Automated Quality Control. Features YOLOv8 for defect detection, ZenML orchestration, and a Generative AI Agent (Llama 3) for technical reporting.",
+  "description": "Egg quality classification: YOLOv8n-cls (97.2% top-1) with ZenML pipeline orchestration, MLflow tracking, FastAPI serving, ChromaDB RAG reports via local llama3.2, drift monitoring, and Helm charts verified in kind.",
   "examples": [],
   "tags": [],
   "category": "Other",
@@ -33,7 +33,7 @@
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-01-14T23:03:35Z",
-  "last_updated": "2026-11-09T19:28:03Z",
+  "last_updated": "2026-11-14T11:45:26Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": true
 }
