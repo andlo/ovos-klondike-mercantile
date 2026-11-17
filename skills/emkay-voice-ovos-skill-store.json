@@ -1,0 +1,164 @@
+{
+  "id": "emkay-voice-ovos-skill-store",
+  "skill_id": null,
+  "name": "ovos-skill-store",
+  "description": "OpenVoiceOS skill: find and install skills by voice from one or more skill stores, with icons and example phrases on the screen. Made for Emkay.",
+  "examples": [],
+  "tags": [
+    "emkay",
+    "openvoiceos",
+    "ovos-skill",
+    "skill-store",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-store/main/res/icon.svg",
+  "icon_source": "repo",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-store",
+  "package_name": "ovos-skill-store",
+  "pypi_version": "0.1.0a2",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "stores",
+      "type": "text",
+      "label": "Store URLs, comma-separated"
+    }
+  ],
+  "setup_notes": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Botiga de skills",
+      "description": "Troba i instal\u00b7la skills amb la veu, des d'una o m\u00e9s botigues; la pantalla mostra cadascuna amb la seva icona i qu\u00e8 li pots dir.",
+      "examples": [
+        "Troba una skill per al temps",
+        "Instal\u00b7la la skill d'acudits",
+        "Recomana'm unes skills"
+      ]
+    },
+    "da-dk": {
+      "name": "Skill-butik",
+      "description": "Find og installer skills med stemmen fra en eller flere skill-butikker; sk\u00e6rmen viser hver med ikon og hvad du kan sige til den.",
+      "examples": [
+        "Find en skill til vejret",
+        "Installer vittigheds-skillen",
+        "Anbefal nogle skills"
+      ]
+    },
+    "de-de": {
+      "name": "Skill-Store",
+      "description": "Skills per Stimme finden und installieren, aus einem oder mehreren Skill-Stores; der Bildschirm zeigt jeden mit Symbol und was man zu ihm sagen kann.",
+      "examples": [
+        "Finde einen Skill f\u00fcr das Wetter",
+        "Installiere den Witz-Skill",
+        "Empfiehl mir ein paar Skills"
+      ]
+    },
+    "es-es": {
+      "name": "Tienda de skills",
+      "description": "Busca e instala skills con la voz, desde una o varias tiendas; la pantalla muestra cada una con su icono y lo que le puedes decir.",
+      "examples": [
+        "Busca una skill para el tiempo",
+        "Instala la skill de chistes",
+        "Recomi\u00e9ndame unas skills"
+      ]
+    },
+    "eu-es": {
+      "name": "Skill denda",
+      "description": "Bilatu eta instalatu skillak ahotsez, denda batetik edo gehiagotatik; pantailak bakoitza bere ikonoarekin eta esan diezaiokezunarekin erakusten du.",
+      "examples": [
+        "Bilatu eguraldirako skill bat",
+        "Instalatu txisteen skilla",
+        "Gomendatu skill batzuk"
+      ]
+    },
+    "fr-fr": {
+      "name": "Boutique de skills",
+      "description": "Trouver et installer des skills \u00e0 la voix, depuis une ou plusieurs boutiques ; l'\u00e9cran montre chacune avec son ic\u00f4ne et ce qu'on peut lui dire.",
+      "examples": [
+        "Trouve une skill pour la m\u00e9t\u00e9o",
+        "Installe la skill des blagues",
+        "Recommande-moi des skills"
+      ]
+    },
+    "gl-es": {
+      "name": "Tenda de skills",
+      "description": "Atopa e instala skills coa voz, dende unha ou varias tendas; a pantalla amosa cada unha coa s\u00faa icona e o que lle podes dicir.",
+      "examples": [
+        "Atopa unha skill para o tempo",
+        "Instala a skill de chistes",
+        "Recom\u00e9ndame unhas skills"
+      ]
+    },
+    "it-it": {
+      "name": "Negozio di skill",
+      "description": "Trova e installa skill con la voce, da uno o pi\u00f9 negozi; lo schermo mostra ognuna con la sua icona e cosa le puoi dire.",
+      "examples": [
+        "Trova una skill per il meteo",
+        "Installa la skill delle barzellette",
+        "Consigliami qualche skill"
+      ]
+    },
+    "nl-nl": {
+      "name": "Skillwinkel",
+      "description": "Skills zoeken en installeren met je stem, uit een of meer skillwinkels; het scherm toont elke met icoon en wat je ertegen kunt zeggen.",
+      "examples": [
+        "Zoek een skill voor het weer",
+        "Installeer de grappen-skill",
+        "Raad me wat skills aan"
+      ]
+    },
+    "pt-br": {
+      "name": "Loja de skills",
+      "description": "Encontre e instale skills com a voz, de uma ou mais lojas; a tela mostra cada uma com seu \u00edcone e o que voc\u00ea pode dizer a ela.",
+      "examples": [
+        "Encontre uma skill para o tempo",
+        "Instale a skill de piadas",
+        "Recomende algumas skills"
+      ]
+    },
+    "pt-pt": {
+      "name": "Loja de skills",
+      "description": "Encontra e instala skills com a voz, a partir de uma ou mais lojas; o ecr\u00e3 mostra cada uma com o seu \u00edcone e o que lhe podes dizer.",
+      "examples": [
+        "Encontra uma skill para o tempo",
+        "Instala a skill de anedotas",
+        "Recomenda-me algumas skills"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-16T22:28:39Z",
+  "last_updated": "2026-11-16T22:40:44.232474Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

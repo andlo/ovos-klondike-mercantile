@@ -159,6 +159,180 @@
     }
   },
   {
+    "id": "emkay-voice-ovos-skill-about-emkay",
+    "skill_id": "ovos-skill-about-emkay.emkay-voice",
+    "name": "About Emkay",
+    "description": "Who Emkay is and where it comes from: Mycroft's Mark 1 and Mark 2, the OpenVoiceOS community, and Emkay itself, with the logos on the screen.",
+    "examples": [
+      "Who are you?",
+      "Tell me about yourself",
+      "Why are you called Emkay?",
+      "What is OpenVoiceOS?",
+      "What was Mycroft?"
+    ],
+    "tags": [
+      "personality",
+      "persona",
+      "emkay"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-about-emkay",
+    "package_name": "ovos-skill-about-emkay",
+    "pypi_version": "0.1.0a2",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "assistant_name",
+        "type": "text",
+        "label": "Name"
+      },
+      {
+        "name": "creator",
+        "type": "text",
+        "label": "Made by"
+      },
+      {
+        "name": "year_of_birth",
+        "type": "number",
+        "label": "Year of birth"
+      }
+    ],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "hu-hu",
+      "it-it",
+      "kab",
+      "nl-nl",
+      "pt-br",
+      "pt-pt",
+      "ru-ru",
+      "sv-se"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Rerefons de l'assistent",
+        "description": "Coneixeu la hist\u00f2ria i la personalitat de l'assistent. Pregunteu sobre el \"naixement\" i la filiaci\u00f3 de l'assistent de veu i feu un tast de la comunitat que fomenta aquesta intel\u00b7lig\u00e8ncia artificial de codi obert.",
+        "examples": [
+          "Quan et van crear?",
+          "Qu\u00e8 ets?",
+          "On vas n\u00e9ixer?",
+          "Qui et va fer?"
+        ]
+      },
+      "da-dk": {
+        "name": "Om Emkay",
+        "description": "Hvem Emkay er, og hvor den kommer fra: Mycrofts Mark 1 og Mark 2, OpenVoiceOS-f\u00e6llesskabet og Emkay selv, med logoerne p\u00e5 sk\u00e6rmen.",
+        "examples": [
+          "Hvem er du?",
+          "Fort\u00e6l mig om dig selv",
+          "Hvorfor hedder du Emkay?",
+          "Hvad er OpenVoiceOS?",
+          "Hvad var Mycroft?"
+        ]
+      },
+      "de-de": {
+        "name": "Hintergrund des Assistenten",
+        "description": "Erfahre mehr \u00fcber die Geschichte und Pers\u00f6nlichkeit des Assistenten. Frage nach der \u201eGeburt\u201c und Herkunft des Sprachassistenten und erhalte einen Einblick in die Community, die diese Open-Source-k\u00fcnstliche Intelligenz f\u00f6rdert.",
+        "examples": [
+          "Wann wurdest du erschaffen?",
+          "Was bist du?",
+          "Wo wurdest Du geboren?",
+          "Wer hat dich erschaffen?"
+        ]
+      },
+      "es-es": {
+        "name": "Origen del asistente",
+        "description": "Conoce la historia y la personalidad del asistente. Inf\u00f3rmate acerca de su \u201cnacimiento\u201d y procedencia, y descubre la comunidad que impulsa esta inteligencia artificial de c\u00f3digo abierto.",
+        "examples": [
+          "\u00bfCu\u00e1ndo fuiste creado?",
+          "\u00bfQu\u00e9 eres?",
+          "\u00bfD\u00f3nde naciste?",
+          "\u00bfQui\u00e9n te cre\u00f3?"
+        ]
+      },
+      "fr-fr": {
+        "name": "Origines de l'assistant",
+        "description": "D\u00e9couvrez l'histoire et la personnalit\u00e9 de l'assistant. Demandez quand il est n\u00e9, d'o\u00f9 il vient et qui l'a cr\u00e9\u00e9 pour mieux conna\u00eetre la communaut\u00e9 qui fait vivre cette intelligence artificielle open source.",
+        "examples": [
+          "Quand as-tu \u00e9t\u00e9 cr\u00e9\u00e9 ?",
+          "Qu'est-ce que tu es ?",
+          "O\u00f9 es-tu n\u00e9 ?",
+          "Qui t'a cr\u00e9\u00e9 ?"
+        ]
+      },
+      "gl-es": {
+        "name": "Historia do asistente",
+        "description": "Co\u00f1ece a historia e a personalidade do asistente. Pregunta sobre o seu \"nacemento\" e orixe, e descubre a comunidade que est\u00e1 a impulsar esta intelixencia artificial de c\u00f3digo aberto.",
+        "examples": [
+          "Cando te crearon?",
+          "Que es ti?",
+          "Onde naciches?",
+          "Quen te (fixo|creou)?"
+        ]
+      },
+      "kab": {
+        "name": "La\u1e63el n umallal",
+        "description": "Issin amezruy d \u1e6d\u1e6dbi\u025ba n umallal. Steqsi \u0263ef \u00ab tlalit \u00bb d la\u1e63el n umallal-aa ihedd\u1e5ben, ternu\u1e0d ad tessine\u1e0d tarba\u025bt i t-id-yesnulfan s wudem yeldin i yal yiwen.",
+        "examples": [
+          "Melmi i k-id-xedmen?",
+          "D acu-k?",
+          "Anda i d-tlule\u1e0d?",
+          "Anwa i k-id-ixedmen?"
+        ]
+      },
+      "nl-nl": {
+        "name": "Achtergrond van de assistent",
+        "description": "Leer meer over de geschiedenis en persoonlijkheid van de assistent. Vraag naar het \u2018ontstaan\u2019 en de afkomst van de spraakassistent en maak kennis met de gemeenschap die deze open source kunstmatige intelligentie ondersteunt.",
+        "examples": [
+          "Wanneer ben je gemaakt?",
+          "Wat ben jij?",
+          "Waar ben je geboren?",
+          "Wie heeft je gemaakt?"
+        ]
+      },
+      "pt-br": {
+        "name": "Assistant's Background",
+        "description": "Aprenda a hist\u00f3ria e a personalidade do assistente. Pergunte sobre o \"nascimento\" e a ascend\u00eancia do assistente de voz e conhe\u00e7a um pouco da comunidade que est\u00e1 fomentando essa intelig\u00eancia artificial de c\u00f3digo aberto.",
+        "examples": [
+          "Quando voc\u00ea foi criado?",
+          "Quem \u00e9 voc\u00ea?",
+          "Onde voc\u00ea nasceu?",
+          "Quem fez voc\u00ea?"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-16T20:36:50Z",
+    "last_updated": "2026-11-16T21:18:45.989293Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-skill-alerts",
     "skill_id": null,
     "name": "Alerts",
@@ -5905,6 +6079,184 @@
     }
   },
   {
+    "id": "emkay-voice-ovos-skill-guardian",
+    "skill_id": "ovos-skill-guardian.emkay-voice",
+    "name": "Guardian",
+    "description": "Your privacy by voice: what the assistant sent out today, who hears what you say, and going offline so nothing you say leaves the device.",
+    "examples": [
+      "What did you send out today?",
+      "Who hears what I say?",
+      "Go offline",
+      "Are you online?"
+    ],
+    "tags": [
+      "privacy",
+      "network",
+      "emkay"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-guardian/main/res/icon.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-guardian",
+    "package_name": "ovos-skill-guardian",
+    "pypi_version": "0.1.0a5",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "offline",
+    "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "log_path",
+        "type": "text",
+        "label": "Where the network log is"
+      }
+    ],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Guardi\u00e0",
+        "description": "La teva privacitat amb la veu: qu\u00e8 ha enviat avui l'assistent, qui sent el que dius i el mode desconnectat perqu\u00e8 res del que dius surti del dispositiu.",
+        "examples": [
+          "Qu\u00e8 has enviat fora avui?",
+          "Qui sent el que dic?",
+          "Desconnecta't",
+          "Est\u00e0s connectat?"
+        ]
+      },
+      "da-dk": {
+        "name": "Vogter",
+        "description": "Dit privatliv med stemmen: hvad assistenten har sendt ud i dag, hvem der h\u00f8rer, hvad du siger, og offline-tilstand, s\u00e5 intet af det du siger forlader enheden.",
+        "examples": [
+          "Hvad har du sendt ud i dag?",
+          "Hvem h\u00f8rer hvad jeg siger?",
+          "G\u00e5 offline",
+          "Er du online?"
+        ]
+      },
+      "de-de": {
+        "name": "W\u00e4chter",
+        "description": "Deine Privatsph\u00e4re per Stimme: was der Assistent heute nach drau\u00dfen geschickt hat, wer h\u00f6rt, was du sagst, und offline gehen, damit nichts, was du sagst, das Ger\u00e4t verl\u00e4sst.",
+        "examples": [
+          "Was hast du heute nach drau\u00dfen geschickt?",
+          "Wer h\u00f6rt, was ich sage?",
+          "Geh offline",
+          "Bist du online?"
+        ]
+      },
+      "es-es": {
+        "name": "Guardi\u00e1n",
+        "description": "Tu privacidad con la voz: qu\u00e9 ha enviado hoy el asistente, qui\u00e9n oye lo que dices y el modo sin conexi\u00f3n para que nada de lo que dices salga del dispositivo.",
+        "examples": [
+          "\u00bfQu\u00e9 has enviado fuera hoy?",
+          "\u00bfQui\u00e9n oye lo que digo?",
+          "Descon\u00e9ctate",
+          "\u00bfEst\u00e1s conectado?"
+        ]
+      },
+      "eu-es": {
+        "name": "Zaindaria",
+        "description": "Zure pribatutasuna ahotsez: laguntzaileak gaur kanpora bidali duena, esaten duzuna nork entzuten duen, eta deskonektatzea, esaten duzun ezer gailutik atera ez dadin.",
+        "examples": [
+          "Zer bidali duzu kanpora gaur?",
+          "Nork entzuten du esaten dudana?",
+          "Deskonektatu",
+          "Konektatuta zaude?"
+        ]
+      },
+      "fr-fr": {
+        "name": "Gardien",
+        "description": "Ta vie priv\u00e9e \u00e0 la voix : ce que l'assistant a envoy\u00e9 aujourd'hui, qui entend ce que tu dis, et le mode hors ligne pour que rien de ce que tu dis ne quitte l'appareil.",
+        "examples": [
+          "Qu'as-tu envoy\u00e9 dehors aujourd'hui ?",
+          "Qui entend ce que je dis ?",
+          "Passe hors ligne",
+          "Es-tu en ligne ?"
+        ]
+      },
+      "gl-es": {
+        "name": "Garda",
+        "description": "A t\u00faa privacidade coa voz: que enviou hoxe o asistente, quen oe o que dis e o modo sen conexi\u00f3n para que nada do que dis saia do dispositivo.",
+        "examples": [
+          "Que enviaches f\u00f3ra hoxe?",
+          "Quen oe o que digo?",
+          "Descon\u00e9ctate",
+          "Est\u00e1s conectado?"
+        ]
+      },
+      "it-it": {
+        "name": "Guardiano",
+        "description": "La tua privacy con la voce: cosa ha inviato oggi l'assistente, chi sente quello che dici e la modalit\u00e0 offline, cos\u00ec niente di quello che dici esce dal dispositivo.",
+        "examples": [
+          "Cosa hai inviato fuori oggi?",
+          "Chi sente quello che dico?",
+          "Vai offline",
+          "Sei online?"
+        ]
+      },
+      "nl-nl": {
+        "name": "Wachter",
+        "description": "Je privacy met je stem: wat de assistent vandaag naar buiten stuurde, wie hoort wat je zegt, en offline gaan zodat niets van wat je zegt het apparaat verlaat.",
+        "examples": [
+          "Wat heb je vandaag naar buiten gestuurd?",
+          "Wie hoort wat ik zeg?",
+          "Ga offline",
+          "Ben je online?"
+        ]
+      },
+      "pt-br": {
+        "name": "Guardi\u00e3o",
+        "description": "Sua privacidade por voz: o que o assistente enviou hoje, quem ouve o que voc\u00ea diz e o modo offline, para que nada do que voc\u00ea diz saia do aparelho.",
+        "examples": [
+          "O que voc\u00ea enviou para fora hoje?",
+          "Quem ouve o que eu digo?",
+          "Fique offline",
+          "Voc\u00ea est\u00e1 online?"
+        ]
+      },
+      "pt-pt": {
+        "name": "Guardi\u00e3o",
+        "description": "A tua privacidade por voz: o que o assistente enviou hoje, quem ouve o que dizes e o modo offline, para que nada do que dizes saia do dispositivo.",
+        "examples": [
+          "O que enviaste para fora hoje?",
+          "Quem ouve o que eu digo?",
+          "Fica offline",
+          "Est\u00e1s online?"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-16T22:12:30Z",
+    "last_updated": "2026-11-16T23:17:53.002657Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OscillateLabsLLC-ha-neon-hub",
     "skill_id": null,
     "name": "ha-neon-hub",
@@ -8071,7 +8423,7 @@
     "repo_created_at": "2026-05-26T13:21:29Z",
     "last_updated": "2026-11-10T18:20:52.876175Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
+    "is_recently_updated": true,
     "compat": {
       "badge_id": "thalovant-skill-interaction-modes",
       "channels": {
@@ -19437,52 +19789,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OscillateLabsLLC-ovos-ollama-dialog-transformer-plugin",
-    "skill_id": null,
-    "name": "ovos-ollama-dialog-transformer-plugin",
-    "description": "Dialog transformer for OVOS, designed to return responses from Ollama. By default it will make all your OVOS responses sarcastic.",
-    "examples": [],
-    "tags": [
-      "status-poc"
-    ],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OscillateLabsLLC/ovos-ollama-dialog-transformer-plugin",
-    "package_name": "ovos-ollama-dialog-transformer-plugin",
-    "pypi_version": "1.1.2",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OscillateLabsLLC",
-    "tier": 1,
-    "component_type": "Transformer Plugin",
-    "type_group": "Plugin",
-    "stars": 1,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": "online",
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Configuration",
-        "content": "To enable the Ollama Dialog Transformer Plugin, add the following to your `mycroft.conf` (typically found at `~/.config/mycroft/mycroft.conf`):\n\n\"dialog_transformers\": {\n    \"ovos-ollama-dialog-transformer-plugin\": {\n        \"prompt\": \"Please revise this text in 30 words or less as if it were spoken by a sarcastic AI. You are not an AI, you are revising text as if you were an AI. Don't mention anything about rewriting text, or your training, and don't use emoji. The dialog to rewrite is as follows:\",\n        \"model\": \"llama3.2\",\n        \"timeout\": 10,\n        \"stream\": false,\n        \"ollama_base_url\": \"http://localhost:11434\"\n    }\n}\n\nNote that these are all default values, so a minimal configuration would be:\n\n\"dialog_transformers\": {\n    \"ovos-ollama-dialog-transformer-plugin\": {}\n}"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-02-24T14:29:39Z",
-    "last_updated": "2026-11-04T03:26:30.146248Z",
-    "is_new_repo": false,
-    "is_recently_updated": true
-  },
-  {
     "id": "OpenVoiceOS-ovos-openai-plugin",
     "skill_id": null,
     "name": "ovos-openai-plugin",
@@ -24540,6 +24846,164 @@
     "is_recently_updated": false
   },
   {
+    "id": "emkay-voice-ovos-skill-kiosk",
+    "skill_id": null,
+    "name": "ovos-skill-kiosk",
+    "description": "OpenVoiceOS skill: full screen, keeping the screen on and installing as an app, by voice, for an assistant on a screen. Made for Emkay.",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "kiosk",
+      "openvoiceos",
+      "ovos-skill",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-kiosk/main/res/icon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-kiosk",
+    "package_name": "ovos-skill-kiosk",
+    "pypi_version": "0.1.0a1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Kiosk",
+        "description": "Un assistent en una pantalla, amb la veu: pantalla completa, pantalla encesa, instal\u00b7lar com a aplicaci\u00f3.",
+        "examples": [
+          "Pantalla completa",
+          "Mant\u00e9n la pantalla encesa",
+          "Instal\u00b7la't com a aplicaci\u00f3"
+        ]
+      },
+      "da-dk": {
+        "name": "Kiosk",
+        "description": "En assistent p\u00e5 en sk\u00e6rm, med stemmen: fuld sk\u00e6rm, hold sk\u00e6rmen t\u00e6ndt, installer som app.",
+        "examples": [
+          "Fuld sk\u00e6rm",
+          "Hold sk\u00e6rmen t\u00e6ndt",
+          "Installer dig som app"
+        ]
+      },
+      "de-de": {
+        "name": "Kiosk",
+        "description": "Ein Assistent auf einem Bildschirm, per Stimme: Vollbild, Bildschirm anlassen, als App installieren.",
+        "examples": [
+          "Vollbild",
+          "Lass den Bildschirm an",
+          "Installiere dich als App"
+        ]
+      },
+      "es-es": {
+        "name": "Kiosk",
+        "description": "Un asistente en una pantalla, con la voz: pantalla completa, pantalla encendida, instalar como aplicaci\u00f3n.",
+        "examples": [
+          "Pantalla completa",
+          "Mant\u00e9n la pantalla encendida",
+          "Inst\u00e1late como aplicaci\u00f3n"
+        ]
+      },
+      "eu-es": {
+        "name": "Kiosk",
+        "description": "Pantaila bateko laguntzailea, ahotsez: pantaila osoa, pantaila piztuta, aplikazio gisa instalatu.",
+        "examples": [
+          "Pantaila osoa",
+          "Mantendu pantaila piztuta",
+          "Instalatu zure burua aplikazio gisa"
+        ]
+      },
+      "fr-fr": {
+        "name": "Kiosk",
+        "description": "Un assistant sur un \u00e9cran, \u00e0 la voix : plein \u00e9cran, \u00e9cran allum\u00e9, installation comme application.",
+        "examples": [
+          "Plein \u00e9cran",
+          "Garde l'\u00e9cran allum\u00e9",
+          "Installe-toi comme application"
+        ]
+      },
+      "gl-es": {
+        "name": "Kiosk",
+        "description": "Un asistente nunha pantalla, coa voz: pantalla completa, pantalla acesa, instalar como aplicaci\u00f3n.",
+        "examples": [
+          "Pantalla completa",
+          "Mant\u00e9n a pantalla acesa",
+          "Inst\u00e1late como aplicaci\u00f3n"
+        ]
+      },
+      "it-it": {
+        "name": "Kiosk",
+        "description": "Un assistente su uno schermo, con la voce: schermo intero, schermo acceso, installare come app.",
+        "examples": [
+          "Schermo intero",
+          "Tieni lo schermo acceso",
+          "Installati come app"
+        ]
+      },
+      "nl-nl": {
+        "name": "Kiosk",
+        "description": "Een assistent op een scherm, met je stem: volledig scherm, scherm aan houden, als app installeren.",
+        "examples": [
+          "Volledig scherm",
+          "Houd het scherm aan",
+          "Installeer jezelf als app"
+        ]
+      },
+      "pt-br": {
+        "name": "Kiosk",
+        "description": "Um assistente numa tela, por voz: tela cheia, manter a tela ligada, instalar como app.",
+        "examples": [
+          "Tela cheia",
+          "Mantenha a tela ligada",
+          "Instale-se como app"
+        ]
+      },
+      "pt-pt": {
+        "name": "Kiosk",
+        "description": "Um assistente num ecr\u00e3, por voz: ecr\u00e3 inteiro, manter o ecr\u00e3 ligado, instalar como app.",
+        "examples": [
+          "Ecr\u00e3 inteiro",
+          "Mant\u00e9m o ecr\u00e3 ligado",
+          "Instala-te como app"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-16T22:36:36Z",
+    "last_updated": "2026-11-16T22:38:18.185493Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "andlo-ovos-skill-language-practice",
     "skill_id": null,
     "name": "ovos-skill-language-practice",
@@ -26368,6 +26832,170 @@
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-01T01:56:20Z",
     "last_updated": "2026-02-10T19:23:09Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-ovos-skill-store",
+    "skill_id": null,
+    "name": "ovos-skill-store",
+    "description": "OpenVoiceOS skill: find and install skills by voice from one or more skill stores, with icons and example phrases on the screen. Made for Emkay.",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "openvoiceos",
+      "ovos-skill",
+      "skill-store",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-store/main/res/icon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-store",
+    "package_name": "ovos-skill-store",
+    "pypi_version": "0.1.0a2",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "stores",
+        "type": "text",
+        "label": "Store URLs, comma-separated"
+      }
+    ],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Botiga de skills",
+        "description": "Troba i instal\u00b7la skills amb la veu, des d'una o m\u00e9s botigues; la pantalla mostra cadascuna amb la seva icona i qu\u00e8 li pots dir.",
+        "examples": [
+          "Troba una skill per al temps",
+          "Instal\u00b7la la skill d'acudits",
+          "Recomana'm unes skills"
+        ]
+      },
+      "da-dk": {
+        "name": "Skill-butik",
+        "description": "Find og installer skills med stemmen fra en eller flere skill-butikker; sk\u00e6rmen viser hver med ikon og hvad du kan sige til den.",
+        "examples": [
+          "Find en skill til vejret",
+          "Installer vittigheds-skillen",
+          "Anbefal nogle skills"
+        ]
+      },
+      "de-de": {
+        "name": "Skill-Store",
+        "description": "Skills per Stimme finden und installieren, aus einem oder mehreren Skill-Stores; der Bildschirm zeigt jeden mit Symbol und was man zu ihm sagen kann.",
+        "examples": [
+          "Finde einen Skill f\u00fcr das Wetter",
+          "Installiere den Witz-Skill",
+          "Empfiehl mir ein paar Skills"
+        ]
+      },
+      "es-es": {
+        "name": "Tienda de skills",
+        "description": "Busca e instala skills con la voz, desde una o varias tiendas; la pantalla muestra cada una con su icono y lo que le puedes decir.",
+        "examples": [
+          "Busca una skill para el tiempo",
+          "Instala la skill de chistes",
+          "Recomi\u00e9ndame unas skills"
+        ]
+      },
+      "eu-es": {
+        "name": "Skill denda",
+        "description": "Bilatu eta instalatu skillak ahotsez, denda batetik edo gehiagotatik; pantailak bakoitza bere ikonoarekin eta esan diezaiokezunarekin erakusten du.",
+        "examples": [
+          "Bilatu eguraldirako skill bat",
+          "Instalatu txisteen skilla",
+          "Gomendatu skill batzuk"
+        ]
+      },
+      "fr-fr": {
+        "name": "Boutique de skills",
+        "description": "Trouver et installer des skills \u00e0 la voix, depuis une ou plusieurs boutiques ; l'\u00e9cran montre chacune avec son ic\u00f4ne et ce qu'on peut lui dire.",
+        "examples": [
+          "Trouve une skill pour la m\u00e9t\u00e9o",
+          "Installe la skill des blagues",
+          "Recommande-moi des skills"
+        ]
+      },
+      "gl-es": {
+        "name": "Tenda de skills",
+        "description": "Atopa e instala skills coa voz, dende unha ou varias tendas; a pantalla amosa cada unha coa s\u00faa icona e o que lle podes dicir.",
+        "examples": [
+          "Atopa unha skill para o tempo",
+          "Instala a skill de chistes",
+          "Recom\u00e9ndame unhas skills"
+        ]
+      },
+      "it-it": {
+        "name": "Negozio di skill",
+        "description": "Trova e installa skill con la voce, da uno o pi\u00f9 negozi; lo schermo mostra ognuna con la sua icona e cosa le puoi dire.",
+        "examples": [
+          "Trova una skill per il meteo",
+          "Installa la skill delle barzellette",
+          "Consigliami qualche skill"
+        ]
+      },
+      "nl-nl": {
+        "name": "Skillwinkel",
+        "description": "Skills zoeken en installeren met je stem, uit een of meer skillwinkels; het scherm toont elke met icoon en wat je ertegen kunt zeggen.",
+        "examples": [
+          "Zoek een skill voor het weer",
+          "Installeer de grappen-skill",
+          "Raad me wat skills aan"
+        ]
+      },
+      "pt-br": {
+        "name": "Loja de skills",
+        "description": "Encontre e instale skills com a voz, de uma ou mais lojas; a tela mostra cada uma com seu \u00edcone e o que voc\u00ea pode dizer a ela.",
+        "examples": [
+          "Encontre uma skill para o tempo",
+          "Instale a skill de piadas",
+          "Recomende algumas skills"
+        ]
+      },
+      "pt-pt": {
+        "name": "Loja de skills",
+        "description": "Encontra e instala skills com a voz, a partir de uma ou mais lojas; o ecr\u00e3 mostra cada uma com o seu \u00edcone e o que lhe podes dizer.",
+        "examples": [
+          "Encontra uma skill para o tempo",
+          "Instala a skill de anedotas",
+          "Recomenda-me algumas skills"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-16T22:28:39Z",
+    "last_updated": "2026-11-16T22:40:44.232474Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -33498,54 +34126,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OpenVoiceOS-ovos-ww-plugin-efficientword-net",
-    "skill_id": null,
-    "name": "ovos-ww-plugin-efficientword-net",
-    "description": "OVOS wake-word plugin for EfficientWord-Net, few-shot hotword detection",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-efficientword-net",
-    "package_name": "ovos-ww-plugin-efficientword-net",
-    "pypi_version": "0.0.1a2",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 2,
-    "component_type": "Wake Word Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 1,
-    "on_pypi": true,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install --pre ovos-ww-plugin-efficientword-net\n\nThe plugin needs only `onnxruntime` and `numpy`. It carries the quantized EfficientWord-Net model (22 MB) and the upstream sample references, so it works offline and does not install PyAudio."
-      },
-      {
-        "heading": "Configuration",
-        "content": "Use one of the bundled wake words: `alexa`, `balloon`, `computer`, `lights_off`, `lights_on`, `mobile` or `mycroft`.\n\n\"hotwords\": {\n  \"computer\": {\n    \"module\": \"ovos-ww-plugin-efficientword-net\",\n    \"listen\": true\n  }\n},\n\"listener\": {\"wake_word\": \"computer\"}\n\nOr give your own recordings: a folder of 16-bit WAV files, one wake word per file, at least 4 files. Any sample rate works.\n\n\"hotwords\": {\n  \"hey_computer\": {\n    \"module\": \"ovos-ww-plugin-efficientword-net\",\n    \"samples\": \"~/wakewords/hey_computer\",\n    \"listen\": true\n  }\n}\n\n| Key | Default | Meaning |\n|---|---|---|\n| `wakeword` | key phrase, spaces as `_` | Name of a bundled reference |\n| `samples` | | Folder or list of WAV recordings; replaces the bundled reference |\n| `reference_file` | | A `*_ref.json` file made by EfficientW\u2026"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-10-22T15:58:49Z",
-    "last_updated": "2026-10-22T16:07:37.380031Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
-  },
-  {
     "id": "OpenVoiceOS-ovos-ww-plugin-local-wake",
     "skill_id": null,
     "name": "ovos-ww-plugin-local-wake",
@@ -38922,6 +39502,55 @@
     "is_recently_updated": false
   },
   {
+    "id": "emkay-voice-stt-models",
+    "skill_id": null,
+    "name": "stt-models",
+    "description": "Speech recognition models for Emkay: convert to ONNX for transformers.js, test, publish, and why each language uses its model",
+    "examples": [],
+    "tags": [
+      "danish",
+      "emkay",
+      "onnx",
+      "openvoiceos",
+      "speech-recognition",
+      "stt",
+      "transformers-js",
+      "wav2vec2",
+      "whisper"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/stt-models",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-16T19:36:21Z",
+    "last_updated": "2026-11-16T20:10:24Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OscillateLabsLLC-switchboard",
     "skill_id": null,
     "name": "switchboard",
@@ -39546,8 +40175,8 @@
       "voice-interface"
     ],
     "category": "Other",
-    "icon": null,
-    "icon_source": null,
+    "icon": "https://raw.githubusercontent.com/thalovant/.github/main/profile/assets/thalovant-logo-light.png",
+    "icon_source": "readme",
     "icon_color": null,
     "source": "https://github.com/thalovant/thalovant-skill-custos-fallback",
     "package_name": "thalovant-skill-custos-fallback",
@@ -39560,7 +40189,7 @@
     "type_group": "Skill",
     "stars": 0,
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 0,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -39568,7 +40197,12 @@
     "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
-    "setup_notes": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "Open the Thalovant marketplace on your hub and add **Thalovant Custos Fallback**. Or install it yourself:\n\npip install thalovant-skill-custos-fallback"
+      }
+    ],
     "languages": [
       "ca-es",
       "cs-cz",
@@ -39616,7 +40250,7 @@
     "repo_created_at": "2026-09-01T14:12:17Z",
     "last_updated": "2026-10-11T21:07:05.577426Z",
     "is_new_repo": false,
-    "is_recently_updated": true,
+    "is_recently_updated": false,
     "compat": {
       "badge_id": "thalovant-skill-custos-fallback.thalovant",
       "channels": {
@@ -39665,14 +40299,14 @@
     "icon_color": null,
     "source": "https://github.com/thalovant/thalovant-skillkit",
     "package_name": "thalovant-skillkit",
-    "pypi_version": "0.36.1",
+    "pypi_version": "0.38.0",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
     "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
-    "stars": 0,
+    "stars": 1,
     "forks": 0,
     "open_issues": 0,
     "on_pypi": true,
@@ -39695,9 +40329,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-08T01:58:37Z",
-    "last_updated": "2026-11-10T19:50:44.932146Z",
+    "last_updated": "2026-11-14T22:25:55.018607Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-skill-days-in-history",

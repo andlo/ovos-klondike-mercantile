@@ -1,0 +1,178 @@
+{
+  "id": "emkay-voice-ovos-skill-guardian",
+  "skill_id": "ovos-skill-guardian.emkay-voice",
+  "name": "Guardian",
+  "description": "Your privacy by voice: what the assistant sent out today, who hears what you say, and going offline so nothing you say leaves the device.",
+  "examples": [
+    "What did you send out today?",
+    "Who hears what I say?",
+    "Go offline",
+    "Are you online?"
+  ],
+  "tags": [
+    "privacy",
+    "network",
+    "emkay"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-guardian/main/res/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-guardian",
+  "package_name": "ovos-skill-guardian",
+  "pypi_version": "0.1.0a5",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "offline",
+  "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "log_path",
+      "type": "text",
+      "label": "Where the network log is"
+    }
+  ],
+  "setup_notes": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Guardi\u00e0",
+      "description": "La teva privacitat amb la veu: qu\u00e8 ha enviat avui l'assistent, qui sent el que dius i el mode desconnectat perqu\u00e8 res del que dius surti del dispositiu.",
+      "examples": [
+        "Qu\u00e8 has enviat fora avui?",
+        "Qui sent el que dic?",
+        "Desconnecta't",
+        "Est\u00e0s connectat?"
+      ]
+    },
+    "da-dk": {
+      "name": "Vogter",
+      "description": "Dit privatliv med stemmen: hvad assistenten har sendt ud i dag, hvem der h\u00f8rer, hvad du siger, og offline-tilstand, s\u00e5 intet af det du siger forlader enheden.",
+      "examples": [
+        "Hvad har du sendt ud i dag?",
+        "Hvem h\u00f8rer hvad jeg siger?",
+        "G\u00e5 offline",
+        "Er du online?"
+      ]
+    },
+    "de-de": {
+      "name": "W\u00e4chter",
+      "description": "Deine Privatsph\u00e4re per Stimme: was der Assistent heute nach drau\u00dfen geschickt hat, wer h\u00f6rt, was du sagst, und offline gehen, damit nichts, was du sagst, das Ger\u00e4t verl\u00e4sst.",
+      "examples": [
+        "Was hast du heute nach drau\u00dfen geschickt?",
+        "Wer h\u00f6rt, was ich sage?",
+        "Geh offline",
+        "Bist du online?"
+      ]
+    },
+    "es-es": {
+      "name": "Guardi\u00e1n",
+      "description": "Tu privacidad con la voz: qu\u00e9 ha enviado hoy el asistente, qui\u00e9n oye lo que dices y el modo sin conexi\u00f3n para que nada de lo que dices salga del dispositivo.",
+      "examples": [
+        "\u00bfQu\u00e9 has enviado fuera hoy?",
+        "\u00bfQui\u00e9n oye lo que digo?",
+        "Descon\u00e9ctate",
+        "\u00bfEst\u00e1s conectado?"
+      ]
+    },
+    "eu-es": {
+      "name": "Zaindaria",
+      "description": "Zure pribatutasuna ahotsez: laguntzaileak gaur kanpora bidali duena, esaten duzuna nork entzuten duen, eta deskonektatzea, esaten duzun ezer gailutik atera ez dadin.",
+      "examples": [
+        "Zer bidali duzu kanpora gaur?",
+        "Nork entzuten du esaten dudana?",
+        "Deskonektatu",
+        "Konektatuta zaude?"
+      ]
+    },
+    "fr-fr": {
+      "name": "Gardien",
+      "description": "Ta vie priv\u00e9e \u00e0 la voix : ce que l'assistant a envoy\u00e9 aujourd'hui, qui entend ce que tu dis, et le mode hors ligne pour que rien de ce que tu dis ne quitte l'appareil.",
+      "examples": [
+        "Qu'as-tu envoy\u00e9 dehors aujourd'hui ?",
+        "Qui entend ce que je dis ?",
+        "Passe hors ligne",
+        "Es-tu en ligne ?"
+      ]
+    },
+    "gl-es": {
+      "name": "Garda",
+      "description": "A t\u00faa privacidade coa voz: que enviou hoxe o asistente, quen oe o que dis e o modo sen conexi\u00f3n para que nada do que dis saia do dispositivo.",
+      "examples": [
+        "Que enviaches f\u00f3ra hoxe?",
+        "Quen oe o que digo?",
+        "Descon\u00e9ctate",
+        "Est\u00e1s conectado?"
+      ]
+    },
+    "it-it": {
+      "name": "Guardiano",
+      "description": "La tua privacy con la voce: cosa ha inviato oggi l'assistente, chi sente quello che dici e la modalit\u00e0 offline, cos\u00ec niente di quello che dici esce dal dispositivo.",
+      "examples": [
+        "Cosa hai inviato fuori oggi?",
+        "Chi sente quello che dico?",
+        "Vai offline",
+        "Sei online?"
+      ]
+    },
+    "nl-nl": {
+      "name": "Wachter",
+      "description": "Je privacy met je stem: wat de assistent vandaag naar buiten stuurde, wie hoort wat je zegt, en offline gaan zodat niets van wat je zegt het apparaat verlaat.",
+      "examples": [
+        "Wat heb je vandaag naar buiten gestuurd?",
+        "Wie hoort wat ik zeg?",
+        "Ga offline",
+        "Ben je online?"
+      ]
+    },
+    "pt-br": {
+      "name": "Guardi\u00e3o",
+      "description": "Sua privacidade por voz: o que o assistente enviou hoje, quem ouve o que voc\u00ea diz e o modo offline, para que nada do que voc\u00ea diz saia do aparelho.",
+      "examples": [
+        "O que voc\u00ea enviou para fora hoje?",
+        "Quem ouve o que eu digo?",
+        "Fique offline",
+        "Voc\u00ea est\u00e1 online?"
+      ]
+    },
+    "pt-pt": {
+      "name": "Guardi\u00e3o",
+      "description": "A tua privacidade por voz: o que o assistente enviou hoje, quem ouve o que dizes e o modo offline, para que nada do que dizes saia do dispositivo.",
+      "examples": [
+        "O que enviaste para fora hoje?",
+        "Quem ouve o que eu digo?",
+        "Fica offline",
+        "Est\u00e1s online?"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-16T22:12:30Z",
+  "last_updated": "2026-11-16T23:17:53.002657Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
