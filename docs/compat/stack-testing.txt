@@ -11,8 +11,8 @@ filelock==3.32.7
 fsspec==2026.9.0
 h11==0.16.0
 hf-xet==1.8.0
-httpcore2==2.16.0
-httpx2==2.16.0
+httpcore2==2.16.2
+httpx2==2.16.2
 huggingface_hub==2.4.0
 idna==3.20
 importlib_metadata==10.2.0
@@ -24,7 +24,7 @@ keyword-template-matcher @ git+https://github.com/TigreGotico/kw-template-matche
 kthread==0.2.3
 langcodes==3.5.1
 lazy-importer==0.1.0
-linguatag==0.2.1a1
+linguatag==0.2.7a1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
 markdown-it-py==4.3.0
 MarkupSafe==3.0.4
@@ -81,7 +81,7 @@ python-dateutil==2.9.0.post0
 PyYAML==6.0.3
 quebra-frases==0.3.7
 RapidFuzz==3.14.6
-regex==2026.11.9
+regex==2026.11.15
 requests==2.34.2
 rich==13.9.4
 rich-click==1.9.9
@@ -95,7 +95,7 @@ tornado==6.6.1
 tqdm==4.70.1
 truststore==0.10.5
 typing_extensions==4.16.0
-unicode-rbnf==2.4.1
+unicode-rbnf==2.5.0
 urllib3==2.8.0
 watchdog==2.3.1
 websocket-client==1.9.2

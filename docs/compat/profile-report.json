@@ -1,9 +1,9 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-16T11:46:29+00:00",
+ "generated_at": "2026-11-17T12:44:48+00:00",
  "channels": {
   "stable": {
-   "run_at": "2026-11-06T10:00:21+00:00",
+   "run_at": "2026-11-17T12:44:48+00:00",
    "klondike_run_at": "2026-11-07T10:46:32+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
@@ -652,32 +652,32 @@
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 4/14 golden",
+       "label": "✓ loads · 6/13 golden",
        "level": 2,
-       "version": "0.0.5",
-       "tested_at": "2026-10-04T11:12:57+00:00",
+       "version": "0.0.7",
+       "tested_at": "2026-11-17T11:06:35+00:00",
        "golden": {
-        "hit": 4,
-        "counted": 14,
+        "hit": 6,
+        "counted": 13,
         "langs": [
          "en-US"
         ],
         "by_lang": {
          "da-DK": {
           "counted": 14,
-          "hit": 3
+          "hit": 5
          },
          "de-DE": {
           "counted": 13,
-          "hit": 2
-         },
-         "en-US": {
-          "counted": 14,
           "hit": 4
          },
+         "en-US": {
+          "counted": 13,
+          "hit": 6
+         },
          "es-ES": {
-          "counted": 10,
-          "hit": 0
+          "counted": 14,
+          "hit": 2
          }
         }
        },
@@ -694,12 +694,12 @@
        "store_id": "andlo-ovos-skill-geometry",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 2/13 golden",
+       "label": "✓ loads · 4/13 golden",
        "level": 2,
-       "version": "0.0.4",
-       "tested_at": "2026-10-04T11:13:20+00:00",
+       "version": "0.0.5",
+       "tested_at": "2026-11-17T11:07:14+00:00",
        "golden": {
-        "hit": 2,
+        "hit": 4,
         "counted": 13,
         "langs": [
          "en-US"
@@ -707,15 +707,19 @@
         "by_lang": {
          "da-DK": {
           "counted": 12,
-          "hit": 1
+          "hit": 3
          },
          "de-DE": {
           "counted": 12,
-          "hit": 1
+          "hit": 3
          },
          "en-US": {
           "counted": 13,
-          "hit": 2
+          "hit": 4
+         },
+         "es-ES": {
+          "counted": 12,
+          "hit": 3
          }
         }
        },
@@ -1175,8 +1179,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.4.6",
-       "tested_at": "2026-11-04T09:50:03+00:00",
+       "version": "1.4.7",
+       "tested_at": "2026-11-17T11:07:29+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -1210,7 +1214,7 @@
    ]
   },
   "testing": {
-   "run_at": "2026-11-06T10:00:21+00:00",
+   "run_at": "2026-11-17T12:44:48+00:00",
    "klondike_run_at": "2026-11-07T10:46:32+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
@@ -1866,12 +1870,12 @@
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 4/14 golden",
+       "label": "✓ loads · 6/14 golden",
        "level": 2,
-       "version": "0.0.5",
-       "tested_at": "2026-10-04T10:48:48+00:00",
+       "version": "0.0.7",
+       "tested_at": "2026-11-17T11:05:55+00:00",
        "golden": {
-        "hit": 4,
+        "hit": 6,
         "counted": 14,
         "langs": [
          "en-US"
@@ -1879,15 +1883,19 @@
         "by_lang": {
          "da-DK": {
           "counted": 14,
-          "hit": 3
+          "hit": 5
          },
          "de-DE": {
           "counted": 13,
-          "hit": 2
+          "hit": 4
          },
          "en-US": {
           "counted": 14,
-          "hit": 4
+          "hit": 6
+         },
+         "es-ES": {
+          "counted": 14,
+          "hit": 2
          }
         }
        },
@@ -1904,12 +1912,12 @@
        "store_id": "andlo-ovos-skill-geometry",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 2/13 golden",
+       "label": "✓ loads · 4/13 golden",
        "level": 2,
-       "version": "0.0.4",
-       "tested_at": "2026-10-04T10:49:08+00:00",
+       "version": "0.0.5",
+       "tested_at": "2026-11-17T11:06:21+00:00",
        "golden": {
-        "hit": 2,
+        "hit": 4,
         "counted": 13,
         "langs": [
          "en-US"
@@ -1917,15 +1925,19 @@
         "by_lang": {
          "da-DK": {
           "counted": 12,
-          "hit": 1
+          "hit": 3
          },
          "de-DE": {
-          "counted": 2,
-          "hit": 0
+          "counted": 12,
+          "hit": 3
          },
          "en-US": {
           "counted": 13,
-          "hit": 2
+          "hit": 4
+         },
+         "es-ES": {
+          "counted": 12,
+          "hit": 3
          }
         }
        },
@@ -2381,8 +2393,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.4.6",
-       "tested_at": "2026-11-04T09:49:14+00:00",
+       "version": "1.4.7",
+       "tested_at": "2026-11-17T11:06:31+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2416,8 +2428,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-11-16T11:46:29+00:00",
-   "klondike_run_at": "2026-11-16T11:46:29+00:00",
+   "run_at": "2026-11-17T12:44:48+00:00",
+   "klondike_run_at": "2026-11-17T12:44:48+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2438,10 +2450,10 @@
        "tested_at": "2026-10-30T08:59:57+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false,
+       "gold": true,
        "pipeline_route": {
         "measured": true,
-        "reaches": 0,
+        "reaches": 1,
         "takes": 0
        }
       },
@@ -2527,9 +2539,27 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 19,
-        "takes": 2,
+        "reaches": 21,
+        "takes": 5,
         "examples": [
+         {
+          "from": "andlo-ovos-skill-geography",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-date-time.openvoiceos",
+          "utterance": "what do you know about France"
+         },
+         {
+          "from": "andlo-ovos-skill-geometry",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-hello-world.openvoiceos",
+          "utterance": "what is a angle"
+         },
+         {
+          "from": "andlo-ovos-skill-geometry",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-hello-world.openvoiceos",
+          "utterance": "what is hypotenuse"
+         },
          {
           "from": "OpenVoiceOS-ovos-skill-wallpapers",
           "kind": "wrong_intent",
@@ -2541,24 +2571,6 @@
           "kind": "wrong_intent",
           "taken_by": "skill-ovos-wallpapers.openvoiceos",
           "utterance": "change wall paper for something"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-wallpapers",
-          "kind": "wrong_intent",
-          "taken_by": "skill-ovos-wallpapers.openvoiceos",
-          "utterance": "change wall paper to something"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-wallpapers",
-          "kind": "wrong_intent",
-          "taken_by": "skill-ovos-wallpapers.openvoiceos",
-          "utterance": "change wall paper with something"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-wallpapers",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-date-time.openvoiceos",
-          "utterance": "before"
          }
         ]
        }
@@ -2627,8 +2639,8 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 351,
-        "takes": 16,
+        "reaches": 348,
+        "takes": 13,
         "examples": [
          {
           "from": "OpenVoiceOS-ovos-skill-date-time",
@@ -2637,28 +2649,16 @@
           "utterance": "how many days are there between march 1 and june 5"
          },
          {
-          "from": "OpenVoiceOS-ovos-skill-moviemaster",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-geometry.andlo",
-          "utterance": "what's popular right now"
-         },
-         {
-          "from": "andlo-ovos-skill-network-scanner",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-geometry.andlo",
-          "utterance": "what's on my network"
-         },
-         {
-          "from": "OpenVoiceOS-ovos-skill-word-of-the-day",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-geometry.andlo",
-          "utterance": "what's today's word"
-         },
-         {
           "from": "andlo-ovos-skill-math-practice",
           "kind": "baseline",
           "taken_by": "ovos-skill-count.openvoiceos",
           "utterance": "count to 7"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-screenshot",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-date-time.openvoiceos",
+          "utterance": "grab a screenshot in 5 seconds"
          }
         ]
        }
@@ -2720,8 +2720,8 @@
        "state": "warn",
        "label": "✓ 52/55 golden",
        "level": 3,
-       "version": "0.12.58a1",
-       "tested_at": "2026-10-30T08:58:52+00:00",
+       "version": "0.12.58a3",
+       "tested_at": "2026-11-17T11:05:36+00:00",
        "golden": {
         "hit": 52,
         "counted": 55,
@@ -2785,20 +2785,24 @@
        "store_id": "OpenVoiceOS-ovos-skill-date-time",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 2/5 golden",
+       "label": "✓ loads · 3/4 golden",
        "level": 2,
-       "version": "1.12.3a1",
-       "tested_at": "2026-11-15T09:52:39+00:00",
+       "version": "1.12.3a2",
+       "tested_at": "2026-11-17T11:12:49+00:00",
        "golden": {
-        "hit": 2,
-        "counted": 5,
+        "hit": 3,
+        "counted": 4,
         "langs": [
          "en-US"
         ],
         "by_lang": {
+         "da-DK": {
+          "counted": 3,
+          "hit": 3
+         },
          "en-US": {
-          "counted": 5,
-          "hit": 2
+          "counted": 4,
+          "hit": 3
          }
         }
        },
@@ -3123,7 +3127,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 5,
-      "gold": 5
+      "gold": 6
      },
      "cumulative": {
       "total": 29,
@@ -3134,7 +3138,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 5,
-      "gold": 5
+      "gold": 6
      }
     },
     {
@@ -3247,7 +3251,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 5,
-      "gold": 5
+      "gold": 6
      }
     },
     {
@@ -3352,29 +3356,29 @@
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
        "state": "pass",
-       "label": "✓ 14/14 golden",
+       "label": "✓ 13/13 golden",
        "level": 3,
-       "version": "0.0.5",
-       "tested_at": "2026-10-30T09:15:47+00:00",
+       "version": "0.0.7",
+       "tested_at": "2026-11-17T11:14:39+00:00",
        "golden": {
-        "hit": 14,
-        "counted": 14,
+        "hit": 13,
+        "counted": 13,
         "langs": [
          "en-US"
         ],
         "by_lang": {
          "da-DK": {
-          "counted": 14,
-          "hit": 14
+          "counted": 13,
+          "hit": 13
          },
          "en-US": {
-          "counted": 14,
-          "hit": 14
+          "counted": 13,
+          "hit": 13
          }
         }
        },
        "klondike": {
-        "hit": 14,
+        "hit": 13,
         "counted": 14
        },
        "gold": true,
@@ -3385,13 +3389,13 @@
        "runtime_id": "ovos-skill-geometry.andlo",
        "store_id": "andlo-ovos-skill-geometry",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ 13/13 golden",
+       "state": "warn",
+       "label": "✓ 11/13 golden",
        "level": 3,
-       "version": "0.0.4",
-       "tested_at": "2026-10-30T09:16:10+00:00",
+       "version": "0.0.5",
+       "tested_at": "2026-11-17T11:14:48+00:00",
        "golden": {
-        "hit": 13,
+        "hit": 11,
         "counted": 13,
         "langs": [
          "en-US"
@@ -3399,16 +3403,16 @@
         "by_lang": {
          "da-DK": {
           "counted": 12,
-          "hit": 12
+          "hit": 11
          },
          "en-US": {
           "counted": 13,
-          "hit": 13
+          "hit": 11
          }
         }
        },
        "klondike": {
-        "hit": 13,
+        "hit": 11,
         "counted": 13
        },
        "gold": true,
@@ -3544,7 +3548,7 @@
         }
        },
        "klondike": {
-        "hit": 5,
+        "hit": 6,
         "counted": 6
        },
        "gold": true,
@@ -3815,7 +3819,7 @@
         }
        },
        "klondike": {
-        "hit": 95,
+        "hit": 96,
         "counted": 96
        },
        "gold": true,
@@ -3874,7 +3878,7 @@
         }
        },
        "klondike": {
-        "hit": 6,
+        "hit": 7,
         "counted": 10
        },
        "gold": false,
@@ -3918,8 +3922,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.4.6",
-       "tested_at": "2026-11-04T09:49:24+00:00",
+       "version": "1.4.7",
+       "tested_at": "2026-11-17T11:14:58+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3947,7 +3951,7 @@
       "untested": 0,
       "not_in_store": 0,
       "routes": 19,
-      "gold": 19
+      "gold": 20
      }
     }
    ]
