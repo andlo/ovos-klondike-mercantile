@@ -108,38 +108,38 @@
     "badge_id": "ovos-skill-geometry.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 2/13 golden",
+        "label": "\u2713 loads \u00b7 4/13 golden",
         "state": "warn",
         "level": 2,
-        "version_tested": "0.0.4",
-        "tested_at": "2026-10-04T11:13:20+00:00",
+        "version_tested": "0.0.5",
+        "tested_at": "2026-11-17T11:07:14+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 2,
+          "hit": 4,
           "counted": 13
         }
       },
       "testing": {
-        "label": "\u2713 loads \u00b7 2/13 golden",
+        "label": "\u2713 loads \u00b7 4/13 golden",
         "state": "warn",
         "level": 2,
-        "version_tested": "0.0.4",
-        "tested_at": "2026-10-04T10:49:08+00:00",
+        "version_tested": "0.0.5",
+        "tested_at": "2026-11-17T11:06:21+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 2,
+          "hit": 4,
           "counted": 13
         }
       },
       "alpha": {
-        "label": "\u2713 13/13 golden",
-        "state": "pass",
+        "label": "\u2713 11/13 golden",
+        "state": "warn",
         "level": 3,
-        "version_tested": "0.0.4",
-        "tested_at": "2026-10-30T09:16:10+00:00",
+        "version_tested": "0.0.5",
+        "tested_at": "2026-11-17T11:14:48+00:00",
         "channel_pinned": false,
         "golden": {
-          "hit": 13,
+          "hit": 11,
           "counted": 13
         }
       }
