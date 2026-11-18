@@ -1,0 +1,52 @@
+{
+  "id": "emkay-voice-ovos-assist-pipeline-plugin",
+  "skill_id": null,
+  "name": "ovos-assist-pipeline-plugin",
+  "description": "OpenVoiceOS pipeline plugin: what Home Assistant's Assist recognizes (lights, heating, rooms\u2026) goes to Home Assistant \u2013 made for Emkay, works on any OVOS",
+  "examples": [],
+  "tags": [
+    "assist",
+    "emkay",
+    "home-assistant",
+    "openvoiceos",
+    "ovos",
+    "ovos-pipeline",
+    "ovos-plugin"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-assist-pipeline-plugin",
+  "package_name": "ovos-assist-pipeline-plugin",
+  "pypi_version": "0.1.0a1",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Pipeline Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install --pre ovos-assist-pipeline-plugin\n\nand add `ovos-assist-pipeline-plugin` to `intents.pipeline` as above.\n\n| Setting (under `intents` \u2192 `ovos-assist-pipeline-plugin`) | |\n|---|---|\n| `recognize_timeout` | seconds to wait for Home Assistant per utterance (default 2) |\n| `process_timeout` | seconds to wait for its answer (default 10) |"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-17T21:01:03Z",
+  "last_updated": "2026-11-17T21:35:01.864132Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

@@ -4018,6 +4018,51 @@
     }
   },
   {
+    "id": "emkay-voice-dev",
+    "skill_id": null,
+    "name": "dev",
+    "description": "dev.emkay.ai \u2013 make an OpenVoiceOS skill in your browser and hear Emkay answer it: VS Code + Emkay, skill templates, step by step.",
+    "examples": [],
+    "tags": [
+      "developer-tools",
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/dev/main/icon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/dev",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-17T23:10:10Z",
+    "last_updated": "2026-11-17T23:13:35Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-skill-ip",
     "skill_id": "ovos-skill-ip.openvoiceos",
     "name": "Device IP Address",
@@ -6753,7 +6798,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -6815,7 +6860,7 @@
     "type_group": "Tool",
     "stars": 7,
     "forks": 7,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -6864,7 +6909,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -6911,7 +6956,7 @@
     "type_group": "Tool",
     "stars": 16,
     "forks": 1,
-    "open_issues": 11,
+    "open_issues": 9,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -6964,7 +7009,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 11,
+    "open_issues": 12,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -6986,7 +7031,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-09-10T23:05:41Z",
-    "last_updated": "2026-11-12T01:46:12Z",
+    "last_updated": "2026-11-17T16:50:58Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -7039,9 +7084,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-04-26T18:29:10Z",
-    "last_updated": "2026-10-11T01:15:27Z",
+    "last_updated": "2026-11-13T08:44:05Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-hivemind-http-protocol",
@@ -7171,7 +7216,7 @@
     "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-media-player",
     "package_name": "hivemind-player-protocol",
-    "pypi_version": "0.1.2a2",
+    "pypi_version": "0.1.4a1",
     "license": null,
     "archived": false,
     "author": "JarbasHiveMind",
@@ -7180,7 +7225,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -7206,9 +7251,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-09-14T22:56:03Z",
-    "last_updated": "2026-09-23T03:12:31.779880Z",
+    "last_updated": "2026-11-13T06:57:15.660748Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-hivemind-mic-satellite",
@@ -7286,7 +7331,7 @@
     "icon_color": null,
     "source": "https://github.com/JarbasHiveMind/hivemind-mqtt-protocol",
     "package_name": "hivemind-mqtt-protocol",
-    "pypi_version": "0.3.0a1",
+    "pypi_version": "0.3.2a1",
     "license": "Apache-2.0",
     "archived": false,
     "author": "JarbasHiveMind",
@@ -7295,7 +7340,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 3,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -7317,7 +7362,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-04T18:25:55Z",
-    "last_updated": "2026-11-02T18:52:20.032799Z",
+    "last_updated": "2026-11-13T07:11:21.141922Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -7350,7 +7395,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 2,
-    "open_issues": 8,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7402,7 +7447,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 4,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7459,7 +7504,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7525,7 +7570,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-03-14T14:57:24Z",
-    "last_updated": "2026-10-31T03:32:07Z",
+    "last_updated": "2026-11-13T14:11:05Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -7750,7 +7795,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7802,7 +7847,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": false,
     "in_ovos_store": false,
@@ -13861,6 +13906,58 @@
     "in_ovos_localize": false,
     "repo_created_at": "2021-12-31T00:23:46Z",
     "last_updated": "2024-05-31T01:58:16Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-ovos-assist-pipeline-plugin",
+    "skill_id": null,
+    "name": "ovos-assist-pipeline-plugin",
+    "description": "OpenVoiceOS pipeline plugin: what Home Assistant's Assist recognizes (lights, heating, rooms\u2026) goes to Home Assistant \u2013 made for Emkay, works on any OVOS",
+    "examples": [],
+    "tags": [
+      "assist",
+      "emkay",
+      "home-assistant",
+      "openvoiceos",
+      "ovos",
+      "ovos-pipeline",
+      "ovos-plugin"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-assist-pipeline-plugin",
+    "package_name": "ovos-assist-pipeline-plugin",
+    "pypi_version": "0.1.0a1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Pipeline Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install --pre ovos-assist-pipeline-plugin\n\nand add `ovos-assist-pipeline-plugin` to `intents.pipeline` as above.\n\n| Setting (under `intents` \u2192 `ovos-assist-pipeline-plugin`) | |\n|---|---|\n| `recognize_timeout` | seconds to wait for Home Assistant per utterance (default 2) |\n| `process_timeout` | seconds to wait for its answer (default 10) |"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-17T21:01:03Z",
+    "last_updated": "2026-11-17T21:35:01.864132Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -21354,6 +21451,60 @@
     "is_recently_updated": false
   },
   {
+    "id": "andlo-ovos-phal-plugin-ha-link",
+    "skill_id": null,
+    "name": "ovos-phal-plugin-ha-link",
+    "description": "Links an OpenVoiceOS device to Home Assistant: the device connects to HA itself and carries its bus (and its control panel) to the OpenVoiceOS integration \u2013 no open ports, works behind NAT",
+    "examples": [],
+    "tags": [
+      "home-assistant",
+      "openvoiceos",
+      "ovos",
+      "ovos-plugin",
+      "phal"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/andlo/ovos-phal-plugin-ha-link",
+    "package_name": "ovos-phal-plugin-ha-link",
+    "pypi_version": "0.1.0a4",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "andlo",
+    "tier": 2,
+    "component_type": "PHAL Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install --pre ovos-phal-plugin-ha-link\n\nIn Home Assistant, install the [OpenVoiceOS integration](https://github.com/andlo/ha-ovos-integration)\n(0.3.0 or newer), add it, and choose **An OpenVoiceOS device**. That lets\ndevices connect. Then make a long-lived access token: your profile \u2192 Security."
+      },
+      {
+        "heading": "Configure",
+        "content": "In `mycroft.conf`:\n\n{\n  \"PHAL\": {\n    \"ovos-phal-plugin-ha-link\": {\n      \"url\": \"http://homeassistant.local:8123\",\n      \"token\": \"<the long-lived access token>\",\n      \"name\": \"Kitchen\"\n    }\n  }\n}\n\n| Setting | |\n|---|---|\n| `url` | Home Assistant's address |\n| `token` | a long-lived access token |\n| `name` | the device's name in Home Assistant (default: the host name) |\n| `model` | shown on the device page (default: `OpenVoiceOS`) |\n| `panel_url` | the device's [ovos-control-panel](https://github.com/OpenVoiceOS/ovos-control-panel), reached here on the device (default `http://127.0.0.1:8500`; `false` for none) |\n| `panel_token` | its access token (default: `webui.access_token` from `mycroft.conf`) |\n| `panel_public_url` | where a browser can open the panel, for \"Open control panel\" in H\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-17T20:26:08Z",
+    "last_updated": "2026-11-17T22:51:10.952799Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-PHAL-plugin-homeassistant",
     "skill_id": null,
     "name": "ovos-PHAL-plugin-homeassistant",
@@ -28579,7 +28730,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -35706,7 +35857,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 2,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -38580,6 +38731,154 @@
     "in_ovos_localize": false,
     "repo_created_at": "2020-12-08T01:27:16Z",
     "last_updated": "2026-08-11T04:36:40Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-skill-template",
+    "skill_id": null,
+    "name": "skill-template",
+    "description": "Your first OpenVoiceOS skill: say \"hello from my skill\" and it answers \u2013 in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "ovos-skill",
+      "template",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/skill-template",
+    "package_name": "ovos-skill-hello",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Hola",
+        "description": "La meva primera skill: respon quan li dius hola.",
+        "examples": [
+          "Hola des de la meva skill",
+          "Executa la meva primera skill"
+        ]
+      },
+      "da-dk": {
+        "name": "Hej",
+        "description": "Min f\u00f8rste skill: den svarer, n\u00e5r du siger hej til den.",
+        "examples": [
+          "Hej fra min skill",
+          "K\u00f8r min f\u00f8rste skill"
+        ]
+      },
+      "de-de": {
+        "name": "Hallo",
+        "description": "Mein erster Skill: er antwortet, wenn du hallo zu ihm sagst.",
+        "examples": [
+          "Hallo von meinem Skill",
+          "Starte meinen ersten Skill"
+        ]
+      },
+      "es-es": {
+        "name": "Hola",
+        "description": "Mi primera skill: responde cuando le dices hola.",
+        "examples": [
+          "Hola desde mi skill",
+          "Ejecuta mi primera skill"
+        ]
+      },
+      "eu-es": {
+        "name": "Kaixo",
+        "description": "Nire lehen skilla: kaixo esaten diozunean erantzuten du.",
+        "examples": [
+          "Kaixo nire skilletik",
+          "Exekutatu nire lehen skilla"
+        ]
+      },
+      "fr-fr": {
+        "name": "Bonjour",
+        "description": "Ma premi\u00e8re skill : elle r\u00e9pond quand vous lui dites bonjour.",
+        "examples": [
+          "Bonjour de ma skill",
+          "Lance ma premi\u00e8re skill"
+        ]
+      },
+      "gl-es": {
+        "name": "Ola",
+        "description": "A mi\u00f1a primeira skill: responde cando lle dis ola.",
+        "examples": [
+          "Ola dende a mi\u00f1a skill",
+          "Executa a mi\u00f1a primeira skill"
+        ]
+      },
+      "it-it": {
+        "name": "Ciao",
+        "description": "La mia prima skill: risponde quando la saluti.",
+        "examples": [
+          "Ciao dalla mia skill",
+          "Avvia la mia prima skill"
+        ]
+      },
+      "nl-nl": {
+        "name": "Hallo",
+        "description": "Mijn eerste skill: hij antwoordt als je hallo tegen hem zegt.",
+        "examples": [
+          "Hallo van mijn skill",
+          "Start mijn eerste skill"
+        ]
+      },
+      "pt-br": {
+        "name": "Ol\u00e1",
+        "description": "Minha primeira skill: ela responde quando voc\u00ea diz ol\u00e1.",
+        "examples": [
+          "Ol\u00e1 da minha skill",
+          "Rode minha primeira skill"
+        ]
+      },
+      "pt-pt": {
+        "name": "Ol\u00e1",
+        "description": "A minha primeira skill: responde quando lhe diz ol\u00e1.",
+        "examples": [
+          "Ol\u00e1 da minha skill",
+          "Executa a minha primeira skill"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-17T23:09:09Z",
+    "last_updated": "2026-11-17T23:09:15Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -41958,6 +42257,52 @@
         "doesnt_work": 0
       }
     }
+  },
+  {
+    "id": "emkay-voice-vscode-emkay",
+    "skill_id": null,
+    "name": "vscode-emkay",
+    "description": "Emkay Dev for VS Code: write an OpenVoiceOS skill and talk to it at once \u2013 Emkay runs next to your code, also in vscode.dev. Start at dev.emkay.ai.",
+    "examples": [],
+    "tags": [
+      "developer-tools",
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "voice-assistant",
+      "vscode-extension"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/vscode-emkay/main/media/icon.png",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/vscode-emkay",
+    "package_name": null,
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": null,
+    "component_type": "Infrastructure",
+    "type_group": "Infrastructure",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 1,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-17T23:09:47Z",
+    "last_updated": "2026-11-18T00:30:36Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-wallpapers",

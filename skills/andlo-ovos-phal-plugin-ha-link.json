@@ -1,0 +1,54 @@
+{
+  "id": "andlo-ovos-phal-plugin-ha-link",
+  "skill_id": null,
+  "name": "ovos-phal-plugin-ha-link",
+  "description": "Links an OpenVoiceOS device to Home Assistant: the device connects to HA itself and carries its bus (and its control panel) to the OpenVoiceOS integration \u2013 no open ports, works behind NAT",
+  "examples": [],
+  "tags": [
+    "home-assistant",
+    "openvoiceos",
+    "ovos",
+    "ovos-plugin",
+    "phal"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/andlo/ovos-phal-plugin-ha-link",
+  "package_name": "ovos-phal-plugin-ha-link",
+  "pypi_version": "0.1.0a4",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "andlo",
+  "tier": 2,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install --pre ovos-phal-plugin-ha-link\n\nIn Home Assistant, install the [OpenVoiceOS integration](https://github.com/andlo/ha-ovos-integration)\n(0.3.0 or newer), add it, and choose **An OpenVoiceOS device**. That lets\ndevices connect. Then make a long-lived access token: your profile \u2192 Security."
+    },
+    {
+      "heading": "Configure",
+      "content": "In `mycroft.conf`:\n\n{\n  \"PHAL\": {\n    \"ovos-phal-plugin-ha-link\": {\n      \"url\": \"http://homeassistant.local:8123\",\n      \"token\": \"<the long-lived access token>\",\n      \"name\": \"Kitchen\"\n    }\n  }\n}\n\n| Setting | |\n|---|---|\n| `url` | Home Assistant's address |\n| `token` | a long-lived access token |\n| `name` | the device's name in Home Assistant (default: the host name) |\n| `model` | shown on the device page (default: `OpenVoiceOS`) |\n| `panel_url` | the device's [ovos-control-panel](https://github.com/OpenVoiceOS/ovos-control-panel), reached here on the device (default `http://127.0.0.1:8500`; `false` for none) |\n| `panel_token` | its access token (default: `webui.access_token` from `mycroft.conf`) |\n| `panel_public_url` | where a browser can open the panel, for \"Open control panel\" in H\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-17T20:26:08Z",
+  "last_updated": "2026-11-17T22:51:10.952799Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

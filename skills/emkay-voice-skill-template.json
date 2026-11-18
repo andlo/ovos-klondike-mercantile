@@ -1,0 +1,148 @@
+{
+  "id": "emkay-voice-skill-template",
+  "skill_id": null,
+  "name": "skill-template",
+  "description": "Your first OpenVoiceOS skill: say \"hello from my skill\" and it answers \u2013 in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+  "examples": [],
+  "tags": [
+    "emkay",
+    "openvoiceos",
+    "ovos",
+    "ovos-skill",
+    "template",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/skill-template",
+  "package_name": "ovos-skill-hello",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Hola",
+      "description": "La meva primera skill: respon quan li dius hola.",
+      "examples": [
+        "Hola des de la meva skill",
+        "Executa la meva primera skill"
+      ]
+    },
+    "da-dk": {
+      "name": "Hej",
+      "description": "Min f\u00f8rste skill: den svarer, n\u00e5r du siger hej til den.",
+      "examples": [
+        "Hej fra min skill",
+        "K\u00f8r min f\u00f8rste skill"
+      ]
+    },
+    "de-de": {
+      "name": "Hallo",
+      "description": "Mein erster Skill: er antwortet, wenn du hallo zu ihm sagst.",
+      "examples": [
+        "Hallo von meinem Skill",
+        "Starte meinen ersten Skill"
+      ]
+    },
+    "es-es": {
+      "name": "Hola",
+      "description": "Mi primera skill: responde cuando le dices hola.",
+      "examples": [
+        "Hola desde mi skill",
+        "Ejecuta mi primera skill"
+      ]
+    },
+    "eu-es": {
+      "name": "Kaixo",
+      "description": "Nire lehen skilla: kaixo esaten diozunean erantzuten du.",
+      "examples": [
+        "Kaixo nire skilletik",
+        "Exekutatu nire lehen skilla"
+      ]
+    },
+    "fr-fr": {
+      "name": "Bonjour",
+      "description": "Ma premi\u00e8re skill : elle r\u00e9pond quand vous lui dites bonjour.",
+      "examples": [
+        "Bonjour de ma skill",
+        "Lance ma premi\u00e8re skill"
+      ]
+    },
+    "gl-es": {
+      "name": "Ola",
+      "description": "A mi\u00f1a primeira skill: responde cando lle dis ola.",
+      "examples": [
+        "Ola dende a mi\u00f1a skill",
+        "Executa a mi\u00f1a primeira skill"
+      ]
+    },
+    "it-it": {
+      "name": "Ciao",
+      "description": "La mia prima skill: risponde quando la saluti.",
+      "examples": [
+        "Ciao dalla mia skill",
+        "Avvia la mia prima skill"
+      ]
+    },
+    "nl-nl": {
+      "name": "Hallo",
+      "description": "Mijn eerste skill: hij antwoordt als je hallo tegen hem zegt.",
+      "examples": [
+        "Hallo van mijn skill",
+        "Start mijn eerste skill"
+      ]
+    },
+    "pt-br": {
+      "name": "Ol\u00e1",
+      "description": "Minha primeira skill: ela responde quando voc\u00ea diz ol\u00e1.",
+      "examples": [
+        "Ol\u00e1 da minha skill",
+        "Rode minha primeira skill"
+      ]
+    },
+    "pt-pt": {
+      "name": "Ol\u00e1",
+      "description": "A minha primeira skill: responde quando lhe diz ol\u00e1.",
+      "examples": [
+        "Ol\u00e1 da minha skill",
+        "Executa a minha primeira skill"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-17T23:09:09Z",
+  "last_updated": "2026-11-17T23:09:15Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
