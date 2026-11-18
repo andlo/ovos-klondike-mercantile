@@ -1,7 +1,7 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "abf75a4402a330e1ed9188ff36f7f8654cfb6f8f15024b4d8cd3ed4de785624e",
+      "constraints_sha256": "cd961e5bfe2303fd94b5560abfb440f8b8b690259a7105a39deb6f5cfbdffd1b",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
@@ -15,7 +15,7 @@
         "ovos-padatious": "2.3.2a1",
         "ovos-persona": "0.9.0a36",
         "ovos-plugin-manager": "3.1.0a1",
-        "ovos-utils": "0.15.7a2",
+        "ovos-utils": "0.15.7a3",
         "ovos-workshop": "9.10.1a1",
         "padacioso": "2.5.4a1"
       },
@@ -34,7 +34,6 @@
           "ovos-skill-personal.openvoiceos",
           "ovos-skill-speedtest.openvoiceos",
           "ovos-skill-volume.openvoiceos",
-          "ovos-skill-weather.openvoiceos",
           "ovos-skill-wikihow.openvoiceos",
           "ovos-skill-wikipedia.openvoiceos",
           "ovos-skill-wolfie.openvoiceos",
@@ -85,33 +84,22 @@
           "ovos-fallback-pipeline-plugin-low"
         ],
         "route_version": "5",
-        "run_at": "2026-11-17T12:44:48+00:00",
+        "run_at": "2026-11-18T12:16:06+00:00",
         "timing": [
           {
             "lang": "en-US",
             "row_seconds": {
-              "max": 15.0,
-              "median": 0.53,
-              "n": 444,
-              "p95": 2.71
+              "max": 15.05,
+              "median": 0.61,
+              "n": 478,
+              "p95": 15.01
             },
-            "seconds": 799.3,
-            "status": "ok"
-          },
-          {
-            "lang": "da-DK",
-            "row_seconds": {
-              "max": 1.37,
-              "median": 0.43,
-              "n": 30,
-              "p95": 1.11
-            },
-            "seconds": 505.6,
+            "seconds": 1325.7,
             "status": "ok"
           }
         ]
       },
-      "run_at": "2026-11-17T12:44:48+00:00",
+      "run_at": "2026-11-18T12:16:06+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -122,13 +110,15 @@
           "ovos-padatious": "2.3.2a1",
           "ovos-plugin-manager": "2.12.5a1",
           "ovos-translate-server-plugin": "0.0.10a1",
-          "ovos-utils": "0.15.7a2",
+          "ovos-utils": "0.15.7a3",
           "ovos-workshop": "9.10.1a1",
           "ovoscope": "1.12.1a1"
         },
         "python": "3.11.18"
       },
-      "stack_moved": []
+      "stack_moved": [
+        "ovos-utils 0.15.7a2 -> 0.15.7a3"
+      ]
     },
     "stable": {
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
@@ -425,7 +415,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-11-17T12:44:48+00:00",
+  "generated_at": "2026-11-18T12:16:06+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -977,7 +967,7 @@
               "ovos-common-reading-pipeline-plugin-low",
               "ovos-fallback-pipeline-plugin-low"
             ],
-            "seconds": 5510.3,
+            "seconds": 5295.0,
             "status": "ok"
           }
         ],
@@ -1134,10 +1124,16 @@
               }
             ],
             "reaches": 0,
-            "takes": 7
+            "takes": 6
           },
           "ovos-m2v-pipeline": {
             "examples": [
+              {
+                "from": "OpenVoiceOS-ovos-skill-alerts",
+                "kind": "wrong_intent",
+                "taken_by": "ovos-skill-alerts.openvoiceos",
+                "utterance": "change my 8 am alarm to 9"
+              },
               {
                 "from": "andlo-ovos-skill-geography",
                 "kind": "baseline",
@@ -1161,15 +1157,9 @@
                 "kind": "wrong_intent",
                 "taken_by": "skill-ovos-wallpapers.openvoiceos",
                 "utterance": "change wall paper about something"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-wallpapers",
-                "kind": "wrong_intent",
-                "taken_by": "skill-ovos-wallpapers.openvoiceos",
-                "utterance": "change wall paper for something"
               }
             ],
-            "reaches": 21,
+            "reaches": 23,
             "takes": 5
           },
           "ovos-ocp-pipeline-plugin": {
@@ -1229,7 +1219,7 @@
                 "utterance": "grab a screenshot in 5 seconds"
               }
             ],
-            "reaches": 348,
+            "reaches": 346,
             "takes": 13
           },
           "ovos-persona-pipeline-plugin": {
@@ -1280,12 +1270,12 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 210,
-                    "hit": 206
+                    "hit": 205
                   }
                 },
                 "by_pipeline": {
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 206,
+                    "hit": 205,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -1296,7 +1286,7 @@
                 "collisions": [],
                 "counted": 210,
                 "hang": 0,
-                "hit": 206,
+                "hit": 205,
                 "langs": [
                   "en-US"
                 ],
@@ -1310,6 +1300,17 @@
                     "pipeline": "ovos-persona-pipeline-plugin",
                     "stage": "ovos-persona-pipeline-plugin",
                     "utterance": "change the priority to 10 of my reminders"
+                  },
+                  {
+                    "expected": "change_until",
+                    "fired": [
+                      "ovos-skill-alerts.openvoiceos:reschedule_alert"
+                    ],
+                    "kind": "wrong_intent",
+                    "lang": "en-US",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "utterance": "change my reminders until 5 minutes"
                   },
                   {
                     "expected": "create_alarm",
@@ -1341,28 +1342,24 @@
                 "status": "ok",
                 "total": 210,
                 "unhandled": 4,
-                "wrong_intent": 0
+                "wrong_intent": 1
               },
               "golden": {
                 "asked": 2,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
-                    "counted": 54,
+                    "counted": 55,
                     "hit": 52
                   }
                 },
                 "by_pipeline": {
-                  "ovos-fallback-pipeline-plugin": {
-                    "hit": 0,
-                    "miss": 1
-                  },
                   "ovos-m2v-pipeline": {
-                    "hit": 4,
+                    "hit": 7,
                     "miss": 0
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 48,
+                    "hit": 45,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -1370,16 +1367,8 @@
                     "miss": 2
                   }
                 },
-                "collisions": [
-                  {
-                    "expected": "reschedule_alert",
-                    "lang": "en-US",
-                    "pipeline": "ovos-fallback-pipeline-plugin",
-                    "taken_by": "thalovant-skill-custos-fallback.thalovant",
-                    "utterance": "change the next alarm to 9"
-                  }
-                ],
-                "counted": 54,
+                "collisions": [],
+                "counted": 55,
                 "hang": 0,
                 "hit": 52,
                 "langs": [
@@ -1449,6 +1438,17 @@
                     "utterance": "move the timer to later"
                   },
                   {
+                    "expected": "reschedule_alert",
+                    "fired": [
+                      "ovos-skill-alerts.openvoiceos:change_until"
+                    ],
+                    "kind": "wrong_intent",
+                    "lang": "en-US",
+                    "pipeline": "ovos-m2v-pipeline",
+                    "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "utterance": "change my 8 am alarm to 9"
+                  },
+                  {
                     "expected": "create_alarm",
                     "kind": "unhandled",
                     "lang": "en-US",
@@ -1457,14 +1457,14 @@
                     "utterance": "wake me up to the radio at 7"
                   }
                 ],
-                "neighbour": 1,
+                "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 220,
                 "unhandled": 2,
-                "wrong_intent": 0
+                "wrong_intent": 1
               },
-              "ref": "0.12.58a3",
+              "ref": "0.13.1a1",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
@@ -1472,7 +1472,7 @@
               }
             },
             "skill_id": "ovos-skill-alerts.openvoiceos",
-            "version": "0.12.58a3"
+            "version": "0.13.1a1"
           },
           "OpenVoiceOS-ovos-skill-application-launcher": {
             "member": false,
@@ -2444,11 +2444,11 @@
                     "miss": 14
                   },
                   "ovos-m2v-pipeline": {
-                    "hit": 2,
+                    "hit": 1,
                     "miss": 0
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 108,
+                    "hit": 109,
                     "miss": 0
                   }
                 },
@@ -2655,11 +2655,11 @@
                     "miss": 1
                   },
                   "ovos-m2v-pipeline": {
-                    "hit": 2,
+                    "hit": 1,
                     "miss": 0
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 1,
+                    "hit": 2,
                     "miss": 1
                   }
                 },
@@ -2751,7 +2751,7 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "1.12.3a2",
+              "ref": "1.12.4a1",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
@@ -2759,7 +2759,7 @@
               }
             },
             "skill_id": "ovos-skill-date-time.openvoiceos",
-            "version": "1.12.3a2"
+            "version": "1.12.4a1"
           },
           "OpenVoiceOS-ovos-skill-days-in-history": {
             "member": true,
@@ -4509,7 +4509,7 @@
               "ref": "0.8.0a2",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "silent",
                 "utterance": "who's currently living on the space station"
               }
             },
@@ -5904,10 +5904,14 @@
               },
               "ref": "0.10.0a7",
               "stop": {
+                "after": [
+                  "Your download speed is 2232.73 Megabit per second and your upload speed is 957.76 Megabit per second.",
+                  "ping is 33.53 milliseconds"
+                ],
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 1.4,
-                "spoke_after_stop": 0,
+                "result": "keeps_going",
+                "seconds": 2.1,
+                "spoke_after_stop": 2,
                 "utterance": "run a speed test"
               }
             },
@@ -6217,7 +6221,7 @@
                 "by_pipeline": {
                   "ovos-fallback-pipeline-plugin": {
                     "hit": 0,
-                    "miss": 22
+                    "miss": 21
                   },
                   "ovos-m2v-pipeline": {
                     "hit": 0,
@@ -6225,7 +6229,7 @@
                   },
                   "ovos-padatious-pipeline-plugin": {
                     "hit": 40,
-                    "miss": 0
+                    "miss": 1
                   },
                   "ovos-persona-pipeline-plugin": {
                     "hit": 0,
@@ -6280,9 +6284,9 @@
                     "expected": "make_wallpaper",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "pipeline": "ovos-fallback-pipeline-plugin",
-                    "stage": "ovos-fallback-pipeline-plugin",
-                    "taken_by": "ovos-skill-ddg.openvoiceos",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
+                    "stage": "ovos-padatious-pipeline-plugin",
+                    "taken_by": "ovos-skill-alerts.openvoiceos",
                     "utterance": "change the wall paper to this one"
                   },
                   {
@@ -6699,8 +6703,13 @@
               },
               "ref": "2.8.1a2",
               "stop": {
+                "after": [
+                  "enjoy your new wallpaper"
+                ],
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "keeps_going",
+                "seconds": 3.4,
+                "spoke_after_stop": 1,
                 "utterance": "change current wall paper"
               }
             },
@@ -6815,7 +6824,7 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "1.5.5a3",
+              "ref": "1.5.6a1",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
@@ -6823,7 +6832,7 @@
               }
             },
             "skill_id": "ovos-skill-weather.openvoiceos",
-            "version": "1.5.5a3"
+            "version": "1.5.6a1"
           },
           "OpenVoiceOS-ovos-skill-wikihow": {
             "member": true,
@@ -7669,11 +7678,11 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-dgb424e8/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-n43yj9qe/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "golden": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-dgb424e8/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-n43yj9qe/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "stop": {
@@ -7930,9 +7939,7 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.1,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "tell me a story from 365 tomorrows"
               }
             },
@@ -8033,9 +8040,7 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "read me a story by hans christian andersen"
               }
             },
@@ -8945,7 +8950,7 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 8,
+                "asked": 7,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
@@ -9097,7 +9102,14 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "v0.0.6"
+              "ref": "v0.0.6",
+              "stop": {
+                "lang": "en-US",
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
+                "utterance": "test me on capitals"
+              }
             },
             "skill_id": "ovos-skill-geography-practice.andlo",
             "version": "0.0.6"
@@ -9258,7 +9270,7 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 7,
+                "asked": 8,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
@@ -11318,13 +11330,13 @@
                 "status": "none"
               },
               "golden": {
-                "reason": "no test/end2end/golden_utterances*.jsonl at v0.0.7",
+                "reason": "no test/end2end/golden_utterances*.jsonl at v0.0.8",
                 "status": "none"
               },
-              "ref": "v0.0.7"
+              "ref": "v0.0.8"
             },
             "skill_id": "ovos-skill-wiki-offline.andlo",
-            "version": "0.0.7"
+            "version": "0.0.8"
           },
           "mikejgray-neon-homeassistant-skill": {
             "member": false,
@@ -11358,7 +11370,7 @@
             "version": "0.1.6"
           }
         },
-        "run_at": "2026-11-17T12:44:48+00:00",
+        "run_at": "2026-11-18T12:16:06+00:00",
         "takes_from": {
           "OpenVoiceOS-ovos-skill-alerts": {
             "generated": [
@@ -11547,7 +11559,7 @@
           }
         }
       },
-      "key": "04a66fa4a087999e",
+      "key": "d350f06cb8906d07",
       "profile": {
         "added_stages": [
           "ovos-common-reading-pipeline-plugin-high",
@@ -11823,7 +11835,7 @@
               "(channel default used: 13 stages)"
             ],
             "pipeline_used": [],
-            "seconds": 2819.6,
+            "seconds": 2611.3,
             "status": "ok"
           }
         ],
@@ -12234,16 +12246,16 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "0.6.2a3"
+              "ref": "0.6.3a1"
             },
             "skill_id": "ovos-skill-count.openvoiceos",
-            "version": "0.6.2a3"
+            "version": "0.6.3a1"
           },
           "OpenVoiceOS-ovos-skill-date-time": {
             "member": true,
             "routing": {
               "generated": {
-                "reason": "ovoscope generate exit 1:   File \"/home/runner/work/_temp/gen/lib/python3.11/site-packages/ovos_spec_tools/resources.py\", line 1102, in _load_expanded_uncached |     raise MalformedResource( | ovos_spec_tools.resources.MalformedResource: empty resource file /tmp/compat-qan0b6jb/src/OpenVoiceOS-ovos-",
+                "reason": "ovoscope generate exit 1:   File \"/home/runner/work/_temp/gen/lib/python3.11/site-packages/ovos_spec_tools/resources.py\", line 1102, in _load_expanded_uncached |     raise MalformedResource( | ovos_spec_tools.resources.MalformedResource: empty resource file /tmp/compat-c_ke9nae/src/OpenVoiceOS-ovos-",
                 "status": "error"
               },
               "golden": {
@@ -12264,34 +12276,19 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 12,
-                    "hit": 10
+                    "hit": 12
                   }
                 },
                 "collisions": [],
                 "counted": 12,
-                "hang": 2,
-                "hit": 10,
+                "hang": 0,
+                "hit": 12,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [
-                  {
-                    "expected": "today_in_history",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "tell me about happened on tomorrow"
-                  },
-                  {
-                    "expected": "today_in_history",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "tell me about historical events happened on tomorrow"
-                  }
-                ],
+                "misses": [],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
@@ -12437,7 +12434,7 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 4,
+                "baseline": 2,
                 "by_lang": {
                   "en-US": {
                     "counted": 162,
@@ -12446,7 +12443,7 @@
                 },
                 "collisions": [],
                 "counted": 162,
-                "hang": 0,
+                "hang": 2,
                 "hit": 158,
                 "langs": [
                   "en-US"
@@ -12466,24 +12463,22 @@
                     "expected": "stardate_intent",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start date"
                   },
                   {
                     "expected": "stardate_intent",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
+                    "stage": "last message: ovos.common_play.search.stop",
                     "utterance": "start day"
                   },
                   {
                     "expected": "stardate_intent",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "start eight"
                   }
                 ],
@@ -13100,17 +13095,24 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 1,
                 "by_lang": {
                   "en-US": {
-                    "counted": 45,
-                    "hit": 43
+                    "counted": 44,
+                    "hit": 42
                   }
                 },
-                "collisions": [],
-                "counted": 45,
-                "hang": 2,
-                "hit": 43,
+                "collisions": [
+                  {
+                    "expected": "start_parrot",
+                    "lang": "en-US",
+                    "taken_by": "skill-musicassistant.oscillatelabsllc",
+                    "utterance": "repeat everything"
+                  }
+                ],
+                "counted": 44,
+                "hang": 1,
+                "hit": 42,
                 "langs": [
                   "en-US"
                 ],
@@ -13119,20 +13121,21 @@
                 "misses": [
                   {
                     "expected": "start_parrot",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_start",
+                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start parrot"
                   },
                   {
                     "expected": "start_parrot",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "stage": "last message: ovos.common_play.search.stop",
                     "utterance": "start parroting"
                   }
                 ],
-                "neighbour": 0,
+                "neighbour": 1,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 45,
@@ -13507,7 +13510,7 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 5,
+                "baseline": 4,
                 "by_lang": {
                   "en-US": {
                     "counted": 8,
@@ -13529,7 +13532,7 @@
                   }
                 ],
                 "counted": 8,
-                "hang": 3,
+                "hang": 4,
                 "hit": 0,
                 "langs": [
                   "en-US"
@@ -13562,10 +13565,9 @@
                   },
                   {
                     "expected": "wikiroulette",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
                     "stage": "last message: ovos.common_play.skill.search_end",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "play the wikipedia roulette"
                   },
                   {
@@ -13683,16 +13685,21 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-qan0b6jb/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-c_ke9nae/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "golden": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-qan0b6jb/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-c_ke9nae/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
+              },
+              "stop": {
+                "lang": "en-US",
+                "result": "nothing_to_stop",
+                "utterance": "Disable Home Assistant"
               }
             },
             "skill_id": "skill-homeassistant.oscillatelabsllc",
-            "version": "1.4.6"
+            "version": "1.4.7"
           },
           "OscillateLabsLLC-skill-mac-application-launcher": {
             "member": false,
@@ -13731,17 +13738,17 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 7,
+                "baseline": 6,
                 "by_lang": {
                   "en-US": {
                     "counted": 75,
-                    "hit": 65
+                    "hit": 69
                   }
                 },
                 "collisions": [],
                 "counted": 75,
-                "hang": 3,
-                "hit": 65,
+                "hang": 0,
+                "hit": 69,
                 "langs": [
                   "en-US"
                 ],
@@ -13749,33 +13756,12 @@
                 "manual": 0,
                 "misses": [
                   {
-                    "expected": "now_playing",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "what's playing in the london"
-                  },
-                  {
-                    "expected": "now_playing",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "what is playing in the london"
-                  },
-                  {
-                    "expected": "pause",
+                    "expected": "next",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_end",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
-                    "utterance": "pause the music in the london"
-                  },
-                  {
-                    "expected": "pause",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_start",
-                    "utterance": "unpause the music in the london"
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
+                    "utterance": "next track in the london"
                   },
                   {
                     "expected": "previous",
@@ -13800,14 +13786,6 @@
                     "stage": "last message: ovos.common_play.skill.search_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "previous song in the london"
-                  },
-                  {
-                    "expected": "repeat",
-                    "kind": "baseline",
-                    "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
-                    "taken_by": "ovos-skill-parrot.openvoiceos",
-                    "utterance": "repeat everything"
                   },
                   {
                     "expected": "volume",
@@ -13968,7 +13946,7 @@
                   {
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "stage": "last message: ovos.common_play.search.stop",
                     "utterance": "read me a story by hans christian andersen"
                   },
                   {
@@ -14040,7 +14018,7 @@
                   {
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.search.stop",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "read me a story from the fairy books"
                   },
                   {
@@ -14194,7 +14172,7 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 3,
                 "by_lang": {
                   "en-US": {
                     "counted": 16,
@@ -14203,7 +14181,7 @@
                 },
                 "collisions": [],
                 "counted": 16,
-                "hang": 14,
+                "hang": 11,
                 "hit": 2,
                 "langs": [
                   "en-US"
@@ -14261,9 +14239,10 @@
                   },
                   {
                     "expected": "divide",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
                     "utterance": "what's 99 divided by 11"
                   },
                   {
@@ -14303,16 +14282,18 @@
                   },
                   {
                     "expected": "square_root",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-geometry.andlo",
                     "utterance": "what is the square root of 250"
                   },
                   {
                     "expected": "square_root",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-geometry.andlo",
                     "utterance": "what's the square root of 3.5"
                   },
                   {
@@ -14509,7 +14490,7 @@
                     "expected": "random_start",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.search.stop",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "start farting randomly"
                   }
                 ],
@@ -14581,16 +14562,16 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 1,
                 "by_lang": {
                   "en-US": {
-                    "counted": 14,
+                    "counted": 12,
                     "hit": 4
                   }
                 },
                 "collisions": [],
-                "counted": 14,
-                "hang": 10,
+                "counted": 12,
+                "hang": 6,
                 "hit": 4,
                 "langs": [
                   "en-US"
@@ -14598,20 +14579,6 @@
                 "langs_failed": [],
                 "manual": 0,
                 "misses": [
-                  {
-                    "expected": "about_country",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "tell me about france"
-                  },
-                  {
-                    "expected": "about_country",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "what do you know about france"
-                  },
                   {
                     "expected": "area_of",
                     "kind": "hang",
@@ -14621,9 +14588,10 @@
                   },
                   {
                     "expected": "area_of",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-geometry.andlo",
                     "utterance": "what is the area of france"
                   },
                   {
@@ -14642,9 +14610,12 @@
                   },
                   {
                     "expected": "capital_of",
-                    "kind": "hang",
+                    "fired": [
+                      "ovos-skill-geography.andlo:common_query"
+                    ],
+                    "kind": "wrong_intent",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "taken_by": "ovos-skill-geography.andlo",
                     "utterance": "what's the capital of france"
                   },
                   {
@@ -14672,23 +14643,23 @@
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
-                "total": 14,
+                "total": 12,
                 "unhandled": 0,
-                "wrong_intent": 0
+                "wrong_intent": 1
               },
               "golden": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 1,
                 "by_lang": {
                   "en-US": {
                     "counted": 14,
-                    "hit": 4
+                    "hit": 6
                   }
                 },
                 "collisions": [],
                 "counted": 14,
-                "hang": 10,
-                "hit": 4,
+                "hang": 7,
+                "hit": 6,
                 "langs": [
                   "en-US"
                 ],
@@ -14716,20 +14687,6 @@
                 "manual": 0,
                 "misses": [
                   {
-                    "expected": "about_country",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "tell me about Denmark"
-                  },
-                  {
-                    "expected": "about_country",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "what do you know about France"
-                  },
-                  {
                     "expected": "area_of",
                     "kind": "hang",
                     "lang": "en-US",
@@ -14738,9 +14695,10 @@
                   },
                   {
                     "expected": "area_of",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-geometry.andlo",
                     "utterance": "what is the area of Brazil"
                   },
                   {
@@ -14793,15 +14751,15 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "v0.0.5",
+              "ref": "v0.0.7",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
-                "utterance": "what countries does Canada border"
+                "utterance": "tell me about Denmark"
               }
             },
             "skill_id": "ovos-skill-geography.andlo",
-            "version": "0.0.5"
+            "version": "0.0.7"
           },
           "andlo-ovos-skill-geography-practice": {
             "member": false,
@@ -14819,13 +14777,13 @@
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what you taught me"
                   },
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what I just learned"
                   }
                 ],
@@ -14858,13 +14816,13 @@
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what you taught me"
                   },
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what I just learned"
                   }
                 ],
@@ -14961,13 +14919,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 13,
-                    "hit": 2
+                    "hit": 4
                   }
                 },
                 "collisions": [],
                 "counted": 13,
-                "hang": 11,
-                "hit": 2,
+                "hang": 9,
+                "hit": 4,
                 "langs": [
                   "en-US"
                 ],
@@ -15056,20 +15014,6 @@
                     "lang": "en-US",
                     "stage": "last message: question:query.response",
                     "utterance": "what is the perimeter of a square with side 3"
-                  },
-                  {
-                    "expected": "what_is",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "what is a angle"
-                  },
-                  {
-                    "expected": "what_is",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: question:query.response",
-                    "utterance": "what is hypotenuse"
                   }
                 ],
                 "neighbour": 0,
@@ -15079,7 +15023,7 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "v0.0.4",
+              "ref": "v0.0.5",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
@@ -15087,44 +15031,31 @@
               }
             },
             "skill_id": "ovos-skill-geometry.andlo",
-            "version": "0.0.4"
+            "version": "0.0.5"
           },
           "andlo-ovos-skill-geometry-practice": {
             "member": false,
             "routing": {
               "generated": {
-                "asked": 6,
+                "asked": 8,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
-                    "counted": 8,
-                    "hit": 8
+                    "counted": 10,
+                    "hit": 10
                   }
                 },
-                "collisions": [
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what you taught me"
-                  },
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what I just learned"
-                  }
-                ],
-                "counted": 8,
+                "collisions": [],
+                "counted": 10,
                 "hang": 0,
-                "hit": 8,
+                "hit": 10,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
                 "misses": [],
-                "neighbour": 2,
+                "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 10,
@@ -15136,27 +15067,14 @@
                 "baseline": 2,
                 "by_lang": {
                   "en-US": {
-                    "counted": 10,
-                    "hit": 8
+                    "counted": 12,
+                    "hit": 10
                   }
                 },
-                "collisions": [
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what you taught me"
-                  },
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what I just learned"
-                  }
-                ],
-                "counted": 10,
+                "collisions": [],
+                "counted": 12,
                 "hang": 0,
-                "hit": 8,
+                "hit": 10,
                 "langs": [
                   "en-US"
                 ],
@@ -15200,7 +15118,7 @@
                     "utterance": "teach me geometry 2d shapes"
                   }
                 ],
-                "neighbour": 2,
+                "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 12,
@@ -15210,8 +15128,10 @@
               "ref": "v0.0.4",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
-                "utterance": "teach me pythagoras' theorem"
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
+                "utterance": "quiz me on what you taught me"
               }
             },
             "skill_id": "ovos-skill-geometry-practice.andlo",
@@ -15279,7 +15199,7 @@
                   {
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "read me a grimm story"
                   }
                 ],
@@ -15551,18 +15471,33 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 18,
+                "asked": 16,
                 "baseline": 1,
                 "by_lang": {
                   "en-US": {
-                    "counted": 21,
-                    "hit": 20
+                    "counted": 19,
+                    "hit": 18
                   }
                 },
-                "collisions": [],
-                "counted": 21,
+                "collisions": [
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what you taught me"
+                  },
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what I just learned"
+                  }
+                ],
+                "counted": 19,
                 "hang": 0,
-                "hit": 20,
+                "hit": 18,
                 "langs": [
                   "en-US"
                 ],
@@ -15578,7 +15513,7 @@
                     "utterance": "count to 10"
                   }
                 ],
-                "neighbour": 0,
+                "neighbour": 2,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 21,
@@ -15586,18 +15521,33 @@
                 "wrong_intent": 0
               },
               "golden": {
-                "asked": 18,
+                "asked": 20,
                 "baseline": 9,
                 "by_lang": {
                   "en-US": {
-                    "counted": 33,
-                    "hit": 24
+                    "counted": 31,
+                    "hit": 22
                   }
                 },
-                "collisions": [],
-                "counted": 33,
+                "collisions": [
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what you taught me"
+                  },
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what I just learned"
+                  }
+                ],
+                "counted": 31,
                 "hang": 0,
-                "hit": 24,
+                "hit": 22,
                 "langs": [
                   "en-US"
                 ],
@@ -15697,7 +15647,7 @@
                     "utterance": "teach me the division facts for 7"
                   }
                 ],
-                "neighbour": 0,
+                "neighbour": 2,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 33,
@@ -15708,7 +15658,7 @@
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
-                "utterance": "quiz me on (easy|medium|hard) division"
+                "utterance": "say the 9 times table"
               }
             },
             "skill_id": "ovos-skill-math-practice.andlo",
@@ -16092,7 +16042,7 @@
                   {
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.search.stop",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "utterance": "read me an article from the openvoiceos blog"
                   }
                 ],
@@ -16247,7 +16197,7 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 6,
+                "baseline": 5,
                 "by_lang": {
                   "en-US": {
                     "counted": 6,
@@ -16256,7 +16206,7 @@
                 },
                 "collisions": [],
                 "counted": 6,
-                "hang": 0,
+                "hang": 1,
                 "hit": 0,
                 "langs": [
                   "en-US"
@@ -16294,17 +16244,16 @@
                   },
                   {
                     "expected": "set_rhythm",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "utterance": "play the four on the floor beat at 90 bpm"
                   },
                   {
                     "expected": "set_rhythm",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start a rock beat at 100 bpm"
                   },
@@ -16422,7 +16371,7 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 5,
+                "baseline": 4,
                 "by_lang": {
                   "en-US": {
                     "counted": 6,
@@ -16431,7 +16380,7 @@
                 },
                 "collisions": [],
                 "counted": 6,
-                "hang": 0,
+                "hang": 1,
                 "hit": 1,
                 "langs": [
                   "en-US"
@@ -16477,10 +16426,9 @@
                   },
                   {
                     "expected": "give_note",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "utterance": "play an e flat"
                   },
                   {
@@ -16495,7 +16443,7 @@
                     "expected": "play_frequency",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "play a 300 hertz tone"
                   }
@@ -16559,7 +16507,7 @@
                     "expected": "start_noise",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "play some noise"
                   },
@@ -16567,7 +16515,7 @@
                     "expected": "start_noise",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "play ambient noise"
                   },
@@ -16575,7 +16523,7 @@
                     "expected": "start_noise",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start some background noise"
                   }
@@ -16589,7 +16537,7 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 3,
+                "baseline": 4,
                 "by_lang": {
                   "en-US": {
                     "counted": 7,
@@ -16598,7 +16546,7 @@
                 },
                 "collisions": [],
                 "counted": 7,
-                "hang": 2,
+                "hang": 1,
                 "hit": 2,
                 "langs": [
                   "en-US"
@@ -16638,14 +16586,15 @@
                     "expected": "set_noise",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.query.response",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "utterance": "play some brown noise"
                   },
                   {
                     "expected": "start_noise",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_start",
+                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "play some noise"
                   },
                   {
@@ -16660,7 +16609,7 @@
                     "expected": "start_noise",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_start",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start some background noise"
                   }
@@ -16692,13 +16641,13 @@
                 "status": "none"
               },
               "golden": {
-                "reason": "no test/end2end/golden_utterances*.jsonl at v0.0.7",
+                "reason": "no test/end2end/golden_utterances*.jsonl at v0.0.8",
                 "status": "none"
               },
-              "ref": "v0.0.7"
+              "ref": "v0.0.8"
             },
             "skill_id": "ovos-skill-wiki-offline.andlo",
-            "version": "0.0.7"
+            "version": "0.0.8"
           },
           "mikejgray-neon-homeassistant-skill": {
             "member": false,
@@ -16716,7 +16665,7 @@
             "version": "0.0.24"
           }
         },
-        "run_at": "2026-11-07T10:46:32+00:00",
+        "run_at": "2026-11-18T12:16:06+00:00",
         "takes_from": {
           "OpenVoiceOS-ovos-skill-easter-eggs": {
             "generated": [
@@ -16793,8 +16742,22 @@
               }
             ]
           },
+          "OpenVoiceOS-ovos-skill-wolfie": {
+            "golden": [
+              {
+                "from": "andlo-ovos-skill-calculator",
+                "lang": "en-US",
+                "utterance": "what's 99 divided by 11"
+              }
+            ]
+          },
           "OpenVoiceOS-ovos-skill-youtube-music": {
             "generated": [
+              {
+                "from": "OpenVoiceOS-ovos-skill-parrot",
+                "lang": "en-US",
+                "utterance": "start parrot"
+              },
               {
                 "from": "OpenVoiceOS-ovos-skill-personal",
                 "lang": "en-US",
@@ -16816,11 +16779,6 @@
                 "utterance": "play a beat"
               },
               {
-                "from": "OpenVoiceOS-ovos-skill-wikipedia",
-                "lang": "en-US",
-                "utterance": "play the wikipedia roulette"
-              },
-              {
                 "from": "OpenVoiceOS-ovos-skill-easter-eggs",
                 "lang": "en-US",
                 "utterance": "lets play rock paper scissors lizard spock"
@@ -16829,16 +16787,6 @@
                 "from": "OpenVoiceOS-ovos-skill-easter-eggs",
                 "lang": "en-US",
                 "utterance": "start date"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-easter-eggs",
-                "lang": "en-US",
-                "utterance": "start day"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-easter-eggs",
-                "lang": "en-US",
-                "utterance": "start eight"
               }
             ],
             "golden": [
@@ -16846,11 +16794,6 @@
                 "from": "andlo-ovos-skill-rhythm-box",
                 "lang": "en-US",
                 "utterance": "play a rock beat at 120 bpm"
-              },
-              {
-                "from": "andlo-ovos-skill-rhythm-box",
-                "lang": "en-US",
-                "utterance": "play the four on the floor beat at 90 bpm"
               },
               {
                 "from": "andlo-ovos-skill-rhythm-box",
@@ -16875,11 +16818,6 @@
               {
                 "from": "andlo-ovos-skill-tuning-fork",
                 "lang": "en-US",
-                "utterance": "play an e flat"
-              },
-              {
-                "from": "andlo-ovos-skill-tuning-fork",
-                "lang": "en-US",
                 "utterance": "play 440 hertz"
               },
               {
@@ -16888,10 +16826,36 @@
                 "utterance": "play a 300 hertz tone"
               }
             ]
+          },
+          "andlo-ovos-skill-geometry": {
+            "generated": [
+              {
+                "from": "andlo-ovos-skill-geography",
+                "lang": "en-US",
+                "utterance": "what is the area of france"
+              }
+            ],
+            "golden": [
+              {
+                "from": "andlo-ovos-skill-calculator",
+                "lang": "en-US",
+                "utterance": "what is the square root of 250"
+              },
+              {
+                "from": "andlo-ovos-skill-calculator",
+                "lang": "en-US",
+                "utterance": "what's the square root of 3.5"
+              },
+              {
+                "from": "andlo-ovos-skill-geography",
+                "lang": "en-US",
+                "utterance": "what is the area of Brazil"
+              }
+            ]
           }
         }
       },
-      "key": "8f1402953aac3929",
+      "key": "080245ae0a040ae5",
       "profile": {
         "added_stages": [],
         "curated": [
@@ -17168,7 +17132,7 @@
               "ovos-common-reading-pipeline-plugin-low",
               "ovos-fallback-pipeline-plugin-low"
             ],
-            "seconds": 5310.6,
+            "seconds": 3359.3,
             "status": "ok"
           }
         ],
@@ -17249,36 +17213,102 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 10,
-                    "hit": 10
+                    "hit": 0
                   }
                 },
                 "collisions": [],
                 "counted": 10,
                 "hang": 0,
-                "hit": 10,
+                "hit": 0,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a alarm"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a alarms"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a alert"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a alerts"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a event"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a events"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a reminder"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a reminders"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a timer"
+                  },
+                  {
+                    "expected": "missed_alerts",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "did i miss a timers"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 10,
-                "unhandled": 0,
+                "unhandled": 10,
                 "wrong_intent": 0
               },
               "golden": {
                 "reason": "no test/end2end/golden_utterances*.jsonl at 0.1.28",
                 "status": "none"
               },
-              "ref": "0.1.28",
-              "stop": {
-                "lang": "en-US",
-                "result": "nothing_to_stop",
-                "utterance": "did i miss a alarm"
-              }
+              "ref": "0.1.28"
             },
             "skill_id": "ovos-skill-alerts.openvoiceos",
             "version": "0.1.28"
@@ -17366,13 +17396,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 8,
-                    "hit": 7
+                    "hit": 3
                   }
                 },
                 "collisions": [],
                 "counted": 8,
                 "hang": 0,
-                "hit": 7,
+                "hit": 3,
                 "langs": [
                   "en-US"
                 ],
@@ -17385,13 +17415,41 @@
                     "lang": "en-US",
                     "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "can you access the camera"
+                  },
+                  {
+                    "expected": "have_camera",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "is a camera available"
+                  },
+                  {
+                    "expected": "have_camera",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "is there a camera"
+                  },
+                  {
+                    "expected": "take_picture",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "take a photo"
+                  },
+                  {
+                    "expected": "take_picture",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "take a picture"
                   }
                 ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 8,
-                "unhandled": 1,
+                "unhandled": 5,
                 "wrong_intent": 0
               },
               "golden": {
@@ -17574,7 +17632,7 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "ovoscope generate exit 1:   File \"/home/runner/work/_temp/gen/lib/python3.11/site-packages/ovos_spec_tools/resources.py\", line 1102, in _load_expanded_uncached |     raise MalformedResource( | ovos_spec_tools.resources.MalformedResource: empty resource file /tmp/compat-x8j1mufa/src/OpenVoiceOS-ovos-",
+                "reason": "ovoscope generate exit 1:   File \"/home/runner/work/_temp/gen/lib/python3.11/site-packages/ovos_spec_tools/resources.py\", line 1102, in _load_expanded_uncached |     raise MalformedResource( | ovos_spec_tools.resources.MalformedResource: empty resource file /tmp/compat-99b44c1o/src/OpenVoiceOS-ovos-",
                 "status": "error"
               },
               "golden": {
@@ -17595,27 +17653,19 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 12,
-                    "hit": 11
+                    "hit": 12
                   }
                 },
                 "collisions": [],
                 "counted": 12,
-                "hang": 1,
-                "hit": 11,
+                "hang": 0,
+                "hit": 12,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [
-                  {
-                    "expected": "today_in_history",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "tell me about happened on tomorrow"
-                  }
-                ],
+                "misses": [],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
@@ -17658,17 +17708,17 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 2,
+                "baseline": 0,
                 "by_lang": {
                   "en-US": {
                     "counted": 60,
-                    "hit": 58
+                    "hit": 59
                   }
                 },
                 "collisions": [],
                 "counted": 60,
                 "hang": 0,
-                "hit": 58,
+                "hit": 59,
                 "langs": [
                   "en-US"
                 ],
@@ -17676,27 +17726,18 @@
                 "manual": 0,
                 "misses": [
                   {
-                    "expected": "query_langs",
-                    "kind": "baseline",
+                    "expected": "query_gpu",
+                    "kind": "unhandled",
                     "lang": "en-US",
                     "stage": "last message: recognizer_loop:audio_output_end",
-                    "taken_by": "skill-easter-eggs.openvoiceos",
-                    "utterance": "what languages can you speak"
-                  },
-                  {
-                    "expected": "query_langs",
-                    "kind": "baseline",
-                    "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
-                    "taken_by": "skill-easter-eggs.openvoiceos",
-                    "utterance": "which languages can you speak"
+                    "utterance": "is there a gpu in your system"
                   }
                 ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 60,
-                "unhandled": 0,
+                "unhandled": 1,
                 "wrong_intent": 0
               },
               "golden": {
@@ -17794,13 +17835,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 162,
-                    "hit": 155
+                    "hit": 152
                   }
                 },
                 "collisions": [],
                 "counted": 162,
-                "hang": 1,
-                "hit": 155,
+                "hang": 0,
+                "hit": 152,
                 "langs": [
                   "en-US"
                 ],
@@ -17815,12 +17856,6 @@
                     "utterance": "enable adult mode please"
                   },
                   {
-                    "expected": "duke_nukem_intent",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "utterance": "duke newham say"
-                  },
-                  {
                     "expected": "rock_paper_scissors_lizard_spock_intent",
                     "kind": "baseline",
                     "lang": "en-US",
@@ -17829,11 +17864,40 @@
                     "utterance": "lets play rock paper scissors lizard spock"
                   },
                   {
+                    "asked": true,
                     "expected": "rock_paper_scissors_lizard_spock_intent",
                     "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "stage": "last message: ovos-common-reading-pipeline-plugin.andlo.get_response.waiting",
                     "utterance": "tell me the rules of rock paper scissors lizard spock"
+                  },
+                  {
+                    "expected": "sing_intent",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "sing me a song"
+                  },
+                  {
+                    "expected": "sing_intent",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "sing me a song please"
+                  },
+                  {
+                    "expected": "sing_intent",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "i want you to sing me a song"
+                  },
+                  {
+                    "expected": "sing_intent",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "sing a song please"
                   },
                   {
                     "expected": "stardate_intent",
@@ -17855,7 +17919,7 @@
                     "expected": "stardate_intent",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start eight"
                   }
@@ -17864,7 +17928,7 @@
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 162,
-                "unhandled": 2,
+                "unhandled": 6,
                 "wrong_intent": 0
               },
               "golden": {
@@ -17989,24 +18053,39 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 5,
-                    "hit": 5
+                    "hit": 3
                   }
                 },
                 "collisions": [],
                 "counted": 5,
                 "hang": 0,
-                "hit": 5,
+                "hit": 3,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "joke",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "say a joke"
+                  },
+                  {
+                    "expected": "joke",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "tell me a joke"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 5,
-                "unhandled": 0,
+                "unhandled": 2,
                 "wrong_intent": 0
               },
               "golden": {
@@ -18077,7 +18156,7 @@
                     "expected": "what.ssid",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what network are you using"
                   },
                   {
@@ -18091,21 +18170,21 @@
                     "expected": "what.ssid",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: question:query.response",
                     "utterance": "what wifi are you using"
                   },
                   {
                     "expected": "what.ssid",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what wifi network are you using"
                   },
                   {
                     "expected": "what.ssid",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what network are you connected to"
                   },
                   {
@@ -18184,24 +18263,46 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 23,
-                    "hit": 23
+                    "hit": 20
                   }
                 },
                 "collisions": [],
                 "counted": 23,
                 "hang": 0,
-                "hit": 23,
+                "hit": 20,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "Laugh",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "I want you to laugh"
+                  },
+                  {
+                    "expected": "Laugh",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "laugh a little"
+                  },
+                  {
+                    "expected": "RandomLaugh",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "trigger a random laugh"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 23,
-                "unhandled": 0,
+                "unhandled": 3,
                 "wrong_intent": 0
               },
               "golden": {
@@ -18212,7 +18313,7 @@
               "stop": {
                 "lang": "en-US",
                 "result": "silent",
-                "utterance": "I want you to laugh"
+                "utterance": "I would like you to laugh"
               }
             },
             "skill_id": "ovos-skill-laugh.openvoiceos",
@@ -18436,21 +18537,14 @@
                 "baseline": 1,
                 "by_lang": {
                   "en-US": {
-                    "counted": 44,
-                    "hit": 41
+                    "counted": 45,
+                    "hit": 42
                   }
                 },
-                "collisions": [
-                  {
-                    "expected": "start_parrot",
-                    "lang": "en-US",
-                    "taken_by": "skill-musicassistant.oscillatelabsllc",
-                    "utterance": "repeat everything"
-                  }
-                ],
-                "counted": 44,
+                "collisions": [],
+                "counted": 45,
                 "hang": 1,
-                "hit": 41,
+                "hit": 42,
                 "langs": [
                   "en-US"
                 ],
@@ -18468,7 +18562,7 @@
                     "expected": "start_parrot",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start parrot"
                   },
@@ -18480,7 +18574,7 @@
                     "utterance": "start parroting"
                   }
                 ],
-                "neighbour": 1,
+                "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 45,
@@ -18589,29 +18683,72 @@
             "member": true,
             "routing": {
               "generated": {
-                "asked": 10,
+                "asked": 7,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
                     "counted": 16,
-                    "hit": 16
+                    "hit": 10
                   }
                 },
                 "collisions": [],
                 "counted": 16,
                 "hang": 0,
-                "hit": 16,
+                "hit": 10,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "flip-a-coin",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "flip a coin"
+                  },
+                  {
+                    "expected": "fortune-teller",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "Tell me a future"
+                  },
+                  {
+                    "expected": "fortune-teller",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "Tell me a fortune"
+                  },
+                  {
+                    "expected": "make-a-choice",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "help me make a choice"
+                  },
+                  {
+                    "expected": "roll-single-die",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "roll a dice"
+                  },
+                  {
+                    "expected": "roll-single-die",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "roll a die"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 16,
-                "unhandled": 0,
+                "unhandled": 6,
                 "wrong_intent": 0
               },
               "golden": {
@@ -18622,7 +18759,7 @@
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
-                "utterance": "flip a coin"
+                "utterance": "roll 10 dice"
               }
             },
             "skill_id": "skill-ovos-randomness.openvoiceos",
@@ -18637,24 +18774,39 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 6,
-                    "hit": 6
+                    "hit": 4
                   }
                 },
                 "collisions": [],
                 "counted": 6,
                 "hang": 0,
-                "hit": 6,
+                "hit": 4,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "take.screenshot",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "save a screenshot"
+                  },
+                  {
+                    "expected": "take.screenshot",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "take a screenshot"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 6,
-                "unhandled": 0,
+                "unhandled": 2,
                 "wrong_intent": 0
               },
               "golden": {
@@ -18771,24 +18923,60 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 20,
-                    "hit": 20
+                    "hit": 15
                   }
                 },
                 "collisions": [],
                 "counted": 20,
                 "hang": 0,
-                "hit": 20,
+                "hit": 15,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "picture.random",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "show me a picture"
+                  },
+                  {
+                    "expected": "picture.random",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "show me a random picture"
+                  },
+                  {
+                    "expected": "picture.random",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "display me a picture"
+                  },
+                  {
+                    "expected": "picture.random",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "display me a random picture"
+                  },
+                  {
+                    "expected": "picture.random",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "show me a photo"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 20,
-                "unhandled": 0,
+                "unhandled": 5,
                 "wrong_intent": 0
               },
               "golden": {
@@ -18812,54 +19000,17 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 4,
+                "baseline": 5,
                 "by_lang": {
                   "en-US": {
-                    "counted": 193,
-                    "hit": 170
+                    "counted": 199,
+                    "hit": 173
                   }
                 },
-                "collisions": [
-                  {
-                    "expected": "humidity",
-                    "lang": "en-US",
-                    "taken_by": "neon_homeassistant_skill.mikejgray",
-                    "utterance": "is it humid in london"
-                  },
-                  {
-                    "expected": "is_clear",
-                    "lang": "en-US",
-                    "taken_by": "neon_homeassistant_skill.mikejgray",
-                    "utterance": "is it cloudy in london"
-                  },
-                  {
-                    "expected": "is_fog",
-                    "lang": "en-US",
-                    "taken_by": "neon_homeassistant_skill.mikejgray",
-                    "utterance": "is fog expected in london"
-                  },
-                  {
-                    "expected": "is_fog",
-                    "lang": "en-US",
-                    "taken_by": "neon_homeassistant_skill.mikejgray",
-                    "utterance": "is it foggy in london"
-                  },
-                  {
-                    "expected": "is_snow",
-                    "lang": "en-US",
-                    "taken_by": "neon_homeassistant_skill.mikejgray",
-                    "utterance": "is it snowing in london"
-                  },
-                  {
-                    "expected": "next_rain",
-                    "lang": "en-US",
-                    "taken_by": "neon_homeassistant_skill.mikejgray",
-                    "utterance": "is rain coming soon in london"
-                  }
-                ],
-                "counted": 193,
-                "hang": 8,
-                "hit": 170,
+                "collisions": [],
+                "counted": 199,
+                "hang": 5,
+                "hit": 173,
                 "langs": [
                   "en-US"
                 ],
@@ -18867,25 +19018,54 @@
                 "manual": 0,
                 "misses": [
                   {
-                    "expected": "N_days_forecast",
-                    "kind": "hang",
+                    "expected": "humidity",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "What is the 2 day forecast in london"
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "do I need a humidifier"
                   },
                   {
-                    "expected": "N_days_forecast",
-                    "kind": "hang",
+                    "expected": "humidity",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "What is the 3 day forecast in london"
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "do I need a humidifier in london"
                   },
                   {
-                    "expected": "N_days_forecast",
+                    "expected": "humidity",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "do I need a humidifier today"
+                  },
+                  {
+                    "expected": "humidity",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "do I need a humidifier today in london"
+                  },
+                  {
+                    "expected": "humidity",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
+                    "utterance": "how humid is it in london"
+                  },
+                  {
+                    "expected": "humidity",
                     "kind": "hang",
                     "lang": "en-US",
                     "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "What is the 4 day forecast in london"
+                    "utterance": "is it humid in london"
+                  },
+                  {
+                    "expected": "is_rain",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "do I need a raincoat tomorrow"
                   },
                   {
                     "expected": "is_rain",
@@ -18893,6 +19073,22 @@
                     "lang": "en-US",
                     "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "do I need to bring a rain jacket"
+                  },
+                  {
+                    "expected": "is_snow",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
+                    "utterance": "are roads expected to be icy in london"
+                  },
+                  {
+                    "expected": "next_rain",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
+                    "utterance": "is rain coming soon in london"
                   },
                   {
                     "expected": "next_rain",
@@ -18912,19 +19108,10 @@
                   },
                   {
                     "expected": "next_rain",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
-                    "taken_by": "ovos-skill-date-time.openvoiceos",
+                    "stage": "last message: question:query.response",
                     "utterance": "when is the next rainfall in london"
-                  },
-                  {
-                    "expected": "sunrise",
-                    "kind": "baseline",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.utterance.handled",
-                    "taken_by": "ovos-skill-wolfie.openvoiceos",
-                    "utterance": "at what time does daylight begin in london"
                   },
                   {
                     "expected": "sunrise",
@@ -18948,27 +19135,10 @@
                     "utterance": "at what time does it get dark in london"
                   },
                   {
-                    "expected": "sunset",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "what time does the sun set in london"
-                  },
-                  {
-                    "expected": "sunset",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "what's the dusk time in london"
-                  },
-                  {
                     "expected": "do-i-need-an-umbrella",
-                    "fired": [
-                      "ovos-skill-weather.openvoiceos:is_rain.intent"
-                    ],
-                    "kind": "wrong_intent",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-weather.openvoiceos",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "do I need a raincoat tomorrow"
                   },
                   {
@@ -19047,24 +19217,14 @@
                     "lang": "en-US",
                     "taken_by": "ovos-skill-weather.openvoiceos",
                     "utterance": "do I need to protect myself from rain"
-                  },
-                  {
-                    "expected": "do-i-need-an-umbrella",
-                    "fired": [
-                      "ovos-skill-weather.openvoiceos:is_rain.intent"
-                    ],
-                    "kind": "wrong_intent",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-weather.openvoiceos",
-                    "utterance": "do I need to take precautions for rain"
                   }
                 ],
-                "neighbour": 6,
+                "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 199,
-                "unhandled": 2,
-                "wrong_intent": 9
+                "unhandled": 8,
+                "wrong_intent": 8
               },
               "golden": {
                 "reason": "no test/end2end/golden_utterances*.jsonl at 1.0.6",
@@ -19073,9 +19233,7 @@
               "ref": "1.0.6",
               "stop": {
                 "lang": "en-US",
-                "result": "stuck",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "What is the 2 day forecast"
               }
             },
@@ -19103,16 +19261,41 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 2,
+                "baseline": 0,
                 "by_lang": {
                   "en-US": {
-                    "counted": 10,
+                    "counted": 6,
                     "hit": 0
                   }
                 },
-                "collisions": [],
-                "counted": 10,
-                "hang": 8,
+                "collisions": [
+                  {
+                    "expected": "wikiroulette",
+                    "lang": "en-US",
+                    "taken_by": "neon_homeassistant_skill.mikejgray",
+                    "utterance": "display random wiki"
+                  },
+                  {
+                    "expected": "wikiroulette",
+                    "lang": "en-US",
+                    "taken_by": "neon_homeassistant_skill.mikejgray",
+                    "utterance": "display random wikipedia"
+                  },
+                  {
+                    "expected": "wikiroulette",
+                    "lang": "en-US",
+                    "taken_by": "neon_homeassistant_skill.mikejgray",
+                    "utterance": "open random wiki"
+                  },
+                  {
+                    "expected": "wikiroulette",
+                    "lang": "en-US",
+                    "taken_by": "neon_homeassistant_skill.mikejgray",
+                    "utterance": "open random wikipedia"
+                  }
+                ],
+                "counted": 6,
+                "hang": 6,
                 "hit": 0,
                 "langs": [
                   "en-US"
@@ -19124,43 +19307,14 @@
                     "expected": "wikiroulette",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "display random wiki"
-                  },
-                  {
-                    "expected": "wikiroulette",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "display random wikipedia"
-                  },
-                  {
-                    "expected": "wikiroulette",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "open random wiki"
-                  },
-                  {
-                    "expected": "wikiroulette",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "open random wikipedia"
-                  },
-                  {
-                    "expected": "wikiroulette",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "utterance": "play the wiki roulette"
                   },
                   {
                     "expected": "wikiroulette",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
+                    "stage": "last message: ovos.common_play.skill.search_start",
                     "utterance": "play the wikipedia roulette"
                   },
                   {
@@ -19186,14 +19340,13 @@
                   },
                   {
                     "expected": "wikiroulette",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.utterance.handled",
-                    "taken_by": "ovos-skill-wolfie.openvoiceos",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "random wiki page"
                   }
                 ],
-                "neighbour": 0,
+                "neighbour": 4,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 10,
@@ -19261,11 +19414,11 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-x8j1mufa/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-99b44c1o/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "golden": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-x8j1mufa/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-99b44c1o/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "stop": {
@@ -19275,7 +19428,7 @@
               }
             },
             "skill_id": "skill-homeassistant.oscillatelabsllc",
-            "version": "1.4.6"
+            "version": "1.4.7"
           },
           "OscillateLabsLLC-skill-monster-scanner": {
             "member": false,
@@ -19298,17 +19451,17 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 2,
+                "baseline": 3,
                 "by_lang": {
                   "en-US": {
                     "counted": 75,
-                    "hit": 66
+                    "hit": 69
                   }
                 },
                 "collisions": [],
                 "counted": 75,
-                "hang": 6,
-                "hit": 66,
+                "hang": 2,
+                "hit": 69,
                 "langs": [
                   "en-US"
                 ],
@@ -19319,29 +19472,23 @@
                     "expected": "now_playing",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: question:query.response",
                     "utterance": "what's playing in the london"
                   },
                   {
                     "expected": "now_playing",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: question:query.response",
                     "utterance": "what is playing in the london"
                   },
                   {
-                    "expected": "previous",
-                    "kind": "hang",
+                    "expected": "repeat",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "previous track in the london"
-                  },
-                  {
-                    "expected": "previous",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "last track in the london"
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-parrot.openvoiceos",
+                    "utterance": "repeat everything"
                   },
                   {
                     "expected": "shuffle",
@@ -19360,25 +19507,11 @@
                   },
                   {
                     "expected": "volume",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "mute the volume in the london"
-                  },
-                  {
-                    "expected": "volume",
                     "kind": "baseline",
                     "lang": "en-US",
                     "stage": "last message: ovos.utterance.handled",
                     "taken_by": "ovos-skill-volume.openvoiceos",
                     "utterance": "unmute"
-                  },
-                  {
-                    "expected": "volume",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "unmute the volume in the london"
                   }
                 ],
                 "neighbour": 0,
@@ -19447,9 +19580,7 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "tell me a story from 365 tomorrows"
               }
             },
@@ -19553,9 +19684,7 @@
               "ref": "v0.1.9",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
+                "result": "nothing_to_stop",
                 "utterance": "read me a story from the fairy books"
               }
             },
@@ -19575,13 +19704,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 2,
-                    "hit": 0
+                    "hit": 2
                   }
                 },
                 "collisions": [],
                 "counted": 2,
                 "hang": 0,
-                "hit": 0,
+                "hit": 2,
                 "langs": [
                   "en-US"
                 ],
@@ -19596,28 +19725,20 @@
                   "pt-PT"
                 ],
                 "manual": 0,
-                "misses": [
-                  {
-                    "kind": "unhandled",
-                    "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
-                    "utterance": "read me a paper from arxiv"
-                  },
-                  {
-                    "kind": "unhandled",
-                    "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
-                    "utterance": "read me a research paper from the arxiv"
-                  }
-                ],
+                "misses": [],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 2,
-                "unhandled": 2,
+                "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "v0.1.7"
+              "ref": "v0.1.7",
+              "stop": {
+                "lang": "en-US",
+                "result": "nothing_to_stop",
+                "utterance": "read me a paper from arxiv"
+              }
             },
             "skill_id": "ovos-skill-arxiv-papers.andlo",
             "version": "0.1.7"
@@ -19680,7 +19801,7 @@
                 },
                 "collisions": [],
                 "counted": 16,
-                "hang": 10,
+                "hang": 11,
                 "hit": 2,
                 "langs": [
                   "en-US"
@@ -19723,12 +19844,9 @@
                   },
                   {
                     "expected": "divide",
-                    "fired": [
-                      "ovos-skill-calculator.andlo:common_query"
-                    ],
-                    "kind": "wrong_intent",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-calculator.andlo",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what is 3.5 divided by 2"
                   },
                   {
@@ -19740,9 +19858,12 @@
                   },
                   {
                     "expected": "multiply",
-                    "kind": "hang",
+                    "fired": [
+                      "ovos-skill-calculator.andlo:common_query"
+                    ],
+                    "kind": "wrong_intent",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "taken_by": "ovos-skill-calculator.andlo",
                     "utterance": "what is 12 times 4"
                   },
                   {
@@ -19785,12 +19906,9 @@
                   },
                   {
                     "expected": "square_root",
-                    "fired": [
-                      "ovos-skill-calculator.andlo:common_query"
-                    ],
-                    "kind": "wrong_intent",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-calculator.andlo",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what's the square root of 3.5"
                   },
                   {
@@ -19813,7 +19931,7 @@
                 "status": "ok",
                 "total": 16,
                 "unhandled": 0,
-                "wrong_intent": 4
+                "wrong_intent": 3
               },
               "ref": "v0.0.4",
               "stop": {
@@ -19948,13 +20066,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 36,
-                    "hit": 35
+                    "hit": 30
                   }
                 },
                 "collisions": [],
                 "counted": 36,
                 "hang": 1,
-                "hit": 35,
+                "hit": 30,
                 "langs": [
                   "en-US"
                 ],
@@ -19962,18 +20080,53 @@
                 "manual": 0,
                 "misses": [
                   {
+                    "expected": "fart",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "make a fart"
+                  },
+                  {
+                    "expected": "fart",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "make a fart sound"
+                  },
+                  {
+                    "expected": "fart",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "blow a raspberry"
+                  },
+                  {
+                    "expected": "fart",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "do a fart"
+                  },
+                  {
                     "expected": "random_start",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "stage": "last message: ovos.common_play.SEI.get",
                     "utterance": "start farting randomly"
+                  },
+                  {
+                    "expected": "random_start",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "surprise me with farts"
                   }
                 ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 36,
-                "unhandled": 0,
+                "unhandled": 5,
                 "wrong_intent": 0
               },
               "golden": {
@@ -19982,13 +20135,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 11,
-                    "hit": 11
+                    "hit": 10
                   }
                 },
                 "collisions": [],
                 "counted": 11,
                 "hang": 0,
-                "hit": 11,
+                "hit": 10,
                 "langs": [
                   "en-US"
                 ],
@@ -20003,12 +20156,20 @@
                   "pt-PT"
                 ],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "fart",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "make a fart"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 11,
-                "unhandled": 0,
+                "unhandled": 1,
                 "wrong_intent": 0
               },
               "ref": "v1.0.1",
@@ -20026,16 +20187,16 @@
             "routing": {
               "generated": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 1,
                 "by_lang": {
                   "en-US": {
-                    "counted": 14,
+                    "counted": 12,
                     "hit": 4
                   }
                 },
                 "collisions": [],
-                "counted": 14,
-                "hang": 10,
+                "counted": 12,
+                "hang": 7,
                 "hit": 4,
                 "langs": [
                   "en-US"
@@ -20043,20 +20204,6 @@
                 "langs_failed": [],
                 "manual": 0,
                 "misses": [
-                  {
-                    "expected": "about_country",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "tell me about france"
-                  },
-                  {
-                    "expected": "about_country",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "what do you know about france"
-                  },
                   {
                     "expected": "area_of",
                     "kind": "hang",
@@ -20066,9 +20213,10 @@
                   },
                   {
                     "expected": "area_of",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
                     "utterance": "what is the area of france"
                   },
                   {
@@ -20096,7 +20244,7 @@
                     "expected": "currency_of",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what is the currency of france"
                   },
                   {
@@ -20117,7 +20265,7 @@
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
-                "total": 14,
+                "total": 12,
                 "unhandled": 0,
                 "wrong_intent": 0
               },
@@ -20132,7 +20280,7 @@
                 },
                 "collisions": [],
                 "counted": 14,
-                "hang": 9,
+                "hang": 8,
                 "hit": 4,
                 "langs": [
                   "en-US"
@@ -20193,24 +20341,27 @@
                   },
                   {
                     "expected": "capital_of",
-                    "kind": "hang",
+                    "fired": [
+                      "ovos-skill-geography.andlo:common_query"
+                    ],
+                    "kind": "wrong_intent",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "taken_by": "ovos-skill-geography.andlo",
                     "utterance": "what's the capital of Australia"
                   },
                   {
                     "expected": "currency_of",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
-                    "utterance": "what is the currency of Brazil"
-                  },
-                  {
-                    "expected": "language_of",
                     "kind": "baseline",
                     "lang": "en-US",
                     "stage": "last message: recognizer_loop:audio_output_end",
                     "taken_by": "ovos-skill-wolfie.openvoiceos",
+                    "utterance": "what is the currency of Brazil"
+                  },
+                  {
+                    "expected": "language_of",
+                    "kind": "hang",
+                    "lang": "en-US",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what language do they speak in Kenya"
                   },
                   {
@@ -20226,9 +20377,9 @@
                 "status": "ok",
                 "total": 14,
                 "unhandled": 0,
-                "wrong_intent": 0
+                "wrong_intent": 1
               },
-              "ref": "v0.0.5",
+              "ref": "v0.0.7",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
@@ -20236,7 +20387,7 @@
               }
             },
             "skill_id": "ovos-skill-geography.andlo",
-            "version": "0.0.5"
+            "version": "0.0.7"
           },
           "andlo-ovos-skill-geography-practice": {
             "member": false,
@@ -20254,13 +20405,13 @@
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what you taught me"
                   },
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what I just learned"
                   }
                 ],
@@ -20282,7 +20433,7 @@
               },
               "golden": {
                 "asked": 8,
-                "baseline": 1,
+                "baseline": 2,
                 "by_lang": {
                   "en-US": {
                     "counted": 10,
@@ -20293,18 +20444,18 @@
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what you taught me"
                   },
                   {
                     "expected": "quiz_taught",
                     "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
                     "utterance": "quiz me on what I just learned"
                   }
                 ],
                 "counted": 10,
-                "hang": 1,
+                "hang": 0,
                 "hit": 8,
                 "langs": [
                   "en-US"
@@ -20331,9 +20482,10 @@
                   },
                   {
                     "expected": "teach_me",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
                     "utterance": "teach me geography for the Americas"
                   }
                 ],
@@ -20389,7 +20541,7 @@
                 },
                 "collisions": [],
                 "counted": 13,
-                "hang": 7,
+                "hang": 10,
                 "hit": 2,
                 "langs": [
                   "en-US"
@@ -20415,9 +20567,9 @@
                   },
                   {
                     "expected": "area_of_rectangle",
-                    "kind": "unhandled",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "stage": "last message: question:query.response",
                     "utterance": "what is the area of a rectangle with length 5 and width 4"
                   },
                   {
@@ -20429,9 +20581,9 @@
                   },
                   {
                     "expected": "area_of_triangle",
-                    "kind": "unhandled",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what is the area of a triangle with base 5 and height 5"
                   },
                   {
@@ -20450,16 +20602,16 @@
                   },
                   {
                     "expected": "hypotenuse_of_right_triangle",
-                    "kind": "unhandled",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what is the hypotenuse of a right triangle with legs 5 and 4"
                   },
                   {
                     "expected": "perimeter_of_rectangle",
-                    "kind": "unhandled",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what is the perimeter of a rectangle with length 3 and width 6"
                   },
                   {
@@ -20471,16 +20623,16 @@
                   },
                   {
                     "expected": "what_is",
-                    "kind": "hang",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "what is a angle"
                   },
                   {
                     "expected": "what_is",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "what is hypotenuse"
                   }
                 ],
@@ -20488,10 +20640,10 @@
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 13,
-                "unhandled": 4,
+                "unhandled": 1,
                 "wrong_intent": 0
               },
-              "ref": "v0.0.4",
+              "ref": "v0.0.5",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
@@ -20499,44 +20651,31 @@
               }
             },
             "skill_id": "ovos-skill-geometry.andlo",
-            "version": "0.0.4"
+            "version": "0.0.5"
           },
           "andlo-ovos-skill-geometry-practice": {
             "member": false,
             "routing": {
               "generated": {
-                "asked": 6,
+                "asked": 8,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
-                    "counted": 8,
-                    "hit": 8
+                    "counted": 10,
+                    "hit": 10
                   }
                 },
-                "collisions": [
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what you taught me"
-                  },
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what I just learned"
-                  }
-                ],
-                "counted": 8,
+                "collisions": [],
+                "counted": 10,
                 "hang": 0,
-                "hit": 8,
+                "hit": 10,
                 "langs": [
                   "en-US"
                 ],
                 "langs_failed": [],
                 "manual": 0,
                 "misses": [],
-                "neighbour": 2,
+                "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 10,
@@ -20545,30 +20684,17 @@
               },
               "golden": {
                 "asked": 6,
-                "baseline": 0,
+                "baseline": 2,
                 "by_lang": {
                   "en-US": {
-                    "counted": 10,
-                    "hit": 8
+                    "counted": 12,
+                    "hit": 10
                   }
                 },
-                "collisions": [
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what you taught me"
-                  },
-                  {
-                    "expected": "quiz_taught",
-                    "lang": "en-US",
-                    "taken_by": "ovos-skill-math-practice.andlo",
-                    "utterance": "quiz me on what I just learned"
-                  }
-                ],
-                "counted": 10,
-                "hang": 1,
-                "hit": 8,
+                "collisions": [],
+                "counted": 12,
+                "hang": 0,
+                "hit": 10,
                 "langs": [
                   "en-US"
                 ],
@@ -20586,30 +20712,35 @@
                 "misses": [
                   {
                     "expected": "teach_me",
-                    "kind": "unhandled",
+                    "kind": "baseline",
                     "lang": "en-US",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
                     "utterance": "teach me about terms"
                   },
                   {
                     "expected": "teach_me",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
                     "utterance": "teach me geometry 2d shapes"
                   }
                 ],
-                "neighbour": 2,
+                "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 12,
-                "unhandled": 1,
+                "unhandled": 0,
                 "wrong_intent": 0
               },
               "ref": "v0.0.4",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
-                "utterance": "teach me pythagoras' theorem"
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
+                "utterance": "quiz me on what you taught me"
               }
             },
             "skill_id": "ovos-skill-geometry-practice.andlo",
@@ -20676,13 +20807,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 23,
-                    "hit": 21
+                    "hit": 18
                   }
                 },
                 "collisions": [],
                 "counted": 23,
                 "hang": 2,
-                "hit": 21,
+                "hit": 18,
                 "langs": [
                   "en-US"
                 ],
@@ -20697,10 +20828,31 @@
                     "utterance": "how many days left until christmas day"
                   },
                   {
+                    "expected": "is_today_holiday",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "is today a holiday"
+                  },
+                  {
+                    "expected": "is_today_holiday",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "is it a holiday today"
+                  },
+                  {
+                    "expected": "is_today_holiday",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "is today a public holiday"
+                  },
+                  {
                     "expected": "when_is_holiday",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: question:query.response",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "when's christmas day"
                   }
                 ],
@@ -20708,7 +20860,7 @@
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 23,
-                "unhandled": 0,
+                "unhandled": 3,
                 "wrong_intent": 0
               },
               "golden": {
@@ -20786,7 +20938,7 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 0,
+                "baseline": 2,
                 "by_lang": {
                   "en-US": {
                     "counted": 9,
@@ -20795,7 +20947,7 @@
                 },
                 "collisions": [],
                 "counted": 9,
-                "hang": 8,
+                "hang": 2,
                 "hit": 1,
                 "langs": [
                   "en-US"
@@ -20814,37 +20966,38 @@
                 "misses": [
                   {
                     "expected": "send_message",
-                    "kind": "hang",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "send a message to the kitchen"
                   },
                   {
                     "expected": "send_message",
-                    "kind": "hang",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "send message to the bedroom"
                   },
                   {
                     "expected": "send_message",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
                     "utterance": "send an intercom message to the living room"
                   },
                   {
                     "expected": "send_message_with_text",
-                    "kind": "hang",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "send a message to the kitchen saying dinner is ready"
                   },
                   {
                     "expected": "send_message_with_text",
-                    "kind": "hang",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "send message to the bedroom saying come downstairs"
                   },
                   {
@@ -20856,9 +21009,10 @@
                   },
                   {
                     "expected": "set_intercom_code",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
                     "utterance": "set intercom code to four seven two nine"
                   },
                   {
@@ -20873,7 +21027,7 @@
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 9,
-                "unhandled": 0,
+                "unhandled": 4,
                 "wrong_intent": 0
               },
               "ref": "v0.0.7",
@@ -20890,18 +21044,33 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 18,
+                "asked": 12,
                 "baseline": 1,
                 "by_lang": {
                   "en-US": {
-                    "counted": 21,
-                    "hit": 20
+                    "counted": 19,
+                    "hit": 14
                   }
                 },
-                "collisions": [],
-                "counted": 21,
+                "collisions": [
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what you taught me"
+                  },
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what I just learned"
+                  }
+                ],
+                "counted": 19,
                 "hang": 0,
-                "hit": 20,
+                "hit": 14,
                 "langs": [
                   "en-US"
                 ],
@@ -20915,28 +21084,71 @@
                     "stage": "last message: ovos.utterance.handled",
                     "taken_by": "ovos-skill-count.openvoiceos",
                     "utterance": "count to 10"
+                  },
+                  {
+                    "expected": "quiz_full",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a full math quiz"
+                  },
+                  {
+                    "expected": "quiz_full",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a mixed math quiz"
+                  },
+                  {
+                    "expected": "quiz_general",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a math quiz"
+                  },
+                  {
+                    "expected": "quiz_general",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a math problem"
                   }
                 ],
-                "neighbour": 0,
+                "neighbour": 2,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 21,
-                "unhandled": 0,
+                "unhandled": 4,
                 "wrong_intent": 0
               },
               "golden": {
-                "asked": 20,
+                "asked": 13,
                 "baseline": 4,
                 "by_lang": {
                   "en-US": {
-                    "counted": 33,
-                    "hit": 24
+                    "counted": 31,
+                    "hit": 15
                   }
                 },
-                "collisions": [],
-                "counted": 33,
-                "hang": 5,
-                "hit": 24,
+                "collisions": [
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what you taught me"
+                  },
+                  {
+                    "asked": true,
+                    "expected": "quiz_taught",
+                    "lang": "en-US",
+                    "taken_by": "ovos-skill-geometry-practice.andlo",
+                    "utterance": "quiz me on what I just learned"
+                  }
+                ],
+                "counted": 31,
+                "hang": 8,
+                "hit": 15,
                 "langs": [
                   "en-US"
                 ],
@@ -20985,11 +21197,38 @@
                   },
                   {
                     "expected": "quiz_decimal",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.utterance.handled",
-                    "taken_by": "ovos-skill-wolfie.openvoiceos",
+                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "test me on decimal addition"
+                  },
+                  {
+                    "expected": "quiz_full",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a full math quiz"
+                  },
+                  {
+                    "expected": "quiz_full",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a mixed math quiz"
+                  },
+                  {
+                    "expected": "quiz_general",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a math quiz"
+                  },
+                  {
+                    "expected": "quiz_general",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "give me a math problem"
                   },
                   {
                     "expected": "quiz_operation",
@@ -21006,6 +21245,28 @@
                     "utterance": "test me on multiplication"
                   },
                   {
+                    "expected": "quiz_operation_difficulty",
+                    "kind": "hang",
+                    "lang": "en-US",
+                    "stage": "last message: ovos.skills.fallback.pong",
+                    "utterance": "quiz me on (easy|medium|hard) division"
+                  },
+                  {
+                    "expected": "quiz_operation_difficulty",
+                    "kind": "baseline",
+                    "lang": "en-US",
+                    "stage": "last message: ovos.utterance.handled",
+                    "taken_by": "ovos-skill-wolfie.openvoiceos",
+                    "utterance": "test me on (easy|medium|hard) addition"
+                  },
+                  {
+                    "expected": "quiz_operation_difficulty",
+                    "kind": "hang",
+                    "lang": "en-US",
+                    "stage": "last message: ovos.skills.fallback.pong",
+                    "utterance": "quiz me on (easy|medium|hard) subtraction"
+                  },
+                  {
                     "expected": "teach_me_operation",
                     "kind": "hang",
                     "lang": "en-US",
@@ -21020,20 +21281,18 @@
                     "utterance": "teach me the division facts for 7"
                   }
                 ],
-                "neighbour": 0,
+                "neighbour": 2,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 33,
-                "unhandled": 0,
+                "unhandled": 4,
                 "wrong_intent": 0
               },
               "ref": "v0.0.8",
               "stop": {
                 "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
-                "utterance": "quiz me on what you taught me"
+                "result": "nothing_to_stop",
+                "utterance": "say the 9 times table"
               }
             },
             "skill_id": "ovos-skill-math-practice.andlo",
@@ -21074,13 +21333,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 5,
-                    "hit": 5
+                    "hit": 3
                   }
                 },
                 "collisions": [],
                 "counted": 5,
                 "hang": 0,
-                "hit": 5,
+                "hit": 3,
                 "langs": [
                   "en-US"
                 ],
@@ -21095,12 +21354,27 @@
                   "pt-PT"
                 ],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "set_metronome",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "set a metronome to 120 bpm"
+                  },
+                  {
+                    "expected": "set_metronome",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "set the metronome to 90 bpm"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 5,
-                "unhandled": 0,
+                "unhandled": 2,
                 "wrong_intent": 0
               },
               "ref": "v0.0.5",
@@ -21109,7 +21383,7 @@
                 "result": "stops",
                 "seconds": 0.0,
                 "spoke_after_stop": 0,
-                "utterance": "set a metronome to 120 bpm"
+                "utterance": "start a metronome at 60 bpm"
               }
             },
             "skill_id": "ovos-skill-metronome.andlo",
@@ -21154,7 +21428,7 @@
                     "expected": "play_morse",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "stage": "last message: ovos.common_play.SEI.get",
                     "utterance": "play sos in morse"
                   }
                 ],
@@ -21389,7 +21663,7 @@
                 },
                 "collisions": [],
                 "counted": 3,
-                "hang": 2,
+                "hang": 0,
                 "hit": 0,
                 "langs": [
                   "en-US"
@@ -21408,10 +21682,20 @@
                 "misses": [
                   {
                     "expected": "recipe",
-                    "kind": "hang",
+                    "fired": [
+                      "ovos-skill-recipe-helper.andlo:fallback"
+                    ],
+                    "kind": "wrong_intent",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "taken_by": "ovos-skill-recipe-helper.andlo",
                     "utterance": "recipe for pancakes"
+                  },
+                  {
+                    "expected": "recipe",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "a recipe for risotto"
                   },
                   {
                     "expected": "recipe",
@@ -21419,13 +21703,6 @@
                     "lang": "en-US",
                     "stage": "last message: ovos.utterance.handled",
                     "taken_by": "ovos-skill-wolfie.openvoiceos",
-                    "utterance": "a recipe for risotto"
-                  },
-                  {
-                    "expected": "recipe",
-                    "kind": "hang",
-                    "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
                     "utterance": "the recipe for bobotie"
                   }
                 ],
@@ -21433,8 +21710,8 @@
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 3,
-                "unhandled": 0,
-                "wrong_intent": 0
+                "unhandled": 1,
+                "wrong_intent": 1
               },
               "ref": "v0.1.1"
             },
@@ -21475,7 +21752,7 @@
                     "expected": "start_rhythm",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start the beat"
                   },
@@ -21497,7 +21774,7 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 4,
+                "baseline": 5,
                 "by_lang": {
                   "en-US": {
                     "counted": 6,
@@ -21506,7 +21783,7 @@
                 },
                 "collisions": [],
                 "counted": 6,
-                "hang": 2,
+                "hang": 1,
                 "hit": 0,
                 "langs": [
                   "en-US"
@@ -21535,6 +21812,7 @@
                     "expected": "set_rhythm",
                     "kind": "hang",
                     "lang": "en-US",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "utterance": "play the four on the floor beat at 90 bpm"
                   },
                   {
@@ -21549,14 +21827,16 @@
                     "expected": "start_rhythm",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start a drum loop"
                   },
                   {
                     "expected": "start_rhythm",
-                    "kind": "hang",
+                    "kind": "baseline",
                     "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start the beat"
                   },
                   {
@@ -21598,13 +21878,13 @@
                 "by_lang": {
                   "en-US": {
                     "counted": 3,
-                    "hit": 3
+                    "hit": 1
                   }
                 },
                 "collisions": [],
                 "counted": 3,
                 "hang": 0,
-                "hit": 3,
+                "hit": 1,
                 "langs": [
                   "en-US"
                 ],
@@ -21619,19 +21899,34 @@
                   "pt-PT"
                 ],
                 "manual": 0,
-                "misses": [],
+                "misses": [
+                  {
+                    "expected": "sound_like",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "how does a cow sound"
+                  },
+                  {
+                    "expected": "sound_like",
+                    "kind": "unhandled",
+                    "lang": "en-US",
+                    "stage": "last message: recognizer_loop:audio_output_end",
+                    "utterance": "what does a cat sound like"
+                  }
+                ],
                 "neighbour": 0,
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 3,
-                "unhandled": 0,
+                "unhandled": 2,
                 "wrong_intent": 0
               },
               "ref": "v0.0.3",
               "stop": {
                 "lang": "en-US",
                 "result": "nothing_to_stop",
-                "utterance": "how does a cow sound"
+                "utterance": "how does dog sound"
               }
             },
             "skill_id": "ovos-skill-sound-like.andlo",
@@ -21646,7 +21941,7 @@
               },
               "golden": {
                 "asked": 0,
-                "baseline": 3,
+                "baseline": 2,
                 "by_lang": {
                   "en-US": {
                     "counted": 6,
@@ -21681,17 +21976,16 @@
                   },
                   {
                     "expected": "give_note",
-                    "kind": "hang",
+                    "kind": "unhandled",
                     "lang": "en-US",
-                    "stage": "last message: ovos.skills.fallback.pong",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "utterance": "give me a c sharp"
                   },
                   {
                     "expected": "give_note",
-                    "kind": "baseline",
+                    "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: recognizer_loop:audio_output_end",
-                    "taken_by": "ovos-skill-youtube-music.openvoiceos",
+                    "stage": "last message: ovos.common_play.skill.search_end",
                     "utterance": "play an e flat"
                   },
                   {
@@ -21715,7 +22009,7 @@
                 "not_loaded": 0,
                 "status": "ok",
                 "total": 6,
-                "unhandled": 0,
+                "unhandled": 1,
                 "wrong_intent": 0
               },
               "ref": "v0.0.4",
@@ -21830,7 +22124,7 @@
                     "expected": "set_noise",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "start pink noise"
                   },
@@ -21838,14 +22132,14 @@
                     "expected": "set_noise",
                     "kind": "hang",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.skill.search_end",
+                    "stage": "last message: ovos.common_play.query.response",
                     "utterance": "play some brown noise"
                   },
                   {
                     "expected": "start_noise",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "stage": "last message: ovos.common_play.SEI.get",
+                    "stage": "last message: recognizer_loop:audio_output_end",
                     "taken_by": "ovos-skill-youtube-music.openvoiceos",
                     "utterance": "play some noise"
                   },
@@ -21893,13 +22187,13 @@
                 "status": "none"
               },
               "golden": {
-                "reason": "no test/end2end/golden_utterances*.jsonl at v0.0.7",
+                "reason": "no test/end2end/golden_utterances*.jsonl at v0.0.8",
                 "status": "none"
               },
-              "ref": "v0.0.7"
+              "ref": "v0.0.8"
             },
             "skill_id": "ovos-skill-wiki-offline.andlo",
-            "version": "0.0.7"
+            "version": "0.0.8"
           },
           "mikejgray-neon-homeassistant-skill": {
             "member": false,
@@ -21917,49 +22211,36 @@
             "version": "0.0.24"
           }
         },
-        "run_at": "2026-11-07T10:46:32+00:00",
+        "run_at": "2026-11-18T12:16:06+00:00",
         "takes_from": {
-          "OpenVoiceOS-ovos-skill-date-time": {
-            "generated": [
-              {
-                "from": "OpenVoiceOS-ovos-skill-weather",
-                "lang": "en-US",
-                "utterance": "when is the next rainfall in london"
-              }
-            ]
-          },
-          "OpenVoiceOS-ovos-skill-easter-eggs": {
-            "generated": [
-              {
-                "from": "OpenVoiceOS-ovos-skill-diagnostics",
-                "lang": "en-US",
-                "utterance": "what languages can you speak"
-              },
-              {
-                "from": "OpenVoiceOS-ovos-skill-diagnostics",
-                "lang": "en-US",
-                "utterance": "which languages can you speak"
-              }
-            ]
-          },
           "OpenVoiceOS-ovos-skill-wolfie": {
             "generated": [
               {
-                "from": "OpenVoiceOS-ovos-skill-weather",
+                "from": "andlo-ovos-skill-geography",
                 "lang": "en-US",
-                "utterance": "at what time does daylight begin in london"
+                "utterance": "what is the area of france"
               },
               {
-                "from": "OpenVoiceOS-ovos-skill-wikipedia",
+                "from": "OpenVoiceOS-ovos-skill-weather",
                 "lang": "en-US",
-                "utterance": "random wiki page"
+                "utterance": "how humid is it in london"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-weather",
+                "lang": "en-US",
+                "utterance": "are roads expected to be icy in london"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-weather",
+                "lang": "en-US",
+                "utterance": "is rain coming soon in london"
               }
             ],
             "golden": [
               {
                 "from": "andlo-ovos-skill-geography",
                 "lang": "en-US",
-                "utterance": "what language do they speak in Kenya"
+                "utterance": "what is the currency of Brazil"
               },
               {
                 "from": "andlo-ovos-skill-network-scanner",
@@ -22006,11 +22287,6 @@
                 "utterance": "what time will it start raining in london"
               },
               {
-                "from": "OpenVoiceOS-ovos-skill-wikipedia",
-                "lang": "en-US",
-                "utterance": "play the wikipedia roulette"
-              },
-              {
                 "from": "OpenVoiceOS-ovos-skill-easter-eggs",
                 "lang": "en-US",
                 "utterance": "lets play rock paper scissors lizard spock"
@@ -22019,6 +22295,11 @@
                 "from": "OpenVoiceOS-ovos-skill-easter-eggs",
                 "lang": "en-US",
                 "utterance": "start date"
+              },
+              {
+                "from": "OpenVoiceOS-ovos-skill-easter-eggs",
+                "lang": "en-US",
+                "utterance": "start day"
               }
             ],
             "golden": [
@@ -22040,12 +22321,12 @@
               {
                 "from": "andlo-ovos-skill-rhythm-box",
                 "lang": "en-US",
-                "utterance": "play a beat"
+                "utterance": "start the beat"
               },
               {
-                "from": "andlo-ovos-skill-tuning-fork",
+                "from": "andlo-ovos-skill-rhythm-box",
                 "lang": "en-US",
-                "utterance": "play an e flat"
+                "utterance": "play a beat"
               },
               {
                 "from": "andlo-ovos-skill-tuning-fork",
@@ -22061,7 +22342,7 @@
           }
         }
       },
-      "key": "c4b136947c4531f2",
+      "key": "117d9d10b8f48d77",
       "profile": {
         "added_stages": [
           "ovos-common-reading-pipeline-plugin-high",
@@ -23548,11 +23829,11 @@
     },
     "OpenVoiceOS-ovos-skill-alerts": {
       "alpha": {
-        "boot_seconds": 422.7,
+        "boot_seconds": 662.8,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 427.0,
+        "duration_seconds": 668.2,
         "id": "OpenVoiceOS-ovos-skill-alerts",
         "intents_by_lang": {
           "ca-es": 53,
@@ -23578,7 +23859,7 @@
           "sv-fi": 52,
           "sv-se": 52
         },
-        "key": "53423dda26a9dd84",
+        "key": "271d9023768b2472",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -23615,8 +23896,8 @@
             "ovos.entity.register"
           ]
         },
-        "requested_version": "0.12.58a3",
-        "route_key": "40aa8983db234840",
+        "requested_version": "0.13.1a1",
+        "route_key": "9bac60d99521c5af",
         "routing": {
           "generated": {
             "asked": 23,
@@ -23689,7 +23970,7 @@
           },
           "golden": {
             "asked": 2,
-            "baseline": 1,
+            "baseline": 0,
             "by_lang": {
               "en-US": {
                 "counted": 55,
@@ -23697,16 +23978,12 @@
               }
             },
             "by_pipeline": {
-              "ovos-fallback-pipeline-plugin": {
-                "hit": 0,
-                "miss": 1
-              },
               "ovos-m2v-pipeline": {
-                "hit": 6,
+                "hit": 7,
                 "miss": 0
               },
               "ovos-padatious-pipeline-plugin": {
-                "hit": 46,
+                "hit": 45,
                 "miss": 0
               },
               "ovos-persona-pipeline-plugin": {
@@ -23719,20 +23996,20 @@
             "hang": 0,
             "hit": 52,
             "langs": [
-              "en-US",
-              "da-DK"
+              "en-US"
             ],
             "langs_failed": [],
             "langs_not_routed": [
-              "es-ES",
-              "de-DE",
-              "fr-FR",
-              "ca-ES",
+              "da-DK",
               "cs-CZ",
+              "ca-ES",
+              "de-DE",
               "es-CO",
+              "es-ES",
               "eu-ES",
               "fa-IR",
               "fi-FI",
+              "fr-FR",
               "gl-ES",
               "hu-HU",
               "it-IT",
@@ -23744,10 +24021,11 @@
               "ru-RU",
               "sv-FI",
               "sv-SE",
+              "tr-TR",
               "an",
-              "tr-TR"
+              "oc-FR"
             ],
-            "manual": 231,
+            "manual": 165,
             "misses": [
               {
                 "expected": "reschedule_alert",
@@ -23759,12 +24037,14 @@
               },
               {
                 "expected": "reschedule_alert",
-                "kind": "baseline",
+                "fired": [
+                  "ovos-skill-alerts.openvoiceos:change_until"
+                ],
+                "kind": "wrong_intent",
                 "lang": "en-US",
-                "pipeline": "ovos-fallback-pipeline-plugin",
-                "stage": "ovos-fallback-pipeline-plugin",
-                "taken_by": "ovos-skill-fallback-unknown.openvoiceos",
-                "utterance": "change the next alarm to 9"
+                "pipeline": "ovos-m2v-pipeline",
+                "taken_by": "ovos-skill-alerts.openvoiceos",
+                "utterance": "change my 8 am alarm to 9"
               },
               {
                 "expected": "create_alarm",
@@ -23778,11 +24058,11 @@
             "neighbour": 0,
             "not_loaded": 0,
             "status": "ok",
-            "total": 286,
+            "total": 220,
             "unhandled": 2,
-            "wrong_intent": 0
+            "wrong_intent": 1
           },
-          "ref": "0.12.58a3",
+          "ref": "0.13.1a1",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -23791,8 +24071,8 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-11-17T11:05:36+00:00",
-        "version_tested": "0.12.58a3"
+        "tested_at": "2026-11-18T10:40:44+00:00",
+        "version_tested": "0.13.1a1"
       },
       "stable": {
         "boot_seconds": 82.4,
@@ -26299,11 +26579,11 @@
     },
     "OpenVoiceOS-ovos-skill-date-time": {
       "alpha": {
-        "boot_seconds": 97.2,
+        "boot_seconds": 160.5,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 101.2,
+        "duration_seconds": 166.0,
         "id": "OpenVoiceOS-ovos-skill-date-time",
         "intents_by_lang": {
           "an-cw": 27,
@@ -26331,7 +26611,7 @@
           "sv-se": 27,
           "tr-tr": 27
         },
-        "key": "55c543c378962166",
+        "key": "fec10c8e02dc4bf2",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -26363,7 +26643,7 @@
           "an-AN"
         ],
         "level": 2,
-        "log_excerpt": " a Par\u00eds?']\n2026-11-17 11:12:57.341 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: nl-NL - ['Hoe laat is het?', 'Welke dag is het?', 'Hoeveel dagen tot 4 juli?', 'Wat is de datum?', 'Wat is de huidige tijd?', 'Welke dag is 4 mei?', 'Hoe laat is het in Parijs?']\n2026-11-17 11:12:57.342 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: pl-PL - ['Jak\u0105 mamy godzin\u0119?', 'Jaki dzie\u0144 tygodnia jest dzisiaj?', 'Jaka jest dzisiejsza data?', 'Kt\u00f3rego dzisiaj mamy?', 'Podaj mi godzin\u0119', 'Ile dni zosta\u0142o do Bo\u017cego Narodzenia?', 'Aktualna godzina w Warszawie']\n2026-11-17 11:12:57.342 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: gl-ES - ['Que hora \u00e9?', 'Dime o d\u00eda da semana', 'Cantos d\u00edas faltan para o 4 de xullo', 'Que d\u00eda \u00e9 hoxe?', 'Dime que hora \u00e9', 'Que d\u00eda \u00e9 o martes de entroido de 2025?', 'Que hora \u00e9 en Par\u00eds?']\n2026-11-17 11:12:57.343 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: it-IT - ['Che ora \u00e8?', 'Che giorno \u00e8 oggi', 'Quanti giorni mancano a 15 maggio', \"Qual'\u00e8 la data di oggi\", 'Che ore sono?', 'Che giorno della settimana \u00e8 15 maggio', \"Dammi l'ora a Parigi\"]\n2026-11-17 11:12:57.343 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: es-ES - ['\u00bfQu\u00e9 hora es?', 'Dime el d\u00eda de la semana', '\u00bfCuantos d\u00edas faltan para el 24 de junio?', '\u00bfQue d\u00eda es?', 'Dime la hora', '\u00bfCu\u00e1ndo es el d\u00eda del libro?', '\u00bfQu\u00e9 hora es en Par\u00eds?']\n2026-11-17 11:12:57.343 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: sv-SE - ['Vad \u00e4r klockan?', 'Ber\u00e4tta vilken veckodag det \u00e4r', 'Hur m\u00e5nga dagar \u00e4r det till den 4 juli', 'Vad \u00e4r dagens datum?', 'Visa mig klockan', 'Vilken dag \u00e4r Memorial Day 2020?', 'Vad \u00e4r klockan i Paris?']\n2026-11-17 11:12:57.344 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: cs-CZ - ['Kolik je hodin?', '\u0158ekni mi, kter\u00fd je den v t\u00fddnu', 'Kolik dn\u00ed zb\u00fdv\u00e1 do 4. \u010dervence', 'Jak\u00e9 je datum?', 'Uka\u017e mi \u010das', 'Na jak\u00fd den p\u0159ipad\u00e1 Memorial Day 2020?', 'Kolik je hodin v Pa\u0159\u00ed\u017ei?']\n2026-11-17 11:12:57.344 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: eu-ES - ['Zer ordu da?', 'Esadazu asteko eguna', 'Zenbat egun falta dira uztailaren 4a arte', 'Zein data da?', 'Erakutsi ordua', 'Zein egunetan da 2020ko Oroitzapen Eguna?', 'Zer ordu da Parisen?']\n2026-11-17 11:12:57.344 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: pt-BR - ['Que horas s\u00e3o?', 'Diga-me o dia da semana', 'Quantos dias faltam para 4 de julho', 'Qual \u00e9 a data?', 'Mostre-me as horas', 'Que dia \u00e9 o Memorial Day de 2020?', 'Que horas s\u00e3o em Paris?']\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'",
+        "log_excerpt": "eos - INFO - Registering example utterances with homescreen for lang: it-IT - ['Che ora \u00e8?', 'Che giorno \u00e8 oggi', 'Quanti giorni mancano a 15 maggio', \"Qual'\u00e8 la data di oggi\", 'Che ore sono?', 'Che giorno della settimana \u00e8 15 maggio', \"Dammi l'ora a Parigi\"]\n2026-11-18 10:52:06.430 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: en-US - ['What time is it?', 'Tell me the day of the week', 'How many days are left until July 4th', 'What date is it?', 'Do you have the time', 'What day is Memorial Day 2020?', 'What time is it in Paris?']\n2026-11-18 10:52:06.430 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: ca-ES - ['Quina hora \u00e9s?', 'Digues-me el dia de la setmana', 'Quants dies falten per al 24 de juny?', 'Quina data som?', \"Mostra'm l'hora\", 'Quin dia \u00e9s el dia del Punt Volat de 2026?', 'Quina hora \u00e9s a Par\u00eds?']\n2026-11-18 10:52:06.430 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: nl-NL - ['Hoe laat is het?', 'Welke dag is het?', 'Hoeveel dagen tot 4 juli?', 'Wat is de datum?', 'Wat is de huidige tijd?', 'Welke dag is 4 mei?', 'Hoe laat is het in Parijs?']\n2026-11-18 10:52:06.430 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: pl-PL - ['Jak\u0105 mamy godzin\u0119?', 'Jaki dzie\u0144 tygodnia jest dzisiaj?', 'Jaka jest dzisiejsza data?', 'Kt\u00f3rego dzisiaj mamy?', 'Podaj mi godzin\u0119', 'Ile dni zosta\u0142o do Bo\u017cego Narodzenia?', 'Aktualna godzina w Warszawie']\n2026-11-18 10:52:06.431 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: fi-FI - ['mik\u00e4 on t\u00e4m\u00e4n p\u00e4iv\u00e4n p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4', 'Aika, kiitos.', 'monesko p\u00e4iv\u00e4 t\u00e4n\u00e4\u00e4n on', 'mik\u00e4 viikonp\u00e4iv\u00e4 t\u00e4n\u00e4\u00e4n on', 'mik\u00e4 kuukausi nyt on', 'mik\u00e4 vuosi nyt on', 'onko t\u00e4m\u00e4 vuosi karkausvuosi', 'milloin on seuraava karkausvuosi']\n2026-11-18 10:52:06.431 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: es-CO - ['\u00bfQu\u00e9 hora es?', 'Dime el d\u00eda de la semana', '\u00bfCuantos d\u00edas faltan para el 24 de junio?', '\u00bfQue d\u00eda es?', 'Dime la hora', '\u00bfCu\u00e1ndo es el d\u00eda del libro?', '\u00bfQu\u00e9 hora es en Par\u00eds?']\n2026-11-18 10:52:06.431 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: de-DE - ['Wie sp\u00e4t ist es?', 'Sag mir den Wochentag', 'Wie viele Tage bis zum 4. Juli', 'Welches Datum haben wir?', 'Zeig mir die Zeit', 'Welcher Tag ist der Memorial Day 2020?', 'Wie sp\u00e4t ist es in Paris?']\n2026-11-18 10:52:06.431 - ovos-skill-date-time.openvoiceos - INFO - Registering example utterances with homescreen for lang: sv-FI - ['Vad \u00e4r klockan?', 'S\u00e4g vilken veckodag det \u00e4r', 'Hur m\u00e5nga dagar \u00e4r det till den 4 juli', 'Vilket datum \u00e4r det?', 'Visa mig klockan', 'Vilken dag \u00e4r minnesdagen 2020?', 'Vad \u00e4r klockan i Paris?']\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'\nOVOS-INTENT-1 \u00a73.6: single-branch group (e) is degenerate; treating as the bare branch 'e'",
         "package": "ovos-skill-date-time",
         "plugin_ids": [
           "ovos-skill-date-time.openvoiceos"
@@ -26376,8 +26656,8 @@
             "ovos.scheduler.list"
           ]
         },
-        "requested_version": "1.12.3a2",
-        "route_key": "c9e7df57019c09d0",
+        "requested_version": "1.12.4a1",
+        "route_key": "0d7f0ced7db23daf",
         "routing": {
           "generated": {
             "asked": 8,
@@ -26394,11 +26674,11 @@
                 "miss": 14
               },
               "ovos-m2v-pipeline": {
-                "hit": 2,
+                "hit": 1,
                 "miss": 0
               },
               "ovos-padatious-pipeline-plugin": {
-                "hit": 108,
+                "hit": 109,
                 "miss": 0
               }
             },
@@ -26594,10 +26874,6 @@
             "asked": 0,
             "baseline": 1,
             "by_lang": {
-              "da-DK": {
-                "counted": 3,
-                "hit": 3
-              },
               "en-US": {
                 "counted": 4,
                 "hit": 3
@@ -26608,13 +26884,9 @@
                 "hit": 0,
                 "miss": 1
               },
-              "ovos-m2v-pipeline": {
-                "hit": 4,
-                "miss": 0
-              },
               "ovos-padatious-pipeline-plugin": {
-                "hit": 2,
-                "miss": 2
+                "hit": 3,
+                "miss": 1
               }
             },
             "collisions": [
@@ -26624,33 +26896,26 @@
                 "pipeline": "ovos-padatious-pipeline-plugin",
                 "taken_by": "ovos-skill-alerts.openvoiceos",
                 "utterance": "how many days are there between march 1 and june 5"
-              },
-              {
-                "expected": "time_until",
-                "lang": "da-DK",
-                "pipeline": "ovos-padatious-pipeline-plugin",
-                "taken_by": "ovos-skill-alerts.openvoiceos",
-                "utterance": "hvor mange dage er der mellem 1. marts og 5. juni"
               }
             ],
-            "counted": 7,
+            "counted": 4,
             "hang": 0,
-            "hit": 6,
+            "hit": 3,
             "langs": [
-              "en-US",
-              "da-DK"
+              "en-US"
             ],
             "langs_failed": [],
             "langs_not_routed": [
-              "es-ES",
-              "de-DE",
-              "fr-FR",
-              "ca-ES",
+              "da-DK",
               "cs-CZ",
+              "ca-ES",
+              "de-DE",
               "es-CO",
+              "es-ES",
               "eu-ES",
               "fa-IR",
               "fi-FI",
+              "fr-FR",
               "gl-ES",
               "hu-HU",
               "it-IT",
@@ -26662,10 +26927,11 @@
               "ru-RU",
               "sv-FI",
               "sv-SE",
+              "tr-TR",
               "an",
-              "tr-TR"
+              "oc-FR"
             ],
-            "manual": 152,
+            "manual": 110,
             "misses": [
               {
                 "expected": "time_until",
@@ -26677,14 +26943,14 @@
                 "utterance": "count the days between monday and friday"
               }
             ],
-            "neighbour": 2,
+            "neighbour": 1,
             "not_loaded": 0,
             "status": "ok",
-            "total": 161,
+            "total": 115,
             "unhandled": 0,
             "wrong_intent": 0
           },
-          "ref": "1.12.3a2",
+          "ref": "1.12.4a1",
           "stop": {
             "lang": "en-US",
             "result": "nothing_to_stop",
@@ -26693,8 +26959,8 @@
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-11-17T11:12:49+00:00",
-        "version_tested": "1.12.3a2",
+        "tested_at": "2026-11-18T10:51:55+00:00",
+        "version_tested": "1.12.4a1",
         "warnings": [
           "no intents registered for: an-AN"
         ]
@@ -36866,11 +37132,11 @@
     },
     "OpenVoiceOS-ovos-skill-weather": {
       "alpha": {
-        "boot_seconds": 705.0,
+        "boot_seconds": 734.3,
         "channel": "alpha",
         "channel_pinned": true,
         "driver": "ovoscope modern",
-        "duration_seconds": 710.6,
+        "duration_seconds": 739.3,
         "id": "OpenVoiceOS-ovos-skill-weather",
         "intents_by_lang": {
           "ca-es": 20,
@@ -36898,7 +37164,7 @@
           "sv-se": 20,
           "tr-tr": 20
         },
-        "key": "3fb64d4deee7220f",
+        "key": "bcc88ea951f72f6d",
         "kind": "skill",
         "languages_booted": [
           "en-US",
@@ -36937,8 +37203,8 @@
             "ovos.entity.register"
           ]
         },
-        "requested_version": "1.5.5a3",
-        "route_key": "1660730579b235de",
+        "requested_version": "1.5.6a1",
+        "route_key": "ee3cd309e4c06041",
         "routing": {
           "generated": {
             "asked": 0,
@@ -36984,29 +37250,30 @@
             ],
             "langs_failed": [],
             "langs_not_routed": [
-              "es-ES",
-              "ca-ES",
               "da-DK",
+              "cs-CZ",
+              "ca-ES",
+              "de-DE",
+              "es-CO",
+              "es-ES",
               "eu-ES",
+              "fa-IR",
+              "fi-FI",
               "fr-FR",
               "gl-ES",
+              "hu-HU",
               "it-IT",
               "kab",
               "nl-NL",
+              "pl-PL",
               "pt-BR",
               "pt-PT",
-              "sv-SE",
-              "de-DE",
-              "es-CO",
-              "fa-IR",
-              "pl-PL",
               "ru-RU",
-              "cs-CZ",
-              "fi-FI",
-              "hu-HU",
-              "oc-FR",
               "sv-FI",
-              "tr-TR"
+              "sv-SE",
+              "tr-TR",
+              "an",
+              "oc-FR"
             ],
             "manual": 117,
             "misses": [],
@@ -37018,17 +37285,17 @@
             "unhandled": 0,
             "wrong_intent": 0
           },
-          "ref": "1.5.5a3",
+          "ref": "1.5.6a1",
           "stop": {
             "lang": "en-US",
-            "result": "nothing_to_stop",
+            "result": "silent",
             "utterance": "current humidity level right now in New York"
           }
         },
         "stage": "load",
         "status": "pass",
-        "tested_at": "2026-10-30T09:28:45+00:00",
-        "version_tested": "1.5.5a3"
+        "tested_at": "2026-11-18T10:54:44+00:00",
+        "version_tested": "1.5.6a1"
       },
       "stable": {
         "boot_seconds": 22.7,
