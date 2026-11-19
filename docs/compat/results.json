@@ -1,7 +1,7 @@
 {
   "channels": {
     "alpha": {
-      "constraints_sha256": "cd961e5bfe2303fd94b5560abfb440f8b8b690259a7105a39deb6f5cfbdffd1b",
+      "constraints_sha256": "82749433b96ca82d8180ca253064597d98cc34060cd2445802a9ae6e434fe6c8",
       "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
       "harness_sha": "b752659c25b2637f57095fa5a585a2a0c588550c",
       "resolved_stack": {
@@ -99,7 +99,7 @@
           }
         ]
       },
-      "run_at": "2026-11-18T12:16:06+00:00",
+      "run_at": "2026-11-19T12:22:05+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -116,9 +116,7 @@
         },
         "python": "3.11.18"
       },
-      "stack_moved": [
-        "ovos-utils 0.15.7a2 -> 0.15.7a3"
-      ]
+      "stack_moved": []
     },
     "stable": {
       "constraints_sha256": "dfe3dacba4a572aec3c0ba4e311872ec3d90f143cbbbf8b7aeb9f0d6c6f00a7c",
@@ -240,7 +238,7 @@
           }
         ]
       },
-      "run_at": "2026-11-17T12:44:48+00:00",
+      "run_at": "2026-11-19T12:22:05+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -395,7 +393,7 @@
           }
         ]
       },
-      "run_at": "2026-11-17T12:44:48+00:00",
+      "run_at": "2026-11-19T12:22:05+00:00",
       "runner_version": "3",
       "stack": {
         "packages": {
@@ -415,7 +413,7 @@
       "stack_moved": []
     }
   },
-  "generated_at": "2026-11-18T12:16:06+00:00",
+  "generated_at": "2026-11-19T12:22:05+00:00",
   "installer": {
     "alpha": {
       "OpenVoiceOS-ovos-adapt-pipeline-plugin": {
@@ -967,7 +965,7 @@
               "ovos-common-reading-pipeline-plugin-low",
               "ovos-fallback-pipeline-plugin-low"
             ],
-            "seconds": 5295.0,
+            "seconds": 5277.9,
             "status": "ok"
           }
         ],
@@ -1159,7 +1157,7 @@
                 "utterance": "change wall paper about something"
               }
             ],
-            "reaches": 23,
+            "reaches": 20,
             "takes": 5
           },
           "ovos-ocp-pipeline-plugin": {
@@ -1219,7 +1217,7 @@
                 "utterance": "grab a screenshot in 5 seconds"
               }
             ],
-            "reaches": 346,
+            "reaches": 349,
             "takes": 13
           },
           "ovos-persona-pipeline-plugin": {
@@ -1355,11 +1353,11 @@
                 },
                 "by_pipeline": {
                   "ovos-m2v-pipeline": {
-                    "hit": 7,
+                    "hit": 5,
                     "miss": 0
                   },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 45,
+                    "hit": 47,
                     "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
@@ -2617,7 +2615,7 @@
                     ],
                     "kind": "wrong_intent",
                     "lang": "en-US",
-                    "pipeline": "ovos-m2v-pipeline",
+                    "pipeline": "ovos-padatious-pipeline-plugin",
                     "taken_by": "ovos-skill-date-time.openvoiceos",
                     "utterance": "day of the week"
                   },
@@ -2654,12 +2652,8 @@
                     "hit": 0,
                     "miss": 1
                   },
-                  "ovos-m2v-pipeline": {
-                    "hit": 1,
-                    "miss": 0
-                  },
                   "ovos-padatious-pipeline-plugin": {
-                    "hit": 2,
+                    "hit": 3,
                     "miss": 1
                   }
                 },
@@ -5904,14 +5898,10 @@
               },
               "ref": "0.10.0a7",
               "stop": {
-                "after": [
-                  "Your download speed is 2232.73 Megabit per second and your upload speed is 957.76 Megabit per second.",
-                  "ping is 33.53 milliseconds"
-                ],
                 "lang": "en-US",
-                "result": "keeps_going",
-                "seconds": 2.1,
-                "spoke_after_stop": 2,
+                "result": "stops",
+                "seconds": 1.7,
+                "spoke_after_stop": 0,
                 "utterance": "run a speed test"
               }
             },
@@ -6221,7 +6211,7 @@
                 "by_pipeline": {
                   "ovos-fallback-pipeline-plugin": {
                     "hit": 0,
-                    "miss": 21
+                    "miss": 22
                   },
                   "ovos-m2v-pipeline": {
                     "hit": 0,
@@ -6229,7 +6219,7 @@
                   },
                   "ovos-padatious-pipeline-plugin": {
                     "hit": 40,
-                    "miss": 1
+                    "miss": 0
                   },
                   "ovos-persona-pipeline-plugin": {
                     "hit": 0,
@@ -6284,9 +6274,9 @@
                     "expected": "make_wallpaper",
                     "kind": "baseline",
                     "lang": "en-US",
-                    "pipeline": "ovos-padatious-pipeline-plugin",
-                    "stage": "ovos-padatious-pipeline-plugin",
-                    "taken_by": "ovos-skill-alerts.openvoiceos",
+                    "pipeline": "ovos-fallback-pipeline-plugin",
+                    "stage": "ovos-fallback-pipeline-plugin",
+                    "taken_by": "ovos-skill-ddg.openvoiceos",
                     "utterance": "change the wall paper to this one"
                   },
                   {
@@ -6703,13 +6693,10 @@
               },
               "ref": "2.8.1a2",
               "stop": {
-                "after": [
-                  "enjoy your new wallpaper"
-                ],
                 "lang": "en-US",
-                "result": "keeps_going",
-                "seconds": 3.4,
-                "spoke_after_stop": 1,
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
                 "utterance": "change current wall paper"
               }
             },
@@ -7678,11 +7665,11 @@
             "member": true,
             "routing": {
               "generated": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-n43yj9qe/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-8hj6ytlk/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "golden": {
-                "reason": "git clone failed: fatal: destination path '/tmp/compat-n43yj9qe/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
+                "reason": "git clone failed: fatal: destination path '/tmp/compat-8hj6ytlk/src/OscillateLabsLLC-skill-homeassistant' already exists and is not an empty directory.",
                 "status": "none"
               },
               "stop": {
@@ -8040,7 +8027,9 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
                 "utterance": "read me a story by hans christian andersen"
               }
             },
@@ -8950,7 +8939,7 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 7,
+                "asked": 8,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
@@ -9102,14 +9091,7 @@
                 "unhandled": 0,
                 "wrong_intent": 0
               },
-              "ref": "v0.0.6",
-              "stop": {
-                "lang": "en-US",
-                "result": "stops",
-                "seconds": 0.0,
-                "spoke_after_stop": 0,
-                "utterance": "test me on capitals"
-              }
+              "ref": "v0.0.6"
             },
             "skill_id": "ovos-skill-geography-practice.andlo",
             "version": "0.0.6"
@@ -9270,7 +9252,7 @@
             "member": false,
             "routing": {
               "generated": {
-                "asked": 8,
+                "asked": 6,
                 "baseline": 0,
                 "by_lang": {
                   "en-US": {
@@ -9491,7 +9473,9 @@
               "ref": "v0.1.8",
               "stop": {
                 "lang": "en-US",
-                "result": "nothing_to_stop",
+                "result": "stops",
+                "seconds": 0.0,
+                "spoke_after_stop": 0,
                 "utterance": "read me a story from grimm"
               }
             },
@@ -11370,7 +11354,7 @@
             "version": "0.1.6"
           }
         },
-        "run_at": "2026-11-18T12:16:06+00:00",
+        "run_at": "2026-11-19T12:22:05+00:00",
         "takes_from": {
           "OpenVoiceOS-ovos-skill-alerts": {
             "generated": [
@@ -11559,7 +11543,7 @@
           }
         }
       },
-      "key": "d350f06cb8906d07",
+      "key": "0d4e3c14e53aca81",
       "profile": {
         "added_stages": [
           "ovos-common-reading-pipeline-plugin-high",
@@ -23603,6 +23587,65 @@
         "status": "fail",
         "tested_at": "2026-10-04T10:45:30+00:00",
         "version_tested": "0.0.9"
+      }
+    },
+    "OpenVoiceOS-ovos-markov-pipeline-plugin": {
+      "alpha": {
+        "boot_seconds": 4.2,
+        "channel": "alpha",
+        "channel_pinned": false,
+        "driver": "ovoscope modern",
+        "duration_seconds": 9.0,
+        "id": "OpenVoiceOS-ovos-markov-pipeline-plugin",
+        "key": "9758c8add614cd4c",
+        "kind": "pipeline",
+        "level": 2,
+        "package": "ovos-markov-pipeline-plugin",
+        "plugin_ids": [
+          "ovos-markov-domain-pipeline-plugin",
+          "ovos-markov-pipeline-plugin"
+        ],
+        "requested_version": "0.5.2a2",
+        "stage": "load",
+        "stages": [
+          "ovos-markov-domain-pipeline-plugin-high",
+          "ovos-markov-pipeline-plugin-high"
+        ],
+        "status": "pass",
+        "tested_at": "2026-11-19T10:45:22+00:00",
+        "version_tested": "0.5.2a2"
+      },
+      "stable": {
+        "channel": "stable",
+        "channel_pinned": false,
+        "duration_seconds": 2.5,
+        "id": "OpenVoiceOS-ovos-markov-pipeline-plugin",
+        "key": "4e1c79178ffcac1b",
+        "kind": "pipeline",
+        "level": 0,
+        "log_excerpt": " (from ovos-markov-pipeline-plugin==0.5.2a2)\n  Downloading markovonnx-1.0.1-py3-none-any.whl.metadata (955 bytes)\nINFO: pip is looking at multiple versions of ovos-markov-pipeline-plugin to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-markov-pipeline-plugin==0.5.2a2 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-markov-pipeline-plugin 0.5.2a2 depends on ovos-plugin-manager<3.0.0 and >=2.3.0a1\n    The user requested (constraint) ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "ovos-markov-pipeline-plugin",
+        "reason": "ovos-markov-pipeline-plugin 0.5.2a2 depends on ovos-plugin-manager<3.0.0 and >=2.3.0a1; channel pins ovos-plugin-manager<0.10.0,==0.9.0,>=0.9.0",
+        "requested_version": "0.5.2a2",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-11-19T10:46:24+00:00"
+      },
+      "testing": {
+        "channel": "testing",
+        "channel_pinned": false,
+        "duration_seconds": 0.8,
+        "id": "OpenVoiceOS-ovos-markov-pipeline-plugin",
+        "key": "34936fd2d2f26a6c",
+        "kind": "pipeline",
+        "level": 0,
+        "log_excerpt": " (from ovos-markov-pipeline-plugin==0.5.2a2)\n  Downloading markovonnx-1.0.1-py3-none-any.whl.metadata (955 bytes)\nINFO: pip is looking at multiple versions of ovos-markov-pipeline-plugin to determine which version is compatible with other requirements. This could take a while.\nERROR: Cannot install ovos-markov-pipeline-plugin==0.5.2a2 because these package versions have conflicting dependencies.\n\nThe conflict is caused by:\n    ovos-markov-pipeline-plugin 0.5.2a2 depends on ovos-plugin-manager<3.0.0 and >=2.3.0a1\n    The user requested (constraint) ovos-plugin-manager<3.0.0,==2.2.0,>=1.0.3\n\nAdditionally, some packages in these conflicts have no matching distributions available for your environment:\n    ovos-plugin-manager\n\nTo fix this you could try to:\n1. loosen the range of package versions you've specified\n2. remove package versions to allow pip to attempt to solve the dependency conflict\n\nERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts\n",
+        "package": "ovos-markov-pipeline-plugin",
+        "reason": "ovos-markov-pipeline-plugin 0.5.2a2 depends on ovos-plugin-manager<3.0.0 and >=2.3.0a1; channel pins ovos-plugin-manager<3.0.0,==2.2.0,>=1.0.3",
+        "requested_version": "0.5.2a2",
+        "stage": "install",
+        "status": "fail",
+        "tested_at": "2026-11-19T10:45:31+00:00"
       }
     },
     "OpenVoiceOS-ovos-ocp-pipeline-plugin": {

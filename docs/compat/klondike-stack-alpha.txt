@@ -14,7 +14,7 @@ cattrs==26.2.1
 certifi==2026.10.23
 cffi==2.1.1
 charset-normalizer==3.5.2
-chronologia==0.34.1a3
+chronologia==0.35.14a1
 click==8.5.1
 cloudpickle==3.1.3
 combo_lock==0.3.1
@@ -34,7 +34,7 @@ ftfy==6.3.1
 future==1.0.0
 geocoder==1.38.1
 h11==0.16.0
-h3==4.5.0
+h3==4.5.1
 hf-xet==1.8.0
 holidays==0.109
 httpcore==1.0.9
@@ -54,7 +54,7 @@ keyword-template-matcher==0.1.11a1
 kthread==0.2.3
 langcodes==3.5.1
 language_data==1.4.0
-linguatag==0.2.7a1
+linguatag==0.3.1a1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
 lxml==6.1.3
 ma-http-client==1.0.0
@@ -72,14 +72,14 @@ narwhals==2.29.0
 nebulento @ git+https://github.com/OpenVoiceOS/nebulento@8af5d46f252cde812c6a4f64d9c1062a582db238
 neon-homeassistant-skill==0.0.24
 numpy==2.4.6
-numtag==0.15.3a1
+numtag==0.15.10a1
 ovos-audio==2.2.9a1
 ovos-bidirectional-translation-plugin==0.1.5a1
 ovos-bus-client==2.11.29a1
 ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==3.9.0a2
 ovos-core==3.7.5a1
-ovos-date-parser==0.41.0a1
+ovos-date-parser==0.41.0a2
 ovos-ddg-plugin==1.1.7a1
 ovos-dinkum-listener==0.11.3a1
 ovos-gui==1.6.0a1
@@ -223,7 +223,7 @@ RAKEkeywords==0.3.1
 RapidFuzz==3.14.6
 ratelim==0.1.6
 recurring-ical-events==3.3.4
-regex==2026.11.18
+regex==2026.11.19
 requests==2.34.2
 requests-cache==1.3.3
 rich==15.0.0
@@ -242,11 +242,11 @@ skill-musicassistant==1.0.3
 skops==0.16.0
 skyfield==1.55
 snowballstemmer==3.1.1
-soupsieve==4.1.1
+soupsieve==4.1.2
 speedtest-cli==2.1.3
 thalovant-languages==0.3.7
 thalovant-skill-custos-fallback==0.1.6
-thalovant-skillkit==0.38.0
+thalovant-skillkit==0.38.2
 threadpoolctl==3.8.0
 timezonefinder==9.0.0
 timezonefinder-data==3.2026.3.post1
@@ -261,7 +261,7 @@ typing_extensions==4.16.0
 tzdata==2026.6
 tzlocal==5.4.5
 unicode-rbnf==2.5.0
-url-normalize==3.1.0
+url-normalize==4.0.0
 urllib3==2.8.0
 vobject==0.9.9
 watchdog==7.1.0
