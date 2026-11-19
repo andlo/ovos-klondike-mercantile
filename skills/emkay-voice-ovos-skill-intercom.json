@@ -1,6 +1,6 @@
 {
-  "id": "andlo-ovos-skill-intercom",
-  "skill_id": "ovos-skill-intercom.andlo",
+  "id": "emkay-voice-ovos-skill-intercom",
+  "skill_id": "ovos-skill-intercom.emkay-voice",
   "name": "Intercom",
   "description": "LAN intercom - send a spoken message to a named OVOS device on the same local network. Fully offline, no internet needed. Speak-only, never executes commands on the receiving device.",
   "examples": [
@@ -17,21 +17,21 @@
     "home"
   ],
   "category": "Home",
-  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-intercom/main/icon.png",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-intercom/main/icon.png",
   "icon_source": "skill.json",
   "icon_color": null,
-  "source": "https://github.com/andlo/ovos-skill-intercom",
+  "source": "https://github.com/emkay-voice/ovos-skill-intercom",
   "package_name": "ovos-skill-intercom",
   "pypi_version": "0.0.7",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "archived": false,
-  "author": "andlo",
+  "author": "emkay-voice",
   "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 1,
   "forks": 0,
-  "open_issues": 0,
+  "open_issues": 2,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -105,44 +105,7 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-intercom.andlo",
-    "channels": {
-      "stable": {
-        "label": "\u2713 loads \u00b7 1/9 golden",
-        "state": "warn",
-        "level": 2,
-        "version_tested": "0.0.7",
-        "tested_at": "2026-10-04T10:58:19+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 1,
-          "counted": 9
-        }
-      },
-      "testing": {
-        "label": "\u2713 loads \u00b7 1/9 golden",
-        "state": "warn",
-        "level": 2,
-        "version_tested": "0.0.7",
-        "tested_at": "2026-10-04T10:35:42+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 1,
-          "counted": 9
-        }
-      },
-      "alpha": {
-        "label": "\u2713 loads \u00b7 7/9 golden",
-        "state": "warn",
-        "level": 2,
-        "version_tested": "0.0.7",
-        "tested_at": "2026-10-30T08:59:51+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 7,
-          "counted": 9
-        }
-      }
-    }
+    "badge_id": "ovos-skill-intercom.emkay-voice",
+    "channels": {}
   }
 }

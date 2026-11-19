@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-utterance-normalizer",
   "skill_id": null,
   "name": "ovos-utterance-normalizer",
-  "description": "`ovos-utterance-normalizer` is an OVOS plugin that",
+  "description": "`ovos-utterance-normalizer` is an utterance transformer plugin for OpenVoiceOS. It runs after speech-to-text and before the intent engines. It gives the intent pipeline extra candidate utterances, and one of these candidates writes numbers as digits.",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -33,7 +33,11 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install ovos-utterance-normalizer"
+      "content": "The package needs Python 3.11 or newer.\n\nuv pip install --prerelease=allow ovos-utterance-normalizer"
+    },
+    {
+      "heading": "Configuration",
+      "content": "The default `mycroft.conf` of [ovos-config](https://github.com/OpenVoiceOS/ovos-config) turns the plugin on:\n\n\"utterance_transformers\": {\n   \"ovos-utterance-normalizer\": {}\n}\n\n| Key | Default | What it does |\n|---|---|---|\n| `lang` | `\"en-us\"` | The language to use when the message context has no `lang` |\n| `fix_encoding_errors` | `true` | Repairs encoding errors with ftfy |\n| `strip_punctuation` | `true` | Removes punctuation from the start and the end of each candidate |\n| `active` | `true` | When it is `false`, the plugin does not load |\n\nSee [docs/configuration.md](docs/configuration.md)."
     }
   ],
   "languages": [],

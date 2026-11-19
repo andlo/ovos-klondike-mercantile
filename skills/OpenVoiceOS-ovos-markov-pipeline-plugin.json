@@ -42,7 +42,30 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "OpenVoiceOS-ovos-markov-pipeline-plugin",
-    "channels": {}
+    "badge_id": "ovos-markov-domain-pipeline-plugin",
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-11-19T10:46:24+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
+        "label": "\u2717 doesn't install",
+        "state": "fail",
+        "level": 0,
+        "tested_at": "2026-11-19T10:45:31+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.5.2a2",
+        "tested_at": "2026-11-19T10:45:22+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }

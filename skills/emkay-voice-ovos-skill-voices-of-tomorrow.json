@@ -1,6 +1,6 @@
 {
-  "id": "andlo-ovos-skill-voices-of-tomorrow",
-  "skill_id": "ovos-skill-voices-of-tomorrow.andlo",
+  "id": "emkay-voice-ovos-skill-voices-of-tomorrow",
+  "skill_id": "ovos-skill-voices-of-tomorrow.emkay-voice",
   "name": "Voices of Tomorrow",
   "description": "Plays pre-recorded audio readings of 365tomorrows.com flash fiction stories, via OCP. Separate from ovos-skill-365tomorrows-stories, which reads the text aloud via TTS instead.",
   "examples": [
@@ -14,15 +14,15 @@
     "ocp"
   ],
   "category": "Entertainment",
-  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-voices-of-tomorrow/main/ui/icon.png",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-voices-of-tomorrow/main/ui/icon.png",
   "icon_source": "skill.json",
   "icon_color": null,
-  "source": "https://github.com/andlo/ovos-skill-voices-of-tomorrow",
+  "source": "https://github.com/emkay-voice/ovos-skill-voices-of-tomorrow",
   "package_name": "ovos-skill-voices-of-tomorrow",
   "pypi_version": "0.1.2",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "archived": false,
-  "author": "andlo",
+  "author": "emkay-voice",
   "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
@@ -134,32 +134,7 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-voices-of-tomorrow.andlo",
-    "channels": {
-      "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.2",
-        "tested_at": "2026-10-04T11:12:19+00:00",
-        "channel_pinned": false
-      },
-      "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.2",
-        "tested_at": "2026-10-04T10:56:14+00:00",
-        "channel_pinned": false
-      },
-      "alpha": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.2",
-        "tested_at": "2026-10-30T09:20:14+00:00",
-        "channel_pinned": false
-      }
-    }
+    "badge_id": "ovos-skill-voices-of-tomorrow.emkay-voice",
+    "channels": {}
   }
 }

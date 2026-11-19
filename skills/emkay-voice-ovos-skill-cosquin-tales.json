@@ -1,6 +1,6 @@
 {
-  "id": "andlo-ovos-skill-cosquin-tales",
-  "skill_id": "ovos-skill-cosquin-tales.andlo",
+  "id": "emkay-voice-ovos-skill-cosquin-tales",
+  "skill_id": "ovos-skill-cosquin-tales.emkay-voice",
   "name": "Cosquin Tales (provider)",
   "description": "Emmanuel Cosquin's Lorraine folk tales provider for ovos-common-reading-pipeline-plugin. French only, no translation.",
   "examples": [],
@@ -13,21 +13,21 @@
     "provider"
   ],
   "category": "Entertainment",
-  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-cosquin-tales/main/story-512.png",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-cosquin-tales/main/story-512.png",
   "icon_source": "skill.json",
   "icon_color": null,
-  "source": "https://github.com/andlo/ovos-skill-cosquin-tales",
+  "source": "https://github.com/emkay-voice/ovos-skill-cosquin-tales",
   "package_name": "ovos-skill-cosquin-tales",
   "pypi_version": "0.1.7",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "archived": false,
-  "author": "andlo",
+  "author": "emkay-voice",
   "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 1,
   "forks": 2,
-  "open_issues": 0,
+  "open_issues": 1,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -61,32 +61,7 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-cosquin-tales.andlo",
-    "channels": {
-      "stable": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.7",
-        "tested_at": "2026-10-04T10:58:12+00:00",
-        "channel_pinned": false
-      },
-      "testing": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.7",
-        "tested_at": "2026-10-04T10:32:33+00:00",
-        "channel_pinned": false
-      },
-      "alpha": {
-        "label": "\u2713 loads",
-        "state": "pass",
-        "level": 2,
-        "version_tested": "0.1.7",
-        "tested_at": "2026-10-30T09:00:04+00:00",
-        "channel_pinned": false
-      }
-    }
+    "badge_id": "ovos-skill-cosquin-tales.emkay-voice",
+    "channels": {}
   }
 }

@@ -1,6 +1,6 @@
 {
-  "id": "andlo-ovos-skill-morse-code",
-  "skill_id": "ovos-skill-morse-code.andlo",
+  "id": "emkay-voice-ovos-skill-morse-code",
+  "skill_id": "ovos-skill-morse-code.emkay-voice",
   "name": "Morse Code",
   "description": "Encodes text to Morse code, played as generated audible beeps. Fully offline, nothing recorded.",
   "examples": [
@@ -13,21 +13,21 @@
     "ham radio"
   ],
   "category": "Other",
-  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-morse-code/main/icon.png",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-morse-code/main/icon.png",
   "icon_source": "skill.json",
   "icon_color": null,
-  "source": "https://github.com/andlo/ovos-skill-morse-code",
+  "source": "https://github.com/emkay-voice/ovos-skill-morse-code",
   "package_name": "ovos-skill-morse-code",
   "pypi_version": "0.0.3",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "archived": false,
-  "author": "andlo",
+  "author": "emkay-voice",
   "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 1,
   "forks": 0,
-  "open_issues": 1,
+  "open_issues": 2,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -61,44 +61,7 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-morse-code.andlo",
-    "channels": {
-      "stable": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-04T11:01:33+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
-      },
-      "testing": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-04T10:38:31+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
-      },
-      "alpha": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-30T08:59:47+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
-      }
-    }
+    "badge_id": "ovos-skill-morse-code.emkay-voice",
+    "channels": {}
   }
 }

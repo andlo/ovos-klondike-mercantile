@@ -1,6 +1,6 @@
 {
-  "id": "andlo-ovos-skill-nato-alphabet",
-  "skill_id": "ovos-skill-nato-alphabet.andlo",
+  "id": "emkay-voice-ovos-skill-nato-alphabet",
+  "skill_id": "ovos-skill-nato-alphabet.emkay-voice",
   "name": "NATO Alphabet",
   "description": "Spells a word using the NATO/ICAO phonetic alphabet - Alfa, Bravo, Charlie. Fully offline, pure lookup table.",
   "examples": [
@@ -14,21 +14,21 @@
     "utility"
   ],
   "category": "Utility",
-  "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-nato-alphabet/main/icon.png",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-nato-alphabet/main/icon.png",
   "icon_source": "skill.json",
   "icon_color": null,
-  "source": "https://github.com/andlo/ovos-skill-nato-alphabet",
+  "source": "https://github.com/emkay-voice/ovos-skill-nato-alphabet",
   "package_name": "ovos-skill-nato-alphabet",
   "pypi_version": "0.0.3",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "archived": false,
-  "author": "andlo",
+  "author": "emkay-voice",
   "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 2,
   "forks": 0,
-  "open_issues": 0,
+  "open_issues": 1,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -62,44 +62,7 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-nato-alphabet.andlo",
-    "channels": {
-      "stable": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-04T11:03:54+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
-      },
-      "testing": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-04T10:40:22+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
-      },
-      "alpha": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-10-30T08:58:58+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
-      }
-    }
+    "badge_id": "ovos-skill-nato-alphabet.emkay-voice",
+    "channels": {}
   }
 }

@@ -1,7 +1,7 @@
 [
   {
-    "id": "andlo-ovos-skill-365tomorrows-stories",
-    "skill_id": "ovos-skill-365tomorrows-stories.andlo",
+    "id": "emkay-voice-ovos-skill-365tomorrows-stories",
+    "skill_id": "ovos-skill-365tomorrows-stories.emkay-voice",
     "name": "365tomorrows Stories (provider)",
     "description": "Reads daily CC-licensed flash sci-fi from 365tomorrows.com aloud. Provider for ovos-common-reading-pipeline-plugin - no standalone voice interface.",
     "examples": [
@@ -15,15 +15,15 @@
       "provider"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-365tomorrows-stories/main/book-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-365tomorrows-stories/main/book-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-365tomorrows-stories",
+    "source": "https://github.com/emkay-voice/ovos-skill-365tomorrows-stories",
     "package_name": "ovos-skill-365tomorrows-stories",
     "pypi_version": "0.1.8",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
@@ -116,46 +116,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-365tomorrows-stories.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-04T10:56:21+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-04T10:30:17+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
-        },
-        "alpha": {
-          "label": "\u2713 2/2 golden \u00b7 stops",
-          "state": "pass",
-          "level": 3,
-          "stop": "stops",
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-30T08:58:43+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        }
-      }
+      "badge_id": "ovos-skill-365tomorrows-stories.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -835,8 +797,8 @@
     }
   },
   {
-    "id": "andlo-ovos-skill-andersen-tales",
-    "skill_id": "ovos-skill-andersen-tales.andlo",
+    "id": "emkay-voice-ovos-skill-andersen-tales",
+    "skill_id": "ovos-skill-andersen-tales.emkay-voice",
     "name": "Andersen Tales (provider)",
     "description": "Hans Christian Andersen fairy tales provider for ovos-common-reading-pipeline-plugin. No standalone voice interface.",
     "examples": [
@@ -852,21 +814,21 @@
       "provider"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-andersen-tales/main/story-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-andersen-tales/main/story-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-andersen-tales",
+    "source": "https://github.com/emkay-voice/ovos-skill-andersen-tales",
     "package_name": "ovos-skill-andersen-tales",
     "pypi_version": "0.1.8",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 2,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -945,50 +907,13 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-andersen-tales.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-04T10:58:07+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
-        },
-        "testing": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-04T10:31:57+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        },
-        "alpha": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-30T09:09:45+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        }
-      }
+      "badge_id": "ovos-skill-andersen-tales.emkay-voice",
+      "channels": {}
     }
   },
   {
-    "id": "andlo-ovos-skill-andrew-lang-tales",
-    "skill_id": "ovos-skill-andrew-lang-tales.andlo",
+    "id": "emkay-voice-ovos-skill-andrew-lang-tales",
+    "skill_id": "ovos-skill-andrew-lang-tales.emkay-voice",
     "name": "Andrew Lang Tales (provider)",
     "description": "Andrew Lang's Fairy Books provider for ovos-common-reading-pipeline-plugin. No standalone voice interface.",
     "examples": [
@@ -1003,21 +928,21 @@
       "provider"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-andrew-lang-tales/main/story-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-andrew-lang-tales/main/story-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-andrew-lang-tales",
+    "source": "https://github.com/emkay-voice/ovos-skill-andrew-lang-tales",
     "package_name": "ovos-skill-andrew-lang-tales",
     "pypi_version": "0.1.9",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 2,
-    "open_issues": 0,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -1041,45 +966,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-andrew-lang-tales.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.9",
-          "tested_at": "2026-10-04T10:58:27+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
-        },
-        "testing": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.9",
-          "tested_at": "2026-10-04T10:32:12+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        },
-        "alpha": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.9",
-          "tested_at": "2026-10-30T09:09:57+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        }
-      }
+      "badge_id": "ovos-skill-andrew-lang-tales.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -1415,8 +1303,8 @@
     "is_recently_updated": true
   },
   {
-    "id": "andlo-ovos-skill-arxiv-papers",
-    "skill_id": "ovos-skill-arxiv-papers.andlo",
+    "id": "emkay-voice-ovos-skill-arxiv-papers",
+    "skill_id": "ovos-skill-arxiv-papers.emkay-voice",
     "name": "arXiv Papers (provider)",
     "description": "Reads arXiv paper abstracts aloud. Provider for ovos-common-reading-pipeline-plugin - no standalone voice interface.",
     "examples": [
@@ -1432,21 +1320,21 @@
       "information"
     ],
     "category": "Information",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-arxiv-papers/main/book-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-arxiv-papers/main/book-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-arxiv-papers",
+    "source": "https://github.com/emkay-voice/ovos-skill-arxiv-papers",
     "package_name": "ovos-skill-arxiv-papers",
     "pypi_version": "0.1.7",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -1533,45 +1421,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-arxiv-papers.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-04T10:59:00+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-04T10:32:34+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
-        },
-        "alpha": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-30T09:10:13+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        }
-      }
+      "badge_id": "ovos-skill-arxiv-papers.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -2236,8 +2087,8 @@
     "is_recently_updated": false
   },
   {
-    "id": "andlo-ovos-skill-bechstein-tales",
-    "skill_id": "ovos-skill-bechstein-tales.andlo",
+    "id": "emkay-voice-ovos-skill-bechstein-tales",
+    "skill_id": "ovos-skill-bechstein-tales.emkay-voice",
     "name": "Bechstein Tales (provider)",
     "description": "Ludwig Bechstein's German fairy tales provider for ovos-common-reading-pipeline-plugin. German only, no translation.",
     "examples": [],
@@ -2250,21 +2101,21 @@
       "provider"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-bechstein-tales/main/story-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-bechstein-tales/main/story-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-bechstein-tales",
+    "source": "https://github.com/emkay-voice/ovos-skill-bechstein-tales",
     "package_name": "ovos-skill-bechstein-tales",
     "pypi_version": "0.1.7",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 2,
-    "open_issues": 0,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -2298,33 +2149,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-bechstein-tales.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-04T10:55:56+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-04T10:30:26+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-30T08:58:55+00:00",
-          "channel_pinned": false
-        }
-      }
+      "badge_id": "ovos-skill-bechstein-tales.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -2972,8 +2798,8 @@
     }
   },
   {
-    "id": "andlo-ovos-skill-common-reading-example",
-    "skill_id": "ovos-skill-common-reading-example.andlo",
+    "id": "emkay-voice-ovos-skill-common-reading-example",
+    "skill_id": "ovos-skill-common-reading-example.emkay-voice",
     "name": "Common Reading Example (template)",
     "description": "Template/example provider for ovos-common-reading-pipeline-plugin. Copy and adapt - not meant to be installed for its own content.",
     "examples": [],
@@ -2984,26 +2810,26 @@
       "orchestrator"
     ],
     "category": "Other",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-common-reading-example/main/story-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-common-reading-example/main/story-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-common-reading-example",
+    "source": "https://github.com/emkay-voice/ovos-skill-common-reading-example",
     "package_name": "ovos-skill-common-reading-example",
     "pypi_version": null,
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 2,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
     "pipeline": "ovos-common-reading-pipeline-plugin",
-    "connectivity": "online",
+    "connectivity": null,
     "requires_api_key": false,
     "settings_fields": [],
     "setup_notes": [],
@@ -3020,7 +2846,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-07-21T14:56:13Z",
-    "last_updated": "2026-09-30T21:46:35Z",
+    "last_updated": "2026-11-19T18:39:10Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -3470,8 +3296,8 @@
     }
   },
   {
-    "id": "andlo-ovos-skill-cosquin-tales",
-    "skill_id": "ovos-skill-cosquin-tales.andlo",
+    "id": "emkay-voice-ovos-skill-cosquin-tales",
+    "skill_id": "ovos-skill-cosquin-tales.emkay-voice",
     "name": "Cosquin Tales (provider)",
     "description": "Emmanuel Cosquin's Lorraine folk tales provider for ovos-common-reading-pipeline-plugin. French only, no translation.",
     "examples": [],
@@ -3484,21 +3310,21 @@
       "provider"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-cosquin-tales/main/story-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-cosquin-tales/main/story-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-cosquin-tales",
+    "source": "https://github.com/emkay-voice/ovos-skill-cosquin-tales",
     "package_name": "ovos-skill-cosquin-tales",
     "pypi_version": "0.1.7",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 2,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3532,33 +3358,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-cosquin-tales.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-04T10:58:12+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-04T10:32:33+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.7",
-          "tested_at": "2026-10-30T09:00:04+00:00",
-          "channel_pinned": false
-        }
-      }
+      "badge_id": "ovos-skill-cosquin-tales.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -6058,8 +5859,8 @@
     }
   },
   {
-    "id": "andlo-ovos-skill-grimm-tales",
-    "skill_id": "ovos-skill-grimm-tales.andlo",
+    "id": "emkay-voice-ovos-skill-grimm-tales",
+    "skill_id": "ovos-skill-grimm-tales.emkay-voice",
     "name": "Grimm Tales (provider)",
     "description": "Brothers Grimm fairy tales provider for ovos-common-reading-pipeline-plugin. No standalone voice interface.",
     "examples": [
@@ -6075,21 +5876,21 @@
       "provider"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-grimm-tales/main/story-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-grimm-tales/main/story-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-grimm-tales",
+    "source": "https://github.com/emkay-voice/ovos-skill-grimm-tales",
     "package_name": "ovos-skill-grimm-tales",
     "pypi_version": "0.1.8",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 2,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -6177,45 +5978,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-grimm-tales.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads \u00b7 0/3 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-04T10:57:09+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 3
-          }
-        },
-        "testing": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-04T10:34:24+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        },
-        "alpha": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-10-30T08:58:54+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        }
-      }
+      "badge_id": "ovos-skill-grimm-tales.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -8006,8 +7770,8 @@
     }
   },
   {
-    "id": "andlo-ovos-skill-horoscope-readings",
-    "skill_id": "ovos-skill-horoscope-readings.andlo",
+    "id": "emkay-voice-ovos-skill-horoscope-readings",
+    "skill_id": "ovos-skill-horoscope-readings.emkay-voice",
     "name": "Horoscope Readings (provider)",
     "description": "Reads daily zodiac horoscopes aloud. Provider for ovos-common-reading-pipeline-plugin - no standalone voice interface.",
     "examples": [
@@ -8022,21 +7786,21 @@
       "provider"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-horoscope-readings/main/book-512.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-horoscope-readings/main/book-512.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-horoscope-readings",
+    "source": "https://github.com/emkay-voice/ovos-skill-horoscope-readings",
     "package_name": "ovos-skill-horoscope-readings",
     "pypi_version": "0.1.5",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 2,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8100,46 +7864,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-horoscope-readings.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.5",
-          "tested_at": "2026-10-04T10:58:07+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
-        },
-        "testing": {
-          "label": "\u2713 2/2 golden \u00b7 stops",
-          "state": "pass",
-          "level": 3,
-          "stop": "stops",
-          "version_tested": "0.1.5",
-          "tested_at": "2026-10-04T10:35:28+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        },
-        "alpha": {
-          "label": "\u2713 2/2 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.1.5",
-          "tested_at": "2026-10-30T08:59:26+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 2,
-            "counted": 2
-          }
-        }
-      }
+      "badge_id": "ovos-skill-horoscope-readings.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -8634,8 +8360,8 @@
     "is_recently_updated": false
   },
   {
-    "id": "andlo-ovos-skill-intercom",
-    "skill_id": "ovos-skill-intercom.andlo",
+    "id": "emkay-voice-ovos-skill-intercom",
+    "skill_id": "ovos-skill-intercom.emkay-voice",
     "name": "Intercom",
     "description": "LAN intercom - send a spoken message to a named OVOS device on the same local network. Fully offline, no internet needed. Speak-only, never executes commands on the receiving device.",
     "examples": [
@@ -8652,21 +8378,21 @@
       "home"
     ],
     "category": "Home",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-intercom/main/icon.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-intercom/main/icon.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-intercom",
+    "source": "https://github.com/emkay-voice/ovos-skill-intercom",
     "package_name": "ovos-skill-intercom",
     "pypi_version": "0.0.7",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8740,45 +8466,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-intercom.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads \u00b7 1/9 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-04T10:58:19+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 1,
-            "counted": 9
-          }
-        },
-        "testing": {
-          "label": "\u2713 loads \u00b7 1/9 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-04T10:35:42+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 1,
-            "counted": 9
-          }
-        },
-        "alpha": {
-          "label": "\u2713 loads \u00b7 7/9 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.0.7",
-          "tested_at": "2026-10-30T08:59:51+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 7,
-            "counted": 9
-          }
-        }
-      }
+      "badge_id": "ovos-skill-intercom.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -10955,8 +10644,8 @@
     "is_recently_updated": false
   },
   {
-    "id": "andlo-ovos-skill-morse-code",
-    "skill_id": "ovos-skill-morse-code.andlo",
+    "id": "emkay-voice-ovos-skill-morse-code",
+    "skill_id": "ovos-skill-morse-code.emkay-voice",
     "name": "Morse Code",
     "description": "Encodes text to Morse code, played as generated audible beeps. Fully offline, nothing recorded.",
     "examples": [
@@ -10969,21 +10658,21 @@
       "ham radio"
     ],
     "category": "Other",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-morse-code/main/icon.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-morse-code/main/icon.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-morse-code",
+    "source": "https://github.com/emkay-voice/ovos-skill-morse-code",
     "package_name": "ovos-skill-morse-code",
     "pypi_version": "0.0.3",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11017,45 +10706,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-morse-code.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-04T11:01:33+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        },
-        "testing": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-04T10:38:31+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        },
-        "alpha": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-30T08:59:47+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        }
-      }
+      "badge_id": "ovos-skill-morse-code.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -11929,8 +11581,8 @@
     }
   },
   {
-    "id": "andlo-ovos-skill-nato-alphabet",
-    "skill_id": "ovos-skill-nato-alphabet.andlo",
+    "id": "emkay-voice-ovos-skill-nato-alphabet",
+    "skill_id": "ovos-skill-nato-alphabet.emkay-voice",
     "name": "NATO Alphabet",
     "description": "Spells a word using the NATO/ICAO phonetic alphabet - Alfa, Bravo, Charlie. Fully offline, pure lookup table.",
     "examples": [
@@ -11944,21 +11596,21 @@
       "utility"
     ],
     "category": "Utility",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-nato-alphabet/main/icon.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-nato-alphabet/main/icon.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-nato-alphabet",
+    "source": "https://github.com/emkay-voice/ovos-skill-nato-alphabet",
     "package_name": "ovos-skill-nato-alphabet",
     "pypi_version": "0.0.3",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 2,
     "forks": 0,
-    "open_issues": 0,
+    "open_issues": 1,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -11992,45 +11644,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-nato-alphabet.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-04T11:03:54+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        },
-        "testing": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-04T10:40:22+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        },
-        "alpha": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-10-30T08:58:58+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
-        }
-      }
+      "badge_id": "ovos-skill-nato-alphabet.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -17786,8 +17401,31 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "OpenVoiceOS-ovos-markov-pipeline-plugin",
-      "channels": {}
+      "badge_id": "ovos-markov-domain-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-11-19T10:46:24+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-11-19T10:45:31+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.5.2a2",
+          "tested_at": "2026-11-19T10:45:22+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -20974,6 +20612,50 @@
     "is_recently_updated": false
   },
   {
+    "id": "LibreVoiceAssistant-ovos-PHAL-plugin-configuration-provider",
+    "skill_id": null,
+    "name": "ovos-PHAL-plugin-configuration-provider",
+    "description": "PHAL plugin to provide configuration in displayable GUI format",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/LibreVoiceAssistant/ovos-PHAL-plugin-configuration-provider",
+    "package_name": "ovos-PHAL-plugin-configuration-provider",
+    "pypi_version": "1.0.0",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "LibreVoiceAssistant",
+    "tier": 1,
+    "component_type": "PHAL Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 1,
+    "open_issues": 1,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "`pip install ovos-PHAL-plugin-configuration-provider`"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2022-07-15T09:19:57Z",
+    "last_updated": "2022-11-17T00:44:55.666551Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-PHAL-plugin-connectivity-events",
     "skill_id": null,
     "name": "ovos-PHAL-plugin-connectivity-events",
@@ -21364,7 +21046,7 @@
     "is_recently_updated": false
   },
   {
-    "id": "andlo-ovos-phal-plugin-ha-link",
+    "id": "emkay-voice-ovos-phal-plugin-ha-link",
     "skill_id": null,
     "name": "ovos-phal-plugin-ha-link",
     "description": "Links an OpenVoiceOS device to Home Assistant: the device connects to HA itself and carries its bus (and its control panel) to the OpenVoiceOS integration \u2013 no open ports, works behind NAT",
@@ -21380,12 +21062,12 @@
     "icon": null,
     "icon_source": null,
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-phal-plugin-ha-link",
+    "source": "https://github.com/emkay-voice/ovos-phal-plugin-ha-link",
     "package_name": "ovos-phal-plugin-ha-link",
     "pypi_version": "0.1.0a4",
     "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 2,
     "component_type": "PHAL Plugin",
     "type_group": "Plugin",
@@ -21414,8 +21096,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-11-17T20:26:08Z",
     "last_updated": "2026-11-17T22:51:10.952799Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
+    "is_new_repo": true,
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-PHAL-plugin-homeassistant",
@@ -21887,7 +21569,7 @@
     "is_recently_updated": false
   },
   {
-    "id": "andlo-ovos-PHAL-plugin-netpolicy",
+    "id": "emkay-voice-ovos-PHAL-plugin-netpolicy",
     "skill_id": null,
     "name": "ovos-PHAL-plugin-netpolicy",
     "description": "Per-service network policy for OpenVoiceOS (PHAL admin plugin) \u2014 including enforced Tor routing. Design stage.",
@@ -21904,12 +21586,12 @@
     "icon": null,
     "icon_source": null,
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-PHAL-plugin-netpolicy",
+    "source": "https://github.com/emkay-voice/ovos-PHAL-plugin-netpolicy",
     "package_name": "ovos-PHAL-plugin-netpolicy",
     "pypi_version": null,
     "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 2,
     "component_type": "PHAL Plugin",
     "type_group": "Plugin",
@@ -21933,9 +21615,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-30T22:31:53Z",
-    "last_updated": "2026-10-30T22:31:59Z",
+    "last_updated": "2026-11-19T18:42:28Z",
     "is_new_repo": true,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-PHAL-plugin-network-manager",
@@ -22991,7 +22673,7 @@
     "is_recently_updated": false
   },
   {
-    "id": "andlo-ovos-routing-judge",
+    "id": "emkay-voice-ovos-routing-judge",
     "skill_id": null,
     "name": "ovos-routing-judge",
     "description": "Who took an utterance, and was it the right skill? One routing judge for OVOS golden-utterance tests",
@@ -23005,12 +22687,12 @@
     "icon": null,
     "icon_source": null,
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-routing-judge",
+    "source": "https://github.com/emkay-voice/ovos-routing-judge",
     "package_name": "ovos-routing-judge",
     "pypi_version": "0.0.5",
     "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
@@ -32149,7 +31831,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Translate Plugin",
+    "component_type": "Detect Plugin",
     "type_group": "Plugin",
     "stars": 2,
     "forks": 2,
@@ -32356,14 +32038,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "TTS Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -32409,14 +32091,14 @@
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "TTS Plugin",
     "type_group": "Plugin",
     "stars": 4,
     "forks": 3,
     "open_issues": 8,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -32819,14 +32501,14 @@
     "license": "GPL-3.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "TTS Plugin",
     "type_group": "Plugin",
     "stars": 2,
     "forks": 2,
     "open_issues": 12,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -33186,7 +32868,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "G2P Plugin",
+    "component_type": "TTS Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 4,
@@ -33506,14 +33188,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "TTS Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
     "open_issues": 8,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -33564,7 +33246,7 @@
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 38,
-    "forks": 13,
+    "forks": 14,
     "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
@@ -33770,14 +33452,14 @@
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "TTS Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
     "open_issues": 10,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -33978,7 +33660,7 @@
     "forks": 0,
     "open_issues": 1,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -34025,14 +33707,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "TTS Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -34167,7 +33849,7 @@
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 6,
-    "forks": 12,
+    "forks": 13,
     "open_issues": 20,
     "on_pypi": true,
     "has_release": true,
@@ -34245,7 +33927,7 @@
     "id": "OpenVoiceOS-ovos-utterance-normalizer",
     "skill_id": null,
     "name": "ovos-utterance-normalizer",
-    "description": "`ovos-utterance-normalizer` is an OVOS plugin that",
+    "description": "`ovos-utterance-normalizer` is an utterance transformer plugin for OpenVoiceOS. It runs after speech-to-text and before the intent engines. It gives the intent pipeline extra candidate utterances, and one of these candidates writes numbers as digits.",
     "examples": [],
     "tags": [
       "openvoiceos"
@@ -34276,7 +33958,11 @@
     "setup_notes": [
       {
         "heading": "Install",
-        "content": "pip install ovos-utterance-normalizer"
+        "content": "The package needs Python 3.11 or newer.\n\nuv pip install --prerelease=allow ovos-utterance-normalizer"
+      },
+      {
+        "heading": "Configuration",
+        "content": "The default `mycroft.conf` of [ovos-config](https://github.com/OpenVoiceOS/ovos-config) turns the plugin on:\n\n\"utterance_transformers\": {\n   \"ovos-utterance-normalizer\": {}\n}\n\n| Key | Default | What it does |\n|---|---|---|\n| `lang` | `\"en-us\"` | The language to use when the message context has no `lang` |\n| `fix_encoding_errors` | `true` | Repairs encoding errors with ftfy |\n| `strip_punctuation` | `true` | Removes punctuation from the start and the end of each candidate |\n| `active` | `true` | When it is `false`, the plugin does not load |\n\nSee [docs/configuration.md](docs/configuration.md)."
       }
     ],
     "languages": [],
@@ -34504,7 +34190,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Wake Word Plugin",
+    "component_type": "Vad Plugin",
     "type_group": "Plugin",
     "stars": 2,
     "forks": 3,
@@ -34554,7 +34240,7 @@
     "forks": 0,
     "open_issues": 2,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -34830,7 +34516,7 @@
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-wikipedia-plugin",
     "package_name": "ovos-wikipedia-plugin",
-    "pypi_version": "1.1.2a4",
+    "pypi_version": "1.1.2a5",
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
@@ -34838,7 +34524,7 @@
     "component_type": "Retrieval Plugin",
     "type_group": "Plugin",
     "stars": 1,
-    "forks": 1,
+    "forks": 2,
     "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
@@ -34857,7 +34543,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-03-26T20:58:41Z",
-    "last_updated": "2026-10-19T22:32:34.248509Z",
+    "last_updated": "2026-11-17T15:20:56.406268Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -35032,7 +34718,7 @@
     "type_group": "Tool",
     "stars": 6,
     "forks": 18,
-    "open_issues": 27,
+    "open_issues": 29,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -35208,14 +34894,14 @@
     "license": "MIT",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Wake Word Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -35256,14 +34942,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Wake Word Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -35767,7 +35453,7 @@
     "forks": 0,
     "open_issues": 4,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -41998,8 +41684,8 @@
     "is_recently_updated": false
   },
   {
-    "id": "andlo-ovos-skill-voices-of-tomorrow",
-    "skill_id": "ovos-skill-voices-of-tomorrow.andlo",
+    "id": "emkay-voice-ovos-skill-voices-of-tomorrow",
+    "skill_id": "ovos-skill-voices-of-tomorrow.emkay-voice",
     "name": "Voices of Tomorrow",
     "description": "Plays pre-recorded audio readings of 365tomorrows.com flash fiction stories, via OCP. Separate from ovos-skill-365tomorrows-stories, which reads the text aloud via TTS instead.",
     "examples": [
@@ -42013,15 +41699,15 @@
       "ocp"
     ],
     "category": "Entertainment",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-voices-of-tomorrow/main/ui/icon.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-voices-of-tomorrow/main/ui/icon.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-voices-of-tomorrow",
+    "source": "https://github.com/emkay-voice/ovos-skill-voices-of-tomorrow",
     "package_name": "ovos-skill-voices-of-tomorrow",
     "pypi_version": "0.1.2",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
@@ -42133,33 +41819,8 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-voices-of-tomorrow.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.2",
-          "tested_at": "2026-10-04T11:12:19+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.2",
-          "tested_at": "2026-10-04T10:56:14+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.1.2",
-          "tested_at": "2026-10-30T09:20:14+00:00",
-          "channel_pinned": false
-        }
-      }
+      "badge_id": "ovos-skill-voices-of-tomorrow.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -44725,8 +44386,8 @@
     }
   },
   {
-    "id": "andlo-ovos-skill-wiki-offline",
-    "skill_id": "ovos-skill-wiki-offline.andlo",
+    "id": "emkay-voice-ovos-skill-wiki-offline",
+    "skill_id": "ovos-skill-wiki-offline.emkay-voice",
     "name": "Wiki Offline",
     "description": "Offline general-knowledge lookup covering Wikipedia's ~10,000 Level 4 Vital Articles. English, Spanish, and French are native; any other language is answered via on-demand offline translation. No internet connection needed.",
     "examples": [
@@ -44742,21 +44403,21 @@
       "information"
     ],
     "category": "Information",
-    "icon": "https://raw.githubusercontent.com/andlo/ovos-skill-wiki-offline/main/icon.png",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-wiki-offline/main/icon.png",
     "icon_source": "skill.json",
     "icon_color": null,
-    "source": "https://github.com/andlo/ovos-skill-wiki-offline",
+    "source": "https://github.com/emkay-voice/ovos-skill-wiki-offline",
     "package_name": "ovos-skill-wiki-offline",
-    "pypi_version": "0.0.7",
-    "license": "GPL-3.0",
+    "pypi_version": "0.0.8",
+    "license": "Apache-2.0",
     "archived": false,
-    "author": "andlo",
+    "author": "emkay-voice",
     "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 1,
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -44780,7 +44441,7 @@
     "locale_content": {
       "da-dk": {
         "name": "Wiki Offline",
-        "description": "Offline opslag i almen viden, der d\u00e6kker Wikipedias ~10.000 vitale artikler. Engelsk, spansk og fransk er indbygget; alle andre sprog besvares via offline-overs\u00e6ttelse. Ingen internetforbindelse n\u00f8dvendig.",
+        "description": "Offline opslag i almen viden: de ~8.300 emner fra Wikipedias vitale artikler, som dansk Wikipedia har sin egen artikel om, p\u00e5 dansk. Ingen internetforbindelse n\u00f8dvendig.",
         "examples": [
           "hvad er fotosyntese",
           "hvem var Marie Curie",
@@ -44817,37 +44478,12 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-17T20:39:40Z",
-    "last_updated": "2026-08-18T13:53:56.170148Z",
+    "last_updated": "2026-11-17T06:42:57.534077Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
+    "is_recently_updated": true,
     "compat": {
-      "badge_id": "ovos-skill-wiki-offline.andlo",
-      "channels": {
-        "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-11-17T11:11:14+00:00",
-          "channel_pinned": false
-        },
-        "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-11-17T11:10:31+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-11-17T11:15:21+00:00",
-          "channel_pinned": false
-        }
-      }
+      "badge_id": "ovos-skill-wiki-offline.emkay-voice",
+      "channels": {}
     }
   },
   {
