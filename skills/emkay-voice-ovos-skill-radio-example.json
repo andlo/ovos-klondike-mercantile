@@ -1,0 +1,148 @@
+{
+  "id": "emkay-voice-ovos-skill-radio-example",
+  "skill_id": null,
+  "name": "ovos-skill-radio-example",
+  "description": "Your own radio: internet radio stations played with OpenVoiceOS' media player (OCP) \u2013 an OpenVoiceOS skill template for Emkay",
+  "examples": [],
+  "tags": [
+    "emkay",
+    "openvoiceos",
+    "ovos",
+    "ovos-skill",
+    "template",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-radio-example",
+  "package_name": "ovos-skill-radio-example",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "La meva r\u00e0dio",
+      "description": "Reprodueix les teves emissores de r\u00e0dio per internet \u2013 aqu\u00ed tres de SomaFM \u2013 amb el reproductor de l'OpenVoiceOS.",
+      "examples": [
+        "Reprodueix Emkay Chill",
+        "Posa una mica de r\u00e0dio"
+      ]
+    },
+    "da-dk": {
+      "name": "Min radio",
+      "description": "Spiller dine egne netradiostationer \u2013 her tre fra SomaFM \u2013 med OpenVoiceOS' medieafspiller.",
+      "examples": [
+        "Spil Emkay Chill",
+        "Spil noget radio"
+      ]
+    },
+    "de-de": {
+      "name": "Mein Radio",
+      "description": "Spielt deine eigenen Internetradiosender \u2013 hier drei von SomaFM \u2013 mit dem Mediaplayer von OpenVoiceOS.",
+      "examples": [
+        "Spiele Emkay Chill",
+        "Spiele etwas Radio"
+      ]
+    },
+    "es-es": {
+      "name": "Mi radio",
+      "description": "Reproduce tus propias emisoras de radio por internet \u2013 aqu\u00ed tres de SomaFM \u2013 con el reproductor de OpenVoiceOS.",
+      "examples": [
+        "Reproduce Emkay Chill",
+        "Reproduce algo de radio"
+      ]
+    },
+    "eu-es": {
+      "name": "Nire irratia",
+      "description": "Zure interneteko irrati kateak erreproduzitzen ditu \u2013 hemen SomaFM-ren hiru \u2013 OpenVoiceOS-en multimedia erreproduzitzailearekin.",
+      "examples": [
+        "Erreproduzitu Emkay Chill",
+        "Jarri irratia"
+      ]
+    },
+    "fr-fr": {
+      "name": "Ma radio",
+      "description": "Joue tes propres radios internet \u2013 ici trois de SomaFM \u2013 avec le lecteur multim\u00e9dia d'OpenVoiceOS.",
+      "examples": [
+        "Joue Emkay Chill",
+        "Joue de la radio"
+      ]
+    },
+    "gl-es": {
+      "name": "A mi\u00f1a radio",
+      "description": "Reproduce as t\u00faas emisoras de radio por internet \u2013 aqu\u00ed tres de SomaFM \u2013 co reprodutor de OpenVoiceOS.",
+      "examples": [
+        "Reproducir Emkay Chill",
+        "Pon algo de radio"
+      ]
+    },
+    "it-it": {
+      "name": "La mia radio",
+      "description": "Riproduce le tue stazioni radio su internet \u2013 qui tre di SomaFM \u2013 con il lettore multimediale di OpenVoiceOS.",
+      "examples": [
+        "Riproduci Emkay Chill",
+        "Metti un po' di radio"
+      ]
+    },
+    "nl-nl": {
+      "name": "Mijn radio",
+      "description": "Speelt je eigen internetradiozenders \u2013 hier drie van SomaFM \u2013 met de mediaspeler van OpenVoiceOS.",
+      "examples": [
+        "Speel Emkay Chill",
+        "Speel wat radio"
+      ]
+    },
+    "pt-br": {
+      "name": "Meu r\u00e1dio",
+      "description": "Toca suas pr\u00f3prias r\u00e1dios da internet \u2013 aqui tr\u00eas da SomaFM \u2013 com o player de m\u00eddia do OpenVoiceOS.",
+      "examples": [
+        "Toque Emkay Chill",
+        "Toque uma r\u00e1dio"
+      ]
+    },
+    "pt-pt": {
+      "name": "O meu r\u00e1dio",
+      "description": "Toca as tuas r\u00e1dios da internet \u2013 aqui tr\u00eas da SomaFM \u2013 com o leitor multim\u00e9dia do OpenVoiceOS.",
+      "examples": [
+        "Toca Emkay Chill",
+        "Toca uma r\u00e1dio"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-19T07:51:15Z",
+  "last_updated": "2026-11-19T07:51:20Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
