@@ -1,7 +1,7 @@
 {
-  "id": "emkay-voice-skill-template",
+  "id": "emkay-voice-ovos-skill-hello-example",
   "skill_id": null,
-  "name": "skill-template",
+  "name": "ovos-skill-hello-example",
   "description": "Your first OpenVoiceOS skill: say \"hello from my skill\" and it answers \u2013 in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
   "examples": [],
   "tags": [
@@ -16,8 +16,8 @@
   "icon": null,
   "icon_source": null,
   "icon_color": null,
-  "source": "https://github.com/emkay-voice/skill-template",
-  "package_name": "ovos-skill-hello",
+  "source": "https://github.com/emkay-voice/ovos-skill-hello-example",
+  "package_name": "ovos-skill-hello-example",
   "pypi_version": null,
   "license": "NOASSERTION",
   "archived": false,
@@ -142,7 +142,7 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-11-17T23:09:09Z",
-  "last_updated": "2026-11-17T23:09:15Z",
-  "is_new_repo": false,
+  "last_updated": "2026-11-18T23:10:35Z",
+  "is_new_repo": true,
   "is_recently_updated": false
 }

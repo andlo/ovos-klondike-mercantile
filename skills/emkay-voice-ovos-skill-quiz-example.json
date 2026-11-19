@@ -1,0 +1,148 @@
+{
+  "id": "emkay-voice-ovos-skill-quiz-example",
+  "skill_id": null,
+  "name": "ovos-skill-quiz-example",
+  "description": "A quiz skill for OpenVoiceOS: it asks, you answer, it keeps score \u2013 in all of Emkay's languages. Shows get_response, ask_yesno and stop. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+  "examples": [],
+  "tags": [
+    "emkay",
+    "openvoiceos",
+    "ovos",
+    "ovos-skill",
+    "template",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-quiz-example",
+  "package_name": "ovos-skill-quiz-example",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Concurs",
+      "description": "Un petit concurs: et fa preguntes i compta els teus punts.",
+      "examples": [
+        "Fes-me un concurs",
+        "Fes-me unes preguntes"
+      ]
+    },
+    "da-dk": {
+      "name": "Quiz",
+      "description": "En lille quiz: den stiller dig sp\u00f8rgsm\u00e5l og holder styr p\u00e5 point.",
+      "examples": [
+        "Quiz mig",
+        "Giv mig en quiz"
+      ]
+    },
+    "de-de": {
+      "name": "Quiz",
+      "description": "Ein kleines Quiz: es stellt dir Fragen und z\u00e4hlt deine Punkte.",
+      "examples": [
+        "Frag mich ab",
+        "Gib mir ein Quiz"
+      ]
+    },
+    "es-es": {
+      "name": "Concurso",
+      "description": "Un peque\u00f1o concurso: te hace preguntas y lleva la cuenta de tus puntos.",
+      "examples": [
+        "Hazme un concurso",
+        "Hazme unas preguntas"
+      ]
+    },
+    "eu-es": {
+      "name": "Galdetegia",
+      "description": "Galdetegi txiki bat: galderak egiten dizkizu eta puntuak zenbatzen ditu.",
+      "examples": [
+        "Egin galdetegi bat",
+        "Egin galdera batzuk"
+      ]
+    },
+    "fr-fr": {
+      "name": "Quiz",
+      "description": "Un petit quiz : il te pose des questions et compte tes points.",
+      "examples": [
+        "Interroge-moi",
+        "Fais-moi un quiz"
+      ]
+    },
+    "gl-es": {
+      "name": "Concurso",
+      "description": "Un pequeno concurso: faiche preguntas e leva a conta dos teus puntos.",
+      "examples": [
+        "Faime un concurso",
+        "Faime unhas preguntas"
+      ]
+    },
+    "it-it": {
+      "name": "Quiz",
+      "description": "Un piccolo quiz: ti fa domande e tiene il punteggio.",
+      "examples": [
+        "Interrogami",
+        "Fammi un quiz"
+      ]
+    },
+    "nl-nl": {
+      "name": "Quiz",
+      "description": "Een kleine quiz: hij stelt je vragen en houdt je score bij.",
+      "examples": [
+        "Overhoor me",
+        "Geef me een quiz"
+      ]
+    },
+    "pt-br": {
+      "name": "Quiz",
+      "description": "Um pequeno quiz: ele faz perguntas e conta seus pontos.",
+      "examples": [
+        "Me fa\u00e7a um quiz",
+        "Me fa\u00e7a umas perguntas"
+      ]
+    },
+    "pt-pt": {
+      "name": "Quiz",
+      "description": "Um pequeno quiz: faz perguntas e conta os teus pontos.",
+      "examples": [
+        "Faz-me um quiz",
+        "Faz-me umas perguntas"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-18T22:13:41Z",
+  "last_updated": "2026-11-18T23:10:40Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

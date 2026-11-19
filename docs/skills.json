@@ -15774,7 +15774,7 @@
     "type_group": "Infrastructure",
     "stars": 2,
     "forks": 2,
-    "open_issues": 5,
+    "open_issues": 6,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -15792,7 +15792,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-06-24T15:44:23Z",
-    "last_updated": "2026-10-06T18:23:20Z",
+    "last_updated": "2026-11-18T23:40:20Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -15980,8 +15980,8 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-10-14T19:01:58Z",
     "last_updated": "2026-10-15T14:37:09Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "tophcodes-ovos-flake",
@@ -16164,7 +16164,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Summarizer Plugin",
+    "component_type": "Translate Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
@@ -16372,7 +16372,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Translate Plugin",
+    "component_type": "Detect Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -17034,7 +17034,7 @@
     "tier": null,
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
-    "stars": 330,
+    "stars": 331,
     "forks": 60,
     "open_issues": 6,
     "on_pypi": false,
@@ -17054,7 +17054,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-11-07T20:31:20Z",
-    "last_updated": "2026-11-12T12:50:07Z",
+    "last_updated": "2026-11-18T13:09:04Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -17194,7 +17194,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-04T15:01:45Z",
-    "last_updated": "2026-11-12T10:17:10Z",
+    "last_updated": "2026-11-18T11:08:32Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -17218,14 +17218,14 @@
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Detect Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -17512,14 +17512,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 8,
     "forks": 4,
-    "open_issues": 64,
+    "open_issues": 65,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -17537,7 +17537,7 @@
     "repo_created_at": "2026-03-18T01:39:28Z",
     "last_updated": "2026-10-15T17:37:44.538363Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-m2v-pipeline",
@@ -17610,14 +17610,14 @@
     "license": null,
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": "Music",
     "connectivity": null,
@@ -17759,14 +17759,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
     "open_issues": 5,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -17803,14 +17803,14 @@
     "license": "NOASSERTION",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 5,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -17828,7 +17828,11 @@
     "repo_created_at": "2026-05-19T23:04:37Z",
     "last_updated": "2026-09-18T01:16:33.375881Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "OpenVoiceOS-ovos-markov-pipeline-plugin",
+      "channels": {}
+    }
   },
   {
     "id": "andlo-ovos-mcp-toolbox",
@@ -17896,14 +17900,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 3,
     "forks": 4,
     "open_issues": 11,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -17947,14 +17951,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Classifier Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
     "open_issues": 5,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -18052,14 +18056,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 4,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -18103,14 +18107,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18151,14 +18155,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18303,14 +18307,14 @@
     "license": "Apache-2.0",
     "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
     "open_issues": 3,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18406,14 +18410,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Video Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 3,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18550,14 +18554,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18594,14 +18598,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18642,14 +18646,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18690,14 +18694,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18734,18 +18738,18 @@
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-media-provider-pyradios",
     "package_name": "ovos-media-provider-pyradios",
-    "pypi_version": "0.0.1a5",
+    "pypi_version": "0.0.1a6",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
-    "forks": 1,
+    "forks": 2,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -18765,9 +18769,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-06-22T23:10:58Z",
-    "last_updated": "2026-09-16T19:22:22.035668Z",
+    "last_updated": "2026-11-17T14:46:40.141805Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-media-provider-somafm",
@@ -18786,14 +18790,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18834,14 +18838,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18882,14 +18886,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -18930,14 +18934,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -18974,14 +18978,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Provider Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -19022,14 +19026,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Memory Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -19118,14 +19122,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Chat Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -19270,14 +19274,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Microphone Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -19428,6 +19432,51 @@
     "in_ovos_localize": false,
     "repo_created_at": "2024-05-19T20:24:44Z",
     "last_updated": "2026-10-11T12:20:14Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-ovos-network-log",
+    "skill_id": null,
+    "name": "ovos-network-log",
+    "description": "A network log for OpenVoiceOS: every request OVOS and its skills make \u2013 when, where, who asked, never what \u2013 for ovos-skill-guardian and you to read",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "network",
+      "openvoiceos",
+      "ovos",
+      "privacy"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-network-log",
+    "package_name": "ovos-network-log",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 3,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-18T23:56:19Z",
+    "last_updated": "2026-11-18T23:57:24Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -20964,50 +21013,6 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-05-16T17:39:30Z",
-    "last_updated": "2022-11-17T00:44:55.666551Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "LibreVoiceAssistant-ovos-PHAL-plugin-configuration-provider",
-    "skill_id": null,
-    "name": "ovos-PHAL-plugin-configuration-provider",
-    "description": "PHAL plugin to provide configuration in displayable GUI format",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/LibreVoiceAssistant/ovos-PHAL-plugin-configuration-provider",
-    "package_name": "ovos-PHAL-plugin-configuration-provider",
-    "pypi_version": "1.0.0",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "LibreVoiceAssistant",
-    "tier": 1,
-    "component_type": "PHAL Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 1,
-    "open_issues": 1,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "`pip install ovos-PHAL-plugin-configuration-provider`"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2022-07-15T09:19:57Z",
     "last_updated": "2022-11-17T00:44:55.666551Z",
     "is_new_repo": false,
     "is_recently_updated": false
@@ -23263,6 +23268,154 @@
     "is_recently_updated": false
   },
   {
+    "id": "emkay-voice-ovos-skill-air-quality-example",
+    "skill_id": null,
+    "name": "ovos-skill-air-quality-example",
+    "description": "Ask the web from an OpenVoiceOS skill: air quality and UV where you are, from Open-Meteo (free, no key) \u2013 in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "ovos-skill",
+      "template",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-air-quality-example",
+    "package_name": "ovos-skill-air-quality-example",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Qualitat de l'aire",
+        "description": "Pregunta a un servei web gratu\u00eft com de net \u00e9s l'aire i com de fort \u00e9s el sol on ets.",
+        "examples": [
+          "Quina \u00e9s la qualitat de l'aire?",
+          "Quin \u00e9s l'\u00edndex UV avui?"
+        ]
+      },
+      "da-dk": {
+        "name": "Luftkvalitet",
+        "description": "Sp\u00f8rger en gratis webtjeneste, hvor ren luften er, og hvor st\u00e6rk solen er, der hvor du er.",
+        "examples": [
+          "Hvordan er luftkvaliteten?",
+          "Hvad er UV-indekset i dag?"
+        ]
+      },
+      "de-de": {
+        "name": "Luftqualit\u00e4t",
+        "description": "Fragt einen kostenlosen Webdienst, wie sauber die Luft ist und wie stark die Sonne, wo du bist.",
+        "examples": [
+          "Wie ist die Luftqualit\u00e4t?",
+          "Wie hoch ist der UV-Index heute?"
+        ]
+      },
+      "es-es": {
+        "name": "Calidad del aire",
+        "description": "Pregunta a un servicio web gratuito lo limpio que est\u00e1 el aire y lo fuerte que est\u00e1 el sol donde est\u00e1s.",
+        "examples": [
+          "\u00bfCu\u00e1l es la calidad del aire?",
+          "\u00bfCu\u00e1l es el \u00edndice UV hoy?"
+        ]
+      },
+      "eu-es": {
+        "name": "Airearen kalitatea",
+        "description": "Doako web zerbitzu bati galdetzen dio zein garbia dagoen airea eta zein indartsua den eguzkia zauden lekuan.",
+        "examples": [
+          "Nolakoa da airearen kalitatea?",
+          "Zein da UV indizea gaur?"
+        ]
+      },
+      "fr-fr": {
+        "name": "Qualit\u00e9 de l'air",
+        "description": "Demande \u00e0 un service web gratuit si l'air est pur et si le soleil est fort l\u00e0 o\u00f9 tu es.",
+        "examples": [
+          "Quelle est la qualit\u00e9 de l'air ?",
+          "Quel est l'indice UV aujourd'hui ?"
+        ]
+      },
+      "gl-es": {
+        "name": "Calidade do aire",
+        "description": "Preg\u00fantalle a un servizo web gratu\u00edto que limpo est\u00e1 o aire e que forte est\u00e1 o sol onde est\u00e1s.",
+        "examples": [
+          "Cal \u00e9 a calidade do aire?",
+          "Cal \u00e9 o \u00edndice UV hoxe?"
+        ]
+      },
+      "it-it": {
+        "name": "Qualit\u00e0 dell'aria",
+        "description": "Chiede a un servizio web gratuito quanto \u00e8 pulita l'aria e quanto \u00e8 forte il sole dove sei.",
+        "examples": [
+          "Qual \u00e8 la qualit\u00e0 dell'aria?",
+          "Qual \u00e8 l'indice UV oggi?"
+        ]
+      },
+      "nl-nl": {
+        "name": "Luchtkwaliteit",
+        "description": "Vraagt een gratis webdienst hoe schoon de lucht is en hoe sterk de zon is waar je bent.",
+        "examples": [
+          "Hoe is de luchtkwaliteit?",
+          "Wat is de UV-index vandaag?"
+        ]
+      },
+      "pt-br": {
+        "name": "Qualidade do ar",
+        "description": "Pergunta a um servi\u00e7o web gratuito o qu\u00e3o limpo est\u00e1 o ar e o qu\u00e3o forte est\u00e1 o sol onde voc\u00ea est\u00e1.",
+        "examples": [
+          "Qual \u00e9 a qualidade do ar?",
+          "Qual \u00e9 o \u00edndice UV hoje?"
+        ]
+      },
+      "pt-pt": {
+        "name": "Qualidade do ar",
+        "description": "Pergunta a um servi\u00e7o web gratuito qu\u00e3o limpo est\u00e1 o ar e qu\u00e3o forte est\u00e1 o sol onde est\u00e1s.",
+        "examples": [
+          "Qual \u00e9 a qualidade do ar?",
+          "Qual \u00e9 o \u00edndice UV hoje?"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-18T22:21:27Z",
+    "last_updated": "2026-11-18T23:10:46Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "timonvanhasselt-ovos-skill-blackstories",
     "skill_id": null,
     "name": "ovos-skill-blackstories",
@@ -24507,6 +24660,154 @@
     "repo_created_at": "2026-05-09T16:22:23Z",
     "last_updated": "2026-06-05T02:13:23Z",
     "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-ovos-skill-hello-example",
+    "skill_id": null,
+    "name": "ovos-skill-hello-example",
+    "description": "Your first OpenVoiceOS skill: say \"hello from my skill\" and it answers \u2013 in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "ovos-skill",
+      "template",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-hello-example",
+    "package_name": "ovos-skill-hello-example",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Hola",
+        "description": "La meva primera skill: respon quan li dius hola.",
+        "examples": [
+          "Hola des de la meva skill",
+          "Executa la meva primera skill"
+        ]
+      },
+      "da-dk": {
+        "name": "Hej",
+        "description": "Min f\u00f8rste skill: den svarer, n\u00e5r du siger hej til den.",
+        "examples": [
+          "Hej fra min skill",
+          "K\u00f8r min f\u00f8rste skill"
+        ]
+      },
+      "de-de": {
+        "name": "Hallo",
+        "description": "Mein erster Skill: er antwortet, wenn du hallo zu ihm sagst.",
+        "examples": [
+          "Hallo von meinem Skill",
+          "Starte meinen ersten Skill"
+        ]
+      },
+      "es-es": {
+        "name": "Hola",
+        "description": "Mi primera skill: responde cuando le dices hola.",
+        "examples": [
+          "Hola desde mi skill",
+          "Ejecuta mi primera skill"
+        ]
+      },
+      "eu-es": {
+        "name": "Kaixo",
+        "description": "Nire lehen skilla: kaixo esaten diozunean erantzuten du.",
+        "examples": [
+          "Kaixo nire skilletik",
+          "Exekutatu nire lehen skilla"
+        ]
+      },
+      "fr-fr": {
+        "name": "Bonjour",
+        "description": "Ma premi\u00e8re skill : elle r\u00e9pond quand vous lui dites bonjour.",
+        "examples": [
+          "Bonjour de ma skill",
+          "Lance ma premi\u00e8re skill"
+        ]
+      },
+      "gl-es": {
+        "name": "Ola",
+        "description": "A mi\u00f1a primeira skill: responde cando lle dis ola.",
+        "examples": [
+          "Ola dende a mi\u00f1a skill",
+          "Executa a mi\u00f1a primeira skill"
+        ]
+      },
+      "it-it": {
+        "name": "Ciao",
+        "description": "La mia prima skill: risponde quando la saluti.",
+        "examples": [
+          "Ciao dalla mia skill",
+          "Avvia la mia prima skill"
+        ]
+      },
+      "nl-nl": {
+        "name": "Hallo",
+        "description": "Mijn eerste skill: hij antwoordt als je hallo tegen hem zegt.",
+        "examples": [
+          "Hallo van mijn skill",
+          "Start mijn eerste skill"
+        ]
+      },
+      "pt-br": {
+        "name": "Ol\u00e1",
+        "description": "Minha primeira skill: ela responde quando voc\u00ea diz ol\u00e1.",
+        "examples": [
+          "Ol\u00e1 da minha skill",
+          "Rode minha primeira skill"
+        ]
+      },
+      "pt-pt": {
+        "name": "Ol\u00e1",
+        "description": "A minha primeira skill: responde quando lhe diz ol\u00e1.",
+        "examples": [
+          "Ol\u00e1 da minha skill",
+          "Executa a minha primeira skill"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-17T23:09:09Z",
+    "last_updated": "2026-11-18T23:10:35Z",
+    "is_new_repo": true,
     "is_recently_updated": false
   },
   {
@@ -26263,6 +26564,154 @@
     "is_recently_updated": false
   },
   {
+    "id": "emkay-voice-ovos-skill-pictures-example",
+    "skill_id": null,
+    "name": "ovos-skill-pictures-example",
+    "description": "Pictures on the screen from an OpenVoiceOS skill: \"show me a dog\" shows a picture with self.gui.show_image \u2013 in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "ovos-skill",
+      "template",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-pictures-example",
+    "package_name": "ovos-skill-pictures-example",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Imatges",
+        "description": "Mostra a la pantalla la foto d'un gos o d'un gat.",
+        "examples": [
+          "Ensenya'm un gos",
+          "Ensenya'm un gat"
+        ]
+      },
+      "da-dk": {
+        "name": "Billeder",
+        "description": "Viser et billede af en hund eller en kat p\u00e5 sk\u00e6rmen.",
+        "examples": [
+          "Vis mig en hund",
+          "Vis mig en kat"
+        ]
+      },
+      "de-de": {
+        "name": "Bilder",
+        "description": "Zeigt ein Bild von einem Hund oder einer Katze auf dem Bildschirm.",
+        "examples": [
+          "Zeig mir einen Hund",
+          "Zeig mir eine Katze"
+        ]
+      },
+      "es-es": {
+        "name": "Im\u00e1genes",
+        "description": "Muestra una foto de un perro o un gato en la pantalla.",
+        "examples": [
+          "Ens\u00e9\u00f1ame un perro",
+          "Ens\u00e9\u00f1ame un gato"
+        ]
+      },
+      "eu-es": {
+        "name": "Irudiak",
+        "description": "Txakur edo katu baten argazkia erakusten du pantailan.",
+        "examples": [
+          "Erakutsi txakur bat",
+          "Erakutsi katu bat"
+        ]
+      },
+      "fr-fr": {
+        "name": "Images",
+        "description": "Affiche une photo de chien ou de chat \u00e0 l'\u00e9cran.",
+        "examples": [
+          "Montre-moi un chien",
+          "Montre-moi un chat"
+        ]
+      },
+      "gl-es": {
+        "name": "Imaxes",
+        "description": "Amosa na pantalla a foto dun can ou dun gato.",
+        "examples": [
+          "Am\u00f3same un can",
+          "Am\u00f3same un gato"
+        ]
+      },
+      "it-it": {
+        "name": "Immagini",
+        "description": "Mostra sullo schermo la foto di un cane o di un gatto.",
+        "examples": [
+          "Fammi vedere un cane",
+          "Fammi vedere un gatto"
+        ]
+      },
+      "nl-nl": {
+        "name": "Foto's",
+        "description": "Toont een foto van een hond of een kat op het scherm.",
+        "examples": [
+          "Laat me een hond zien",
+          "Laat me een kat zien"
+        ]
+      },
+      "pt-br": {
+        "name": "Imagens",
+        "description": "Mostra a foto de um cachorro ou de um gato na tela.",
+        "examples": [
+          "Me mostre um cachorro",
+          "Me mostre um gato"
+        ]
+      },
+      "pt-pt": {
+        "name": "Imagens",
+        "description": "Mostra no ecr\u00e3 a fotografia de um c\u00e3o ou de um gato.",
+        "examples": [
+          "Mostra-me um c\u00e3o",
+          "Mostra-me um gato"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-18T22:24:11Z",
+    "last_updated": "2026-11-18T23:10:53Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-skill-pokepedia",
     "skill_id": null,
     "name": "ovos-skill-pokepedia",
@@ -26514,6 +26963,154 @@
         }
       }
     }
+  },
+  {
+    "id": "emkay-voice-ovos-skill-quiz-example",
+    "skill_id": null,
+    "name": "ovos-skill-quiz-example",
+    "description": "A quiz skill for OpenVoiceOS: it asks, you answer, it keeps score \u2013 in all of Emkay's languages. Shows get_response, ask_yesno and stop. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "ovos-skill",
+      "template",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-quiz-example",
+    "package_name": "ovos-skill-quiz-example",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Concurs",
+        "description": "Un petit concurs: et fa preguntes i compta els teus punts.",
+        "examples": [
+          "Fes-me un concurs",
+          "Fes-me unes preguntes"
+        ]
+      },
+      "da-dk": {
+        "name": "Quiz",
+        "description": "En lille quiz: den stiller dig sp\u00f8rgsm\u00e5l og holder styr p\u00e5 point.",
+        "examples": [
+          "Quiz mig",
+          "Giv mig en quiz"
+        ]
+      },
+      "de-de": {
+        "name": "Quiz",
+        "description": "Ein kleines Quiz: es stellt dir Fragen und z\u00e4hlt deine Punkte.",
+        "examples": [
+          "Frag mich ab",
+          "Gib mir ein Quiz"
+        ]
+      },
+      "es-es": {
+        "name": "Concurso",
+        "description": "Un peque\u00f1o concurso: te hace preguntas y lleva la cuenta de tus puntos.",
+        "examples": [
+          "Hazme un concurso",
+          "Hazme unas preguntas"
+        ]
+      },
+      "eu-es": {
+        "name": "Galdetegia",
+        "description": "Galdetegi txiki bat: galderak egiten dizkizu eta puntuak zenbatzen ditu.",
+        "examples": [
+          "Egin galdetegi bat",
+          "Egin galdera batzuk"
+        ]
+      },
+      "fr-fr": {
+        "name": "Quiz",
+        "description": "Un petit quiz : il te pose des questions et compte tes points.",
+        "examples": [
+          "Interroge-moi",
+          "Fais-moi un quiz"
+        ]
+      },
+      "gl-es": {
+        "name": "Concurso",
+        "description": "Un pequeno concurso: faiche preguntas e leva a conta dos teus puntos.",
+        "examples": [
+          "Faime un concurso",
+          "Faime unhas preguntas"
+        ]
+      },
+      "it-it": {
+        "name": "Quiz",
+        "description": "Un piccolo quiz: ti fa domande e tiene il punteggio.",
+        "examples": [
+          "Interrogami",
+          "Fammi un quiz"
+        ]
+      },
+      "nl-nl": {
+        "name": "Quiz",
+        "description": "Een kleine quiz: hij stelt je vragen en houdt je score bij.",
+        "examples": [
+          "Overhoor me",
+          "Geef me een quiz"
+        ]
+      },
+      "pt-br": {
+        "name": "Quiz",
+        "description": "Um pequeno quiz: ele faz perguntas e conta seus pontos.",
+        "examples": [
+          "Me fa\u00e7a um quiz",
+          "Me fa\u00e7a umas perguntas"
+        ]
+      },
+      "pt-pt": {
+        "name": "Quiz",
+        "description": "Um pequeno quiz: faz perguntas e conta os teus pontos.",
+        "examples": [
+          "Faz-me um quiz",
+          "Faz-me umas perguntas"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-18T22:13:41Z",
+    "last_updated": "2026-11-18T23:10:40Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-randomness",
@@ -35030,59 +35627,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OpenVoiceOS-ovos_tts_transformer_FlashSR",
-    "skill_id": null,
-    "name": "ovos_tts_transformer_FlashSR",
-    "description": "Audio super-resolution for OpenVoiceOS speech synthesis. `FlashSR` upsamples the",
-    "examples": [],
-    "tags": [
-      "text-to-speech",
-      "tigregotico",
-      "transformers",
-      "tts"
-    ],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos_tts_transformer_FlashSR",
-    "package_name": "ovos_tts_transformer_FlashSR",
-    "pypi_version": null,
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 2,
-    "component_type": "TTS Plugin",
-    "type_group": "Plugin",
-    "stars": 1,
-    "forks": 0,
-    "open_issues": 5,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Installation",
-        "content": "pip install ovos-tts-transformer-FlashSR\n\nGPU acceleration also requires `onnxruntime-gpu` and a working CUDA runtime.\nOn CPU-only systems the default `onnxruntime` dependency is sufficient."
-      },
-      {
-        "heading": "Configuration",
-        "content": "Enable the transformer in `mycroft.conf` under the `tts_transformers` section,\nkeyed by the plugin name:\n\n\"tts_transformers\": {\n  \"ovos-tts-transformer-FlashSR\": {}\n}\n\nThe plugin takes no configuration of its own. Once enabled, it applies to the\noutput of whichever TTS plugin is active. You can chain multiple TTS\ntransformers. Execution order follows each plugin's `priority` (FlashSR\ndefaults to `50`)."
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-01-26T12:36:58Z",
-    "last_updated": "2026-10-11T11:55:08Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "OpenVoiceOS-ovos_tts_transformer_NovaSR",
     "skill_id": null,
     "name": "ovos_tts_transformer_NovaSR",
@@ -38635,154 +39179,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2020-12-08T01:27:16Z",
     "last_updated": "2026-08-11T04:36:40Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "emkay-voice-skill-template",
-    "skill_id": null,
-    "name": "skill-template",
-    "description": "Your first OpenVoiceOS skill: say \"hello from my skill\" and it answers \u2013 in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
-    "examples": [],
-    "tags": [
-      "emkay",
-      "openvoiceos",
-      "ovos",
-      "ovos-skill",
-      "template",
-      "voice-assistant"
-    ],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/emkay-voice/skill-template",
-    "package_name": "ovos-skill-hello",
-    "pypi_version": null,
-    "license": "NOASSERTION",
-    "archived": false,
-    "author": "emkay-voice",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [
-      "ca-es",
-      "da-dk",
-      "de-de",
-      "en-us",
-      "es-es",
-      "eu-es",
-      "fr-fr",
-      "gl-es",
-      "it-it",
-      "nl-nl",
-      "pt-br",
-      "pt-pt"
-    ],
-    "locale_content": {
-      "ca-es": {
-        "name": "Hola",
-        "description": "La meva primera skill: respon quan li dius hola.",
-        "examples": [
-          "Hola des de la meva skill",
-          "Executa la meva primera skill"
-        ]
-      },
-      "da-dk": {
-        "name": "Hej",
-        "description": "Min f\u00f8rste skill: den svarer, n\u00e5r du siger hej til den.",
-        "examples": [
-          "Hej fra min skill",
-          "K\u00f8r min f\u00f8rste skill"
-        ]
-      },
-      "de-de": {
-        "name": "Hallo",
-        "description": "Mein erster Skill: er antwortet, wenn du hallo zu ihm sagst.",
-        "examples": [
-          "Hallo von meinem Skill",
-          "Starte meinen ersten Skill"
-        ]
-      },
-      "es-es": {
-        "name": "Hola",
-        "description": "Mi primera skill: responde cuando le dices hola.",
-        "examples": [
-          "Hola desde mi skill",
-          "Ejecuta mi primera skill"
-        ]
-      },
-      "eu-es": {
-        "name": "Kaixo",
-        "description": "Nire lehen skilla: kaixo esaten diozunean erantzuten du.",
-        "examples": [
-          "Kaixo nire skilletik",
-          "Exekutatu nire lehen skilla"
-        ]
-      },
-      "fr-fr": {
-        "name": "Bonjour",
-        "description": "Ma premi\u00e8re skill : elle r\u00e9pond quand vous lui dites bonjour.",
-        "examples": [
-          "Bonjour de ma skill",
-          "Lance ma premi\u00e8re skill"
-        ]
-      },
-      "gl-es": {
-        "name": "Ola",
-        "description": "A mi\u00f1a primeira skill: responde cando lle dis ola.",
-        "examples": [
-          "Ola dende a mi\u00f1a skill",
-          "Executa a mi\u00f1a primeira skill"
-        ]
-      },
-      "it-it": {
-        "name": "Ciao",
-        "description": "La mia prima skill: risponde quando la saluti.",
-        "examples": [
-          "Ciao dalla mia skill",
-          "Avvia la mia prima skill"
-        ]
-      },
-      "nl-nl": {
-        "name": "Hallo",
-        "description": "Mijn eerste skill: hij antwoordt als je hallo tegen hem zegt.",
-        "examples": [
-          "Hallo van mijn skill",
-          "Start mijn eerste skill"
-        ]
-      },
-      "pt-br": {
-        "name": "Ol\u00e1",
-        "description": "Minha primeira skill: ela responde quando voc\u00ea diz ol\u00e1.",
-        "examples": [
-          "Ol\u00e1 da minha skill",
-          "Rode minha primeira skill"
-        ]
-      },
-      "pt-pt": {
-        "name": "Ol\u00e1",
-        "description": "A minha primeira skill: responde quando lhe diz ol\u00e1.",
-        "examples": [
-          "Ol\u00e1 da minha skill",
-          "Executa a minha primeira skill"
-        ]
-      }
-    },
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-11-17T23:09:09Z",
-    "last_updated": "2026-11-17T23:09:15Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
