@@ -377,7 +377,7 @@
     "type_group": "Skill",
     "stars": 2,
     "forks": 5,
-    "open_issues": 9,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -3666,7 +3666,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 10,
-    "open_issues": 10,
+    "open_issues": 13,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": true,
@@ -11470,14 +11470,14 @@
     "license": "Apache-2.0",
     "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -17341,50 +17341,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OpenVoiceOS-ovos-legacy-mycroft-gui-plugin",
-    "skill_id": null,
-    "name": "ovos-legacy-mycroft-gui-plugin",
-    "description": "This plugin is a GUI adapter for OpenVoiceOS. It translates the OVOS template API (the `SYSTEM_*` page templates) into the mycroft-gui Qt WebSocket protocol. Existing Qt5 and Qt6 GUI clients, such as mycroft-gui-qt6, can then show skill output without any QML from the skill itself. Skills do not ship QML files. This plugin renders every page from its own bundled `ui/*.qml` files.",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-legacy-mycroft-gui-plugin",
-    "package_name": "ovos-legacy-mycroft-gui-plugin",
-    "pypi_version": null,
-    "license": null,
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 2,
-    "component_type": "Gui Adapter Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 4,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos-legacy-mycroft-gui-plugin\n\nThe plugin registers under the `opm.gui_adapter` entry point:\n\n[project.entry-points.\"opm.gui_adapter\"]\novos-legacy-mycroft-gui = \"ovos_legacy_mycroft_gui:LegacyMycoftGuiPlugin\"\n\n[ovos-plugin-manager](https://github.com/OpenVoiceOS/ovos-plugin-manager) finds and loads it through this entry point. You do not call the plugin directly."
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-03-12T03:21:01Z",
-    "last_updated": "2026-09-24T18:06:41Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "OpenVoiceOS-ovos-lingua-franca",
     "skill_id": null,
     "name": "ovos-lingua-franca",
@@ -19865,7 +19821,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 4,
-    "open_issues": 10,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20050,7 +20006,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Translate Plugin",
+    "component_type": "Detect Plugin",
     "type_group": "Plugin",
     "stars": 9,
     "forks": 8,
@@ -22646,9 +22602,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-06T11:10:29Z",
-    "last_updated": "2026-11-12T01:59:42Z",
+    "last_updated": "2026-11-18T18:37:13Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-plugin-linguonnx",
@@ -22904,14 +22860,14 @@
     "license": "MIT",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Embeddings Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
     "open_issues": 1,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -23412,6 +23368,154 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-11-18T22:21:27Z",
     "last_updated": "2026-11-18T23:10:46Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-ovos-skill-answers-example",
+    "skill_id": null,
+    "name": "ovos-skill-answers-example",
+    "description": "Your own answers for OpenVoiceOS: questions and answers in a list, answered when someone asks something like them \u2013 a common query skill, in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+    "examples": [],
+    "tags": [
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "ovos-skill",
+      "template",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-answers-example",
+    "package_name": "ovos-skill-answers-example",
+    "pypi_version": null,
+    "license": "NOASSERTION",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Les teves respostes",
+        "description": "Respon a les teves preguntes \u2013 on s\u00f3n les claus, quan passen les escombraries \u2013 a partir d'una llista que escrius tu.",
+        "examples": [
+          "On s\u00f3n les claus de recanvi?",
+          "Quan passen a recollir les escombraries?"
+        ]
+      },
+      "da-dk": {
+        "name": "Dine egne svar",
+        "description": "Svarer p\u00e5 dine egne sp\u00f8rgsm\u00e5l \u2013 hvor n\u00f8glerne er, hvorn\u00e5r skraldet hentes \u2013 fra en liste, du selv skriver.",
+        "examples": [
+          "Hvor er reserven\u00f8glerne?",
+          "Hvorn\u00e5r bliver skraldet hentet?"
+        ]
+      },
+      "de-de": {
+        "name": "Deine eigenen Antworten",
+        "description": "Beantwortet deine eigenen Fragen \u2013 wo die Schl\u00fcssel sind, wann der M\u00fcll abgeholt wird \u2013 aus einer Liste, die du schreibst.",
+        "examples": [
+          "Wo sind die Ersatzschl\u00fcssel?",
+          "Wann wird der M\u00fcll abgeholt?"
+        ]
+      },
+      "es-es": {
+        "name": "Tus propias respuestas",
+        "description": "Responde a tus propias preguntas \u2013 d\u00f3nde est\u00e1n las llaves, cu\u00e1ndo pasa la basura \u2013 a partir de una lista que escribes t\u00fa.",
+        "examples": [
+          "\u00bfD\u00f3nde est\u00e1n las llaves de repuesto?",
+          "\u00bfCu\u00e1ndo pasa la basura?"
+        ]
+      },
+      "eu-es": {
+        "name": "Zure erantzunak",
+        "description": "Zure galderak erantzuten ditu \u2013 non dauden giltzak, noiz biltzen duten zaborra \u2013 zuk idatzitako zerrenda batetik.",
+        "examples": [
+          "Non daude ordezko giltzak?",
+          "Noiz biltzen dute zaborra?"
+        ]
+      },
+      "fr-fr": {
+        "name": "Tes propres r\u00e9ponses",
+        "description": "R\u00e9pond \u00e0 tes propres questions \u2013 o\u00f9 sont les cl\u00e9s, quand passent les poubelles \u2013 \u00e0 partir d'une liste que tu \u00e9cris.",
+        "examples": [
+          "O\u00f9 sont les cl\u00e9s de rechange ?",
+          "Quand passent les poubelles ?"
+        ]
+      },
+      "gl-es": {
+        "name": "As t\u00faas respostas",
+        "description": "Responde \u00e1s t\u00faas preguntas \u2013 onde est\u00e1n as chaves, cando recollen o lixo \u2013 a partir dunha lista que escribes ti.",
+        "examples": [
+          "Onde est\u00e1n as chaves de reposto?",
+          "Cando recollen o lixo?"
+        ]
+      },
+      "it-it": {
+        "name": "Le tue risposte",
+        "description": "Risponde alle tue domande \u2013 dove sono le chiavi, quando passa la spazzatura \u2013 da un elenco che scrivi tu.",
+        "examples": [
+          "Dove sono le chiavi di riserva?",
+          "Quando passa la spazzatura?"
+        ]
+      },
+      "nl-nl": {
+        "name": "Je eigen antwoorden",
+        "description": "Beantwoordt je eigen vragen \u2013 waar de sleutels zijn, wanneer het afval wordt opgehaald \u2013 uit een lijst die je zelf schrijft.",
+        "examples": [
+          "Waar zijn de reservesleutels?",
+          "Wanneer wordt het afval opgehaald?"
+        ]
+      },
+      "pt-br": {
+        "name": "Suas pr\u00f3prias respostas",
+        "description": "Responde \u00e0s suas pr\u00f3prias perguntas \u2013 onde est\u00e3o as chaves, quando o lixo \u00e9 recolhido \u2013 a partir de uma lista que voc\u00ea escreve.",
+        "examples": [
+          "Onde est\u00e3o as chaves reserva?",
+          "Quando o lixo \u00e9 recolhido?"
+        ]
+      },
+      "pt-pt": {
+        "name": "As tuas respostas",
+        "description": "Responde \u00e0s tuas pr\u00f3prias perguntas \u2013 onde est\u00e3o as chaves, quando \u00e9 recolhido o lixo \u2013 a partir de uma lista que escreves.",
+        "examples": [
+          "Onde est\u00e3o as chaves suplentes?",
+          "Quando \u00e9 recolhido o lixo?"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-19T00:12:17Z",
+    "last_updated": "2026-11-19T00:12:22Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -24125,45 +24229,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2026-05-09T16:04:11Z",
     "last_updated": "2026-08-10T03:37:45Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "MenneBos-ovos-skill-esp32sat",
-    "skill_id": null,
-    "name": "ovos-skill-esp32sat",
-    "description": "",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/MenneBos/ovos-skill-esp32sat",
-    "package_name": "ovos-skill-esp32sat",
-    "pypi_version": null,
-    "license": "NOASSERTION",
-    "archived": false,
-    "author": "MenneBos",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-10-11T15:11:58Z",
-    "last_updated": "2025-10-12T20:01:00Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -37383,7 +37448,7 @@
     "repo_created_at": "2017-09-22T05:02:43Z",
     "last_updated": "2026-10-16T02:53:15.511853Z",
     "is_new_repo": false,
-    "is_recently_updated": true,
+    "is_recently_updated": false,
     "compat": {
       "badge_id": "skill-easter-eggs.openvoiceos",
       "channels": {

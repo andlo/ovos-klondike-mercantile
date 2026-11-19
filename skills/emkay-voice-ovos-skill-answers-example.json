@@ -1,0 +1,148 @@
+{
+  "id": "emkay-voice-ovos-skill-answers-example",
+  "skill_id": null,
+  "name": "ovos-skill-answers-example",
+  "description": "Your own answers for OpenVoiceOS: questions and answers in a list, answered when someone asks something like them \u2013 a common query skill, in all of Emkay's languages. Use this template, or Emkay: New skill in VS Code (dev.emkay.ai).",
+  "examples": [],
+  "tags": [
+    "emkay",
+    "openvoiceos",
+    "ovos",
+    "ovos-skill",
+    "template",
+    "voice-assistant"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-answers-example",
+  "package_name": "ovos-skill-answers-example",
+  "pypi_version": null,
+  "license": "NOASSERTION",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Les teves respostes",
+      "description": "Respon a les teves preguntes \u2013 on s\u00f3n les claus, quan passen les escombraries \u2013 a partir d'una llista que escrius tu.",
+      "examples": [
+        "On s\u00f3n les claus de recanvi?",
+        "Quan passen a recollir les escombraries?"
+      ]
+    },
+    "da-dk": {
+      "name": "Dine egne svar",
+      "description": "Svarer p\u00e5 dine egne sp\u00f8rgsm\u00e5l \u2013 hvor n\u00f8glerne er, hvorn\u00e5r skraldet hentes \u2013 fra en liste, du selv skriver.",
+      "examples": [
+        "Hvor er reserven\u00f8glerne?",
+        "Hvorn\u00e5r bliver skraldet hentet?"
+      ]
+    },
+    "de-de": {
+      "name": "Deine eigenen Antworten",
+      "description": "Beantwortet deine eigenen Fragen \u2013 wo die Schl\u00fcssel sind, wann der M\u00fcll abgeholt wird \u2013 aus einer Liste, die du schreibst.",
+      "examples": [
+        "Wo sind die Ersatzschl\u00fcssel?",
+        "Wann wird der M\u00fcll abgeholt?"
+      ]
+    },
+    "es-es": {
+      "name": "Tus propias respuestas",
+      "description": "Responde a tus propias preguntas \u2013 d\u00f3nde est\u00e1n las llaves, cu\u00e1ndo pasa la basura \u2013 a partir de una lista que escribes t\u00fa.",
+      "examples": [
+        "\u00bfD\u00f3nde est\u00e1n las llaves de repuesto?",
+        "\u00bfCu\u00e1ndo pasa la basura?"
+      ]
+    },
+    "eu-es": {
+      "name": "Zure erantzunak",
+      "description": "Zure galderak erantzuten ditu \u2013 non dauden giltzak, noiz biltzen duten zaborra \u2013 zuk idatzitako zerrenda batetik.",
+      "examples": [
+        "Non daude ordezko giltzak?",
+        "Noiz biltzen dute zaborra?"
+      ]
+    },
+    "fr-fr": {
+      "name": "Tes propres r\u00e9ponses",
+      "description": "R\u00e9pond \u00e0 tes propres questions \u2013 o\u00f9 sont les cl\u00e9s, quand passent les poubelles \u2013 \u00e0 partir d'une liste que tu \u00e9cris.",
+      "examples": [
+        "O\u00f9 sont les cl\u00e9s de rechange ?",
+        "Quand passent les poubelles ?"
+      ]
+    },
+    "gl-es": {
+      "name": "As t\u00faas respostas",
+      "description": "Responde \u00e1s t\u00faas preguntas \u2013 onde est\u00e1n as chaves, cando recollen o lixo \u2013 a partir dunha lista que escribes ti.",
+      "examples": [
+        "Onde est\u00e1n as chaves de reposto?",
+        "Cando recollen o lixo?"
+      ]
+    },
+    "it-it": {
+      "name": "Le tue risposte",
+      "description": "Risponde alle tue domande \u2013 dove sono le chiavi, quando passa la spazzatura \u2013 da un elenco che scrivi tu.",
+      "examples": [
+        "Dove sono le chiavi di riserva?",
+        "Quando passa la spazzatura?"
+      ]
+    },
+    "nl-nl": {
+      "name": "Je eigen antwoorden",
+      "description": "Beantwoordt je eigen vragen \u2013 waar de sleutels zijn, wanneer het afval wordt opgehaald \u2013 uit een lijst die je zelf schrijft.",
+      "examples": [
+        "Waar zijn de reservesleutels?",
+        "Wanneer wordt het afval opgehaald?"
+      ]
+    },
+    "pt-br": {
+      "name": "Suas pr\u00f3prias respostas",
+      "description": "Responde \u00e0s suas pr\u00f3prias perguntas \u2013 onde est\u00e3o as chaves, quando o lixo \u00e9 recolhido \u2013 a partir de uma lista que voc\u00ea escreve.",
+      "examples": [
+        "Onde est\u00e3o as chaves reserva?",
+        "Quando o lixo \u00e9 recolhido?"
+      ]
+    },
+    "pt-pt": {
+      "name": "As tuas respostas",
+      "description": "Responde \u00e0s tuas pr\u00f3prias perguntas \u2013 onde est\u00e3o as chaves, quando \u00e9 recolhido o lixo \u2013 a partir de uma lista que escreves.",
+      "examples": [
+        "Onde est\u00e3o as chaves suplentes?",
+        "Quando \u00e9 recolhido o lixo?"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-19T00:12:17Z",
+  "last_updated": "2026-11-19T00:12:22Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}
