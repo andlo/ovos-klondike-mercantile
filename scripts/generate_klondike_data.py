@@ -684,8 +684,20 @@ def pypi_info(package_name):
 
 
 def latest_github_release(full_name):
+    """Tag of the newest published GitHub release, pre-releases included.
+
+    GitHub's releases/latest skips pre-releases, but most OVOS skills and
+    plugins are released as alpha versions (0.1.0a2), the same versions the
+    PyPI check already accepts - so fall back to the newest non-draft
+    release from the list."""
     data = gh_ok("api", f"repos/{full_name}/releases/latest")
-    return data.get("tag_name") if data else None
+    if data and data.get("tag_name"):
+        return data["tag_name"]
+    releases = gh_ok("api", f"repos/{full_name}/releases?per_page=10")
+    for rel in releases if isinstance(releases, list) else []:
+        if not rel.get("draft") and rel.get("tag_name"):
+            return rel["tag_name"]
+    return None
 
 
 def fetch_ovos_store_package_names():
