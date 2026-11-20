@@ -20,8 +20,8 @@
   "icon_color": null,
   "source": "https://github.com/andlo/ovos-skill-calculator",
   "package_name": "ovos-skill-calculator",
-  "pypi_version": "0.0.4",
-  "license": "GPL-3.0",
+  "pypi_version": "0.0.5",
+  "license": "Apache-2.0",
   "archived": false,
   "author": "andlo",
   "tier": 1,
@@ -61,30 +61,30 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-08-16T18:25:07Z",
-  "last_updated": "2026-10-01T18:37:27.190396Z",
+  "last_updated": "2026-11-19T22:10:36.148033Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-calculator.andlo",
     "channels": {
       "stable": {
-        "label": "\u2713 loads \u00b7 2/16 golden",
+        "label": "\u2713 loads \u00b7 2/14 golden",
         "state": "warn",
         "level": 2,
-        "version_tested": "0.0.4",
-        "tested_at": "2026-10-04T10:56:15+00:00",
+        "version_tested": "0.0.5",
+        "tested_at": "2026-11-20T10:28:49+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 2,
-          "counted": 16
+          "counted": 14
         }
       },
       "testing": {
         "label": "\u2713 loads \u00b7 2/16 golden",
         "state": "warn",
         "level": 2,
-        "version_tested": "0.0.4",
-        "tested_at": "2026-10-04T10:30:39+00:00",
+        "version_tested": "0.0.5",
+        "tested_at": "2026-11-20T10:28:49+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 2,
@@ -95,8 +95,8 @@
         "label": "\u2713 16/16 golden",
         "state": "pass",
         "level": 3,
-        "version_tested": "0.0.4",
-        "tested_at": "2026-10-30T08:59:04+00:00",
+        "version_tested": "0.0.5",
+        "tested_at": "2026-11-20T10:27:22+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 16,

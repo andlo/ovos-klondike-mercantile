@@ -1,0 +1,68 @@
+{
+  "id": "emkay-voice-ovos-skill-karaoke",
+  "skill_id": "ovos-skill-karaoke.emkay-voice",
+  "name": "Karaoke",
+  "description": "Sings songs with the device's own voice, autotuned onto the melody with a band behind it - or plays karaoke for you, with the words, chords and melody on the screen. Runs on the device; your own .kar files welcome.",
+  "examples": [
+    "sing Daisy Bell",
+    "karaoke Jingle Bells",
+    "sing a song",
+    "what songs can you sing"
+  ],
+  "tags": [
+    "karaoke",
+    "singing",
+    "music",
+    "fun"
+  ],
+  "category": "Music",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-karaoke/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-karaoke",
+  "package_name": "ovos-skill-karaoke",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-karaoke"
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "en-us"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Karaoke",
+      "description": "Synger sange med enhedens egen stemme, autotunet p\u00e5 melodien med et band bagved - eller spiller karaoke for dig, med tekst, akkorder og melodi p\u00e5 sk\u00e6rmen. K\u00f8rer p\u00e5 enheden; dine egne .kar-filer er velkomne.",
+      "examples": [
+        "syng Daisy Bell",
+        "karaoke Jingle Bells",
+        "syng en sang",
+        "hvilke sange kan du synge"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-20T19:49:19Z",
+  "last_updated": "2026-11-20T20:02:21Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

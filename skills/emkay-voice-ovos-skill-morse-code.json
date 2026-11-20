@@ -61,7 +61,44 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-morse-code.emkay-voice",
-    "channels": {}
+    "badge_id": "ovos-skill-morse-code.andlo",
+    "channels": {
+      "stable": {
+        "label": "\u2713 3/3 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-11-20T10:29:27+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 3,
+          "counted": 3
+        }
+      },
+      "testing": {
+        "label": "\u2713 3/3 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-11-20T10:27:24+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 3,
+          "counted": 3
+        }
+      },
+      "alpha": {
+        "label": "\u2713 3/3 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.0.3",
+        "tested_at": "2026-11-20T10:27:13+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 3,
+          "counted": 3
+        }
+      }
+    }
   }
 }

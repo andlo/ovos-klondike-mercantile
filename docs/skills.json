@@ -116,8 +116,46 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-365tomorrows-stories.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-365tomorrows-stories.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:26:59+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:27:15+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "alpha": {
+          "label": "\u2713 2/2 golden \u00b7 stops",
+          "state": "pass",
+          "level": 3,
+          "stop": "stops",
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:26:44+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        }
+      }
     }
   },
   {
@@ -907,8 +945,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-andersen-tales.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-andersen-tales.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:27:54+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "testing": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:28:03+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        },
+        "alpha": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:26:51+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        }
+      }
     }
   },
   {
@@ -966,8 +1041,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-andrew-lang-tales.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-andrew-lang-tales.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.9",
+          "tested_at": "2026-11-20T10:28:11+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "testing": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.9",
+          "tested_at": "2026-11-20T10:28:19+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        },
+        "alpha": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.9",
+          "tested_at": "2026-11-20T10:27:02+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        }
+      }
     }
   },
   {
@@ -1421,8 +1533,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-arxiv-papers.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-arxiv-papers.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:28:22+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "testing": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:28:26+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        },
+        "alpha": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:27:08+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        }
+      }
     }
   },
   {
@@ -2149,8 +2298,33 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-bechstein-tales.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-bechstein-tales.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:28:37+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:28:41+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:27:15+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -2175,8 +2349,8 @@
     "icon_color": null,
     "source": "https://github.com/andlo/ovos-skill-calculator",
     "package_name": "ovos-skill-calculator",
-    "pypi_version": "0.0.4",
-    "license": "GPL-3.0",
+    "pypi_version": "0.0.5",
+    "license": "Apache-2.0",
     "archived": false,
     "author": "andlo",
     "tier": 1,
@@ -2216,30 +2390,30 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T18:25:07Z",
-    "last_updated": "2026-10-01T18:37:27.190396Z",
+    "last_updated": "2026-11-19T22:10:36.148033Z",
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-calculator.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads \u00b7 2/16 golden",
+          "label": "\u2713 loads \u00b7 2/14 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.0.4",
-          "tested_at": "2026-10-04T10:56:15+00:00",
+          "version_tested": "0.0.5",
+          "tested_at": "2026-11-20T10:28:49+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
-            "counted": 16
+            "counted": 14
           }
         },
         "testing": {
           "label": "\u2713 loads \u00b7 2/16 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.0.4",
-          "tested_at": "2026-10-04T10:30:39+00:00",
+          "version_tested": "0.0.5",
+          "tested_at": "2026-11-20T10:28:49+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -2250,8 +2424,8 @@
           "label": "\u2713 16/16 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.4",
-          "tested_at": "2026-10-30T08:59:04+00:00",
+          "version_tested": "0.0.5",
+          "tested_at": "2026-11-20T10:27:22+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 16,
@@ -2499,8 +2673,8 @@
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "1.4.0a4",
-          "tested_at": "2026-10-30T08:59:15+00:00",
+          "version_tested": "1.4.0a6",
+          "tested_at": "2026-11-20T10:27:31+00:00",
           "channel_pinned": true
         }
       }
@@ -2888,7 +3062,7 @@
     "type_group": "Plugin",
     "stars": 2,
     "forks": 2,
-    "open_issues": 24,
+    "open_issues": 25,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -3358,8 +3532,33 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-cosquin-tales.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-cosquin-tales.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:29:01+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:28:56+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.7",
+          "tested_at": "2026-11-20T10:27:42+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5279,8 +5478,8 @@
     "icon_color": null,
     "source": "https://github.com/andlo/ovos-skill-geography",
     "package_name": "ovos-skill-geography",
-    "pypi_version": "0.0.5",
-    "license": "GPL-3.0",
+    "pypi_version": "0.0.7",
+    "license": "Apache-2.0",
     "archived": false,
     "author": "andlo",
     "tier": 1,
@@ -5366,9 +5565,9 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-17T14:27:03Z",
-    "last_updated": "2026-10-01T18:37:21.657418Z",
+    "last_updated": "2026-11-17T09:33:19.087244Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
+    "is_recently_updated": true,
     "compat": {
       "badge_id": "ovos-skill-geography.andlo",
       "channels": {
@@ -5585,8 +5784,8 @@
     "icon_color": null,
     "source": "https://github.com/andlo/ovos-skill-geometry",
     "package_name": "ovos-skill-geometry",
-    "pypi_version": "0.0.4",
-    "license": "GPL-3.0",
+    "pypi_version": "0.0.6",
+    "license": "Apache-2.0",
     "archived": false,
     "author": "andlo",
     "tier": 1,
@@ -5663,7 +5862,7 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-17T16:59:50Z",
-    "last_updated": "2026-10-01T10:10:40.067199Z",
+    "last_updated": "2026-11-19T22:10:44.189100Z",
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
@@ -5673,8 +5872,8 @@
           "label": "\u2713 loads \u00b7 4/13 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-11-17T11:07:14+00:00",
+          "version_tested": "0.0.6",
+          "tested_at": "2026-11-20T10:29:13+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 4,
@@ -5682,23 +5881,23 @@
           }
         },
         "testing": {
-          "label": "\u2713 loads \u00b7 4/13 golden",
+          "label": "\u2713 loads \u00b7 4/12 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-11-17T11:06:21+00:00",
+          "version_tested": "0.0.6",
+          "tested_at": "2026-11-20T10:29:04+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 4,
-            "counted": 13
+            "counted": 12
           }
         },
         "alpha": {
           "label": "\u2713 11/13 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.0.5",
-          "tested_at": "2026-11-17T11:14:48+00:00",
+          "version_tested": "0.0.6",
+          "tested_at": "2026-11-20T10:26:30+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 11,
@@ -5978,8 +6177,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-grimm-tales.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-grimm-tales.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 0/3 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:27:40+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 3
+          }
+        },
+        "testing": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:26:25+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        },
+        "alpha": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.8",
+          "tested_at": "2026-11-20T10:26:40+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        }
+      }
     }
   },
   {
@@ -6241,7 +6477,7 @@
     "type_group": "Infrastructure",
     "stars": 1,
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 5,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -6252,16 +6488,16 @@
     "setup_notes": [
       {
         "heading": "Setup",
-        "content": "1. Install and start the relevant [haos-ovos-addons](https://github.com/andlo/haos-ovos-addons) add-ons first.\n2. Add the **OpenVoiceOS** integration in HA.\n3. On Home Assistant OS / Supervised, each add-on's API URL is filled in automatically by querying Supervisor \u2014 nothing to do here. On a non-Supervisor install (or if an add-on isn't found), fill in the missing URL(s) under the integration's own entities (e.g. `http://<hostname>:8500` for `ovos-skills`).\n4. Use **Add sub-entry** on the integration to add skills, run voice setup, or configure persona."
+        "content": "1. Install and start the relevant [haos-ovos-addons](https://github.com/andlo/haos-ovos-addons) add-ons first.\n2. Add the **OpenVoiceOS** integration in HA and choose *The OpenVoiceOS add-ons on this Home Assistant*.\n3. On Home Assistant OS / Supervised, each add-on's API URL is filled in automatically by querying Supervisor \u2014 nothing to do here. On a non-Supervisor install (or if an add-on isn't found), fill in the missing URL(s) under the integration's own entities (e.g. `http://<hostname>:8500` for `ovos-skills`).\n4. Use **Add sub-entry** on the integration to add skills, run voice setup, or configure persona."
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-04T06:43:42Z",
-    "last_updated": "2026-08-30T19:33:37Z",
+    "last_updated": "2026-11-18T19:05:02Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OscillateLabsLLC-ha-ovos-tts",
@@ -7864,8 +8100,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-horoscope-readings.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-horoscope-readings.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 0/2 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-11-20T10:28:41+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 0,
+            "counted": 2
+          }
+        },
+        "testing": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-11-20T10:27:02+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        },
+        "alpha": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.5",
+          "tested_at": "2026-11-20T10:26:48+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        }
+      }
     }
   },
   {
@@ -8466,8 +8739,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-intercom.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-intercom.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads \u00b7 1/9 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-11-20T10:28:57+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 1,
+            "counted": 9
+          }
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 1/9 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-11-20T10:27:11+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 1,
+            "counted": 9
+          }
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 7/9 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.0.7",
+          "tested_at": "2026-11-20T10:26:54+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 7,
+            "counted": 9
+          }
+        }
+      }
     }
   },
   {
@@ -9456,6 +9766,74 @@
     }
   },
   {
+    "id": "emkay-voice-ovos-skill-karaoke",
+    "skill_id": "ovos-skill-karaoke.emkay-voice",
+    "name": "Karaoke",
+    "description": "Sings songs with the device's own voice, autotuned onto the melody with a band behind it - or plays karaoke for you, with the words, chords and melody on the screen. Runs on the device; your own .kar files welcome.",
+    "examples": [
+      "sing Daisy Bell",
+      "karaoke Jingle Bells",
+      "sing a song",
+      "what songs can you sing"
+    ],
+    "tags": [
+      "karaoke",
+      "singing",
+      "music",
+      "fun"
+    ],
+    "category": "Music",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-karaoke/main/icon.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-karaoke",
+    "package_name": "ovos-skill-karaoke",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-karaoke"
+      }
+    ],
+    "languages": [
+      "da-dk",
+      "en-us"
+    ],
+    "locale_content": {
+      "da-dk": {
+        "name": "Karaoke",
+        "description": "Synger sange med enhedens egen stemme, autotunet p\u00e5 melodien med et band bagved - eller spiller karaoke for dig, med tekst, akkorder og melodi p\u00e5 sk\u00e6rmen. K\u00f8rer p\u00e5 enheden; dine egne .kar-filer er velkomne.",
+        "examples": [
+          "syng Daisy Bell",
+          "karaoke Jingle Bells",
+          "syng en sang",
+          "hvilke sange kan du synge"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-20T19:49:19Z",
+    "last_updated": "2026-11-20T20:02:21Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-skill-local-media",
     "skill_id": "ovos-skill-local-media.openvoiceos",
     "name": "Local Media",
@@ -10382,7 +10760,7 @@
     "icon_color": null,
     "source": "https://github.com/andlo/ovos-skill-math-practice",
     "package_name": "ovos-skill-math-practice",
-    "pypi_version": "0.0.8",
+    "pypi_version": "0.0.9",
     "license": "GPL-3.0",
     "archived": false,
     "author": "andlo",
@@ -10428,35 +10806,35 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T18:31:58Z",
-    "last_updated": "2026-10-01T10:10:37.028605Z",
+    "last_updated": "2026-11-19T22:37:51.477960Z",
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-math-practice.andlo",
       "channels": {
         "stable": {
-          "label": "\u2713 loads \u00b7 21/33 golden",
-          "state": "warn",
-          "level": 2,
-          "stop": "stops",
-          "version_tested": "0.0.8",
-          "tested_at": "2026-10-04T11:01:06+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 21,
-            "counted": 33
-          }
-        },
-        "testing": {
           "label": "\u2713 loads \u00b7 24/33 golden",
           "state": "warn",
           "level": 2,
           "stop": "stops",
-          "version_tested": "0.0.8",
-          "tested_at": "2026-10-04T10:38:19+00:00",
+          "version_tested": "0.0.9",
+          "tested_at": "2026-11-20T10:29:14+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 24,
+            "counted": 33
+          }
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 21/33 golden",
+          "state": "warn",
+          "level": 2,
+          "stop": "stops",
+          "version_tested": "0.0.9",
+          "tested_at": "2026-11-20T10:27:19+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 21,
             "counted": 33
           }
         },
@@ -10464,8 +10842,8 @@
           "label": "\u2713 32/33 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-10-30T08:59:28+00:00",
+          "version_tested": "0.0.9",
+          "tested_at": "2026-11-20T10:27:04+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 32,
@@ -10706,8 +11084,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-morse-code.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-morse-code.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-11-20T10:29:27+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        },
+        "testing": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-11-20T10:27:24+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        },
+        "alpha": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-11-20T10:27:13+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        }
+      }
     }
   },
   {
@@ -11644,8 +12059,45 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-nato-alphabet.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-nato-alphabet.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-11-20T10:29:41+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        },
+        "testing": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-11-20T10:27:29+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        },
+        "alpha": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.0.3",
+          "tested_at": "2026-11-20T10:27:22+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
+            "counted": 3
+          }
+        }
+      }
     }
   },
   {
@@ -13195,7 +13647,7 @@
     "source": "https://github.com/andlo/ovos-skill-ovosblog",
     "package_name": "ovos-skill-ovosblog",
     "pypi_version": "0.1.8",
-    "license": "GPL-3.0",
+    "license": "Apache-2.0",
     "archived": false,
     "author": "andlo",
     "tier": 1,
@@ -16768,7 +17220,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-18T20:54:26Z",
-    "last_updated": "2026-11-14T18:02:26Z",
+    "last_updated": "2026-11-20T12:00:33Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -37302,14 +37754,14 @@
           "channel_pinned": true
         },
         "alpha": {
-          "label": "\u2713 26/27 golden",
+          "label": "\u2713 25/27 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "1.7.1a1",
-          "tested_at": "2026-10-30T08:59:58+00:00",
+          "version_tested": "1.7.1a3",
+          "tested_at": "2026-11-20T10:27:30+00:00",
           "channel_pinned": true,
           "golden": {
-            "hit": 26,
+            "hit": 25,
             "counted": 27
           }
         }
@@ -41386,8 +41838,8 @@
     "icon_color": null,
     "source": "https://github.com/andlo/ovos-skill-convert",
     "package_name": "ovos-skill-convert",
-    "pypi_version": "0.0.10",
-    "license": "GPL-3.0",
+    "pypi_version": "0.0.11",
+    "license": "Apache-2.0",
     "archived": false,
     "author": "andlo",
     "tier": 1,
@@ -41395,7 +41847,7 @@
     "type_group": "Skill",
     "stars": 1,
     "forks": 0,
-    "open_issues": 3,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -41482,7 +41934,7 @@
     },
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-16T14:09:15Z",
-    "last_updated": "2026-10-01T18:37:22.827834Z",
+    "last_updated": "2026-11-19T22:15:48.532238Z",
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
@@ -41492,8 +41944,8 @@
           "label": "\u2713 8/8 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.10",
-          "tested_at": "2026-10-04T11:11:45+00:00",
+          "version_tested": "0.0.11",
+          "tested_at": "2026-11-20T10:29:54+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 8,
@@ -41504,8 +41956,8 @@
           "label": "\u2713 8/8 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.10",
-          "tested_at": "2026-10-04T10:55:45+00:00",
+          "version_tested": "0.0.11",
+          "tested_at": "2026-11-20T10:27:34+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 8,
@@ -41516,8 +41968,8 @@
           "label": "\u2713 8/8 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.10",
-          "tested_at": "2026-10-30T09:20:04+00:00",
+          "version_tested": "0.0.11",
+          "tested_at": "2026-11-20T10:26:41+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 8,
@@ -41775,8 +42227,33 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-voices-of-tomorrow.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-voices-of-tomorrow.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.2",
+          "tested_at": "2026-11-20T10:30:13+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.2",
+          "tested_at": "2026-11-20T10:27:44+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.2",
+          "tested_at": "2026-11-20T10:26:55+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -44438,8 +44915,33 @@
     "is_new_repo": false,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "ovos-skill-wiki-offline.emkay-voice",
-      "channels": {}
+      "badge_id": "ovos-skill-wiki-offline.andlo",
+      "channels": {
+        "stable": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-11-20T10:27:18+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-11-20T10:26:30+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.8",
+          "tested_at": "2026-11-20T10:27:04+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -44519,7 +45021,32 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-wikidata.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-20T10:27:50+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 11/12 langs",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-20T10:26:53+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-20T10:27:13+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
