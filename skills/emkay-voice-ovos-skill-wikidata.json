@@ -1,0 +1,80 @@
+{
+  "id": "emkay-voice-ovos-skill-wikidata",
+  "skill_id": "ovos-skill-wikidata.emkay-voice",
+  "name": "Wikidata",
+  "description": "Short, current facts from Wikidata: who leads a country, capitals, population, birthdays, where places are.",
+  "examples": [
+    "who is the prime minister of denmark",
+    "where is the eiffel tower",
+    "how old is mette frederiksen"
+  ],
+  "tags": [
+    "knowledge",
+    "facts",
+    "wikidata",
+    "information"
+  ],
+  "category": "Information",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-wikidata/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-wikidata",
+  "package_name": "ovos-skill-wikidata",
+  "pypi_version": "0.1.0a2",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-wikidata"
+    }
+  ],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Wikidata",
+      "description": "Korte, aktuelle fakta fra Wikidata: hvem der leder et land, hovedst\u00e6der, indbyggertal, f\u00f8dselsdage, hvor steder ligger.",
+      "examples": [
+        "hvem er statsminister i danmark",
+        "hvor ligger eiffelt\u00e5rnet",
+        "hvad er hovedstaden i frankrig"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-19T21:10:22Z",
+  "last_updated": "2026-11-19T21:39:24.900214Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-wikidata.emkay-voice",
+    "channels": {}
+  }
+}
