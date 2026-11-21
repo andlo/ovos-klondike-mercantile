@@ -1,0 +1,55 @@
+{
+  "id": "emkay-voice-ovos-phal-plugin-midi",
+  "skill_id": null,
+  "name": "ovos-phal-plugin-midi",
+  "description": "OpenVoiceOS PHAL plugin: a MIDI instrument on the bus - a General MIDI synth skills can play note by note or give a MIDI file, MIDI keyboards in, real instruments out",
+  "examples": [],
+  "tags": [
+    "emkay",
+    "midi",
+    "openvoiceos",
+    "ovos",
+    "phal",
+    "synthesizer"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-phal-plugin-midi",
+  "package_name": "ovos-phal-plugin-midi",
+  "pypi_version": "0.1.0a2",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "PHAL Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install --pre ovos-phal-plugin-midi\n\nThat is all the built-in synth needs. Restart OVOS' PHAL service\n(`systemctl --user restart ovos-phal` on ovos-installer and raspOVOS).\n\nOptional, for more:\n\n| | |\n|---|---|\n| `pip install --pre \"ovos-phal-plugin-midi[ports]\"` | python-rtmidi: MIDI keyboards and instruments plugged into the device |\n| `pip install --pre \"ovos-phal-plugin-midi[sounddevice]\"` | PortAudio: the lowest latency from the built-in synth |\n| `pip install --pre \"ovos-phal-plugin-midi[fluidsynth]\"` + `sudo apt install fluidsynth fluid-soundfont-gm` (Fedora: `sudo dnf install fluidsynth-libs fluid-soundfont-gm`) | FluidSynth with the FluidR3 SoundFont: real instrument samples. It is used by itself once it is there |"
+    },
+    {
+      "heading": "Configure",
+      "content": "Nothing has to be set. To change something, in `mycroft.conf`:\n\n{\n  \"PHAL\": {\n    \"ovos-phal-plugin-midi\": {\n      \"synth\": \"auto\",\n      \"audio\": \"auto\",\n      \"output_port\": \"\",\n      \"inputs\": [\"*\"],\n      \"thru\": false\n    }\n  }\n}\n\n| Setting | |\n|---|---|\n| `synth` | `auto` (the default) uses a MIDI port if `output_port` names one that is plugged in, else FluidSynth if it and a SoundFont are there, else the built-in synth. You can also choose `port`, `fluidsynth` or `builtin`. |\n| `audio` | where the built-in synth's sound goes. `auto` (the default) tries `sounddevice`, then `paplay` (PulseAudio and PipeWire), `pw-cat`, `aplay` (plain ALSA), in that order. In a browser it uses `bus`. |\n| `audio_device` | a PortAudio device for `sounddevice` (name or number) |\n| `soundfont` | a `.sf2` f\u2026"
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-20T22:27:01Z",
+  "last_updated": "2026-11-20T22:57:15.591517Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

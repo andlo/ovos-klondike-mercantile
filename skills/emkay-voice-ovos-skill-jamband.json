@@ -1,0 +1,218 @@
+{
+  "id": "emkay-voice-ovos-skill-jamband",
+  "skill_id": "ovos-skill-jamband.emkay-voice",
+  "name": "Jam Band",
+  "description": "A band you lead with your voice: ask for drums, then bass, then the whole band - in swing, blues, rock, funk, disco, reggae, bossa or tango, in any key. Played by the device's MIDI instrument.",
+  "examples": [
+    "let's jam",
+    "jam a blues in E",
+    "add the bass",
+    "the whole band",
+    "faster",
+    "make it reggae",
+    "let's finish"
+  ],
+  "tags": [
+    "music",
+    "jam",
+    "band",
+    "fun"
+  ],
+  "category": "Music",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-jamband/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-jamband",
+  "package_name": "ovos-skill-jamband",
+  "pypi_version": "0.1.0a2",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install --pre ovos-skill-jamband"
+    }
+  ],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Banda de jam",
+      "description": "Una banda que dirigeixes amb la veu: demana bateria, despr\u00e9s baix, despr\u00e9s tota la banda - swing, blues, rock, funk, disco, reggae, bossa o tango, en qualsevol tonalitat. La toca l'instrument MIDI del dispositiu.",
+      "examples": [
+        "fem una jam",
+        "un blues en mi",
+        "afegeix el baix",
+        "tota la banda",
+        "m\u00e9s r\u00e0pid",
+        "fes-ho reggae",
+        "acabem"
+      ]
+    },
+    "da-dk": {
+      "name": "Jamband",
+      "description": "Et band, du dirigerer med stemmen: bed om trommer, s\u00e5 bas, s\u00e5 hele bandet - i swing, blues, rock, funk, disco, reggae, bossa eller tango, i alle tonearter. Spillet af enhedens MIDI-instrument.",
+      "examples": [
+        "lad os jamme",
+        "jam en blues i e",
+        "s\u00e6t bassen ind",
+        "hele bandet",
+        "hurtigere",
+        "spil det som reggae",
+        "lad os slutte"
+      ]
+    },
+    "de-de": {
+      "name": "Jamband",
+      "description": "Eine Band, die du mit der Stimme leitest: erst Schlagzeug, dann Bass, dann die ganze Band - Swing, Blues, Rock, Funk, Disco, Reggae, Bossa oder Tango, in jeder Tonart. Gespielt vom MIDI-Instrument des Ger\u00e4ts.",
+      "examples": [
+        "lass uns jammen",
+        "jam einen Blues in E",
+        "Bass dazu",
+        "die ganze Band",
+        "schneller",
+        "mach Reggae draus",
+        "lass uns aufh\u00f6ren"
+      ]
+    },
+    "es-es": {
+      "name": "Banda de jam",
+      "description": "Una banda que diriges con la voz: pide bater\u00eda, luego bajo, luego toda la banda - swing, blues, rock, funk, disco, reggae, bossa o tango, en cualquier tono. La toca el instrumento MIDI del dispositivo.",
+      "examples": [
+        "vamos a improvisar",
+        "un blues en mi",
+        "a\u00f1ade el bajo",
+        "toda la banda",
+        "m\u00e1s r\u00e1pido",
+        "ponlo en reggae",
+        "terminemos"
+      ]
+    },
+    "eu-es": {
+      "name": "Jam taldea",
+      "description": "Ahotsarekin zuzentzen duzun taldea: eskatu bateria, gero baxua, gero talde osoa - swing, blues, rock, funk, disco, reggae, bossa edo tango, edozein tonutan. Gailuaren MIDI tresnak jotzen du.",
+      "examples": [
+        "egin dezagun jam bat",
+        "blues bat mi-n",
+        "gehitu baxua",
+        "talde osoa",
+        "azkarrago",
+        "egin reggae",
+        "amaitu dezagun"
+      ]
+    },
+    "fr-fr": {
+      "name": "Jam band",
+      "description": "Un groupe que tu diriges \u00e0 la voix : demande la batterie, puis la basse, puis tout le groupe - swing, blues, rock, funk, disco, reggae, bossa ou tango, dans n'importe quelle tonalit\u00e9. Jou\u00e9 par l'instrument MIDI de l'appareil.",
+      "examples": [
+        "on fait un b\u0153uf",
+        "un blues en mi",
+        "ajoute la basse",
+        "tout le groupe",
+        "plus vite",
+        "passe au reggae",
+        "on termine"
+      ]
+    },
+    "gl-es": {
+      "name": "Banda de jam",
+      "description": "Unha banda que diriximos coa voz: pide bater\u00eda, despois baixo, despois a banda enteira - swing, blues, rock, funk, disco, reggae, bossa ou tango, en calquera ton. T\u00f3caa o instrumento MIDI do dispositivo.",
+      "examples": [
+        "imos improvisar",
+        "un blues en mi",
+        "engade o baixo",
+        "a banda enteira",
+        "m\u00e1is r\u00e1pido",
+        "faino reggae",
+        "rematemos"
+      ]
+    },
+    "it-it": {
+      "name": "Jam band",
+      "description": "Una band che dirigi con la voce: chiedi la batteria, poi il basso, poi tutta la band - swing, blues, rock, funk, disco, reggae, bossa o tango, in qualsiasi tonalit\u00e0. La suona lo strumento MIDI del dispositivo.",
+      "examples": [
+        "facciamo una jam",
+        "un blues in mi",
+        "aggiungi il basso",
+        "tutta la band",
+        "pi\u00f9 veloce",
+        "fallo reggae",
+        "chiudiamo"
+      ]
+    },
+    "nl-nl": {
+      "name": "Jamband",
+      "description": "Een band die je met je stem leidt: vraag om drums, dan bas, dan de hele band - swing, blues, rock, funk, disco, reggae, bossa of tango, in elke toonsoort. Gespeeld door het MIDI-instrument van het apparaat.",
+      "examples": [
+        "laten we jammen",
+        "jam een blues in E",
+        "voeg de bas toe",
+        "de hele band",
+        "sneller",
+        "maak er reggae van",
+        "laten we stoppen"
+      ]
+    },
+    "pt-br": {
+      "name": "Banda de jam",
+      "description": "Uma banda que voc\u00ea dirige com a voz: pe\u00e7a bateria, depois baixo, depois a banda toda - swing, blues, rock, funk, disco, reggae, bossa ou tango, em qualquer tom. Tocada pelo instrumento MIDI do dispositivo.",
+      "examples": [
+        "vamos improvisar",
+        "um blues em mi",
+        "junta o baixo",
+        "a banda toda",
+        "mais r\u00e1pido",
+        "faz reggae",
+        "vamos acabar"
+      ]
+    },
+    "pt-pt": {
+      "name": "Banda de jam",
+      "description": "Uma banda que diriges com a voz: pede bateria, depois baixo, depois a banda toda - swing, blues, rock, funk, disco, reggae, bossa ou tango, em qualquer tom. Tocada pelo instrumento MIDI do dispositivo.",
+      "examples": [
+        "vamos improvisar",
+        "um blues em mi",
+        "junta o baixo",
+        "a banda toda",
+        "mais r\u00e1pido",
+        "faz reggae",
+        "vamos acabar"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-21T00:19:16Z",
+  "last_updated": "2026-11-21T00:34:29.748809Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-jamband.emkay-voice",
+    "channels": {}
+  }
+}
