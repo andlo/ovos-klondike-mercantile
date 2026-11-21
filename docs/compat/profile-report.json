@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-20T12:00:32+00:00",
+ "generated_at": "2026-11-21T11:51:06+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-11-20T12:00:32+00:00",
-   "klondike_run_at": "2026-11-20T12:00:32+00:00",
+   "klondike_run_at": "2026-11-21T11:51:06+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
    "profiles": [
@@ -1164,8 +1164,8 @@
    ]
   },
   "testing": {
-   "run_at": "2026-11-20T12:00:32+00:00",
-   "klondike_run_at": "2026-11-20T12:00:32+00:00",
+   "run_at": "2026-11-21T11:51:06+00:00",
+   "klondike_run_at": "2026-11-21T11:51:06+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -1862,8 +1862,8 @@
         }
        },
        "klondike": {
-        "hit": 4,
-        "counted": 14
+        "hit": 5,
+        "counted": 12
        },
        "gold": false,
        "note": "geography facts (offline)",
@@ -1904,7 +1904,7 @@
         }
        },
        "klondike": {
-        "hit": 3,
+        "hit": 2,
         "counted": 13
        },
        "gold": false,
@@ -1951,7 +1951,7 @@
         }
        },
        "klondike": {
-        "hit": 5,
+        "hit": 4,
         "counted": 5
        },
        "gold": true,
@@ -2340,8 +2340,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-11-20T12:00:32+00:00",
-   "klondike_run_at": "2026-11-20T12:00:32+00:00",
+   "run_at": "2026-11-21T11:51:06+00:00",
+   "klondike_run_at": "2026-11-21T11:51:06+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2451,7 +2451,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 19,
+        "reaches": 22,
         "takes": 5,
         "examples": [
          {
@@ -2501,8 +2501,8 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 4,
-        "takes": 16,
+        "reaches": 5,
+        "takes": 17,
         "examples": [
          {
           "from": "andlo-ovos-skill-rhythm-box",
@@ -2551,7 +2551,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 339,
+        "reaches": 347,
         "takes": 13,
         "examples": [
          {
@@ -2561,16 +2561,16 @@
           "utterance": "how many days are there between march 1 and june 5"
          },
          {
-          "from": "OpenVoiceOS-ovos-skill-date-time",
-          "kind": "baseline",
-          "taken_by": "ovos-skill-alerts.openvoiceos",
-          "utterance": "how many days between christmas and new year's eve"
-         },
-         {
           "from": "andlo-ovos-skill-math-practice",
           "kind": "baseline",
           "taken_by": "ovos-skill-count.openvoiceos",
           "utterance": "count to 7"
+         },
+         {
+          "from": "OpenVoiceOS-ovos-skill-screenshot",
+          "kind": "baseline",
+          "taken_by": "ovos-skill-date-time.openvoiceos",
+          "utterance": "grab a screenshot in 5 seconds"
          }
         ]
        }
@@ -2590,7 +2590,7 @@
        "pipeline_route": {
         "measured": true,
         "reaches": 0,
-        "takes": 3,
+        "takes": 5,
         "examples": [
          {
           "from": "OpenVoiceOS-ovos-skill-alerts",
@@ -2609,6 +2609,18 @@
           "kind": "unhandled",
           "taken_by": null,
           "utterance": "set the metronome to 90 bpm"
+         },
+         {
+          "from": "emkay-voice-ovos-skill-intercom",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "send message to the bedroom"
+         },
+         {
+          "from": "emkay-voice-ovos-skill-intercom",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "send message to the bedroom saying come downstairs"
          }
         ]
        }
@@ -2703,7 +2715,7 @@
         }
        },
        "klondike": {
-        "hit": 2,
+        "hit": 3,
         "counted": 5
        },
        "gold": false
@@ -3167,11 +3179,25 @@
        "tested_at": "2026-10-30T08:59:43+00:00",
        "golden": null,
        "klondike": null,
-       "gold": true,
+       "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 2,
-        "takes": 0
+        "reaches": 13,
+        "takes": 2,
+        "examples": [
+         {
+          "from": "emkay-voice-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a paper from arxiv"
+         },
+         {
+          "from": "emkay-voice-ovos-skill-arxiv-papers",
+          "kind": "unhandled",
+          "taken_by": null,
+          "utterance": "read me a research paper from the arxiv"
+         }
+        ]
        },
        "in_profile": true
       },
@@ -3794,7 +3820,7 @@
       "untested": 0,
       "not_in_store": 2,
       "routes": 12,
-      "gold": 12
+      "gold": 11
      },
      "cumulative": {
       "total": 59,
@@ -3805,7 +3831,7 @@
       "untested": 0,
       "not_in_store": 2,
       "routes": 17,
-      "gold": 18
+      "gold": 17
      }
     }
    ]
