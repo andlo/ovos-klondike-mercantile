@@ -62,26 +62,22 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-nato-alphabet.andlo",
+    "badge_id": "ovos-skill-nato-alphabet.emkay-voice",
     "channels": {
       "stable": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-11-20T10:29:41+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
+        "label": "\u2717 doesn't load",
+        "state": "fail",
+        "level": 1,
+        "version_tested": "0.2.0",
+        "tested_at": "2026-11-21T10:12:53+00:00",
+        "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-11-20T10:27:29+00:00",
+        "version_tested": "0.2.0",
+        "tested_at": "2026-11-21T10:10:55+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 3,
@@ -92,8 +88,8 @@
         "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-11-20T10:27:22+00:00",
+        "version_tested": "0.2.0",
+        "tested_at": "2026-11-21T10:11:37+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 3,

@@ -1,5 +1,84 @@
 [
   {
+    "id": "emkay-voice-ovos-skill-1001-nights",
+    "skill_id": "ovos-skill-1001-nights.emkay-voice",
+    "name": "1001 Nights (provider)",
+    "description": "Tales from the Thousand and One Nights, read from Wikisource. Provider for ovos-common-reading-pipeline-plugin. No standalone voice interface.",
+    "examples": [
+      "Tell me a story from the arabian nights",
+      "Read me a story from one thousand and one nights"
+    ],
+    "tags": [
+      "entertainment",
+      "stories",
+      "fairytales",
+      "arabian-nights",
+      "wikisource",
+      "provider"
+    ],
+    "category": "Entertainment",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-1001-nights/main/story-512.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-1001-nights",
+    "package_name": "ovos-skill-1001-nights",
+    "pypi_version": "0.1.0",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": "ovos-common-reading-pipeline-plugin",
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-1001-nights ovos-common-reading-pipeline-plugin"
+      }
+    ],
+    "languages": [
+      "en-us",
+      "fr-fr",
+      "it-it"
+    ],
+    "locale_content": {
+      "fr-fr": {
+        "name": "Les Mille et Une Nuits (fournisseur)",
+        "description": "Contes des Mille et Une Nuits, lus depuis Wikisource. Fournisseur pour ovos-common-reading-pipeline-plugin. Sans interface vocale autonome.",
+        "examples": [
+          "Raconte-moi une histoire des mille et une nuits",
+          "Lis-moi un conte des mille et une nuits"
+        ]
+      },
+      "it-it": {
+        "name": "Le mille e una notte (fornitore)",
+        "description": "Racconti delle Mille e una notte, letti da Wikisource. Fornitore per ovos-common-reading-pipeline-plugin. Senza interfaccia vocale autonoma.",
+        "examples": [
+          "Raccontami una storia delle mille e una notte",
+          "Leggimi una fiaba delle mille e una notte"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-21T17:20:29Z",
+    "last_updated": "2026-11-21T17:28:53.483782Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-1001-nights.emkay-voice",
+      "channels": {}
+    }
+  },
+  {
     "id": "emkay-voice-ovos-skill-365tomorrows-stories",
     "skill_id": "ovos-skill-365tomorrows-stories.emkay-voice",
     "name": "365tomorrows Stories (provider)",
@@ -4611,6 +4690,147 @@
           "channel_pinned": true
         }
       }
+    }
+  },
+  {
+    "id": "emkay-voice-ovos-skill-documents",
+    "skill_id": "ovos-skill-documents.emkay-voice",
+    "name": "Documents",
+    "description": "Reads your own documents aloud - text, Markdown, PDF, Word, OpenDocument, EPUB and HTML - from folders on the device or from urls.",
+    "examples": [
+      "read me the document holiday plans",
+      "read my documents",
+      "read me a document"
+    ],
+    "tags": [
+      "documents",
+      "reading",
+      "pdf",
+      "provider",
+      "common reading"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-documents/main/icon.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-documents",
+    "package_name": "ovos-skill-documents",
+    "pypi_version": "0.1.0a4",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "folders",
+        "type": "text",
+        "label": "Folders"
+      },
+      {
+        "name": "urls",
+        "type": "text",
+        "label": "Urls"
+      },
+      {
+        "name": "rescan_minutes",
+        "type": "number",
+        "label": "Look for new documents every (minutes, 0 = only at start)"
+      }
+    ],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-documents\n\nIt needs [ovos-common-reading-pipeline-plugin](https://github.com/andlo/ovos-common-reading-pipeline-plugin) in the\nintent pipeline, as every reading provider does."
+      }
+    ],
+    "languages": [
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "fr-fr",
+      "it-it",
+      "nl-nl",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "da-dk": {
+        "name": "Dokumenter",
+        "description": "L\u00e6ser dine egne dokumenter op - tekst, Markdown, PDF, Word, OpenDocument, EPUB og HTML - fra mapper p\u00e5 enheden eller fra url'er.",
+        "examples": [
+          "l\u00e6s dokumentet ferieplaner",
+          "l\u00e6s mine dokumenter",
+          "l\u00e6s et dokument"
+        ]
+      },
+      "de-de": {
+        "name": "Dokumente",
+        "description": "Liest deine eigenen Dokumente vor - Text, Markdown, PDF, Word, OpenDocument, EPUB und HTML - aus Ordnern auf dem Ger\u00e4t oder von URLs.",
+        "examples": [
+          "lies mir das dokument urlaubspl\u00e4ne vor",
+          "lies meine dokumente vor"
+        ]
+      },
+      "es-es": {
+        "name": "Documentos",
+        "description": "Lee en voz alta tus propios documentos - texto, Markdown, PDF, Word, OpenDocument, EPUB y HTML - desde carpetas del dispositivo o desde URL.",
+        "examples": [
+          "l\u00e9eme el documento planes de vacaciones",
+          "lee mis documentos"
+        ]
+      },
+      "fr-fr": {
+        "name": "Documents",
+        "description": "Lit \u00e0 voix haute tes propres documents - texte, Markdown, PDF, Word, OpenDocument, EPUB et HTML - depuis des dossiers de l'appareil ou des URL.",
+        "examples": [
+          "lis-moi le document projets de vacances",
+          "lis mes documents"
+        ]
+      },
+      "it-it": {
+        "name": "Documenti",
+        "description": "Legge ad alta voce i tuoi documenti - testo, Markdown, PDF, Word, OpenDocument, EPUB e HTML - da cartelle sul dispositivo o da URL.",
+        "examples": [
+          "leggimi il documento piani per le vacanze",
+          "leggi i miei documenti"
+        ]
+      },
+      "nl-nl": {
+        "name": "Documenten",
+        "description": "Leest je eigen documenten voor - tekst, Markdown, PDF, Word, OpenDocument, EPUB en HTML - uit mappen op het apparaat of van URL's.",
+        "examples": [
+          "lees het document vakantieplannen voor",
+          "lees mijn documenten voor"
+        ]
+      },
+      "pt-pt": {
+        "name": "Documentos",
+        "description": "L\u00ea em voz alta os teus pr\u00f3prios documentos - texto, Markdown, PDF, Word, OpenDocument, EPUB e HTML - de pastas no dispositivo ou de URLs.",
+        "examples": [
+          "l\u00ea-me o documento planos de f\u00e9rias",
+          "l\u00ea os meus documentos"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-21T14:16:22Z",
+    "last_updated": "2026-11-21T18:34:30.072918Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-documents.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -9431,7 +9651,35 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-jamband.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.0a1",
+          "tested_at": "2026-11-21T10:11:27+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-11-21T10:10:48+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads \u00b7 2/3 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.2.0a1",
+          "tested_at": "2026-11-21T10:11:10+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 3
+          }
+        }
+      }
     }
   },
   {
@@ -11485,26 +11733,22 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-morse-code.andlo",
+      "badge_id": "ovos-skill-morse-code.emkay-voice",
       "channels": {
         "stable": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-11-20T10:29:27+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:12:41+00:00",
+          "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-11-20T10:27:24+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:10:49+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -11515,8 +11759,8 @@
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-11-20T10:27:13+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:11:26+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -11979,6 +12223,238 @@
     "last_updated": "2026-09-02T18:40:44.756410Z",
     "is_new_repo": false,
     "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-ovos-skill-music-teacher",
+    "skill_id": "ovos-skill-music-teacher.emkay-voice",
+    "name": "Music Teacher",
+    "description": "Piano, guitar and bass lessons: scales, chords, simple songs and jamming. Shown on the screen with the keys or frets and the fingers, played for you, then it listens to you play - through the microphone, or exactly through a MIDI keyboard - and tells you what was right, or the first mistake. Learn a song a piece at a time, then play it with the band; jam with the band and take turns; tune your guitar or bass. A course for each instrument remembers where you are.",
+    "examples": [
+      "teach me the C major scale on piano",
+      "how do I play A minor on guitar",
+      "teach me Ode to Joy on piano",
+      "teach me to jam a blues in A on guitar",
+      "tune my bass",
+      "music lesson",
+      "next lesson",
+      "what can you teach me"
+    ],
+    "tags": [
+      "music",
+      "learning",
+      "education",
+      "piano",
+      "guitar",
+      "bass"
+    ],
+    "category": "Music",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-music-teacher/main/icon.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-music-teacher",
+    "package_name": "ovos-skill-music-teacher",
+    "pypi_version": "0.1.0a1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-music-teacher\n\nIt brings ovos-skill-jamband (the band, the songs) and ovos-phal-plugin-midi\n(the sound). The plugin runs in OVOS' PHAL service, so restart OpenVoiceOS\nonce after installing; Emkay starts it by itself. Without it everything still\nworks - except you hear no examples, and there is no band."
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Professor de m\u00fasica",
+        "description": "Classes de piano, guitarra i baix: escales, acords, can\u00e7ons senzilles i improvisaci\u00f3. Es mostra a la pantalla amb les tecles o els trastos i els dits, te'l toca, i despr\u00e9s t'escolta tocar - pel micr\u00f2fon, o exactament amb un teclat MIDI - i et diu qu\u00e8 ha anat b\u00e9, o el primer error. Apr\u00e8n una can\u00e7\u00f3 tros a tros i despr\u00e9s toca-la amb la banda; improvisa per torns amb la banda; afina la teva guitarra o el teu baix. Un curs per a cada instrument recorda on ets.",
+        "examples": [
+          "ensenya'm l'escala de do major al piano",
+          "com toco la menor a la guitarra",
+          "ensenya'm l'Oda a l'alegria al piano",
+          "ensenya'm a improvisar un blues en la a la guitarra",
+          "afina el meu baix",
+          "classe de m\u00fasica",
+          "seg\u00fcent lli\u00e7\u00f3",
+          "qu\u00e8 em pots ensenyar"
+        ]
+      },
+      "da-dk": {
+        "name": "Musikl\u00e6rer",
+        "description": "Klaver-, guitar- og basundervisning: skalaer, akkorder, enkle sange og jam. Vist p\u00e5 sk\u00e6rmen med tangenter eller b\u00e5nd og fingre, spillet for dig, og s\u00e5 lytter den, mens du spiller - gennem mikrofonen, eller helt pr\u00e6cist gennem et MIDI-keyboard - og siger, hvad der var rigtigt, eller den f\u00f8rste fejl. L\u00e6r en sang et stykke ad gangen, og spil den s\u00e5 med bandet; jam med bandet p\u00e5 skift; stem din guitar eller bas. Et forl\u00f8b for hvert instrument husker, hvor du er n\u00e5et til.",
+        "examples": [
+          "l\u00e6r mig c-dur-skalaen p\u00e5 klaver",
+          "hvordan tager jeg a-mol p\u00e5 guitar",
+          "l\u00e6r mig Ode til gl\u00e6den p\u00e5 klaver",
+          "l\u00e6r mig at jamme en blues i a p\u00e5 guitar",
+          "stem min bas",
+          "musiktime",
+          "n\u00e6ste lektion",
+          "hvad kan du l\u00e6re mig"
+        ]
+      },
+      "de-de": {
+        "name": "Musiklehrer",
+        "description": "Klavier-, Gitarren- und Bassunterricht: Tonleitern, Akkorde, einfache Lieder und Jammen. Auf dem Bildschirm mit Tasten oder B\u00fcnden und Fingern gezeigt, dir vorgespielt, dann h\u00f6rt er dir beim Spielen zu - \u00fcber das Mikrofon oder genau \u00fcber ein MIDI-Keyboard - und sagt, was richtig war, oder den ersten Fehler. Lerne ein Lied St\u00fcck f\u00fcr St\u00fcck und spiel es dann mit der Band; jamme abwechselnd mit der Band; stimme deine Gitarre oder deinen Bass. Ein Kurs f\u00fcr jedes Instrument merkt sich, wo du bist.",
+        "examples": [
+          "bring mir die C-Dur-Tonleiter auf dem Klavier bei",
+          "wie greife ich a-Moll auf der Gitarre",
+          "bring mir Ode an die Freude auf dem Klavier bei",
+          "bring mir bei einen Blues in A auf der Gitarre zu jammen",
+          "stimm meinen Bass",
+          "Musikstunde",
+          "n\u00e4chste Lektion",
+          "was kannst du mir beibringen"
+        ]
+      },
+      "es-es": {
+        "name": "Profesor de m\u00fasica",
+        "description": "Clases de piano, guitarra y bajo: escalas, acordes, canciones sencillas e improvisaci\u00f3n. Se muestra en la pantalla con las teclas o los trastes y los dedos, te lo toca, y luego te escucha tocar - por el micr\u00f3fono, o exactamente con un teclado MIDI - y te dice qu\u00e9 estuvo bien, o el primer error. Aprende una canci\u00f3n trozo a trozo y luego t\u00f3cala con la banda; improvisa por turnos con la banda; afina tu guitarra o tu bajo. Un curso para cada instrumento recuerda por d\u00f3nde vas.",
+        "examples": [
+          "ens\u00e9\u00f1ame la escala de do mayor en el piano",
+          "c\u00f3mo toco la menor en la guitarra",
+          "ens\u00e9\u00f1ame el Himno de la alegr\u00eda en el piano",
+          "ens\u00e9\u00f1ame a improvisar un blues en la en la guitarra",
+          "afina mi bajo",
+          "clase de m\u00fasica",
+          "siguiente lecci\u00f3n",
+          "qu\u00e9 me puedes ense\u00f1ar"
+        ]
+      },
+      "eu-es": {
+        "name": "Musika irakaslea",
+        "description": "Piano, gitarra eta baxu eskolak: eskalak, akordeak, abesti errazak eta inprobisazioa. Pantailan erakusten da teklekin edo trasteekin eta hatzekin, zuretzat jotzen du, eta gero zu jotzen entzuten zaitu - mikrofonoaren bidez, edo zehatz MIDI teklatu baten bidez - eta zer egon den ondo esaten dizu, edo lehen akatsa. Ikasi abesti bat zatika eta gero jo taldearekin; inprobisatu txandaka taldearekin; afinatu zure gitarra edo baxua. Instrumentu bakoitzeko ikastaro batek gogoratzen du non zauden.",
+        "examples": [
+          "irakatsi iezadazu do maior eskala pianoan",
+          "nola jo la minor gitarran",
+          "irakatsi iezadazu Bozkariorako oda pianoan",
+          "irakatsi iezadazu blues bat inprobisatzen la tonuan gitarran",
+          "afinatu nire baxua",
+          "musika eskola",
+          "hurrengo ikasgaia",
+          "zer irakats diezadakezu"
+        ]
+      },
+      "fr-fr": {
+        "name": "Professeur de musique",
+        "description": "Le\u00e7ons de piano, de guitare et de basse : gammes, accords, chansons simples et jam. Montr\u00e9 \u00e0 l'\u00e9cran avec les touches ou les cases et les doigts, jou\u00e9 pour toi, puis il t'\u00e9coute jouer - au micro, ou exactement avec un clavier MIDI - et te dit ce qui \u00e9tait juste, ou la premi\u00e8re erreur. Apprends une chanson morceau par morceau, puis joue-la avec le groupe ; improvise \u00e0 tour de r\u00f4le avec le groupe ; accorde ta guitare ou ta basse. Un cours pour chaque instrument se souvient d'o\u00f9 tu en es.",
+        "examples": [
+          "apprends-moi la gamme de do majeur au piano",
+          "comment jouer la mineur \u00e0 la guitare",
+          "apprends-moi l'Hymne \u00e0 la joie au piano",
+          "apprends-moi \u00e0 jammer un blues en la \u00e0 la guitare",
+          "accorde ma basse",
+          "le\u00e7on de musique",
+          "le\u00e7on suivante",
+          "qu'est-ce que tu peux m'apprendre"
+        ]
+      },
+      "gl-es": {
+        "name": "Profesor de m\u00fasica",
+        "description": "Clases de piano, guitarra e baixo: escalas, acordes, canci\u00f3ns sinxelas e improvisaci\u00f3n. Am\u00f3sase na pantalla coas teclas ou os trastes e os dedos, t\u00f3cacho, e despois esc\u00f3itate tocar - polo micr\u00f3fono, ou exactamente cun teclado MIDI - e dicche que estivo ben, ou o primeiro erro. Aprende unha canci\u00f3n anaco a anaco e despois t\u00f3caa coa banda; improvisa por quendas coa banda; afina a t\u00faa guitarra ou o teu baixo. Un curso para cada instrumento lembra por onde vas.",
+        "examples": [
+          "ens\u00edname a escala de do maior no piano",
+          "como toco la menor na guitarra",
+          "ens\u00edname o Himno da alegr\u00eda no piano",
+          "ens\u00edname a improvisar un blues en la na guitarra",
+          "afina o meu baixo",
+          "clase de m\u00fasica",
+          "seguinte lecci\u00f3n",
+          "que me podes ensinar"
+        ]
+      },
+      "it-it": {
+        "name": "Insegnante di musica",
+        "description": "Lezioni di pianoforte, chitarra e basso: scale, accordi, canzoni semplici e improvvisazione. Mostrato sullo schermo con tasti o tasti della chitarra e dita, suonato per te, poi ti ascolta suonare - dal microfono, o esattamente con una tastiera MIDI - e ti dice cosa era giusto, o il primo errore. Impara una canzone un pezzo alla volta, poi suonala con la band; improvvisa a turno con la band; accorda la tua chitarra o il tuo basso. Un corso per ogni strumento ricorda dove sei arrivato.",
+        "examples": [
+          "insegnami la scala di do maggiore al pianoforte",
+          "come suono la minore sulla chitarra",
+          "insegnami l'Inno alla gioia al pianoforte",
+          "insegnami a improvvisare un blues in la sulla chitarra",
+          "accorda il mio basso",
+          "lezione di musica",
+          "prossima lezione",
+          "cosa mi puoi insegnare"
+        ]
+      },
+      "nl-nl": {
+        "name": "Muziekleraar",
+        "description": "Piano-, gitaar- en basles: toonladders, akkoorden, eenvoudige liedjes en jammen. Op het scherm getoond met toetsen of frets en vingers, voor je gespeeld, en dan luistert hij terwijl jij speelt - via de microfoon, of precies via een MIDI-keyboard - en zegt wat goed was, of de eerste fout. Leer een liedje stukje voor stukje en speel het dan met de band; jam om beurten met de band; stem je gitaar of bas. Een cursus per instrument onthoudt waar je bent.",
+        "examples": [
+          "leer me de C groot toonladder op piano",
+          "hoe speel ik A klein op gitaar",
+          "leer me Ode aan de vreugde op piano",
+          "leer me een blues in A jammen op gitaar",
+          "stem mijn bas",
+          "muziekles",
+          "volgende les",
+          "wat kun je me leren"
+        ]
+      },
+      "pt-br": {
+        "name": "Professor de m\u00fasica",
+        "description": "Aulas de piano, viol\u00e3o e baixo: escalas, acordes, m\u00fasicas simples e improviso. Mostrado na tela com as teclas ou casas e os dedos, tocado para voc\u00ea, e depois ele ouve voc\u00ea tocar - pelo microfone, ou exatamente por um teclado MIDI - e diz o que estava certo, ou o primeiro erro. Aprenda uma m\u00fasica peda\u00e7o por peda\u00e7o e depois toque com a banda; improvise em turnos com a banda; afine seu viol\u00e3o ou seu baixo. Um curso para cada instrumento lembra onde voc\u00ea parou.",
+        "examples": [
+          "me ensine a escala de d\u00f3 maior no piano",
+          "como eu toco l\u00e1 menor no viol\u00e3o",
+          "me ensine o Hino da alegria no piano",
+          "me ensine a improvisar um blues em l\u00e1 no viol\u00e3o",
+          "afina meu baixo",
+          "aula de m\u00fasica",
+          "pr\u00f3xima aula",
+          "o que voc\u00ea pode me ensinar"
+        ]
+      },
+      "pt-pt": {
+        "name": "Professor de m\u00fasica",
+        "description": "Aulas de piano, guitarra e baixo: escalas, acordes, m\u00fasicas simples e improviso. Mostrado no ecr\u00e3 com as teclas ou casas e os dedos, tocado para ti, e depois ouve-te tocar - pelo microfone, ou exatamente por um teclado MIDI - e diz o que estava certo, ou o primeiro erro. Aprende uma m\u00fasica peda\u00e7o a peda\u00e7o e depois toca-a com a banda; improvisa \u00e0 vez com a banda; afina a tua guitarra ou o teu baixo. Um curso para cada instrumento lembra-se de onde ficaste.",
+        "examples": [
+          "ensina-me a escala de d\u00f3 maior no piano",
+          "como \u00e9 que toco l\u00e1 menor na guitarra",
+          "ensina-me o Hino da alegria no piano",
+          "ensina-me a improvisar um blues em l\u00e1 na guitarra",
+          "afina o meu baixo",
+          "aula de m\u00fasica",
+          "pr\u00f3xima aula",
+          "o que me podes ensinar"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-21T16:16:56Z",
+    "last_updated": "2026-11-21T16:19:49.014714Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-music-teacher.emkay-voice",
+      "channels": {}
+    }
   },
   {
     "id": "OpenVoiceOS-mycroft-classic-listener",
@@ -12460,26 +12936,22 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-nato-alphabet.andlo",
+      "badge_id": "ovos-skill-nato-alphabet.emkay-voice",
       "channels": {
         "stable": {
-          "label": "\u2713 3/3 golden",
-          "state": "pass",
-          "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-11-20T10:29:41+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 3,
-            "counted": 3
-          }
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:12:53+00:00",
+          "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-11-20T10:27:29+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:10:55+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -12490,8 +12962,8 @@
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.0.3",
-          "tested_at": "2026-11-20T10:27:22+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:11:37+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -13944,6 +14416,135 @@
     "last_updated": "2026-11-04T03:19:35Z",
     "is_new_repo": false,
     "is_recently_updated": true
+  },
+  {
+    "id": "emkay-voice-ovos-skill-opds-books",
+    "skill_id": "ovos-skill-opds-books.emkay-voice",
+    "name": "OPDS Books",
+    "description": "Reads books aloud from e-book catalogs - any OPDS catalog, or a feed of books such as Standard Ebooks' new releases.",
+    "examples": [
+      "read me the book wuthering heights",
+      "read me a book from standard ebooks"
+    ],
+    "tags": [
+      "books",
+      "reading",
+      "opds",
+      "ebooks",
+      "provider",
+      "common reading"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-opds-books/main/icon.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-opds-books",
+    "package_name": "ovos-skill-opds-books",
+    "pypi_version": "0.1.0a3",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [
+      {
+        "name": "catalogs",
+        "type": "text",
+        "label": "Catalogs"
+      },
+      {
+        "name": "refresh_hours",
+        "type": "number",
+        "label": "Read the catalogs again every (hours)"
+      }
+    ],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-opds-books\n\nLike every reading provider, it needs\n[ovos-common-reading-pipeline-plugin](https://github.com/andlo/ovos-common-reading-pipeline-plugin) in the intent\npipeline."
+      }
+    ],
+    "languages": [
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "fr-fr",
+      "it-it",
+      "nl-nl",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "da-dk": {
+        "name": "OPDS-b\u00f8ger",
+        "description": "L\u00e6ser b\u00f8ger op fra e-bogskataloger - ethvert OPDS-katalog eller et feed med b\u00f8ger som Standard Ebooks' nye udgivelser.",
+        "examples": [
+          "l\u00e6s bogen ...",
+          "l\u00e6s en bog"
+        ]
+      },
+      "de-de": {
+        "name": "OPDS-B\u00fccher",
+        "description": "Liest B\u00fccher aus E-Book-Katalogen vor - jeder OPDS-Katalog oder ein Feed mit B\u00fcchern.",
+        "examples": [
+          "lies mir ein buch vor"
+        ]
+      },
+      "es-es": {
+        "name": "Libros OPDS",
+        "description": "Lee en voz alta libros de cat\u00e1logos de libros electr\u00f3nicos - cualquier cat\u00e1logo OPDS o un feed de libros.",
+        "examples": [
+          "l\u00e9eme un libro"
+        ]
+      },
+      "fr-fr": {
+        "name": "Livres OPDS",
+        "description": "Lit \u00e0 voix haute des livres de catalogues de livres num\u00e9riques - tout catalogue OPDS ou un flux de livres.",
+        "examples": [
+          "lis-moi un livre"
+        ]
+      },
+      "it-it": {
+        "name": "Libri OPDS",
+        "description": "Legge ad alta voce libri da cataloghi di e-book - qualsiasi catalogo OPDS o un feed di libri.",
+        "examples": [
+          "leggimi un libro"
+        ]
+      },
+      "nl-nl": {
+        "name": "OPDS-boeken",
+        "description": "Leest boeken voor uit e-bookcatalogi - elke OPDS-catalogus of een feed met boeken.",
+        "examples": [
+          "lees een boek voor"
+        ]
+      },
+      "pt-pt": {
+        "name": "Livros OPDS",
+        "description": "L\u00ea em voz alta livros de cat\u00e1logos de livros eletr\u00f3nicos - qualquer cat\u00e1logo OPDS ou um feed de livros.",
+        "examples": [
+          "l\u00ea-me um livro"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-21T14:45:20Z",
+    "last_updated": "2026-11-21T18:34:38.583084Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-opds-books.emkay-voice",
+      "channels": {}
+    }
   },
   {
     "id": "putnik-OpenVoiceOS-russian",
@@ -17206,14 +17807,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "femelo",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
     "open_issues": 0,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -17235,7 +17836,11 @@
     "repo_created_at": "2026-05-11T07:55:37Z",
     "last_updated": "2026-05-13T16:59:21.702710Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "femelo-ovos-hierarchical-knn-pipeline",
+      "channels": {}
+    }
   },
   {
     "id": "JarbasHiveMind-ovos-hivemind-pipeline-plugin",
@@ -27150,45 +27755,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "MenneBos-ovos-skill-ObsidianAddNote",
-    "skill_id": null,
-    "name": "ovos-skill-ObsidianAddNote",
-    "description": "An OVOS skill using OVOS-persona ",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/MenneBos/ovos-skill-ObsidianAddNote",
-    "package_name": "ovos-skill-ObsidianAddNote",
-    "pypi_version": null,
-    "license": "NOASSERTION",
-    "archived": false,
-    "author": "MenneBos",
-    "tier": 2,
-    "component_type": "Skill",
-    "type_group": "Skill",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 0,
-    "on_pypi": false,
-    "has_release": false,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-08-30T13:40:16Z",
-    "last_updated": "2025-09-07T10:05:25Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "jaredcobb-ovos-skill-openai",
     "skill_id": null,
     "name": "ovos-skill-openai",
@@ -28574,7 +29140,7 @@
     "forks": 0,
     "open_issues": 7,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -28873,7 +29439,7 @@
     "archived": false,
     "author": "greennosedmule",
     "tier": 2,
-    "component_type": "Pipeline Plugin",
+    "component_type": "Toolbox Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -28899,7 +29465,7 @@
     "repo_created_at": "2026-10-07T05:55:07Z",
     "last_updated": "2026-10-18T03:39:58Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "JoergZ2-ovos-skill-wakeup",
@@ -30398,7 +30964,7 @@
     "forks": 2,
     "open_issues": 1,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -30442,7 +31008,7 @@
     "forks": 0,
     "open_issues": 0,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -36652,65 +37218,26 @@
     "is_recently_updated": false
   },
   {
-    "id": "OpenVoiceOS-ovos_tts_transformer_NovaSR",
-    "skill_id": null,
-    "name": "ovos_tts_transformer_NovaSR",
-    "description": "Audio super-resolution for OpenVoiceOS speech synthesis. `NovaSR` upsamples the",
-    "examples": [],
-    "tags": [
-      "text-to-speech",
-      "tigregotico",
-      "transformers",
-      "tts"
-    ],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos_tts_transformer_NovaSR",
-    "package_name": "ovos_tts_transformer_NovaSR",
-    "pypi_version": null,
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 2,
-    "component_type": "TTS Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 5,
-    "on_pypi": false,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Installation",
-        "content": "pip install ovos-tts-transformer-NovaSR"
-      },
-      {
-        "heading": "Configuration",
-        "content": "Enable the transformer in `mycroft.conf` under the `tts_transformers` section,\nkeyed by the plugin name:\n\n\"tts_transformers\": {\n  \"ovos-tts-transformer-NovaSR\": {}\n}\n\nThe plugin takes no configuration of its own; once enabled it applies to the\noutput of whichever TTS plugin is active. Multiple TTS transformers can be\nchained. Execution order follows each plugin's `priority` (NovaSR defaults to\n`50`)."
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-01-26T12:35:02Z",
-    "last_updated": "2026-10-11T07:44:01Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
     "id": "ksnishat-ovoscan-pipeline",
     "skill_id": null,
     "name": "ovoscan-pipeline",
     "description": "Egg quality classification: YOLOv8n-cls (97.2% top-1) with ZenML pipeline orchestration, MLflow tracking, FastAPI serving, ChromaDB RAG reports via local llama3.2, drift monitoring, and Helm charts verified in kind.",
     "examples": [],
-    "tags": [],
+    "tags": [
+      "chromadb",
+      "computer-vision",
+      "fastapi",
+      "grafana",
+      "helm",
+      "image-classification",
+      "kubernetes",
+      "mlflow",
+      "mlops",
+      "prometheus",
+      "rag",
+      "yolov8",
+      "zenml"
+    ],
     "category": "Other",
     "icon": null,
     "icon_source": null,
@@ -36739,7 +37266,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-14T23:03:35Z",
-    "last_updated": "2026-11-14T11:45:26Z",
+    "last_updated": "2026-11-17T22:04:35Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -39276,7 +39803,7 @@
     "forks": 0,
     "open_issues": 0,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -45438,30 +45965,30 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-wiki-offline.andlo",
+      "badge_id": "ovos-skill-wiki-offline.emkay-voice",
       "channels": {
         "stable": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-11-20T10:27:18+00:00",
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:13:04+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-11-20T10:26:30+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:11:00+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.0.8",
-          "tested_at": "2026-11-20T10:27:04+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-21T10:11:48+00:00",
           "channel_pinned": false
         }
       }

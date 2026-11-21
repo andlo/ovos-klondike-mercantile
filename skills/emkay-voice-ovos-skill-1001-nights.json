@@ -1,0 +1,79 @@
+{
+  "id": "emkay-voice-ovos-skill-1001-nights",
+  "skill_id": "ovos-skill-1001-nights.emkay-voice",
+  "name": "1001 Nights (provider)",
+  "description": "Tales from the Thousand and One Nights, read from Wikisource. Provider for ovos-common-reading-pipeline-plugin. No standalone voice interface.",
+  "examples": [
+    "Tell me a story from the arabian nights",
+    "Read me a story from one thousand and one nights"
+  ],
+  "tags": [
+    "entertainment",
+    "stories",
+    "fairytales",
+    "arabian-nights",
+    "wikisource",
+    "provider"
+  ],
+  "category": "Entertainment",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-1001-nights/main/story-512.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-1001-nights",
+  "package_name": "ovos-skill-1001-nights",
+  "pypi_version": "0.1.0",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": "ovos-common-reading-pipeline-plugin",
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-1001-nights ovos-common-reading-pipeline-plugin"
+    }
+  ],
+  "languages": [
+    "en-us",
+    "fr-fr",
+    "it-it"
+  ],
+  "locale_content": {
+    "fr-fr": {
+      "name": "Les Mille et Une Nuits (fournisseur)",
+      "description": "Contes des Mille et Une Nuits, lus depuis Wikisource. Fournisseur pour ovos-common-reading-pipeline-plugin. Sans interface vocale autonome.",
+      "examples": [
+        "Raconte-moi une histoire des mille et une nuits",
+        "Lis-moi un conte des mille et une nuits"
+      ]
+    },
+    "it-it": {
+      "name": "Le mille e una notte (fornitore)",
+      "description": "Racconti delle Mille e una notte, letti da Wikisource. Fornitore per ovos-common-reading-pipeline-plugin. Senza interfaccia vocale autonoma.",
+      "examples": [
+        "Raccontami una storia delle mille e una notte",
+        "Leggimi una fiaba delle mille e una notte"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-21T17:20:29Z",
+  "last_updated": "2026-11-21T17:28:53.483782Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-1001-nights.emkay-voice",
+    "channels": {}
+  }
+}

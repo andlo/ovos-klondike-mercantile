@@ -1,0 +1,232 @@
+{
+  "id": "emkay-voice-ovos-skill-music-teacher",
+  "skill_id": "ovos-skill-music-teacher.emkay-voice",
+  "name": "Music Teacher",
+  "description": "Piano, guitar and bass lessons: scales, chords, simple songs and jamming. Shown on the screen with the keys or frets and the fingers, played for you, then it listens to you play - through the microphone, or exactly through a MIDI keyboard - and tells you what was right, or the first mistake. Learn a song a piece at a time, then play it with the band; jam with the band and take turns; tune your guitar or bass. A course for each instrument remembers where you are.",
+  "examples": [
+    "teach me the C major scale on piano",
+    "how do I play A minor on guitar",
+    "teach me Ode to Joy on piano",
+    "teach me to jam a blues in A on guitar",
+    "tune my bass",
+    "music lesson",
+    "next lesson",
+    "what can you teach me"
+  ],
+  "tags": [
+    "music",
+    "learning",
+    "education",
+    "piano",
+    "guitar",
+    "bass"
+  ],
+  "category": "Music",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-music-teacher/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-music-teacher",
+  "package_name": "ovos-skill-music-teacher",
+  "pypi_version": "0.1.0a1",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-music-teacher\n\nIt brings ovos-skill-jamband (the band, the songs) and ovos-phal-plugin-midi\n(the sound). The plugin runs in OVOS' PHAL service, so restart OpenVoiceOS\nonce after installing; Emkay starts it by itself. Without it everything still\nworks - except you hear no examples, and there is no band."
+    }
+  ],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Professor de m\u00fasica",
+      "description": "Classes de piano, guitarra i baix: escales, acords, can\u00e7ons senzilles i improvisaci\u00f3. Es mostra a la pantalla amb les tecles o els trastos i els dits, te'l toca, i despr\u00e9s t'escolta tocar - pel micr\u00f2fon, o exactament amb un teclat MIDI - i et diu qu\u00e8 ha anat b\u00e9, o el primer error. Apr\u00e8n una can\u00e7\u00f3 tros a tros i despr\u00e9s toca-la amb la banda; improvisa per torns amb la banda; afina la teva guitarra o el teu baix. Un curs per a cada instrument recorda on ets.",
+      "examples": [
+        "ensenya'm l'escala de do major al piano",
+        "com toco la menor a la guitarra",
+        "ensenya'm l'Oda a l'alegria al piano",
+        "ensenya'm a improvisar un blues en la a la guitarra",
+        "afina el meu baix",
+        "classe de m\u00fasica",
+        "seg\u00fcent lli\u00e7\u00f3",
+        "qu\u00e8 em pots ensenyar"
+      ]
+    },
+    "da-dk": {
+      "name": "Musikl\u00e6rer",
+      "description": "Klaver-, guitar- og basundervisning: skalaer, akkorder, enkle sange og jam. Vist p\u00e5 sk\u00e6rmen med tangenter eller b\u00e5nd og fingre, spillet for dig, og s\u00e5 lytter den, mens du spiller - gennem mikrofonen, eller helt pr\u00e6cist gennem et MIDI-keyboard - og siger, hvad der var rigtigt, eller den f\u00f8rste fejl. L\u00e6r en sang et stykke ad gangen, og spil den s\u00e5 med bandet; jam med bandet p\u00e5 skift; stem din guitar eller bas. Et forl\u00f8b for hvert instrument husker, hvor du er n\u00e5et til.",
+      "examples": [
+        "l\u00e6r mig c-dur-skalaen p\u00e5 klaver",
+        "hvordan tager jeg a-mol p\u00e5 guitar",
+        "l\u00e6r mig Ode til gl\u00e6den p\u00e5 klaver",
+        "l\u00e6r mig at jamme en blues i a p\u00e5 guitar",
+        "stem min bas",
+        "musiktime",
+        "n\u00e6ste lektion",
+        "hvad kan du l\u00e6re mig"
+      ]
+    },
+    "de-de": {
+      "name": "Musiklehrer",
+      "description": "Klavier-, Gitarren- und Bassunterricht: Tonleitern, Akkorde, einfache Lieder und Jammen. Auf dem Bildschirm mit Tasten oder B\u00fcnden und Fingern gezeigt, dir vorgespielt, dann h\u00f6rt er dir beim Spielen zu - \u00fcber das Mikrofon oder genau \u00fcber ein MIDI-Keyboard - und sagt, was richtig war, oder den ersten Fehler. Lerne ein Lied St\u00fcck f\u00fcr St\u00fcck und spiel es dann mit der Band; jamme abwechselnd mit der Band; stimme deine Gitarre oder deinen Bass. Ein Kurs f\u00fcr jedes Instrument merkt sich, wo du bist.",
+      "examples": [
+        "bring mir die C-Dur-Tonleiter auf dem Klavier bei",
+        "wie greife ich a-Moll auf der Gitarre",
+        "bring mir Ode an die Freude auf dem Klavier bei",
+        "bring mir bei einen Blues in A auf der Gitarre zu jammen",
+        "stimm meinen Bass",
+        "Musikstunde",
+        "n\u00e4chste Lektion",
+        "was kannst du mir beibringen"
+      ]
+    },
+    "es-es": {
+      "name": "Profesor de m\u00fasica",
+      "description": "Clases de piano, guitarra y bajo: escalas, acordes, canciones sencillas e improvisaci\u00f3n. Se muestra en la pantalla con las teclas o los trastes y los dedos, te lo toca, y luego te escucha tocar - por el micr\u00f3fono, o exactamente con un teclado MIDI - y te dice qu\u00e9 estuvo bien, o el primer error. Aprende una canci\u00f3n trozo a trozo y luego t\u00f3cala con la banda; improvisa por turnos con la banda; afina tu guitarra o tu bajo. Un curso para cada instrumento recuerda por d\u00f3nde vas.",
+      "examples": [
+        "ens\u00e9\u00f1ame la escala de do mayor en el piano",
+        "c\u00f3mo toco la menor en la guitarra",
+        "ens\u00e9\u00f1ame el Himno de la alegr\u00eda en el piano",
+        "ens\u00e9\u00f1ame a improvisar un blues en la en la guitarra",
+        "afina mi bajo",
+        "clase de m\u00fasica",
+        "siguiente lecci\u00f3n",
+        "qu\u00e9 me puedes ense\u00f1ar"
+      ]
+    },
+    "eu-es": {
+      "name": "Musika irakaslea",
+      "description": "Piano, gitarra eta baxu eskolak: eskalak, akordeak, abesti errazak eta inprobisazioa. Pantailan erakusten da teklekin edo trasteekin eta hatzekin, zuretzat jotzen du, eta gero zu jotzen entzuten zaitu - mikrofonoaren bidez, edo zehatz MIDI teklatu baten bidez - eta zer egon den ondo esaten dizu, edo lehen akatsa. Ikasi abesti bat zatika eta gero jo taldearekin; inprobisatu txandaka taldearekin; afinatu zure gitarra edo baxua. Instrumentu bakoitzeko ikastaro batek gogoratzen du non zauden.",
+      "examples": [
+        "irakatsi iezadazu do maior eskala pianoan",
+        "nola jo la minor gitarran",
+        "irakatsi iezadazu Bozkariorako oda pianoan",
+        "irakatsi iezadazu blues bat inprobisatzen la tonuan gitarran",
+        "afinatu nire baxua",
+        "musika eskola",
+        "hurrengo ikasgaia",
+        "zer irakats diezadakezu"
+      ]
+    },
+    "fr-fr": {
+      "name": "Professeur de musique",
+      "description": "Le\u00e7ons de piano, de guitare et de basse : gammes, accords, chansons simples et jam. Montr\u00e9 \u00e0 l'\u00e9cran avec les touches ou les cases et les doigts, jou\u00e9 pour toi, puis il t'\u00e9coute jouer - au micro, ou exactement avec un clavier MIDI - et te dit ce qui \u00e9tait juste, ou la premi\u00e8re erreur. Apprends une chanson morceau par morceau, puis joue-la avec le groupe ; improvise \u00e0 tour de r\u00f4le avec le groupe ; accorde ta guitare ou ta basse. Un cours pour chaque instrument se souvient d'o\u00f9 tu en es.",
+      "examples": [
+        "apprends-moi la gamme de do majeur au piano",
+        "comment jouer la mineur \u00e0 la guitare",
+        "apprends-moi l'Hymne \u00e0 la joie au piano",
+        "apprends-moi \u00e0 jammer un blues en la \u00e0 la guitare",
+        "accorde ma basse",
+        "le\u00e7on de musique",
+        "le\u00e7on suivante",
+        "qu'est-ce que tu peux m'apprendre"
+      ]
+    },
+    "gl-es": {
+      "name": "Profesor de m\u00fasica",
+      "description": "Clases de piano, guitarra e baixo: escalas, acordes, canci\u00f3ns sinxelas e improvisaci\u00f3n. Am\u00f3sase na pantalla coas teclas ou os trastes e os dedos, t\u00f3cacho, e despois esc\u00f3itate tocar - polo micr\u00f3fono, ou exactamente cun teclado MIDI - e dicche que estivo ben, ou o primeiro erro. Aprende unha canci\u00f3n anaco a anaco e despois t\u00f3caa coa banda; improvisa por quendas coa banda; afina a t\u00faa guitarra ou o teu baixo. Un curso para cada instrumento lembra por onde vas.",
+      "examples": [
+        "ens\u00edname a escala de do maior no piano",
+        "como toco la menor na guitarra",
+        "ens\u00edname o Himno da alegr\u00eda no piano",
+        "ens\u00edname a improvisar un blues en la na guitarra",
+        "afina o meu baixo",
+        "clase de m\u00fasica",
+        "seguinte lecci\u00f3n",
+        "que me podes ensinar"
+      ]
+    },
+    "it-it": {
+      "name": "Insegnante di musica",
+      "description": "Lezioni di pianoforte, chitarra e basso: scale, accordi, canzoni semplici e improvvisazione. Mostrato sullo schermo con tasti o tasti della chitarra e dita, suonato per te, poi ti ascolta suonare - dal microfono, o esattamente con una tastiera MIDI - e ti dice cosa era giusto, o il primo errore. Impara una canzone un pezzo alla volta, poi suonala con la band; improvvisa a turno con la band; accorda la tua chitarra o il tuo basso. Un corso per ogni strumento ricorda dove sei arrivato.",
+      "examples": [
+        "insegnami la scala di do maggiore al pianoforte",
+        "come suono la minore sulla chitarra",
+        "insegnami l'Inno alla gioia al pianoforte",
+        "insegnami a improvvisare un blues in la sulla chitarra",
+        "accorda il mio basso",
+        "lezione di musica",
+        "prossima lezione",
+        "cosa mi puoi insegnare"
+      ]
+    },
+    "nl-nl": {
+      "name": "Muziekleraar",
+      "description": "Piano-, gitaar- en basles: toonladders, akkoorden, eenvoudige liedjes en jammen. Op het scherm getoond met toetsen of frets en vingers, voor je gespeeld, en dan luistert hij terwijl jij speelt - via de microfoon, of precies via een MIDI-keyboard - en zegt wat goed was, of de eerste fout. Leer een liedje stukje voor stukje en speel het dan met de band; jam om beurten met de band; stem je gitaar of bas. Een cursus per instrument onthoudt waar je bent.",
+      "examples": [
+        "leer me de C groot toonladder op piano",
+        "hoe speel ik A klein op gitaar",
+        "leer me Ode aan de vreugde op piano",
+        "leer me een blues in A jammen op gitaar",
+        "stem mijn bas",
+        "muziekles",
+        "volgende les",
+        "wat kun je me leren"
+      ]
+    },
+    "pt-br": {
+      "name": "Professor de m\u00fasica",
+      "description": "Aulas de piano, viol\u00e3o e baixo: escalas, acordes, m\u00fasicas simples e improviso. Mostrado na tela com as teclas ou casas e os dedos, tocado para voc\u00ea, e depois ele ouve voc\u00ea tocar - pelo microfone, ou exatamente por um teclado MIDI - e diz o que estava certo, ou o primeiro erro. Aprenda uma m\u00fasica peda\u00e7o por peda\u00e7o e depois toque com a banda; improvise em turnos com a banda; afine seu viol\u00e3o ou seu baixo. Um curso para cada instrumento lembra onde voc\u00ea parou.",
+      "examples": [
+        "me ensine a escala de d\u00f3 maior no piano",
+        "como eu toco l\u00e1 menor no viol\u00e3o",
+        "me ensine o Hino da alegria no piano",
+        "me ensine a improvisar um blues em l\u00e1 no viol\u00e3o",
+        "afina meu baixo",
+        "aula de m\u00fasica",
+        "pr\u00f3xima aula",
+        "o que voc\u00ea pode me ensinar"
+      ]
+    },
+    "pt-pt": {
+      "name": "Professor de m\u00fasica",
+      "description": "Aulas de piano, guitarra e baixo: escalas, acordes, m\u00fasicas simples e improviso. Mostrado no ecr\u00e3 com as teclas ou casas e os dedos, tocado para ti, e depois ouve-te tocar - pelo microfone, ou exatamente por um teclado MIDI - e diz o que estava certo, ou o primeiro erro. Aprende uma m\u00fasica peda\u00e7o a peda\u00e7o e depois toca-a com a banda; improvisa \u00e0 vez com a banda; afina a tua guitarra ou o teu baixo. Um curso para cada instrumento lembra-se de onde ficaste.",
+      "examples": [
+        "ensina-me a escala de d\u00f3 maior no piano",
+        "como \u00e9 que toco l\u00e1 menor na guitarra",
+        "ensina-me o Hino da alegria no piano",
+        "ensina-me a improvisar um blues em l\u00e1 na guitarra",
+        "afina o meu baixo",
+        "aula de m\u00fasica",
+        "pr\u00f3xima aula",
+        "o que me podes ensinar"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-21T16:16:56Z",
+  "last_updated": "2026-11-21T16:19:49.014714Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-music-teacher.emkay-voice",
+    "channels": {}
+  }
+}

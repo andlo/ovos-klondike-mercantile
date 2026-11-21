@@ -61,26 +61,22 @@
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
-    "badge_id": "ovos-skill-morse-code.andlo",
+    "badge_id": "ovos-skill-morse-code.emkay-voice",
     "channels": {
       "stable": {
-        "label": "\u2713 3/3 golden",
-        "state": "pass",
-        "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-11-20T10:29:27+00:00",
-        "channel_pinned": false,
-        "golden": {
-          "hit": 3,
-          "counted": 3
-        }
+        "label": "\u2717 doesn't load",
+        "state": "fail",
+        "level": 1,
+        "version_tested": "0.2.0",
+        "tested_at": "2026-11-21T10:12:41+00:00",
+        "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-11-20T10:27:24+00:00",
+        "version_tested": "0.2.0",
+        "tested_at": "2026-11-21T10:10:49+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 3,
@@ -91,8 +87,8 @@
         "label": "\u2713 3/3 golden",
         "state": "pass",
         "level": 3,
-        "version_tested": "0.0.3",
-        "tested_at": "2026-11-20T10:27:13+00:00",
+        "version_tested": "0.2.0",
+        "tested_at": "2026-11-21T10:11:26+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 3,

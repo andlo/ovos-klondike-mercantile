@@ -1,0 +1,141 @@
+{
+  "id": "emkay-voice-ovos-skill-documents",
+  "skill_id": "ovos-skill-documents.emkay-voice",
+  "name": "Documents",
+  "description": "Reads your own documents aloud - text, Markdown, PDF, Word, OpenDocument, EPUB and HTML - from folders on the device or from urls.",
+  "examples": [
+    "read me the document holiday plans",
+    "read my documents",
+    "read me a document"
+  ],
+  "tags": [
+    "documents",
+    "reading",
+    "pdf",
+    "provider",
+    "common reading"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-documents/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-documents",
+  "package_name": "ovos-skill-documents",
+  "pypi_version": "0.1.0a4",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "folders",
+      "type": "text",
+      "label": "Folders"
+    },
+    {
+      "name": "urls",
+      "type": "text",
+      "label": "Urls"
+    },
+    {
+      "name": "rescan_minutes",
+      "type": "number",
+      "label": "Look for new documents every (minutes, 0 = only at start)"
+    }
+  ],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-documents\n\nIt needs [ovos-common-reading-pipeline-plugin](https://github.com/andlo/ovos-common-reading-pipeline-plugin) in the\nintent pipeline, as every reading provider does."
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "Dokumenter",
+      "description": "L\u00e6ser dine egne dokumenter op - tekst, Markdown, PDF, Word, OpenDocument, EPUB og HTML - fra mapper p\u00e5 enheden eller fra url'er.",
+      "examples": [
+        "l\u00e6s dokumentet ferieplaner",
+        "l\u00e6s mine dokumenter",
+        "l\u00e6s et dokument"
+      ]
+    },
+    "de-de": {
+      "name": "Dokumente",
+      "description": "Liest deine eigenen Dokumente vor - Text, Markdown, PDF, Word, OpenDocument, EPUB und HTML - aus Ordnern auf dem Ger\u00e4t oder von URLs.",
+      "examples": [
+        "lies mir das dokument urlaubspl\u00e4ne vor",
+        "lies meine dokumente vor"
+      ]
+    },
+    "es-es": {
+      "name": "Documentos",
+      "description": "Lee en voz alta tus propios documentos - texto, Markdown, PDF, Word, OpenDocument, EPUB y HTML - desde carpetas del dispositivo o desde URL.",
+      "examples": [
+        "l\u00e9eme el documento planes de vacaciones",
+        "lee mis documentos"
+      ]
+    },
+    "fr-fr": {
+      "name": "Documents",
+      "description": "Lit \u00e0 voix haute tes propres documents - texte, Markdown, PDF, Word, OpenDocument, EPUB et HTML - depuis des dossiers de l'appareil ou des URL.",
+      "examples": [
+        "lis-moi le document projets de vacances",
+        "lis mes documents"
+      ]
+    },
+    "it-it": {
+      "name": "Documenti",
+      "description": "Legge ad alta voce i tuoi documenti - testo, Markdown, PDF, Word, OpenDocument, EPUB e HTML - da cartelle sul dispositivo o da URL.",
+      "examples": [
+        "leggimi il documento piani per le vacanze",
+        "leggi i miei documenti"
+      ]
+    },
+    "nl-nl": {
+      "name": "Documenten",
+      "description": "Leest je eigen documenten voor - tekst, Markdown, PDF, Word, OpenDocument, EPUB en HTML - uit mappen op het apparaat of van URL's.",
+      "examples": [
+        "lees het document vakantieplannen voor",
+        "lees mijn documenten voor"
+      ]
+    },
+    "pt-pt": {
+      "name": "Documentos",
+      "description": "L\u00ea em voz alta os teus pr\u00f3prios documentos - texto, Markdown, PDF, Word, OpenDocument, EPUB e HTML - de pastas no dispositivo ou de URLs.",
+      "examples": [
+        "l\u00ea-me o documento planos de f\u00e9rias",
+        "l\u00ea os meus documentos"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-21T14:16:22Z",
+  "last_updated": "2026-11-21T18:34:30.072918Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-documents.emkay-voice",
+    "channels": {}
+  }
+}

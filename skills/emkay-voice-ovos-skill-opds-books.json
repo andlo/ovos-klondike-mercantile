@@ -1,0 +1,129 @@
+{
+  "id": "emkay-voice-ovos-skill-opds-books",
+  "skill_id": "ovos-skill-opds-books.emkay-voice",
+  "name": "OPDS Books",
+  "description": "Reads books aloud from e-book catalogs - any OPDS catalog, or a feed of books such as Standard Ebooks' new releases.",
+  "examples": [
+    "read me the book wuthering heights",
+    "read me a book from standard ebooks"
+  ],
+  "tags": [
+    "books",
+    "reading",
+    "opds",
+    "ebooks",
+    "provider",
+    "common reading"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-opds-books/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-opds-books",
+  "package_name": "ovos-skill-opds-books",
+  "pypi_version": "0.1.0a3",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": "online",
+  "requires_api_key": false,
+  "settings_fields": [
+    {
+      "name": "catalogs",
+      "type": "text",
+      "label": "Catalogs"
+    },
+    {
+      "name": "refresh_hours",
+      "type": "number",
+      "label": "Read the catalogs again every (hours)"
+    }
+  ],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-opds-books\n\nLike every reading provider, it needs\n[ovos-common-reading-pipeline-plugin](https://github.com/andlo/ovos-common-reading-pipeline-plugin) in the intent\npipeline."
+    }
+  ],
+  "languages": [
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "fr-fr",
+    "it-it",
+    "nl-nl",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "da-dk": {
+      "name": "OPDS-b\u00f8ger",
+      "description": "L\u00e6ser b\u00f8ger op fra e-bogskataloger - ethvert OPDS-katalog eller et feed med b\u00f8ger som Standard Ebooks' nye udgivelser.",
+      "examples": [
+        "l\u00e6s bogen ...",
+        "l\u00e6s en bog"
+      ]
+    },
+    "de-de": {
+      "name": "OPDS-B\u00fccher",
+      "description": "Liest B\u00fccher aus E-Book-Katalogen vor - jeder OPDS-Katalog oder ein Feed mit B\u00fcchern.",
+      "examples": [
+        "lies mir ein buch vor"
+      ]
+    },
+    "es-es": {
+      "name": "Libros OPDS",
+      "description": "Lee en voz alta libros de cat\u00e1logos de libros electr\u00f3nicos - cualquier cat\u00e1logo OPDS o un feed de libros.",
+      "examples": [
+        "l\u00e9eme un libro"
+      ]
+    },
+    "fr-fr": {
+      "name": "Livres OPDS",
+      "description": "Lit \u00e0 voix haute des livres de catalogues de livres num\u00e9riques - tout catalogue OPDS ou un flux de livres.",
+      "examples": [
+        "lis-moi un livre"
+      ]
+    },
+    "it-it": {
+      "name": "Libri OPDS",
+      "description": "Legge ad alta voce libri da cataloghi di e-book - qualsiasi catalogo OPDS o un feed di libri.",
+      "examples": [
+        "leggimi un libro"
+      ]
+    },
+    "nl-nl": {
+      "name": "OPDS-boeken",
+      "description": "Leest boeken voor uit e-bookcatalogi - elke OPDS-catalogus of een feed met boeken.",
+      "examples": [
+        "lees een boek voor"
+      ]
+    },
+    "pt-pt": {
+      "name": "Livros OPDS",
+      "description": "L\u00ea em voz alta livros de cat\u00e1logos de livros eletr\u00f3nicos - qualquer cat\u00e1logo OPDS ou um feed de livros.",
+      "examples": [
+        "l\u00ea-me um livro"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-21T14:45:20Z",
+  "last_updated": "2026-11-21T18:34:38.583084Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-opds-books.emkay-voice",
+    "channels": {}
+  }
+}
