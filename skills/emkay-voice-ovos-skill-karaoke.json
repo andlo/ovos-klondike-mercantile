@@ -21,21 +21,21 @@
   "icon_color": null,
   "source": "https://github.com/emkay-voice/ovos-skill-karaoke",
   "package_name": "ovos-skill-karaoke",
-  "pypi_version": null,
+  "pypi_version": "0.1.0a4",
   "license": "Apache-2.0",
   "archived": false,
   "author": "emkay-voice",
-  "tier": 2,
+  "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 0,
   "forks": 0,
   "open_issues": 0,
-  "on_pypi": false,
-  "has_release": false,
+  "on_pypi": true,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
-  "connectivity": null,
+  "connectivity": "online",
   "requires_api_key": false,
   "settings_fields": [],
   "setup_notes": [
@@ -45,10 +45,30 @@
     }
   ],
   "languages": [
+    "ca-es",
     "da-dk",
-    "en-us"
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
   ],
   "locale_content": {
+    "ca-es": {
+      "name": "Karaoke",
+      "description": "Canta can\u00e7ons amb la veu del mateix dispositiu, afinada sobre la melodia i amb una banda, o fa karaoke per a tu amb la lletra, els acords i la melodia a la pantalla. Funciona al dispositiu; els teus fitxers .kar s\u00f3n benvinguts.",
+      "examples": [
+        "canta Daisy Bell",
+        "karaoke Jingle Bells",
+        "canta una can\u00e7\u00f3",
+        "busca una can\u00e7\u00f3 sobre el Nadal"
+      ]
+    },
     "da-dk": {
       "name": "Karaoke",
       "description": "Synger sange med enhedens egen stemme, autotunet p\u00e5 melodien med et band bagved - eller spiller karaoke for dig, med tekst, akkorder og melodi p\u00e5 sk\u00e6rmen. K\u00f8rer p\u00e5 enheden; dine egne .kar-filer er velkomne.",
@@ -58,11 +78,105 @@
         "syng en sang",
         "hvilke sange kan du synge"
       ]
+    },
+    "de-de": {
+      "name": "Karaoke",
+      "description": "Singt Lieder mit der eigenen Stimme des Ger\u00e4ts, automatisch auf die Melodie gestimmt und mit Band \u2013 oder spielt Karaoke f\u00fcr dich, mit Text, Akkorden und Melodie auf dem Bildschirm. L\u00e4uft auf dem Ger\u00e4t; eigene .kar-Dateien willkommen.",
+      "examples": [
+        "sing Daisy Bell",
+        "Karaoke Jingle Bells",
+        "sing ein Lied",
+        "finde ein Lied \u00fcber Weihnachten"
+      ]
+    },
+    "es-es": {
+      "name": "Karaoke",
+      "description": "Canta canciones con la propia voz del dispositivo, afinada sobre la melod\u00eda y con una banda detr\u00e1s, o hace karaoke para ti con la letra, los acordes y la melod\u00eda en pantalla. Funciona en el dispositivo; tus propios archivos .kar son bienvenidos.",
+      "examples": [
+        "canta Daisy Bell",
+        "karaoke Jingle Bells",
+        "canta una canci\u00f3n",
+        "busca una canci\u00f3n sobre la Navidad"
+      ]
+    },
+    "eu-es": {
+      "name": "Karaokea",
+      "description": "Gailuaren ahotsarekin abestiak abesten ditu, melodiara egokituta eta talde batekin, edo karaokea egiten du zuretzat, letra, akordeak eta melodia pantailan. Gailuan bertan dabil; zure .kar fitxategiak ongi etorriak dira.",
+      "examples": [
+        "abestu Daisy Bell",
+        "karaokea Jingle Bells",
+        "abestu abesti bat",
+        "bilatu Gabonei buruzko abesti bat"
+      ]
+    },
+    "fr-fr": {
+      "name": "Karaok\u00e9",
+      "description": "Chante des chansons avec la propre voix de l'appareil, accord\u00e9e sur la m\u00e9lodie avec un groupe derri\u00e8re, ou fait du karaok\u00e9 pour toi avec les paroles, les accords et la m\u00e9lodie \u00e0 l'\u00e9cran. Fonctionne sur l'appareil ; tes propres fichiers .kar sont les bienvenus.",
+      "examples": [
+        "chante Daisy Bell",
+        "karaok\u00e9 Jingle Bells",
+        "chante une chanson",
+        "trouve une chanson sur No\u00ebl"
+      ]
+    },
+    "gl-es": {
+      "name": "Karaoke",
+      "description": "Canta canci\u00f3ns coa propia voz do dispositivo, afinada na melod\u00eda e cunha banda, ou fai karaoke para ti coa letra, os acordes e a melod\u00eda na pantalla. Funciona no dispositivo; os teus ficheiros .kar son benvidos.",
+      "examples": [
+        "canta Daisy Bell",
+        "karaoke Jingle Bells",
+        "canta unha canci\u00f3n",
+        "busca unha canci\u00f3n sobre o Nadal"
+      ]
+    },
+    "it-it": {
+      "name": "Karaoke",
+      "description": "Canta canzoni con la voce del dispositivo, intonata sulla melodia e con una band, oppure fa il karaoke per te con testo, accordi e melodia sullo schermo. Funziona sul dispositivo; i tuoi file .kar sono i benvenuti.",
+      "examples": [
+        "canta Daisy Bell",
+        "karaoke Jingle Bells",
+        "canta una canzone",
+        "trova una canzone sul Natale"
+      ]
+    },
+    "nl-nl": {
+      "name": "Karaoke",
+      "description": "Zingt liedjes met de eigen stem van het apparaat, gestemd op de melodie met een band erachter, of doet karaoke voor jou met tekst, akkoorden en melodie op het scherm. Draait op het apparaat; je eigen .kar-bestanden zijn welkom.",
+      "examples": [
+        "zing Daisy Bell",
+        "karaoke Jingle Bells",
+        "zing een liedje",
+        "zoek een liedje over kerst"
+      ]
+    },
+    "pt-br": {
+      "name": "Karaok\u00ea",
+      "description": "Canta m\u00fasicas com a pr\u00f3pria voz do dispositivo, afinada na melodia e com uma banda, ou faz karaok\u00ea para voc\u00ea com a letra, os acordes e a melodia na tela. Roda no dispositivo; seus pr\u00f3prios arquivos .kar s\u00e3o bem-vindos.",
+      "examples": [
+        "canta Daisy Bell",
+        "karaok\u00ea Jingle Bells",
+        "canta uma m\u00fasica",
+        "procura uma m\u00fasica sobre o Natal"
+      ]
+    },
+    "pt-pt": {
+      "name": "Karaoke",
+      "description": "Canta can\u00e7\u00f5es com a pr\u00f3pria voz do dispositivo, afinada na melodia e com uma banda, ou faz karaoke para ti com a letra, os acordes e a melodia no ecr\u00e3. Funciona no dispositivo; os teus ficheiros .kar s\u00e3o bem-vindos.",
+      "examples": [
+        "canta Daisy Bell",
+        "karaoke Jingle Bells",
+        "canta uma can\u00e7\u00e3o",
+        "procura uma can\u00e7\u00e3o sobre o Natal"
+      ]
     }
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-11-20T19:49:19Z",
-  "last_updated": "2026-11-20T20:02:21Z",
+  "last_updated": "2026-11-21T00:10:28.510436Z",
   "is_new_repo": false,
-  "is_recently_updated": false
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-karaoke.emkay-voice",
+    "channels": {}
+  }
 }

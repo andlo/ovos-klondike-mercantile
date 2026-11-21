@@ -23,18 +23,18 @@
   "icon_color": null,
   "source": "https://github.com/emkay-voice/ovos-stt-plugin-whisper-browser",
   "package_name": "ovos-stt-plugin-whisper-browser",
-  "pypi_version": "0.1.0a2",
+  "pypi_version": "0.1.0a4",
   "license": "Apache-2.0",
   "archived": false,
   "author": "emkay-voice",
-  "tier": 2,
+  "tier": 1,
   "component_type": "STT Plugin",
   "type_group": "Plugin",
   "stars": 0,
   "forks": 0,
   "open_issues": 0,
   "on_pypi": true,
-  "has_release": false,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
   "connectivity": null,
@@ -43,14 +43,14 @@
   "setup_notes": [
     {
       "heading": "Configuration",
-      "content": "{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-whisper-browser\",\n    \"fallback_module\": \"ovos-stt-plugin-server\",\n    \"ovos-stt-plugin-whisper-browser\": {}\n  }\n}\n\nThe model follows the language, as Piper's voice does: a language with a\nmodel of its own that does better uses that one (`MODELS`), every other\nlanguage the multilingual `onnx-community/whisper-base`.\n\n| language | model | download |\n|---|---|---|\n| English | `onnx-community/whisper-base.en` (English-only: better and faster) | ~140 MB |\n| others | `onnx-community/whisper-base` | ~140 MB |\n\n`model` in the config sets one model for every language instead, any\nWhisper model in ONNX for transformers.js, for instance\n`onnx-community/whisper-tiny` (~65 MB, faster, less accurate) or\n`onnx-community/whisper-small` (~510 MB, more accurate,\u2026"
+      "content": "{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-whisper-browser\",\n    \"fallback_module\": \"ovos-stt-plugin-server\",\n    \"ovos-stt-plugin-whisper-browser\": {}\n  }\n}\n\nWhile the model downloads the first time, the plugin fails so\n`fallback_module` hears you. With `\"wait_for_download\": true` it waits for the\nmodel instead; for when there is no network to fall back on (Emkay's \"local\nonly\" mode sets it).\n\nThe model follows the language, as Piper's voice does: a language with a\nmodel of its own that does better uses that one (`MODELS`), every other\nlanguage the multilingual `onnx-community/whisper-base`.\n\n| language | model | download |\n|---|---|---|\n| English | `onnx-community/whisper-base.en` (English-only: better and faster) | ~140 MB |\n| Danish | `emkay-voice/roest-wav2vec2-315m-onnx` ([R\u00f8st](htt\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-11-16T18:15:26Z",
-  "last_updated": "2026-11-16T18:37:40.931864Z",
-  "is_new_repo": false,
-  "is_recently_updated": false
+  "last_updated": "2026-11-16T23:41:43.205073Z",
+  "is_new_repo": true,
+  "is_recently_updated": true
 }

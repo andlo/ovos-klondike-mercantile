@@ -6,6 +6,7 @@
   "examples": [
     "What did you send out today?",
     "Who hears what I say?",
+    "What just happened?",
     "Go offline",
     "Are you online?"
   ],
@@ -20,18 +21,18 @@
   "icon_color": null,
   "source": "https://github.com/emkay-voice/ovos-skill-guardian",
   "package_name": "ovos-skill-guardian",
-  "pypi_version": "0.1.0a5",
+  "pypi_version": "0.1.0a7",
   "license": "Apache-2.0",
   "archived": false,
   "author": "emkay-voice",
-  "tier": 2,
+  "tier": 1,
   "component_type": "Skill",
   "type_group": "Skill",
   "stars": 0,
   "forks": 0,
   "open_issues": 0,
   "on_pypi": true,
-  "has_release": false,
+  "has_release": true,
   "in_ovos_store": false,
   "pipeline": null,
   "connectivity": "offline",
@@ -65,6 +66,7 @@
       "examples": [
         "Qu\u00e8 has enviat fora avui?",
         "Qui sent el que dic?",
+        "Qu\u00e8 acaba de passar?",
         "Desconnecta't",
         "Est\u00e0s connectat?"
       ]
@@ -75,6 +77,7 @@
       "examples": [
         "Hvad har du sendt ud i dag?",
         "Hvem h\u00f8rer hvad jeg siger?",
+        "Hvad skete der lige?",
         "G\u00e5 offline",
         "Er du online?"
       ]
@@ -85,6 +88,7 @@
       "examples": [
         "Was hast du heute nach drau\u00dfen geschickt?",
         "Wer h\u00f6rt, was ich sage?",
+        "Was ist gerade passiert?",
         "Geh offline",
         "Bist du online?"
       ]
@@ -95,6 +99,7 @@
       "examples": [
         "\u00bfQu\u00e9 has enviado fuera hoy?",
         "\u00bfQui\u00e9n oye lo que digo?",
+        "\u00bfQu\u00e9 acaba de pasar?",
         "Descon\u00e9ctate",
         "\u00bfEst\u00e1s conectado?"
       ]
@@ -105,6 +110,7 @@
       "examples": [
         "Zer bidali duzu kanpora gaur?",
         "Nork entzuten du esaten dudana?",
+        "Zer gertatu da oraintxe?",
         "Deskonektatu",
         "Konektatuta zaude?"
       ]
@@ -115,6 +121,7 @@
       "examples": [
         "Qu'as-tu envoy\u00e9 dehors aujourd'hui ?",
         "Qui entend ce que je dis ?",
+        "Que vient-il de se passer ?",
         "Passe hors ligne",
         "Es-tu en ligne ?"
       ]
@@ -125,6 +132,7 @@
       "examples": [
         "Que enviaches f\u00f3ra hoxe?",
         "Quen oe o que digo?",
+        "Que acaba de pasar?",
         "Descon\u00e9ctate",
         "Est\u00e1s conectado?"
       ]
@@ -135,6 +143,7 @@
       "examples": [
         "Cosa hai inviato fuori oggi?",
         "Chi sente quello che dico?",
+        "Cosa \u00e8 appena successo?",
         "Vai offline",
         "Sei online?"
       ]
@@ -145,6 +154,7 @@
       "examples": [
         "Wat heb je vandaag naar buiten gestuurd?",
         "Wie hoort wat ik zeg?",
+        "Wat gebeurde er net?",
         "Ga offline",
         "Ben je online?"
       ]
@@ -155,6 +165,7 @@
       "examples": [
         "O que voc\u00ea enviou para fora hoje?",
         "Quem ouve o que eu digo?",
+        "O que acabou de acontecer?",
         "Fique offline",
         "Voc\u00ea est\u00e1 online?"
       ]
@@ -165,6 +176,7 @@
       "examples": [
         "O que enviaste para fora hoje?",
         "Quem ouve o que eu digo?",
+        "O que acabou de acontecer?",
         "Fica offline",
         "Est\u00e1s online?"
       ]
@@ -172,7 +184,11 @@
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-11-16T22:12:30Z",
-  "last_updated": "2026-11-16T23:17:53.002657Z",
-  "is_new_repo": false,
-  "is_recently_updated": false
+  "last_updated": "2026-11-18T23:57:07.263558Z",
+  "is_new_repo": true,
+  "is_recently_updated": true,
+  "compat": {
+    "badge_id": "ovos-skill-guardian.emkay-voice",
+    "channels": {}
+  }
 }

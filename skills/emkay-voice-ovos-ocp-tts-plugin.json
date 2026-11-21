@@ -1,0 +1,55 @@
+{
+  "id": "emkay-voice-ovos-ocp-tts-plugin",
+  "skill_id": null,
+  "name": "ovos-ocp-tts-plugin",
+  "description": "OCP stream extractor for text read aloud: tts// uris play as sentences in the device's own voice, rendered by ovos-audio",
+  "examples": [],
+  "tags": [
+    "emkay",
+    "ocp",
+    "openvoiceos",
+    "ovos",
+    "ovos-plugin",
+    "tts"
+  ],
+  "category": "Other",
+  "icon": null,
+  "icon_source": null,
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-ocp-tts-plugin",
+  "package_name": "ovos-ocp-tts-plugin",
+  "pypi_version": null,
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 2,
+  "component_type": "OCP Media Plugin",
+  "type_group": "Plugin",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": false,
+  "has_release": false,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-ocp-tts-plugin\n\nIt is picked up by every player that uses OVOS' stream extractors (`opm.ocp.extractor`), such as ovos-media. ovos-audio\nmust be running, as it always is on an OVOS device."
+    },
+    {
+      "heading": "Configuration",
+      "content": "None needed. Under the player's OCP settings, `tts_render_timeout` (seconds, default 60) is how long to wait for\novos-audio to render a sentence. Rendered files are kept in `~/.cache/ovos-ocp-tts-plugin` for a day; ovos-audio's own\nTTS cache is what makes a repeated sentence fast."
+    }
+  ],
+  "languages": [],
+  "locale_content": {},
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-21T10:29:50Z",
+  "last_updated": "2026-11-21T10:29:54Z",
+  "is_new_repo": false,
+  "is_recently_updated": false
+}

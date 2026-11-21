@@ -2,14 +2,17 @@
   "id": "emkay-voice-ovos-skill-jamband",
   "skill_id": "ovos-skill-jamband.emkay-voice",
   "name": "Jam Band",
-  "description": "A band you lead with your voice: ask for drums, then bass, then the whole band - in swing, blues, rock, funk, disco, reggae, bossa or tango, in any key. Played by the device's MIDI instrument.",
+  "description": "A band you lead with your voice: ask for drums, then bass, then the whole band - in swing, blues, rock, funk, disco, reggae, bossa or tango. Give it a melody (hum it, play it, say the notes, or pick a tune everybody knows), ask for solos and breaks, let Emkay build a jam with you - or make one all by itself. Save your jams and play them again. Played by the device's MIDI instrument.",
   "examples": [
     "let's jam",
     "jam a blues in E",
     "add the bass",
-    "the whole band",
-    "faster",
-    "make it reggae",
+    "a sax solo",
+    "a reggae over Fr\u00e8re Jacques",
+    "here's my melody",
+    "help me make a jam",
+    "surprise me",
+    "play my jam Friday blues",
     "let's finish"
   ],
   "tags": [
@@ -24,7 +27,7 @@
   "icon_color": null,
   "source": "https://github.com/emkay-voice/ovos-skill-jamband",
   "package_name": "ovos-skill-jamband",
-  "pypi_version": "0.1.0a2",
+  "pypi_version": "0.2.0a1",
   "license": "Apache-2.0",
   "archived": false,
   "author": "emkay-voice",
@@ -64,151 +67,184 @@
   "locale_content": {
     "ca-es": {
       "name": "Banda de jam",
-      "description": "Una banda que dirigeixes amb la veu: demana bateria, despr\u00e9s baix, despr\u00e9s tota la banda - swing, blues, rock, funk, disco, reggae, bossa o tango, en qualsevol tonalitat. La toca l'instrument MIDI del dispositiu.",
+      "description": "Una banda que dirigeixes amb la veu: demana bateria, despr\u00e9s baix, despr\u00e9s tota la banda - swing, blues, rock, funk, disco, reggae, bossa o tango. Dona-li una melodia (taral\u00b7lejada, tocada, dient les notes o una can\u00e7\u00f3 que tothom coneix), demana solos i breaks, deixa que l'Emkay construeixi una jam amb tu - o que en faci una tot sol. Desa les teves jams i torna-les a tocar. La toca l'instrument MIDI del dispositiu.",
       "examples": [
         "fem una jam",
         "un blues en mi",
         "afegeix el baix",
-        "tota la banda",
-        "m\u00e9s r\u00e0pid",
-        "fes-ho reggae",
+        "un solo de saxo",
+        "un reggae sobre Frare Jaume",
+        "aqu\u00ed tens la meva melodia",
+        "ajuda'm a fer una jam",
+        "sorpr\u00e8n-me",
+        "toca la meva jam Blues del divendres",
         "acabem"
       ]
     },
     "da-dk": {
       "name": "Jamband",
-      "description": "Et band, du dirigerer med stemmen: bed om trommer, s\u00e5 bas, s\u00e5 hele bandet - i swing, blues, rock, funk, disco, reggae, bossa eller tango, i alle tonearter. Spillet af enhedens MIDI-instrument.",
+      "description": "Et band, du dirigerer med stemmen: bed om trommer, s\u00e5 bas, s\u00e5 hele bandet - i swing, blues, rock, funk, disco, reggae, bossa eller tango. Giv det en melodi (nyn den, spil den, sig tonerne, eller v\u00e6lg en melodi alle kender), bed om soloer og breaks, lad Emkay bygge et jam med dig - eller lave et helt selv. Gem dine jams og spil dem igen. Spillet af enhedens MIDI-instrument.",
       "examples": [
         "lad os jamme",
         "jam en blues i e",
         "s\u00e6t bassen ind",
-        "hele bandet",
-        "hurtigere",
-        "spil det som reggae",
+        "en sax-solo",
+        "en reggae over Mester Jakob",
+        "her er min melodi",
+        "hj\u00e6lp mig med at lave et jam",
+        "overrask mig",
+        "spil mit jam Fredagsblues",
         "lad os slutte"
       ]
     },
     "de-de": {
       "name": "Jamband",
-      "description": "Eine Band, die du mit der Stimme leitest: erst Schlagzeug, dann Bass, dann die ganze Band - Swing, Blues, Rock, Funk, Disco, Reggae, Bossa oder Tango, in jeder Tonart. Gespielt vom MIDI-Instrument des Ger\u00e4ts.",
+      "description": "Eine Band, die du mit der Stimme leitest: erst Schlagzeug, dann Bass, dann die ganze Band - Swing, Blues, Rock, Funk, Disco, Reggae, Bossa oder Tango. Gib ihr eine Melodie (summen, spielen, Noten sagen oder ein bekanntes Lied w\u00e4hlen), w\u00fcnsch dir Soli und Breaks, lass Emkay mit dir eine Jam bauen - oder ganz allein eine machen. Speichere deine Jams und spiel sie wieder. Gespielt vom MIDI-Instrument des Ger\u00e4ts.",
       "examples": [
         "lass uns jammen",
         "jam einen Blues in E",
         "Bass dazu",
-        "die ganze Band",
-        "schneller",
-        "mach Reggae draus",
+        "ein Saxofon-Solo",
+        "ein Reggae \u00fcber Bruder Jakob",
+        "hier ist meine Melodie",
+        "hilf mir eine Jam zu bauen",
+        "\u00fcberrasch mich",
+        "spiel meine Jam Freitagsblues",
         "lass uns aufh\u00f6ren"
       ]
     },
     "es-es": {
       "name": "Banda de jam",
-      "description": "Una banda que diriges con la voz: pide bater\u00eda, luego bajo, luego toda la banda - swing, blues, rock, funk, disco, reggae, bossa o tango, en cualquier tono. La toca el instrumento MIDI del dispositivo.",
+      "description": "Una banda que diriges con la voz: pide bater\u00eda, luego bajo, luego toda la banda - swing, blues, rock, funk, disco, reggae, bossa o tango. Dale una melod\u00eda (tarareada, tocada, diciendo las notas o una canci\u00f3n que todos conocen), pide solos y breaks, deja que Emkay construya una jam contigo - o que haga una \u00e9l solo. Guarda tus jams y vuelve a tocarlas. La toca el instrumento MIDI del dispositivo.",
       "examples": [
         "vamos a improvisar",
         "un blues en mi",
         "a\u00f1ade el bajo",
-        "toda la banda",
-        "m\u00e1s r\u00e1pido",
-        "ponlo en reggae",
+        "un solo de saxo",
+        "un reggae sobre Martinillo",
+        "aqu\u00ed est\u00e1 mi melod\u00eda",
+        "ay\u00fadame a hacer una jam",
+        "sorpr\u00e9ndeme",
+        "toca mi jam Blues del viernes",
         "terminemos"
       ]
     },
     "eu-es": {
       "name": "Jam taldea",
-      "description": "Ahotsarekin zuzentzen duzun taldea: eskatu bateria, gero baxua, gero talde osoa - swing, blues, rock, funk, disco, reggae, bossa edo tango, edozein tonutan. Gailuaren MIDI tresnak jotzen du.",
+      "description": "Ahotsarekin zuzentzen duzun taldea: eskatu bateria, gero baxua, gero talde osoa - swing, blues, rock, funk, disco, reggae, bossa edo tango. Eman doinu bat (ahopeka, joz, notak esanez edo denok ezagutzen dugun abesti bat), eskatu bakarkakoak eta breakak, utzi Emkayri zurekin jam bat eraikitzen - edo bakarrik bat egiten. Gorde zure jamak eta jo berriro. Gailuaren MIDI tresnak jotzen du.",
       "examples": [
         "egin dezagun jam bat",
         "blues bat mi-n",
         "gehitu baxua",
-        "talde osoa",
-        "azkarrago",
-        "egin reggae",
+        "saxo bakarkako bat",
+        "reggae bat Anaia Jakoberen gainean",
+        "hona hemen nire doinua",
+        "lagundu jam bat egiten",
+        "harritu nazazu",
+        "jo nire jam Ostiraleko bluesa",
         "amaitu dezagun"
       ]
     },
     "fr-fr": {
       "name": "Jam band",
-      "description": "Un groupe que tu diriges \u00e0 la voix : demande la batterie, puis la basse, puis tout le groupe - swing, blues, rock, funk, disco, reggae, bossa ou tango, dans n'importe quelle tonalit\u00e9. Jou\u00e9 par l'instrument MIDI de l'appareil.",
+      "description": "Un groupe que tu diriges \u00e0 la voix : la batterie, puis la basse, puis tout le groupe - swing, blues, rock, funk, disco, reggae, bossa ou tango. Donne-lui une m\u00e9lodie (fredonn\u00e9e, jou\u00e9e, les notes dites ou un air que tout le monde conna\u00eet), demande des solos et des breaks, laisse Emkay construire un b\u0153uf avec toi - ou en faire un tout seul. Garde tes b\u0153ufs et rejoue-les. Jou\u00e9 par l'instrument MIDI de l'appareil.",
       "examples": [
-        "on fait un b\u0153uf",
+        "faisons un b\u0153uf",
         "un blues en mi",
         "ajoute la basse",
-        "tout le groupe",
-        "plus vite",
-        "passe au reggae",
-        "on termine"
+        "un solo de saxo",
+        "un reggae sur Fr\u00e8re Jacques",
+        "voici ma m\u00e9lodie",
+        "aide-moi \u00e0 faire un b\u0153uf",
+        "surprends-moi",
+        "joue mon b\u0153uf Blues du vendredi",
+        "terminons"
       ]
     },
     "gl-es": {
       "name": "Banda de jam",
-      "description": "Unha banda que diriximos coa voz: pide bater\u00eda, despois baixo, despois a banda enteira - swing, blues, rock, funk, disco, reggae, bossa ou tango, en calquera ton. T\u00f3caa o instrumento MIDI do dispositivo.",
+      "description": "Unha banda que diriximos coa voz: pide bater\u00eda, despois baixo, despois a banda enteira - swing, blues, rock, funk, disco, reggae, bossa ou tango. D\u00e1lle unha melod\u00eda (tarareada, tocada, dicindo as notas ou unha canci\u00f3n que todos co\u00f1ecen), pide solos e breaks, deixa que Emkay constr\u00faa unha jam contigo - ou que faga unha el s\u00f3. Garda as t\u00faas jams e t\u00f3caas outra vez. T\u00f3caa o instrumento MIDI do dispositivo.",
       "examples": [
         "imos improvisar",
         "un blues en mi",
         "engade o baixo",
-        "a banda enteira",
-        "m\u00e1is r\u00e1pido",
-        "faino reggae",
+        "un solo de saxo",
+        "un reggae sobre Irm\u00e1n Xacobe",
+        "aqu\u00ed est\u00e1 a mi\u00f1a melod\u00eda",
+        "ax\u00fadame a facer unha jam",
+        "sorpr\u00e9ndeme",
+        "toca a mi\u00f1a jam Blues do venres",
         "rematemos"
       ]
     },
     "it-it": {
       "name": "Jam band",
-      "description": "Una band che dirigi con la voce: chiedi la batteria, poi il basso, poi tutta la band - swing, blues, rock, funk, disco, reggae, bossa o tango, in qualsiasi tonalit\u00e0. La suona lo strumento MIDI del dispositivo.",
+      "description": "Una band che guidi con la voce: chiedi la batteria, poi il basso, poi tutta la band - swing, blues, rock, funk, disco, reggae, bossa o tango. Dagli una melodia (canticchiata, suonata, dicendo le note o una canzone che tutti conoscono), chiedi assoli e break, lascia che Emkay costruisca una jam con te - o che ne faccia una da solo. Salva le tue jam e risuonale. La suona lo strumento MIDI del dispositivo.",
       "examples": [
         "facciamo una jam",
         "un blues in mi",
         "aggiungi il basso",
-        "tutta la band",
-        "pi\u00f9 veloce",
-        "fallo reggae",
-        "chiudiamo"
+        "un assolo di sax",
+        "un reggae su Fra Martino",
+        "ecco la mia melodia",
+        "aiutami a fare una jam",
+        "sorprendimi",
+        "suona la mia jam Blues del venerd\u00ec",
+        "finiamo"
       ]
     },
     "nl-nl": {
       "name": "Jamband",
-      "description": "Een band die je met je stem leidt: vraag om drums, dan bas, dan de hele band - swing, blues, rock, funk, disco, reggae, bossa of tango, in elke toonsoort. Gespeeld door het MIDI-instrument van het apparaat.",
+      "description": "Een band die je met je stem leidt: eerst drums, dan bas, dan de hele band - swing, blues, rock, funk, disco, reggae, bossa of tango. Geef hem een melodie (neuri\u00ebn, spelen, de noten zeggen of een bekend liedje kiezen), vraag om solo's en breaks, laat Emkay samen met jou een jam bouwen - of er zelf een maken. Bewaar je jams en speel ze opnieuw. Gespeeld door het MIDI-instrument van het apparaat.",
       "examples": [
         "laten we jammen",
         "jam een blues in E",
         "voeg de bas toe",
-        "de hele band",
-        "sneller",
-        "maak er reggae van",
+        "een saxsolo",
+        "een reggae over Vader Jacob",
+        "hier is mijn melodie",
+        "help me een jam te maken",
+        "verras me",
+        "speel mijn jam Vrijdagblues",
         "laten we stoppen"
       ]
     },
     "pt-br": {
       "name": "Banda de jam",
-      "description": "Uma banda que voc\u00ea dirige com a voz: pe\u00e7a bateria, depois baixo, depois a banda toda - swing, blues, rock, funk, disco, reggae, bossa ou tango, em qualquer tom. Tocada pelo instrumento MIDI do dispositivo.",
+      "description": "Uma banda que diriges com a voz: pede bateria, depois baixo, depois a banda toda - swing, blues, rock, funk, disco, reggae, bossa ou tango. D\u00e1-lhe uma melodia (cantarolada, tocada, dizendo as notas ou uma m\u00fasica que todos conhecem), pede solos e breaks, deixa o Emkay construir uma jam contigo - ou fazer uma sozinho. Guarda as tuas jams e toca-as outra vez. Tocada pelo instrumento MIDI do dispositivo.",
       "examples": [
         "vamos improvisar",
         "um blues em mi",
         "junta o baixo",
-        "a banda toda",
-        "mais r\u00e1pido",
-        "faz reggae",
-        "vamos acabar"
+        "um solo de saxofone",
+        "um reggae sobre Frei Jo\u00e3o",
+        "aqui est\u00e1 a minha melodia",
+        "ajuda-me a fazer uma jam",
+        "surpreende-me",
+        "toca a minha jam Blues de sexta",
+        "vamos terminar"
       ]
     },
     "pt-pt": {
       "name": "Banda de jam",
-      "description": "Uma banda que diriges com a voz: pede bateria, depois baixo, depois a banda toda - swing, blues, rock, funk, disco, reggae, bossa ou tango, em qualquer tom. Tocada pelo instrumento MIDI do dispositivo.",
+      "description": "Uma banda que diriges com a voz: pede bateria, depois baixo, depois a banda toda - swing, blues, rock, funk, disco, reggae, bossa ou tango. D\u00e1-lhe uma melodia (cantarolada, tocada, dizendo as notas ou uma m\u00fasica que todos conhecem), pede solos e breaks, deixa o Emkay construir uma jam contigo - ou fazer uma sozinho. Guarda as tuas jams e toca-as outra vez. Tocada pelo instrumento MIDI do dispositivo.",
       "examples": [
         "vamos improvisar",
         "um blues em mi",
         "junta o baixo",
-        "a banda toda",
-        "mais r\u00e1pido",
-        "faz reggae",
-        "vamos acabar"
+        "um solo de saxofone",
+        "um reggae sobre Frei Jo\u00e3o",
+        "aqui est\u00e1 a minha melodia",
+        "ajuda-me a fazer uma jam",
+        "surpreende-me",
+        "toca a minha jam Blues de sexta",
+        "vamos terminar"
       ]
     }
   },
   "in_ovos_localize": false,
   "repo_created_at": "2026-11-21T00:19:16Z",
-  "last_updated": "2026-11-21T00:34:29.748809Z",
+  "last_updated": "2026-11-21T10:07:29.536772Z",
   "is_new_repo": false,
   "is_recently_updated": false,
   "compat": {
