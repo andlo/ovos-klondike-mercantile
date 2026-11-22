@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-21T11:51:06+00:00",
+ "generated_at": "2026-11-22T11:55:50+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-11-20T12:00:32+00:00",
-   "klondike_run_at": "2026-11-21T11:51:06+00:00",
+   "klondike_run_at": "2026-11-22T11:55:50+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
    "profiles": [
@@ -1164,8 +1164,8 @@
    ]
   },
   "testing": {
-   "run_at": "2026-11-21T11:51:06+00:00",
-   "klondike_run_at": "2026-11-21T11:51:06+00:00",
+   "run_at": "2026-11-22T11:55:50+00:00",
+   "klondike_run_at": "2026-11-22T11:55:50+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -1862,8 +1862,8 @@
         }
        },
        "klondike": {
-        "hit": 5,
-        "counted": 12
+        "hit": 4,
+        "counted": 14
        },
        "gold": false,
        "note": "geography facts (offline)",
@@ -2340,8 +2340,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-11-21T11:51:06+00:00",
-   "klondike_run_at": "2026-11-21T11:51:06+00:00",
+   "run_at": "2026-11-22T11:55:50+00:00",
+   "klondike_run_at": "2026-11-22T11:55:50+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2502,7 +2502,7 @@
        "pipeline_route": {
         "measured": true,
         "reaches": 5,
-        "takes": 17,
+        "takes": 18,
         "examples": [
          {
           "from": "andlo-ovos-skill-rhythm-box",
@@ -2551,9 +2551,15 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 347,
+        "reaches": 348,
         "takes": 13,
         "examples": [
+         {
+          "from": "OpenVoiceOS-ovos-skill-alerts",
+          "kind": "wrong_intent",
+          "taken_by": "ovos-skill-alerts.openvoiceos",
+          "utterance": "cancel all alarms and timers"
+         },
          {
           "from": "OpenVoiceOS-ovos-skill-date-time",
           "kind": "baseline",
@@ -2648,7 +2654,7 @@
         }
        },
        "klondike": {
-        "hit": 52,
+        "hit": 51,
         "counted": 55
        },
        "gold": true
