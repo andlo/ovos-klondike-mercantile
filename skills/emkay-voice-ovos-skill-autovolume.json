@@ -1,0 +1,182 @@
+{
+  "id": "emkay-voice-ovos-skill-autovolume",
+  "skill_id": "ovos-skill-autovolume.emkay-voice",
+  "name": "Auto volume",
+  "description": "Speaks up when the room is noisy and softly when it's quiet, and learns the volume you like from the times you set it yourself. Turn it on or off, ask how it stands, or make it forget what it has learned. Only loudness is measured, on the device.",
+  "examples": [
+    "turn on auto volume",
+    "turn off auto volume",
+    "is auto volume on",
+    "forget what you learned about the volume"
+  ],
+  "tags": [
+    "volume",
+    "auto volume",
+    "noise",
+    "privacy"
+  ],
+  "category": "Other",
+  "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-autovolume/main/icon.png",
+  "icon_source": "skill.json",
+  "icon_color": null,
+  "source": "https://github.com/emkay-voice/ovos-skill-autovolume",
+  "package_name": "ovos-skill-autovolume",
+  "pypi_version": "0.0.1a1",
+  "license": "Apache-2.0",
+  "archived": false,
+  "author": "emkay-voice",
+  "tier": 1,
+  "component_type": "Skill",
+  "type_group": "Skill",
+  "stars": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "on_pypi": true,
+  "has_release": true,
+  "in_ovos_store": false,
+  "pipeline": null,
+  "connectivity": null,
+  "requires_api_key": false,
+  "settings_fields": [],
+  "setup_notes": [
+    {
+      "heading": "Install",
+      "content": "pip install ovos-skill-autovolume\n\nThis also installs the plugin, but OVOS only runs it once it is named in the\n`audio_transformers` section of `mycroft.conf`:\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-autovolume\": {}\n  }\n}\n\nWithout it the skill says that auto volume isn't set up on this device.\n\nIn Emkay the listener doesn't feed audio transformers yet; that is\n[emkay#105](https://github.com/emkay-voice/emkay/issues/105)."
+    }
+  ],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
+  "locale_content": {
+    "ca-es": {
+      "name": "Volum autom\u00e0tic",
+      "description": "Parla m\u00e9s fort quan hi ha soroll a l'habitaci\u00f3 i m\u00e9s fluix quan hi ha calma, i apr\u00e8n el volum que t'agrada de les vegades que l'ajustes tu. Activa'l o desactiva'l, pregunta com est\u00e0 o fes que oblidi el que ha apr\u00e8s. Nom\u00e9s es mesura el nivell de so, al dispositiu.",
+      "examples": [
+        "activa el volum autom\u00e0tic",
+        "desactiva el volum autom\u00e0tic",
+        "est\u00e0 activat el volum autom\u00e0tic",
+        "oblida el que has apr\u00e8s sobre el volum"
+      ]
+    },
+    "da-dk": {
+      "name": "Automatisk lydstyrke",
+      "description": "Taler h\u00f8jere, n\u00e5r der er larm i rummet, og stille, n\u00e5r der er roligt, og l\u00e6rer den lydstyrke, du kan lide, af de gange du selv skruer. Sl\u00e5 den til og fra, sp\u00f8rg hvordan den st\u00e5r, eller f\u00e5 den til at glemme, hvad den har l\u00e6rt. Kun lydniveauet m\u00e5les, p\u00e5 enheden.",
+      "examples": [
+        "sl\u00e5 automatisk lydstyrke til",
+        "sl\u00e5 automatisk lydstyrke fra",
+        "er automatisk lydstyrke sl\u00e5et til",
+        "glem hvad du har l\u00e6rt om lydstyrken"
+      ]
+    },
+    "de-de": {
+      "name": "Automatische Lautst\u00e4rke",
+      "description": "Spricht lauter, wenn es im Raum laut ist, und leiser, wenn es ruhig ist, und lernt die Lautst\u00e4rke, die du magst, aus den Malen, in denen du sie selbst einstellst. Ein- und ausschalten, nach dem Stand fragen oder das Gelernte vergessen lassen. Gemessen wird nur die Lautheit, auf dem Ger\u00e4t.",
+      "examples": [
+        "schalte die automatische Lautst\u00e4rke ein",
+        "schalte die automatische Lautst\u00e4rke aus",
+        "ist die automatische Lautst\u00e4rke an",
+        "vergiss was du \u00fcber die Lautst\u00e4rke gelernt hast"
+      ]
+    },
+    "es-es": {
+      "name": "Volumen autom\u00e1tico",
+      "description": "Habla m\u00e1s alto cuando hay ruido en la habitaci\u00f3n y m\u00e1s bajo cuando hay calma, y aprende el volumen que te gusta de las veces que lo ajustas t\u00fa. Act\u00edvalo o desact\u00edvalo, pregunta c\u00f3mo est\u00e1 o haz que olvide lo aprendido. Solo se mide el nivel de sonido, en el dispositivo.",
+      "examples": [
+        "activa el volumen autom\u00e1tico",
+        "desactiva el volumen autom\u00e1tico",
+        "est\u00e1 activado el volumen autom\u00e1tico",
+        "olvida lo que has aprendido sobre el volumen"
+      ]
+    },
+    "eu-es": {
+      "name": "Bolumen automatikoa",
+      "description": "Ozenago hitz egiten du gelan zarata dagoenean eta baxuago lasai dagoenean, eta zuk zeuk bolumena doitzen duzun aldietatik ikasten du zer gustatzen zaizun. Piztu edo itzali, galdetu nola dagoen edo ahaztarazi ikasitakoa. Soinu-maila bakarrik neurtzen da, gailuan.",
+      "examples": [
+        "piztu bolumen automatikoa",
+        "itzali bolumen automatikoa",
+        "piztuta al dago bolumen automatikoa",
+        "ahaztu bolumenari buruz ikasi duzuna"
+      ]
+    },
+    "fr-fr": {
+      "name": "Volume automatique",
+      "description": "Parle plus fort quand la pi\u00e8ce est bruyante et plus doucement quand c'est calme, et apprend le volume que tu aimes \u00e0 partir des fois o\u00f9 tu le r\u00e8gles toi-m\u00eame. Active-le ou d\u00e9sactive-le, demande o\u00f9 il en est, ou fais-lui oublier ce qu'il a appris. Seul le niveau sonore est mesur\u00e9, sur l'appareil.",
+      "examples": [
+        "active le volume automatique",
+        "d\u00e9sactive le volume automatique",
+        "est-ce que le volume automatique est activ\u00e9",
+        "oublie ce que tu as appris sur le volume"
+      ]
+    },
+    "gl-es": {
+      "name": "Volume autom\u00e1tico",
+      "description": "Fala m\u00e1is alto cando hai ru\u00eddo na habitaci\u00f3n e m\u00e1is baixo cando hai calma, e aprende o volume que che gusta das veces que o axustas ti. Act\u00edvao ou desact\u00edvao, pregunta como est\u00e1 ou fai que esqueza o aprendido. S\u00f3 se mide o nivel de son, no dispositivo.",
+      "examples": [
+        "activa o volume autom\u00e1tico",
+        "desactiva o volume autom\u00e1tico",
+        "est\u00e1 activado o volume autom\u00e1tico",
+        "esquece o que aprendiches sobre o volume"
+      ]
+    },
+    "it-it": {
+      "name": "Volume automatico",
+      "description": "Parla pi\u00f9 forte quando nella stanza c'\u00e8 rumore e pi\u00f9 piano quando c'\u00e8 calma, e impara il volume che ti piace dalle volte in cui lo regoli tu. Attivalo o disattivalo, chiedi a che punto \u00e8 o fagli dimenticare quello che ha imparato. Si misura solo il livello del suono, sul dispositivo.",
+      "examples": [
+        "attiva il volume automatico",
+        "disattiva il volume automatico",
+        "il volume automatico \u00e8 attivo",
+        "dimentica quello che hai imparato sul volume"
+      ]
+    },
+    "nl-nl": {
+      "name": "Automatisch volume",
+      "description": "Praat harder als het lawaaierig is in de kamer en zachter als het rustig is, en leert het volume dat je fijn vindt van de keren dat je het zelf instelt. Zet het aan of uit, vraag hoe het ervoor staat of laat het vergeten wat het heeft geleerd. Alleen het geluidsniveau wordt gemeten, op het apparaat.",
+      "examples": [
+        "zet automatisch volume aan",
+        "zet automatisch volume uit",
+        "staat automatisch volume aan",
+        "vergeet wat je over het volume hebt geleerd"
+      ]
+    },
+    "pt-br": {
+      "name": "Volume autom\u00e1tico",
+      "description": "Fala mais alto quando tem barulho no ambiente e mais baixo quando est\u00e1 tranquilo, e aprende o volume de que voc\u00ea gosta a partir das vezes em que voc\u00ea mesmo o ajusta. Ligue ou desligue, pergunte como est\u00e1 ou fa\u00e7a ele esquecer o que aprendeu. S\u00f3 o n\u00edvel do som \u00e9 medido, no dispositivo.",
+      "examples": [
+        "ligue o volume autom\u00e1tico",
+        "desligue o volume autom\u00e1tico",
+        "o volume autom\u00e1tico est\u00e1 ligado",
+        "esque\u00e7a o que voc\u00ea aprendeu sobre o volume"
+      ]
+    },
+    "pt-pt": {
+      "name": "Volume autom\u00e1tico",
+      "description": "Fala mais alto quando h\u00e1 barulho na sala e mais baixo quando est\u00e1 calmo, e aprende o volume de que gostas a partir das vezes em que o ajustas tu. Liga-o ou desliga-o, pergunta como est\u00e1 ou f\u00e1-lo esquecer o que aprendeu. S\u00f3 \u00e9 medido o n\u00edvel do som, no dispositivo.",
+      "examples": [
+        "liga o volume autom\u00e1tico",
+        "desliga o volume autom\u00e1tico",
+        "o volume autom\u00e1tico est\u00e1 ligado",
+        "esquece o que aprendeste sobre o volume"
+      ]
+    }
+  },
+  "in_ovos_localize": false,
+  "repo_created_at": "2026-11-22T15:36:23Z",
+  "last_updated": "2026-11-22T15:38:44.617223Z",
+  "is_new_repo": false,
+  "is_recently_updated": false,
+  "compat": {
+    "badge_id": "ovos-skill-autovolume.emkay-voice",
+    "channels": {}
+  }
+}

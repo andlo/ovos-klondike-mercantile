@@ -227,6 +227,39 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-music-teacher.emkay-voice",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't load",
+        "state": "fail",
+        "level": 1,
+        "version_tested": "0.1.0a1",
+        "tested_at": "2026-11-22T10:15:06+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
+        "label": "\u2713 loads \u00b7 5/8 golden",
+        "state": "warn",
+        "level": 2,
+        "version_tested": "0.1.0a1",
+        "tested_at": "2026-11-22T10:14:34+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 5,
+          "counted": 8
+        }
+      },
+      "alpha": {
+        "label": "\u2713 7/8 golden",
+        "state": "warn",
+        "level": 3,
+        "version_tested": "0.1.0a1",
+        "tested_at": "2026-11-22T10:14:52+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 7,
+          "counted": 8
+        }
+      }
+    }
   }
 }

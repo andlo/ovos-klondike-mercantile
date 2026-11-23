@@ -75,7 +75,40 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-1001-nights.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0",
+          "tested_at": "2026-11-22T10:15:30+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.0",
+          "tested_at": "2026-11-22T10:14:50+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        },
+        "alpha": {
+          "label": "\u2713 2/2 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.0",
+          "tested_at": "2026-11-22T10:14:42+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 2,
+            "counted": 2
+          }
+        }
+      }
     }
   },
   {
@@ -412,7 +445,32 @@
     "is_recently_updated": true,
     "compat": {
       "badge_id": "ovos-skill-about-emkay.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-22T10:16:00+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-22T10:15:18+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-22T10:14:51+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -1028,26 +1086,22 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-andersen-tales.andlo",
+      "badge_id": "ovos-skill-andersen-tales.emkay-voice",
       "channels": {
         "stable": {
-          "label": "\u2713 loads \u00b7 0/2 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-11-20T10:27:54+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 2
-          }
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:17:12+00:00",
+          "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 2/2 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-11-20T10:28:03+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:16:15+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -1058,8 +1112,8 @@
           "label": "\u2713 2/2 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-11-20T10:26:51+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:15:04+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -2109,6 +2163,188 @@
           "channel_pinned": true
         }
       }
+    }
+  },
+  {
+    "id": "emkay-voice-ovos-skill-autovolume",
+    "skill_id": "ovos-skill-autovolume.emkay-voice",
+    "name": "Auto volume",
+    "description": "Speaks up when the room is noisy and softly when it's quiet, and learns the volume you like from the times you set it yourself. Turn it on or off, ask how it stands, or make it forget what it has learned. Only loudness is measured, on the device.",
+    "examples": [
+      "turn on auto volume",
+      "turn off auto volume",
+      "is auto volume on",
+      "forget what you learned about the volume"
+    ],
+    "tags": [
+      "volume",
+      "auto volume",
+      "noise",
+      "privacy"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-skill-autovolume/main/icon.png",
+    "icon_source": "skill.json",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-skill-autovolume",
+    "package_name": "ovos-skill-autovolume",
+    "pypi_version": "0.0.1a1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 1,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-skill-autovolume\n\nThis also installs the plugin, but OVOS only runs it once it is named in the\n`audio_transformers` section of `mycroft.conf`:\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-autovolume\": {}\n  }\n}\n\nWithout it the skill says that auto volume isn't set up on this device.\n\nIn Emkay the listener doesn't feed audio transformers yet; that is\n[emkay#105](https://github.com/emkay-voice/emkay/issues/105)."
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {
+      "ca-es": {
+        "name": "Volum autom\u00e0tic",
+        "description": "Parla m\u00e9s fort quan hi ha soroll a l'habitaci\u00f3 i m\u00e9s fluix quan hi ha calma, i apr\u00e8n el volum que t'agrada de les vegades que l'ajustes tu. Activa'l o desactiva'l, pregunta com est\u00e0 o fes que oblidi el que ha apr\u00e8s. Nom\u00e9s es mesura el nivell de so, al dispositiu.",
+        "examples": [
+          "activa el volum autom\u00e0tic",
+          "desactiva el volum autom\u00e0tic",
+          "est\u00e0 activat el volum autom\u00e0tic",
+          "oblida el que has apr\u00e8s sobre el volum"
+        ]
+      },
+      "da-dk": {
+        "name": "Automatisk lydstyrke",
+        "description": "Taler h\u00f8jere, n\u00e5r der er larm i rummet, og stille, n\u00e5r der er roligt, og l\u00e6rer den lydstyrke, du kan lide, af de gange du selv skruer. Sl\u00e5 den til og fra, sp\u00f8rg hvordan den st\u00e5r, eller f\u00e5 den til at glemme, hvad den har l\u00e6rt. Kun lydniveauet m\u00e5les, p\u00e5 enheden.",
+        "examples": [
+          "sl\u00e5 automatisk lydstyrke til",
+          "sl\u00e5 automatisk lydstyrke fra",
+          "er automatisk lydstyrke sl\u00e5et til",
+          "glem hvad du har l\u00e6rt om lydstyrken"
+        ]
+      },
+      "de-de": {
+        "name": "Automatische Lautst\u00e4rke",
+        "description": "Spricht lauter, wenn es im Raum laut ist, und leiser, wenn es ruhig ist, und lernt die Lautst\u00e4rke, die du magst, aus den Malen, in denen du sie selbst einstellst. Ein- und ausschalten, nach dem Stand fragen oder das Gelernte vergessen lassen. Gemessen wird nur die Lautheit, auf dem Ger\u00e4t.",
+        "examples": [
+          "schalte die automatische Lautst\u00e4rke ein",
+          "schalte die automatische Lautst\u00e4rke aus",
+          "ist die automatische Lautst\u00e4rke an",
+          "vergiss was du \u00fcber die Lautst\u00e4rke gelernt hast"
+        ]
+      },
+      "es-es": {
+        "name": "Volumen autom\u00e1tico",
+        "description": "Habla m\u00e1s alto cuando hay ruido en la habitaci\u00f3n y m\u00e1s bajo cuando hay calma, y aprende el volumen que te gusta de las veces que lo ajustas t\u00fa. Act\u00edvalo o desact\u00edvalo, pregunta c\u00f3mo est\u00e1 o haz que olvide lo aprendido. Solo se mide el nivel de sonido, en el dispositivo.",
+        "examples": [
+          "activa el volumen autom\u00e1tico",
+          "desactiva el volumen autom\u00e1tico",
+          "est\u00e1 activado el volumen autom\u00e1tico",
+          "olvida lo que has aprendido sobre el volumen"
+        ]
+      },
+      "eu-es": {
+        "name": "Bolumen automatikoa",
+        "description": "Ozenago hitz egiten du gelan zarata dagoenean eta baxuago lasai dagoenean, eta zuk zeuk bolumena doitzen duzun aldietatik ikasten du zer gustatzen zaizun. Piztu edo itzali, galdetu nola dagoen edo ahaztarazi ikasitakoa. Soinu-maila bakarrik neurtzen da, gailuan.",
+        "examples": [
+          "piztu bolumen automatikoa",
+          "itzali bolumen automatikoa",
+          "piztuta al dago bolumen automatikoa",
+          "ahaztu bolumenari buruz ikasi duzuna"
+        ]
+      },
+      "fr-fr": {
+        "name": "Volume automatique",
+        "description": "Parle plus fort quand la pi\u00e8ce est bruyante et plus doucement quand c'est calme, et apprend le volume que tu aimes \u00e0 partir des fois o\u00f9 tu le r\u00e8gles toi-m\u00eame. Active-le ou d\u00e9sactive-le, demande o\u00f9 il en est, ou fais-lui oublier ce qu'il a appris. Seul le niveau sonore est mesur\u00e9, sur l'appareil.",
+        "examples": [
+          "active le volume automatique",
+          "d\u00e9sactive le volume automatique",
+          "est-ce que le volume automatique est activ\u00e9",
+          "oublie ce que tu as appris sur le volume"
+        ]
+      },
+      "gl-es": {
+        "name": "Volume autom\u00e1tico",
+        "description": "Fala m\u00e1is alto cando hai ru\u00eddo na habitaci\u00f3n e m\u00e1is baixo cando hai calma, e aprende o volume que che gusta das veces que o axustas ti. Act\u00edvao ou desact\u00edvao, pregunta como est\u00e1 ou fai que esqueza o aprendido. S\u00f3 se mide o nivel de son, no dispositivo.",
+        "examples": [
+          "activa o volume autom\u00e1tico",
+          "desactiva o volume autom\u00e1tico",
+          "est\u00e1 activado o volume autom\u00e1tico",
+          "esquece o que aprendiches sobre o volume"
+        ]
+      },
+      "it-it": {
+        "name": "Volume automatico",
+        "description": "Parla pi\u00f9 forte quando nella stanza c'\u00e8 rumore e pi\u00f9 piano quando c'\u00e8 calma, e impara il volume che ti piace dalle volte in cui lo regoli tu. Attivalo o disattivalo, chiedi a che punto \u00e8 o fagli dimenticare quello che ha imparato. Si misura solo il livello del suono, sul dispositivo.",
+        "examples": [
+          "attiva il volume automatico",
+          "disattiva il volume automatico",
+          "il volume automatico \u00e8 attivo",
+          "dimentica quello che hai imparato sul volume"
+        ]
+      },
+      "nl-nl": {
+        "name": "Automatisch volume",
+        "description": "Praat harder als het lawaaierig is in de kamer en zachter als het rustig is, en leert het volume dat je fijn vindt van de keren dat je het zelf instelt. Zet het aan of uit, vraag hoe het ervoor staat of laat het vergeten wat het heeft geleerd. Alleen het geluidsniveau wordt gemeten, op het apparaat.",
+        "examples": [
+          "zet automatisch volume aan",
+          "zet automatisch volume uit",
+          "staat automatisch volume aan",
+          "vergeet wat je over het volume hebt geleerd"
+        ]
+      },
+      "pt-br": {
+        "name": "Volume autom\u00e1tico",
+        "description": "Fala mais alto quando tem barulho no ambiente e mais baixo quando est\u00e1 tranquilo, e aprende o volume de que voc\u00ea gosta a partir das vezes em que voc\u00ea mesmo o ajusta. Ligue ou desligue, pergunte como est\u00e1 ou fa\u00e7a ele esquecer o que aprendeu. S\u00f3 o n\u00edvel do som \u00e9 medido, no dispositivo.",
+        "examples": [
+          "ligue o volume autom\u00e1tico",
+          "desligue o volume autom\u00e1tico",
+          "o volume autom\u00e1tico est\u00e1 ligado",
+          "esque\u00e7a o que voc\u00ea aprendeu sobre o volume"
+        ]
+      },
+      "pt-pt": {
+        "name": "Volume autom\u00e1tico",
+        "description": "Fala mais alto quando h\u00e1 barulho na sala e mais baixo quando est\u00e1 calmo, e aprende o volume de que gostas a partir das vezes em que o ajustas tu. Liga-o ou desliga-o, pergunta como est\u00e1 ou f\u00e1-lo esquecer o que aprendeu. S\u00f3 \u00e9 medido o n\u00edvel do som, no dispositivo.",
+        "examples": [
+          "liga o volume autom\u00e1tico",
+          "desliga o volume autom\u00e1tico",
+          "o volume autom\u00e1tico est\u00e1 ligado",
+          "esquece o que aprendeste sobre o volume"
+        ]
+      }
+    },
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-22T15:36:23Z",
+    "last_updated": "2026-11-22T15:38:44.617223Z",
+    "is_new_repo": false,
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-skill-autovolume.emkay-voice",
+      "channels": {}
     }
   },
   {
@@ -4830,7 +5066,32 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-documents.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-22T10:17:30+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-22T10:16:29+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-22T10:15:15+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -6414,26 +6675,22 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "ovos-skill-grimm-tales.andlo",
+      "badge_id": "ovos-skill-grimm-tales.emkay-voice",
       "channels": {
         "stable": {
-          "label": "\u2713 loads \u00b7 0/3 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-11-20T10:27:40+00:00",
-          "channel_pinned": false,
-          "golden": {
-            "hit": 0,
-            "counted": 3
-          }
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:17:48+00:00",
+          "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-11-20T10:26:25+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:16:39+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -6441,11 +6698,12 @@
           }
         },
         "alpha": {
-          "label": "\u2713 3/3 golden",
+          "label": "\u2713 3/3 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.1.8",
-          "tested_at": "2026-11-20T10:26:40+00:00",
+          "stop": "stops",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:15:24+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -6646,7 +6904,32 @@
     "is_recently_updated": true,
     "compat": {
       "badge_id": "ovos-skill-guardian.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a10",
+          "tested_at": "2026-11-22T10:18:05+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a10",
+          "tested_at": "2026-11-22T10:16:52+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a10",
+          "tested_at": "2026-11-22T10:15:35+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -9656,26 +9939,31 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.2.0a1",
-          "tested_at": "2026-11-21T10:11:27+00:00",
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:18:25+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2717 doesn't install",
-          "state": "fail",
-          "level": 0,
-          "tested_at": "2026-11-21T10:10:48+00:00",
-          "channel_pinned": false
-        },
-        "alpha": {
-          "label": "\u2713 loads \u00b7 2/3 golden",
-          "state": "warn",
-          "level": 2,
-          "version_tested": "0.2.0a1",
-          "tested_at": "2026-11-21T10:11:10+00:00",
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:17:06+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 2,
+            "hit": 3,
+            "counted": 3
+          }
+        },
+        "alpha": {
+          "label": "\u2713 3/3 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.2.0",
+          "tested_at": "2026-11-22T10:15:47+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 3,
             "counted": 3
           }
         }
@@ -10479,7 +10767,40 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-karaoke.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0",
+          "tested_at": "2026-11-22T10:18:46+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 4/6 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.0",
+          "tested_at": "2026-11-22T10:17:23+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 4,
+            "counted": 6
+          }
+        },
+        "alpha": {
+          "label": "\u2713 6/6 golden",
+          "state": "pass",
+          "level": 3,
+          "version_tested": "0.1.0",
+          "tested_at": "2026-11-22T10:16:01+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 6,
+            "counted": 6
+          }
+        }
+      }
     }
   },
   {
@@ -12453,7 +12774,40 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-music-teacher.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:15:06+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads \u00b7 5/8 golden",
+          "state": "warn",
+          "level": 2,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:14:34+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 5,
+            "counted": 8
+          }
+        },
+        "alpha": {
+          "label": "\u2713 7/8 golden",
+          "state": "warn",
+          "level": 3,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:14:52+00:00",
+          "channel_pinned": false,
+          "golden": {
+            "hit": 7,
+            "counted": 8
+          }
+        }
+      }
     }
   },
   {
@@ -14543,7 +14897,32 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-opds-books.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a4",
+          "tested_at": "2026-11-22T10:16:00+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a4",
+          "tested_at": "2026-11-22T10:15:56+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a4",
+          "tested_at": "2026-11-22T10:15:07+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -15030,8 +15409,32 @@
     "is_new_repo": true,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "emkay-voice-ovos-assist-pipeline-plugin",
-      "channels": {}
+      "badge_id": "ovos-assist-pipeline-plugin",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-11-22T10:16:14+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:16:08+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:15:16+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -15188,6 +15591,72 @@
     "is_recently_updated": false
   },
   {
+    "id": "emkay-voice-ovos-audio-transformer-plugin-autovolume",
+    "skill_id": null,
+    "name": "ovos-audio-transformer-plugin-autovolume",
+    "description": "OpenVoiceOS audio transformer: speaks up when the room is noisy and softly when it's quiet, and learns the volume you like. Only loudness is measured. Made for Emkay, works on any OVOS.",
+    "examples": [],
+    "tags": [
+      "audio-transformer",
+      "auto-volume",
+      "emkay",
+      "openvoiceos",
+      "ovos",
+      "ovos-plugin",
+      "privacy",
+      "volume"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/emkay-voice/ovos-audio-transformer-plugin-autovolume/main/icon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-audio-transformer-plugin-autovolume",
+    "package_name": "ovos-audio-transformer-plugin-autovolume",
+    "pypi_version": "0.0.1a3",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 1,
+    "component_type": "Audio Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Setup",
+        "content": "pip install ovos-audio-transformer-plugin-autovolume\n\nName it in `mycroft.conf` (that is the opt-in):\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-autovolume\": {\n      \"speech_only\": true,\n      \"low\": 0.35,\n      \"high\": 0.75\n    }\n  }\n}\n\n`\"active\": false` in the same place turns it off again.\n\n| key | default | |\n|---|---|---|\n| `enabled` | `true` | start right away; turning it on or off on the bus is remembered |\n| `speech_only` | `true` | media goes back to the volume you last set yourself |\n| `low` / `high` | `0.35` / `0.75` | volumes for the quiet and the noisy end of the room, until you have taught it |\n| `window_seconds` | `90` | the room's running level is over about this long |\n| `step_seconds` | `5` | how often it looks at the volume |\n| `max_step` | `0.02` |\u2026"
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-br",
+      "pt-pt"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-22T15:26:48Z",
+    "last_updated": "2026-11-22T23:24:57.538003Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
     "id": "OpenVoiceOS-ovos-audio-transformer-plugin-ggwave",
     "skill_id": null,
     "name": "ovos-audio-transformer-plugin-ggwave",
@@ -15245,6 +15714,71 @@
     "in_ovos_localize": false,
     "repo_created_at": "2023-09-13T20:56:58Z",
     "last_updated": "2025-06-16T22:49:35.954419Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "emkay-voice-ovos-audio-transformer-plugin-overheard-manners",
+    "skill_id": null,
+    "name": "ovos-audio-transformer-plugin-overheard-manners",
+    "description": "OpenVoiceOS audio transformer: the assistant gently comments on swearing it overhears - spotted and checked on the device, nothing recorded or sent. Made for Emkay, works on any OVOS.",
+    "examples": [],
+    "tags": [
+      "audio-transformer",
+      "emkay",
+      "good-manners",
+      "keyword-spotting",
+      "openvoiceos",
+      "ovos",
+      "ovos-plugin",
+      "privacy"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/emkay-voice/ovos-audio-transformer-plugin-overheard-manners",
+    "package_name": "ovos-audio-transformer-plugin-overheard-manners",
+    "pypi_version": "0.1.0a3",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "emkay-voice",
+    "tier": 1,
+    "component_type": "Audio Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Setup",
+        "content": "pip install ovos-audio-transformer-plugin-overheard-manners\n\nName it in `mycroft.conf` (that is the opt-in):\n\n{\n  \"audio_transformers\": {\n    \"ovos-audio-transformer-plugin-overheard-manners\": {\n      \"stt\": {\"module\": \"ovos-stt-plugin-fasterwhisper\", \"model\": \"small\"}\n    }\n  }\n}\n\n| key | default | |\n|---|---|---|\n| `stt` | the listener's STT, if it is a known local one | a local STT plugin and its config; naming one here is your statement that it runs on the device |\n| `lang` | the device's `lang` | the room's language |\n| `cooldown_sec` | `600` | least time between two comments |\n| `sensitivity_offset` | `0.07` | first-ear threshold offset, higher is stricter (fewer STT runs, fewer catches) |\n| `confirm_blocks` | `2` | windows in a row a phrase must hold |\n| `inline` | on only in Pyodid\u2026"
+      }
+    ],
+    "languages": [
+      "ca-es",
+      "da-dk",
+      "de-de",
+      "en-us",
+      "es-es",
+      "eu-es",
+      "fr-fr",
+      "gl-es",
+      "it-it",
+      "nl-nl",
+      "pt-pt"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-22T15:12:15Z",
+    "last_updated": "2026-11-22T23:33:30.243023Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -16192,6 +16726,150 @@
     "last_updated": "2026-11-16T16:08:31.821333Z",
     "is_new_repo": false,
     "is_recently_updated": true
+  },
+  {
+    "id": "andlo-ovos-control-panel-mark1",
+    "skill_id": null,
+    "name": "ovos-control-panel-mark1",
+    "description": "ovos-control-panel extension: draw the Mark-1's mouth and eyes, animate them, and update the faceplate firmware",
+    "examples": [],
+    "tags": [
+      "control-panel",
+      "hardware",
+      "mark1",
+      "mycroft",
+      "openvoiceos",
+      "ovos",
+      "ovos-plugin",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/andlo/ovos-control-panel-mark1/main/ovos_control_panel_mark1/icon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/andlo/ovos-control-panel-mark1",
+    "package_name": "ovos-control-panel-mark1",
+    "pypi_version": "0.1.0a1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "andlo",
+    "tier": 1,
+    "component_type": "Page Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-22T14:25:14Z",
+    "last_updated": "2026-11-22T14:56:25.490896Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "andlo-ovos-control-panel-media",
+    "skill_id": null,
+    "name": "ovos-control-panel-media",
+    "description": "ovos-control-panel extension: what the device is playing, the queue, the volume, and the other matches for a request",
+    "examples": [],
+    "tags": [
+      "control-panel",
+      "media",
+      "mycroft",
+      "ocp",
+      "openvoiceos",
+      "ovos",
+      "ovos-plugin",
+      "voice-assistant"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/andlo/ovos-control-panel-media/main/ovos_control_panel_media/icon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/andlo/ovos-control-panel-media",
+    "package_name": "ovos-control-panel-media",
+    "pypi_version": "0.1.0a5",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "andlo",
+    "tier": 1,
+    "component_type": "Page Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-22T19:39:13Z",
+    "last_updated": "2026-11-22T21:46:46.791382Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "andlo-ovos-control-panel-network",
+    "skill_id": null,
+    "name": "ovos-control-panel-network",
+    "description": "ovos-control-panel extension: whether the device is online, the Wi-Fi networks near it, and joining one",
+    "examples": [],
+    "tags": [
+      "control-panel",
+      "mycroft",
+      "network",
+      "openvoiceos",
+      "ovos",
+      "ovos-plugin",
+      "voice-assistant",
+      "wifi"
+    ],
+    "category": "Other",
+    "icon": "https://raw.githubusercontent.com/andlo/ovos-control-panel-network/main/ovos_control_panel_network/icon.svg",
+    "icon_source": "repo",
+    "icon_color": null,
+    "source": "https://github.com/andlo/ovos-control-panel-network",
+    "package_name": "ovos-control-panel-network",
+    "pypi_version": "0.1.0a1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "andlo",
+    "tier": 1,
+    "component_type": "Page Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "online",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-22T19:46:33Z",
+    "last_updated": "2026-11-22T20:12:52.467960Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-core",
@@ -17838,8 +18516,32 @@
     "is_new_repo": false,
     "is_recently_updated": false,
     "compat": {
-      "badge_id": "femelo-ovos-hierarchical-knn-pipeline",
-      "channels": {}
+      "badge_id": "ovos-hierarchical-knn-pipeline",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-11-22T10:16:15+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1",
+          "tested_at": "2026-11-22T10:16:13+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2717 doesn't install",
+          "state": "fail",
+          "level": 0,
+          "tested_at": "2026-11-22T10:15:25+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -26928,8 +27630,33 @@
     "is_new_repo": true,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "emkay-voice-ovos-skill-kiosk",
-      "channels": {}
+      "badge_id": "ovos-skill-kiosk.emkay-voice",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:16:20+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:16:31+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a1",
+          "tested_at": "2026-11-22T10:15:29+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -29333,8 +30060,33 @@
     "is_new_repo": true,
     "is_recently_updated": true,
     "compat": {
-      "badge_id": "emkay-voice-ovos-skill-store",
-      "channels": {}
+      "badge_id": "ovos-skill-store.emkay-voice",
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-22T10:16:35+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-22T10:16:46+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-22T10:15:40+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -32396,6 +33148,60 @@
     "in_ovos_localize": false,
     "repo_created_at": "2022-08-25T23:02:54Z",
     "last_updated": "2023-03-13T18:46:38.869707Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
+  },
+  {
+    "id": "OpenVoiceOS-ovos-stt-plugin-sherpa-onnx",
+    "skill_id": null,
+    "name": "ovos-stt-plugin-sherpa-onnx",
+    "description": "An OpenVoiceOS Speech-to-Text plugin that uses Sherpa-ONNX, the Kaldi-based speech recognition toolkit from k2-fsa. The plugin runs fully offline and supports Transducer, Whisper, Moonshine, Paraformer, and several CTC model architectures.",
+    "examples": [],
+    "tags": [
+      "onnx",
+      "plugin",
+      "speech-to-text",
+      "stt",
+      "tigregotico"
+    ],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/OpenVoiceOS/ovos-stt-plugin-sherpa-onnx",
+    "package_name": "ovos-stt-plugin-sherpa-onnx",
+    "pypi_version": "0.0.1",
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "OpenVoiceOS",
+    "tier": 1,
+    "component_type": "STT Plugin",
+    "type_group": "Plugin",
+    "stars": 0,
+    "forks": 2,
+    "open_issues": 7,
+    "on_pypi": true,
+    "has_release": true,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": "offline",
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Install",
+        "content": "pip install ovos-stt-plugin-sherpa-onnx"
+      },
+      {
+        "heading": "Configuration",
+        "content": "Add the following to your `mycroft.conf`. The configuration keys depend on the `model_type` you choose.\n\n### Basic usage (Transducer)\n\nThis is the standard configuration for Zipformer and Conformer transducer models.\n\n{\n  \"stt\": {\n    \"module\": \"ovos-stt-plugin-sherpa-onnx\",\n    \"ovos-stt-plugin-sherpa-onnx\": {\n      \"model\": \"sherpa-onnx-zipformer-en-libriheavy-20230830-large-punct-case\",\n      \"model_type\": \"transducer\",\n      \"encoder\": \"encoder-epoch-16-avg-2.int8.onnx\",\n      \"decoder\": \"decoder-epoch-16-avg-2.int8.onnx\",\n      \"joiner\": \"joiner-epoch-16-avg-2.int8.onnx\",\n      \"tokens\": \"tokens.txt\"\n    }\n  }\n}\n\n### Supported model types and examples\n\nThe plugin supports many architectures. Below are configuration examples for the most common ones.\n\n#### Whisper\n\n{\n  \"model\": \"sherpa\u2026"
+      }
+    ],
+    "languages": [],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-01-31T21:24:09Z",
+    "last_updated": "2026-01-31T21:27:01.008902Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -36375,54 +37181,6 @@
     "is_recently_updated": false
   },
   {
-    "id": "OpenVoiceOS-ovos-ww-plugin-local-wake",
-    "skill_id": null,
-    "name": "ovos-ww-plugin-local-wake",
-    "description": "OVOS wake-word plugin for local-wake, wake words from a few recordings",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-local-wake",
-    "package_name": "ovos-ww-plugin-local-wake",
-    "pypi_version": "0.0.1a2",
-    "license": "MIT",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Wake Word Plugin",
-    "type_group": "Plugin",
-    "stars": 0,
-    "forks": 0,
-    "open_issues": 1,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install --pre ovos-ww-plugin-local-wake\n\nThe plugin needs only `onnxruntime` and `numpy`, and carries the 2.4 MB speech-embedding model. It does not install PyTorch, librosa or sounddevice."
-      },
-      {
-        "heading": "Configuration",
-        "content": "\"hotwords\": {\n  \"hey_computer\": {\n    \"module\": \"ovos-ww-plugin-local-wake\",\n    \"samples\": \"~/wakewords/hey_computer\",\n    \"listen\": true\n  }\n},\n\"listener\": {\"wake_word\": \"hey_computer\"}\n\n| Key | Default | Meaning |\n|---|---|---|\n| `samples` | required | Folder or list of WAV recordings of the wake word |\n| `threshold` | `0.16` | Largest DTW distance for a detection |\n| `buffer_seconds` | longest recording + 0.25 s | Audio compared with the recordings, at least 0.775 s |\n| `hop_seconds` | `0.25` | Audio between two comparisons |\n| `silence_db` | `20` | A buffer this many dB quieter than the recordings is not compared |\n\nThe best threshold depends on the recordings and the microphone. A lower value gives fewer false detections and more misses. The local-wake benchmark found optimal thresho\u2026"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2026-10-22T15:58:53Z",
-    "last_updated": "2026-10-22T16:07:22.457577Z",
-    "is_new_repo": true,
-    "is_recently_updated": true
-  },
-  {
     "id": "OpenVoiceOS-ovos-ww-plugin-microwakeword",
     "skill_id": null,
     "name": "ovos-ww-plugin-microwakeword",
@@ -36722,54 +37480,6 @@
     "in_ovos_localize": false,
     "repo_created_at": "2021-08-15T21:56:32Z",
     "last_updated": "2025-06-10T21:19:30.747583Z",
-    "is_new_repo": false,
-    "is_recently_updated": false
-  },
-  {
-    "id": "OpenVoiceOS-ovos-ww-plugin-precise-onnx",
-    "skill_id": null,
-    "name": "ovos-ww-plugin-precise-onnx",
-    "description": "A wake word plugin for OpenVoiceOS. It runs Precise-style wake word models with `onnxruntime` instead of `tflite`.",
-    "examples": [],
-    "tags": [],
-    "category": "Other",
-    "icon": null,
-    "icon_source": null,
-    "icon_color": null,
-    "source": "https://github.com/OpenVoiceOS/ovos-ww-plugin-precise-onnx",
-    "package_name": "ovos-ww-plugin-precise-onnx",
-    "pypi_version": "0.1.0",
-    "license": "Apache-2.0",
-    "archived": false,
-    "author": "OpenVoiceOS",
-    "tier": 1,
-    "component_type": "Wake Word Plugin",
-    "type_group": "Plugin",
-    "stars": 1,
-    "forks": 1,
-    "open_issues": 4,
-    "on_pypi": true,
-    "has_release": true,
-    "in_ovos_store": false,
-    "pipeline": null,
-    "connectivity": null,
-    "requires_api_key": false,
-    "settings_fields": [],
-    "setup_notes": [
-      {
-        "heading": "Install",
-        "content": "pip install ovos_ww_plugin_precise_onnx\n\n---"
-      },
-      {
-        "heading": "Configuration",
-        "content": "Add the plugin to the `hotwords` section of `mycroft.conf`.\n\n\"listener\": {\n  \"wake_word\": \"hey_mycroft\"\n},\n\"hotwords\": {\n  \"hey_mycroft\": {\n    \"module\": \"ovos-ww-plugin-precise-onnx\",\n    \"model\": \"https://github.com/OpenVoiceOS/precise-lite-models/raw/master/wakewords/en/hey_mycroft.onnx\",\n    \"trigger_level\": 3,\n    \"sensitivity\": 0.5\n   }\n}\n\nGet community models from [OpenVoiceOS/precise-lite-models](https://github.com/OpenVoiceOS/precise-lite-models).\n\n---"
-      }
-    ],
-    "languages": [],
-    "locale_content": {},
-    "in_ovos_localize": false,
-    "repo_created_at": "2025-10-31T06:33:40Z",
-    "last_updated": "2025-11-04T19:09:22.604331Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -42455,7 +43165,7 @@
     "icon_color": null,
     "source": "https://github.com/thalovant/thalovant-skillkit",
     "package_name": "thalovant-skillkit",
-    "pypi_version": "0.38.0",
+    "pypi_version": "0.39.0",
     "license": "Apache-2.0",
     "archived": false,
     "author": "thalovant",
@@ -42485,7 +43195,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-09-08T01:58:37Z",
-    "last_updated": "2026-11-14T22:25:55.018607Z",
+    "last_updated": "2026-11-21T16:46:15.974385Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },

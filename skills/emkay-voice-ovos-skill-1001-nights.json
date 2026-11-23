@@ -74,6 +74,39 @@
   "is_recently_updated": false,
   "compat": {
     "badge_id": "ovos-skill-1001-nights.emkay-voice",
-    "channels": {}
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't load",
+        "state": "fail",
+        "level": 1,
+        "version_tested": "0.1.0",
+        "tested_at": "2026-11-22T10:15:30+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
+        "label": "\u2713 2/2 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.1.0",
+        "tested_at": "2026-11-22T10:14:50+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 2,
+          "counted": 2
+        }
+      },
+      "alpha": {
+        "label": "\u2713 2/2 golden",
+        "state": "pass",
+        "level": 3,
+        "version_tested": "0.1.0",
+        "tested_at": "2026-11-22T10:14:42+00:00",
+        "channel_pinned": false,
+        "golden": {
+          "hit": 2,
+          "counted": 2
+        }
+      }
+    }
   }
 }

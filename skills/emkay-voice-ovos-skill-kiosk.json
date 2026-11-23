@@ -156,7 +156,32 @@
   "is_new_repo": true,
   "is_recently_updated": true,
   "compat": {
-    "badge_id": "emkay-voice-ovos-skill-kiosk",
-    "channels": {}
+    "badge_id": "ovos-skill-kiosk.emkay-voice",
+    "channels": {
+      "stable": {
+        "label": "\u2717 doesn't load",
+        "state": "fail",
+        "level": 1,
+        "version_tested": "0.1.0a1",
+        "tested_at": "2026-11-22T10:16:20+00:00",
+        "channel_pinned": false
+      },
+      "testing": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.0a1",
+        "tested_at": "2026-11-22T10:16:31+00:00",
+        "channel_pinned": false
+      },
+      "alpha": {
+        "label": "\u2713 loads",
+        "state": "pass",
+        "level": 2,
+        "version_tested": "0.1.0a1",
+        "tested_at": "2026-11-22T10:15:29+00:00",
+        "channel_pinned": false
+      }
+    }
   }
 }
