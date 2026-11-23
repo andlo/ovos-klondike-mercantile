@@ -1,10 +1,10 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-22T11:55:50+00:00",
+ "generated_at": "2026-11-23T13:12:14+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-11-20T12:00:32+00:00",
-   "klondike_run_at": "2026-11-22T11:55:50+00:00",
+   "klondike_run_at": "2026-11-23T13:12:14+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
    "profiles": [
@@ -1164,8 +1164,8 @@
    ]
   },
   "testing": {
-   "run_at": "2026-11-22T11:55:50+00:00",
-   "klondike_run_at": "2026-11-22T11:55:50+00:00",
+   "run_at": "2026-11-23T13:12:14+00:00",
+   "klondike_run_at": "2026-11-23T13:12:14+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -1863,7 +1863,7 @@
        },
        "klondike": {
         "hit": 4,
-        "counted": 14
+        "counted": 13
        },
        "gold": false,
        "note": "geography facts (offline)",
@@ -2340,8 +2340,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-11-22T11:55:50+00:00",
-   "klondike_run_at": "2026-11-22T11:55:50+00:00",
+   "run_at": "2026-11-23T13:12:14+00:00",
+   "klondike_run_at": "2026-11-23T13:12:14+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2451,7 +2451,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 22,
+        "reaches": 23,
         "takes": 5,
         "examples": [
          {
@@ -2502,7 +2502,7 @@
        "pipeline_route": {
         "measured": true,
         "reaches": 5,
-        "takes": 18,
+        "takes": 19,
         "examples": [
          {
           "from": "andlo-ovos-skill-rhythm-box",
@@ -2551,15 +2551,9 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 348,
+        "reaches": 360,
         "takes": 13,
         "examples": [
-         {
-          "from": "OpenVoiceOS-ovos-skill-alerts",
-          "kind": "wrong_intent",
-          "taken_by": "ovos-skill-alerts.openvoiceos",
-          "utterance": "cancel all alarms and timers"
-         },
          {
           "from": "OpenVoiceOS-ovos-skill-date-time",
           "kind": "baseline",
@@ -2596,7 +2590,7 @@
        "pipeline_route": {
         "measured": true,
         "reaches": 0,
-        "takes": 5,
+        "takes": 6,
         "examples": [
          {
           "from": "OpenVoiceOS-ovos-skill-alerts",
@@ -2654,7 +2648,7 @@
         }
        },
        "klondike": {
-        "hit": 51,
+        "hit": 52,
         "counted": 55
        },
        "gold": true
@@ -3185,25 +3179,11 @@
        "tested_at": "2026-10-30T08:59:43+00:00",
        "golden": null,
        "klondike": null,
-       "gold": false,
+       "gold": true,
        "pipeline_route": {
         "measured": true,
-        "reaches": 13,
-        "takes": 2,
-        "examples": [
-         {
-          "from": "emkay-voice-ovos-skill-arxiv-papers",
-          "kind": "unhandled",
-          "taken_by": null,
-          "utterance": "read me a paper from arxiv"
-         },
-         {
-          "from": "emkay-voice-ovos-skill-arxiv-papers",
-          "kind": "unhandled",
-          "taken_by": null,
-          "utterance": "read me a research paper from the arxiv"
-         }
-        ]
+        "reaches": 17,
+        "takes": 0
        },
        "in_profile": true
       },
@@ -3826,7 +3806,7 @@
       "untested": 0,
       "not_in_store": 2,
       "routes": 12,
-      "gold": 11
+      "gold": 12
      },
      "cumulative": {
       "total": 59,
@@ -3837,7 +3817,7 @@
       "untested": 0,
       "not_in_store": 2,
       "routes": 17,
-      "gold": 17
+      "gold": 18
      }
     }
    ]

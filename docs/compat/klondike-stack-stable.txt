@@ -14,7 +14,7 @@ caldav==1.6.0
 cattrs==26.2.1
 certifi==2026.11.20
 cffi==2.1.1
-charset-normalizer==3.5.2
+charset-normalizer==3.5.3
 click==8.5.1
 cloudpickle==3.1.3
 colorspacious==1.1.2
@@ -69,7 +69,7 @@ nebulento @ git+https://github.com/OpenVoiceOS/nebulento@8af5d46f252cde812c6a4f6
 neon-homeassistant-skill==0.0.24
 nltk==3.10.4
 numpy==1.26.4
-numtag==0.19.2a1
+numtag==0.19.22a1
 oauthlib==3.3.1
 orjson==3.13.0
 ovos-audio==0.4.0
@@ -91,7 +91,6 @@ ovos-plugin-common-play==1.2.1
 ovos-plugin-manager==0.9.0
 ovos-skill-365tomorrows-stories==0.1.8
 ovos-skill-alerts==0.1.24
-ovos-skill-andersen-tales==0.1.8
 ovos-skill-andrew-lang-tales==0.1.9
 ovos-skill-application-launcher==0.5.13
 ovos-skill-arxiv-papers==0.1.7
@@ -118,7 +117,6 @@ ovos-skill-geography-practice==0.0.6
 ovos-skill-geometry==0.0.6
 ovos-skill-geometry-practice==0.0.4
 ovos-skill-ggwave==0.3.4
-ovos-skill-grimm-tales==0.1.8
 ovos-skill-hello-world==0.2.1
 ovos-skill-holidays==0.0.3
 ovos-skill-horoscope-readings==0.1.5
