@@ -1,6 +1,6 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-23T13:12:14+00:00",
+ "generated_at": "2026-11-24T15:10:29+00:00",
  "channels": {
   "stable": {
    "run_at": "2026-11-20T12:00:32+00:00",
@@ -1165,7 +1165,7 @@
   },
   "testing": {
    "run_at": "2026-11-23T13:12:14+00:00",
-   "klondike_run_at": "2026-11-23T13:12:14+00:00",
+   "klondike_run_at": "2026-11-24T15:10:29+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
    ],
@@ -1863,7 +1863,7 @@
        },
        "klondike": {
         "hit": 4,
-        "counted": 13
+        "counted": 14
        },
        "gold": false,
        "note": "geography facts (offline)",
@@ -1904,7 +1904,7 @@
         }
        },
        "klondike": {
-        "hit": 2,
+        "hit": 3,
         "counted": 13
        },
        "gold": false,
@@ -1951,7 +1951,7 @@
         }
        },
        "klondike": {
-        "hit": 4,
+        "hit": 5,
         "counted": 5
        },
        "gold": true,
@@ -2341,7 +2341,7 @@
   },
   "alpha": {
    "run_at": "2026-11-23T13:12:14+00:00",
-   "klondike_run_at": "2026-11-23T13:12:14+00:00",
+   "klondike_run_at": "2026-11-24T15:10:29+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2451,7 +2451,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 23,
+        "reaches": 20,
         "takes": 5,
         "examples": [
          {
@@ -2551,7 +2551,7 @@
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 360,
+        "reaches": 363,
         "takes": 13,
         "examples": [
          {
