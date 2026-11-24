@@ -115,16 +115,16 @@
         "label": "\u2717 doesn't load",
         "state": "fail",
         "level": 1,
-        "version_tested": "0.2.0",
-        "tested_at": "2026-11-22T10:17:12+00:00",
+        "version_tested": "0.2.1",
+        "tested_at": "2026-11-23T11:15:25+00:00",
         "channel_pinned": false
       },
       "testing": {
         "label": "\u2713 2/2 golden",
         "state": "pass",
         "level": 3,
-        "version_tested": "0.2.0",
-        "tested_at": "2026-11-22T10:16:15+00:00",
+        "version_tested": "0.2.1",
+        "tested_at": "2026-11-23T11:15:31+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 2,
@@ -132,11 +132,12 @@
         }
       },
       "alpha": {
-        "label": "\u2713 2/2 golden",
+        "label": "\u2713 2/2 golden \u00b7 stops",
         "state": "pass",
         "level": 3,
-        "version_tested": "0.2.0",
-        "tested_at": "2026-11-22T10:15:04+00:00",
+        "stop": "stops",
+        "version_tested": "0.2.1",
+        "tested_at": "2026-11-23T11:13:50+00:00",
         "channel_pinned": false,
         "golden": {
           "hit": 2,

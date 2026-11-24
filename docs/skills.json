@@ -80,16 +80,16 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0",
-          "tested_at": "2026-11-22T10:15:30+00:00",
+          "version_tested": "0.1.1",
+          "tested_at": "2026-11-23T11:14:05+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 2/2 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.1.0",
-          "tested_at": "2026-11-22T10:14:50+00:00",
+          "version_tested": "0.1.1",
+          "tested_at": "2026-11-23T11:14:02+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -100,8 +100,8 @@
           "label": "\u2713 2/2 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.1.0",
-          "tested_at": "2026-11-22T10:14:42+00:00",
+          "version_tested": "0.1.1",
+          "tested_at": "2026-11-23T11:13:27+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -450,24 +450,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a3",
-          "tested_at": "2026-11-22T10:16:00+00:00",
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-23T11:14:35+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a3",
-          "tested_at": "2026-11-22T10:15:18+00:00",
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-23T11:14:32+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a3",
-          "tested_at": "2026-11-22T10:14:51+00:00",
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-23T11:13:36+00:00",
           "channel_pinned": false
         }
       }
@@ -1092,16 +1092,16 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-22T10:17:12+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:15:25+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 2/2 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-22T10:16:15+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:15:31+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -1109,11 +1109,12 @@
           }
         },
         "alpha": {
-          "label": "\u2713 2/2 golden",
+          "label": "\u2713 2/2 golden \u00b7 stops",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-22T10:15:04+00:00",
+          "stop": "stops",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:13:50+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 2,
@@ -2344,7 +2345,32 @@
     "is_recently_updated": false,
     "compat": {
       "badge_id": "ovos-skill-autovolume.emkay-voice",
-      "channels": {}
+      "channels": {
+        "stable": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.1a1",
+          "tested_at": "2026-11-23T11:15:39+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1a1",
+          "tested_at": "2026-11-23T11:15:47+00:00",
+          "channel_pinned": false
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.0.1a1",
+          "tested_at": "2026-11-23T11:14:03+00:00",
+          "channel_pinned": false
+        }
+      }
     }
   },
   {
@@ -5071,24 +5097,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a5",
-          "tested_at": "2026-11-22T10:17:30+00:00",
+          "version_tested": "0.1.0a6",
+          "tested_at": "2026-11-23T11:15:56+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a5",
-          "tested_at": "2026-11-22T10:16:29+00:00",
+          "version_tested": "0.1.0a6",
+          "tested_at": "2026-11-23T11:16:06+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a5",
-          "tested_at": "2026-11-22T10:15:15+00:00",
+          "version_tested": "0.1.0a6",
+          "tested_at": "2026-11-23T11:14:15+00:00",
           "channel_pinned": false
         }
       }
@@ -6681,16 +6707,16 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-22T10:17:48+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:16:11+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-22T10:16:39+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:16:20+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -6702,8 +6728,8 @@
           "state": "pass",
           "level": 3,
           "stop": "stops",
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-22T10:15:24+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:14:24+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -6909,24 +6935,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a10",
-          "tested_at": "2026-11-22T10:18:05+00:00",
+          "version_tested": "0.1.0a13",
+          "tested_at": "2026-11-23T11:16:25+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a10",
-          "tested_at": "2026-11-22T10:16:52+00:00",
+          "version_tested": "0.1.0a13",
+          "tested_at": "2026-11-23T11:16:36+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a10",
-          "tested_at": "2026-11-22T10:15:35+00:00",
+          "version_tested": "0.1.0a13",
+          "tested_at": "2026-11-23T11:14:36+00:00",
           "channel_pinned": false
         }
       }
@@ -7391,14 +7417,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 7,
     "forks": 7,
     "open_issues": 3,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -7445,7 +7471,7 @@
     "type_group": "Infrastructure",
     "stars": 3,
     "forks": 1,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -7458,9 +7484,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-10-13T23:01:38Z",
-    "last_updated": "2026-10-11T17:29:22Z",
+    "last_updated": "2026-11-18T21:14:18Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-HiveMind-core",
@@ -7492,7 +7518,7 @@
     "type_group": "Tool",
     "stars": 16,
     "forks": 1,
-    "open_issues": 9,
+    "open_issues": 7,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -7567,9 +7593,9 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-09-10T23:05:41Z",
-    "last_updated": "2026-11-17T16:50:58Z",
+    "last_updated": "2026-11-19T20:10:01Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "JarbasHiveMind-hivemind-homeassistant",
@@ -7756,14 +7782,14 @@
     "license": null,
     "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 1,
+    "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -7871,14 +7897,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 1,
+    "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -7931,7 +7957,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 2,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8040,7 +8066,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8088,7 +8114,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
-    "open_issues": 9,
+    "open_issues": 10,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -8331,7 +8357,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 1,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -8378,14 +8404,14 @@
     "license": "Apache-2.0",
     "archived": false,
     "author": "JarbasHiveMind",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 0,
     "forks": 0,
     "open_issues": 4,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -10772,16 +10798,16 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0",
-          "tested_at": "2026-11-22T10:18:46+00:00",
+          "version_tested": "0.1.2",
+          "tested_at": "2026-11-23T11:16:42+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads \u00b7 4/6 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.1.0",
-          "tested_at": "2026-11-22T10:17:23+00:00",
+          "version_tested": "0.1.2",
+          "tested_at": "2026-11-23T11:16:56+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 4,
@@ -10792,8 +10818,8 @@
           "label": "\u2713 6/6 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.1.0",
-          "tested_at": "2026-11-22T10:16:01+00:00",
+          "version_tested": "0.1.2",
+          "tested_at": "2026-11-23T11:14:49+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 6,
@@ -12060,16 +12086,16 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:12:41+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:13:34+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:10:49+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:15:24+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -12080,8 +12106,8 @@
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:11:26+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:13:11+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -12779,19 +12805,19 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:15:06+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:13:46+00:00",
           "channel_pinned": false
         },
         "testing": {
-          "label": "\u2713 loads \u00b7 5/8 golden",
+          "label": "\u2713 loads \u00b7 4/8 golden",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:14:34+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:15:29+00:00",
           "channel_pinned": false,
           "golden": {
-            "hit": 5,
+            "hit": 4,
             "counted": 8
           }
         },
@@ -12799,8 +12825,8 @@
           "label": "\u2713 7/8 golden",
           "state": "warn",
           "level": 3,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:14:52+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:13:20+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 7,
@@ -13296,16 +13322,16 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:12:53+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:14:55+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:10:55+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:16:33+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -13316,8 +13342,8 @@
           "label": "\u2713 3/3 golden",
           "state": "pass",
           "level": 3,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:11:37+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:13:31+00:00",
           "channel_pinned": false,
           "golden": {
             "hit": 3,
@@ -14902,24 +14928,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a4",
-          "tested_at": "2026-11-22T10:16:00+00:00",
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-23T11:15:06+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a4",
-          "tested_at": "2026-11-22T10:15:56+00:00",
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-23T11:16:38+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a4",
-          "tested_at": "2026-11-22T10:15:07+00:00",
+          "version_tested": "0.1.0a5",
+          "tested_at": "2026-11-23T11:13:40+00:00",
           "channel_pinned": false
         }
       }
@@ -15415,23 +15441,23 @@
           "label": "\u2717 doesn't install",
           "state": "fail",
           "level": 0,
-          "tested_at": "2026-11-22T10:16:14+00:00",
+          "tested_at": "2026-11-23T11:15:22+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:16:08+00:00",
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-23T11:16:48+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:15:16+00:00",
+          "version_tested": "0.1.0a2",
+          "tested_at": "2026-11-23T11:13:47+00:00",
           "channel_pinned": false
         }
       }
@@ -18572,7 +18598,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 2,
-    "open_issues": 3,
+    "open_issues": 2,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -18598,6 +18624,7 @@
       "es-es",
       "fa-ir",
       "fr-fr",
+      "gl-es",
       "nl-nl",
       "pt-pt",
       "sv-se"
@@ -26208,14 +26235,14 @@
     "license": "Apache-2.0",
     "archived": true,
     "author": "JarbasHiveMind",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Skill",
     "type_group": "Skill",
     "stars": 0,
     "forks": 3,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -27636,24 +27663,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:16:20+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:15:23+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:16:31+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:16:52+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a1",
-          "tested_at": "2026-11-22T10:15:29+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:13:54+00:00",
           "channel_pinned": false
         }
       }
@@ -30066,24 +30093,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a2",
-          "tested_at": "2026-11-22T10:16:35+00:00",
+          "version_tested": "0.1.0a4",
+          "tested_at": "2026-11-23T11:15:41+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a2",
-          "tested_at": "2026-11-22T10:16:46+00:00",
+          "version_tested": "0.1.0a4",
+          "tested_at": "2026-11-23T11:17:06+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a2",
-          "tested_at": "2026-11-22T10:15:40+00:00",
+          "version_tested": "0.1.0a4",
+          "tested_at": "2026-11-23T11:14:03+00:00",
           "channel_pinned": false
         }
       }
@@ -31618,7 +31645,7 @@
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -38567,7 +38594,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 2,
-    "open_issues": 2,
+    "open_issues": 3,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -46681,24 +46708,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:13:04+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:15:58+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:11:00+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:17:21+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.2.0",
-          "tested_at": "2026-11-21T10:11:48+00:00",
+          "version_tested": "0.2.1",
+          "tested_at": "2026-11-23T11:14:13+00:00",
           "channel_pinned": false
         }
       }
@@ -46786,24 +46813,24 @@
           "label": "\u2717 doesn't load",
           "state": "fail",
           "level": 1,
-          "version_tested": "0.1.0a2",
-          "tested_at": "2026-11-20T10:27:50+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:14:06+00:00",
           "channel_pinned": false
         },
         "testing": {
           "label": "\u2713 loads \u00b7 11/12 langs",
           "state": "warn",
           "level": 2,
-          "version_tested": "0.1.0a2",
-          "tested_at": "2026-11-20T10:26:53+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:13:17+00:00",
           "channel_pinned": false
         },
         "alpha": {
           "label": "\u2713 loads",
           "state": "pass",
           "level": 2,
-          "version_tested": "0.1.0a2",
-          "tested_at": "2026-11-20T10:27:13+00:00",
+          "version_tested": "0.1.0a3",
+          "tested_at": "2026-11-23T11:14:28+00:00",
           "channel_pinned": false
         }
       }
