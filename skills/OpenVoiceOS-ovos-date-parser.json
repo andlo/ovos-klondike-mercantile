@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-date-parser",
   "skill_id": null,
   "name": "ovos-date-parser",
-  "description": "Multilingual parsing, extraction, and formatting of human date, time, and",
+  "description": "covers: what the package does, how to install it, a first example, and where the docs are",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -22,7 +22,7 @@
   "type_group": "Tool",
   "stars": 0,
   "forks": 8,
-  "open_issues": 9,
+  "open_issues": 8,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -32,8 +32,12 @@
   "settings_fields": [],
   "setup_notes": [
     {
-      "heading": "Installation",
-      "content": "pip install ovos-date-parser"
+      "heading": "Install",
+      "content": "uv pip install --prerelease=allow ovos-date-parser"
+    },
+    {
+      "heading": "Getting started",
+      "content": "Reading a phrase gives a `datetime` and the words left over. Writing a value\ngives words that a speech engine can say.\n\nfrom datetime import datetime\nfrom ovos_date_parser import extract_datetime, extract_duration, nice_time, nice_duration"
     }
   ],
   "languages": [

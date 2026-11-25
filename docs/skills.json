@@ -16155,8 +16155,8 @@
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
     "stars": 1,
-    "forks": 5,
-    "open_issues": 38,
+    "forks": 6,
+    "open_issues": 42,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -16169,7 +16169,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-12-22T18:14:53Z",
-    "last_updated": "2026-11-16T18:48:47Z",
+    "last_updated": "2026-11-21T14:16:47Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -16403,14 +16403,14 @@
     "license": "Apache-2.0",
     "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Solver Plugin",
     "type_group": "Plugin",
     "stars": 3,
     "forks": 6,
     "open_issues": 3,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -16493,14 +16493,14 @@
     "license": "Apache-2.0",
     "archived": true,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
     "forks": 2,
     "open_issues": 2,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -16765,25 +16765,32 @@
     "name": "ovos-control-panel",
     "description": "Unified local web UI for OpenVoiceOS devices",
     "examples": [],
-    "tags": [],
+    "tags": [
+      "control-panel",
+      "mycroft",
+      "openvoiceos",
+      "ovos",
+      "voice-assistant",
+      "web-ui"
+    ],
     "category": "Other",
-    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-control-panel/dev/ovos_webui/static/icon-512.png",
+    "icon": "https://raw.githubusercontent.com/OpenVoiceOS/ovos-control-panel/dev/ovos_webui/pages/voice_all/icon.svg",
     "icon_source": "repo",
     "icon_color": null,
     "source": "https://github.com/OpenVoiceOS/ovos-control-panel",
     "package_name": "ovos-control-panel",
-    "pypi_version": "0.0.1a55",
+    "pypi_version": "0.0.1a103",
     "license": "Apache-2.0",
     "archived": false,
     "author": "OpenVoiceOS",
-    "tier": 2,
+    "tier": 1,
     "component_type": "Tool",
     "type_group": "Tool",
     "stars": 1,
     "forks": 1,
-    "open_issues": 5,
+    "open_issues": 4,
     "on_pypi": true,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": "online",
@@ -16795,11 +16802,17 @@
         "content": "The panel follows the OVOS **alpha** channel. It is built on the ovos-config 3.x\nconfiguration layers, which only alpha has for now. Install it on an alpha device:\n\npip install --pre ovos-control-panel\n\nOn a stable or testing device, pip either picks an old pre-release or wants to\nupgrade core OVOS packages to alphas. Wait until alpha becomes testing."
       }
     ],
-    "languages": [],
+    "languages": [
+      "ar",
+      "da-dk",
+      "en-us",
+      "es-es",
+      "pt-pt"
+    ],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-08-10T17:37:33Z",
-    "last_updated": "2026-11-16T16:08:31.821333Z",
+    "last_updated": "2026-11-23T10:05:02.231150Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -16971,9 +16984,9 @@
     "tier": 1,
     "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
-    "stars": 302,
-    "forks": 31,
-    "open_issues": 15,
+    "stars": 303,
+    "forks": 32,
+    "open_issues": 16,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -17070,7 +17083,7 @@
     "forks": 0,
     "open_issues": 1,
     "on_pypi": false,
-    "has_release": false,
+    "has_release": true,
     "in_ovos_store": false,
     "pipeline": null,
     "connectivity": null,
@@ -17094,7 +17107,7 @@
     "id": "OpenVoiceOS-ovos-date-parser",
     "skill_id": null,
     "name": "ovos-date-parser",
-    "description": "Multilingual parsing, extraction, and formatting of human date, time, and",
+    "description": "covers: what the package does, how to install it, a first example, and where the docs are",
     "examples": [],
     "tags": [
       "openvoiceos"
@@ -17114,7 +17127,7 @@
     "type_group": "Tool",
     "stars": 0,
     "forks": 8,
-    "open_issues": 9,
+    "open_issues": 8,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -17124,8 +17137,12 @@
     "settings_fields": [],
     "setup_notes": [
       {
-        "heading": "Installation",
-        "content": "pip install ovos-date-parser"
+        "heading": "Install",
+        "content": "uv pip install --prerelease=allow ovos-date-parser"
+      },
+      {
+        "heading": "Getting started",
+        "content": "Reading a phrase gives a `datetime` and the words left over. Writing a value\ngives words that a speech engine can say.\n\nfrom datetime import datetime\nfrom ovos_date_parser import extract_datetime, extract_duration, nice_time, nice_duration"
       }
     ],
     "languages": [
@@ -17165,7 +17182,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Retrieval Plugin",
+    "component_type": "Toolbox Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
@@ -17384,8 +17401,8 @@
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
     "stars": 64,
-    "forks": 21,
-    "open_issues": 6,
+    "forks": 20,
+    "open_issues": 7,
     "on_pypi": false,
     "has_release": true,
     "in_ovos_store": false,
@@ -17403,7 +17420,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2022-05-07T17:20:53Z",
-    "last_updated": "2026-11-12T23:34:44Z",
+    "last_updated": "2026-11-25T02:20:44Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -17570,7 +17587,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-05-31T02:30:07Z",
-    "last_updated": "2026-11-09T00:21:01Z",
+    "last_updated": "2026-11-20T14:01:15Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -17601,7 +17618,7 @@
     "type_group": "Infrastructure",
     "stars": 2,
     "forks": 2,
-    "open_issues": 6,
+    "open_issues": 4,
     "on_pypi": false,
     "has_release": false,
     "in_ovos_store": false,
@@ -17612,16 +17629,16 @@
     "setup_notes": [
       {
         "heading": "Install",
-        "content": "This repository has no Python package and no install step. It only builds OCI images.\n\nBuild the base image first, then an engine image:\n\ndocker build -t smartgic/ovos-tts-server-base:alpha base/\ndocker build --build-arg TAG=alpha -t smartgic/ovos-tts-server-piper:alpha piper/\n\nCUDA variants use `Dockerfile.cuda` and build on `smartgic/ovos-tts-server-base-cuda`. CUDA images exist for `base`, `piper`, and `phoonnx`.\n\nImages publish to the Docker Hub `smartgic/` namespace. The image labels still point back to this repository as the source."
+        "content": "This repository has no Python package and no install step. It only builds OCI images.\n\nBuild the base image first, then an engine image:\n\ndocker build -t smartgic/ovos-tts-server-base:alpha base/\ndocker build --build-arg TAG=alpha -t smartgic/ovos-tts-server-piper:alpha piper/\n\nCUDA variants use `Dockerfile.cuda` and build on `smartgic/ovos-tts-server-base-cuda`. CUDA images exist for `base`, `piper`, and `phoonnx`.\n\nThe `phoonnx` images are different in two points. They do not build on the base image. Their build context is the repository root, not the `phoonnx/` directory, because they install the package in `phoonnx/stream`:\n\ndocker build -f phoonnx/Dockerfile -t smartgic/ovos-tts-server-phoonnx:alpha .\ndocker build -f phoonnx/Dockerfile.cuda -t smartgic/ovos-tts-server-phoonnx-cuda:alp\u2026"
       }
     ],
     "languages": [],
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-06-24T15:44:23Z",
-    "last_updated": "2026-11-18T23:40:20Z",
+    "last_updated": "2026-11-23T14:27:47Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": true
   },
   {
     "id": "OpenVoiceOS-ovos-docker-tx",
@@ -18021,7 +18038,7 @@
     "repo_created_at": "2024-07-20T23:33:09Z",
     "last_updated": "2026-10-22T19:08:50.690153Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-gguf-translate-plugin",
@@ -18890,8 +18907,8 @@
     "tier": null,
     "component_type": "Infrastructure",
     "type_group": "Infrastructure",
-    "stars": 331,
-    "forks": 60,
+    "stars": 333,
+    "forks": 59,
     "open_issues": 6,
     "on_pypi": false,
     "has_release": true,
@@ -18910,7 +18927,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2023-11-07T20:31:20Z",
-    "last_updated": "2026-11-18T13:09:04Z",
+    "last_updated": "2026-11-24T14:56:18Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -19050,7 +19067,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2024-06-04T15:01:45Z",
-    "last_updated": "2026-11-18T11:08:32Z",
+    "last_updated": "2026-11-24T12:53:34Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -19375,11 +19392,11 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Text Plugin",
+    "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
     "stars": 1,
     "forks": 5,
-    "open_issues": 8,
+    "open_issues": 9,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19403,7 +19420,36 @@
     "repo_created_at": "2025-05-08T05:12:04Z",
     "last_updated": "2026-03-04T03:17:36.005766Z",
     "is_new_repo": false,
-    "is_recently_updated": false
+    "is_recently_updated": false,
+    "compat": {
+      "badge_id": "ovos-m2v-pipeline",
+      "channels": {
+        "stable": {
+          "label": "not supported",
+          "state": "unsupported",
+          "level": 1,
+          "version_tested": "0.0.9",
+          "tested_at": "2026-10-04T11:06:09+00:00",
+          "channel_pinned": false
+        },
+        "testing": {
+          "label": "\u2717 doesn't load",
+          "state": "fail",
+          "level": 1,
+          "version_tested": "0.0.9",
+          "tested_at": "2026-10-04T10:45:30+00:00",
+          "channel_pinned": true
+        },
+        "alpha": {
+          "label": "\u2713 loads",
+          "state": "pass",
+          "level": 2,
+          "version_tested": "0.38.0a1",
+          "tested_at": "2026-10-30T09:41:20+00:00",
+          "channel_pinned": true
+        }
+      }
+    }
   },
   {
     "id": "OpenVoiceOS-ovos-ma-player",
@@ -19740,7 +19786,7 @@
     "type_group": "Tool",
     "stars": 3,
     "forks": 4,
-    "open_issues": 11,
+    "open_issues": 13,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -19844,7 +19890,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Video Plugin",
+    "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 3,
@@ -19895,8 +19941,8 @@
     "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
-    "forks": 0,
-    "open_issues": 4,
+    "forks": 1,
+    "open_issues": 5,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -20042,7 +20088,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Video Plugin",
+    "component_type": "Audio Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 1,
