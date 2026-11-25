@@ -20936,7 +20936,7 @@
     "repo_created_at": "2026-06-10T14:57:42Z",
     "last_updated": "2026-10-21T10:42:14.053784Z",
     "is_new_repo": false,
-    "is_recently_updated": true
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-messagebus",
@@ -21365,7 +21365,7 @@
     "id": "OpenVoiceOS-ovos-number-parser",
     "skill_id": null,
     "name": "ovos-number-parser",
-    "description": "Convert numbers between digits and spoken words, in **40 languages**, with one",
+    "description": "covers: what ovos-number-parser does, how to install it, a first example and where the docs are",
     "examples": [],
     "tags": [
       "openvoiceos"
@@ -21385,7 +21385,7 @@
     "type_group": "Tool",
     "stars": 4,
     "forks": 5,
-    "open_issues": 14,
+    "open_issues": 18,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -21396,7 +21396,7 @@
     "setup_notes": [
       {
         "heading": "Install",
-        "content": "pip install ovos-number-parser"
+        "content": "uv pip install ovos-number-parser"
       }
     ],
     "languages": [],
@@ -21986,7 +21986,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Detect Plugin",
+    "component_type": "Memory Plugin",
     "type_group": "Plugin",
     "stars": 9,
     "forks": 8,
@@ -22102,7 +22102,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2025-03-07T22:47:46Z",
-    "last_updated": "2026-10-27T01:02:49Z",
+    "last_updated": "2026-11-20T04:12:06Z",
     "is_new_repo": false,
     "is_recently_updated": true
   },
@@ -22175,8 +22175,8 @@
     "component_type": "Pipeline Plugin",
     "type_group": "Plugin",
     "stars": 0,
-    "forks": 4,
-    "open_issues": 9,
+    "forks": 5,
+    "open_issues": 11,
     "on_pypi": true,
     "has_release": true,
     "in_ovos_store": false,
@@ -22247,7 +22247,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Pipeline Plugin",
+    "component_type": "Memory Plugin",
     "type_group": "Plugin",
     "stars": 8,
     "forks": 6,
@@ -22295,36 +22295,7 @@
     "repo_created_at": "2023-03-25T05:15:52Z",
     "last_updated": "2026-01-23T10:59:47.267314Z",
     "is_new_repo": false,
-    "is_recently_updated": false,
-    "compat": {
-      "badge_id": "ovos-persona-pipeline-plugin",
-      "channels": {
-        "stable": {
-          "label": "not supported",
-          "state": "unsupported",
-          "level": 1,
-          "version_tested": "0.6.24",
-          "tested_at": "2026-10-04T11:15:55+00:00",
-          "channel_pinned": true
-        },
-        "testing": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.7.1",
-          "tested_at": "2026-10-04T10:56:04+00:00",
-          "channel_pinned": true
-        },
-        "alpha": {
-          "label": "\u2713 loads",
-          "state": "pass",
-          "level": 2,
-          "version_tested": "0.9.0a36",
-          "tested_at": "2026-11-04T09:49:16+00:00",
-          "channel_pinned": true
-        }
-      }
-    }
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-persona-server",
@@ -24684,7 +24655,7 @@
     "locale_content": {},
     "in_ovos_localize": false,
     "repo_created_at": "2026-01-06T11:10:29Z",
-    "last_updated": "2026-11-18T18:37:13Z",
+    "last_updated": "2026-11-25T00:48:55Z",
     "is_new_repo": false,
     "is_recently_updated": false
   },
@@ -24706,7 +24677,7 @@
     "archived": false,
     "author": "OpenVoiceOS",
     "tier": 1,
-    "component_type": "Detect Plugin",
+    "component_type": "Translate Plugin",
     "type_group": "Plugin",
     "stars": 0,
     "forks": 0,
@@ -31469,6 +31440,52 @@
         }
       }
     }
+  },
+  {
+    "id": "iBreve-ovos-skill-workwell-orchestrator",
+    "skill_id": null,
+    "name": "ovos-skill-workwell-orchestrator",
+    "description": "OVOS Skill",
+    "examples": [],
+    "tags": [],
+    "category": "Other",
+    "icon": null,
+    "icon_source": null,
+    "icon_color": null,
+    "source": "https://github.com/iBreve/ovos-skill-workwell-orchestrator",
+    "package_name": "ovos-skill-workwell-orchestrator",
+    "pypi_version": null,
+    "license": "Apache-2.0",
+    "archived": false,
+    "author": "iBreve",
+    "tier": 2,
+    "component_type": "Skill",
+    "type_group": "Skill",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "on_pypi": false,
+    "has_release": false,
+    "in_ovos_store": false,
+    "pipeline": null,
+    "connectivity": null,
+    "requires_api_key": false,
+    "settings_fields": [],
+    "setup_notes": [
+      {
+        "heading": "Installation",
+        "content": "Clone the repository and install the skill into the Python environment that runs the OVOS skills:\n\ngit clone https://github.com/iBreve/ovos-skill-workwell-orchestrator\ncd ovos-skill-workwell-orchestrator\npip install .\n\nIn a containerised OVOS setup, install the package in the image that runs the skills. The skill container has to use the same OVOS configuration and message bus as the other OVOS services."
+      }
+    ],
+    "languages": [
+      "en-us"
+    ],
+    "locale_content": {},
+    "in_ovos_localize": false,
+    "repo_created_at": "2026-11-25T12:26:13Z",
+    "last_updated": "2026-11-25T12:37:16Z",
+    "is_new_repo": false,
+    "is_recently_updated": false
   },
   {
     "id": "OpenVoiceOS-ovos-skill-youtube",

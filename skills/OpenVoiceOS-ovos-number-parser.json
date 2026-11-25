@@ -2,7 +2,7 @@
   "id": "OpenVoiceOS-ovos-number-parser",
   "skill_id": null,
   "name": "ovos-number-parser",
-  "description": "Convert numbers between digits and spoken words, in **40 languages**, with one",
+  "description": "covers: what ovos-number-parser does, how to install it, a first example and where the docs are",
   "examples": [],
   "tags": [
     "openvoiceos"
@@ -22,7 +22,7 @@
   "type_group": "Tool",
   "stars": 4,
   "forks": 5,
-  "open_issues": 14,
+  "open_issues": 18,
   "on_pypi": true,
   "has_release": true,
   "in_ovos_store": false,
@@ -33,7 +33,7 @@
   "setup_notes": [
     {
       "heading": "Install",
-      "content": "pip install ovos-number-parser"
+      "content": "uv pip install ovos-number-parser"
     }
   ],
   "languages": [],
