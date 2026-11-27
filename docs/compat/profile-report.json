@@ -1,9 +1,9 @@
 {
  "schema": "ovos-profile-report/1",
- "generated_at": "2026-11-24T15:10:29+00:00",
+ "generated_at": "2026-11-27T13:30:40+00:00",
  "channels": {
   "stable": {
-   "run_at": "2026-11-20T12:00:32+00:00",
+   "run_at": "2026-11-27T13:30:40+00:00",
    "klondike_run_at": "2026-11-23T13:12:14+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-stable.txt",
@@ -1129,8 +1129,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.4.7",
-       "tested_at": "2026-11-17T11:07:29+00:00",
+       "version": "1.4.8",
+       "tested_at": "2026-11-27T11:54:50+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -1164,7 +1164,7 @@
    ]
   },
   "testing": {
-   "run_at": "2026-11-23T13:12:14+00:00",
+   "run_at": "2026-11-27T13:30:40+00:00",
    "klondike_run_at": "2026-11-24T15:10:29+00:00",
    "pipeline_not_loaded": [
     "ovos-m2v-pipeline-high"
@@ -2305,8 +2305,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.4.7",
-       "tested_at": "2026-11-17T11:06:31+00:00",
+       "version": "1.4.8",
+       "tested_at": "2026-11-27T11:52:48+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2340,8 +2340,8 @@
    ]
   },
   "alpha": {
-   "run_at": "2026-11-23T13:12:14+00:00",
-   "klondike_run_at": "2026-11-24T15:10:29+00:00",
+   "run_at": "2026-11-27T13:30:40+00:00",
+   "klondike_run_at": "2026-11-27T13:30:40+00:00",
    "pipeline_not_loaded": [],
    "constraints_url": "https://raw.githubusercontent.com/OpenVoiceOS/OpenVoiceOS/main/constraints-alpha.txt",
    "profiles": [
@@ -2359,7 +2359,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.6.8a1",
-       "tested_at": "2026-10-30T08:59:57+00:00",
+       "tested_at": "2026-11-27T11:23:15+00:00",
        "golden": null,
        "klondike": null,
        "gold": true,
@@ -2377,7 +2377,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.1.20a1",
-       "tested_at": "2026-10-30T08:58:31+00:00",
+       "tested_at": "2026-11-27T11:23:31+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2394,8 +2394,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "3.7.5a1",
-       "tested_at": "2026-10-30T08:58:36+00:00",
+       "version": "3.7.5a4",
+       "tested_at": "2026-11-27T11:23:40+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2445,13 +2445,13 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.38.0a1",
-       "tested_at": "2026-10-30T09:41:20+00:00",
+       "tested_at": "2026-11-27T11:24:09+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 20,
+        "reaches": 24,
         "takes": 5,
         "examples": [
          {
@@ -2495,7 +2495,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.5.8a1",
-       "tested_at": "2026-10-30T08:58:55+00:00",
+       "tested_at": "2026-11-27T11:22:59+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2545,13 +2545,13 @@
        "label": "✓ loads",
        "level": 2,
        "version": "2.3.2a1",
-       "tested_at": "2026-10-30T08:59:02+00:00",
+       "tested_at": "2026-11-27T11:23:05+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
        "pipeline_route": {
         "measured": true,
-        "reaches": 363,
+        "reaches": 359,
         "takes": 13,
         "examples": [
          {
@@ -2583,7 +2583,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.9.0a36",
-       "tested_at": "2026-11-04T09:49:16+00:00",
+       "tested_at": "2026-11-27T12:00:30+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -2632,8 +2632,8 @@
        "state": "warn",
        "label": "✓ 52/55 golden",
        "level": 3,
-       "version": "0.13.1a1",
-       "tested_at": "2026-11-18T10:40:44+00:00",
+       "version": "0.13.3a4",
+       "tested_at": "2026-11-27T11:23:44+00:00",
        "golden": {
         "hit": 52,
         "counted": 55,
@@ -2661,7 +2661,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.7.2a7",
-       "tested_at": "2026-10-30T09:10:33+00:00",
+       "tested_at": "2026-11-27T11:23:44+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2674,7 +2674,7 @@
        "label": "needs device",
        "level": 1,
        "version": "0.9.4a1",
-       "tested_at": "2026-10-30T09:00:38+00:00",
+       "tested_at": "2026-11-27T11:23:10+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2686,8 +2686,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "0.6.3a1",
-       "tested_at": "2026-11-16T10:09:34+00:00",
+       "version": "0.7.1a2",
+       "tested_at": "2026-11-27T11:23:20+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2697,20 +2697,24 @@
        "store_id": "OpenVoiceOS-ovos-skill-date-time",
        "kind": "skill",
        "state": "warn",
-       "label": "✓ loads · 3/4 golden",
-       "level": 2,
-       "version": "1.12.4a1",
-       "tested_at": "2026-11-18T10:51:55+00:00",
+       "label": "✓ 4/5 golden",
+       "level": 3,
+       "version": "1.13.0a1",
+       "tested_at": "2026-11-27T11:23:17+00:00",
        "golden": {
-        "hit": 3,
-        "counted": 4,
+        "hit": 4,
+        "counted": 5,
         "langs": [
          "en-US"
         ],
         "by_lang": {
-         "en-US": {
+         "da-DK": {
           "counted": 4,
-          "hit": 3
+          "hit": 2
+         },
+         "en-US": {
+          "counted": 5,
+          "hit": 4
          }
         }
        },
@@ -2728,7 +2732,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.6.0a4",
-       "tested_at": "2026-10-30T08:58:43+00:00",
+       "tested_at": "2026-11-27T11:24:59+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2740,8 +2744,8 @@
        "state": "pass",
        "label": "✓ 2/2 golden",
        "level": 3,
-       "version": "0.4.1a2",
-       "tested_at": "2026-10-30T09:18:39+00:00",
+       "version": "0.5.1a2",
+       "tested_at": "2026-11-27T11:50:34+00:00",
        "golden": {
         "hit": 2,
         "counted": 2,
@@ -2769,7 +2773,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.7.0a6",
-       "tested_at": "2026-10-30T08:59:06+00:00",
+       "tested_at": "2026-11-27T11:25:49+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2782,7 +2786,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.2a1",
-       "tested_at": "2026-10-30T08:58:54+00:00",
+       "tested_at": "2026-11-27T11:25:09+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2795,7 +2799,7 @@
        "label": "✓ 4/4 golden",
        "level": 3,
        "version": "0.6.0a2",
-       "tested_at": "2026-10-30T08:59:04+00:00",
+       "tested_at": "2026-11-27T11:22:57+00:00",
        "golden": {
         "hit": 4,
         "counted": 4,
@@ -2804,10 +2808,6 @@
         ],
         "by_lang": {
          "ca-ES": {
-          "counted": 2,
-          "hit": 2
-         },
-         "da-DK": {
           "counted": 2,
           "hit": 2
          },
@@ -2831,7 +2831,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.9.0a6",
-       "tested_at": "2026-10-30T08:58:51+00:00",
+       "tested_at": "2026-11-27T11:25:37+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2843,8 +2843,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "0.12.2a3",
-       "tested_at": "2026-10-30T09:00:34+00:00",
+       "version": "0.12.3a1",
+       "tested_at": "2026-11-27T11:24:57+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2857,7 +2857,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.11.1a3",
-       "tested_at": "2026-10-30T08:59:23+00:00",
+       "tested_at": "2026-11-27T11:26:25+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2870,7 +2870,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.1.0a1",
-       "tested_at": "2026-10-30T09:10:21+00:00",
+       "tested_at": "2026-11-27T11:23:30+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2883,7 +2883,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "2.0.2a8",
-       "tested_at": "2026-10-30T09:01:06+00:00",
+       "tested_at": "2026-11-27T11:25:14+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2895,8 +2895,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "0.10.0a7",
-       "tested_at": "2026-10-30T08:59:25+00:00",
+       "version": "0.10.0a8",
+       "tested_at": "2026-11-27T11:42:19+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2909,7 +2909,7 @@
        "label": "✓ 10/10 golden",
        "level": 3,
        "version": "0.13.2a2",
-       "tested_at": "2026-10-30T08:59:34+00:00",
+       "tested_at": "2026-11-27T11:42:29+00:00",
        "golden": {
         "hit": 10,
         "counted": 10,
@@ -2945,7 +2945,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.12.4a1",
-       "tested_at": "2026-11-16T10:13:29+00:00",
+       "tested_at": "2026-11-27T11:53:01+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2957,8 +2957,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.5.6a1",
-       "tested_at": "2026-11-18T10:54:44+00:00",
+       "version": "1.5.8a1",
+       "tested_at": "2026-11-27T11:50:32+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2971,7 +2971,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.7.3a3",
-       "tested_at": "2026-10-30T09:27:53+00:00",
+       "tested_at": "2026-11-27T12:00:02+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -2984,7 +2984,7 @@
        "label": "✓ 11/11 golden",
        "level": 3,
        "version": "0.19.1a1",
-       "tested_at": "2026-10-30T09:01:15+00:00",
+       "tested_at": "2026-11-27T11:25:33+00:00",
        "golden": {
         "hit": 11,
         "counted": 11,
@@ -2993,11 +2993,7 @@
         ],
         "by_lang": {
          "ca-ES": {
-          "counted": 4,
-          "hit": 4
-         },
-         "da-DK": {
-          "counted": 4,
+          "counted": 5,
           "hit": 4
          },
          "en-US": {
@@ -3020,7 +3016,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.13.0a2",
-       "tested_at": "2026-10-30T08:58:53+00:00",
+       "tested_at": "2026-11-27T11:25:48+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3034,7 +3030,7 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 5,
+      "routes": 6,
       "gold": 6
      },
      "cumulative": {
@@ -3045,7 +3041,7 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 5,
+      "routes": 6,
       "gold": 6
      }
     },
@@ -3063,7 +3059,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.27.0a1",
-       "tested_at": "2026-10-30T08:59:08+00:00",
+       "tested_at": "2026-11-27T11:24:36+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3077,7 +3073,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.2.16a1",
-       "tested_at": "2026-10-30T09:41:39+00:00",
+       "tested_at": "2026-11-27T12:00:38+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3091,7 +3087,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.4.10a4",
-       "tested_at": "2026-10-30T09:27:26+00:00",
+       "tested_at": "2026-11-27T11:51:30+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3105,7 +3101,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.1.6a8",
-       "tested_at": "2026-10-30T09:27:35+00:00",
+       "tested_at": "2026-11-27T11:51:37+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3119,7 +3115,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.1.6a9",
-       "tested_at": "2026-10-30T09:27:43+00:00",
+       "tested_at": "2026-11-27T11:51:44+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3133,7 +3129,7 @@
        "label": "✗ doesn't load",
        "level": 1,
        "version": "0.1.10a3",
-       "tested_at": "2026-10-30T09:28:18+00:00",
+       "tested_at": "2026-11-27T11:51:52+00:00",
        "golden": null,
        "klondike": null,
        "gold": false
@@ -3158,7 +3154,7 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 0,
-      "routes": 5,
+      "routes": 6,
       "gold": 6
      }
     },
@@ -3176,7 +3172,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.3.2",
-       "tested_at": "2026-10-30T08:59:43+00:00",
+       "tested_at": "2026-11-27T11:25:28+00:00",
        "golden": null,
        "klondike": null,
        "gold": true,
@@ -3195,7 +3191,7 @@
        "label": "✓ 16/16 golden",
        "level": 3,
        "version": "0.0.5",
-       "tested_at": "2026-11-20T10:27:22+00:00",
+       "tested_at": "2026-11-27T11:24:48+00:00",
        "golden": {
         "hit": 16,
         "counted": 16,
@@ -3229,7 +3225,7 @@
        "label": "✓ 8/8 golden",
        "level": 3,
        "version": "0.0.11",
-       "tested_at": "2026-11-20T10:26:41+00:00",
+       "tested_at": "2026-11-27T11:52:39+00:00",
        "golden": {
         "hit": 8,
         "counted": 8,
@@ -3240,10 +3236,6 @@
          "da-DK": {
           "counted": 5,
           "hit": 5
-         },
-         "de-DE": {
-          "counted": 6,
-          "hit": 6
          },
          "en-US": {
           "counted": 8,
@@ -3263,24 +3255,24 @@
        "runtime_id": "ovos-skill-geography.andlo",
        "store_id": "andlo-ovos-skill-geography",
        "kind": "skill",
-       "state": "pass",
-       "label": "✓ 13/13 golden",
+       "state": "warn",
+       "label": "✓ 13/14 golden",
        "level": 3,
        "version": "0.0.7",
-       "tested_at": "2026-11-17T11:14:39+00:00",
+       "tested_at": "2026-11-27T11:38:18+00:00",
        "golden": {
         "hit": 13,
-        "counted": 13,
+        "counted": 14,
         "langs": [
          "en-US"
         ],
         "by_lang": {
          "da-DK": {
-          "counted": 13,
+          "counted": 14,
           "hit": 13
          },
          "en-US": {
-          "counted": 13,
+          "counted": 14,
           "hit": 13
          }
         }
@@ -3301,7 +3293,7 @@
        "label": "✓ 11/13 golden",
        "level": 3,
        "version": "0.0.6",
-       "tested_at": "2026-11-20T10:26:30+00:00",
+       "tested_at": "2026-11-27T11:38:44+00:00",
        "golden": {
         "hit": 11,
         "counted": 13,
@@ -3348,7 +3340,7 @@
        "label": "✓ 4/5 golden · stops",
        "level": 3,
        "version": "0.0.5",
-       "tested_at": "2026-10-30T08:59:37+00:00",
+       "tested_at": "2026-11-27T11:23:41+00:00",
        "golden": {
         "hit": 4,
         "counted": 5,
@@ -3395,7 +3387,7 @@
        "label": "✓ 6/6 golden",
        "level": 3,
        "version": "0.0.2",
-       "tested_at": "2026-10-30T08:59:18+00:00",
+       "tested_at": "2026-11-27T11:23:22+00:00",
        "golden": {
         "hit": 6,
         "counted": 6,
@@ -3429,7 +3421,7 @@
        "label": "✓ 2/2 golden · stops",
        "level": 3,
        "version": "0.1.8",
-       "tested_at": "2026-10-30T08:59:48+00:00",
+       "tested_at": "2026-11-27T11:23:54+00:00",
        "golden": {
         "hit": 2,
         "counted": 2,
@@ -3459,7 +3451,7 @@
        "label": "✓ loads · 0/6 golden",
        "level": 2,
        "version": "0.0.4",
-       "tested_at": "2026-10-30T08:59:48+00:00",
+       "tested_at": "2026-11-27T11:26:51+00:00",
        "golden": {
         "hit": 0,
         "counted": 6,
@@ -3493,7 +3485,7 @@
        "label": "✓ 3/3 golden",
        "level": 3,
        "version": "0.0.3",
-       "tested_at": "2026-10-30T08:59:18+00:00",
+       "tested_at": "2026-11-27T11:42:11+00:00",
        "golden": {
         "hit": 3,
         "counted": 3,
@@ -3527,7 +3519,7 @@
        "label": "✓ 6/6 golden",
        "level": 3,
        "version": "0.0.4",
-       "tested_at": "2026-10-30T09:19:55+00:00",
+       "tested_at": "2026-11-27T11:52:28+00:00",
        "golden": {
         "hit": 6,
         "counted": 6,
@@ -3561,7 +3553,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.7.4a1",
-       "tested_at": "2026-10-30T08:59:28+00:00",
+       "tested_at": "2026-11-27T11:25:13+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3576,7 +3568,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.8.3a2",
-       "tested_at": "2026-10-30T08:59:52+00:00",
+       "tested_at": "2026-11-27T11:22:57+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3591,7 +3583,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.10.4a1",
-       "tested_at": "2026-11-16T10:12:16+00:00",
+       "tested_at": "2026-11-27T11:51:11+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3606,7 +3598,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "1.2.5",
-       "tested_at": "2026-10-30T09:00:10+00:00",
+       "tested_at": "2026-11-27T11:27:15+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3620,8 +3612,8 @@
        "state": "pass",
        "label": "✓ 1/1 golden",
        "level": 3,
-       "version": "0.8.0a2",
-       "tested_at": "2026-10-30T09:00:03+00:00",
+       "version": "0.8.1a1",
+       "tested_at": "2026-11-27T11:23:50+00:00",
        "golden": {
         "hit": 1,
         "counted": 1,
@@ -3651,7 +3643,7 @@
        "label": "✓ loads · 14/17 langs",
        "level": 2,
        "version": "2.0.0a7",
-       "tested_at": "2026-10-30T08:59:14+00:00",
+       "tested_at": "2026-11-27T11:23:16+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3666,7 +3658,7 @@
        "label": "✓ 96/96 golden",
        "level": 3,
        "version": "0.7.4a1",
-       "tested_at": "2026-10-30T08:59:56+00:00",
+       "tested_at": "2026-11-27T11:24:03+00:00",
        "golden": {
         "hit": 96,
         "counted": 96,
@@ -3674,10 +3666,6 @@
          "en-US"
         ],
         "by_lang": {
-         "da-DK": {
-          "counted": 29,
-          "hit": 29
-         },
          "en-US": {
           "counted": 96,
           "hit": 96
@@ -3700,7 +3688,7 @@
        "label": "✓ loads",
        "level": 2,
        "version": "0.6.3a1",
-       "tested_at": "2026-11-16T10:09:17+00:00",
+       "tested_at": "2026-11-27T11:23:33+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3714,7 +3702,7 @@
        "state": "fail",
        "label": "✗ doesn't install",
        "level": 0,
-       "tested_at": "2026-10-30T09:01:03+00:00",
+       "tested_at": "2026-11-27T11:25:12+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3729,7 +3717,7 @@
        "label": "✓ loads · 7/10 golden",
        "level": 2,
        "version": "0.8.0a2",
-       "tested_at": "2026-10-30T09:41:01+00:00",
+       "tested_at": "2026-11-27T12:00:19+00:00",
        "golden": {
         "hit": 7,
         "counted": 10,
@@ -3737,6 +3725,10 @@
          "en-US"
         ],
         "by_lang": {
+         "da-DK": {
+          "counted": 9,
+          "hit": 6
+         },
          "en-US": {
           "counted": 10,
           "hit": 7
@@ -3758,8 +3750,8 @@
        "state": "pass",
        "label": "✓ 5/5 golden",
        "level": 3,
-       "version": "0.14.2a1",
-       "tested_at": "2026-10-30T08:59:11+00:00",
+       "version": "0.15.0a1",
+       "tested_at": "2026-11-27T11:26:10+00:00",
        "golden": {
         "hit": 5,
         "counted": 5,
@@ -3788,8 +3780,8 @@
        "state": "pass",
        "label": "✓ loads",
        "level": 2,
-       "version": "1.4.7",
-       "tested_at": "2026-11-17T11:14:58+00:00",
+       "version": "1.4.8",
+       "tested_at": "2026-11-27T11:27:32+00:00",
        "golden": null,
        "klondike": null,
        "gold": false,
@@ -3816,7 +3808,7 @@
       "not_testable": 1,
       "untested": 0,
       "not_in_store": 2,
-      "routes": 17,
+      "routes": 18,
       "gold": 18
      }
     }

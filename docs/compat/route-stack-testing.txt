@@ -30,7 +30,7 @@ h3==4.5.1
 hf-xet==1.8.0
 httpcore2==2.16.2
 httpx2==2.16.2
-huggingface_hub==2.4.0
+huggingface_hub==2.5.0
 icalendar==5.0.14
 icepool==2.1.3
 idna==3.20
@@ -44,49 +44,38 @@ keyword-template-matcher @ git+https://github.com/TigreGotico/kw-template-matche
 kthread==0.2.3
 langcodes==3.5.1
 lazy-importer==0.1.0
-linguatag==0.4.1a2
+linguatag==0.10.0a1
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
 lxml==6.1.3
 markdown-it-py==4.3.0
 MarkupSafe==3.0.4
 mdurl==0.1.2
 memory-tempfile==2.2.3
-mido==1.3.3
 model2vec==0.10.0
 narwhals==2.29.0
 nebulento @ git+https://github.com/OpenVoiceOS/nebulento@8af5d46f252cde812c6a4f64d9c1062a582db238
 nltk==3.10.4
 numpy==2.4.6
 ovos-audio==1.2.0
-ovos-audio-transformer-plugin-autovolume==0.0.1a3
-ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==2.1.1
 ovos-date-parser==0.29.0
 ovos-dinkum-listener==0.5.0
 ovos-gui-api-client==0.1.0
 ovos-lang-parser==0.0.2
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
-ovos-media==2.4.5a2
+ovos-media==3.4.0a1
 ovos-number-parser==0.19.13
-ovos-phal-plugin-midi==0.2.0
 ovos-plugin-manager==2.2.0
-ovos-skill-1001-nights==0.1.1
-ovos-skill-about-emkay==0.1.0a5
 ovos-skill-alerts==0.1.28
-ovos-skill-andersen-tales==0.2.1
 ovos-skill-audio-recording==0.2.7
-ovos-skill-autovolume==0.0.1a1
 ovos-skill-boot-finished==0.5.0
 ovos-skill-count==0.0.2
 ovos-skill-date-time==1.1.5
 ovos-skill-diagnostics==0.0.8
 ovos-skill-dictation==0.2.19
 ovos-skill-fallback-unknown==0.1.9
-ovos-skill-grimm-tales==0.2.1
-ovos-skill-guardian==0.1.0a13
 ovos-skill-hello-world==0.2.1
 ovos-skill-ip==0.2.8
-ovos-skill-karaoke==0.1.2
 ovos-skill-naptime==0.3.15
 ovos-skill-parrot==0.1.25
 ovos-skill-personal==0.1.19
@@ -100,7 +89,7 @@ ovos-skill-wikipedia==0.8.13
 ovos-skill-wolfie==0.5.8
 ovos-solver-bm25-plugin==0.1.0
 ovos-solver-yes-no-plugin==0.2.8
-ovos-spec-tools==1.17.1a2
+ovos-spec-tools==1.17.2a1
 ovos-utterance-normalizer==0.2.3
 ovos-utterance-plugin-cancel==0.2.8
 ovos-workshop==7.0.6
@@ -121,7 +110,7 @@ ovos_utils==0.8.4
 ovos_wikipedia_solver==0.1.3
 ovos_wolfram_alpha_solver==0.0.4
 ovoscope==0.13.1
-packaging==26.3
+packaging==26.4
 padacioso==1.0.0
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
@@ -147,7 +136,7 @@ quebra-frases==0.3.7
 RapidFuzz==3.14.6
 ratelim==0.1.6
 recurring-ical-events==3.3.4
-regex==2026.11.19
+regex==2026.11.25
 requests==2.34.2
 requests-cache==1.3.3
 rich==13.9.4
@@ -157,6 +146,7 @@ scikit-learn==1.9.1
 scipy==1.17.1
 simplematch==1.4
 six==1.17.0
+skill-homeassistant==1.4.8
 sklearn-crfsuite==0.5.0
 snowballstemmer==3.1.1
 soupsieve==4.1.3
@@ -179,6 +169,7 @@ urllib3==2.8.0
 vobject==0.9.9
 watchdog==2.3.1
 wcwidth==0.9.5
+webcolors==25.10.0
 websocket-client==1.9.2
 x-wr-timezone==1.0.1
 xxhash==4.1.0
