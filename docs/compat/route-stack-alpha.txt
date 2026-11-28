@@ -9,7 +9,7 @@ cattrs==26.2.1
 certifi==2026.11.20
 cffi==2.1.1
 charset-normalizer==3.5.3
-chronologia==0.45.11a1
+chronologia==0.48.6a1
 click==8.5.1
 cloudpickle==3.1.3
 combo_lock==0.3.1
@@ -39,22 +39,23 @@ keyword-template-matcher==0.1.11a1
 kthread==0.2.3
 langcodes==3.5.1
 language_data==1.4.0
-linguatag==0.10.0a1
+linguatag==0.13.1a3
 linha-fina @ git+https://github.com/OpenVoiceOS/linha-fina@39166a14a977bca252328c280d7817e5284750c3
-lxml==6.1.3
+lxml==6.2.0
 marisa-trie==1.4.1
 markdown-it-py==4.3.0
 MarkupSafe==3.0.4
 mdurl==0.1.2
 mediavocab==1.3.0a3
 memory-tempfile==2.2.3
-model2vec==0.10.0
+model2vec==0.11.0
+model2vec-rs==0.5.1
 narwhals==2.29.0
 nebulento @ git+https://github.com/OpenVoiceOS/nebulento@8af5d46f252cde812c6a4f64d9c1062a582db238
 numpy==2.4.6
-numtag==0.49.1a1
-ovos-audio==2.2.11a2
-ovos-bidirectional-translation-plugin==0.1.5a1
+numtag==0.50.0a1
+ovos-audio==2.3.1a1
+ovos-bidirectional-translation-plugin==0.1.6a1
 ovos-bus-client==2.11.29a1
 ovos-common-reading-pipeline-plugin==0.3.2
 ovos-config==3.9.0a2
@@ -66,9 +67,9 @@ ovos-gui==1.6.0a1
 ovos-gui-api-client==0.1.0
 ovos-lang-parser==0.8.0a3
 ovos-markov-pipeline-plugin @ git+https://github.com/OpenVoiceOS/ovos-markov-pipeline-plugin@2d831ccaab26519b3ac473466ef56012077f6105
-ovos-media==3.4.0a1
+ovos-media==4.2.0a1
 ovos-media-classifier==0.2.1a2
-ovos-number-parser==0.31.6a1
+ovos-number-parser==0.31.6a2
 ovos-option-matcher-fuzzy-plugin==0.0.4a1
 ovos-persona==0.9.0a36
 ovos-plugin-manager==2.12.5a1
@@ -82,7 +83,7 @@ ovos-skill-application-launcher==0.14.0a1
 ovos-skill-arxiv-papers==0.1.7
 ovos-skill-audio-recording==0.7.2a7
 ovos-skill-boot-finished==0.9.4a1
-ovos-skill-count==0.7.1a2
+ovos-skill-count==0.7.2a1
 ovos-skill-date-time==1.13.0a1
 ovos-skill-ddg==0.6.0a4
 ovos-skill-diagnostics==0.5.1a2
@@ -96,13 +97,13 @@ ovos-skill-personal==1.1.0a1
 ovos-skill-randomness==2.0.2a8
 ovos-skill-speedtest==0.10.0a8
 ovos-skill-spelling==0.13.2a2
-ovos-skill-volume==0.12.4a1
-ovos-skill-weather==1.5.8a1
+ovos-skill-volume==0.12.5a1
+ovos-skill-weather==1.5.9a3
 ovos-skill-wikihow==0.7.3a3
 ovos-skill-wikipedia==0.19.1a1
 ovos-skill-wolfie==0.13.0a2
 ovos-spec-tools==1.17.2a1
-ovos-translate-server-plugin==0.0.10a1
+ovos-translate-server-plugin==0.0.11a1
 ovos-typed-slots-transformer==0.0.1a7
 ovos-utils==0.15.7a3
 ovos-utterance-normalizer==0.2.8a1
@@ -114,10 +115,10 @@ ovos-yes-no-plugin==0.4.1a1
 ovos_adapt_parser==1.6.8a1
 ovos_color_parser==0.12.8a3
 ovos_common_query_pipeline_plugin==1.1.20a1
-ovos_m2v_pipeline==0.38.0a1
+ovos_m2v_pipeline==0.38.1a1
 ovos_ocp_pipeline_plugin==1.5.8a1
 ovos_openai_plugin==2.0.14a1
-ovos_padatious==2.3.2a1
+ovos_padatious==2.3.3a1
 ovos_solver_failure_plugin==1.0.1a2
 ovos_utterance_corrections_plugin==0.1.4a1
 ovoscope==1.12.1a1
@@ -125,7 +126,7 @@ packaging==26.4
 padacioso==2.5.4a1
 palavreado @ git+https://github.com/OpenVoiceOS/palavreado@cb48a52254e25870d38c2d72b03920736c2a74fe
 pexpect==4.9.0
-platformdirs==4.14.8
+platformdirs==4.14.9
 pluggy==1.7.0
 prettytable==3.19.0
 psutil==7.2.2
