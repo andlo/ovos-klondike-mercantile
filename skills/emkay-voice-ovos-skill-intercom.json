@@ -38,11 +38,22 @@
   "pipeline": null,
   "connectivity": "lan",
   "requires_api_key": false,
-  "settings_fields": [],
+  "settings_fields": [
+    {
+      "name": "intercom_name",
+      "type": "text",
+      "label": "This device's name"
+    },
+    {
+      "name": "intercom_code",
+      "type": "text",
+      "label": "Household code"
+    }
+  ],
   "setup_notes": [
     {
       "heading": "Setup",
-      "content": "Each device needs a **name** and a shared household **code**, set by\nvoice on that specific device:\n\"set intercom name to living room\"\n\"set intercom code to four seven two nine\"\n\nEvery device that should participate says the **same code** - not a\nseparate secret per pair of devices. Say it once per device; any two\ndevices with matching codes can message each other.\n\nThe name and code can also be set in the skill's settings\n(`intercom_name`, `intercom_code` in its `settings.json`, or a\nsettings UI). A new name is advertised as soon as the settings are\nsaved - no restart needed."
+      "content": "Each device needs a **name** and a shared household **code**, set by\nvoice on that specific device:\n\"set intercom name to living room\"\n\"set intercom code to four seven two nine\"\n\nEvery device that should participate says the **same code** - not a\nseparate secret per pair of devices. Say it once per device; any two\ndevices with matching codes can message each other.\n\nThe name and code can also be set in the skill's settings\n(`intercom_name`, `intercom_code` in its `settings.json`, or a\nsettings UI: `settingsmeta.json` gives them a form, as on the Skills page of\nthe [control panel](https://github.com/OpenVoiceOS/ovos-control-panel)). A new name is advertised as soon as the settings are\nsaved - no restart needed."
     },
     {
       "heading": "Install",

@@ -21,7 +21,7 @@
   "icon_color": null,
   "source": "https://github.com/emkay-voice/ovos-phal-plugin-browser",
   "package_name": "ovos-phal-plugin-browser",
-  "pypi_version": "0.1.0a3",
+  "pypi_version": "0.1.0a7",
   "license": "Apache-2.0",
   "archived": false,
   "author": "emkay-voice",
@@ -41,14 +41,27 @@
   "setup_notes": [
     {
       "heading": "Config",
-      "content": "`PHAL.ovos-phal-plugin-browser` in `mycroft.conf`; nothing needs setting. The\nvolume is kept in `~/.config/OpenVoiceOS/ovos-phal-plugin-browser.json`."
+      "content": "`PHAL.ovos-phal-plugin-browser` in `mycroft.conf`; nothing needs setting. The\nvolume is kept in `~/.config/OpenVoiceOS/ovos-phal-plugin-browser.json`.\n\nIn the [control panel](https://github.com/OpenVoiceOS/ovos-control-panel) the plugin has a page under Device for `camera` and\n`default_volume`, saved in `PHAL.ovos-phal-plugin-browser` (`controlpanel.json`).\n\n### Sensors that ask\n\nThe sensors whose readings the browser only gives after asking the user are\noff until turned on in `PHAL.ovos-phal-plugin-browser.sensors` (the same page\nhas a switch for each):\n\n| Sensor | Readings | Asks |\n| --- | --- | --- |\n| `position` | `position_location` (\"lat,lon\", with latitude, longitude, gps_accuracy) | yes |\n| `presence` | `presence_user_active`, `presence_screen_locked` (Idle Detection, Chrome) | yes\u2026"
     }
   ],
-  "languages": [],
+  "languages": [
+    "ca-es",
+    "da-dk",
+    "de-de",
+    "en-us",
+    "es-es",
+    "eu-es",
+    "fr-fr",
+    "gl-es",
+    "it-it",
+    "nl-nl",
+    "pt-br",
+    "pt-pt"
+  ],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-11-16T13:28:25Z",
-  "last_updated": "2026-11-16T23:41:34.339903Z",
+  "last_updated": "2026-11-23T09:46:13.463899Z",
   "is_new_repo": true,
   "is_recently_updated": true
 }

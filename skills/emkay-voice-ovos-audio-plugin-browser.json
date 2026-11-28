@@ -21,7 +21,7 @@
   "icon_color": null,
   "source": "https://github.com/emkay-voice/ovos-audio-plugin-browser",
   "package_name": "ovos-audio-plugin-browser",
-  "pypi_version": "0.1.0a1",
+  "pypi_version": "0.1.0a3",
   "license": "Apache-2.0",
   "archived": false,
   "author": "emkay-voice",
@@ -41,14 +41,14 @@
   "setup_notes": [
     {
       "heading": "Install and configure",
-      "content": "pip install ovos-audio-plugin-browser\n\n{\n  \"Audio\": {\n    \"default-backend\": \"browser\",\n    \"backends\": {\n      \"browser\": {\"type\": \"ovos_audio_browser\", \"active\": true, \"duck_factor\": 0.3}\n    }\n  },\n  \"intents\": {\n    \"ovos-ocp-pipeline-plugin\": {\"legacy\": true}\n  }\n}\n\n- `duck_factor`: the music's volume while OVOS speaks or listens, 0..1.\n- Without a `backends` entry of this type, one called `browser` is made, so\n  installing the plugin is enough; set `default-backend` to make it the\n  first choice.\n- `\"legacy\": true` makes OCP play through `AudioService` (and this backend)\n  instead of waiting for ovos-media."
+      "content": "pip install ovos-audio-plugin-browser\n\n{\n  \"Audio\": {\n    \"default-backend\": \"browser\",\n    \"backends\": {\n      \"browser\": {\"type\": \"ovos_audio_browser\", \"active\": true, \"duck_factor\": 0.3}\n    }\n  },\n  \"intents\": {\n    \"ovos-ocp-pipeline-plugin\": {\"legacy\": true}\n  }\n}\n\n- `duck_factor`: the music's volume while OVOS speaks or listens, 0..1.\n- `file`: whether the page can play `file://` tracks. A page can't open the\n  device's files by itself, so this is off, except where OVOS runs in the\n  page (Emkay, in Pyodide), which hands the page a track's bytes, or plays\n  it from a folder the page was given.\n- Without a `backends` entry of this type, one called `browser` is made, so\n  installing the plugin is enough; set `default-backend` to make it the\n  first choice.\n- `\"legacy\": true` makes OCP\u2026"
     }
   ],
   "languages": [],
   "locale_content": {},
   "in_ovos_localize": false,
   "repo_created_at": "2026-11-16T14:10:08Z",
-  "last_updated": "2026-11-16T15:22:13.309170Z",
+  "last_updated": "2026-11-23T10:32:14.568379Z",
   "is_new_repo": true,
   "is_recently_updated": true
 }
